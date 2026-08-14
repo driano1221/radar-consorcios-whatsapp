@@ -1,0 +1,27 @@
+{
+  "name": "radar-consorcios-whatsapp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Radar gratuito de notícias sobre consórcios intermunicipais com publicação em grupo do WhatsApp.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "collect": "node src/radar.mjs",
+    "pair": "node scripts/pair-whatsapp.mjs",
+    "session:encrypt": "node scripts/session-state.mjs encrypt",
+    "session:decrypt": "node scripts/session-state.mjs decrypt",
+    "session:prepare": "node scripts/prepare-session.mjs",
+    "session:check": "node scripts/check-session.mjs",
+    "test": "node --test",
+    "check": "node --check src/radar.mjs && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "6.7.24",
+    "fast-xml-parser": "5.10.1",
+    "pino": "10.3.1",
+    "qrcode": "1.5.4",
+    "tar": "7.5.22"
+  }
+}

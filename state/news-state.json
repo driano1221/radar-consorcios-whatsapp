@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "seen": {
+    "0b0938ab741ab5ff15a12139069ce6d9e60fc4a2210f2efb1b080b2c4fdaf430": {
+      "sentAt": "2026-08-14T12:27:20.074Z",
+      "url": "https://data.queridodiario.ok.org.br/3111200/2026-08-11/377f2ff156b4ea0c7f3f70d2b2bfcf12f325bd6e.pdf",
+      "title": "Diário Oficial de Campo Belo (MG)",
+      "titleFingerprint": "aaa5bba37c1febe3b2e4bdcd133b49efe469eaf75e553b64ceb8ca8fb319f5c8",
+      "category": "SAÍDA"
+    }
+  }
+}

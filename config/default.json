@@ -1,0 +1,84 @@
+{
+  "lookbackHours": 96,
+  "maxPostsPerRun": 3,
+  "maxPostsPerDay": 72,
+  "minimumScore": 5,
+  "messageDelayMs": 6000,
+  "stateRetentionDays": 365,
+  "googleNews": {
+    "enabled": true,
+    "queries": [
+      "\"consórcio intermunicipal\"",
+      "\"consórcio público\" município",
+      "\"contrato de rateio\" consórcio",
+      "\"protocolo de intenções\" consórcio município",
+      "\"novo consórcio\" municípios",
+      "\"ratifica protocolo de intenções\" consórcio",
+      "\"deixa o consórcio\" município",
+      "\"retirada do consórcio\" município",
+      "\"consórcio intermunicipal\" dissolução OR extinção OR crise OR dívida OR inadimplência",
+      "\"consórcio intermunicipal\" auditoria OR irregularidade OR \"Tribunal de Contas\" OR \"Ministério Público\"",
+      "\"consórcio intermunicipal\" saúde OR saneamento OR resíduos",
+      "site:gov.br \"consórcio público\" municípios"
+    ]
+  },
+  "queridoDiario": {
+    "enabled": true,
+    "pageSize": 100,
+    "excerptSize": 900,
+    "numberOfExcerpts": 3,
+    "timeoutMs": 15000,
+    "retries": 1,
+    "queryGroups": [
+      [
+        "consórcio intermunicipal",
+        "consorcio intermunicipal",
+        "consórcio público",
+        "consorcio publico",
+        "protocolo de intenções",
+        "protocolo de intencoes"
+      ],
+      [
+        "contrato de rateio",
+        "termo aditivo ao contrato de rateio",
+        "adesão ao consórcio",
+        "adesao ao consorcio",
+        "ingresso no consórcio",
+        "ratifica o protocolo de intenções"
+      ],
+      [
+        "retirada do consórcio",
+        "desligamento do consórcio",
+        "desvinculação do consórcio",
+        "exclusão do consórcio",
+        "dissolução do consórcio",
+        "extinção do consórcio",
+        "inadimplência do consórcio",
+        "denúncia do protocolo de intenções"
+      ]
+    ]
+  },
+  "rssFeeds": {
+    "enabled": true,
+    "timeoutMs": 12000,
+    "retries": 1,
+    "feeds": [
+      {
+        "name": "COPIRN",
+        "url": "https://copirn.org.br/feed/"
+      },
+      {
+        "name": "Observatório das Metrópoles",
+        "url": "https://www.observatoriodasmetropoles.net.br/tag/consorcios-publicos/feed/"
+      },
+      {
+        "name": "Frente Nacional de Prefeitas e Prefeitos",
+        "url": "https://fnp.org.br/noticias?format=feed&type=rss"
+      },
+      {
+        "name": "Agência Brasil",
+        "url": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+.local/
+output/
+.env
+*.log
+
+# A sessão descriptografada nunca pode entrar no Git.
+state/auth/
+state/*.tar.gz
+
