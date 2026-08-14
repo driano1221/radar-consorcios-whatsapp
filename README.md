@@ -1,10 +1,37 @@
 # Radar de Consórcios no WhatsApp
 
-Piloto sem servidor e sem n8n para monitorar notícias e atos oficiais sobre consórcios intermunicipais. O GitHub Actions consulta as fontes uma vez por hora, classifica eventos, elimina duplicações e publica mensagens curtas em um grupo existente do WhatsApp.
+Radar automatizado de notícias e atos oficiais sobre consórcios intermunicipais. O projeto consulta fontes públicas uma vez por hora, identifica acontecimentos relevantes, evita repetições e publica resumos curtos em um grupo do WhatsApp.
 
-O projeto foi criado para apoiar a pesquisa do Ipea **“Avanços e Limites da Coordenação Federativa por meio de Consórcios Intermunicipais: aprendendo com os ‘fracassos’”**.
+O piloto apoia a pesquisa do Ipea **“Avanços e Limites da Coordenação Federativa por meio de Consórcios Intermunicipais: aprendendo com os ‘fracassos’”**.
 
-## Cobertura
+## Estado atual
+
+- piloto ativo desde 14 de agosto de 2026;
+- repositório privado e execução gratuita pelo GitHub Actions;
+- destino atual: grupo **Radar Consórcios - Teste**;
+- 24 coletas por dia, no minuto 17 de cada hora, no fuso de São Paulo;
+- até 3 publicações por rodada e 72 por dia, somente quando houver conteúdo novo;
+- orçamento do GitHub Actions em **US$ 0**, com bloqueio de uso pago;
+- sessão do WhatsApp cifrada com AES-256-GCM;
+- primeira coleta sem envio e primeira rodada real concluídas com sucesso.
+
+Para interromper os disparos imediatamente, altere a variável `SEND_ENABLED` para `false` em **Settings → Secrets and variables → Actions → Variables**.
+
+## O que o radar procura
+
+São priorizados acontecimentos ligados à composição, sustentabilidade e governança dos consórcios públicos:
+
+- criação ou dissolução;
+- adesão e saída de municípios;
+- protocolo de intenções e contrato de consórcio;
+- contrato de rateio e situação financeira;
+- inadimplência, paralisação e crise institucional;
+- fiscalização, irregularidades e controle;
+- alteração de governança ou área de atuação.
+
+Consórcios empresariais e comerciais, compras comuns e adesões a atas de preços recebem penalidades para reduzir falsos positivos.
+
+## Fontes
 
 O radar combina três famílias de fontes:
 
@@ -12,28 +39,58 @@ O radar combina três famílias de fontes:
 - API pública do Querido Diário, dividida em três grupos de termos;
 - feeds diretos do COPIRN, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil.
 
-São priorizados criação, adesão, saída, dissolução, protocolo de intenções, contrato de rateio, finanças, governança, fiscalização, irregularidades e paralisação. Consórcios empresariais, comerciais e adesões a atas de preços recebem penalidades para evitar falsos positivos.
+Cada família é consultada de forma independente. A falha temporária de uma fonte não interrompe as demais.
 
-## Frequência e cota
+## Funcionamento de cada rodada
 
-O workflow roda no minuto 17 de cada hora, no fuso de São Paulo: **24 execuções por dia**. Cada execução pode publicar até três notícias, com teto teórico de 72 mensagens diárias se houver conteúdo relevante.
+1. consulta as fontes em paralelo, com timeout e nova tentativa;
+2. normaliza e reúne as publicações;
+3. classifica os eventos e calcula a relevância;
+4. elimina duplicidades;
+5. ordena por pontuação e, em caso de empate, pela publicação mais recente;
+6. seleciona até três candidatos, respeitando o limite diário;
+7. envia as mensagens com intervalo de seis segundos;
+8. registra cada entrega imediatamente;
+9. renova a sessão cifrada e persiste o histórico no repositório.
 
-Em repositório privado GitHub Free há 2.000 minutos mensais. Como os jobs são arredondados para o próximo minuto, o workflow usa limite rígido de dois minutos:
+## Quando existem mais de três notícias
+
+Somente as três mais relevantes são enviadas na rodada atual. As demais **não são marcadas como enviadas** e voltam a concorrer nas coletas seguintes enquanto permanecerem disponíveis nas fontes e dentro da janela de 96 horas.
+
+O piloto ainda não possui uma fila persistente. Depois da homologação, a principal evolução prevista é guardar todos os candidatos relevantes com prioridade, data de descoberta, tentativas e prazo de expiração.
+
+## Proteção contra duplicatas
+
+A deduplicação combina:
+
+- URL canônica, removendo parâmetros de rastreamento;
+- título normalizado;
+- impressão digital do título;
+- similaridade do conteúdo dentro da mesma categoria;
+- comparação entre fontes na mesma rodada;
+- histórico persistente das notícias enviadas por 365 dias.
+
+Isso permite reconhecer, por exemplo, o mesmo ato publicado por duas fontes com títulos e endereços diferentes. Nenhum método é infalível; casos reais observados durante o piloto serão usados para calibrar os limiares.
+
+## Frequência e cota gratuita
+
+O GitHub Free inclui 2.000 minutos mensais de Actions em repositórios privados. O job possui limite rígido de dois minutos:
 
 ```text
 24 execuções × 31 dias × 2 minutos = 1.488 minutos/mês
 ```
 
-Isso reserva ao menos 512 minutos para testes manuais e variações. Configure o orçamento de cobrança em zero para impedir gastos após a franquia.
+O orçamento da conta está configurado em zero e bloqueia cobrança adicional após a franquia.
 
 ## Segurança e limitações
 
 - A conexão usa WhatsApp Web por meio do Baileys; não é uma API oficial da Meta.
-- A sessão vinculada é armazenada no repositório somente após criptografia AES-256-GCM.
-- Dados criptográficos internos da biblioteca são filtrados dos logs.
-- `.local/`, sessões abertas e senhas nunca entram no Git.
-- O destino é definido por secret; durante a homologação, use apenas **Radar Consórcios - Teste**.
-- GitHub Actions é periódico e pode sofrer pequenos atrasos.
+- A sessão vinculada entra no repositório somente após criptografia.
+- Dados criptográficos internos são filtrados dos logs.
+- `.local/`, sessões abertas, senha, número pessoal e ID do grupo não entram no Git.
+- O destino é definido por um secret do GitHub.
+- O Actions é periódico e pode sofrer pequenos atrasos.
+- Se o WhatsApp desvincular o aparelho, será necessário parear novamente.
 
 ## Instalação local
 
@@ -44,32 +101,30 @@ npm install
 npm test
 ```
 
-## Parear o WhatsApp
+### Parear o WhatsApp
 
 ```powershell
 npm run pair
 ```
 
-Abra **WhatsApp → Dispositivos conectados → Conectar dispositivo** e leia o QR. O script salva os grupos em `.local/groups.json`.
+Abra **WhatsApp → Dispositivos conectados → Conectar dispositivo** e leia o QR. O script salva a relação de grupos apenas em `.local/groups.json`.
 
-Para verificar sessão e grupo sem enviar:
+### Verificar a sessão sem enviar
 
 ```powershell
 $env:WHATSAPP_GROUP_ID='ID_DO_GRUPO@g.us'
 npm run session:check
 ```
 
-## Coleta sem publicação
-
-O envio é desabilitado por padrão:
+### Coletar sem publicar
 
 ```powershell
 npm run collect
 ```
 
-Os candidatos ficam em `output/candidates.json`; a prévia pronta para WhatsApp fica em `output/preview.txt`.
+Os candidatos ficam em `output/candidates.json`; a prévia formatada fica em `output/preview.txt`.
 
-## Publicação local controlada
+### Publicação local controlada
 
 ```powershell
 $env:SEND_ENABLED='true'
@@ -78,48 +133,33 @@ $env:MAX_POSTS_PER_RUN='1'
 npm run collect
 ```
 
-Cada entrega é persistida imediatamente em `state/news-state.json`, reduzindo o risco de repetição caso uma mensagem posterior falhe.
+## Configuração do GitHub
 
-## Sessão criptografada
-
-```powershell
-npm run session:prepare
-```
-
-O comando cria ou reutiliza a senha em `.local/bot-state-password.txt` e atualiza:
-
-- `state/auth.enc`: sessão criptografada;
-- `state/auth.sha256`: hash de controle.
-
-No GitHub, configure em **Settings → Secrets and variables → Actions**:
+Em **Settings → Secrets and variables → Actions**:
 
 ### Secrets
 
-- `BOT_STATE_PASSWORD`: conteúdo de `.local/bot-state-password.txt`;
-- `WHATSAPP_GROUP_ID`: ID do grupo **Radar Consórcios - Teste** durante a homologação.
+- `BOT_STATE_PASSWORD`: senha que cifra a sessão;
+- `WHATSAPP_GROUP_ID`: ID do grupo de destino.
 
 ### Variable
 
-- `SEND_ENABLED`: `true` para a homologação automática; mude para `false` para interromper imediatamente.
+- `SEND_ENABLED`: `true` para publicar ou `false` para pausar.
 
-## Funcionamento por rodada
+## Homologação até domingo
 
-1. instala dependências usando o lockfile;
-2. restaura a sessão criptografada;
-3. consulta fontes em paralelo, com timeout e nova tentativa;
-4. classifica e pontua os eventos;
-5. elimina URL, título e conteúdo equivalentes;
-6. respeita os tetos por rodada e por dia;
-7. envia no máximo três mensagens, com intervalo;
-8. grava cada entrega e renova a sessão criptografada;
-9. persiste somente estado e sessão cifrada.
+Até a revisão de 16 de agosto de 2026, observar:
 
-## Homologação
+- relevância e falsos positivos;
+- eventuais repetições;
+- qualidade e tamanho das mensagens;
+- volume por dia;
+- tempo entre o fato e a publicação;
+- estabilidade da sessão do WhatsApp;
+- recuperação das notícias que ficaram fora das três primeiras.
 
-Mantenha o ID do grupo de teste até a revisão de domingo. Observe volume, falsos positivos, repetições, qualidade dos resumos e estabilidade da sessão. Só depois substitua `WHATSAPP_GROUP_ID` pelo grupo definitivo.
-
-Detalhes da pesquisa técnica e das escolhas estão em [docs/ARQUITETURA.md](docs/ARQUITETURA.md).
+As decisões, resultados iniciais e próximos passos estão registrados em [docs/MEMORIA_DO_PROJETO.md](docs/MEMORIA_DO_PROJETO.md). A pesquisa técnica está em [docs/ARQUITETURA.md](docs/ARQUITETURA.md).
 
 ## Recuperação
 
-Se o WhatsApp desvincular a sessão, execute `npm run pair`, depois `npm run session:prepare`, e atualize os dois arquivos `state/auth.*` no repositório. O histórico de notícias enviadas permanece preservado.
+Se o WhatsApp desvincular a sessão, execute `npm run pair` e depois `npm run session:prepare`. Atualize os arquivos cifrados `state/auth.*` no repositório. O histórico de notícias enviadas permanece preservado em `state/news-state.json`.
