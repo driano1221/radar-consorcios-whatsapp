@@ -35,10 +35,11 @@ Consórcios empresariais e comerciais, compras comuns e adesões a atas de preç
 
 O radar combina quatro famílias de fontes:
 
-- Google News RSS, com 17 consultas temáticas, incluindo controle, Ministério Público e Legislativo;
+- Google News RSS, com 19 consultas temáticas, incluindo controle, Ministério Público, Legislativo e filtros próprios para RNCP e CNM;
 - API pública do Querido Diário, dividida em três grupos de termos;
 - feeds diretos do COPIRN, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil.
-- scrapers leves da RNCP, da área de Consórcios da CNM e das notícias do TCE-MG; o índice da AMM-MG também é monitorado.
+- scraper direto das notícias do TCE-MG e monitoramento do índice da AMM-MG;
+- parsers da RNCP e da área de Consórcios da CNM, mantidos desativados no Actions porque esses portais recusam os IPs do GitHub; a cobertura deles ocorre por consultas específicas no Google News.
 
 Cada família é consultada de forma independente. A falha temporária de uma fonte não interrompe as demais.
 

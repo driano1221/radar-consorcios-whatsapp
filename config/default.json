@@ -24,7 +24,9 @@
       "\"consórcio intermunicipal\" \"Ministério Público\"",
       "site:leg.br \"consórcio público\" ratifica OR adesão OR retirada",
       "\"consórcio público\" \"passa a integrar\" OR desligamento",
-      "\"consórcio intermunicipal\" assembleia OR estatuto OR \"novo presidente\""
+      "\"consórcio intermunicipal\" assembleia OR estatuto OR \"novo presidente\"",
+      "site:rncp.org.br/noticia consórcio",
+      "site:cnm.org.br/comunicacao/noticias consórcio"
     ]
   },
   "queridoDiario": {
@@ -96,12 +98,16 @@
       {
         "name": "Rede Nacional de Consórcios Públicos",
         "adapter": "rncp",
-        "url": "https://www.rncp.org.br/noticias"
+        "url": "https://www.rncp.org.br/noticias",
+        "enabled": false,
+        "fallback": "Google News com filtro site:rncp.org.br"
       },
       {
         "name": "Confederação Nacional de Municípios",
         "adapter": "cnm",
-        "url": "https://cnm.org.br/areas_tecnicas/consorcios/noticias"
+        "url": "https://cnm.org.br/areas_tecnicas/consorcios/noticias",
+        "enabled": false,
+        "fallback": "Google News com filtro site:cnm.org.br"
       },
       {
         "name": "TCE-MG",
