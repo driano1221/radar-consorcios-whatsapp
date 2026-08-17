@@ -33,13 +33,16 @@ Consórcios empresariais e comerciais, compras comuns e adesões a atas de preç
 
 ## Fontes
 
-O radar combina três famílias de fontes:
+O radar combina quatro famílias de fontes:
 
-- Google News RSS, com 12 consultas temáticas;
+- Google News RSS, com 17 consultas temáticas, incluindo controle, Ministério Público e Legislativo;
 - API pública do Querido Diário, dividida em três grupos de termos;
 - feeds diretos do COPIRN, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil.
+- scrapers leves da RNCP, da área de Consórcios da CNM e das notícias do TCE-MG; o índice da AMM-MG também é monitorado.
 
 Cada família é consultada de forma independente. A falha temporária de uma fonte não interrompe as demais.
+
+Os scrapers estão inicialmente com `publish: false`: coletam, classificam e aparecem no resumo do GitHub Actions, mas não enviam mensagens ao WhatsApp. As observações ficam em `output/scraper-observations.json`, os candidatos relevantes em `output/scraper-candidates.json`, a saúde dos portais em `output/scraper-health.json` e a mensagem formatada em `output/scraper-preview.txt`. Isso permite homologar relevância e estabilidade antes da ativação.
 
 ## Funcionamento de cada rodada
 
@@ -123,6 +126,7 @@ npm run collect
 ```
 
 Os candidatos ficam em `output/candidates.json`; a prévia formatada fica em `output/preview.txt`.
+As saídas de homologação dos scrapers ficam nos arquivos `output/scraper-*`.
 
 ### Publicação local controlada
 

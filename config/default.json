@@ -19,7 +19,12 @@
       "\"consórcio intermunicipal\" dissolução OR extinção OR crise OR dívida OR inadimplência",
       "\"consórcio intermunicipal\" auditoria OR irregularidade OR \"Tribunal de Contas\" OR \"Ministério Público\"",
       "\"consórcio intermunicipal\" saúde OR saneamento OR resíduos",
-      "site:gov.br \"consórcio público\" municípios"
+      "site:gov.br \"consórcio público\" municípios",
+      "\"consórcio intermunicipal\" \"Tribunal de Contas\"",
+      "\"consórcio intermunicipal\" \"Ministério Público\"",
+      "site:leg.br \"consórcio público\" ratifica OR adesão OR retirada",
+      "\"consórcio público\" \"passa a integrar\" OR desligamento",
+      "\"consórcio intermunicipal\" assembleia OR estatuto OR \"novo presidente\""
     ]
   },
   "queridoDiario": {
@@ -78,6 +83,36 @@
       {
         "name": "Agência Brasil",
         "url": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml"
+      }
+    ]
+  },
+  "webScrapers": {
+    "enabled": true,
+    "publish": false,
+    "timeoutMs": 12000,
+    "retries": 1,
+    "userAgent": "RadarConsorciosIPEA/0.3 (+pesquisa academica; contato via GitHub)",
+    "sites": [
+      {
+        "name": "Rede Nacional de Consórcios Públicos",
+        "adapter": "rncp",
+        "url": "https://www.rncp.org.br/noticias"
+      },
+      {
+        "name": "Confederação Nacional de Municípios",
+        "adapter": "cnm",
+        "url": "https://cnm.org.br/areas_tecnicas/consorcios/noticias"
+      },
+      {
+        "name": "TCE-MG",
+        "adapter": "tce-mg",
+        "url": "https://www.tce.mg.gov.br/Noticia/?cod_secao=1IQX&tipo=1&url=&cod_secao_menu=5K&cod_pagina=&areas=",
+        "encoding": "windows-1252"
+      },
+      {
+        "name": "Diário Municipal AMM-MG",
+        "adapter": "diario-municipal-index",
+        "url": "https://www.diariomunicipal.com.br/amm-mg/"
       }
     ]
   }
