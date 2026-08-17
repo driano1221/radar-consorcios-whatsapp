@@ -17,7 +17,8 @@ O radar privilegia mudanças na composição e na sustentabilidade institucional
 - [Querido Diário](https://docs.queridodiario.ok.org.br/pt-br/latest/utilizando/api-publica.html): atos municipais estruturados; a documentação indica referência de 60 requisições por minuto. O radar faz três por hora.
 - Google News RSS: descoberta ampla de imprensa e portais locais.
 - COPIRN, Observatório das Metrópoles, FNP e Agência Brasil: feeds diretos, sem depender exclusivamente do índice do Google.
-- RNCP, CNM e TCE-MG: scraping leve de HTML público, com adaptador isolado por portal e publicação inicialmente desativada.
+- TCE-MG: scraping leve de HTML público, com adaptador isolado e publicação inicialmente desativada.
+- RNCP e CNM: os parsers funcionam localmente, mas os portais responderam `403` no GitHub Actions. As chamadas diretas ficam desativadas e são substituídas por consultas `site:` no Google News, sem contornar a proteção dos portais.
 - Diário Municipal AMM-MG: protótipo que monitora a edição mais recente, sem tentar contornar CAPTCHA e sem publicar o PDF como notícia.
 - PNCP e Transferegov foram avaliados, mas não entram no disparo inicial: possuem grande volume de compras e transferências com risco de desviar o foco de adesão/permanência. Podem alimentar uma camada analítica futura.
 

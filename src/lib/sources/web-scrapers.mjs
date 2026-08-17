@@ -157,14 +157,23 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
   if (!config?.enabled || !config.sites?.length) {
     return { items: [], diagnostics: [], ok: true };
   }
+  const activeSites = config.sites.filter((site) => site.enabled !== false);
   const settled = await Promise.allSettled(
-    config.sites.map((site) => fetchSite(site, since, config, fetchImpl)),
+    activeSites.map((site) => fetchSite(site, since, config, fetchImpl)),
   );
   const items = [];
-  const diagnostics = [];
+  const diagnostics = config.sites
+    .filter((site) => site.enabled === false)
+    .map((site) => ({
+      name: site.name,
+      adapter: site.adapter,
+      status: 'disabled',
+      itemCount: 0,
+      message: site.fallback ? `cobertura alternativa: ${site.fallback}` : 'coletor desativado',
+    }));
   let successfulSites = 0;
   settled.forEach((result, index) => {
-    const site = config.sites[index];
+    const site = activeSites[index];
     if (result.status === 'fulfilled') {
       successfulSites += 1;
       items.push(...result.value);
@@ -186,7 +195,7 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
       console.warn(`[fonte:scraper:${site.name}] ${result.reason.message}`);
     }
   });
-  return { items, diagnostics, ok: successfulSites > 0 };
+  return { items, diagnostics, ok: !activeSites.length || successfulSites > 0 };
 }
 
 export { parseBrazilianDate };
