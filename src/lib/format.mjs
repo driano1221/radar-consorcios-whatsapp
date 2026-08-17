@@ -223,11 +223,15 @@ export function formatScraperSummary(items, observationsCount, diagnostics = [])
     '',
     `${observationsCount} item(ns) observado(s); nenhum deles foi enviado automaticamente.`,
     '',
-    ...diagnostics.map((diagnostic) =>
-      diagnostic.status === 'ok'
-        ? `- ✅ ${diagnostic.name}: ${diagnostic.itemCount} item(ns) dentro da janela.`
-        : `- ⚠️ ${diagnostic.name}: falha isolada — ${diagnostic.message}`,
-    ),
+    ...diagnostics.map((diagnostic) => {
+      if (diagnostic.status === 'ok') {
+        return `- ✅ ${diagnostic.name}: ${diagnostic.itemCount} item(ns) dentro da janela.`;
+      }
+      if (diagnostic.status === 'disabled') {
+        return `- ℹ️ ${diagnostic.name}: chamada direta desativada — ${diagnostic.message}.`;
+      }
+      return `- ⚠️ ${diagnostic.name}: falha isolada — ${diagnostic.message}`;
+    }),
     '',
     ...rows,
     '',

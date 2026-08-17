@@ -104,3 +104,29 @@ test('sinaliza quando todos os portais falham', async () => {
   assert.equal(result.diagnostics[0].status, 'error');
   assert.match(result.diagnostics[0].message, /post-item/);
 });
+
+test('nao requisita portal desativado e informa a cobertura alternativa', async () => {
+  let requests = 0;
+  const result = await fetchWebScrapers(
+    {
+      enabled: true,
+      publish: false,
+      sites: [{
+        name: 'Portal bloqueado no Actions',
+        adapter: 'rncp',
+        url: 'https://bloqueado.exemplo/',
+        enabled: false,
+        fallback: 'Google News',
+      }],
+    },
+    since,
+    async () => {
+      requests += 1;
+      return new Response('nao deveria ser chamado');
+    },
+  );
+  assert.equal(requests, 0);
+  assert.equal(result.ok, true);
+  assert.equal(result.diagnostics[0].status, 'disabled');
+  assert.match(result.diagnostics[0].message, /Google News/);
+});
