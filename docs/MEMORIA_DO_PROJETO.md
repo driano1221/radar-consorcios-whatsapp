@@ -47,12 +47,14 @@ O objetivo do piloto é entregar, em um grupo do WhatsApp, notícias curtas e ú
 
 ### Fontes
 
-- Google News RSS com 12 consultas específicas.
+- Google News RSS com 17 consultas específicas.
 - Querido Diário em três grupos de busca.
 - COPIRN.
 - Observatório das Metrópoles.
 - Frente Nacional de Prefeitas e Prefeitos.
 - Agência Brasil.
+- Scrapers em prévia da RNCP, CNM e TCE-MG.
+- Monitoramento experimental do índice da edição mais recente da AMM-MG.
 
 PNCP, Transferegov e GDELT foram avaliados, mas não entraram no disparo inicial devido a ruído ou instabilidade. Podem ser usados futuramente em uma camada analítica.
 
@@ -87,7 +89,7 @@ A fila persistente é a primeira melhoria estrutural prevista após a homologaç
 
 ## Validações realizadas
 
-- 19 testes automatizados aprovados.
+- 26 testes automatizados aprovados.
 - Verificação sintática aprovada.
 - Auditoria das dependências sem vulnerabilidades conhecidas.
 - Sessão do WhatsApp verificada localmente.
@@ -122,6 +124,18 @@ Não alterar regras durante o período, salvo erro grave. Observar e registrar:
 7. Criar painel histórico de consórcios, municípios e eventos.
 8. Somente depois substituir o grupo de teste pelo grupo definitivo.
 
+## Fase de scraping — 17 de agosto de 2026
+
+- Scrapers leves foram implementados com `publish: false`; eles não enviam mensagens ao WhatsApp durante a homologação.
+- Cada portal possui parser isolado, timeout, uma nova tentativa, `User-Agent` identificável e detecção básica de mudança de layout.
+- A primeira coleta real dos scrapers observou três itens dentro da janela: duas notícias do TCE-MG e o índice da edição da AMM-MG.
+- Uma notícia do TCE-MG sobre suspensão de licitação do Ciminas atingiu 11 pontos e foi corretamente retida como candidato de CONTROLE em prévia.
+- A outra notícia do TCE-MG, sem relação com consórcios, foi descartada pelo classificador.
+- RNCP e CNM estavam acessíveis, mas não tinham item dentro das 96 horas da coleta.
+- O Diário Municipal não é pesquisado por formulário porque existe CAPTCHA; o radar não tenta contorná-lo. O protótipo apenas monitora a edição e não trata um PDF inteiro como notícia.
+- Saídas de auditoria: `output/scraper-observations.json`, `output/scraper-candidates.json`, `output/scraper-health.json` e `output/scraper-preview.txt`.
+- Próxima decisão: observar os resumos do Actions e somente mudar `webScrapers.publish` para `true` após confirmar estabilidade e qualidade.
+
 ## Arquivos centrais
 
 - `src/radar.mjs`: orquestra coleta, seleção, envio e persistência.
@@ -129,6 +143,7 @@ Não alterar regras durante o período, salvo erro grave. Observar e registrar:
 - `src/lib/dedupe.mjs`: deduplicação e histórico.
 - `src/lib/format.mjs`: apresentação das mensagens.
 - `src/lib/whatsapp.mjs`: conexão e entrega.
+- `src/lib/sources/web-scrapers.mjs`: adaptadores de scraping e normalização.
 - `config/default.json`: limites e parâmetros editoriais.
 - `.github/workflows/radar.yml`: agendamento e execução no GitHub.
 - `docs/ARQUITETURA.md`: pesquisa técnica e justificativas.
