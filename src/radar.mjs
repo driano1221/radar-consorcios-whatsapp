@@ -10,10 +10,11 @@ import {
   selectUnseen,
   countSentToday,
 } from './lib/dedupe.mjs';
-import { formatRunSummary, formatWhatsAppMessage } from './lib/format.mjs';
+import { formatRunSummary, formatScraperSummary, formatWhatsAppMessage } from './lib/format.mjs';
 import { fetchGoogleNews } from './lib/sources/google-news.mjs';
 import { fetchQueridoDiario } from './lib/sources/querido-diario.mjs';
 import { fetchRssFeeds } from './lib/sources/rss-feeds.mjs';
+import { fetchWebScrapers } from './lib/sources/web-scrapers.mjs';
 import { sendMessages } from './lib/whatsapp.mjs';
 
 async function appendGitHubSummary(markdown) {
@@ -32,15 +33,23 @@ async function main() {
     ['Google News', fetchGoogleNews(config.googleNews, since)],
     ['Querido Diário', fetchQueridoDiario(config.queridoDiario, since)],
     ['Feeds RSS', fetchRssFeeds(config.rssFeeds, since)],
+    ['Scrapers web', fetchWebScrapers(config.webScrapers, since)],
   ];
   const results = await Promise.allSettled(sourceRequests.map(([, request]) => request));
   const collected = [];
+  let scraperDiagnostics = [];
   let successfulSources = 0;
   for (const [index, result] of results.entries()) {
     if (result.status === 'fulfilled') {
-      successfulSources += 1;
-      collected.push(...result.value);
-      console.log(`[fonte] ${sourceRequests[index][0]}: ${result.value.length} item(ns)`);
+      const payload = Array.isArray(result.value)
+        ? { items: result.value, ok: true, diagnostics: [] }
+        : result.value;
+      if (payload.ok !== false) successfulSources += 1;
+      collected.push(...payload.items);
+      if (sourceRequests[index][0] === 'Scrapers web') {
+        scraperDiagnostics = payload.diagnostics || [];
+      }
+      console.log(`[fonte] ${sourceRequests[index][0]}: ${payload.items.length} item(ns)`);
     }
     else console.warn(`[fonte] ${sourceRequests[index][0]}: ${result.reason.message}`);
   }
@@ -57,12 +66,16 @@ async function main() {
       const scoreDifference = b.classification.score - a.classification.score;
       return scoreDifference || new Date(b.publishedAt) - new Date(a.publishedAt);
     });
+  const previewRelevant = relevant.filter((item) => item.previewOnly);
+  const publishableRelevant = relevant.filter((item) => !item.previewOnly);
   const sentToday = countSentToday(state);
   const remainingToday = Math.max(0, config.maxPostsPerDay - sentToday);
-  const unseen = selectUnseen(relevant, state).slice(
+  const unseen = selectUnseen(publishableRelevant, state).slice(
     0,
     Math.min(config.maxPostsPerRun, remainingToday),
   );
+  const scraperPreview = selectUnseen(previewRelevant, state).slice(0, 50);
+  const scraperObservations = collected.filter((item) => item.scraper);
 
   await mkdir(config.outputDir, { recursive: true });
   await writeFile(
@@ -75,24 +88,51 @@ async function main() {
     `${unseen.map(formatWhatsAppMessage).join('\n\n──────────\n\n')}\n`,
     'utf8',
   );
+  await writeFile(
+    path.join(config.outputDir, 'scraper-observations.json'),
+    `${JSON.stringify(scraperObservations, null, 2)}\n`,
+    'utf8',
+  );
+  await writeFile(
+    path.join(config.outputDir, 'scraper-candidates.json'),
+    `${JSON.stringify(scraperPreview, null, 2)}\n`,
+    'utf8',
+  );
+  await writeFile(
+    path.join(config.outputDir, 'scraper-health.json'),
+    `${JSON.stringify(scraperDiagnostics, null, 2)}\n`,
+    'utf8',
+  );
+  await writeFile(
+    path.join(config.outputDir, 'scraper-preview.txt'),
+    `${scraperPreview.map(formatWhatsAppMessage).join('\n\n──────────\n\n')}\n`,
+    'utf8',
+  );
 
   console.log(
     `${collected.length} itens coletados; ${relevant.length} relevantes; ${unseen.length} novos candidatos; ` +
+      `${scraperPreview.length} candidato(s) de scraper em previa; ` +
       `${sentToday}/${config.maxPostsPerDay} enviados hoje.`,
   );
+  const scraperSummary = formatScraperSummary(
+    scraperPreview,
+    scraperObservations.length,
+    scraperDiagnostics,
+  );
+  console.log(scraperSummary);
 
   if (!config.sendEnabled) {
     console.log('SEND_ENABLED=false: prévia concluída sem publicar no WhatsApp.');
     const summary = formatRunSummary(unseen, false);
     console.log(summary);
-    await appendGitHubSummary(summary);
+    await appendGitHubSummary(`${summary}\n${scraperSummary}`);
     return;
   }
 
   if (!config.groupId) throw new Error('Defina WHATSAPP_GROUP_ID antes de habilitar o envio.');
   if (!unseen.length) {
     await saveState(config.stateFile, state);
-    await appendGitHubSummary(formatRunSummary([], true));
+    await appendGitHubSummary(`${formatRunSummary([], true)}\n${scraperSummary}`);
     return;
   }
 
@@ -107,7 +147,9 @@ async function main() {
       await saveState(config.stateFile, state);
     },
   });
-  await appendGitHubSummary(formatRunSummary(sent.map((entry) => entry.item), true));
+  await appendGitHubSummary(
+    `${formatRunSummary(sent.map((entry) => entry.item), true)}\n${scraperSummary}`,
+  );
   console.log(`${sent.length} mensagem(ns) publicada(s) no grupo.`);
 }
 
