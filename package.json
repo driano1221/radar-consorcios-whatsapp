@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Radar gratuito de notícias sobre consórcios intermunicipais com publicação em grupo do WhatsApp.",
   "engines": {
-    "node": ">=20"
+    "node": ">=20.18.1"
   },
   "scripts": {
     "collect": "node src/radar.mjs",
@@ -15,10 +15,11 @@
     "session:prepare": "node scripts/prepare-session.mjs",
     "session:check": "node scripts/check-session.mjs",
     "test": "node --test",
-    "check": "node --check src/radar.mjs && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
+    "check": "node --check src/radar.mjs && node --check src/lib/sources/web-scrapers.mjs && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.7.24",
+    "cheerio": "1.1.2",
     "fast-xml-parser": "5.10.1",
     "pino": "10.3.1",
     "qrcode": "1.5.4",

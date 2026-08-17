@@ -210,4 +210,28 @@ export function formatRunSummary(items, sendEnabled) {
   return [`## ${header}`, '', ...rows, ''].join('\n');
 }
 
+export function formatScraperSummary(items, observationsCount, diagnostics = []) {
+  const rows = items.length
+    ? items.map(
+        (item) =>
+          `- ${item.classification.emoji} **${item.classification.category}** ` +
+          `(${item.classification.score} pontos): [${item.title}](${item.url})`,
+      )
+    : ['- Nenhum candidato novo dos scrapers atingiu a pontuação mínima.'];
+  return [
+    '## Scrapers em prévia',
+    '',
+    `${observationsCount} item(ns) observado(s); nenhum deles foi enviado automaticamente.`,
+    '',
+    ...diagnostics.map((diagnostic) =>
+      diagnostic.status === 'ok'
+        ? `- ✅ ${diagnostic.name}: ${diagnostic.itemCount} item(ns) dentro da janela.`
+        : `- ⚠️ ${diagnostic.name}: falha isolada — ${diagnostic.message}`,
+    ),
+    '',
+    ...rows,
+    '',
+  ].join('\n');
+}
+
 export { formatDate };
