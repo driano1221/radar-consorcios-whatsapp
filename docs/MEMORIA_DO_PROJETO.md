@@ -47,7 +47,7 @@ O objetivo do piloto é entregar, em um grupo do WhatsApp, notícias curtas e ú
 
 ### Fontes
 
-- Google News RSS com 17 consultas específicas.
+- Google News RSS com 19 consultas específicas.
 - Querido Diário em três grupos de busca.
 - COPIRN.
 - Observatório das Metrópoles.
@@ -89,7 +89,7 @@ A fila persistente é a primeira melhoria estrutural prevista após a homologaç
 
 ## Validações realizadas
 
-- 26 testes automatizados aprovados.
+- 27 testes automatizados aprovados.
 - Verificação sintática aprovada.
 - Auditoria das dependências sem vulnerabilidades conhecidas.
 - Sessão do WhatsApp verificada localmente.
@@ -135,6 +135,8 @@ Não alterar regras durante o período, salvo erro grave. Observar e registrar:
 - O Diário Municipal não é pesquisado por formulário porque existe CAPTCHA; o radar não tenta contorná-lo. O protótipo apenas monitora a edição e não trata um PDF inteiro como notícia.
 - Saídas de auditoria: `output/scraper-observations.json`, `output/scraper-candidates.json`, `output/scraper-health.json` e `output/scraper-preview.txt`.
 - Próxima decisão: observar os resumos do Actions e somente mudar `webScrapers.publish` para `true` após confirmar estabilidade e qualidade.
+- A primeira execução no GitHub Actions após o merge terminou com sucesso em 22 segundos. TCE-MG e AMM-MG funcionaram; RNCP e CNM responderam `403` apenas no ambiente do GitHub.
+- Para respeitar as proteções dos portais, as chamadas diretas de RNCP e CNM foram desativadas no Actions e substituídas por consultas específicas no Google News. Nenhum mecanismo de contorno foi adotado.
 
 ## Arquivos centrais
 
