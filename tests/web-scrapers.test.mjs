@@ -72,7 +72,12 @@ test('isola falha de portal e mantem todos os itens do scraper em previa', async
     timeoutMs: 1000,
     retries: 0,
     sites: [
-      { name: 'Portal saudavel', adapter: 'rncp', url: 'https://saudavel.exemplo/noticias' },
+      {
+        name: 'Portal saudavel',
+        adapter: 'rncp',
+        url: 'https://saudavel.exemplo/noticias',
+        publish: true,
+      },
       { name: 'Portal indisponivel', adapter: 'rncp', url: 'https://erro.exemplo/noticias' },
     ],
   };
@@ -84,7 +89,7 @@ test('isola falha de portal e mantem todos os itens do scraper em previa', async
   const result = await fetchWebScrapers(config, since, fetchImpl);
   assert.equal(result.ok, true);
   assert.equal(result.items.length, 1);
-  assert.equal(result.items[0].previewOnly, true);
+  assert.equal(result.items[0].previewOnly, false);
   assert.deepEqual(result.diagnostics.map((entry) => entry.status), ['ok', 'error']);
 });
 

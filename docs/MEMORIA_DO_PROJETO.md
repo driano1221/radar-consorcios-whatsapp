@@ -126,7 +126,7 @@ Não alterar regras durante o período, salvo erro grave. Observar e registrar:
 
 ## Fase de scraping — 17 de agosto de 2026
 
-- Scrapers leves foram implementados com `publish: false`; eles não enviam mensagens ao WhatsApp durante a homologação.
+- Scrapers leves foram inicialmente implementados apenas em prévia. Depois da homologação do TCE-MG, a publicação passou a ser configurada por portal: somente o TCE-MG está marcado com `publish: true`; AMM-MG e futuras fontes continuam em prévia.
 - Cada portal possui parser isolado, timeout, uma nova tentativa, `User-Agent` identificável e detecção básica de mudança de layout.
 - A primeira coleta real dos scrapers observou três itens dentro da janela: duas notícias do TCE-MG e o índice da edição da AMM-MG.
 - Uma notícia do TCE-MG sobre suspensão de licitação do Ciminas atingiu 11 pontos e foi corretamente retida como candidato de CONTROLE em prévia.
@@ -134,7 +134,7 @@ Não alterar regras durante o período, salvo erro grave. Observar e registrar:
 - RNCP e CNM estavam acessíveis, mas não tinham item dentro das 96 horas da coleta.
 - O Diário Municipal não é pesquisado por formulário porque existe CAPTCHA; o radar não tenta contorná-lo. O protótipo apenas monitora a edição e não trata um PDF inteiro como notícia.
 - Saídas de auditoria: `output/scraper-observations.json`, `output/scraper-candidates.json`, `output/scraper-health.json` e `output/scraper-preview.txt`.
-- Próxima decisão: observar os resumos do Actions e somente mudar `webScrapers.publish` para `true` após confirmar estabilidade e qualidade.
+- A ativação por portal evita que a aprovação do TCE-MG libere automaticamente AMM-MG ou qualquer fonte futura. A observação agora é feita sobre os envios reais originados exclusivamente no TCE-MG.
 - A primeira execução no GitHub Actions após o merge terminou com sucesso em 22 segundos. TCE-MG e AMM-MG funcionaram; RNCP e CNM responderam `403` apenas no ambiente do GitHub.
 - Para respeitar as proteções dos portais, as chamadas diretas de RNCP e CNM foram desativadas no Actions e substituídas por consultas específicas no Google News. Nenhum mecanismo de contorno foi adotado.
 

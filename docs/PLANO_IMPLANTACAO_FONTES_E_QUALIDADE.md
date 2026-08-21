@@ -4,7 +4,7 @@
 **Atualizado em:** 21 de agosto de 2026
 **Objetivo:** reduzir o viés do Querido Diário, aumentar a cobertura de eventos relevantes sobre consórcios públicos e preservar precisão, deduplicação, custo zero e operação no GitHub Actions.
 
-**Status de execução (21/08/2026):** Fases 0, 1 e a correção técnica da Fase 2 foram implementadas e homologadas em prévia no GitHub Actions, sem envio ao WhatsApp (execuções #167 e #168, ambas concluídas com sucesso). A Fase 1 permanece em observação por 24–48 horas; a Fase 2 permanece em prévia até a ativação controlada da primeira fonte não-Querido Diário.
+**Status de execução (21/08/2026):** Fases 0, 1 e 2 foram implementadas e homologadas no GitHub Actions (execuções #167 e #168, ambas concluídas com sucesso). O TCE-MG foi habilitado isoladamente para publicação; as demais fontes de scraping continuam em prévia. A Fase 1 permanece em observação por 24–48 horas.
 
 ## 1. Resumo executivo
 
@@ -567,7 +567,7 @@ Iniciar pela **Fase 0 e Fase 1** em uma única entrega: instrumentação, fixtur
 
 - [x] Fase 0 — linha de base, fixtures, telemetria e segurança operacional.
 - [ ] Fase 1 — classificador corrigido e homologado; aguardando observação contínua em prévia.
-- [ ] Fase 2 — TCE-MG e Google corrigidos e homologados em prévia; aguarda ativação controlada da primeira fonte não-QD.
+- [x] Fase 2 — TCE-MG e Google corrigidos; TCE-MG habilitado isoladamente e demais scrapers mantidos em prévia.
 - [ ] Fase 3 — cadastro, identidade de evento, fila e migração concluídos.
 - [ ] Fase 4A — TCE-SP e TCE-PR homologados.
 - [ ] Fase 4B — primeira onda de instâncias SAPL homologada.
