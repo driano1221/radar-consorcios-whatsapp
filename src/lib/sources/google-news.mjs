@@ -14,6 +14,33 @@ function textValue(value) {
   return value?.['#text'] || value?.__cdata || '';
 }
 
+function sourceUrl(entry) {
+  const value = entry?.source;
+  if (!value || typeof value === 'string') return '';
+  return value['@_url'] || '';
+}
+
+export function parseGoogleNewsRss(xml, since) {
+  const parsed = parser.parse(xml);
+  return asArray(parsed?.rss?.channel?.item)
+    .map((entry) => {
+      const publishedAt = new Date(textValue(entry.pubDate));
+      return {
+        kind: 'news',
+        title: normalizeWhitespace(textValue(entry.title)),
+        url: textValue(entry.link),
+        sourceUrl: sourceUrl(entry),
+        publishedAt: Number.isNaN(publishedAt.getTime()) ? null : publishedAt.toISOString(),
+        source: normalizeWhitespace(textValue(entry.source)) || 'Google News',
+        summary: normalizeWhitespace(textValue(entry.description)),
+        rawText: normalizeWhitespace(textValue(entry.description)),
+      };
+    })
+    .filter(
+      (item) => item.publishedAt && new Date(item.publishedAt) >= since && item.title && item.url,
+    );
+}
+
 async function fetchQuery(query, since, fetchImpl) {
   const params = new URLSearchParams({
     q: query,
@@ -30,24 +57,7 @@ async function fetchQuery(query, since, fetchImpl) {
   });
   if (!response.ok) throw new Error(`Google News respondeu ${response.status} para ${query}`);
   const xml = await response.text();
-  const parsed = parser.parse(xml);
-
-  return asArray(parsed?.rss?.channel?.item)
-    .map((entry) => {
-      const publishedAt = new Date(textValue(entry.pubDate));
-      return {
-        kind: 'news',
-        title: normalizeWhitespace(textValue(entry.title)),
-        url: textValue(entry.link),
-        publishedAt: Number.isNaN(publishedAt.getTime()) ? null : publishedAt.toISOString(),
-        source: normalizeWhitespace(textValue(entry.source)) || 'Google News',
-        summary: normalizeWhitespace(textValue(entry.description)),
-        rawText: normalizeWhitespace(textValue(entry.description)),
-      };
-    })
-    .filter(
-      (item) => item.publishedAt && new Date(item.publishedAt) >= since && item.title && item.url,
-    );
+  return parseGoogleNewsRss(xml, since);
 }
 
 export async function fetchGoogleNews(config, since, fetchImpl = fetch) {

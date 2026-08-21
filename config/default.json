@@ -112,7 +112,7 @@
       {
         "name": "TCE-MG",
         "adapter": "tce-mg",
-        "url": "https://www.tce.mg.gov.br/Noticia/?cod_secao=1IQX&tipo=1&url=&cod_secao_menu=5K&cod_pagina=&areas=",
+        "url": "https://www.tce.mg.gov.br/noticia",
         "encoding": "windows-1252"
       },
       {

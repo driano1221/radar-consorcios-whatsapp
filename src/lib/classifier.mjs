@@ -1,6 +1,6 @@
 import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
 
-const PUBLIC_CONTEXT = /\b(consorcio publico|consorcio intermunicipal|associacao publica|lei 11\.?107)\b/;
+const PUBLIC_CONTEXT = /\b(consorcio publico|consorcio intermunicipal|consorcio interfederativo|associacao publica|lei 11\.?107)\b/;
 const MUNICIPAL_CONTEXT = /\b(municipio|municipal|prefeitura|camara municipal|poder executivo)\b/;
 const CONSORTIUM = /\bconsorcio(s)?\b/;
 

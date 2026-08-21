@@ -80,6 +80,17 @@ test('reconhece fiscalização de consórcio público', () => {
   assert.ok(result.score >= 7);
 });
 
+test('reconhece fiscalização de consórcio interfederativo', () => {
+  const result = classifyItem({
+    kind: 'news',
+    title: 'Tribunal de Contas suspende contratação do Consórcio Interfederativo Minas Gerais',
+    summary: 'A decisão aponta irregularidades em credenciamento do consórcio.',
+    sourceUrl: 'https://www.tce.mg.gov.br/noticia',
+  });
+  assert.equal(result.category, 'CONTROLE');
+  assert.ok(result.score >= 7);
+});
+
 test('rejeita consórcio comercial sem contexto intermunicipal', () => {
   const result = classifyItem({
     kind: 'news',

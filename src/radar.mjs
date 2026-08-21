@@ -149,8 +149,8 @@ async function main() {
     `${JSON.stringify({
       generatedAt: new Date().toISOString(),
       minimumScore: config.minimumScore,
-      items: classified.map(({ title, url, source, kind, previewOnly, classification }) => ({
-        title, url, source, kind, previewOnly, classification,
+      items: classified.map(({ title, url, source, sourceUrl, kind, previewOnly, classification }) => ({
+        title, url, source, sourceUrl, kind, previewOnly, classification,
       })),
     }, null, 2)}\n`,
     'utf8',

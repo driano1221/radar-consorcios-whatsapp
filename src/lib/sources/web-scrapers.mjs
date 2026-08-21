@@ -52,6 +52,7 @@ export function parseRncp(html, site, since) {
         url: absoluteUrl(anchor.attr('href'), site.url),
         publishedAt: parseBrazilianDate(card.find('.post-date.updated, .post-date').first().text()),
         source: site.name,
+        sourceUrl: site.url,
         summary,
         rawText: summary,
       };
@@ -75,6 +76,7 @@ export function parseCnm(html, site, since) {
       url: absoluteUrl(`/comunicacao/noticias/${row.slug}`, site.url),
       publishedAt: parseBrazilianDate(row.datetime),
       source: site.name,
+      sourceUrl: site.url,
       summary: normalizeWhitespace(row.conteudo),
       rawText: normalizeWhitespace(row.conteudo),
     }))
@@ -100,6 +102,7 @@ export function parseTceMg(html, site, since) {
       url: absoluteUrl(anchor.attr('href'), site.url),
       publishedAt: date,
       source: site.name,
+      sourceUrl: site.url,
       summary,
       rawText: summary,
     };
@@ -119,6 +122,7 @@ export function parseDiarioMunicipalIndex(html, site, since) {
     url: absoluteUrl(link, site.url),
     publishedAt,
     source: site.name,
+    sourceUrl: site.url,
     summary: 'Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.',
     rawText: '',
   };
