@@ -4,7 +4,7 @@
 **Atualizado em:** 21 de agosto de 2026
 **Objetivo:** reduzir o viés do Querido Diário, aumentar a cobertura de eventos relevantes sobre consórcios públicos e preservar precisão, deduplicação, custo zero e operação no GitHub Actions.
 
-**Status de execução (21/08/2026):** Fases 0 e 1 implementadas localmente e validadas em prévia sem envio. A homologação operacional no GitHub Actions permanece pendente antes de marcar a Fase 1 como concluída.
+**Status de execução (21/08/2026):** Fases 0 e 1 implementadas localmente e homologadas em prévia no GitHub Actions, sem envio ao WhatsApp (execução #167, sucesso em 28 segundos). A Fase 1 permanece em observação por 24–48 horas antes de ser marcada como concluída.
 
 ## 1. Resumo executivo
 
@@ -566,7 +566,7 @@ Iniciar pela **Fase 0 e Fase 1** em uma única entrega: instrumentação, fixtur
 ## 13. Checklist de acompanhamento
 
 - [x] Fase 0 — linha de base, fixtures, telemetria e segurança operacional.
-- [ ] Fase 1 — classificador corrigido; aguardando homologação contínua em prévia.
+- [ ] Fase 1 — classificador corrigido e homologado; aguardando observação contínua em prévia.
 - [ ] Fase 2 — TCE-MG e Google corrigidos; primeira fonte não-QD ativada.
 - [ ] Fase 3 — cadastro, identidade de evento, fila e migração concluídos.
 - [ ] Fase 4A — TCE-SP e TCE-PR homologados.
