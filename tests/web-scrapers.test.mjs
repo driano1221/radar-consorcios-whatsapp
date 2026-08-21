@@ -43,9 +43,10 @@ test('extrai noticias e resumo do TCE-MG', () => {
   const html = `<h2><span class="data-noticia-internas">15/08/2026 - </span>
     <a href="/TCE-fiscaliza-consorcio.html/Noticia/111">TCE fiscaliza consorcio intermunicipal</a></h2>
     <p><a href="/TCE-fiscaliza-consorcio.html/Noticia/111">Auditoria encontrou irregularidade.</a></p>`;
-  const items = parseTceMg(html, { name: 'TCE-MG', url: 'https://www.tce.mg.gov.br/' }, since);
+  const items = parseTceMg(html, { name: 'TCE-MG', url: 'https://www.tce.mg.gov.br/noticia' }, since);
   assert.equal(items.length, 1);
   assert.equal(items[0].summary, 'Auditoria encontrou irregularidade.');
+  assert.equal(items[0].sourceUrl, 'https://www.tce.mg.gov.br/noticia');
 });
 
 test('monitora o indice do Diario Municipal sem tratar a edicao como noticia', () => {

@@ -2,6 +2,21 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseFeed } from '../src/lib/sources/rss-feeds.mjs';
 import { mergeGazettes } from '../src/lib/sources/querido-diario.mjs';
+import { parseGoogleNewsRss } from '../src/lib/sources/google-news.mjs';
+
+test('preserva a URL e o domínio da fonte original do Google Notícias', () => {
+  const xml = `<?xml version="1.0"?><rss><channel><item>
+    <title>Consórcio público aprova novo contrato de rateio</title>
+    <link>https://news.google.com/rss/articles/exemplo</link>
+    <pubDate>Fri, 21 Aug 2026 12:00:00 GMT</pubDate>
+    <description>Notícia resumida.</description>
+    <source url="https://www.tce.mg.gov.br">TCE-MG</source>
+  </item></channel></rss>`;
+  const items = parseGoogleNewsRss(xml, new Date('2026-08-20T00:00:00Z'));
+  assert.equal(items.length, 1);
+  assert.equal(items[0].source, 'TCE-MG');
+  assert.equal(items[0].sourceUrl, 'https://www.tce.mg.gov.br');
+});
 
 test('lê RSS e ignora publicação fora da janela', () => {
   const xml = `<?xml version="1.0"?><rss><channel>
