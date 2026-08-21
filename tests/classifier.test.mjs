@@ -1,6 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { classifyItem } from '../src/lib/classifier.mjs';
+
+test('protege os casos reais de regressão editorial', async () => {
+  const fixtureUrl = new URL('./fixtures/classifier-regression.json', import.meta.url);
+  const cases = JSON.parse(await readFile(fixtureUrl, 'utf8'));
+  for (const fixture of cases) {
+    const result = classifyItem(fixture.item);
+    assert.equal(result.category, fixture.expectedCategory, fixture.name);
+    if (fixture.minimumScore) assert.ok(result.score >= fixture.minimumScore, fixture.name);
+    if (fixture.maximumScore) assert.ok(result.score <= fixture.maximumScore, fixture.name);
+  }
+});
 
 test('classifica adesão real ao consórcio', () => {
   const result = classifyItem({
@@ -34,6 +46,16 @@ test('reconhece contrato de rateio', () => {
     summary: 'Contrato de rateio celebrado com o consórcio intermunicipal de saúde.',
   });
   assert.equal(result.category, 'RATEIO');
+});
+
+test('prioriza adesão quando a lei também altera o protocolo', () => {
+  const result = classifyItem({
+    kind: 'gazette',
+    title: 'Diário Oficial de Exemplo',
+    summary:
+      'Lei autoriza a adesão do Município ao Consórcio Intermunicipal Regional, mediante ratificação da alteração do protocolo de intenções, nos termos da Lei 11.107.',
+  });
+  assert.equal(result.category, 'ADESÃO');
 });
 
 test('rejeita consórcio empresarial em licitação', () => {

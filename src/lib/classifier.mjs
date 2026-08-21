@@ -1,10 +1,12 @@
-import { normalizeForMatch } from './text.mjs';
+import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
+
+const PUBLIC_CONTEXT = /\b(consorcio publico|consorcio intermunicipal|associacao publica|lei 11\.?107)\b/;
+const MUNICIPAL_CONTEXT = /\b(municipio|municipal|prefeitura|camara municipal|poder executivo)\b/;
+const CONSORTIUM = /\bconsorcio(s)?\b/;
 
 const RULES = [
   {
-    category: 'CRISE',
-    emoji: '🟥',
-    weight: 8,
+    category: 'CRISE', emoji: '🟥', weight: 8, priority: 100, requiresPublicContext: true,
     patterns: [
       /\b(dissolucao|extincao|liquidacao|intervencao|colapso|falencia)\b.{0,140}\bconsorcio/,
       /\bconsorcio\b.{0,140}\b(dissolucao|extincao|liquidacao|intervencao|colapso|falencia)\b/,
@@ -15,9 +17,7 @@ const RULES = [
     ],
   },
   {
-    category: 'SAÍDA',
-    emoji: '🟧',
-    weight: 8,
+    category: 'SAÍDA', emoji: '🟧', weight: 8, priority: 90, requiresPublicContext: true,
     patterns: [
       /\b(retirada|desligamento|desvinculacao|saida|exclusao)\b.{0,140}\b(consorcio|municipio consorciado)/,
       /\bconsorcio\b.{0,140}\b(retirada|desligamento|desvinculacao|saida|exclusao)\b/,
@@ -26,9 +26,7 @@ const RULES = [
     ],
   },
   {
-    category: 'CRIAÇÃO',
-    emoji: '🟩',
-    weight: 8,
+    category: 'CRIAÇÃO', emoji: '🟩', weight: 8, priority: 85, requiresPublicContext: true,
     patterns: [
       /\b(cria|criado|criacao|institui|formaliza)\b.{0,140}\bconsorcio/,
       /\b(constitui|constituicao)\b.{0,50}\b(um |do )consorcio/,
@@ -36,9 +34,7 @@ const RULES = [
     ],
   },
   {
-    category: 'ADESÃO',
-    emoji: '🟦',
-    weight: 7,
+    category: 'ADESÃO', emoji: '🟦', weight: 7, priority: 80, requiresPublicContext: true,
     patterns: [
       /\b(adesao|ingresso|integracao|filiacao|inclusao)\b.{0,130}\b(ao |no )?consorcio/,
       /\b(autoriza|autorizado)\b.{0,140}\b(municipio|prefeitura|poder executivo)\b.{0,140}\b(participar|integrar|aderir)\b.{0,100}\bconsorcio/,
@@ -49,9 +45,7 @@ const RULES = [
     ],
   },
   {
-    category: 'CONTROLE',
-    emoji: '🟥',
-    weight: 7,
+    category: 'CONTROLE', emoji: '🟥', weight: 7, priority: 75, requiresPublicContext: true,
     patterns: [
       /\b(auditoria|investigacao|operacao|acao civil publica|recomendacao)\b.{0,140}\bconsorcio/,
       /\bconsorcio\b.{0,140}\b(irregularidade|fraude|desvio|improbidade|contas rejeitadas)\b/,
@@ -59,30 +53,22 @@ const RULES = [
     ],
   },
   {
-    category: 'RATEIO',
-    emoji: '🟪',
-    weight: 7,
+    category: 'RATEIO', emoji: '🟪', weight: 7, priority: 70, requiresPublicContext: true,
     patterns: [/\bcontrato(s)? de rateio\b/, /\brateio\b.{0,100}\bconsorcio/],
   },
   {
-    category: 'FINANÇAS',
-    emoji: '💰',
-    weight: 6,
+    category: 'FINANÇAS', emoji: '💰', weight: 6, priority: 65, requiresPublicContext: true,
     patterns: [
       /\b(repasse|aporte|parcelamento|debito|prestacao de contas)\b.{0,120}\bconsorcio/,
       /\bconsorcio\b.{0,120}\b(repasse|aporte|parcelamento|debito|prestacao de contas)\b/,
     ],
   },
   {
-    category: 'PROTOCOLO',
-    emoji: '🟨',
-    weight: 6,
+    category: 'PROTOCOLO', emoji: '🟨', weight: 6, priority: 50, requiresPublicContext: true,
     patterns: [/\bprotocolo de intencoes\b/],
   },
   {
-    category: 'GOVERNANÇA',
-    emoji: '⬛',
-    weight: 8,
+    category: 'GOVERNANÇA', emoji: '⬛', weight: 8, priority: 60, requiresPublicContext: true,
     patterns: [
       /\b(alteracao|revisao|mudanca)\b.{0,100}\b(estatuto|estatutar)/,
       /\b(ratificacao|consolidacao)\b.{0,120}\balteracao\b.{0,100}\bprotocolo de intencoes/,
@@ -92,9 +78,7 @@ const RULES = [
     ],
   },
   {
-    category: 'ATUAÇÃO',
-    emoji: '📰',
-    weight: 4,
+    category: 'ATUAÇÃO', emoji: '📰', weight: 4, priority: 40, requiresPublicContext: true,
     patterns: [
       /\bconsorcio\b.{0,120}\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta)\b/,
       /\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta)\b.{0,120}\bconsorcio/,
@@ -103,18 +87,11 @@ const RULES = [
 ];
 
 const NEGATIVE_PATTERNS = [
-  { pattern: /\badesao a(s)? ata(s)?( de registro de precos)?\b/, penalty: 12, reason: 'adesão a ata de preços' },
-  { pattern: /\bcarona\b.{0,100}\bata de registro de precos\b/, penalty: 12, reason: 'carona em ata de preços' },
-  {
-    pattern: /\b(consorcio de empresas|consorcio empresarial|consorcio vencedor|empresa consorciada)\b/,
-    penalty: 12,
-    reason: 'consórcio empresarial',
-  },
-  {
-    pattern: /\b(administradora de consorcio|cota de consorcio|consorcio imobiliario|consorcio de veiculos)\b/,
-    penalty: 14,
-    reason: 'consórcio comercial',
-  },
+  { pattern: /\badesao (a|de|em) (a )?(ata|atas|arp)( de registro de precos)?\b/, penalty: 30, reason: 'adesão a ata de preços' },
+  { pattern: /\b(ata de registro de precos|registro de precos|intencao de registro de precos|orgao nao participante)\b/, penalty: 30, reason: 'contratação/ata de preços' },
+  { pattern: /\bcarona\b.{0,100}\b(ata|registro de precos|arp)\b/, penalty: 30, reason: 'carona em ata de preços' },
+  { pattern: /\b(consorcio de empresas|consorcio empresarial|consorcio vencedor|empresa consorciada)\b/, penalty: 30, reason: 'consórcio empresarial' },
+  { pattern: /\b(administradora de consorcio|cota de consorcio|consorcio imobiliario|consorcio de veiculos)\b/, penalty: 30, reason: 'consórcio comercial' },
 ];
 
 function isOfficialUrl(value = '') {
@@ -126,62 +103,106 @@ function isOfficialUrl(value = '') {
   }
 }
 
-export function classifyItem(item) {
+function evidenceSegments(item) {
+  const excerpts = Array.isArray(item.excerpts) ? item.excerpts : [];
+  const segments = excerpts.length ? excerpts : [item.summary || item.rawText || ''];
+  const limit = item.kind === 'gazette' ? 1200 : 1800;
+  return segments.map((segment) => normalizeWhitespace(segment).slice(0, limit)).filter(Boolean);
+}
+
+function hasPublicContext(text) {
+  return PUBLIC_CONTEXT.test(text) || (CONSORTIUM.test(text) && MUNICIPAL_CONTEXT.test(text));
+}
+
+function isGenericBudgetProvision(text) {
+  const explicitContract = /\b(contrato de rateio|contrato n\.?\s*\d+|celebram.{0,160}consorcio|objeto.{0,160}repasse)\b/.test(text);
+  return (
+    /\blei orcamentaria\b.{0,500}\b(consorcios publicos|contrato de rateio)\b/.test(text) ||
+    /\breservara recursos\b.{0,350}\bcontrato de rateio\b/.test(text) ||
+    (/\brateio pela participacao em consorcio publico\b/.test(text) && !explicitContract)
+  );
+}
+
+function isMeetingAgendaWithoutDecision(text) {
+  const agendaSignal = /\b(convocar|convocacao|reuniao|pauta|assuntos abordados|informes gerais)\b/.test(text);
+  const decisionSignal = /\b(lei|decreto|autoriza|ratifica|aprovou|sanciona|promulga|delibera)\b/.test(text);
+  return agendaSignal && !decisionSignal;
+}
+
+function evaluateSegment(item, evidence, index) {
   const title = normalizeForMatch(item.title);
-  const body = normalizeForMatch(`${item.title} ${item.summary || ''} ${item.rawText || ''}`);
-  const eventText = item.kind === 'gazette' ? body.slice(0, 1800) : body;
-  const institutionalContext =
-    /\b(municipio|municipal|prefeitura|intermunicipal|interfederativo|consorcio publico|associacao publica|lei 11\.?107)\b/.test(
-      body,
-    );
+  const text = normalizeForMatch(`${item.title || ''} ${evidence}`);
+  const hasConsortium = CONSORTIUM.test(text);
+  const strongPublicContext = PUBLIC_CONTEXT.test(text);
+  const publicContext = hasPublicContext(text);
   let score = 0;
-  let selected = { category: 'GERAL', emoji: '📰', weight: 0 };
+  let selected = { category: 'GERAL', emoji: '📰', weight: 0, priority: 0 };
   const reasons = [];
 
-  if (/\bconsorcio(s)?\b/.test(body)) score += 1;
-  if (institutionalContext) score += 1;
-  if (/\b(consorcio publico|consorcio intermunicipal|associacao publica|lei 11\.?107)\b/.test(body)) {
+  if (hasConsortium) score += 1;
+  if (publicContext) score += 1;
+  if (strongPublicContext) {
     score += 2;
-    reasons.push('contexto institucional');
+    reasons.push('contexto público forte');
   }
-  if (/\bconsorcio(s)?\b/.test(title)) score += 1;
-  if (item.kind === 'gazette') score += 2;
-  else if (isOfficialUrl(item.url)) score += 1;
+  if (CONSORTIUM.test(title)) score += 1;
+  if (item.kind !== 'gazette' && isOfficialUrl(item.sourceUrl || item.url)) score += 1;
 
   for (const rule of RULES) {
-    const matchCount = rule.patterns.filter((pattern) => pattern.test(eventText)).length;
+    const matchCount = rule.patterns.filter((pattern) => pattern.test(text)).length;
     if (!matchCount) continue;
+    if (rule.requiresPublicContext && !publicContext) {
+      reasons.push(`rejeitado: ${rule.category} sem contexto público`);
+      continue;
+    }
     score += rule.weight + Math.min(matchCount - 1, 2);
     reasons.push(rule.category);
-    if (rule.weight > selected.weight) selected = rule;
-  }
-
-  for (const negative of NEGATIVE_PATTERNS) {
-    if (negative.pattern.test(body)) {
-      score -= negative.penalty;
-      reasons.push(`excluído: ${negative.reason}`);
+    if (rule.priority > selected.priority || (rule.priority === selected.priority && rule.weight > selected.weight)) {
+      selected = rule;
     }
   }
 
-  if (item.kind !== 'gazette' && !institutionalContext) {
-    score -= 20;
-    reasons.push('excluído: sem contexto de consórcio público/intermunicipal');
+  for (const negative of NEGATIVE_PATTERNS) {
+    if (negative.pattern.test(text)) {
+      score -= negative.penalty;
+      reasons.push(`rejeitado: ${negative.reason}`);
+    }
   }
 
-  if (
-    /\blei orcamentaria\b.{0,500}\b(consorcios publicos|contrato de rateio)\b/.test(eventText) ||
-    /\breservara recursos\b.{0,350}\bcontrato de rateio\b/.test(eventText)
-  ) {
-    score -= 9;
-    reasons.push('excluído: previsão orçamentária genérica');
+  if (isGenericBudgetProvision(text)) {
+    score -= 12;
+    reasons.push('rejeitado: previsão orçamentária genérica');
   }
+  if (isMeetingAgendaWithoutDecision(text)) {
+    score -= 12;
+    reasons.push('rejeitado: agenda sem deliberação');
+  }
+
+  const rejected = reasons.some((reason) => reason.startsWith('rejeitado:'));
+  if (rejected) selected = { category: 'GERAL', emoji: '📰', weight: 0, priority: 0 };
 
   return {
     category: selected.category,
     emoji: selected.emoji,
     score,
     reasons,
+    evidenceIndex: index,
+    evidenceText: evidence,
+    publicContext,
+    strongPublicContext,
   };
 }
 
-export { RULES };
+export function classifyItem(item) {
+  const classifications = evidenceSegments(item).map((evidence, index) => evaluateSegment(item, evidence, index));
+  if (!classifications.length) {
+    return { category: 'GERAL', emoji: '📰', score: 0, reasons: ['rejeitado: sem texto para classificação'], evidenceIndex: -1, evidenceText: '', publicContext: false, strongPublicContext: false };
+  }
+  return classifications.sort((left, right) => right.score - left.score)[0];
+}
+
+export function isPublishableClassification(classification, minimumScore = 5) {
+  return classification.category !== 'GERAL' && classification.score >= minimumScore;
+}
+
+export { RULES, NEGATIVE_PATTERNS, evidenceSegments };

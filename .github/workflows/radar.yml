@@ -22,7 +22,7 @@ concurrency:
 jobs:
   radar:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
+    timeout-minutes: 8
     env:
       BOT_STATE_PASSWORD: ${{ secrets.BOT_STATE_PASSWORD }}
       WHATSAPP_GROUP_ID: ${{ secrets.WHATSAPP_GROUP_ID }}

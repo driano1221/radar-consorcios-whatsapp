@@ -85,7 +85,7 @@ function gazetteLead(item) {
   const legalPrefix = instrument ? `${instrument.article} ${instrument.label}` : 'O ato municipal';
   const target = consortium ? `o ${consortium}` : 'o consórcio intermunicipal citado';
   const protocolChange = /alteracao.{0,120}protocolo de intencoes/.test(
-    normalizeForMatch(`${item.summary || ''} ${item.rawText || ''}`).slice(0, 800),
+    normalizeForMatch(item.classification?.evidenceText || `${item.summary || ''} ${item.rawText || ''}`).slice(0, 800),
   );
 
   const templates = {
@@ -117,7 +117,7 @@ function gazetteLead(item) {
 }
 
 function gazetteKeyPoints(item) {
-  const text = normalizeForMatch(`${item.summary || ''} ${item.rawText || ''}`);
+  const text = normalizeForMatch(item.classification?.evidenceText || `${item.summary || ''} ${item.rawText || ''}`);
   const points = [];
   if (/formalizacao do desligamento|efetiva formalizacao da saida/.test(text)) {
     points.push('A saída ainda depende da formalização do desligamento.');
@@ -136,7 +136,7 @@ function gazetteKeyPoints(item) {
 
 export function buildSummary(item) {
   if (item.kind === 'gazette') return gazetteLead(item);
-  return firstCompleteSentence(item.summary || item.rawText, item.title);
+  return firstCompleteSentence(item.classification?.evidenceText || item.summary || item.rawText, item.title);
 }
 
 export function displayTitle(item) {

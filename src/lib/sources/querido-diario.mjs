@@ -72,6 +72,7 @@ export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
       source: 'Querido Diário',
       summary: excerpts.join(' '),
       rawText: excerpts.join(' '),
+      excerpts,
       territoryId: gazette.territory_id,
       territoryName: gazette.territory_name,
       stateCode: gazette.state_code,
