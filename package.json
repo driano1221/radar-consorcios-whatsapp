@@ -15,7 +15,7 @@
     "session:prepare": "node scripts/prepare-session.mjs",
     "session:check": "node scripts/check-session.mjs",
     "test": "node --test",
-    "check": "node --check src/radar.mjs && node --check src/lib/sources/web-scrapers.mjs && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
+    "check": "node --check src/radar.mjs && node --check src/lib/classifier.mjs && node --check src/lib/run-metrics.mjs && node --check src/lib/sources/web-scrapers.mjs && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.7.24",

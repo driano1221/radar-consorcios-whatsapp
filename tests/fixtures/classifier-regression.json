@@ -1,0 +1,74 @@
+[
+  {
+    "name": "não combina protocolo de um excerto com consórcio de outro excerto",
+    "item": {
+      "kind": "gazette",
+      "title": "Diário Oficial de Maracaju (MS)",
+      "excerpts": [
+        "O Município de Maracaju participa de encontro sobre o Protocolo Urban95, voltado à primeira infância e ao planejamento urbano.",
+        "Em outra publicação, o Consórcio Intermunicipal de Saúde divulgou calendário de reuniões administrativas."
+      ]
+    },
+    "expectedCategory": "GERAL"
+  },
+  {
+    "name": "rejeita protocolo de incentivo empresarial de Apucarana",
+    "item": {
+      "kind": "gazette",
+      "title": "Diário Oficial de Apucarana (PR)",
+      "summary": "Protocolo de intenções para cessão de imóvel e incentivos a empreendimento empresarial no Município de Apucarana."
+    },
+    "expectedCategory": "GERAL",
+    "maximumScore": 4
+  },
+  {
+    "name": "rejeita adesão de ata mesmo quando cita consórcio público",
+    "item": {
+      "kind": "gazette",
+      "title": "Diário Oficial de Exemplo (MG)",
+      "summary": "Autoriza a adesão de ata de registro de preços gerenciada por consórcio intermunicipal para compra de veículos."
+    },
+    "expectedCategory": "GERAL",
+    "maximumScore": 4
+  },
+  {
+    "name": "rejeita rateio que é apenas previsão orçamentária",
+    "item": {
+      "kind": "gazette",
+      "title": "Diário Oficial de Exemplo (BA)",
+      "summary": "Gestão das atividades do consórcio público de saúde. Rateio pela participação em consórcio público: R$ 50.000,00."
+    },
+    "expectedCategory": "GERAL",
+    "maximumScore": 4
+  },
+  {
+    "name": "rejeita pauta de reunião sem ato de adesão aprovado",
+    "item": {
+      "kind": "gazette",
+      "title": "Diário Oficial de Itápolis (SP)",
+      "summary": "Convocação para reunião do conselho. Assuntos abordados: informes gerais e ratificação do protocolo de intenções do consórcio intermunicipal."
+    },
+    "expectedCategory": "GERAL"
+  },
+  {
+    "name": "mantém saída real de município de consórcio público",
+    "item": {
+      "kind": "gazette",
+      "title": "Diário Oficial de Campo Belo (MG)",
+      "summary": "Lei nº 4.497 autoriza a retirada do Município de Campo Belo do Consórcio Intermunicipal de Saúde da Microrregião do Alto Rio Grande."
+    },
+    "expectedCategory": "SAÍDA",
+    "minimumScore": 8
+  },
+  {
+    "name": "mantém fiscalização de tribunal de contas",
+    "item": {
+      "kind": "news",
+      "title": "TCE fiscaliza consórcio intermunicipal de saúde",
+      "summary": "O Tribunal de Contas apontou irregularidades em contrato do consórcio público regional.",
+      "sourceUrl": "https://www.tce.mg.gov.br/noticia"
+    },
+    "expectedCategory": "CONTROLE",
+    "minimumScore": 8
+  }
+]
