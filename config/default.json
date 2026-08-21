@@ -113,7 +113,8 @@
         "name": "TCE-MG",
         "adapter": "tce-mg",
         "url": "https://www.tce.mg.gov.br/noticia",
-        "encoding": "windows-1252"
+        "encoding": "windows-1252",
+        "publish": true
       },
       {
         "name": "Diário Municipal AMM-MG",

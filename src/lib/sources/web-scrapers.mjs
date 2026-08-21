@@ -153,7 +153,9 @@ async function fetchSite(site, since, config, fetchImpl) {
   return parser(html, site, since).map((item) => ({
     ...item,
     scraper: site.adapter,
-    previewOnly: config.publish !== true,
+    // A ativação é por fonte: assim um portal homologado pode publicar sem
+    // liberar automaticamente todos os demais scrapers ainda em prévia.
+    previewOnly: site.publish !== true,
   }));
 }
 
