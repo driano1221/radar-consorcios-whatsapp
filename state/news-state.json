@@ -2148,6 +2148,21 @@
         "turando"
       ],
       "category": "RATEIO"
+    },
+    "06c581f2a7432373f4504870243ed942b5d7c2255b2a30806793bb05acf94b6c": {
+      "sentAt": "2026-08-26T16:58:36.543Z",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZHp1TGZLWC1IRFhtMkE5RDNXRnVJaEs0SVp5UkxHNzZwbjVOSnU1UjZYTU1fcHdNQWhkYnExUlR2QUhCbFdPU0w5aHZpazh3Ry1fTDJXSWdVT1Y1aUVuYTltSTBGZzNLZ2lCc3FjSzZPeTE0ZjEzcHl0QUNVWW91VkdFcjZPWTJncFl5OWdINHJCS3lYVlhjb0ZGV0h3c0ZiNlIwcTRR?oc=5",
+      "title": "TCE-SP paralisa licitação do Consórcio Intermunicipal Grande ABC - ABC Repórter",
+      "titleFingerprint": "161d03db0ccda9b398fa0fa9228ac97d9d04e2cae7ef3f18169973c23f449449",
+      "contentTokens": [
+        "abc",
+        "grande",
+        "licitacao",
+        "paralisa",
+        "reporter",
+        "tce"
+      ],
+      "category": "CONTROLE"
     }
   }
 }
