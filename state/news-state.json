@@ -2232,6 +2232,27 @@
         "viger"
       ],
       "category": "RATEIO"
+    },
+    "25a9bd1a434d1b4bd0f8a31da4305e51cdb539ebcc79e63f88bb87a268b69467": {
+      "sentAt": "2026-08-29T14:27:29.999Z",
+      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOd2JJSzNSbDBqMlZ5bkxYanFndlhLYV96Ym03SFBNT21NbGVnSkVpVFpCYjVlM1hlMzJfNERzTS1CeERjcmFsdWtBcDBsUWhFWGoyUHE0aXFQdGtnd0R4OXFiLU51S1RVTTVrYjJWb3A0Wnd3aVVNSVJmcDJEMFpxUGpUUi1xX1FySkFWLVdHbnRHOXQ1OTJTZG9taGRrUHQtdFVfcHVfT1JGQWlHZlFFT2ZRZWR6OTRNWG9DdmpIbENyM0U0cVVSaHZXcXc2WnNEVkN1Wk43VGlWZTJaSGhhSE42czllUQ?oc=5",
+      "title": "Rubelita marca presença na assembleia do CIMAMS (Consórcio Intermunicipal Multifinalitário da Área Mineira da Sudene) – Jornal Panorama - Jornal Panorama Minas",
+      "titleFingerprint": "6f3bffdfe9291ff41b5c0219ae6554554044131e0975c7c8cad462e4b6541e4d",
+      "contentTokens": [
+        "area",
+        "assembleia",
+        "cimams",
+        "jornal",
+        "marca",
+        "minas",
+        "mineira",
+        "multifinalitario",
+        "panorama",
+        "presenca",
+        "rubelita",
+        "sudene"
+      ],
+      "category": "GOVERNANÇA"
     }
   }
 }
