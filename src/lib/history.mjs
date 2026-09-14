@@ -17,7 +17,10 @@ export function observeRun(state, items, health, minimumScore, now = new Date(),
   }
   state.runs[runId] = { at: now.toISOString(), collected: items.length, minimumScore, health };
   for (const source of health) {
-    if (source.status === 'disabled') continue;
+    if (source.status === 'disabled') {
+      state.health[source.name] = { ...source, consecutiveFailures: 0, checkedAt: now.toISOString() };
+      continue;
+    }
     const old = state.health[source.name] || {};
     state.health[source.name] = { ...source, checkedAt: now.toISOString(),
       consecutiveFailures: source.status === 'ok' ? 0 : (old.consecutiveFailures || 0) + 1,

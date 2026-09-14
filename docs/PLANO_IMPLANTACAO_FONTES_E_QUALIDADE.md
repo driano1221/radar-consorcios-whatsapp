@@ -4,7 +4,7 @@
 
 - Observabilidade e regressões: ampliadas; saúde por feed/consulta e alertas via GitHub.
 - Classificador: correções adicionais de plurais, convocações, recrutamento, demonstrativos e propostas de ingresso.
-- Fontes: QD com endpoint atual (ainda instável), RNCP reativada, TCE-SP/CISAMAPI e três RSS adicionados; duas instâncias SAPL integradas.
+- Fontes: QD com endpoint atual (ainda instável), TCE-SP e três RSS adicionados; duas instâncias SAPL integradas. RNCP/CISAMAPI passaram localmente, mas recebem HTTP 403 no Actions: coleta direta desativada e cobertura via Google.
 - Histórico e fila: observações e execuções por 60 dias, fila por 30 dias, resumo separado do histórico de envios.
 - Resumo semanal: implementado para **sábado às 9h**, substituindo a proposta anterior de segunda-feira; retentativa ao meio-dia com deduplicação semanal. Destino inicial de teste.
 - Pendências: TCE-PR direto, CNM direta, cadastro amplo e identidade jurídica dos eventos, fontes financeiras nacionais e IA opcional. Não foram declaradas concluídas.

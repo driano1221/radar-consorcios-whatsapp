@@ -35,17 +35,17 @@ Consórcios empresariais e comerciais, compras comuns e adesões a atas de preç
 
 O radar combina cinco famílias de fontes:
 
-- Google News RSS, com 19 consultas temáticas, incluindo controle, Ministério Público, Legislativo e filtros próprios para RNCP e CNM;
+- Google News RSS, com 21 consultas temáticas, incluindo controle, Ministério Público, Legislativo e filtros para RNCP, CNM, CISAMAPI e TCE-PR;
 - API pública do Querido Diário, dividida em três grupos de termos;
 - feeds diretos do COPIRN, CIGA, CISREC, CONIAPE, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil;
-- portais TCE-MG, TCE-SP, RNCP, CISAMAPI e índice da AMM-MG;
+- portais TCE-MG, TCE-SP e índice da AMM-MG; adaptadores RNCP/CISAMAPI disponíveis, mas desativados no Actions por HTTP 403;
 - APIs SAPL de normas jurídicas de Unaí e São João da Boa Vista.
 
-A CNM direta continua desativada por bloqueio HTTP; sua descoberta pelo Google permanece. TCE-PR direto ainda não foi homologado.
+A CNM direta continua desativada por bloqueio HTTP; sua descoberta pelo Google permanece. RNCP e CISAMAPI funcionaram localmente, mas falharam no GitHub. TCE-PR direto ainda não foi homologado.
 
 Cada família é consultada de forma independente. A falha temporária de uma fonte não interrompe as demais.
 
-Cada scraper possui ativação própria. TCE-MG, TCE-SP, RNCP e CISAMAPI podem publicar quando os critérios forem atendidos. AMM-MG monitora somente o índice, em prévia. Falhas na leitura do artigo mantêm o item em prévia. Relatórios e prévias ficam em `output/` e nos artefatos das execuções.
+Cada scraper possui ativação própria. TCE-MG e TCE-SP podem publicar quando os critérios forem atendidos. AMM-MG monitora somente o índice, em prévia. Falhas na leitura do artigo mantêm o item em prévia. Relatórios e prévias ficam em `output/` e nos artefatos das execuções.
 
 ## Funcionamento de cada rodada
 
@@ -166,7 +166,7 @@ Se o WhatsApp desvincular a sessão, execute `npm run pair` e depois `npm run se
 
 ## Atualização operacional — 14/09/2026
 
-O radar coleta a cada hora (minuto 17), busca publicações dos últimos **sete dias** e mantém até três envios por rodada. Fontes adicionadas: TCE-SP, CISAMAPI, RSS de CONIAPE/CIGA/CISREC e APIs SAPL de Unaí e São João da Boa Vista. A RNCP foi reativada. O Querido Diário usa o endereço atual, mas ainda apresenta oscilações externas.
+O radar coleta a cada hora (minuto 17), busca publicações dos últimos **sete dias** e mantém até três envios por rodada. Fontes diretas adicionadas: TCE-SP, RSS de CONIAPE/CIGA/CISREC e APIs SAPL de Unaí e São João da Boa Vista. RNCP e CISAMAPI têm adaptadores testados localmente, mas dependem de cobertura via Google no Actions. O Querido Diário usa o endereço atual, mas ainda apresenta oscilações externas.
 
 **Resumo semanal:** sábado às **9h de Brasília**, com nova tentativa às 12h somente se ainda não tiver sido confirmado. Destino: `WHATSAPP_WEEKLY_GROUP_ID` ou, na ausência, o grupo já configurado. A operação atual continua no grupo de teste. O resumo conta achados descobertos no período, não apenas mensagens enviadas. Histórico inicial parcial é informado na mensagem.
 
