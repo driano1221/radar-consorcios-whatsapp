@@ -6,10 +6,8 @@ import {
   loadState,
   markSeen,
   enqueuePending,
-  isSessionCheckDue,
   listPending,
   markPendingFailure,
-  markSessionCheck,
   pruneState,
   saveState,
   selectUnseen,
@@ -20,7 +18,7 @@ import { fetchGoogleNews } from './lib/sources/google-news.mjs';
 import { fetchQueridoDiario } from './lib/sources/querido-diario.mjs';
 import { fetchRssFeeds } from './lib/sources/rss-feeds.mjs';
 import { fetchWebScrapers } from './lib/sources/web-scrapers.mjs';
-import { checkWhatsAppSession, sendMessages } from './lib/whatsapp.mjs';
+import { sendMessages } from './lib/whatsapp.mjs';
 import { buildSourceFunnel, formatSourceFunnel } from './lib/run-metrics.mjs';
 
 async function appendGitHubSummary(markdown) {
@@ -185,17 +183,6 @@ async function main() {
 
   if (!config.groupId) throw new Error('Defina WHATSAPP_GROUP_ID antes de habilitar o envio.');
   if (!unseen.length) {
-    if (isSessionCheckDue(state, config.sessionCheckIntervalHours || 24)) {
-      try {
-        const session = await checkWhatsAppSession({ authDir: config.authDir, groupId: config.groupId });
-        markSessionCheck(state, true, `Grupo encontrado: ${session.subject}`);
-        console.log(`Sessão do WhatsApp verificada. Grupo encontrado: ${session.subject}`);
-      } catch (error) {
-        markSessionCheck(state, false, error);
-        await saveState(config.stateFile, state);
-        throw error;
-      }
-    }
     await saveState(config.stateFile, state);
     await appendGitHubSummary(`${formatRunSummary([], true)}\n${scraperSummary}\n${funnelSummary}`);
     return;
@@ -212,13 +199,11 @@ async function main() {
       delayMs: config.messageDelayMs,
       onSent: async (entry) => {
         markSeen(state, entry.item);
-        markSessionCheck(state, true, 'Mensagem entregue ao grupo.');
         await saveState(config.stateFile, state);
       },
     });
   } catch (error) {
     markPendingFailure(state, unseen, error);
-    markSessionCheck(state, false, error);
     await saveState(config.stateFile, state);
     throw error;
   }

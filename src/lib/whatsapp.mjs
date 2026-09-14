@@ -95,17 +95,6 @@ export function validateGroupId(groupId) {
   }
 }
 
-export async function checkWhatsAppSession({ authDir, groupId }) {
-  validateGroupId(groupId);
-  const socket = await connectWhatsApp({ authDir });
-  try {
-    const group = await socket.groupMetadata(groupId);
-    return { groupId: group.id, subject: group.subject };
-  } finally {
-    socket.end(new Error('Verificação de sessão concluída.'));
-  }
-}
-
 export async function sendMessages({ authDir, groupId, messages, delayMs = 5000, onSent }) {
   validateGroupId(groupId);
   const socket = await connectWhatsApp({ authDir });
