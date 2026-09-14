@@ -6,18 +6,22 @@ A ampliação combina descoberta de notícias, leitura de portais institucionais
 
 O propósito editorial permanece identificar criação, entrada e saída de municípios, protocolos, rateio, governança, crises, fiscalização e ações relevantes de consórcios públicos. Conteúdos comerciais, concursos, atas de preços, simples convocações e tabelas contábeis não devem ser transformados automaticamente em acontecimentos institucionais.
 
+## Validação no GitHub Actions
+
+A execução [34889843638](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/34889843638) passou em 53 testes e completou a coleta em prévia: 71 registros e um candidato relevante, a parceria do CONIAPE. RNCP e CISAMAPI, apesar do sucesso local, retornaram HTTP 403 nesse ambiente. Seus acessos diretos foram então desativados na configuração de produção e mantidos como adaptadores disponíveis. Foram acrescentadas buscas específicas para CISAMAPI e TCE-PR no Google. A RNCP já tinha busca específica. As conclusões locais da tabela abaixo não equivalem a homologação no Actions.
+
 ## Resultado por fonte
 
 | Fonte e interface testada | Resultado observado | Decisão e limite |
 |---|---|---|
 | [Querido Diário — API atual](https://queridodiario.ok.org.br/api/gazettes) | Respondeu com 21 documentos em duas coletas; em outras houve HTTP 503 e timeout | Endereço corrigido, tentativas limitadas e diagnóstico por consulta. Continua instável; recuperação não é garantia de disponibilidade |
 | [QD — endereço antigo](https://api.queridodiario.ok.org.br/docs) | Falha de negociação TLS | Deixou de ser o endereço utilizado. Não se desativou validação de certificado |
-| [RNCP](https://www.rncp.org.br/noticias) | HTTP 200; duas notícias na janela ampliada; leitura do corpo funcionou | Coleta direta reativada. Acesso bem-sucedido não promove automaticamente uma notícia ao envio |
+| [RNCP](https://www.rncp.org.br/noticias) | HTTP 200 local; duas notícias na janela ampliada; HTTP 403 no Actions | Tentativa de reativação revertida na configuração de produção. Cobertura via Google |
 | [CNM](https://cnm.org.br/areas_tecnicas/consorcios/noticias) | HTTP 403 com página de proteção | Mantida descoberta pelo Google; sem contornar proteção |
 | [TCE-MG](https://www.tce.mg.gov.br/noticia) | Extração de 20 notícias na amostra final; seleção depende do conteúdo | Mantido. A página pode mudar durante a pesquisa, e o primeiro lote não representa todo o arquivo |
 | [TCE-SP](https://www.tce.sp.gov.br/noticias) | HTTP 200; sete notícias na janela de sete dias e oito na ampliada | Adaptador novo, com data do card e leitura de texto. Clipping lateral não é misturado às notícias do tribunal |
 | [TCE-PR](https://www.tce.pr.gov.br/imprensa/noticias/) | HTTP 200, mas listagem entregue como estrutura a preencher por JavaScript/Lumis; `/feed/` respondeu 404 | Não homologado como scraper. Necessita interface pública estável ou adaptador específico; não tratado como fonte saudável com zero notícias |
-| [CISAMAPI](https://www.cisamapi.mg.gov.br/noticias) | Três itens na janela ampliada; eleição de 04/09 validada no corpo | Adaptador novo. A página possui dois blocos `.new-txt`; foi selecionado o que contém parágrafos, evitando capturar apenas cabeçalho |
+| [CISAMAPI](https://www.cisamapi.mg.gov.br/noticias) | Três itens localmente; eleição de 04/09 validada; HTTP 403 no Actions | Adaptador novo disponível, desativado em produção. A seleção do corpo foi corrigida; cobertura alternativa via Google |
 | [CONIAPE](https://consorcioconiape.pe.gov.br/feed/) | RSS válido, duas notícias recentes; parceria publicada em 10/09 | Feed novo com leitura complementar do artigo. Expande a cobertura para Pernambuco |
 | [CIGA](https://consorciociga.gov.br/feed/) | RSS válido; itens recentes incluem tutoriais administrativos | Integrado com filtro editorial. Volume de itens não representa rendimento noticioso |
 | [CISREC](https://cisrec.mg.gov.br/feed/) | RSS válido, última entrada observada em março de 2026 | Integrado como fonte de baixa frequência. Zero na janela recente é ausência no feed, não prova de ausência de atividade institucional |
