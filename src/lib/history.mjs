@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { canonicalUrl, selectUnseen } from './dedupe.mjs';
 import { isPublishableClassification } from './classifier.mjs';
 
-export function observeRun(state, items, health, minimumScore, now = new Date()) {
+export function observeRun(state, items, health, minimumScore, now = new Date(), runId = now.toISOString()) {
   state.observations ||= {};
   state.runs ||= {};
   state.health ||= {};
@@ -15,7 +15,6 @@ export function observeRun(state, items, health, minimumScore, now = new Date())
       item: { ...item, summary: (item.summary || '').slice(0, 1800), rawText: undefined, excerpts: undefined },
     };
   }
-  const runId = process.env.GITHUB_RUN_ID || now.toISOString();
   state.runs[runId] = { at: now.toISOString(), collected: items.length, minimumScore, health };
   for (const source of health) {
     if (source.status === 'disabled') continue;
