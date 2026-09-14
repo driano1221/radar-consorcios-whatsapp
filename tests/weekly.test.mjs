@@ -31,7 +31,7 @@ test('resumo inclui achados não enviados sem somar observações repetidas', ()
   assert.equal(report.runs, 2);
   assert.equal(report.partial, true);
   assert.deepEqual(report.failures, ['API']);
-  assert.match(formatWeeklyMessage(report), /1 achados relevantes/);
+  assert.match(formatWeeklyMessage(report), /1 achado relevante/);
   assert.match(formatWeeklyMessage(report), /Histórico parcial/);
 });
 
