@@ -8,6 +8,10 @@ O propósito editorial permanece identificar criação, entrada e saída de muni
 
 ## Validação no GitHub Actions
 
+Validação de produção concluída: [coleta e envio 34890080312](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/34890080312) coletou 74 registros, consolidou 69 URLs únicas e enviou a notícia do CONIAPE. O estado gravado contém versão 4, histórico de coleta e fila vazia após a confirmação. A fonte QD falhou nessa execução e a limitação foi registrada.
+
+O [teste do resumo 34890156509](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/34890156509) enviou um boletim identificado como prévia para o grupo de teste. A [repetição 34890287847](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/34890287847) concluiu com a indicação de resumo já enviado e não repetiu a mensagem. A suíte foi ampliada para 54 testes, incluindo abertura, repetição e encerramento de incidentes com API simulada. Os testes de alerta não enviam notificações fictícias.
+
 A execução [34889843638](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/34889843638) passou em 53 testes e completou a coleta em prévia: 71 registros e um candidato relevante, a parceria do CONIAPE. RNCP e CISAMAPI, apesar do sucesso local, retornaram HTTP 403 nesse ambiente. Seus acessos diretos foram então desativados na configuração de produção e mantidos como adaptadores disponíveis. Foram acrescentadas buscas específicas para CISAMAPI e TCE-PR no Google. A RNCP já tinha busca específica. As conclusões locais da tabela abaixo não equivalem a homologação no Actions.
 
 ## Resultado por fonte

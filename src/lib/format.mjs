@@ -250,16 +250,17 @@ export function formatScraperSummary(items, observationsCount, diagnostics = [])
 export { formatDate };
 
 export function formatWeeklyMessage(report, test = false) {
+  const count = (n, singular, plural) => `${n} ${n === 1 ? singular : plural}`;
   const date = (value) => new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' }).format(new Date(value));
   const rows = [test ? '🧪 *PRÉVIA DO RESUMO SEMANAL*' : '🗓️ *RADAR CONSÓRCIOS | RESUMO SEMANAL*',
     `_${date(report.start)} a ${date(report.end)} · corte às ${new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(new Date(report.end))}_`, '',
     '*A semana em números*',
-    `- ${report.observations} publicações únicas encontradas`,
-    `- ${report.events} achados relevantes após deduplicação`,
-    `- ${report.sent} notícias enviadas · ${report.pending} achados em fila`,
-    `- ${Object.keys(report.sources).length} fontes nos achados · ${report.runs} coletas`,
+    `- ${count(report.observations, 'publicação única encontrada', 'publicações únicas encontradas')}`,
+    `- ${count(report.events, 'achado relevante', 'achados relevantes')} após deduplicação`,
+    `- ${count(report.sent, 'notícia enviada', 'notícias enviadas')} · ${count(report.pending, 'achado em fila', 'achados em fila')}`,
+    `- ${count(Object.keys(report.sources).length, 'fonte', 'fontes')} nos achados · ${count(report.runs, 'coleta', 'coletas')}`,
   ];
-  if (report.preview) rows.push(`- ${report.preview} achados ainda em prévia`);
+  if (report.preview) rows.push(`- ${count(report.preview, 'achado ainda em prévia', 'achados ainda em prévia')}`);
   if (report.partial) rows.push('', 'ℹ️ Histórico parcial: o registro detalhado começou durante ou após o início deste período.');
   if (Object.keys(report.categories).length) rows.push('', '*Temas identificados*',
     ...Object.entries(report.categories).sort((a,b) => b[1]-a[1]).map(([label, n]) => `- ${cleanInline(categoryLabels[label] || label)}: ${n}`));
