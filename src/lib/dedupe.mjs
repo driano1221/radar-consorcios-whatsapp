@@ -58,9 +58,14 @@ export function titleFingerprint(item) {
 export async function loadState(stateFile) {
   try {
     const parsed = JSON.parse(await readFile(stateFile, 'utf8'));
-    return { version: 2, seen: parsed.seen || {} };
+    return {
+      version: 3,
+      seen: parsed.seen || {},
+      pending: parsed.pending || {},
+      session: parsed.session || {},
+    };
   } catch (error) {
-    if (error.code === 'ENOENT') return { version: 2, seen: {} };
+    if (error.code === 'ENOENT') return { version: 3, seen: {}, pending: {}, session: {} };
     throw new Error(`Estado de notícias inválido em ${stateFile}: ${error.message}`);
   }
 }
@@ -72,10 +77,14 @@ export async function saveState(stateFile, state) {
   await import('node:fs/promises').then(({ rename }) => rename(tempFile, stateFile));
 }
 
-export function pruneState(state, retentionDays) {
+export function pruneState(state, retentionDays, pendingRetentionDays = 30) {
   const cutoff = Date.now() - retentionDays * 24 * 60 * 60 * 1000;
   for (const [id, record] of Object.entries(state.seen)) {
     if (new Date(record.sentAt).getTime() < cutoff) delete state.seen[id];
+  }
+  const pendingCutoff = Date.now() - pendingRetentionDays * 24 * 60 * 60 * 1000;
+  for (const [id, record] of Object.entries(state.pending || {})) {
+    if (new Date(record.queuedAt).getTime() < pendingCutoff) delete state.pending[id];
   }
 }
 
@@ -89,7 +98,12 @@ function resemblesKnownEvent(item, tokens, records, threshold = 0.66) {
 }
 
 export function selectUnseen(items, state) {
-  const records = Object.values(state.seen);
+  const pendingRecords = Object.values(state.pending || {}).map(({ item }) => ({
+    category: item.classification?.category,
+    contentTokens: item.contentTokens,
+    titleFingerprint: item.titleFingerprint,
+  }));
+  const records = [...Object.values(state.seen), ...pendingRecords];
   const knownFingerprints = new Set(records.map((record) => record.titleFingerprint).filter(Boolean));
   const batchFingerprints = new Set();
   const batchRecords = [];
@@ -116,6 +130,61 @@ export function selectUnseen(items, state) {
   });
 }
 
+export function enqueuePending(state, items, queuedAt = new Date().toISOString()) {
+  state.pending ||= {};
+  let added = 0;
+  for (const item of items) {
+    const id = item.id || itemId(item);
+    if (state.seen[id] || state.pending[id]) continue;
+    state.pending[id] = {
+      queuedAt,
+      attempts: 0,
+      lastAttemptAt: null,
+      lastError: null,
+      item: {
+        ...item,
+        id,
+        titleFingerprint: item.titleFingerprint || titleFingerprint(item),
+        contentTokens: item.contentTokens || significantTokens(item),
+      },
+    };
+    added += 1;
+  }
+  return added;
+}
+
+export function listPending(state) {
+  return Object.values(state.pending || {})
+    .sort((left, right) => {
+      const score = (right.item.classification?.score || 0) - (left.item.classification?.score || 0);
+      return score || new Date(left.queuedAt) - new Date(right.queuedAt);
+    })
+    .map((record) => record.item);
+}
+
+export function markPendingFailure(state, items, error, attemptedAt = new Date().toISOString()) {
+  for (const item of items) {
+    const record = state.pending?.[item.id || itemId(item)];
+    if (!record) continue;
+    record.attempts = (record.attempts || 0) + 1;
+    record.lastAttemptAt = attemptedAt;
+    record.lastError = String(error?.message || error).slice(0, 300);
+  }
+}
+
+export function markSessionCheck(state, ok, detail, checkedAt = new Date().toISOString()) {
+  state.session = {
+    lastCheckedAt: checkedAt,
+    status: ok ? 'ok' : 'error',
+    detail: String(detail || '').slice(0, 300),
+  };
+}
+
+export function isSessionCheckDue(state, intervalHours, now = new Date()) {
+  const lastCheck = new Date(state.session?.lastCheckedAt || 0).getTime();
+  return !Number.isFinite(lastCheck) || now.getTime() - lastCheck >= intervalHours * 60 * 60 * 1000;
+}
+
 export function countSentToday(state, now = new Date()) {
   const formatter = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'America/Sao_Paulo',
@@ -129,7 +198,8 @@ export function countSentToday(state, now = new Date()) {
 }
 
 export function markSeen(state, item, sentAt = new Date().toISOString()) {
-  state.seen[item.id || itemId(item)] = {
+  const id = item.id || itemId(item);
+  state.seen[id] = {
     sentAt,
     url: canonicalUrl(item.url),
     title: item.title,
@@ -137,6 +207,7 @@ export function markSeen(state, item, sentAt = new Date().toISOString()) {
     contentTokens: item.contentTokens || significantTokens(item),
     category: item.classification?.category || 'GERAL',
   };
+  if (state.pending) delete state.pending[id];
 }
 
 export { jaccard, significantTokens };

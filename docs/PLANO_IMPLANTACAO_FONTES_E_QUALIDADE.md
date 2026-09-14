@@ -568,7 +568,7 @@ Iniciar pela **Fase 0 e Fase 1** em uma única entrega: instrumentação, fixtur
 - [x] Fase 0 — linha de base, fixtures, telemetria e segurança operacional.
 - [ ] Fase 1 — classificador corrigido e homologado; aguardando observação contínua em prévia.
 - [x] Fase 2 — TCE-MG e Google corrigidos; TCE-MG habilitado isoladamente e demais scrapers mantidos em prévia.
-- [ ] Fase 3 — cadastro, identidade de evento, fila e migração concluídos.
+- [ ] Fase 3 — fila persistente concluída; cadastro de consórcios, aliases e identidade ampliada de eventos ainda pendentes.
 - [ ] Fase 4A — TCE-SP e TCE-PR homologados.
 - [ ] Fase 4B — primeira onda de instâncias SAPL homologada.
 - [ ] Fase 4C — portais oficiais prioritários homologados.

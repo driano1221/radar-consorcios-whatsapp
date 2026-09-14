@@ -39,6 +39,8 @@ O GitHub Free inclui 2.000 minutos mensais para Actions em repositórios privado
 - deduplicação por URL canônica, título e similaridade de conteúdo;
 - gravação atômica do estado;
 - persistência após cada mensagem entregue;
+- fila persistente de candidatos por até 30 dias, com tentativas e último erro;
+- verificação explícita da sessão do WhatsApp a cada 24 horas, mesmo sem candidatos;
 - limite por rodada e por dia;
 - reconexão apenas para erros transitórios;
 - sessão AES-256-GCM e filtragem de chaves nos logs;
