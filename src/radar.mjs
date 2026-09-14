@@ -80,7 +80,8 @@ async function main() {
     }
   }
   const classified = collected.map((item) => ({ ...item, classification: classifyItem(item) }));
-  observeRun(state, classified, sourceHealth, config.minimumScore);
+  observeRun(state, classified, sourceHealth, config.minimumScore, new Date(),
+    process.env.GITHUB_RUN_ID ? `${process.env.GITHUB_RUN_ID}:${process.env.GITHUB_RUN_ATTEMPT || 1}` : undefined);
   if (config.persistState) await saveState(config.stateFile, state);
   if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
   const relevant = classified
