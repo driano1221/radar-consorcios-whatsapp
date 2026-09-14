@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "seen": {
     "0b0938ab741ab5ff15a12139069ce6d9e60fc4a2210f2efb1b080b2c4fdaf430": {
       "sentAt": "2026-08-14T12:27:20.074Z",
@@ -2254,5 +2254,11 @@
       ],
       "category": "GOVERNANÇA"
     }
+  },
+  "pending": {},
+  "session": {
+    "lastCheckedAt": "2026-09-14T19:15:41.990Z",
+    "status": "ok",
+    "detail": "Grupo encontrado: Radar Consórcios - Teste"
   }
 }
