@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "seen": {
     "0b0938ab741ab5ff15a12139069ce6d9e60fc4a2210f2efb1b080b2c4fdaf430": {
       "sentAt": "2026-08-14T12:27:20.074Z",
@@ -2253,7 +2253,2103 @@
         "sudene"
       ],
       "category": "GOVERNANÇA"
+    },
+    "e8c1ba1b6dc2cb85241f9822d1f6de83339699afa22e7e81fab66f57a20e0ed9": {
+      "sentAt": "2026-09-14T19:58:43.460Z",
+      "url": "https://consorcioconiape.pe.gov.br/2026/09/10/coniape-firma-parceria-com-o-ministerio-da-agricultura-e-pecuaria-do-governo-federal/",
+      "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
+      "titleFingerprint": "9ea811f4de54c3fab06792defa3ce79c31d292fc060718ad21b3ee52855af2ca",
+      "contentTokens": [
+        "2026",
+        "agricultura",
+        "agrinordeste",
+        "agroindustrias",
+        "alcancar",
+        "ambiente",
+        "ampliando",
+        "animal",
+        "atraves",
+        "avancar",
+        "basico",
+        "brasileiro",
+        "centro",
+        "claudia",
+        "comercializacao",
+        "como",
+        "conforme",
+        "coniape",
+        "consorciados",
+        "contribuindo",
+        "convencoes",
+        "durante",
+        "engenharia",
+        "exigencias",
+        "federal",
+        "firma",
+        "firmou",
+        "fortalecer",
+        "governo",
+        "guerreiro",
+        "implementacao",
+        "iniciativa",
+        "inspecao",
+        "mapa",
+        "meio",
+        "mercados",
+        "ministerio",
+        "nacional",
+        "niesma",
+        "nucleo",
+        "objetivo",
+        "ocorreu",
+        "oportunidades",
+        "origem",
+        "parceria",
+        "pecuaria",
+        "pernambuco",
+        "possam",
+        "produtos",
+        "saneamento",
+        "setembro",
+        "sisbi",
+        "sistema",
+        "superintende",
+        "tem",
+        "territorio",
+        "todo"
+      ],
+      "category": "ATUAÇÃO",
+      "source": "CONIAPE",
+      "publishedAt": "2026-09-10T14:22:53.000Z"
     }
   },
-  "pending": {}
+  "pending": {},
+  "observations": {
+    "79ae36896118fb7467961a4e9f2a1d1f3254a9146098b22fe20bb5ec0faf47a3": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Notícia - ABC das Artes será realizado em nova data - Consórcio Intermunicipal - Grande ABC",
+        "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNam5wQnZZcDQwNTZfb2dsZHZLMldrR1UzODhVOWtTbnd4MENMbUFXTFR0eVlDNjhhTGJmNFhSS0RtWTRHV0k5TFFDdUpNTV9vQW5ETlJRQ3JnMktMa19jWURfMHFYQ0RVTVRFNmU0cDg5RUd1bmFmS3NlRV9BWm0xUUltaWVGNTI5LTFOZFQxbXRuSk00?oc=5",
+        "sourceUrl": "https://www.consorcioabc.sp.gov.br",
+        "publishedAt": "2026-09-10T19:13:14.000Z",
+        "source": "Consórcio Intermunicipal - Grande ABC",
+        "summary": "Notícia - ABC das Artes será realizado em nova data Consórcio Intermunicipal - Grande ABC",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 6,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Notícia - ABC das Artes será realizado em nova data Consórcio Intermunicipal - Grande ABC",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbzdGVWh1Wk5OMFUzT2VDVF96eU04UmFfMkZQM2dTamhxOWJCOG1xZElKZ1lKRFQ1czktVmQ2bHFpcU5JY1V1a3NxWExDMWxrbTdXd2djOEFQOTJJY0c5SDhoRlpRQ01vNzd0Z2ZTZnRvWnFPWTcwYmFwY3NrZ2U2dW5RYVByeG5sbzdBaTd0QWluX2xVMTNZTWFPUXpKbzB6a0wtTDcxMFhCMkt2Z21aalJMNktKQ3hsVEgtRnp4clBkVnBaYVow?oc=5",
+        "sourceUrl": "https://folha.qconcursos.com",
+        "publishedAt": "2026-09-11T19:56:51.000Z",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "eaa0de7c1adedd5a789788dbf1741fac53dd8c26808c19af390e55a8969ed71f": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUjJFQ2ZiVWJkb1dHVG4td2pJS2JrZHRYc1ZVd1AtSXI5dXhDdDVHLS1hczMyUlF4YldYRzdkUGxLVGc5Y082ck5KM3VxbXRLMEIxdXRVSEpvLWd6TExkQm9wRE1va0lEbGh4ZElwWUV0YmQzMEtoMHdNblVIX0ZwbTRDVVU5UFY3amZ2NlZmdGkyc3p0SGcyOTRWdk0ySjQ4UmVyZjBMUTFuRE9fTVpXWEJ6MU1OcTRDS1BYdko2TmFsZG9KeDZNek16b2FTRHVESFZEStIB2gFBVV95cUxPR3V6cUF2dlFPSjZFZVJ3ZHN4WXFuUk9GRHctemZhWHpISmFLWG5ZckE5eGxnYmE0LWJZT2JCSGpKU0IwS21iY1E1cUpVUWFZSHhOYjlhMkdwZ01HQ3FOSGlLb0ROOTdoOUZBSFYtVU9meEgwWlFSQ0ItSWM2QnY0N0JZd19KTXRTSUNfMkw5YUM5bHBoSWpta19pOU9WRmtueTFnSjh3NzhzQTdpMHNOX0I1NVVadmh2TkVEcEhCYnRkcGtHUFY5YVNJSDJEcU5JT182SklCMk5aUQ?oc=5",
+        "sourceUrl": "https://www.bemparana.com.br",
+        "publishedAt": "2026-09-10T17:53:00.000Z",
+        "source": "Bem Paraná",
+        "summary": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta Bem Paraná",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 3,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta Bem Paraná",
+          "publicContext": true,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "05cd3fe0259c62e2e6133f049b84329daed5274e1844017a46a66d96a84f7aba": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Rotary entrega consultório oftalmológico ao Consórcio de Saúde de Birigui - Hojemais.com.br",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPeDNVSk9GS25SaWhVUkF2VE5jSDlhT0tMbnRLQTRHcjdjeVAzTWdzdUN5S293SmdxWjZkSlhZdmt1OHNvRWY2NnpRaHVuZ0pWMExJc3ZWN00yNjl6M2xUbEMtZ194N2ZnalN0MFNZOVh5U0FRbjRxLTd0N1lXUVdpMW5BT2RRMWtpMzZ3WUhSUG5QNkhObDBUUUdDaEowelBaVEFhSVg4RlBRcDNORnN5WkQzZklDTS1lU3NxTkx3OWtxZzE3QVY2TQ?oc=5",
+        "sourceUrl": "https://www.hojemais.com.br",
+        "publishedAt": "2026-09-11T14:02:00.000Z",
+        "source": "Hojemais.com.br",
+        "summary": "Rotary entrega consultório oftalmológico ao Consórcio de Saúde de Birigui Hojemais.com.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 2,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Rotary entrega consultório oftalmológico ao Consórcio de Saúde de Birigui Hojemais.com.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - abcdjornal.com.br",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQZW5aOVQ5azJORlQ1VmVDbTRVLTZaZWJZM3FGZmctb29SMFVkZ0RDSUtjbW9tWTJDb2VlTWJSS2ZJOHNjR3ZMNlZEeW5OajRFRUctT1RDNUVpa2FETjR3NnhMWVBTUUxuRFlTaDBBa2hsRmUwZng2Sm9lOWdVQk9hRUVzcFNJMGhkckV2WWVvb3QxUVR1R1dNQWd5TUVGUDAxMGduMHhuYlhSdFlhbTE2UFZnU2JZaVlfNno0NFIwXzlOdk8zUy15ZVlSNE9IenpDWGthSjQ4eUtPRzh6dE5n0gHkAUFVX3lxTE1XOVNFa25DV2JSZWpaXzczYjJmcGE2amlxRU1NclZNNi1JLWx4ZEJzSk1FNmUyWmZzNmFGX0N6eDVUdEtVdkNSSEJJeGc1ME9LN3lxUVdnd25BWEtjVnRZTVJiT1AySE5uOHRzY3NJNlNZTjl5cWNDUmtWWFdsWkdHal9XSGlOeVV1QXJzOWsyV0VYM1otUzhEVEhQUGdXRHN1WXdMNU1yczR2UHZpd0poUUxhZkNtMWtqbHNKZndRal84R1Bidy1GYUdNSmtYanRiVVRGei0tcVJtaVB4VzVxcUU4Sw?oc=5",
+        "sourceUrl": "https://abcdjornal.com.br",
+        "publishedAt": "2026-09-10T13:52:47.000Z",
+        "source": "abcdjornal.com.br",
+        "summary": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico abcdjornal.com.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 2,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico abcdjornal.com.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a4feb48e8f2142b20e06ff88d669459d9865b7b06fb07a93b918922708ebf272": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - Qconcursos Folha Dirigida",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbFlOS0l0d0k5RkJua2dFR1JBZXVWS2RzN2NNUWdDYWVUdjY3NGlxdkhrR00yWC1zM1haUGt3SlJ2RWVyVlprWkdSdEJLd1ZTV3FxOEdHTTNhNjFyc09HXzJyX1p1TkI1TUhLX3NtXzU3aEd6ZHZTZ1RrZ0ZUaUNERThvQkUzYzdtdnhWQTFfa3MwZWoyb1hFR1pET3g0ZUh3TVV6MHR4SW8zTWVJQy1IMkRuWnZLc0xQNTJTZUhPbXN5eTR2b1dRekgxR0pkc2loLVlRaklUOG5RQQ?oc=5",
+        "sourceUrl": "https://folha.qconcursos.com",
+        "publishedAt": "2026-09-09T21:09:10.000Z",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "1cd8049fa620a5e4db87515be93dbce0b7a18cb41bc472b0cd3c3ed496841451": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas - Qconcursos Folha Dirigida",
+        "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbmdWTC1jZXp1LVBsR2l3dmxGQTZFTzNqMkFfWWNjcUJXLUtxZE5ZS1BFTG11NmN1akpERzNmMUNGYWFVVGJTMTRwUGU1LTJ2Z2psWWZwTDdTaWNTd21yN3Awc1VKZUNwM1ZIelY2YWtfSDVONTF6ellwTFVVRFBNdktULTFwNnZvQ19qR1p1M3F2WTFFU0toUUlYa05qdjFDT1FDdnpZZ0syOUk0NmFqclJ2Z0F5aFgwRk40UWtrbk40bGZ6TlBPa1laMXBJNEE?oc=5",
+        "sourceUrl": "https://folha.qconcursos.com",
+        "publishedAt": "2026-09-09T14:20:11.000Z",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "f32488dd494ffaab10d9b9e8f0edac4bf98fe69efeed611e37377fd9a776d644": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 - pciconcursos.com.br",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbW1VeTl1VEk4a1ZvbzV0Q3o1RklheTI5MkZvS0dDU3dkZ250QlFJa01WUXEyY29sZlN0d1djbmN3SU5JQ3Fzc2VEQXJLUVRGeGVaTTZJOVlLVnd1VjRvWTJvdl90Z2paazVra1VpTWhsbkx5UkRmTGcxdzBzUmpUSDVzbEs1REJWVkRwV3M0VTEtaTF1T3hGaWNEVTFtcWpYRHRTTG5TYVY?oc=5",
+        "sourceUrl": "https://www.pciconcursos.com.br",
+        "publishedAt": "2026-09-08T20:49:03.000Z",
+        "source": "pciconcursos.com.br",
+        "summary": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 pciconcursos.com.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -30,
+          "reasons": [
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 pciconcursos.com.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8154518dba47dbdaca5bb52772830b7b3662599e101dbcb2f2c677ebff17a77f": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - Midiamax",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORElmWFFsaEFRb2pEQWtleXlmWm90cmtUT0pTQmRFR1ZDa2hYM1RTN1U4M2lSQV9WeXhtaFlZenl2NW4wQUZTemRsY1V0RklJbWFKdDhfRkYzN1VrZHJuTkVFVUJfQjM1ZGZZcWw0em5IQktHU1BISVFDaWFEc29PeDhuU0xQdkZXU1kxbkd0UVZZM2hLYmVuY1FHc0pRRHA1YVprUzc2bmFlQXgzSTJkVEhB?oc=5",
+        "sourceUrl": "https://midiamax.com.br",
+        "publishedAt": "2026-09-11T11:37:00.000Z",
+        "source": "Midiamax",
+        "summary": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões Midiamax",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões Midiamax",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "0e7aabe32ed068953985e31bb57c64aa08f6bab53384df4012d13ecf16f92a96": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - cmc.pr.gov.br",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNX19ncTZZemJncVNPSElJNzRSYVl1WUxaTEFtMWV2OWc2RmxUTWxzQVBqalg5djZNaTFqdy12V0gtS2hGaWpFYl9CZFhNSDZDdWJiVDJKb1dhTzVneklXcFlmUmdaVldyR1NaVW15dFlyY0xDLUd6M08xd0dLU0J2dWdzUi1NZFlfMDctWWhZcW9pNjZ3Y1YwM3VIa2NjODhrdkEzNTFkX2hWU01rdlI1dW9zVVZGbjF1eE5HT2F5dWg2QQ?oc=5",
+        "sourceUrl": "https://www.cmc.pr.gov.br",
+        "publishedAt": "2026-09-10T12:04:00.000Z",
+        "source": "cmc.pr.gov.br",
+        "summary": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral cmc.pr.gov.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral cmc.pr.gov.br",
+          "publicContext": true,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOYzVOZHp3LWtlY0VyeFVOSHM4SWdteVpVeTk4ci1Hc0pSVDliaTVNNVpWWEhJajhNXzdma0xSdzY2YTdZRHhiVlpJeloxZHNvRDlDQllRa1N2R00wNDJkR3hBXy1vTTRnaVJNTlJnS2xRdVVQNWVXUWRDT19WNk9qQ2k4VFhXZm85QnphUHh6U3I1QUdjSG14RjFTekJZVmNDemNOOExIQUlJRUl6dno4cGxNZTRxV3htYzNiR3F0NGZsc1k3b3NtNHpCeFZqd2x2d1E?oc=5",
+        "sourceUrl": "https://barcelosnanet.com.br",
+        "publishedAt": "2026-09-10T21:59:18.000Z",
+        "source": "Portal Barcelos na NET",
+        "summary": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras Portal Barcelos na NET",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 2,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras Portal Barcelos na NET",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9mbVhYbkl5aG1CSVEtNWhCcm5KcldRbXhfeU1ERGtIaUZKX2I0Rm5pNjRabXROOTdRdHM2NTIzZC1Za29Sai1MOHZTNXA0eTRvN2dvT0RSN3AwblE?oc=5",
+        "sourceUrl": "https://consorciopublico.ro.gov.br",
+        "publishedAt": "2026-09-11T13:21:57.000Z",
+        "source": "Consórcio CIMCERO",
+        "summary": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária Consórcio CIMCERO",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [
+            "GOVERNANÇA",
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária Consórcio CIMCERO",
+          "publicContext": true,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "3b4657af15c412acf25a2145f93fa8c32c4769db0607b8ed39a099c38031de5d": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento - Top Mídia News",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbDVRT3lMOGxsX0YyRXdhbjd2M1RkR0tydFlSdDRhbGdnRXpLNHNPNHVZeGdtV0RqYk9DRW1ncTk4MkFzSVIwZzlaazN5OExBN2ZfRDZ2ZnNKdFk5VlRMdGhySzR2NkJtX1kzZ0ZydmdhMlNENk0zM0I5SFVXTHlmSjZpaGZwOV95bzlNcFJ0TGltMjVuY0NDWC1xRjJZcGlNNTY3R0ZReTMwYVnSAa8BQVVfeXFMTmZPMDhycW02ZlVzYXEybjFDWXZzZG9DUzRUSnMyR2c5MkUwUks1N3ZZMVdCdjI1dmZXY0ZjMGVRRGhCNXF6OW1vTW9zQWY1UWFDYlJjb3FmRFVTdVVkbEhGXzB2YWpLdW85MVc1b2ZXSjFxTll5NmV6M2c5MDZWMXg4alFrVFpGSjVnQXNjSUpnMndmRllTR25ieFJDUk1NYUthTDRra2pJZkdVQlgtRQ?oc=5",
+        "sourceUrl": "https://www.topmidianews.com.br",
+        "publishedAt": "2026-09-08T19:00:00.000Z",
+        "source": "Top Mídia News",
+        "summary": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento Top Mídia News",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento Top Mídia News",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBJdTNEbUd6T3p6TUw2MXJPTVlOd0k4UEVDR3otM3l2MGYzZlgzMU1mVElJQ1p1bnpyVkVBVTdHME43dHRzQkVjX3ZlT1hrejRrYUJnRHlvX2hLcldSWGlhSXA0NW1zVTg?oc=5",
+        "sourceUrl": "https://www.passodetorres.sc.leg.br",
+        "publishedAt": "2026-09-13T09:55:08.000Z",
+        "source": "passodetorres.sc.leg.br",
+        "summary": "Projeto de Lei nº 11/2026 passodetorres.sc.leg.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Projeto de Lei nº 11/2026 passodetorres.sc.leg.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "184db1ccb8d0f9dfedfa5ab0c26b244078321aa1348d0e74a0c033cffbabd237": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Untitled - Câmara Municipal de Várzea - RN",
+        "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQ3pmWHAtQWY0Y2ZEdHh3MFlXU3ZROXo2LUxHa1RZSExJS3V4ZVpTbUtZcGV1Z2lHQjNsN1dnamk5QlJtYkRYR2gzeVYxLWdQTkFsaU5CTFhHRFNSN0JjU2s5WWdYREstN3FBS1UxcUhySUR5VWM5UkNuaEs0WWp5T1c2aUNPM2xDdGdpWGRCOTdNaXprRkJBS2syUklxdFR2cnZ2RTNlZVgzVXpSTlN0T2hyX0hHbEVJSjhZSnhsYTU4VENoRnBLbnktVnRRUDRhNUJCRXhNZU9OeDZHSEtvY0Ixbw?oc=5",
+        "sourceUrl": "https://www.varzea.rn.leg.br",
+        "publishedAt": "2026-09-10T00:53:55.000Z",
+        "source": "Câmara Municipal de Várzea - RN",
+        "summary": "Untitled Câmara Municipal de Várzea - RN",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Untitled Câmara Municipal de Várzea - RN",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
+        "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOVkoyR0hMZlVtZkkwM0RxTnhWWDJ5SzBKUkttWU5KMkVOeEFQSDEwNC1DRUF5T0hvcWhmSV9JVjJZVDJWdFdyYUZ2cEVITmtjcGZCaWhySmFJUEJ4UjRpQ09IYldWNUVCY3VHNWh1ajlPdk8tVFJzYmk4UjltU2ZtR2NjcmI1NEV3X1BQdkVwOTZ0YnhrQ2ZN?oc=5",
+        "sourceUrl": "https://sapl.unai.mg.leg.br",
+        "publishedAt": "2026-09-13T13:34:45.000Z",
+        "source": "sapl.unai.mg.leg.br",
+        "summary": "CÂMARA MUNICIPAL DE UNAÍ-MG sapl.unai.mg.leg.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "CÂMARA MUNICIPAL DE UNAÍ-MG sapl.unai.mg.leg.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
+        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbHAyRUJRNmEtNnVCYkl3UHpaTUxTSHl0VkNYLWZSTlNjSkRWSkgxLWpVODByU3BJRHhEcENfX2xXaDFOMDNqc1lCc0JsNmFFWnNUV19mbnBjeFBFbk9pbHBjMzh6dGw3bXY0aFhhRlk1TFZRTkxOdTcyV3E5SHVYOXJYM1lIRzBhUjRZV1lKaE1mRUw0YjZFdUl1R01qeXVQbHZ5dUZERm41NGpjTHNLYm9TWDYwbk1B?oc=5",
+        "sourceUrl": "https://cnm.org.br",
+        "publishedAt": "2026-09-14T19:49:12.000Z",
+        "source": "Confederação Nacional de Municípios",
+        "summary": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar Confederação Nacional de Municípios",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar Confederação Nacional de Municípios",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xbmp5QnhsUHljTG9sN1pvQmtvWXhXZTg3QXFyZTBFR0JtZUJPV3R5SFdSZ3RSeEUxT3hxWFA5QUNEU1pPcUV3RUtvblFrMWxZWU95Y3lZd2hqVE85Z0Q3WXhCSGlBN1B4M0ZlemE1MUItY0xVNnc?oc=5",
+        "sourceUrl": "https://viajuris.tce.pr.gov.br",
+        "publishedAt": "2026-09-12T19:19:20.000Z",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "34f2e231099d6bc75ce83425f39ce1e3dc6f6a4aac497482eefddbe33185f2f6": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mUG80SHJBXzRsam8ydUpFb1J2bzBFaklRMFQ2dE54dUJLU1RYY3FNVVRTSFRVY2x3ZXVYem9qLS1Vc1kyUFBOSloxTlVBQUZUQW1ULXRRMjR0NVpnLUs1QlBnaTlIdGRENDA0OTBWRWJUOEF3MkE?oc=5",
+        "sourceUrl": "https://viajuris.tce.pr.gov.br",
+        "publishedAt": "2026-09-10T00:34:23.000Z",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0wRE1YNUpNMTl3ZUxZUk5VWXpJTzdJWkxiNmk2UHlKak4zR0NMeFEyNTBDY2xrSkRhMGVlTFpzWDN2bkZFWENHMml4VTNCSFJPWkZLOEJSVmlCc1dqY3dqckxKWWhPLWtDOVVqQjI0RUFaT2ZPY3c?oc=5",
+        "sourceUrl": "https://viajuris.tce.pr.gov.br",
+        "publishedAt": "2026-09-13T09:08:08.000Z",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a01a83c0cedc579416617fd7d41ba9be8d19b2062d37a1584462884a1c06c6aa": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
+        "url": "https://consorcioconiape.pe.gov.br/2026/09/10/coniape-firma-parceria-com-o-ministerio-da-agricultura-e-pecuaria-do-governo-federal/",
+        "publishedAt": "2026-09-10T14:22:53.000Z",
+        "source": "CONIAPE",
+        "sourceUrl": "https://consorcioconiape.pe.gov.br/feed/",
+        "stateCode": "PE",
+        "entityName": "Consórcio Público Intermunicipal do Agreste Pernambucano e Fronteiras",
+        "entityAlias": "CONIAPE",
+        "summary": "Durante a Agrinordeste, que ocorreu nos 3 a 6 de setembro de 2026, no Centro de Convenções de Pernambuco, o CONIAPE firmou parceria com o Ministério da Agricultura e Pecuária (MAPA) para avançar na implementação do SISBI – Sistema Brasileiro de Inspeção de Produtos de Origem Animal, através da superintende, Cláudia Guerreiro, do NIESMA – NÚCLEO INTERMUNICIPAL DE ENGENHARIA, SANEAMENTO BÁSICO E MEIO AMBIENTE. A iniciativa tem como objetivo fortalecer as agroindústrias dos municípios consorciados, ampliando as oportunidades de comercialização e contribuindo para que produtos de origem animal possam alcançar mercados em todo o território nacional, conforme as exigências do sistema. A parceria representa um importante passo para o desenvolvimento das agroindústrias, a valorização da produção local e o fortalecimento da economia dos municípios consorciados ao CONIAPE. Mais mercado para quem produz. Mais oportunidades para os municípios. Mais desenvolvimento para a nossa região.",
+        "classification": {
+          "category": "ATUAÇÃO",
+          "emoji": "📰",
+          "score": 9,
+          "reasons": [
+            "contexto público forte",
+            "ATUAÇÃO"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Durante a Agrinordeste, que ocorreu nos 3 a 6 de setembro de 2026, no Centro de Convenções de Pernambuco, o CONIAPE firmou parceria com o Ministério da Agricultura e Pecuária (MAPA) para avançar na implementação do SISBI – Sistema Brasileiro de Inspeção de Produtos de Origem Animal, através da superintende, Cláudia Guerreiro, do NIESMA – NÚCLEO INTERMUNICIPAL DE ENGENHARIA, SANEAMENTO BÁSICO E MEIO AMBIENTE. A iniciativa tem como objetivo fortalecer as agroindústrias dos municípios consorciados, ampliando as oportunidades de comercialização e contribuindo para que produtos de origem animal possam alcançar mercados em todo o território nacional, conforme as exigências do sistema. A parceria representa um importante passo para o desenvolvimento das agroindústrias, a valorização da produção local e o fortalecimento da economia dos municípios consorciados ao CONIAPE. Mais mercado para quem produz. Mais oportunidades para os municípios. Mais desenvolvimento para a nossa região.",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
+        "url": "https://fnp.org.br/noticias/item/3949-conexao-urbana-realiza-visitas-tecnicas-na-regiao-metropolitana-do-recife",
+        "publishedAt": "2026-09-11T19:48:27.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "Agenda percorrerá 12 municípios entre 14 e 17 de setembro e será concluída com oficina presencial no dia 18 O projeto Conexão Urbana realizará, entre os dias 14 e 17 de setembro, visitas técnicas nos 12 municípios selecionados da Região Metropolitana do Recife/PE, além de uma oficina de encerramento no dia 18. As atividades têm como objetivo fortalecer a governança local, apresentar os avanços e os próximos passos da iniciativa. A programação é promovida pela Frente Nacional de Prefeitas e Prefeitos (FNP), em parceria com o Sebrae Nacional e o Sebrae Pernambuco. No dia 14, as atividades serão realizadas em Ipojuca, Cabo de Santo Agostinho e Jaboatão dos Guararapes. No dia 15, a programação seguirá por Itamaracá, Itapissuma e Igarassu. No dia 16, será a vez de São Lourenço da Mata, Camaragibe e Paulista. A etapa de visitas será encerrada no dia 17, com agendas em Recife e Olinda. No eixo de desenvolvimento urbano, a equipe apresentará o andamento do diagnóstico do licenciamento edilício e dos códigos de obras de cada um dos municípios. Ainda, serão debatidas as propostas para melhorias e simplificação de procedimentos, melhoria da gestão e ampliação da transparência dos processos. No eixo de inclusão socioprodutiva, as visitas buscarão identificar políticas, serviços e iniciativas de qualificação profissional, empreendedorismo e geração de renda. Também serão discutidas possibilidades de articulação entre as áreas de assistência social, trabalho e desenvolvimento econômico. A oficina será realizada no dia 18 de setembro, das 8h30 às 12h, na sede do Sebrae Pernambuco, reunindo secretárias e secretários municipais das áreas de desenvolvimento urbano, obras, infraestrutura, meio ambiente, desenvolvimento econômico, assistência social, renda e trabalho. Sobre o Conexão Urban",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Agenda percorrerá 12 municípios entre 14 e 17 de setembro e será concluída com oficina presencial no dia 18 O projeto Conexão Urbana realizará, entre os dias 14 e 17 de setembro, visitas técnicas nos 12 municípios selecionados da Região Metropolitana do Recife/PE, além de uma oficina de encerramento no dia 18. As atividades têm como objetivo fortalecer a governança local, apresentar os avanços e os próximos passos da iniciativa. A programação é promovida pela Frente Nacional de Prefeitas e Prefeitos (FNP), em parceria com o Sebrae Nacional e o Sebrae Pernambuco. No dia 14, as atividades serão realizadas em Ipojuca, Cabo de Santo Agostinho e Jaboatão dos Guararapes. No dia 15, a programação seguirá por Itamaracá, Itapissuma e Igarassu. No dia 16, será a vez de São Lourenço da Mata, Camaragibe e Paulista. A etapa de visitas será encerrada no dia 17, com agendas em Recife e Olinda. No eixo de desenvolvimento urbano, a equipe apresentará o andamento do diagnóstico do licenciamento edilício e dos códigos de obras de cada um dos municípios. Ainda, serão debatidas as propostas para melhorias e simplificação de procedimentos, melhoria da gestão e ampliação da transparência dos processos. No eixo de inclusão socioprodutiva, as visitas buscarão identificar políticas, serviços e iniciativas de qualificação profissional, empreendedorismo e geração de renda. Também serão discutidas possibilidades de articulação entre as áreas de assistência social, trabalho e desenvolvimento econômico. A oficina será realizada no dia 18 de setembro, das 8h30 às 12h, na sede do Sebrae Pernambuco, reunindo secretárias e secretários municipais das áreas de desenvolvimento urbano, obras, infraestrutura, meio ambiente, desenvolvimento econômico, assistência social, renda e trabalho. Sobre o Conexão Urban",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
+        "url": "https://fnp.org.br/noticias/item/3948-reforma-tributaria-eleva-teto-referencial-de-todos-os-auditores-municipais-ao-de-ministro-do-stf",
+        "publishedAt": "2026-09-12T11:00:00.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "Em função da articulação de entidades representativas dos auditores fiscais junto ao Congresso Nacional, a Reforma Tributária foi aprovada com uma alteração do teto referencial dos servidores ativos e inativos de carreira das administrações tributárias dos municípios, equiparando ao limite da remuneração de ministro do Supremo Tribunal Federal (STF), hoje em R$ 46.366,19 . Atualmente, a remuneração está limitada ao subsídio do chefe do executivo municipal. A partir de 1° de janeiro de 2027, os auditores municipais poderão ter o mesmo teto dos servidores da União, caso não haja legislação municipal estabelecendo um subteto remuneratório. Ou seja, a ausência de previsão do limite remuneratório em legislação municipal remeterá os auditores ao novo limite constitucional. Parecer jurídico encomendado pela Frente Nacional de Prefeitas e Prefeitos (FNP) esclarece que o novo teto constitucional é uma norma autorizativa. O STF pacificou que a alteração do teto não obriga municípios a pagarem salários superiores ao estipulado na legislação local, em respeito a autonomia dos entes subnacionais. É recomendável que o município tenha no seu ordenamento jurídico a tabela remuneratória (incluindo gratificações e outras verbas de natureza indenizatória) e a definição do subteto para a carreira especificamente, além da previsão do possível aumento de despesas nas legislações orçamentárias com a eventual aplicação do novo teto federal. A FNP alerta que eventual pagamento de valores retidos no abate-teto ou a concessão de reajustes, sem previsão na lei municipal de diretrizes orçamentárias e sem prévia dotação, configura vício de inconstitucionalidade formal e ilegalidade. Gestores que descumprirem tais parâmetros sujeitam-se a responsabilização por Crime de Responsabilidade, Ação de Impro",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Em função da articulação de entidades representativas dos auditores fiscais junto ao Congresso Nacional, a Reforma Tributária foi aprovada com uma alteração do teto referencial dos servidores ativos e inativos de carreira das administrações tributárias dos municípios, equiparando ao limite da remuneração de ministro do Supremo Tribunal Federal (STF), hoje em R$ 46.366,19 . Atualmente, a remuneração está limitada ao subsídio do chefe do executivo municipal. A partir de 1° de janeiro de 2027, os auditores municipais poderão ter o mesmo teto dos servidores da União, caso não haja legislação municipal estabelecendo um subteto remuneratório. Ou seja, a ausência de previsão do limite remuneratório em legislação municipal remeterá os auditores ao novo limite constitucional. Parecer jurídico encomendado pela Frente Nacional de Prefeitas e Prefeitos (FNP) esclarece que o novo teto constitucional é uma norma autorizativa. O STF pacificou que a alteração do teto não obriga municípios a pagarem salários superiores ao estipulado na legislação local, em respeito a autonomia dos entes subnacionais. É recomendável que o município tenha no seu ordenamento jurídico a tabela remuneratória (incluindo gratificações e outras verbas de natureza indenizatória) e a definição do subteto para a carreira especificamente, além da previsão do possível aumento de despesas nas legislações orçamentárias com a eventual aplicação do novo teto federal. A FNP alerta que eventual pagamento de valores retidos no abate-teto ou a concessão de reajustes, sem previsão na lei municipal de diretrizes orçamentárias e sem prévia dotação, configura vício de inconstitucionalidade formal e ilegalidade. Gestores que descumprirem tais parâmetros sujeitam-se a responsabilização por Crime de Responsabilidade, Ação de Impro",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "00ecea0e3db92dbffe5198e7dd9f7e1d0285edf7461a98c450ca99e7a54a9b01": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "FNP se reúne com a Secretaria de Educação Básica do MEC para fortalecer agenda municipalista",
+        "url": "https://fnp.org.br/noticias/item/3946-fnp-se-reune-com-a-secretaria-de-educacao-basica-do-mec-para-fortalecer-agenda-municipalista",
+        "publishedAt": "2026-09-11T17:28:35.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "A Comissão Permanente de Educação da Frente Nacional de Prefeitas e Prefeitos (FNP) se reuniu com Katia Schweickardt, secretária Nacional de Educação Básica do Ministério da Educaçã, para discutir a aplicabilidade da Resolução nº 27/2026 da Comissão Intergovernamental de Financiamento para Educação Básica de Qualidade (CIF) e articular o apoio do MEC às iniciativas municipalistas. Marcos Guarino, prefeito de Muriaé/MG e vice-presidente de Alimentação Escolar da FNP, apresentou a atuação da entidade, o trabalho da comissão e o Programa Embaixadores da Educação, desenvolvido em parceria com a Fundação Lemann e apoio técnico do Centro Lemann. Também participaram Claudinha Jardim, prefeita de Guaíba/RS, e Jussara Menicucci, prefeita de Lavras/MG; as secretárias de educação Laís Costa de Oliveira de Lavras/SP e Paula Trevizolli de Ferraz de Vasconcelos/SP; a secretária adjunta Simone Marreiros de Muriaé/MG, além do diretor de Monitoramento, Avaliação e Manutenção da Educação Básica, Valdoir Wathier, e da coordenadora-geral de Manutenção da Educação Básica, Michele Lessa. Indicador de arrecadação tributária Ao apresentar a Resolução nº 27/2026, Valdoir Wathier explicou que a norma integra os aprimoramentos do novo Fundeb e trata do indicador de utilização do potencial de arrecadação tributária dos entes federativos, que será combinado ao nível socioeconômico dos estudantes atendidos e à disponibilidade de recursos vinculados à educação. A finalidade é considerar se o município institui e efetivamente arrecada os tributos de sua competência. A metodologia está sendo construída pelo Ministério da Fazenda, em interlocução com o MEC. Para 2027, o ponderador será unitário para todas as redes, sem alteração na distribuição dos recursos do fundo. Eventuais impactos financeiros só po",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Comissão Permanente de Educação da Frente Nacional de Prefeitas e Prefeitos (FNP) se reuniu com Katia Schweickardt, secretária Nacional de Educação Básica do Ministério da Educaçã, para discutir a aplicabilidade da Resolução nº 27/2026 da Comissão Intergovernamental de Financiamento para Educação Básica de Qualidade (CIF) e articular o apoio do MEC às iniciativas municipalistas. Marcos Guarino, prefeito de Muriaé/MG e vice-presidente de Alimentação Escolar da FNP, apresentou a atuação da entidade, o trabalho da comissão e o Programa Embaixadores da Educação, desenvolvido em parceria com a Fundação Lemann e apoio técnico do Centro Lemann. Também participaram Claudinha Jardim, prefeita de Guaíba/RS, e Jussara Menicucci, prefeita de Lavras/MG; as secretárias de educação Laís Costa de Oliveira de Lavras/SP e Paula Trevizolli de Ferraz de Vasconcelos/SP; a secretária adjunta Simone Marreiros de Muriaé/MG, além do diretor de Monitoramento, Avaliação e Manutenção da Educação Básica, Valdoir Wathier, e da coordenadora-geral de Manutenção da Educação Básica, Michele Lessa. Indicador de arrecadação tributária Ao apresentar a Resolução nº 27/2026, Valdoir Wathier explicou que a norma integra os aprimoramentos do novo Fundeb e trata do indicador de utilização do potencial de arrecadação tributária dos entes federativos, que será combinado ao nível socioeconômico dos estudantes atendidos e à disponibilidade de recursos vinculados à educação. A finalidade é considerar se o município institui e efetivamente arrecada os tributos de sua competência. A metodologia está sendo construída pelo Ministério da Fazenda, em interlocução com o MEC. Para 2027, o ponderador será unitário para todas as redes, sem alteração na distribuição dos recursos do fundo. Eventuais impactos financeiros só po",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "475bff69568a7ede517b7ef0a3983674bc7673884c88267509c5ec7feebb2365": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "FNP leva debate da Reforma Tributária aos municípios paranaenses",
+        "url": "https://fnp.org.br/noticias/item/3945-fnp-leva-debate-da-reforma-tributaria-aos-municipios-paranaenses",
+        "publishedAt": "2026-09-11T16:19:42.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "Curitiba recebeu nesta sexta, 11/9, a quinta edição do evento \"Reforma Tributária: Estratégias para o futuro das cidades\", promovido pela Frente Nacional de Prefeitas e Prefeitos (FNP). O evento reuniu 16 prefeitos de diversas regiões do Paraná, entre eles Rodolfo Mota (Apucarana), Nina Singer (São José dos Pinhais), Silvio Barros (Maringá), Marquinhos (Piraquara), Maurício Rivabem (Campo Largo), Ezequiel Bestel Jr. (Doutor Ulysses), Leandro Antônio (Bolsa Nova), Mostarda (Contenda), Daniel Lovato (Almirante Tamandaré), Bozinha (Campo Magro), Hélder Lazarotto (Colombo) e Doutor Gustavo (Araucária). Liderado pelo presidente da FNP, Sebastião Melo (prefeito de Porto Alegre/RS), o evento tem rodado o país discutindo os reflexos da Reforma nos municípios. \"Esse assunto precisa de uma reflexão profunda. Na prática, o novo modelo pode significar menos recursos para as cidades e, sem dinheiro, não é possível manter serviços essenciais\", explicou Melo na abertura da reunião. \"Somos municipalistas, temos as mesmas dores e temos que refletir de forma profunda sobre esse tema. Como as cidades vão atrair investimentos após a reforma, por exemplo?\". Eduardo Pimentel, prefeito de Curitiba, também se mostrou preocupado com o futuro das cidades no processo de adoção do IBS (Imposto sobre Bens e Serviços), junção do ISS e do ICM, atuais impostos municipal e estadual, respectivamente. \"É muito importante ter esse trabalho técnico de discutir, depurar e entender a Reforma Tributária e o papel da FNP nessa troca de informações é fundamental\", disse Pimentel. Estratégias conjuntas O fortalecimento da participação dos municípios nas discussões foi a tônica do debate com os prefeitos pedindo união em torno do tema. \"Ninguém passará por esse processo sozinho e as informações precisam ser compa",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Curitiba recebeu nesta sexta, 11/9, a quinta edição do evento \"Reforma Tributária: Estratégias para o futuro das cidades\", promovido pela Frente Nacional de Prefeitas e Prefeitos (FNP). O evento reuniu 16 prefeitos de diversas regiões do Paraná, entre eles Rodolfo Mota (Apucarana), Nina Singer (São José dos Pinhais), Silvio Barros (Maringá), Marquinhos (Piraquara), Maurício Rivabem (Campo Largo), Ezequiel Bestel Jr. (Doutor Ulysses), Leandro Antônio (Bolsa Nova), Mostarda (Contenda), Daniel Lovato (Almirante Tamandaré), Bozinha (Campo Magro), Hélder Lazarotto (Colombo) e Doutor Gustavo (Araucária). Liderado pelo presidente da FNP, Sebastião Melo (prefeito de Porto Alegre/RS), o evento tem rodado o país discutindo os reflexos da Reforma nos municípios. \"Esse assunto precisa de uma reflexão profunda. Na prática, o novo modelo pode significar menos recursos para as cidades e, sem dinheiro, não é possível manter serviços essenciais\", explicou Melo na abertura da reunião. \"Somos municipalistas, temos as mesmas dores e temos que refletir de forma profunda sobre esse tema. Como as cidades vão atrair investimentos após a reforma, por exemplo?\". Eduardo Pimentel, prefeito de Curitiba, também se mostrou preocupado com o futuro das cidades no processo de adoção do IBS (Imposto sobre Bens e Serviços), junção do ISS e do ICM, atuais impostos municipal e estadual, respectivamente. \"É muito importante ter esse trabalho técnico de discutir, depurar e entender a Reforma Tributária e o papel da FNP nessa troca de informações é fundamental\", disse Pimentel. Estratégias conjuntas O fortalecimento da participação dos municípios nas discussões foi a tônica do debate com os prefeitos pedindo união em torno do tema. \"Ninguém passará por esse processo sozinho e as informações precisam ser compa",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "44c3475b4abe5ff9287ba07e7130980831dd6ab42fc2dd1474f7e333df0303a6": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "FNP reúne municípios para debater drenagem urbana e estratégias de adaptação às mudanças climáticas",
+        "url": "https://fnp.org.br/noticias/item/3944-fnp-reune-municipios-para-debater-drenagem-urbana-e-estrategias-de-adaptacao-as-mudancas-climaticas",
+        "publishedAt": "2026-09-11T13:41:58.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "A Comissão de Adaptação, Mitigação e Prevenção de Desastres (CAMP) da Frente Nacional de Prefeitas e Prefeitos (FNP) promoveu, nesta quinta (10), o webinário ‘Drenagem urbana e resiliência municipal: gestão das águas pluviais frente às mudanças climáticas’ . O encontro reuniu experiências concretas de cidades que já investem em soluções de drenagem e resiliência hídrica e discutiu caminhos para uma atuação integrada entre municípios, governo federal e organizações parceiras na busca por soluções mais eficientes para enfrentar eventos climáticos extremos. Guilherme Guimarães, prefeito de Montes Claros/MG e vice-presidente de segurança hídrica da FNP, destacou a importância da troca de experiências entre os municípios e defendeu a revisão dos modelos de drenagem adotados no país. “É uma oportunidade de compartilhar conhecimento e aprender. Esse assunto permeia todas as cidades, principalmente pela ausência de planejamento ao longo do tempo e pelas características do nosso país. Precisamos rever nossos modelos de drenagem”, afirmou. E Silvio Barros, prefeito de Maringá/PR e presidente da CAMP, reforçou que os desafios relacionados aos eventos climáticos extremos afetam municípios de todo o país, especialmente aqueles localizados em áreas que podem registrar chuvas mais intensas em períodos influenciados pelo El Niño. O superintendente de Regulação de Saneamento Básico da Agência Nacional de Águas e Saneamento Básico (ANA), Silvano Silvério da Costa, apresentou o diagnóstico nacional do déficit de infraestrutura de drenagem no Brasil, destacou como o Marco Legal do Saneamento Básico pode contribuir para o enfrentamento desses desafios e apresentou a trilha regulatória do manejo de águas pluviais. Leonardo Santos Salles Varallo, da Coordenação-Geral de Planos de Riscos e SBN",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Comissão de Adaptação, Mitigação e Prevenção de Desastres (CAMP) da Frente Nacional de Prefeitas e Prefeitos (FNP) promoveu, nesta quinta (10), o webinário ‘Drenagem urbana e resiliência municipal: gestão das águas pluviais frente às mudanças climáticas’ . O encontro reuniu experiências concretas de cidades que já investem em soluções de drenagem e resiliência hídrica e discutiu caminhos para uma atuação integrada entre municípios, governo federal e organizações parceiras na busca por soluções mais eficientes para enfrentar eventos climáticos extremos. Guilherme Guimarães, prefeito de Montes Claros/MG e vice-presidente de segurança hídrica da FNP, destacou a importância da troca de experiências entre os municípios e defendeu a revisão dos modelos de drenagem adotados no país. “É uma oportunidade de compartilhar conhecimento e aprender. Esse assunto permeia todas as cidades, principalmente pela ausência de planejamento ao longo do tempo e pelas características do nosso país. Precisamos rever nossos modelos de drenagem”, afirmou. E Silvio Barros, prefeito de Maringá/PR e presidente da CAMP, reforçou que os desafios relacionados aos eventos climáticos extremos afetam municípios de todo o país, especialmente aqueles localizados em áreas que podem registrar chuvas mais intensas em períodos influenciados pelo El Niño. O superintendente de Regulação de Saneamento Básico da Agência Nacional de Águas e Saneamento Básico (ANA), Silvano Silvério da Costa, apresentou o diagnóstico nacional do déficit de infraestrutura de drenagem no Brasil, destacou como o Marco Legal do Saneamento Básico pode contribuir para o enfrentamento desses desafios e apresentou a trilha regulatória do manejo de águas pluviais. Leonardo Santos Salles Varallo, da Coordenação-Geral de Planos de Riscos e SBN",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "34819e26868a429627b6d1613444cef9a15ec93f80850f63ee5ed083ea89487c": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Fórum Nacional de mobilidade debate novos modelos de financiamento para o transporte público",
+        "url": "https://fnp.org.br/noticias/item/3943-forum-nacional-de-mobilidade-debate-novos-modelos-de-financiamento-para-o-transporte-publico",
+        "publishedAt": "2026-09-10T19:50:17.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "Novos modelos de financiamento para o setor de transporte foram discutidos no primeiro dia de debates da 126° Reunião do Fórum Nacional de Secretários, Secretárias e Dirigentes de Mobilidade Urbana, que acontece nesta quinta e sexta (10 e 11/9) em Florianópolis/SC. O evento é realizado pelo Fórum, em parceria com a Prefeitura de Florianópolis/SC e a Associação Nacional de Transportes Públicos (ANTP). Para prefeitos/as, sem fonte permanente, governança e transparência, a modernização não sairá do papel e o transporte público continuará pressionando os cofres municipais. Os dados mostram que a mobilidade não fecha a conta sozinha e por isso, o prefeito Sebastião Melo (Porto Alegre/RS), presidente da Frente Nacional de Prefeitas e Prefeitos (FNP), defendeu a criação de um sistema integrado e com financiamento permanente compartilhado entre governos locais, estaduais e federal. \"O sistema precisa de uma passagem que caiba no bolso do cidadão. Do jeito que está não dá para continuar. Estamos perdendo passageiros e fica inviável pagar o sistema somente com a tarifa. Nenhum prefeito é contra a Tarifa Zero, por exemplo, mas quem paga essa conta?\", indagou Melo. Melo pediu ainda que prefeitos/as se mobilizem para derrubar os vetos do Marco legal. Pedido reforçado por Topázio Neto, prefeito de Florianópolis/SC e vice-presidente de Empreendedorismo da FNP. \"Temos um sistema que é caro, com muitos custos indiretos, mas que pode ser melhorado. É preciso também ter uma atuação mais forte dos governos do estado e federal. Temos que rever esses vetos. O cidadão comum precisa debater o transporte coletivo, que nos últimos anos vem perdendo relevância\". O financiamento tripartite não prevaleceu na sanção do Marco Legal do Transporte Público. Durante a tramitação do projeto, a FNP se posi",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Novos modelos de financiamento para o setor de transporte foram discutidos no primeiro dia de debates da 126° Reunião do Fórum Nacional de Secretários, Secretárias e Dirigentes de Mobilidade Urbana, que acontece nesta quinta e sexta (10 e 11/9) em Florianópolis/SC. O evento é realizado pelo Fórum, em parceria com a Prefeitura de Florianópolis/SC e a Associação Nacional de Transportes Públicos (ANTP). Para prefeitos/as, sem fonte permanente, governança e transparência, a modernização não sairá do papel e o transporte público continuará pressionando os cofres municipais. Os dados mostram que a mobilidade não fecha a conta sozinha e por isso, o prefeito Sebastião Melo (Porto Alegre/RS), presidente da Frente Nacional de Prefeitas e Prefeitos (FNP), defendeu a criação de um sistema integrado e com financiamento permanente compartilhado entre governos locais, estaduais e federal. \"O sistema precisa de uma passagem que caiba no bolso do cidadão. Do jeito que está não dá para continuar. Estamos perdendo passageiros e fica inviável pagar o sistema somente com a tarifa. Nenhum prefeito é contra a Tarifa Zero, por exemplo, mas quem paga essa conta?\", indagou Melo. Melo pediu ainda que prefeitos/as se mobilizem para derrubar os vetos do Marco legal. Pedido reforçado por Topázio Neto, prefeito de Florianópolis/SC e vice-presidente de Empreendedorismo da FNP. \"Temos um sistema que é caro, com muitos custos indiretos, mas que pode ser melhorado. É preciso também ter uma atuação mais forte dos governos do estado e federal. Temos que rever esses vetos. O cidadão comum precisa debater o transporte coletivo, que nos últimos anos vem perdendo relevância\". O financiamento tripartite não prevaleceu na sanção do Marco Legal do Transporte Público. Durante a tramitação do projeto, a FNP se posi",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "02984a86f07be5e4bb0918702dbf843e95008afbe36220670121cfe4dbd2fa9f": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Diálogos Finanças Municipais debate impactos cadastrais da Reforma Tributária do Consumo",
+        "url": "https://fnp.org.br/noticias/item/3942-dialogos-financas-municipais-debate-impactos-cadastrais-da-reforma-tributaria-do-consumo",
+        "publishedAt": "2026-09-09T19:42:28.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "A FNP, em parceria com a Associação Brasileira das Secretarias de Finanças das Capitais (ABRASF) e o Fórum Nacional de Secretários de Fazenda e Finanças, deu início, nesta quarta-feira (9/9), à série de webinários Diálogos Finanças Municipais , com um encontro dedicado aos impactos cadastrais da Reforma Tributária do Consumo (RTC) para os municípios. A atividade reuniu gestores públicos, representantes das áreas de Fazenda e Finanças e especialistas para discutir as mudanças que já estão sendo implementadas e os caminhos necessários para que os municípios estejam preparados para as novas exigências cadastrais e tecnológicas. Na abertura do encontro, Rodolfo Mota, prefeito de Apucarana/PR e vice-presidente de Relações Institucionais da FNP, destacou que o período de transição exige diálogo, cooperação e atuação conjunta entre os diferentes níveis de governo. “Ninguém vai conseguir enfrentar esse momento de transição do modelo tributário brasileiro sozinho, nós vamos precisar uns dos outros”, destacou. Rodolfo Mota também ressaltou a relação direta entre uma gestão fiscal eficiente e a capacidade dos governos municipais de garantir serviços e políticas públicas à população. “Ninguém cuida das pessoas se não cuidar do dinheiro. Não existe política pública de graça, e aqui vamos aprender a cuidar desse dinheiro”. Michele Roncalio, secretária de Fazenda de Florianópolis/SC e presidente da ABRASF, também participou do encontro e reforçou a importância de ampliar o acesso dos municípios a informações e conhecimentos técnicos para que estejam preparados para as mudanças decorrentes da reforma. A apresentação técnica foi conduzida por Flávio Andrade, gerente de Cadastro Tributário da Prefeitura de Belo Horizonte/MG, e moderada por Henrique Valentim, Secretário da Fazenda de Serr",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A FNP, em parceria com a Associação Brasileira das Secretarias de Finanças das Capitais (ABRASF) e o Fórum Nacional de Secretários de Fazenda e Finanças, deu início, nesta quarta-feira (9/9), à série de webinários Diálogos Finanças Municipais , com um encontro dedicado aos impactos cadastrais da Reforma Tributária do Consumo (RTC) para os municípios. A atividade reuniu gestores públicos, representantes das áreas de Fazenda e Finanças e especialistas para discutir as mudanças que já estão sendo implementadas e os caminhos necessários para que os municípios estejam preparados para as novas exigências cadastrais e tecnológicas. Na abertura do encontro, Rodolfo Mota, prefeito de Apucarana/PR e vice-presidente de Relações Institucionais da FNP, destacou que o período de transição exige diálogo, cooperação e atuação conjunta entre os diferentes níveis de governo. “Ninguém vai conseguir enfrentar esse momento de transição do modelo tributário brasileiro sozinho, nós vamos precisar uns dos outros”, destacou. Rodolfo Mota também ressaltou a relação direta entre uma gestão fiscal eficiente e a capacidade dos governos municipais de garantir serviços e políticas públicas à população. “Ninguém cuida das pessoas se não cuidar do dinheiro. Não existe política pública de graça, e aqui vamos aprender a cuidar desse dinheiro”. Michele Roncalio, secretária de Fazenda de Florianópolis/SC e presidente da ABRASF, também participou do encontro e reforçou a importância de ampliar o acesso dos municípios a informações e conhecimentos técnicos para que estejam preparados para as mudanças decorrentes da reforma. A apresentação técnica foi conduzida por Flávio Andrade, gerente de Cadastro Tributário da Prefeitura de Belo Horizonte/MG, e moderada por Henrique Valentim, Secretário da Fazenda de Serr",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "9c5b9a050ee29886340c0e637f538ec941595e3ce7198ffc71599d5d898a22c6": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "FNP lança coalizão de cidades pela segurança no trânsito",
+        "url": "https://fnp.org.br/noticias/item/3941-fnp-lanca-coalizao-de-cidades-pela-seguranca-no-transito",
+        "publishedAt": "2026-09-09T17:40:28.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "A Frente Nacional de Prefeitas e Prefeitos (FNP) lançou, nesta terça (8/9), a Coalizão de Cidades pela Redução de Mortes e Lesões no Trânsito, iniciativa que reúne governos locais e organizações parceiras para fortalecer a segurança viária como uma agenda permanente das cidades brasileiras. Liderada por Dário Saadi, prefeito de Campinas/SP e presidente da Comissão Permanente de Saúde da FNP, a coalizão será um espaço de aprendizado, intercâmbio de experiências, fortalecimento institucional e mobilização política. Segundo dados do Sistema de Informações sobre Mortalidade do Ministério da Saúde, 37.150 pessoas perderam a vida no trânsito no Brasil em 2024, uma média de 101 mortes por dia. O país também registra cerca de 160 mil feridos graves por ano. Além disso, o impacto econômico dos sinistros é estimado em aproximadamente 3,8% do Produto Interno Bruto (PIB). Para Dário Saadi, a segurança no trânsito no Brasil é uma epidemia que precisa ser enfrentada de forma estratégica pelos municípios. “As cidades sofrem as consequências. A sobrecarga chega diretamente à rede municipal de saúde, com internações prolongadas e pressão sobre hospitais”. O prefeito ressaltou ainda que medidas como controle de velocidade e fiscalização enfrentam resistência, mas são fundamentais para salvar vidas. “São questões vistas como impopulares, mas as estatísticas de mortes e acidentes graves são piores”, afirmou. Os impactos se concentram especialmente nas cidades médias e grandes. Em 2025, dados de internações por acidentes terrestres no SUS mostram que 59% dos pacientes eram moradores de municípios com mais de 80 mil habitantes e 80% das internações ocorreram em hospitais localizados nessas cidades . Em relação à mortalidade, 54% dos óbitos foram de moradores de municípios acima de 80 mil hab",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Frente Nacional de Prefeitas e Prefeitos (FNP) lançou, nesta terça (8/9), a Coalizão de Cidades pela Redução de Mortes e Lesões no Trânsito, iniciativa que reúne governos locais e organizações parceiras para fortalecer a segurança viária como uma agenda permanente das cidades brasileiras. Liderada por Dário Saadi, prefeito de Campinas/SP e presidente da Comissão Permanente de Saúde da FNP, a coalizão será um espaço de aprendizado, intercâmbio de experiências, fortalecimento institucional e mobilização política. Segundo dados do Sistema de Informações sobre Mortalidade do Ministério da Saúde, 37.150 pessoas perderam a vida no trânsito no Brasil em 2024, uma média de 101 mortes por dia. O país também registra cerca de 160 mil feridos graves por ano. Além disso, o impacto econômico dos sinistros é estimado em aproximadamente 3,8% do Produto Interno Bruto (PIB). Para Dário Saadi, a segurança no trânsito no Brasil é uma epidemia que precisa ser enfrentada de forma estratégica pelos municípios. “As cidades sofrem as consequências. A sobrecarga chega diretamente à rede municipal de saúde, com internações prolongadas e pressão sobre hospitais”. O prefeito ressaltou ainda que medidas como controle de velocidade e fiscalização enfrentam resistência, mas são fundamentais para salvar vidas. “São questões vistas como impopulares, mas as estatísticas de mortes e acidentes graves são piores”, afirmou. Os impactos se concentram especialmente nas cidades médias e grandes. Em 2025, dados de internações por acidentes terrestres no SUS mostram que 59% dos pacientes eram moradores de municípios com mais de 80 mil habitantes e 80% das internações ocorreram em hospitais localizados nessas cidades . Em relação à mortalidade, 54% dos óbitos foram de moradores de municípios acima de 80 mil hab",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a801ef042db512a167f2292278bcbe247597cc0d31131e8ab9c34d964a725b45": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "FNP defende criação do PIX Precatório em audiência no CNJ",
+        "url": "https://fnp.org.br/noticias/item/3940-fnp-defende-criacao-do-pix-precatorio-em-audiencia-no-cnj",
+        "publishedAt": "2026-09-09T17:41:00.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "Em audiência pública no Conselho Nacional de Justiça (CNJ) para debater a gestão e o pagamento de precatórios, a Frente Nacional de Prefeitas e Prefeitos (FNP) defendeu a criação do PIX Precatório – o pagamento direto de dívidas entre os entes federados e os credores. O evento aconteceu nesta quarta (9/9) com objetivo de disciplinar os regimes de pagamento e aperfeiçoar os mecanismos de redução do estoque de precatórios, a transparência e a organização nacional de dados por meio de resolução do Conselho. A FNP foi representada por Gilvan Ferreira, prefeito de Santo André/SP e presidente da Comissão de Finanças Públicas e Reforma Tributária, que chamou atenção para o tempo prolongado entre a saída dos recursos do caixa das prefeituras e o recebimento do valor pelo credor. “Todos querem o resultado final: a Justiça, o credor, os advogados e também os municípios. Nós sabemos da nossa responsabilidade e queremos cumprir nossas obrigações. Se o recurso já saiu da conta da prefeitura, precisamos ter mecanismos para que ele chegue rapidamente à ponta e que a baixa seja registrada no sistema da Justiça. O Brasil já conta com tecnologia para isso”, defendeu Gilvan. Previsibilidade A FNP também defendeu a preservação da previsibilidade para o pagamento de precatórios previsto na Emenda Constitucional n° 136/2025. Gilvan alertou que a regulamentação deve manter os limites de comprometimento determinados de 1% a 5%, conforme o estoque da dívida, garantindo aos municípios a possibilidade de planejamento orçamentário. “Queremos pagar precatórios, assim como queremos melhorar a saúde, a educação, a mobilidade urbana e a segurança pública. Por isso, precisamos encontrar o equilíbrio entre cumprir o pagamento dos precatórios — que é uma obrigação que queremos honrar — e garantir a suste",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Em audiência pública no Conselho Nacional de Justiça (CNJ) para debater a gestão e o pagamento de precatórios, a Frente Nacional de Prefeitas e Prefeitos (FNP) defendeu a criação do PIX Precatório – o pagamento direto de dívidas entre os entes federados e os credores. O evento aconteceu nesta quarta (9/9) com objetivo de disciplinar os regimes de pagamento e aperfeiçoar os mecanismos de redução do estoque de precatórios, a transparência e a organização nacional de dados por meio de resolução do Conselho. A FNP foi representada por Gilvan Ferreira, prefeito de Santo André/SP e presidente da Comissão de Finanças Públicas e Reforma Tributária, que chamou atenção para o tempo prolongado entre a saída dos recursos do caixa das prefeituras e o recebimento do valor pelo credor. “Todos querem o resultado final: a Justiça, o credor, os advogados e também os municípios. Nós sabemos da nossa responsabilidade e queremos cumprir nossas obrigações. Se o recurso já saiu da conta da prefeitura, precisamos ter mecanismos para que ele chegue rapidamente à ponta e que a baixa seja registrada no sistema da Justiça. O Brasil já conta com tecnologia para isso”, defendeu Gilvan. Previsibilidade A FNP também defendeu a preservação da previsibilidade para o pagamento de precatórios previsto na Emenda Constitucional n° 136/2025. Gilvan alertou que a regulamentação deve manter os limites de comprometimento determinados de 1% a 5%, conforme o estoque da dívida, garantindo aos municípios a possibilidade de planejamento orçamentário. “Queremos pagar precatórios, assim como queremos melhorar a saúde, a educação, a mobilidade urbana e a segurança pública. Por isso, precisamos encontrar o equilíbrio entre cumprir o pagamento dos precatórios — que é uma obrigação que queremos honrar — e garantir a suste",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "6e75cb4ca4e23f84269d89274ff6ca445e9b8c0fa861fd96d6ef64c70a7fabad": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Importância de governança integrada e ações conjuntas para municípios é tema de seminário",
+        "url": "https://fnp.org.br/noticias/item/3939-importancia-de-governanca-integrada-e-acoes-conjuntas-para-municipios-e-tema-de-seminario",
+        "publishedAt": "2026-09-08T18:57:54.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "Sebastião Melo, prefeito da capital gaúcha e presidente da Frente Nacional de Prefeitas e Prefeitos (FNP), participou, nesta terça (8), do Seminário Internacional ‘Desafios para o Crescimento Econômico, Sustentável e Resiliente na Região Metropolitana de Porto Alegre ’, promovido pela Associação dos Municípios da Região Metropolitana de Porto Alegre (Granpal), para debater estratégias de gestão integrada para as cidades brasileiras. Na abertura do evento, Melo ressaltou a necessidade de fortalecer a governança metropolitana diante de desafios que ultrapassam os limites administrativos dos municípios e da necessidade de transformar o debate sobre sustentabilidade em ações concretas. “É muito importante falar de governança metropolitana porque os problemas não acabam na divisa dos municípios. Desafios como as mudanças climáticas e a mobilidade urbana devem ser administrados em conjunto”, destacou. No painel ‘ Como a governança metropolitana pode contribuir para que a região se transforme em um território virtuoso de crescimento econômico com resiliência’ , Douglas Martello, prefeito de Alvorada/RS e presidente da Granpal, destacou a importância da parceria com a FNP e ressaltou a necessidade de ampliar a participação de diferentes setores na construção de uma estratégia para o fortalecimento da Região Metropolitana. Conectando Cidades Como presidente da FNP, Melo falou sobre a importância da conexão das cidades para garantir qualidade de vida para a população brasileira. Dentre as pautas prioritárias, o prefeito destacou a questão climática =, já que eventos climáticos extremos ultrapassam as divisas municipais, a mobilidade urbana, com defesa de maior integração entre os municípios e de subsídios públicos ao transporte coletivo, a segurança pública e a economia local. A ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Sebastião Melo, prefeito da capital gaúcha e presidente da Frente Nacional de Prefeitas e Prefeitos (FNP), participou, nesta terça (8), do Seminário Internacional ‘Desafios para o Crescimento Econômico, Sustentável e Resiliente na Região Metropolitana de Porto Alegre ’, promovido pela Associação dos Municípios da Região Metropolitana de Porto Alegre (Granpal), para debater estratégias de gestão integrada para as cidades brasileiras. Na abertura do evento, Melo ressaltou a necessidade de fortalecer a governança metropolitana diante de desafios que ultrapassam os limites administrativos dos municípios e da necessidade de transformar o debate sobre sustentabilidade em ações concretas. “É muito importante falar de governança metropolitana porque os problemas não acabam na divisa dos municípios. Desafios como as mudanças climáticas e a mobilidade urbana devem ser administrados em conjunto”, destacou. No painel ‘ Como a governança metropolitana pode contribuir para que a região se transforme em um território virtuoso de crescimento econômico com resiliência’ , Douglas Martello, prefeito de Alvorada/RS e presidente da Granpal, destacou a importância da parceria com a FNP e ressaltou a necessidade de ampliar a participação de diferentes setores na construção de uma estratégia para o fortalecimento da Região Metropolitana. Conectando Cidades Como presidente da FNP, Melo falou sobre a importância da conexão das cidades para garantir qualidade de vida para a população brasileira. Dentre as pautas prioritárias, o prefeito destacou a questão climática =, já que eventos climáticos extremos ultrapassam as divisas municipais, a mobilidade urbana, com defesa de maior integração entre os municípios e de subsídios públicos ao transporte coletivo, a segurança pública e a economia local. A ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a9dac56427a05d393a49017f6e888563aecfac798b543d18e924686892d63bc4": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "STF confirma transmissão pela internet de sessão sobre Moraes",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/stf-confirma-transmissao-pela-internet-de-sessao-sobre-moraes",
+        "publishedAt": "2026-09-14T19:22:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Supremo Tribunal Federal (STF) confirmou há pouco que a sessão da Corte que vai analisar as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro terá transmissão ao vivo pela TV Justiça e pela internet. A Corte também adotou medidas de segurança durante o julgamento, que está previsto para começar às 10h desta terça-feira (15). Notícias relacionadas: STF: Gilmar Mendes sugere adiar sessão sobre conduta de Moraes. Presidente do STF assume relatoria de processo sobre Moraes e Vorcaro. As vagas no plenário serão destinadas a pessoas previamente inscritas pelo cerimonial do STF. A entrada do plenário contará com detectores de metais e equipamento de raio-X e todos as pessoas deverão passar pelos procedimentos de segurança. O uso de celulares durante a sessão será proibido, e os aparelhos deverão ser lacrados na entrada do plenário. O trânsito na Esplanada dos Ministérios será interditado na altura do Congresso Nacional. (Em atualização)",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Supremo Tribunal Federal (STF) confirmou há pouco que a sessão da Corte que vai analisar as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro terá transmissão ao vivo pela TV Justiça e pela internet. A Corte também adotou medidas de segurança durante o julgamento, que está previsto para começar às 10h desta terça-feira (15). Notícias relacionadas: STF: Gilmar Mendes sugere adiar sessão sobre conduta de Moraes. Presidente do STF assume relatoria de processo sobre Moraes e Vorcaro. As vagas no plenário serão destinadas a pessoas previamente inscritas pelo cerimonial do STF. A entrada do plenário contará com detectores de metais e equipamento de raio-X e todos as pessoas deverão passar pelos procedimentos de segurança. O uso de celulares durante a sessão será proibido, e os aparelhos deverão ser lacrados na entrada do plenário. O trânsito na Esplanada dos Ministérios será interditado na altura do Congresso Nacional. (Em atualização)",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8573df23d8ff013c4a81833cf18e0fc0cf8776d298af10876c4489f25e46166c": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Assédio e sobrecarga ameaçam saúde mental de jornalistas, diz pesquisa",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/assedio-e-sobrecarga-ameacam-saude-mental-de-jornalistas-diz-pesquisa",
+        "publishedAt": "2026-09-14T18:46:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Uma pesquisa divulgada nesta segunda-feira (14) aponta um cenário preocupante: as condições e as características do trabalho jornalístico, aliadas ao constante assédio e ao baixo apoio social, expõem os profissionais de imprensa do Brasil a uma série de potenciais problemas de saúde mental. Produzido pela Fundação Centro Nacional de Segurança, Higiene e Medicina do Trabalho (Fundacentro) com o apoio da Federação Nacional dos Jornalistas (Fenaj), o estudo Condições de Trabalho e Saúde Mental de Jornalistas no Brasil aponta a urgência de empregadores, entidades de classe e formuladores de políticas públicas reconhecerem a gravidade da situação e atuarem para promover um ambiente de trabalho mais seguro, justo e saudável para os profissionais da categoria. Notícias relacionadas: Fenaj pede que STF reveja decisão sobre diploma de jornalista. Plataforma estimula denúncias contra censuras a jornalistas. Quase metade (48%) dos 257 jornalistas brasileiros recrutados via amostragem para responder a um questionário online afirmaram sofrer com sintomas de insônia . O percentual é superior à média nacional registrada no relatório Vigilância de Fatores de Risco e Proteção para Doenças Crônicas por Inquérito Telefônico (Vigitel Brasil) 2006-2024, do Ministério da Saúde, que registra média entre 28,7% (em Natal) e 38% (em Maceió). Trinta e seis por cento dos entrevistados também relataram episódios típicos de um quadro de ansiedade , enquanto metade dos entrevistados (50%) disse enfrentar quadro de depressão. Desses últimos, 9% elencaram sintomas de depressão severa e 16%, extremamente severa. Além disso, 21,5% dos que responderam ao questionário revelaram consumir bebidas alcoólicas em consonância com padrões de frequência e de quantidade que sugerem o uso de risco (18,7%) ou nocivo ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Uma pesquisa divulgada nesta segunda-feira (14) aponta um cenário preocupante: as condições e as características do trabalho jornalístico, aliadas ao constante assédio e ao baixo apoio social, expõem os profissionais de imprensa do Brasil a uma série de potenciais problemas de saúde mental. Produzido pela Fundação Centro Nacional de Segurança, Higiene e Medicina do Trabalho (Fundacentro) com o apoio da Federação Nacional dos Jornalistas (Fenaj), o estudo Condições de Trabalho e Saúde Mental de Jornalistas no Brasil aponta a urgência de empregadores, entidades de classe e formuladores de políticas públicas reconhecerem a gravidade da situação e atuarem para promover um ambiente de trabalho mais seguro, justo e saudável para os profissionais da categoria. Notícias relacionadas: Fenaj pede que STF reveja decisão sobre diploma de jornalista. Plataforma estimula denúncias contra censuras a jornalistas. Quase metade (48%) dos 257 jornalistas brasileiros recrutados via amostragem para responder a um questionário online afirmaram sofrer com sintomas de insônia . O percentual é superior à média nacional registrada no relatório Vigilância de Fatores de Risco e Proteção para Doenças Crônicas por Inquérito Telefônico (Vigitel Brasil) 2006-2024, do Ministério da Saúde, que registra média entre 28,7% (em Natal) e 38% (em Maceió). Trinta e seis por cento dos entrevistados também relataram episódios típicos de um quadro de ansiedade , enquanto metade dos entrevistados (50%) disse enfrentar quadro de depressão. Desses últimos, 9% elencaram sintomas de depressão severa e 16%, extremamente severa. Além disso, 21,5% dos que responderam ao questionário revelaram consumir bebidas alcoólicas em consonância com padrões de frequência e de quantidade que sugerem o uso de risco (18,7%) ou nocivo ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "38946cf9a2e583dbf2488a8e606ffc4e9ae4e71563a7f6c4b77d0460f19a0262": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Confiança da indústria recua e mantém 21 meses de pessimismo",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/confianca-da-industria-recua-e-mantem-21-meses-de-pessimismo",
+        "publishedAt": "2026-09-14T18:03:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A confiança dos empresários industriais voltou a recuar em setembro. O Índice de Confiança do Empresário Industrial (Icei), divulgado nesta segunda-feira (14) pela Confederação Nacional da Indústria (CNI), caiu 1,4 ponto, passando de 46,3 para 44,9 pontos. O resultado mantém o indicador abaixo da linha de 50 pontos, que separa confiança de pessimismo. Com isso, a indústria completa 21 meses consecutivos sem confiança, no período mais prolongado já registrado pela série desde 2015 e 2016. Notícias relacionadas: Produção industrial interrompe 2 meses de queda e sobe 0,2% em julho. Governo libera gasoduto da Petrobras para baratear gás industrial. Alta da atividade industrial em janeiro não compensa perdas acumuladas. Segundo a CNI, a queda foi disseminada entre os componentes do índice, atingindo tanto a avaliação das condições atuais quanto as expectativas para os próximos meses. “Essa queda foi generalizada, verificada em todos os componentes do índice, tanto a avaliação das condições correntes quanto as expectativas”, afirmou em nota Marcelo Azevedo, gerente de Análise Econômica da CNI. Economia pesa A percepção dos empresários sobre a situação econômica do país foi um dos principais fatores para o recuo do indicador. A avaliação das condições atuais da economia brasileira caiu 3,6 pontos, de 36,6 para 33 pontos. O Índice de Condições Atuais, que mede a percepção dos empresários sobre o momento presente, caiu 2,5 pontos, de 42,7 para 40,2 pontos. Os principais resultados foram: • Condições atuais: 40,2 pontos, queda de 2,5 pontos; • Economia brasileira: 33 pontos, recuo de 3,6 pontos; • Condições das empresas: 43,8 pontos, queda de 1,9 ponto. Expectativas pioram O pessimismo também avançou nas perspectivas para os próximos meses. O Índice de Expectativas recuou 0,9 pon",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A confiança dos empresários industriais voltou a recuar em setembro. O Índice de Confiança do Empresário Industrial (Icei), divulgado nesta segunda-feira (14) pela Confederação Nacional da Indústria (CNI), caiu 1,4 ponto, passando de 46,3 para 44,9 pontos. O resultado mantém o indicador abaixo da linha de 50 pontos, que separa confiança de pessimismo. Com isso, a indústria completa 21 meses consecutivos sem confiança, no período mais prolongado já registrado pela série desde 2015 e 2016. Notícias relacionadas: Produção industrial interrompe 2 meses de queda e sobe 0,2% em julho. Governo libera gasoduto da Petrobras para baratear gás industrial. Alta da atividade industrial em janeiro não compensa perdas acumuladas. Segundo a CNI, a queda foi disseminada entre os componentes do índice, atingindo tanto a avaliação das condições atuais quanto as expectativas para os próximos meses. “Essa queda foi generalizada, verificada em todos os componentes do índice, tanto a avaliação das condições correntes quanto as expectativas”, afirmou em nota Marcelo Azevedo, gerente de Análise Econômica da CNI. Economia pesa A percepção dos empresários sobre a situação econômica do país foi um dos principais fatores para o recuo do indicador. A avaliação das condições atuais da economia brasileira caiu 3,6 pontos, de 36,6 para 33 pontos. O Índice de Condições Atuais, que mede a percepção dos empresários sobre o momento presente, caiu 2,5 pontos, de 42,7 para 40,2 pontos. Os principais resultados foram: • Condições atuais: 40,2 pontos, queda de 2,5 pontos; • Economia brasileira: 33 pontos, recuo de 3,6 pontos; • Condições das empresas: 43,8 pontos, queda de 1,9 ponto. Expectativas pioram O pessimismo também avançou nas perspectivas para os próximos meses. O Índice de Expectativas recuou 0,9 pon",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "3d2eca453d3084c71ad68eb93363783a872a4acab5347fd372acdccdbac63491": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Mendonça retira sigilo de processo sobre rede de pagamentos de Vorcaro",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/mendonca-retira-sigilo-de-processo-sobre-rede-de-pagamentos-de-vorcaro",
+        "publishedAt": "2026-09-14T16:57:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ministro André Mendonça, do Supremo Tribunal Federal (STF), retirou nesta segunda-feira (14) o sigilo sobre um processo que trata da rede de pagamentos do ex-banqueiro Daniel Vorcaro, dono do Banco Master. A medida foi tomada após determinação do presidente do STF, ministro Edson Fachin. Mais cedo , a Procuradoria-Geral da República (PGR) havia opinado pela retirada do sigilo que ainda vigorava sobre o processo. Notícias relacionadas: Ex-ministros e sociedade civil divulgam carta em apoio a Fachin . Mendonça cita risco às investigações com dados de celular de Vorcaro. Dino determina fim do sigilo de investigações sobre o filme Dark Horse. Fachin, por sua vez, havia sido acionado pelo ministro Alexandre de Moraes, que em ofício disse ser essencial a quebra do sigilo da petição sobre os pagamentos de Vorcaro antes do julgamento marcado para terça-feira (15). Amanhã, o plenário decidirá sobre a abertura de investigação sobre Moraes . Com a nova retirada de sigilo, o STF derrubou o segredo judicial sobre 54 investigações derivadas da Operação Compliance Zero, que apura a corrupção de agentes públicos e fraudes financeiras bilionárias supostamente praticadas por Vorcaro. Julgamento No julgamento de terça, os ministros devem se debruçar sobre um relatório da Polícia Federal (PF) que traz 52 mensagens que os investigadores dizem ter sido enviadas por Vorcaro a Moraes, com quem o ex-banqueiro demonstra ter relação próxima. O material foi recuperado do celular apreendido de Vorcaro. As mensagens foram enviadas entre 2023 e 17 de novembro de 2025, dia em que o ex-banqueiro foi preso preventivamente. Nas mensagens, Vorcaro aparenta compartilhar com Moraes um contrato de R$ 131 milhões do Master com o escritório da advogada Viviane Barci de Moraes, esposa do ministro. Em outro tr",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O ministro André Mendonça, do Supremo Tribunal Federal (STF), retirou nesta segunda-feira (14) o sigilo sobre um processo que trata da rede de pagamentos do ex-banqueiro Daniel Vorcaro, dono do Banco Master. A medida foi tomada após determinação do presidente do STF, ministro Edson Fachin. Mais cedo , a Procuradoria-Geral da República (PGR) havia opinado pela retirada do sigilo que ainda vigorava sobre o processo. Notícias relacionadas: Ex-ministros e sociedade civil divulgam carta em apoio a Fachin . Mendonça cita risco às investigações com dados de celular de Vorcaro. Dino determina fim do sigilo de investigações sobre o filme Dark Horse. Fachin, por sua vez, havia sido acionado pelo ministro Alexandre de Moraes, que em ofício disse ser essencial a quebra do sigilo da petição sobre os pagamentos de Vorcaro antes do julgamento marcado para terça-feira (15). Amanhã, o plenário decidirá sobre a abertura de investigação sobre Moraes . Com a nova retirada de sigilo, o STF derrubou o segredo judicial sobre 54 investigações derivadas da Operação Compliance Zero, que apura a corrupção de agentes públicos e fraudes financeiras bilionárias supostamente praticadas por Vorcaro. Julgamento No julgamento de terça, os ministros devem se debruçar sobre um relatório da Polícia Federal (PF) que traz 52 mensagens que os investigadores dizem ter sido enviadas por Vorcaro a Moraes, com quem o ex-banqueiro demonstra ter relação próxima. O material foi recuperado do celular apreendido de Vorcaro. As mensagens foram enviadas entre 2023 e 17 de novembro de 2025, dia em que o ex-banqueiro foi preso preventivamente. Nas mensagens, Vorcaro aparenta compartilhar com Moraes um contrato de R$ 131 milhões do Master com o escritório da advogada Viviane Barci de Moraes, esposa do ministro. Em outro tr",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "731f68737029a59b67ea50bed6a80a52bdf69f3876480174e195404e25d86d3e": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "PF: deputado Cezinha de Madureira negociava acesso a ministros do STF",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/pf-deputado-cezinha-de-madureira-negociava-acesso-ministros-do-stf",
+        "publishedAt": "2026-09-14T16:51:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ministro Flávio Dino, do Supremo Tribunal Federal (STF), levantou o sigilo da decisão em que autorizou a Polícia Federal (PF) a realizar buscas em endereços do deputado Cezinha de Madureira (PL-RJ). O documento descreve as suspeitas de que o parlamentar prometia acesso e influência sobre ministros da Corte em troca de dinheiro. Notícias relacionadas: Dino aponta indícios de liderança de Mário Frias em desvio de emendas. Na decisão, Dino destacou a suspeita de que o deputado “aparenta utilizar a ascendência de sua função parlamentar para incutir em terceiros a percepção de influência sobre magistrados de Tribunais Superiores”. O congressista é investigado por tráfico de influência, corrupção e lavagem de dinheiro. Em relatório parcial citado por Dino, a PF apresenta mensagens encontradas em celular de terceiros em que a advogada Valéria Rodrigues Linhares, esposa do parlamentar, aparece negociando a influência do deputado sobre ministros de tribunais superiores, incluindo do próprio Supremo. As mensagens foram encontradas no celular apreendido da advogada Mariângela Fialek, servidora da Câmara dos Deputados que é investigada pela PF como responsável pela liberação de emendas parlamentares do chamado orçamento secreto – emendas ao orçamento do governo federal que não permitiam identificar o parlamentar responsável pela indicação nem o destinatário final dos recursos. Em conversas extraídas de seu celular, Mariângela negocia com Valéria contratos de honorários advocatícios em troca de que Cezinha de Madureira entre em contato e faça pedidos a ministros de tribunais superiores relacionadas a causas específicas. Nas conversas, são mencionados os ministro do STF Nunes Marques, André Mendonça e Gilmar Mendes. A PF, contudo, afirmou não haver nenhum elemento que indique “soli",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O ministro Flávio Dino, do Supremo Tribunal Federal (STF), levantou o sigilo da decisão em que autorizou a Polícia Federal (PF) a realizar buscas em endereços do deputado Cezinha de Madureira (PL-RJ). O documento descreve as suspeitas de que o parlamentar prometia acesso e influência sobre ministros da Corte em troca de dinheiro. Notícias relacionadas: Dino aponta indícios de liderança de Mário Frias em desvio de emendas. Na decisão, Dino destacou a suspeita de que o deputado “aparenta utilizar a ascendência de sua função parlamentar para incutir em terceiros a percepção de influência sobre magistrados de Tribunais Superiores”. O congressista é investigado por tráfico de influência, corrupção e lavagem de dinheiro. Em relatório parcial citado por Dino, a PF apresenta mensagens encontradas em celular de terceiros em que a advogada Valéria Rodrigues Linhares, esposa do parlamentar, aparece negociando a influência do deputado sobre ministros de tribunais superiores, incluindo do próprio Supremo. As mensagens foram encontradas no celular apreendido da advogada Mariângela Fialek, servidora da Câmara dos Deputados que é investigada pela PF como responsável pela liberação de emendas parlamentares do chamado orçamento secreto – emendas ao orçamento do governo federal que não permitiam identificar o parlamentar responsável pela indicação nem o destinatário final dos recursos. Em conversas extraídas de seu celular, Mariângela negocia com Valéria contratos de honorários advocatícios em troca de que Cezinha de Madureira entre em contato e faça pedidos a ministros de tribunais superiores relacionadas a causas específicas. Nas conversas, são mencionados os ministro do STF Nunes Marques, André Mendonça e Gilmar Mendes. A PF, contudo, afirmou não haver nenhum elemento que indique “soli",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d1d8240454f601e9571d40f9280876398d9221b552aea685e1dbe25feb8a1738": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Países do Golfo Pérsico cancelam reunião sobre reabertura de Ormuz",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/paises-do-golfo-persico-cancelam-reuniao-sobre-reabertura-de-ormuz",
+        "publishedAt": "2026-09-14T16:42:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Países árabes do Golfo Pérsico cancelaram reunião com Irã e Omã prevista para esta segunda-feira (14) sobre a reabertura do Estreito de Ormuz , enquanto os houthis do Iêmen atacaram novamente a Arábia Saudita. Tais medidas prejudicam ainda mais o abastecimento global de petróleo. Praticamente fechado desde que Estados Unidos e Israel atacaram o Irã no final de fevereiro, Ormuz é a rota marítima de transporte de petróleo mais importante do mundo. Notícias relacionadas: Petróleo: ataque contra Arábia Saudita soa alerta sobre abastecimento. Arábia Saudita paralisa oleoduto, e houthis controlam Mar Vermelho. Navios com petróleo saudita são atacados no Estreito de Ormuz. O ministro das Relações Exteriores de Omã, Sayyid Badr Albusaidi, anunciou durante a madrugada que a reunião havia sido adiada “em prol do consenso”. O Irã afirmou que o adiamento ocorreu a pedido da Arábia Saudita. Houthis atacam Arábia Saudita Os houthis, aliados do Irã, afirmaram ter disparado dezenas de mísseis e drones nesta segunda-feira contra uma base aérea militar saudita em Khamis Mushait, perto da fronteira. O ataque atingiu hangares, sistemas de radar, pistas de decolagem e depósitos de munição. Eles descreveram o ataque como uma retaliação às centenas de ofensivas aéreos sauditas contra o Iêmen nos últimos dias. As autoridades sauditas anunciaram breves alertas de emergência na região e em outras três cidades do Sul que já haviam sido alvo de ataques dos houthis. Os houthis tomaram a ilha situada na foz do Mar Vermelho na sexta-feira (11). Outra ação danificou o oleoduto leste-oeste da Arábia Saudita – principal rota para o petróleo do Oriente Médio que contorna o Estreito de Ormuz. Preço do petróleo dispara Os preços do petróleo bruto subiram mais de 3% nesta segunda-feira, quando o mercado rea",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Países árabes do Golfo Pérsico cancelaram reunião com Irã e Omã prevista para esta segunda-feira (14) sobre a reabertura do Estreito de Ormuz , enquanto os houthis do Iêmen atacaram novamente a Arábia Saudita. Tais medidas prejudicam ainda mais o abastecimento global de petróleo. Praticamente fechado desde que Estados Unidos e Israel atacaram o Irã no final de fevereiro, Ormuz é a rota marítima de transporte de petróleo mais importante do mundo. Notícias relacionadas: Petróleo: ataque contra Arábia Saudita soa alerta sobre abastecimento. Arábia Saudita paralisa oleoduto, e houthis controlam Mar Vermelho. Navios com petróleo saudita são atacados no Estreito de Ormuz. O ministro das Relações Exteriores de Omã, Sayyid Badr Albusaidi, anunciou durante a madrugada que a reunião havia sido adiada “em prol do consenso”. O Irã afirmou que o adiamento ocorreu a pedido da Arábia Saudita. Houthis atacam Arábia Saudita Os houthis, aliados do Irã, afirmaram ter disparado dezenas de mísseis e drones nesta segunda-feira contra uma base aérea militar saudita em Khamis Mushait, perto da fronteira. O ataque atingiu hangares, sistemas de radar, pistas de decolagem e depósitos de munição. Eles descreveram o ataque como uma retaliação às centenas de ofensivas aéreos sauditas contra o Iêmen nos últimos dias. As autoridades sauditas anunciaram breves alertas de emergência na região e em outras três cidades do Sul que já haviam sido alvo de ataques dos houthis. Os houthis tomaram a ilha situada na foz do Mar Vermelho na sexta-feira (11). Outra ação danificou o oleoduto leste-oeste da Arábia Saudita – principal rota para o petróleo do Oriente Médio que contorna o Estreito de Ormuz. Preço do petróleo dispara Os preços do petróleo bruto subiram mais de 3% nesta segunda-feira, quando o mercado rea",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "891ebdcee9bde58f6f82f0d7cd5a43c04f2266e523390ab0bcb864f18be224f3": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "EBC participa de evento internacional sobre futuro do futebol feminino",
+        "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-09/ebc-participa-de-evento-internacional-sobre-futuro-do-futebol-feminino",
+        "publishedAt": "2026-09-14T16:17:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Empresa Brasil de Comunicação (EBC) é apoiadora institucional da primeira edição do Women’s International Football Summit (WIFS), evento dedicado ao desenvolvimento, à profissionalização e ao fortalecimento da indústria do futebol feminino no Brasil. O encontro acontece nesta segunda-feira (14) e terça-feira (15), no Museu do Amanhã, no Rio de Janeiro (RJ). A participação da EBC reforça a atuação da TV Brasil como a tela do futebol feminino, com a presença da diretora-presidente da empresa, Antonia Pellegrino; da jornalista Marília Arrigoni; e da comentarista Rachel Motta como painelistas da programação. No evento também será divulgado o Prêmio TV Brasil Petrobras Para Elas , iniciativa criada para reconhecer atletas, treinadoras, equipes técnicas, gestoras e clubes que se destacam na modalidade. Notícias relacionadas: Prêmio TV Brasil Petrobras Para Elas abre votação popular para craque. Seleção feminina de futebol é convocada para a Copa do Mundo sub-20. MEC aprova regras para as férias escolares na Copa do Mundo Feminina. Nesta segunda-feira (14), a jornalista Marília Arrigoni, da TV Brasil , participou do painel “Futebol feminino entre gerações: experiências, conquistas e novos horizontes”. Integram a mesa a moderadora Marion Konczyk Kaplan, presidente da Bancada Feminina do Flamengo; Renata Armiliato, gerente de Futebol Feminino do Internacional; e as ex-jogadoras Pelézinha e Danda. Na terça-feira (15), às 14h30, a diretora-presidente da EBC , Antonia Pellegrino, modera o painel “Comunicação do futebol feminino em transformação: novos formatos, plataformas e narrativas”. A mesa terá a participação de Suleima Sena, fundadora do Donas FC; Rachel Motta, jornalista esportiva e comentarista da TV Brasil ; Daniela Grelin, diretora-executiva da NO MORE Foundation; e da ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Empresa Brasil de Comunicação (EBC) é apoiadora institucional da primeira edição do Women’s International Football Summit (WIFS), evento dedicado ao desenvolvimento, à profissionalização e ao fortalecimento da indústria do futebol feminino no Brasil. O encontro acontece nesta segunda-feira (14) e terça-feira (15), no Museu do Amanhã, no Rio de Janeiro (RJ). A participação da EBC reforça a atuação da TV Brasil como a tela do futebol feminino, com a presença da diretora-presidente da empresa, Antonia Pellegrino; da jornalista Marília Arrigoni; e da comentarista Rachel Motta como painelistas da programação. No evento também será divulgado o Prêmio TV Brasil Petrobras Para Elas , iniciativa criada para reconhecer atletas, treinadoras, equipes técnicas, gestoras e clubes que se destacam na modalidade. Notícias relacionadas: Prêmio TV Brasil Petrobras Para Elas abre votação popular para craque. Seleção feminina de futebol é convocada para a Copa do Mundo sub-20. MEC aprova regras para as férias escolares na Copa do Mundo Feminina. Nesta segunda-feira (14), a jornalista Marília Arrigoni, da TV Brasil , participou do painel “Futebol feminino entre gerações: experiências, conquistas e novos horizontes”. Integram a mesa a moderadora Marion Konczyk Kaplan, presidente da Bancada Feminina do Flamengo; Renata Armiliato, gerente de Futebol Feminino do Internacional; e as ex-jogadoras Pelézinha e Danda. Na terça-feira (15), às 14h30, a diretora-presidente da EBC , Antonia Pellegrino, modera o painel “Comunicação do futebol feminino em transformação: novos formatos, plataformas e narrativas”. A mesa terá a participação de Suleima Sena, fundadora do Donas FC; Rachel Motta, jornalista esportiva e comentarista da TV Brasil ; Daniela Grelin, diretora-executiva da NO MORE Foundation; e da ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "43dabdba06c2e3116505e9d904cabb80dd952cb3f807e0ab86230dbc8a2c3455": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Ciência ainda não foi lembrada na campanha eleitoral, diz SBPC",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/ciencia-ainda-nao-foi-lembrada-na-campanha-eleitoral-diz-sbpc",
+        "publishedAt": "2026-09-14T15:55:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Enquanto o cenário político e as denúncias envolvendo o caso Master monopolizam as atenções em todo o Brasil, os desafios estratégicos que o país enfrentará a curtíssimo prazo — do envelhecimento populacional à transição energética, passando pela importância de se tornar capaz de processar os minerais críticos que abriga em seu subsolo — seguem à margem do debate eleitoral. Para a presidenta da Sociedade Brasileira para o Progresso da Ciência (SBPC), Francilene Garcia, os recentes escândalos e as disputas pessoais aprofundam o esvaziamento das discussões de temas vitais para os rumos nacionais, deixando em segundo plano itens como ciência, transição energética e a necessidade de se preparar para cenários adversos, incluindo uma iminente crise sanitária. Para a doutora em engenharia elétrica, professora e pesquisadora da Universidade Federal de Campina Grande (UFCG), que desde 2025 está à frente da mais importante entidade de promoção e defesa da ciência e tecnologia no Brasil, eleitores e candidatos parecem ter sido empurrados para uma falsa dicotomia: a ideia errônea de que é preciso escolher entre passar as instituições a limpo ou discutir e planejar o futuro do país. “O país acaba sendo obrigado a escolher entre discutir a integridade das instituições ou o projeto de desenvolvimento, quando as duas coisas fazem parte de uma mesma agenda”, defendeu Francilene em entrevista exclusiva à Agência Brasil . Na conversa, ela falou ainda sobre temas como o envelhecimento da população e o baixo engajamento das candidaturas com o tema da ciência. Leia a íntegra abaixo: Brasília (DF), 06/07/2026 - A presidente da Sociedade Brasileira para o Progresso da Ciência, Francilene Garcia. Foto: SBPC/Divulgação - SBPC/Divulgação Notícias relacionadas: Eleitores com deficiência têm até ho",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Enquanto o cenário político e as denúncias envolvendo o caso Master monopolizam as atenções em todo o Brasil, os desafios estratégicos que o país enfrentará a curtíssimo prazo — do envelhecimento populacional à transição energética, passando pela importância de se tornar capaz de processar os minerais críticos que abriga em seu subsolo — seguem à margem do debate eleitoral. Para a presidenta da Sociedade Brasileira para o Progresso da Ciência (SBPC), Francilene Garcia, os recentes escândalos e as disputas pessoais aprofundam o esvaziamento das discussões de temas vitais para os rumos nacionais, deixando em segundo plano itens como ciência, transição energética e a necessidade de se preparar para cenários adversos, incluindo uma iminente crise sanitária. Para a doutora em engenharia elétrica, professora e pesquisadora da Universidade Federal de Campina Grande (UFCG), que desde 2025 está à frente da mais importante entidade de promoção e defesa da ciência e tecnologia no Brasil, eleitores e candidatos parecem ter sido empurrados para uma falsa dicotomia: a ideia errônea de que é preciso escolher entre passar as instituições a limpo ou discutir e planejar o futuro do país. “O país acaba sendo obrigado a escolher entre discutir a integridade das instituições ou o projeto de desenvolvimento, quando as duas coisas fazem parte de uma mesma agenda”, defendeu Francilene em entrevista exclusiva à Agência Brasil . Na conversa, ela falou ainda sobre temas como o envelhecimento da população e o baixo engajamento das candidaturas com o tema da ciência. Leia a íntegra abaixo: Brasília (DF), 06/07/2026 - A presidente da Sociedade Brasileira para o Progresso da Ciência, Francilene Garcia. Foto: SBPC/Divulgação - SBPC/Divulgação Notícias relacionadas: Eleitores com deficiência têm até ho",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "266ac56406ac36186054528f740c3bc3fca992c0ff8c910a7415b20137bfbb7d": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Campanha incentiva voto de quem tem mais de 70 anos",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/campanha-incentiva-voto-de-quem-tem-mais-de-70-anos",
+        "publishedAt": "2026-09-14T15:38:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Mapeamento do data8 revela diferenças regionais na implementação do programa Seu Voto Importa , voltado para atender eleitores brasileiros com deficiência ou mobilidade reduzida, que não dispõem de meios próprios para chegar ao local de votação – entre eles, pessoas idosas com dificuldade de deslocamento. A iniciativa alcança mais de 300 municípios em São Paulo e 358 em Minas Gerais, mas estados como Amazonas e Mato Grosso do Sul, por exemplo, não implementaram o programa. Notícias relacionadas: Justiça preserva direito de idosos a passagens interestaduais . TRE de Alagoas lança HQ para orientar idosos contra desinformação. Aumento do eleitorado idoso pauta campanhas, mas abstenção é desafio. Outro problema identificado pelo mapeamento é que as ações dirigidas aos eleitores com mais de 70 anos, faixa etária para a qual o voto é facultativo, são pontuais e nem sempre esse público é informado de maneira clara das possibilidades de solicitar o serviço, cujo prazo expira nesta segunda-feira (14) . Criado pelo Tribunal Superior Eleitoral (TSE) a partir da Resolução 23.753/2026, o Seu Voto Importa estabelece as diretrizes para a oferta do serviço pelos Tribunais Regionais Eleitorais (TREs). A norma inclui os idosos entre as pessoas com mobilidade reduzida quando essa condição dificulta ou impede o deslocamento por meios próprios. Para o primeiro turno, a solicitação pode ser feita pela própria pessoa – ou por curador, apoiador ou procurador –, presencialmente no cartório eleitoral ou pelos canais disponibilizados por cada TRE. Os pedidos são avaliados individualmente, considerando fatores como grau de limitação funcional, existência de transporte público acessível e distância entre a residência e o local de votação. O transporte pode incluir os trajetos de ida e volta entre a",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Mapeamento do data8 revela diferenças regionais na implementação do programa Seu Voto Importa , voltado para atender eleitores brasileiros com deficiência ou mobilidade reduzida, que não dispõem de meios próprios para chegar ao local de votação – entre eles, pessoas idosas com dificuldade de deslocamento. A iniciativa alcança mais de 300 municípios em São Paulo e 358 em Minas Gerais, mas estados como Amazonas e Mato Grosso do Sul, por exemplo, não implementaram o programa. Notícias relacionadas: Justiça preserva direito de idosos a passagens interestaduais . TRE de Alagoas lança HQ para orientar idosos contra desinformação. Aumento do eleitorado idoso pauta campanhas, mas abstenção é desafio. Outro problema identificado pelo mapeamento é que as ações dirigidas aos eleitores com mais de 70 anos, faixa etária para a qual o voto é facultativo, são pontuais e nem sempre esse público é informado de maneira clara das possibilidades de solicitar o serviço, cujo prazo expira nesta segunda-feira (14) . Criado pelo Tribunal Superior Eleitoral (TSE) a partir da Resolução 23.753/2026, o Seu Voto Importa estabelece as diretrizes para a oferta do serviço pelos Tribunais Regionais Eleitorais (TREs). A norma inclui os idosos entre as pessoas com mobilidade reduzida quando essa condição dificulta ou impede o deslocamento por meios próprios. Para o primeiro turno, a solicitação pode ser feita pela própria pessoa – ou por curador, apoiador ou procurador –, presencialmente no cartório eleitoral ou pelos canais disponibilizados por cada TRE. Os pedidos são avaliados individualmente, considerando fatores como grau de limitação funcional, existência de transporte público acessível e distância entre a residência e o local de votação. O transporte pode incluir os trajetos de ida e volta entre a",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "e460753fbe516036316f7ae75843bbe9ab929f7ea20590654e83b0298bc99303": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Saiba as novas regras da Anac para passageiros indisciplinados",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/saiba-as-novas-regras-da-anac-para-passageiros-indisciplinados",
+        "publishedAt": "2026-09-14T14:38:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Começam a valer, nesta segunda-feira (14), as novas regras da Agência Nacional de Aviação Civil (Anac) para punir passageiros que adotem comportamentos que coloquem em risco a segurança, a ordem ou a integridade de pessoas em aeroportos e aeronaves. As medidas punitivas, previstas na Resolução Anac nº 800/2026, podem chegar à suspensão do direito de embarque em voos domésticos pelo prazo de até 12 meses, a depender da gravidade da infração. Notícias relacionadas: Anac permite voos após as 23h em Congonhas em situações excepcionais. Anac suspende quatro empresas de voos panorâmicos que operavam no Rio. Companhias aéreas e operadores aeroportuários poderão adotar medidas imediatas diante de atos de indisciplina, como advertências, acionamento das autoridades policiais, contenção do passageiro e retirada da aeronave. Em casos graves ou gravíssimos, o transporte poderá ser interrompido. Compartilhamento de informações Para viabilizar a medida, as empresas aéreas compartilharão as informações necessárias para identificar passageiros suspensos. A penalidade será aplicada pela própria companhia responsável pela ocorrência, que deverá comunicar o passageiro e garantir o direito de defesa. A norma prevê também sanções administrativas. Para atos classificados como graves ou gravíssimos, a multa-base fixada pela Anac é de R$ 17,5 mil – valor que poderá ser ajustado de acordo com as circunstâncias apuradas em processo administrativo. Saiba mais no Repórter Brasil Tarde, da TV Brasil",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Começam a valer, nesta segunda-feira (14), as novas regras da Agência Nacional de Aviação Civil (Anac) para punir passageiros que adotem comportamentos que coloquem em risco a segurança, a ordem ou a integridade de pessoas em aeroportos e aeronaves. As medidas punitivas, previstas na Resolução Anac nº 800/2026, podem chegar à suspensão do direito de embarque em voos domésticos pelo prazo de até 12 meses, a depender da gravidade da infração. Notícias relacionadas: Anac permite voos após as 23h em Congonhas em situações excepcionais. Anac suspende quatro empresas de voos panorâmicos que operavam no Rio. Companhias aéreas e operadores aeroportuários poderão adotar medidas imediatas diante de atos de indisciplina, como advertências, acionamento das autoridades policiais, contenção do passageiro e retirada da aeronave. Em casos graves ou gravíssimos, o transporte poderá ser interrompido. Compartilhamento de informações Para viabilizar a medida, as empresas aéreas compartilharão as informações necessárias para identificar passageiros suspensos. A penalidade será aplicada pela própria companhia responsável pela ocorrência, que deverá comunicar o passageiro e garantir o direito de defesa. A norma prevê também sanções administrativas. Para atos classificados como graves ou gravíssimos, a multa-base fixada pela Anac é de R$ 17,5 mil – valor que poderá ser ajustado de acordo com as circunstâncias apuradas em processo administrativo. Saiba mais no Repórter Brasil Tarde, da TV Brasil",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "52e9debc511af81db435f27a8fb4a039d6b996b929867d06f376a8ec149a1b6a": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Triubnal cobra soluções para problemas graves em escolas municipais de Almenara",
+        "url": "https://www.tce.mg.gov.br/Triubnal-cobra-solucoes-para-problemas-graves-em-escolas-municipais-de-Almenara.html/Noticia/1111629165",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) determinou que a Prefeitura de Almenara, município situado na região mineira do Vale do Jequitinhonha, adote medidas urgentes para sanar graves irregularidades identificadas em quatro escolas da rede municipal. A decisão foi aprovada por unanimidade pelo Tribunal Pleno na última quarta-feira (9/9), com base em auditoria realizada no âmbito do Projeto Sede de Aprender, iniciativa que fiscaliza as condições de saneamento básico e de infraestrutura das escolas públicas. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) determinou que a Prefeitura de Almenara, município situado na região mineira do Vale do Jequitinhonha, adote medidas urgentes para sanar graves irregularidades identificadas em quatro escolas da rede municipal. A decisão foi aprovada por unanimidade pelo Tribunal Pleno na última quarta-feira (9/9), com base em auditoria realizada no âmbito do Projeto Sede de Aprender, iniciativa que fiscaliza as condições de saneamento básico e de infraestrutura das escolas públicas. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
+        "url": "https://www.tce.mg.gov.br/Gaepe-mineiro-projeta-reuniao-interinstitucional-de-articulacao-para-alinhar-operacionalizacao-de-forca-tarefa.html/Noticia/1111629166",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Está prevista para o próximo dia 17 de setembro, às 15h, uma reunião de articulação promovida pelo Gabinete de Articulação para a Efetividade da Política da Educação (Gaepe) em Minas Gerais. O encontro, que aguarda a confirmação da participação do Fundo Nacional de Desenvolvimento da Educação (FNDE), tem como objetivo estruturar o desenho operacional de uma nova força-tarefa voltada ao fortalecimento das políticas educacionais no território mineiro. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -11,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Está prevista para o próximo dia 17 de setembro, às 15h, uma reunião de articulação promovida pelo Gabinete de Articulação para a Efetividade da Política da Educação (Gaepe) em Minas Gerais. O encontro, que aguarda a confirmação da participação do Fundo Nacional de Desenvolvimento da Educação (FNDE), tem como objetivo estruturar o desenho operacional de uma nova força-tarefa voltada ao fortalecimento das políticas educacionais no território mineiro. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
+        "url": "https://www.tce.mg.gov.br/Livro-lancado-no-TCEMG-resgata-memorias-da-repressao-e-fortalece-defesa-da-democracia.html/Noticia/1111629167",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) sediou o lançamento do livro \"Memórias aprisionadas, arqueologia da repressão e da resistência no DOPs em Minas Gerais\", de autoria dos pesquisadores André Zarankin, Caroline Murta e Denise Costa. A obra, que joga luz sobre o antigo centro de detenção utilizado para o confinamento de presos políticos durante o regime militar, reafirma a ciência e a arqueologia como instrumentos de reparação, justiça e preservação da memória histórica do país. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) sediou o lançamento do livro \"Memórias aprisionadas, arqueologia da repressão e da resistência no DOPs em Minas Gerais\", de autoria dos pesquisadores André Zarankin, Caroline Murta e Denise Costa. A obra, que joga luz sobre o antigo centro de detenção utilizado para o confinamento de presos políticos durante o regime militar, reafirma a ciência e a arqueologia como instrumentos de reparação, justiça e preservação da memória histórica do país. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "26c2b82664c43ce3db2df36b5095c04dc8d284ba7cbbeb77b43c2042d87725db": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Boas práticas colocam foco em rastreamento de informações, análise de riscos, transparência e reforçam diálogo com a gestão",
+        "url": "https://www.tce.mg.gov.br/Boas-praticas-colocam-foco-em-rastreamento-de-informacoes-analise-de-riscos-transparencia-e-reforcam-dialogo-com-a-gestao.html/Noticia/1111629161",
+        "publishedAt": "2026-09-11T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Durante o II Seminário de Controle Internos e os Desafios na Gestão foram apresentadas boas práticas, que demonstraram a importância e a necessidade de atuação junto à gestão. Relatos spbre ações e projetos para ampliar a transparência, ampliar a gestão de riscos, rastrear gastos e recursos, gestão integrada e atuação em rede marcaram a agenda do primeiro dia do evento, que reuniu perto de 900 pessoas. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Durante o II Seminário de Controle Internos e os Desafios na Gestão foram apresentadas boas práticas, que demonstraram a importância e a necessidade de atuação junto à gestão. Relatos spbre ações e projetos para ampliar a transparência, ampliar a gestão de riscos, rastrear gastos e recursos, gestão integrada e atuação em rede marcaram a agenda do primeiro dia do evento, que reuniu perto de 900 pessoas. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a62ed95fee447ddbd7ac7ae0371fd72c75770f5dec76a2ccab383d38a47db325": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "TCEMG esclarece regras para contratação por credenciamento",
+        "url": "https://www.tce.mg.gov.br/TCEMG-esclarece-regras-para-contratacao-por-credenciamento-.html/Noticia/1111629160",
+        "publishedAt": "2026-09-11T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal Pleno do TCEMG fixou entendimento, em sessão ordinária realizada em 9 de setembro, sobre consulta apresentada pela Prefeitura Municipal de São Tiago referente ao credenciamento, procedimento auxiliar definido na Lei de Licitações e Contratos Administrativos nº 14.133/2021. A decisão traz orientações sobre a formalização das contratações e a participação de novos credenciados em casos de contratações paralelas e não excludentes. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal Pleno do TCEMG fixou entendimento, em sessão ordinária realizada em 9 de setembro, sobre consulta apresentada pela Prefeitura Municipal de São Tiago referente ao credenciamento, procedimento auxiliar definido na Lei de Licitações e Contratos Administrativos nº 14.133/2021. A decisão traz orientações sobre a formalização das contratações e a participação de novos credenciados em casos de contratações paralelas e não excludentes. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "49efe5aea7014a410018a72f9d3c9964cab61a80021365a6087844c3f0f9253e": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Identificação de fraudes e aproximação com a sociedade são temas do último dia do Seminário de Controle Interno",
+        "url": "https://www.tce.mg.gov.br/Identificacao-de-fraudes-e-aproximacao-com-a-sociedade-sao-temas-do-ultimo-dia-do-Seminario-de-Controle-Interno.html/Noticia/1111629162",
+        "publishedAt": "2026-09-11T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Mais de 800 pessoas participaram do II Seminário de Controle Interno encerraram as atividades nesta sexta-feira, 11 de setembro. O evento, organizado pela Controladoria Interna do Tribunal de Contas do Estado de Minas Gerais (TCEMG), foi realizado no Espaço The One e proporcionou novos aprendizados, reflexões e casos práticos para auditores e controladores internos de todo o estado. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Mais de 800 pessoas participaram do II Seminário de Controle Interno encerraram as atividades nesta sexta-feira, 11 de setembro. O evento, organizado pela Controladoria Interna do Tribunal de Contas do Estado de Minas Gerais (TCEMG), foi realizado no Espaço The One e proporcionou novos aprendizados, reflexões e casos práticos para auditores e controladores internos de todo o estado. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "73c7c6dd92a4d4ed7e284f1766f4d343372711b6baae2ca033f9854522a3c2ce": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Controladorias Internas têm a missão de estar atentas aos \"rinocerontes cinza\" da gestão pública",
+        "url": "https://www.tce.mg.gov.br/Controladorias-Internas-tem-a-missao-de-estar-atentas-aos-rinocerontes-cinza-da-gestao-publica-.html/Noticia/1111629164",
+        "publishedAt": "2026-09-11T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Segunda edição do Seminário de Controles Internos e os Desafios na Gestão apresenta sistema desenvolvido pelo governo do Estado para gerenciar compras e contratações, abre espaço para o lançamento de livro que se apresenta como um manual para a boa gestão pública e discute a importância de as Controladorias Internas gerenciarem os riscos associados a LGPD. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Segunda edição do Seminário de Controles Internos e os Desafios na Gestão apresenta sistema desenvolvido pelo governo do Estado para gerenciar compras e contratações, abre espaço para o lançamento de livro que se apresenta como um manual para a boa gestão pública e discute a importância de as Controladorias Internas gerenciarem os riscos associados a LGPD. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "9b59e45a6f77220cf1be84a1814d9ac59194150e9c2fab3330b5b231f895a291": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "TCEMG lança carta compromisso para fortalecer controles internos em Minas Gerais",
+        "url": "https://www.tce.mg.gov.br/TCEMG-lanca-carta-compromisso-para-fortalecer-controles-internos-em-Minas-Gerais.html/Noticia/1111629163",
+        "publishedAt": "2026-09-11T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) lançou a Carta Compromisso para o fortalecimento dos sistemas de controle interno dos municípios mineiros. O documento foi apresentado durante o II Seminário de Controles Internos e os Desafios na Gestão, realizado em Belo Horizonte, e marca os dez anos de vigência da Decisão Normativa TCEMG nº 02/2016, que estabelece diretrizes para a organização dos controles internos. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) lançou a Carta Compromisso para o fortalecimento dos sistemas de controle interno dos municípios mineiros. O documento foi apresentado durante o II Seminário de Controles Internos e os Desafios na Gestão, realizado em Belo Horizonte, e marca os dez anos de vigência da Decisão Normativa TCEMG nº 02/2016, que estabelece diretrizes para a organização dos controles internos. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "634e48a364faf8610ae5f9bb220a4215fb0cbc7d4a9d0e738b846cf0bc1e4925": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "II Seminário de Controles Internos reúne mais de 750 pessoas em BH",
+        "url": "https://www.tce.mg.gov.br/II-Seminario-de-Controles-Internos-reune-mais-de-750-pessoas-em-BH.html/Noticia/1111629158",
+        "publishedAt": "2026-09-10T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Evento promovido pelo TCEMG em parceria com AMM, AMCP e Coneci-MG começou nesta quinta-feira (10/9) com palestra magna e debate sobre a efetividade do controle nos municípios mineiros. Programação segue até esta sexta-feira (11/9) Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Evento promovido pelo TCEMG em parceria com AMM, AMCP e Coneci-MG começou nesta quinta-feira (10/9) com palestra magna e debate sobre a efetividade do controle nos municípios mineiros. Programação segue até esta sexta-feira (11/9) Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "51b6d6659dcd9bf107d30375d0503ce40fd8ccca116a8708337f92fbea038f2c": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Livro sobre escavações no antigo DOPS/MG será lançado com experiência imersiva em Belo Horizonte",
+        "url": "https://www.tce.mg.gov.br/Livro-sobre-escavacoes-no-antigo-DOPS-MG-sera-lancado-com-experiencia-imersiva-em-Belo-Horizonte.html/Noticia/1111629154",
+        "publishedAt": "2026-09-10T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Memórias Aprisionadas: arqueologia da repressão e da resistência no DOPS/MG apresenta pesquisa inédita sobre a materialidade da ditadura e terá lançamento com exposição de peças arqueológicas e projeções de imagens das escavações. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Memórias Aprisionadas: arqueologia da repressão e da resistência no DOPS/MG apresenta pesquisa inédita sobre a materialidade da ditadura e terá lançamento com exposição de peças arqueológicas e projeções de imagens das escavações. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a96f9c196b1d204fcec8d247f0608672bc652edb25c8d232eba3860b9e761acc": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "TCEMG julga regulares as contas de 2025 da Assembleia Legislativa de Minas Gerais",
+        "url": "https://www.tce.mg.gov.br/TCEMG-julga-regulares-as-contas-de-2025-da-Assembleia-Legislativa-de-Minas-Gerais.html/Noticia/1111629155",
+        "publishedAt": "2026-09-10T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) julgou regulares as contas da Assembleia Legislativa do Estado de Minas Gerais (ALMG) referentes ao exercício financeiro de 2025, de responsabilidade do presidente da Casa, deputado Luiz Tadeu Martins Leite. A decisão foi proferida no processo nº 1.210.696, de relatoria do conselheiro Alencar da Silveira Jr. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) julgou regulares as contas da Assembleia Legislativa do Estado de Minas Gerais (ALMG) referentes ao exercício financeiro de 2025, de responsabilidade do presidente da Casa, deputado Luiz Tadeu Martins Leite. A decisão foi proferida no processo nº 1.210.696, de relatoria do conselheiro Alencar da Silveira Jr. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "e8088838ed6cb79460ef9f73beed4ac05c3e737f1d59b473836c1eeb4948046c": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "\"A Terra que Ninguém nos Prometeu\": Fábio de Melo lança novo livro no TCEMG",
+        "url": "https://www.tce.mg.gov.br/-A-Terra-que-Ninguem-nos-Prometeu-Fabio-de-Melo-lanca-novo-livro-no-TCEMG.html/Noticia/1111629156",
+        "publishedAt": "2026-09-10T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Dando continuidade às comemorações dos 40 anos do projeto Sempre Um Papo, o escritor Fábio de Melo participa, no dia 15 de setembro de 2026, do lançamento de seu novo livro, A Terra que Ninguém nos Prometeu (Editora Record). O encontro será realizado às 19h, no auditório do Tribunal de Contas do Estado de Minas Gerais (TCEMG), em Belo Horizonte. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Dando continuidade às comemorações dos 40 anos do projeto Sempre Um Papo, o escritor Fábio de Melo participa, no dia 15 de setembro de 2026, do lançamento de seu novo livro, A Terra que Ninguém nos Prometeu (Editora Record). O encontro será realizado às 19h, no auditório do Tribunal de Contas do Estado de Minas Gerais (TCEMG), em Belo Horizonte. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "fea773ad11b3f69b238957fbd5be196fc4c671d38b510becf88b27ea140a19a4": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Solenidade do Colar do Mérito marca comemorações dos 91 anos do TCEMG",
+        "url": "https://www.tce.mg.gov.br/Solenidade-do-Colar-do-Merito-marca-comemoracoes-dos-91-anos-do-TCEMG.html/Noticia/1111629157",
+        "publishedAt": "2026-09-10T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) recebeu, na tarde de 9 de setembro, personalidades e representantes de instituições para a solenidade de entrega da Medalha Colar do Mérito da Corte de Contas Ministro José Maria de Alkmim. A iniciativa, realizada na sede do Tribunal, tem o objetivo de homenagear pessoas e organizações que prestam relevantes serviços ao TCEMG e ao sistema de controle externo da administração pública. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) recebeu, na tarde de 9 de setembro, personalidades e representantes de instituições para a solenidade de entrega da Medalha Colar do Mérito da Corte de Contas Ministro José Maria de Alkmim. A iniciativa, realizada na sede do Tribunal, tem o objetivo de homenagear pessoas e organizações que prestam relevantes serviços ao TCEMG e ao sistema de controle externo da administração pública. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "36244ea3be2747000619345370651c66c33897b719677c8d9c8efe19b2b90ce6": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Painel revela avanços e desafios de controladorias do Semiárido Mineiro",
+        "url": "https://www.tce.mg.gov.br/Painel-revela-avancos-e-desafios-de-controladorias-do-Semiarido-Mineiro.html/Noticia/1111629159",
+        "publishedAt": "2026-09-10T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "A importância da Decisão Normativa nº 02/2016 e os desafios enfrentados pelas controladorias municipais foram discutidos durante mesa de debates do II Seminário Controles Internos e os Desafios na Gestão, realizado pelo Tribunal de Contas do Estado de Minas Gerais (TCEMG), em Belo Horizonte, em parceria com a Associação Mineira de Contadores Públicos (AMCP), Conselho Estadual de Controle Interno de Minas Gerais (Coneci-MG) e Associação Mineira de Municípios (AMM). O painel reuniu representantes de municípios do Semiárido Mineiro contemplados pelo Programa de Aceleração do Crescimento dos Controles Internos Municipais (PAC-CI). Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A importância da Decisão Normativa nº 02/2016 e os desafios enfrentados pelas controladorias municipais foram discutidos durante mesa de debates do II Seminário Controles Internos e os Desafios na Gestão, realizado pelo Tribunal de Contas do Estado de Minas Gerais (TCEMG), em Belo Horizonte, em parceria com a Associação Mineira de Contadores Públicos (AMCP), Conselho Estadual de Controle Interno de Minas Gerais (Coneci-MG) e Associação Mineira de Municípios (AMM). O painel reuniu representantes de municípios do Semiárido Mineiro contemplados pelo Programa de Aceleração do Crescimento dos Controles Internos Municipais (PAC-CI). Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "fd99b3d7bdcd10c3b072ab2e529d2b543ff7fa4314614f5cb5d7fe1cc3c481f4": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "20 anos da Lei Maria da Penha: evento celebra marco histórico de luta, resistência e transformação",
+        "url": "https://www.tce.mg.gov.br/-20-anos-da-Lei-Maria-da-Penha-evento-celebra-marco-historico-de-luta-resistencia-e-transformacao.html/Noticia/1111629144",
+        "publishedAt": "2026-09-09T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "A Lei Maria da Penha (Lei nº 11.340/2006) representa o principal instrumento jurídico brasileiro de prevenção e combate à violência doméstica e familiar contra a mulher. Reconhecida internacionalmente como uma das legislações mais importantes na defesa dos direitos das mulheres, a norma recebeu o nome de Maria da Penha Maia Fernandes, biofarmacêutica que sofreu duas tentativas de feminicídio praticadas pelo então marido, agressões que a deixaram paraplégica. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Lei Maria da Penha (Lei nº 11.340/2006) representa o principal instrumento jurídico brasileiro de prevenção e combate à violência doméstica e familiar contra a mulher. Reconhecida internacionalmente como uma das legislações mais importantes na defesa dos direitos das mulheres, a norma recebeu o nome de Maria da Penha Maia Fernandes, biofarmacêutica que sofreu duas tentativas de feminicídio praticadas pelo então marido, agressões que a deixaram paraplégica. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a721785b95220768bc645cdc14e6bfefc2a74155926bed36fb9cc5b5b33d1e78": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Edital de rodeio em Cruzília que previa até sorteio de moto emplacada acaba em multa por irregularidades",
+        "url": "https://www.tce.mg.gov.br/Edital-de-rodeio-em-Cruzilia-que-previa-ate-sorteio-de-moto-emplacada-acaba-em-multa-por-irregularidades.html/Noticia/1111629147",
+        "publishedAt": "2026-09-09T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Um edital da Prefeitura de Cruzília, no Sul de Minas, chamou a atenção por um detalhe incomum: entre as premiações previstas para a \"Festa do Peão de Boiadeiro\" estava uma motocicleta Suzuki Yes, ano 2010, vermelha e identificada pela placa NVP-0233. Com essas condições tão específicas, na prática, apenas quem tivesse aquela moto - ou pudesse adquiri-la previamente - teria condições de cumprir as exigências, o que de fato aconteceu: somente uma empresa participou do pregão. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Um edital da Prefeitura de Cruzília, no Sul de Minas, chamou a atenção por um detalhe incomum: entre as premiações previstas para a \"Festa do Peão de Boiadeiro\" estava uma motocicleta Suzuki Yes, ano 2010, vermelha e identificada pela placa NVP-0233. Com essas condições tão específicas, na prática, apenas quem tivesse aquela moto - ou pudesse adquiri-la previamente - teria condições de cumprir as exigências, o que de fato aconteceu: somente uma empresa participou do pregão. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "66cce994bd5884b8c90d6f11d559afc8c96b55840d6086830bef2a43909bc663": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "TCEMG julga regulares as contas de 2023 do Tribunal de Justiça de Minas Gerais",
+        "url": "https://www.tce.mg.gov.br/TCEMG-julga-regulares-as-contas-de-2023-do-Tribunal-de-Justica-de-Minas-Gerais.html/Noticia/1111629149",
+        "publishedAt": "2026-09-09T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) julgou regulares as contas do Tribunal de Justiça do Estado de Minas Gerais (TJMG) referentes ao exercício de 2023, de responsabilidade do então presidente da instituição, desembargador José Arthur de Carvalho Pereira Filho. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) julgou regulares as contas do Tribunal de Justiça do Estado de Minas Gerais (TJMG) referentes ao exercício de 2023, de responsabilidade do então presidente da instituição, desembargador José Arthur de Carvalho Pereira Filho. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "59ae8bf7b518104f423ef92b7064b0ba2e9cdf7752fa9325df3354158ccb2752": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "TCEMG nega recurso e mantém multa a prefeito de Araguari por nepotismo",
+        "url": "https://www.tce.mg.gov.br/TCEMG-nega-recurso-e-mantem-multa-a-prefeito-de-Araguari-por-nepotismo.html/Noticia/1111629150",
+        "publishedAt": "2026-09-09T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) negou, nesta quarta-feira (9/9), recurso apresentado pelo prefeito de Araguari, Renato Carvalho Fernandes, e manteve multa de R$ 5 mil aplicada a ele por nepotismo. A decisão foi tomada pelo Tribunal Pleno, no julgamento do processo nº 1.207.818, de relatoria do conselheiro em exercício Adonias Monteiro. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) negou, nesta quarta-feira (9/9), recurso apresentado pelo prefeito de Araguari, Renato Carvalho Fernandes, e manteve multa de R$ 5 mil aplicada a ele por nepotismo. A decisão foi tomada pelo Tribunal Pleno, no julgamento do processo nº 1.207.818, de relatoria do conselheiro em exercício Adonias Monteiro. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "476a740841787349a3455efc4135c9c6e646adebc928cf685662ce4b873341b4": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Novas lideranças, mesmo propósito: encontro celebra mudança de gestão do Jus-Povos",
+        "url": "https://www.tce.mg.gov.br/Novas-liderancas-mesmo-proposito-encontro-celebra-mudanca-de-gestao-do-Jus-Povos.html/Noticia/1111629151",
+        "publishedAt": "2026-09-09T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "No dia 8 de agosto, o Tribunal de Justiça de Minas Gerais (TJMG) sediou a cerimônia de posse da presidência e da vice-presidência do Jus-Povos. As novas lideranças passaram a ser exercidas, respectivamente, pela desembargadora Shirley Fenzi Bertão e pelo presidente do Tribunal de Contas do Estado de Minas Gerais (TCEMG), conselheiro Durval Ângelo. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "No dia 8 de agosto, o Tribunal de Justiça de Minas Gerais (TJMG) sediou a cerimônia de posse da presidência e da vice-presidência do Jus-Povos. As novas lideranças passaram a ser exercidas, respectivamente, pela desembargadora Shirley Fenzi Bertão e pelo presidente do Tribunal de Contas do Estado de Minas Gerais (TCEMG), conselheiro Durval Ângelo. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a8a9c483df59d653eecde7bf16b8bb3ec080488418ca4fdb0da0389450dce87f": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Sempre Um Papo leva ao Tribunal a obra e a persona Rita von Hunty",
+        "url": "https://www.tce.mg.gov.br/Sempre-Um-Papo-leva-ao-Tribunal-a-obra-e-a-persona-Rita-von-Hunty.html/Noticia/1111629152",
+        "publishedAt": "2026-09-09T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Em “Formas de Narrar um Corpo” a comunicadora, escritora, letróloga e Drag Queen Rita von Hunty coloca em xeque a naturalidade e normalidade atribuídas a aspectos da vida em sociedade. Na obra, a escritora dedica-se especificamente a desconstruir a percepção que a sociedade ocidental tem de gênero e de sexualidade, demonstrando que as bases sobre as quais construímos nossas próprias identidades são bem menos sólidas do que o senso comum faz parecer. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Em “Formas de Narrar um Corpo” a comunicadora, escritora, letróloga e Drag Queen Rita von Hunty coloca em xeque a naturalidade e normalidade atribuídas a aspectos da vida em sociedade. Na obra, a escritora dedica-se especificamente a desconstruir a percepção que a sociedade ocidental tem de gênero e de sexualidade, demonstrando que as bases sobre as quais construímos nossas próprias identidades são bem menos sólidas do que o senso comum faz parecer. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "96de484ae2333596f2689e38ddc97895c8b7a62f04be4a2c710e168bcfb1be13": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "PodContas debate o papel dos Consórcios Públicos na gestão municipal com Victor Borges",
+        "url": "https://www.tce.sp.gov.br/6524-podcontas-debate-papel-consorcios-publicos-gestao-municipal-com-victor-borges",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "14/09/2026 – SÃO PAULO – A Escola Paulista de Contas Públicas \"Presidente Washington Luís\" (EPCP), vinculada ao Tribunal de Contas do Estado de São Paulo (TCESP), disponibilizou o 156º episódio do PodContas, dedicado ao tema Consórcios Públicos. O programa recebeu Victor Borges, Presidente Executivo da Rede Nacional de Consórcios Públicos — entidade que atua fomentando e articulando políticas públicas em favor dos consórcios em todos os estados da federação. Apresentado por Patrick Rafael Comparoni, servidor da Escola de Contas, o episódio abordou o conceito e o funcionamento desse modelo de cooperação, suas vantagens e desafios, a atuação da Rede Nacional e o papel dos Tribunais de Contas na temática. Borges abriu a conversa explicando o princípio que sustenta o instrumento: \"a união faz a força\". Segundo o convidado, a maioria dos 5.570 municípios brasileiros é de pequeno porte e não consegue, isoladamente, dar conta de desafios como a destinação do lixo doméstico, a compra de medicamentos ou a manutenção de serviços especializados. A solução consorciada permite que cidades vizinhas compartilhem estruturas e contratem em conjunto. No caso do lixo, por exemplo, pequenos municípios utilizam sua \"cota parte\" de um aterro sanitário coletivo. Nas compras, a soma das demandas gera escala e resulta em preços menores — o convidado comparou a situação a pequenas farmácias que, unidas, passam a competir com grandes redes. Vantagens e desafios Entre os pontos fortes do modelo, o convidado destacou a capacidade de municípios pequenos competirem em condições semelhantes às das cidades maiores, viabilizando políticas públicas em áreas como saúde, saneamento, meio ambiente, segurança pública e desenvolvimento regional. Borges também apresentou iniciativas da Rede Nacional, como a ca",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 6,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "14/09/2026 – SÃO PAULO – A Escola Paulista de Contas Públicas \"Presidente Washington Luís\" (EPCP), vinculada ao Tribunal de Contas do Estado de São Paulo (TCESP), disponibilizou o 156º episódio do PodContas, dedicado ao tema Consórcios Públicos. O programa recebeu Victor Borges, Presidente Executivo da Rede Nacional de Consórcios Públicos — entidade que atua fomentando e articulando políticas públicas em favor dos consórcios em todos os estados da federação. Apresentado por Patrick Rafael Comparoni, servidor da Escola de Contas, o episódio abordou o conceito e o funcionamento desse modelo de cooperação, suas vantagens e desafios, a atuação da Rede Nacional e o papel dos Tribunais de Contas na temática. Borges abriu a conversa explicando o princípio que sustenta o instrumento: \"a união faz a força\". Segundo o convidado, a maioria dos 5.570 municípios brasileiros é de pequeno porte e não consegue, isoladamente, dar conta de desafios como a destinação do lixo doméstico, a compra de medicamentos ou a manutenção de serviços especializados. A solução consorciada permite que cidades vizinhas compartilhem estruturas e contratem em conjunto. No caso do lixo, por exemplo, pequenos municípios utilizam sua \"cota parte\" de um aterro sanitário coletivo. Nas compras, a soma das demandas gera escala e resulta em preços menores — o convidado comparou a situação a pequenas farmácias que, unidas, passam a competir com grandes redes. Vantagens e desafios Entre os pontos fortes do modelo, o convidado destacou a capacidade de municípios pequenos competirem em condições semelhantes às das cidades maiores, viabilizando políticas públicas em áreas como saúde, saneamento, meio ambiente, segurança pública e desenvolvimento regional. Borges também apresentou iniciativas da Rede Nacional, como a ca",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "4436fad46607038d8cfe89469b557267d3afa88b2153e8a335cc4fa4c50c70d7": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Nono módulo da Trilha de Aprendizagem sobre ODS está no ar",
+        "url": "https://www.tce.sp.gov.br/6524-nono-modulo-trilha-aprendizagem-sobre-ods-esta-ar",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "14/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP), por meio da Escola Paulista de Contas Públicas (EPCP), disponibilizou nesta segunda-feira, 14/9, o nono módulo da Trilha de Aprendizagem que aborda os Objetivos de Desenvolvimento Sustentável (ODS) na Prática. Com o tema ‘Valorização do Corpo Técnico’, o módulo evidencia a valorização do corpo técnico como elemento central para a melhoria do desempenho institucional e para a efetividade das políticas públicas, permite compreender a gestão de pessoas como processo estratégico e reflete sobre o comportamento das pessoas nas organizações. Composta por dez módulos, lançados ao longo de 2025 e 2026, a trilha disponibiliza conteúdos didáticos, vídeos, manuais, boas práticas, além de indicações de livros, filmes, documentários e podcasts, e o desafio EPCPlay. A ideia tem como objetivo reunir o conhecimento sobre os ODS e sua relação com as dimensões do Índice de Efetividade da Gestão Municipal (IEG-M), oferecendo um guia prático aos gestores públicos de como melhorar a qualidade dos produtos e dos serviços disponibilizados aos cidadãos. Conheça a Trilha de Aprendizagem ODS na Prática por meio do link a seguir e saiba mais: https://go.tce.sp.gov.br/trilhaods.",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "14/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP), por meio da Escola Paulista de Contas Públicas (EPCP), disponibilizou nesta segunda-feira, 14/9, o nono módulo da Trilha de Aprendizagem que aborda os Objetivos de Desenvolvimento Sustentável (ODS) na Prática. Com o tema ‘Valorização do Corpo Técnico’, o módulo evidencia a valorização do corpo técnico como elemento central para a melhoria do desempenho institucional e para a efetividade das políticas públicas, permite compreender a gestão de pessoas como processo estratégico e reflete sobre o comportamento das pessoas nas organizações. Composta por dez módulos, lançados ao longo de 2025 e 2026, a trilha disponibiliza conteúdos didáticos, vídeos, manuais, boas práticas, além de indicações de livros, filmes, documentários e podcasts, e o desafio EPCPlay. A ideia tem como objetivo reunir o conhecimento sobre os ODS e sua relação com as dimensões do Índice de Efetividade da Gestão Municipal (IEG-M), oferecendo um guia prático aos gestores públicos de como melhorar a qualidade dos produtos e dos serviços disponibilizados aos cidadãos. Conheça a Trilha de Aprendizagem ODS na Prática por meio do link a seguir e saiba mais: https://go.tce.sp.gov.br/trilhaods.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5644e472796b1bd97f5551ffcb683217a3f08af0d8d0d8e4a0a1588f49dfbf95": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Conexão Saúde debate saúde mental no trabalho com a jornalista Izabella Camargo",
+        "url": "https://www.tce.sp.gov.br/6524-conexao-saude-debate-saude-mental-trabalho-com-jornalista-izabella-camargo",
+        "publishedAt": "2026-09-11T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "11/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP) disponibilizou, em seu canal oficial no YouTube, novo episódio do programa Conexão Saúde, dedicado ao Setembro Amarelo e ao enfrentamento do adoecimento mental no trabalho. A edição recebeu a jornalista Izabella Camargo, autora do livro 'Dá um tempo', e Fernanda Keid, Diretora da Diretoria de Saúde e Assistência Social (DASAS) do TCESP. Apresentado por Karen Bravo, o programa abordou como identificar e enfrentar o adoecimento no trabalho, com a provocação central: por que ainda precisamos chegar ao limite para começar a cuidar da saúde mental? A experiência de Izabella Camargo Izabella Camargo, que em 2018 recebeu o diagnóstico da síndrome de burnout ao vivo, durante sua carreira na televisão, contou como transformou a própria experiência em um trabalho de educação e prevenção. \"Ou a gente vai falar só sobre as consequências ou a gente pode falar da origem\", afirmou. A jornalista destacou a importância de construir uma cultura de prevenção em saúde mental — comparando o tema à saúde bucal, que também enfrentou estigmas até se tornar hábito cotidiano — e diferenciou os estágios do adoecimento: o cansaço, consequência daquilo que se escolhe fazer; o esgotamento, quando a pessoa já está doente, mas ainda funcionando; e o burnout, quando se para de funcionar. A Brigada em Saúde Mental do TCESP Fernanda Keid relatou como o próprio adoecimento a levou a criar, no TCESP, a Brigada em Saúde Mental — projeto formado por servidores voluntários, não profissionais da saúde, que atuam como \"olhares espalhados pela casa\", percebendo mudanças sutis no padrão de comportamento dos colegas. A diretora também destacou o trabalho de busca ativa por meio de oficinas de psicoeducação e de comunicação não violenta, a",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "11/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP) disponibilizou, em seu canal oficial no YouTube, novo episódio do programa Conexão Saúde, dedicado ao Setembro Amarelo e ao enfrentamento do adoecimento mental no trabalho. A edição recebeu a jornalista Izabella Camargo, autora do livro 'Dá um tempo', e Fernanda Keid, Diretora da Diretoria de Saúde e Assistência Social (DASAS) do TCESP. Apresentado por Karen Bravo, o programa abordou como identificar e enfrentar o adoecimento no trabalho, com a provocação central: por que ainda precisamos chegar ao limite para começar a cuidar da saúde mental? A experiência de Izabella Camargo Izabella Camargo, que em 2018 recebeu o diagnóstico da síndrome de burnout ao vivo, durante sua carreira na televisão, contou como transformou a própria experiência em um trabalho de educação e prevenção. \"Ou a gente vai falar só sobre as consequências ou a gente pode falar da origem\", afirmou. A jornalista destacou a importância de construir uma cultura de prevenção em saúde mental — comparando o tema à saúde bucal, que também enfrentou estigmas até se tornar hábito cotidiano — e diferenciou os estágios do adoecimento: o cansaço, consequência daquilo que se escolhe fazer; o esgotamento, quando a pessoa já está doente, mas ainda funcionando; e o burnout, quando se para de funcionar. A Brigada em Saúde Mental do TCESP Fernanda Keid relatou como o próprio adoecimento a levou a criar, no TCESP, a Brigada em Saúde Mental — projeto formado por servidores voluntários, não profissionais da saúde, que atuam como \"olhares espalhados pela casa\", percebendo mudanças sutis no padrão de comportamento dos colegas. A diretora também destacou o trabalho de busca ativa por meio de oficinas de psicoeducação e de comunicação não violenta, a",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "9f028ca97770b6f264b0893ebc66f4d033c9fc3602a3b61c9025f20ab8b581dc": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "Ciclo de Debates do TCESP faz parada na cidade de Limeira",
+        "url": "https://www.tce.sp.gov.br/6524-ciclo-debates-tcesp-faz-parada-cidade-limeira",
+        "publishedAt": "2026-09-11T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "11/09/2026 - LIMEIRA - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou nova etapa do 30º Ciclo de Debates nesta sexta-feira, 11/9. Desta vez, a cidade anfitriã foi Limeira e mais de 300 pessoas prestigiaram o evento no Teatro Nair Bello. Assim, gestores públicos de toda região puderam discutir temas relativos ao controle externo e administração pública. O ponto alto do evento foi a troca de conhecimento e informações apresentadas durante a sessão coordenada pelos Diretores e Técnicos do Tribunal. Durante a explanação houve sessão de tira-dúvidas com questões trazidas pela plateia. Temas como Nova Lei de Licitações, Índice de Efetividade da Gestão Municipal (IEG-M), Fase 4 do Sistema Audesp, repasses ao Terceiro Setor, emendas parlamentares, questões orçamentárias, contratações, entrega de dados, processos e tecnologia da informação entraram na pauta. Além das perguntas dos gestores, os prefeitos da região puderam apresentar suas dúvidas e situações em uma roda de conversa com a Presidente do TCESP, Conselheira Cristiana de Castro Moraes; a Procuradora-Geral do Ministério Público de Contas, Letícia Formoso Delsin Matuck Feres, além de Diretores. A Presidente do TCESP, Conselheira Cristiana de Castro Moraes, abriu o evento e lembrou ter sido agraciada recentemente com o título de Cidadã Limeirense. Sobre o evento, ressaltou a grande adesão. \"Fico feliz em vermos todos juntos com o mesmo propósito. Nessa manhã chuvosa estar aqui, querer aprender mais, contribuir, trocar experiências. Assim, ajudamos na melhoria da administração pública, com a melhoria do cidadão. Parabéns a todos vocês que desejam melhorar a vida das nossas cidades, a vida das pessoas\", pontuou. O Prefeito de Limeira, Murilo Félix, reforçou a alegria em receber o Ciclo de Debates no mês das co",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "11/09/2026 - LIMEIRA - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou nova etapa do 30º Ciclo de Debates nesta sexta-feira, 11/9. Desta vez, a cidade anfitriã foi Limeira e mais de 300 pessoas prestigiaram o evento no Teatro Nair Bello. Assim, gestores públicos de toda região puderam discutir temas relativos ao controle externo e administração pública. O ponto alto do evento foi a troca de conhecimento e informações apresentadas durante a sessão coordenada pelos Diretores e Técnicos do Tribunal. Durante a explanação houve sessão de tira-dúvidas com questões trazidas pela plateia. Temas como Nova Lei de Licitações, Índice de Efetividade da Gestão Municipal (IEG-M), Fase 4 do Sistema Audesp, repasses ao Terceiro Setor, emendas parlamentares, questões orçamentárias, contratações, entrega de dados, processos e tecnologia da informação entraram na pauta. Além das perguntas dos gestores, os prefeitos da região puderam apresentar suas dúvidas e situações em uma roda de conversa com a Presidente do TCESP, Conselheira Cristiana de Castro Moraes; a Procuradora-Geral do Ministério Público de Contas, Letícia Formoso Delsin Matuck Feres, além de Diretores. A Presidente do TCESP, Conselheira Cristiana de Castro Moraes, abriu o evento e lembrou ter sido agraciada recentemente com o título de Cidadã Limeirense. Sobre o evento, ressaltou a grande adesão. \"Fico feliz em vermos todos juntos com o mesmo propósito. Nessa manhã chuvosa estar aqui, querer aprender mais, contribuir, trocar experiências. Assim, ajudamos na melhoria da administração pública, com a melhoria do cidadão. Parabéns a todos vocês que desejam melhorar a vida das nossas cidades, a vida das pessoas\", pontuou. O Prefeito de Limeira, Murilo Félix, reforçou a alegria em receber o Ciclo de Debates no mês das co",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "9f9364e6671983e0a305a64aade3d413bedcedfd4c26332c8868da0cf8473cc0": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "São Carlos recebe caravana do Ciclo de Debates do TCESP",
+        "url": "https://www.tce.sp.gov.br/6524-sao-carlos-recebe-caravana-ciclo-debates-tcesp",
+        "publishedAt": "2026-09-10T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "10/09/2026 - SÃO CARLOS - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou mais um encontro do 30º Ciclo de Debates nesta quinta-feira, 10/9. O evento foi realizado no Teatro Municipal Dr. Alderico Vieira Perdigão, em São Carlos, e recebeu cerca de 300 gestores públicos de todo a Região Central para discutirem temas relativos ao controle externo e administração pública. O ponto alto do evento foi a troca de conhecimento e informações apresentadas durante a sessão coordenada pelos Diretores e Técnicos do Tribunal. Durante a explanação houve sessão de tira-dúvidas com questões trazidas pela plateia. Temas como Nova Lei de Licitações, Índice de Efetividade da Gestão Municipal (IEG-M), Fase 4 do Sistema Audesp, repasses ao Terceiro Setor, emendas parlamentares, questões orçamentárias, contratações, entrega de dados, processos e tecnologia da informação entraram na pauta. Além das perguntas dos gestores, cerca de 30 prefeitos da região puderam apresentar suas dúvidas e situações em uma roda de conversa com a Presidente do TCESP, Conselheira Cristiana de Castro Moraes; o Vice-Presidente Conselheiro Dimas Ramalho; a Procuradora do Ministério Público de Contas, Renata Constante Cestari, além de Diretores. O evento foi aberto aos presentes pela Presidente do TCESP. \"Estamos aqui para conversarmos sobre o dia a dia da administração, ouvir vocês que estão na ponta. Queremos que vocês tragam as suas perguntas nesse importante momento de diálogo, de troca, de aprendizado. Assim, podemos conhecer mais a administração, fiscalizar melhor, mas também orientar melhor e contribuir mais\", discursou a Conselheira Cristiana. O Vice-Presidente do TCESP também falou ao público. \"Prefeitos, parabéns pelo enfrentamento que vocês têm. É difícil, mas resistam. Vocês foram escolhidos pa",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "10/09/2026 - SÃO CARLOS - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou mais um encontro do 30º Ciclo de Debates nesta quinta-feira, 10/9. O evento foi realizado no Teatro Municipal Dr. Alderico Vieira Perdigão, em São Carlos, e recebeu cerca de 300 gestores públicos de todo a Região Central para discutirem temas relativos ao controle externo e administração pública. O ponto alto do evento foi a troca de conhecimento e informações apresentadas durante a sessão coordenada pelos Diretores e Técnicos do Tribunal. Durante a explanação houve sessão de tira-dúvidas com questões trazidas pela plateia. Temas como Nova Lei de Licitações, Índice de Efetividade da Gestão Municipal (IEG-M), Fase 4 do Sistema Audesp, repasses ao Terceiro Setor, emendas parlamentares, questões orçamentárias, contratações, entrega de dados, processos e tecnologia da informação entraram na pauta. Além das perguntas dos gestores, cerca de 30 prefeitos da região puderam apresentar suas dúvidas e situações em uma roda de conversa com a Presidente do TCESP, Conselheira Cristiana de Castro Moraes; o Vice-Presidente Conselheiro Dimas Ramalho; a Procuradora do Ministério Público de Contas, Renata Constante Cestari, além de Diretores. O evento foi aberto aos presentes pela Presidente do TCESP. \"Estamos aqui para conversarmos sobre o dia a dia da administração, ouvir vocês que estão na ponta. Queremos que vocês tragam as suas perguntas nesse importante momento de diálogo, de troca, de aprendizado. Assim, podemos conhecer mais a administração, fiscalizar melhor, mas também orientar melhor e contribuir mais\", discursou a Conselheira Cristiana. O Vice-Presidente do TCESP também falou ao público. \"Prefeitos, parabéns pelo enfrentamento que vocês têm. É difícil, mas resistam. Vocês foram escolhidos pa",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "91becf7d33c3807798844cf54349a99202244f4c1a0bdb01075f141c425f31d3": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "TCESP publica Relatório do Terceiro Setor 2025",
+        "url": "https://www.tce.sp.gov.br/6524-tcesp-publica-relatorio-terceiro-setor-2025",
+        "publishedAt": "2026-09-09T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "09/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) publicou nesta terça-feira, 08/09, o Relatório do Terceiro Setor 2025. O documento consolida as principais ações desenvolvidas pelo TCESP, por intermédio da 1ª e da 10ª Diretorias de Fiscalização e das Unidades Regionais, relacionadas à fiscalização, ao aperfeiçoamento normativo e à orientação dos jurisdicionados quanto às parcerias celebradas com entidades do Terceiro Setor durante o exercício de 2025. O documento evidencia a crescente relevância dessas parcerias na execução de políticas públicas e demonstra as iniciativas adotadas pelo Tribunal para fortalecer os mecanismos de controle, transparência e prestação de contas. No âmbito da fiscalização, foram instruídos 2.028 processos, compreendendo ajustes, aditamentos e prestações de contas, além da realização de 350 auditorias in loco, envolvendo inspeções patrimoniais, análise de contratações, vistorias em instalações e acompanhamento da execução dos serviços prestados pelas entidades parceiras.",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "09/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) publicou nesta terça-feira, 08/09, o Relatório do Terceiro Setor 2025. O documento consolida as principais ações desenvolvidas pelo TCESP, por intermédio da 1ª e da 10ª Diretorias de Fiscalização e das Unidades Regionais, relacionadas à fiscalização, ao aperfeiçoamento normativo e à orientação dos jurisdicionados quanto às parcerias celebradas com entidades do Terceiro Setor durante o exercício de 2025. O documento evidencia a crescente relevância dessas parcerias na execução de políticas públicas e demonstra as iniciativas adotadas pelo Tribunal para fortalecer os mecanismos de controle, transparência e prestação de contas. No âmbito da fiscalização, foram instruídos 2.028 processos, compreendendo ajustes, aditamentos e prestações de contas, além da realização de 350 auditorias in loco, envolvendo inspeções patrimoniais, análise de contratações, vistorias em instalações e acompanhamento da execução dos serviços prestados pelas entidades parceiras.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "fd3436bacead59e22f97f1d0571bb3afa9834f7b4694a78cd13c6ce017bd4d7f": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "news",
+        "title": "TCESP realiza Encontro de Controle Interno e Integridade na Gestão Pública em Araraquara",
+        "url": "https://www.tce.sp.gov.br/6524-tcesp-realiza-encontro-controle-interno-e-integridade-gestao-publica-araraquara",
+        "publishedAt": "2026-09-08T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "08/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por meio da Escola Paulista de Contas Públicas (EPCP), realizará no dia 28 de setembro de 2026, das 9h às 12h e das 13h30 às 16h30, o Encontro de Controle Interno e Integridade na Gestão Pública, no Auditório da Unidade Regional do TCESP em Araraquara...",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "08/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por meio da Escola Paulista de Contas Públicas (EPCP), realizará no dia 28 de setembro de 2026, das 9h às 12h e das 13h30 às 16h30, o Encontro de Controle Interno e Integridade na Gestão Pública, no Auditório da Unidade Regional do TCESP em Araraquara...",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c3b84aa16ffb37c62607e95c6ea7a4861732ee5b81d362ab1ef787ba3f02d682": {
+      "firstSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "item": {
+        "kind": "gazette-index",
+        "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
+        "url": "https://www-storage.voxtecnologia.com.br/?m=sigpub.publicacao&f=182&i=publicado_118436_2026-09-11_31833fb788f5ea8af55110153a97105f.pdf",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "Diário Municipal AMM-MG",
+        "sourceUrl": "https://www.diariomunicipal.com.br/amm-mg/",
+        "summary": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
+        "scraper": "diario-municipal-index",
+        "previewOnly": true,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    }
+  },
+  "runs": {
+    "34890080312:1": {
+      "at": "2026-09-14T19:58:39.657Z",
+      "collected": 74,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 25,
+          "durationMs": 691
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 4761
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 21,
+          "durationMs": 2598
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 28,
+          "durationMs": 6059
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 20
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 7
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 4017
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
+    }
+  },
+  "health": {
+    "Google News": {
+      "name": "Google News",
+      "status": "ok",
+      "itemCount": 25,
+      "durationMs": 691,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Querido Diário": {
+      "name": "Querido Diário",
+      "status": "degraded",
+      "itemCount": 0,
+      "durationMs": 4761,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 1,
+      "lastSuccessAt": null
+    },
+    "Querido Diário — consulta 1": {
+      "name": "Querido Diário — consulta 1",
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 1,
+      "lastSuccessAt": null
+    },
+    "Querido Diário — consulta 2": {
+      "name": "Querido Diário — consulta 2",
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 1,
+      "lastSuccessAt": null
+    },
+    "Querido Diário — consulta 3": {
+      "name": "Querido Diário — consulta 3",
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 1,
+      "lastSuccessAt": null
+    },
+    "Feeds RSS": {
+      "name": "Feeds RSS",
+      "status": "ok",
+      "itemCount": 21,
+      "durationMs": 2598,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "COPIRN": {
+      "name": "COPIRN",
+      "status": "ok",
+      "itemCount": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "CIGA": {
+      "name": "CIGA",
+      "status": "ok",
+      "itemCount": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "CISREC": {
+      "name": "CISREC",
+      "status": "ok",
+      "itemCount": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "CONIAPE": {
+      "name": "CONIAPE",
+      "status": "ok",
+      "itemCount": 1,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Observatório das Metrópoles": {
+      "name": "Observatório das Metrópoles",
+      "status": "ok",
+      "itemCount": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Frente Nacional de Prefeitas e Prefeitos": {
+      "name": "Frente Nacional de Prefeitas e Prefeitos",
+      "status": "ok",
+      "itemCount": 10,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Agência Brasil": {
+      "name": "Agência Brasil",
+      "status": "ok",
+      "itemCount": 10,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Scrapers web": {
+      "name": "Scrapers web",
+      "status": "ok",
+      "itemCount": 28,
+      "durationMs": 6059,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Rede Nacional de Consórcios Públicos": {
+      "name": "Rede Nacional de Consórcios Públicos",
+      "adapter": "rncp",
+      "status": "disabled",
+      "itemCount": 0,
+      "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
+      "consecutiveFailures": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Confederação Nacional de Municípios": {
+      "name": "Confederação Nacional de Municípios",
+      "adapter": "cnm",
+      "status": "disabled",
+      "itemCount": 0,
+      "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
+      "consecutiveFailures": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z"
+    },
+    "CISAMAPI": {
+      "name": "CISAMAPI",
+      "adapter": "cisamapi",
+      "status": "disabled",
+      "itemCount": 0,
+      "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
+      "consecutiveFailures": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z"
+    },
+    "TCE-MG": {
+      "name": "TCE-MG",
+      "adapter": "tce-mg",
+      "status": "ok",
+      "itemCount": 20,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "TCE-SP": {
+      "name": "TCE-SP",
+      "adapter": "tce-sp",
+      "status": "ok",
+      "itemCount": 7,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "Diário Municipal AMM-MG": {
+      "name": "Diário Municipal AMM-MG",
+      "adapter": "diario-municipal-index",
+      "status": "ok",
+      "itemCount": 1,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "SAPL": {
+      "name": "SAPL",
+      "status": "ok",
+      "itemCount": 0,
+      "durationMs": 4017,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "SAPL Unaí": {
+      "name": "SAPL Unaí",
+      "status": "ok",
+      "itemCount": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    },
+    "SAPL São João da Boa Vista": {
+      "name": "SAPL São João da Boa Vista",
+      "status": "ok",
+      "itemCount": 0,
+      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+    }
+  },
+  "historyStartedAt": "2026-09-14T19:58:39.657Z"
 }
