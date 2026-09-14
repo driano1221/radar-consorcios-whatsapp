@@ -1,5 +1,5 @@
 {
-  "lookbackHours": 96,
+  "lookbackHours": 168,
   "maxPostsPerRun": 3,
   "maxPostsPerDay": 72,
   "minimumScore": 5,
@@ -32,6 +32,7 @@
   },
   "queridoDiario": {
     "enabled": true,
+    "baseUrl": "https://queridodiario.ok.org.br/api",
     "pageSize": 100,
     "excerptSize": 900,
     "numberOfExcerpts": 3,
@@ -76,6 +77,25 @@
         "url": "https://copirn.org.br/feed/"
       },
       {
+        "name": "CIGA",
+        "url": "https://consorciociga.gov.br/feed/",
+        "stateCode": "SC"
+      },
+      {
+        "name": "CISREC",
+        "url": "https://cisrec.mg.gov.br/feed/",
+        "stateCode": "MG"
+      },
+      {
+        "name": "CONIAPE",
+        "url": "https://consorcioconiape.pe.gov.br/feed/",
+        "articleSelector": ".entry-content",
+        "maxArticles": 4,
+        "entityAlias": "CONIAPE",
+        "entityName": "Consórcio Público Intermunicipal do Agreste Pernambucano e Fronteiras",
+        "stateCode": "PE"
+      },
+      {
         "name": "Observatório das Metrópoles",
         "url": "https://www.observatoriodasmetropoles.net.br/tag/consorcios-publicos/feed/"
       },
@@ -89,6 +109,15 @@
       }
     ]
   },
+  "sapl": {
+    "enabled": true,
+    "maxPages": 3,
+    "timeoutMs": 12000,
+    "sites": [
+      { "name": "SAPL Unaí", "url": "https://sapl.unai.mg.leg.br", "municipality": "Unaí", "stateCode": "MG", "publish": true },
+      { "name": "SAPL São João da Boa Vista", "url": "https://sapl.saojoaodaboavista.sp.leg.br", "municipality": "São João da Boa Vista", "stateCode": "SP", "publish": true }
+    ]
+  },
   "webScrapers": {
     "enabled": true,
     "publish": false,
@@ -100,8 +129,9 @@
         "name": "Rede Nacional de Consórcios Públicos",
         "adapter": "rncp",
         "url": "https://www.rncp.org.br/noticias",
-        "enabled": false,
-        "fallback": "Google News com filtro site:rncp.org.br"
+        "enabled": true,
+        "publish": true,
+        "articleSelector": ".the_content_wrapper"
       },
       {
         "name": "Confederação Nacional de Municípios",
@@ -115,6 +145,23 @@
         "adapter": "tce-mg",
         "url": "https://www.tce.mg.gov.br/noticia",
         "encoding": "windows-1252",
+        "publish": true
+      },
+      {
+        "name": "TCE-SP",
+        "adapter": "tce-sp",
+        "url": "https://www.tce.sp.gov.br/noticias",
+        "articleSelector": ".conteudoNoticia",
+        "maxArticles": 6,
+        "publish": true
+      },
+      {
+        "name": "CISAMAPI",
+        "adapter": "cisamapi",
+        "url": "https://www.cisamapi.mg.gov.br/noticias",
+        "articleSelector": ".new-txt:has(p)",
+        "entityName": "Consórcio Intermunicipal de Saúde da Microrregião do Vale do Piranga",
+        "entityAlias": "CISAMAPI",
         "publish": true
       },
       {

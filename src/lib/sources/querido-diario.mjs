@@ -20,7 +20,7 @@ async function fetchGroup(terms, config, since, fetchImpl) {
     size: String(config.pageSize || 100),
     sort_by: 'descending_date',
   });
-  const url = `https://api.queridodiario.ok.org.br/gazettes?${params}`;
+  const url = `${config.baseUrl || 'https://queridodiario.ok.org.br/api'}/gazettes?${params}`;
   const response = await fetchWithRetry(url, {
     fetchImpl,
     timeoutMs: config.timeoutMs || 15000,
@@ -29,7 +29,8 @@ async function fetchGroup(terms, config, since, fetchImpl) {
   });
   if (!response.ok) throw new Error(`Querido Diário respondeu ${response.status}`);
   const payload = await response.json();
-  return payload.gazettes || [];
+  if (!Array.isArray(payload.gazettes)) throw new Error('Querido Diário: formato inesperado (gazettes ausente)');
+  return { gazettes: payload.gazettes, truncated: payload.gazettes.length >= (config.pageSize || 100) };
 }
 
 function mergeGazettes(groups) {
@@ -52,17 +53,20 @@ export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
   );
   const results = [];
   let successfulGroups = 0;
+  const diagnostics = [];
   settled.forEach((result, index) => {
     if (result.status === 'fulfilled') {
       successfulGroups += 1;
-      results.push(result.value);
+      results.push(result.value.gazettes);
+      diagnostics.push({ name: `Querido Diário — consulta ${index + 1}`, status: result.value.truncated ? 'degraded' : 'ok',
+        itemCount: result.value.gazettes.length,
+        ...(result.value.truncated ? { message: 'Página cheia; pode haver resultados adicionais fora do limite' } : {}) });
     } else {
       console.warn(`[fonte:querido-diario:${index + 1}] ${result.reason.message}`);
+      diagnostics.push({ name: `Querido Diário — consulta ${index + 1}`, status: 'error', itemCount: 0, message: result.reason.message });
     }
   });
-  if (!successfulGroups) throw new Error('Todas as consultas ao Querido Diário falharam.');
-
-  return mergeGazettes(results).map((gazette) => {
+  const items = mergeGazettes(results).map((gazette) => {
     const excerpts = (gazette.excerpts || []).map(normalizeWhitespace).filter(Boolean);
     return {
       kind: 'gazette',
@@ -79,6 +83,7 @@ export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
       edition: gazette.edition,
     };
   });
+  return { items, diagnostics, ok: successfulGroups > 0, degraded: diagnostics.some((d) => d.status !== 'ok') };
 }
 
 export { mergeGazettes };

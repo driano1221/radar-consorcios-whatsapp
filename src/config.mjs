@@ -23,6 +23,7 @@ export async function loadConfig() {
     projectRoot,
     configPath,
     sendEnabled: parseBoolean(process.env.SEND_ENABLED, false),
+    persistState: parseBoolean(process.env.PERSIST_STATE, parseBoolean(process.env.SEND_ENABLED, false)),
     groupId: process.env.WHATSAPP_GROUP_ID?.trim() || '',
     authDir: path.resolve(process.env.AUTH_DIR || path.join(projectRoot, '.local', 'auth')),
     stateFile: path.resolve(

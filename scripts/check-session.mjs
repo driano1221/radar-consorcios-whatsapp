@@ -2,6 +2,7 @@ import { loadConfig } from '../src/config.mjs';
 import { connectWhatsApp, validateGroupId } from '../src/lib/whatsapp.mjs';
 import { jidNormalizedUser } from '@whiskeysockets/baileys';
 
+async function main() {
 const config = await loadConfig();
 validateGroupId(config.groupId);
 const socket = await connectWhatsApp({ authDir: config.authDir });
@@ -16,8 +17,13 @@ try {
   console.log(`Somente administradores podem enviar: ${group.announce ? 'sim' : 'não'}`);
   if (group.announce) {
     console.log(`Seu número é administrador: ${myParticipant?.admin ? 'sim' : 'não identificado'}`);
+    if (!myParticipant?.admin) throw new Error('Grupo permite apenas administradores; envio não autorizado ao bot.');
   }
 } finally {
   socket.end(new Error('Verificação concluída.'));
-  setTimeout(() => process.exit(0), 500);
 }
+}
+main().then(() => setTimeout(() => process.exit(0), 500)).catch((error) => {
+  console.error(error.message);
+  setTimeout(() => process.exit(1), 500);
+});

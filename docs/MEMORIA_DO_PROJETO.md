@@ -1,6 +1,6 @@
 # Memória do projeto — Radar de Consórcios
 
-Atualizado em 14 de agosto de 2026.
+Atualizado em 14 de setembro de 2026. As primeiras seções registram a implantação original; as atualizações datadas ao final indicam as mudanças posteriores.
 
 Este documento registra o contexto, as decisões e o estado operacional do projeto para que o trabalho possa ser retomado sem depender do histórico da conversa. Ele não contém telefone, ID do grupo, senha ou material de autenticação aberto.
 
@@ -164,3 +164,10 @@ Não alterar regras durante o período, salvo erro grave. Observar e registrar:
 - Para trocar de grupo: atualizar apenas o secret `WHATSAPP_GROUP_ID` depois da homologação.
 - Nunca incluir no Git o conteúdo de `.local/`, o número pessoal, a senha ou o ID do grupo.
 - Se a sessão cair: parear novamente, preparar a sessão cifrada e atualizar somente `state/auth.enc` e `state/auth.sha256`.
+# Memória adicional — ampliação de 14/09/2026
+
+O usuário autorizou pesquisa, depuração, expansão, melhorias de mensagem, alertas e resumo semanal de sábado. A implementação mantém Node.js, GitHub Actions e grupo de teste. Não presume autorização para trocar o destino pelo grupo dos chefes sem identificar esse grupo.
+
+Decisões: janela de descoberta 168h; sábado 09h BRT, fallback 12h com idempotência por semana/destino; histórico de descobertas 60 dias; QD em `https://queridodiario.ok.org.br/api`; alerta externo à sessão via GitHub Issues. QD retornou dados e também erros 503/timeouts no mesmo dia. RNCP voltou a funcionar. TCE-SP, CISAMAPI, CONIAPE, CIGA, CISREC e duas instâncias SAPL foram integrados. Nem todos têm notícias recentes ou alto rendimento.
+
+Casos críticos encontrados: Valinhos apresentava proposta de ingresso, não adesão efetivada; tabelas de despesa com pessoal não são novos contratos; OCR não deve produzir siglas inventadas; menção a TCE em podcast não equivale a fiscalização. Esses casos ganharam regressões. Pesquisa completa e limites estão em `docs/PESQUISA_E_VALIDACAO_2026-09-14.md`.

@@ -7,11 +7,11 @@ O piloto apoia a pesquisa do Ipea **“Avanços e Limites da Coordenação Feder
 ## Estado atual
 
 - piloto ativo desde 14 de agosto de 2026;
-- repositório privado e execução gratuita pelo GitHub Actions;
+- repositório público e runners padrão do GitHub Actions;
 - destino atual: grupo **Radar Consórcios - Teste**;
 - 24 coletas por dia, no minuto 17 de cada hora, no fuso de São Paulo;
 - até 3 publicações por rodada e 72 por dia, somente quando houver conteúdo novo;
-- orçamento do GitHub Actions em **US$ 0**, com bloqueio de uso pago;
+- sem API paga, n8n ou servidor permanente;
 - sessão do WhatsApp cifrada com AES-256-GCM;
 - primeira coleta sem envio e primeira rodada real concluídas com sucesso.
 
@@ -33,17 +33,19 @@ Consórcios empresariais e comerciais, compras comuns e adesões a atas de preç
 
 ## Fontes
 
-O radar combina quatro famílias de fontes:
+O radar combina cinco famílias de fontes:
 
 - Google News RSS, com 19 consultas temáticas, incluindo controle, Ministério Público, Legislativo e filtros próprios para RNCP e CNM;
 - API pública do Querido Diário, dividida em três grupos de termos;
-- feeds diretos do COPIRN, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil.
-- scraper direto das notícias do TCE-MG e monitoramento do índice da AMM-MG;
-- parsers da RNCP e da área de Consórcios da CNM, mantidos desativados no Actions porque esses portais recusam os IPs do GitHub; a cobertura deles ocorre por consultas específicas no Google News.
+- feeds diretos do COPIRN, CIGA, CISREC, CONIAPE, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil;
+- portais TCE-MG, TCE-SP, RNCP, CISAMAPI e índice da AMM-MG;
+- APIs SAPL de normas jurídicas de Unaí e São João da Boa Vista.
+
+A CNM direta continua desativada por bloqueio HTTP; sua descoberta pelo Google permanece. TCE-PR direto ainda não foi homologado.
 
 Cada família é consultada de forma independente. A falha temporária de uma fonte não interrompe as demais.
 
-Cada scraper possui ativação própria. O TCE-MG está autorizado a publicar; AMM-MG e fontes futuras continuam em prévia. As observações ficam em `output/scraper-observations.json`, os candidatos relevantes em `output/scraper-candidates.json`, a saúde dos portais em `output/scraper-health.json` e a mensagem formatada em `output/scraper-preview.txt`.
+Cada scraper possui ativação própria. TCE-MG, TCE-SP, RNCP e CISAMAPI podem publicar quando os critérios forem atendidos. AMM-MG monitora somente o índice, em prévia. Falhas na leitura do artigo mantêm o item em prévia. Relatórios e prévias ficam em `output/` e nos artefatos das execuções.
 
 ## Funcionamento de cada rodada
 
@@ -76,13 +78,7 @@ Isso permite reconhecer, por exemplo, o mesmo ato publicado por duas fontes com 
 
 ## Frequência e cota gratuita
 
-O GitHub Free inclui 2.000 minutos mensais de Actions em repositórios privados. O job possui limite rígido de dois minutos:
-
-```text
-24 execuções × 31 dias × 2 minutos = 1.488 minutos/mês
-```
-
-O orçamento da conta está configurado em zero e bloqueia cobrança adicional após a franquia.
+O repositório é público: os minutos de runners padrão são gratuitos segundo a [documentação do GitHub](https://docs.github.com/en/billing/concepts/product-billing/github-actions). O coletor tem timeout de oito minutos, a saúde da sessão de três e o resumo semanal de cinco; esses limites não são a duração esperada. Artefatos de coleta expiram em sete dias e os resumos em 14 dias para limitar armazenamento. Nenhum serviço pago foi acrescentado.
 
 ## Segurança e limitações
 
@@ -167,3 +163,15 @@ As decisões, resultados iniciais e próximos passos estão registrados em [docs
 ## Recuperação
 
 Se o WhatsApp desvincular a sessão, execute `npm run pair` e depois `npm run session:prepare`. Atualize os arquivos cifrados `state/auth.*` no repositório. O histórico de notícias enviadas permanece preservado em `state/news-state.json`.
+
+## Atualização operacional — 14/09/2026
+
+O radar coleta a cada hora (minuto 17), busca publicações dos últimos **sete dias** e mantém até três envios por rodada. Fontes adicionadas: TCE-SP, CISAMAPI, RSS de CONIAPE/CIGA/CISREC e APIs SAPL de Unaí e São João da Boa Vista. A RNCP foi reativada. O Querido Diário usa o endereço atual, mas ainda apresenta oscilações externas.
+
+**Resumo semanal:** sábado às **9h de Brasília**, com nova tentativa às 12h somente se ainda não tiver sido confirmado. Destino: `WHATSAPP_WEEKLY_GROUP_ID` ou, na ausência, o grupo já configurado. A operação atual continua no grupo de teste. O resumo conta achados descobertos no período, não apenas mensagens enviadas. Histórico inicial parcial é informado na mensagem.
+
+**Alertas:** workflows abrem uma ocorrência no GitHub em caso de falha; fontes geram alerta após três falhas consecutivas. Ocorrências são reaproveitadas e encerradas após recuperação. As notificações seguem suas preferências do GitHub.
+
+Comandos adicionais: `npm run weekly` gera a prévia; `node scripts/validate-sources.mjs` testa fontes ao vivo; `node scripts/preview-messages.mjs output/research-final-state.json` cria uma simulação visual a partir do estado de pesquisa. Use `SEND_ENABLED=false` para prévias. `PERSIST_STATE=true` registra observações sem enviar, e `NEWS_STATE_FILE` permite isolar o estado de teste.
+
+Detalhes, fontes, exemplos antes/depois e limitações: [pesquisa e validação](docs/PESQUISA_E_VALIDACAO_2026-09-14.md).

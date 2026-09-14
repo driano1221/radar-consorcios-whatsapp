@@ -1,5 +1,16 @@
 # Plano de implantação — fontes, qualidade e resumo semanal
 
+## Atualização de implantação — 14/09/2026
+
+- Observabilidade e regressões: ampliadas; saúde por feed/consulta e alertas via GitHub.
+- Classificador: correções adicionais de plurais, convocações, recrutamento, demonstrativos e propostas de ingresso.
+- Fontes: QD com endpoint atual (ainda instável), RNCP reativada, TCE-SP/CISAMAPI e três RSS adicionados; duas instâncias SAPL integradas.
+- Histórico e fila: observações e execuções por 60 dias, fila por 30 dias, resumo separado do histórico de envios.
+- Resumo semanal: implementado para **sábado às 9h**, substituindo a proposta anterior de segunda-feira; retentativa ao meio-dia com deduplicação semanal. Destino inicial de teste.
+- Pendências: TCE-PR direto, CNM direta, cadastro amplo e identidade jurídica dos eventos, fontes financeiras nacionais e IA opcional. Não foram declaradas concluídas.
+
+Evidências e critérios: [pesquisa e validação de setembro](PESQUISA_E_VALIDACAO_2026-09-14.md). As fases descritas abaixo são o plano histórico e não substituem este status atualizado.
+
 **Projeto:** Radar Consórcios — WhatsApp
 **Atualizado em:** 21 de agosto de 2026
 **Objetivo:** reduzir o viés do Querido Diário, aumentar a cobertura de eventos relevantes sobre consórcios públicos e preservar precisão, deduplicação, custo zero e operação no GitHub Actions.

@@ -20,6 +20,8 @@ import { fetchRssFeeds } from './lib/sources/rss-feeds.mjs';
 import { fetchWebScrapers } from './lib/sources/web-scrapers.mjs';
 import { sendMessages } from './lib/whatsapp.mjs';
 import { buildSourceFunnel, formatSourceFunnel } from './lib/run-metrics.mjs';
+import { observeRun } from './lib/history.mjs';
+import { fetchSapl } from './lib/sources/sapl.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -38,6 +40,7 @@ async function main() {
     ['Querido Diário', () => fetchQueridoDiario(config.queridoDiario, since)],
     ['Feeds RSS', () => fetchRssFeeds(config.rssFeeds, since)],
     ['Scrapers web', () => fetchWebScrapers(config.webScrapers, since)],
+    ['SAPL', () => fetchSapl(config.sapl, since)],
   ];
   const results = await Promise.allSettled(
     sourceRequests.map(async ([name, request]) => {
@@ -60,9 +63,10 @@ async function main() {
         scraperDiagnostics = payload.diagnostics || [];
       }
       sourceHealth.push({
-        name: sourceRequests[index][0], status: payload.ok === false ? 'degraded' : 'ok',
+        name: sourceRequests[index][0], status: payload.ok === false || payload.degraded ? 'degraded' : 'ok',
         itemCount: payload.items.length, durationMs,
       });
+      sourceHealth.push(...(payload.diagnostics || []));
       console.log(
         `[fonte] ${sourceRequests[index][0]}: ${payload.items.length} item(ns) em ${durationMs} ms`,
       );
@@ -75,9 +79,10 @@ async function main() {
       console.warn(`[fonte] ${sourceRequests[index][0]}: ${result.reason.message}`);
     }
   }
-  if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
-
   const classified = collected.map((item) => ({ ...item, classification: classifyItem(item) }));
+  observeRun(state, classified, sourceHealth, config.minimumScore);
+  if (config.persistState) await saveState(config.stateFile, state);
+  if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
   const relevant = classified
     .filter((item) => isPublishableClassification(item.classification, config.minimumScore))
     .sort((a, b) => {
@@ -90,6 +95,7 @@ async function main() {
   const remainingToday = Math.max(0, config.maxPostsPerDay - sentToday);
   const discovered = selectUnseen(publishableRelevant, state);
   if (config.sendEnabled) enqueuePending(state, discovered);
+  if (config.persistState) await saveState(config.stateFile, state);
   const available = config.sendEnabled ? listPending(state) : discovered;
   const unseen = available.slice(0, Math.min(config.maxPostsPerRun, remainingToday));
   const scraperPreview = selectUnseen(previewRelevant, state).slice(0, 50);
@@ -213,7 +219,7 @@ async function main() {
   console.log(`${sent.length} mensagem(ns) publicada(s) no grupo.`);
 }
 
-main().catch((error) => {
+main().then(() => setTimeout(() => process.exit(0), 500)).catch((error) => {
   console.error(error.stack || error.message);
-  process.exitCode = 1;
+  setTimeout(() => process.exit(1), 500);
 });

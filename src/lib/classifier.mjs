@@ -1,7 +1,7 @@
 import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
 
-const PUBLIC_CONTEXT = /\b(consorcio publico|consorcio intermunicipal|consorcio interfederativo|associacao publica|lei 11\.?107)\b/;
-const MUNICIPAL_CONTEXT = /\b(municipio|municipal|prefeitura|camara municipal|poder executivo)\b/;
+const PUBLIC_CONTEXT = /\b(consorcios? publicos?|consorcio intermunicipal|consorcios intermunicipais|consorcios? interfederativos?|associacao publica|lei 11\.?107)\b/;
+const MUNICIPAL_CONTEXT = /\b(municipios?|municipal|municipais|prefeituras?|camaras? municipa(?:l|is)|poder executivo)\b/;
 const CONSORTIUM = /\bconsorcio(s)?\b/;
 
 const RULES = [
@@ -48,8 +48,9 @@ const RULES = [
     category: 'CONTROLE', emoji: '🟥', weight: 7, priority: 75, requiresPublicContext: true,
     patterns: [
       /\b(auditoria|investigacao|operacao|acao civil publica|recomendacao)\b.{0,140}\bconsorcio/,
-      /\bconsorcio\b.{0,140}\b(irregularidade|fraude|desvio|improbidade|contas rejeitadas)\b/,
-      /\b(tribunal de contas|ministerio publico|tce|tcu)\b.{0,160}\bconsorcio/,
+      /\b(irregularidades?|fraude|suspende|suspendem|condena|fiscaliza)\b.{0,140}\bconsorcio/,
+      /\bconsorcio\b.{0,140}\b(irregularidades?|fraude|desvio|improbidade|contas rejeitadas)\b/,
+      /\b(tribunal de contas|ministerio publico|tce|tcu)\b.{0,80}\b(fiscaliza|suspende|determina|condena|julga|investiga|aponta|recomenda)\b.{0,120}\bconsorcio/,
     ],
   },
   {
@@ -71,22 +72,26 @@ const RULES = [
     category: 'GOVERNANÇA', emoji: '⬛', weight: 8, priority: 60, requiresPublicContext: true,
     patterns: [
       /\b(alteracao|revisao|mudanca)\b.{0,100}\b(estatuto|estatutar)/,
+      /\b(alteracoes|consolidacao)\b.{0,160}\b(contrato de consorcio|estatuto)/,
       /\b(ratificacao|consolidacao)\b.{0,120}\balteracao\b.{0,100}\bprotocolo de intencoes/,
       /\bassembleia\b.{0,120}\bconsorcio/,
       /\beleicao\b.{0,100}\bconsorcio/,
       /\bconsorcio\b.{0,100}\b(novo presidente|nova diretoria|eleito|eleita)\b/,
+      /\b(elege|elegeu|eleicao|nova presidencia|nova diretoria)\b.{0,140}\bconsorcio/,
+      /\bconsorcio\b.{0,140}\b(elege|elegeu|nova presidencia)\b/,
     ],
   },
   {
     category: 'ATUAÇÃO', emoji: '📰', weight: 4, priority: 40, requiresPublicContext: true,
     patterns: [
-      /\bconsorcio\b.{0,120}\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta)\b/,
+      /\bconsorcio\b.{0,120}\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta|firmou|firma|assinou|inaugurou|ampliou)\b/,
       /\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta)\b.{0,120}\bconsorcio/,
     ],
   },
 ];
 
 const NEGATIVE_PATTERNS = [
+  { pattern: /\b(processo seletivo|concurso publico|inscricoes abertas|vagas de emprego)\b/, penalty: 30, reason: 'recrutamento sem evento institucional' },
   { pattern: /\badesao (a|de|em) (a )?(ata|atas|arp)( de registro de precos)?\b/, penalty: 30, reason: 'adesão a ata de preços' },
   { pattern: /\b(ata de registro de precos|registro de precos|intencao de registro de precos|orgao nao participante)\b/, penalty: 30, reason: 'contratação/ata de preços' },
   { pattern: /\bcarona\b.{0,100}\b(ata|registro de precos|arp)\b/, penalty: 30, reason: 'carona em ata de preços' },
@@ -117,6 +122,8 @@ function hasPublicContext(text) {
 function isGenericBudgetProvision(text) {
   const explicitContract = /\b(contrato de rateio|contrato n\.?\s*\d+|celebram.{0,160}consorcio|objeto.{0,160}repasse)\b/.test(text);
   return (
+    /\b(demonstrativo da despesa com pessoal|despesa bruta com pessoal|rgf.anexo)\b/.test(text) ||
+    (/\brateio do consorcio\b/.test(text) && /\b(subvencao social|termo de colaboracao|financiamento)\b/.test(text) && !explicitContract) ||
     /\blei orcamentaria\b.{0,500}\b(consorcios publicos|contrato de rateio)\b/.test(text) ||
     /\breservara recursos\b.{0,350}\bcontrato de rateio\b/.test(text) ||
     (/\brateio pela participacao em consorcio publico\b/.test(text) && !explicitContract)
@@ -124,14 +131,18 @@ function isGenericBudgetProvision(text) {
 }
 
 function isMeetingAgendaWithoutDecision(text) {
-  const agendaSignal = /\b(convocar|convocacao|reuniao|pauta|assuntos abordados|informes gerais)\b/.test(text);
-  const decisionSignal = /\b(lei|decreto|autoriza|ratifica|aprovou|sanciona|promulga|delibera)\b/.test(text);
+  const agendaSignal = /\b(convoca|convocam|convocar|convocacao|reuniao|pauta|assuntos abordados|informes gerais)\b/.test(text);
+  const decisionSignal = /\b(lei|decreto|autoriza|ratifica|aprovou|sanciona|promulga|delibera|eleitos?|eleitas?|elegeu|elege|eleicao)\b/.test(text);
   return agendaSignal && !decisionSignal;
 }
 
 function evaluateSegment(item, evidence, index) {
   const title = normalizeForMatch(item.title);
-  const text = normalizeForMatch(`${item.title || ''} ${evidence}`);
+  const entityContext = item.entityName && item.entityAlias &&
+    normalizeForMatch(`${item.title || ''} ${evidence}`).includes(normalizeForMatch(item.entityAlias))
+    ? item.entityName : '';
+  const text = normalizeForMatch(`${item.title || ''} ${evidence} ${entityContext}`);
+  const eventText = entityContext ? text.replaceAll(normalizeForMatch(item.entityAlias), 'consorcio') : text;
   const hasConsortium = CONSORTIUM.test(text);
   const strongPublicContext = PUBLIC_CONTEXT.test(text);
   const publicContext = hasPublicContext(text);
@@ -149,7 +160,7 @@ function evaluateSegment(item, evidence, index) {
   if (item.kind !== 'gazette' && isOfficialUrl(item.sourceUrl || item.url)) score += 1;
 
   for (const rule of RULES) {
-    const matchCount = rule.patterns.filter((pattern) => pattern.test(text)).length;
+    const matchCount = rule.patterns.filter((pattern) => pattern.test(eventText)).length;
     if (!matchCount) continue;
     if (rule.requiresPublicContext && !publicContext) {
       reasons.push(`rejeitado: ${rule.category} sem contexto público`);

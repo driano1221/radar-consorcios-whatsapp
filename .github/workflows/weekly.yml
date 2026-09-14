@@ -1,0 +1,78 @@
+name: Resumo semanal de sábado
+
+on:
+  schedule:
+    - cron: '0 9,12 * * 6'
+      timezone: America/Sao_Paulo
+  workflow_dispatch:
+    inputs:
+      send_enabled:
+        description: Enviar o resumo ao grupo configurado
+        type: boolean
+        default: false
+      test_preview:
+        description: Usar janela até agora e identificar como prévia de teste
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: radar-consorcios-whatsapp
+  cancel-in-progress: false
+
+jobs:
+  resumo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      BOT_STATE_PASSWORD: ${{ secrets.BOT_STATE_PASSWORD }}
+      WHATSAPP_GROUP_ID: ${{ secrets.WHATSAPP_GROUP_ID }}
+      WHATSAPP_WEEKLY_GROUP_ID: ${{ secrets.WHATSAPP_WEEKLY_GROUP_ID }}
+      SEND_ENABLED: ${{ github.event_name == 'schedule' && (vars.SEND_ENABLED || 'false') || format('{0}', inputs.send_enabled) }}
+      WEEKLY_TEST: ${{ format('{0}', inputs.test_preview) }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Restaurar sessão
+        if: env.SEND_ENABLED == 'true'
+        run: npm run session:decrypt
+      - name: Preparar e enviar resumo
+        run: npm run weekly
+      - name: Criptografar sessão
+        if: always() && env.SEND_ENABLED == 'true'
+        run: npm run session:encrypt
+      - name: Persistir confirmação e sessão
+        if: always() && env.SEND_ENABLED == 'true'
+        shell: bash
+        run: |
+          git config user.name "radar-consorcios[bot]"
+          git config user.email "radar-consorcios[bot]@users.noreply.github.com"
+          git add -- state/auth.enc state/auth.sha256 state/news-state.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: registrar resumo semanal [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+      - name: Guardar resumo para conferência
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resumo-${{ github.run_id }}
+          path: output/weekly-*
+          retention-days: 14
+      - name: Alertar falhas do resumo
+        if: always() && github.ref_name == 'main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_STATUS: ${{ job.status }}
+          HEALTH_MODE: weekly
+        run: npm run health:report

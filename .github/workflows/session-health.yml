@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: radar-consorcios-whatsapp
@@ -60,3 +61,11 @@ jobs:
           git commit -m "chore: atualizar sessão do WhatsApp [skip ci]"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Alertar falha da sessão
+        if: always() && github.ref_name == 'main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_STATUS: ${{ job.status }}
+          HEALTH_MODE: session
+        run: npm run health:report
