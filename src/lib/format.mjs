@@ -11,6 +11,7 @@ const categoryLabels = {
   CONTROLE: 'FISCALIZAÇÃO E CONTROLE',
   FINANÇAS: 'FINANÇAS DO CONSÓRCIO',
   AÇÃO: 'ATUAÇÃO DO CONSÓRCIO',
+  ATUAÇÃO: 'ATUAÇÃO DO CONSÓRCIO',
   GERAL: 'CONSÓRCIOS PÚBLICOS',
 };
 
@@ -39,13 +40,10 @@ function extractConsortiumLabel(item) {
     'REGIONAL', 'INSTITUICAO', 'INSTITUIÇÃO', 'SECRETARIA', 'CNM', 'FNS', 'DEP',
   ]);
   const candidates = [
-    item.classification?.category === 'RATEIO'
-      ? text.match(/\bCONS\.\s*([A-Z][A-Z0-9]{2,14})\b/i)?.[1]
-      : undefined,
-    text.match(/cons[oó]rcio\s+(?:p[uú]blico\s+)?([A-Z][A-Z0-9]{2,14})\b/i)?.[1],
-    text.match(/cons[oó]rcio.{0,180}\(([A-Z][A-Z0-9]{2,14})\)/i)?.[1],
-    text.match(/cons[oó]rcio.{0,180}[–—-]\s*([A-Z][A-Z0-9]{2,14})\b/i)?.[1],
-  ].map((candidate) => candidate?.toUpperCase());
+    text.match(/cons[oó]rcio[^.;:]{0,160}?\(([A-Z][A-Z0-9]{2,14})\)/i)?.[1],
+    text.match(/cons[oó]rcio[^.;:]{0,160}?[–—]\s*([A-Z][A-Z0-9]{2,14})(?=[\s.,;)]|$)/i)?.[1],
+  ].filter((candidate) => candidate && (candidate === candidate.toUpperCase() || /^[A-Z][a-z]{2,14}$/.test(candidate)))
+    .map((candidate) => candidate.toUpperCase());
   const acronym = candidates.find(
     (candidate) => candidate && candidate === candidate.toUpperCase() && !generic.has(candidate),
   );
@@ -70,9 +68,9 @@ function extractLegalInstrument(item) {
 
 function firstCompleteSentence(value, fallback) {
   const text = normalizeWhitespace(value);
-  const sentences = text.match(/[^.!?]+[.!?]+/g) || [];
-  const first = sentences[0]?.trim();
-  if (first && first.length <= 280) return first;
+  const sentences = [...new Intl.Segmenter('pt-BR', { granularity: 'sentence' }).segment(text)];
+  const first = sentences.map((s) => s.segment.trim()).find((s) => s.length >= 35 && s.length <= 360 && /[.!?]["”']?$/.test(s) && !/…|\.{3}|\[\s*…/.test(s));
+  if (first) return first;
   const cleanFallback = normalizeWhitespace(fallback);
   return /[.!?]$/.test(cleanFallback) ? cleanFallback : `${cleanFallback}.`;
 }
@@ -83,6 +81,9 @@ function gazetteLead(item) {
   const consortium = extractConsortiumLabel(item);
   const instrument = extractLegalInstrument(item);
   const legalPrefix = instrument ? `${instrument.article} ${instrument.label}` : 'O ato municipal';
+  if (category === 'ADESÃO' && /proposta de ingresso|proposta de adesao/.test(normalizeForMatch(item.summary || ''))) {
+    return `O documento registra uma proposta de ingresso de ${locality} em consórcio intermunicipal.`;
+  }
   const target = consortium ? `o ${consortium}` : 'o consórcio intermunicipal citado';
   const protocolChange = /alteracao.{0,120}protocolo de intencoes/.test(
     normalizeForMatch(item.classification?.evidenceText || `${item.summary || ''} ${item.rawText || ''}`).slice(0, 800),
@@ -119,6 +120,9 @@ function gazetteLead(item) {
 function gazetteKeyPoints(item) {
   const text = normalizeForMatch(item.classification?.evidenceText || `${item.summary || ''} ${item.rawText || ''}`);
   const points = [];
+  if (/proposta de ingresso|proposta de adesao/.test(text)) {
+    points.push('O trecho consultado não comprova que a adesão já foi efetivada.');
+  }
   if (/formalizacao do desligamento|efetiva formalizacao da saida/.test(text)) {
     points.push('A saída ainda depende da formalização do desligamento.');
   }
@@ -143,6 +147,9 @@ export function displayTitle(item) {
   if (item.kind !== 'gazette') return cleanInline(item.title);
   const locality = cleanInline(item.territoryName || 'Município');
   const consortium = extractConsortiumLabel(item);
+  if (item.classification?.category === 'ADESÃO' && /proposta de ingresso|proposta de adesao/.test(normalizeForMatch(item.summary || ''))) {
+    return `${locality} publica proposta de adesão a consórcio`;
+  }
   const protocolChange = /alteracao.{0,120}protocolo de intencoes/.test(
     normalizeForMatch(`${item.summary || ''} ${item.rawText || ''}`).slice(0, 800),
   );
@@ -181,9 +188,11 @@ export function formatWhatsAppMessage(item) {
   const lines = [
     `${classification.emoji} *${category}*`,
     `*${cleanInline(displayTitle(item))}*`,
-    '',
-    `> ${cleanInline(buildSummary(item))}`,
   ];
+  const summary = cleanInline(buildSummary(item));
+  if (normalizeForMatch(summary).replace(/[.!?]+$/, '') !== normalizeForMatch(displayTitle(item)).replace(/[.!?]+$/, '')) {
+    lines.push('', `> ${summary}`);
+  }
 
   if (points.length) {
     lines.push('', '*Pontos-chave*', ...points.map((point) => `- ${cleanInline(point)}`));
@@ -219,9 +228,9 @@ export function formatScraperSummary(items, observationsCount, diagnostics = [])
       )
     : ['- Nenhum candidato novo dos scrapers atingiu a pontuação mínima.'];
   return [
-    '## Scrapers em prévia',
+    '## Monitoramento dos scrapers',
     '',
-    `${observationsCount} item(ns) observado(s); nenhum deles foi enviado automaticamente.`,
+    `${observationsCount} item(ns) observado(s). Fontes homologadas seguem os critérios de publicação; candidatos em prévia aparecem abaixo.`,
     '',
     ...diagnostics.map((diagnostic) => {
       if (diagnostic.status === 'ok') {
@@ -239,3 +248,33 @@ export function formatScraperSummary(items, observationsCount, diagnostics = [])
 }
 
 export { formatDate };
+
+export function formatWeeklyMessage(report, test = false) {
+  const date = (value) => new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' }).format(new Date(value));
+  const rows = [test ? '🧪 *PRÉVIA DO RESUMO SEMANAL*' : '🗓️ *RADAR CONSÓRCIOS | RESUMO SEMANAL*',
+    `_${date(report.start)} a ${date(report.end)} · corte às ${new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(new Date(report.end))}_`, '',
+    '*A semana em números*',
+    `- ${report.observations} publicações únicas encontradas`,
+    `- ${report.events} achados relevantes após deduplicação`,
+    `- ${report.sent} notícias enviadas · ${report.pending} achados em fila`,
+    `- ${Object.keys(report.sources).length} fontes nos achados · ${report.runs} coletas`,
+  ];
+  if (report.preview) rows.push(`- ${report.preview} achados ainda em prévia`);
+  if (report.partial) rows.push('', 'ℹ️ Histórico parcial: o registro detalhado começou durante ou após o início deste período.');
+  if (Object.keys(report.categories).length) rows.push('', '*Temas identificados*',
+    ...Object.entries(report.categories).sort((a,b) => b[1]-a[1]).map(([label, n]) => `- ${cleanInline(categoryLabels[label] || label)}: ${n}`));
+  rows.push('', '*Principais achados*');
+  if (!report.highlights.length) rows.push('Nenhum achado atingiu os critérios nesta janela. Isso não significa ausência de eventos fora das fontes consultadas.');
+  for (const [index, item] of report.highlights.entries()) {
+    const title = cleanInline(displayTitle(item));
+    const block = [`${index + 1}. *${title}*${item.previewOnly ? ' _(em prévia)_' : ''}`,
+      `${cleanInline(item.source)} · ${date(item.publishedAt)}`, item.url, ''];
+    if ([...rows, ...block].join('\n').length > 4800) break;
+    rows.push(...block);
+  }
+  const rankedSources = Object.entries(report.sources).sort((a,b) => b[1]-a[1]);
+  if (rankedSources.length) rows.push('*Origem dos achados*', ...rankedSources.slice(0, 6).map(([s,n])=>`- ${cleanInline(s)}: ${n}`));
+  if (report.failures.length) rows.push('', '⚠️ *Cobertura com falhas no período*', report.failures.map(cleanInline).slice(0, 8).join(' · '));
+  rows.push('', '_Os achados são selecionados por regras automáticas. Consulte os links para verificar cada publicação._');
+  return rows.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+}

@@ -9,6 +9,8 @@
   },
   "scripts": {
     "collect": "node src/radar.mjs",
+    "weekly": "node src/weekly.mjs",
+    "health:report": "node scripts/report-health.mjs",
     "pair": "node scripts/pair-whatsapp.mjs",
     "session:encrypt": "node scripts/session-state.mjs encrypt",
     "session:decrypt": "node scripts/session-state.mjs decrypt",

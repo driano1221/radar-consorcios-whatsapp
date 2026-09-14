@@ -1,5 +1,7 @@
 # Arquitetura e pesquisa técnica
 
+As seções iniciais documentam as decisões de agosto. O comportamento atual e os limites da validação estão na [pesquisa de setembro](PESQUISA_E_VALIDACAO_2026-09-14.md) e na seção de evolução ao final.
+
 ## Objetivo editorial
 
 O radar privilegia mudanças na composição e na sustentabilidade institucional dos consórcios: formação, ingresso, retirada, dissolução, inadimplência, rateio, alteração de protocolos, governança e controle. Esse recorte segue o objetivo do projeto do Ipea de compreender fatores que facilitam ou dificultam adesão e permanência de governos locais.
@@ -45,3 +47,8 @@ O GitHub Free inclui 2.000 minutos mensais para Actions em repositórios privado
 - reconexão apenas para erros transitórios;
 - sessão AES-256-GCM e filtragem de chaves nos logs;
 - lockfile e testes automatizados.
+# Evolução — setembro de 2026
+
+Estado versão 4: mantém `seen` e `pending` e acrescenta `observations`, `runs`, `health`, `historyStartedAt` e `weekly`. A coleta persiste observações antes do envio; o semanal lê esse histórico e conserva o texto da tentativa para retomar sem alterar o boletim. A janela semanal é definida pelo sábado 09h BRT; a seleção é por primeira descoberta, não por data de envio.
+
+Novos módulos: `history.mjs` (observações, métricas e janela), `sapl.mjs` (normas municipais), `weekly.mjs` (entrega semanal), `report-health.mjs` (incidentes GitHub). Coleta horária, saúde diária e resumo semanal usam a mesma concorrência para a sessão. A biblioteca informa sucesso de envio; não há promessa absoluta de exatamente uma entrega diante de falhas entre envio e commit do estado.

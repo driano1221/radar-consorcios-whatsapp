@@ -22,7 +22,59 @@ function absoluteUrl(value, baseUrl) {
 }
 
 function withinWindow(item, since) {
-  return item.title && item.url && item.publishedAt && new Date(item.publishedAt) >= since;
+  return item.title && /^https?:\/\//i.test(item.url) && item.publishedAt && new Date(item.publishedAt) >= since && new Date(item.publishedAt) <= new Date();
+}
+
+export function parseTceSp(html, site, since) {
+  const $ = load(html);
+  const cards = $('.listagem-noticia');
+  if (!cards.length) throw new Error('TCE-SP: listagem de notícias não encontrada');
+  return cards.map((_, el) => {
+    const card = $(el);
+    const anchor = card.find('h2 a').first();
+    const summary = normalizeWhitespace(card.children('.field--item').last().text());
+    return { kind: 'news', title: normalizeWhitespace(anchor.text()),
+      url: absoluteUrl(anchor.attr('href'), site.url), publishedAt: parseBrazilianDate(summary),
+      source: site.name, sourceUrl: site.url, stateCode: 'SP', summary, rawText: summary };
+  }).get().filter((item) => withinWindow(item, since));
+}
+
+export function parseCisamapi(html, site, since) {
+  const $ = load(html);
+  const cards = $('.news-post-txt');
+  if (!cards.length) throw new Error('CISAMAPI: cards de notícias não encontrados');
+  return cards.map((_, el) => {
+    const a = $(el).find('h2 a').first();
+    const date = a.attr('href')?.match(/\/(\d{2})-(\d{2})-(\d{4})\//);
+    const title = normalizeWhitespace(a.text());
+    return { kind: 'news', title, url: absoluteUrl(a.attr('href'), site.url),
+      publishedAt: date ? parseBrazilianDate(`${date[1]}/${date[2]}/${date[3]}`) : null,
+      source: site.name, sourceUrl: site.url, stateCode: 'MG', summary: '', rawText: '' };
+  }).get().filter((item) => withinWindow(item, since));
+}
+
+// Conteúdo apenas da notícia, sem menus/rodapés que produziriam falsos positivos.
+export async function enrichArticles(items, site, config, fetchImpl) {
+  if (!site.articleSelector) return items;
+  const enriched = [];
+  for (const item of items.slice(0, site.maxArticles || 12)) {
+    try {
+      if (new URL(item.url).hostname !== new URL(site.url).hostname) throw new Error('Domínio inesperado');
+      const r = await fetchWithRetry(item.url, { fetchImpl, timeoutMs: config.timeoutMs, retries: 0 });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const $ = load(await responseText(r, site.encoding));
+      const body = $(site.articleSelector).first().clone();
+      body.find('script,style,nav,footer,form').remove();
+      body.find('p,li,h1,h2,h3,h4,br').append(' ');
+      const text = normalizeWhitespace(body.text());
+      if (text.length < 80) throw new Error('Texto da notícia não encontrado');
+      enriched.push({ ...item, summary: text.slice(0, 4000), rawText: text.slice(0, 4000) });
+    } catch (error) {
+      console.warn(`[artigo:${site.name}] ${error.message}`);
+      enriched.push({ ...item, previewOnly: true, extractionError: error.message });
+    }
+  }
+  return [...enriched, ...items.slice(site.maxArticles || 12)];
 }
 
 async function responseText(response, encoding) {
@@ -133,6 +185,8 @@ const PARSERS = {
   rncp: parseRncp,
   cnm: parseCnm,
   'tce-mg': parseTceMg,
+  'tce-sp': parseTceSp,
+  cisamapi: parseCisamapi,
   'diario-municipal-index': parseDiarioMunicipalIndex,
 };
 
@@ -150,12 +204,15 @@ async function fetchSite(site, since, config, fetchImpl) {
   });
   if (!response.ok) throw new Error(`${site.name} respondeu ${response.status}`);
   const html = await responseText(response, site.encoding);
-  return parser(html, site, since).map((item) => ({
+  const items = await enrichArticles(parser(html, site, since), site, config, fetchImpl);
+  return items.map((item) => ({
     ...item,
     scraper: site.adapter,
+    entityName: site.entityName,
+    entityAlias: site.entityAlias,
     // A ativação é por fonte: assim um portal homologado pode publicar sem
     // liberar automaticamente todos os demais scrapers ainda em prévia.
-    previewOnly: site.publish !== true,
+    previewOnly: item.previewOnly || site.publish !== true,
   }));
 }
 
@@ -186,7 +243,8 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
       diagnostics.push({
         name: site.name,
         adapter: site.adapter,
-        status: 'ok',
+        status: result.value.some((item) => item.extractionError) ? 'degraded' : 'ok',
+        ...(result.value.some((item) => item.extractionError) ? { message: 'Falha ao extrair texto de uma ou mais notícias; itens mantidos em prévia' } : {}),
         itemCount: result.value.length,
       });
       console.log(`[fonte:scraper:${site.name}] ${result.value.length} item(ns)`);
@@ -201,7 +259,7 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
       console.warn(`[fonte:scraper:${site.name}] ${result.reason.message}`);
     }
   });
-  return { items, diagnostics, ok: !activeSites.length || successfulSites > 0 };
+  return { items, diagnostics, ok: !activeSites.length || successfulSites > 0, degraded: successfulSites < activeSites.length };
 }
 
 export { parseBrazilianDate };

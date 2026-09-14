@@ -52,6 +52,7 @@ function jaccard(left, right) {
 }
 
 export function titleFingerprint(item) {
+  if (item.kind === 'gazette') return sha256(`${canonicalUrl(item.url)}|${item.territoryId || item.territoryName}`);
   return sha256(normalizeForMatch(item.title).replace(/\b(de|da|do|das|dos|e|em|no|na)\b/g, ' '));
 }
 
@@ -59,7 +60,8 @@ export async function loadState(stateFile) {
   try {
     const parsed = JSON.parse(await readFile(stateFile, 'utf8'));
     return {
-      version: 3,
+      ...parsed,
+      version: 4,
       seen: parsed.seen || {},
       pending: parsed.pending || {},
     };
@@ -91,6 +93,8 @@ function resemblesKnownEvent(item, tokens, records, threshold = 0.66) {
   return records.some(
     (record) =>
       record.category === item.classification?.category &&
+      (!item.publishedAt || !(record.publishedAt || record.sentAt) ||
+        Math.abs(new Date(item.publishedAt) - new Date(record.publishedAt || record.sentAt)) <= 7 * 86400000) &&
       record.contentTokens?.length >= 4 &&
       jaccard(tokens, record.contentTokens) >= threshold,
   );
@@ -101,9 +105,11 @@ export function selectUnseen(items, state) {
     category: item.classification?.category,
     contentTokens: item.contentTokens,
     titleFingerprint: item.titleFingerprint,
+    publishedAt: item.publishedAt,
   }));
   const records = [...Object.values(state.seen), ...pendingRecords];
-  const knownFingerprints = new Set(records.map((record) => record.titleFingerprint).filter(Boolean));
+  // Títulos genéricos de diários antigos não identificam o ato nem sua edição.
+  const knownFingerprints = new Set(records.filter((r) => !/^Diário Oficial de /i.test(r.title || '')).map((record) => record.titleFingerprint).filter(Boolean));
   const batchFingerprints = new Set();
   const batchRecords = [];
 
@@ -124,7 +130,7 @@ export function selectUnseen(items, state) {
     item.titleFingerprint = fingerprint;
     item.contentTokens = contentTokens;
     batchFingerprints.add(fingerprint);
-    batchRecords.push({ category: item.classification?.category, contentTokens });
+    batchRecords.push({ category: item.classification?.category, contentTokens, publishedAt: item.publishedAt });
     return true;
   });
 }
@@ -192,6 +198,8 @@ export function markSeen(state, item, sentAt = new Date().toISOString()) {
     titleFingerprint: item.titleFingerprint || titleFingerprint(item),
     contentTokens: item.contentTokens || significantTokens(item),
     category: item.classification?.category || 'GERAL',
+    source: item.source,
+    publishedAt: item.publishedAt,
   };
   if (state.pending) delete state.pending[id];
 }

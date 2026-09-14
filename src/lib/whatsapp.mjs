@@ -101,7 +101,7 @@ export async function sendMessages({ authDir, groupId, messages, delayMs = 5000,
   const sent = [];
   try {
     for (const message of messages) {
-      await socket.sendMessage(groupId, { text: message.text });
+      await socket.sendMessage(groupId, { text: message.text }, message.messageId ? { messageId: message.messageId } : {});
       sent.push(message);
       if (onSent) await onSent(message);
       if (delayMs > 0 && sent.length < messages.length) {

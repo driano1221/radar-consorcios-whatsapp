@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: radar-consorcios-whatsapp
@@ -27,6 +28,7 @@ jobs:
       BOT_STATE_PASSWORD: ${{ secrets.BOT_STATE_PASSWORD }}
       WHATSAPP_GROUP_ID: ${{ secrets.WHATSAPP_GROUP_ID }}
       SEND_ENABLED: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.send_enabled) || vars.SEND_ENABLED || 'false' }}
+      PERSIST_STATE: ${{ github.event_name == 'schedule' || inputs.send_enabled }}
 
     steps:
       - name: Baixar o projeto
@@ -43,6 +45,9 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
+      - name: Testes de regressão
+        run: npm test
+
       - name: Restaurar sessão criptografada
         if: env.SEND_ENABLED == 'true'
         run: npm run session:decrypt
@@ -55,7 +60,7 @@ jobs:
         run: npm run session:encrypt
 
       - name: Persistir sessão e notícias enviadas
-        if: always() && env.SEND_ENABLED == 'true'
+        if: always() && env.PERSIST_STATE == 'true'
         shell: bash
         run: |
           git config user.name "radar-consorcios[bot]"
@@ -68,3 +73,22 @@ jobs:
           git commit -m "chore: atualizar estado do radar [skip ci]"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Guardar relatórios de coleta
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-${{ github.run_id }}
+          path: |
+            output/*preview.txt
+            output/source-health.json
+            output/source-funnel.json
+            output/classification-audit.json
+          retention-days: 7
+
+      - name: Alertar falhas persistentes
+        if: always() && github.ref_name == 'main'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_STATUS: ${{ job.status }}
+        run: npm run health:report
