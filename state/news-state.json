@@ -2321,13 +2321,129 @@
       "category": "ATUAÇÃO",
       "source": "CONIAPE",
       "publishedAt": "2026-09-10T14:22:53.000Z"
+    },
+    "a70772c1553ec4e7ded49c65abd63b7d1c0d08bccf3c735226ce66084eb7729f": {
+      "sentAt": "2026-09-14T22:30:23.473Z",
+      "url": "https://data.queridodiario.ok.org.br/2700000/2026-09-14/71ae3de2cdc04efa3d9e2bb5d32dc56850d96181.pdf",
+      "title": "Diário Oficial de Inhapi (AL)",
+      "titleFingerprint": "af4f0e59fea5b549c2174a81183a56273164a290cb7999a282d1011e08f37fc8",
+      "contentTokens": [
+        "107",
+        "abril",
+        "aderir",
+        "agreste",
+        "alagoano",
+        "alagoas",
+        "alteracao",
+        "ama",
+        "aprovou",
+        "art",
+        "atribuicoes",
+        "autorizado",
+        "camara",
+        "cavalcante",
+        "conagreste",
+        "consolidacao",
+        "constantes",
+        "constitui",
+        "diariomunicipal",
+        "ele",
+        "estado",
+        "faz",
+        "federal",
+        "fica",
+        "gilson",
+        "inhapi",
+        "intencoes",
+        "legais",
+        "lei",
+        "mediante",
+        "modificacoes",
+        "outras",
+        "prefeito",
+        "protocolo",
+        "providencias",
+        "ratificacao",
+        "saber",
+        "sanciona",
+        "seguinte",
+        "sua",
+        "suas",
+        "tenorio",
+        "termos",
+        "uso",
+        "www"
+      ],
+      "category": "ADESÃO",
+      "source": "Querido Diário",
+      "publishedAt": "2026-09-14T12:00:00-03:00"
+    },
+    "5cdb001668a2b3d03d129e898e85c2075965bd8dc72b23bfdd633589fefb831c": {
+      "sentAt": "2026-09-14T22:30:29.521Z",
+      "url": "https://data.queridodiario.ok.org.br/3556206/2026-09-11/99545b3eba67d73579910c843a307e824498dfe8.pdf",
+      "title": "Diário Oficial de Valinhos (SP)",
+      "titleFingerprint": "71ff11e53633cdc393d822b62e93f01fce96ce3501f7053a38a984909b8f3beb",
+      "contentTokens": [
+        "142",
+        "2026",
+        "479",
+        "923",
+        "agosto",
+        "alteracoes",
+        "apresentacao",
+        "aprovacao",
+        "atribuicoes",
+        "bem",
+        "brito",
+        "cms",
+        "como",
+        "conferidas",
+        "conselho",
+        "considerando",
+        "dispoe",
+        "especifica",
+        "federal",
+        "forma",
+        "gais",
+        "hortolandia",
+        "ingresso",
+        "interno",
+        "julho",
+        "lei",
+        "luciana",
+        "munici",
+        "ordinaria",
+        "pal",
+        "pela",
+        "pelo",
+        "pignatta",
+        "plenaria",
+        "proposta",
+        "realizada",
+        "regimento",
+        "regional",
+        "resolucao",
+        "reuniao",
+        "samu",
+        "saude",
+        "secretaria",
+        "seu",
+        "sobre",
+        "suas",
+        "sumare",
+        "uso",
+        "valinhos"
+      ],
+      "category": "ADESÃO",
+      "source": "Querido Diário",
+      "publishedAt": "2026-09-11T12:00:00-03:00"
     }
   },
   "pending": {},
   "observations": {
     "79ae36896118fb7467961a4e9f2a1d1f3254a9146098b22fe20bb5ec0faf47a3": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Notícia - ABC das Artes será realizado em nova data - Consórcio Intermunicipal - Grande ABC",
@@ -2352,7 +2468,7 @@
     },
     "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
@@ -2378,7 +2494,7 @@
     },
     "eaa0de7c1adedd5a789788dbf1741fac53dd8c26808c19af390e55a8969ed71f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná",
@@ -2401,7 +2517,7 @@
     },
     "05cd3fe0259c62e2e6133f049b84329daed5274e1844017a46a66d96a84f7aba": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Rotary entrega consultório oftalmológico ao Consórcio de Saúde de Birigui - Hojemais.com.br",
@@ -2424,22 +2540,22 @@
     },
     "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - abcdjornal.com.br",
+        "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - ABCD Jornal",
         "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQZW5aOVQ5azJORlQ1VmVDbTRVLTZaZWJZM3FGZmctb29SMFVkZ0RDSUtjbW9tWTJDb2VlTWJSS2ZJOHNjR3ZMNlZEeW5OajRFRUctT1RDNUVpa2FETjR3NnhMWVBTUUxuRFlTaDBBa2hsRmUwZng2Sm9lOWdVQk9hRUVzcFNJMGhkckV2WWVvb3QxUVR1R1dNQWd5TUVGUDAxMGduMHhuYlhSdFlhbTE2UFZnU2JZaVlfNno0NFIwXzlOdk8zUy15ZVlSNE9IenpDWGthSjQ4eUtPRzh6dE5n0gHkAUFVX3lxTE1XOVNFa25DV2JSZWpaXzczYjJmcGE2amlxRU1NclZNNi1JLWx4ZEJzSk1FNmUyWmZzNmFGX0N6eDVUdEtVdkNSSEJJeGc1ME9LN3lxUVdnd25BWEtjVnRZTVJiT1AySE5uOHRzY3NJNlNZTjl5cWNDUmtWWFdsWkdHal9XSGlOeVV1QXJzOWsyV0VYM1otUzhEVEhQUGdXRHN1WXdMNU1yczR2UHZpd0poUUxhZkNtMWtqbHNKZndRal84R1Bidy1GYUdNSmtYanRiVVRGei0tcVJtaVB4VzVxcUU4Sw?oc=5",
         "sourceUrl": "https://abcdjornal.com.br",
         "publishedAt": "2026-09-10T13:52:47.000Z",
-        "source": "abcdjornal.com.br",
-        "summary": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico abcdjornal.com.br",
+        "source": "ABCD Jornal",
+        "summary": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico ABCD Jornal",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 2,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico abcdjornal.com.br",
+          "evidenceText": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico ABCD Jornal",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2447,7 +2563,7 @@
     },
     "a4feb48e8f2142b20e06ff88d669459d9865b7b06fb07a93b918922708ebf272": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - Qconcursos Folha Dirigida",
@@ -2473,7 +2589,7 @@
     },
     "1cd8049fa620a5e4db87515be93dbce0b7a18cb41bc472b0cd3c3ed496841451": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas - Qconcursos Folha Dirigida",
@@ -2499,15 +2615,15 @@
     },
     "f32488dd494ffaab10d9b9e8f0edac4bf98fe69efeed611e37377fd9a776d644": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
-        "title": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 - pciconcursos.com.br",
+        "title": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 - PCI Concursos",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbW1VeTl1VEk4a1ZvbzV0Q3o1RklheTI5MkZvS0dDU3dkZ250QlFJa01WUXEyY29sZlN0d1djbmN3SU5JQ3Fzc2VEQXJLUVRGeGVaTTZJOVlLVnd1VjRvWTJvdl90Z2paazVra1VpTWhsbkx5UkRmTGcxdzBzUmpUSDVzbEs1REJWVkRwV3M0VTEtaTF1T3hGaWNEVTFtcWpYRHRTTG5TYVY?oc=5",
         "sourceUrl": "https://www.pciconcursos.com.br",
         "publishedAt": "2026-09-08T20:49:03.000Z",
-        "source": "pciconcursos.com.br",
-        "summary": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 pciconcursos.com.br",
+        "source": "PCI Concursos",
+        "summary": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 PCI Concursos",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2516,7 +2632,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 pciconcursos.com.br",
+          "evidenceText": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 PCI Concursos",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2524,7 +2640,7 @@
     },
     "8154518dba47dbdaca5bb52772830b7b3662599e101dbcb2f2c677ebff17a77f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - Midiamax",
@@ -2547,22 +2663,22 @@
     },
     "0e7aabe32ed068953985e31bb57c64aa08f6bab53384df4012d13ecf16f92a96": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - cmc.pr.gov.br",
+        "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - Câmara Municipal de Curitiba",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNX19ncTZZemJncVNPSElJNzRSYVl1WUxaTEFtMWV2OWc2RmxUTWxzQVBqalg5djZNaTFqdy12V0gtS2hGaWpFYl9CZFhNSDZDdWJiVDJKb1dhTzVneklXcFlmUmdaVldyR1NaVW15dFlyY0xDLUd6M08xd0dLU0J2dWdzUi1NZFlfMDctWWhZcW9pNjZ3Y1YwM3VIa2NjODhrdkEzNTFkX2hWU01rdlI1dW9zVVZGbjF1eE5HT2F5dWg2QQ?oc=5",
         "sourceUrl": "https://www.cmc.pr.gov.br",
         "publishedAt": "2026-09-10T12:04:00.000Z",
-        "source": "cmc.pr.gov.br",
-        "summary": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral cmc.pr.gov.br",
+        "source": "Câmara Municipal de Curitiba",
+        "summary": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral Câmara Municipal de Curitiba",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 4,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral cmc.pr.gov.br",
+          "evidenceText": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral Câmara Municipal de Curitiba",
           "publicContext": true,
           "strongPublicContext": false
         }
@@ -2570,7 +2686,7 @@
     },
     "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
@@ -2593,7 +2709,7 @@
     },
     "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
@@ -2619,7 +2735,7 @@
     },
     "3b4657af15c412acf25a2145f93fa8c32c4769db0607b8ed39a099c38031de5d": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento - Top Mídia News",
@@ -2642,7 +2758,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -2665,7 +2781,7 @@
     },
     "184db1ccb8d0f9dfedfa5ab0c26b244078321aa1348d0e74a0c033cffbabd237": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Untitled - Câmara Municipal de Várzea - RN",
@@ -2688,7 +2804,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -2711,7 +2827,7 @@
     },
     "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
@@ -2734,22 +2850,22 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xbmp5QnhsUHljTG9sN1pvQmtvWXhXZTg3QXFyZTBFR0JtZUJPV3R5SFdSZ3RSeEUxT3hxWFA5QUNEU1pPcUV3RUtvblFrMWxZWU95Y3lZd2hqVE85Z0Q3WXhCSGlBN1B4M0ZlemE1MUItY0xVNnc?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-12T19:19:20.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2757,22 +2873,22 @@
     },
     "34f2e231099d6bc75ce83425f39ce1e3dc6f6a4aac497482eefddbe33185f2f6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mUG80SHJBXzRsam8ydUpFb1J2bzBFaklRMFQ2dE54dUJLU1RYY3FNVVRTSFRVY2x3ZXVYem9qLS1Vc1kyUFBOSloxTlVBQUZUQW1ULXRRMjR0NVpnLUs1QlBnaTlIdGRENDA0OTBWRWJUOEF3MkE?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-10T00:34:23.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2780,22 +2896,22 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0wRE1YNUpNMTl3ZUxZUk5VWXpJTzdJWkxiNmk2UHlKak4zR0NMeFEyNTBDY2xrSkRhMGVlTFpzWDN2bkZFWENHMml4VTNCSFJPWkZLOEJSVmlCc1dqY3dqckxKWWhPLWtDOVVqQjI0RUFaT2ZPY3c?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-13T09:08:08.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 24/2019 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 24/2019 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2803,7 +2919,7 @@
     },
     "a01a83c0cedc579416617fd7d41ba9be8d19b2062d37a1584462884a1c06c6aa": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
@@ -2827,73 +2943,12 @@
           "evidenceText": "Durante a Agrinordeste, que ocorreu nos 3 a 6 de setembro de 2026, no Centro de Convenções de Pernambuco, o CONIAPE firmou parceria com o Ministério da Agricultura e Pecuária (MAPA) para avançar na implementação do SISBI – Sistema Brasileiro de Inspeção de Produtos de Origem Animal, através da superintende, Cláudia Guerreiro, do NIESMA – NÚCLEO INTERMUNICIPAL DE ENGENHARIA, SANEAMENTO BÁSICO E MEIO AMBIENTE. A iniciativa tem como objetivo fortalecer as agroindústrias dos municípios consorciados, ampliando as oportunidades de comercialização e contribuindo para que produtos de origem animal possam alcançar mercados em todo o território nacional, conforme as exigências do sistema. A parceria representa um importante passo para o desenvolvimento das agroindústrias, a valorização da produção local e o fortalecimento da economia dos municípios consorciados ao CONIAPE. Mais mercado para quem produz. Mais oportunidades para os municípios. Mais desenvolvimento para a nossa região.",
           "publicContext": true,
           "strongPublicContext": true
-        },
-        "id": "e8c1ba1b6dc2cb85241f9822d1f6de83339699afa22e7e81fab66f57a20e0ed9",
-        "titleFingerprint": "9ea811f4de54c3fab06792defa3ce79c31d292fc060718ad21b3ee52855af2ca",
-        "contentTokens": [
-          "2026",
-          "agricultura",
-          "agrinordeste",
-          "agroindustrias",
-          "alcancar",
-          "ambiente",
-          "ampliando",
-          "animal",
-          "atraves",
-          "avancar",
-          "basico",
-          "brasileiro",
-          "centro",
-          "claudia",
-          "comercializacao",
-          "como",
-          "conforme",
-          "coniape",
-          "consorciados",
-          "contribuindo",
-          "convencoes",
-          "durante",
-          "engenharia",
-          "exigencias",
-          "federal",
-          "firma",
-          "firmou",
-          "fortalecer",
-          "governo",
-          "guerreiro",
-          "implementacao",
-          "iniciativa",
-          "inspecao",
-          "mapa",
-          "meio",
-          "mercados",
-          "ministerio",
-          "nacional",
-          "niesma",
-          "nucleo",
-          "objetivo",
-          "ocorreu",
-          "oportunidades",
-          "origem",
-          "parceria",
-          "pecuaria",
-          "pernambuco",
-          "possam",
-          "produtos",
-          "saneamento",
-          "setembro",
-          "sisbi",
-          "sistema",
-          "superintende",
-          "tem",
-          "territorio",
-          "todo"
-        ]
+        }
       }
     },
     "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
@@ -2916,7 +2971,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -2939,7 +2994,7 @@
     },
     "00ecea0e3db92dbffe5198e7dd9f7e1d0285edf7461a98c450ca99e7a54a9b01": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "FNP se reúne com a Secretaria de Educação Básica do MEC para fortalecer agenda municipalista",
@@ -2962,7 +3017,7 @@
     },
     "475bff69568a7ede517b7ef0a3983674bc7673884c88267509c5ec7feebb2365": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "FNP leva debate da Reforma Tributária aos municípios paranaenses",
@@ -2987,7 +3042,7 @@
     },
     "44c3475b4abe5ff9287ba07e7130980831dd6ab42fc2dd1474f7e333df0303a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "FNP reúne municípios para debater drenagem urbana e estratégias de adaptação às mudanças climáticas",
@@ -3010,7 +3065,7 @@
     },
     "34819e26868a429627b6d1613444cef9a15ec93f80850f63ee5ed083ea89487c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Fórum Nacional de mobilidade debate novos modelos de financiamento para o transporte público",
@@ -3035,7 +3090,7 @@
     },
     "02984a86f07be5e4bb0918702dbf843e95008afbe36220670121cfe4dbd2fa9f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais debate impactos cadastrais da Reforma Tributária do Consumo",
@@ -3058,7 +3113,7 @@
     },
     "9c5b9a050ee29886340c0e637f538ec941595e3ce7198ffc71599d5d898a22c6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "FNP lança coalizão de cidades pela segurança no trânsito",
@@ -3081,7 +3136,7 @@
     },
     "a801ef042db512a167f2292278bcbe247597cc0d31131e8ab9c34d964a725b45": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "FNP defende criação do PIX Precatório em audiência no CNJ",
@@ -3104,7 +3159,7 @@
     },
     "6e75cb4ca4e23f84269d89274ff6ca445e9b8c0fa861fd96d6ef64c70a7fabad": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Importância de governança integrada e ações conjuntas para municípios é tema de seminário",
@@ -3127,7 +3182,7 @@
     },
     "a9dac56427a05d393a49017f6e888563aecfac798b543d18e924686892d63bc4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "STF confirma transmissão pela internet de sessão sobre Moraes",
@@ -3135,14 +3190,14 @@
         "publishedAt": "2026-09-14T19:22:00.000Z",
         "source": "Agência Brasil",
         "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
-        "summary": "O Supremo Tribunal Federal (STF) confirmou há pouco que a sessão da Corte que vai analisar as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro terá transmissão ao vivo pela TV Justiça e pela internet. A Corte também adotou medidas de segurança durante o julgamento, que está previsto para começar às 10h desta terça-feira (15). Notícias relacionadas: STF: Gilmar Mendes sugere adiar sessão sobre conduta de Moraes. Presidente do STF assume relatoria de processo sobre Moraes e Vorcaro. As vagas no plenário serão destinadas a pessoas previamente inscritas pelo cerimonial do STF. A entrada do plenário contará com detectores de metais e equipamento de raio-X e todos as pessoas deverão passar pelos procedimentos de segurança. O uso de celulares durante a sessão será proibido, e os aparelhos deverão ser lacrados na entrada do plenário. O trânsito na Esplanada dos Ministérios será interditado na altura do Congresso Nacional. (Em atualização)",
+        "summary": "O Supremo Tribunal Federal (STF) confirmou há pouco que a sessão da Corte que vai analisar as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro terá transmissão ao vivo pela TV Justiça e pela internet. A Corte também adotou medidas de segurança durante o julgamento, que está previsto para começar às 10h desta terça-feira (15). Notícias relacionadas: STF: Gilmar Mendes sugere adiar sessão sobre conduta de Moraes. Presidente do STF assume relatoria de processo sobre Moraes e Vorcaro. As vagas no plenário serão destinadas a pessoas previamente inscritas pelo cerimonial do STF. A entrada do plenário contará com detectores de metais e equipamento de raio-X e todos as pessoas deverão passar pelos procedimentos de segurança. O uso de celulares durante a sessão será proibido, e os aparelhos deverão ser lacrados na entrada do plenário. O trânsito na Esplanada dos Ministérios será interditado na altura do Congresso Nacional. Clique aqui e leia mais sobre a crise no STF . Entenda No início deste mês, o ministro André Mendonça, então relator do caso Master, informou a Edson Fachin que a PF encontrou mensagens trocadas entre Moraes e Vorcaro e disse que é necessário que o plenário decida sobre a abertura de investigação . Após a divulgação do caso, o procurador-geral da República, Paulo Gonet, defendeu a anulação do relatório da PF que encontrou as conversas. Na manifestação enviada à Corte, Gonet disse que André Mendonça investigou Moraes ilegalmente ao determinar o aprofundamento da investigação sobre o caso Master para esmiuçar as conversas envolvendo Moraes e o ex-banqueiro. No entendimento do procurador, o aprofundamento da apuração só poderia ocorrer após autorização do plenário da Corte. Matéria ampliada às 16h58",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "O Supremo Tribunal Federal (STF) confirmou há pouco que a sessão da Corte que vai analisar as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro terá transmissão ao vivo pela TV Justiça e pela internet. A Corte também adotou medidas de segurança durante o julgamento, que está previsto para começar às 10h desta terça-feira (15). Notícias relacionadas: STF: Gilmar Mendes sugere adiar sessão sobre conduta de Moraes. Presidente do STF assume relatoria de processo sobre Moraes e Vorcaro. As vagas no plenário serão destinadas a pessoas previamente inscritas pelo cerimonial do STF. A entrada do plenário contará com detectores de metais e equipamento de raio-X e todos as pessoas deverão passar pelos procedimentos de segurança. O uso de celulares durante a sessão será proibido, e os aparelhos deverão ser lacrados na entrada do plenário. O trânsito na Esplanada dos Ministérios será interditado na altura do Congresso Nacional. (Em atualização)",
+          "evidenceText": "O Supremo Tribunal Federal (STF) confirmou há pouco que a sessão da Corte que vai analisar as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro terá transmissão ao vivo pela TV Justiça e pela internet. A Corte também adotou medidas de segurança durante o julgamento, que está previsto para começar às 10h desta terça-feira (15). Notícias relacionadas: STF: Gilmar Mendes sugere adiar sessão sobre conduta de Moraes. Presidente do STF assume relatoria de processo sobre Moraes e Vorcaro. As vagas no plenário serão destinadas a pessoas previamente inscritas pelo cerimonial do STF. A entrada do plenário contará com detectores de metais e equipamento de raio-X e todos as pessoas deverão passar pelos procedimentos de segurança. O uso de celulares durante a sessão será proibido, e os aparelhos deverão ser lacrados na entrada do plenário. O trânsito na Esplanada dos Ministérios será interditado na altura do Congresso Nacional. Clique aqui e leia mais sobre a crise no STF . Entenda No início deste mês, o ministro André Mendonça, então relator do caso Master, informou a Edson Fachin que a PF encontrou mensagens trocadas entre Moraes e Vorcaro e disse que é necessário que o plenário decida sobre a abertura de investigação . Após a divulgação do caso, o procurador-geral da República, Paulo Gonet, defendeu a anulação do relatório da PF que encontrou as conversas. Na manifestação enviada à Corte, Gonet disse que André Mendonça investigou Moraes ilegalmente ao determinar o aprofundamento da investigação sobre o caso Master para esmiuçar as conversas envolvendo Moraes e o ex-banqueiro. No entendimento do procurador, o aprofundamento da apuração só poderia ocorrer após autorização do plenário da Corte. Matéria ampliada às 16h58",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -3150,7 +3205,7 @@
     },
     "8573df23d8ff013c4a81833cf18e0fc0cf8776d298af10876c4489f25e46166c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Assédio e sobrecarga ameaçam saúde mental de jornalistas, diz pesquisa",
@@ -3173,7 +3228,7 @@
     },
     "38946cf9a2e583dbf2488a8e606ffc4e9ae4e71563a7f6c4b77d0460f19a0262": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Confiança da indústria recua e mantém 21 meses de pessimismo",
@@ -3361,7 +3416,7 @@
     },
     "52e9debc511af81db435f27a8fb4a039d6b996b929867d06f376a8ec149a1b6a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Triubnal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -3386,7 +3441,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3413,7 +3468,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -3438,7 +3493,7 @@
     },
     "26c2b82664c43ce3db2df36b5095c04dc8d284ba7cbbeb77b43c2042d87725db": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Boas práticas colocam foco em rastreamento de informações, análise de riscos, transparência e reforçam diálogo com a gestão",
@@ -3463,7 +3518,7 @@
     },
     "a62ed95fee447ddbd7ac7ae0371fd72c75770f5dec76a2ccab383d38a47db325": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "TCEMG esclarece regras para contratação por credenciamento",
@@ -3488,7 +3543,7 @@
     },
     "49efe5aea7014a410018a72f9d3c9964cab61a80021365a6087844c3f0f9253e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Identificação de fraudes e aproximação com a sociedade são temas do último dia do Seminário de Controle Interno",
@@ -3513,7 +3568,7 @@
     },
     "73c7c6dd92a4d4ed7e284f1766f4d343372711b6baae2ca033f9854522a3c2ce": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Controladorias Internas têm a missão de estar atentas aos \"rinocerontes cinza\" da gestão pública",
@@ -3538,7 +3593,7 @@
     },
     "9b59e45a6f77220cf1be84a1814d9ac59194150e9c2fab3330b5b231f895a291": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "TCEMG lança carta compromisso para fortalecer controles internos em Minas Gerais",
@@ -3563,7 +3618,7 @@
     },
     "634e48a364faf8610ae5f9bb220a4215fb0cbc7d4a9d0e738b846cf0bc1e4925": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "II Seminário de Controles Internos reúne mais de 750 pessoas em BH",
@@ -3588,7 +3643,7 @@
     },
     "51b6d6659dcd9bf107d30375d0503ce40fd8ccca116a8708337f92fbea038f2c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Livro sobre escavações no antigo DOPS/MG será lançado com experiência imersiva em Belo Horizonte",
@@ -3613,7 +3668,7 @@
     },
     "a96f9c196b1d204fcec8d247f0608672bc652edb25c8d232eba3860b9e761acc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2025 da Assembleia Legislativa de Minas Gerais",
@@ -3638,7 +3693,7 @@
     },
     "e8088838ed6cb79460ef9f73beed4ac05c3e737f1d59b473836c1eeb4948046c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "\"A Terra que Ninguém nos Prometeu\": Fábio de Melo lança novo livro no TCEMG",
@@ -3663,7 +3718,7 @@
     },
     "fea773ad11b3f69b238957fbd5be196fc4c671d38b510becf88b27ea140a19a4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Solenidade do Colar do Mérito marca comemorações dos 91 anos do TCEMG",
@@ -3688,7 +3743,7 @@
     },
     "36244ea3be2747000619345370651c66c33897b719677c8d9c8efe19b2b90ce6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Painel revela avanços e desafios de controladorias do Semiárido Mineiro",
@@ -3713,7 +3768,7 @@
     },
     "fd99b3d7bdcd10c3b072ab2e529d2b543ff7fa4314614f5cb5d7fe1cc3c481f4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "20 anos da Lei Maria da Penha: evento celebra marco histórico de luta, resistência e transformação",
@@ -3738,7 +3793,7 @@
     },
     "a721785b95220768bc645cdc14e6bfefc2a74155926bed36fb9cc5b5b33d1e78": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Edital de rodeio em Cruzília que previa até sorteio de moto emplacada acaba em multa por irregularidades",
@@ -3763,7 +3818,7 @@
     },
     "66cce994bd5884b8c90d6f11d559afc8c96b55840d6086830bef2a43909bc663": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 do Tribunal de Justiça de Minas Gerais",
@@ -3788,7 +3843,7 @@
     },
     "59ae8bf7b518104f423ef92b7064b0ba2e9cdf7752fa9325df3354158ccb2752": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "TCEMG nega recurso e mantém multa a prefeito de Araguari por nepotismo",
@@ -3813,7 +3868,7 @@
     },
     "476a740841787349a3455efc4135c9c6e646adebc928cf685662ce4b873341b4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Novas lideranças, mesmo propósito: encontro celebra mudança de gestão do Jus-Povos",
@@ -3863,7 +3918,7 @@
     },
     "96de484ae2333596f2689e38ddc97895c8b7a62f04be4a2c710e168bcfb1be13": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o papel dos Consórcios Públicos na gestão municipal com Victor Borges",
@@ -3891,7 +3946,7 @@
     },
     "4436fad46607038d8cfe89469b557267d3afa88b2153e8a335cc4fa4c50c70d7": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Nono módulo da Trilha de Aprendizagem sobre ODS está no ar",
@@ -3917,7 +3972,7 @@
     },
     "5644e472796b1bd97f5551ffcb683217a3f08af0d8d0d8e4a0a1588f49dfbf95": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Conexão Saúde debate saúde mental no trabalho com a jornalista Izabella Camargo",
@@ -3943,7 +3998,7 @@
     },
     "9f028ca97770b6f264b0893ebc66f4d033c9fc3602a3b61c9025f20ab8b581dc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada na cidade de Limeira",
@@ -3969,7 +4024,7 @@
     },
     "9f9364e6671983e0a305a64aade3d413bedcedfd4c26332c8868da0cf8473cc0": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "São Carlos recebe caravana do Ciclo de Debates do TCESP",
@@ -3995,7 +4050,7 @@
     },
     "91becf7d33c3807798844cf54349a99202244f4c1a0bdb01075f141c425f31d3": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "TCESP publica Relatório do Terceiro Setor 2025",
@@ -4004,7 +4059,7 @@
         "source": "TCE-SP",
         "sourceUrl": "https://www.tce.sp.gov.br/noticias",
         "stateCode": "SP",
-        "summary": "09/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) publicou nesta terça-feira, 08/09, o Relatório do Terceiro Setor 2025. O documento consolida as principais ações desenvolvidas pelo TCESP, por intermédio da 1ª e da 10ª Diretorias de Fiscalização e das Unidades Regionais, relacionadas à fiscalização, ao aperfeiçoamento normativo e à orientação dos jurisdicionados quanto às parcerias celebradas com entidades do Terceiro Setor durante o exercício de 2025. O documento evidencia a crescente relevância dessas parcerias na execução de políticas públicas e demonstra as iniciativas adotadas pelo Tribunal para fortalecer os mecanismos de controle, transparência e prestação de contas. No âmbito da fiscalização, foram instruídos 2.028 processos, compreendendo ajustes, aditamentos e prestações de contas, além da realização de 350 auditorias in loco, envolvendo inspeções patrimoniais, análise de contratações, vistorias em instalações e acompanhamento da execução dos serviços prestados pelas entidades parceiras.",
+        "summary": "09/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) publicou nesta terça-feira, 08/09, o Relatório do Terceiro Setor 2025 . O documento consolida as principais ações desenvolvidas pelo TCESP, por intermédio da 1ª e da 10ª Diretorias de Fiscalização e das Unidades Regionais, relacionadas à fiscalização...",
         "scraper": "tce-sp",
         "previewOnly": false,
         "classification": {
@@ -4013,7 +4068,7 @@
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "09/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) publicou nesta terça-feira, 08/09, o Relatório do Terceiro Setor 2025. O documento consolida as principais ações desenvolvidas pelo TCESP, por intermédio da 1ª e da 10ª Diretorias de Fiscalização e das Unidades Regionais, relacionadas à fiscalização, ao aperfeiçoamento normativo e à orientação dos jurisdicionados quanto às parcerias celebradas com entidades do Terceiro Setor durante o exercício de 2025. O documento evidencia a crescente relevância dessas parcerias na execução de políticas públicas e demonstra as iniciativas adotadas pelo Tribunal para fortalecer os mecanismos de controle, transparência e prestação de contas. No âmbito da fiscalização, foram instruídos 2.028 processos, compreendendo ajustes, aditamentos e prestações de contas, além da realização de 350 auditorias in loco, envolvendo inspeções patrimoniais, análise de contratações, vistorias em instalações e acompanhamento da execução dos serviços prestados pelas entidades parceiras.",
+          "evidenceText": "09/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) publicou nesta terça-feira, 08/09, o Relatório do Terceiro Setor 2025 . O documento consolida as principais ações desenvolvidas pelo TCESP, por intermédio da 1ª e da 10ª Diretorias de Fiscalização e das Unidades Regionais, relacionadas à fiscalização...",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -4021,7 +4076,7 @@
     },
     "fd3436bacead59e22f97f1d0571bb3afa9834f7b4694a78cd13c6ce017bd4d7f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza Encontro de Controle Interno e Integridade na Gestão Pública em Araraquara",
@@ -4047,7 +4102,7 @@
     },
     "c3b84aa16ffb37c62607e95c6ea7a4861732ee5b81d362ab1ef787ba3f02d682": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T19:58:39.657Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
       "item": {
         "kind": "gazette-index",
         "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
@@ -4065,6 +4120,924 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d3519c9b480649442de03b07c20d251a361bf7bd0599063bcbabf0ff8e2228b1": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília - ABC Agora",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5yeFBKSl9KZVlBTEpPdEMyNlVXUHF6QW40Yzk0S3RCQ3gzdWpxbHVNZ0ktVlJiWV8xMnBUazJlMzRlRDVhVWc2dU82QmpYSnFXUFRKemU2WTh5cThDWkViWWsxQ1BKWkM3VDdzLUwyQXBSZkJ1d3RMSE5B?oc=5",
+        "sourceUrl": "https://abcagora.com.br",
+        "publishedAt": "2026-09-14T21:17:41.000Z",
+        "source": "ABC Agora",
+        "summary": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília ABC Agora",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília ABC Agora",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "1bb8aa8da2195060a12b04ce02b33d5ff9c85ed3e6578bfdce247960c4a0a300": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda - RD – Repórter Diário",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdW5GNjJhNjBvYUNpVm9GSVp4U2stQk1ybnhNcThmTlktMXJEVDM2T1BQQ05hTEZ2M3hnakY4TUxwZ1JmSDNpTFFDcUJ1d2lqSm13RVB2ZU1YRUhXakU2ck5YS08zWVVkMTFfZThlQnJobENESTRTSFVSb3hzdWhlQzlmeG5nTUp2V0xqYjlaRUdNbDhNSHVldThaZ24yLWFic0ZsM2hwREN4NzdXR25TZ2ZvM21fcWl3c1lRbXdWNEdxNFZFUFhn?oc=5",
+        "sourceUrl": "https://www.reporterdiario.com.br",
+        "publishedAt": "2026-09-11T21:49:37.000Z",
+        "source": "RD – Repórter Diário",
+        "summary": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda RD – Repórter Diário",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 2,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda RD – Repórter Diário",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "814ac792cba46109b3f64d7d13f720576bc9163b42cb479cb166cc5d49a83ea5": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Promotorias cobram solução para crise em hospital regional - MOMENTO MT",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVHRzZW9fZGp6dUtUQjVzeWJQQ1B2cFB2RnhkN3NpRF9oNUlONjZwZlZFV0kxQ1pOa0xLY2tBWW02ZkIycXBGeUJrZWFGdWVkb05yLUJycFR4U3lsSmp0TFVQS3IwTC1qc3h4VW92a09BVjVncXdmQjdiTlZzQlhhMkNTSVdNaEN2WVA4b2FYRFl1Q2hKSnlidk9tQ25xLTNjdjdyRzZfUmtaQQ?oc=5",
+        "sourceUrl": "https://momentomt.com.br",
+        "publishedAt": "2026-09-14T21:00:00.000Z",
+        "source": "MOMENTO MT",
+        "summary": "Promotorias cobram solução para crise em hospital regional MOMENTO MT",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional MOMENTO MT",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "58706a3a4aa7d743798e03cbb9442770b47c948325085c7e4ac25086e29c28fb": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Inhapi (AL)",
+        "url": "https://data.queridodiario.ok.org.br/2700000/2026-09-14/71ae3de2cdc04efa3d9e2bb5d32dc56850d96181.pdf",
+        "publishedAt": "2026-09-14T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Inhapi ao Consórcio Intermunicipal do Agreste Alagoano – CONAGRESTE, com a ratificação da 3ª Alteração e Consolidação do Protocolo de Intenções e dá outras providências.‖ www.diariomunicipal.com.br/ama 26 O PREFEITO DO MUNICÍPIO INHAPI, ESTADO DE ALAGOAS, Sr. GILSON TENÓRIO CAVALCANTE, no uso de suas atribuições legais, faz saber que a Câmara Municipal aprovou e ele sanciona a seguinte lei: Art. 1º - Fica o Município de Inhapi autorizado a aderir ao Consórcio Intermunicipal do Agreste Alagoano – CONAGRESTE, mediante ratificação do Protocolo de Intenções que o constitui, já com as modificações constantes da sua 3ª Alteração e Consolidação, nos termos da Lei Federal nº 11.107, de 06 de abril de 2005. Parágrafo único. O texto consolidado do Protocolo de Intenções e seu as providências administrativas necessárias à efetivação da adesão, inclusive firmar instrumentos, designar representantes e adotar os atos de gestão que se fizerem necessários para o ingresso e participação do Município no referido Consórcio. Art. 3º - Ficam ratificadas todas as deliberações da Assembleia Geral do CONAGRESTE realizadas em 08 de janeiro de 2025, por ocasião da aprovação da 3ª Alteração e Consolidação do Protocolo de Intenções. Art. 4º - Esta Lei entra em vigor na data de sua publicação, revogadas as disposições em contrário. INHAPI/AL, 11 de setembro de 2026. GILSON TENÓRIO CAVALCANTE Prefeito Publicado por: Relden Rafael Barros Tenorio Soares Código Identificador:A993AE0D SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO EXTRATO DO CONTRATO DE LOCAÇÃO DE IMÓVEL INHAPI N° 045-2026 Processo N° 20260730.010 Inexigibilidade: 022/2026",
+        "territoryId": "2703304",
+        "territoryName": "Inhapi",
+        "stateCode": "AL",
+        "edition": "2891",
+        "classification": {
+          "category": "ADESÃO",
+          "emoji": "🟦",
+          "score": 25,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO",
+            "PROTOCOLO",
+            "GOVERNANÇA"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Inhapi ao Consórcio Intermunicipal do Agreste Alagoano – CONAGRESTE, com a ratificação da 3ª Alteração e Consolidação do Protocolo de Intenções e dá outras providências.‖ www.diariomunicipal.com.br/ama 26 O PREFEITO DO MUNICÍPIO INHAPI, ESTADO DE ALAGOAS, Sr. GILSON TENÓRIO CAVALCANTE, no uso de suas atribuições legais, faz saber que a Câmara Municipal aprovou e ele sanciona a seguinte lei: Art. 1º - Fica o Município de Inhapi autorizado a aderir ao Consórcio Intermunicipal do Agreste Alagoano – CONAGRESTE, mediante ratificação do Protocolo de Intenções que o constitui, já com as modificações constantes da sua 3ª Alteração e Consolidação, nos termos da Lei Federal nº 11.107, de 06 de abril de 2005. Parágrafo único. O texto consolidado do Protocolo de Intenções e seu",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "91fe4f7cfc6858264b418bffa47077497838fe4647251f3d4c8ee635dda59a38": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Mogi Guaçu (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3530706/2026-09-12/68d98595c9696060901bd727031eba418a1f28ca.pdf",
+        "publishedAt": "2026-09-12T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Mogi Guaçu - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade jurídica e integridade. CONSÓRCIO INTERMUNICIPAL CEMMIL PARA O DESENVOLVIMENTO SUSTENTÁVEL Aguaí – Amparo – Araras – Casa Branca - Espírito Santo do Pinhal - Leme - Mococa - Mogi Guaçu –Mogi Mirim Pirassununga – São João da Boa Vista - São José do Rio Pardo - Vargem Grande do Sul CNPJ: 05.012.725/0001-13 Escritório: Rua Luiz Baiochi, 111 – Parque Cidade Nova – Mogi Guaçu/SP. CEP. 13845-437 - site: www.cemmil.com.br - Tel: 3841-8181 - 3569-5534 CEMMIL Página 1 EDITAL DE CONVOCAÇÃO DE CANDIDATOS PARA ADMISSÃO O SUPERINTENDENTE DO CONSÓRCIO INTERMUNICIPAL “CEMMIL” PARA O DESENVOLVIMENTO SUSTENTÁVEL, com sede na cidade de Mogi Guaçu, Estado de São Paulo, na Rua Luiz Baiochi,111 – Parque Cidade Nova, no uso de suas atribuições",
+        "territoryId": "3530706",
+        "territoryName": "Mogi Guaçu",
+        "stateCode": "SP",
+        "edition": "1166",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Mogi Guaçu - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade jurídica e integridade. CONSÓRCIO INTERMUNICIPAL CEMMIL PARA O DESENVOLVIMENTO SUSTENTÁVEL Aguaí – Amparo – Araras – Casa Branca - Espírito Santo do Pinhal - Leme - Mococa - Mogi Guaçu –Mogi Mirim Pirassununga – São João da Boa Vista - São José do Rio Pardo - Vargem Grande do Sul CNPJ: 05.012.725/0001-13 Escritório: Rua Luiz Baiochi, 111 – Parque Cidade Nova – Mogi Guaçu/SP. CEP. 13845-437 - site: www.cemmil.com.br - Tel: 3841-8181 - 3569-5534 CEMMIL Página 1 EDITAL DE CONVOCAÇÃO DE CANDIDATOS PARA ADMISSÃO O SUPERINTENDENTE DO CONSÓRCIO INTERMUNICIPAL “CEMMIL” PARA O DESENVOLVIMENTO SUSTENTÁVEL, com sede na cidade de Mogi Guaçu, Estado de São Paulo, na Rua Luiz Baiochi,111 – Parque Cidade Nova, no uso de suas atribuições",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "2e0b143f48cd1ce98a41b32e39393c42b6f18cb7488667154ad12cb72e420d1f": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Nova Iguaçu (RJ)",
+        "url": "https://data.queridodiario.ok.org.br/3303500/2026-09-11/f383d906db40f12738994056531f9012822057df.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "DERANDO-SE SEMPRE AS RESPECTIVAS ALTERAÇÕES, BEM COMO AS CLÁUSULAS E CONDIÇÕES DO CONTRATO ORIGINAL E SEUS ADI- TIVOS. DATA DA ASSINATURA: 08 DE SETEMBRO DE 2026. LUIZ CARLOS NOBRE CAVALCANTI SECRETÁRIO MUNICIPAL DE SAÚDE Id. 06112/2026 SEÇÃO 4 – CONSÓRCIO CISBAF EXTRATO DO CREDENCIAMENTO DE PESSOA JURÍDICA PRESTA- DORA DE SERVIÇOS NA ÁREA DA SAÚDE, LOCALIZADA NO ES- TADO DO RIO DE JANEIRO. O CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA BAIXADA FLUMI- NENSE- CISBAF credenciou a empresa HOSPITAL GRAND MATER LTDA, inscrito no CNPJ nº 01.395.205/0001-86, com sede na Rua Rio de Janeiro, n°192, Quadra 16, Lote 11 Lote 12 Lote 22 Lote 23, Extensão Do Bosque, Rio das Ostras, Rio de Janeiro, CEP: 28.893-334, para prestação de serviços na área da saúde, utilizando por base valores referenciados na tabela CISBAF, conforme objeto da PROCEDIMENTO AUXILIAR DE LICI- de 1º de abril de 2021, Resolução CISBAF 003/2024 e demais legislações aplicáveis. Preço: utilizando por base valores referenciados na tabela CISBAF. Data de credenciamento: 10/09/2026. ROSANGELA BELLO – SECRETÁRIA EXECUTIVA DO CISBAF Id. 06113/2026 EXTRATO PUBLICAÇÃO CONTRATO DE PRESTAÇÃO DE SERVIÇOS DE SAÚDE COMPLEMEN- TARES ESPECIALIZADOS Nº 006/2026 PROCESSO CISBAF Nº. 812/2026 PARTES: CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA BAIXADA FLU- MINENSE – CISBAF E HOSPITAL GRAND MATER LTDA OBJETO: Prestação de serviços complementares de saúde, conforme Anexo I do contrato (Tabela CISBAF). PRAZO: 12 meses DOTAÇÃO ORÇAMENTÁRIA: As despesas dos serviços complementares especializados de saúde realizados decorrentes deste Contrato correrão à conta dos recursos financeiros provenientes das dotações orçamentárias específicas",
+        "territoryId": "3303500",
+        "territoryName": "Nova Iguaçu",
+        "stateCode": "RJ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "DERANDO-SE SEMPRE AS RESPECTIVAS ALTERAÇÕES, BEM COMO AS CLÁUSULAS E CONDIÇÕES DO CONTRATO ORIGINAL E SEUS ADI- TIVOS. DATA DA ASSINATURA: 08 DE SETEMBRO DE 2026. LUIZ CARLOS NOBRE CAVALCANTI SECRETÁRIO MUNICIPAL DE SAÚDE Id. 06112/2026 SEÇÃO 4 – CONSÓRCIO CISBAF EXTRATO DO CREDENCIAMENTO DE PESSOA JURÍDICA PRESTA- DORA DE SERVIÇOS NA ÁREA DA SAÚDE, LOCALIZADA NO ES- TADO DO RIO DE JANEIRO. O CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA BAIXADA FLUMI- NENSE- CISBAF credenciou a empresa HOSPITAL GRAND MATER LTDA, inscrito no CNPJ nº 01.395.205/0001-86, com sede na Rua Rio de Janeiro, n°192, Quadra 16, Lote 11 Lote 12 Lote 22 Lote 23, Extensão Do Bosque, Rio das Ostras, Rio de Janeiro, CEP: 28.893-334, para prestação de serviços na área da saúde, utilizando por base valores referenciados na tabela CISBAF, conforme objeto da PROCEDIMENTO AUXILIAR DE LICI-",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "0ab1dcb04e92bc81bf061cc1e6051694069efff1352862ca0a4524d6f7984a71": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de São Mateus do Sul (PR)",
+        "url": "https://data.queridodiario.ok.org.br/4125605/2026-09-11/c9c23115e08f0958f4b94fff5c8835e5953b7b88.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "reforço das seguintes Dotações Orçamentárias. Suplementação 07 Secretaria Municipal de Administração. 07.001 Administração. 07.001.04.122.1111.2.012 Manutenção do órgão Secretaria Municipal de Administração 92 - 3.3.90.39.00.00 00000 OUTROS SERVIÇOS DE TERCEIROS-PESSOA JURÍDICA 41.000,00 09 Secretaria Municipal de Saúde 09.001 Saúde 09.001.10.302.2201.2.099 Manutenção do Consórcio Intermunicipal de Saúde 247 - 3.3.72.39.00.00 00303 OUTROS SERVIÇOS DE TERCEIROS-PESSOA JURÍDICA 260.000,00 13 Secretaria Municipal de Assistência Social 13.002 Fundo Municipal de Assistência Social 13.002.08.244.2221.2.226 Bloco Proteção Social Básica - CRAS/PAIF, SCFV e Equipe Volante do CRAS 406 - 3.3.90.32.00.00 34040 MATERIAL, BEM OU SERVIÇO PARA DISTRIBUIÇÃO GRATUIT 15.000,00 Total Suplementação:",
+        "territoryId": "4125605",
+        "territoryName": "São Mateus do Sul",
+        "stateCode": "PR",
+        "edition": "3937",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "reforço das seguintes Dotações Orçamentárias. Suplementação 07 Secretaria Municipal de Administração. 07.001 Administração. 07.001.04.122.1111.2.012 Manutenção do órgão Secretaria Municipal de Administração 92 - 3.3.90.39.00.00 00000 OUTROS SERVIÇOS DE TERCEIROS-PESSOA JURÍDICA 41.000,00 09 Secretaria Municipal de Saúde 09.001 Saúde 09.001.10.302.2201.2.099 Manutenção do Consórcio Intermunicipal de Saúde 247 - 3.3.72.39.00.00 00303 OUTROS SERVIÇOS DE TERCEIROS-PESSOA JURÍDICA 260.000,00 13 Secretaria Municipal de Assistência Social 13.002 Fundo Municipal de Assistência Social 13.002.08.244.2221.2.226 Bloco Proteção Social Básica - CRAS/PAIF, SCFV e Equipe Volante do CRAS 406 - 3.3.90.32.00.00 34040 MATERIAL, BEM OU SERVIÇO PARA DISTRIBUIÇÃO GRATUIT 15.000,00 Total Suplementação:",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "f656a233847a58ee7666e3b18f1afe7b77168e0bca8d2811bc5e6c5393fb03ed": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Januária (MG)",
+        "url": "https://data.queridodiario.ok.org.br/3135209/2026-09-11/e40b984a0799cd8b21cc0f6d47e1412e28da1b2b.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "10:10:17 -03'00' Sexta-feira, 11 de Setembro de 2026 ANO 4 Edição Nº 831 Página 13 PREFEITURA MUNICIPAL DE JANUÁRIA SECRETARIA MUNICIPAL DE SAÚDE SEDE ADMINISTRATIVA Rua Ana Maria Montalvão, nº 120 – Centro - CEP 39480-000 – Januária (MG) e-mail: smsjanuaria@gmail.com ANEXO: Relação dos estabelecimentos habilitados Nome do estabelecimento CNES Código/habilitação de inserção descentralizada Consórcio Intermunicipal de Saúde do Alto Médio São Francisco – CISAMSF 9228713 Serviço especializado 170 – Comissões e Comitês Classificação 002 – Núcleo de Gestão do Cuidado – NGC Sexta-feira, 11 de Setembro de 2026 ANO 4 Edição Nº 831 Página 14 2026-09-11T17:54:57-0300",
+        "territoryId": "3135209",
+        "territoryName": "Januária",
+        "stateCode": "MG",
+        "edition": "831",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "10:10:17 -03'00' Sexta-feira, 11 de Setembro de 2026 ANO 4 Edição Nº 831 Página 13 PREFEITURA MUNICIPAL DE JANUÁRIA SECRETARIA MUNICIPAL DE SAÚDE SEDE ADMINISTRATIVA Rua Ana Maria Montalvão, nº 120 – Centro - CEP 39480-000 – Januária (MG) e-mail: smsjanuaria@gmail.com ANEXO: Relação dos estabelecimentos habilitados Nome do estabelecimento CNES Código/habilitação de inserção descentralizada Consórcio Intermunicipal de Saúde do Alto Médio São Francisco – CISAMSF 9228713 Serviço especializado 170 – Comissões e Comitês Classificação 002 – Núcleo de Gestão do Cuidado – NGC Sexta-feira, 11 de Setembro de 2026 ANO 4 Edição Nº 831 Página 14 2026-09-11T17:54:57-0300",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "bd8dd48d487e4533c07201feaa3712e299c423f0f22ae7cff61506a66689c3c4": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Jeremoabo (BA)",
+        "url": "https://data.queridodiario.ok.org.br/2918100/2026-09-11/227aba5e433eb37069ab45862737e85726552a4a.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "- DAFAULT P-02 Sexta-feira 11 de Setembro de 2026 14 - Ano I - Nº 6663 Prefeitura Municipal de Jeremoabo CERTIFICAÇÃO DIGITAL: NTMXMJEYQZHCMUEWRTDGRE Esta edição encontra-se no site oficial deste ente. PREFEITURA MUNICIPAL DE JEREMOABO AVENIDA DR JOSE GONCALVES DE SA - Centro CNPJ: 13.809.041/0001-75 - CEP: 48.540-000 - JEREMOABO - BA DECRETO DE CRÉDITO ORÇAMENTÁRIO E SUPLEMENTAR 3.3.71.70.00 / 1500 - Rateio pela Participação em Consórcio Público 14.354,97 Total por Ação: 14.354,97 Total por Unidade Orçamentária: 1.039.354,97 031312 - SECRETARIA MUNICIPAL DE ASSISTÊNCIA SOCIAL E CIDADANIA 2.040 - MANUTENCAO DO CONSELHO TUTELAR 3.3.90.36.00 / 1500 - Outros Serviços de Terceiros - Pessoa Física 7.590,00 Total por Ação: 7.590,00 Total por Unidade Orçamentária: 7.590,00 031313 - FUNDO MUNICIPAL DE ASSISTENCIA SOCIAL 2.087 - PROGRAMA PRIMEIRA INFANCIA NO SUAS - CRIANÇA FELIZ",
+        "territoryId": "2918100",
+        "territoryName": "Jeremoabo",
+        "stateCode": "BA",
+        "edition": "6663",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -1,
+          "reasons": [
+            "contexto público forte",
+            "RATEIO",
+            "rejeitado: previsão orçamentária genérica"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "- DAFAULT P-02 Sexta-feira 11 de Setembro de 2026 14 - Ano I - Nº 6663 Prefeitura Municipal de Jeremoabo CERTIFICAÇÃO DIGITAL: NTMXMJEYQZHCMUEWRTDGRE Esta edição encontra-se no site oficial deste ente. PREFEITURA MUNICIPAL DE JEREMOABO AVENIDA DR JOSE GONCALVES DE SA - Centro CNPJ: 13.809.041/0001-75 - CEP: 48.540-000 - JEREMOABO - BA DECRETO DE CRÉDITO ORÇAMENTÁRIO E SUPLEMENTAR 3.3.71.70.00 / 1500 - Rateio pela Participação em Consórcio Público 14.354,97 Total por Ação: 14.354,97 Total por Unidade Orçamentária: 1.039.354,97 031312 - SECRETARIA MUNICIPAL DE ASSISTÊNCIA SOCIAL E CIDADANIA 2.040 - MANUTENCAO DO CONSELHO TUTELAR 3.3.90.36.00 / 1500 - Outros Serviços de Terceiros - Pessoa Física 7.590,00 Total por Ação: 7.590,00 Total por Unidade Orçamentária: 7.590,00 031313 - FUNDO MUNICIPAL DE ASSISTENCIA SOCIAL 2.087 - PROGRAMA PRIMEIRA INFANCIA NO SUAS - CRIANÇA FELIZ",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "db0a25272a2b9077e0f5a8854e013bdf9d4c62c11678ed315780577e24c411f6": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Jaboti (PR)",
+        "url": "https://data.queridodiario.ok.org.br/4111704/2026-09-11/db107338237b178a6db534587632198cda1a68b1.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Adicional Suplementar no valor de R$ 71.541,74 ( Setenta e Um Mil, Quinhentos e Quarenta e Um Reais e Setenta e Quatro Centavos ), nas dotações a seguir especificadas: Suplementar Códigos Descrição Valor 03 SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO E FAZENDA 03.001 SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO E FAZENDA 04.122.0003.20 03 MANUTENÇÃO DA ADMINISTRAÇÃO E FINAN ÇAS 3.3.71.70.00.00 RATEIO PELA PARTICIPAÇÃO EM CONSÓRCIO PÚBLICO 350 00000-Recursos Ordinários (Livres) 1.300,00 SUBTOTAL 1.300,00 05 SECRETARIA MUNCIPAL DE EDUCAÇÃO E ESPORTE 05.001 ENSINO FUNDAMENTAL 12.361.0005.20 14 TRANSPORTE ESCOLAR 3.3.90.30.00.00 MATERIAL DE CONSUMO 1400 00103-5% sobre Transferências Constitucionais FUNDEB 30.000,00 1410 00104-Demais Impostos Vinculados à Educação Básica 30.000,00 12.361.0005.20 13 MANUTENÇÃO DO ENSINO FUNDAMENTAL 3",
+        "territoryId": "4111704",
+        "territoryName": "Jaboti",
+        "stateCode": "PR",
+        "edition": "1417",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -1,
+          "reasons": [
+            "contexto público forte",
+            "RATEIO",
+            "rejeitado: previsão orçamentária genérica"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Adicional Suplementar no valor de R$ 71.541,74 ( Setenta e Um Mil, Quinhentos e Quarenta e Um Reais e Setenta e Quatro Centavos ), nas dotações a seguir especificadas: Suplementar Códigos Descrição Valor 03 SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO E FAZENDA 03.001 SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO E FAZENDA 04.122.0003.20 03 MANUTENÇÃO DA ADMINISTRAÇÃO E FINAN ÇAS 3.3.71.70.00.00 RATEIO PELA PARTICIPAÇÃO EM CONSÓRCIO PÚBLICO 350 00000-Recursos Ordinários (Livres) 1.300,00 SUBTOTAL 1.300,00 05 SECRETARIA MUNCIPAL DE EDUCAÇÃO E ESPORTE 05.001 ENSINO FUNDAMENTAL 12.361.0005.20 14 TRANSPORTE ESCOLAR 3.3.90.30.00.00 MATERIAL DE CONSUMO 1400 00103-5% sobre Transferências Constitucionais FUNDEB 30.000,00 1410 00104-Demais Impostos Vinculados à Educação Básica 30.000,00 12.361.0005.20 13 MANUTENÇÃO DO ENSINO FUNDAMENTAL 3",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "6eaae0eeaf3cb62bc486e0ed29492a4a8d57d40eb999d04c119c5e228eb19aca": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Castro (PR)",
+        "url": "https://data.queridodiario.ok.org.br/4104907/2026-09-11/93cd1a10efdb7457ab5b6e7d017edc3633dcef29.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Universidade Estadual De Ponta Grossa – UEPG, a Associação Parque Tecnológico Agroleite e a Castrolanda Cooperativa Agroindustrial Ltda, visando à criação, implantação e viabilização do Curso de Medicina Veterinária no Município de Castro, e dá outras providências. A CÂMARA MUNICIPAL DE CASTRO decretou e eu, PREFEITO MUNICIPAL sanciono esta Lei: Art. 1º. Fica o Poder Executivo Municipal autorizado a celebrar Protocolo de Intenções, Termo de Cooperação, Convênio, Acordo de Cooperação, Termo de Compromisso ou qualquer outro instrumento jurídico adequado com a Universidade Estadual De Ponta Grossa – UEPG, a Associação Parque Tecnológico Agroleite e a Castrolanda Cooperativa Agroindustrial LTDA, individual ou conjuntamente, com a finalidade de promover a criação, implantação, estruturação, consolidação e viabilização do Curso de Medicina Veterinária",
+        "territoryId": "4104907",
+        "territoryName": "Castro",
+        "stateCode": "PR",
+        "edition": "3473",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [
+            "rejeitado: PROTOCOLO sem contexto público"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Universidade Estadual De Ponta Grossa – UEPG, a Associação Parque Tecnológico Agroleite e a Castrolanda Cooperativa Agroindustrial Ltda, visando à criação, implantação e viabilização do Curso de Medicina Veterinária no Município de Castro, e dá outras providências. A CÂMARA MUNICIPAL DE CASTRO decretou e eu, PREFEITO MUNICIPAL sanciono esta Lei: Art. 1º. Fica o Poder Executivo Municipal autorizado a celebrar Protocolo de Intenções, Termo de Cooperação, Convênio, Acordo de Cooperação, Termo de Compromisso ou qualquer outro instrumento jurídico adequado com a Universidade Estadual De Ponta Grossa – UEPG, a Associação Parque Tecnológico Agroleite e a Castrolanda Cooperativa Agroindustrial LTDA, individual ou conjuntamente, com a finalidade de promover a criação, implantação, estruturação, consolidação e viabilização do Curso de Medicina Veterinária",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "3caf4cbdca7bdaf941f9368a6f415d0a136a01f44fbb5ada8f51b488372370c2": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Joinville (SC)",
+        "url": "https://data.queridodiario.ok.org.br/4209102/2026-09-11/3a4aa117336abf80aa7e26bab8102db3c78ce23b.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Corpo de Bombeiros Voluntários de Joinville – SCBVJ; VIII – Associação dos Servidores Públicos do Município de Joinville – ASPMJ; IX – Frente Nacional dos Prefeitos – FNP; X – Confederação Nacional dos Municípios – CNM; XI – Associação Nacional de Órgãos Municipais de Meio Ambiente – ANAMMA; XII – Joinville e Região Convention & Visitors Bureau; XIII – Instituto de Desenvolvimento Turístico do Norte de Santa Catarina; XIV – Consórcio Intermunicipal de Saúde – CIS/Nordeste; XV – Associação Brasileira de Recursos Humanos – ABRH; XVI – Associação Nacional de Cidades Inteligentes, Tecnológicas e Inovadoras – ANCITI; XVII – Consórcio Interfederativo Santa Catarina – CINCATARINA; e XVIII – Instituto Escola do Teatro Bolshoi no Brasil. Parágrafo único. O Executivo Municipal fica autorizado a conceder contribuição financeira aos serviços públicos municipais, diante de necessidade Município de Joinville e a empresa Soma Sc Produtos Hospitalares Ltda., inscrita no CNPJ n.º 05.531.725/0001- 20, doravante denominada CONTRATADA, cujo objeto é o Registro de Preços para futura e eventual contratação, com fornecimento parcelado de Materiais Ambulatoriais E Insumos Hospitalares - Lei 14.133/2021, para uso dos Entes da Federação Consorciados, Cooperados ou 94 de 295 Nº 3046, sexta-feira, 11 de setembro de 2026 Referendados ao Consórcio Público Interfederativo Nacional – CINCATARINA: a) Titulares: 1. Ana Paula Prus dos Santos - Matrícula n.º 100427; 2. Gilson Costa Lopes - Matrícula n.º 51605; 3. Marisa Cristina Weldt Wagencknecht - Matrícula n.º 100561. b) Suplentes: 1. Flávia Vicente Amâncio Maiochi - Matrícula n.º 100385; 2. Bruno Kouketsu - Matrícula n.º 100647; 3. Yngrid Soares Dolci - Matrícula n.º 100343. Art. 2º Aos Fiscais compete: I - Conhecer, cumprir e fazer",
+        "territoryId": "4209102",
+        "territoryName": "Joinville",
+        "stateCode": "SC",
+        "edition": "2026",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Corpo de Bombeiros Voluntários de Joinville – SCBVJ; VIII – Associação dos Servidores Públicos do Município de Joinville – ASPMJ; IX – Frente Nacional dos Prefeitos – FNP; X – Confederação Nacional dos Municípios – CNM; XI – Associação Nacional de Órgãos Municipais de Meio Ambiente – ANAMMA; XII – Joinville e Região Convention & Visitors Bureau; XIII – Instituto de Desenvolvimento Turístico do Norte de Santa Catarina; XIV – Consórcio Intermunicipal de Saúde – CIS/Nordeste; XV – Associação Brasileira de Recursos Humanos – ABRH; XVI – Associação Nacional de Cidades Inteligentes, Tecnológicas e Inovadoras – ANCITI; XVII – Consórcio Interfederativo Santa Catarina – CINCATARINA; e XVIII – Instituto Escola do Teatro Bolshoi no Brasil. Parágrafo único. O Executivo Municipal fica autorizado a conceder contribuição financeira aos serviços públicos municipais, diante de necessidade",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "e205732cb2afefd7983344f58ee985d571cb154e3fde628bbce8bd914ebf613c": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Sumidouro (RJ)",
+        "url": "https://data.queridodiario.ok.org.br/3305703/2026-09-11/6766101458e8e154d6d9e7d2e210dea9cccfe3d4.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "suas atribuições; RESOLVE: Art. 1° - Nomear o Senhor CLAUDIO FELIPE DA ROCHA CORGUINHA, matrícula n° 25.07.5336, Assessor Superior de Planejamento, Desenvolvimento e programas de Saúde da SMS, para exercer sem ônus, o cargo de FISCAL DE CONTRATOS, da Secretaria Municipal de Saúde referente à Aquisição de Veículo tipo Furgão, Novo, 0 Km, adaptado para Ambulância tipo A Simples Remoção, Adesão de Ata SRP n° 001/2025 PE 006/2025 – Consórcio Intermunicipal da Região Sudoeste da Grande São Paulo - Processo nº SUM-060206/000057/2026. Art. 2° - Esta Portaria entra em vigor na data de sua publicação. Sumidouro, 10 de Setembro de 2026. FABÍOLA DA SILVA WERNECH Matrícula 25.07.5592 Secretária Municipal de Saúde Rua 10 de Junho, - Centro - Sumidouro - RJ - CEP: 28637-000 Tel:(22)2531-2150",
+        "territoryId": "3305703",
+        "territoryName": "Sumidouro",
+        "stateCode": "RJ",
+        "edition": "1895",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -19,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO",
+            "rejeitado: adesão a ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "suas atribuições; RESOLVE: Art. 1° - Nomear o Senhor CLAUDIO FELIPE DA ROCHA CORGUINHA, matrícula n° 25.07.5336, Assessor Superior de Planejamento, Desenvolvimento e programas de Saúde da SMS, para exercer sem ônus, o cargo de FISCAL DE CONTRATOS, da Secretaria Municipal de Saúde referente à Aquisição de Veículo tipo Furgão, Novo, 0 Km, adaptado para Ambulância tipo A Simples Remoção, Adesão de Ata SRP n° 001/2025 PE 006/2025 – Consórcio Intermunicipal da Região Sudoeste da Grande São Paulo - Processo nº SUM-060206/000057/2026. Art. 2° - Esta Portaria entra em vigor na data de sua publicação. Sumidouro, 10 de Setembro de 2026. FABÍOLA DA SILVA WERNECH Matrícula 25.07.5592 Secretária Municipal de Saúde Rua 10 de Junho, - Centro - Sumidouro - RJ - CEP: 28637-000 Tel:(22)2531-2150",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "8bde66cf0a87d3f0165ad3649cbfe352343f1c1b2689c107d3493a01587f5e18": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Teotônio Vilela (AL)",
+        "url": "https://data.queridodiario.ok.org.br/2700000/2026-09-11/04b9de1e2c75efedb17f820bcb05a158a86aad51.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "contrato ou não, se necessário. CONSIDERANDO, que na ausência de designação de Gestor de Contratos, suas atribuições deverão ser exercidas pelo Fiscal designado. R E S O L V E: Art. 1º. Designar os servidores abaixo como Gestor e Fiscal, para gerir e fiscalizar a AQUISIÇÃO DE AMBULÂNCIA DE SUPORTE AVANÇADO (TIPO D - UTI MÓVEL),REALIZADO POR MEIO DA ADESÃO Á ATA DE REGISTRO DE PREÇOS N°13/2026,ORIUNDA DO CONSORCIO INTERMUNICIPAL MULTIFINALIARIO DO VALE DO PARAIBUNA - CIMPAR. VISANDO ATENDER AS NECESSIDADES DA SECRETARIA DE SAÚDE DO MUNICÍPIO DE TEOTÔNIO VILELA-AL, exercendo todas as funções inerentes e designadas em Legislação pertinente e nesta Portaria, no âmbito do Município de Teotônio Vilela, Alagoas, senão vejamos: I – Gyltemberg Francisco Feitosa, CPF nº 103.###.###-05 e matrícula nº 05304305233– Gestor representante da Secretaria",
+        "territoryId": "2709152",
+        "territoryName": "Teotônio Vilela",
+        "stateCode": "AL",
+        "edition": "2890",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -49,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO",
+            "rejeitado: adesão a ata de preços",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "contrato ou não, se necessário. CONSIDERANDO, que na ausência de designação de Gestor de Contratos, suas atribuições deverão ser exercidas pelo Fiscal designado. R E S O L V E: Art. 1º. Designar os servidores abaixo como Gestor e Fiscal, para gerir e fiscalizar a AQUISIÇÃO DE AMBULÂNCIA DE SUPORTE AVANÇADO (TIPO D - UTI MÓVEL),REALIZADO POR MEIO DA ADESÃO Á ATA DE REGISTRO DE PREÇOS N°13/2026,ORIUNDA DO CONSORCIO INTERMUNICIPAL MULTIFINALIARIO DO VALE DO PARAIBUNA - CIMPAR. VISANDO ATENDER AS NECESSIDADES DA SECRETARIA DE SAÚDE DO MUNICÍPIO DE TEOTÔNIO VILELA-AL, exercendo todas as funções inerentes e designadas em Legislação pertinente e nesta Portaria, no âmbito do Município de Teotônio Vilela, Alagoas, senão vejamos: I – Gyltemberg Francisco Feitosa, CPF nº 103.###.###-05 e matrícula nº 05304305233– Gestor representante da Secretaria",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "faf08c1508c9279852a935c46f6b4f356470121b4c9ecdb46395546096646da7": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Bela Vista (MS)",
+        "url": "https://data.queridodiario.ok.org.br/5002100/2026-09-11/2a8023c33d8a1e5000171fe261b0cc82184409c8.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Transporte. OBJETO: Contratação de empresa especializada em serviços de eficiência energética para elaboração do projeto executivo e execução da obra de modernização dos sistemas de iluminação pública, através da substituição dos sistemas de IP atuais por sistemas integralmente composto por luminárias LED, nos quantitativos e condições definidos pelo Município no âmbito da Intenção de Registro de Preços - IRP promovida pelo CIDEMA (Consórcio Intermunicipal para o Desenvolvimento Integrado das Bacias dos Rios Miranda e Apa), que resultou na Concorrência Eletrônica nº 001/2025, Processo Licitatório nº 013/2025, e na Ata de Registro de Preços nº 002/2026, da qual o Município de Bela Vista/MS participa na condição de órgão participante. EMPRESA: SOUZAFRANCO CONSTRUÇÕES LTDA CNPJ nº 13.311.779/0001-08 VALOR GLOBAL: R$ 2.020.667,98 Dotação Orçamentária: Ficha: 500 – 020801.25.752.0113",
+        "territoryId": "5002100",
+        "territoryName": "Bela Vista",
+        "stateCode": "MS",
+        "edition": "2996",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -26,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Transporte. OBJETO: Contratação de empresa especializada em serviços de eficiência energética para elaboração do projeto executivo e execução da obra de modernização dos sistemas de iluminação pública, através da substituição dos sistemas de IP atuais por sistemas integralmente composto por luminárias LED, nos quantitativos e condições definidos pelo Município no âmbito da Intenção de Registro de Preços - IRP promovida pelo CIDEMA (Consórcio Intermunicipal para o Desenvolvimento Integrado das Bacias dos Rios Miranda e Apa), que resultou na Concorrência Eletrônica nº 001/2025, Processo Licitatório nº 013/2025, e na Ata de Registro de Preços nº 002/2026, da qual o Município de Bela Vista/MS participa na condição de órgão participante. EMPRESA: SOUZAFRANCO CONSTRUÇÕES LTDA CNPJ nº 13.311.779/0001-08 VALOR GLOBAL: R$ 2.020.667,98 Dotação Orçamentária: Ficha: 500 – 020801.25.752.0113",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "7e5a4db87ff19ac5cc5f7f7c87c3bbbb25b9c0f91b75cefca07b071047b03065": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Jaboticabal (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3524303/2026-09-11/7f2ffa2320b0cb0393982ae0865baeca3bd98fa4.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "OPERATIVO HOSPITALAR ATENDIMENTO SUS DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LVM – LINHA VERDE DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LVM – LINHA VERDE DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LDM – DESENVOLVE DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LDM – DESENVOLVE RATEIO DO CONSORCIO INTERMUNICIPAL CUL- TURANDO SUBVENÇÃO SOCIAL – EXECUÇÃO DOS SERVI- ÇOS NA RESIDÊNCIA INCLUSIVA SUBVENÇÃO SOCIAL – EXECUÇÃO DOS SERVI- ÇOS NA RESIDÊNCIA INCLUSIVA TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR CRECHE MARIA DO CARMO ABREU SODRÉ TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR",
+        "territoryId": "3524303",
+        "territoryName": "Jaboticabal",
+        "stateCode": "SP",
+        "edition": "1675",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -1,
+          "reasons": [
+            "contexto público forte",
+            "RATEIO",
+            "rejeitado: previsão orçamentária genérica"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "OPERATIVO HOSPITALAR ATENDIMENTO SUS DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LVM – LINHA VERDE DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LVM – LINHA VERDE DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LDM – DESENVOLVE DESENVOLVE SP – AGÊNCIA DE FOMENTO DO ESTADO DE SÃO PAULO S.A. FINANCIAMENTO LDM – DESENVOLVE RATEIO DO CONSORCIO INTERMUNICIPAL CUL- TURANDO SUBVENÇÃO SOCIAL – EXECUÇÃO DOS SERVI- ÇOS NA RESIDÊNCIA INCLUSIVA SUBVENÇÃO SOCIAL – EXECUÇÃO DOS SERVI- ÇOS NA RESIDÊNCIA INCLUSIVA TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR CRECHE MARIA DO CARMO ABREU SODRÉ TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR TERMO DE COLABORAÇÃO COM TERCEIRO SE- TOR",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "f097a17226a407a3681290940db19a18328956eb917c160b596b42244c729bca": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Catanduva (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3511102/2026-09-11/b49e9ddc33ada2c4361f0a1db030a186be17a214.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "............................................................................. Licitações e Contratos 74 ........................................................................................................................................................ Contratos - Extrato 74 ........................................................................................................................................................... Consórcio Público Intermunicipal de Saúde da Região de Catanduva - CONSIRC 76 ........................................................... Licitações e Contratos 76 ........................................................................................................................................................ SUMÁRIOSUMÁRIO Convocação 76 ........................................................................................................... ONIVALDO LUIZ CARDOSO 049.***.***-60 171/2025 ANDRESSA CRISTINA DE OLIVEIRA BORGES 235.***.***-88 209/2025 EDUARDA DA SILVA 433.***.***-60 020/2026 FLÁVIO LEANDRO FERREIRA 313.***.****-43 042/2026 CARLILANE LAURENTINO 604.***.***-41 055/2026 LAUANDER ROSSINI DE LIMA 475.***.***-52 072/2026 PAULA CECÍLIA MIRANDA CLÍNICA MÉDICA 42.186.490/0001-02 Catanduva – SP, 11 de setembro de 2026 CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DA REGIÃO DE CATANDUVA - CONSIRC Consórcio Público Intermunicipal de Saúde da Região de Catanduva - CONSIRC Licitações e Contratos Licitações e Contratos Convocação Convocação DIÁRIO OFICIAL - MUNICÍPIO DE CATANDUVA Sexta-feira, 11 de setembro de 2026 Ano XXI | Edição nº 3145 | Página 77 de 85 Município de Catanduva - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade Cândido Rodrigues - Catanduva –",
+        "territoryId": "3511102",
+        "territoryName": "Catanduva",
+        "stateCode": "SP",
+        "edition": "3145",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 1,
+          "evidenceText": "ONIVALDO LUIZ CARDOSO 049.***.***-60 171/2025 ANDRESSA CRISTINA DE OLIVEIRA BORGES 235.***.***-88 209/2025 EDUARDA DA SILVA 433.***.***-60 020/2026 FLÁVIO LEANDRO FERREIRA 313.***.****-43 042/2026 CARLILANE LAURENTINO 604.***.***-41 055/2026 LAUANDER ROSSINI DE LIMA 475.***.***-52 072/2026 PAULA CECÍLIA MIRANDA CLÍNICA MÉDICA 42.186.490/0001-02 Catanduva – SP, 11 de setembro de 2026 CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DA REGIÃO DE CATANDUVA - CONSIRC Consórcio Público Intermunicipal de Saúde da Região de Catanduva - CONSIRC Licitações e Contratos Licitações e Contratos Convocação Convocação DIÁRIO OFICIAL - MUNICÍPIO DE CATANDUVA Sexta-feira, 11 de setembro de 2026 Ano XXI | Edição nº 3145 | Página 77 de 85 Município de Catanduva - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "b506d859df497e84ef9339edf1769b08336b82affeb7963e9478aac068fe0c1d": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Ourinhos (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3534708/2026-09-11/4b7dec34d05e249d294a14b6ae8e44b37f72402a.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "na data de sua publicação. Ourinhos, 11 de setembro de 2026 LEANDRO DE OLIVEIRA MORAES Secretário Municipal de Administração OUTROS ATOS ATO DECISÓRIO Nº 022/2026 A Comissão de Avaliação de Acúmulo de Cargos, com base no Artigo 148 da Lei Complementar Nº 474/2006, expede a seguinte decisão: Acumulação Legal MEIRIELE DE ALMEIDA CAMPOS, CPF ***.071.028.**, TÉCNICA DE ENFERMAGEM junto à UNIÃO DOS MUNICÍPIOS DA MÉDIA SOROCABANA CONSÓRCIO PÚBLICO INTERMUNICIPAL (UMMES), CNPJ 01.488.169/0001-03, acumula o cargo de TÉCNICO MUNICIPAL DE NÍVEL MÉDIO – TÉCNICO EM ENFERMAGEM junto à PREFEITURA MUNICIPAL DE OURINHOS – CNPJ 53.415.717/0001-60. Ourinhos, 11 de setembro de 2026. Presidente - Andréia Aparecida Floriano CPF: ***.905.248-** Membro - Leandro Mendes Correa CPF: ***.892.049-** Membro - Joyce Cristiane Leocadio CPF: ***.943.298-** COMUNICADO AVISO DEFESA CIVIL Diário Oficial",
+        "territoryId": "3534708",
+        "territoryName": "Ourinhos",
+        "stateCode": "SP",
+        "edition": "2191",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "na data de sua publicação. Ourinhos, 11 de setembro de 2026 LEANDRO DE OLIVEIRA MORAES Secretário Municipal de Administração OUTROS ATOS ATO DECISÓRIO Nº 022/2026 A Comissão de Avaliação de Acúmulo de Cargos, com base no Artigo 148 da Lei Complementar Nº 474/2006, expede a seguinte decisão: Acumulação Legal MEIRIELE DE ALMEIDA CAMPOS, CPF ***.071.028.**, TÉCNICA DE ENFERMAGEM junto à UNIÃO DOS MUNICÍPIOS DA MÉDIA SOROCABANA CONSÓRCIO PÚBLICO INTERMUNICIPAL (UMMES), CNPJ 01.488.169/0001-03, acumula o cargo de TÉCNICO MUNICIPAL DE NÍVEL MÉDIO – TÉCNICO EM ENFERMAGEM junto à PREFEITURA MUNICIPAL DE OURINHOS – CNPJ 53.415.717/0001-60. Ourinhos, 11 de setembro de 2026. Presidente - Andréia Aparecida Floriano CPF: ***.905.248-** Membro - Leandro Mendes Correa CPF: ***.892.049-** Membro - Joyce Cristiane Leocadio CPF: ***.943.298-** COMUNICADO AVISO DEFESA CIVIL Diário Oficial",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "92f2f1f5e6ca23f1da19b2a2159ecbf67fed9e43150d3d887934c4ebde1b9324": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Mogi Guaçu (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3530706/2026-09-11/700fe8f17f08fd83087c1e3749ad05bfbf749c7f.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "22 de 32 Município de Mogi Guaçu - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade jurídica e integridade. Rua: Dr. José Alves, nº403 – Centro – Mogi Mirim / SP CNPJ. 08.996.378/0001-07 EDITAL DE CONVOCAÇÃO Nº. 01/2024 PROCESSO SELETIVO EDITAL Nº. 01/2024 CONVOCAÇÃO DE APROVADOS EM PROCESSO SELETIVO PARA PROVIMENTO DE VAGAS DO QUADRO DO CONSÓRCIO INTERMUNICIPAL DE SAÚDE “08 DE ABRIL” – CON8. O PRESIDENTE DESTE CONSÓRCIO, com sede administrativa na cidade de Mogi Mirim, Estado de São Paulo, na Rua Dr. José Alves, nº 403 – Centro, no uso de suas atribuições legais, que homologou o resultado dos aprovados e classificados em processo seletivo, divulgado através do edital, o qual foi publicado nesta imprensa no dia 10 de Abril de 2024, observando as necessidades dos serviços, o número de 23 de 32 Município de Mogi Guaçu - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade jurídica e integridade. Rua: Dr. José Alves, nº403 – Centro – Mogi Mirim / SP CNPJ. 08.996.378/0001-07 EDITAL DE CONVOCAÇÃO Nº. 01/2024 PROCESSO SELETIVO EDITAL Nº. 01/2024 CONVOCAÇÃO DE APROVADOS EM PROCESSO SELETIVO PARA PROVIMENTO DE VAGAS DO QUADRO DO CONSÓRCIO INTERMUNICIPAL DE SAÚDE “08 DE ABRIL” – CON8. O PRESIDENTE DESTE CONSÓRCIO, com sede administrativa na cidade de Mogi Mirim, Estado de São Paulo, na Rua Dr. José Alves, nº 403 – Centro, no uso de suas atribuições legais, que homologou o resultado dos aprovados e classificados em processo seletivo, divulgado através do edital, o qual foi publicado nesta imprensa no dia 10 de Abril de 2024, observando as necessidades dos serviços, o número de 24 de 32 Município de Mogi Guaçu - SP Diário O",
+        "territoryId": "3530706",
+        "territoryName": "Mogi Guaçu",
+        "stateCode": "SP",
+        "edition": "1165",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -26,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "22 de 32 Município de Mogi Guaçu - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade jurídica e integridade. Rua: Dr. José Alves, nº403 – Centro – Mogi Mirim / SP CNPJ. 08.996.378/0001-07 EDITAL DE CONVOCAÇÃO Nº. 01/2024 PROCESSO SELETIVO EDITAL Nº. 01/2024 CONVOCAÇÃO DE APROVADOS EM PROCESSO SELETIVO PARA PROVIMENTO DE VAGAS DO QUADRO DO CONSÓRCIO INTERMUNICIPAL DE SAÚDE “08 DE ABRIL” – CON8. O PRESIDENTE DESTE CONSÓRCIO, com sede administrativa na cidade de Mogi Mirim, Estado de São Paulo, na Rua Dr. José Alves, nº 403 – Centro, no uso de suas atribuições legais, que homologou o resultado dos aprovados e classificados em processo seletivo, divulgado através do edital, o qual foi publicado nesta imprensa no dia 10 de Abril de 2024, observando as necessidades dos serviços, o número de",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "8c405fe1ab0b1ddc86053574b682af942def8bb27aa81c361248f5a52b0f7eee": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Uberaba (MG)",
+        "url": "https://data.queridodiario.ok.org.br/3170107/2026-09-11/ee5c140b1ae84b8fa0b9c3f6d2d006fbc087eed6.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": ".......................................................................................................................................................... CODIUB 4 ............................................................................................................................................................................................................................................................................... Consórcio Intermunicipal de Saúde do Alto Paranaíba - CISALP 4 .............................................................................................................................................................................. FUNDAÇÃO CULTURAL DE UBERABA \"PROFº ANTÔNIO CARLOS MARQUES\" 5 .......................................................................................................................................................... FUNDAÇÃO CODIUB Fabiano Cavlcanti de Melo Bernardi Diretor Presidente Iale Bontempo Teixeira Diretor Adm. Financeiro ....................................................................................................................................................................................................................................................... CONSÓRCIO INTERMUNICIPAL DE SAÚDE DO ALTO PARANAÍBA - CISALP Consórcio Intermunicipal de Saúde do Alto Paranaíba - CISALP Licitações e Contratos Pregão CISALP - CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA MICRORREGIÃO DO ALTO PARANAÍBA LICITAÇÕES Torna públicaa PUBLICAÇÃO do Processo Administrativo nº. 063/2026 – Pregão Eletrônico por Registro de Preços nº. 4 Porta-voz nº 3009 - Uberaba, 11 de Setembro de 2026 018/2026, em 10 de setembro 2026. Objeto: O objeto deste presente processo é o Registro de Preços para futura e eventual contratação 01/1",
+        "territoryId": "3170107",
+        "territoryName": "Uberaba",
+        "stateCode": "MG",
+        "edition": "3009",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": ".......................................................................................................................................................... CODIUB 4 ............................................................................................................................................................................................................................................................................... Consórcio Intermunicipal de Saúde do Alto Paranaíba - CISALP 4 .............................................................................................................................................................................. FUNDAÇÃO CULTURAL DE UBERABA \"PROFº ANTÔNIO CARLOS MARQUES\" 5 .......................................................................................................................................................... FUNDAÇÃO",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "d11a436ffa73a699589c41f4c63812c0f0cf90b13c596dc7f45defbebe09b68c": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Itajubá (MG)",
+        "url": "https://data.queridodiario.ok.org.br/3132404/2026-09-11/0f9212e34fd7657e9df5b425dff3ae1d77421057.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Avenida: Henriqueto Cardinali, 931 – Varginha – Cep.: 37.501-150 - Telefone: (35) 3622-4211 licitacimasp@gmail.com AVISO DE LICITAÇÃO COMPARTILHADA: CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO DA MICRORREGIÃO DO ALTO DO SAPUCAÍ – CIMASP. PROCESSO LICITATÓRIO N.º 058/2026, PREGÃO ELETRÔNICO N.º 043/2026. Torna público o aviso de licitação que tem como OBJETO: LICITAÇÃO COMPARTILHADA – EDITAL DE REGISTRO DE PREÇOS PARA EVENTUAL E FUTURA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS DE LOCAÇÃO, SOB DEMANDA, DE VEÍCULOS, CAMINHÕES, EQUIPAMENTOS E MÁQUINAS PESADAS PARA CONSTRUÇÃO, MANUTENÇÃO, CONSERVAÇÃO E RECUPERAÇÃO DE VIAS URBANAS E RURAIS, PARA ATENDER OS MUNICÍPIOS QUE COMPÕE O CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO DA MICRORREGIÃO DO ALTO DO SAPUCAÍ – CIMASP, tudo de acordo com as especificações contidas no edital e seus anexos. Abertura: 25/09/2026 CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO DA MICRORREGIÃO DO ALTO DO SAPUCAÍ- CIMASP – TERMO DE ADITAMENTO DA ATA DE RP 034/2025 – PROCESSO LICITATÓRIO 061/2025, PREGÃO ELETRÔNICO 046/2025 – OBJETO: LICITAÇÃO COMPARTILHADA - REGISTRO DE PREÇOS PARA EVENTUAL CONTRATAÇÃO DE EMPRESA ESPECIALIZADA NA ELABORAÇÃO E IMPLANTAÇÃO DO PLANO DE MANUTENÇÃO, OPERAÇÃO E CONTROLE (PMOC) PARA OS SISTEMAS DE CLIMATIZAÇÃO E REFRIGERAÇÃO, EM CONFORMIDADE COM A NBR 13.971/1997 DA ABNT, PORTARIA Nº 3.523/1998 DO MINISTÉRIO DA SAÚDE E RESOLUÇÃO ANVISA Nº 09/2003, BEM COMO A PRESTAÇÃO DE SERVIÇOS CONTINUADOS DE MANUTENÇÃO PREVENTIVA E CORRETIVA DE EQUIPAMENTOS DE REFRIGERAÇÃO E CLIMATIZAÇÃO, COM FORNECIMENTO DE PEÇAS, INSTALAÇÃO E DESINSTALAÇÃO, VISANDO ATENDER ÀS DEMANDAS DAS UNIDADES ADMINISTRATIVAS, ESCOLARES, DE SAÚDE E HOSPITALARES DO CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO",
+        "territoryId": "3132404",
+        "territoryName": "Itajubá",
+        "stateCode": "MG",
+        "edition": "814",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -26,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Avenida: Henriqueto Cardinali, 931 – Varginha – Cep.: 37.501-150 - Telefone: (35) 3622-4211 licitacimasp@gmail.com AVISO DE LICITAÇÃO COMPARTILHADA: CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO DA MICRORREGIÃO DO ALTO DO SAPUCAÍ – CIMASP. PROCESSO LICITATÓRIO N.º 058/2026, PREGÃO ELETRÔNICO N.º 043/2026. Torna público o aviso de licitação que tem como OBJETO: LICITAÇÃO COMPARTILHADA – EDITAL DE REGISTRO DE PREÇOS PARA EVENTUAL E FUTURA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA PRESTAÇÃO DE SERVIÇOS DE LOCAÇÃO, SOB DEMANDA, DE VEÍCULOS, CAMINHÕES, EQUIPAMENTOS E MÁQUINAS PESADAS PARA CONSTRUÇÃO, MANUTENÇÃO, CONSERVAÇÃO E RECUPERAÇÃO DE VIAS URBANAS E RURAIS, PARA ATENDER OS MUNICÍPIOS QUE COMPÕE O CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO DA MICRORREGIÃO DO ALTO DO SAPUCAÍ – CIMASP, tudo de acordo com as especificações contidas no edital e seus anexos. Abertura: 25/09/2026",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "7ed126a6717a0ba3c7e1875bdc785938b2aaa96699cc1d6c8835e0e38cefc2fa": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Jundiaí (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3525904/2026-09-11/067a451776959640f434998bd4a708679033e643.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "SECR. MUN. DE PROMOÇÃO DA SAÚDE PEDIDO 4.357 REQUISIÇÃO REMANEJAMENTO D E C R E T A: ART. 1º - FICA ABERTO NO ORÇAMENTO DO MUNICÍPIO, UM CRÉDITO ADICIONAL SUPLEMENTAR NO VALOR DE R$ 392.850,00 (TREZENTOS E NOVENTA E DOIS MIL OITOCENTOS E CINQÜENTA REAIS) NA(S) DOTAÇÃO(ÕES): 14.01.10.302.0191.2186 R E O R G A N I Z A Ç Ã O E FORTALECIMENTO DA ATENÇÃO ESPECIALIZADA 3.3.71.70.00 RATEIO PELA PARTICIPACAO EM CONSORCIO PUBLICO PROPRIA0000 R$ 392.850,00 392.850,00TOTAL....R$ ART. 2º - A COBERTURA DO CRÉDITO DE QUE TRATA O ART. 1º FAR-SE-Á COM O(S) SEGUINTE(S) RECURSO(S): I - ANULAÇÃO PARCIAL DA(S) SEGUINTE(S) DOTAÇÃO(ÕES) DO ORÇAMENTO VIGENTE: 14.01.10.302.0191.2186 R E O R G A N I Z A Ç Ã O E FORTALECIMENTO DA ATENÇÃO ESPECIALIZADA 3.3.90.39.00 O U T R O S S E R V I Ç O S D E TERCEIROS - PESSOA JURÍDICA 0000 PROPRIA DO MUNICÍPIO DE JUNDIAÍ DECRETO Nº.36.673, DE 10 DE SETEMBRO DE 2026. GUSTAVO MARTINELLI, PREFEITO DO MUNICÍPIO DE JUNDIAI, ESTADO DE SÃO PAULO, NO USO DE SUAS ATRIBUIÇÕES LEGAIS ESPECIALMENTE AS QUE LHE SÃO CONFERIDAS PELA LEI Nº 10436, DE 03 DE DEZEMBRO DE 2025, ART. 4º, §§ 1º E 2º. CONSIDERANDO NECESSIDADE DE ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR POR ANULAÇÃO DE DOTAÇÃO, PARA ATENDER DESPESAS COM COTA VARIÁVEL DO CONTRATO DE RATEIO Nº 01/2025, REFERENTE A CONSULTAS ESPECIALIZADAS. SEM IMPACTO NAS METAS CONTIDAS NA LDO E PPA. PROCESSO SEI PMJ.0038441/2025. REF. SOLICITAÇÃO 903 - SECR. MUN. DE PROMOÇÃO DA SAÚDE PEDIDO 4.357 REQUISIÇÃO REMANEJAMENTO D E C R E T A: ART. 1º - FICA ABERTO NO ORÇAMENTO DO MUNICÍPIO, UM CRÉDITO ADICIONAL SUPLEMENTAR NO VALOR DE R$ 392.850,00 (TREZENTOS E NOVENTA E DOIS MIL OITOCENTOS E CINQÜENTA REAIS)",
+        "territoryId": "3525904",
+        "territoryName": "Jundiaí",
+        "stateCode": "SP",
+        "edition": "5871",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [
+            "rejeitado: RATEIO sem contexto público"
+          ],
+          "evidenceIndex": 1,
+          "evidenceText": "DO MUNICÍPIO DE JUNDIAÍ DECRETO Nº.36.673, DE 10 DE SETEMBRO DE 2026. GUSTAVO MARTINELLI, PREFEITO DO MUNICÍPIO DE JUNDIAI, ESTADO DE SÃO PAULO, NO USO DE SUAS ATRIBUIÇÕES LEGAIS ESPECIALMENTE AS QUE LHE SÃO CONFERIDAS PELA LEI Nº 10436, DE 03 DE DEZEMBRO DE 2025, ART. 4º, §§ 1º E 2º. CONSIDERANDO NECESSIDADE DE ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR POR ANULAÇÃO DE DOTAÇÃO, PARA ATENDER DESPESAS COM COTA VARIÁVEL DO CONTRATO DE RATEIO Nº 01/2025, REFERENTE A CONSULTAS ESPECIALIZADAS. SEM IMPACTO NAS METAS CONTIDAS NA LDO E PPA. PROCESSO SEI PMJ.0038441/2025. REF. SOLICITAÇÃO 903 - SECR. MUN. DE PROMOÇÃO DA SAÚDE PEDIDO 4.357 REQUISIÇÃO REMANEJAMENTO D E C R E T A: ART. 1º - FICA ABERTO NO ORÇAMENTO DO MUNICÍPIO, UM CRÉDITO ADICIONAL SUPLEMENTAR NO VALOR DE R$ 392.850,00 (TREZENTOS E NOVENTA E DOIS MIL OITOCENTOS E CINQÜENTA REAIS)",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "0fd295d7f66b53584cceb18e3d5baf89b9cfdfa11e1bd6e2490cb97efe508072": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Andradina (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3502101/2026-09-11/4bdff91c0f90fab03b73882c3d7fdcc7c8037837.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Rodrigues da Silva, nº 553 - CEP: 16901-900 Telefone: (18) 3702-3000 Site: www.camaraandradina.sp.gov.br FUNDAÇÃO EDUCACIONAL DE ANDRADINA CNPJ: 48.420.889/0001-92 Rua: Amazonas, nº 571 - CEP: 16901-160 Telefone: (18) 3702-3702 Site: www.fea.br AGÊNCIA REGULADORA DOS SERVIÇOS DE ÁGUA E SANEAMENTO BÁSICO DE ANDRADINA CNPJ: 12.314.091/0001-19 Rua: Acácio e Silva, nº 1281 - CEP: 16901-005 Telefone: (18) 3723-4035 Site: www.arsan.sp.gov.br CONSÓRCIO INTERMUNICIPAL DO EXTREMO NOROESTE DE SÃO PAULO CNPJ: 07.309.266/0001-60 Rua: Floriano Peixoto, nº 1291 - CEP: 16901-030 Telefone: (18) 3702-3150 - Site: www.ciensp.sp.gov.br http://www.andradina.sp.gov.br http://www.camaraandradina.sp.gov.br http://www.fea.br http://www.arsan.sp.gov.br http://www.ciensp.sp.gov.br Sexta-feira, 11 de Setembro de 2026, Ano V - Edição 1382",
+        "territoryId": "3502101",
+        "territoryName": "Andradina",
+        "stateCode": "SP",
+        "edition": "1382",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Rodrigues da Silva, nº 553 - CEP: 16901-900 Telefone: (18) 3702-3000 Site: www.camaraandradina.sp.gov.br FUNDAÇÃO EDUCACIONAL DE ANDRADINA CNPJ: 48.420.889/0001-92 Rua: Amazonas, nº 571 - CEP: 16901-160 Telefone: (18) 3702-3702 Site: www.fea.br AGÊNCIA REGULADORA DOS SERVIÇOS DE ÁGUA E SANEAMENTO BÁSICO DE ANDRADINA CNPJ: 12.314.091/0001-19 Rua: Acácio e Silva, nº 1281 - CEP: 16901-005 Telefone: (18) 3723-4035 Site: www.arsan.sp.gov.br CONSÓRCIO INTERMUNICIPAL DO EXTREMO NOROESTE DE SÃO PAULO CNPJ: 07.309.266/0001-60 Rua: Floriano Peixoto, nº 1291 - CEP: 16901-030 Telefone: (18) 3702-3150 - Site: www.ciensp.sp.gov.br http://www.andradina.sp.gov.br http://www.camaraandradina.sp.gov.br http://www.fea.br http://www.arsan.sp.gov.br http://www.ciensp.sp.gov.br Sexta-feira, 11 de Setembro de 2026, Ano V - Edição 1382",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "2243715d94e7fbe20b01b945e6a8b0fb7d1fb3a64280fc321b914b80cab47277": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Valinhos (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3556206/2026-09-11/99545b3eba67d73579910c843a307e824498dfe8.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "Saúde de Valinhos/SP. Luciana Pignatta Brito Secretária de Saúde RESOLUÇÃO CMS Nº 35 /2026 De 31 de agosto de 2026 Dispõe sobre a aprovação da “Proposta de Ingresso do Município de Valinhos no Consórcio Intermunicipal do SAMU Regional Hortolândia/ Sumaré”, na forma que especifica. O CONSELHO MUNICIPAL DE SAÚDE, no uso de suas atribuições le- gais conferidas pela Lei Federal nº 8.142/90, pela Lei Municipal nº 2.923/95 e suas alterações, bem como pelo seu Regimento Interno; e CONSIDERANDO a 479ª Reunião Plenária Ordinária do Conselho Munici- pal de Saúde, realizada em 31 de julho de 2026; CONSIDERANDO a apresentação da Proposta de Ingresso do Município de Valinhos no Consórcio Intermunicipal do SAMU Regional Hortolândia/Sumaré, cuja finalidade representa avanço na organização da Rede de Atenção às Urgências e Emergências do Município, com potencial para ampliar a resolutividade, racionalizar",
+        "territoryId": "3556206",
+        "territoryName": "Valinhos",
+        "stateCode": "SP",
+        "edition": "3046",
+        "classification": {
+          "category": "ADESÃO",
+          "emoji": "🟦",
+          "score": 11,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Saúde de Valinhos/SP. Luciana Pignatta Brito Secretária de Saúde RESOLUÇÃO CMS Nº 35 /2026 De 31 de agosto de 2026 Dispõe sobre a aprovação da “Proposta de Ingresso do Município de Valinhos no Consórcio Intermunicipal do SAMU Regional Hortolândia/ Sumaré”, na forma que especifica. O CONSELHO MUNICIPAL DE SAÚDE, no uso de suas atribuições le- gais conferidas pela Lei Federal nº 8.142/90, pela Lei Municipal nº 2.923/95 e suas alterações, bem como pelo seu Regimento Interno; e CONSIDERANDO a 479ª Reunião Plenária Ordinária do Conselho Munici- pal de Saúde, realizada em 31 de julho de 2026; CONSIDERANDO a apresentação da Proposta de Ingresso do Município de Valinhos no Consórcio Intermunicipal do SAMU Regional Hortolândia/Sumaré, cuja finalidade representa avanço na organização da Rede de Atenção às Urgências e Emergências do Município, com potencial para ampliar a resolutividade, racionalizar",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "b102575f88c62615fdfdece095c8696c830e51576e89dc30b69287c757848726": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Votuporanga (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3557105/2026-09-11/6ca9ca4424a6f69b341a00c1deec250f43b75e94.pdf",
+        "publishedAt": "2026-09-11T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "(Últimos 12 Meses) LIQUIDADAS (a) INSCRITAS EM RESTOS A PAGAR NÃO PROCESSADOS (b) TOTAL (c=a+b) Despesa com Pessoal - - - DESPESA BRUTA COM PESSOAL (CONTRATO DE RATEIO) (I) 0,00 0,00 0,00 Pessoal Ativo 0,00 0,00 0,00 Outras Despesas de Pessoal decorrentes de Contratos de Terceirização ou de contratação de forma indireta (§ 1º do art. 18 da LRF) DESPESAS NÃO COMPUTADAS (CONTRATO DE RATEIO) (§ 1º do art. 19 da LRF) (II) 0,00 0,00 0,00 Indenizações por Demissão e Incentivos à Demissão Voluntária e Deduções Constitucionais Decorrentes de Decisão Judicial de Período Anterior ao da Apuração Despesas de Exercícios Anteriores de período anterior ao da apuração Outras Deduções Constitucionais ou Legais DESPESA COM PESSOAL (CONTRATO DE RATEIO) (III) = (I - II) 0,00 0,00 0,00 DESPESA COM PESSOAL (RECURSOS PRÓPRIOS) (IV) DESPESA TOTAL COM PESSOAL - DTP (V) = (III + IV) 0,00 0,00 0,00 RGF-Anexo - Demonstrativo da Despesa com Pessoal - Consórcios Públicos | Valores transferidos por Ente Despesa Bruta com Pessoal por Ente Consorciado Despesa Bruta com Pessoal por Ente Consorciado VALORES TRANSFERIDOS POR CONTRATO DE RATEIO VALORES EXECUTADOS Cardoso/SP Fernandópolis/SP Guarani d'Oeste/SP Indiaporã/SP Macedônia/SP Meridiano/SP Mira Estrela/SP Ouroeste/SP Paulo de Faria/SP Pedranópolis/SP Populina/SP Riolândia/SP Valentim Gentil/SP Votuporanga/SP RGF-Anexo 01 | Tabela 1.5 - Demonstrativo da Despesa com Pessoal - Consórcios Públicos Despesa Total com Pessoal - DTP Despesa Bruta com Pessoal por Ente Consorciado VALORES TRANSFERIDOS POR CONTRATO DE RATEIO VALORES EXECUTADOS Despesa Total com Pessoal - DTP - - Total dos valores transferidos pelos Entes RGF-Anexo 01 | Tabela 1.5 - Demonstrativo da Despesa com Pessoal - Consórcios Públicos Notas Explicativas Valores",
+        "territoryId": "3557105",
+        "territoryName": "Votuporanga",
+        "stateCode": "SP",
+        "edition": "2693",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -1,
+          "reasons": [
+            "contexto público forte",
+            "RATEIO",
+            "rejeitado: previsão orçamentária genérica"
+          ],
+          "evidenceIndex": 1,
+          "evidenceText": "- Demonstrativo da Despesa com Pessoal - Consórcios Públicos | Valores transferidos por Ente Despesa Bruta com Pessoal por Ente Consorciado Despesa Bruta com Pessoal por Ente Consorciado VALORES TRANSFERIDOS POR CONTRATO DE RATEIO VALORES EXECUTADOS Cardoso/SP Fernandópolis/SP Guarani d'Oeste/SP Indiaporã/SP Macedônia/SP Meridiano/SP Mira Estrela/SP Ouroeste/SP Paulo de Faria/SP Pedranópolis/SP Populina/SP Riolândia/SP Valentim Gentil/SP Votuporanga/SP RGF-Anexo 01 | Tabela 1.5 - Demonstrativo da Despesa com Pessoal - Consórcios Públicos Despesa Total com Pessoal - DTP Despesa Bruta com Pessoal por Ente Consorciado VALORES TRANSFERIDOS POR CONTRATO DE RATEIO VALORES EXECUTADOS Despesa Total com Pessoal - DTP - - Total dos valores transferidos pelos Entes RGF-Anexo 01 | Tabela 1.5 - Demonstrativo da Despesa com Pessoal - Consórcios Públicos Notas Explicativas Valores",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "7ee6443964d54cb02f01a2147a7c3d3fde98d1e1fa500feb52baf1b46d1c8d2d": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Move Brasil terá R$ 30 bilhões para crédito de veículos",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/move-brasil-tera-R-30-bilhoes-para-credito-de-veiculos",
+        "publishedAt": "2026-09-14T21:45:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O presidente Luiz Inácio Lula da Silva sancionou, nesta segunda-feira (14), a lei que institui linhas de crédito no programa Move Brasil para veículos novos. O programa viabiliza o financiamento de carros e motos, voltados para taxistas, motoristas de aplicativo, entregadores e motoapps e passa a ser permanente. Agora, o programa também inclui motoristas de transporte escolar. Notícias relacionadas: Estados e municípios têm limite de crédito para 2026 ampliado. Mercado projeta corte da Selic para 13,75% . O ministro do Desenvolvimento, Indústria e Comércio Exterior explicou que o Move Brasil agora se tornou um programa perene. \"O BNDES dispõe de R$ 30 bilhões para gastar ao longo do tempo, de acordo com a demanda das trabalhadoras e trabalhadores\", esclareceu Elias. A lei sancionada garante a possibilidade adesão ao programa após o trabalhador de aplicativo completar 6 meses de cadastro ativo em plataforma para motoristas e entregadores . O financiamento pode ser feito para veículos de até R$ 200 mil, com parcelamento em até 84 vezes. Além disso, inclui a possibilidade de comprar veículos utilitários. Os juros do financiamento são de 12,6% ao ano para homens e 11,5% ao ano para mulheres. É possível financiar pelo programa carros elétricos e híbridos, além de veículos movidos a etanol e flex (etanol e gasolina). O pedido de habilitação para participar do programa deve ser feito pela internet, no site do Move Brasil . “Esse programa tem ganhos em várias frentes. Para os trabalhadores; para a economia do país, com recorde na venda de automóveis; e do ponto de vista ambiental, já que o programa foca em carros elétricos, motos elétricas, em carros híbridos. E que também permite que o trabalhador reduza o custo do seu próprio trabalho com combustível”, disse o ministro da Sec",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O presidente Luiz Inácio Lula da Silva sancionou, nesta segunda-feira (14), a lei que institui linhas de crédito no programa Move Brasil para veículos novos. O programa viabiliza o financiamento de carros e motos, voltados para taxistas, motoristas de aplicativo, entregadores e motoapps e passa a ser permanente. Agora, o programa também inclui motoristas de transporte escolar. Notícias relacionadas: Estados e municípios têm limite de crédito para 2026 ampliado. Mercado projeta corte da Selic para 13,75% . O ministro do Desenvolvimento, Indústria e Comércio Exterior explicou que o Move Brasil agora se tornou um programa perene. \"O BNDES dispõe de R$ 30 bilhões para gastar ao longo do tempo, de acordo com a demanda das trabalhadoras e trabalhadores\", esclareceu Elias. A lei sancionada garante a possibilidade adesão ao programa após o trabalhador de aplicativo completar 6 meses de cadastro ativo em plataforma para motoristas e entregadores . O financiamento pode ser feito para veículos de até R$ 200 mil, com parcelamento em até 84 vezes. Além disso, inclui a possibilidade de comprar veículos utilitários. Os juros do financiamento são de 12,6% ao ano para homens e 11,5% ao ano para mulheres. É possível financiar pelo programa carros elétricos e híbridos, além de veículos movidos a etanol e flex (etanol e gasolina). O pedido de habilitação para participar do programa deve ser feito pela internet, no site do Move Brasil . “Esse programa tem ganhos em várias frentes. Para os trabalhadores; para a economia do país, com recorde na venda de automóveis; e do ponto de vista ambiental, já que o programa foca em carros elétricos, motos elétricas, em carros híbridos. E que também permite que o trabalhador reduza o custo do seu próprio trabalho com combustível”, disse o ministro da Sec",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "dbca43b4b8f516112cafa5376af2061992d4cc12d571dec39d687e3676be814a": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Estados e municípios têm limite de crédito para 2026 ampliado",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/estados-e-municipios-tem-limite-de-credito-para-2026-ampliado",
+        "publishedAt": "2026-09-14T21:33:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Os estados, o Distrito Federal e os municípios poderão contratar mais operações de crédito em 2026. Em reunião extraordinária, o Conselho Monetário Nacional (CMN) aumentou em R$ 2 bilhões o limite global anual de crédito autorizado pelo órgão, que passa de R$ 26,625 bilhões para R$ 28,625 bilhões. Na prática, a medida cria mais espaço para que governos estaduais e municipais contratem empréstimos para financiar projetos e investimentos dentro das regras fiscais estabelecidas para 2026. As operações podem ter ou não garantia da União. De onde vem Notícias relacionadas: CMN amplia renegociação de dívidas rurais ligadas a eventos climáticos. O aumento não representa uma nova despesa federal. O espaço foi obtido a partir de um levantamento da Secretaria do Tesouro Nacional com entes que participam de programas de ajuste fiscal. O levantamento identificou cerca de R$ 7,87 bilhões em espaço fiscal que não tinham previsão de utilização até o fim de 2026. Desse total: R$ 3 bilhões haviam sido remanejados anteriormente; R$ 4,87 bilhões permaneciam disponíveis; Agora, R$ 2 bilhões desse saldo foram destinados aos novos limites de crédito. Segundo o CMN, o remanejamento ocorreu porque os limites para crédito dos governos subnacionais estavam próximos do esgotamento. Novos limites A resolução aumenta dois sublimites específicos. Sublimite é, nesse caso, uma parcela do limite total reservada para determinado tipo de operação. Os valores passam a ser: Com garantia da União: de R$ 7 bilhões para R$ 8,5 bilhões; Sem garantia da União: de R$ 6 bilhões para R$ 6,5 bilhões. Assim, os dois grupos somam R$ 15 bilhões em limites para estados, Distrito Federal e municípios. A garantia da União significa que o governo federal assume determinadas obrigações caso o ente público não honre a dívid",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Os estados, o Distrito Federal e os municípios poderão contratar mais operações de crédito em 2026. Em reunião extraordinária, o Conselho Monetário Nacional (CMN) aumentou em R$ 2 bilhões o limite global anual de crédito autorizado pelo órgão, que passa de R$ 26,625 bilhões para R$ 28,625 bilhões. Na prática, a medida cria mais espaço para que governos estaduais e municipais contratem empréstimos para financiar projetos e investimentos dentro das regras fiscais estabelecidas para 2026. As operações podem ter ou não garantia da União. De onde vem Notícias relacionadas: CMN amplia renegociação de dívidas rurais ligadas a eventos climáticos. O aumento não representa uma nova despesa federal. O espaço foi obtido a partir de um levantamento da Secretaria do Tesouro Nacional com entes que participam de programas de ajuste fiscal. O levantamento identificou cerca de R$ 7,87 bilhões em espaço fiscal que não tinham previsão de utilização até o fim de 2026. Desse total: R$ 3 bilhões haviam sido remanejados anteriormente; R$ 4,87 bilhões permaneciam disponíveis; Agora, R$ 2 bilhões desse saldo foram destinados aos novos limites de crédito. Segundo o CMN, o remanejamento ocorreu porque os limites para crédito dos governos subnacionais estavam próximos do esgotamento. Novos limites A resolução aumenta dois sublimites específicos. Sublimite é, nesse caso, uma parcela do limite total reservada para determinado tipo de operação. Os valores passam a ser: Com garantia da União: de R$ 7 bilhões para R$ 8,5 bilhões; Sem garantia da União: de R$ 6 bilhões para R$ 6,5 bilhões. Assim, os dois grupos somam R$ 15 bilhões em limites para estados, Distrito Federal e municípios. A garantia da União significa que o governo federal assume determinadas obrigações caso o ente público não honre a dívid",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ddc7698cdd37680129cd516e401b98060f53aeee902ef8cb20ad0272ed67dce7": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "IBGE acionará PF e AGU contra fake news sobre pesquisa de saúde",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/ibge-acionara-pf-e-agu-contra-fake-news-sobre-pesquisa-de-saude",
+        "publishedAt": "2026-09-14T21:30:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Instituto Brasileiro de Geografia e Estatística (IBGE) informou nesta segunda-feira (14) que acionará a Polícia Federal e a Advocacia-Geral da União (AGU) para investigar a divulgação de fake news na internet sobre a Pesquisa Nacional de Saúde (PMS 2026). O IBGE identificou um movimento espalhando informações falsas nas redes sociais, sugerindo que o levantamento serviria para montar \"um banco de DNA estatal\", o que o órgão repudia. Notícias relacionadas: IBGE inicia coleta da Pesquisa Nacional de Saúde 2026. Em nota, o instituto explicou que a pesquisa faz coleta de sangue e urina para exames \"exclusivamente para os objetivos de pesquisa\". Informou ainda que os materiais \"serão descartados ao final\". Com a coleta, investiga, por exemplo, níveis de glicose, colesterol e creatinina na população. Segundo o órgão de estatística, a desinformação que circulou nas redes, nos últimos dias, impacta a operação de coleta em todo o país e, \"por isso, os responsáveis precisam ser identificados\", defendeu o IBGE, justificando o acionando dos órgãos federais. Terceira edição Ao informar que o material biológico é utilizado somente para produzir indicadores de saúde, o IBGE explicou ainda que a pesquisa é realizada em parceria com o Ministério da Saúde e busca contribuir para ações de planejamento de ações de prevenção, serviços e campanhas de vacinação, além da promoção de alimentação saudável. Esta é a terceira edição da Pesquisa Nacional de Saúde. O levantamento começou em julho e pretende visitar 140 mil domicílios para coletar informações sobre hábitos de vida e acesso a serviços de saúde. Os agentes também irão medir peso, aferir a pressão arterial e conferir a altura de alguns entrevistados, até o final de novembro. Segundo o IBGE, a coleta de sangue e de urina por profission",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Instituto Brasileiro de Geografia e Estatística (IBGE) informou nesta segunda-feira (14) que acionará a Polícia Federal e a Advocacia-Geral da União (AGU) para investigar a divulgação de fake news na internet sobre a Pesquisa Nacional de Saúde (PMS 2026). O IBGE identificou um movimento espalhando informações falsas nas redes sociais, sugerindo que o levantamento serviria para montar \"um banco de DNA estatal\", o que o órgão repudia. Notícias relacionadas: IBGE inicia coleta da Pesquisa Nacional de Saúde 2026. Em nota, o instituto explicou que a pesquisa faz coleta de sangue e urina para exames \"exclusivamente para os objetivos de pesquisa\". Informou ainda que os materiais \"serão descartados ao final\". Com a coleta, investiga, por exemplo, níveis de glicose, colesterol e creatinina na população. Segundo o órgão de estatística, a desinformação que circulou nas redes, nos últimos dias, impacta a operação de coleta em todo o país e, \"por isso, os responsáveis precisam ser identificados\", defendeu o IBGE, justificando o acionando dos órgãos federais. Terceira edição Ao informar que o material biológico é utilizado somente para produzir indicadores de saúde, o IBGE explicou ainda que a pesquisa é realizada em parceria com o Ministério da Saúde e busca contribuir para ações de planejamento de ações de prevenção, serviços e campanhas de vacinação, além da promoção de alimentação saudável. Esta é a terceira edição da Pesquisa Nacional de Saúde. O levantamento começou em julho e pretende visitar 140 mil domicílios para coletar informações sobre hábitos de vida e acesso a serviços de saúde. Os agentes também irão medir peso, aferir a pressão arterial e conferir a altura de alguns entrevistados, até o final de novembro. Segundo o IBGE, a coleta de sangue e de urina por profission",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "7ef036ffb45e8a98eb384615dab4e1c677826d64f2a46264cee81e9ac0bab09e": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "SUS amplia cobertura da vacina Pneumo 20 para maiores de 85 anos",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/sus-amplia-cobertura-de-vacina-pneumo-20-para-maiores-de-85-anos",
+        "publishedAt": "2026-09-14T21:06:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Idosos com 85 anos ou mais já podem se vacinar com a pneumocócica 20 pelo Sistema Único de Saúde (SUS). O imunizante começou a ser distribuído este mês pelo Ministério da Saúde e a meta é vacinar pelo menos 90% do público alvo. A pneumocócica 20-valente conjugada (pneumo 20) protege contra 20 sorotipos da bactéria Streptococcus pneumoniae , causadora de infecções como pneumonia e meningite. Essas infecções costumam ser mais graves em pessoas idosas, por causa do processo natural de envelhecimento do sistema imunológico. Notícias relacionadas: SUS vacina mais de 1 milhão de crianças com Pneumo 20. SUS vai ampliar proteção vacinal contra doença pneumocócica. Segundo o Ministério da Saúde, em 2025, a taxa de hospitalizações por pneumonia em pessoas com mais de 80 anos foi de 2.902,7 por 100 mil. A taxa de mortalidade foi de 743,1 por 100 mil. Vacinação em crianças Em junho deste ano, o SUS já havia incorporado a pneumo 20 no Calendário Nacional de Vacinação para crianças menores de 5 anos. Desde então, mais de 1 milhão de crianças foram imunizadas. Serviço Para vacinar é preciso levar documento de identidade que comprove a idade. Não é necessária prescrição médica.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Idosos com 85 anos ou mais já podem se vacinar com a pneumocócica 20 pelo Sistema Único de Saúde (SUS). O imunizante começou a ser distribuído este mês pelo Ministério da Saúde e a meta é vacinar pelo menos 90% do público alvo. A pneumocócica 20-valente conjugada (pneumo 20) protege contra 20 sorotipos da bactéria Streptococcus pneumoniae , causadora de infecções como pneumonia e meningite. Essas infecções costumam ser mais graves em pessoas idosas, por causa do processo natural de envelhecimento do sistema imunológico. Notícias relacionadas: SUS vacina mais de 1 milhão de crianças com Pneumo 20. SUS vai ampliar proteção vacinal contra doença pneumocócica. Segundo o Ministério da Saúde, em 2025, a taxa de hospitalizações por pneumonia em pessoas com mais de 80 anos foi de 2.902,7 por 100 mil. A taxa de mortalidade foi de 743,1 por 100 mil. Vacinação em crianças Em junho deste ano, o SUS já havia incorporado a pneumo 20 no Calendário Nacional de Vacinação para crianças menores de 5 anos. Desde então, mais de 1 milhão de crianças foram imunizadas. Serviço Para vacinar é preciso levar documento de identidade que comprove a idade. Não é necessária prescrição médica.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "f787ff653daf3c14d6c7a2dc7bffd31fd869330e048907e420c2141a2adae277": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Greve nos Correios: TST determina manutenção de 80% do efetivo",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/greve-nos-correios-tst-determina-manutencao-de-80-do-efetivo",
+        "publishedAt": "2026-09-14T20:14:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Tribunal Superior do Trabalho (TST) determinou a manutenção de 80% do efetivo de trabalhadores dos Correios durante a greve da categoria. A decisão foi proferida no último sábado (12) pelo presidente do TST, ministro Vieira de Mello Filho, após a estatal recorrer ao tribunal para garantir o funcionamento mínimo da empresa, que considera a greve abusiva. Notícias relacionadas: Trabalhadores dos Correios estão em greve por tempo indeterminado. O presidente entendeu que o serviço prestado pelos Correios é essencial e que a greve pode impactar nas eleições. \"A atividade essencial desenvolvida pela suscitante se agiganta em face dos compromissos assumidos com entes públicos e privados relacionados ao pleito eleitoral de 2026, cujo período de campanha encontra-se em curso, o que agrava os impactos à sociedade do movimento paredista\", afirmou o ministro. Os trabalhadores dos Correios entraram em greve na quinta-feira (10) e buscam a aprovação do acordo coletivo de trabalho 2025/2026. Os sindicatos da categoria contestam o modelo de restruturação da estatal, que prevê o fechamento de agências, redução de distritos postais. A categoria também afirma que não pode ser responsabilizada pela crise financeira da estatal. Campanha salarial O movimento grevista teve início na última quinta-feira (10). Segundo a Federação dos Trabalhadores dos Correios e Telégrafos e das Empresas de Comunicações (Findect), a deflagração aconteceu após as negociações da campanha salarial deste ano terminarem sem acordo. Segundo a federação, a categoria buscou uma solução negociada, mas a empresa manteve sua posição em um tema considerado fundamental pelos trabalhadores. Um dos principais pontos do impasse é o plano de saúde, para os trabalhadores, aposentados e suas famílias. Entregas Em nota à imprens",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal Superior do Trabalho (TST) determinou a manutenção de 80% do efetivo de trabalhadores dos Correios durante a greve da categoria. A decisão foi proferida no último sábado (12) pelo presidente do TST, ministro Vieira de Mello Filho, após a estatal recorrer ao tribunal para garantir o funcionamento mínimo da empresa, que considera a greve abusiva. Notícias relacionadas: Trabalhadores dos Correios estão em greve por tempo indeterminado. O presidente entendeu que o serviço prestado pelos Correios é essencial e que a greve pode impactar nas eleições. \"A atividade essencial desenvolvida pela suscitante se agiganta em face dos compromissos assumidos com entes públicos e privados relacionados ao pleito eleitoral de 2026, cujo período de campanha encontra-se em curso, o que agrava os impactos à sociedade do movimento paredista\", afirmou o ministro. Os trabalhadores dos Correios entraram em greve na quinta-feira (10) e buscam a aprovação do acordo coletivo de trabalho 2025/2026. Os sindicatos da categoria contestam o modelo de restruturação da estatal, que prevê o fechamento de agências, redução de distritos postais. A categoria também afirma que não pode ser responsabilizada pela crise financeira da estatal. Campanha salarial O movimento grevista teve início na última quinta-feira (10). Segundo a Federação dos Trabalhadores dos Correios e Telégrafos e das Empresas de Comunicações (Findect), a deflagração aconteceu após as negociações da campanha salarial deste ano terminarem sem acordo. Segundo a federação, a categoria buscou uma solução negociada, mas a empresa manteve sua posição em um tema considerado fundamental pelos trabalhadores. Um dos principais pontos do impasse é o plano de saúde, para os trabalhadores, aposentados e suas famílias. Entregas Em nota à imprens",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a6304df55586cf62ff633ab687064ecf0909e5830a0451f2b3632b6999b7c039": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Festival de Música Rádio Nacional apresenta novo cronograma",
+        "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-09/festival-de-musica-radio-nacional-apresenta-novo-cronograma",
+        "publishedAt": "2026-09-14T20:07:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O 17º Festival de Música Rádio Nacional apresenta novo cronograma para a edição de 2026. Com a reorganização das datas, o show da final, que coroa a trajetória dos artistas selecionados ao longo da edição, foi remarcado para 12 de dezembro, na Caixa Cultural Brasília. A partir de 30 de setembro, as 50 músicas semifinalistas passam a ser executadas na programação da Rádio Nacional e entram em votação pela internet. Essa etapa segue até 29 de novembro. Em seguida, entre 30 de novembro e 11 de dezembro, as 10 músicas finalistas serão veiculadas na programação da emissora e participarão de uma nova fase de votação online. A final do Festival será realizada em 12 de dezembro, na Caixa Cultural Brasília, com apresentação dos artistas finalistas e anúncio dos vencedores da edição. As categorias contempladas são Melhor Música, Melhor Intérprete, Melhor Letra, Melhor Arranjo e Música Mais Votada na Internet. Recorde de inscrições O 17º Festival de Música Rádio Nacional encerrou as inscrições deste ano com 1.512 músicas de todo o país. O número representa um novo recorde da iniciativa e supera a marca registrada em 2025. Em comparação com a edição anterior, foram 444 músicas a mais, um crescimento aproximado de 42%. O Festival de Música Rádio Nacional tem como objetivo revelar e divulgar gravações de obras musicais inéditas, abrindo espaço para novos talentos e para a diversidade da produção musical brasileira. Os finalistas em cada categoria receberão certificados de participação, e os vencedores ganharão troféus. Novo cronograma 30 de setembro a 29 de novembro de 2026 Execução das 50 músicas semifinalistas na programação da Rádio Nacional e votação pela internet 30 de novembro a 11 de dezembro de 2026 Execução das 10 músicas finalistas na programação da Rádio Nacional e votação",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O 17º Festival de Música Rádio Nacional apresenta novo cronograma para a edição de 2026. Com a reorganização das datas, o show da final, que coroa a trajetória dos artistas selecionados ao longo da edição, foi remarcado para 12 de dezembro, na Caixa Cultural Brasília. A partir de 30 de setembro, as 50 músicas semifinalistas passam a ser executadas na programação da Rádio Nacional e entram em votação pela internet. Essa etapa segue até 29 de novembro. Em seguida, entre 30 de novembro e 11 de dezembro, as 10 músicas finalistas serão veiculadas na programação da emissora e participarão de uma nova fase de votação online. A final do Festival será realizada em 12 de dezembro, na Caixa Cultural Brasília, com apresentação dos artistas finalistas e anúncio dos vencedores da edição. As categorias contempladas são Melhor Música, Melhor Intérprete, Melhor Letra, Melhor Arranjo e Música Mais Votada na Internet. Recorde de inscrições O 17º Festival de Música Rádio Nacional encerrou as inscrições deste ano com 1.512 músicas de todo o país. O número representa um novo recorde da iniciativa e supera a marca registrada em 2025. Em comparação com a edição anterior, foram 444 músicas a mais, um crescimento aproximado de 42%. O Festival de Música Rádio Nacional tem como objetivo revelar e divulgar gravações de obras musicais inéditas, abrindo espaço para novos talentos e para a diversidade da produção musical brasileira. Os finalistas em cada categoria receberão certificados de participação, e os vencedores ganharão troféus. Novo cronograma 30 de setembro a 29 de novembro de 2026 Execução das 50 músicas semifinalistas na programação da Rádio Nacional e votação pela internet 30 de novembro a 11 de dezembro de 2026 Execução das 10 músicas finalistas na programação da Rádio Nacional e votação",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "07323fa88ea7fa4ce90763b53b014116a66ec38cb3dfa5efdfb01407c54b5e26": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "STF define rito de sessão que analisará conversas de Moraes e Vorcaro",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/stf-define-rito-de-sessao-que-analisara-conversas-de-moraes-e-vorcaro",
+        "publishedAt": "2026-09-14T19:33:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Supremo Tribunal Federal (STF) divulgou há pouco o rito que será adotado durante a sessão desta terça-feira (15), que vai analisar o relatório da Polícia Federal sobre as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro. De acordo com o procedimento definido pelo presidente do STF, ministro Edson Fachin, a sessão será aberta às 10h. Notícias relacionadas: STF confirma transmissão pela internet de sessão sobre Moraes. Mendonça retira sigilo de processo sobre rede de pagamentos de Vorcaro. Em seguida, a secretária da sessão fará a leitura da ata da sessão anterior da Corte, e Fachin vai realizar as saudações de praxe a todos os ministros. O ministro chamará o processo para julgamento e passará a palavra ao ministro André Mendonça, que fará a leitura do relatório. O caso chegou a Fachin após Mendonça, informar sobre possíveis conversas entre Moraes e Daniel Vorcaro. Depois, a palavra será dada à Procuradoria-Geral da República (PGR). Após a manifestação da procuradoria, a votação será iniciada. O STF não confirmou se Alexandre de Moraes poderá participar da sessão. O plenário também é composto pelos ministros Cristiano Zanin, Flávio Dino, Nunes Marques, Luiz Fux, Cármen Lúcia e Gilmar Mendes. A participação de Dias Toffoli também não está confirmada. No início deste ano, Toffoli se declarou impedido de participar de julgamentos sobre o caso Master após a imprensa revelar que o ministro é dono de um resort que foi comprado por um fundo de investimentos ligado ao banco. Mais cedo, o STF confirmou que a sessão da Corte terá transmissão ao vivo pela TV Justiça e pela internet.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Supremo Tribunal Federal (STF) divulgou há pouco o rito que será adotado durante a sessão desta terça-feira (15), que vai analisar o relatório da Polícia Federal sobre as conversas entre o ministro Alexandre de Moraes e o ex-banqueiro Daniel Vorcaro. De acordo com o procedimento definido pelo presidente do STF, ministro Edson Fachin, a sessão será aberta às 10h. Notícias relacionadas: STF confirma transmissão pela internet de sessão sobre Moraes. Mendonça retira sigilo de processo sobre rede de pagamentos de Vorcaro. Em seguida, a secretária da sessão fará a leitura da ata da sessão anterior da Corte, e Fachin vai realizar as saudações de praxe a todos os ministros. O ministro chamará o processo para julgamento e passará a palavra ao ministro André Mendonça, que fará a leitura do relatório. O caso chegou a Fachin após Mendonça, informar sobre possíveis conversas entre Moraes e Daniel Vorcaro. Depois, a palavra será dada à Procuradoria-Geral da República (PGR). Após a manifestação da procuradoria, a votação será iniciada. O STF não confirmou se Alexandre de Moraes poderá participar da sessão. O plenário também é composto pelos ministros Cristiano Zanin, Flávio Dino, Nunes Marques, Luiz Fux, Cármen Lúcia e Gilmar Mendes. A participação de Dias Toffoli também não está confirmada. No início deste ano, Toffoli se declarou impedido de participar de julgamentos sobre o caso Master após a imprensa revelar que o ministro é dono de um resort que foi comprado por um fundo de investimentos ligado ao banco. Mais cedo, o STF confirmou que a sessão da Corte terá transmissão ao vivo pela TV Justiça e pela internet.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
+        "url": "https://www.tce.mg.gov.br/PNTP-2026-entra-na-etapa-de-Garantia-da-Qualidade-confira-os-proximos-passos.html/Noticia/1111629168",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "317c46da86013d797f3ef87df96607ca5126ff1e5808224c53921837863cddf9": {
+      "firstSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "item": {
+        "kind": "news",
+        "title": "Transferida a 23ª Sessão Ordinária da Segunda Câmara do TCESP desta terça-feira",
+        "url": "https://www.tce.sp.gov.br/6524-transferida-23a-sessao-ordinaria-segunda-camara-tcesp-desta-terca-feira",
+        "publishedAt": "2026-09-14T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "14/09/2026 – SÃO PAULO – O Presidente da Segunda Câmara do Tribunal de Contas do Estado de São Paulo (TCESP), Conselheiro Renato Martins Costa, em edição extra do Diário Oficial desta segunda-feira, 14/9, comunicou a transferência da 23ª Sessão Ordinária do Colegiado, marcada para dia 15 de setembro de 2026, esta terça-feira, às 10 horas. A sessão foi remanejada, integralmente, para o dia 22 de setembro de 2026, próxima terça-feira, às 10 horas, mantidas as sustentações orais já deferidas. Conforme o comunicado, os novos pedidos de sustentação oral por videoconferência deverão ser encaminhados, necessariamente, por meio do formulário disponível no endereço tce.sp.gov.br/sustentacao-oral, até 24 horas antes do início da sessão do dia 22. Para a sustentação oral presencial, o requerimento poderá ser encaminhado pelo mesmo canal eletrônico, observado o prazo indicado, ou submetido ao Secretário-Diretor Geral, previamente ao início da sessão. A apresentação de memoriais poderá ser realizada até 24 horas antes da sessão, exclusivamente em meio digital, por meio do sistema disponível em tce.sp.gov.br/memoriais.",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "14/09/2026 – SÃO PAULO – O Presidente da Segunda Câmara do Tribunal de Contas do Estado de São Paulo (TCESP), Conselheiro Renato Martins Costa, em edição extra do Diário Oficial desta segunda-feira, 14/9, comunicou a transferência da 23ª Sessão Ordinária do Colegiado, marcada para dia 15 de setembro de 2026, esta terça-feira, às 10 horas. A sessão foi remanejada, integralmente, para o dia 22 de setembro de 2026, próxima terça-feira, às 10 horas, mantidas as sustentações orais já deferidas. Conforme o comunicado, os novos pedidos de sustentação oral por videoconferência deverão ser encaminhados, necessariamente, por meio do formulário disponível no endereço tce.sp.gov.br/sustentacao-oral, até 24 horas antes do início da sessão do dia 22. Para a sustentação oral presencial, o requerimento poderá ser encaminhado pelo mesmo canal eletrônico, observado o prazo indicado, ou submetido ao Secretário-Diretor Geral, previamente ao início da sessão. A apresentação de memoriais poderá ser realizada até 24 horas antes da sessão, exclusivamente em meio digital, por meio do sistema disponível em tce.sp.gov.br/memoriais.",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -4210,127 +5183,260 @@
           "itemCount": 0
         }
       ]
+    },
+    "34904343379:1": {
+      "at": "2026-09-14T22:30:22.881Z",
+      "collected": 101,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 29,
+          "durationMs": 644
+        },
+        {
+          "name": "Querido Diário",
+          "status": "ok",
+          "itemCount": 22,
+          "durationMs": 21453
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "ok",
+          "itemCount": 21
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "ok",
+          "itemCount": 2
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 21,
+          "durationMs": 4046
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 29,
+          "durationMs": 5257
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 20
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 4249
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 25,
-      "durationMs": 691,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "itemCount": 29,
+      "durationMs": 644,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
-      "status": "degraded",
-      "itemCount": 0,
-      "durationMs": 4761,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": null
+      "status": "ok",
+      "itemCount": 22,
+      "durationMs": 21453,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
-      "status": "error",
-      "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-14T19:58:39.657Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": null
+      "status": "ok",
+      "itemCount": 21,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
-      "status": "error",
-      "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-14T19:58:39.657Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": null
+      "status": "ok",
+      "itemCount": 2,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-14T19:58:39.657Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": null
+      "checkedAt": "2026-09-14T22:30:22.881Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 21,
-      "durationMs": 2598,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "durationMs": 4046,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
-      "itemCount": 28,
-      "durationMs": 6059,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "itemCount": 29,
+      "durationMs": 5257,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -4339,7 +5445,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z"
+      "checkedAt": "2026-09-14T22:30:22.881Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -4348,7 +5454,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z"
+      "checkedAt": "2026-09-14T22:30:22.881Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -4357,59 +5463,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z"
+      "checkedAt": "2026-09-14T22:30:22.881Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 20,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
-      "itemCount": 7,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "itemCount": 8,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 0,
-      "durationMs": 4017,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "durationMs": 4249,
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-14T19:58:39.657Z",
+      "checkedAt": "2026-09-14T22:30:22.881Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-14T19:58:39.657Z"
+      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
