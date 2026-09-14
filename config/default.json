@@ -5,6 +5,8 @@
   "minimumScore": 5,
   "messageDelayMs": 6000,
   "stateRetentionDays": 365,
+  "pendingRetentionDays": 30,
+  "sessionCheckIntervalHours": 24,
   "googleNews": {
     "enabled": true,
     "queries": [

@@ -144,6 +144,14 @@ Não alterar regras durante o período, salvo erro grave. Observar e registrar:
 - `src/lib/classifier.mjs`: classificação e pontuação.
 - `src/lib/dedupe.mjs`: deduplicação e histórico.
 - `src/lib/format.mjs`: apresentação das mensagens.
+
+## Incidente e recuperação — 14 de setembro de 2026
+
+- A sessão vinculada do WhatsApp foi revogada. Entre as execuções #359 e #382, um candidato do TCE-MG foi reencontrado, mas o envio falhou em todas as tentativas.
+- As execuções seguintes ficaram verdes porque o candidato saiu da janela de 96 horas e, sem candidato, a versão anterior não abria conexão com o WhatsApp.
+- A sessão foi pareada novamente e validada no grupo `Radar Consórcios - Teste`.
+- Foi criada uma fila persistente de 30 dias. Candidatos passam a ser gravados antes da tentativa e só são removidos após confirmação de entrega.
+- Foi adicionada verificação da sessão a cada 24 horas, inclusive quando não houver notícia nova.
 - `src/lib/whatsapp.mjs`: conexão e entrega.
 - `src/lib/sources/web-scrapers.mjs`: adaptadores de scraping e normalização.
 - `config/default.json`: limites e parâmetros editoriais.

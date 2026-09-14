@@ -5,6 +5,11 @@ import { classifyItem, isPublishableClassification } from './lib/classifier.mjs'
 import {
   loadState,
   markSeen,
+  enqueuePending,
+  isSessionCheckDue,
+  listPending,
+  markPendingFailure,
+  markSessionCheck,
   pruneState,
   saveState,
   selectUnseen,
@@ -15,7 +20,7 @@ import { fetchGoogleNews } from './lib/sources/google-news.mjs';
 import { fetchQueridoDiario } from './lib/sources/querido-diario.mjs';
 import { fetchRssFeeds } from './lib/sources/rss-feeds.mjs';
 import { fetchWebScrapers } from './lib/sources/web-scrapers.mjs';
-import { sendMessages } from './lib/whatsapp.mjs';
+import { checkWhatsAppSession, sendMessages } from './lib/whatsapp.mjs';
 import { buildSourceFunnel, formatSourceFunnel } from './lib/run-metrics.mjs';
 
 async function appendGitHubSummary(markdown) {
@@ -27,7 +32,7 @@ async function main() {
   const config = await loadConfig();
   const since = new Date(Date.now() - config.lookbackHours * 60 * 60 * 1000);
   const state = await loadState(config.stateFile);
-  pruneState(state, config.stateRetentionDays);
+  pruneState(state, config.stateRetentionDays, config.pendingRetentionDays);
 
   console.log(`Coletando publicações desde ${since.toISOString()}...`);
   const sourceRequests = [
@@ -85,10 +90,10 @@ async function main() {
   const publishableRelevant = relevant.filter((item) => !item.previewOnly);
   const sentToday = countSentToday(state);
   const remainingToday = Math.max(0, config.maxPostsPerDay - sentToday);
-  const unseen = selectUnseen(publishableRelevant, state).slice(
-    0,
-    Math.min(config.maxPostsPerRun, remainingToday),
-  );
+  const discovered = selectUnseen(publishableRelevant, state);
+  if (config.sendEnabled) enqueuePending(state, discovered);
+  const available = config.sendEnabled ? listPending(state) : discovered;
+  const unseen = available.slice(0, Math.min(config.maxPostsPerRun, remainingToday));
   const scraperPreview = selectUnseen(previewRelevant, state).slice(0, 50);
   const scraperObservations = collected.filter((item) => item.scraper);
   const funnel = buildSourceFunnel({
@@ -96,7 +101,7 @@ async function main() {
     classified,
     relevant,
     publishable: publishableRelevant,
-    unseen,
+    unseen: discovered,
     selected: unseen,
     minimumScore: config.minimumScore,
   });
@@ -157,7 +162,8 @@ async function main() {
   );
 
   console.log(
-    `${collected.length} itens coletados; ${relevant.length} relevantes; ${unseen.length} novos candidatos; ` +
+    `${collected.length} itens coletados; ${relevant.length} relevantes; ${discovered.length} novos candidatos; ` +
+      `${config.sendEnabled ? listPending(state).length : 0} em fila; ${unseen.length} selecionado(s); ` +
       `${scraperPreview.length} candidato(s) de scraper em previa; ` +
       `${sentToday}/${config.maxPostsPerDay} enviados hoje.`,
   );
@@ -179,22 +185,43 @@ async function main() {
 
   if (!config.groupId) throw new Error('Defina WHATSAPP_GROUP_ID antes de habilitar o envio.');
   if (!unseen.length) {
+    if (isSessionCheckDue(state, config.sessionCheckIntervalHours || 24)) {
+      try {
+        const session = await checkWhatsAppSession({ authDir: config.authDir, groupId: config.groupId });
+        markSessionCheck(state, true, `Grupo encontrado: ${session.subject}`);
+        console.log(`Sessão do WhatsApp verificada. Grupo encontrado: ${session.subject}`);
+      } catch (error) {
+        markSessionCheck(state, false, error);
+        await saveState(config.stateFile, state);
+        throw error;
+      }
+    }
     await saveState(config.stateFile, state);
     await appendGitHubSummary(`${formatRunSummary([], true)}\n${scraperSummary}\n${funnelSummary}`);
     return;
   }
 
   const payload = unseen.map((item) => ({ item, text: formatWhatsAppMessage(item) }));
-  const sent = await sendMessages({
-    authDir: config.authDir,
-    groupId: config.groupId,
-    messages: payload,
-    delayMs: config.messageDelayMs,
-    onSent: async (entry) => {
-      markSeen(state, entry.item);
-      await saveState(config.stateFile, state);
-    },
-  });
+  await saveState(config.stateFile, state);
+  let sent;
+  try {
+    sent = await sendMessages({
+      authDir: config.authDir,
+      groupId: config.groupId,
+      messages: payload,
+      delayMs: config.messageDelayMs,
+      onSent: async (entry) => {
+        markSeen(state, entry.item);
+        markSessionCheck(state, true, 'Mensagem entregue ao grupo.');
+        await saveState(config.stateFile, state);
+      },
+    });
+  } catch (error) {
+    markPendingFailure(state, unseen, error);
+    markSessionCheck(state, false, error);
+    await saveState(config.stateFile, state);
+    throw error;
+  }
   await appendGitHubSummary(
     `${formatRunSummary(sent.map((entry) => entry.item), true)}\n${scraperSummary}\n${funnelSummary}`,
   );

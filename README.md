@@ -43,7 +43,7 @@ O radar combina quatro famílias de fontes:
 
 Cada família é consultada de forma independente. A falha temporária de uma fonte não interrompe as demais.
 
-Os scrapers estão inicialmente com `publish: false`: coletam, classificam e aparecem no resumo do GitHub Actions, mas não enviam mensagens ao WhatsApp. As observações ficam em `output/scraper-observations.json`, os candidatos relevantes em `output/scraper-candidates.json`, a saúde dos portais em `output/scraper-health.json` e a mensagem formatada em `output/scraper-preview.txt`. Isso permite homologar relevância e estabilidade antes da ativação.
+Cada scraper possui ativação própria. O TCE-MG está autorizado a publicar; AMM-MG e fontes futuras continuam em prévia. As observações ficam em `output/scraper-observations.json`, os candidatos relevantes em `output/scraper-candidates.json`, a saúde dos portais em `output/scraper-health.json` e a mensagem formatada em `output/scraper-preview.txt`.
 
 ## Funcionamento de cada rodada
 
@@ -59,9 +59,7 @@ Os scrapers estão inicialmente com `publish: false`: coletam, classificam e apa
 
 ## Quando existem mais de três notícias
 
-Somente as três mais relevantes são enviadas na rodada atual. As demais **não são marcadas como enviadas** e voltam a concorrer nas coletas seguintes enquanto permanecerem disponíveis nas fontes e dentro da janela de 96 horas.
-
-O piloto ainda não possui uma fila persistente. Depois da homologação, a principal evolução prevista é guardar todos os candidatos relevantes com prioridade, data de descoberta, tentativas e prazo de expiração.
+Somente as três mais relevantes são enviadas na rodada atual. As demais ficam em uma fila persistente por até 30 dias, com data de descoberta, tentativas e último erro. Um candidato só sai da fila depois da confirmação de entrega, evitando perdas quando o WhatsApp estiver indisponível ou a notícia sair da janela de coleta.
 
 ## Proteção contra duplicatas
 
@@ -95,6 +93,7 @@ O orçamento da conta está configurado em zero e bloqueia cobrança adicional a
 - O destino é definido por um secret do GitHub.
 - O Actions é periódico e pode sofrer pequenos atrasos.
 - Se o WhatsApp desvincular o aparelho, será necessário parear novamente.
+- Mesmo sem notícias novas, a sessão é verificada a cada 24 horas para que uma desconexão não fique escondida atrás de execuções verdes.
 
 ## Instalação local
 
