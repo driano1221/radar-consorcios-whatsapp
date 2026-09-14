@@ -3,12 +3,10 @@ import assert from 'node:assert/strict';
 import {
   canonicalUrl,
   enqueuePending,
-  isSessionCheckDue,
   itemId,
   listPending,
   markPendingFailure,
   markSeen,
-  markSessionCheck,
   selectUnseen,
 } from '../src/lib/dedupe.mjs';
 
@@ -62,13 +60,4 @@ test('mantém candidato em fila até a confirmação do envio', () => {
   markSeen(state, fresh[0], '2026-09-14T14:00:00.000Z');
   assert.equal(listPending(state).length, 0);
   assert.equal(Object.keys(state.seen).length, 1);
-});
-
-test('solicita verificação periódica da sessão', () => {
-  const state = { version: 3, seen: {}, pending: {}, session: {} };
-  const now = new Date('2026-09-14T18:00:00.000Z');
-  assert.equal(isSessionCheckDue(state, 24, now), true);
-  markSessionCheck(state, true, 'ok', '2026-09-14T17:00:00.000Z');
-  assert.equal(isSessionCheckDue(state, 24, now), false);
-  assert.equal(isSessionCheckDue(state, 0.5, now), true);
 });

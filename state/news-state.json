@@ -2255,10 +2255,5 @@
       "category": "GOVERNANÇA"
     }
   },
-  "pending": {},
-  "session": {
-    "lastCheckedAt": "2026-09-14T19:15:41.990Z",
-    "status": "ok",
-    "detail": "Grupo encontrado: Radar Consórcios - Teste"
-  }
+  "pending": {}
 }

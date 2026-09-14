@@ -62,10 +62,9 @@ export async function loadState(stateFile) {
       version: 3,
       seen: parsed.seen || {},
       pending: parsed.pending || {},
-      session: parsed.session || {},
     };
   } catch (error) {
-    if (error.code === 'ENOENT') return { version: 3, seen: {}, pending: {}, session: {} };
+    if (error.code === 'ENOENT') return { version: 3, seen: {}, pending: {} };
     throw new Error(`Estado de notícias inválido em ${stateFile}: ${error.message}`);
   }
 }
@@ -170,19 +169,6 @@ export function markPendingFailure(state, items, error, attemptedAt = new Date()
     record.lastAttemptAt = attemptedAt;
     record.lastError = String(error?.message || error).slice(0, 300);
   }
-}
-
-export function markSessionCheck(state, ok, detail, checkedAt = new Date().toISOString()) {
-  state.session = {
-    lastCheckedAt: checkedAt,
-    status: ok ? 'ok' : 'error',
-    detail: String(detail || '').slice(0, 300),
-  };
-}
-
-export function isSessionCheckDue(state, intervalHours, now = new Date()) {
-  const lastCheck = new Date(state.session?.lastCheckedAt || 0).getTime();
-  return !Number.isFinite(lastCheck) || now.getTime() - lastCheck >= intervalHours * 60 * 60 * 1000;
 }
 
 export function countSentToday(state, now = new Date()) {
