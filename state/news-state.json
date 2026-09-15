@@ -2453,6 +2453,23 @@
       "category": "ADESÃO",
       "source": "alagoasnanet.com.br",
       "publishedAt": "2026-09-14T14:07:00.000Z"
+    },
+    "446490fd2eb644bed20bdd4fa71facc354c6bfb32d085fed23048709968abbba": {
+      "sentAt": "2026-09-15T13:32:11.957Z",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOYUh5OEx5RTZkdlB2bi0zOUFCYktNZEQyeVVIUWVtejBqUTBCLVZaNUEtQ2ZyeEVUR2NNbEtuMFN3akx6amU3eV9OcEladnV1Q0h5YmI2VXhJMWJlc0RXbHdONGxfaEotaTNwMFJfVXZDeGtYLW0tQy1RbVhkMGFwWEtoYkVzWnJTbGZYaHJhTmJmcm1DVGJnZUladG81b1BpRDNSMUpRZXhBNFpjQXhJV3prSk9jblZwR0h4VkNEWS1NaGdvc0ZPTmtqeWJjOUkyNmVwbzVPYw?oc=5",
+      "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - Alagoas na Net",
+      "titleFingerprint": "52cec686daf055834b4aea18caf48e4eee0242fe07f943b766c194fb035f7759",
+      "contentTokens": [
+        "adesao",
+        "agreste",
+        "alagoas",
+        "autoriza",
+        "inhapi",
+        "net"
+      ],
+      "category": "ADESÃO",
+      "source": "Alagoas na Net",
+      "publishedAt": "2026-09-14T14:07:00.000Z"
     }
   },
   "pending": {},
@@ -2484,15 +2501,15 @@
     },
     "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - folha.qconcursos.com",
+        "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbzdGVWh1Wk5OMFUzT2VDVF96eU04UmFfMkZQM2dTamhxOWJCOG1xZElKZ1lKRFQ1czktVmQ2bHFpcU5JY1V1a3NxWExDMWxrbTdXd2djOEFQOTJJY0c5SDhoRlpRQ01vNzd0Z2ZTZnRvWnFPWTcwYmFwY3NrZ2U2dW5RYVByeG5sbzdBaTd0QWluX2xVMTNZTWFPUXpKbzB6a0wtTDcxMFhCMkt2Z21aalJMNktKQ3hsVEgtRnp4clBkVnBaYVow?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-11T19:56:51.000Z",
-        "source": "folha.qconcursos.com",
-        "summary": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas folha.qconcursos.com",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2502,7 +2519,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas folha.qconcursos.com",
+          "evidenceText": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2510,7 +2527,7 @@
     },
     "eaa0de7c1adedd5a789788dbf1741fac53dd8c26808c19af390e55a8969ed71f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná",
@@ -2556,7 +2573,7 @@
     },
     "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - ABCD Jornal",
@@ -2579,15 +2596,15 @@
     },
     "a4feb48e8f2142b20e06ff88d669459d9865b7b06fb07a93b918922708ebf272": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - folha.qconcursos.com",
+        "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - Qconcursos Folha Dirigida",
         "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbFlOS0l0d0k5RkJua2dFR1JBZXVWS2RzN2NNUWdDYWVUdjY3NGlxdkhrR00yWC1zM1haUGt3SlJ2RWVyVlprWkdSdEJLd1ZTV3FxOEdHTTNhNjFyc09HXzJyX1p1TkI1TUhLX3NtXzU3aEd6ZHZTZ1RrZ0ZUaUNERThvQkUzYzdtdnhWQTFfa3MwZWoyb1hFR1pET3g0ZUh3TVV6MHR4SW8zTWVJQy1IMkRuWnZLc0xQNTJTZUhPbXN5eTR2b1dRekgxR0pkc2loLVlRaklUOG5RQQ?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-09T21:09:10.000Z",
-        "source": "folha.qconcursos.com",
-        "summary": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva folha.qconcursos.com",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2597,7 +2614,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva folha.qconcursos.com",
+          "evidenceText": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2605,15 +2622,15 @@
     },
     "1cd8049fa620a5e4db87515be93dbce0b7a18cb41bc472b0cd3c3ed496841451": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas - folha.qconcursos.com",
+        "title": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas - Qconcursos Folha Dirigida",
         "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbmdWTC1jZXp1LVBsR2l3dmxGQTZFTzNqMkFfWWNjcUJXLUtxZE5ZS1BFTG11NmN1akpERzNmMUNGYWFVVGJTMTRwUGU1LTJ2Z2psWWZwTDdTaWNTd21yN3Awc1VKZUNwM1ZIelY2YWtfSDVONTF6ellwTFVVRFBNdktULTFwNnZvQ19qR1p1M3F2WTFFU0toUUlYa05qdjFDT1FDdnpZZ0syOUk0NmFqclJ2Z0F5aFgwRk40UWtrbk40bGZ6TlBPa1laMXBJNEE?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-09T14:20:11.000Z",
-        "source": "folha.qconcursos.com",
-        "summary": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas folha.qconcursos.com",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2623,7 +2640,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas folha.qconcursos.com",
+          "evidenceText": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2631,7 +2648,7 @@
     },
     "f32488dd494ffaab10d9b9e8f0edac4bf98fe69efeed611e37377fd9a776d644": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 - PCI Concursos",
@@ -2679,7 +2696,7 @@
     },
     "0e7aabe32ed068953985e31bb57c64aa08f6bab53384df4012d13ecf16f92a96": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - Câmara Municipal de Curitiba",
@@ -2702,7 +2719,7 @@
     },
     "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
@@ -2725,7 +2742,7 @@
     },
     "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
@@ -2751,7 +2768,7 @@
     },
     "3b4657af15c412acf25a2145f93fa8c32c4769db0607b8ed39a099c38031de5d": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento - Top Mídia News",
@@ -2774,7 +2791,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -2797,22 +2814,22 @@
     },
     "184db1ccb8d0f9dfedfa5ab0c26b244078321aa1348d0e74a0c033cffbabd237": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
-        "title": "Untitled - varzea.rn.leg.br",
+        "title": "Untitled - Câmara Municipal de Várzea - RN",
         "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQ3pmWHAtQWY0Y2ZEdHh3MFlXU3ZROXo2LUxHa1RZSExJS3V4ZVpTbUtZcGV1Z2lHQjNsN1dnamk5QlJtYkRYR2gzeVYxLWdQTkFsaU5CTFhHRFNSN0JjU2s5WWdYREstN3FBS1UxcUhySUR5VWM5UkNuaEs0WWp5T1c2aUNPM2xDdGdpWGRCOTdNaXprRkJBS2syUklxdFR2cnZ2RTNlZVgzVXpSTlN0T2hyX0hHbEVJSjhZSnhsYTU4VENoRnBLbnktVnRRUDRhNUJCRXhNZU9OeDZHSEtvY0Ixbw?oc=5",
         "sourceUrl": "https://www.varzea.rn.leg.br",
         "publishedAt": "2026-09-10T00:53:55.000Z",
-        "source": "varzea.rn.leg.br",
-        "summary": "Untitled varzea.rn.leg.br",
+        "source": "Câmara Municipal de Várzea - RN",
+        "summary": "Untitled Câmara Municipal de Várzea - RN",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Untitled varzea.rn.leg.br",
+          "evidenceText": "Untitled Câmara Municipal de Várzea - RN",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2820,7 +2837,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -2843,7 +2860,7 @@
     },
     "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Municípios assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
@@ -2866,7 +2883,7 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
@@ -2889,7 +2906,7 @@
     },
     "34f2e231099d6bc75ce83425f39ce1e3dc6f6a4aac497482eefddbe33185f2f6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - TCE-PR",
@@ -2912,7 +2929,7 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
@@ -2935,7 +2952,7 @@
     },
     "a01a83c0cedc579416617fd7d41ba9be8d19b2062d37a1584462884a1c06c6aa": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
@@ -2964,7 +2981,7 @@
     },
     "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
@@ -2987,7 +3004,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -3010,7 +3027,7 @@
     },
     "00ecea0e3db92dbffe5198e7dd9f7e1d0285edf7461a98c450ca99e7a54a9b01": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "FNP se reúne com a Secretaria de Educação Básica do MEC para fortalecer agenda municipalista",
@@ -3033,7 +3050,7 @@
     },
     "475bff69568a7ede517b7ef0a3983674bc7673884c88267509c5ec7feebb2365": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "FNP leva debate da Reforma Tributária aos municípios paranaenses",
@@ -3058,7 +3075,7 @@
     },
     "44c3475b4abe5ff9287ba07e7130980831dd6ab42fc2dd1474f7e333df0303a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "FNP reúne municípios para debater drenagem urbana e estratégias de adaptação às mudanças climáticas",
@@ -3081,7 +3098,7 @@
     },
     "34819e26868a429627b6d1613444cef9a15ec93f80850f63ee5ed083ea89487c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Fórum Nacional de mobilidade debate novos modelos de financiamento para o transporte público",
@@ -3106,7 +3123,7 @@
     },
     "02984a86f07be5e4bb0918702dbf843e95008afbe36220670121cfe4dbd2fa9f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais debate impactos cadastrais da Reforma Tributária do Consumo",
@@ -3129,7 +3146,7 @@
     },
     "9c5b9a050ee29886340c0e637f538ec941595e3ce7198ffc71599d5d898a22c6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "FNP lança coalizão de cidades pela segurança no trânsito",
@@ -3152,7 +3169,7 @@
     },
     "a801ef042db512a167f2292278bcbe247597cc0d31131e8ab9c34d964a725b45": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "FNP defende criação do PIX Precatório em audiência no CNJ",
@@ -3175,7 +3192,7 @@
     },
     "6e75cb4ca4e23f84269d89274ff6ca445e9b8c0fa861fd96d6ef64c70a7fabad": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Importância de governança integrada e ações conjuntas para municípios é tema de seminário",
@@ -3432,7 +3449,7 @@
     },
     "52e9debc511af81db435f27a8fb4a039d6b996b929867d06f376a8ec149a1b6a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Triubnal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -3457,7 +3474,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3484,7 +3501,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -3509,7 +3526,7 @@
     },
     "26c2b82664c43ce3db2df36b5095c04dc8d284ba7cbbeb77b43c2042d87725db": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Boas práticas colocam foco em rastreamento de informações, análise de riscos, transparência e reforçam diálogo com a gestão",
@@ -3534,7 +3551,7 @@
     },
     "a62ed95fee447ddbd7ac7ae0371fd72c75770f5dec76a2ccab383d38a47db325": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "TCEMG esclarece regras para contratação por credenciamento",
@@ -3559,7 +3576,7 @@
     },
     "49efe5aea7014a410018a72f9d3c9964cab61a80021365a6087844c3f0f9253e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Identificação de fraudes e aproximação com a sociedade são temas do último dia do Seminário de Controle Interno",
@@ -3584,7 +3601,7 @@
     },
     "73c7c6dd92a4d4ed7e284f1766f4d343372711b6baae2ca033f9854522a3c2ce": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Controladorias Internas têm a missão de estar atentas aos \"rinocerontes cinza\" da gestão pública",
@@ -3609,7 +3626,7 @@
     },
     "9b59e45a6f77220cf1be84a1814d9ac59194150e9c2fab3330b5b231f895a291": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "TCEMG lança carta compromisso para fortalecer controles internos em Minas Gerais",
@@ -3634,7 +3651,7 @@
     },
     "634e48a364faf8610ae5f9bb220a4215fb0cbc7d4a9d0e738b846cf0bc1e4925": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "II Seminário de Controles Internos reúne mais de 750 pessoas em BH",
@@ -3659,7 +3676,7 @@
     },
     "51b6d6659dcd9bf107d30375d0503ce40fd8ccca116a8708337f92fbea038f2c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Livro sobre escavações no antigo DOPS/MG será lançado com experiência imersiva em Belo Horizonte",
@@ -3684,7 +3701,7 @@
     },
     "a96f9c196b1d204fcec8d247f0608672bc652edb25c8d232eba3860b9e761acc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2025 da Assembleia Legislativa de Minas Gerais",
@@ -3709,7 +3726,7 @@
     },
     "e8088838ed6cb79460ef9f73beed4ac05c3e737f1d59b473836c1eeb4948046c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "\"A Terra que Ninguém nos Prometeu\": Fábio de Melo lança novo livro no TCEMG",
@@ -3734,7 +3751,7 @@
     },
     "fea773ad11b3f69b238957fbd5be196fc4c671d38b510becf88b27ea140a19a4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Solenidade do Colar do Mérito marca comemorações dos 91 anos do TCEMG",
@@ -3759,7 +3776,7 @@
     },
     "36244ea3be2747000619345370651c66c33897b719677c8d9c8efe19b2b90ce6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Painel revela avanços e desafios de controladorias do Semiárido Mineiro",
@@ -3784,7 +3801,7 @@
     },
     "fd99b3d7bdcd10c3b072ab2e529d2b543ff7fa4314614f5cb5d7fe1cc3c481f4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "20 anos da Lei Maria da Penha: evento celebra marco histórico de luta, resistência e transformação",
@@ -3809,7 +3826,7 @@
     },
     "a721785b95220768bc645cdc14e6bfefc2a74155926bed36fb9cc5b5b33d1e78": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Edital de rodeio em Cruzília que previa até sorteio de moto emplacada acaba em multa por irregularidades",
@@ -3834,7 +3851,7 @@
     },
     "66cce994bd5884b8c90d6f11d559afc8c96b55840d6086830bef2a43909bc663": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 do Tribunal de Justiça de Minas Gerais",
@@ -3859,7 +3876,7 @@
     },
     "59ae8bf7b518104f423ef92b7064b0ba2e9cdf7752fa9325df3354158ccb2752": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "TCEMG nega recurso e mantém multa a prefeito de Araguari por nepotismo",
@@ -3884,7 +3901,7 @@
     },
     "476a740841787349a3455efc4135c9c6e646adebc928cf685662ce4b873341b4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Novas lideranças, mesmo propósito: encontro celebra mudança de gestão do Jus-Povos",
@@ -3934,7 +3951,7 @@
     },
     "96de484ae2333596f2689e38ddc97895c8b7a62f04be4a2c710e168bcfb1be13": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o papel dos Consórcios Públicos na gestão municipal com Victor Borges",
@@ -3962,7 +3979,7 @@
     },
     "4436fad46607038d8cfe89469b557267d3afa88b2153e8a335cc4fa4c50c70d7": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Nono módulo da Trilha de Aprendizagem sobre ODS está no ar",
@@ -3988,7 +4005,7 @@
     },
     "5644e472796b1bd97f5551ffcb683217a3f08af0d8d0d8e4a0a1588f49dfbf95": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Conexão Saúde debate saúde mental no trabalho com a jornalista Izabella Camargo",
@@ -4014,7 +4031,7 @@
     },
     "9f028ca97770b6f264b0893ebc66f4d033c9fc3602a3b61c9025f20ab8b581dc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada na cidade de Limeira",
@@ -4040,7 +4057,7 @@
     },
     "9f9364e6671983e0a305a64aade3d413bedcedfd4c26332c8868da0cf8473cc0": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "São Carlos recebe caravana do Ciclo de Debates do TCESP",
@@ -4066,7 +4083,7 @@
     },
     "91becf7d33c3807798844cf54349a99202244f4c1a0bdb01075f141c425f31d3": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "TCESP publica Relatório do Terceiro Setor 2025",
@@ -4092,7 +4109,7 @@
     },
     "fd3436bacead59e22f97f1d0571bb3afa9834f7b4694a78cd13c6ce017bd4d7f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza Encontro de Controle Interno e Integridade na Gestão Pública em Araraquara",
@@ -4143,7 +4160,7 @@
     },
     "d3519c9b480649442de03b07c20d251a361bf7bd0599063bcbabf0ff8e2228b1": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília - ABC Agora",
@@ -4166,7 +4183,7 @@
     },
     "1bb8aa8da2195060a12b04ce02b33d5ff9c85ed3e6578bfdce247960c4a0a300": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda - RD – Repórter Diário",
@@ -5010,7 +5027,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5035,7 +5052,7 @@
     },
     "317c46da86013d797f3ef87df96607ca5126ff1e5808224c53921837863cddf9": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Transferida a 23ª Sessão Ordinária da Segunda Câmara do TCESP desta terça-feira",
@@ -5084,7 +5101,7 @@
     },
     "30f0fad5ec941d4d459701b873cbbc55a58d01be94aafbc54b264a08ffa510bd": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Ministério Público cobra retomada de cirurgias em hospital de Peixoto e prevê ação judicial - Só Notícias",
@@ -5270,15 +5287,15 @@
     },
     "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
-        "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - alagoasnanet.com.br",
+        "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - Alagoas na Net",
         "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOYUh5OEx5RTZkdlB2bi0zOUFCYktNZEQyeVVIUWVtejBqUTBCLVZaNUEtQ2ZyeEVUR2NNbEtuMFN3akx6amU3eV9OcEladnV1Q0h5YmI2VXhJMWJlc0RXbHdONGxfaEotaTNwMFJfVXZDeGtYLW0tQy1RbVhkMGFwWEtoYkVzWnJTbGZYaHJhTmJmcm1DVGJnZUladG81b1BpRDNSMUpRZXhBNFpjQXhJV3prSk9jblZwR0h4VkNEWS1NaGdvc0ZPTmtqeWJjOUkyNmVwbzVPYw?oc=5",
         "sourceUrl": "https://www.alagoasnanet.com.br",
         "publishedAt": "2026-09-14T14:07:00.000Z",
-        "source": "alagoasnanet.com.br",
-        "summary": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+        "source": "Alagoas na Net",
+        "summary": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste Alagoas na Net",
         "classification": {
           "category": "ADESÃO",
           "emoji": "🟦",
@@ -5288,7 +5305,7 @@
             "ADESÃO"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+          "evidenceText": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste Alagoas na Net",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -5296,7 +5313,7 @@
     },
     "e89f6a8f36d52e820688ea464c9b85b2ec230fc9fe914415077c0bed7c18b41f": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Adia Festival ABC Das Artes Por Previsão De Chuvas E Ventos Fortes - ABC Agora",
@@ -5319,7 +5336,7 @@
     },
     "a686b7e342d5c46e52089538533812d2d6a9a707215d7436d0aa3d917a973adf": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - Buriti News",
@@ -5342,22 +5359,22 @@
     },
     "532facdf6f324b9dbd06ec9d54f5d2db1aa0476f06813d500ca2f9eaae9e35f1": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
-        "title": "Promotorias cobram solução para crise em hospital regional - novidades mt",
+        "title": "Promotorias cobram solução para crise em hospital regional - novidadesmt.com.br",
         "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWi1RYU10SVhYUGJ1Zmw1NW0zWUQzaUk4dUQ4UmV0UHZFYXU2NnFvUUtoZEVOX2ZPTUN0QnJHZHQwWTFYY08yTk5ibndHdEpxcmZsaUlaVkc4ME9qVE8zdjlORHRpbHpramZOZk5kbUUwS2YtRnQtUWVOUDg4NGZoNWdJTUdJWW5JSUtIUDlWYUtYUGJoOTQwNURvRnNQbG8?oc=5",
         "sourceUrl": "https://novidadesmt.com.br",
         "publishedAt": "2026-09-15T00:17:00.000Z",
-        "source": "novidades mt",
-        "summary": "Promotorias cobram solução para crise em hospital regional novidades mt",
+        "source": "novidadesmt.com.br",
+        "summary": "Promotorias cobram solução para crise em hospital regional novidadesmt.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Promotorias cobram solução para crise em hospital regional novidades mt",
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional novidadesmt.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -5365,7 +5382,7 @@
     },
     "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
@@ -5450,6 +5467,261 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "O cacique Raoni Metuktire, de 94 anos, foi diagnosticado com câncer no aparelho digestório e recebe cuidados paliativos em casa, em Peixoto de Azevedo (MT), onde está acompanhado pela família e por uma equipe médica. A informação foi divulgada nesta segunda-feira (14) por meio de perfil do Instituto Raoni nas redes sociais. O comunicado informa que ao longo de 2026, Raoni passou por internações, exames e agravamentos no quadro de saúde. Em junho, foi transferido em caráter de emergência para São Paulo após apresentar uma grave obstrução intestinal provocada pelo tumor. Em seguida, passou por uma gastroenteroanastomose no Hospital São Paulo, da Universidade Federal de São Paulo (Unifesp), procedimento que criou uma nova passagem para permitir o trânsito dos alimentos e melhorar as condições de alimentação e conforto. Notícias relacionadas: Cacique Raoni tem alta hospitalar. Raoni está consciente, mas apresenta leve piora no quadro renal. Cacique Raoni apresenta boa evolução clínica e vai para enfermaria. Exames realizados posteriormente confirmaram o diagnóstico de adenocarcinoma pouco diferenciado. Segundo o Instituto Raoni, diante da idade, das condições clínicas e dos riscos associados a tratamentos mais agressivos, as equipes médicas indicaram cuidados paliativos. Os cuidados paliativos têm como objetivo controlar a dor e outros sintomas, prevenir complicações e proporcionar qualidade de vida. O acompanhamento inclui assistência médica e de enfermagem, fisioterapia, além de cuidados com alimentação e hidratação. “O cuidado também envolve a dimensão espiritual. Raoni é pajé e segue recebendo a presença e os cuidados de pajés de sua confiança, em uma atenção intercultural que respeita a cultura Mẽbêngôkre, sua língua, suas escolhas e suas referências espirituais.”, diz",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b9243454fd8f696c89efe2a28513f85297f0f66807f108cb8166887e4be3e357": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "Promotorias cobram solução para crise em hospital regional em Peixoto de Azevedo - Web Rádio Terra",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcUFyZEJFRGtOYVBvdHJqYVBJOEtmRU5DN29ZOUd2UnNzc19fMmp4Y25CUnVYWno5Ul9YYWc3V2VmZGxmZGM4QnJnTkN3ZUd6Q3BsS1R4TndNcFdfblFyb081WlpaZVJkOFlOc0g4STBKaENEb3BJUDFraVhldnZURmg4X3V2TEJ1Y2gzbkJoWGljNEdVNkRzc0xaSWhxSHFMQi1FakI4ZlBEcWlEZnV2b19DTFk?oc=5",
+        "sourceUrl": "https://terratnn.com.br",
+        "publishedAt": "2026-09-15T10:01:08.000Z",
+        "source": "Web Rádio Terra",
+        "summary": "Promotorias cobram solução para crise em hospital regional em Peixoto de Azevedo Web Rádio Terra",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional em Peixoto de Azevedo Web Rádio Terra",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "480823e4b189204dc6152b513867d1c86bf37a306f0e7e3a0474db634c4dd0e9": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "Evento de arte e tecnologia \"alfineta\" com bordado e reflete sobre IA",
+        "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-09/evento-de-arte-e-tecnologia-alfineta-com-bordado-e-reflete-sobre-ia",
+        "publishedAt": "2026-09-15T12:36:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A primeira vez da potiguar Kaliane Martins, de 40 anos, em um museu foi para trabalhar em Brasília (DF). Ela se mudou para a capital, com a mãe, ainda criança, e adulta virou faxineira. Conseguiu emprego no Sesi Lab, na área central da capital, há quatro anos, deixou a vassoura e virou agente de portaria. Está encantada pelas artes que surgem de todos os lados. Inclusive, a mais recente tocou mais fundo o seu coração e a memória do bordado. Trata-se da instalação “Bordaduras”, um vinil adesivo de 530 metros quadrados, com imagem de agulhas e uma série de bordados em ponto de cruz inacabados instalada sobre os vidros do museu do Sesi Lab. O trabalho está oficialmente aberto à visitação do público a partir desta terça (15). A agente de portaria e costureira, Kaliane Freire, duarnte entrevista para Agência Brasil. Joédson Alves/Agência Brasil Notícias relacionadas: Exposição no CCBB do Rio traz a força da arte de mulheres da Amazônia. Exposição destaca força de mulheres quilombolas no Rio de Janeiro. A obra da artista plástica Regina Silveira, de 87 anos de idade, professora emérita da Universidade de São Paulo (USP), fez bem à memória da funcionária do espaço. “Aprendi a bordar com a minha mãe e com minha avó. Vi as agulhas [da obra] e me fez recordar”, diz Kaliane Martins. Ela recordou que teceu não apenas as próprias roupas e as dos três filhos adolescentes, mas também a própria vida. “Nunca foi fácil costurar cada dia de batalha”, filosofou a agente de portaria em entrevista à Agência Brasil. Ela ficou entusiasmada ainda mais com a chegada da artista. Feminista Nas palavras da artista Regina Silveira, que tem extensa carreira internacional, o objetivo da obra de arte é justamente provocar reflexões. Ela contextualiza que os bordados estão historicamente ligados à alfab",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A primeira vez da potiguar Kaliane Martins, de 40 anos, em um museu foi para trabalhar em Brasília (DF). Ela se mudou para a capital, com a mãe, ainda criança, e adulta virou faxineira. Conseguiu emprego no Sesi Lab, na área central da capital, há quatro anos, deixou a vassoura e virou agente de portaria. Está encantada pelas artes que surgem de todos os lados. Inclusive, a mais recente tocou mais fundo o seu coração e a memória do bordado. Trata-se da instalação “Bordaduras”, um vinil adesivo de 530 metros quadrados, com imagem de agulhas e uma série de bordados em ponto de cruz inacabados instalada sobre os vidros do museu do Sesi Lab. O trabalho está oficialmente aberto à visitação do público a partir desta terça (15). A agente de portaria e costureira, Kaliane Freire, duarnte entrevista para Agência Brasil. Joédson Alves/Agência Brasil Notícias relacionadas: Exposição no CCBB do Rio traz a força da arte de mulheres da Amazônia. Exposição destaca força de mulheres quilombolas no Rio de Janeiro. A obra da artista plástica Regina Silveira, de 87 anos de idade, professora emérita da Universidade de São Paulo (USP), fez bem à memória da funcionária do espaço. “Aprendi a bordar com a minha mãe e com minha avó. Vi as agulhas [da obra] e me fez recordar”, diz Kaliane Martins. Ela recordou que teceu não apenas as próprias roupas e as dos três filhos adolescentes, mas também a própria vida. “Nunca foi fácil costurar cada dia de batalha”, filosofou a agente de portaria em entrevista à Agência Brasil. Ela ficou entusiasmada ainda mais com a chegada da artista. Feminista Nas palavras da artista Regina Silveira, que tem extensa carreira internacional, o objetivo da obra de arte é justamente provocar reflexões. Ela contextualiza que os bordados estão historicamente ligados à alfab",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "20ad3836f032d6933c0425819465fd1313f8bd95cdcd493fa69970d5e760a6f8": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "\"Tiktokização\" e crise sufocam propostas de campanha, diz Fenaj",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/tiktokizacao-e-crise-sufocam-propostas-de-campanha-diz-fenaj",
+        "publishedAt": "2026-09-15T11:46:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O debate público sobre os rumos do Brasil tem sido esvaziado por um modelo eleitoral distorcido, marcado pela ausência de propostas estruturais. É o que aponta a presidenta da Federação Nacional dos Jornalistas (Fenaj), Samira de Castro. Em entrevista à Agência Brasil , ela argumenta que os problemas reais do país estão deixando de ser discutidos devido a dois principais fatores: a busca da grande mídia por audiência instantânea - e, na maioria dos casos, momentânea - e a adesão das candidaturas a uma lógica de marketing superficial. “Sofremos um processo violento de 'tiktokização' da campanha eleitoral. Tudo se resume à dancinha”, declarou Samira. Notícias relacionadas: Ciência ainda não foi lembrada na campanha eleitoral, diz SBPC. Campanha incentiva voto de quem tem mais de 70 anos. Crise institucional prejudica debate eleitoral, avaliam entidades. Ela acrescenta que, em tempos de atenção pulverizada e consumo superficial de notícias, poucos candidatos parecem dispostos a debater a sério os reais problemas do Brasil. Samira também destaca qual é o papel do jornalismo nas grandes crises, como a que enfrenta o Supremo Tribunal Federal (STF) e a importância de ir além nessa pauta. Leia, a seguir, os principais trechos da entrevista exclusiva. Agência Brasil: A atual crise político-institucional, que envolve denúncias relacionadas ao caso Master, afeta o debate eleitoral? Samira de Castro: Sim. Ela já extrapolou o Poder Judiciário - envolvendo outras organizações, como a Polícia Federal - e está dominando o debate. O pior é que, a meu ver, ela continuará dominando o noticiário. Agência Brasil: Com a aproximação do primeiro turno [em 4 de outubro], você acha que a imprensa e a opinião pública vão encontrar uma forma mais equilibrada para seguir acompanhando e noticiando o",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O debate público sobre os rumos do Brasil tem sido esvaziado por um modelo eleitoral distorcido, marcado pela ausência de propostas estruturais. É o que aponta a presidenta da Federação Nacional dos Jornalistas (Fenaj), Samira de Castro. Em entrevista à Agência Brasil , ela argumenta que os problemas reais do país estão deixando de ser discutidos devido a dois principais fatores: a busca da grande mídia por audiência instantânea - e, na maioria dos casos, momentânea - e a adesão das candidaturas a uma lógica de marketing superficial. “Sofremos um processo violento de 'tiktokização' da campanha eleitoral. Tudo se resume à dancinha”, declarou Samira. Notícias relacionadas: Ciência ainda não foi lembrada na campanha eleitoral, diz SBPC. Campanha incentiva voto de quem tem mais de 70 anos. Crise institucional prejudica debate eleitoral, avaliam entidades. Ela acrescenta que, em tempos de atenção pulverizada e consumo superficial de notícias, poucos candidatos parecem dispostos a debater a sério os reais problemas do Brasil. Samira também destaca qual é o papel do jornalismo nas grandes crises, como a que enfrenta o Supremo Tribunal Federal (STF) e a importância de ir além nessa pauta. Leia, a seguir, os principais trechos da entrevista exclusiva. Agência Brasil: A atual crise político-institucional, que envolve denúncias relacionadas ao caso Master, afeta o debate eleitoral? Samira de Castro: Sim. Ela já extrapolou o Poder Judiciário - envolvendo outras organizações, como a Polícia Federal - e está dominando o debate. O pior é que, a meu ver, ela continuará dominando o noticiário. Agência Brasil: Com a aproximação do primeiro turno [em 4 de outubro], você acha que a imprensa e a opinião pública vão encontrar uma forma mais equilibrada para seguir acompanhando e noticiando o",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "11cfbe086fa2b26009daa01a784705712bf8892ea2b9ce4fa4bad154f8ff2387": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "\"Inconstitucional e ilegal\", diz Moraes sobre investigação de Mendonça",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/inconstitucional-e-ilegal-diz-moraes-sobre-investigacao-de-mendonca",
+        "publishedAt": "2026-09-15T11:38:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ministro Alexandre de Moraes, do Supremo Tribunal Federal, se manifestou na madrugada desta terça-feira (15) sobre o julgamento previsto para a manhã de hoje, que vai decidir se ele poderá ser investigado por sua suposta relação com o ex-banqueiro Daniel Vorcaro. Em manifestação enviada ao presidente da Corte, Edson Fachin, o ministro negou ter cometido qualquer tipo de irregularidade e classificou o relatório que contém supostas mensagens enviadas pelo ex-banqueiro a ele como inconstitucional e ilegal. Notícias relacionadas: STF faz nesta manhã sessão que analisará conversas de Moraes e Vorcaro. STF define rito de sessão que analisará conversas de Moraes e Vorcaro. Os ministros da suprema Corte se reúnem na manhã de hoje para decidir se Moraes poderá ser investigado por sua suposta relação com o ex-banqueiro. Em documento de 44 páginas, Moraes se refere ao relatório de Mendonça como \"mentiroso e imprestável\". Segundo Moraes, os diálogos são fantasiosos. “Há, conforme anteriormente afirmado, uma tentativa de responsabilização objetiva por escritos de terceiro encontrados em ‘bloco de notas’ de celular, que foi apreendido em operação policial exitosa, onde o investigado foi preso.” Ainda segundo Moraes, das 52 notas encontradas no celular do ex-banqueiro, 47 não foram localizadas nas conversas de WhatsApp interceptadas pela investigação. Assim, na avaliação do ministro, não há nenhum tipo de “correspondência efetiva”. Para Moraes, o fato de o relatório ter sido feito em sigilo, sem pedido da Procuradoria-Geral da República e autorização do plenário do Supremo, demonstra “ilegal direcionamento da investigação” por parte de André Mendonça. Sobre contrato firmado entre o Banco Master e a Barci de Moraes Sociedade de Advogados, que tem entre seus sócios a esposa de Moraes,",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O ministro Alexandre de Moraes, do Supremo Tribunal Federal, se manifestou na madrugada desta terça-feira (15) sobre o julgamento previsto para a manhã de hoje, que vai decidir se ele poderá ser investigado por sua suposta relação com o ex-banqueiro Daniel Vorcaro. Em manifestação enviada ao presidente da Corte, Edson Fachin, o ministro negou ter cometido qualquer tipo de irregularidade e classificou o relatório que contém supostas mensagens enviadas pelo ex-banqueiro a ele como inconstitucional e ilegal. Notícias relacionadas: STF faz nesta manhã sessão que analisará conversas de Moraes e Vorcaro. STF define rito de sessão que analisará conversas de Moraes e Vorcaro. Os ministros da suprema Corte se reúnem na manhã de hoje para decidir se Moraes poderá ser investigado por sua suposta relação com o ex-banqueiro. Em documento de 44 páginas, Moraes se refere ao relatório de Mendonça como \"mentiroso e imprestável\". Segundo Moraes, os diálogos são fantasiosos. “Há, conforme anteriormente afirmado, uma tentativa de responsabilização objetiva por escritos de terceiro encontrados em ‘bloco de notas’ de celular, que foi apreendido em operação policial exitosa, onde o investigado foi preso.” Ainda segundo Moraes, das 52 notas encontradas no celular do ex-banqueiro, 47 não foram localizadas nas conversas de WhatsApp interceptadas pela investigação. Assim, na avaliação do ministro, não há nenhum tipo de “correspondência efetiva”. Para Moraes, o fato de o relatório ter sido feito em sigilo, sem pedido da Procuradoria-Geral da República e autorização do plenário do Supremo, demonstra “ilegal direcionamento da investigação” por parte de André Mendonça. Sobre contrato firmado entre o Banco Master e a Barci de Moraes Sociedade de Advogados, que tem entre seus sócios a esposa de Moraes,",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "88ed4a0697ee76a72ba7985680613f6ea18989075a92d5853f8df5f03847a609": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "Brasileirão Feminino: TV Brasil exibe semifinal Bahia x Corinthians",
+        "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-09/brasileirao-feminino-tv-brasil-exibe-semifinal-bahia-x-corinthians",
+        "publishedAt": "2026-09-15T11:32:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A TV Brasil transmite nesta terça-feira (15) um duelo de ida das semifinais do Campeonato Brasileiro Feminino Série A1 2026. A exibição do confronto entre Bahia e Corinthians começa a partir das 21h30, direto da Casa de Apostas Arena Fonte Nova, em Salvador. As duas equipes chegam embaladas após eliminarem adversários de peso nas quartas de final. O Bahia garantiu a classificação histórica nos pênaltis: após empates por 1 a 1 em Salvador e em Barueri, o time baiano superou o Palmeiras por 5 a 4 nas penalidades. Já o Corinthians chega para o duelo com duas vitórias na fase anterior, eliminando o Cruzeiro com um placar agregado de 4 a 1. Notícias relacionadas: EBC participa de evento internacional sobre futuro do futebol feminino. Desfile de 7 de Setembro homenageia pioneiras do futebol feminino. Maracanã será palco de abertura da Copa Feminina de Futebol de 2027. As exibições fazem parte da estratégia da TV Brasil , a tela do futebol feminino, para ampliar a visibilidade da modalidade no país. Pelo terceiro ano consecutivo, o canal público exibe os jogos da elite feminina. Também serão transmitidos os confrontos decisivos das Séries A2 e A3, a partir das semifinais. Além disso, o público poderá acompanhar as decisões das categorias de base pelo título do Brasileirão Feminino Sub-17 e Sub-20. A equipe de profissionais que comanda as transmissões do Brasileirão Feminino conta com o narrador Thiago Julianelli e um time de mulheres formado pelas comentaristas Brenda Balbi e Rachel Motta e as repórteres Marília Arrigoni e Verônica Dalcanal. As competições ganham ainda mais visibilidade por meio da parceria com os canais que formam a Rede Nacional de Comunicação Pública (RNCP), que podem retransmitir a programação da TV Brasil em seus estados. Sobre o Brasileirão Feminino Séri",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A TV Brasil transmite nesta terça-feira (15) um duelo de ida das semifinais do Campeonato Brasileiro Feminino Série A1 2026. A exibição do confronto entre Bahia e Corinthians começa a partir das 21h30, direto da Casa de Apostas Arena Fonte Nova, em Salvador. As duas equipes chegam embaladas após eliminarem adversários de peso nas quartas de final. O Bahia garantiu a classificação histórica nos pênaltis: após empates por 1 a 1 em Salvador e em Barueri, o time baiano superou o Palmeiras por 5 a 4 nas penalidades. Já o Corinthians chega para o duelo com duas vitórias na fase anterior, eliminando o Cruzeiro com um placar agregado de 4 a 1. Notícias relacionadas: EBC participa de evento internacional sobre futuro do futebol feminino. Desfile de 7 de Setembro homenageia pioneiras do futebol feminino. Maracanã será palco de abertura da Copa Feminina de Futebol de 2027. As exibições fazem parte da estratégia da TV Brasil , a tela do futebol feminino, para ampliar a visibilidade da modalidade no país. Pelo terceiro ano consecutivo, o canal público exibe os jogos da elite feminina. Também serão transmitidos os confrontos decisivos das Séries A2 e A3, a partir das semifinais. Além disso, o público poderá acompanhar as decisões das categorias de base pelo título do Brasileirão Feminino Sub-17 e Sub-20. A equipe de profissionais que comanda as transmissões do Brasileirão Feminino conta com o narrador Thiago Julianelli e um time de mulheres formado pelas comentaristas Brenda Balbi e Rachel Motta e as repórteres Marília Arrigoni e Verônica Dalcanal. As competições ganham ainda mais visibilidade por meio da parceria com os canais que formam a Rede Nacional de Comunicação Pública (RNCP), que podem retransmitir a programação da TV Brasil em seus estados. Sobre o Brasileirão Feminino Séri",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "21dbcc5f358c0a94767aaebc9f7bf2e2a1719f1b94bc288d07b5333073fbd0bb": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "Confira a agenda dos presidenciáveis nesta terça-feira (15)",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/confira-agenda-dos-presidenciaveis-nesta-terca-feira-15",
+        "publishedAt": "2026-09-15T11:28:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A agenda dos candidatos à presidência da República nesta terça-feira (15) inclui entrevistas e participação em podcasts, manifestações e atos políticos. Também estão previstos encontros com apoiadores, panfletagens, visitas a movimentos sociais, atividades em comunidades e participação em evento de campanha. Notícias relacionadas: Eleitores com deficiência têm até hoje para pedir transporte grátis . Campanha incentiva voto de quem tem mais de 70 anos. Augusto Cury (Avante) Participa da ação \"Cury Fala, Brasil Escuta\", na Avenida Paulista, em São Paulo (SP). Clariana Barão (DC) Participa dos podcasts Midiajur Cuiabá (MT) e O Empallador, de Várzea Grande (MT). Edmilson Costa (PCB) Em Campinas (SP), faz panfletagem no CAPS Reviver e no centro da cidade. À noite, acompanha o lançamento do documentário \"Afrontosa\", no Centro de Convivência Cultural. Flávio Bolsonaro (PL) Às 19h, em Fortaleza, participa do Bloco do 22 com candidatos da capital. Hertz Dias (PSTU) Em São Luís (MA), visita a greve dos bancários da Caixa e se reúne com apoiadores na comunidade do Rio dos Cachorros, na zona rural. Luiz Inácio Lula da Silva (PT) Concede entrevista ao Jornal da Record. Renan Santos (Missão) Às 14h, participa de gravação de Sabatina Rede TV!. Às 15h, tem sabatina no jornal Correio Braziliense. Ambos os compromissos ocorrem em Osasco (SP). Romeu Zema (Novo) Participa de manifestação em frente ao STF, em Brasília. Samara Martins (UP) Em Porto Alegre (RS), participa de café da manhã na Ocupação Sepé Tiaraju, de panfletagem no Restaurante Universitário da Ufrgs e de ato em frente ao Ministério Público. No fim da tarde, faz comício no centro de Gravataí (RS). Ronaldo Caiado (PSD) Em Aparecida de Goiânia (GO), concede entrevista coletiva e participa do encontro \"Dia do 15\". Rui Costa Pimen",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A agenda dos candidatos à presidência da República nesta terça-feira (15) inclui entrevistas e participação em podcasts, manifestações e atos políticos. Também estão previstos encontros com apoiadores, panfletagens, visitas a movimentos sociais, atividades em comunidades e participação em evento de campanha. Notícias relacionadas: Eleitores com deficiência têm até hoje para pedir transporte grátis . Campanha incentiva voto de quem tem mais de 70 anos. Augusto Cury (Avante) Participa da ação \"Cury Fala, Brasil Escuta\", na Avenida Paulista, em São Paulo (SP). Clariana Barão (DC) Participa dos podcasts Midiajur Cuiabá (MT) e O Empallador, de Várzea Grande (MT). Edmilson Costa (PCB) Em Campinas (SP), faz panfletagem no CAPS Reviver e no centro da cidade. À noite, acompanha o lançamento do documentário \"Afrontosa\", no Centro de Convivência Cultural. Flávio Bolsonaro (PL) Às 19h, em Fortaleza, participa do Bloco do 22 com candidatos da capital. Hertz Dias (PSTU) Em São Luís (MA), visita a greve dos bancários da Caixa e se reúne com apoiadores na comunidade do Rio dos Cachorros, na zona rural. Luiz Inácio Lula da Silva (PT) Concede entrevista ao Jornal da Record. Renan Santos (Missão) Às 14h, participa de gravação de Sabatina Rede TV!. Às 15h, tem sabatina no jornal Correio Braziliense. Ambos os compromissos ocorrem em Osasco (SP). Romeu Zema (Novo) Participa de manifestação em frente ao STF, em Brasília. Samara Martins (UP) Em Porto Alegre (RS), participa de café da manhã na Ocupação Sepé Tiaraju, de panfletagem no Restaurante Universitário da Ufrgs e de ato em frente ao Ministério Público. No fim da tarde, faz comício no centro de Gravataí (RS). Ronaldo Caiado (PSD) Em Aparecida de Goiânia (GO), concede entrevista coletiva e participa do encontro \"Dia do 15\". Rui Costa Pimen",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ef67b73f37372a2a7cdbece42c0e6afca9ee25b2640d6b097ad46b726e7fd929": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "TRE-RJ indefere 15 candidaturas por indícios de vínculos criminosos",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/tre-rj-indefere-15-candidaturas-por-indicios-de-vinculos-criminosos",
+        "publishedAt": "2026-09-15T11:03:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Tribunal Regional Eleitoral do Rio de Janeiro (TER-RJ) já indeferiu registros de 15 candidatos à eleição deste ano , por entender que há indícios de vínculos com organizações criminosas. A maioria das candidaturas é para o cargo de deputado estadual (11). Também há três postulantes a deputado federal e um a suplente de senador. Oito desses candidatos tiveram o registro indeferido apenas na sessão de segunda-feira (14). Cinco deles pela aplicação da tese de “milícia de gravata”, que abrange as organizações criminosas voltadas à prática de crimes contra a administração pública. Os demais tiveram o registro de candidatura indeferidos por suspeita de envolvimento com milícias – organizações paramilitares que impõem controle armado sobre comunidades fluminenses. Outros sete candidatos já tinham tido o registro indeferido também por envolvimento com milícias em julgamentos anteriores. De acordo com o presidente do TRE-RJ, desembargador Claudio de Mello Tavares, por meio de nota divulgada pelo tribunal, não há qualquer tolerância da Corte com a atuação do tráfico de drogas e das milícias. Notícias relacionadas: TRE-RJ indefere registro de Garotinho para candidato a governador. TRE indefere candidatura de José Roberto Arruda ao governo do DF. TRE-RJ indefere candidatura de Gabriel Monteiro a deputado federal. \"[O tribunal] agiu com rigor para proteger a democracia. Não é possível permitir que as organizações criminosas se apossem das estruturas de poder do estado pela via eleitoral.”",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal Regional Eleitoral do Rio de Janeiro (TER-RJ) já indeferiu registros de 15 candidatos à eleição deste ano , por entender que há indícios de vínculos com organizações criminosas. A maioria das candidaturas é para o cargo de deputado estadual (11). Também há três postulantes a deputado federal e um a suplente de senador. Oito desses candidatos tiveram o registro indeferido apenas na sessão de segunda-feira (14). Cinco deles pela aplicação da tese de “milícia de gravata”, que abrange as organizações criminosas voltadas à prática de crimes contra a administração pública. Os demais tiveram o registro de candidatura indeferidos por suspeita de envolvimento com milícias – organizações paramilitares que impõem controle armado sobre comunidades fluminenses. Outros sete candidatos já tinham tido o registro indeferido também por envolvimento com milícias em julgamentos anteriores. De acordo com o presidente do TRE-RJ, desembargador Claudio de Mello Tavares, por meio de nota divulgada pelo tribunal, não há qualquer tolerância da Corte com a atuação do tráfico de drogas e das milícias. Notícias relacionadas: TRE-RJ indefere registro de Garotinho para candidato a governador. TRE indefere candidatura de José Roberto Arruda ao governo do DF. TRE-RJ indefere candidatura de Gabriel Monteiro a deputado federal. \"[O tribunal] agiu com rigor para proteger a democracia. Não é possível permitir que as organizações criminosas se apossem das estruturas de poder do estado pela via eleitoral.”",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "1097425353d8ba6ffb9e5a13e72e0120713ecec6ea355ac827dd38b7c0c5180a": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "Brasil deve dobrar investimentos para zerar déficit em infraestrutura",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/brasil-deve-dobrar-investimentos-para-zerar-deficit-em-infraestrutura",
+        "publishedAt": "2026-09-15T11:01:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Brasil precisa mais que dobrar os investimentos em infraestrutura para reduzir o déficit histórico do setor e se aproximar dos padrões internacionais. É o que aponta o estudo Financiamento dos Investimentos em Infraestrutura no Brasil , da Confederação Nacional da Indústria (CNI), que propõe um novo regime de financiamento para ampliar a participação do capital privado e sustentar projetos de longo prazo. Em 2024, foram investidos R$ 266,8 bilhões em infraestrutura, equivalentes a 2,27% do PIB. Segundo a CNI, o país precisaria elevar esse patamar para 4,65% do Produto Interno Bruto (PIB), cerca de R$ 550 bilhões por ano, e mantê-lo por pelo menos duas décadas. Notícias relacionadas: Ministros defendem mais parcerias em investimentos em infraestrutura. Do total investido em 2024: R$ 188,1 bilhões (70,5%) vieram do setor privado; R$ 78,6 bilhões foram investimentos públicos; Estados e municípios responderam pela maior parte dos aportes públicos. Novo modelo Para a CNI, nenhuma fonte de recursos, isoladamente, é capaz de atender às necessidades do país. O novo regime deveria combinar recursos públicos e privados, ampliar o mercado de capitais e criar condições para investimentos de longo prazo. Em nota, o presidente da CNI, Ricardo Alban, defende estabilidade econômica e institucional para atrair capital. “O Brasil precisa de responsabilidade fiscal, instituições sólidas e segurança jurídica para criar condições de mobilizar mais recursos privados para o setor de infraestrutura, sem abrir mão do papel estratégico dos investimentos públicos”, ressalta. Alban também defende uma estratégia de Estado para garantir continuidade aos projetos. Segundo ele, a modernização da infraestrutura demanda esforço contínuo, sistemático e de longo prazo, com uma política de Estado, conduz",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Brasil precisa mais que dobrar os investimentos em infraestrutura para reduzir o déficit histórico do setor e se aproximar dos padrões internacionais. É o que aponta o estudo Financiamento dos Investimentos em Infraestrutura no Brasil , da Confederação Nacional da Indústria (CNI), que propõe um novo regime de financiamento para ampliar a participação do capital privado e sustentar projetos de longo prazo. Em 2024, foram investidos R$ 266,8 bilhões em infraestrutura, equivalentes a 2,27% do PIB. Segundo a CNI, o país precisaria elevar esse patamar para 4,65% do Produto Interno Bruto (PIB), cerca de R$ 550 bilhões por ano, e mantê-lo por pelo menos duas décadas. Notícias relacionadas: Ministros defendem mais parcerias em investimentos em infraestrutura. Do total investido em 2024: R$ 188,1 bilhões (70,5%) vieram do setor privado; R$ 78,6 bilhões foram investimentos públicos; Estados e municípios responderam pela maior parte dos aportes públicos. Novo modelo Para a CNI, nenhuma fonte de recursos, isoladamente, é capaz de atender às necessidades do país. O novo regime deveria combinar recursos públicos e privados, ampliar o mercado de capitais e criar condições para investimentos de longo prazo. Em nota, o presidente da CNI, Ricardo Alban, defende estabilidade econômica e institucional para atrair capital. “O Brasil precisa de responsabilidade fiscal, instituições sólidas e segurança jurídica para criar condições de mobilizar mais recursos privados para o setor de infraestrutura, sem abrir mão do papel estratégico dos investimentos públicos”, ressalta. Alban também defende uma estratégia de Estado para garantir continuidade aos projetos. Segundo ele, a modernização da infraestrutura demanda esforço contínuo, sistemático e de longo prazo, com uma política de Estado, conduz",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5b6e5a4a4315f6b030f41039764a3f4d430b3d2fe425bf685741682b31262876": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "Câncer: estudo alerta para riscos de melanoma fora da pele",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/cancer-estudo-alerta-para-riscos-de-melanoma-fora-da-pele",
+        "publishedAt": "2026-09-15T10:34:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Nem todo melanoma está relacionado ao câncer de pele, esclarece a Fundação do Câncer. Com origem nas células produtoras de melanina (melanócitos), o melanoma também pode se manifestar nas estruturas extracutâneas (extrapele), como no olho; em mucosas, como as da cavidade oral; e órgãos internos dos sistemas genital e digestório. Esse tipo de neoplasia maligna é menos frequente, porém mais agressivo e letal porque tem maior possibilidade de provocar metástase e, com isso, se espalhar para tecidos e órgãos vizinhos. Notícias relacionadas: Anvisa aprova novas indicações para remédio que trata câncer de mama. SUS terá três novos medicamentos para câncer de pulmão . Pacientes com câncer colorretal têm medicamento aprovado pela Anvisa. A 12ª edição do boletim Análises e Tendências em Câncer , lançado pela fundação nesse mês, foca no estudo do melanoma de pele e extracutâneo. Com o título Melanoma: nem sempre na pele , a publicação destaca que conhecer este tipo de câncer é o primeiro passo para enfrentá-lo. “Para enfrentar o câncer, não basta tratar. É preciso conhecer. Conhecer para prevenir, diagnosticar mais cedo, planejar melhor os serviços de saúde e orientar políticas públicas capazes de salvar vidas”, diz o boletim. Anualmente, as edições do boletim da Fundação do Câncer mostram um retrato epidemiológico da doença no Brasil e têm o objetivo de alertar a sociedade e orientar profissionais sobre a importância da prevenção, do diagnóstico precoce e do combate ao câncer. Os dados do boletim são da plataforma info.oncollect, sistema que integra a coleta, a organização e a análise de dados relativos a registros hospitalares de oncologia. Enfrentando o melanoma Alfredo Scaff, consultor médico da Fundação do Câncer e coordenador do estudo - Foto: Hugo Vilarroel/ Divulgação O e",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Nem todo melanoma está relacionado ao câncer de pele, esclarece a Fundação do Câncer. Com origem nas células produtoras de melanina (melanócitos), o melanoma também pode se manifestar nas estruturas extracutâneas (extrapele), como no olho; em mucosas, como as da cavidade oral; e órgãos internos dos sistemas genital e digestório. Esse tipo de neoplasia maligna é menos frequente, porém mais agressivo e letal porque tem maior possibilidade de provocar metástase e, com isso, se espalhar para tecidos e órgãos vizinhos. Notícias relacionadas: Anvisa aprova novas indicações para remédio que trata câncer de mama. SUS terá três novos medicamentos para câncer de pulmão . Pacientes com câncer colorretal têm medicamento aprovado pela Anvisa. A 12ª edição do boletim Análises e Tendências em Câncer , lançado pela fundação nesse mês, foca no estudo do melanoma de pele e extracutâneo. Com o título Melanoma: nem sempre na pele , a publicação destaca que conhecer este tipo de câncer é o primeiro passo para enfrentá-lo. “Para enfrentar o câncer, não basta tratar. É preciso conhecer. Conhecer para prevenir, diagnosticar mais cedo, planejar melhor os serviços de saúde e orientar políticas públicas capazes de salvar vidas”, diz o boletim. Anualmente, as edições do boletim da Fundação do Câncer mostram um retrato epidemiológico da doença no Brasil e têm o objetivo de alertar a sociedade e orientar profissionais sobre a importância da prevenção, do diagnóstico precoce e do combate ao câncer. Os dados do boletim são da plataforma info.oncollect, sistema que integra a coleta, a organização e a análise de dados relativos a registros hospitalares de oncologia. Enfrentando o melanoma Alfredo Scaff, consultor médico da Fundação do Câncer e coordenador do estudo - Foto: Hugo Vilarroel/ Divulgação O e",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "240343f0fa8aeaaf0c89f45a3de123f879c9af4664be78190ece011a94a4cc5f": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "STF faz nesta manhã sessão que analisará conversas de Moraes e Vorcaro",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/stf-faz-nesta-manha-sessao-que-analisara-conversas-de-moraes-e-vorcaro",
+        "publishedAt": "2026-09-15T10:19:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O plenário do Supremo Tribunal Federal (STF) começa a analisar na manhã desta terça-feira (15) se o ministro Alexandre de Moraes pode ser investigado pela suposta relação com o ex-banqueiro Daniel Vorcaro . A sessão está marcada para às 10h e será transmitida pela TV Justiça e pela internet . Acompanhe ao vivo: Notícias relacionadas: STF define rito de sessão que analisará conversas de Moraes e Vorcaro. STF confirma transmissão pela internet de sessão sobre Moraes. O plenário da Corte foi acionado pelo ministro André Mendonça, antigo relator do caso Master , após a apuração da Polícia Federal (PF) identificar que Vorcaro entrou em contato com um número de celular atribuído ao ministro. As mensagens foram captadas pela PF a partir da quebra do sigilo do celular do ex-banqueiro, que está preso pelas investigações da Operação Compliance Zero , que investiga fraudes financeiras no Master e a tentativa de compra da instituição pelo Banco de Brasília (BRB), banco público ligado ao Governo do Distrito Federal (GDF). Rito De acordo com o procedimento definido pelo presidente do STF e novo relator do caso, ministro Edson Fachin, a sessão será aberta às 10h. Em seguida, a secretária da sessão fará a leitura da ata da sessão anterior da Corte, e Fachin vai fazer as saudações de praxe a todos os ministros. O ministro chamará o processo para julgamento e fará a leitura do relatório do caso. Depois, a palavra será dada à Procuradoria-Geral da República (PGR) . Após a manifestação da procuradoria, a votação será iniciada. O STF não confirmou se Alexandre de Moraes poderá participar da sessão. O plenário também é composto pelos ministros Cristiano Zanin, Flávio Dino, Nunes Marques, Luiz Fux, Cármen Lúcia e Gilmar Mendes. A participação de Dias Toffoli também não está confirmada. No iní",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O plenário do Supremo Tribunal Federal (STF) começa a analisar na manhã desta terça-feira (15) se o ministro Alexandre de Moraes pode ser investigado pela suposta relação com o ex-banqueiro Daniel Vorcaro . A sessão está marcada para às 10h e será transmitida pela TV Justiça e pela internet . Acompanhe ao vivo: Notícias relacionadas: STF define rito de sessão que analisará conversas de Moraes e Vorcaro. STF confirma transmissão pela internet de sessão sobre Moraes. O plenário da Corte foi acionado pelo ministro André Mendonça, antigo relator do caso Master , após a apuração da Polícia Federal (PF) identificar que Vorcaro entrou em contato com um número de celular atribuído ao ministro. As mensagens foram captadas pela PF a partir da quebra do sigilo do celular do ex-banqueiro, que está preso pelas investigações da Operação Compliance Zero , que investiga fraudes financeiras no Master e a tentativa de compra da instituição pelo Banco de Brasília (BRB), banco público ligado ao Governo do Distrito Federal (GDF). Rito De acordo com o procedimento definido pelo presidente do STF e novo relator do caso, ministro Edson Fachin, a sessão será aberta às 10h. Em seguida, a secretária da sessão fará a leitura da ata da sessão anterior da Corte, e Fachin vai fazer as saudações de praxe a todos os ministros. O ministro chamará o processo para julgamento e fará a leitura do relatório do caso. Depois, a palavra será dada à Procuradoria-Geral da República (PGR) . Após a manifestação da procuradoria, a votação será iniciada. O STF não confirmou se Alexandre de Moraes poderá participar da sessão. O plenário também é composto pelos ministros Cristiano Zanin, Flávio Dino, Nunes Marques, Luiz Fux, Cármen Lúcia e Gilmar Mendes. A participação de Dias Toffoli também não está confirmada. No iní",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a41dddfed619715bd901a62b1abb68206c6ab3d9a089e65e99d10316daa76838": {
+      "firstSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "item": {
+        "kind": "news",
+        "title": "Mega-Sena sorteia prêmio de R$ 95 milhões nesta terça-feira",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/mega-sena-sorteia-premio-de-r-95-milhoes-nesta-terca-feira",
+        "publishedAt": "2026-09-15T10:02:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Mega-Sena sorteia nesta terça-feira (15) prêmio estimado em R$ 95 milhões. As seis dezenas do concurso 3.058 serão sorteadas a partir das 21h (horário de Brasília) no Espaço da Sorte, em São Paulo. As apostas podem ser feitas até às 20h (horário de Brasília) em casas lotéricas credenciadas pela Caixa em todo o país ou pela internet, no site ou aplicativo da Caixa. A aposta simples, com seis dezenas, custa R$ 6. Notícias relacionadas: Mega-Sena acumula para R$ 95 milhões; confira os números sorteados. No último concurso, foram sorteados os números 02 - 04 - 16 - 21 - 48 - 53. e nenhum apostador acertou as seis dezenas .",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Mega-Sena sorteia nesta terça-feira (15) prêmio estimado em R$ 95 milhões. As seis dezenas do concurso 3.058 serão sorteadas a partir das 21h (horário de Brasília) no Espaço da Sorte, em São Paulo. As apostas podem ser feitas até às 20h (horário de Brasília) em casas lotéricas credenciadas pela Caixa em todo o país ou pela internet, no site ou aplicativo da Caixa. A aposta simples, com seis dezenas, custa R$ 6. Notícias relacionadas: Mega-Sena acumula para R$ 95 milhões; confira os números sorteados. No último concurso, foram sorteados os números 02 - 04 - 16 - 21 - 48 - 53. e nenhum apostador acertou as seis dezenas .",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6011,25 +6283,164 @@
           "itemCount": 0
         }
       ]
+    },
+    "34975536790:1": {
+      "at": "2026-09-15T13:32:10.950Z",
+      "collected": 79,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 30,
+          "durationMs": 1274
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 30505
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 21,
+          "durationMs": 3666
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 28,
+          "durationMs": 6616
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 20
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 2624
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 32,
-      "durationMs": 1567,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "itemCount": 30,
+      "durationMs": 1274,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
       "itemCount": 0,
       "durationMs": 30505,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
-      "consecutiveFailures": 2,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
+      "consecutiveFailures": 3,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 1": {
@@ -6037,8 +6448,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-15T07:43:01.000Z",
-      "consecutiveFailures": 2,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
+      "consecutiveFailures": 3,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 2": {
@@ -6046,8 +6457,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-15T07:43:01.000Z",
-      "consecutiveFailures": 2,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
+      "consecutiveFailures": 3,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 3": {
@@ -6055,83 +6466,83 @@
       "status": "error",
       "itemCount": 0,
       "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-15T07:43:01.000Z",
-      "consecutiveFailures": 2,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
+      "consecutiveFailures": 3,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 21,
-      "durationMs": 3172,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "durationMs": 3666,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
       "itemCount": 28,
-      "durationMs": 4250,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "durationMs": 6616,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -6140,7 +6551,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z"
+      "checkedAt": "2026-09-15T13:32:10.950Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -6149,7 +6560,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z"
+      "checkedAt": "2026-09-15T13:32:10.950Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -6158,59 +6569,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z"
+      "checkedAt": "2026-09-15T13:32:10.950Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 20,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 8,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 0,
-      "durationMs": 2586,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "durationMs": 2624,
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "checkedAt": "2026-09-15T13:32:10.950Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
+      "lastSuccessAt": "2026-09-15T13:32:10.950Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
