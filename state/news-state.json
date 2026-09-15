@@ -2437,6 +2437,22 @@
       "category": "ADESÃO",
       "source": "Querido Diário",
       "publishedAt": "2026-09-11T12:00:00-03:00"
+    },
+    "2235430e19f4f8dc358f1195ce3136b788d1e5d4fa90e00942917539cd4135f6": {
+      "sentAt": "2026-09-15T07:43:04.026Z",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOYUh5OEx5RTZkdlB2bi0zOUFCYktNZEQyeVVIUWVtejBqUTBCLVZaNUEtQ2ZyeEVUR2NNbEtuMFN3akx6amU3eV9OcEladnV1Q0h5YmI2VXhJMWJlc0RXbHdONGxfaEotaTNwMFJfVXZDeGtYLW0tQy1RbVhkMGFwWEtoYkVzWnJTbGZYaHJhTmJmcm1DVGJnZUladG81b1BpRDNSMUpRZXhBNFpjQXhJV3prSk9jblZwR0h4VkNEWS1NaGdvc0ZPTmtqeWJjOUkyNmVwbzVPYw?oc=5",
+      "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - alagoasnanet.com.br",
+      "titleFingerprint": "7c3b1759c53f6e05d11d7c5275ebf95ae9c3bd28d69ec1c1c86265e2d01dae43",
+      "contentTokens": [
+        "adesao",
+        "agreste",
+        "alagoasnanet",
+        "autoriza",
+        "inhapi"
+      ],
+      "category": "ADESÃO",
+      "source": "alagoasnanet.com.br",
+      "publishedAt": "2026-09-14T14:07:00.000Z"
     }
   },
   "pending": {},
@@ -2468,15 +2484,15 @@
     },
     "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
+        "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - folha.qconcursos.com",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbzdGVWh1Wk5OMFUzT2VDVF96eU04UmFfMkZQM2dTamhxOWJCOG1xZElKZ1lKRFQ1czktVmQ2bHFpcU5JY1V1a3NxWExDMWxrbTdXd2djOEFQOTJJY0c5SDhoRlpRQ01vNzd0Z2ZTZnRvWnFPWTcwYmFwY3NrZ2U2dW5RYVByeG5sbzdBaTd0QWluX2xVMTNZTWFPUXpKbzB6a0wtTDcxMFhCMkt2Z21aalJMNktKQ3hsVEgtRnp4clBkVnBaYVow?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-11T19:56:51.000Z",
-        "source": "Qconcursos Folha Dirigida",
-        "summary": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
+        "source": "folha.qconcursos.com",
+        "summary": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas folha.qconcursos.com",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2486,7 +2502,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
+          "evidenceText": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas folha.qconcursos.com",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2494,7 +2510,7 @@
     },
     "eaa0de7c1adedd5a789788dbf1741fac53dd8c26808c19af390e55a8969ed71f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná",
@@ -2517,7 +2533,7 @@
     },
     "05cd3fe0259c62e2e6133f049b84329daed5274e1844017a46a66d96a84f7aba": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Rotary entrega consultório oftalmológico ao Consórcio de Saúde de Birigui - Hojemais.com.br",
@@ -2540,7 +2556,7 @@
     },
     "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - ABCD Jornal",
@@ -2563,15 +2579,15 @@
     },
     "a4feb48e8f2142b20e06ff88d669459d9865b7b06fb07a93b918922708ebf272": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - Qconcursos Folha Dirigida",
+        "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - folha.qconcursos.com",
         "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbFlOS0l0d0k5RkJua2dFR1JBZXVWS2RzN2NNUWdDYWVUdjY3NGlxdkhrR00yWC1zM1haUGt3SlJ2RWVyVlprWkdSdEJLd1ZTV3FxOEdHTTNhNjFyc09HXzJyX1p1TkI1TUhLX3NtXzU3aEd6ZHZTZ1RrZ0ZUaUNERThvQkUzYzdtdnhWQTFfa3MwZWoyb1hFR1pET3g0ZUh3TVV6MHR4SW8zTWVJQy1IMkRuWnZLc0xQNTJTZUhPbXN5eTR2b1dRekgxR0pkc2loLVlRaklUOG5RQQ?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-09T21:09:10.000Z",
-        "source": "Qconcursos Folha Dirigida",
-        "summary": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
+        "source": "folha.qconcursos.com",
+        "summary": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva folha.qconcursos.com",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2581,7 +2597,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
+          "evidenceText": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva folha.qconcursos.com",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2589,15 +2605,15 @@
     },
     "1cd8049fa620a5e4db87515be93dbce0b7a18cb41bc472b0cd3c3ed496841451": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas - Qconcursos Folha Dirigida",
+        "title": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas - folha.qconcursos.com",
         "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbmdWTC1jZXp1LVBsR2l3dmxGQTZFTzNqMkFfWWNjcUJXLUtxZE5ZS1BFTG11NmN1akpERzNmMUNGYWFVVGJTMTRwUGU1LTJ2Z2psWWZwTDdTaWNTd21yN3Awc1VKZUNwM1ZIelY2YWtfSDVONTF6ellwTFVVRFBNdktULTFwNnZvQ19qR1p1M3F2WTFFU0toUUlYa05qdjFDT1FDdnpZZ0syOUk0NmFqclJ2Z0F5aFgwRk40UWtrbk40bGZ6TlBPa1laMXBJNEE?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-09T14:20:11.000Z",
-        "source": "Qconcursos Folha Dirigida",
-        "summary": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
+        "source": "folha.qconcursos.com",
+        "summary": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas folha.qconcursos.com",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2607,7 +2623,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
+          "evidenceText": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas folha.qconcursos.com",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2615,7 +2631,7 @@
     },
     "f32488dd494ffaab10d9b9e8f0edac4bf98fe69efeed611e37377fd9a776d644": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "CISAN Central - RO abre processo seletivo com salários de até R$ 7.130,13 - PCI Concursos",
@@ -2663,7 +2679,7 @@
     },
     "0e7aabe32ed068953985e31bb57c64aa08f6bab53384df4012d13ecf16f92a96": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - Câmara Municipal de Curitiba",
@@ -2686,7 +2702,7 @@
     },
     "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
@@ -2709,7 +2725,7 @@
     },
     "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
@@ -2735,22 +2751,22 @@
     },
     "3b4657af15c412acf25a2145f93fa8c32c4769db0607b8ed39a099c38031de5d": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento - topmidianews.com.br",
+        "title": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento - Top Mídia News",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbDVRT3lMOGxsX0YyRXdhbjd2M1RkR0tydFlSdDRhbGdnRXpLNHNPNHVZeGdtV0RqYk9DRW1ncTk4MkFzSVIwZzlaazN5OExBN2ZfRDZ2ZnNKdFk5VlRMdGhySzR2NkJtX1kzZ0ZydmdhMlNENk0zM0I5SFVXTHlmSjZpaGZwOV95bzlNcFJ0TGltMjVuY0NDWC1xRjJZcGlNNTY3R0ZReTMwYVnSAa8BQVVfeXFMTmZPMDhycW02ZlVzYXEybjFDWXZzZG9DUzRUSnMyR2c5MkUwUks1N3ZZMVdCdjI1dmZXY0ZjMGVRRGhCNXF6OW1vTW9zQWY1UWFDYlJjb3FmRFVTdVVkbEhGXzB2YWpLdW85MVc1b2ZXSjFxTll5NmV6M2c5MDZWMXg4alFrVFpGSjVnQXNjSUpnMndmRllTR25ieFJDUk1NYUthTDRra2pJZkdVQlgtRQ?oc=5",
         "sourceUrl": "https://www.topmidianews.com.br",
         "publishedAt": "2026-09-08T19:00:00.000Z",
-        "source": "topmidianews.com.br",
-        "summary": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento topmidianews.com.br",
+        "source": "Top Mídia News",
+        "summary": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento Top Mídia News",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento topmidianews.com.br",
+          "evidenceText": "Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento Top Mídia News",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2758,7 +2774,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -2781,22 +2797,22 @@
     },
     "184db1ccb8d0f9dfedfa5ab0c26b244078321aa1348d0e74a0c033cffbabd237": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Untitled - Câmara Municipal de Várzea - RN",
+        "title": "Untitled - varzea.rn.leg.br",
         "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQQ3pmWHAtQWY0Y2ZEdHh3MFlXU3ZROXo2LUxHa1RZSExJS3V4ZVpTbUtZcGV1Z2lHQjNsN1dnamk5QlJtYkRYR2gzeVYxLWdQTkFsaU5CTFhHRFNSN0JjU2s5WWdYREstN3FBS1UxcUhySUR5VWM5UkNuaEs0WWp5T1c2aUNPM2xDdGdpWGRCOTdNaXprRkJBS2syUklxdFR2cnZ2RTNlZVgzVXpSTlN0T2hyX0hHbEVJSjhZSnhsYTU4VENoRnBLbnktVnRRUDRhNUJCRXhNZU9OeDZHSEtvY0Ixbw?oc=5",
         "sourceUrl": "https://www.varzea.rn.leg.br",
         "publishedAt": "2026-09-10T00:53:55.000Z",
-        "source": "Câmara Municipal de Várzea - RN",
-        "summary": "Untitled Câmara Municipal de Várzea - RN",
+        "source": "varzea.rn.leg.br",
+        "summary": "Untitled varzea.rn.leg.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Untitled Câmara Municipal de Várzea - RN",
+          "evidenceText": "Untitled varzea.rn.leg.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2804,7 +2820,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -2827,22 +2843,22 @@
     },
     "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
+        "title": "Municípios assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
         "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQbHAyRUJRNmEtNnVCYkl3UHpaTUxTSHl0VkNYLWZSTlNjSkRWSkgxLWpVODByU3BJRHhEcENfX2xXaDFOMDNqc1lCc0JsNmFFWnNUV19mbnBjeFBFbk9pbHBjMzh6dGw3bXY0aFhhRlk1TFZRTkxOdTcyV3E5SHVYOXJYM1lIRzBhUjRZV1lKaE1mRUw0YjZFdUl1R01qeXVQbHZ5dUZERm41NGpjTHNLYm9TWDYwbk1B?oc=5",
         "sourceUrl": "https://cnm.org.br",
-        "publishedAt": "2026-09-14T19:49:12.000Z",
+        "publishedAt": "2026-09-14T23:54:47.000Z",
         "source": "Confederação Nacional de Municípios",
-        "summary": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar Confederação Nacional de Municípios",
+        "summary": "Municípios assinam adesão ao Conclima; saiba como participar Confederação Nacional de Municípios",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar Confederação Nacional de Municípios",
+          "evidenceText": "Municípios assinam adesão ao Conclima; saiba como participar Confederação Nacional de Municípios",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2850,22 +2866,22 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xbmp5QnhsUHljTG9sN1pvQmtvWXhXZTg3QXFyZTBFR0JtZUJPV3R5SFdSZ3RSeEUxT3hxWFA5QUNEU1pPcUV3RUtvblFrMWxZWU95Y3lZd2hqVE85Z0Q3WXhCSGlBN1B4M0ZlemE1MUItY0xVNnc?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-12T19:19:20.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2873,22 +2889,22 @@
     },
     "34f2e231099d6bc75ce83425f39ce1e3dc6f6a4aac497482eefddbe33185f2f6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5mUG80SHJBXzRsam8ydUpFb1J2bzBFaklRMFQ2dE54dUJLU1RYY3FNVVRTSFRVY2x3ZXVYem9qLS1Vc1kyUFBOSloxTlVBQUZUQW1ULXRRMjR0NVpnLUs1QlBnaTlIdGRENDA0OTBWRWJUOEF3MkE?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-10T00:34:23.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2896,22 +2912,22 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0wRE1YNUpNMTl3ZUxZUk5VWXpJTzdJWkxiNmk2UHlKak4zR0NMeFEyNTBDY2xrSkRhMGVlTFpzWDN2bkZFWENHMml4VTNCSFJPWkZLOEJSVmlCc1dqY3dqckxKWWhPLWtDOVVqQjI0RUFaT2ZPY3c?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-13T09:08:08.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 24/2019 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 24/2019 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2919,7 +2935,7 @@
     },
     "a01a83c0cedc579416617fd7d41ba9be8d19b2062d37a1584462884a1c06c6aa": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
@@ -2948,7 +2964,7 @@
     },
     "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
@@ -2971,7 +2987,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -2994,7 +3010,7 @@
     },
     "00ecea0e3db92dbffe5198e7dd9f7e1d0285edf7461a98c450ca99e7a54a9b01": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "FNP se reúne com a Secretaria de Educação Básica do MEC para fortalecer agenda municipalista",
@@ -3017,7 +3033,7 @@
     },
     "475bff69568a7ede517b7ef0a3983674bc7673884c88267509c5ec7feebb2365": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "FNP leva debate da Reforma Tributária aos municípios paranaenses",
@@ -3042,7 +3058,7 @@
     },
     "44c3475b4abe5ff9287ba07e7130980831dd6ab42fc2dd1474f7e333df0303a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "FNP reúne municípios para debater drenagem urbana e estratégias de adaptação às mudanças climáticas",
@@ -3065,7 +3081,7 @@
     },
     "34819e26868a429627b6d1613444cef9a15ec93f80850f63ee5ed083ea89487c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Fórum Nacional de mobilidade debate novos modelos de financiamento para o transporte público",
@@ -3090,7 +3106,7 @@
     },
     "02984a86f07be5e4bb0918702dbf843e95008afbe36220670121cfe4dbd2fa9f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais debate impactos cadastrais da Reforma Tributária do Consumo",
@@ -3113,7 +3129,7 @@
     },
     "9c5b9a050ee29886340c0e637f538ec941595e3ce7198ffc71599d5d898a22c6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "FNP lança coalizão de cidades pela segurança no trânsito",
@@ -3136,7 +3152,7 @@
     },
     "a801ef042db512a167f2292278bcbe247597cc0d31131e8ab9c34d964a725b45": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "FNP defende criação do PIX Precatório em audiência no CNJ",
@@ -3159,7 +3175,7 @@
     },
     "6e75cb4ca4e23f84269d89274ff6ca445e9b8c0fa861fd96d6ef64c70a7fabad": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Importância de governança integrada e ações conjuntas para municípios é tema de seminário",
@@ -3416,7 +3432,7 @@
     },
     "52e9debc511af81db435f27a8fb4a039d6b996b929867d06f376a8ec149a1b6a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Triubnal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -3441,7 +3457,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3468,7 +3484,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -3493,7 +3509,7 @@
     },
     "26c2b82664c43ce3db2df36b5095c04dc8d284ba7cbbeb77b43c2042d87725db": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Boas práticas colocam foco em rastreamento de informações, análise de riscos, transparência e reforçam diálogo com a gestão",
@@ -3518,7 +3534,7 @@
     },
     "a62ed95fee447ddbd7ac7ae0371fd72c75770f5dec76a2ccab383d38a47db325": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "TCEMG esclarece regras para contratação por credenciamento",
@@ -3543,7 +3559,7 @@
     },
     "49efe5aea7014a410018a72f9d3c9964cab61a80021365a6087844c3f0f9253e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Identificação de fraudes e aproximação com a sociedade são temas do último dia do Seminário de Controle Interno",
@@ -3568,7 +3584,7 @@
     },
     "73c7c6dd92a4d4ed7e284f1766f4d343372711b6baae2ca033f9854522a3c2ce": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Controladorias Internas têm a missão de estar atentas aos \"rinocerontes cinza\" da gestão pública",
@@ -3593,7 +3609,7 @@
     },
     "9b59e45a6f77220cf1be84a1814d9ac59194150e9c2fab3330b5b231f895a291": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "TCEMG lança carta compromisso para fortalecer controles internos em Minas Gerais",
@@ -3618,7 +3634,7 @@
     },
     "634e48a364faf8610ae5f9bb220a4215fb0cbc7d4a9d0e738b846cf0bc1e4925": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "II Seminário de Controles Internos reúne mais de 750 pessoas em BH",
@@ -3643,7 +3659,7 @@
     },
     "51b6d6659dcd9bf107d30375d0503ce40fd8ccca116a8708337f92fbea038f2c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Livro sobre escavações no antigo DOPS/MG será lançado com experiência imersiva em Belo Horizonte",
@@ -3668,7 +3684,7 @@
     },
     "a96f9c196b1d204fcec8d247f0608672bc652edb25c8d232eba3860b9e761acc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2025 da Assembleia Legislativa de Minas Gerais",
@@ -3693,7 +3709,7 @@
     },
     "e8088838ed6cb79460ef9f73beed4ac05c3e737f1d59b473836c1eeb4948046c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "\"A Terra que Ninguém nos Prometeu\": Fábio de Melo lança novo livro no TCEMG",
@@ -3718,7 +3734,7 @@
     },
     "fea773ad11b3f69b238957fbd5be196fc4c671d38b510becf88b27ea140a19a4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Solenidade do Colar do Mérito marca comemorações dos 91 anos do TCEMG",
@@ -3743,7 +3759,7 @@
     },
     "36244ea3be2747000619345370651c66c33897b719677c8d9c8efe19b2b90ce6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Painel revela avanços e desafios de controladorias do Semiárido Mineiro",
@@ -3768,7 +3784,7 @@
     },
     "fd99b3d7bdcd10c3b072ab2e529d2b543ff7fa4314614f5cb5d7fe1cc3c481f4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "20 anos da Lei Maria da Penha: evento celebra marco histórico de luta, resistência e transformação",
@@ -3793,7 +3809,7 @@
     },
     "a721785b95220768bc645cdc14e6bfefc2a74155926bed36fb9cc5b5b33d1e78": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Edital de rodeio em Cruzília que previa até sorteio de moto emplacada acaba em multa por irregularidades",
@@ -3818,7 +3834,7 @@
     },
     "66cce994bd5884b8c90d6f11d559afc8c96b55840d6086830bef2a43909bc663": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 do Tribunal de Justiça de Minas Gerais",
@@ -3843,7 +3859,7 @@
     },
     "59ae8bf7b518104f423ef92b7064b0ba2e9cdf7752fa9325df3354158ccb2752": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "TCEMG nega recurso e mantém multa a prefeito de Araguari por nepotismo",
@@ -3868,7 +3884,7 @@
     },
     "476a740841787349a3455efc4135c9c6e646adebc928cf685662ce4b873341b4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Novas lideranças, mesmo propósito: encontro celebra mudança de gestão do Jus-Povos",
@@ -3918,7 +3934,7 @@
     },
     "96de484ae2333596f2689e38ddc97895c8b7a62f04be4a2c710e168bcfb1be13": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o papel dos Consórcios Públicos na gestão municipal com Victor Borges",
@@ -3946,7 +3962,7 @@
     },
     "4436fad46607038d8cfe89469b557267d3afa88b2153e8a335cc4fa4c50c70d7": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Nono módulo da Trilha de Aprendizagem sobre ODS está no ar",
@@ -3972,7 +3988,7 @@
     },
     "5644e472796b1bd97f5551ffcb683217a3f08af0d8d0d8e4a0a1588f49dfbf95": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Conexão Saúde debate saúde mental no trabalho com a jornalista Izabella Camargo",
@@ -3998,7 +4014,7 @@
     },
     "9f028ca97770b6f264b0893ebc66f4d033c9fc3602a3b61c9025f20ab8b581dc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada na cidade de Limeira",
@@ -4024,7 +4040,7 @@
     },
     "9f9364e6671983e0a305a64aade3d413bedcedfd4c26332c8868da0cf8473cc0": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "São Carlos recebe caravana do Ciclo de Debates do TCESP",
@@ -4050,7 +4066,7 @@
     },
     "91becf7d33c3807798844cf54349a99202244f4c1a0bdb01075f141c425f31d3": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "TCESP publica Relatório do Terceiro Setor 2025",
@@ -4076,7 +4092,7 @@
     },
     "fd3436bacead59e22f97f1d0571bb3afa9834f7b4694a78cd13c6ce017bd4d7f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza Encontro de Controle Interno e Integridade na Gestão Pública em Araraquara",
@@ -4127,7 +4143,7 @@
     },
     "d3519c9b480649442de03b07c20d251a361bf7bd0599063bcbabf0ff8e2228b1": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília - ABC Agora",
@@ -4150,7 +4166,7 @@
     },
     "1bb8aa8da2195060a12b04ce02b33d5ff9c85ed3e6578bfdce247960c4a0a300": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda - RD – Repórter Diário",
@@ -4831,7 +4847,7 @@
     },
     "7ee6443964d54cb02f01a2147a7c3d3fde98d1e1fa500feb52baf1b46d1c8d2d": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Move Brasil terá R$ 30 bilhões para crédito de veículos",
@@ -4994,7 +5010,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-14T22:30:22.881Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5019,7 +5035,7 @@
     },
     "317c46da86013d797f3ef87df96607ca5126ff1e5808224c53921837863cddf9": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Transferida a 23ª Sessão Ordinária da Segunda Câmara do TCESP desta terça-feira",
@@ -5045,22 +5061,22 @@
     },
     "d4cb0fc1763d3bb3686caeeb1da4c0be201b071408c236e114602a932f5309b2": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
-        "title": "TCE-MS barra licitação de R$ 165,5 milhões do consórcio para Rio Miranda e Apa - midiamax.com.br",
+        "title": "TCE-MS barra licitação de R$ 165,5 milhões do consórcio para Rio Miranda e Apa - Midiamax",
         "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQTRTQUhGaWRBZkdkUW5lX2FWeUhHZEtzNzlDRHpOOU1xTUUyZHR5aFRmU2VUaXVONnlvaXVLQ0pBa1lVaWR0cmhPanVQbjhaVUstZzB0SzVSbHJPT1Z0NjN1Z0h3b2F0ZmFjUy1Ka3hOekVWMFhJbWFYSjE4elZRa1BIWjRKWlVOQThsWjBvX2s3UHNPSW9taHUtZmtNZw?oc=5",
         "sourceUrl": "https://midiamax.com.br",
         "publishedAt": "2026-09-08T13:08:00.000Z",
-        "source": "midiamax.com.br",
-        "summary": "TCE-MS barra licitação de R$ 165,5 milhões do consórcio para Rio Miranda e Apa midiamax.com.br",
+        "source": "Midiamax",
+        "summary": "TCE-MS barra licitação de R$ 165,5 milhões do consórcio para Rio Miranda e Apa Midiamax",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 2,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "TCE-MS barra licitação de R$ 165,5 milhões do consórcio para Rio Miranda e Apa midiamax.com.br",
+          "evidenceText": "TCE-MS barra licitação de R$ 165,5 milhões do consórcio para Rio Miranda e Apa Midiamax",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -5068,7 +5084,7 @@
     },
     "30f0fad5ec941d4d459701b873cbbc55a58d01be94aafbc54b264a08ffa510bd": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Ministério Público cobra retomada de cirurgias em hospital de Peixoto e prevê ação judicial - Só Notícias",
@@ -5114,7 +5130,7 @@
     },
     "34973192e1d068f47bf4265b870f222e6e49c7439113ffc5d1cebc3cf2b9f45a": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Flávio e PL lideram uso indevido de IA, diz observatório",
@@ -5137,7 +5153,7 @@
     },
     "598c7395ae5b8f0856694a62aff3e27f3d945716173967cbbdec5ae10ec90345": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Conselho regulamenta crédito para taxistas e motoristas de aplicativo",
@@ -5160,7 +5176,7 @@
     },
     "3262b4e235c33594b88c6b24b8e21c97fe331697afc95803e0a5cc2994609f9a": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Confira como foi a segunda-feira (14) dos candidatos a presidente",
@@ -5185,7 +5201,7 @@
     },
     "dbe0fd6d6235bfaa6045cb89bed266c8c8b850dfe2fa97929a1e8c42e2f9af56": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Brasil e EUA voltarão a discutir tarifas em encontro do G20",
@@ -5208,7 +5224,7 @@
     },
     "3169cdda77083588609ef18b16ad3ffacbf95ad2448c927d4e679de123d6c667": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Dólar sobe e fecha perto de R$ 5,15 com aversão a risco",
@@ -5231,7 +5247,7 @@
     },
     "a71bdd2f8827d2f06b04c256ef78b437f083eee8be2556a5205a33a2db120745": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
       "item": {
         "kind": "news",
         "title": "Setembro registra recorde de chuva na capital paulista",
@@ -5247,6 +5263,193 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "Os registros oficiais de chuvas na capital paulista já consideram este mês de setembro como o mais chuvoso desde o início dos registros, em 1943, segundo informações do governo do estado. O levantamento, que toma como referência a base de monitoramento do Instituto Nacional de Meteorologia (Inmet) no Mirante de Santana, zona norte da capital, registrou 253,8 milímetros (mm) de precipitação até as 9h desta segunda-feira (14). Notícias relacionadas: Chuvas deixam ao menos oito mortos na Grande São Paulo. Capital paulista já acumula quase 200 mm de chuvas em setembro. A média de chuvas para setembro na região é de 83,3 mm. O recorde anterior era de 243,1 mm, em 1983. Os outros anos considerados excepcionalmente chuvosos foram 1957, com 197,2 mm; 1993, com 206,7 mm; e 2015, com 201,7 mm. Outras regiões do estado também registraram volumes excepcionais de precipitações. Na região de Campinas, entre o dia 1º e 13 de setembro, choveu 257,2 mm. O volume equivale a 3,1 vezes a média mensal de setembro, de 83,7 mm, e também estabelece recorde, na série iniciada em 1961. Na região de Registro, que enfrentou alagamentos severos neste final de semana, foram contabilizados 185,3 mm em setembro até o dia 13. O volume coloca setembro de 2026 como o terceiro mês mais chuvoso da série histórica na região, iniciada em 1961. Em São José dos Campos, o acumulado chegou a 161 mm, equivalente a 2,1 vezes a média mensal, que é de 76 mm. O volume é o terceiro maior registrado para setembro desde o início da série histórica, em 1977. Previsão A previsão para os próximos dias é de enfraquecimento e afastamento gradual do sistema, na terça-feira, mas devem ocorrer chuvas ao longo do dia, com pancadas isolada. As temperaturas caem em todo o estado devido à maior nebulosidade e à entrada de ar mais f",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - alagoasnanet.com.br",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOYUh5OEx5RTZkdlB2bi0zOUFCYktNZEQyeVVIUWVtejBqUTBCLVZaNUEtQ2ZyeEVUR2NNbEtuMFN3akx6amU3eV9OcEladnV1Q0h5YmI2VXhJMWJlc0RXbHdONGxfaEotaTNwMFJfVXZDeGtYLW0tQy1RbVhkMGFwWEtoYkVzWnJTbGZYaHJhTmJmcm1DVGJnZUladG81b1BpRDNSMUpRZXhBNFpjQXhJV3prSk9jblZwR0h4VkNEWS1NaGdvc0ZPTmtqeWJjOUkyNmVwbzVPYw?oc=5",
+        "sourceUrl": "https://www.alagoasnanet.com.br",
+        "publishedAt": "2026-09-14T14:07:00.000Z",
+        "source": "alagoasnanet.com.br",
+        "summary": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+        "classification": {
+          "category": "ADESÃO",
+          "emoji": "🟦",
+          "score": 12,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "e89f6a8f36d52e820688ea464c9b85b2ec230fc9fe914415077c0bed7c18b41f": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio ABC Adia Festival ABC Das Artes Por Previsão De Chuvas E Ventos Fortes - ABC Agora",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5PX1doTlFDZTF1TW54YllhMGdsaWtsek13Uk9aMnV1RERBREtRNXZxRjJWN2N5V1RXNWhfQ1BIYU42MUZnNXV5Sy1NOUxROHRmd2dUNTRuRklrWHdnQ0VPbl9rRnFONTRUX3c?oc=5",
+        "sourceUrl": "https://abcagora.com.br",
+        "publishedAt": "2026-09-10T19:59:26.000Z",
+        "source": "ABC Agora",
+        "summary": "Consórcio ABC Adia Festival ABC Das Artes Por Previsão De Chuvas E Ventos Fortes ABC Agora",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 2,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio ABC Adia Festival ABC Das Artes Por Previsão De Chuvas E Ventos Fortes ABC Agora",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a686b7e342d5c46e52089538533812d2d6a9a707215d7436d0aa3d917a973adf": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - Buriti News",
+        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQLTBXWUVLdVRpWWlPTHU1MEhtSkNRWUFnbzNYUmRwR2ExQVpoNTdLQkFaVndFUGlfY1lyTnpFMzRBN05mSjlLM2cwYjJUajRCSXpRcUwydi1OUDhBRngyVjZxZTNyQVRBeGQ4MGhsRnBVb0cwRk10MlNSaWliVGxsQV9YUFR2TGtjbDZmMUdNLU5KWHpKRkg2eERLaXYzN19jU0g3Nm5MYkFlWEVNYjE4dA?oc=5",
+        "sourceUrl": "https://buritinews.com.br",
+        "publishedAt": "2026-09-11T13:05:07.000Z",
+        "source": "Buriti News",
+        "summary": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões Buriti News",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões Buriti News",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "532facdf6f324b9dbd06ec9d54f5d2db1aa0476f06813d500ca2f9eaae9e35f1": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "Promotorias cobram solução para crise em hospital regional - novidades mt",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOWi1RYU10SVhYUGJ1Zmw1NW0zWUQzaUk4dUQ4UmV0UHZFYXU2NnFvUUtoZEVOX2ZPTUN0QnJHZHQwWTFYY08yTk5ibndHdEpxcmZsaUlaVkc4ME9qVE8zdjlORHRpbHpramZOZk5kbUUwS2YtRnQtUWVOUDg4NGZoNWdJTUdJWW5JSUtIUDlWYUtYUGJoOTQwNURvRnNQbG8?oc=5",
+        "sourceUrl": "https://novidadesmt.com.br",
+        "publishedAt": "2026-09-15T00:17:00.000Z",
+        "source": "novidades mt",
+        "summary": "Promotorias cobram solução para crise em hospital regional novidades mt",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional novidades mt",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbTlqbnRGNVNIYW1pUF9CVEJDdTJCT3RSSTlraWJfSGZrZmdvSlNPR3FzNDloMDFTX2IyS280SDZLZGZnSEVDS2I0bTBLLXlscTZBVWIwLVh6eTNXd2l6VVNRRmpCM3JvRnNYbjJ5cVhibzY5Q3FEOHpFLVFjNWhBQmxRcDJIOGJOZWYxWE1iZV9NUGFQTGJDSHQtVVNYaThoZ0h1OHhUdUZnY0VZM05FNzRUcDhWeUlBQk82X3JMMk5ldFU?oc=5",
+        "sourceUrl": "https://passandoalimpomt.com.br",
+        "publishedAt": "2026-09-14T22:04:58.000Z",
+        "source": "passandoalimpomt.com.br",
+        "summary": "Promotorias cobram solução para crise em hospital regional passandoalimpomt.com.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional passandoalimpomt.com.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "2eb61f0ad52811922ece115b5b22ad21371de58bf7787df37fc6ebade08168e1": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "Chuvas deixam 152 famílias em abrigos no Vale do Ribeira (SP)",
+        "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/chuvas-deixam-152-familias-em-abrigos-no-vale-do-ribeira-sp",
+        "publishedAt": "2026-09-15T00:52:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Ao menos 152 famílias seguem em abrigos temporários na região do Vale do Ribeira, sul do estado de São Paulo, após fortes chuvas atingirem a região entre sexta-feira (11) e domingo (13), causando inundações e transbordamento de rios. Segundo o governo do estado, três bairros de Barra do Turvo estão isolados, afetando 450 pessoas. Em todo o Vale do Ribeira e na região de Itapeva, 152 famílias tiveram que deixar suas casas. Foram montados 19 abrigos provisórios para receber as pessoas afetadas pelas cheias. Nesta segunda-feira (14), equipes da Defesa Civil estadual visitaram cinco comunidades quilombolas em Eldorado. As cidades de Barra do Turvo, Iporanga e Eldorado p ublicaram decretos de situação de emergência , medida que permite solicitar recursos estaduais e federais para ações de resposta e recuperação. Em visita à região, o governador do estado, Tarcísio de Freitas, anunciou reforço operacional, com a destinação de 16 barcos e dois helicópteros Águia, além de ajuda humanitária com alimentos e roupas, auxílio para recuperação de estradas, envio de medicamentos, apoio do Poupatempo para emissão de documentos e assistência aos agricultores locais. A Secretaria Estadual de Saúde encaminhou 159 mil frascos de hipoclorito de sódio para tratamento da água nos domicílios, além de remessas adicionais de soros contra animais peçonhentos e de soro antitetânico. A Secretaria de Estado da Saúde de São Paulo (SES-SP) também monitora a rede assistencial e o estoque de medicamentos de Eldorado, Iporanga, Registro, Barra do Turvo, Sete Barras e Iguape, em articulação com as gestões municipais. Nas últimas 24 horas, foram registrados 38,80 milímetros de chuva acumulada média na bacia do Ribeira de Iguape. Das 29 estações monitoradas, cinco registram extravasamento, oito estão em ale",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Ao menos 152 famílias seguem em abrigos temporários na região do Vale do Ribeira, sul do estado de São Paulo, após fortes chuvas atingirem a região entre sexta-feira (11) e domingo (13), causando inundações e transbordamento de rios. Segundo o governo do estado, três bairros de Barra do Turvo estão isolados, afetando 450 pessoas. Em todo o Vale do Ribeira e na região de Itapeva, 152 famílias tiveram que deixar suas casas. Foram montados 19 abrigos provisórios para receber as pessoas afetadas pelas cheias. Nesta segunda-feira (14), equipes da Defesa Civil estadual visitaram cinco comunidades quilombolas em Eldorado. As cidades de Barra do Turvo, Iporanga e Eldorado p ublicaram decretos de situação de emergência , medida que permite solicitar recursos estaduais e federais para ações de resposta e recuperação. Em visita à região, o governador do estado, Tarcísio de Freitas, anunciou reforço operacional, com a destinação de 16 barcos e dois helicópteros Águia, além de ajuda humanitária com alimentos e roupas, auxílio para recuperação de estradas, envio de medicamentos, apoio do Poupatempo para emissão de documentos e assistência aos agricultores locais. A Secretaria Estadual de Saúde encaminhou 159 mil frascos de hipoclorito de sódio para tratamento da água nos domicílios, além de remessas adicionais de soros contra animais peçonhentos e de soro antitetânico. A Secretaria de Estado da Saúde de São Paulo (SES-SP) também monitora a rede assistencial e o estoque de medicamentos de Eldorado, Iporanga, Registro, Barra do Turvo, Sete Barras e Iguape, em articulação com as gestões municipais. Nas últimas 24 horas, foram registrados 38,80 milímetros de chuva acumulada média na bacia do Ribeira de Iguape. Das 29 estações monitoradas, cinco registram extravasamento, oito estão em ale",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c83a0bffc769cc0d2277f5ca2458fa168b2d52b8221ccad8cd4362dadeae2139": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "Caixa muda horário do sorteio da Lotofácil da Independência",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/caixa-muda-horario-do-sorteio-da-lotofacil-da-independencia",
+        "publishedAt": "2026-09-15T00:48:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Caixa anunciou mudança no horário do sorteio especial da Lotofácil da Independência nesta terça-feira (15). O sorteio será realizado às 21h . Inicialmente, estava previsto para 11h. O prêmio é estimado em R$ 300 milhões. Com isso, as apostas poderão ser feitas até as 18h desta terça-feira (15) nas lotéricas . Pelo aplicativo Loterias Caixa e pelo portal Loterias Caixa, as vendas de cotas de bolão seguirão até as 20h . Para participar, é possível escolher de 15 a 20 números entre os 25 disponíveis. A aposta simples custa R$ 3,50. Caso não haja ganhador na faixa principal, com 15 acertos, o prêmio será distribuído entre os acertadores da faixa seguinte.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Caixa anunciou mudança no horário do sorteio especial da Lotofácil da Independência nesta terça-feira (15). O sorteio será realizado às 21h . Inicialmente, estava previsto para 11h. O prêmio é estimado em R$ 300 milhões. Com isso, as apostas poderão ser feitas até as 18h desta terça-feira (15) nas lotéricas . Pelo aplicativo Loterias Caixa e pelo portal Loterias Caixa, as vendas de cotas de bolão seguirão até as 20h . Para participar, é possível escolher de 15 a 20 números entre os 25 disponíveis. A aposta simples custa R$ 3,50. Caso não haja ganhador na faixa principal, com 15 acertos, o prêmio será distribuído entre os acertadores da faixa seguinte.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d20f5ff2baf99f904cc647f0a558baae6ea6c99272a223883586ba082bca222d": {
+      "firstSeenAt": "2026-09-15T07:43:01.000Z",
+      "lastSeenAt": "2026-09-15T07:43:01.000Z",
+      "item": {
+        "kind": "news",
+        "title": "Cacique Raoni, de 94 anos, recebe cuidados paliativos em Mato Grosso",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/cacique-raoni-de-94-anos-recebe-cuidados-paliativos-em-mato-grosso",
+        "publishedAt": "2026-09-15T00:38:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O cacique Raoni Metuktire, de 94 anos, foi diagnosticado com câncer no aparelho digestório e recebe cuidados paliativos em casa, em Peixoto de Azevedo (MT), onde está acompanhado pela família e por uma equipe médica. A informação foi divulgada nesta segunda-feira (14) por meio de perfil do Instituto Raoni nas redes sociais. O comunicado informa que ao longo de 2026, Raoni passou por internações, exames e agravamentos no quadro de saúde. Em junho, foi transferido em caráter de emergência para São Paulo após apresentar uma grave obstrução intestinal provocada pelo tumor. Em seguida, passou por uma gastroenteroanastomose no Hospital São Paulo, da Universidade Federal de São Paulo (Unifesp), procedimento que criou uma nova passagem para permitir o trânsito dos alimentos e melhorar as condições de alimentação e conforto. Notícias relacionadas: Cacique Raoni tem alta hospitalar. Raoni está consciente, mas apresenta leve piora no quadro renal. Cacique Raoni apresenta boa evolução clínica e vai para enfermaria. Exames realizados posteriormente confirmaram o diagnóstico de adenocarcinoma pouco diferenciado. Segundo o Instituto Raoni, diante da idade, das condições clínicas e dos riscos associados a tratamentos mais agressivos, as equipes médicas indicaram cuidados paliativos. Os cuidados paliativos têm como objetivo controlar a dor e outros sintomas, prevenir complicações e proporcionar qualidade de vida. O acompanhamento inclui assistência médica e de enfermagem, fisioterapia, além de cuidados com alimentação e hidratação. “O cuidado também envolve a dimensão espiritual. Raoni é pajé e segue recebendo a presença e os cuidados de pajés de sua confiança, em uma atenção intercultural que respeita a cultura Mẽbêngôkre, sua língua, suas escolhas e suas referências espirituais.”, diz",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O cacique Raoni Metuktire, de 94 anos, foi diagnosticado com câncer no aparelho digestório e recebe cuidados paliativos em casa, em Peixoto de Azevedo (MT), onde está acompanhado pela família e por uma equipe médica. A informação foi divulgada nesta segunda-feira (14) por meio de perfil do Instituto Raoni nas redes sociais. O comunicado informa que ao longo de 2026, Raoni passou por internações, exames e agravamentos no quadro de saúde. Em junho, foi transferido em caráter de emergência para São Paulo após apresentar uma grave obstrução intestinal provocada pelo tumor. Em seguida, passou por uma gastroenteroanastomose no Hospital São Paulo, da Universidade Federal de São Paulo (Unifesp), procedimento que criou uma nova passagem para permitir o trânsito dos alimentos e melhorar as condições de alimentação e conforto. Notícias relacionadas: Cacique Raoni tem alta hospitalar. Raoni está consciente, mas apresenta leve piora no quadro renal. Cacique Raoni apresenta boa evolução clínica e vai para enfermaria. Exames realizados posteriormente confirmaram o diagnóstico de adenocarcinoma pouco diferenciado. Segundo o Instituto Raoni, diante da idade, das condições clínicas e dos riscos associados a tratamentos mais agressivos, as equipes médicas indicaram cuidados paliativos. Os cuidados paliativos têm como objetivo controlar a dor e outros sintomas, prevenir complicações e proporcionar qualidade de vida. O acompanhamento inclui assistência médica e de enfermagem, fisioterapia, além de cuidados com alimentação e hidratação. “O cuidado também envolve a dimensão espiritual. Raoni é pajé e segue recebendo a presença e os cuidados de pajés de sua confiança, em uma atenção intercultural que respeita a cultura Mẽbêngôkre, sua língua, suas escolhas e suas referências espirituais.”, diz",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -5669,128 +5872,266 @@
           "itemCount": 0
         }
       ]
+    },
+    "34943062308:1": {
+      "at": "2026-09-15T07:43:01.000Z",
+      "collected": 81,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 32,
+          "durationMs": 1567
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 30505
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 21,
+          "durationMs": 3172
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 28,
+          "durationMs": 4250
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 20
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 2586
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 31,
-      "durationMs": 1821,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "itemCount": 32,
+      "durationMs": 1567,
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
       "itemCount": 0,
-      "durationMs": 4961,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
+      "durationMs": 30505,
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
-      "status": "degraded",
+      "status": "ok",
       "itemCount": 21,
-      "durationMs": 2793,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
+      "durationMs": 3172,
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "CISREC": {
       "name": "CISREC",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "CISREC respondeu 403",
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
-      "status": "degraded",
-      "itemCount": 9,
-      "durationMs": 12001,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
+      "status": "ok",
+      "itemCount": 28,
+      "durationMs": 4250,
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -5799,7 +6140,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z"
+      "checkedAt": "2026-09-15T07:43:01.000Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -5808,7 +6149,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z"
+      "checkedAt": "2026-09-15T07:43:01.000Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -5817,60 +6158,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z"
+      "checkedAt": "2026-09-15T07:43:01.000Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
-      "status": "error",
-      "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-15T01:26:50.377Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-14T22:30:22.881Z"
+      "status": "ok",
+      "itemCount": 20,
+      "checkedAt": "2026-09-15T07:43:01.000Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 8,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
-      "itemCount": 1,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "itemCount": 0,
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 0,
-      "durationMs": 3427,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "durationMs": 2586,
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-15T01:26:50.377Z",
+      "checkedAt": "2026-09-15T07:43:01.000Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-15T01:26:50.377Z"
+      "lastSuccessAt": "2026-09-15T07:43:01.000Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
