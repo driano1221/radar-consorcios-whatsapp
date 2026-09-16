@@ -2496,40 +2496,38 @@
   "observations": {
     "79ae36896118fb7467961a4e9f2a1d1f3254a9146098b22fe20bb5ec0faf47a3": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
-        "title": "Notícia - ABC das Artes será realizado em nova data - Consórcio Intermunicipal - Grande ABC",
+        "title": "Notícia - ABC das Artes será realizado em nova data - consorcioabc.sp.gov.br",
         "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNam5wQnZZcDQwNTZfb2dsZHZLMldrR1UzODhVOWtTbnd4MENMbUFXTFR0eVlDNjhhTGJmNFhSS0RtWTRHV0k5TFFDdUpNTV9vQW5ETlJRQ3JnMktMa19jWURfMHFYQ0RVTVRFNmU0cDg5RUd1bmFmS3NlRV9BWm0xUUltaWVGNTI5LTFOZFQxbXRuSk00?oc=5",
         "sourceUrl": "https://www.consorcioabc.sp.gov.br",
         "publishedAt": "2026-09-10T19:13:14.000Z",
-        "source": "Consórcio Intermunicipal - Grande ABC",
-        "summary": "Notícia - ABC das Artes será realizado em nova data Consórcio Intermunicipal - Grande ABC",
+        "source": "consorcioabc.sp.gov.br",
+        "summary": "Notícia - ABC das Artes será realizado em nova data consorcioabc.sp.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
-          "score": 6,
-          "reasons": [
-            "contexto público forte"
-          ],
+          "score": 1,
+          "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Notícia - ABC das Artes será realizado em nova data Consórcio Intermunicipal - Grande ABC",
-          "publicContext": true,
-          "strongPublicContext": true
+          "evidenceText": "Notícia - ABC das Artes será realizado em nova data consorcioabc.sp.gov.br",
+          "publicContext": false,
+          "strongPublicContext": false
         }
       }
     },
     "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
+        "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - folha.qconcursos.com",
         "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbzdGVWh1Wk5OMFUzT2VDVF96eU04UmFfMkZQM2dTamhxOWJCOG1xZElKZ1lKRFQ1czktVmQ2bHFpcU5JY1V1a3NxWExDMWxrbTdXd2djOEFQOTJJY0c5SDhoRlpRQ01vNzd0Z2ZTZnRvWnFPWTcwYmFwY3NrZ2U2dW5RYVByeG5sbzdBaTd0QWluX2xVMTNZTWFPUXpKbzB6a0wtTDcxMFhCMkt2Z21aalJMNktKQ3hsVEgtRnp4clBkVnBaYVow?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-11T19:56:51.000Z",
-        "source": "Qconcursos Folha Dirigida",
-        "summary": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
+        "source": "folha.qconcursos.com",
+        "summary": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas folha.qconcursos.com",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2539,7 +2537,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas Qconcursos Folha Dirigida",
+          "evidenceText": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas folha.qconcursos.com",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2547,7 +2545,7 @@
     },
     "eaa0de7c1adedd5a789788dbf1741fac53dd8c26808c19af390e55a8969ed71f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná",
@@ -2593,7 +2591,7 @@
     },
     "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - ABCD Jornal",
@@ -2616,15 +2614,15 @@
     },
     "a4feb48e8f2142b20e06ff88d669459d9865b7b06fb07a93b918922708ebf272": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - Qconcursos Folha Dirigida",
+        "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - folha.qconcursos.com",
         "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQbFlOS0l0d0k5RkJua2dFR1JBZXVWS2RzN2NNUWdDYWVUdjY3NGlxdkhrR00yWC1zM1haUGt3SlJ2RWVyVlprWkdSdEJLd1ZTV3FxOEdHTTNhNjFyc09HXzJyX1p1TkI1TUhLX3NtXzU3aEd6ZHZTZ1RrZ0ZUaUNERThvQkUzYzdtdnhWQTFfa3MwZWoyb1hFR1pET3g0ZUh3TVV6MHR4SW8zTWVJQy1IMkRuWnZLc0xQNTJTZUhPbXN5eTR2b1dRekgxR0pkc2loLVlRaklUOG5RQQ?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-09-09T21:09:10.000Z",
-        "source": "Qconcursos Folha Dirigida",
-        "summary": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
+        "source": "folha.qconcursos.com",
+        "summary": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva folha.qconcursos.com",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -2634,7 +2632,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva Qconcursos Folha Dirigida",
+          "evidenceText": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva folha.qconcursos.com",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -2693,7 +2691,7 @@
     },
     "8154518dba47dbdaca5bb52772830b7b3662599e101dbcb2f2c677ebff17a77f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - Midiamax",
@@ -2716,7 +2714,7 @@
     },
     "0e7aabe32ed068953985e31bb57c64aa08f6bab53384df4012d13ecf16f92a96": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - Câmara Municipal de Curitiba",
@@ -2739,7 +2737,7 @@
     },
     "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
@@ -2762,7 +2760,7 @@
     },
     "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
@@ -2811,7 +2809,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -2834,7 +2832,7 @@
     },
     "184db1ccb8d0f9dfedfa5ab0c26b244078321aa1348d0e74a0c033cffbabd237": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Untitled - Câmara Municipal de Várzea - RN",
@@ -2857,7 +2855,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -2903,7 +2901,7 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
@@ -2926,7 +2924,7 @@
     },
     "34f2e231099d6bc75ce83425f39ce1e3dc6f6a4aac497482eefddbe33185f2f6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - TCE-PR",
@@ -2949,7 +2947,7 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
@@ -2972,7 +2970,7 @@
     },
     "a01a83c0cedc579416617fd7d41ba9be8d19b2062d37a1584462884a1c06c6aa": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
@@ -3001,7 +2999,7 @@
     },
     "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
@@ -3024,7 +3022,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -3047,7 +3045,7 @@
     },
     "00ecea0e3db92dbffe5198e7dd9f7e1d0285edf7461a98c450ca99e7a54a9b01": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "FNP se reúne com a Secretaria de Educação Básica do MEC para fortalecer agenda municipalista",
@@ -3070,7 +3068,7 @@
     },
     "475bff69568a7ede517b7ef0a3983674bc7673884c88267509c5ec7feebb2365": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "FNP leva debate da Reforma Tributária aos municípios paranaenses",
@@ -3095,7 +3093,7 @@
     },
     "44c3475b4abe5ff9287ba07e7130980831dd6ab42fc2dd1474f7e333df0303a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "FNP reúne municípios para debater drenagem urbana e estratégias de adaptação às mudanças climáticas",
@@ -3118,7 +3116,7 @@
     },
     "34819e26868a429627b6d1613444cef9a15ec93f80850f63ee5ed083ea89487c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Fórum Nacional de mobilidade debate novos modelos de financiamento para o transporte público",
@@ -3143,7 +3141,7 @@
     },
     "02984a86f07be5e4bb0918702dbf843e95008afbe36220670121cfe4dbd2fa9f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais debate impactos cadastrais da Reforma Tributária do Consumo",
@@ -3166,7 +3164,7 @@
     },
     "9c5b9a050ee29886340c0e637f538ec941595e3ce7198ffc71599d5d898a22c6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "FNP lança coalizão de cidades pela segurança no trânsito",
@@ -3469,7 +3467,7 @@
     },
     "52e9debc511af81db435f27a8fb4a039d6b996b929867d06f376a8ec149a1b6a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Triubnal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -3494,7 +3492,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3521,7 +3519,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -3546,7 +3544,7 @@
     },
     "26c2b82664c43ce3db2df36b5095c04dc8d284ba7cbbeb77b43c2042d87725db": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Boas práticas colocam foco em rastreamento de informações, análise de riscos, transparência e reforçam diálogo com a gestão",
@@ -3571,7 +3569,7 @@
     },
     "a62ed95fee447ddbd7ac7ae0371fd72c75770f5dec76a2ccab383d38a47db325": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "TCEMG esclarece regras para contratação por credenciamento",
@@ -3596,7 +3594,7 @@
     },
     "49efe5aea7014a410018a72f9d3c9964cab61a80021365a6087844c3f0f9253e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Identificação de fraudes e aproximação com a sociedade são temas do último dia do Seminário de Controle Interno",
@@ -3621,7 +3619,7 @@
     },
     "73c7c6dd92a4d4ed7e284f1766f4d343372711b6baae2ca033f9854522a3c2ce": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Controladorias Internas têm a missão de estar atentas aos \"rinocerontes cinza\" da gestão pública",
@@ -3646,7 +3644,7 @@
     },
     "9b59e45a6f77220cf1be84a1814d9ac59194150e9c2fab3330b5b231f895a291": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "TCEMG lança carta compromisso para fortalecer controles internos em Minas Gerais",
@@ -3671,7 +3669,7 @@
     },
     "634e48a364faf8610ae5f9bb220a4215fb0cbc7d4a9d0e738b846cf0bc1e4925": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "II Seminário de Controles Internos reúne mais de 750 pessoas em BH",
@@ -3696,7 +3694,7 @@
     },
     "51b6d6659dcd9bf107d30375d0503ce40fd8ccca116a8708337f92fbea038f2c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Livro sobre escavações no antigo DOPS/MG será lançado com experiência imersiva em Belo Horizonte",
@@ -3721,7 +3719,7 @@
     },
     "a96f9c196b1d204fcec8d247f0608672bc652edb25c8d232eba3860b9e761acc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2025 da Assembleia Legislativa de Minas Gerais",
@@ -3771,7 +3769,7 @@
     },
     "fea773ad11b3f69b238957fbd5be196fc4c671d38b510becf88b27ea140a19a4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Solenidade do Colar do Mérito marca comemorações dos 91 anos do TCEMG",
@@ -3796,7 +3794,7 @@
     },
     "36244ea3be2747000619345370651c66c33897b719677c8d9c8efe19b2b90ce6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Painel revela avanços e desafios de controladorias do Semiárido Mineiro",
@@ -3971,7 +3969,7 @@
     },
     "96de484ae2333596f2689e38ddc97895c8b7a62f04be4a2c710e168bcfb1be13": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o papel dos Consórcios Públicos na gestão municipal com Victor Borges",
@@ -3999,7 +3997,7 @@
     },
     "4436fad46607038d8cfe89469b557267d3afa88b2153e8a335cc4fa4c50c70d7": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Nono módulo da Trilha de Aprendizagem sobre ODS está no ar",
@@ -4025,7 +4023,7 @@
     },
     "5644e472796b1bd97f5551ffcb683217a3f08af0d8d0d8e4a0a1588f49dfbf95": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Conexão Saúde debate saúde mental no trabalho com a jornalista Izabella Camargo",
@@ -4051,7 +4049,7 @@
     },
     "9f028ca97770b6f264b0893ebc66f4d033c9fc3602a3b61c9025f20ab8b581dc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada na cidade de Limeira",
@@ -4077,7 +4075,7 @@
     },
     "9f9364e6671983e0a305a64aade3d413bedcedfd4c26332c8868da0cf8473cc0": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "São Carlos recebe caravana do Ciclo de Debates do TCESP",
@@ -4086,7 +4084,7 @@
         "source": "TCE-SP",
         "sourceUrl": "https://www.tce.sp.gov.br/noticias",
         "stateCode": "SP",
-        "summary": "10/09/2026 - SÃO CARLOS - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou mais um encontro do 30º Ciclo de Debates nesta quinta-feira, 10/9. O evento foi realizado no Teatro Municipal Dr. Alderico Vieira Perdigão, em São Carlos, e recebeu cerca de 300 gestores públicos de todo a Região Central para discutirem temas relativos ao controle externo e administração pública. O ponto alto do evento foi a troca de conhecimento e informações apresentadas durante a sessão coordenada pelos Diretores e Técnicos do Tribunal. Durante a explanação houve sessão de tira-dúvidas com questões trazidas pela plateia. Temas como Nova Lei de Licitações, Índice de Efetividade da Gestão Municipal (IEG-M), Fase 4 do Sistema Audesp, repasses ao Terceiro Setor, emendas parlamentares, questões orçamentárias, contratações, entrega de dados, processos e tecnologia da informação entraram na pauta. Além das perguntas dos gestores, cerca de 30 prefeitos da região puderam apresentar suas dúvidas e situações em uma roda de conversa com a Presidente do TCESP, Conselheira Cristiana de Castro Moraes; o Vice-Presidente Conselheiro Dimas Ramalho; a Procuradora do Ministério Público de Contas, Renata Constante Cestari, além de Diretores. O evento foi aberto aos presentes pela Presidente do TCESP. \"Estamos aqui para conversarmos sobre o dia a dia da administração, ouvir vocês que estão na ponta. Queremos que vocês tragam as suas perguntas nesse importante momento de diálogo, de troca, de aprendizado. Assim, podemos conhecer mais a administração, fiscalizar melhor, mas também orientar melhor e contribuir mais\", discursou a Conselheira Cristiana. O Vice-Presidente do TCESP também falou ao público. \"Prefeitos, parabéns pelo enfrentamento que vocês têm. É difícil, mas resistam. Vocês foram escolhidos pa",
+        "summary": "10/09/2026 - SÃO CARLOS - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou mais um encontro do 30º Ciclo de Debates nesta quinta-feira, 10/9. O evento foi realizado no Teatro Municipal Dr. Alderico Vieira Perdigão, em São Carlos, e recebeu cerca de 300 gestores públicos de todo a Região Central para discutirem temas...",
         "scraper": "tce-sp",
         "previewOnly": false,
         "classification": {
@@ -4095,7 +4093,7 @@
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "10/09/2026 - SÃO CARLOS - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou mais um encontro do 30º Ciclo de Debates nesta quinta-feira, 10/9. O evento foi realizado no Teatro Municipal Dr. Alderico Vieira Perdigão, em São Carlos, e recebeu cerca de 300 gestores públicos de todo a Região Central para discutirem temas relativos ao controle externo e administração pública. O ponto alto do evento foi a troca de conhecimento e informações apresentadas durante a sessão coordenada pelos Diretores e Técnicos do Tribunal. Durante a explanação houve sessão de tira-dúvidas com questões trazidas pela plateia. Temas como Nova Lei de Licitações, Índice de Efetividade da Gestão Municipal (IEG-M), Fase 4 do Sistema Audesp, repasses ao Terceiro Setor, emendas parlamentares, questões orçamentárias, contratações, entrega de dados, processos e tecnologia da informação entraram na pauta. Além das perguntas dos gestores, cerca de 30 prefeitos da região puderam apresentar suas dúvidas e situações em uma roda de conversa com a Presidente do TCESP, Conselheira Cristiana de Castro Moraes; o Vice-Presidente Conselheiro Dimas Ramalho; a Procuradora do Ministério Público de Contas, Renata Constante Cestari, além de Diretores. O evento foi aberto aos presentes pela Presidente do TCESP. \"Estamos aqui para conversarmos sobre o dia a dia da administração, ouvir vocês que estão na ponta. Queremos que vocês tragam as suas perguntas nesse importante momento de diálogo, de troca, de aprendizado. Assim, podemos conhecer mais a administração, fiscalizar melhor, mas também orientar melhor e contribuir mais\", discursou a Conselheira Cristiana. O Vice-Presidente do TCESP também falou ao público. \"Prefeitos, parabéns pelo enfrentamento que vocês têm. É difícil, mas resistam. Vocês foram escolhidos pa",
+          "evidenceText": "10/09/2026 - SÃO CARLOS - O Tribunal de Contas do Estado de São Paulo (TCESP) realizou mais um encontro do 30º Ciclo de Debates nesta quinta-feira, 10/9. O evento foi realizado no Teatro Municipal Dr. Alderico Vieira Perdigão, em São Carlos, e recebeu cerca de 300 gestores públicos de todo a Região Central para discutirem temas...",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -4180,7 +4178,7 @@
     },
     "d3519c9b480649442de03b07c20d251a361bf7bd0599063bcbabf0ff8e2228b1": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília - ABC Agora",
@@ -4203,7 +4201,7 @@
     },
     "1bb8aa8da2195060a12b04ce02b33d5ff9c85ed3e6578bfdce247960c4a0a300": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda - RD – Repórter Diário",
@@ -5049,7 +5047,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5074,7 +5072,7 @@
     },
     "317c46da86013d797f3ef87df96607ca5126ff1e5808224c53921837863cddf9": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Transferida a 23ª Sessão Ordinária da Segunda Câmara do TCESP desta terça-feira",
@@ -5309,15 +5307,15 @@
     },
     "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
-        "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - alagoasnanet.com.br",
+        "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - Alagoas na Net",
         "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOYUh5OEx5RTZkdlB2bi0zOUFCYktNZEQyeVVIUWVtejBqUTBCLVZaNUEtQ2ZyeEVUR2NNbEtuMFN3akx6amU3eV9OcEladnV1Q0h5YmI2VXhJMWJlc0RXbHdONGxfaEotaTNwMFJfVXZDeGtYLW0tQy1RbVhkMGFwWEtoYkVzWnJTbGZYaHJhTmJmcm1DVGJnZUladG81b1BpRDNSMUpRZXhBNFpjQXhJV3prSk9jblZwR0h4VkNEWS1NaGdvc0ZPTmtqeWJjOUkyNmVwbzVPYw?oc=5",
         "sourceUrl": "https://www.alagoasnanet.com.br",
         "publishedAt": "2026-09-14T14:07:00.000Z",
-        "source": "alagoasnanet.com.br",
-        "summary": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+        "source": "Alagoas na Net",
+        "summary": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste Alagoas na Net",
         "classification": {
           "category": "ADESÃO",
           "emoji": "🟦",
@@ -5327,7 +5325,7 @@
             "ADESÃO"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+          "evidenceText": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste Alagoas na Net",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -5404,7 +5402,7 @@
     },
     "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
@@ -5751,32 +5749,30 @@
     },
     "3f5b7b86c6f8909d0733cf127e65b91b8450a4bd255004996b0470fa96d8739e": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-15T18:10:58.887Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio ABC participa de Encontro Cidades Verdes Resili... - Consórcio Intermunicipal - Grande ABC",
+        "title": "Consórcio ABC participa de Encontro Cidades Verdes Resili... - consorcioabc.sp.gov.br",
         "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9vTGJhdkJQV0pLT0IxTzVQYkpjMWxCSV9xRDNnUGdTZE90Z2hWTjNhaks4M1Y5MEkwT0N1NnlaeFZLbl8welcxb3JXY1RPWFR6TTFIRjVn?oc=5",
         "sourceUrl": "https://consorcioabc.sp.gov.br",
         "publishedAt": "2026-09-14T18:24:12.000Z",
-        "source": "Consórcio Intermunicipal - Grande ABC",
-        "summary": "Consórcio ABC participa de Encontro Cidades Verdes Resili... Consórcio Intermunicipal - Grande ABC",
+        "source": "consorcioabc.sp.gov.br",
+        "summary": "Consórcio ABC participa de Encontro Cidades Verdes Resili... consorcioabc.sp.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
-          "score": 6,
-          "reasons": [
-            "contexto público forte"
-          ],
+          "score": 3,
+          "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio ABC participa de Encontro Cidades Verdes Resili... Consórcio Intermunicipal - Grande ABC",
-          "publicContext": true,
-          "strongPublicContext": true
+          "evidenceText": "Consórcio ABC participa de Encontro Cidades Verdes Resili... consorcioabc.sp.gov.br",
+          "publicContext": false,
+          "strongPublicContext": false
         }
       }
     },
     "abaee63293712160492481bad2162710c9c1b133a8c3ed5c9b8a21fc901cde03": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - NG NOTÍCIAS",
@@ -5822,7 +5818,7 @@
     },
     "97888cdbc4139f52de557a7c5321f8f8ff2082fcba1231438afaae3f27988d4c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital - Ponto na Curva",
@@ -5845,7 +5841,7 @@
     },
     "57cbc5c4169c8017e9c5c3f545acfe2f06058d8effea13d29d4e1c70a0d76c0c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Acompanhamento de Matéria - sapl.patobranco.pr.leg.br",
@@ -5868,7 +5864,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -5891,7 +5887,7 @@
     },
     "14a939bc0c54983f74323beb211d40d0f034733f9633d9214d826d8f66fa273d": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Mutirão Brasil Cidades Amazônicas fortalece ação climática local em seis municípios",
@@ -6169,7 +6165,7 @@
     },
     "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Concurso CONSUD PR: inscrições encerradas para 37 vagas - Estratégia Concursos",
@@ -6192,7 +6188,7 @@
     },
     "473cca93ce84b67612103b5ffbf695d672e6c410b84700dcc2ed77caca99d2c0": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais - ABC Agora",
@@ -6215,7 +6211,7 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Brava Energia vai operar Papa-Terra integralmente - agenciainfra.com",
@@ -6491,7 +6487,7 @@
     },
     "bd14fb2413e3f263be8feff4397689363acc15b7529d2e4e0b40bb290487ff80": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "Educação em primeiro lugar: TCEMG participa do 12º Fórum Mineiro de Educação",
@@ -6516,7 +6512,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T11:29:35.597Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -6754,7 +6750,7 @@
     },
     "29164a2c6b237c262f0931b5900806b8270872add136622f8d7d721b7f33d983": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
       "item": {
         "kind": "news",
         "title": "ÓRGÃO OFICIAL - prefeitura de vargem alta",
@@ -7169,6 +7165,370 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "O Conselho de Sentença do 3º Tribunal do Júri de Niterói condenou, nesta terça-feira (15), Uilian Anderson Silva a 42 anos de prisão, em regime fechado, pelo feminicídio de sua companheira, Elizabeth de Lima Mendonça. O crime ocorreu em janeiro de 2025, dentro da casa do casal, no bairro de Icaraí, em Niterói, região metropolitana do Rio. Os jurados concluíram que Elizabeth foi morta por razões relacionadas à sua condição de mulher . Notícias relacionadas: Irmã de PM suspeito de feminicídio é investigada e está foragida. Policial militar é preso suspeito de feminicídio em Embu das Artes . Justiça do Rio condena músico a 28 anos de prisão por feminicídio. De acordo com a sentença, a vítima, de 46 anos, foi atacada ao manifestar a intenção de se separar após quase 20 anos de convivência. A Justiça considerou que o réu atacou a vítima com golpes de faca no pescoço e a deixou agonizando, sem prestar socorro. O laudo apontou lesões graves, incluindo ferimentos compatíveis com degolamento. Os jurados também reconheceram o emprego de meio cruel e de recurso que dificultou a defesa da vítima. Na sentença, a juíza Nearis dos Santos Carvalho Arce, que presidiu a sessão, destacou a brutalidade do crime e considerou que o ataque ocorreu quando a vítima estava desarmada e sem possibilidade de receber ajuda. Além da pena privativa de liberdade, a sentença condenou o réu ao pagamento de R$ 10 mil de indenização por danos morais à família da vítima.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "3b3368b3fd178566961ea830b393ed9c0c7326c30b3a8ff85845aa57e4cafdce": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - AtualMT",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5",
+        "sourceUrl": "https://atualmt.com.br",
+        "publishedAt": "2026-09-16T11:43:37.000Z",
+        "source": "AtualMT",
+        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
+        "classification": {
+          "category": "CRISE",
+          "emoji": "🟥",
+          "score": 19,
+          "reasons": [
+            "CRISE",
+            "SAÍDA"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
+          "publicContext": true,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "f788eb894e7a595db76d82ec096730de19085f49a34810bd7a04eff642e86485": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Prazo para recursos do Enamed 2026 e Revalida 2026/2 vai até quinta",
+        "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-09/prazo-para-recursos-do-enamed-2026-e-revalida-20262-vai-ate-quinta",
+        "publishedAt": "2026-09-16T16:08:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "As versões preliminares do gabarito e do caderno de provas objetivas do Exame Nacional de Avaliação da Formação Médica (Enamed) de 2026 e também da primeira etapa da segunda edição do Exame Nacional de Revalidação de Diplomas Médicos Expedidos por Instituição de Educação Superior Estrangeira (Revalida) já stão disponíveis . Os candidatos podem consultar os documentos nas páginas eletrônicas dos respectivos exames nacionais coordenados pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Notícias relacionadas: Enamed 2026: prova que avalia formação médica será neste domingo. STJ restabelece sanções a cursos de medicina com nota baixa no Enamed. >>> Clique aqui para acessar os gabaritos do Enamed e aqui para os resultados do Revalida 2026/2 . As provas de avaliação da formação médica foram aplicadas no último domingo (14), em todas as unidades da federação. Recursos Os recursos administrativos contra as versões preliminares de gabarito oficial da prova objetiva podem ser apresentados até as 23h59 desta quinta-feira (17), no horário de Brasília. A data inicial, que era 22 de setembro, foi retificada para esta quinta-feira. Para o procedimento, o participante deverá acessar o Sistema Revalida . Os recursos serão analisados, e os resultados serão disponibilizados pelo Inep, acompanhados das razões de deferimento ou indeferimento apresentadas pela Banca de Análise de Recursos do Gabarito Preliminar . Em caso de anulação de item do gabarito oficial preliminar da prova objetiva, a pontuação correspondente será atribuída a todos os participantes, inclusive aos que não tenham interposto recurso. Conforme o edital do Enamed desta edição, ainda serão publicadas as versões definitivas do gabarito oficial da prova objetiva e o resultado definitivo da pr",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "As versões preliminares do gabarito e do caderno de provas objetivas do Exame Nacional de Avaliação da Formação Médica (Enamed) de 2026 e também da primeira etapa da segunda edição do Exame Nacional de Revalidação de Diplomas Médicos Expedidos por Instituição de Educação Superior Estrangeira (Revalida) já stão disponíveis . Os candidatos podem consultar os documentos nas páginas eletrônicas dos respectivos exames nacionais coordenados pelo Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Notícias relacionadas: Enamed 2026: prova que avalia formação médica será neste domingo. STJ restabelece sanções a cursos de medicina com nota baixa no Enamed. >>> Clique aqui para acessar os gabaritos do Enamed e aqui para os resultados do Revalida 2026/2 . As provas de avaliação da formação médica foram aplicadas no último domingo (14), em todas as unidades da federação. Recursos Os recursos administrativos contra as versões preliminares de gabarito oficial da prova objetiva podem ser apresentados até as 23h59 desta quinta-feira (17), no horário de Brasília. A data inicial, que era 22 de setembro, foi retificada para esta quinta-feira. Para o procedimento, o participante deverá acessar o Sistema Revalida . Os recursos serão analisados, e os resultados serão disponibilizados pelo Inep, acompanhados das razões de deferimento ou indeferimento apresentadas pela Banca de Análise de Recursos do Gabarito Preliminar . Em caso de anulação de item do gabarito oficial preliminar da prova objetiva, a pontuação correspondente será atribuída a todos os participantes, inclusive aos que não tenham interposto recurso. Conforme o edital do Enamed desta edição, ainda serão publicadas as versões definitivas do gabarito oficial da prova objetiva e o resultado definitivo da pr",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "f36d790f3e0e1358d5a7d0fe51726eb513ae6625384a24a15a92f006be5bf573": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Brics: declaração final reforça defesa de reforma da governança global",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/brics-declaracao-final-reforca-defesa-de-reforma-da-governanca-global",
+        "publishedAt": "2026-09-16T16:01:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Os líderes do Brics divulgaram a declaração final da 18ª Cúpula do grupo, em Nova Délhi, na Índia. O documento reúne os consensos alcançados pelos integrantes do bloco em temas como governança global, comércio, desenvolvimento sustentável, clima, tecnologia, segurança internacional e cooperação entre países em desenvolvimento. O Brics é formado por Brasil, Rússia, Índia, China, África do Sul, Arábia Saudita, Egito, Emirados Árabes Unidos, Etiópia, Indonésia e Irã. Os 11 países representam 39% da economia mundial, 48,5% da população do planeta e 23% do comércio global. Notícias relacionadas: Xi Jiping defende laços econômicos maiores entre países do Brics. Na cúpula do Brics na Índia, Guterres diz que mundo \"precisa de paz\". A declaração tem caráter político e orienta a atuação conjunta dos países em organismos multilaterais, sinalizando prioridades, consensos e reivindicações que tendem a ser levados a fóruns como a Organização das Nações Unidas (ONU), o G20, a Organização Mundial do Comércio (OMC) e outras instituições multilaterais. Em um cenário marcado por disputas geopolíticas, guerras, tensões comerciais e debates sobre reforma das instituições internacionais, o texto reforça a defesa do multilateralismo e de uma governança global mais representativa. Banco do Brics Os líderes ressaltaram o papel do Novo Banco de Desenvolvimento (NDB), conhecido como Banco do Brics , como instrumento estratégico para financiar projetos de infraestrutura e desenvolvimento sustentável. O documento incentiva a instituição a ampliar sua capacidade de mobilizar recursos, expandir operações em moedas locais, diversificar fontes de financiamento e apoiar iniciativas voltadas à redução das desigualdades e à integração econômica. A declaração manifesta, ainda, apoio à ampliação do número d",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Os líderes do Brics divulgaram a declaração final da 18ª Cúpula do grupo, em Nova Délhi, na Índia. O documento reúne os consensos alcançados pelos integrantes do bloco em temas como governança global, comércio, desenvolvimento sustentável, clima, tecnologia, segurança internacional e cooperação entre países em desenvolvimento. O Brics é formado por Brasil, Rússia, Índia, China, África do Sul, Arábia Saudita, Egito, Emirados Árabes Unidos, Etiópia, Indonésia e Irã. Os 11 países representam 39% da economia mundial, 48,5% da população do planeta e 23% do comércio global. Notícias relacionadas: Xi Jiping defende laços econômicos maiores entre países do Brics. Na cúpula do Brics na Índia, Guterres diz que mundo \"precisa de paz\". A declaração tem caráter político e orienta a atuação conjunta dos países em organismos multilaterais, sinalizando prioridades, consensos e reivindicações que tendem a ser levados a fóruns como a Organização das Nações Unidas (ONU), o G20, a Organização Mundial do Comércio (OMC) e outras instituições multilaterais. Em um cenário marcado por disputas geopolíticas, guerras, tensões comerciais e debates sobre reforma das instituições internacionais, o texto reforça a defesa do multilateralismo e de uma governança global mais representativa. Banco do Brics Os líderes ressaltaram o papel do Novo Banco de Desenvolvimento (NDB), conhecido como Banco do Brics , como instrumento estratégico para financiar projetos de infraestrutura e desenvolvimento sustentável. O documento incentiva a instituição a ampliar sua capacidade de mobilizar recursos, expandir operações em moedas locais, diversificar fontes de financiamento e apoiar iniciativas voltadas à redução das desigualdades e à integração econômica. A declaração manifesta, ainda, apoio à ampliação do número d",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "420a625f97aa3d72d28769ed297b12272d6524b879a3fe98257e432f1adfaf55": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Conselho Superior do MPF analisará mensagens de Vorcaro sobre Gonet",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/conselho-superior-do-mpf-analisara-mensagens-de-vorcaro-sobre-gonet",
+        "publishedAt": "2026-09-16T15:22:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Conselho Superior do Ministério Público Federal (MPF) marcou para 25 de setembro debate sobre o procedimento interno acerca das menções ao procurador-geral da República, Paulo Gonet, em mensagens do ex-banqueiro Daniel Vorcaro, dono do antigo Banco Master . O caso é relatado pelo subprocurador-geral da República, Francisco de Assis Sanseverino, um dos conselheiros, e foi aberto após representação de deputados do partido Novo. Eles pediram para Gonet ser afastado das investigações do caso Master. Notícias relacionadas: Paulo Gonet nega proximidade com Daniel Vorcaro. Fachin dá 5 dias para Mendonça e Gonet responderem acusação de Moraes. O PGR não responde a um processo administrativo, passível de punições. O conselho deverá se ater a discutir se a menção a Gonet em relatório da PF compromete sua imparcialidade no caso Master. Em defesa enviada na terça-feira (15), Gonet disse que pode afirmar, em termos bastante diretos e simples, que não tem \"com o Sr. Daniel Vorcaro relação de amizade alguma, nem muito menos interesse pessoal nos processos em que ele conste como parte ou investigado”. Durante julgamento no Supremo Tribunal Federal (STF), também na terça, Gonet disse ter se encontrado com Vorcaro apenas uma vez , de forma “brevíssima e banal”, em decorrência da participação de um painel jurídico em Londres que tinha o Master entre os patrocinadores. Na defesa ao Conselho Superior, o PGR disse que não tinha conhecimento prévio de quem eram os patrocinadores do evento. Gonet enfatiza ainda não ter sido encontrado no telefone de Vorcaro nenhum contato relativo a ele. Os investigadores da Operação Compliance Zero , que apura a corrupção de agentes públicos e fraudes financeiras bilionárias supostamente praticadas por Vorcaro, apontam para menções a Gonet em conversas do e",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Conselho Superior do Ministério Público Federal (MPF) marcou para 25 de setembro debate sobre o procedimento interno acerca das menções ao procurador-geral da República, Paulo Gonet, em mensagens do ex-banqueiro Daniel Vorcaro, dono do antigo Banco Master . O caso é relatado pelo subprocurador-geral da República, Francisco de Assis Sanseverino, um dos conselheiros, e foi aberto após representação de deputados do partido Novo. Eles pediram para Gonet ser afastado das investigações do caso Master. Notícias relacionadas: Paulo Gonet nega proximidade com Daniel Vorcaro. Fachin dá 5 dias para Mendonça e Gonet responderem acusação de Moraes. O PGR não responde a um processo administrativo, passível de punições. O conselho deverá se ater a discutir se a menção a Gonet em relatório da PF compromete sua imparcialidade no caso Master. Em defesa enviada na terça-feira (15), Gonet disse que pode afirmar, em termos bastante diretos e simples, que não tem \"com o Sr. Daniel Vorcaro relação de amizade alguma, nem muito menos interesse pessoal nos processos em que ele conste como parte ou investigado”. Durante julgamento no Supremo Tribunal Federal (STF), também na terça, Gonet disse ter se encontrado com Vorcaro apenas uma vez , de forma “brevíssima e banal”, em decorrência da participação de um painel jurídico em Londres que tinha o Master entre os patrocinadores. Na defesa ao Conselho Superior, o PGR disse que não tinha conhecimento prévio de quem eram os patrocinadores do evento. Gonet enfatiza ainda não ter sido encontrado no telefone de Vorcaro nenhum contato relativo a ele. Os investigadores da Operação Compliance Zero , que apura a corrupção de agentes públicos e fraudes financeiras bilionárias supostamente praticadas por Vorcaro, apontam para menções a Gonet em conversas do e",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "82145178e1eefed2cc5c333fe92f13e05ec89b57db39011471acbe6b90eeada1": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "CBF anuncia amistosos da seleção feminina em palcos da Copa do Mundo",
+        "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-09/cbf-anuncia-amistosos-da-selecao-feminina-em-palcos-da-copa-do-mundo",
+        "publishedAt": "2026-09-16T15:21:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Confederação Brasileira de Futebol (CBF) anunciou, nesta quarta-feira (16), os adversários dos quatro últimos amistosos da seleção feminina em 2026. Em outubro, serão duas partidas diante da Argentina, ambos no Brasil e em palcos da Copa do Mundo do ano que vem. Entre o fim de novembro e o começo de dezembro, são mais dois compromissos no Japão, contra as donas da casa. Os duelos com as argentinas estão marcados para 10 e 13 de outubro. O primeiro será no Beira-Rio, em Porto Alegre, e o segundo na Arena Pernambuco, em São Lourenço da Mata (PE), região metropolitana de Recife. Notícias relacionadas: CBF anuncia amistosos da seleção brasileira contra Japão e Singapura. CBF e clubes aprovam novas regras para competições nacionais. CBF reforça paralisação das competições durante Copa Feminina em 2027. É a primeira vez que o Beira-Rio receberá um jogo da seleção feminina principal. Já a Arena Pernambuco foi casa da vitória brasileira por 4 a 0 sobre a Jamaica, em junho de 2024, para quase 34 mil pessoas. Foi neste amistoso que Marta ​anotou o golaço vencedor do prêmio que leva o nome da própria craque, concedido pela Federação Internacional de Futebol (Fifa). As partidas em território japonês serão em 29 de novembro e 5 de dezembro, nas cidades de Hiroshima (Edion Peace Wing) e Okayama (JFE Harenokuni Stadium), respectivamente. Ainda não há definição dos horários. \"A Argentina teve um grande desempenho nas eliminatórias e na Copa América. É uma seleção que evoluiu muito. E a seleção japonesa é uma das favoritas para a Copa e sempre um confronto muito difícil pela qualidade das suas jogadoras e sua velocidade de jogo”, disse o técnico Arthur Elias, em depoimento ao site da CBF. A convocação para os jogos contra a Argentina será no próximo dia 22 de setembro, às 15h (horário",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A Confederação Brasileira de Futebol (CBF) anunciou, nesta quarta-feira (16), os adversários dos quatro últimos amistosos da seleção feminina em 2026. Em outubro, serão duas partidas diante da Argentina, ambos no Brasil e em palcos da Copa do Mundo do ano que vem. Entre o fim de novembro e o começo de dezembro, são mais dois compromissos no Japão, contra as donas da casa. Os duelos com as argentinas estão marcados para 10 e 13 de outubro. O primeiro será no Beira-Rio, em Porto Alegre, e o segundo na Arena Pernambuco, em São Lourenço da Mata (PE), região metropolitana de Recife. Notícias relacionadas: CBF anuncia amistosos da seleção brasileira contra Japão e Singapura. CBF e clubes aprovam novas regras para competições nacionais. CBF reforça paralisação das competições durante Copa Feminina em 2027. É a primeira vez que o Beira-Rio receberá um jogo da seleção feminina principal. Já a Arena Pernambuco foi casa da vitória brasileira por 4 a 0 sobre a Jamaica, em junho de 2024, para quase 34 mil pessoas. Foi neste amistoso que Marta ​anotou o golaço vencedor do prêmio que leva o nome da própria craque, concedido pela Federação Internacional de Futebol (Fifa). As partidas em território japonês serão em 29 de novembro e 5 de dezembro, nas cidades de Hiroshima (Edion Peace Wing) e Okayama (JFE Harenokuni Stadium), respectivamente. Ainda não há definição dos horários. \"A Argentina teve um grande desempenho nas eliminatórias e na Copa América. É uma seleção que evoluiu muito. E a seleção japonesa é uma das favoritas para a Copa e sempre um confronto muito difícil pela qualidade das suas jogadoras e sua velocidade de jogo”, disse o técnico Arthur Elias, em depoimento ao site da CBF. A convocação para os jogos contra a Argentina será no próximo dia 22 de setembro, às 15h (horário",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "211a8a731422cedd05ea3498897475cbf23bbf62a64e244b634380c9903bf207": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Megaoperação contra crime organizado bloqueia mais de R$ 508 milhões",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/megaoperacao-contra-o-crime-organizado-bloqueia-mais-de-r-508-milhoes",
+        "publishedAt": "2026-09-16T14:41:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Força Integrada de Combate ao Crime Organizado (Ficco) deflagrou, nesta quarta-feira (16), dezenas de ações simultâneas em 19 estados brasileiros para prender mais de uma centena de suspeitos de terem vínculos com facções criminosas. Desde as primeiras horas da manhã, os agentes cumprem 106 mandados de prisão e 173 de busca e apreensão de provas. Notícias relacionadas: Polícia faz operação contra venda de medicamentos abortivos no Rio. PF faz operação contra fraudes no registro de armas de colecionadores. Polícia Civil recupera oito obras de Matisse roubadas em São Paulo. As ordens judiciais incluem medidas cautelares patrimoniais, como o bloqueio e o sequestro de mais de R$ 508 milhões em bens de integrantes de organizações criminosas. Segundo o Ministério da Justiça e Segurança Pública, a ação mobilizou 20 bases da Ficco, em 19 unidades federativas, contra supostos esquemas de tráfico de drogas e de armas, lavagem de dinheiro e outros delitos relacionados ao crime organizado. Em cada estado, a operação recebeu um nome diferente, ainda que, em conjunto, integrem a quarta fase da chamada Operação Força Integrada. Tocantins Em Tocantins, onde a 2ª Vara Federal determinou o bloqueio do maior volume de recursos financeiros sob suspeita (até R$ 412,5 milhões). A chamada Operação Rota Araguaia 2 mirou o suposto núcleo responsável pelo suporte logístico e financeiro de uma organização criminosa especializada no tráfico internacional de drogas e na lavagem de capitais. O objetivo da medida, segundo a Polícia Federal (PF) , é descapitalizar a suposta estrutura criminosa e assegurar a reparação de eventuais danos causados por atividades ilícitas. Mato Grosso do Sul O segundo maior volume de bens e valores sequestrados judicialmente, R$ 75 milhões, foi registrado em Mato Grosso",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Força Integrada de Combate ao Crime Organizado (Ficco) deflagrou, nesta quarta-feira (16), dezenas de ações simultâneas em 19 estados brasileiros para prender mais de uma centena de suspeitos de terem vínculos com facções criminosas. Desde as primeiras horas da manhã, os agentes cumprem 106 mandados de prisão e 173 de busca e apreensão de provas. Notícias relacionadas: Polícia faz operação contra venda de medicamentos abortivos no Rio. PF faz operação contra fraudes no registro de armas de colecionadores. Polícia Civil recupera oito obras de Matisse roubadas em São Paulo. As ordens judiciais incluem medidas cautelares patrimoniais, como o bloqueio e o sequestro de mais de R$ 508 milhões em bens de integrantes de organizações criminosas. Segundo o Ministério da Justiça e Segurança Pública, a ação mobilizou 20 bases da Ficco, em 19 unidades federativas, contra supostos esquemas de tráfico de drogas e de armas, lavagem de dinheiro e outros delitos relacionados ao crime organizado. Em cada estado, a operação recebeu um nome diferente, ainda que, em conjunto, integrem a quarta fase da chamada Operação Força Integrada. Tocantins Em Tocantins, onde a 2ª Vara Federal determinou o bloqueio do maior volume de recursos financeiros sob suspeita (até R$ 412,5 milhões). A chamada Operação Rota Araguaia 2 mirou o suposto núcleo responsável pelo suporte logístico e financeiro de uma organização criminosa especializada no tráfico internacional de drogas e na lavagem de capitais. O objetivo da medida, segundo a Polícia Federal (PF) , é descapitalizar a suposta estrutura criminosa e assegurar a reparação de eventuais danos causados por atividades ilícitas. Mato Grosso do Sul O segundo maior volume de bens e valores sequestrados judicialmente, R$ 75 milhões, foi registrado em Mato Grosso",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "11ce5f39e75c1ed7843a2f260e25c9e5bc52daefe2ae441c27ddc78b9c33f677": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Anvisa determina recolhimento do produto NotShake Protein",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/anvisa-determina-recolhimento-do-produto-notshake-protein",
+        "publishedAt": "2026-09-16T14:27:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Agência Nacional de Vigilância Sanitária (Anvisa) determinou o recolhimento do produto NotShake Protein, fabricado pela NotCo Brasil Distribuição e Comércio de Produtos Alimentícios Ltda. A resolução foi publicada nesta quarta-feira (16) no Diário Oficial da União . Em nota, a Anvisa informou que a medida atinge todos os lotes dos seguintes produtos: Notícias relacionadas: Anvisa proíbe caneta emagrecedora vinda do Paraguai. Anvisa alerta risco de deficiência de B6 com uso de carbidopa/levodopa. Anvisa aprova novas indicações para remédio que trata câncer de mama. - NotShake Protein Morango com Tâmara - NotShake Protein Baunilha com Coco - NotShake Protein Chocolate - NotShake Protein Café Caramelo “Os produtos não são notificados junto à Anvisa como suplementos alimentares. Além disso, há insuficiência dos estudos apresentados para demonstrar a manutenção das características dos produtos durante todo o prazo de validade e a inadequação da alegação zero lactose”, destacou a agência. Além do recolhimento, a Anvisa proibiu ainda a fabricação, a venda, a distribuição, a propaganda e o uso dos produtos . A reportagem da Agência Brasil entrou em contato com a NotCo Brasil Distribuição e Comércio de Produtos Alimentícios Ltda. e aguarda posicionamento. Aloe vera A Anvisa também determinou o recolhimento do produto Aloe Care – Cranberry Flavored Aloe Vera Gel, da Biodis Industrial Ltda. Segundo a agência, o produto não poder ser fabricado, distribuído, comercializado, divulgado nem utilizado. A resolução consta no Diário Oficial da União . “O item é vendido com produto que contém Aloe vera para consumo oral sem prévia avaliação de segurança e autorização de uso pela Anvisa. A medida também aponta outras irregularidades: rotulagem com informações obrigatórias do produto em lí",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Agência Nacional de Vigilância Sanitária (Anvisa) determinou o recolhimento do produto NotShake Protein, fabricado pela NotCo Brasil Distribuição e Comércio de Produtos Alimentícios Ltda. A resolução foi publicada nesta quarta-feira (16) no Diário Oficial da União . Em nota, a Anvisa informou que a medida atinge todos os lotes dos seguintes produtos: Notícias relacionadas: Anvisa proíbe caneta emagrecedora vinda do Paraguai. Anvisa alerta risco de deficiência de B6 com uso de carbidopa/levodopa. Anvisa aprova novas indicações para remédio que trata câncer de mama. - NotShake Protein Morango com Tâmara - NotShake Protein Baunilha com Coco - NotShake Protein Chocolate - NotShake Protein Café Caramelo “Os produtos não são notificados junto à Anvisa como suplementos alimentares. Além disso, há insuficiência dos estudos apresentados para demonstrar a manutenção das características dos produtos durante todo o prazo de validade e a inadequação da alegação zero lactose”, destacou a agência. Além do recolhimento, a Anvisa proibiu ainda a fabricação, a venda, a distribuição, a propaganda e o uso dos produtos . A reportagem da Agência Brasil entrou em contato com a NotCo Brasil Distribuição e Comércio de Produtos Alimentícios Ltda. e aguarda posicionamento. Aloe vera A Anvisa também determinou o recolhimento do produto Aloe Care – Cranberry Flavored Aloe Vera Gel, da Biodis Industrial Ltda. Segundo a agência, o produto não poder ser fabricado, distribuído, comercializado, divulgado nem utilizado. A resolução consta no Diário Oficial da União . “O item é vendido com produto que contém Aloe vera para consumo oral sem prévia avaliação de segurança e autorização de uso pela Anvisa. A medida também aponta outras irregularidades: rotulagem com informações obrigatórias do produto em lí",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d0a0cb6a2fe7549064b2f07ed9cf9bde0b9a90382edaa2bd1cf9c27f6a7f9c93": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Lotofácil da Independência: 72 apostas faturam R$ 4,4 milhões cada",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/lotofacil-da-independencia-72-apostas-faturam-r-44-milhoes-cada",
+        "publishedAt": "2026-09-16T14:01:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O concurso especial da Lotofácil da Independência 3.780 sorteou nesta terça-feira (15) um prêmio total de R$ 323.177.688, que será dividido entre 72 apostas vencedoras. Cada aposta receberá R$ 4.488.579. Os 15 números sorteados foram 01-02-03-04-05-06-07-12-15-16-17-19-21-22-23. Segundo a Caixa, 61 apostas sorteadas foram feitas em canais físicos nas seguintes unidades federativas: Alagoas (2), Amazonas (1), Bahia (4), Ceará (6), Distrito Federal (3), Goiás (2), Maranhão (1), Minas Gerais (8), Mato Grosso do Sul (2), Mato Grosso (2), Paraíba (2), Piauí (1), Paraná (3), Rio de Janeiro (4), Rio Grande do Norte (2), Rio Grande do Sul (3) e São Paulo (15). As outras 11 apostas foram feitas em canais eletrônicos. Ainda segundo a Caixa, para os 8.978 jogos que acertaram 14 números, segunda faixa de premiação, o valor do prêmio é de R$ 2.762 para cada. Considerando todas as cinco faixas de premiação, a Lotofácil da Independência premiou, neste ano, mais de 23 milhões de apostas. Em nota, a Caixa destacou que prêmios com valor superior a R$ 2.259,20 são pagos exclusivamente em agências do banco. “O bilhete é ao portador, sendo recomendável que o apostador escreva no verso do recibo da aposta premiada seu nome completo e CPF. Dessa forma, ninguém mais poderá retirar o prêmio”. “Em caso de bolão, cada participante pode fazer o mesmo no verso de seu recibo individual de cota”, completou. Ganhadores também devem ficar atentos aos prazos, já que prêmios de loterias prescrevem após 90 dias da data do sorteio, quando o valor é repassado ao Fundo de Financiamento Estudantil (Fies), conforme Lei 13.756/18.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O concurso especial da Lotofácil da Independência 3.780 sorteou nesta terça-feira (15) um prêmio total de R$ 323.177.688, que será dividido entre 72 apostas vencedoras. Cada aposta receberá R$ 4.488.579. Os 15 números sorteados foram 01-02-03-04-05-06-07-12-15-16-17-19-21-22-23. Segundo a Caixa, 61 apostas sorteadas foram feitas em canais físicos nas seguintes unidades federativas: Alagoas (2), Amazonas (1), Bahia (4), Ceará (6), Distrito Federal (3), Goiás (2), Maranhão (1), Minas Gerais (8), Mato Grosso do Sul (2), Mato Grosso (2), Paraíba (2), Piauí (1), Paraná (3), Rio de Janeiro (4), Rio Grande do Norte (2), Rio Grande do Sul (3) e São Paulo (15). As outras 11 apostas foram feitas em canais eletrônicos. Ainda segundo a Caixa, para os 8.978 jogos que acertaram 14 números, segunda faixa de premiação, o valor do prêmio é de R$ 2.762 para cada. Considerando todas as cinco faixas de premiação, a Lotofácil da Independência premiou, neste ano, mais de 23 milhões de apostas. Em nota, a Caixa destacou que prêmios com valor superior a R$ 2.259,20 são pagos exclusivamente em agências do banco. “O bilhete é ao portador, sendo recomendável que o apostador escreva no verso do recibo da aposta premiada seu nome completo e CPF. Dessa forma, ninguém mais poderá retirar o prêmio”. “Em caso de bolão, cada participante pode fazer o mesmo no verso de seu recibo individual de cota”, completou. Ganhadores também devem ficar atentos aos prazos, já que prêmios de loterias prescrevem após 90 dias da data do sorteio, quando o valor é repassado ao Fundo de Financiamento Estudantil (Fies), conforme Lei 13.756/18.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "3c3dc1e5254ca85c4c66e97ed3837529b327c67239f3441d9b9b6d2a7d3d44e6": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "IBC-BR recua 0,2% em julho; resultado representa alta de 1% em um ano",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/ibc-br-recua-02-em-julho-resultado-representa-alta-de-1-em-um-ano",
+        "publishedAt": "2026-09-16T13:39:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Índice de Atividade Econômica do Banco Central (IBC-Br), indicador usado para acompanhar a evolução da economia brasileira, recuou 0,2% em julho de 2026 na comparação com junho, informou o Banco Central do Brasil. Na comparação com julho de 2025, o indicador apresentou crescimento de 1,1%. A queda observada em julho (ante junho de 2026) foi o segundo resultado negativo consecutivo, após o recuo de 0,6% registrado no mês anterior. O resultado foi calculado tendo por base a série dessazonalizada – de forma a eliminar efeitos típicos de determinadas épocas do ano. Notícias relacionadas: Inflação oficial de agosto fecha em -0,32%, menor taxa em quatro anos. De acordo com o BC, o desempenho foi influenciado principalmente pela agropecuária, que caiu 1,2% no mês. A indústria recuou 0,4%, enquanto o setor de serviços ficou estável, sem variação. Os impostos sobre produtos tiveram retração de 0,2%. Excluindo a agropecuária, o IBC-Br registrou queda de 0,1%. Segundo o dados divulgados, os resultados de julho (na comparação com junho) foram os seguintes: IBC-Br -0,2% Agropecuária -1,2% Indústria -0,4% Serviços 0,0% Impostos -0,2% IBC-Br ex-agropecuária -0,1% Comparação anual Já na comparação anual, com julho de 2025, o indicador apresentou avanço de 1,1%. Nesse tipo de comparação, o resultado mostra que a atividade econômica ficou acima do nível registrado no mesmo mês do ano passado. Entre os setores, a agropecuária teve crescimento de 3,7% em um ano. Os serviços avançaram 1,3%, a indústria cresceu 0,5% e os impostos aumentaram 0,7%. Sem a agropecuária, o IBC-Br registrou alta de 1%. IBC-Br 1,1% Agropecuária 3,7% Indústria 0,5% Serviços 1,3% Impostos 0,7% IBC-Br ex-agropecuária 1% No acumulado dos sete primeiros meses do ano, o indicador registra crescimento de 1,5%. Em 12 mes",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Índice de Atividade Econômica do Banco Central (IBC-Br), indicador usado para acompanhar a evolução da economia brasileira, recuou 0,2% em julho de 2026 na comparação com junho, informou o Banco Central do Brasil. Na comparação com julho de 2025, o indicador apresentou crescimento de 1,1%. A queda observada em julho (ante junho de 2026) foi o segundo resultado negativo consecutivo, após o recuo de 0,6% registrado no mês anterior. O resultado foi calculado tendo por base a série dessazonalizada – de forma a eliminar efeitos típicos de determinadas épocas do ano. Notícias relacionadas: Inflação oficial de agosto fecha em -0,32%, menor taxa em quatro anos. De acordo com o BC, o desempenho foi influenciado principalmente pela agropecuária, que caiu 1,2% no mês. A indústria recuou 0,4%, enquanto o setor de serviços ficou estável, sem variação. Os impostos sobre produtos tiveram retração de 0,2%. Excluindo a agropecuária, o IBC-Br registrou queda de 0,1%. Segundo o dados divulgados, os resultados de julho (na comparação com junho) foram os seguintes: IBC-Br -0,2% Agropecuária -1,2% Indústria -0,4% Serviços 0,0% Impostos -0,2% IBC-Br ex-agropecuária -0,1% Comparação anual Já na comparação anual, com julho de 2025, o indicador apresentou avanço de 1,1%. Nesse tipo de comparação, o resultado mostra que a atividade econômica ficou acima do nível registrado no mesmo mês do ano passado. Entre os setores, a agropecuária teve crescimento de 3,7% em um ano. Os serviços avançaram 1,3%, a indústria cresceu 0,5% e os impostos aumentaram 0,7%. Sem a agropecuária, o IBC-Br registrou alta de 1%. IBC-Br 1,1% Agropecuária 3,7% Indústria 0,5% Serviços 1,3% Impostos 0,7% IBC-Br ex-agropecuária 1% No acumulado dos sete primeiros meses do ano, o indicador registra crescimento de 1,5%. Em 12 mes",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "0a00ecf01f8302c5bde0c4ebaa64ca7399639376fa7b0484a78ac8dd03a2b583": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Anvisa proíbe caneta emagrecedora vinda do Paraguai",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/anvisa-proibe-caneta-emagrecedora-vinda-do-paraguai",
+        "publishedAt": "2026-09-16T13:27:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Agência Nacional de Vigilância Sanitária (Anvisa) proibiu a importação, o armazenamento, a distribuição, a comercialização, a propaganda e o uso do medicamento T36, da classe de agonistas do receptor GLP 1, popularmente conhecidos como canetas emagrecedoras. A resolução da Anvisa foi publicada nesta quarta-feira (16) no Diário Oficial da União . Em nota, a agência informou que o medicamento não possui registro sanitário e não teve segurança e eficácia avaliadas no Brasil. Site de vendas Notícias relacionadas: Anvisa alerta risco de deficiência de B6 com uso de carbidopa/levodopa. Anvisa aprova novas indicações para remédio que trata câncer de mama. Anvisa amplia indicação de vacina contra meningite . No último dia 8, a Anvisa proibiu a comercialização de canetas emagrecedoras por meio do site www.gopharma.shop . Segundo a agência, o site anunciava medicamentos sem registro no Brasil à base de tirzepatida ou que alegavam ter como princípio ativo a retatrutida, substância ainda sem registro em nenhum país do mundo. Alguns dos produtos anunciados, como T.G. 15 miligramas (mg), Tirzec 15 mg e Lipoless MD 15 mg, já possuíam proibição expressa de ingresso no Brasil. Além de proibir a comercialização, a distribuição, a importação, a propaganda e o uso dos produtos anunciados pelo site , a Anvisa determinou ainda que eles sejam apreendidos. “É importante esclarecer que sites em geral não podem vender medicamentos para qualquer indicação, em nenhuma hipótese. Isso não é novidade: a comercialização de medicamentos no Brasil é privativa de farmácias e drogarias regularizadas, por meio de suas lojas físicas ou sites e canais digitais oficiais”, reforçou a agência no comunicado. “Além da comercialização de medicamentos ser proibida fora dos ambientes e canais oficiais de farmácias",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Agência Nacional de Vigilância Sanitária (Anvisa) proibiu a importação, o armazenamento, a distribuição, a comercialização, a propaganda e o uso do medicamento T36, da classe de agonistas do receptor GLP 1, popularmente conhecidos como canetas emagrecedoras. A resolução da Anvisa foi publicada nesta quarta-feira (16) no Diário Oficial da União . Em nota, a agência informou que o medicamento não possui registro sanitário e não teve segurança e eficácia avaliadas no Brasil. Site de vendas Notícias relacionadas: Anvisa alerta risco de deficiência de B6 com uso de carbidopa/levodopa. Anvisa aprova novas indicações para remédio que trata câncer de mama. Anvisa amplia indicação de vacina contra meningite . No último dia 8, a Anvisa proibiu a comercialização de canetas emagrecedoras por meio do site www.gopharma.shop . Segundo a agência, o site anunciava medicamentos sem registro no Brasil à base de tirzepatida ou que alegavam ter como princípio ativo a retatrutida, substância ainda sem registro em nenhum país do mundo. Alguns dos produtos anunciados, como T.G. 15 miligramas (mg), Tirzec 15 mg e Lipoless MD 15 mg, já possuíam proibição expressa de ingresso no Brasil. Além de proibir a comercialização, a distribuição, a importação, a propaganda e o uso dos produtos anunciados pelo site , a Anvisa determinou ainda que eles sejam apreendidos. “É importante esclarecer que sites em geral não podem vender medicamentos para qualquer indicação, em nenhuma hipótese. Isso não é novidade: a comercialização de medicamentos no Brasil é privativa de farmácias e drogarias regularizadas, por meio de suas lojas físicas ou sites e canais digitais oficiais”, reforçou a agência no comunicado. “Além da comercialização de medicamentos ser proibida fora dos ambientes e canais oficiais de farmácias",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "7fa3b5208a92e770a3f89c07966c90dd4998fa1491c675fb1350c668903bda05": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Justiça aceita denúncia contra 5 acusados de matar ciclista no Rio",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/justica-aceita-denuncia-contra-5-acusados-de-matar-ciclista-no-rio",
+        "publishedAt": "2026-09-16T13:02:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Os cinco acusados de matar o ciclista Claudio Rafael Landeiro Moreira em Copacabana, na zona sul da cidade do Rio de Janeiro, se tornaram réus. A Justiça do Rio de Janeiro aceitou a denúncia do Ministério Público (MPRJ) contra Davi Santos Machado, Jorge Luiz Ricardo Dias, Felipe Eduardo dos Santos Silva, Ailton José da Silva e Wellington Luiz Santos de Souza. Com isso, eles passam a responder pelo crime de homicídio qualificado, fundamentado \"em agressões físicas brutais registradas por câmeras de segurança, laudos periciais e depoimentos colhidos na investigação\", segundo nota divulgada pelo Tribunal de Justiça do Rio (TJRJ). O ciclista foi espancado até a morte, em 12 de agosto, depois de ter sido acusado, injustamente, de furtar uma bicicleta. O equipamento era de sua própria irmã. Além de instaurar a ação penal, o juízo decretou a prisão preventiva dos cinco réus. Quatro deles já estavam presos. Como Wellington Luiz Santos de Souza fugiu para o Paraguai, em agosto, também foi determinada a inclusão de seu nome na Difusão Vermelha da Interpol para permitir sua localização, prisão no exterior e posterior extradição.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Os cinco acusados de matar o ciclista Claudio Rafael Landeiro Moreira em Copacabana, na zona sul da cidade do Rio de Janeiro, se tornaram réus. A Justiça do Rio de Janeiro aceitou a denúncia do Ministério Público (MPRJ) contra Davi Santos Machado, Jorge Luiz Ricardo Dias, Felipe Eduardo dos Santos Silva, Ailton José da Silva e Wellington Luiz Santos de Souza. Com isso, eles passam a responder pelo crime de homicídio qualificado, fundamentado \"em agressões físicas brutais registradas por câmeras de segurança, laudos periciais e depoimentos colhidos na investigação\", segundo nota divulgada pelo Tribunal de Justiça do Rio (TJRJ). O ciclista foi espancado até a morte, em 12 de agosto, depois de ter sido acusado, injustamente, de furtar uma bicicleta. O equipamento era de sua própria irmã. Além de instaurar a ação penal, o juízo decretou a prisão preventiva dos cinco réus. Quatro deles já estavam presos. Como Wellington Luiz Santos de Souza fugiu para o Paraguai, em agosto, também foi determinada a inclusão de seu nome na Difusão Vermelha da Interpol para permitir sua localização, prisão no exterior e posterior extradição.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "TCE suspende licitação para solução educacional baseada em neurociência",
+        "url": "https://www.tce.mg.gov.br/TCE-suspende-licitacao-para-solucao-educacional-baseada-em-neurociencia.html/Noticia/1111629173",
+        "publishedAt": "2026-09-16T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "A Primeira Câmara do TCEMG confirmou a decisão cautelar do conselheiro-substituto Telmo Passareli que suspendeu o Pregão Eletrônico nº 17/2026, realizado pelo Consórcio Interfederativo Minas Gerais (Ciminas). A licitação previa o registro de preços para a compra de uma solução educacional física e digital baseada em neurociência, com valor estimado em R$ 60,9 milhões. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A Primeira Câmara do TCEMG confirmou a decisão cautelar do conselheiro-substituto Telmo Passareli que suspendeu o Pregão Eletrônico nº 17/2026, realizado pelo Consórcio Interfederativo Minas Gerais (Ciminas). A licitação previa o registro de preços para a compra de uma solução educacional física e digital baseada em neurociência, com valor estimado em R$ 60,9 milhões. Clique aqui",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "06428e75937044b7bf4f96b4d416326c858195b05468d8997b9f41a19d058b11": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "Licitação de R$ 31,2 milhões em Itanhomi é suspensa por indícios de restrição à concorrência",
+        "url": "https://www.tce.mg.gov.br/Licitacao-de-R-31-2-milhoes-em-Itanhomi-e-suspensa-por-indicios-de-restricao-a-concorrencia-.html/Noticia/1111629170",
+        "publishedAt": "2026-09-15T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "A Segunda Câmara do Tribunal de Contas do Estado de Minas Gerais (TCEMG) referendou, nesta terça-feira (15/9), decisão cautelar do conselheiro em exercício Adonias Monteiro que determinou a suspensão dos efeitos de uma ata de registro de preços de R$ 30,6 milhões da Prefeitura de Itanhomi destinada à contratação de serviços de pavimentação asfáltica, recapeamento, drenagem e infraestrutura viária. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -29,
+          "reasons": [
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A Segunda Câmara do Tribunal de Contas do Estado de Minas Gerais (TCEMG) referendou, nesta terça-feira (15/9), decisão cautelar do conselheiro em exercício Adonias Monteiro que determinou a suspensão dos efeitos de uma ata de registro de preços de R$ 30,6 milhões da Prefeitura de Itanhomi destinada à contratação de serviços de pavimentação asfáltica, recapeamento, drenagem e infraestrutura viária. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a8b47d06995b57b48ed350ecc23c3d3902f5b917aed230dd2239145a5a453af8": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "news",
+        "title": "TCESP comunica abertura de consulta pública sobre o Guia de Custos para o Setor Público",
+        "url": "https://www.tce.sp.gov.br/6524-tcesp-comunica-abertura-consulta-publica-sobre-guia-custos-para-setor-publico",
+        "publishedAt": "2026-09-16T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "16/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por sua Secretaria-Diretoria Geral, comunicou aos órgãos jurisdicionados estaduais e municipais e aos demais interessados que o Instituto Rui Barbosa (IRB), em parceria com a Secretaria do Tesouro Nacional (STN), abriu consulta pública sobre a minuta do Guia de Custos para o Setor Público (GCSP). O Comunicado SDG nº 46/2026 foi assinado pelo Secretário-Diretor Geral, Germano Fraga Lima, e disponibilizado na 894ª edição do Diário Oficial Eletrônico do TCESP desta quarta-feira, 16 de setembro. Elaborado no âmbito do Acordo de Cooperação firmado entre o IRB e a STN, vinculada ao Ministério da Fazenda, o Guia reúne parâmetros técnicos para melhorar a forma como os órgãos públicos acompanham seus custos e para apoiar o trabalho dos órgãos de controle externo. A iniciativa busca fortalecer a gestão de custos na administração pública e oferecer suporte técnico ao Sistema de Controle Externo, contribuindo para o aprimoramento da fiscalização e para uma avaliação mais precisa dos gastos e da gestão dos recursos governamentais. Como participar Gestores públicos, contadores, auditores, membros e servidores dos Tribunais de Contas, pesquisadores, acadêmicos e demais interessados podem analisar a minuta e as planilhas eletrônicas dos anexos e encaminhar sugestões ao Grupo Técnico Conjunto STN/IRB até o dia 30 de setembro de 2026, por meio do endereço eletrônico ctcustos@irb.org.br. A minuta do Guia e os documentos complementares estão disponíveis nos seguintes links: - GCSP IRB V.18 - Anexo 1 - Codificação dos objetos de custos - Anexo 2 - Relacionamentos VPDs x Elementos de Custos - Apêndice C - Filtros de seleção para relatórios de custos Conforme o comunicado, a participação dos profissionais do control",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "16/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por sua Secretaria-Diretoria Geral, comunicou aos órgãos jurisdicionados estaduais e municipais e aos demais interessados que o Instituto Rui Barbosa (IRB), em parceria com a Secretaria do Tesouro Nacional (STN), abriu consulta pública sobre a minuta do Guia de Custos para o Setor Público (GCSP). O Comunicado SDG nº 46/2026 foi assinado pelo Secretário-Diretor Geral, Germano Fraga Lima, e disponibilizado na 894ª edição do Diário Oficial Eletrônico do TCESP desta quarta-feira, 16 de setembro. Elaborado no âmbito do Acordo de Cooperação firmado entre o IRB e a STN, vinculada ao Ministério da Fazenda, o Guia reúne parâmetros técnicos para melhorar a forma como os órgãos públicos acompanham seus custos e para apoiar o trabalho dos órgãos de controle externo. A iniciativa busca fortalecer a gestão de custos na administração pública e oferecer suporte técnico ao Sistema de Controle Externo, contribuindo para o aprimoramento da fiscalização e para uma avaliação mais precisa dos gastos e da gestão dos recursos governamentais. Como participar Gestores públicos, contadores, auditores, membros e servidores dos Tribunais de Contas, pesquisadores, acadêmicos e demais interessados podem analisar a minuta e as planilhas eletrônicas dos anexos e encaminhar sugestões ao Grupo Técnico Conjunto STN/IRB até o dia 30 de setembro de 2026, por meio do endereço eletrônico ctcustos@irb.org.br. A minuta do Guia e os documentos complementares estão disponíveis nos seguintes links: - GCSP IRB V.18 - Anexo 1 - Codificação dos objetos de custos - Anexo 2 - Relacionamentos VPDs x Elementos de Custos - Apêndice C - Filtros de seleção para relatórios de custos Conforme o comunicado, a participação dos profissionais do control",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ee2e1a9815cbb3137ff3db3391024df35a98c461376387470163afa6112f1c0c": {
+      "firstSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "item": {
+        "kind": "gazette-index",
+        "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
+        "url": "https://www-storage.voxtecnologia.com.br/?m=sigpub.publicacao&f=182&i=publicado_118438_2026-09-15_c1def7c66a363fc70cc67b6b2681441f.pdf",
+        "publishedAt": "2026-09-16T15:00:00.000Z",
+        "source": "Diário Municipal AMM-MG",
+        "sourceUrl": "https://www.diariomunicipal.com.br/amm-mg/",
+        "summary": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
+        "scraper": "diario-municipal-index",
+        "previewOnly": true,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -8568,126 +8928,266 @@
           "itemCount": 0
         }
       ]
+    },
+    "35124607928:1": {
+      "at": "2026-09-16T16:52:30.454Z",
+      "collected": 77,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 30,
+          "durationMs": 921
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 4803
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 21,
+          "durationMs": 4750
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 25,
+          "durationMs": 6328
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 17
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 7
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 3796
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
-      "status": "error",
-      "itemCount": 0,
-      "message": "Todas as consultas ao Google News falharam.",
-      "checkedAt": "2026-09-16T11:29:35.597Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
+      "status": "ok",
+      "itemCount": 30,
+      "durationMs": 921,
+      "checkedAt": "2026-09-16T16:52:30.454Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
-      "itemCount": 27,
-      "durationMs": 28129,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
-      "consecutiveFailures": 8,
+      "itemCount": 0,
+      "durationMs": 4803,
+      "checkedAt": "2026-09-16T16:52:30.454Z",
+      "consecutiveFailures": 9,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
-      "status": "ok",
-      "itemCount": 27,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
-      "consecutiveFailures": 0,
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-16T11:29:35.597Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 502",
-      "checkedAt": "2026-09-16T11:29:35.597Z",
-      "consecutiveFailures": 8,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
+      "consecutiveFailures": 9,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 502",
-      "checkedAt": "2026-09-16T11:29:35.597Z",
-      "consecutiveFailures": 8,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
+      "consecutiveFailures": 9,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 21,
-      "durationMs": 4659,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "durationMs": 4750,
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
-      "itemCount": 27,
-      "durationMs": 6070,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "itemCount": 25,
+      "durationMs": 6328,
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -8696,7 +9196,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z"
+      "checkedAt": "2026-09-16T16:52:30.454Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -8705,7 +9205,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z"
+      "checkedAt": "2026-09-16T16:52:30.454Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -8714,59 +9214,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z"
+      "checkedAt": "2026-09-16T16:52:30.454Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
-      "itemCount": 20,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "itemCount": 17,
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 7,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
-      "itemCount": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "itemCount": 1,
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 3740,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "durationMs": 3796,
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T11:29:35.597Z",
+      "checkedAt": "2026-09-16T16:52:30.454Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T11:29:35.597Z"
+      "lastSuccessAt": "2026-09-16T16:52:30.454Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
