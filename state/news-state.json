@@ -2470,6 +2470,26 @@
       "category": "ADESÃO",
       "source": "Alagoas na Net",
       "publishedAt": "2026-09-14T14:07:00.000Z"
+    },
+    "0b0d1dd377a2b733201f7de82ff180631e89a9780fef8e9d7795f60c882fc98b": {
+      "sentAt": "2026-09-16T05:59:15.834Z",
+      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWGFNS2d0NlNlcE13VU9PTnBTamRGejNJT2h3MVM1MVpkbHppN1NZcmNJQV9RSUJFdFVaN0JsVE1WTFAwRE1RZGQ0X3FXZGRWcDhHQ0FWTFFpOTgzeTVLLUhvNjg2ckZKa190eGhFZDhULUdxNmZGNTJhek1CenAxWGJjS2FuRkhZd3lkOW9IanFEaHFzWTJvNF8yWE5qaE5TbGtqUm9aZUcyeWFDSXEzYXE1MFpPMnpuMlpSQVRaRWhmeXF6MVdLOWl6b2RFak91Wm9DX0RGeG1MOVR1UHc?oc=5",
+      "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - Isso É Notícia",
+      "titleFingerprint": "ba67ce8df7903f51d22a07e9330c21f99bfe9a9264fab2e60872c97a8eb8ec29",
+      "contentTokens": [
+        "deixa",
+        "estadual",
+        "inadimplencia",
+        "incentivo",
+        "isso",
+        "noticia",
+        "oito",
+        "saude",
+        "sem"
+      ],
+      "category": "CRISE",
+      "source": "Isso É Notícia",
+      "publishedAt": "2026-09-15T18:19:00.000Z"
     }
   },
   "pending": {},
@@ -2501,7 +2521,7 @@
     },
     "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
@@ -2527,7 +2547,7 @@
     },
     "eaa0de7c1adedd5a789788dbf1741fac53dd8c26808c19af390e55a8969ed71f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná",
@@ -2573,7 +2593,7 @@
     },
     "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - ABCD Jornal",
@@ -2596,7 +2616,7 @@
     },
     "a4feb48e8f2142b20e06ff88d669459d9865b7b06fb07a93b918922708ebf272": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multissetorial do Médio Rio Piracicaba abre processo seletivo para cadastro de reserva - Qconcursos Folha Dirigida",
@@ -2622,7 +2642,7 @@
     },
     "1cd8049fa620a5e4db87515be93dbce0b7a18cb41bc472b0cd3c3ed496841451": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal de Saneamento da Região Central de Rondônia abre processo seletivo com 9 vagas - Qconcursos Folha Dirigida",
@@ -2673,22 +2693,22 @@
     },
     "8154518dba47dbdaca5bb52772830b7b3662599e101dbcb2f2c677ebff17a77f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T01:26:50.377Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
-        "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - midiamax.com.br",
+        "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - Midiamax",
         "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORElmWFFsaEFRb2pEQWtleXlmWm90cmtUT0pTQmRFR1ZDa2hYM1RTN1U4M2lSQV9WeXhtaFlZenl2NW4wQUZTemRsY1V0RklJbWFKdDhfRkYzN1VrZHJuTkVFVUJfQjM1ZGZZcWw0em5IQktHU1BISVFDaWFEc29PeDhuU0xQdkZXU1kxbkd0UVZZM2hLYmVuY1FHc0pRRHA1YVprUzc2bmFlQXgzSTJkVEhB?oc=5",
         "sourceUrl": "https://midiamax.com.br",
         "publishedAt": "2026-09-11T11:37:00.000Z",
-        "source": "midiamax.com.br",
-        "summary": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões midiamax.com.br",
+        "source": "Midiamax",
+        "summary": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões Midiamax",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões midiamax.com.br",
+          "evidenceText": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões Midiamax",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -2696,7 +2716,7 @@
     },
     "0e7aabe32ed068953985e31bb57c64aa08f6bab53384df4012d13ecf16f92a96": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - Câmara Municipal de Curitiba",
@@ -2719,7 +2739,7 @@
     },
     "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
@@ -2742,7 +2762,7 @@
     },
     "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
@@ -2791,7 +2811,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -2814,7 +2834,7 @@
     },
     "184db1ccb8d0f9dfedfa5ab0c26b244078321aa1348d0e74a0c033cffbabd237": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Untitled - Câmara Municipal de Várzea - RN",
@@ -2837,7 +2857,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -2860,7 +2880,7 @@
     },
     "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Municípios assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
@@ -2883,7 +2903,7 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
@@ -2906,7 +2926,7 @@
     },
     "34f2e231099d6bc75ce83425f39ce1e3dc6f6a4aac497482eefddbe33185f2f6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 3353/2021 - Primeira Câmara - TCE-PR",
@@ -2929,7 +2949,7 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
@@ -2952,7 +2972,7 @@
     },
     "a01a83c0cedc579416617fd7d41ba9be8d19b2062d37a1584462884a1c06c6aa": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
@@ -2981,7 +3001,7 @@
     },
     "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
@@ -3004,7 +3024,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -3027,7 +3047,7 @@
     },
     "00ecea0e3db92dbffe5198e7dd9f7e1d0285edf7461a98c450ca99e7a54a9b01": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "FNP se reúne com a Secretaria de Educação Básica do MEC para fortalecer agenda municipalista",
@@ -3050,7 +3070,7 @@
     },
     "475bff69568a7ede517b7ef0a3983674bc7673884c88267509c5ec7feebb2365": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "FNP leva debate da Reforma Tributária aos municípios paranaenses",
@@ -3075,7 +3095,7 @@
     },
     "44c3475b4abe5ff9287ba07e7130980831dd6ab42fc2dd1474f7e333df0303a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "FNP reúne municípios para debater drenagem urbana e estratégias de adaptação às mudanças climáticas",
@@ -3098,7 +3118,7 @@
     },
     "34819e26868a429627b6d1613444cef9a15ec93f80850f63ee5ed083ea89487c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Fórum Nacional de mobilidade debate novos modelos de financiamento para o transporte público",
@@ -3123,7 +3143,7 @@
     },
     "02984a86f07be5e4bb0918702dbf843e95008afbe36220670121cfe4dbd2fa9f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais debate impactos cadastrais da Reforma Tributária do Consumo",
@@ -3146,7 +3166,7 @@
     },
     "9c5b9a050ee29886340c0e637f538ec941595e3ce7198ffc71599d5d898a22c6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "FNP lança coalizão de cidades pela segurança no trânsito",
@@ -3449,7 +3469,7 @@
     },
     "52e9debc511af81db435f27a8fb4a039d6b996b929867d06f376a8ec149a1b6a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Triubnal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -3474,7 +3494,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3501,7 +3521,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -3526,7 +3546,7 @@
     },
     "26c2b82664c43ce3db2df36b5095c04dc8d284ba7cbbeb77b43c2042d87725db": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Boas práticas colocam foco em rastreamento de informações, análise de riscos, transparência e reforçam diálogo com a gestão",
@@ -3551,7 +3571,7 @@
     },
     "a62ed95fee447ddbd7ac7ae0371fd72c75770f5dec76a2ccab383d38a47db325": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "TCEMG esclarece regras para contratação por credenciamento",
@@ -3576,7 +3596,7 @@
     },
     "49efe5aea7014a410018a72f9d3c9964cab61a80021365a6087844c3f0f9253e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Identificação de fraudes e aproximação com a sociedade são temas do último dia do Seminário de Controle Interno",
@@ -3601,7 +3621,7 @@
     },
     "73c7c6dd92a4d4ed7e284f1766f4d343372711b6baae2ca033f9854522a3c2ce": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Controladorias Internas têm a missão de estar atentas aos \"rinocerontes cinza\" da gestão pública",
@@ -3626,7 +3646,7 @@
     },
     "9b59e45a6f77220cf1be84a1814d9ac59194150e9c2fab3330b5b231f895a291": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "TCEMG lança carta compromisso para fortalecer controles internos em Minas Gerais",
@@ -3651,7 +3671,7 @@
     },
     "634e48a364faf8610ae5f9bb220a4215fb0cbc7d4a9d0e738b846cf0bc1e4925": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "II Seminário de Controles Internos reúne mais de 750 pessoas em BH",
@@ -3676,7 +3696,7 @@
     },
     "51b6d6659dcd9bf107d30375d0503ce40fd8ccca116a8708337f92fbea038f2c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Livro sobre escavações no antigo DOPS/MG será lançado com experiência imersiva em Belo Horizonte",
@@ -3701,7 +3721,7 @@
     },
     "a96f9c196b1d204fcec8d247f0608672bc652edb25c8d232eba3860b9e761acc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2025 da Assembleia Legislativa de Minas Gerais",
@@ -3751,7 +3771,7 @@
     },
     "fea773ad11b3f69b238957fbd5be196fc4c671d38b510becf88b27ea140a19a4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Solenidade do Colar do Mérito marca comemorações dos 91 anos do TCEMG",
@@ -3776,7 +3796,7 @@
     },
     "36244ea3be2747000619345370651c66c33897b719677c8d9c8efe19b2b90ce6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Painel revela avanços e desafios de controladorias do Semiárido Mineiro",
@@ -3801,7 +3821,7 @@
     },
     "fd99b3d7bdcd10c3b072ab2e529d2b543ff7fa4314614f5cb5d7fe1cc3c481f4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "20 anos da Lei Maria da Penha: evento celebra marco histórico de luta, resistência e transformação",
@@ -3826,7 +3846,7 @@
     },
     "a721785b95220768bc645cdc14e6bfefc2a74155926bed36fb9cc5b5b33d1e78": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Edital de rodeio em Cruzília que previa até sorteio de moto emplacada acaba em multa por irregularidades",
@@ -3851,7 +3871,7 @@
     },
     "66cce994bd5884b8c90d6f11d559afc8c96b55840d6086830bef2a43909bc663": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 do Tribunal de Justiça de Minas Gerais",
@@ -3876,7 +3896,7 @@
     },
     "59ae8bf7b518104f423ef92b7064b0ba2e9cdf7752fa9325df3354158ccb2752": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "TCEMG nega recurso e mantém multa a prefeito de Araguari por nepotismo",
@@ -3901,7 +3921,7 @@
     },
     "476a740841787349a3455efc4135c9c6e646adebc928cf685662ce4b873341b4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Novas lideranças, mesmo propósito: encontro celebra mudança de gestão do Jus-Povos",
@@ -3951,7 +3971,7 @@
     },
     "96de484ae2333596f2689e38ddc97895c8b7a62f04be4a2c710e168bcfb1be13": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o papel dos Consórcios Públicos na gestão municipal com Victor Borges",
@@ -3979,7 +3999,7 @@
     },
     "4436fad46607038d8cfe89469b557267d3afa88b2153e8a335cc4fa4c50c70d7": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Nono módulo da Trilha de Aprendizagem sobre ODS está no ar",
@@ -4005,7 +4025,7 @@
     },
     "5644e472796b1bd97f5551ffcb683217a3f08af0d8d0d8e4a0a1588f49dfbf95": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Conexão Saúde debate saúde mental no trabalho com a jornalista Izabella Camargo",
@@ -4031,7 +4051,7 @@
     },
     "9f028ca97770b6f264b0893ebc66f4d033c9fc3602a3b61c9025f20ab8b581dc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada na cidade de Limeira",
@@ -4057,7 +4077,7 @@
     },
     "9f9364e6671983e0a305a64aade3d413bedcedfd4c26332c8868da0cf8473cc0": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "São Carlos recebe caravana do Ciclo de Debates do TCESP",
@@ -4083,7 +4103,7 @@
     },
     "91becf7d33c3807798844cf54349a99202244f4c1a0bdb01075f141c425f31d3": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "TCESP publica Relatório do Terceiro Setor 2025",
@@ -4160,22 +4180,22 @@
     },
     "d3519c9b480649442de03b07c20d251a361bf7bd0599063bcbabf0ff8e2228b1": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
-        "title": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília - abcagora.com.br",
+        "title": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília - ABC Agora",
         "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5yeFBKSl9KZVlBTEpPdEMyNlVXUHF6QW40Yzk0S3RCQ3gzdWpxbHVNZ0ktVlJiWV8xMnBUazJlMzRlRDVhVWc2dU82QmpYSnFXUFRKemU2WTh5cThDWkViWWsxQ1BKWkM3VDdzLUwyQXBSZkJ1d3RMSE5B?oc=5",
         "sourceUrl": "https://abcagora.com.br",
         "publishedAt": "2026-09-14T21:17:41.000Z",
-        "source": "abcagora.com.br",
-        "summary": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília abcagora.com.br",
+        "source": "ABC Agora",
+        "summary": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília ABC Agora",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília abcagora.com.br",
+          "evidenceText": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília ABC Agora",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -4183,7 +4203,7 @@
     },
     "1bb8aa8da2195060a12b04ce02b33d5ff9c85ed3e6578bfdce247960c4a0a300": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda - RD – Repórter Diário",
@@ -5027,7 +5047,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5052,7 +5072,7 @@
     },
     "317c46da86013d797f3ef87df96607ca5126ff1e5808224c53921837863cddf9": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Transferida a 23ª Sessão Ordinária da Segunda Câmara do TCESP desta terça-feira",
@@ -5287,7 +5307,7 @@
     },
     "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - alagoasnanet.com.br",
@@ -5313,7 +5333,7 @@
     },
     "e89f6a8f36d52e820688ea464c9b85b2ec230fc9fe914415077c0bed7c18b41f": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-15T13:32:10.950Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Adia Festival ABC Das Artes Por Previsão De Chuvas E Ventos Fortes - ABC Agora",
@@ -5382,7 +5402,7 @@
     },
     "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
@@ -5474,7 +5494,7 @@
     },
     "b9243454fd8f696c89efe2a28513f85297f0f66807f108cb8166887e4be3e357": {
       "firstSeenAt": "2026-09-15T13:32:10.950Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional em Peixoto de Azevedo - Web Rádio Terra",
@@ -5754,7 +5774,7 @@
     },
     "abaee63293712160492481bad2162710c9c1b133a8c3ed5c9b8a21fc901cde03": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - NG NOTÍCIAS",
@@ -5800,7 +5820,7 @@
     },
     "97888cdbc4139f52de557a7c5321f8f8ff2082fcba1231438afaae3f27988d4c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital - Ponto na Curva",
@@ -5846,7 +5866,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -5869,7 +5889,7 @@
     },
     "14a939bc0c54983f74323beb211d40d0f034733f9633d9214d826d8f66fa273d": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Mutirão Brasil Cidades Amazônicas fortalece ação climática local em seis municípios",
@@ -6147,7 +6167,7 @@
     },
     "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Concurso CONSUD PR: inscrições encerradas para 37 vagas - Estratégia Concursos",
@@ -6170,22 +6190,22 @@
     },
     "473cca93ce84b67612103b5ffbf695d672e6c410b84700dcc2ed77caca99d2c0": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais - abcagora.com.br",
+        "title": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais - ABC Agora",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4xR1YwYUxPWG9ldVVselhEcDdzUWFnY3poNW1UcXNuT2w5eFhZNmxSRnZTaGtPZUd4NWRoU0MzSFh4V1RyaXlfMWh3V2g5VmNrUGxoSmhYUFVNNl80bE9WdGh3RlpmMjB4TkliV1ZPVDNpTjBaeXJXRGVQQWw?oc=5",
         "sourceUrl": "https://abcagora.com.br",
         "publishedAt": "2026-09-15T20:50:41.000Z",
-        "source": "abcagora.com.br",
-        "summary": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais abcagora.com.br",
+        "source": "ABC Agora",
+        "summary": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais ABC Agora",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 2,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais abcagora.com.br",
+          "evidenceText": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais ABC Agora",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6193,22 +6213,22 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
-        "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
+        "title": "Brava Energia vai operar Papa-Terra integralmente - agenciainfra.com",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZUhoX1ZmbzBkbW11U0lOa1ROVDl4Q2NPNS1hZDhRR2JfZkZEaEttQV9TQ2VMa1pLTmRrU3h6LVptX3VpWHhKeXItcnM0NXFnaEQwYnFNOEwza0YyQ2xYOXJ5U2h3cG9pT1ROY25YVFBkYndNZnEyUE1OeEQxYVNDV1czOXFvdmM?oc=5",
         "sourceUrl": "https://agenciainfra.com",
         "publishedAt": "2026-09-15T20:37:59.000Z",
-        "source": "Agência iNFRA",
-        "summary": "Brava Energia vai operar Papa-Terra integralmente Agência iNFRA",
+        "source": "agenciainfra.com",
+        "summary": "Brava Energia vai operar Papa-Terra integralmente agenciainfra.com",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Brava Energia vai operar Papa-Terra integralmente Agência iNFRA",
+          "evidenceText": "Brava Energia vai operar Papa-Terra integralmente agenciainfra.com",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6469,7 +6489,7 @@
     },
     "bd14fb2413e3f263be8feff4397689363acc15b7529d2e4e0b40bb290487ff80": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Educação em primeiro lugar: TCEMG participa do 12º Fórum Mineiro de Educação",
@@ -6494,7 +6514,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-15T21:18:44.745Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -6522,7 +6542,7 @@
     },
     "24d39330c83d700374555ce07ff35bab089ddb738b8c46ed4ac225f5127a9969": {
       "firstSeenAt": "2026-09-16T00:17:58.313Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Entenda: STF encerra sessão sem definir casos sobre Moraes e Mendonça",
@@ -6545,7 +6565,7 @@
     },
     "4d45b792583725aed1df6738cc1fccecadb17ee798be38744bc6f325b519d674": {
       "firstSeenAt": "2026-09-16T00:17:58.313Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "STF provocou mal-estar cívico na população, diz Cármen Lúcia",
@@ -6568,7 +6588,7 @@
     },
     "04ff7c20ddbc1f618b944e9ae9527aa76dfd73a9a1138c32a07db8b6e953928d": {
       "firstSeenAt": "2026-09-16T00:17:58.313Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Livro com textos de Pierre Verger será lançado amanhã em São Paulo",
@@ -6591,7 +6611,7 @@
     },
     "a9aee4fa61c447262ab36fa24276ab26ec03122befc7cc0defab760c51c439d1": {
       "firstSeenAt": "2026-09-16T00:17:58.313Z",
-      "lastSeenAt": "2026-09-16T00:17:58.313Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
       "item": {
         "kind": "news",
         "title": "Apoiado pela EBC, evento debate desenvolvimento do futebol feminino",
@@ -6676,6 +6696,239 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "O ministro Flávio Dino, do Supremo Tribunal Federal (STF), pediu vista do julgamento que vai decidir se os casos dos ministros Alexandre de Moraes e André Mendonça devem ser julgados simultaneamente. O pedido foi feito após os ministros André Mendonça e Gilmar Mendes iniciarem um bate-boca sobre a condução do caso Master. Notícias relacionadas: Zanin: não dá para investigar Moraes sem julgar atos de Mendonça. Mendonça acompanha Fachin e vota por julgamento separado de Moraes. Gilmar acusa Mendonça de usar caso Master para interferir em eleição . Com o pedido de vista, a análise do caso não tem data para ser retomada. O placar parcial do julgamento ficou em 4 votos a 3. Os votos pelo julgamento conjunto foram proferidos pelos ministros Cristiano Zanin, Alexandre de Moraes e Gilmar Mendes. Apesar de ter defendido o julgamento conjunto, Dino pediu para não computar sua posição no placar provisório por ter pedido vista. O presidente do STF, Edson Fachin, Luiz Fux, Cármen Lúcia e André Mendonça votaram pelo julgamento separado. Sessão Sessão plenária extraordinária do STF. - Fellipe Sampaio/STF Na manhã desta terça-feira (15), o Supremo começou a analisar se o ministro Alexandre de Moraes pode ser investigado pela suposta relação com o ex-banqueiro Daniel Vorcaro. O caso foi pautado pelo presidente da Corte, Edson Fachin. No entanto, o ministro Gilmar Mendes suscitou uma questão de ordem para retomar o julgamento na quarta-feira (23) e incluir a análise das supostas irregularidades que teriam sido cometidas pelo antigo relator do caso, ministro André Mendonça, ao solicitar ao plenário a investigação contra Moraes. Além disso, Mendes defendeu que o caso seja redistribuído entre os membros do tribunal e não permaneça sob a relatoria do presidente da Corte, ministro Edson Fachi",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "cea72684cd8fbc51576e30d661d687d68f16639fa83c83d5d0b8f4e5cdfb115f": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas - ABC Agora",
+        "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOR0NvV1p0Rl9uRTZwbEFrcExJTzlOOTFSS0dIeWJxSndRVkw2TjhKd1A2Q3lONmxKdURjTlhQQV8tMzY0WGJfcnFfWmU3VnhBRkl3eW5DYmcyOFNaUlgxMU1RYVhMVE93RnhOYmVpb0s5RVBtQk5xSlhxYmljWWZnbA?oc=5",
+        "sourceUrl": "https://abcagora.com.br",
+        "publishedAt": "2026-09-15T20:04:25.000Z",
+        "source": "ABC Agora",
+        "summary": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas ABC Agora",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 2,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas ABC Agora",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b4e307c829e9da01d07e4af2c01aed82370a9d2223967661154467ff5b813fa1": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - Isso É Notícia",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWGFNS2d0NlNlcE13VU9PTnBTamRGejNJT2h3MVM1MVpkbHppN1NZcmNJQV9RSUJFdFVaN0JsVE1WTFAwRE1RZGQ0X3FXZGRWcDhHQ0FWTFFpOTgzeTVLLUhvNjg2ckZKa190eGhFZDhULUdxNmZGNTJhek1CenAxWGJjS2FuRkhZd3lkOW9IanFEaHFzWTJvNF8yWE5qaE5TbGtqUm9aZUcyeWFDSXEzYXE1MFpPMnpuMlpSQVRaRWhmeXF6MVdLOWl6b2RFak91Wm9DX0RGeG1MOVR1UHc?oc=5",
+        "sourceUrl": "https://www.issoenoticia.com.br",
+        "publishedAt": "2026-09-15T18:19:00.000Z",
+        "source": "Isso É Notícia",
+        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde Isso É Notícia",
+        "classification": {
+          "category": "CRISE",
+          "emoji": "🟥",
+          "score": 19,
+          "reasons": [
+            "CRISE",
+            "SAÍDA"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde Isso É Notícia",
+          "publicContext": true,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "29164a2c6b237c262f0931b5900806b8270872add136622f8d7d721b7f33d983": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "ÓRGÃO OFICIAL - prefeitura de vargem alta",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQWd4UWFhc1p0LWFyMnNrSHVDa01mX3pGMmxIcHp0bVhPWTQ2TG1IWHlLdnZ4Nk9USjhxM20yWHFPWm9VemFkQkQwT2hrZlQ5c3FNQ1NmRWFtY1YzWWlCZ2p2UHhaeFp2TjdEbzljV0lvVXF4Vjg5aDIzb1poaHh5NUJOMi12Y01ZYVE?oc=5",
+        "sourceUrl": "https://www.vargemalta.es.gov.br",
+        "publishedAt": "2026-09-11T22:38:58.000Z",
+        "source": "prefeitura de vargem alta",
+        "summary": "ÓRGÃO OFICIAL prefeitura de vargem alta",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "ÓRGÃO OFICIAL prefeitura de vargem alta",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "aa4e7c489fd115157c5d5fd961b53f89eb3aa50e5f65149aea4945b06191373e": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara - TCE-PR",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0xalFsZnByek5kSGExbG9Od3dkemR2YUtfUzhxN3dFQ25Dd184eUlGYzBJMEFCajFGbVRkYnYyYk9JQXBURmhGeGdOZlpQdk1TeHNDZENhamRGdDljcUtHU285VFpFY2RlUWhfMDh4cXhGcDRzOVUw?oc=5",
+        "sourceUrl": "https://viajuris.tce.pr.gov.br",
+        "publishedAt": "2026-09-15T20:44:13.000Z",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara TCE-PR",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara TCE-PR",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "57b992536ad6a74004342604cab4d1c5e003abe2d99b0da314daedba0691a22e": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Especialistas defendem maior regulação de plataformas digitais",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/especialistas-defendem-maior-regulacao-de-plataformas-digitais",
+        "publishedAt": "2026-09-16T01:01:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Brasil deve ampliar a regulação de plataformas digitais e a fiscalização do compartilhamento de conteúdos feitos com Inteligência Artificial. Foi o que defenderam as pesquisadoras Fernanda Rodrigues, diretora executiva do Instituto de Referência em Internet e Sociedade (IRIS) e Larissa Santiago, cofundadora da plataforma de comunicação independente Blogueiras Negras. Durante o webinário Tecnologias, IA e Eleições, promovido pela Articulação de Organizações de Mulheres Negras Brasileiras nesta terça-feira (15), Fernanda Rodrigues chamou atenção para o funcionamento dos algoritmos de recomendação, que, segundo ela, fazem com que as plataformas determinem quais conteúdos serão apresentados aos usuários. “É preciso uma regulação mínima que assegure que as pessoas possam optar por não receber conteúdos padronizados e que assegure que os mecanismos de recomendação não tenham vieses discriminatórios”, disse. Inteligência Artificial Sobre a Inteligência Artificial, as pesquisadoras afirmaram que o desenvolvimento dessa tecnologia não tem sido pautado pelas demandas da sociedade e que as grandes empresas de tecnologia monopolizam o debate sobre o assunto. Larissa Santiago afirmou que, em comparação com outros países, o Brasil tem um bom sistema regulatório de IA. Mas que é preciso aumentar a fiscalização e, principalmente, a educação midiática. “As pessoas não conseguem entender a diferença entre uma pessoa real e uma pessoa criada pela IA. É preciso educar a população”, disse. IA nas eleições Ao citar o processo que levou ao impeachment da então presidenta Dilma Rousseff, Larissa Santiago mencionou a circulação de imagens e notícias distorcidas. O processo de impeachment ocorreu em 2016, antes da popularização das ferramentas atuais de inteligência artificial generativa. Lari",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Brasil deve ampliar a regulação de plataformas digitais e a fiscalização do compartilhamento de conteúdos feitos com Inteligência Artificial. Foi o que defenderam as pesquisadoras Fernanda Rodrigues, diretora executiva do Instituto de Referência em Internet e Sociedade (IRIS) e Larissa Santiago, cofundadora da plataforma de comunicação independente Blogueiras Negras. Durante o webinário Tecnologias, IA e Eleições, promovido pela Articulação de Organizações de Mulheres Negras Brasileiras nesta terça-feira (15), Fernanda Rodrigues chamou atenção para o funcionamento dos algoritmos de recomendação, que, segundo ela, fazem com que as plataformas determinem quais conteúdos serão apresentados aos usuários. “É preciso uma regulação mínima que assegure que as pessoas possam optar por não receber conteúdos padronizados e que assegure que os mecanismos de recomendação não tenham vieses discriminatórios”, disse. Inteligência Artificial Sobre a Inteligência Artificial, as pesquisadoras afirmaram que o desenvolvimento dessa tecnologia não tem sido pautado pelas demandas da sociedade e que as grandes empresas de tecnologia monopolizam o debate sobre o assunto. Larissa Santiago afirmou que, em comparação com outros países, o Brasil tem um bom sistema regulatório de IA. Mas que é preciso aumentar a fiscalização e, principalmente, a educação midiática. “As pessoas não conseguem entender a diferença entre uma pessoa real e uma pessoa criada pela IA. É preciso educar a população”, disse. IA nas eleições Ao citar o processo que levou ao impeachment da então presidenta Dilma Rousseff, Larissa Santiago mencionou a circulação de imagens e notícias distorcidas. O processo de impeachment ocorreu em 2016, antes da popularização das ferramentas atuais de inteligência artificial generativa. Lari",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "59e80dd613a0b4d87f5bf808011696c526cc6805770038eebbfa744ff3921c66": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Brasil vence Chile na estreia pelo Sul-Americano de vôlei masculino",
+        "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-09/brasil-vence-chile-na-estreia-pelo-sul-americano-de-volei-masculino",
+        "publishedAt": "2026-09-16T00:56:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A seleção masculina de vôlei estreou com triunfo no Campeonato Sul-Americano da modalidade, que classifica o campeão à Olimpíada de Los Angeles (Estados Unidos). Nesta terça-feira (15), os brasileiros venceram o Chile por 3 sets a 0 , parciais de 25/23, 25/16 e 25/11, em uma hora e 20 minutos de partida. Notícias relacionadas: Brasil é campeão do Pré-Olímpico e garante vaga em Los Angeles 2028. Fluminense leva susto, mas é 1º classificado à semi da Libertadores. Apoiado pela EBC, evento debate desenvolvimento do futebol feminino. A competição ocorre no Rio de Janeiro, com os todos os jogos no Maracanãzinho. São seis participantes: Brasil, Chile, Argentina, Bolívia, Colômbia e Venezuela. As seleções jogam entre si ao longo de cinco rodadas, sendo campeã a que fizer melhor campanha. As vitórias por 3 sets a 0 ou 3 a 1 valem três pontos. Se o triunfo for por 3 a 2, a equipe ganhadora soma dois pontos e a que perder faz um ponto. Pressionado após a má campanha na Liga das Nações, em que ficou fora da fase final pela primeira vez desde a criação do torneio, em 2018, o Brasil quase se complicou no primeiro set, encontrando dificuldades para abrir distância. Nas demais parciais, os brasileiros fizeram valer a superioridade e venceram sem maiores problemas. O ponteiro Adriano, com 13 pontos, comandou a vitória da seleção comandada por Bernardinho, que ainda teve o oposto Bryan, maior pontuador da última edição da Superliga Masculina, anotando 11 pontos. O central Judson, por sua vez, fez nove pontos, sendo três deles de bloqueio. O Brasil volta a quadra nesta quarta-feira (16), novamente às 20h (horário de Brasília), para encarar a Bolívia. No mesmo horário, mas na quinta-feira (17), o adversário será a Colômbia. No sábado (19), às 11h, os brasileiros enfrentam a Venezuela. A p",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A seleção masculina de vôlei estreou com triunfo no Campeonato Sul-Americano da modalidade, que classifica o campeão à Olimpíada de Los Angeles (Estados Unidos). Nesta terça-feira (15), os brasileiros venceram o Chile por 3 sets a 0 , parciais de 25/23, 25/16 e 25/11, em uma hora e 20 minutos de partida. Notícias relacionadas: Brasil é campeão do Pré-Olímpico e garante vaga em Los Angeles 2028. Fluminense leva susto, mas é 1º classificado à semi da Libertadores. Apoiado pela EBC, evento debate desenvolvimento do futebol feminino. A competição ocorre no Rio de Janeiro, com os todos os jogos no Maracanãzinho. São seis participantes: Brasil, Chile, Argentina, Bolívia, Colômbia e Venezuela. As seleções jogam entre si ao longo de cinco rodadas, sendo campeã a que fizer melhor campanha. As vitórias por 3 sets a 0 ou 3 a 1 valem três pontos. Se o triunfo for por 3 a 2, a equipe ganhadora soma dois pontos e a que perder faz um ponto. Pressionado após a má campanha na Liga das Nações, em que ficou fora da fase final pela primeira vez desde a criação do torneio, em 2018, o Brasil quase se complicou no primeiro set, encontrando dificuldades para abrir distância. Nas demais parciais, os brasileiros fizeram valer a superioridade e venceram sem maiores problemas. O ponteiro Adriano, com 13 pontos, comandou a vitória da seleção comandada por Bernardinho, que ainda teve o oposto Bryan, maior pontuador da última edição da Superliga Masculina, anotando 11 pontos. O central Judson, por sua vez, fez nove pontos, sendo três deles de bloqueio. O Brasil volta a quadra nesta quarta-feira (16), novamente às 20h (horário de Brasília), para encarar a Bolívia. No mesmo horário, mas na quinta-feira (17), o adversário será a Colômbia. No sábado (19), às 11h, os brasileiros enfrentam a Venezuela. A p",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "98ed309445e673948e3b4cae75b2bf7872385f9d9c07a4fa279a407b148d776c": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Mega-Sena acumula para R$ 102 milhões; confira os números sorteados",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/mega-sena-acumula-para-r-102-milhoes-confira-os-numeros-sorteados",
+        "publishedAt": "2026-09-16T00:30:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Nenhum apostador acertou as seis dezenas do Concurso 3.058 da Mega-Sena, realizado nesta terça-feira (15). O prêmio acumulou e está estimado em R$ 102 milhões para o próximo sorteio. Os números sorteados foram: 14 - 23 - 53 - 56 - 57 - 60 49 apostas acertaram cinco dezenas e irão receber R$ 53.305,58 cada 3.632 apostas acertaram quatro dezenas e irão receber R$ 1.185,42 cada Apostas Para o próximo concurso, as apostas podem ser feitas até as 20h (horário de Brasília) de quinta-feira (17), em qualquer lotérica do país ou pela internet, no site ou aplicativo da Caixa. A aposta simples, com seis dezenas, custa R$ 6.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Nenhum apostador acertou as seis dezenas do Concurso 3.058 da Mega-Sena, realizado nesta terça-feira (15). O prêmio acumulou e está estimado em R$ 102 milhões para o próximo sorteio. Os números sorteados foram: 14 - 23 - 53 - 56 - 57 - 60 49 apostas acertaram cinco dezenas e irão receber R$ 53.305,58 cada 3.632 apostas acertaram quatro dezenas e irão receber R$ 1.185,42 cada Apostas Para o próximo concurso, as apostas podem ser feitas até as 20h (horário de Brasília) de quinta-feira (17), em qualquer lotérica do país ou pela internet, no site ou aplicativo da Caixa. A aposta simples, com seis dezenas, custa R$ 6.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "afd81cf2f834fe64d5125340b90dc8172a581ebd6a25b38c143331943a1e61e3": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Maioria dos projetos no Congresso ameaçam indígenas, diz pesquisa",
+        "url": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-09/maioria-dos-projetos-no-congresso-ameacam-indigenas-diz-pesquisa",
+        "publishedAt": "2026-09-16T00:25:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Dos 272 projetos que tramitam no Congresso Nacional que afetam diretamente os direitos dos povos indígenas, 146 (54%) são desfavoráveis a essas comunidades tradicionais. Essa é uma das conclusões de um levantamento divulgado, na tarde desta terça (15), pelo Conselho Indígena Missionário (Cimi). A avaliação aponta ainda que, dessas propostas consideradas negativas, 125 dizem respeito aos direitos territoriais. Os dados ficaram disponíveis pelo Cimi na plataforma denominada “ Congresso Antindígena ”. Aumento Secretário executivo do Cimi, Luís Ventura. Foto: Cimi/Divulgação Notícias relacionadas: Especialistas defendem protagonismo indígena na restauração de terras. De acordo com o secretário executivo do Cimi, Luís Ventura, os números levantados confirmam que o Congresso tem um comportamento contrário aos direitos constitucionais dos povos indígenas. Essa configuração teve um aumento relevante, segundo ele, nas últimas duas legislaturas. “Na última legislatura, de 2023 para cá, foram 83 proposições legislativas contrárias aos direitos dos povos indígenas protocoladas na Câmara dos Deputados ou no Senado”, disse em entrevista à Agência Brasil. Entre as iniciativas negativas para os povos indígenas, o secretário do Cimi cita tentativas de instalar o Marco temporal, de abertura dos territórios à exploração econômica por terceiros, de reduzir as possibilidades de demarcação e até de levar a atribuição da demarcação para o Congresso Nacional e não para o Executivo, que é o que estabelece a Constituição. O secretário do Cimi acrescenta que há uma intensificação dos votos dos parlamentares contrários aos interesses dos indígenas no país. Por isso, há uma preocupação da entidade com o futuro. “É evidente que nós estamos preocupados caso o Congresso Nacional não tenha uma reconfig",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Dos 272 projetos que tramitam no Congresso Nacional que afetam diretamente os direitos dos povos indígenas, 146 (54%) são desfavoráveis a essas comunidades tradicionais. Essa é uma das conclusões de um levantamento divulgado, na tarde desta terça (15), pelo Conselho Indígena Missionário (Cimi). A avaliação aponta ainda que, dessas propostas consideradas negativas, 125 dizem respeito aos direitos territoriais. Os dados ficaram disponíveis pelo Cimi na plataforma denominada “ Congresso Antindígena ”. Aumento Secretário executivo do Cimi, Luís Ventura. Foto: Cimi/Divulgação Notícias relacionadas: Especialistas defendem protagonismo indígena na restauração de terras. De acordo com o secretário executivo do Cimi, Luís Ventura, os números levantados confirmam que o Congresso tem um comportamento contrário aos direitos constitucionais dos povos indígenas. Essa configuração teve um aumento relevante, segundo ele, nas últimas duas legislaturas. “Na última legislatura, de 2023 para cá, foram 83 proposições legislativas contrárias aos direitos dos povos indígenas protocoladas na Câmara dos Deputados ou no Senado”, disse em entrevista à Agência Brasil. Entre as iniciativas negativas para os povos indígenas, o secretário do Cimi cita tentativas de instalar o Marco temporal, de abertura dos territórios à exploração econômica por terceiros, de reduzir as possibilidades de demarcação e até de levar a atribuição da demarcação para o Congresso Nacional e não para o Executivo, que é o que estabelece a Constituição. O secretário do Cimi acrescenta que há uma intensificação dos votos dos parlamentares contrários aos interesses dos indígenas no país. Por isso, há uma preocupação da entidade com o futuro. “É evidente que nós estamos preocupados caso o Congresso Nacional não tenha uma reconfig",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "465672a5cefb949072d50db3ad4c81ec8f64ae3f8bb28fe80423ae0b13bb5aaf": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Veja como foi a terça-feira (15) dos candidatos a presidente",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/veja-como-foi-terca-feira-15-dos-candidatos-presidente",
+        "publishedAt": "2026-09-16T00:19:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A agenda dos candidatos à presidência da República nesta terça-feira (15) incluiu entrevistas e participação em podcasts, manifestações e atos políticos. >> Veja como foi o dia dos presidenciáveis: Ronaldo Caiado (PSD) O candidato Ronaldo Caiado cumpriu agenda na cidade de Aparecida de Goiânia (GO), onde fez comício de campanha. Notícias relacionadas: Em carta aos candidatos, Fenaj pede valorização dos jornalistas. Ciência ainda não foi lembrada na campanha eleitoral, diz SBPC. Campanha incentiva voto de quem tem mais de 70 anos. Nas redes sociais, Caiado disse que, se eleito, pretende implantar novos critérios para indicação de ministros do STF, como idade mínima de 60 anos, quarentena de quatro anos para voltar à profissão e de oito anos para disputar cargo político. Ele afirmou ainda que pretende indicar quatro mulheres para a Corte. Rui Costa Pimenta (PCO) O candidato Rui Costa Pimenta participou de programa na Rádio Causa Operária e concedeu entrevista ao Canal do Galo Preto. Samara Martins (UP) A candidata Samara Martins cumpriu agenda de campanha em Porto Alegre (RS). Na cidade, participou de café da manhã na Ocupação Sepé Tiaraju, próxima ao centro da cidade. Samara Martins também fez panfletagem no Restaurante Universitário da Universidade Federal do Rio Grande do Sul (Ufrgs) e de ato em frente ao Ministério Público. Ela fez comício no centro de Gravataí (RS). Wilson Grassi (Democrata) O candidato não teve agenda pública de campanha. Augusto Cury (Avante) O candidato Augusto Cury esteve na Avenida Paulista, em frente ao Museu de Arte de São Paulo (Masp), e participou da ação “Cury Fala, Brasil Escuta”, onde público relatou problemas ao candidato. Clariana Barão (DC) A candidata Clariana Barão passou o dia em Brasília. Em vídeo divulgado nas redes sociais, a can",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A agenda dos candidatos à presidência da República nesta terça-feira (15) incluiu entrevistas e participação em podcasts, manifestações e atos políticos. >> Veja como foi o dia dos presidenciáveis: Ronaldo Caiado (PSD) O candidato Ronaldo Caiado cumpriu agenda na cidade de Aparecida de Goiânia (GO), onde fez comício de campanha. Notícias relacionadas: Em carta aos candidatos, Fenaj pede valorização dos jornalistas. Ciência ainda não foi lembrada na campanha eleitoral, diz SBPC. Campanha incentiva voto de quem tem mais de 70 anos. Nas redes sociais, Caiado disse que, se eleito, pretende implantar novos critérios para indicação de ministros do STF, como idade mínima de 60 anos, quarentena de quatro anos para voltar à profissão e de oito anos para disputar cargo político. Ele afirmou ainda que pretende indicar quatro mulheres para a Corte. Rui Costa Pimenta (PCO) O candidato Rui Costa Pimenta participou de programa na Rádio Causa Operária e concedeu entrevista ao Canal do Galo Preto. Samara Martins (UP) A candidata Samara Martins cumpriu agenda de campanha em Porto Alegre (RS). Na cidade, participou de café da manhã na Ocupação Sepé Tiaraju, próxima ao centro da cidade. Samara Martins também fez panfletagem no Restaurante Universitário da Universidade Federal do Rio Grande do Sul (Ufrgs) e de ato em frente ao Ministério Público. Ela fez comício no centro de Gravataí (RS). Wilson Grassi (Democrata) O candidato não teve agenda pública de campanha. Augusto Cury (Avante) O candidato Augusto Cury esteve na Avenida Paulista, em frente ao Museu de Arte de São Paulo (Masp), e participou da ação “Cury Fala, Brasil Escuta”, onde público relatou problemas ao candidato. Clariana Barão (DC) A candidata Clariana Barão passou o dia em Brasília. Em vídeo divulgado nas redes sociais, a can",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "4f26ac555ce3ab6b21e82efc021cc73ef4a908eadd25faa5828321aef07eb2b4": {
+      "firstSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "item": {
+        "kind": "news",
+        "title": "Fluminense leva susto, mas é 1º classificado à semi da Libertadores",
+        "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-09/fluminense-leva-susto-mas-e-1o-classificado-semi-da-libertadores",
+        "publishedAt": "2026-09-16T00:17:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Fluminense é o primeiro classificado às semifinais da Libertadores. O Tricolor se garantiu nesta terça-feira (15), mesmo com a derrota por 2 a 1 para o Platense no Coliseo de Victoria, em Vicente López, região metropolitana de Buenos Aires. A equipe brasileira se beneficiou da vitória por 2 a 0 sobre os argentinos na partida de ida, há uma semana, no Maracanã. Na soma dos placares, 3 a 2 para o time carioca. Notícias relacionadas: Flamengo supera Del Valle na altitude pelas quartas da Libertadores. Fluminense bate Platense e abre vantagem nas quartas da Libertadores. Esta é a terceira vez que o Fluminense se coloca entre os quatro principais clubes da América do Sul. Em 2008 e 2023, o Tricolor também foi à decisão, sendo campeão na edição de três anos atrás. O adversário nas semifinais sai nesta quarta-feira (16), no duelo entre LDU e Palmeiras, que se enfrentam no Estádio Casa Blanca, na capital equatoriana Quito, a partir das 19h (horário de Brasília). O Verdão tem a vantagem do empate, pois venceu a partida de ida, uma semana antes, por 1 a 0 no Nubank Parque, em São Paulo. Se na última terça-feira (9) o Fluminense construiu a vitória no primeiro tempo, o Platense necessitou dos mesmos 45 minutos iniciais para igualar o placar agregado. O time da casa acuou o Tricolor na defesa e obrigou o goleiro Fábio a trabalhar. Aos 24, o goleiro fez grande defesa após uma cabeçada do zagueiro Ignacio Vázquez, no canto. Cinco minutos depois, Fábio nada pôde fazer. Na sobra de uma tentativa de drible que esbarrou no zagueiro Julián Millán, o meia Guido Mainero chutou quase da marca do pênalti, a bola desviou no volante Hércules e saiu do alcance do arqueiro da equipe carioca, abrindo o marcador. Nos acréscimos, Mainero cruzou pela direita e o atacante Bruno Sepúlveda apareceu às",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Fluminense é o primeiro classificado às semifinais da Libertadores. O Tricolor se garantiu nesta terça-feira (15), mesmo com a derrota por 2 a 1 para o Platense no Coliseo de Victoria, em Vicente López, região metropolitana de Buenos Aires. A equipe brasileira se beneficiou da vitória por 2 a 0 sobre os argentinos na partida de ida, há uma semana, no Maracanã. Na soma dos placares, 3 a 2 para o time carioca. Notícias relacionadas: Flamengo supera Del Valle na altitude pelas quartas da Libertadores. Fluminense bate Platense e abre vantagem nas quartas da Libertadores. Esta é a terceira vez que o Fluminense se coloca entre os quatro principais clubes da América do Sul. Em 2008 e 2023, o Tricolor também foi à decisão, sendo campeão na edição de três anos atrás. O adversário nas semifinais sai nesta quarta-feira (16), no duelo entre LDU e Palmeiras, que se enfrentam no Estádio Casa Blanca, na capital equatoriana Quito, a partir das 19h (horário de Brasília). O Verdão tem a vantagem do empate, pois venceu a partida de ida, uma semana antes, por 1 a 0 no Nubank Parque, em São Paulo. Se na última terça-feira (9) o Fluminense construiu a vitória no primeiro tempo, o Platense necessitou dos mesmos 45 minutos iniciais para igualar o placar agregado. O time da casa acuou o Tricolor na defesa e obrigou o goleiro Fábio a trabalhar. Aos 24, o goleiro fez grande defesa após uma cabeçada do zagueiro Ignacio Vázquez, no canto. Cinco minutos depois, Fábio nada pôde fazer. Na sobra de uma tentativa de drible que esbarrou no zagueiro Julián Millán, o meia Guido Mainero chutou quase da marca do pênalti, a bola desviou no volante Hércules e saiu do alcance do arqueiro da equipe carioca, abrindo o marcador. Nos acréscimos, Mainero cruzou pela direita e o atacante Bruno Sepúlveda apareceu às",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -7798,25 +8051,164 @@
           "message": "fetch failed"
         }
       ]
+    },
+    "35061701795:1": {
+      "at": "2026-09-16T05:59:12.856Z",
+      "collected": 84,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 35,
+          "durationMs": 1333
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 3426
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 21,
+          "durationMs": 3848
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 27,
+          "durationMs": 4467
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 20
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 7
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 3866
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 33,
-      "durationMs": 1881,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "itemCount": 35,
+      "durationMs": 1333,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
       "itemCount": 0,
-      "durationMs": 16140,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 6,
+      "durationMs": 3426,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 7,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 1": {
@@ -7824,8 +8216,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 6,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 7,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 2": {
@@ -7833,8 +8225,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 6,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 7,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Querido Diário — consulta 3": {
@@ -7842,83 +8234,83 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 6,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 7,
       "lastSuccessAt": "2026-09-14T22:30:22.881Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 21,
-      "durationMs": 3946,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "durationMs": 3848,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
-      "status": "degraded",
-      "itemCount": 21,
-      "durationMs": 21470,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-15T21:18:44.745Z"
+      "status": "ok",
+      "itemCount": 27,
+      "durationMs": 4467,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -7927,7 +8319,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T00:17:58.313Z"
+      "checkedAt": "2026-09-16T05:59:12.856Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -7936,7 +8328,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T00:17:58.313Z"
+      "checkedAt": "2026-09-16T05:59:12.856Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -7945,62 +8337,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T00:17:58.313Z"
+      "checkedAt": "2026-09-16T05:59:12.856Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 20,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
-      "status": "error",
-      "itemCount": 0,
-      "message": "fetch failed",
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-15T21:18:44.745Z"
+      "status": "ok",
+      "itemCount": 7,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
-      "itemCount": 1,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
+      "itemCount": 0,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T00:17:58.313Z"
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "SAPL": {
       "name": "SAPL",
-      "status": "degraded",
-      "itemCount": 0,
-      "durationMs": 10478,
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-15T21:18:44.745Z"
+      "status": "ok",
+      "itemCount": 1,
+      "durationMs": 3866,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
-      "status": "error",
-      "itemCount": 0,
-      "message": "fetch failed",
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-15T21:18:44.745Z"
+      "status": "ok",
+      "itemCount": 1,
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "fetch failed",
-      "checkedAt": "2026-09-16T00:17:58.313Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-15T21:18:44.745Z"
+      "checkedAt": "2026-09-16T05:59:12.856Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-16T05:59:12.856Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
