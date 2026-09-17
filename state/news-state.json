@@ -2496,7 +2496,7 @@
   "observations": {
     "79ae36896118fb7467961a4e9f2a1d1f3254a9146098b22fe20bb5ec0faf47a3": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Notícia - ABC das Artes será realizado em nova data - Consórcio Intermunicipal - Grande ABC",
@@ -2521,7 +2521,7 @@
     },
     "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
@@ -2547,7 +2547,7 @@
     },
     "eaa0de7c1adedd5a789788dbf1741fac53dd8c26808c19af390e55a8969ed71f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná",
@@ -2593,7 +2593,7 @@
     },
     "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - ABCD Jornal",
@@ -2693,7 +2693,7 @@
     },
     "8154518dba47dbdaca5bb52772830b7b3662599e101dbcb2f2c677ebff17a77f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "MS reforça contrato para compra de medicamentos com aporte de R$ 20 milhões - Midiamax",
@@ -2716,22 +2716,22 @@
     },
     "0e7aabe32ed068953985e31bb57c64aa08f6bab53384df4012d13ecf16f92a96": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - Câmara Municipal de Curitiba",
+        "title": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral - cmc.pr.gov.br",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNX19ncTZZemJncVNPSElJNzRSYVl1WUxaTEFtMWV2OWc2RmxUTWxzQVBqalg5djZNaTFqdy12V0gtS2hGaWpFYl9CZFhNSDZDdWJiVDJKb1dhTzVneklXcFlmUmdaVldyR1NaVW15dFlyY0xDLUd6M08xd0dLU0J2dWdzUi1NZFlfMDctWWhZcW9pNjZ3Y1YwM3VIa2NjODhrdkEzNTFkX2hWU01rdlI1dW9zVVZGbjF1eE5HT2F5dWg2QQ?oc=5",
         "sourceUrl": "https://www.cmc.pr.gov.br",
         "publishedAt": "2026-09-10T12:04:00.000Z",
-        "source": "Câmara Municipal de Curitiba",
-        "summary": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral Câmara Municipal de Curitiba",
+        "source": "cmc.pr.gov.br",
+        "summary": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral cmc.pr.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 4,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral Câmara Municipal de Curitiba",
+          "evidenceText": "Consórcio de Guardas Municipais pode ampliar atuação até o Litoral cmc.pr.gov.br",
           "publicContext": true,
           "strongPublicContext": false
         }
@@ -2739,7 +2739,7 @@
     },
     "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
@@ -2762,7 +2762,7 @@
     },
     "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
@@ -2811,7 +2811,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -2857,7 +2857,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -2903,7 +2903,7 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
@@ -2949,7 +2949,7 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
@@ -2972,7 +2972,7 @@
     },
     "a01a83c0cedc579416617fd7d41ba9be8d19b2062d37a1584462884a1c06c6aa": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "CONIAPE firma parceria com o Ministério da Agricultura e Pecuária do Governo Federal",
@@ -3001,7 +3001,7 @@
     },
     "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
@@ -3024,7 +3024,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -3047,7 +3047,7 @@
     },
     "00ecea0e3db92dbffe5198e7dd9f7e1d0285edf7461a98c450ca99e7a54a9b01": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "FNP se reúne com a Secretaria de Educação Básica do MEC para fortalecer agenda municipalista",
@@ -3070,7 +3070,7 @@
     },
     "475bff69568a7ede517b7ef0a3983674bc7673884c88267509c5ec7feebb2365": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "FNP leva debate da Reforma Tributária aos municípios paranaenses",
@@ -3095,7 +3095,7 @@
     },
     "44c3475b4abe5ff9287ba07e7130980831dd6ab42fc2dd1474f7e333df0303a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "FNP reúne municípios para debater drenagem urbana e estratégias de adaptação às mudanças climáticas",
@@ -3118,7 +3118,7 @@
     },
     "34819e26868a429627b6d1613444cef9a15ec93f80850f63ee5ed083ea89487c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Fórum Nacional de mobilidade debate novos modelos de financiamento para o transporte público",
@@ -3494,7 +3494,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3521,7 +3521,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -3546,7 +3546,7 @@
     },
     "26c2b82664c43ce3db2df36b5095c04dc8d284ba7cbbeb77b43c2042d87725db": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Boas práticas colocam foco em rastreamento de informações, análise de riscos, transparência e reforçam diálogo com a gestão",
@@ -3571,7 +3571,7 @@
     },
     "a62ed95fee447ddbd7ac7ae0371fd72c75770f5dec76a2ccab383d38a47db325": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "TCEMG esclarece regras para contratação por credenciamento",
@@ -3596,7 +3596,7 @@
     },
     "49efe5aea7014a410018a72f9d3c9964cab61a80021365a6087844c3f0f9253e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Identificação de fraudes e aproximação com a sociedade são temas do último dia do Seminário de Controle Interno",
@@ -3621,7 +3621,7 @@
     },
     "73c7c6dd92a4d4ed7e284f1766f4d343372711b6baae2ca033f9854522a3c2ce": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Controladorias Internas têm a missão de estar atentas aos \"rinocerontes cinza\" da gestão pública",
@@ -3646,7 +3646,7 @@
     },
     "9b59e45a6f77220cf1be84a1814d9ac59194150e9c2fab3330b5b231f895a291": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "TCEMG lança carta compromisso para fortalecer controles internos em Minas Gerais",
@@ -3671,7 +3671,7 @@
     },
     "634e48a364faf8610ae5f9bb220a4215fb0cbc7d4a9d0e738b846cf0bc1e4925": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "II Seminário de Controles Internos reúne mais de 750 pessoas em BH",
@@ -3696,7 +3696,7 @@
     },
     "51b6d6659dcd9bf107d30375d0503ce40fd8ccca116a8708337f92fbea038f2c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Livro sobre escavações no antigo DOPS/MG será lançado com experiência imersiva em Belo Horizonte",
@@ -3721,7 +3721,7 @@
     },
     "a96f9c196b1d204fcec8d247f0608672bc652edb25c8d232eba3860b9e761acc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2025 da Assembleia Legislativa de Minas Gerais",
@@ -3771,7 +3771,7 @@
     },
     "fea773ad11b3f69b238957fbd5be196fc4c671d38b510becf88b27ea140a19a4": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Solenidade do Colar do Mérito marca comemorações dos 91 anos do TCEMG",
@@ -3971,7 +3971,7 @@
     },
     "96de484ae2333596f2689e38ddc97895c8b7a62f04be4a2c710e168bcfb1be13": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o papel dos Consórcios Públicos na gestão municipal com Victor Borges",
@@ -3999,7 +3999,7 @@
     },
     "4436fad46607038d8cfe89469b557267d3afa88b2153e8a335cc4fa4c50c70d7": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Nono módulo da Trilha de Aprendizagem sobre ODS está no ar",
@@ -4025,7 +4025,7 @@
     },
     "5644e472796b1bd97f5551ffcb683217a3f08af0d8d0d8e4a0a1588f49dfbf95": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Conexão Saúde debate saúde mental no trabalho com a jornalista Izabella Camargo",
@@ -4051,7 +4051,7 @@
     },
     "9f028ca97770b6f264b0893ebc66f4d033c9fc3602a3b61c9025f20ab8b581dc": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada na cidade de Limeira",
@@ -4077,7 +4077,7 @@
     },
     "9f9364e6671983e0a305a64aade3d413bedcedfd4c26332c8868da0cf8473cc0": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "São Carlos recebe caravana do Ciclo de Debates do TCESP",
@@ -4203,7 +4203,7 @@
     },
     "1bb8aa8da2195060a12b04ce02b33d5ff9c85ed3e6578bfdce247960c4a0a300": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T16:52:30.454Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda - RD – Repórter Diário",
@@ -4769,14 +4769,14 @@
     },
     "7ed126a6717a0ba3c7e1875bdc785938b2aaa96699cc1d6c8835e0e38cefc2fa": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T20:06:29.557Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jundiaí (SP)",
         "url": "https://data.queridodiario.ok.org.br/3525904/2026-09-11/067a451776959640f434998bd4a708679033e643.pdf",
         "publishedAt": "2026-09-11T12:00:00-03:00",
         "source": "Querido Diário",
-        "summary": "SECR. MUN. DE PROMOÇÃO DA SAÚDE PEDIDO 4.357 REQUISIÇÃO REMANEJAMENTO D E C R E T A: ART. 1º - FICA ABERTO NO ORÇAMENTO DO MUNICÍPIO, UM CRÉDITO ADICIONAL SUPLEMENTAR NO VALOR DE R$ 392.850,00 (TREZENTOS E NOVENTA E DOIS MIL OITOCENTOS E CINQÜENTA REAIS) NA(S) DOTAÇÃO(ÕES): 14.01.10.302.0191.2186 R E O R G A N I Z A Ç Ã O E FORTALECIMENTO DA ATENÇÃO ESPECIALIZADA 3.3.71.70.00 RATEIO PELA PARTICIPACAO EM CONSORCIO PUBLICO PROPRIA0000 R$ 392.850,00 392.850,00TOTAL....R$ ART. 2º - A COBERTURA DO CRÉDITO DE QUE TRATA O ART. 1º FAR-SE-Á COM O(S) SEGUINTE(S) RECURSO(S): I - ANULAÇÃO PARCIAL DA(S) SEGUINTE(S) DOTAÇÃO(ÕES) DO ORÇAMENTO VIGENTE: 14.01.10.302.0191.2186 R E O R G A N I Z A Ç Ã O E FORTALECIMENTO DA ATENÇÃO ESPECIALIZADA 3.3.90.39.00 O U T R O S S E R V I Ç O S D E TERCEIROS - PESSOA JURÍDICA 0000 PROPRIA DO MUNICÍPIO DE JUNDIAÍ DECRETO Nº.36.673, DE 10 DE SETEMBRO DE 2026. GUSTAVO MARTINELLI, PREFEITO DO MUNICÍPIO DE JUNDIAI, ESTADO DE SÃO PAULO, NO USO DE SUAS ATRIBUIÇÕES LEGAIS ESPECIALMENTE AS QUE LHE SÃO CONFERIDAS PELA LEI Nº 10436, DE 03 DE DEZEMBRO DE 2025, ART. 4º, §§ 1º E 2º. CONSIDERANDO NECESSIDADE DE ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR POR ANULAÇÃO DE DOTAÇÃO, PARA ATENDER DESPESAS COM COTA VARIÁVEL DO CONTRATO DE RATEIO Nº 01/2025, REFERENTE A CONSULTAS ESPECIALIZADAS. SEM IMPACTO NAS METAS CONTIDAS NA LDO E PPA. PROCESSO SEI PMJ.0038441/2025. REF. SOLICITAÇÃO 903 - SECR. MUN. DE PROMOÇÃO DA SAÚDE PEDIDO 4.357 REQUISIÇÃO REMANEJAMENTO D E C R E T A: ART. 1º - FICA ABERTO NO ORÇAMENTO DO MUNICÍPIO, UM CRÉDITO ADICIONAL SUPLEMENTAR NO VALOR DE R$ 392.850,00 (TREZENTOS E NOVENTA E DOIS MIL OITOCENTOS E CINQÜENTA REAIS)",
+        "summary": "DO MUNICÍPIO DE JUNDIAÍ DECRETO Nº.36.673, DE 10 DE SETEMBRO DE 2026. GUSTAVO MARTINELLI, PREFEITO DO MUNICÍPIO DE JUNDIAI, ESTADO DE SÃO PAULO, NO USO DE SUAS ATRIBUIÇÕES LEGAIS ESPECIALMENTE AS QUE LHE SÃO CONFERIDAS PELA LEI Nº 10436, DE 03 DE DEZEMBRO DE 2025, ART. 4º, §§ 1º E 2º. CONSIDERANDO NECESSIDADE DE ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR POR ANULAÇÃO DE DOTAÇÃO, PARA ATENDER DESPESAS COM COTA VARIÁVEL DO CONTRATO DE RATEIO Nº 01/2025, REFERENTE A CONSULTAS ESPECIALIZADAS. SEM IMPACTO NAS METAS CONTIDAS NA LDO E PPA. PROCESSO SEI PMJ.0038441/2025. REF. SOLICITAÇÃO 903 - SECR. MUN. DE PROMOÇÃO DA SAÚDE PEDIDO 4.357 REQUISIÇÃO REMANEJAMENTO D E C R E T A: ART. 1º - FICA ABERTO NO ORÇAMENTO DO MUNICÍPIO, UM CRÉDITO ADICIONAL SUPLEMENTAR NO VALOR DE R$ 392.850,00 (TREZENTOS E NOVENTA E DOIS MIL OITOCENTOS E CINQÜENTA REAIS)",
         "territoryId": "3525904",
         "territoryName": "Jundiaí",
         "stateCode": "SP",
@@ -4788,7 +4788,7 @@
           "reasons": [
             "rejeitado: RATEIO sem contexto público"
           ],
-          "evidenceIndex": 1,
+          "evidenceIndex": 0,
           "evidenceText": "DO MUNICÍPIO DE JUNDIAÍ DECRETO Nº.36.673, DE 10 DE SETEMBRO DE 2026. GUSTAVO MARTINELLI, PREFEITO DO MUNICÍPIO DE JUNDIAI, ESTADO DE SÃO PAULO, NO USO DE SUAS ATRIBUIÇÕES LEGAIS ESPECIALMENTE AS QUE LHE SÃO CONFERIDAS PELA LEI Nº 10436, DE 03 DE DEZEMBRO DE 2025, ART. 4º, §§ 1º E 2º. CONSIDERANDO NECESSIDADE DE ABERTURA DE CRÉDITO ADICIONAL SUPLEMENTAR POR ANULAÇÃO DE DOTAÇÃO, PARA ATENDER DESPESAS COM COTA VARIÁVEL DO CONTRATO DE RATEIO Nº 01/2025, REFERENTE A CONSULTAS ESPECIALIZADAS. SEM IMPACTO NAS METAS CONTIDAS NA LDO E PPA. PROCESSO SEI PMJ.0038441/2025. REF. SOLICITAÇÃO 903 - SECR. MUN. DE PROMOÇÃO DA SAÚDE PEDIDO 4.357 REQUISIÇÃO REMANEJAMENTO D E C R E T A: ART. 1º - FICA ABERTO NO ORÇAMENTO DO MUNICÍPIO, UM CRÉDITO ADICIONAL SUPLEMENTAR NO VALOR DE R$ 392.850,00 (TREZENTOS E NOVENTA E DOIS MIL OITOCENTOS E CINQÜENTA REAIS)",
           "publicContext": false,
           "strongPublicContext": false
@@ -4854,7 +4854,7 @@
     },
     "b102575f88c62615fdfdece095c8696c830e51576e89dc30b69287c757848726": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T20:06:29.557Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Votuporanga (SP)",
@@ -5047,7 +5047,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5072,7 +5072,7 @@
     },
     "317c46da86013d797f3ef87df96607ca5126ff1e5808224c53921837863cddf9": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Transferida a 23ª Sessão Ordinária da Segunda Câmara do TCESP desta terça-feira",
@@ -5307,7 +5307,7 @@
     },
     "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - Alagoas na Net",
@@ -5402,7 +5402,7 @@
     },
     "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
@@ -5494,7 +5494,7 @@
     },
     "b9243454fd8f696c89efe2a28513f85297f0f66807f108cb8166887e4be3e357": {
       "firstSeenAt": "2026-09-15T13:32:10.950Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional em Peixoto de Azevedo - Web Rádio Terra",
@@ -5749,7 +5749,7 @@
     },
     "3f5b7b86c6f8909d0733cf127e65b91b8450a4bd255004996b0470fa96d8739e": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC participa de Encontro Cidades Verdes Resili... - Consórcio Intermunicipal - Grande ABC",
@@ -5774,7 +5774,7 @@
     },
     "abaee63293712160492481bad2162710c9c1b133a8c3ed5c9b8a21fc901cde03": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - NG NOTÍCIAS",
@@ -5820,7 +5820,7 @@
     },
     "97888cdbc4139f52de557a7c5321f8f8ff2082fcba1231438afaae3f27988d4c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital - Ponto na Curva",
@@ -5843,7 +5843,7 @@
     },
     "57cbc5c4169c8017e9c5c3f545acfe2f06058d8effea13d29d4e1c70a0d76c0c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Acompanhamento de Matéria - sapl.patobranco.pr.leg.br",
@@ -5866,7 +5866,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -5889,7 +5889,7 @@
     },
     "14a939bc0c54983f74323beb211d40d0f034733f9633d9214d826d8f66fa273d": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Mutirão Brasil Cidades Amazônicas fortalece ação climática local em seis municípios",
@@ -6167,7 +6167,7 @@
     },
     "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Concurso CONSUD PR: inscrições encerradas para 37 vagas - Estratégia Concursos",
@@ -6190,22 +6190,22 @@
     },
     "473cca93ce84b67612103b5ffbf695d672e6c410b84700dcc2ed77caca99d2c0": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais - ABC Agora",
+        "title": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais - abcagora.com.br",
         "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4xR1YwYUxPWG9ldVVselhEcDdzUWFnY3poNW1UcXNuT2w5eFhZNmxSRnZTaGtPZUd4NWRoU0MzSFh4V1RyaXlfMWh3V2g5VmNrUGxoSmhYUFVNNl80bE9WdGh3RlpmMjB4TkliV1ZPVDNpTjBaeXJXRGVQQWw?oc=5",
         "sourceUrl": "https://abcagora.com.br",
         "publishedAt": "2026-09-15T20:50:41.000Z",
-        "source": "ABC Agora",
-        "summary": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais ABC Agora",
+        "source": "abcagora.com.br",
+        "summary": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais abcagora.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 2,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais ABC Agora",
+          "evidenceText": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais abcagora.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6213,7 +6213,7 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
@@ -6489,7 +6489,7 @@
     },
     "bd14fb2413e3f263be8feff4397689363acc15b7529d2e4e0b40bb290487ff80": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Educação em primeiro lugar: TCEMG participa do 12º Fórum Mineiro de Educação",
@@ -6514,7 +6514,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -6752,7 +6752,7 @@
     },
     "29164a2c6b237c262f0931b5900806b8270872add136622f8d7d721b7f33d983": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "ÓRGÃO OFICIAL - prefeitura de vargem alta",
@@ -6775,7 +6775,7 @@
     },
     "aa4e7c489fd115157c5d5fd961b53f89eb3aa50e5f65149aea4945b06191373e": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara - TCE-PR",
@@ -7174,7 +7174,7 @@
     },
     "3b3368b3fd178566961ea830b393ed9c0c7326c30b3a8ff85845aa57e4cafdce": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - AtualMT",
@@ -7432,7 +7432,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -7460,7 +7460,7 @@
     },
     "06428e75937044b7bf4f96b4d416326c858195b05468d8997b9f41a19d058b11": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Licitação de R$ 31,2 milhões em Itanhomi é suspensa por indícios de restrição à concorrência",
@@ -7487,7 +7487,7 @@
     },
     "a8b47d06995b57b48ed350ecc23c3d3902f5b917aed230dd2239145a5a453af8": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "TCESP comunica abertura de consulta pública sobre o Guia de Custos para o Setor Público",
@@ -7513,7 +7513,7 @@
     },
     "ee2e1a9815cbb3137ff3db3391024df35a98c461376387470163afa6112f1c0c": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "gazette-index",
         "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
@@ -7538,7 +7538,7 @@
     },
     "a01af230da7740611782041760ef30c39464eb49867b2bd5bcf17062cd024dd0": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Prefeitura Municipal de Mogi Guaçu",
@@ -7563,22 +7563,22 @@
     },
     "a2abb2acfc15838aefcc78789a39eb9b3bf34cac36f29420e8a174a264394993": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
-        "title": "Promotorias cobram solução para crise em hospital regional - O RONCADOR",
+        "title": "Promotorias cobram solução para crise em hospital regional - oroncador.com.br",
         "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPVGVodFZLcFhHNWY4OUtELXU0SFd1NmYxTEUtV3Z3TzNrcHV1UjZ5T3lfbThXS05vMkRsZmxVMjFhNllFdU5xMGdWR1IxSms4SW1BcmQwM2had0xicldTdTJXbWV5Q0g3N1NSaV8xVDZJN3REM1dXenBFQzNna3lrWERubjVjNkk3bTh5cG9ueXU4VHFvR0FCbw?oc=5",
         "sourceUrl": "https://oroncador.com.br",
         "publishedAt": "2026-09-15T00:30:20.000Z",
-        "source": "O RONCADOR",
-        "summary": "Promotorias cobram solução para crise em hospital regional O RONCADOR",
+        "source": "oroncador.com.br",
+        "summary": "Promotorias cobram solução para crise em hospital regional oroncador.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Promotorias cobram solução para crise em hospital regional O RONCADOR",
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional oroncador.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -7586,7 +7586,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -7772,7 +7772,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -7797,7 +7797,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -7822,7 +7822,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -7849,7 +7849,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -7874,7 +7874,7 @@
     },
     "2e5ce60d1c9221face2410af24ae606ca016845ec74e44a1c2bb7d4bd2d21849": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Tribunal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -7899,7 +7899,7 @@
     },
     "ca0b94ca8fae90b8426d1bc5403b206b5519bfbffe898aa846864b5a06e19729": {
       "firstSeenAt": "2026-09-16T22:55:30.458Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO ABC SEDIA CURSO SOBRE ASSISTÊNCIA TÉCNICA HABITACIONAL DE INTERESSE SOCIAL - TV São Bernardo",
@@ -7922,7 +7922,7 @@
     },
     "44b52f4bc2c735649f07fdd33faca92e522cfff9c4d1bfb825296263de2cdc5a": {
       "firstSeenAt": "2026-09-16T22:55:30.458Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Com 78 galerias, ArtRio traz obras inéditas",
@@ -7945,7 +7945,7 @@
     },
     "f2cc09309b4b0615b27d87f733071d165bce594b088078ab857a46302388d980": {
       "firstSeenAt": "2026-09-16T22:55:30.458Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "PRF estabelece regras para evitar bloqueios nas eleições de 2026",
@@ -7968,7 +7968,7 @@
     },
     "44f94fff6eea4e7c55aaa9585e5e876c1c17aac2821610447840bdef2439f827": {
       "firstSeenAt": "2026-09-16T22:55:30.458Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Trump cita PCC e CV e diz que Brasil não conseguiu enfrentar facções",
@@ -8014,7 +8014,7 @@
     },
     "9cb45aced551d2cc09ad53432c5688c3414c3b16bd0bb7f333880debd93e0d12": {
       "firstSeenAt": "2026-09-16T22:55:30.458Z",
-      "lastSeenAt": "2026-09-16T22:55:30.458Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
       "item": {
         "kind": "news",
         "title": "Apreensão de armas aumenta 10,3% no Rio em 2026",
@@ -8145,6 +8145,146 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "A Petrobras alcançou, no primeiro semestre de 2026, a maior margem de lucro em um grupo de grandes petroleiras internacionais, superando gigantes como a saudita Saudi Aramco e as americanas ExxonMobil e Chevron. A constatação está em um estudo divulgado nesta quarta-feira (16) pela Federação Única dos Petroleiros (FUP), que reúne sindicatos que representam mais de 105 mil trabalhadores da indústria do petróleo. Notícias relacionadas: Campo de Búzios, da Petrobras, bate recordes de exportação de gás. Petrobras negocia exploração em Gana para ampliar presença na África. Navio-plataforma da Petrobras atinge produção máxima no pré-sal. O levantamento é coordenado pelo economista Cloviomar Cararine, do Departamento Intersindical de Estatística e Estudos Socioeconômicos (Dieese), instituição de pesquisa ligada ao movimento sindical. O estudo compara resultados financeiros de grandes petroleiras desde 2020. É a primeira vez em que a Petrobras alcança o topo do ranking de margem de lucro. Margem x lucro Lucro é quanto dinheiro sobra para a empresa depois de descontados os custos, despesas e tributos. Já a margem de lucro mede a eficiência da empresa ao mostrar qual proporção da receita (vendas totais, como combustíveis, óleo cru e derivados) realmente se transforma em lucro. Por exemplo, se uma companhia tem uma margem líquida de 15%, significa que, para cada R$ 100 em vendas, R$ 15 sobram como lucro líquido para o negócio após todos os custos, despesas e tributos terem sido pagos. No ranking do Dieese, a Petrobras aparece no topo, com margem de 29,15% no primeiro semestre de 2026. No período, a estatal brasileira teve lucro líquido de R$ 85,1 bilhões. Confira a margem de lucro das grandes petroleiras acompanhadas pelo Dieese: Petrobras: 29,15% Saudi Aramco: 25,48% Chevron: 18,",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8052fb91718c47a1f2f0825c677485c11973b6b871dc79b9628cb5fe9518c3fb": {
+      "firstSeenAt": "2026-09-17T01:24:12.221Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
+      "item": {
+        "kind": "news",
+        "title": "Veja como foi a quarta-feira (16) dos presidenciáveis",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/veja-como-foi-quarta-feira-dos-presidenciaveis",
+        "publishedAt": "2026-09-17T00:45:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A agenda dos presidenciáveis nesta quarta-feira (16) incluiu entrevistas em podcasts, rádio e televisão, além de caravana, panfletagem e atos de campanha. >> Veja como foi o dia dos candidatos a presidente Rui Costa Pimenta (PCO) O candidato não teve agenda pública de campanha. Notícias relacionadas: PRF estabelece regras para evitar bloqueios nas eleições de 2026. Especialistas defendem maior regulação de plataformas digitais. Samara Martins (UP) A candidata Samara Martins participou de comício no calçadão de Canoas (RS) e de panfletagem no Hospital de Clínicas em Porto Alegre. Ela ainda fez comício no Centro Histórico e Cidade Baixa da capital gaúcha. Wilson Grassi (Democrata) O candidato Wilson Grassi concedeu entrevista ao podcast Lima TV, em São Bernardo do Campo (SP). Augusto Cury (Avante) O candidato Augusto Cury participou do Flow Podcast, em São Paulo. Clariana Barão (DC) A candidata Clariana Barão não teve agenda de campanha. Edmilson Costa (PCB) Nesta quarta-feira (16), o candidato Edmilson Costa (PCB) participou de uma caravana na cidade de Franca (SP), ao lado de outros candidatos do partido. Flávio Bolsonaro (PL) O candidato Flávio Bolsonaro participou de motocarreata em Juazeiro do Norte (CE). Ele disse que, em um eventual mandato, dará continuidade à transposição do Rio São Francisco. Flávio Bolsonaro disse ainda que pretende incrementar a infraestrutura logística da região para favorecer o escoamento da produção agrícola. \"Quero destravar todos esses projetos e conclusões de projetos, em especial de ferrovias, porque isso vai garantir o barateamento do escoamento da nossa produção, de commodities ”, disse. Ele viajou para Recife, onde participou de comício. Hertz Dias (PSTU) O candidato Hertz Dias fez panfletagem na sede da Companhia de Saneamento do Ma",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A agenda dos presidenciáveis nesta quarta-feira (16) incluiu entrevistas em podcasts, rádio e televisão, além de caravana, panfletagem e atos de campanha. >> Veja como foi o dia dos candidatos a presidente Rui Costa Pimenta (PCO) O candidato não teve agenda pública de campanha. Notícias relacionadas: PRF estabelece regras para evitar bloqueios nas eleições de 2026. Especialistas defendem maior regulação de plataformas digitais. Samara Martins (UP) A candidata Samara Martins participou de comício no calçadão de Canoas (RS) e de panfletagem no Hospital de Clínicas em Porto Alegre. Ela ainda fez comício no Centro Histórico e Cidade Baixa da capital gaúcha. Wilson Grassi (Democrata) O candidato Wilson Grassi concedeu entrevista ao podcast Lima TV, em São Bernardo do Campo (SP). Augusto Cury (Avante) O candidato Augusto Cury participou do Flow Podcast, em São Paulo. Clariana Barão (DC) A candidata Clariana Barão não teve agenda de campanha. Edmilson Costa (PCB) Nesta quarta-feira (16), o candidato Edmilson Costa (PCB) participou de uma caravana na cidade de Franca (SP), ao lado de outros candidatos do partido. Flávio Bolsonaro (PL) O candidato Flávio Bolsonaro participou de motocarreata em Juazeiro do Norte (CE). Ele disse que, em um eventual mandato, dará continuidade à transposição do Rio São Francisco. Flávio Bolsonaro disse ainda que pretende incrementar a infraestrutura logística da região para favorecer o escoamento da produção agrícola. \"Quero destravar todos esses projetos e conclusões de projetos, em especial de ferrovias, porque isso vai garantir o barateamento do escoamento da nossa produção, de commodities ”, disse. Ele viajou para Recife, onde participou de comício. Hertz Dias (PSTU) O candidato Hertz Dias fez panfletagem na sede da Companhia de Saneamento do Ma",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a0556e9fa42c90f229775d9e02a812237da9575c5c99dacd3386b49e14e165cb": {
+      "firstSeenAt": "2026-09-17T01:24:12.221Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
+      "item": {
+        "kind": "news",
+        "title": "Pesquisadores debatem em Brasília o papel da comunicação pública",
+        "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-09/pesquisadores-debatem-em-brasilia-o-papel-da-comunicacao-publica",
+        "publishedAt": "2026-09-17T00:18:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Como levar informação de qualidade à população? Como dialogar com o público e estimular a formação de cidadãos conscientes e engajados? Essas são algumas das perguntas que pesquisadores, estudantes e profissionais de comunicação pública vão debater até sexta-feira (18) durante o 4º Congresso Brasileiro de Comunicação Pública, em Brasília. Durante três dias, os pesquisadores vão participar de palestras, mesas redondas, minicursos, relatos de experiências e apresentação de pesquisas. Haverá também lançamento de livros e entrega de premiações. Notícias relacionadas: EBC lança Centro de Inovação e Pesquisa em Comunicação Pública. EBC destaca protagonismo da comunicação pública na TV 3.0. “A comunicação pública não se resume a divulgar realizações ou ocupar canais. A comunicação pública precisa ajudar as instituições a cumprir sua missão e permitir que políticas de serviços, de direitos, cheguem às pessoas. Quando isso falha, o cidadão paga o custo em tempo, dinheiro, segurança e perda de oportunidades”, disse o diretor de Relações Acadêmicas da Associação Brasileira de Comunicação Pública, Jorge Duarte. Desafios Os participantes também lembraram dos desafios da Comunicação Pública, como a transformação tecnológica acelerada e Inteligência Artificial, a fragmentação das audiências e o combate à desinformação. “As instituições públicas não podem ficar inertes à desinformação e elas não podem responder a esse fenômeno só corrigindo informações falsas. Elas precisam construir relações permanentes de credibilidade, transparência e diálogo com a sociedade e também fazer ações de educação midiática”, destacou a diretora da Secretaria de Comunicação Social do Senado, Glauciene Lara. Serviço: O Congresso Brasileiro de Comunicação Pública vai até sexta-feira (18). Os debates ocorrem ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Como levar informação de qualidade à população? Como dialogar com o público e estimular a formação de cidadãos conscientes e engajados? Essas são algumas das perguntas que pesquisadores, estudantes e profissionais de comunicação pública vão debater até sexta-feira (18) durante o 4º Congresso Brasileiro de Comunicação Pública, em Brasília. Durante três dias, os pesquisadores vão participar de palestras, mesas redondas, minicursos, relatos de experiências e apresentação de pesquisas. Haverá também lançamento de livros e entrega de premiações. Notícias relacionadas: EBC lança Centro de Inovação e Pesquisa em Comunicação Pública. EBC destaca protagonismo da comunicação pública na TV 3.0. “A comunicação pública não se resume a divulgar realizações ou ocupar canais. A comunicação pública precisa ajudar as instituições a cumprir sua missão e permitir que políticas de serviços, de direitos, cheguem às pessoas. Quando isso falha, o cidadão paga o custo em tempo, dinheiro, segurança e perda de oportunidades”, disse o diretor de Relações Acadêmicas da Associação Brasileira de Comunicação Pública, Jorge Duarte. Desafios Os participantes também lembraram dos desafios da Comunicação Pública, como a transformação tecnológica acelerada e Inteligência Artificial, a fragmentação das audiências e o combate à desinformação. “As instituições públicas não podem ficar inertes à desinformação e elas não podem responder a esse fenômeno só corrigindo informações falsas. Elas precisam construir relações permanentes de credibilidade, transparência e diálogo com a sociedade e também fazer ações de educação midiática”, destacou a diretora da Secretaria de Comunicação Social do Senado, Glauciene Lara. Serviço: O Congresso Brasileiro de Comunicação Pública vai até sexta-feira (18). Os debates ocorrem ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d203f367f60bc004e139fa62b3a54468fa6feb0f35b2553d04a07623c4fc69c1": {
+      "firstSeenAt": "2026-09-17T01:24:12.221Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
+      "item": {
+        "kind": "news",
+        "title": "TSE vai enviar alertas no e-Título com orientações para eleições",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/tse-vai-enviar-alertas-no-e-titulo-com-orientacoes-para-eleicoes",
+        "publishedAt": "2026-09-16T23:59:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A duas semanas do primeiro turno das Eleições 2026, marcado para 4 de outubro, o Tribunal Superior Eleitoral (TSE) começou a enviar, nesta quinta-feira (17), notificações oficiais aos eleitores pelo aplicativo e-Título. Os alertas trazem orientações sobre serviços eleitorais, consulta ao local de votação e combate à desinformação. O envio continuará durante todo o período eleitoral, inclusive entre o primeiro e o segundo turnos. “Queremos incentivar eleitoras e eleitores a manterem o e-Título atualizado e facilitar o acesso a informações importantes para o exercício do voto, como a consulta ao local de votação. É um canal direto de comunicação da Justiça Eleitoral com a cidadania”, destaca a assessora-chefe de Gestão da Identificação do TSE, Marília Loyola. O TSE recomenda que os eleitores consultem antecipadamente o local de votação. A informação está disponível na opção “Onde Votar”, que indica a zona e a seção eleitoral. Serviços Além de apresentar a via digital do título eleitoral, o e-Título reúne diferentes serviços da Justiça Eleitoral. Entre eles estão: Consulta ao local de votação: permite verificar zona e seção eleitoral. Acompanhamento do Título Net: mostra o andamento de requerimentos feitos pelo sistema. Certidão de filiação partidária: permite emitir documentos sobre filiação atual e histórico de vínculos. Justificativa de ausência: possibilita justificar a ausência no dia da eleição, por geolocalização, ou posteriormente, com documentos comprobatórios. Pagamento de multas eleitorais: débitos podem ser quitados por Pix ou cartão de crédito, por meio do PagTesouro. Validação de documentos: permite conferir a autenticidade de certidões da Justiça Eleitoral por meio de QR Code. Boletim na Mão: a ferramenta passou a integrar o e-Título e permite consultar e co",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A duas semanas do primeiro turno das Eleições 2026, marcado para 4 de outubro, o Tribunal Superior Eleitoral (TSE) começou a enviar, nesta quinta-feira (17), notificações oficiais aos eleitores pelo aplicativo e-Título. Os alertas trazem orientações sobre serviços eleitorais, consulta ao local de votação e combate à desinformação. O envio continuará durante todo o período eleitoral, inclusive entre o primeiro e o segundo turnos. “Queremos incentivar eleitoras e eleitores a manterem o e-Título atualizado e facilitar o acesso a informações importantes para o exercício do voto, como a consulta ao local de votação. É um canal direto de comunicação da Justiça Eleitoral com a cidadania”, destaca a assessora-chefe de Gestão da Identificação do TSE, Marília Loyola. O TSE recomenda que os eleitores consultem antecipadamente o local de votação. A informação está disponível na opção “Onde Votar”, que indica a zona e a seção eleitoral. Serviços Além de apresentar a via digital do título eleitoral, o e-Título reúne diferentes serviços da Justiça Eleitoral. Entre eles estão: Consulta ao local de votação: permite verificar zona e seção eleitoral. Acompanhamento do Título Net: mostra o andamento de requerimentos feitos pelo sistema. Certidão de filiação partidária: permite emitir documentos sobre filiação atual e histórico de vínculos. Justificativa de ausência: possibilita justificar a ausência no dia da eleição, por geolocalização, ou posteriormente, com documentos comprobatórios. Pagamento de multas eleitorais: débitos podem ser quitados por Pix ou cartão de crédito, por meio do PagTesouro. Validação de documentos: permite conferir a autenticidade de certidões da Justiça Eleitoral por meio de QR Code. Boletim na Mão: a ferramenta passou a integrar o e-Título e permite consultar e co",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8e605d36c3e9cf940808eae9eaabc8b50fd58deb9161e85a91799084b9729729": {
+      "firstSeenAt": "2026-09-17T01:24:12.221Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
+      "item": {
+        "kind": "news",
+        "title": "Entidades industriais e trabalhistas consideram tímida queda da Selic",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/entidades-industriais-e-trabalhistas-consideram-timida-queda-da-selic",
+        "publishedAt": "2026-09-16T23:37:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A redução de 0,25% ponto percentual na taxa básica de juros da economia, a Selic, foi considerada insuficiente pelas representações da indústria e dos trabalhadores, que consideram a decisão como “tímida” e que “não alivia a situação financeira das empresas e famílias”. A decisão foi anunciada nesta quarta-feira (16) pelo Comitê de Política Monetária (Copom) do Banco Central (BC), que reduziu de 14% para 13,75% ao ano a Selic . Notícias relacionadas: BC reduz juros básicos para 13,75% ao ano. Mercado mantém estáveis projeções para inflação, juros, PIB e dólar. Após a divulgação do corte, a Confederação Nacional da Indústria (CNI) disse, em nota, que há um excesso de prudência do Copom diante do comportamento de queda na inflação corrente nos últimos meses. “Há trajetória consistente de desaceleração, alcançando 4,22% no acumulado em 12 meses até agosto, e melhora das expectativas de mercado, indicando convergência gradual em direção à meta de 3% ao ano no horizonte relevante para a política monetária”, diz a CNI em nota. O presidente da confederação, Ricardo Alban, considera importante o BC manter a trajetória de queda nos juros. Com a decisão de hoje, está é a quinta redução consecutiva na Selic. “É essencial que o Banco Central dê continuidade ao ciclo de redução da Selic. Manter a taxa básica em patamar tão restritivo por período prolongado significa impor à economia um custo maior do que o necessário para assegurar a estabilidade de preços. Há espaço para avançar no ciclo de cortes sem comprometer a convergência da inflação para a meta”, afirmou. Ainda de acordo com a CNI, mesmo após o corte, a política monetária segue austera. Com a Selic em 13,75% ao ano, o juro real está em torno de 9%, cerca de quatro pontos percentuais acima da taxa real neutra estimada pelo Ba",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A redução de 0,25% ponto percentual na taxa básica de juros da economia, a Selic, foi considerada insuficiente pelas representações da indústria e dos trabalhadores, que consideram a decisão como “tímida” e que “não alivia a situação financeira das empresas e famílias”. A decisão foi anunciada nesta quarta-feira (16) pelo Comitê de Política Monetária (Copom) do Banco Central (BC), que reduziu de 14% para 13,75% ao ano a Selic . Notícias relacionadas: BC reduz juros básicos para 13,75% ao ano. Mercado mantém estáveis projeções para inflação, juros, PIB e dólar. Após a divulgação do corte, a Confederação Nacional da Indústria (CNI) disse, em nota, que há um excesso de prudência do Copom diante do comportamento de queda na inflação corrente nos últimos meses. “Há trajetória consistente de desaceleração, alcançando 4,22% no acumulado em 12 meses até agosto, e melhora das expectativas de mercado, indicando convergência gradual em direção à meta de 3% ao ano no horizonte relevante para a política monetária”, diz a CNI em nota. O presidente da confederação, Ricardo Alban, considera importante o BC manter a trajetória de queda nos juros. Com a decisão de hoje, está é a quinta redução consecutiva na Selic. “É essencial que o Banco Central dê continuidade ao ciclo de redução da Selic. Manter a taxa básica em patamar tão restritivo por período prolongado significa impor à economia um custo maior do que o necessário para assegurar a estabilidade de preços. Há espaço para avançar no ciclo de cortes sem comprometer a convergência da inflação para a meta”, afirmou. Ainda de acordo com a CNI, mesmo após o corte, a política monetária segue austera. Com a Selic em 13,75% ao ano, o juro real está em torno de 9%, cerca de quatro pontos percentuais acima da taxa real neutra estimada pelo Ba",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "4f5e65e9f1ce32f235d6bdc26881709379356f9ef1c797e74b20e72630b46280": {
+      "firstSeenAt": "2026-09-17T01:24:12.221Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
+      "item": {
+        "kind": "news",
+        "title": "Moraes vota para igualar tempo de licenças-maternidade e adotante",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/moraes-vota-para-igualar-tempo-de-licencas-maternidade-e-adotante",
+        "publishedAt": "2026-09-16T22:54:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ministro Alexandre de Moraes, do Supremo Tribunal Federal (STF), votou nesta quarta-feira (16) a favor da equiparação entre os prazos de licença-maternidade e licença-adotante para mulheres. O voto do ministro, que é relator do caso, foi proferido durante o julgamento no qual a Corte analisa uma ação da Procuradoria-Geral da República (PGR) para igualar o tempo dos benefícios. Pelo entendimento, mães genitoras ou adotantes têm direito às licenças remuneradas de 120 dias, que podem ser prorrogadas por mais 60 dias, independentemente do tipo de vínculo trabalhista . O prazo deve ser contado a partir do parto ou obtenção da guarda. Nos casos de internação da mãe, o prazo vale a partir da alta da mãe ou do bebê, o que ocorrer por último. No entendimento de Moraes, as licenças têm objetivo de criar vínculo afetivo entre mães e filhos e não podem possuir prazos diferenciados. \"Se a Constituição encerrou de vez qualquer diferenciação de filhos adotivos e naturais, todos são filhos. Se todos são filhos, a mãe é mãe de todos, a licença-maternidade deve ser idêntica para todos\", afirmou. Os ministros Flávio Dino, Dias Toffoli e Cármen Lúcia acompanharam o relator. Em seguida, o julgamento foi suspenso e será retomado na próxima semana. Entenda A ação julgada pela Corte foi protocolada pela PGR em outubro de 2023 e pretende estender o tempo das licenças-maternidade e adotante previsto na Consolidação das Leis do Trabalho (CLT), regra da iniciativa privada, para as servidoras públicas, que são regidas pela Lei 8.112/1990, conhecida como Estatuto dos Servidores Públicos, e a Lei Complementar 75/1993, o Estatuto do Ministério Público. Pela CLT, as mães biológicas e adotantes têm direito a 120 dias de licença, prazo que pode ser prorrogado por mais 60 dias em empresas que participam",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [
+            "rejeitado: GOVERNANÇA sem contexto público"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O ministro Alexandre de Moraes, do Supremo Tribunal Federal (STF), votou nesta quarta-feira (16) a favor da equiparação entre os prazos de licença-maternidade e licença-adotante para mulheres. O voto do ministro, que é relator do caso, foi proferido durante o julgamento no qual a Corte analisa uma ação da Procuradoria-Geral da República (PGR) para igualar o tempo dos benefícios. Pelo entendimento, mães genitoras ou adotantes têm direito às licenças remuneradas de 120 dias, que podem ser prorrogadas por mais 60 dias, independentemente do tipo de vínculo trabalhista . O prazo deve ser contado a partir do parto ou obtenção da guarda. Nos casos de internação da mãe, o prazo vale a partir da alta da mãe ou do bebê, o que ocorrer por último. No entendimento de Moraes, as licenças têm objetivo de criar vínculo afetivo entre mães e filhos e não podem possuir prazos diferenciados. \"Se a Constituição encerrou de vez qualquer diferenciação de filhos adotivos e naturais, todos são filhos. Se todos são filhos, a mãe é mãe de todos, a licença-maternidade deve ser idêntica para todos\", afirmou. Os ministros Flávio Dino, Dias Toffoli e Cármen Lúcia acompanharam o relator. Em seguida, o julgamento foi suspenso e será retomado na próxima semana. Entenda A ação julgada pela Corte foi protocolada pela PGR em outubro de 2023 e pretende estender o tempo das licenças-maternidade e adotante previsto na Consolidação das Leis do Trabalho (CLT), regra da iniciativa privada, para as servidoras públicas, que são regidas pela Lei 8.112/1990, conhecida como Estatuto dos Servidores Públicos, e a Lei Complementar 75/1993, o Estatuto do Ministério Público. Pela CLT, as mães biológicas e adotantes têm direito a 120 dias de licença, prazo que pode ser prorrogado por mais 60 dias em empresas que participam",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "0ea410900b8b3deef1f787a0252853a9af06442fa36fd5d488070921ee7c1600": {
+      "firstSeenAt": "2026-09-17T01:24:12.221Z",
+      "lastSeenAt": "2026-09-17T01:24:12.221Z",
+      "item": {
+        "kind": "news",
+        "title": "Brasil cria política para ampliar produção de minerais críticos",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/Brasil-cria-politica-para-ampliar-producao-de-minerais-criticos",
+        "publishedAt": "2026-09-16T21:52:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O presidente Luiz Inácio Lula da Silva sancionou nesta quarta-feira (16) a lei que cria a Política Nacional de Minerais Críticos e Estratégicos. A lei prevê investimentos de até R$ 7 bilhões por meio de incentivos a projetos de processamento e transformação dos minerais. O objetivo é estimular a pesquisa, extração e transformação de minerais críticos e estratégicos. Notícias relacionadas: Mineradoras elogiam, mas municípios criticam PL de minerais críticos. Especialistas e municípios criticam PL sobre minerais críticos . “A mineração exige investimentos intensivos e ciclos produtivos que frequentemente chegam a 40 anos. Por isso, previsibilidade e estabilidade, especialmente a fiscal, são premissas indispensáveis para atrair investimento de longo prazo”, explicou Pablo Cesário, do Instituto Brasileiro de Mineração. A lei sancionada hoje cria um Fundo Garantidor da Atividade Mineral (Fgam) com aporte de R$ 2 bilhões da União para garantir empreendimentos e atividades vinculados à produção de minerais críticos e estratégicos. O montante do fundo pode chegar a R$ 5 bilhões. O fundo somente poderá apoiar projetos considerados prioritários no âmbito da política. O Ministro minas e energia, Alexandre Silveira, afirmou que a nova lei será importante para o Brasil conhecer melhor os recursos que tem. “O Brasil vai conhecer em profundidade seus recursos e preservar a capacidade de decisão sobre suas cadeias produtivas”, disse. Ele explicou que o Serviço Geológico do Brasil terá um aumento de verba, de R$ 8 milhões para R$ 300 milhões, para investir em pesquisa para conhecimento do solo. Soberania Após a assinatura da lei, Lula defendeu o investimento na formação de novos profissionais para um mercado que promete se expandir. Lula convidou as universidades e institutos federais a",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O presidente Luiz Inácio Lula da Silva sancionou nesta quarta-feira (16) a lei que cria a Política Nacional de Minerais Críticos e Estratégicos. A lei prevê investimentos de até R$ 7 bilhões por meio de incentivos a projetos de processamento e transformação dos minerais. O objetivo é estimular a pesquisa, extração e transformação de minerais críticos e estratégicos. Notícias relacionadas: Mineradoras elogiam, mas municípios criticam PL de minerais críticos. Especialistas e municípios criticam PL sobre minerais críticos . “A mineração exige investimentos intensivos e ciclos produtivos que frequentemente chegam a 40 anos. Por isso, previsibilidade e estabilidade, especialmente a fiscal, são premissas indispensáveis para atrair investimento de longo prazo”, explicou Pablo Cesário, do Instituto Brasileiro de Mineração. A lei sancionada hoje cria um Fundo Garantidor da Atividade Mineral (Fgam) com aporte de R$ 2 bilhões da União para garantir empreendimentos e atividades vinculados à produção de minerais críticos e estratégicos. O montante do fundo pode chegar a R$ 5 bilhões. O fundo somente poderá apoiar projetos considerados prioritários no âmbito da política. O Ministro minas e energia, Alexandre Silveira, afirmou que a nova lei será importante para o Brasil conhecer melhor os recursos que tem. “O Brasil vai conhecer em profundidade seus recursos e preservar a capacidade de decisão sobre suas cadeias produtivas”, disse. Ele explicou que o Serviço Geológico do Brasil terá um aumento de verba, de R$ 8 milhões para R$ 300 milhões, para investir em pesquisa para conhecimento do solo. Soberania Após a assinatura da lei, Lula defendeu o investimento na formação de novos profissionais para um mercado que promete se expandir. Lula convidou as universidades e institutos federais a",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -9958,127 +10098,262 @@
           "itemCount": 0
         }
       ]
+    },
+    "35170366184:1": {
+      "at": "2026-09-17T01:24:12.221Z",
+      "collected": 84,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 33,
+          "durationMs": 812
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 2,
+          "durationMs": 30504
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "ok",
+          "itemCount": 2
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 20,
+          "durationMs": 3401
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 28,
+          "durationMs": 3929
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 20
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 7
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 2408
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 35,
-      "durationMs": 671,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "itemCount": 33,
+      "durationMs": 812,
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
-      "itemCount": 0,
-      "durationMs": 15926,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
-      "consecutiveFailures": 1,
+      "itemCount": 2,
+      "durationMs": 30504,
+      "checkedAt": "2026-09-17T01:24:12.221Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-16T20:06:29.557Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-16T22:55:30.458Z",
-      "consecutiveFailures": 1,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-16T20:06:29.557Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
-      "status": "error",
-      "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-16T22:55:30.458Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-16T20:06:29.557Z"
+      "status": "ok",
+      "itemCount": 2,
+      "checkedAt": "2026-09-17T01:24:12.221Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-16T22:55:30.458Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-16T20:06:29.557Z"
+      "checkedAt": "2026-09-17T01:24:12.221Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 20,
-      "durationMs": 5710,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "durationMs": 3401,
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 9,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
       "itemCount": 28,
-      "durationMs": 5418,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "durationMs": 3929,
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -10087,7 +10362,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z"
+      "checkedAt": "2026-09-17T01:24:12.221Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -10096,7 +10371,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z"
+      "checkedAt": "2026-09-17T01:24:12.221Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -10105,59 +10380,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z"
+      "checkedAt": "2026-09-17T01:24:12.221Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 20,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 7,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 3729,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "durationMs": 2408,
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-16T22:55:30.458Z",
+      "checkedAt": "2026-09-17T01:24:12.221Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-16T22:55:30.458Z"
+      "lastSuccessAt": "2026-09-17T01:24:12.221Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
