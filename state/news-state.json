@@ -2548,6 +2548,157 @@
       "category": "RATEIO",
       "source": "Querido Diário",
       "publishedAt": "2026-09-15T12:00:00-03:00"
+    },
+    "766066102eab798c844cea748c7e4cc88ea5a8f1311d7db621a8d3d4935290e0": {
+      "sentAt": "2026-09-18T18:27:14.722Z",
+      "url": "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf",
+      "title": "Diário Oficial de Votuporanga (SP)",
+      "titleFingerprint": "adfbbf05bc5166d9b270aff33cf6be3ed2522ce705bc1f3c9c03705d9f7627df",
+      "contentTokens": [
+        "acoes",
+        "alimenta",
+        "aplicacao",
+        "arrecadados",
+        "associada",
+        "atendimento",
+        "bem",
+        "como",
+        "conjunto",
+        "consistentes",
+        "consorciados",
+        "contemplados",
+        "contrato",
+        "credito",
+        "cumprimento",
+        "custeio",
+        "despesas",
+        "deste",
+        "entes",
+        "entregues",
+        "exigir",
+        "genericas",
+        "gestao",
+        "hospedagem",
+        "incluindo",
+        "inclusive",
+        "isolados",
+        "legitimas",
+        "meio",
+        "nao",
+        "neste",
+        "obrigacoes",
+        "operacoes",
+        "paragrafo",
+        "partes",
+        "plano",
+        "plurianual",
+        "poderao",
+        "previstas",
+        "primeiro",
+        "programas",
+        "projetos",
+        "rateio",
+        "recursos",
+        "sao",
+        "segundo",
+        "ser",
+        "servicos",
+        "terceiro",
+        "transferencias",
+        "transporte",
+        "utilizados",
+        "vedado",
+        "viagem",
+        "votuporanga"
+      ],
+      "category": "CONTROLE",
+      "source": "Querido Diário",
+      "publishedAt": "2026-09-17T12:00:00-03:00"
+    },
+    "79e27719b1731820c55e0b4908347b188149b0788681cee870593437e8a27241": {
+      "sentAt": "2026-09-18T18:27:20.883Z",
+      "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5",
+      "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
+      "titleFingerprint": "6082d44f199154aa89e1bcf2f9e6819feac5f57db5dc2e36ba0e1275fa79469d",
+      "contentTokens": [
+        "adesao",
+        "ampliar",
+        "icismep",
+        "net",
+        "neves",
+        "oficializa",
+        "ribeirao",
+        "ribeiraodasneves",
+        "saude",
+        "servicos"
+      ],
+      "category": "ADESÃO",
+      "source": "RibeiraoDasNeves.net",
+      "publishedAt": "2026-09-17T19:28:42.000Z"
+    },
+    "cfb84f8816eda3dd951cde20603cc781d2c48053e9ed9b0c5023ca7086d6bf16": {
+      "sentAt": "2026-09-18T18:27:27.058Z",
+      "url": "https://data.queridodiario.ok.org.br/3557105/2026-09-18/4e3ace208046e008ef151a25466dafd0e361e3cc.pdf",
+      "title": "Diário Oficial de Votuporanga (SP)",
+      "titleFingerprint": "143a717b5e94bbb72fe6f86ac3967811863faa71b73fe8c8e1e8aecc4744d2f0",
+      "contentTokens": [
+        "2025",
+        "anexo",
+        "apenas",
+        "apurado",
+        "ativo",
+        "ativos",
+        "atraves",
+        "aumentativa",
+        "balanco",
+        "conforme",
+        "consideradas",
+        "consorciados",
+        "contabeis",
+        "contabilizacao",
+        "contabilizando",
+        "contas",
+        "cotimarg",
+        "deficit",
+        "dem",
+        "demonstracao",
+        "determina",
+        "dezembro",
+        "elaboracao",
+        "entes",
+        "envolvendo",
+        "estas",
+        "exercicio",
+        "explicativa",
+        "fazenda",
+        "instrucoes",
+        "ipc",
+        "liquido",
+        "meio",
+        "ministerio",
+        "monetarios",
+        "nacional",
+        "nao",
+        "nota",
+        "pag",
+        "participacoes",
+        "patrimoniais",
+        "patrimonial",
+        "patrimonio",
+        "procedimentos",
+        "registradas",
+        "sao",
+        "secretaria",
+        "seja",
+        "tesouro",
+        "transferencias",
+        "variacao",
+        "variacoes",
+        "votuporanga"
+      ],
+      "category": "RATEIO",
+      "source": "Querido Diário",
+      "publishedAt": "2026-09-18T12:00:00-03:00"
     }
   },
   "pending": {},
@@ -2579,7 +2730,7 @@
     },
     "eb6c1574f232ef2ed485469939176d15cebd358a3eb48c58e0563c321e06363a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal de Saúde 08 de Abril SP publica edital de processo seletivo com 45 vagas - Qconcursos Folha Dirigida",
@@ -2869,7 +3020,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -2915,7 +3066,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -2961,7 +3112,7 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
@@ -3007,7 +3158,7 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
@@ -3059,7 +3210,7 @@
     },
     "1347042680375e712b13048ab2e8cbb7981955d503eb72ce91a3a368f60d9075": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana do Recife",
@@ -3082,7 +3233,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -3552,7 +3703,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3579,7 +3730,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -4238,7 +4389,7 @@
     },
     "d3519c9b480649442de03b07c20d251a361bf7bd0599063bcbabf0ff8e2228b1": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Paulo Serra Propõe Plano Diretor Regional Para Dar Mais Força Ao Grande ABC Em Brasília - ABC Agora",
@@ -4307,7 +4458,7 @@
     },
     "58706a3a4aa7d743798e03cbb9442770b47c948325085c7e4ac25086e29c28fb": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Inhapi (AL)",
@@ -4338,7 +4489,7 @@
     },
     "91fe4f7cfc6858264b418bffa47077497838fe4647251f3d4c8ee635dda59a38": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -4366,7 +4517,7 @@
     },
     "2e0b143f48cd1ce98a41b32e39393c42b6f18cb7488667154ad12cb72e420d1f": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Iguaçu (RJ)",
@@ -4393,7 +4544,7 @@
     },
     "0ab1dcb04e92bc81bf061cc1e6051694069efff1352862ca0a4524d6f7984a71": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de São Mateus do Sul (PR)",
@@ -4421,7 +4572,7 @@
     },
     "f656a233847a58ee7666e3b18f1afe7b77168e0bca8d2811bc5e6c5393fb03ed": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Januária (MG)",
@@ -4449,7 +4600,7 @@
     },
     "bd8dd48d487e4533c07201feaa3712e299c423f0f22ae7cff61506a66689c3c4": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jeremoabo (BA)",
@@ -4479,7 +4630,7 @@
     },
     "db0a25272a2b9077e0f5a8854e013bdf9d4c62c11678ed315780577e24c411f6": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jaboti (PR)",
@@ -4509,7 +4660,7 @@
     },
     "6eaae0eeaf3cb62bc486e0ed29492a4a8d57d40eb999d04c119c5e228eb19aca": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Castro (PR)",
@@ -4537,7 +4688,7 @@
     },
     "3caf4cbdca7bdaf941f9368a6f415d0a136a01f44fbb5ada8f51b488372370c2": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -4565,7 +4716,7 @@
     },
     "e205732cb2afefd7983344f58ee985d571cb154e3fde628bbce8bd914ebf613c": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Sumidouro (RJ)",
@@ -4595,7 +4746,7 @@
     },
     "8bde66cf0a87d3f0165ad3649cbfe352343f1c1b2689c107d3493a01587f5e18": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Teotônio Vilela (AL)",
@@ -4626,7 +4777,7 @@
     },
     "faf08c1508c9279852a935c46f6b4f356470121b4c9ecdb46395546096646da7": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Bela Vista (MS)",
@@ -4655,7 +4806,7 @@
     },
     "7e5a4db87ff19ac5cc5f7f7c87c3bbbb25b9c0f91b75cefca07b071047b03065": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jaboticabal (SP)",
@@ -4685,7 +4836,7 @@
     },
     "f097a17226a407a3681290940db19a18328956eb917c160b596b42244c729bca": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -4713,7 +4864,7 @@
     },
     "b506d859df497e84ef9339edf1769b08336b82affeb7963e9478aac068fe0c1d": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Ourinhos (SP)",
@@ -4741,7 +4892,7 @@
     },
     "92f2f1f5e6ca23f1da19b2a2159ecbf67fed9e43150d3d887934c4ebde1b9324": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -4770,7 +4921,7 @@
     },
     "8c405fe1ab0b1ddc86053574b682af942def8bb27aa81c361248f5a52b0f7eee": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -4798,7 +4949,7 @@
     },
     "d11a436ffa73a699589c41f4c63812c0f0cf90b13c596dc7f45defbebe09b68c": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itajubá (MG)",
@@ -4827,7 +4978,7 @@
     },
     "7ed126a6717a0ba3c7e1875bdc785938b2aaa96699cc1d6c8835e0e38cefc2fa": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jundiaí (SP)",
@@ -4855,7 +5006,7 @@
     },
     "0fd295d7f66b53584cceb18e3d5baf89b9cfdfa11e1bd6e2490cb97efe508072": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -4883,7 +5034,7 @@
     },
     "2243715d94e7fbe20b01b945e6a8b0fb7d1fb3a64280fc321b914b80cab47277": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Valinhos (SP)",
@@ -4912,7 +5063,7 @@
     },
     "b102575f88c62615fdfdece095c8696c830e51576e89dc30b69287c757848726": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Votuporanga (SP)",
@@ -5105,7 +5256,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5130,7 +5281,7 @@
     },
     "317c46da86013d797f3ef87df96607ca5126ff1e5808224c53921837863cddf9": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Transferida a 23ª Sessão Ordinária da Segunda Câmara do TCESP desta terça-feira",
@@ -5855,7 +6006,7 @@
     },
     "eebaf02b8a19a72e8f0499b2c3a88a6755c6c8fdd2916222002413417dc5be63": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - PORTAL MATO GROSSO",
@@ -5878,7 +6029,7 @@
     },
     "97888cdbc4139f52de557a7c5321f8f8ff2082fcba1231438afaae3f27988d4c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital - Ponto na Curva",
@@ -5924,7 +6075,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -5947,7 +6098,7 @@
     },
     "14a939bc0c54983f74323beb211d40d0f034733f9633d9214d826d8f66fa273d": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Mutirão Brasil Cidades Amazônicas fortalece ação climática local em seis municípios",
@@ -6225,22 +6376,22 @@
     },
     "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
-        "title": "Concurso CONSUD PR: gabaritos preliminares divulgados! - estrategiaconcursos.com.br",
+        "title": "Concurso CONSUD PR: gabaritos preliminares divulgados! - Estratégia Concursos",
         "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBRSkI5Uk8wclVwNUxNeWswUGRjTXZ2aEg0aWp0TlBmZnl2YTJDdmYzempRUks0ZEQ1Ri01eWxITkcxdDgySUprTzVDUndNWDM1bFdENFJwU2xZMjA3Y0JfeHEzYU84TXZvR0hsX19wMjXSAXZBVV95cUxNZWpMdEFySC1oUXdzZEFhUlB0c0dkdXBtT2RrSlRtTldMaHNINW1ZWm1YY1RnWEdKcVdZVXZ4a1BrQUxkU2lkYlB2SFZHdWYzSU95YjNvS1otWXhkM3dyUndwX3lucnF3TkFELXdJYU1LQm5zRFB3?oc=5",
         "sourceUrl": "https://www.estrategiaconcursos.com.br",
         "publishedAt": "2026-09-15T07:00:00.000Z",
-        "source": "estrategiaconcursos.com.br",
-        "summary": "Concurso CONSUD PR: gabaritos preliminares divulgados! estrategiaconcursos.com.br",
+        "source": "Estratégia Concursos",
+        "summary": "Concurso CONSUD PR: gabaritos preliminares divulgados! Estratégia Concursos",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Concurso CONSUD PR: gabaritos preliminares divulgados! estrategiaconcursos.com.br",
+          "evidenceText": "Concurso CONSUD PR: gabaritos preliminares divulgados! Estratégia Concursos",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6271,7 +6422,7 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
@@ -6547,7 +6698,7 @@
     },
     "bd14fb2413e3f263be8feff4397689363acc15b7529d2e4e0b40bb290487ff80": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Educação em primeiro lugar: TCEMG participa do 12º Fórum Mineiro de Educação",
@@ -6572,7 +6723,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -6784,15 +6935,15 @@
     },
     "b4e307c829e9da01d07e4af2c01aed82370a9d2223967661154467ff5b813fa1": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
-        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - issoenoticia.com.br",
+        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - Isso É Notícia",
         "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWGFNS2d0NlNlcE13VU9PTnBTamRGejNJT2h3MVM1MVpkbHppN1NZcmNJQV9RSUJFdFVaN0JsVE1WTFAwRE1RZGQ0X3FXZGRWcDhHQ0FWTFFpOTgzeTVLLUhvNjg2ckZKa190eGhFZDhULUdxNmZGNTJhek1CenAxWGJjS2FuRkhZd3lkOW9IanFEaHFzWTJvNF8yWE5qaE5TbGtqUm9aZUcyeWFDSXEzYXE1MFpPMnpuMlpSQVRaRWhmeXF6MVdLOWl6b2RFak91Wm9DX0RGeG1MOVR1UHc?oc=5",
         "sourceUrl": "https://www.issoenoticia.com.br",
         "publishedAt": "2026-09-15T18:19:00.000Z",
-        "source": "issoenoticia.com.br",
-        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde issoenoticia.com.br",
+        "source": "Isso É Notícia",
+        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde Isso É Notícia",
         "classification": {
           "category": "CRISE",
           "emoji": "🟥",
@@ -6802,7 +6953,7 @@
             "SAÍDA"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde issoenoticia.com.br",
+          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde Isso É Notícia",
           "publicContext": true,
           "strongPublicContext": false
         }
@@ -6994,7 +7145,7 @@
     },
     "2a2e3d0d3e5f6ab5d5e18e7014425b404b0d4ffe3200504485ed83b8b5db2061": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -7023,7 +7174,7 @@
     },
     "c34c65928484b5f58b0d5120a43d66eae7e93fd5b17ecdfa7cbefe470a618884": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Várzea da Palma (MG)",
@@ -7052,7 +7203,7 @@
     },
     "007d8c8852ad80304776bd1b2c411f31b06dc0678e403c182f6d3e6b52a35584": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -7080,7 +7231,7 @@
     },
     "6dc0d19654c20d2230e17512a95797c22ef95dc6f97399c8fa2a0dc833ba95f2": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Londrina (PR)",
@@ -7108,7 +7259,7 @@
     },
     "e018f31e3ae66da721d2945b2fdef3c2e4be02a8942157b6052c7350f3507d61": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Iguaçu (RJ)",
@@ -7135,7 +7286,7 @@
     },
     "26daff64bc890690cde59500afcd2e0aadd9dfb0df9178b2aed1ed7004d089e3": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -7232,15 +7383,15 @@
     },
     "3b3368b3fd178566961ea830b393ed9c0c7326c30b3a8ff85845aa57e4cafdce": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
-        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - atualmt.com.br",
+        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - AtualMT",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5",
         "sourceUrl": "https://atualmt.com.br",
         "publishedAt": "2026-09-16T11:43:37.000Z",
-        "source": "atualmt.com.br",
-        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
+        "source": "AtualMT",
+        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
         "classification": {
           "category": "CRISE",
           "emoji": "🟥",
@@ -7250,7 +7401,7 @@
             "SAÍDA"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
+          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
           "publicContext": true,
           "strongPublicContext": false
         }
@@ -7490,7 +7641,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -7518,7 +7669,7 @@
     },
     "06428e75937044b7bf4f96b4d416326c858195b05468d8997b9f41a19d058b11": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Licitação de R$ 31,2 milhões em Itanhomi é suspensa por indícios de restrição à concorrência",
@@ -7545,7 +7696,7 @@
     },
     "a8b47d06995b57b48ed350ecc23c3d3902f5b917aed230dd2239145a5a453af8": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "TCESP comunica abertura de consulta pública sobre o Guia de Custos para o Setor Público",
@@ -7554,7 +7705,7 @@
         "source": "TCE-SP",
         "sourceUrl": "https://www.tce.sp.gov.br/noticias",
         "stateCode": "SP",
-        "summary": "16/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por sua Secretaria-Diretoria Geral, comunicou aos órgãos jurisdicionados estaduais e municipais e aos demais interessados que o Instituto Rui Barbosa (IRB), em parceria com a Secretaria do Tesouro Nacional (STN), abriu consulta pública sobre a minuta do Guia de Custos para o Setor Público (GCSP). O Comunicado SDG nº 46/2026 foi assinado pelo Secretário-Diretor Geral, Germano Fraga Lima, e disponibilizado na 894ª edição do Diário Oficial Eletrônico do TCESP desta quarta-feira, 16 de setembro. Elaborado no âmbito do Acordo de Cooperação firmado entre o IRB e a STN, vinculada ao Ministério da Fazenda, o Guia reúne parâmetros técnicos para melhorar a forma como os órgãos públicos acompanham seus custos e para apoiar o trabalho dos órgãos de controle externo. A iniciativa busca fortalecer a gestão de custos na administração pública e oferecer suporte técnico ao Sistema de Controle Externo, contribuindo para o aprimoramento da fiscalização e para uma avaliação mais precisa dos gastos e da gestão dos recursos governamentais. Como participar Gestores públicos, contadores, auditores, membros e servidores dos Tribunais de Contas, pesquisadores, acadêmicos e demais interessados podem analisar a minuta e as planilhas eletrônicas dos anexos e encaminhar sugestões ao Grupo Técnico Conjunto STN/IRB até o dia 30 de setembro de 2026, por meio do endereço eletrônico ctcustos@irb.org.br. A minuta do Guia e os documentos complementares estão disponíveis nos seguintes links: - GCSP IRB V.18 - Anexo 1 - Codificação dos objetos de custos - Anexo 2 - Relacionamentos VPDs x Elementos de Custos - Apêndice C - Filtros de seleção para relatórios de custos Conforme o comunicado, a participação dos profissionais do control",
+        "summary": "16/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por sua Secretaria-Diretoria Geral, comunicou aos órgãos jurisdicionados estaduais e municipais e aos demais interessados que o Instituto Rui Barbosa (IRB), em parceria com a Secretaria do Tesouro Nacional (STN), abriu consulta pública sobre a minuta...",
         "scraper": "tce-sp",
         "previewOnly": false,
         "classification": {
@@ -7563,7 +7714,7 @@
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "16/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por sua Secretaria-Diretoria Geral, comunicou aos órgãos jurisdicionados estaduais e municipais e aos demais interessados que o Instituto Rui Barbosa (IRB), em parceria com a Secretaria do Tesouro Nacional (STN), abriu consulta pública sobre a minuta do Guia de Custos para o Setor Público (GCSP). O Comunicado SDG nº 46/2026 foi assinado pelo Secretário-Diretor Geral, Germano Fraga Lima, e disponibilizado na 894ª edição do Diário Oficial Eletrônico do TCESP desta quarta-feira, 16 de setembro. Elaborado no âmbito do Acordo de Cooperação firmado entre o IRB e a STN, vinculada ao Ministério da Fazenda, o Guia reúne parâmetros técnicos para melhorar a forma como os órgãos públicos acompanham seus custos e para apoiar o trabalho dos órgãos de controle externo. A iniciativa busca fortalecer a gestão de custos na administração pública e oferecer suporte técnico ao Sistema de Controle Externo, contribuindo para o aprimoramento da fiscalização e para uma avaliação mais precisa dos gastos e da gestão dos recursos governamentais. Como participar Gestores públicos, contadores, auditores, membros e servidores dos Tribunais de Contas, pesquisadores, acadêmicos e demais interessados podem analisar a minuta e as planilhas eletrônicas dos anexos e encaminhar sugestões ao Grupo Técnico Conjunto STN/IRB até o dia 30 de setembro de 2026, por meio do endereço eletrônico ctcustos@irb.org.br. A minuta do Guia e os documentos complementares estão disponíveis nos seguintes links: - GCSP IRB V.18 - Anexo 1 - Codificação dos objetos de custos - Anexo 2 - Relacionamentos VPDs x Elementos de Custos - Apêndice C - Filtros de seleção para relatórios de custos Conforme o comunicado, a participação dos profissionais do control",
+          "evidenceText": "16/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por sua Secretaria-Diretoria Geral, comunicou aos órgãos jurisdicionados estaduais e municipais e aos demais interessados que o Instituto Rui Barbosa (IRB), em parceria com a Secretaria do Tesouro Nacional (STN), abriu consulta pública sobre a minuta...",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -7596,7 +7747,7 @@
     },
     "a01af230da7740611782041760ef30c39464eb49867b2bd5bcf17062cd024dd0": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Prefeitura Municipal de Mogi Guaçu",
@@ -7644,7 +7795,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -7830,7 +7981,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -7855,7 +8006,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -7880,7 +8031,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -7907,7 +8058,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -7932,7 +8083,7 @@
     },
     "2e5ce60d1c9221face2410af24ae606ca016845ec74e44a1c2bb7d4bd2d21849": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Tribunal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -8398,22 +8549,22 @@
     },
     "6f103f8dd7ab4573f89a14b5610d827b4d503d302e38bb37d4765cc047af555f": {
       "firstSeenAt": "2026-09-17T13:25:57.252Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
-        "title": "Promotorias cobram solução para crise em hospital regional - issoenoticia.com.br",
+        "title": "Promotorias cobram solução para crise em hospital regional - Isso É Notícia",
         "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSU1rY0pLZDlaLTNJMWw1UzN4cVYtU1FsMGhUZHhCV0pYWmRXXzBrbktwYUUwT1hzZU9IWjBoOVE3UFBTWTNleVFoMHpVTW5vckVXV3J0VU01WUYzOGQ1VHJCYUVmVUU4Q1ZfUzcxckdUYlI5LUJobnZJUExGQVN4YUhPRmJuSnVxY0xERDVJZkpqeFhDUUNWNFJzeFpINlE1YlRWakpZY1Z4MEpsblltZGlqVWo?oc=5",
         "sourceUrl": "https://www.issoenoticia.com.br",
         "publishedAt": "2026-09-15T12:21:00.000Z",
-        "source": "issoenoticia.com.br",
-        "summary": "Promotorias cobram solução para crise em hospital regional issoenoticia.com.br",
+        "source": "Isso É Notícia",
+        "summary": "Promotorias cobram solução para crise em hospital regional Isso É Notícia",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Promotorias cobram solução para crise em hospital regional issoenoticia.com.br",
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional Isso É Notícia",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -8421,7 +8572,7 @@
     },
     "1f25b0b20484f0f1881f66908f4459345a1d638d43c30c2be1136be0065d635d": {
       "firstSeenAt": "2026-09-17T13:25:57.252Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - notícia infoco",
@@ -8697,7 +8848,7 @@
     },
     "6816037279c26f44c5a61bccdde19512d21f267870fcc3a029703630559c1a68": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC e Metodista firmam parceria para até mil bolsas de estudo para estudantes de baixa renda - Portal Opinião Publica",
@@ -8720,7 +8871,7 @@
     },
     "bef6149ab0734de0a2921e8a77c5dc461f306f23c8d759757b5d8bd2ffc2653f": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Diálogo Federativo: na CNM, especialistas debatem desafios e potencialidade dos consórcios públicos - Confederação Nacional de Municípios",
@@ -8745,7 +8896,7 @@
     },
     "5f8169dfadfb7f58ff5fc3798a1b920bf1d1968a5ed977b4c3f8e419b9be4099": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Viçosa (AL)",
@@ -8774,7 +8925,7 @@
     },
     "b243d175e7e63b276b55e5f2001e1410f0ec6029940fa57c73594ae064ae1fbf": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Ouro Verde do Oeste (PR)",
@@ -8804,7 +8955,7 @@
     },
     "26273a65bf07ccf1767383350e881ae51f02f718401605cda81fd2668a0a6756": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de São Mateus do Sul (PR)",
@@ -8832,7 +8983,7 @@
     },
     "27b621bc39d18af16a0871bad3a1b9d2bc92db0c447ab5d2e2ee38597d534ed5": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -8862,7 +9013,7 @@
     },
     "a65232df5c7f31fcd1e80a18b822045ecea0d8b46e5d09de3cea9ea026a2258d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itajubá (MG)",
@@ -8890,7 +9041,7 @@
     },
     "332092ca59cae896267f8a1e53b19254df7e05f0c967be79e729c8af654dea5a": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Contagem (MG)",
@@ -8918,7 +9069,7 @@
     },
     "e939ed4783e8e4b71931fb729dda42952a35508a8962f1d361bd2e9a545317d1": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -8946,7 +9097,7 @@
     },
     "636fe0665af16aff26cf8fa1dd13e477c70c941d98a53192e51cc0af18276621": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -8974,7 +9125,7 @@
     },
     "1f030e27bf926927daa16490f0b9f8e2b5955d4676b7312fc34e6fa86307988d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -9002,7 +9153,7 @@
     },
     "e6b73db1444ff887f64c6edb59f6db3713bbffc5e2e7424e9a9f009170dfe5a2": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -9031,7 +9182,7 @@
     },
     "97209ec5af968ed46b53270b1cff4a2d316f89364153b5d78248ce34b3c25e89": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Betim (MG)",
@@ -9062,7 +9213,7 @@
     },
     "45d4465fc27ec293fa1fa27d2ff79060fcedfc980163374b738177c28c3e1b7e": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Londrina (PR)",
@@ -9092,7 +9243,7 @@
     },
     "e824f6520717d7a24ac462414d0ac0717c3abb1df011ff56581d15180ef39790": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -9120,7 +9271,7 @@
     },
     "e6013bedf3a50f3beda4d85723fbb3148fedd23a06cc0756e0a4cad79ff64f9d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mossoró (RN)",
@@ -9150,7 +9301,7 @@
     },
     "fda85d4031372ab9f40e970ae6c1e22ac20f4861518c1a73bcdaad28ba0c0682": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -9178,7 +9329,7 @@
     },
     "0d322e7698bb1d2f9e16106533bc61f4925068a7eaa0ce5afbc5dba2e1ca10f8": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Serrana (MG)",
@@ -9206,7 +9357,7 @@
     },
     "e5fdbb6fbd6d702fa8e2f124ef9269f553af9420e5ce11e8f945f7e221ee70cd": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Apucarana (PR)",
@@ -9236,7 +9387,7 @@
     },
     "318902870f2ae6d3388ff63f83ed1c8dd6db137da81b5d61616e93a356254906": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Três Arroios (RS)",
@@ -9267,7 +9418,7 @@
     },
     "5334aac16717c175ffd394feb11abe057a3dd2033672e59dd0f21f3e2243af79": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Quatro Irmãos (RS)",
@@ -9297,7 +9448,7 @@
     },
     "23004993f9b664181c2d953839c227f04d409110fee5f0badf5b5ce4bc9dabbc": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Camaquã (RS)",
@@ -9326,7 +9477,7 @@
     },
     "4b186d8478ba6992756691be830982208ef6857df6353b03e606ca2df00b8d35": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -9354,7 +9505,7 @@
     },
     "5b54849b6dc43006259d89e3ad86a5461c44b015a30950039141a0235fc34173": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -9382,7 +9533,7 @@
     },
     "7e07ada61964777cd8aa0e4a65a12a137cc0d5d4c1e3923b39a6da1f82213c7a": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -9410,7 +9561,7 @@
     },
     "817c29aa611c22707d73b416a8cccc2918b28a5867b55c7793e70dd5bfb74f33": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -9438,7 +9589,7 @@
     },
     "e5d8de61915e8319dad49430a6a60708e9d6641c64ce4742f111ed92178a5541": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Programa Mais Iguais leva gestoras à Semana do Clima em Nova York",
@@ -9695,7 +9846,7 @@
     },
     "61ed2b20c4aacdc3cd7d32cfb91108b781a29a3dc49e1f06cbac4a2f4d0a233d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Democracia se fortalece com autocrítica e instituições sólidas, afirma presidente do TCEMG em encontro nacional sobre avaliação dos Tribunais de Contas",
@@ -9720,7 +9871,7 @@
     },
     "6504f1773d4ed0fc68e9510f8a61ab54b79cbd3541ee8b84ca49fc9190db33a4": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "TCESP orienta municípios a fortalecerem bibliotecas públicas e ampliarem acesso a programas do Ministério da Cultura",
@@ -9746,7 +9897,7 @@
     },
     "ec4e340eeb726f98d0f5679ef5f31e8d3b6b9e201d07f556502b3e02522c62f7": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Santa Fé do Sul e Olímpia são as próximas cidades do Ciclo de Debates do TCESP",
@@ -9772,7 +9923,7 @@
     },
     "0c6651077853dffef47facc43511524b5c537550025e8bdce1f92cd1f08dc12b": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza fiscalização inédita para verificar acessibilidade em prédios com atendimento ao público",
@@ -9781,7 +9932,7 @@
         "source": "TCE-SP",
         "sourceUrl": "https://www.tce.sp.gov.br/noticias",
         "stateCode": "SP",
-        "summary": "17/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) realiza, nesta quinta-feira, 17/09, uma fiscalização inédita na infraestrutura de prédios que prestam atendimento administrativo para identificar eventuais dificuldades de acesso aos serviços públicos por todas as pessoas, especialmente aquelas com deficiência ou com mobilidade reduzida. A ação surpresa, que ocorre de forma simultânea em 267 municípios paulistas com 429 auditores do TCESP, busca promover a acessibilidade como requisito indispensável à prestação adequada dos serviços públicos e deve ser compreendida como política pública transversal. Ao todo, 400 espaços serão fiscalizados durante todo o dia. É possível acompanhar um painel atualizado em tempo real com os achados da fiscalização. Basta acessar: www.tce.sp.gov.br/fo-sp. A iniciativa acontece às vésperas do Dia Nacional de Luta da Pessoa com Deficiência (21 de setembro), data marcada pelo combate ao preconceito e pela luta pela inclusão. O objetivo da fiscalização é promover a compreensão de que o espaço acessível não atende apenas às exigências legais e técnicas, mas concretiza o princípio da igualdade e assegura que todos possam exercer sua cidadania com autonomia, segurança e dignidade. A Presidente do TCESP, Conselheira Cristiana de Castro Moraes, afirma que “é dever fundamental assegurar que todos os cidadãos tenham amplo acesso aos serviços públicos”. “A disponibilização de infraestrutura acessível, incluindo rampas, elevadores, vagas reservadas e corrimãos adaptados, constitui premissa básica para a garantia da dignidade humana e a plena vivência da cidadania”, ressalta. Principais pontos de checagem: • Verificar as condições de acessibilidade dos prédios que possuem atendimento ao público, identificando barreiras ou condiç",
+        "summary": "17/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) realiza, nesta quinta-feira, 17/09, uma fiscalização inédita na infraestrutura de prédios que prestam atendimento administrativo para identificar eventuais dificuldades de acesso aos serviços públicos por todas as pessoas, especialmente aquelas com...",
         "scraper": "tce-sp",
         "previewOnly": false,
         "classification": {
@@ -9790,7 +9941,7 @@
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "17/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) realiza, nesta quinta-feira, 17/09, uma fiscalização inédita na infraestrutura de prédios que prestam atendimento administrativo para identificar eventuais dificuldades de acesso aos serviços públicos por todas as pessoas, especialmente aquelas com deficiência ou com mobilidade reduzida. A ação surpresa, que ocorre de forma simultânea em 267 municípios paulistas com 429 auditores do TCESP, busca promover a acessibilidade como requisito indispensável à prestação adequada dos serviços públicos e deve ser compreendida como política pública transversal. Ao todo, 400 espaços serão fiscalizados durante todo o dia. É possível acompanhar um painel atualizado em tempo real com os achados da fiscalização. Basta acessar: www.tce.sp.gov.br/fo-sp. A iniciativa acontece às vésperas do Dia Nacional de Luta da Pessoa com Deficiência (21 de setembro), data marcada pelo combate ao preconceito e pela luta pela inclusão. O objetivo da fiscalização é promover a compreensão de que o espaço acessível não atende apenas às exigências legais e técnicas, mas concretiza o princípio da igualdade e assegura que todos possam exercer sua cidadania com autonomia, segurança e dignidade. A Presidente do TCESP, Conselheira Cristiana de Castro Moraes, afirma que “é dever fundamental assegurar que todos os cidadãos tenham amplo acesso aos serviços públicos”. “A disponibilização de infraestrutura acessível, incluindo rampas, elevadores, vagas reservadas e corrimãos adaptados, constitui premissa básica para a garantia da dignidade humana e a plena vivência da cidadania”, ressalta. Principais pontos de checagem: • Verificar as condições de acessibilidade dos prédios que possuem atendimento ao público, identificando barreiras ou condiç",
+          "evidenceText": "17/09/2026 - SÃO PAULO - O Tribunal de Contas do Estado de São Paulo (TCESP) realiza, nesta quinta-feira, 17/09, uma fiscalização inédita na infraestrutura de prédios que prestam atendimento administrativo para identificar eventuais dificuldades de acesso aos serviços públicos por todas as pessoas, especialmente aquelas com...",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -10055,7 +10206,7 @@
     },
     "0c5ade03550e456b3996eb2b36f9d1eff477ae9872c868d1aa491444060df132": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "TCEMG adota aplicativo do Banco do Brasil para otimizar transporte e reduzir custos",
@@ -10080,7 +10231,7 @@
     },
     "561b71d1edd1e24c42134479b29c47d3f61de9246d934bd16dd227299920e313": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Encontro Técnico em Capelinha aproxima controle externo dos municípios do Vale do Jequitinhonha",
@@ -10105,7 +10256,7 @@
     },
     "cf02a3c30b248e0c07b6f19decd1614b8a78e61d852b7b5434b4b5b10273ecf2": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "II Simpósio Estadual sobre Saúde Mental debate papel da liderança na prevenção de riscos psicossociais",
@@ -10317,7 +10468,7 @@
     },
     "3c6775aa9d398dd8ed338cd2bf2c7fb16600a118b7bd18e76d518008f9f7b615": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de Direito da UFMG participam do Projeto Conhecer",
@@ -10342,7 +10493,7 @@
     },
     "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece": {
       "firstSeenAt": "2026-09-18T04:47:07.838Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
@@ -10551,22 +10702,22 @@
     },
     "530064fc2d70255f4f1b0ee400c031c573cfff7bb5dc4b967d00c24059cd72f8": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
-        "title": "Câmara de Divinópolis aprova cinco projetos nesta quinta - Portal MPA",
+        "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - sistemampa.com.br",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMHdObEdST0JpWFRSZGkyWUtQa2tqNHoxU3NocVB5N1ZmTlA2cl9VU3NYMzBLQVBOcDAyZlNkekZoNHhtUk0xQ2d5VUxIVlZxdXhpQVFzVVdoTERBTjE5Q1pvUms5cUQ3MnRZc0dLNnFTNkNQQWhVbzVhbTVJTjhjdm5RdVVqMnI1eHRN?oc=5",
         "sourceUrl": "https://www.sistemampa.com.br",
         "publishedAt": "2026-09-18T12:06:00.000Z",
-        "source": "Portal MPA",
-        "summary": "Câmara de Divinópolis aprova cinco projetos nesta quinta Portal MPA",
+        "source": "sistemampa.com.br",
+        "summary": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta sistemampa.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Câmara de Divinópolis aprova cinco projetos nesta quinta Portal MPA",
+          "evidenceText": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta sistemampa.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -10574,7 +10725,7 @@
     },
     "94ca8a6343adb830f04deff38614a6765ccdfed18b1478af02bc723e1e938f40": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -10602,7 +10753,7 @@
     },
     "3828bfd26941e763e2c91871ffdd696ae8366141af13b4b81e9d916f48b52320": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -10630,7 +10781,7 @@
     },
     "1a727c5a2ebe71b76a84e848a2836f6e6b40166f6d9ca93e02a9ffc7a4293ea9": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -10659,7 +10810,7 @@
     },
     "8e50e3c65dcaa25cd0e404775ae14d57e488746ac79cff0ca84018b172ada4ce": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Contagem (MG)",
@@ -10687,7 +10838,7 @@
     },
     "e9679fdd0d2d6cefe97a7e3ca373095288c618565c6ddbd6eeead97ed9731e10": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -10715,7 +10866,7 @@
     },
     "52f36dafd4a98d3bde6b238e612679daafbdc24d70157837ce97109aac7a92d6": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -10743,7 +10894,7 @@
     },
     "7d9fcf7b25d1d09d5988e4c965ae58598c0159db3ee3a5d609146728becf9bd7": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Taiobeiras (MG)",
@@ -10773,7 +10924,7 @@
     },
     "afbc7dc77061f207892c94e392328158f64432dbaf6632dd509b4be55e527994": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mamborê (PR)",
@@ -10801,7 +10952,7 @@
     },
     "d26e7a4f8f64034fc64cc735ef20ab224e8df6fb56b8f348e76e8a493e2108d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -10829,7 +10980,7 @@
     },
     "fa2d4cff2930988b3d13a601347fbf66c9a990ac145f76b3ed4e33395fb38a46": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -10857,7 +11008,7 @@
     },
     "91a12ce67c613935ddd43913ff11dc875e10aaf4f0f9a8f4bc5a87e3e58fc2c7": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -10885,7 +11036,7 @@
     },
     "e897be8c978da150823825e999bd141d86f4f64f60e75ff888c92d1405824db0": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Macaé (RJ)",
@@ -10913,7 +11064,7 @@
     },
     "7679c6b9992884ed8657a882b883e0da2abdfa446311e3dd5d44eb79e46cfb80": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Siriri (SE)",
@@ -10943,7 +11094,7 @@
     },
     "95350af70d1e931587cd1ba9c3fce3434249f217f6aa438d4cc5d619a21c56dc": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Debate sobre dados e clima marca 2 mil participantes em série de webinários",
@@ -10966,7 +11117,7 @@
     },
     "d13be8ef98cc981c112d538823b8c7b81fc64645a5e0d0be29f581f555f30d7f": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta painel do IBS aos municípios paranaenses",
@@ -10989,7 +11140,7 @@
     },
     "156ec3c54c14ab1aa09a0be3b6147d1eaeda1480c78b67ff5ab4ef45ff56327b": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "FNP participa de assembleia da Abrasf e apresenta pautas prioritárias para os municípios",
@@ -11012,7 +11163,7 @@
     },
     "7e83015863b712a2a50f2da6e1372e15872a595bd2ddd7217f120dec9a8bffb0": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "SUS vai ofertar canetas emagrecedoras para pacientes com obesidade",
@@ -11242,7 +11393,7 @@
     },
     "53e116cd8838ecf2c622c3d3b73dd4fc03919253d0d56519db0bcb12da0ae5d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T14:30:57.201Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
       "item": {
         "kind": "news",
         "title": "Prédios públicos ainda impõem barreiras para acesso aos serviços, aponta fiscalização do TCESP",
@@ -11261,6 +11412,425 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "Fiscalização inédita mostra que 89% dos locais não têm assentos reservados, 78% não oferecem atendimento em Libras e mais da metade não possui documento vigente do Corpo de Bombeiros 17/09/2026 - SÃO PAULO - Uma fiscalização inédita realizada pelo Tribunal de Contas do Estado de São Paulo (TCESP) revela barreiras de acessibilidade em prédios públicos que prestam atendimento à população. Em uma ação simultânea realizada nesta quinta-feira, 17/09, 429 servidores do Tribunal fiscalizaram 400 locais em 267 municípios paulistas. Os primeiros resultados mostram que problemas de acessibilidade não estão restritos à infraestrutura. Eles atingem também a comunicação, a orientação, a segurança e as condições básicas para que o cidadão utilize os serviços públicos com autonomia e dignidade. O dado mais expressivo está na disponibilidade de assentos especiais: 89% dos locais fiscalizados não possuíam assentos reservados e identificados. A acessibilidade comunicacional também apresenta uma lacuna significativa. Em 78,45% dos locais avaliados não havia atendimento em Libras, presencial ou remoto. “Quando uma pessoa chega a um prédio público e não consegue ser atendida, se orientar ou circular com segurança, a barreira deixa de ser apenas física: ela passa a ser uma barreira ao exercício da cidadania. Fiscalizar acessibilidade é olhar para a qualidade do serviço público a partir de quem está do outro lado do balcão. É garantir que ninguém seja impedido de acessar um serviço por uma condição que o poder público tem o dever de considerar\", aponta a Conselheira Cristiana de Castro Moraes, Presidente do TCESP. Falhas de sinalização dificultam circulação A fiscalização também encontrou problemas expressivos nos recursos destinados à orientação e à autonomia das pessoas com deficiência. Ent",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "66f61094fcea12a719b2e389d5419b122edfc10367923505a5a5d5b3b1a31b3e": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
+        "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5",
+        "sourceUrl": "https://ribeiraodasneves.net",
+        "publishedAt": "2026-09-17T19:28:42.000Z",
+        "source": "RibeiraoDasNeves.net",
+        "summary": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
+        "classification": {
+          "category": "ADESÃO",
+          "emoji": "🟦",
+          "score": 12,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "689ca3936f43f06c5271d14915ceb258f653bf84db23bae21367f8b31236b097": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Promotorias cobram solução para crise em hospital regional - sounews.com.br",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQQ1NTdy15eEF1djYxOElnQXpLSEdNak9jOHdWbWFfLTduLVFpcU56VUw0M2JnQWRIZkFyN2FNdENKeU5RZG4wUjZhWF9BcWZyMC11SUxtSjdNNXQyWld0TEFZaFZRM2NTWjVKWUZfVm9CclNJZVRUZ2lVdm9JZkRsSmZlcEw4R1dxZUE?oc=5",
+        "sourceUrl": "https://sounews.com.br",
+        "publishedAt": "2026-09-14T22:05:00.000Z",
+        "source": "sounews.com.br",
+        "summary": "Promotorias cobram solução para crise em hospital regional sounews.com.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional sounews.com.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "beff50203a891f9f711109b87b06ddb3d75bae39dffda4ebe2521b6b90261af1": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Votuporanga (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3557105/2026-09-18/4e3ace208046e008ef151a25466dafd0e361e3cc.pdf",
+        "publishedAt": "2026-09-18T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "26 Dezembro(31/12/2025) ANEXO 14 - BALANÇO PATRIMONIAL COTIMARG Exercício de 2025 NOTA EXPLICATIVA Pág.: 4 Déficit do Exercício apurado através da Demonstração das Variações Patrimoniais, conforme IPC 10 (Instruções de Procedimentos Contábeis) - Contabilização de Consórcios Públicos do Ministério da Fazenda - Secretaria do Tesouro Nacional, determina que as transferências de ativos (monetários ou não) dos entes consorciados para o consórcio público são registradas por meio de ativo (participações) e patrimônio líquido, ou seja, envolvendo apenas as contas do Ativo e do Patrimônio Líquido, não contabilizando contas de Variação Patrimonial Aumentativa, estas consideradas para elaboração do Demonstrativo. Enquanto que as despesas ocorridas no exercício são contabilizadas e consideradas como Variações Patrimoniais Diminutivas, sendo, portanto, utilizadas na Demonstração das Variações Patrimoniais Participaram todos os membros titulares, conforme estabelecido no art. 28 do Estatuto Social do Cotimarg. A pauta da reunião definida debateu sobre a Apresentação e Aprovação dos Demonstrativos Contábeis referentes ao exercício de 2025: 1. Demonstrativo da Receita e Despesa; 2. Balanço Patrimonial; 3. Demonstrativo da Dívida Flutuante; 4. Boletim de Caixa; 5. Demonstração dos Fluxos de Caixa; 6. Balanço Financeiro e 7. Repasses do Contrato de Rateio 2026. A reunião foi iniciada pelo Gerente Administrativo, o Sr. Alexandre Miotto, que deu as boas-vindas e iniciou a apresentação dos demonstrativos contábeis referente ao exercício de 2025. O Gerente iniciou a apresentação do Demonstrativo da Receita e Despesa, informando que, no âmbito das Receitas Correntes, houve Receita Patrimonial no valor de R$ 100.105,76 (cem mil, cento e cinco reais e setenta e seis centavos) e Transferências e",
+        "territoryId": "3557105",
+        "territoryName": "Votuporanga",
+        "stateCode": "SP",
+        "edition": "2698",
+        "classification": {
+          "category": "RATEIO",
+          "emoji": "🟪",
+          "score": 11,
+          "reasons": [
+            "contexto público forte",
+            "RATEIO"
+          ],
+          "evidenceIndex": 3,
+          "evidenceText": "PATRIMÔNIO LÍQUIDO 1.006.356,66 840.279,18TOTAL 1.006.356,66 836.542,17ATIVO CIRCULANTE 1.003.242,36 828.813,69CAIXA E EQUIVALENTES DE CAIXA 1.003.242,36 828.813,69CAIXA E EQUIVALENTES DE CAIXA EM MOEDA NACIONAL 1.003.242,36 828.813,691.003.242,36FBANCOS CONTA MOVIMENTO - DEMAIS CONTAS (F) 7.728,48CRÉDITOS A CURTO PRAZO 0,00 7.728,48CRÉDITOS DE TRANSFERÊNCIAS A RECEBER 0,00 7.728,480,00PCRÉDITOS DE CONSÓRCIOS PÚBLICOS DECORRENTES DE CONTRATO DE RATEIO (P) 3.737,01ATIVO NÃO-CIRCULANTE 3.114,30 3.737,01IMOBILIZADO 3.114,30 5.190,00BENS MÓVEIS 5.190,00 5.190,005.190,00PBENS DE INFORMÁTICA -1.452,99(-) DEPRECIAÇÃO, EXAUSTÃO E AMORTIZAÇÃO ACUMULADAS -2.075,70 -1.452,99-2.075,70P(-) DEPRECIAÇÃO ACUMULADA - BENS MÓVEIS 840.279,18TOTAL 1.006.356,66 DIÁRIO OFICIAL ELETRÔNICO DE VOTUPORANGA Conforme Lei Municipal 5.927, de 02 de março de 2017 Sexta-feira, 18 de setembro de 2026 Ano XI",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "794018bca4350eadd8e6ac0f71f85240505d16be7f7828103654d9ede5e03cd9": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Votuporanga (SP)",
+        "url": "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf",
+        "publishedAt": "2026-09-17T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "projetos consistentes em programas e ações contemplados em Plano Plurianual ou em Gestão Associada de Serviços Públicos. Parágrafo Primeiro - É vedado ao Consórcio Público a aplicação dos recursos entregues por meio deste Contrato de Rateio para atendimento de despesas genéricas, inclusive transferências ou operações de crédito. Parágrafo Segundo - Os Entes Consorciados, isolados ou em conjunto, bem como o Consórcio Público, são partes legítimas para exigir o cumprimento das obrigações previstas neste Contrato de Rateio. Parágrafo Terceiro - Os recursos arrecadados por meio deste Contrato de Rateio não poderão ser utilizados para custeio de viagem, incluindo transporte, hospedagem e alimentação, dos membros do Consórcio Público, exceto nos casos em que a Gerência Administrativa e membros do Conselho Consultivo de Turismo que representem a Diretoria do Fórum Permanente de Turismo Turismo da Região Turística Maravilhas do Rio Grande necessitem de deslocamento para representar exclusivamente a Região Turística Maravilhas do Rio Grande em atividades de interesse do Consórcio Público, os custeios previsto na cláusula segunda deste contrato poderão ser suportados pelo Consórcio Público, com autorização de seu Presidente. IV - DO VALOR E DA COMPOSIÇÃO DO CONTRATO DIÁRIO OFICIAL ELETRÔNICO DE VOTUPORANGA Conforme Lei Municipal 5.927, de 02 de março de 2017 Quinta-feira, 17 de setembro de 2026 Ano XI | Edição nº 2697 Diário Oficial Eletrônico de Votuporanga | 35 Consórcio de Turismo Intermunicipal da Região Turística “Maravilhas do Rio Grande” Av. Francisco Ramalho de Mendonça, 3112 - Jardim Alvorada - CEP: 15.500-370 – Votuporanga/SP Tel. (17) 3405-9670 - e-mail: cotimarg@cotimarg.tur.br - CNPJ: 40.465.813/0001-71 Consórcio de Turismo Intermunicipal correrão à conta das dotaçõe",
+        "territoryId": "3557105",
+        "territoryName": "Votuporanga",
+        "stateCode": "SP",
+        "edition": "2697",
+        "classification": {
+          "category": "CONTROLE",
+          "emoji": "🟥",
+          "score": 19,
+          "reasons": [
+            "contexto público forte",
+            "CONTROLE",
+            "RATEIO"
+          ],
+          "evidenceIndex": 2,
+          "evidenceText": "correrão à conta das dotações orçamentárias de cada Ente Consorciado. CLÁUSULA ONZE - Os Entes Consorciados aportarão no exercício de 2027, o valor de seus repasses definidos para o exercício financeiro de 2027, onerando as dotações correspondentes do Orçamento Municipal de cada Ente, sob a seguinte Natureza de Despesa e Elemento Econômico: 3.3.00.00.00 - OUTRAS DESPESAS CORRENTES 3.3.71.70.00 - Rateio pela Participação em Consórcio Público CLÁUSULA DOZE - Conforme previsão legal, constitui ato de improbidade administrativa, nos termos do disposto no art. 10, inciso XV, da Lei no 8.429, de 2 de junho de 1992, celebrar Contrato de Rateio sem suficiente e prévia dotação orçamentária, ou sem observar as formalidades previstas em Lei. CLÁUSULA TREZE - A não consignação, pelo Ente Consorciado, em sua lei orçamentária ou em créditos adicionais, das dotações suficientes",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "70f040365856462141bf27d64fa0b05687bb64edb559420d06eb957c7eff6c2c": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "STJ mantém condenação da ex-deputada Flordelis a 50 anos de prisão",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/stj-mantem-condenacao-da-ex-deputada-flordelis-50-anos-de-prisao",
+        "publishedAt": "2026-09-18T17:02:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Sexta Turma do Superior Tribunal de Justiça (STJ) manteve, por unanimidade, a condenação da ex-deputada Flordelis a 50 anos de prisão pela morte do pastor Anderson do Carmo de Souza, em 2019, quando ele era seu marido. A Corte concordou com decisão do Tribunal de Justiça do Rio de Janeiro , que, em 2022, já havia mantido a condenação da ex-deputada a 50 anos de prisão. Notícias relacionadas: Justiça mantém condenação de 50 anos a ex-deputada Flordelis. Em 2022, Flordelis dos Santos de Souza foi condenada pelo Tribunal do Júri pelos crimes de homicídio triplamente qualificado consumado, homicídio duplamente qualificado tentado, associação criminosa armada e uso de documento falso. A ex-deputada foi considerada culpada por planejar o assassinato, ocorrido na casa da família em Niterói (RJ). A motivação, segundo a acusação do Ministério Público, foi o controle das finanças da família e a forma rígida como o pastor administrava os conflitos entre os integrantes. Segunda instância A defesa de Flordelis recorreu ao STJ, após a 2ª Câmara Criminal TJRJ negar, por unanimidade, recursos de apelação. À segunda instância, os advogados alegaram diversas nulidades processuais, entre as quais a não apresentação de alegações finais na fase de pronúncia e a falta de fundamentação das qualificadoras do crime. A relatora do caso, desembargadora convocada Nilsoni de Freitas, contudo, entendeu não ter ficado demonstrado o prejuízo concreto para a defesa da ex-deputada. A Sexta Turma manteve também a decisão que anulou a absolvição de Rayane dos Santos, Marzy Teixeira e André Luiz de Oliveira – a neta biológica e os dois filhos adotivos da ex-deputada que são acusados de participar do crime.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Sexta Turma do Superior Tribunal de Justiça (STJ) manteve, por unanimidade, a condenação da ex-deputada Flordelis a 50 anos de prisão pela morte do pastor Anderson do Carmo de Souza, em 2019, quando ele era seu marido. A Corte concordou com decisão do Tribunal de Justiça do Rio de Janeiro , que, em 2022, já havia mantido a condenação da ex-deputada a 50 anos de prisão. Notícias relacionadas: Justiça mantém condenação de 50 anos a ex-deputada Flordelis. Em 2022, Flordelis dos Santos de Souza foi condenada pelo Tribunal do Júri pelos crimes de homicídio triplamente qualificado consumado, homicídio duplamente qualificado tentado, associação criminosa armada e uso de documento falso. A ex-deputada foi considerada culpada por planejar o assassinato, ocorrido na casa da família em Niterói (RJ). A motivação, segundo a acusação do Ministério Público, foi o controle das finanças da família e a forma rígida como o pastor administrava os conflitos entre os integrantes. Segunda instância A defesa de Flordelis recorreu ao STJ, após a 2ª Câmara Criminal TJRJ negar, por unanimidade, recursos de apelação. À segunda instância, os advogados alegaram diversas nulidades processuais, entre as quais a não apresentação de alegações finais na fase de pronúncia e a falta de fundamentação das qualificadoras do crime. A relatora do caso, desembargadora convocada Nilsoni de Freitas, contudo, entendeu não ter ficado demonstrado o prejuízo concreto para a defesa da ex-deputada. A Sexta Turma manteve também a decisão que anulou a absolvição de Rayane dos Santos, Marzy Teixeira e André Luiz de Oliveira – a neta biológica e os dois filhos adotivos da ex-deputada que são acusados de participar do crime.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "f353e89cca1ba136c925ed28b1c389e72025755e92a080eb5003af3002a7b1b7": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Pessoas com deficiência vivem em piores condições de moradia, diz IBGE",
+        "url": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-09/pessoas-com-deficiencia-vivem-em-piores-condicoes-de-moradia-diz-ibge",
+        "publishedAt": "2026-09-18T15:33:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Dados do Censo 2022, divulgados nesta sexta-feira (18) pelo Instituto Brasileiro de Geografia e Estatística (IBGE), mostram que as pessoas com deficiência vivem em moradias com menos estrutura do que aquelas sem deficiência. Um dos aspectos relevantes é o acesso ao esgotamento sanitário. Apenas 59,8% das pessoas com deficiência vivem em residências com fossas ou ligação à rede coletora de esgoto. Entre aqueles que não têm deficiência, o índice é de 63,1%. Notícias relacionadas: Analfabetismo entre jovens e adultos com deficiência é 12 vezes maior. Renda de PCDs equivale a 70% do rendimento de pessoas sem deficiência. A desigualdade de repete também no acesso ao abastecimento de água potável e coleta de lixo. Para os que têm deficiência, o acesso à água por rede ou distribuição chega a 82% dos lares e a coleta de resíduos direta ou indireta, a 90,1%. Para os sem deficiência, os indicadores são, respectivamente, de 83,1% e 91,1%. O acesso aos três serviços de saneamento básico atinge 56,6% dos lares onde vivem pessoas com deficiência, contra 60,2% das moradias onde só residem pessoas sem deficiência. Há ainda 2,4% dos lares de pessoas com deficiência sem banheiro exclusivo do domicílio e 1,4% de casas com paredes externas construídas predominantemente com material não durável. Nas residências onde só vivem pessoas sem deficiência, os índices são mais baixos: de 2,2% e 1,2%, respectivamente. Internet e eletrodomésticos Apenas 78,9% dos lares onde residem pessoas com deficiência têm acesso domiciliar à internet. Para os sem deficiência, o serviço atinge 90,2% dos imóveis. A desigualdade é percebida ainda no acesso a eletrodomésticos. Em 60,4% dos lares onde vivem pessoas com deficiência há uma máquina de lavar, por exemplo. Por outro lado, o eletrodoméstico está presente em",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Dados do Censo 2022, divulgados nesta sexta-feira (18) pelo Instituto Brasileiro de Geografia e Estatística (IBGE), mostram que as pessoas com deficiência vivem em moradias com menos estrutura do que aquelas sem deficiência. Um dos aspectos relevantes é o acesso ao esgotamento sanitário. Apenas 59,8% das pessoas com deficiência vivem em residências com fossas ou ligação à rede coletora de esgoto. Entre aqueles que não têm deficiência, o índice é de 63,1%. Notícias relacionadas: Analfabetismo entre jovens e adultos com deficiência é 12 vezes maior. Renda de PCDs equivale a 70% do rendimento de pessoas sem deficiência. A desigualdade de repete também no acesso ao abastecimento de água potável e coleta de lixo. Para os que têm deficiência, o acesso à água por rede ou distribuição chega a 82% dos lares e a coleta de resíduos direta ou indireta, a 90,1%. Para os sem deficiência, os indicadores são, respectivamente, de 83,1% e 91,1%. O acesso aos três serviços de saneamento básico atinge 56,6% dos lares onde vivem pessoas com deficiência, contra 60,2% das moradias onde só residem pessoas sem deficiência. Há ainda 2,4% dos lares de pessoas com deficiência sem banheiro exclusivo do domicílio e 1,4% de casas com paredes externas construídas predominantemente com material não durável. Nas residências onde só vivem pessoas sem deficiência, os índices são mais baixos: de 2,2% e 1,2%, respectivamente. Internet e eletrodomésticos Apenas 78,9% dos lares onde residem pessoas com deficiência têm acesso domiciliar à internet. Para os sem deficiência, o serviço atinge 90,2% dos imóveis. A desigualdade é percebida ainda no acesso a eletrodomésticos. Em 60,4% dos lares onde vivem pessoas com deficiência há uma máquina de lavar, por exemplo. Por outro lado, o eletrodoméstico está presente em",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "9512f0d9020d7a3f7e3623c5324ad3cecfe0d77eb95a90929702a7545e534cde": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Saúde qualifica assistência para prevenir progressão de doença renal",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/saude-qualifica-assistencia-para-prevenir-progressao-de-doenca-renal",
+        "publishedAt": "2026-09-18T15:26:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Ministério da Saúde ampliou e qualificou o cuidado especializado a pessoas com doença renal crônica via Sistema Único de Saúde (SUS) , com o objetivo de garantir assistência em tempo adequado, evitar a progressão da doença e reduzir casos graves. Em nota, a pasta informou ter criado, no âmbito do programa Agora Tem Especialistas , uma nova organização do cuidado, que reúne consultas, exames e procedimentos em conjuntos integrados, com valores até 360% superiores aos pagos anteriormente. Notícias relacionadas: Estudo alerta para subdiagnóstico da doença renal crônica no Brasil. Na preparação para a hemodiálise, por exemplo, o valor pago passa de R$ 940,22 para R$ 3.000,63. Entenda A nova organização funciona por meio das chamadas Ofertas de Cuidados Integrados (OCIs), que reúnem, em um mesmo pacote, os cuidados necessários ao paciente, de acordo com o estágio da doença e suas necessidades. As ofertas incluem consultas especializadas, exames laboratoriais e de imagem, acompanhamento multiprofissional e outros procedimentos. “A iniciativa busca reduzir o tempo entre as diferentes etapas da assistência, garantir acompanhamento contínuo e preparar, no momento adequado, os pacientes que precisam iniciar a terapia renal substitutiva”, destacou o ministério. Anemia A pasta também atualizou o Protocolo Clínico e Diretrizes Terapêuticas (PCDT) da Anemia na Doença Renal Crônica. O documento incorpora ao SUS novas opções terapêuticas, como a carboximaltose férrica e a derisomaltose férrica. Transplante renal O transplante renal também integra a linha de cuidado de pessoas com doença renal crônica. Com as OCIs, o acompanhamento especializado pode favorecer a identificação e o encaminhamento de pacientes com indicação para avaliação para transplante – antes mesmo do início da diáli",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Ministério da Saúde ampliou e qualificou o cuidado especializado a pessoas com doença renal crônica via Sistema Único de Saúde (SUS) , com o objetivo de garantir assistência em tempo adequado, evitar a progressão da doença e reduzir casos graves. Em nota, a pasta informou ter criado, no âmbito do programa Agora Tem Especialistas , uma nova organização do cuidado, que reúne consultas, exames e procedimentos em conjuntos integrados, com valores até 360% superiores aos pagos anteriormente. Notícias relacionadas: Estudo alerta para subdiagnóstico da doença renal crônica no Brasil. Na preparação para a hemodiálise, por exemplo, o valor pago passa de R$ 940,22 para R$ 3.000,63. Entenda A nova organização funciona por meio das chamadas Ofertas de Cuidados Integrados (OCIs), que reúnem, em um mesmo pacote, os cuidados necessários ao paciente, de acordo com o estágio da doença e suas necessidades. As ofertas incluem consultas especializadas, exames laboratoriais e de imagem, acompanhamento multiprofissional e outros procedimentos. “A iniciativa busca reduzir o tempo entre as diferentes etapas da assistência, garantir acompanhamento contínuo e preparar, no momento adequado, os pacientes que precisam iniciar a terapia renal substitutiva”, destacou o ministério. Anemia A pasta também atualizou o Protocolo Clínico e Diretrizes Terapêuticas (PCDT) da Anemia na Doença Renal Crônica. O documento incorpora ao SUS novas opções terapêuticas, como a carboximaltose férrica e a derisomaltose férrica. Transplante renal O transplante renal também integra a linha de cuidado de pessoas com doença renal crônica. Com as OCIs, o acompanhamento especializado pode favorecer a identificação e o encaminhamento de pacientes com indicação para avaliação para transplante – antes mesmo do início da diáli",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b2c3b20ed99a15546eb3dd1b907de60817c857fa09cdcf0f9caaa23dd897c9c0": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Renda de PCDs equivale a 70% do rendimento de pessoas sem deficiência",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/renda-de-pcds-equivale-70-do-rendimento-de-pessoas-sem-deficiencia",
+        "publishedAt": "2026-09-18T15:15:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O rendimento médio do trabalhador com deficiência (R$ 2.053) representava cerca de 70% do rendimento médio daqueles sem deficiência (R$ 2.890), segundo dados do Censo 2022, do Instituto Brasileiro de Geografia e Estatística (IBGE), divulgados nesta sexta-feira (18). “Em todos os grupos de atividades econômicas, as pessoas com deficiência recebiam menos do que as pessoas sem deficiência. Além disso elas também estavam mais concentradas nas atividades que remuneravam menos, que são serviços domésticos, agropecuária e alojamento e alimentação”, explica o pesquisador do IBGE João Hallak Neto. Notícias relacionadas: Analfabetismo entre jovens e adultos com deficiência é 12 vezes maior. O segmento de administração pública, educação, saúde e serviços sociais era o que concentra os melhores rendimentos. Neste setor, pessoas com deficiência recebem, em média, R$ 3.223, cerca de 78% do valor recebido pelas pessoas sem deficiência (R$ 4.146). Nos lares com morador com deficiência, a renda do trabalho representava 55,7% do rendimento médio total do domicílio. Outros 44,3% vinham de outras fontes. Já naqueles lares sem pessoas com deficiência, a renda do trabalho respondia por 78,4%, enquanto 21,6% vinham de outras fontes. Ocupação O nível de ocupação entre as pessoas com deficiência era de 29%. Isso significa que apenas três em dez pessoas em idade de trabalhar estavam empregadas. Para efeitos de comparação, o nível de ocupação de pessoas sem deficiência era 55,8%, ou seja, quase duas vezes maior. De acordo com o Censo 2022, a população em idade de trabalho que apresentava alguma deficiência era de 13,71 milhões, das quais 3,97 milhões estavam ocupadas. A pesquisa mostrou ainda que, entre aqueles com deficiência, o menor nível de ocupação encontrava-se no grupo de pessoas com dific",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O rendimento médio do trabalhador com deficiência (R$ 2.053) representava cerca de 70% do rendimento médio daqueles sem deficiência (R$ 2.890), segundo dados do Censo 2022, do Instituto Brasileiro de Geografia e Estatística (IBGE), divulgados nesta sexta-feira (18). “Em todos os grupos de atividades econômicas, as pessoas com deficiência recebiam menos do que as pessoas sem deficiência. Além disso elas também estavam mais concentradas nas atividades que remuneravam menos, que são serviços domésticos, agropecuária e alojamento e alimentação”, explica o pesquisador do IBGE João Hallak Neto. Notícias relacionadas: Analfabetismo entre jovens e adultos com deficiência é 12 vezes maior. O segmento de administração pública, educação, saúde e serviços sociais era o que concentra os melhores rendimentos. Neste setor, pessoas com deficiência recebem, em média, R$ 3.223, cerca de 78% do valor recebido pelas pessoas sem deficiência (R$ 4.146). Nos lares com morador com deficiência, a renda do trabalho representava 55,7% do rendimento médio total do domicílio. Outros 44,3% vinham de outras fontes. Já naqueles lares sem pessoas com deficiência, a renda do trabalho respondia por 78,4%, enquanto 21,6% vinham de outras fontes. Ocupação O nível de ocupação entre as pessoas com deficiência era de 29%. Isso significa que apenas três em dez pessoas em idade de trabalhar estavam empregadas. Para efeitos de comparação, o nível de ocupação de pessoas sem deficiência era 55,8%, ou seja, quase duas vezes maior. De acordo com o Censo 2022, a população em idade de trabalho que apresentava alguma deficiência era de 13,71 milhões, das quais 3,97 milhões estavam ocupadas. A pesquisa mostrou ainda que, entre aqueles com deficiência, o menor nível de ocupação encontrava-se no grupo de pessoas com dific",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a9161f4a15786f1f76a2d98b65a24dc22091bae2cfbb8d1a7be753dbee34b09b": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Candidatos não poderão ser presos a partir deste sábado",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/candidatos-nao-poderao-ser-presos-partir-deste-sabado",
+        "publishedAt": "2026-09-18T15:10:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Candidatas e candidatos que disputam as eleições 2026 não poderão ser presos ou detidos a partir deste sábado (19). A medida é prevista pelo Código Eleitoral, para os 15 dias que antecedem o primeiro turno, marcado para 4 de outubro. Ela valerá até 48 horas após o encerramento da votação. Notícias relacionadas: Justiça Eleitoral rejeita cerca de 1,2 mil registros de candidatura. TRE-RJ distribui mais de 1 milhão de colas eleitorais para dia do voto. TSE vai enviar alertas no e-Título com orientações para eleições. Durante o período de vigência da regra, prisões ou detenções só poderão ocorrer em casos de flagrante delito . A garantia alcança todos os candidatos registrados para a disputa eleitoral. De acordo com o calendário aprovado pelo Tribunal Superior Eleitoral (TSE) , os eleitores irão às urnas em 4 de outubro para escolher presidente da República, governadores, senadores e deputados federais, estaduais e distritais.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Candidatas e candidatos que disputam as eleições 2026 não poderão ser presos ou detidos a partir deste sábado (19). A medida é prevista pelo Código Eleitoral, para os 15 dias que antecedem o primeiro turno, marcado para 4 de outubro. Ela valerá até 48 horas após o encerramento da votação. Notícias relacionadas: Justiça Eleitoral rejeita cerca de 1,2 mil registros de candidatura. TRE-RJ distribui mais de 1 milhão de colas eleitorais para dia do voto. TSE vai enviar alertas no e-Título com orientações para eleições. Durante o período de vigência da regra, prisões ou detenções só poderão ocorrer em casos de flagrante delito . A garantia alcança todos os candidatos registrados para a disputa eleitoral. De acordo com o calendário aprovado pelo Tribunal Superior Eleitoral (TSE) , os eleitores irão às urnas em 4 de outubro para escolher presidente da República, governadores, senadores e deputados federais, estaduais e distritais.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c8407f5a0146a2e566123e047ad31d4cce8189e7c06f65bb26a584efcbcbb76a": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Defesa de Daniel Vorcaro pede revogação de prisão preventiva a Fachin",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/defesa-de-daniel-vorcaro-pede-revogacao-de-prisao-preventiva-fachin",
+        "publishedAt": "2026-09-18T15:06:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A defesa do ex-banqueiro Daniel Vorcaro pediu ao presidente do Supremo Tribunal Federal (STF), Edson Fachin, a revogacão da prisão preventiva do dono do antigo banco Master, que é investigado por corrupção de agentes públicos e fraudes financeiras bilionárias. No pedido, a defesa argumenta que as investigações do caso Master foram paralisadas devido ao pedido de vista do ministro Flávio Dino na sessão plenária da última terça-feira (15), quando os ministros deveriam ter analisado a eventual abertura de investigação contra o também ministro Alexandre de Moraes. Notícias relacionadas: Dino manda PF investigar relação de Vorcaro com cemitérios em SP. Defesa de pai de Vorcaro cita impasse no STF e pede soltura. Mendonça rejeita ação contra reajuste do Bolsa Família . Com a vista, os processos relativos à Operação Compliance Zero, que investiga Vorcaro, ficaram paralisados no gabinete de Fachin, para onde foram enviados pelo relator André Mendonça em meio a uma crise institucional em torno do caso. Os advogados de Vorcaro sustentam que seu cliente não pode ficar preso indefinidamente, enquanto o Supremo vive um impasse em torno da própria relatoria do caso Master. Eles destacaram ainda que o ex-banqueiro está preso há mais de 90 dias sem que o Supremo analise um recurso pela soltura. “Na sessão plenária de 15 de setembro de 2026, a própria definição da relatoria e da competência para a condução dos procedimentos correlatos foi objeto de questão de ordem, cujo julgamento foi suspenso por pedido de vista”, diz a petição da defesa. Vorcaro está preso desde novembro do ano passado. No momento, ele se encontra no 19º Batalhão de Polícia Militar do Distrito Federal, onde há um pavilhão voltado a presos especiais conhecido como Papudinha, devido a sua proximidade com o Complexo Pen",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A defesa do ex-banqueiro Daniel Vorcaro pediu ao presidente do Supremo Tribunal Federal (STF), Edson Fachin, a revogacão da prisão preventiva do dono do antigo banco Master, que é investigado por corrupção de agentes públicos e fraudes financeiras bilionárias. No pedido, a defesa argumenta que as investigações do caso Master foram paralisadas devido ao pedido de vista do ministro Flávio Dino na sessão plenária da última terça-feira (15), quando os ministros deveriam ter analisado a eventual abertura de investigação contra o também ministro Alexandre de Moraes. Notícias relacionadas: Dino manda PF investigar relação de Vorcaro com cemitérios em SP. Defesa de pai de Vorcaro cita impasse no STF e pede soltura. Mendonça rejeita ação contra reajuste do Bolsa Família . Com a vista, os processos relativos à Operação Compliance Zero, que investiga Vorcaro, ficaram paralisados no gabinete de Fachin, para onde foram enviados pelo relator André Mendonça em meio a uma crise institucional em torno do caso. Os advogados de Vorcaro sustentam que seu cliente não pode ficar preso indefinidamente, enquanto o Supremo vive um impasse em torno da própria relatoria do caso Master. Eles destacaram ainda que o ex-banqueiro está preso há mais de 90 dias sem que o Supremo analise um recurso pela soltura. “Na sessão plenária de 15 de setembro de 2026, a própria definição da relatoria e da competência para a condução dos procedimentos correlatos foi objeto de questão de ordem, cujo julgamento foi suspenso por pedido de vista”, diz a petição da defesa. Vorcaro está preso desde novembro do ano passado. No momento, ele se encontra no 19º Batalhão de Polícia Militar do Distrito Federal, onde há um pavilhão voltado a presos especiais conhecido como Papudinha, devido a sua proximidade com o Complexo Pen",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5f71ae3968bffb49cf519578c7d156737f31cfc2dd7d01b6dc7a4d380238d2b7": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Analfabetismo entre jovens e adultos com deficiência é 12 vezes maior",
+        "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-09/analfabetismo-entre-jovens-e-adultos-com-deficiencia-e-12-vezes-maior",
+        "publishedAt": "2026-09-18T15:03:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A taxa de analfabetismo entre as pessoas com deficiência, de 15 a 29 anos, era 12,2% em 2022, ou seja, 12 vezes maior do que aquela registrada entre os sem deficiência nesta faixa etária (1%). Os dados, do Censo Demográfico de 2022, foram divulgados nesta sexta-feira (18), pelo Instituto Brasileiro de Geografia e Estatística (IBGE). “Sabe-se que, historicamente, elas têm uma taxa de analfabetismo mais elevada do que as pessoas sem deficiência. Parte dessa diferença decorre da maior concentração de pessoas com deficiência entre os idosos, gerações menos escolarizadas do que as gerações atuais. Contudo, esse enfoque nos jovens consegue acrescentar que a desigualdade entre as pessoas com deficiência e sem deficiência não se resume só à questão geracional”, destaca a pesquisadora do IBGE Luanda Botelho. Notícias relacionadas: Renda de PCDs equivale a 70% do rendimento de pessoas sem deficiência. Pessoas com deficiência vivem em piores condições de moradia, diz IBGE. Os dados mostram que o analfabetismo é maior entre aqueles com dificuldades associadas às funções mentais (40,4%) e aqueles com mais de um tipo de deficiência (34%). No entanto, mesmo entre os tipos de deficiência com menor taxa de analfabetismo do grupo - aquelas com alguma dificuldade de enxergar (3,5%), - ela é mais do que o triplo daquela observada entre as pessoas sem deficiência. As demais taxas são de 10% entre as pessoas com dificuldade de ouvir, de 23,3% entre aquelas com dificuldade de caminhar ou subir escadas (23,3%) e de 31,3% entre aquelas com dificuldade de pegar objetos pequenos (31,3%). Acesso à educação Alunos em sala de aula no Centro Integrado de Educação Pública (CIEP) 001, no Catete, Rio de Janeiro - Tomaz Silva/Agência Brasil A frequência escolar é menor também entre as pessoas com deficiê",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A taxa de analfabetismo entre as pessoas com deficiência, de 15 a 29 anos, era 12,2% em 2022, ou seja, 12 vezes maior do que aquela registrada entre os sem deficiência nesta faixa etária (1%). Os dados, do Censo Demográfico de 2022, foram divulgados nesta sexta-feira (18), pelo Instituto Brasileiro de Geografia e Estatística (IBGE). “Sabe-se que, historicamente, elas têm uma taxa de analfabetismo mais elevada do que as pessoas sem deficiência. Parte dessa diferença decorre da maior concentração de pessoas com deficiência entre os idosos, gerações menos escolarizadas do que as gerações atuais. Contudo, esse enfoque nos jovens consegue acrescentar que a desigualdade entre as pessoas com deficiência e sem deficiência não se resume só à questão geracional”, destaca a pesquisadora do IBGE Luanda Botelho. Notícias relacionadas: Renda de PCDs equivale a 70% do rendimento de pessoas sem deficiência. Pessoas com deficiência vivem em piores condições de moradia, diz IBGE. Os dados mostram que o analfabetismo é maior entre aqueles com dificuldades associadas às funções mentais (40,4%) e aqueles com mais de um tipo de deficiência (34%). No entanto, mesmo entre os tipos de deficiência com menor taxa de analfabetismo do grupo - aquelas com alguma dificuldade de enxergar (3,5%), - ela é mais do que o triplo daquela observada entre as pessoas sem deficiência. As demais taxas são de 10% entre as pessoas com dificuldade de ouvir, de 23,3% entre aquelas com dificuldade de caminhar ou subir escadas (23,3%) e de 31,3% entre aquelas com dificuldade de pegar objetos pequenos (31,3%). Acesso à educação Alunos em sala de aula no Centro Integrado de Educação Pública (CIEP) 001, no Catete, Rio de Janeiro - Tomaz Silva/Agência Brasil A frequência escolar é menor também entre as pessoas com deficiê",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "0a6c42f50009fc59421cfcf8091fb98e75d8a2c5b05bd83f742bce71ab7e3ba5": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Estudo aponta esgotamento emocional e burnout de médicos de UTI",
+        "url": "https://agenciabrasil.ebc.com.br/saude/noticia/2026-09/estudo-aponta-esgotamento-emocional-e-burnout-de-medicos-de-uti",
+        "publishedAt": "2026-09-18T14:49:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Quase metade (48,5%) dos médicos que trabalham em unidades de terapia intensiva (UTIs) no Brasil apresenta nível elevado de esgotamento mental e emocional. Além disso, 46,4% desses profissionais relatam baixo grau de satisfação com suas atividades. Os dados fazem parte do Inquérito Nacional sobre a Força de Trabalho Médica das UTIs Brasileiras , conduzido pela Associação de Medicina Intensiva Brasileira (Amib) em parceria com o Conselho Federal de Medicina (CFM). Notícias relacionadas: Saúde estende atuação de 676 médicos especialistas no SUS. Governo identifica 97 médicos falsos de IA no Youtube e aciona Google. O estudo ouviu 2.338 profissionais em 26 estados e no Distrito Federal. Em nota, a Amib avaliou que os achados sugerem um quadro de grande vulnerabilidade de médicos intensivistas à síndrome de burnout , fenômeno caracterizado por exaustão emocional, distanciamento afetivo e sensação de baixa realização pessoal. Para a entidade, a saúde mental dos profissionais não deve ser tratada como pauta secundária, mas como questão prioritária para políticas públicas, além de exigir mobilização de gestores, instituições e autoridades de saúde. Em coletiva de imprensa, o diretor de Comunicação do CFM, Estevam Rivello, chamou a atenção para os diferentes impactos da pressão em médicos intensivistas dos sistemas público e privado. “No sistema suplementar, o profissional tem uma estrutura, um arsenal terapêutico que ele pode implementar na assistência ao doente grave com maior facilidade do que quando comparado ao serviço público”, disse. “O nível público, com absoluta convicção, registra maior estresse, porque lida com um profissional que não tem a mesma remuneração do serviço suplementar e que tem mais vínculo empregatício em relação ao serviço suplementar”, complementou Ri",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Quase metade (48,5%) dos médicos que trabalham em unidades de terapia intensiva (UTIs) no Brasil apresenta nível elevado de esgotamento mental e emocional. Além disso, 46,4% desses profissionais relatam baixo grau de satisfação com suas atividades. Os dados fazem parte do Inquérito Nacional sobre a Força de Trabalho Médica das UTIs Brasileiras , conduzido pela Associação de Medicina Intensiva Brasileira (Amib) em parceria com o Conselho Federal de Medicina (CFM). Notícias relacionadas: Saúde estende atuação de 676 médicos especialistas no SUS. Governo identifica 97 médicos falsos de IA no Youtube e aciona Google. O estudo ouviu 2.338 profissionais em 26 estados e no Distrito Federal. Em nota, a Amib avaliou que os achados sugerem um quadro de grande vulnerabilidade de médicos intensivistas à síndrome de burnout , fenômeno caracterizado por exaustão emocional, distanciamento afetivo e sensação de baixa realização pessoal. Para a entidade, a saúde mental dos profissionais não deve ser tratada como pauta secundária, mas como questão prioritária para políticas públicas, além de exigir mobilização de gestores, instituições e autoridades de saúde. Em coletiva de imprensa, o diretor de Comunicação do CFM, Estevam Rivello, chamou a atenção para os diferentes impactos da pressão em médicos intensivistas dos sistemas público e privado. “No sistema suplementar, o profissional tem uma estrutura, um arsenal terapêutico que ele pode implementar na assistência ao doente grave com maior facilidade do que quando comparado ao serviço público”, disse. “O nível público, com absoluta convicção, registra maior estresse, porque lida com um profissional que não tem a mesma remuneração do serviço suplementar e que tem mais vínculo empregatício em relação ao serviço suplementar”, complementou Ri",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d6169429178aa9b7f1ad37809e550c262248dd0cc475f5dcbb0e80b554649304": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Pix terá novas regras para fraudes, cobrança híbrida e contas-salário",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/pix-tera-novas-regras-para-fraudes-cobranca-hibrida-e-contas-salario",
+        "publishedAt": "2026-09-18T14:47:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Banco Central anunciou mudanças no regulamento do Pix para ampliar funcionalidades, reforçar a segurança e aperfeiçoar a participação de instituições no sistema. Entre as principais novidades, está a autorização para que o Pix Automático seja usado em contas-salário a partir de julho de 2027. O BC também regulamentou a chamada cobrança híbrida, que reúne boleto e QR Code do Pix no mesmo documento. A finalidade é evitar pagamentos indevidos ou em duplicidade. As regras passam a valer em fevereiro do ano que vem. Notícias relacionadas: Caixa passa a oferecer modalidade de Pix parcelado. BC proíbe publicidade em comprovantes do Pix a partir de março de 2027. A regulamentação prevê também a possibilidade de dispensar a participação obrigatória de instituições com mais de 500 mil contas ativas, quando o perfil de clientes ou o modelo de negócios não justificar o acesso à infraestrutura do Pix. Suspensão, prazos e facilidades Segundo o BC, algumas regras de adesão e de saída de participantes foram aperfeiçoadas, como: previsão de suspensão imediata de instituições em liquidação extrajudicial; ajustes de prazos para a saída ordenada em algumas situações. Essa última diretriz refere-se, principalmente, a instituições que não comprovarem o atendimento dos limites mínimos de capital social e de patrimônio líquido. De acordo com a autoridade monetária, esses mecanismos facilitarão a retirada de recursos pelos clientes dessas instituições. A penalidade de exclusão do Pix passará a ter efeito imediato, sem o prazo atual de 30 dias.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Banco Central anunciou mudanças no regulamento do Pix para ampliar funcionalidades, reforçar a segurança e aperfeiçoar a participação de instituições no sistema. Entre as principais novidades, está a autorização para que o Pix Automático seja usado em contas-salário a partir de julho de 2027. O BC também regulamentou a chamada cobrança híbrida, que reúne boleto e QR Code do Pix no mesmo documento. A finalidade é evitar pagamentos indevidos ou em duplicidade. As regras passam a valer em fevereiro do ano que vem. Notícias relacionadas: Caixa passa a oferecer modalidade de Pix parcelado. BC proíbe publicidade em comprovantes do Pix a partir de março de 2027. A regulamentação prevê também a possibilidade de dispensar a participação obrigatória de instituições com mais de 500 mil contas ativas, quando o perfil de clientes ou o modelo de negócios não justificar o acesso à infraestrutura do Pix. Suspensão, prazos e facilidades Segundo o BC, algumas regras de adesão e de saída de participantes foram aperfeiçoadas, como: previsão de suspensão imediata de instituições em liquidação extrajudicial; ajustes de prazos para a saída ordenada em algumas situações. Essa última diretriz refere-se, principalmente, a instituições que não comprovarem o atendimento dos limites mínimos de capital social e de patrimônio líquido. De acordo com a autoridade monetária, esses mecanismos facilitarão a retirada de recursos pelos clientes dessas instituições. A penalidade de exclusão do Pix passará a ter efeito imediato, sem o prazo atual de 30 dias.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "2ca8f44ed17886fcea078f1a2085f8e503a0ad4398f28ce5f99e5312f0e0ab26": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Seminário cultural celebra criação de Lei contra violência doméstica",
+        "url": "https://www.tce.mg.gov.br/Seminario-cultural-celebra-criacao-de-Lei-contra-violencia-domestica.html/Noticia/1111629181",
+        "publishedAt": "2026-09-18T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "“Mas é preciso ter força, é preciso ter raça!”. Os versos da canção Maria Maria, assinada por Milton Nascimento e Fernando Brant, clamam pela força e resiliência feminina. E não haveria melhor maneira de iniciar o evento em celebração aos 20 anos da criação da Lei Maria da Penha, realizado no dia 18 de setembro, pelo Tribunal de Contas de Minas Gerais. Entoada pelo Coral Kolping, vindo de Felício dos Santos, no Vale do Jequitinhonha, a música se tornou um símbolo da resistência da mulher aos enfrentamentos sociais. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "“Mas é preciso ter força, é preciso ter raça!”. Os versos da canção Maria Maria, assinada por Milton Nascimento e Fernando Brant, clamam pela força e resiliência feminina. E não haveria melhor maneira de iniciar o evento em celebração aos 20 anos da criação da Lei Maria da Penha, realizado no dia 18 de setembro, pelo Tribunal de Contas de Minas Gerais. Entoada pelo Coral Kolping, vindo de Felício dos Santos, no Vale do Jequitinhonha, a música se tornou um símbolo da resistência da mulher aos enfrentamentos sociais. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5b60207654cdd20d9bbd8d8521e329b8dfc1f9cad17f37e85ea38a97ff607b5a": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Tribunal realiza capacitação on-line sobre o Sistema de Processo Eletrônico (e-TCESP)",
+        "url": "https://www.tce.sp.gov.br/6524-tribunal-realiza-capacitacao-line-sobre-sistema-processo-eletronico-e-tcesp",
+        "publishedAt": "2026-09-18T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "18/09/2026 – SÃO PAULO – A Escola Paulista de Contas Públicas \"Presidente Washington Luís\" (EPCP), do Tribunal de Contas do Estado de São Paulo (TCESP), realizará no dia 8 de outubro de 2026, das 10h às 12h, uma capacitação voltada aos usuários do Sistema de Processo Eletrônico (e-TCESP), com transmissão ao vivo pelo canal da EPCP no YouTube, em streaming.tce.sp.gov.br/lives. O evento tem como objetivo levar o participante a conhecer e aprimorar o uso do e-TCESP, sistema que concentra a tramitação eletrônica de processos no âmbito da Corte de Contas paulista. A capacitação é direcionada a usuários do e-TCESP, entre eles servidores municipais e estaduais, advogados, licitantes e cidadãos que atuam ou interagem com o sistema. Não há necessidade de inscrição prévia para acompanhar a transmissão. A abertura será conduzida por Aluísio Genofre Bicudo, Diretor Técnico de Divisão do TCESP, e as instruções ficarão a cargo dos Chefes Técnicos da Fiscalização do Tribunal, Eliane Cristina Francisco e Julio Eduardo Neves Facco. O conteúdo programático abordará: - Alteração de dados cadastrais; - Autuação de expediente, recurso/ação e representação; - Buscas e pesquisas de processos; - Cadastro de advogado e de parte; - Consulta pública; - Delegação de poderes; - Exclusão de arquivos; - Navegação pelo processo; - Notificações; - Novas formas de acesso; - Download de PDF único (todos os documentos); - Peticionamento e juntada; - Procurador padrão; - Requerer habilitação; - Solicitação de vista; - Fale Conosco, material de apoio e perguntas frequentes. Haverá emissão de certificado de participação aos participantes on-line, condicionada ao preenchimento de formulário que será disponibilizado no chat da transmissão em tempo real. O link para acesso ao formulário será fornecido apenas du",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "18/09/2026 – SÃO PAULO – A Escola Paulista de Contas Públicas \"Presidente Washington Luís\" (EPCP), do Tribunal de Contas do Estado de São Paulo (TCESP), realizará no dia 8 de outubro de 2026, das 10h às 12h, uma capacitação voltada aos usuários do Sistema de Processo Eletrônico (e-TCESP), com transmissão ao vivo pelo canal da EPCP no YouTube, em streaming.tce.sp.gov.br/lives. O evento tem como objetivo levar o participante a conhecer e aprimorar o uso do e-TCESP, sistema que concentra a tramitação eletrônica de processos no âmbito da Corte de Contas paulista. A capacitação é direcionada a usuários do e-TCESP, entre eles servidores municipais e estaduais, advogados, licitantes e cidadãos que atuam ou interagem com o sistema. Não há necessidade de inscrição prévia para acompanhar a transmissão. A abertura será conduzida por Aluísio Genofre Bicudo, Diretor Técnico de Divisão do TCESP, e as instruções ficarão a cargo dos Chefes Técnicos da Fiscalização do Tribunal, Eliane Cristina Francisco e Julio Eduardo Neves Facco. O conteúdo programático abordará: - Alteração de dados cadastrais; - Autuação de expediente, recurso/ação e representação; - Buscas e pesquisas de processos; - Cadastro de advogado e de parte; - Consulta pública; - Delegação de poderes; - Exclusão de arquivos; - Navegação pelo processo; - Notificações; - Novas formas de acesso; - Download de PDF único (todos os documentos); - Peticionamento e juntada; - Procurador padrão; - Requerer habilitação; - Solicitação de vista; - Fale Conosco, material de apoio e perguntas frequentes. Haverá emissão de certificado de participação aos participantes on-line, condicionada ao preenchimento de formulário que será disponibilizado no chat da transmissão em tempo real. O link para acesso ao formulário será fornecido apenas du",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ce31526e2e9f5939a369ed3dec553d843cd9b65e54d128b7b6065b83f64707bb": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "news",
+        "title": "Memorial celebra dois anos preservando a história da Corte de Contas paulista",
+        "url": "https://www.tce.sp.gov.br/6524-memorial-celebra-dois-anos-preservando-historia-corte-contas-paulista",
+        "publishedAt": "2026-09-18T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "18/09/2026 - Neste sábado (19/9), o Memorial do Tribunal de Contas do Estado de São Paulo completará 2 anos de fundação. Um espaço dedicado a preservar, a valorizar e a compartilhar a memória de uma instituição centenária. Inaugurado em 19 de setembro de 2024, como parte das comemorações dos 100 anos da Corte, o espaço foi concebido para aproximar a sociedade da história, da atuação e da importância do Tribunal de Contas para o Estado de São Paulo. O Memorial tem um caráter didático, uma vez que permite ao visitante conhecer seu funcionamento, a trajetória e os acontecimentos que marcaram a história da Corte, além de reconhecer as figuras — Conselheiros, Membros e Servidores — que contribuíram e contribuem para a construção dessa história. Um lugar de preservação da memória institucional. Seu acervo reúne documentos, livros oficiais, máquinas, utensílios e outros objetos que fizeram parte da trajetória centenária do Tribunal. Cada peça que ajuda a contar um capítulo da história da instituição, revelando como o trabalho de controle externo na fiscalização dos recursos públicos também acompanhou as transformações da sociedade e do próprio Estado. Dentre os itens em exposição, materiais históricos como o Livro Ata que registra a sessão inaugural do TCESP, realizada em 6 de maio de 1924, e o documento que registra a primeira sessão ordinária após a reabertura da Corte, em janeiro de 1947. O acervo também guarda momentos como o decreto de 1930 que determinou a extinção do Tribunal, apresentado por meio de um fac-símile da página do Diário Oficial do Estado. Objetos institucionais que aguçam a curiosidade como o caso da máquina de calcular manual Original Odhner, modelo 239, utilizada pelo Tribunal na década de 1950. Além do fac-símile de uma prestação de contas encaminhada p",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "18/09/2026 - Neste sábado (19/9), o Memorial do Tribunal de Contas do Estado de São Paulo completará 2 anos de fundação. Um espaço dedicado a preservar, a valorizar e a compartilhar a memória de uma instituição centenária. Inaugurado em 19 de setembro de 2024, como parte das comemorações dos 100 anos da Corte, o espaço foi concebido para aproximar a sociedade da história, da atuação e da importância do Tribunal de Contas para o Estado de São Paulo. O Memorial tem um caráter didático, uma vez que permite ao visitante conhecer seu funcionamento, a trajetória e os acontecimentos que marcaram a história da Corte, além de reconhecer as figuras — Conselheiros, Membros e Servidores — que contribuíram e contribuem para a construção dessa história. Um lugar de preservação da memória institucional. Seu acervo reúne documentos, livros oficiais, máquinas, utensílios e outros objetos que fizeram parte da trajetória centenária do Tribunal. Cada peça que ajuda a contar um capítulo da história da instituição, revelando como o trabalho de controle externo na fiscalização dos recursos públicos também acompanhou as transformações da sociedade e do próprio Estado. Dentre os itens em exposição, materiais históricos como o Livro Ata que registra a sessão inaugural do TCESP, realizada em 6 de maio de 1924, e o documento que registra a primeira sessão ordinária após a reabertura da Corte, em janeiro de 1947. O acervo também guarda momentos como o decreto de 1930 que determinou a extinção do Tribunal, apresentado por meio de um fac-símile da página do Diário Oficial do Estado. Objetos institucionais que aguçam a curiosidade como o caso da máquina de calcular manual Original Odhner, modelo 239, utilizada pelo Tribunal na década de 1950. Além do fac-símile de uma prestação de contas encaminhada p",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b1cda8c8c682567952562dd279a45e974f5c69c0de2438eb2c5805ba8232353b": {
+      "firstSeenAt": "2026-09-18T18:27:12.503Z",
+      "lastSeenAt": "2026-09-18T18:27:12.503Z",
+      "item": {
+        "kind": "gazette-index",
+        "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
+        "url": "https://www-storage.voxtecnologia.com.br/?m=sigpub.publicacao&f=182&i=publicado_118440_2026-09-17_915faaf9d0fe23eed85d02978a4ccf5e.pdf",
+        "publishedAt": "2026-09-18T15:00:00.000Z",
+        "source": "Diário Municipal AMM-MG",
+        "sourceUrl": "https://www.diariomunicipal.com.br/amm-mg/",
+        "summary": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
+        "scraper": "diario-municipal-index",
+        "previewOnly": true,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -14320,6 +14890,142 @@
           "itemCount": 0
         }
       ]
+    },
+    "35380212789:1": {
+      "at": "2026-09-18T18:27:12.503Z",
+      "collected": 143,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 30,
+          "durationMs": 1789
+        },
+        {
+          "name": "Querido Diário",
+          "status": "ok",
+          "itemCount": 67,
+          "durationMs": 13401
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "ok",
+          "itemCount": 65
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "ok",
+          "itemCount": 6
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 19,
+          "durationMs": 3878
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 26,
+          "durationMs": 5569
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 16
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 3598
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
@@ -14327,117 +15033,117 @@
       "name": "Google News",
       "status": "ok",
       "itemCount": 30,
-      "durationMs": 750,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "durationMs": 1789,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "ok",
-      "itemCount": 65,
-      "durationMs": 9895,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 67,
+      "durationMs": 13401,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
       "status": "ok",
-      "itemCount": 63,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 65,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
       "status": "ok",
-      "itemCount": 4,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 6,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
-      "itemCount": 20,
-      "durationMs": 5352,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 19,
+      "durationMs": 3878,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
-      "itemCount": 10,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 9,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
-      "itemCount": 28,
-      "durationMs": 6329,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 26,
+      "durationMs": 5569,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -14446,7 +15152,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z"
+      "checkedAt": "2026-09-18T18:27:12.503Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -14455,7 +15161,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z"
+      "checkedAt": "2026-09-18T18:27:12.503Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -14464,59 +15170,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z"
+      "checkedAt": "2026-09-18T18:27:12.503Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
-      "itemCount": 20,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 16,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
-      "itemCount": 8,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 9,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
-      "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "itemCount": 1,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 4880,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "durationMs": 3598,
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T14:30:57.201Z",
+      "checkedAt": "2026-09-18T18:27:12.503Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T14:30:57.201Z"
+      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
