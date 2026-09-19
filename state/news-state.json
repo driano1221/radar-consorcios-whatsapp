@@ -2699,6 +2699,68 @@
       "category": "RATEIO",
       "source": "Querido Diário",
       "publishedAt": "2026-09-18T12:00:00-03:00"
+    },
+    "c18dad6e13d021415b51990ec270eee7cbbb148c064145ff4408feba4c6864ad": {
+      "sentAt": "2026-09-19T00:19:31.123Z",
+      "url": "https://data.queridodiario.ok.org.br/2902252/2026-09-18/1f0deead47535f5a43137a332ad3f3d33b99dbce.pdf",
+      "title": "Diário Oficial de Arataca (BA)",
+      "titleFingerprint": "258909fce7064bf3ae91e2512f218a208200995a2fcb972777acbfdce25ab347",
+      "contentTokens": [
+        "039",
+        "056",
+        "100",
+        "130",
+        "139",
+        "142",
+        "151",
+        "323",
+        "444",
+        "545",
+        "559",
+        "629",
+        "641",
+        "674",
+        "730",
+        "739",
+        "815",
+        "924",
+        "975",
+        "alimentacao",
+        "arataca",
+        "asps",
+        "capital",
+        "correntes",
+        "custe",
+        "deducoes",
+        "despesa",
+        "despesas",
+        "disponibilidade",
+        "empenhadas",
+        "epidemiologica",
+        "executadas",
+        "exercicio",
+        "financeira",
+        "iii",
+        "indevidamente",
+        "inscritos",
+        "liquidadas",
+        "nao",
+        "nutricao",
+        "outras",
+        "pagar",
+        "pagas",
+        "processados",
+        "restos",
+        "sem",
+        "subfuncoes",
+        "total",
+        "vigilancia",
+        "vii",
+        "viii"
+      ],
+      "category": "RATEIO",
+      "source": "Querido Diário",
+      "publishedAt": "2026-09-18T12:00:00-03:00"
     }
   },
   "pending": {},
@@ -3020,7 +3082,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -3066,7 +3128,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -3112,7 +3174,7 @@
     },
     "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 1988/2020 - Primeira Câmara - TCE-PR",
@@ -3158,7 +3220,7 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
@@ -3233,7 +3295,7 @@
     },
     "ff8a1bb121bd2c7a6442a69ce4c2e4ce398ffadb53303703c05fb67f7b262e09": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Reforma tributária eleva teto referencial de todos os auditores municipais ao de ministro do STF",
@@ -3703,7 +3765,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3730,7 +3792,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -4458,7 +4520,7 @@
     },
     "58706a3a4aa7d743798e03cbb9442770b47c948325085c7e4ac25086e29c28fb": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Inhapi (AL)",
@@ -4489,7 +4551,7 @@
     },
     "91fe4f7cfc6858264b418bffa47077497838fe4647251f3d4c8ee635dda59a38": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -5256,7 +5318,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5516,7 +5578,7 @@
     },
     "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - Alagoas na Net",
@@ -5958,7 +6020,7 @@
     },
     "3f5b7b86c6f8909d0733cf127e65b91b8450a4bd255004996b0470fa96d8739e": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC participa de Encontro Cidades Verdes Resili... - Consórcio Intermunicipal - Grande ABC",
@@ -6029,22 +6091,22 @@
     },
     "97888cdbc4139f52de557a7c5321f8f8ff2082fcba1231438afaae3f27988d4c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
-        "title": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital - Ponto na Curva",
+        "title": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital - pontonacurva.com.br",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOMkluNVZLa0diNmZteVB1SnhPZ3dpeDF6QlJMWVdYOVdMWFlZQnlQRFZ4RGRtbzNnSmJ2bkc2cUVlWWhWZFladm54aUNqYklSb2I0TWlWR2ZkTkQtemhlTEJxWTNsaXB2ZnEzT3dGdGc3c2NiS3YxRkF5c2plTWl1RHVkbDh2LUFFRkpQYkdnZnZlcU4xb1JoTkhZUkREVTlVcVQ1WTBfbDJDaElWVFpXUEFXTFpXbm5Dc3c?oc=5",
         "sourceUrl": "https://www.pontonacurva.com.br",
         "publishedAt": "2026-09-15T14:00:00.000Z",
-        "source": "Ponto na Curva",
-        "summary": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital Ponto na Curva",
+        "source": "pontonacurva.com.br",
+        "summary": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital pontonacurva.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital Ponto na Curva",
+          "evidenceText": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital pontonacurva.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6052,7 +6114,7 @@
     },
     "57cbc5c4169c8017e9c5c3f545acfe2f06058d8effea13d29d4e1c70a0d76c0c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Acompanhamento de Matéria - sapl.patobranco.pr.leg.br",
@@ -6075,7 +6137,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -6098,7 +6160,7 @@
     },
     "14a939bc0c54983f74323beb211d40d0f034733f9633d9214d826d8f66fa273d": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Mutirão Brasil Cidades Amazônicas fortalece ação climática local em seis municípios",
@@ -6376,22 +6438,22 @@
     },
     "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
-        "title": "Concurso CONSUD PR: gabaritos preliminares divulgados! - Estratégia Concursos",
+        "title": "Concurso CONSUD PR: gabaritos preliminares divulgados! - estrategiaconcursos.com.br",
         "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBRSkI5Uk8wclVwNUxNeWswUGRjTXZ2aEg0aWp0TlBmZnl2YTJDdmYzempRUks0ZEQ1Ri01eWxITkcxdDgySUprTzVDUndNWDM1bFdENFJwU2xZMjA3Y0JfeHEzYU84TXZvR0hsX19wMjXSAXZBVV95cUxNZWpMdEFySC1oUXdzZEFhUlB0c0dkdXBtT2RrSlRtTldMaHNINW1ZWm1YY1RnWEdKcVdZVXZ4a1BrQUxkU2lkYlB2SFZHdWYzSU95YjNvS1otWXhkM3dyUndwX3lucnF3TkFELXdJYU1LQm5zRFB3?oc=5",
         "sourceUrl": "https://www.estrategiaconcursos.com.br",
         "publishedAt": "2026-09-15T07:00:00.000Z",
-        "source": "Estratégia Concursos",
-        "summary": "Concurso CONSUD PR: gabaritos preliminares divulgados! Estratégia Concursos",
+        "source": "estrategiaconcursos.com.br",
+        "summary": "Concurso CONSUD PR: gabaritos preliminares divulgados! estrategiaconcursos.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Concurso CONSUD PR: gabaritos preliminares divulgados! Estratégia Concursos",
+          "evidenceText": "Concurso CONSUD PR: gabaritos preliminares divulgados! estrategiaconcursos.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6422,7 +6484,7 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
@@ -6698,7 +6760,7 @@
     },
     "bd14fb2413e3f263be8feff4397689363acc15b7529d2e4e0b40bb290487ff80": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Educação em primeiro lugar: TCEMG participa do 12º Fórum Mineiro de Educação",
@@ -6723,7 +6785,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -6912,22 +6974,22 @@
     },
     "cea72684cd8fbc51576e30d661d687d68f16639fa83c83d5d0b8f4e5cdfb115f": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-16T05:59:12.856Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas - ABC Agora",
+        "title": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas - abcagora.com.br",
         "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOR0NvV1p0Rl9uRTZwbEFrcExJTzlOOTFSS0dIeWJxSndRVkw2TjhKd1A2Q3lONmxKdURjTlhQQV8tMzY0WGJfcnFfWmU3VnhBRkl3eW5DYmcyOFNaUlgxMU1RYVhMVE93RnhOYmVpb0s5RVBtQk5xSlhxYmljWWZnbA?oc=5",
         "sourceUrl": "https://abcagora.com.br",
         "publishedAt": "2026-09-15T20:04:25.000Z",
-        "source": "ABC Agora",
-        "summary": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas ABC Agora",
+        "source": "abcagora.com.br",
+        "summary": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas abcagora.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 2,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas ABC Agora",
+          "evidenceText": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas abcagora.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -6935,7 +6997,7 @@
     },
     "b4e307c829e9da01d07e4af2c01aed82370a9d2223967661154467ff5b813fa1": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - Isso É Notícia",
@@ -6984,7 +7046,7 @@
     },
     "aa4e7c489fd115157c5d5fd961b53f89eb3aa50e5f65149aea4945b06191373e": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara - TCE-PR",
@@ -7145,7 +7207,7 @@
     },
     "2a2e3d0d3e5f6ab5d5e18e7014425b404b0d4ffe3200504485ed83b8b5db2061": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -7174,7 +7236,7 @@
     },
     "c34c65928484b5f58b0d5120a43d66eae7e93fd5b17ecdfa7cbefe470a618884": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Várzea da Palma (MG)",
@@ -7203,7 +7265,7 @@
     },
     "007d8c8852ad80304776bd1b2c411f31b06dc0678e403c182f6d3e6b52a35584": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -7231,7 +7293,7 @@
     },
     "6dc0d19654c20d2230e17512a95797c22ef95dc6f97399c8fa2a0dc833ba95f2": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Londrina (PR)",
@@ -7259,7 +7321,7 @@
     },
     "e018f31e3ae66da721d2945b2fdef3c2e4be02a8942157b6052c7350f3507d61": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Iguaçu (RJ)",
@@ -7286,7 +7348,7 @@
     },
     "26daff64bc890690cde59500afcd2e0aadd9dfb0df9178b2aed1ed7004d089e3": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -7641,7 +7703,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -7669,7 +7731,7 @@
     },
     "06428e75937044b7bf4f96b4d416326c858195b05468d8997b9f41a19d058b11": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Licitação de R$ 31,2 milhões em Itanhomi é suspensa por indícios de restrição à concorrência",
@@ -7696,7 +7758,7 @@
     },
     "a8b47d06995b57b48ed350ecc23c3d3902f5b917aed230dd2239145a5a453af8": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "TCESP comunica abertura de consulta pública sobre o Guia de Custos para o Setor Público",
@@ -7747,7 +7809,7 @@
     },
     "a01af230da7740611782041760ef30c39464eb49867b2bd5bcf17062cd024dd0": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Prefeitura Municipal de Mogi Guaçu",
@@ -7795,7 +7857,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -7981,7 +8043,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -8006,7 +8068,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -8031,7 +8093,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -8058,7 +8120,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -8083,7 +8145,7 @@
     },
     "2e5ce60d1c9221face2410af24ae606ca016845ec74e44a1c2bb7d4bd2d21849": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Tribunal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -8108,7 +8170,7 @@
     },
     "ca0b94ca8fae90b8426d1bc5403b206b5519bfbffe898aa846864b5a06e19729": {
       "firstSeenAt": "2026-09-16T22:55:30.458Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO ABC SEDIA CURSO SOBRE ASSISTÊNCIA TÉCNICA HABITACIONAL DE INTERESSE SOCIAL - TV São Bernardo",
@@ -8549,7 +8611,7 @@
     },
     "6f103f8dd7ab4573f89a14b5610d827b4d503d302e38bb37d4765cc047af555f": {
       "firstSeenAt": "2026-09-17T13:25:57.252Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - Isso É Notícia",
@@ -8572,7 +8634,7 @@
     },
     "1f25b0b20484f0f1881f66908f4459345a1d638d43c30c2be1136be0065d635d": {
       "firstSeenAt": "2026-09-17T13:25:57.252Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - notícia infoco",
@@ -8871,7 +8933,7 @@
     },
     "bef6149ab0734de0a2921e8a77c5dc461f306f23c8d759757b5d8bd2ffc2653f": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Diálogo Federativo: na CNM, especialistas debatem desafios e potencialidade dos consórcios públicos - Confederação Nacional de Municípios",
@@ -8896,7 +8958,7 @@
     },
     "5f8169dfadfb7f58ff5fc3798a1b920bf1d1968a5ed977b4c3f8e419b9be4099": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Viçosa (AL)",
@@ -8925,7 +8987,7 @@
     },
     "b243d175e7e63b276b55e5f2001e1410f0ec6029940fa57c73594ae064ae1fbf": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Ouro Verde do Oeste (PR)",
@@ -8955,7 +9017,7 @@
     },
     "26273a65bf07ccf1767383350e881ae51f02f718401605cda81fd2668a0a6756": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de São Mateus do Sul (PR)",
@@ -8983,7 +9045,7 @@
     },
     "27b621bc39d18af16a0871bad3a1b9d2bc92db0c447ab5d2e2ee38597d534ed5": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -9013,7 +9075,7 @@
     },
     "a65232df5c7f31fcd1e80a18b822045ecea0d8b46e5d09de3cea9ea026a2258d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itajubá (MG)",
@@ -9041,7 +9103,7 @@
     },
     "332092ca59cae896267f8a1e53b19254df7e05f0c967be79e729c8af654dea5a": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Contagem (MG)",
@@ -9069,7 +9131,7 @@
     },
     "e939ed4783e8e4b71931fb729dda42952a35508a8962f1d361bd2e9a545317d1": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -9097,7 +9159,7 @@
     },
     "636fe0665af16aff26cf8fa1dd13e477c70c941d98a53192e51cc0af18276621": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -9125,7 +9187,7 @@
     },
     "1f030e27bf926927daa16490f0b9f8e2b5955d4676b7312fc34e6fa86307988d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -9153,7 +9215,7 @@
     },
     "e6b73db1444ff887f64c6edb59f6db3713bbffc5e2e7424e9a9f009170dfe5a2": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -9182,7 +9244,7 @@
     },
     "97209ec5af968ed46b53270b1cff4a2d316f89364153b5d78248ce34b3c25e89": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Betim (MG)",
@@ -9213,7 +9275,7 @@
     },
     "45d4465fc27ec293fa1fa27d2ff79060fcedfc980163374b738177c28c3e1b7e": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Londrina (PR)",
@@ -9243,7 +9305,7 @@
     },
     "e824f6520717d7a24ac462414d0ac0717c3abb1df011ff56581d15180ef39790": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -9271,7 +9333,7 @@
     },
     "e6013bedf3a50f3beda4d85723fbb3148fedd23a06cc0756e0a4cad79ff64f9d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mossoró (RN)",
@@ -9301,7 +9363,7 @@
     },
     "fda85d4031372ab9f40e970ae6c1e22ac20f4861518c1a73bcdaad28ba0c0682": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -9329,7 +9391,7 @@
     },
     "0d322e7698bb1d2f9e16106533bc61f4925068a7eaa0ce5afbc5dba2e1ca10f8": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Serrana (MG)",
@@ -9357,7 +9419,7 @@
     },
     "e5fdbb6fbd6d702fa8e2f124ef9269f553af9420e5ce11e8f945f7e221ee70cd": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Apucarana (PR)",
@@ -9387,7 +9449,7 @@
     },
     "318902870f2ae6d3388ff63f83ed1c8dd6db137da81b5d61616e93a356254906": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Três Arroios (RS)",
@@ -9418,7 +9480,7 @@
     },
     "5334aac16717c175ffd394feb11abe057a3dd2033672e59dd0f21f3e2243af79": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Quatro Irmãos (RS)",
@@ -9448,7 +9510,7 @@
     },
     "23004993f9b664181c2d953839c227f04d409110fee5f0badf5b5ce4bc9dabbc": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Camaquã (RS)",
@@ -9477,7 +9539,7 @@
     },
     "4b186d8478ba6992756691be830982208ef6857df6353b03e606ca2df00b8d35": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -9505,7 +9567,7 @@
     },
     "5b54849b6dc43006259d89e3ad86a5461c44b015a30950039141a0235fc34173": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -9533,7 +9595,7 @@
     },
     "7e07ada61964777cd8aa0e4a65a12a137cc0d5d4c1e3923b39a6da1f82213c7a": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -9561,7 +9623,7 @@
     },
     "817c29aa611c22707d73b416a8cccc2918b28a5867b55c7793e70dd5bfb74f33": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -9589,7 +9651,7 @@
     },
     "e5d8de61915e8319dad49430a6a60708e9d6641c64ce4742f111ed92178a5541": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Programa Mais Iguais leva gestoras à Semana do Clima em Nova York",
@@ -9846,7 +9908,7 @@
     },
     "61ed2b20c4aacdc3cd7d32cfb91108b781a29a3dc49e1f06cbac4a2f4d0a233d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Democracia se fortalece com autocrítica e instituições sólidas, afirma presidente do TCEMG em encontro nacional sobre avaliação dos Tribunais de Contas",
@@ -9871,7 +9933,7 @@
     },
     "6504f1773d4ed0fc68e9510f8a61ab54b79cbd3541ee8b84ca49fc9190db33a4": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "TCESP orienta municípios a fortalecerem bibliotecas públicas e ampliarem acesso a programas do Ministério da Cultura",
@@ -9897,7 +9959,7 @@
     },
     "ec4e340eeb726f98d0f5679ef5f31e8d3b6b9e201d07f556502b3e02522c62f7": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Santa Fé do Sul e Olímpia são as próximas cidades do Ciclo de Debates do TCESP",
@@ -9923,7 +9985,7 @@
     },
     "0c6651077853dffef47facc43511524b5c537550025e8bdce1f92cd1f08dc12b": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza fiscalização inédita para verificar acessibilidade em prédios com atendimento ao público",
@@ -10206,7 +10268,7 @@
     },
     "0c5ade03550e456b3996eb2b36f9d1eff477ae9872c868d1aa491444060df132": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "TCEMG adota aplicativo do Banco do Brasil para otimizar transporte e reduzir custos",
@@ -10231,7 +10293,7 @@
     },
     "561b71d1edd1e24c42134479b29c47d3f61de9246d934bd16dd227299920e313": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Encontro Técnico em Capelinha aproxima controle externo dos municípios do Vale do Jequitinhonha",
@@ -10256,7 +10318,7 @@
     },
     "cf02a3c30b248e0c07b6f19decd1614b8a78e61d852b7b5434b4b5b10273ecf2": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "II Simpósio Estadual sobre Saúde Mental debate papel da liderança na prevenção de riscos psicossociais",
@@ -10282,7 +10344,7 @@
     },
     "3459b276f1d8496813599e757f4528741f0bf8d5962b4bfce0d938454359b76c": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... - Mogi Guaçu Acontece",
@@ -10307,7 +10369,7 @@
     },
     "296ce40a4234c5f9b710463368775a1fe78e73ac6f2c4a77806eac7dd8a9fba6": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Painéis do Diálogo Federativo debatem regiões metropolitanas e cooperação federativa - Confederação Nacional de Municípios",
@@ -10468,7 +10530,7 @@
     },
     "3c6775aa9d398dd8ed338cd2bf2c7fb16600a118b7bd18e76d518008f9f7b615": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de Direito da UFMG participam do Projeto Conhecer",
@@ -10493,15 +10555,15 @@
     },
     "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece": {
       "firstSeenAt": "2026-09-18T04:47:07.838Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
-        "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - ribeiraodasneves.net",
+        "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
         "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPejNUdGFjQkI0YmlsU2YwTVV2MHpJX2VMWTI1QzNkWDdmeXlEWUJmamloVzA3S2hTRXVIU3M0RU9DQ2JweTRqOWd2a0xxa0JBUm1VNHpnb1Vid3lwdThIRm9XWXFicDBOZWgzZTBuekdSUV9iQTJLa2QwYkYyWHNfeVRJLXJwTjE0Snh6cUZzdFpVUmlIakhaamFBcjhxa2gwdkE?oc=5",
         "sourceUrl": "https://ribeiraodasneves.net",
         "publishedAt": "2026-09-17T19:56:15.000Z",
-        "source": "ribeiraodasneves.net",
-        "summary": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS ribeiraodasneves.net",
+        "source": "RibeiraoDasNeves.net",
+        "summary": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS RibeiraoDasNeves.net",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -10510,7 +10572,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS ribeiraodasneves.net",
+          "evidenceText": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS RibeiraoDasNeves.net",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -10679,7 +10741,7 @@
     },
     "928d130d02ef622dba128e747b0562e4d2543fb3e5d49b3bbd2f30184d4b4e29": {
       "firstSeenAt": "2026-09-18T09:44:20.602Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº /05 - Camara Municipal Varre-Sai",
@@ -10702,22 +10764,22 @@
     },
     "530064fc2d70255f4f1b0ee400c031c573cfff7bb5dc4b967d00c24059cd72f8": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
-        "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - Portal MPA",
+        "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - sistemampa.com.br",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMHdObEdST0JpWFRSZGkyWUtQa2tqNHoxU3NocVB5N1ZmTlA2cl9VU3NYMzBLQVBOcDAyZlNkekZoNHhtUk0xQ2d5VUxIVlZxdXhpQVFzVVdoTERBTjE5Q1pvUms5cUQ3MnRZc0dLNnFTNkNQQWhVbzVhbTVJTjhjdm5RdVVqMnI1eHRN?oc=5",
         "sourceUrl": "https://www.sistemampa.com.br",
         "publishedAt": "2026-09-18T12:06:00.000Z",
-        "source": "Portal MPA",
-        "summary": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta Portal MPA",
+        "source": "sistemampa.com.br",
+        "summary": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta sistemampa.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta Portal MPA",
+          "evidenceText": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta sistemampa.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -10725,7 +10787,7 @@
     },
     "94ca8a6343adb830f04deff38614a6765ccdfed18b1478af02bc723e1e938f40": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -10753,7 +10815,7 @@
     },
     "3828bfd26941e763e2c91871ffdd696ae8366141af13b4b81e9d916f48b52320": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -10781,7 +10843,7 @@
     },
     "1a727c5a2ebe71b76a84e848a2836f6e6b40166f6d9ca93e02a9ffc7a4293ea9": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -10810,7 +10872,7 @@
     },
     "8e50e3c65dcaa25cd0e404775ae14d57e488746ac79cff0ca84018b172ada4ce": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Contagem (MG)",
@@ -10838,7 +10900,7 @@
     },
     "e9679fdd0d2d6cefe97a7e3ca373095288c618565c6ddbd6eeead97ed9731e10": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -10866,7 +10928,7 @@
     },
     "52f36dafd4a98d3bde6b238e612679daafbdc24d70157837ce97109aac7a92d6": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -10894,7 +10956,7 @@
     },
     "7d9fcf7b25d1d09d5988e4c965ae58598c0159db3ee3a5d609146728becf9bd7": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Taiobeiras (MG)",
@@ -10924,7 +10986,7 @@
     },
     "afbc7dc77061f207892c94e392328158f64432dbaf6632dd509b4be55e527994": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mamborê (PR)",
@@ -10952,7 +11014,7 @@
     },
     "d26e7a4f8f64034fc64cc735ef20ab224e8df6fb56b8f348e76e8a493e2108d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -10980,7 +11042,7 @@
     },
     "fa2d4cff2930988b3d13a601347fbf66c9a990ac145f76b3ed4e33395fb38a46": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -11008,7 +11070,7 @@
     },
     "91a12ce67c613935ddd43913ff11dc875e10aaf4f0f9a8f4bc5a87e3e58fc2c7": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -11036,7 +11098,7 @@
     },
     "e897be8c978da150823825e999bd141d86f4f64f60e75ff888c92d1405824db0": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Macaé (RJ)",
@@ -11064,7 +11126,7 @@
     },
     "7679c6b9992884ed8657a882b883e0da2abdfa446311e3dd5d44eb79e46cfb80": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Siriri (SE)",
@@ -11094,7 +11156,7 @@
     },
     "95350af70d1e931587cd1ba9c3fce3434249f217f6aa438d4cc5d619a21c56dc": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Debate sobre dados e clima marca 2 mil participantes em série de webinários",
@@ -11117,7 +11179,7 @@
     },
     "d13be8ef98cc981c112d538823b8c7b81fc64645a5e0d0be29f581f555f30d7f": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta painel do IBS aos municípios paranaenses",
@@ -11140,7 +11202,7 @@
     },
     "156ec3c54c14ab1aa09a0be3b6147d1eaeda1480c78b67ff5ab4ef45ff56327b": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "FNP participa de assembleia da Abrasf e apresenta pautas prioritárias para os municípios",
@@ -11393,7 +11455,7 @@
     },
     "53e116cd8838ecf2c622c3d3b73dd4fc03919253d0d56519db0bcb12da0ae5d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Prédios públicos ainda impõem barreiras para acesso aos serviços, aponta fiscalização do TCESP",
@@ -11419,15 +11481,15 @@
     },
     "66f61094fcea12a719b2e389d5419b122edfc10367923505a5a5d5b3b1a31b3e": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
-        "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - ribeiraodasneves.net",
+        "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
         "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5",
         "sourceUrl": "https://ribeiraodasneves.net",
         "publishedAt": "2026-09-17T19:28:42.000Z",
-        "source": "ribeiraodasneves.net",
-        "summary": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde ribeiraodasneves.net",
+        "source": "RibeiraoDasNeves.net",
+        "summary": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
         "classification": {
           "category": "ADESÃO",
           "emoji": "🟦",
@@ -11437,7 +11499,7 @@
             "ADESÃO"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde ribeiraodasneves.net",
+          "evidenceText": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -11468,7 +11530,7 @@
     },
     "beff50203a891f9f711109b87b06ddb3d75bae39dffda4ebe2521b6b90261af1": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Votuporanga (SP)",
@@ -11497,7 +11559,7 @@
     },
     "794018bca4350eadd8e6ac0f71f85240505d16be7f7828103654d9ede5e03cd9": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Votuporanga (SP)",
@@ -11761,7 +11823,7 @@
     },
     "5b60207654cdd20d9bbd8d8521e329b8dfc1f9cad17f37e85ea38a97ff607b5a": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Tribunal realiza capacitação on-line sobre o Sistema de Processo Eletrônico (e-TCESP)",
@@ -11787,7 +11849,7 @@
     },
     "ce31526e2e9f5939a369ed3dec553d843cd9b65e54d128b7b6065b83f64707bb": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Memorial celebra dois anos preservando a história da Corte de Contas paulista",
@@ -11813,7 +11875,7 @@
     },
     "b1cda8c8c682567952562dd279a45e974f5c69c0de2438eb2c5805ba8232353b": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "gazette-index",
         "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
@@ -11838,7 +11900,7 @@
     },
     "1739f8fe1c9d74305739341314b5e7d738dbee99190676ab1bfc1ad3165191dc": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO – CIM-AMREC - Jornal Volta Grande",
@@ -11863,15 +11925,15 @@
     },
     "fece60f0ccb7211a4eed577a4e124d2062413576aba670fc1fa28bccdff1ef1d": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia - consorciopublico.ro.gov.br",
+        "title": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia - Consórcio CIMCERO",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE42ZEp2N0ZBeFNGbDBTY25iV0ZWeHFKMEc2Mi1scWItazVNRWtBRThocDduMnV0ZnJJSHhZRUtDcmw5Q05PYkhmNHd2UUpMTVBwNmRDanVoZ3d2YmM?oc=5",
         "sourceUrl": "https://consorciopublico.ro.gov.br",
         "publishedAt": "2026-09-14T19:55:00.000Z",
-        "source": "consorciopublico.ro.gov.br",
-        "summary": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia consorciopublico.ro.gov.br",
+        "source": "Consórcio CIMCERO",
+        "summary": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia Consórcio CIMCERO",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -11880,7 +11942,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia consorciopublico.ro.gov.br",
+          "evidenceText": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia Consórcio CIMCERO",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -11888,7 +11950,7 @@
     },
     "d77266b464e94ae5b770377c91b0c64571a7a68a15898d71786ac5df99241e89": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "FNP debate governança compartilhada e integração do transporte nas regiões metropolitanas",
@@ -11911,7 +11973,7 @@
     },
     "d2df772e3b95c345367638ed0a3e98a63da6d3c463b48afc5fdb0000a6a22da1": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Aposentado ou pensionista que votar não precisará fazer Prova de Vida",
@@ -11934,7 +11996,7 @@
     },
     "4e0d762b4ac4d08d14593d58ef3a2cac2769f566cc0abf1180aaaa640cd45270": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Naná e Victória caem, mas Luisa Stefani vai às semifinais do SP Open",
@@ -11957,7 +12019,7 @@
     },
     "d07c463938f57df0bbd6a112069f51c8cf27759fa7a40dcbad9e76f2d9f44ff2": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Lula rebate Trump ao falar sobre retomada de territórios no Rio",
@@ -11980,7 +12042,7 @@
     },
     "adecaee985a297e6d0e9bb4b111ce73a96a5edbb66b1d50e3f99d620522a4276": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Rio: MPF vai à Justiça cobrar plano de redução da letalidade policial",
@@ -12026,7 +12088,7 @@
     },
     "2696783687a9e33064da44cd82ce7b991b33720fe1975c30d2b122a293d19d88": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Seminário cultural celebra criação de lei contra violência doméstica",
@@ -12051,7 +12113,7 @@
     },
     "a8aba7661040d1ae6155878336c591b5e9b613f58c051b8d202544321ef913d6": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Futuro da Lei Maria da Penha e atuação em rede para proteção à mulher ganham destaque na sequência da programação",
@@ -12076,7 +12138,7 @@
     },
     "6e55814356c97042fda99c75179aba40fa764487809ea6831ef2ce7c0762a3ef": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-18T21:40:29.729Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
       "item": {
         "kind": "news",
         "title": "Controle Externo discute impactos da reforma tributária nas concessões com a professora Cristiana Fortini",
@@ -12095,6 +12157,308 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "18/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP) disponibilizou, em seu canal oficial no YouTube, novo episódio do programa Controle Externo, que recebeu a professora Cristiana Fortini, da Universidade Federal de Minas Gerais (UFMG) e especialista em direito administrativo, para debater os impactos da reforma tributária nas concessões e no equilíbrio dos contratos públicos de longo prazo. Apresentado por Karyn Bravo, o programa deu sequência ao tema apresentado pela convidada na 24ª Semana Jurídica do TCESP, com a provocação central: quando as regras mudam, quem paga essa conta no âmbito das concessões e demais contratações públicas? Cristiana Fortini classificou a reforma tributária como um \"acontecimento jurídico absolutamente tsunâmico\", que muda não apenas a relação entre empresas e fisco, mas também a forma como o Estado brasileiro tributa o consumo. Para ela, o impacto será grande e não se resolve pontualmente — as alíquotas dos tributos que \"morrem\" diminuem enquanto crescem as dos que \"nascem\", um processo de mutação que exigirá anos de acompanhamento e revisões dos contratos até sua consolidação. A professora alertou que a reforma atinge não só as concessões tradicionais, administrativas e patrocinadas, mas também os contratos do cotidiano, como os de terceirização celebrados pelos municípios paulistas, celebrados com base em uma realidade tributária que será alterada. Quem paga a conta do desequilíbrio? Sobre o equilíbrio econômico-financeiro, a convidada explicou que as formas de reequilíbrio são plurais e não necessariamente significam desembolso de recursos. É possível reduzir obrigações do contratado, estender prazos ou rever a remuneração — e, embora o usuário possa ser atingido como pagador final (via tarifas), essa nem sempre",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "4ddc449611298193a3564f0ef640083a9722d214ceac08ee44cd76d17c975492": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "Promotorias cobram solução para crise em hospital regional - Estação Livre MT",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdndrTzloUFdUcFJxRWhFUDJGeTYxdWdiNDlEbU1JcllQZzVqYWVpWkRIYzVybUxaSjNQOTcwelVELWNuem1qZnd0eWpiMEotUzQyYlc0N0lvN2c1QURfSk9iN1NSc1dvYkQzeXhESFNoampoUlVTVWNWb0I4NEJzSWYxRFNGWjNOSkwxbzA5Y3E3azA?oc=5",
+        "sourceUrl": "https://estacaolivremt.com.br",
+        "publishedAt": "2026-09-14T21:00:00.000Z",
+        "source": "Estação Livre MT",
+        "summary": "Promotorias cobram solução para crise em hospital regional Estação Livre MT",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional Estação Livre MT",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "38d47c80e92327bc3e8a342fac0c5f36567b675974e0fbcad6553767edf23a3e": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Arataca (BA)",
+        "url": "https://data.queridodiario.ok.org.br/2902252/2026-09-18/1f0deead47535f5a43137a332ad3f3d33b99dbce.pdf",
+        "publishedAt": "2026-09-18T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "de Capital VIGILÂNCIA EPIDEMIOLÓGICA (V) Despesas Correntes Despesas de Capital ALIMENTAÇÃO E NUTRIÇÃO (VI) Despesas Correntes Despesas de Capital 3.151.739,53 3.641.444,78 3.142.545,23 99,71 OUTRAS SUBFUNÇÕES (VII) 3.139.924,53 3.629.629,78 3.130.730,23 99,71 Despesas Correntes 11.815,00 11.815,00 11.815,00 100,00 Despesas de Capital 4.056.674,18 4.559.323,63 4.039.975,63 99,59 TOTAL DAS DESPESAS COM ASPS EXECUTADAS EM CONSÓRCIO PÚBLICO (VIII) = (I + II + III + IV + V + VI + VII) DESPESAS EMPENHADAS DEDUÇÕES DA DESPESA COM ASPS (d) (f) DESPESAS PAGAS (e) DESPESAS LIQUIDADAS Restos a Pagar Não Processados Inscritos Indevidamente no Exercício sem Disponibilidade Financeira (IX) Despesas Custeadas com Recursos Vinculados à Parcela do Percentual Mínimo que não foi Aplicada em ASPS em Exercícios Anteriores (X) Despesas Custeadas com Disponibilidade de Caixa Vinculada Despesas Correntes Despesas de Capital SUPORTE PROFILÁTICO E TERAPÊUTICO (III) Despesas Correntes Despesas de Capital VIGILÂNCIA SANITÁRIA (IV) Despesas Correntes Despesas de Capital VIGILÂNCIA EPIDEMIOLÓGICA (V) Despesas Correntes Despesas de Capital ALIMENTAÇÃO E NUTRIÇÃO (VI) Despesas Correntes Despesas de Capital OUTRAS SUBFUNÇÕES (VII) Despesas Correntes Despesas de Capital TOTAL DAS DESPESAS COM ASPS EXECUTADAS EM CONSÓRCIO PÚBLICO (VIII) = (I + II + III + IV + V + VI + VII) DESPESAS EMPENHADAS DEDUÇÕES DA DESPESA COM ASPS (d) (f) DESPESAS PAGAS (e) DESPESAS LIQUIDADAS Restos a Pagar Não Processados Inscritos Indevidamente no Exercício sem Disponibilidade Financeira (IX) Despesas Custeadas com Recursos Vinculados à Parcela do Percentual Mínimo que não foi Aplicada em ASPS em Exercícios Anteriores (X) Despesas Custeadas com Disponibilidade de Caixa Vinculada Anteriores (d) Demais Obrigações Financeiras (e)",
+        "territoryId": "2902252",
+        "territoryName": "Arataca",
+        "stateCode": "BA",
+        "edition": "4355",
+        "classification": {
+          "category": "RATEIO",
+          "emoji": "🟪",
+          "score": 11,
+          "reasons": [
+            "contexto público forte",
+            "RATEIO"
+          ],
+          "evidenceIndex": 3,
+          "evidenceText": "Execução Orçamentária CERTIFICAÇÃO DIGITAL: RKIWRDYWNZG4MZCWMJLEME Esta edição encontra-se no site oficial deste ente. RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA DEMONSTRATIVO DA DESPESA COM MANUTENÇÃO E DESENVOLVIMENTO DO ENSINO - MDE ORÇAMENTO FISCAL E DA SEGURIDADE SOCIAL R$ 1,00RREO - ANEXO 8 (Portaria STN nº 72/2012, art. 11, II, b) 4º BIMESTRE DE 2026 - JULHO A AGOSTO DE 2026 MUNICÍPIO DE ARATACA - BA VALORES TRANSFERIDOS POR CONTRATO DE RATEIO (d) DESPESAS EMPENHADAS Até o Bimestre (e) (f) = (e/d) % DESPESAS LIQUIDADAS Até o Bimestre (g) (h) = (g/d) % x100x100 INSCRITAS EM RESTOS A PAGAR NÃO PROCESSADOS (i) DESPESA COM MDE EXECUTADA EM CONSÓRCIO PÚBLICOS PREFEITURA MUNICIPAL DE ARATACA EDUCAÇÃO INFANTIL (I) Despesas com MDE Custeadas com do FUNDEB - Impostos e Transferências de Impostos Despesas com MDE Custeadas com do FUNDEB - Complementação da União - VAAF",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "80e87e2e3fccb79d88db8eeae0869477ec1e39badb1f57bbb8e424d5e4d38988": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Nova Serrana (MG)",
+        "url": "https://data.queridodiario.ok.org.br/3145208/2026-09-18/f8ae8e38adb47aa4f36eaa72ddb2e100451b7155.pdf",
+        "publishedAt": "2026-09-18T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "957/0001-80 Vigência: 60 meses. Nova Serrana, em 18 de setembro de 2026. Fábio José de Oliveira – Prefeito Municipal. PROCESSO LICITATÓRIO Nº 256/2026 PREFEITURA MUNICIPAL DE NOVA SERRANA-MG, torna pública a homologação do Processo Licitatório nº 256/2026, Pregão Eletrônico nº 120/2026. Objeto: ADESÃO Á ATA DE REGISTRO DE PREÇOS Nº 004/2026, DECORRENTE DO PROCESSO ADMINISTRATIVO Nº 256/2026, PREGÃO ELETRÔNICO Nº 120/2026, REALIZADO PELO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO RURAL SUSTENTÁVEL – CIDRUS, PARA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA O FORNECIMENTO DE PEÇAS, ACESSÓRIOS E COMPONENTES GENUÍNOS OU ORIGINAIS DE PRIMEIRA LINHA, BEM COMO PARA A EXECUÇÃO DE SERVIÇOS DE MANUTENÇÃO PREVENTIVA E CORRETIVA, COM DISPONIBILIZAÇÃO DE MÃO DE OBRA ESPECIALIZADA, DESTINADOS À MANUTENÇÃO E CONSERVAÇÃO DOS VEÍCULOS INTEGRANTES DA FROTA MUNICIPAL, INCLUINDO AQUELES QUE VENHAM A SER POSTERIORMENTE",
+        "territoryId": "3145208",
+        "territoryName": "Nova Serrana",
+        "stateCode": "MG",
+        "edition": "2817",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -56,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: adesão a ata de preços",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "957/0001-80 Vigência: 60 meses. Nova Serrana, em 18 de setembro de 2026. Fábio José de Oliveira – Prefeito Municipal. PROCESSO LICITATÓRIO Nº 256/2026 PREFEITURA MUNICIPAL DE NOVA SERRANA-MG, torna pública a homologação do Processo Licitatório nº 256/2026, Pregão Eletrônico nº 120/2026. Objeto: ADESÃO Á ATA DE REGISTRO DE PREÇOS Nº 004/2026, DECORRENTE DO PROCESSO ADMINISTRATIVO Nº 256/2026, PREGÃO ELETRÔNICO Nº 120/2026, REALIZADO PELO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO RURAL SUSTENTÁVEL – CIDRUS, PARA CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA O FORNECIMENTO DE PEÇAS, ACESSÓRIOS E COMPONENTES GENUÍNOS OU ORIGINAIS DE PRIMEIRA LINHA, BEM COMO PARA A EXECUÇÃO DE SERVIÇOS DE MANUTENÇÃO PREVENTIVA E CORRETIVA, COM DISPONIBILIZAÇÃO DE MÃO DE OBRA ESPECIALIZADA, DESTINADOS À MANUTENÇÃO E CONSERVAÇÃO DOS VEÍCULOS INTEGRANTES DA FROTA MUNICIPAL, INCLUINDO AQUELES QUE VENHAM A SER POSTERIORMENTE",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "67ffc3bb2df8e19ac381a6a6a18c9df2257c26872fd811cace0e65782b2d9474": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Itajubá (MG)",
+        "url": "https://data.queridodiario.ok.org.br/3132404/2026-09-18/8f9c72d82aa67a9e5176716c6bde3bb7090d0a0f.pdf",
+        "publishedAt": "2026-09-18T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "contrato, em face do resultado do Pregão Eletrônico para Registro de Preços nº 11/2025, que se regerá pela Lei nº 14.133, de 01 de abril de 2021, bem como o Edital referido, a proposta da CONTRATADA, e as cláusulas seguintes: CLÁUSULA PRIMEIRA - DO OBJETO. 1.1. O objeto do presente contrato é a AQUISIÇÃO DE MEDICAMENTOS, através de Licitação Compartilhada a Ata de registro de preços nº 041/2025, do Consórcio Intermunicipal de Saúde dos Municípios da Microrregião do Alto Sapucaí – CISMAS, em atendimento à Secretaria Municipal de Saúde – SEMSA. Processo Licitatório nº 37/2025 conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos. 1.2. DAS ESPECIFICAÇÕES DO OBJETO 1.2.1. DESCRITIVO E QUANTITATIVO ITEM DESCRIÇÃO UNID QUANT MARCA VALOR UNIT VALOR TOTAL 01 AMINOFILINA 100G CP 8.000 HIPOLABOR_1 contrato, em face do resultado do Pregão Eletrônico para Registro de Preços nº 11/2025, que se regerá pela Lei nº 14.133, de 01 de abril de 2021, bem como o Edital referido, a proposta da CONTRATADA, e as cláusulas seguintes: CLÁUSULA PRIMEIRA - DO OBJETO. 1.1. O objeto do presente contrato é a AQUISIÇÃO DE MEDICAMENTOS, através de Licitação Compartilhada a Ata de registro de preços nº 37/2025, do Consórcio Intermunicipal de Saúde dos Municípios da Microrregião do Alto Sapucaí – CISMAS, em atendimento à Secretaria Municipal de Saúde – SEMSA. Processo Licitatório nº 37/2025 conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos. 1.2. DAS ESPECIFICAÇÕES DO OBJETO 1.2.1. DESCRITIVO E QUANTITATIVO ITEM DESCRIÇÃO UNID QUANT MARCA VALOR UNIT VALOR TOTAL 22 CLOBAZAM 10MG CP 4.000 AQPHARMA R$ contrato, em face do resultado do Pregão Eletrônico para Registro de Preços nº 11/2025, que se regerá pela Lei nº 14.133, de 01 de abril de 2021, be",
+        "territoryId": "3132404",
+        "territoryName": "Itajubá",
+        "stateCode": "MG",
+        "edition": "819",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -26,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "contrato, em face do resultado do Pregão Eletrônico para Registro de Preços nº 11/2025, que se regerá pela Lei nº 14.133, de 01 de abril de 2021, bem como o Edital referido, a proposta da CONTRATADA, e as cláusulas seguintes: CLÁUSULA PRIMEIRA - DO OBJETO. 1.1. O objeto do presente contrato é a AQUISIÇÃO DE MEDICAMENTOS, através de Licitação Compartilhada a Ata de registro de preços nº 041/2025, do Consórcio Intermunicipal de Saúde dos Municípios da Microrregião do Alto Sapucaí – CISMAS, em atendimento à Secretaria Municipal de Saúde – SEMSA. Processo Licitatório nº 37/2025 conforme condições, quantidades e exigências estabelecidas no Edital e seus anexos. 1.2. DAS ESPECIFICAÇÕES DO OBJETO 1.2.1. DESCRITIVO E QUANTITATIVO ITEM DESCRIÇÃO UNID QUANT MARCA VALOR UNIT VALOR TOTAL 01 AMINOFILINA 100G CP 8.000 HIPOLABOR_1",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "c74c8347b493fd167e95da8b6c3fcdab2ce3e638ca7ec77d87b4101a18d218fa": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "gazette",
+        "title": "Diário Oficial de Contagem (MG)",
+        "url": "https://data.queridodiario.ok.org.br/3118601/2026-09-18/6992bd9f94b7772b33098f8592e630853b501ca9.pdf",
+        "publishedAt": "2026-09-18T12:00:00-03:00",
+        "source": "Querido Diário",
+        "summary": "INSTITUIÇÃO DE COOPERAÇÃO INTERMUNICIPAL DO MÉDIO PARAOPEBA – ICISMEP, oriundo do PAC nº 128/2026 – DL nº 026/2026. OBJETO: A presente APOSTILA tem por objeto a inclusão de dotação orçamentária, com efeitos retroativos a 31/08/2026: 1.13.1.10.305.0019.2115.339339 FONTE: 22600000 EXTRATO DO 25º TERMO DE APOSTILAMENTO AO CONTRATO ADMINISTRATIVO Nº 94/2021, CELEBRADO ENTRE O MUNICÍPIO DE CONTAGEM POR MEIO DA SECRETA- RIA MUNICIPAL DE SAÚDE E A CONSÓRCIO PÚBLICO INSTITUIÇÃO DE COOPERAÇÃO INTERMUNICIPAL DO MÉDIO PARAOPEBA - ICISMEP, oriundo do PAC nº 156/2021– MODALIDADE DL 56/2021. OBJETO: A presente APOSTILA tem por objeto a inclusão de dotação orçamentária, com efeitos retroativos a 27 de Agosto de 2026: 1.13.1.10.301.0016.2109.339339 FONTE: 21621000 \"Este documento está assinado digitalmente nos termos da Lei Federal 14063/2020, Lei Federal 11.419/2006, Medida Provisória 2.200-2/2001,",
+        "territoryId": "3118601",
+        "territoryName": "Contagem",
+        "stateCode": "MG",
+        "edition": "6374",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "INSTITUIÇÃO DE COOPERAÇÃO INTERMUNICIPAL DO MÉDIO PARAOPEBA – ICISMEP, oriundo do PAC nº 128/2026 – DL nº 026/2026. OBJETO: A presente APOSTILA tem por objeto a inclusão de dotação orçamentária, com efeitos retroativos a 31/08/2026: 1.13.1.10.305.0019.2115.339339 FONTE: 22600000 EXTRATO DO 25º TERMO DE APOSTILAMENTO AO CONTRATO ADMINISTRATIVO Nº 94/2021, CELEBRADO ENTRE O MUNICÍPIO DE CONTAGEM POR MEIO DA SECRETA- RIA MUNICIPAL DE SAÚDE E A CONSÓRCIO PÚBLICO INSTITUIÇÃO DE COOPERAÇÃO INTERMUNICIPAL DO MÉDIO PARAOPEBA - ICISMEP, oriundo do PAC nº 156/2021– MODALIDADE DL 56/2021. OBJETO: A presente APOSTILA tem por objeto a inclusão de dotação orçamentária, com efeitos retroativos a 27 de Agosto de 2026: 1.13.1.10.301.0016.2109.339339 FONTE: 21621000 \"Este documento está assinado digitalmente nos termos da Lei Federal 14063/2020, Lei Federal 11.419/2006, Medida Provisória 2.200-2/2001,",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "effa861081e1c8064e543be046fee27d96fd50faab9a3919aeda2ebc6345861f": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS",
+        "url": "https://copirn.org.br/convite/",
+        "publishedAt": "2026-09-18T22:41:12.000Z",
+        "source": "COPIRN",
+        "sourceUrl": "https://copirn.org.br/feed/",
+        "summary": "Convite (Invite) do COPIRN aos Prefeitos e Secretários Municipais de Saúde do RN para participação na Live de Comunicação, Instrução e Entendimentos, referente ao Acordo de Cooperação Técnica e Parceria firmado entre o COPIRN e o INSTITUTO ATENA DE PESQUISA CLINICA, em Protocolos de Pesquisas, para atender demandas identificadas, elegibilidade e atendimento de pacientes com os perfis constantes do Acordo. TEMA Acordo de Cooperação e Parceria Técnica e Operacional entre o COPIRN e o INSTITUTO ATENA, contemplando as Secretarias de Saúde das Prefeituras Municipais Consorciadas, disponibilizando Protocolos Clínicos de Pacientes, com os seguintes Perfis : Pessoa com Doença Cardíaca Pessoa com Diabetes tipo 2 Pessoa com Pressão Alta Pessoa com Doença Renal Crônica ou em Diálise Pessoa com IAM, Angioplastias, AVC, DAP, Amputação ou Angina. Informações da Transmissão DATA: Quinta-feira, 24 de setembro de 2026 HORÁRIO: 14:00 – 15:00 (Fuso horário: America/Fortaleza) PLATAFORMA: Google Meet LINK: https://meet.google.com/igg-abrm-ogp Ou disque: (US) +1 304-621-9830 PIN: 645 992 175# The post ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS appeared first on COPIRN .",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Convite (Invite) do COPIRN aos Prefeitos e Secretários Municipais de Saúde do RN para participação na Live de Comunicação, Instrução e Entendimentos, referente ao Acordo de Cooperação Técnica e Parceria firmado entre o COPIRN e o INSTITUTO ATENA DE PESQUISA CLINICA, em Protocolos de Pesquisas, para atender demandas identificadas, elegibilidade e atendimento de pacientes com os perfis constantes do Acordo. TEMA Acordo de Cooperação e Parceria Técnica e Operacional entre o COPIRN e o INSTITUTO ATENA, contemplando as Secretarias de Saúde das Prefeituras Municipais Consorciadas, disponibilizando Protocolos Clínicos de Pacientes, com os seguintes Perfis : Pessoa com Doença Cardíaca Pessoa com Diabetes tipo 2 Pessoa com Pressão Alta Pessoa com Doença Renal Crônica ou em Diálise Pessoa com IAM, Angioplastias, AVC, DAP, Amputação ou Angina. Informações da Transmissão DATA: Quinta-feira, 24 de setembro de 2026 HORÁRIO: 14:00 – 15:00 (Fuso horário: America/Fortaleza) PLATAFORMA: Google Meet LINK: https://meet.google.com/igg-abrm-ogp Ou disque: (US) +1 304-621-9830 PIN: 645 992 175# The post ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS appeared first on COPIRN .",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "4deb73e4077455faaa5c52d37b8157eaeb67ac2812182d3fea6d9ecef88b1a4d": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "Primeira Turma do STF mantém condenação de Eduardo Bolsonaro",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/primeira-turma-do-stf-mantem-condenacao-de-eduardo-bolsonaro",
+        "publishedAt": "2026-09-18T22:21:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Primeira Turma do Supremo Tribunal Federal (STF) rejeitou por unanimidade o recurso do ex-deputado Eduardo Bolsonaro contra a condenação a quatro anos e dois meses anos de prisão no processo do tarifaço. O placar da votação foi de 4 votos a 0. Os votos foram proferidos pelos ministros Flávio Dino, Cristiano Zanin e Cármen Lúcia, além do relator, Alexandre de Moraes. Notícias relacionadas: STF condena Eduardo Bolsonaro a inelegibilidade e a 4 anos de prisão. TSE manda Eduardo Bolsonaro retirar posts de desinformação sobre urnas. O julgamento virtual do caso começou na semana passada e foi finalizado nesta sexta-feira (18). Em junho deste ano, Eduardo foi condenado pelo crime de coação no curso do processo . Por unanimidade, o colegiado concordou com a acusação apresentada pela Procuradoria-Geral da República (PGR) e entendeu que há provas para concluir que o ex-deputado articulou o tarifaço dos Estados Unidos contra as exportações brasileiras para tentar evitar a condenação de seu pai, o ex-presidente Jair Bolsonaro, no processo da trama golpista. Além disso, outras medidas, como a revogação dos vistos de ministros da Corte e do governo federal e a aplicação das sanções econômicas da Lei Magnitsky, também tiveram o mesmo objetivo, conforme o entendimento da Corte. Desde o ano passado, Eduardo Bolsonaro está nos Estados Unidos e perdeu o mandato de parlamentar por faltar às sessões da Câmara dos Deputados. Matéria atualizada ás 19h27 para atualizar o placar da votação",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Primeira Turma do Supremo Tribunal Federal (STF) rejeitou por unanimidade o recurso do ex-deputado Eduardo Bolsonaro contra a condenação a quatro anos e dois meses anos de prisão no processo do tarifaço. O placar da votação foi de 4 votos a 0. Os votos foram proferidos pelos ministros Flávio Dino, Cristiano Zanin e Cármen Lúcia, além do relator, Alexandre de Moraes. Notícias relacionadas: STF condena Eduardo Bolsonaro a inelegibilidade e a 4 anos de prisão. TSE manda Eduardo Bolsonaro retirar posts de desinformação sobre urnas. O julgamento virtual do caso começou na semana passada e foi finalizado nesta sexta-feira (18). Em junho deste ano, Eduardo foi condenado pelo crime de coação no curso do processo . Por unanimidade, o colegiado concordou com a acusação apresentada pela Procuradoria-Geral da República (PGR) e entendeu que há provas para concluir que o ex-deputado articulou o tarifaço dos Estados Unidos contra as exportações brasileiras para tentar evitar a condenação de seu pai, o ex-presidente Jair Bolsonaro, no processo da trama golpista. Além disso, outras medidas, como a revogação dos vistos de ministros da Corte e do governo federal e a aplicação das sanções econômicas da Lei Magnitsky, também tiveram o mesmo objetivo, conforme o entendimento da Corte. Desde o ano passado, Eduardo Bolsonaro está nos Estados Unidos e perdeu o mandato de parlamentar por faltar às sessões da Câmara dos Deputados. Matéria atualizada ás 19h27 para atualizar o placar da votação",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "66d7599fd484d7452ff42c928e9f3e60082a3131abd0f642f4f6fdf201228f14": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "Justiça aumenta indenização a estudantes vítimas de racismo na Uerj",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/justica-aumenta-indenizacao-estudantes-vitimas-de-racismo-na-uerj",
+        "publishedAt": "2026-09-18T22:08:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Justiça do Rio de Janeiro aumentou para R$ 35 mil o valor que a Uerj, a Universidade do Estado do Rio de Janeiro, terá que pagar de indenização individual a três estudantes, por danos morais decorrentes de discriminação racial. De acordo com elas, o crime foi praticado por fiscais em um processo seletivo para o programa de Serviço Social da Residência em Saúde da instituição de ensino. Notícias relacionadas: Luta contra o racismo marca a 12ª Marcha das Mulheres Negras no Rio. “Racismo foi reduzido a chamar alguém de macaco”, critica escritora . O caso aconteceu há dois anos. Na época a Justiça havia fixado o valor de indenização em R$ 20 mil para cada uma, mas elas recorreram e a nova sentença foi proferida agora pela Sétima Câmara de Direito Público. Na decisão, o desembargador e relator Luiz Alberto Carvalho Alves considerou o caso como discriminação indireta e racismo institucional, caracterizando tratamento desigual e vexatório. As candidatas, que se autodeclararam negras, foram obrigadas por fiscais da prova a prender os cabelos para ingressar na sala, exigência não prevista no edital e não imposta aos demais participantes do processo seletivo. A socióloga Lara Miranda, pesquisadora do Núcleo Afro do Centro Brasileiro de Análise e Planejamento (Cebrap), atribuiu o episódio ao fracasso das instituições em não oferecer um serviço adequado às pessoas por causa da cor. Segundo ela, o cabelo é um detalhe, pois o mais gritante é um corpo negro sendo policiado com critérios estéticos. Reconhecer o fato, segundo ela, não é o mesmo que reparar a gravidade dele. \"A identificação e a indenização também precisa comunicar pra instituição e para outras instituições que esse tipo de prática tem custo. Então, nesse caso, o racismo institucional na produção do dano, uma exigência",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -30,
+          "reasons": [
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A Justiça do Rio de Janeiro aumentou para R$ 35 mil o valor que a Uerj, a Universidade do Estado do Rio de Janeiro, terá que pagar de indenização individual a três estudantes, por danos morais decorrentes de discriminação racial. De acordo com elas, o crime foi praticado por fiscais em um processo seletivo para o programa de Serviço Social da Residência em Saúde da instituição de ensino. Notícias relacionadas: Luta contra o racismo marca a 12ª Marcha das Mulheres Negras no Rio. “Racismo foi reduzido a chamar alguém de macaco”, critica escritora . O caso aconteceu há dois anos. Na época a Justiça havia fixado o valor de indenização em R$ 20 mil para cada uma, mas elas recorreram e a nova sentença foi proferida agora pela Sétima Câmara de Direito Público. Na decisão, o desembargador e relator Luiz Alberto Carvalho Alves considerou o caso como discriminação indireta e racismo institucional, caracterizando tratamento desigual e vexatório. As candidatas, que se autodeclararam negras, foram obrigadas por fiscais da prova a prender os cabelos para ingressar na sala, exigência não prevista no edital e não imposta aos demais participantes do processo seletivo. A socióloga Lara Miranda, pesquisadora do Núcleo Afro do Centro Brasileiro de Análise e Planejamento (Cebrap), atribuiu o episódio ao fracasso das instituições em não oferecer um serviço adequado às pessoas por causa da cor. Segundo ela, o cabelo é um detalhe, pois o mais gritante é um corpo negro sendo policiado com critérios estéticos. Reconhecer o fato, segundo ela, não é o mesmo que reparar a gravidade dele. \"A identificação e a indenização também precisa comunicar pra instituição e para outras instituições que esse tipo de prática tem custo. Então, nesse caso, o racismo institucional na produção do dano, uma exigência",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "965e9ad2c1965dddcc12b53d135b68fe889b1231e9fc72ecc165ce08ac4a41db": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "Gilmar Mendes valida reajuste do Bolsa Família",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/gilmar-mendes-atende-ao-pedido-da-agu-e-valida-reajuste-do-bolsa-familia",
+        "publishedAt": "2026-09-18T22:00:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ministro Gilmar Mendes, do Supremo Tribunal Federal (STF), decidiu nesta sexta-feira (18) reconhecer a validade do decreto que permite o reajuste para os benefícios do programa Bolsa Família. Mendes atendeu ao pedido da Advocacia-Geral da União (AGU). Notícias relacionadas: AGU pede que STF reconheça validade do reajuste do Bolsa Família. Para o ministro, o reajuste não afronta as regras eleitorais e representa medida legal para atualizar o piso familiar do programa. “A medida não importa criação de novo benefício, alteração dos critérios de elegibilidade ou ampliação do universo de beneficiários. Trata-se apenas de atualização dos valores das prestações integrantes de programa social já existente, mediante critério objetivo de correção monetária”, afirmou Mendes. A Advocacia-Geral da União (AGU) pediu ao Supremo Tribunal Federal (STF) o reconhecimento da legalidade do decreto. O reajuste foi anunciado nesta quinta-feira (17) pelo governo federal. O benefício pago pelo programa Bolsa Família será reajustado em 15%, a partir de 1° de outubro. O valor mínimo do benefício ficará em R$ 691. Já o valor médio pago chegará a R$ 777. Na petição enviada ao Supremo, a AGU sustenta que o reajuste também está de acordo com a legislação eleitoral e não representa benefício novo. * Em atualização",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O ministro Gilmar Mendes, do Supremo Tribunal Federal (STF), decidiu nesta sexta-feira (18) reconhecer a validade do decreto que permite o reajuste para os benefícios do programa Bolsa Família. Mendes atendeu ao pedido da Advocacia-Geral da União (AGU). Notícias relacionadas: AGU pede que STF reconheça validade do reajuste do Bolsa Família. Para o ministro, o reajuste não afronta as regras eleitorais e representa medida legal para atualizar o piso familiar do programa. “A medida não importa criação de novo benefício, alteração dos critérios de elegibilidade ou ampliação do universo de beneficiários. Trata-se apenas de atualização dos valores das prestações integrantes de programa social já existente, mediante critério objetivo de correção monetária”, afirmou Mendes. A Advocacia-Geral da União (AGU) pediu ao Supremo Tribunal Federal (STF) o reconhecimento da legalidade do decreto. O reajuste foi anunciado nesta quinta-feira (17) pelo governo federal. O benefício pago pelo programa Bolsa Família será reajustado em 15%, a partir de 1° de outubro. O valor mínimo do benefício ficará em R$ 691. Já o valor médio pago chegará a R$ 777. Na petição enviada ao Supremo, a AGU sustenta que o reajuste também está de acordo com a legislação eleitoral e não representa benefício novo. * Em atualização",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "2bce55d62b860c6d656bf7d12eb94d615073fd56d76bf8bc46eb3cb90543598e": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "AGU pede que STF reconheça validade do reajuste do Bolsa Família",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/agu-pede-que-stf-reconheca-validade-do-reajuste-do-bolsa-familia",
+        "publishedAt": "2026-09-18T21:32:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Advocacia-Geral da União (AGU) pediu ao Supremo Tribunal Federal (STF) o reconhecimento da legalidade do decreto que permite o reajuste para os benefícios do programa Bolsa Família. O reajuste foi anunciado nesta quinta-feira (17) pelo governo federal. O benefício pago pelo programa Bolsa Família será reajustado em 15%, a partir de 1° de outubro. Notícias relacionadas: Bolsa Família é reajustado em 15%; medida vale a partir de outubro. Mendonça rejeita ação contra reajuste do Bolsa Família . O valor mínimo do benefício ficará em R$ 691. Já o valor médio pago chegará a R$ 777. A atualização dos valores está prevista na legislação do Bolsa Família e busca preservar o poder de compra das famílias beneficiárias, de acordo com o governo. Na petição enviada ao Supremo, a AGU sustenta que o reajuste também está de acordo com a legislação eleitoral e não representa benefício novo. Para o órgão, a Lei nº 14.601/2023 prevê a atualização dos pagamentos por meio de correção monetária. \"Trata-se, portanto, de providência inserida na execução ordinária e continuada de política pública já existente, em observância ao marco normativo reconhecido por essa Corte como apto a concretizar a ordem injuncional. O decreto representa ato de manutenção e atualização de programa social permanente, e não a criação de vantagem inédita ou excepcional\", argumenta a AGU. O caso será decidido pelo ministro Gilmar Mendes.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Advocacia-Geral da União (AGU) pediu ao Supremo Tribunal Federal (STF) o reconhecimento da legalidade do decreto que permite o reajuste para os benefícios do programa Bolsa Família. O reajuste foi anunciado nesta quinta-feira (17) pelo governo federal. O benefício pago pelo programa Bolsa Família será reajustado em 15%, a partir de 1° de outubro. Notícias relacionadas: Bolsa Família é reajustado em 15%; medida vale a partir de outubro. Mendonça rejeita ação contra reajuste do Bolsa Família . O valor mínimo do benefício ficará em R$ 691. Já o valor médio pago chegará a R$ 777. A atualização dos valores está prevista na legislação do Bolsa Família e busca preservar o poder de compra das famílias beneficiárias, de acordo com o governo. Na petição enviada ao Supremo, a AGU sustenta que o reajuste também está de acordo com a legislação eleitoral e não representa benefício novo. Para o órgão, a Lei nº 14.601/2023 prevê a atualização dos pagamentos por meio de correção monetária. \"Trata-se, portanto, de providência inserida na execução ordinária e continuada de política pública já existente, em observância ao marco normativo reconhecido por essa Corte como apto a concretizar a ordem injuncional. O decreto representa ato de manutenção e atualização de programa social permanente, e não a criação de vantagem inédita ou excepcional\", argumenta a AGU. O caso será decidido pelo ministro Gilmar Mendes.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c7a2bc42f6083699d4bc8eecdf10fe7413d7625de9f077441a01eb34250eec6c": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "Ex-vereador Milton Leite se entrega à polícia após operação contra PCC",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/ex-vereador-milton-leite-se-entrega-policia-apos-operacao-contra-pcc",
+        "publishedAt": "2026-09-18T21:29:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ex-vereador e ex-presidente da Câmara Municipal de São Paulo, Milton Leite, do União Brasil, se entregou à polícia na tarde desta sexta-feira (18). Ele compareceu à Delegacia de Investigações Sobre Entorpecentes na cidade de Mogi das Cruzes, Região Metropolitana de São Paulo, acompanhado de um advogado. Leite foi um dos alvos, nesta quinta-feira (18), de uma operação da Polícia Civil e do Ministério Público de São Paulo que investigava a atuação do Primeiro Comando da Capital (PCC) no transporte coletivo paulistano. Ele teve sua prisão temporária decretada. Notícias relacionadas: Candidatos não poderão ser presos a partir deste sábado. Megaoperação contra crime organizado bloqueia mais de R$ 508 milhões. Ontem, as autoridades foram até a casa do político e não o encontraram. A polícia passou a considerá-lo fugitivo. Leite, ainda na quinta, divulgou nota por meio de sua assessoria informando que não havia fugido, mas que estava viajando e que se apresentaria às autoridades. Ele também declarou que é inocente. A polícia considera que existem vários indícios de que Milton Leite tenha envolvimento com o esquema criminoso do PCC que atinge dezenas de empresas de transporte público de São Paulo. Leite será levado para a cadeia pública de Mogi das Cruzes.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O ex-vereador e ex-presidente da Câmara Municipal de São Paulo, Milton Leite, do União Brasil, se entregou à polícia na tarde desta sexta-feira (18). Ele compareceu à Delegacia de Investigações Sobre Entorpecentes na cidade de Mogi das Cruzes, Região Metropolitana de São Paulo, acompanhado de um advogado. Leite foi um dos alvos, nesta quinta-feira (18), de uma operação da Polícia Civil e do Ministério Público de São Paulo que investigava a atuação do Primeiro Comando da Capital (PCC) no transporte coletivo paulistano. Ele teve sua prisão temporária decretada. Notícias relacionadas: Candidatos não poderão ser presos a partir deste sábado. Megaoperação contra crime organizado bloqueia mais de R$ 508 milhões. Ontem, as autoridades foram até a casa do político e não o encontraram. A polícia passou a considerá-lo fugitivo. Leite, ainda na quinta, divulgou nota por meio de sua assessoria informando que não havia fugido, mas que estava viajando e que se apresentaria às autoridades. Ele também declarou que é inocente. A polícia considera que existem vários indícios de que Milton Leite tenha envolvimento com o esquema criminoso do PCC que atinge dezenas de empresas de transporte público de São Paulo. Leite será levado para a cadeia pública de Mogi das Cruzes.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "473cf72ce7ee00b5c5cb9ec4baec9e3cb0e9841bf904093eefcedbd8b43a5e70": {
+      "firstSeenAt": "2026-09-19T00:19:29.351Z",
+      "lastSeenAt": "2026-09-19T00:19:29.351Z",
+      "item": {
+        "kind": "news",
+        "title": "Cartilha reúne orientações para a redação do Enem 2026",
+        "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-09/cartilha-reune-orientacoes-para-redacao-do-enem-2026",
+        "publishedAt": "2026-09-18T21:09:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Os inscritos no Exame Nacional do Ensino Médio (Enem) 2026 já podem consultar a nova edição da cartilha A Redação do Enem 2026 – Cartilha do Participante , que foi disponibilizada nesta sexta-feira (18) para download, no site do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Os participantes surdos ou com deficiência auditiva, com Transtorno do Espectro Autista (TEA) ou com dislexia também contam com versões do documento que trazem orientações específicas a estes públicos, no mesmo endereço eletrônico. Notícias relacionadas: Enem 2026: candidatos terão transporte gratuito no Rio. Enem 2026 tem mais de 5 milhões de inscritos. Na redação do Enem, os participantes devem produzir um texto dissertativo-argumentativo, com até 30 linhas, a partir de um tema proposto, além dos textos motivadores da prova. As provas do Enem 2026 serão aplicadas nos domingos 8 e 15 de novembro. A redação integra o primeiro dia de aplicação do exame, em todo o país. Conteúdo A publicação reúne recomendações gerais e orientações do Inep para auxiliar os participantes na preparação para a prova de redação. O conteúdo esclarece qual é a Matriz de Referência da redação. Traz também exemplos, acompanhados de comentários pedagógicos dos corretores, das redações que alcançaram altas pontuações na edição de 2025 do exame, o que permite aos participantes compreender, na prática, os critérios utilizados na avaliação dos textos. O material ainda incentiva quem está se preparando para a prova de redação a ler frequentemente para ampliar o vocabulário, diversificar o repertório sociocultural e auxiliar na elaboração de propostas de intervenção ao tema proposto pelo Inep. Critério de correção O documento detalha as cinco competências avaliadas pelos corretores da redação do Enem ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Os inscritos no Exame Nacional do Ensino Médio (Enem) 2026 já podem consultar a nova edição da cartilha A Redação do Enem 2026 – Cartilha do Participante , que foi disponibilizada nesta sexta-feira (18) para download, no site do Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep). Os participantes surdos ou com deficiência auditiva, com Transtorno do Espectro Autista (TEA) ou com dislexia também contam com versões do documento que trazem orientações específicas a estes públicos, no mesmo endereço eletrônico. Notícias relacionadas: Enem 2026: candidatos terão transporte gratuito no Rio. Enem 2026 tem mais de 5 milhões de inscritos. Na redação do Enem, os participantes devem produzir um texto dissertativo-argumentativo, com até 30 linhas, a partir de um tema proposto, além dos textos motivadores da prova. As provas do Enem 2026 serão aplicadas nos domingos 8 e 15 de novembro. A redação integra o primeiro dia de aplicação do exame, em todo o país. Conteúdo A publicação reúne recomendações gerais e orientações do Inep para auxiliar os participantes na preparação para a prova de redação. O conteúdo esclarece qual é a Matriz de Referência da redação. Traz também exemplos, acompanhados de comentários pedagógicos dos corretores, das redações que alcançaram altas pontuações na edição de 2025 do exame, o que permite aos participantes compreender, na prática, os critérios utilizados na avaliação dos textos. O material ainda incentiva quem está se preparando para a prova de redação a ler frequentemente para ampliar o vocabulário, diversificar o repertório sociocultural e auxiliar na elaboração de propostas de intervenção ao tema proposto pelo Inep. Critério de correção O documento detalha as cinco competências avaliadas pelos corretores da redação do Enem ",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -15427,6 +15791,142 @@
           "itemCount": 0
         }
       ]
+    },
+    "35408934865:1": {
+      "at": "2026-09-19T00:19:29.351Z",
+      "collected": 134,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 35,
+          "durationMs": 589
+        },
+        {
+          "name": "Querido Diário",
+          "status": "ok",
+          "itemCount": 51,
+          "durationMs": 12932
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "ok",
+          "itemCount": 50
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "ok",
+          "itemCount": 5
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 20,
+          "durationMs": 2482
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 27,
+          "durationMs": 7312
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 17
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 5020
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
@@ -15434,118 +15934,117 @@
       "name": "Google News",
       "status": "ok",
       "itemCount": 35,
-      "durationMs": 1177,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "durationMs": 589,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "ok",
-      "itemCount": 67,
-      "durationMs": 25590,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "itemCount": 51,
+      "durationMs": 12932,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
       "status": "ok",
-      "itemCount": 65,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "itemCount": 50,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
       "status": "ok",
-      "itemCount": 6,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "itemCount": 5,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
-      "status": "degraded",
-      "itemCount": 19,
-      "durationMs": 3930,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
+      "status": "ok",
+      "itemCount": 20,
+      "durationMs": 2482,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
-      "itemCount": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "itemCount": 1,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "CISREC": {
       "name": "CISREC",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "fetch failed",
-      "checkedAt": "2026-09-18T21:40:29.729Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-18T18:27:12.503Z"
+      "checkedAt": "2026-09-19T00:19:29.351Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 9,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
       "itemCount": 27,
-      "durationMs": 5873,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "durationMs": 7312,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -15554,7 +16053,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z"
+      "checkedAt": "2026-09-19T00:19:29.351Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -15563,7 +16062,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z"
+      "checkedAt": "2026-09-19T00:19:29.351Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -15572,59 +16071,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z"
+      "checkedAt": "2026-09-19T00:19:29.351Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 17,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 9,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 3896,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "durationMs": 5020,
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-18T21:40:29.729Z",
+      "checkedAt": "2026-09-19T00:19:29.351Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-18T21:40:29.729Z"
+      "lastSuccessAt": "2026-09-19T00:19:29.351Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
