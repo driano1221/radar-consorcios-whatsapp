@@ -3148,7 +3148,7 @@
     },
     "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
@@ -3194,7 +3194,7 @@
     },
     "d8eabab4809e1e35e6150e8572d2166b9b8fce4c0a3694fc1212f84a0c23ad5c": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "CÂMARA MUNICIPAL DE UNAÍ-MG - sapl.unai.mg.leg.br",
@@ -3217,7 +3217,7 @@
     },
     "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Municípios assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
@@ -3286,22 +3286,22 @@
     },
     "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - TCE-PR",
+        "title": "Detalhes do Acórdão - 24/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE0wRE1YNUpNMTl3ZUxZUk5VWXpJTzdJWkxiNmk2UHlKak4zR0NMeFEyNTBDY2xrSkRhMGVlTFpzWDN2bkZFWENHMml4VTNCSFJPWkZLOEJSVmlCc1dqY3dqckxKWWhPLWtDOVVqQjI0RUFaT2ZPY3c?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-13T09:08:08.000Z",
-        "source": "TCE-PR",
-        "summary": "Detalhes do Acórdão - 24/2019 - Primeira Câmara TCE-PR",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 24/2019 - Primeira Câmara TCE-PR",
+          "evidenceText": "Detalhes do Acórdão - 24/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -3892,7 +3892,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3919,7 +3919,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -4647,7 +4647,7 @@
     },
     "58706a3a4aa7d743798e03cbb9442770b47c948325085c7e4ac25086e29c28fb": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Inhapi (AL)",
@@ -5498,7 +5498,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5572,7 +5572,7 @@
     },
     "30f0fad5ec941d4d459701b873cbbc55a58d01be94aafbc54b264a08ffa510bd": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Ministério Público cobra retomada de cirurgias em hospital de Peixoto e prevê ação judicial - Só Notícias",
@@ -5758,7 +5758,7 @@
     },
     "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - Alagoas na Net",
@@ -5853,7 +5853,7 @@
     },
     "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
@@ -5945,7 +5945,7 @@
     },
     "b9243454fd8f696c89efe2a28513f85297f0f66807f108cb8166887e4be3e357": {
       "firstSeenAt": "2026-09-15T13:32:10.950Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional em Peixoto de Azevedo - Web Rádio Terra",
@@ -6294,7 +6294,7 @@
     },
     "57cbc5c4169c8017e9c5c3f545acfe2f06058d8effea13d29d4e1c70a0d76c0c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Acompanhamento de Matéria - sapl.patobranco.pr.leg.br",
@@ -6317,7 +6317,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -6340,7 +6340,7 @@
     },
     "14a939bc0c54983f74323beb211d40d0f034733f9633d9214d826d8f66fa273d": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Mutirão Brasil Cidades Amazônicas fortalece ação climática local em seis municípios",
@@ -6618,7 +6618,7 @@
     },
     "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Concurso CONSUD PR: gabaritos preliminares divulgados! - Estratégia Concursos",
@@ -6664,7 +6664,7 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
@@ -6940,7 +6940,7 @@
     },
     "bd14fb2413e3f263be8feff4397689363acc15b7529d2e4e0b40bb290487ff80": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Educação em primeiro lugar: TCEMG participa do 12º Fórum Mineiro de Educação",
@@ -6965,7 +6965,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -7226,22 +7226,22 @@
     },
     "aa4e7c489fd115157c5d5fd961b53f89eb3aa50e5f65149aea4945b06191373e": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara - TCE-PR",
+        "title": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara - viajuris.tce.pr.gov.br",
         "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE0xalFsZnByek5kSGExbG9Od3dkemR2YUtfUzhxN3dFQ25Dd184eUlGYzBJMEFCajFGbVRkYnYyYk9JQXBURmhGeGdOZlpQdk1TeHNDZENhamRGdDljcUtHU285VFpFY2RlUWhfMDh4cXhGcDRzOVUw?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-15T20:44:13.000Z",
-        "source": "TCE-PR",
-        "summary": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara TCE-PR",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara viajuris.tce.pr.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara TCE-PR",
+          "evidenceText": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara viajuris.tce.pr.gov.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -7387,7 +7387,7 @@
     },
     "2a2e3d0d3e5f6ab5d5e18e7014425b404b0d4ffe3200504485ed83b8b5db2061": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -7416,7 +7416,7 @@
     },
     "c34c65928484b5f58b0d5120a43d66eae7e93fd5b17ecdfa7cbefe470a618884": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Várzea da Palma (MG)",
@@ -7445,7 +7445,7 @@
     },
     "007d8c8852ad80304776bd1b2c411f31b06dc0678e403c182f6d3e6b52a35584": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -7473,7 +7473,7 @@
     },
     "6dc0d19654c20d2230e17512a95797c22ef95dc6f97399c8fa2a0dc833ba95f2": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Londrina (PR)",
@@ -7501,7 +7501,7 @@
     },
     "e018f31e3ae66da721d2945b2fdef3c2e4be02a8942157b6052c7350f3507d61": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Iguaçu (RJ)",
@@ -7528,7 +7528,7 @@
     },
     "26daff64bc890690cde59500afcd2e0aadd9dfb0df9178b2aed1ed7004d089e3": {
       "firstSeenAt": "2026-09-16T11:29:35.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -7625,15 +7625,15 @@
     },
     "3b3368b3fd178566961ea830b393ed9c0c7326c30b3a8ff85845aa57e4cafdce": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
-        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - AtualMT",
+        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - atualmt.com.br",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5",
         "sourceUrl": "https://atualmt.com.br",
         "publishedAt": "2026-09-16T11:43:37.000Z",
-        "source": "AtualMT",
-        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
+        "source": "atualmt.com.br",
+        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
         "classification": {
           "category": "CRISE",
           "emoji": "🟥",
@@ -7643,7 +7643,7 @@
             "SAÍDA"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
+          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
           "publicContext": true,
           "strongPublicContext": false
         }
@@ -7883,7 +7883,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -7911,7 +7911,7 @@
     },
     "06428e75937044b7bf4f96b4d416326c858195b05468d8997b9f41a19d058b11": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Licitação de R$ 31,2 milhões em Itanhomi é suspensa por indícios de restrição à concorrência",
@@ -7938,7 +7938,7 @@
     },
     "a8b47d06995b57b48ed350ecc23c3d3902f5b917aed230dd2239145a5a453af8": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "TCESP comunica abertura de consulta pública sobre o Guia de Custos para o Setor Público",
@@ -7989,25 +7989,25 @@
     },
     "a01af230da7740611782041760ef30c39464eb49867b2bd5bcf17062cd024dd0": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - mogiguacu.sp.gov.br",
+        "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Prefeitura Municipal de Mogi Guaçu",
         "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQbGh6MXRrUzVTVUd4OFVxcGMtMmhCb0lmQUJRSloxU3llNGpQTEwzOUg5dnpESE1Jd096aDREMW9UZWVWZzI3T2llZFRuVDVEUV9pN2J1dEJnOE5rYzU3N1VFeEtBZWd2ZGtNRG91M05XMEdWRlpGWjllNWdaNEk3UmhqX2NEWUVfN3pocnRjbFc5dlVTc3NlenRZZDhxZllhNkM1SFZMRGxFZjBQQ0hfTG11RXBqazUwcEV4YVFHWQ?oc=5",
         "sourceUrl": "https://mogiguacu.sp.gov.br",
         "publishedAt": "2026-09-15T14:04:21.000Z",
-        "source": "mogiguacu.sp.gov.br",
-        "summary": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil mogiguacu.sp.gov.br",
+        "source": "Prefeitura Municipal de Mogi Guaçu",
+        "summary": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil Prefeitura Municipal de Mogi Guaçu",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
-          "score": -27,
+          "score": -26,
           "reasons": [
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil mogiguacu.sp.gov.br",
-          "publicContext": false,
+          "evidenceText": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil Prefeitura Municipal de Mogi Guaçu",
+          "publicContext": true,
           "strongPublicContext": false
         }
       }
@@ -8037,7 +8037,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -8223,7 +8223,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -8248,7 +8248,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -8273,7 +8273,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -8300,7 +8300,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -8325,7 +8325,7 @@
     },
     "2e5ce60d1c9221face2410af24ae606ca016845ec74e44a1c2bb7d4bd2d21849": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Tribunal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -9113,7 +9113,7 @@
     },
     "bef6149ab0734de0a2921e8a77c5dc461f306f23c8d759757b5d8bd2ffc2653f": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Diálogo Federativo: na CNM, especialistas debatem desafios e potencialidade dos consórcios públicos - Confederação Nacional de Municípios",
@@ -9138,7 +9138,7 @@
     },
     "5f8169dfadfb7f58ff5fc3798a1b920bf1d1968a5ed977b4c3f8e419b9be4099": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Viçosa (AL)",
@@ -9167,7 +9167,7 @@
     },
     "b243d175e7e63b276b55e5f2001e1410f0ec6029940fa57c73594ae064ae1fbf": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Ouro Verde do Oeste (PR)",
@@ -9197,7 +9197,7 @@
     },
     "26273a65bf07ccf1767383350e881ae51f02f718401605cda81fd2668a0a6756": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de São Mateus do Sul (PR)",
@@ -9225,7 +9225,7 @@
     },
     "27b621bc39d18af16a0871bad3a1b9d2bc92db0c447ab5d2e2ee38597d534ed5": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -9255,7 +9255,7 @@
     },
     "a65232df5c7f31fcd1e80a18b822045ecea0d8b46e5d09de3cea9ea026a2258d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itajubá (MG)",
@@ -9283,7 +9283,7 @@
     },
     "332092ca59cae896267f8a1e53b19254df7e05f0c967be79e729c8af654dea5a": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Contagem (MG)",
@@ -9311,7 +9311,7 @@
     },
     "e939ed4783e8e4b71931fb729dda42952a35508a8962f1d361bd2e9a545317d1": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -9339,7 +9339,7 @@
     },
     "636fe0665af16aff26cf8fa1dd13e477c70c941d98a53192e51cc0af18276621": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -9367,7 +9367,7 @@
     },
     "1f030e27bf926927daa16490f0b9f8e2b5955d4676b7312fc34e6fa86307988d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -9395,7 +9395,7 @@
     },
     "e6b73db1444ff887f64c6edb59f6db3713bbffc5e2e7424e9a9f009170dfe5a2": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -9424,7 +9424,7 @@
     },
     "97209ec5af968ed46b53270b1cff4a2d316f89364153b5d78248ce34b3c25e89": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Betim (MG)",
@@ -9455,7 +9455,7 @@
     },
     "45d4465fc27ec293fa1fa27d2ff79060fcedfc980163374b738177c28c3e1b7e": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Londrina (PR)",
@@ -9485,7 +9485,7 @@
     },
     "e824f6520717d7a24ac462414d0ac0717c3abb1df011ff56581d15180ef39790": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -9513,7 +9513,7 @@
     },
     "e6013bedf3a50f3beda4d85723fbb3148fedd23a06cc0756e0a4cad79ff64f9d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mossoró (RN)",
@@ -9543,7 +9543,7 @@
     },
     "fda85d4031372ab9f40e970ae6c1e22ac20f4861518c1a73bcdaad28ba0c0682": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -9571,7 +9571,7 @@
     },
     "0d322e7698bb1d2f9e16106533bc61f4925068a7eaa0ce5afbc5dba2e1ca10f8": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Serrana (MG)",
@@ -9599,7 +9599,7 @@
     },
     "e5fdbb6fbd6d702fa8e2f124ef9269f553af9420e5ce11e8f945f7e221ee70cd": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Apucarana (PR)",
@@ -9629,7 +9629,7 @@
     },
     "318902870f2ae6d3388ff63f83ed1c8dd6db137da81b5d61616e93a356254906": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Três Arroios (RS)",
@@ -9660,7 +9660,7 @@
     },
     "5334aac16717c175ffd394feb11abe057a3dd2033672e59dd0f21f3e2243af79": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Quatro Irmãos (RS)",
@@ -9690,7 +9690,7 @@
     },
     "23004993f9b664181c2d953839c227f04d409110fee5f0badf5b5ce4bc9dabbc": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Camaquã (RS)",
@@ -9719,7 +9719,7 @@
     },
     "4b186d8478ba6992756691be830982208ef6857df6353b03e606ca2df00b8d35": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -9747,7 +9747,7 @@
     },
     "5b54849b6dc43006259d89e3ad86a5461c44b015a30950039141a0235fc34173": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -9775,7 +9775,7 @@
     },
     "7e07ada61964777cd8aa0e4a65a12a137cc0d5d4c1e3923b39a6da1f82213c7a": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -9803,7 +9803,7 @@
     },
     "817c29aa611c22707d73b416a8cccc2918b28a5867b55c7793e70dd5bfb74f33": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -9831,7 +9831,7 @@
     },
     "e5d8de61915e8319dad49430a6a60708e9d6641c64ce4742f111ed92178a5541": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Programa Mais Iguais leva gestoras à Semana do Clima em Nova York",
@@ -10088,7 +10088,7 @@
     },
     "61ed2b20c4aacdc3cd7d32cfb91108b781a29a3dc49e1f06cbac4a2f4d0a233d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Democracia se fortalece com autocrítica e instituições sólidas, afirma presidente do TCEMG em encontro nacional sobre avaliação dos Tribunais de Contas",
@@ -10113,7 +10113,7 @@
     },
     "6504f1773d4ed0fc68e9510f8a61ab54b79cbd3541ee8b84ca49fc9190db33a4": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "TCESP orienta municípios a fortalecerem bibliotecas públicas e ampliarem acesso a programas do Ministério da Cultura",
@@ -10139,7 +10139,7 @@
     },
     "ec4e340eeb726f98d0f5679ef5f31e8d3b6b9e201d07f556502b3e02522c62f7": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Santa Fé do Sul e Olímpia são as próximas cidades do Ciclo de Debates do TCESP",
@@ -10165,7 +10165,7 @@
     },
     "0c6651077853dffef47facc43511524b5c537550025e8bdce1f92cd1f08dc12b": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza fiscalização inédita para verificar acessibilidade em prédios com atendimento ao público",
@@ -10448,7 +10448,7 @@
     },
     "0c5ade03550e456b3996eb2b36f9d1eff477ae9872c868d1aa491444060df132": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "TCEMG adota aplicativo do Banco do Brasil para otimizar transporte e reduzir custos",
@@ -10473,7 +10473,7 @@
     },
     "561b71d1edd1e24c42134479b29c47d3f61de9246d934bd16dd227299920e313": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Encontro Técnico em Capelinha aproxima controle externo dos municípios do Vale do Jequitinhonha",
@@ -10498,7 +10498,7 @@
     },
     "cf02a3c30b248e0c07b6f19decd1614b8a78e61d852b7b5434b4b5b10273ecf2": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "II Simpósio Estadual sobre Saúde Mental debate papel da liderança na prevenção de riscos psicossociais",
@@ -10710,7 +10710,7 @@
     },
     "3c6775aa9d398dd8ed338cd2bf2c7fb16600a118b7bd18e76d518008f9f7b615": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de Direito da UFMG participam do Projeto Conhecer",
@@ -10735,7 +10735,7 @@
     },
     "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece": {
       "firstSeenAt": "2026-09-18T04:47:07.838Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
@@ -10944,7 +10944,7 @@
     },
     "530064fc2d70255f4f1b0ee400c031c573cfff7bb5dc4b967d00c24059cd72f8": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - Portal MPA",
@@ -10967,7 +10967,7 @@
     },
     "94ca8a6343adb830f04deff38614a6765ccdfed18b1478af02bc723e1e938f40": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -10995,7 +10995,7 @@
     },
     "3828bfd26941e763e2c91871ffdd696ae8366141af13b4b81e9d916f48b52320": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Aguaí (SP)",
@@ -11023,7 +11023,7 @@
     },
     "1a727c5a2ebe71b76a84e848a2836f6e6b40166f6d9ca93e02a9ffc7a4293ea9": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -11052,7 +11052,7 @@
     },
     "8e50e3c65dcaa25cd0e404775ae14d57e488746ac79cff0ca84018b172ada4ce": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Contagem (MG)",
@@ -11080,7 +11080,7 @@
     },
     "e9679fdd0d2d6cefe97a7e3ca373095288c618565c6ddbd6eeead97ed9731e10": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -11108,7 +11108,7 @@
     },
     "52f36dafd4a98d3bde6b238e612679daafbdc24d70157837ce97109aac7a92d6": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -11136,7 +11136,7 @@
     },
     "7d9fcf7b25d1d09d5988e4c965ae58598c0159db3ee3a5d609146728becf9bd7": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Taiobeiras (MG)",
@@ -11166,7 +11166,7 @@
     },
     "afbc7dc77061f207892c94e392328158f64432dbaf6632dd509b4be55e527994": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mamborê (PR)",
@@ -11194,7 +11194,7 @@
     },
     "d26e7a4f8f64034fc64cc735ef20ab224e8df6fb56b8f348e76e8a493e2108d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -11222,7 +11222,7 @@
     },
     "fa2d4cff2930988b3d13a601347fbf66c9a990ac145f76b3ed4e33395fb38a46": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -11250,7 +11250,7 @@
     },
     "91a12ce67c613935ddd43913ff11dc875e10aaf4f0f9a8f4bc5a87e3e58fc2c7": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -11278,7 +11278,7 @@
     },
     "e897be8c978da150823825e999bd141d86f4f64f60e75ff888c92d1405824db0": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Macaé (RJ)",
@@ -11306,7 +11306,7 @@
     },
     "7679c6b9992884ed8657a882b883e0da2abdfa446311e3dd5d44eb79e46cfb80": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Siriri (SE)",
@@ -11336,7 +11336,7 @@
     },
     "95350af70d1e931587cd1ba9c3fce3434249f217f6aa438d4cc5d619a21c56dc": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Debate sobre dados e clima marca 2 mil participantes em série de webinários",
@@ -11359,7 +11359,7 @@
     },
     "d13be8ef98cc981c112d538823b8c7b81fc64645a5e0d0be29f581f555f30d7f": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta painel do IBS aos municípios paranaenses",
@@ -11382,7 +11382,7 @@
     },
     "156ec3c54c14ab1aa09a0be3b6147d1eaeda1480c78b67ff5ab4ef45ff56327b": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "FNP participa de assembleia da Abrasf e apresenta pautas prioritárias para os municípios",
@@ -11635,7 +11635,7 @@
     },
     "53e116cd8838ecf2c622c3d3b73dd4fc03919253d0d56519db0bcb12da0ae5d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Prédios públicos ainda impõem barreiras para acesso aos serviços, aponta fiscalização do TCESP",
@@ -11724,7 +11724,7 @@
     },
     "beff50203a891f9f711109b87b06ddb3d75bae39dffda4ebe2521b6b90261af1": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Votuporanga (SP)",
@@ -11753,7 +11753,7 @@
     },
     "794018bca4350eadd8e6ac0f71f85240505d16be7f7828103654d9ede5e03cd9": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Votuporanga (SP)",
@@ -12017,7 +12017,7 @@
     },
     "5b60207654cdd20d9bbd8d8521e329b8dfc1f9cad17f37e85ea38a97ff607b5a": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Tribunal realiza capacitação on-line sobre o Sistema de Processo Eletrônico (e-TCESP)",
@@ -12043,7 +12043,7 @@
     },
     "ce31526e2e9f5939a369ed3dec553d843cd9b65e54d128b7b6065b83f64707bb": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Memorial celebra dois anos preservando a história da Corte de Contas paulista",
@@ -12069,7 +12069,7 @@
     },
     "b1cda8c8c682567952562dd279a45e974f5c69c0de2438eb2c5805ba8232353b": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette-index",
         "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
@@ -12119,15 +12119,15 @@
     },
     "fece60f0ccb7211a4eed577a4e124d2062413576aba670fc1fa28bccdff1ef1d": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia - consorciopublico.ro.gov.br",
+        "title": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia - Consórcio CIMCERO",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE42ZEp2N0ZBeFNGbDBTY25iV0ZWeHFKMEc2Mi1scWItazVNRWtBRThocDduMnV0ZnJJSHhZRUtDcmw5Q05PYkhmNHd2UUpMTVBwNmRDanVoZ3d2YmM?oc=5",
         "sourceUrl": "https://consorciopublico.ro.gov.br",
         "publishedAt": "2026-09-14T19:55:00.000Z",
-        "source": "consorciopublico.ro.gov.br",
-        "summary": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia consorciopublico.ro.gov.br",
+        "source": "Consórcio CIMCERO",
+        "summary": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia Consórcio CIMCERO",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -12136,7 +12136,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia consorciopublico.ro.gov.br",
+          "evidenceText": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia Consórcio CIMCERO",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -12144,7 +12144,7 @@
     },
     "d77266b464e94ae5b770377c91b0c64571a7a68a15898d71786ac5df99241e89": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "FNP debate governança compartilhada e integração do transporte nas regiões metropolitanas",
@@ -12282,7 +12282,7 @@
     },
     "2696783687a9e33064da44cd82ce7b991b33720fe1975c30d2b122a293d19d88": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Seminário cultural celebra criação de lei contra violência doméstica",
@@ -12307,7 +12307,7 @@
     },
     "a8aba7661040d1ae6155878336c591b5e9b613f58c051b8d202544321ef913d6": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Futuro da Lei Maria da Penha e atuação em rede para proteção à mulher ganham destaque na sequência da programação",
@@ -12332,7 +12332,7 @@
     },
     "6e55814356c97042fda99c75179aba40fa764487809ea6831ef2ce7c0762a3ef": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Controle Externo discute impactos da reforma tributária nas concessões com a professora Cristiana Fortini",
@@ -12358,7 +12358,7 @@
     },
     "4ddc449611298193a3564f0ef640083a9722d214ceac08ee44cd76d17c975492": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - Estação Livre MT",
@@ -12381,7 +12381,7 @@
     },
     "38d47c80e92327bc3e8a342fac0c5f36567b675974e0fbcad6553767edf23a3e": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Arataca (BA)",
@@ -12410,7 +12410,7 @@
     },
     "80e87e2e3fccb79d88db8eeae0869477ec1e39badb1f57bbb8e424d5e4d38988": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Serrana (MG)",
@@ -12440,7 +12440,7 @@
     },
     "67ffc3bb2df8e19ac381a6a6a18c9df2257c26872fd811cace0e65782b2d9474": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itajubá (MG)",
@@ -12469,7 +12469,7 @@
     },
     "c74c8347b493fd167e95da8b6c3fcdab2ce3e638ca7ec77d87b4101a18d218fa": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Contagem (MG)",
@@ -12497,7 +12497,7 @@
     },
     "effa861081e1c8064e543be046fee27d96fd50faab9a3919aeda2ebc6345861f": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS",
@@ -12660,7 +12660,7 @@
     },
     "9c2b997035c5a3ccb3396061cba2d756c4d021726aaf12d9f84432df8ef00a97": {
       "firstSeenAt": "2026-09-19T05:51:51.251Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
@@ -12686,7 +12686,7 @@
     },
     "8cd68dc0688da71808175317bb6b78ab024b9a6465021e99f10e70bc185cb839": {
       "firstSeenAt": "2026-09-19T05:51:51.251Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - O EMPALLADOR",
@@ -12732,7 +12732,7 @@
     },
     "d831082fd60452a73d2625a3b91dccefa15f1ab9d5728a00aeea1caf3b241d70": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -12760,7 +12760,7 @@
     },
     "6b75eb6130d27409d757fb5ebe92ed0dfd563ec4a27b9f874f2aca9fa96f461b": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Curitiba (PR)",
@@ -12788,7 +12788,7 @@
     },
     "6fa3711ddaf887f52f9a26775f87c61da7fe3c26b827b522de3bb56351092d82": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Iguaçu (RJ)",
@@ -12815,7 +12815,7 @@
     },
     "bd5604446975a33927b25ffdf7cd3b068a9b509d0215ad7da42fca88dd6b043a": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de São Mateus do Sul (PR)",
@@ -12843,7 +12843,7 @@
     },
     "3488710acc73c123ce68ba1e986e86cd88e0016a35d7e479942c48b494db5fb4": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Presidente Epitácio (SP)",
@@ -12873,7 +12873,7 @@
     },
     "67c65c29f8791b82ffc0d7d256bfa0c36c92564e9ea2f853fe1248af780d70d6": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -12902,7 +12902,7 @@
     },
     "b1b9f2831f785f1524adfa146cd714c8bfaa1d8ced54ea1668b623c75c6d4ca1": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jaú (SP)",
@@ -12932,7 +12932,7 @@
     },
     "c4645425be71f8cedc3f877b85e3a11152d7ea56132991f6452571316acc23e8": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itapevi (SP)",
@@ -12960,7 +12960,7 @@
     },
     "60aa5a68be69ebb02188105243fe1ab32941ba3d45a1d474a0d1ecdbe44bbdea": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Simão Dias (SE)",
@@ -12990,7 +12990,7 @@
     },
     "de9b0b12fe0071df0ce715f3be10deeb410a3c11887d7573426385dadf5c299c": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nossa Senhora do Socorro (SE)",
@@ -13021,7 +13021,7 @@
     },
     "562bdb30abc43f3ab963046997806dbe7941615acab667c816a87e67d27e3f57": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Coronel Macedo (SP)",
@@ -13049,7 +13049,7 @@
     },
     "69acc0541cfe028f3dd1f1c5ab84df8ee2b1592effb93f085bfc59f24952dff8": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -13077,7 +13077,7 @@
     },
     "bb1cf842fc4212ff578e04e5d72232e67f5f883fdb4a2bcc379922e24b0f9d7f": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -13105,7 +13105,7 @@
     },
     "76a447ffcb173ec56d8d587cc323058e8ece3cc29df12348bcba6b94f4224635": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Iguaçu (RJ)",
@@ -13132,7 +13132,7 @@
     },
     "84e9aa09e601852f8dda16b8932e66e1345752e2697f40b55c90327d5be1f881": {
       "firstSeenAt": "2026-09-19T10:56:24.597Z",
-      "lastSeenAt": "2026-09-19T20:37:51.795Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Castro (PR)",
@@ -13555,7 +13555,7 @@
     },
     "aa73f21b0c2c73be370a9d4143f9f2fe58ce90af1ec80bab706d6e788e69761b": {
       "firstSeenAt": "2026-09-19T20:37:51.795Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº /05 - Camara Municipal Varre-Sai",
@@ -13578,7 +13578,7 @@
     },
     "94c03ec9f93fa3fa3749e035710aa8bc91d55b061448fe5471ee525daeb8b0a0": {
       "firstSeenAt": "2026-09-19T20:37:51.795Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Brasil bate Suíça e avança na Copa Davis",
@@ -13601,7 +13601,7 @@
     },
     "4e875eaa847169babebafdb288b82f91dccb6511eadf4566efddf07da987c88c": {
       "firstSeenAt": "2026-09-19T20:37:51.795Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "FMI: IA pode impulsionar crescimento, mas aumentar tensões econômicas",
@@ -13626,7 +13626,7 @@
     },
     "23037d59758cf5c98b079446bbf6e850507534004aa6687bdcecb8944fa3e669": {
       "firstSeenAt": "2026-09-19T20:37:51.795Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Brasil é eliminado pela Espanha nas quartas da Copa Feminina sub-20",
@@ -13649,7 +13649,7 @@
     },
     "77fd0581fe0c2049de3b7453145e5fa94385372289cbce2e2ee36c8d8b182404": {
       "firstSeenAt": "2026-09-19T20:37:51.795Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Rádio MEC transmite domingo o concerto da Orquestra Filarmônica de MG",
@@ -13764,7 +13764,7 @@
     },
     "f7e321fc7e4a08c2f5bdf8ed027f7ca318bdd138dbbbc07c4492033593ad44a0": {
       "firstSeenAt": "2026-09-19T23:02:42.274Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Podoroska e Quevedo decidem SP Open 2026 neste domingo",
@@ -13787,7 +13787,7 @@
     },
     "92cd155e1bcf161a286f4d7d0d96cc6f3a4847c7eaa7936c85878334ec631d52": {
       "firstSeenAt": "2026-09-19T23:02:42.274Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Caderno de Música lembra 120 anos de nascimento de Dmitri Shostakovich",
@@ -13810,7 +13810,7 @@
     },
     "b84063462599366c30ffac576e5675f4c8cb56a4da841571e002d41ce9343bba": {
       "firstSeenAt": "2026-09-19T23:02:42.274Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Petrobras aprova adesão à subvenção ao óleo diesel",
@@ -13833,7 +13833,7 @@
     },
     "98963e0b0c4db3ecaac78ae0bcae075dfa50227dcba5d51ef186a42a205d9e3e": {
       "firstSeenAt": "2026-09-19T23:02:42.274Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Morre Paulo Roberto Teixeira, referência no combate à aids no Brasil",
@@ -13856,7 +13856,7 @@
     },
     "d51bd965aaad4a8d1c4ad16642aa82d9a517275009c6fe2b1c662dead71e9ebc": {
       "firstSeenAt": "2026-09-19T23:02:42.274Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "Conheça Chongqing: metrópole-chave da transformação econômica chinesa",
@@ -13879,7 +13879,7 @@
     },
     "aea69c5c079ba399d4ba2ae9c24719777c2faa59a28f37b824abda89defa954c": {
       "firstSeenAt": "2026-09-19T23:02:42.274Z",
-      "lastSeenAt": "2026-09-19T23:02:42.274Z",
+      "lastSeenAt": "2026-09-20T01:06:52.016Z",
       "item": {
         "kind": "news",
         "title": "China busca conexão e cooperação entre povos por meio dos grandes rios",
@@ -18189,6 +18189,142 @@
           "itemCount": 0
         }
       ]
+    },
+    "35480517296:1": {
+      "at": "2026-09-20T01:06:52.016Z",
+      "collected": 142,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 30,
+          "durationMs": 727
+        },
+        {
+          "name": "Querido Diário",
+          "status": "ok",
+          "itemCount": 65,
+          "durationMs": 16056
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "ok",
+          "itemCount": 64
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "ok",
+          "itemCount": 6
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 19,
+          "durationMs": 2173
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 27,
+          "durationMs": 5596
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 17
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 3513
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
@@ -18196,120 +18332,117 @@
       "name": "Google News",
       "status": "ok",
       "itemCount": 30,
-      "durationMs": 723,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "durationMs": 727,
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
-      "status": "degraded",
-      "itemCount": 0,
-      "durationMs": 30505,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-19T20:37:51.795Z"
+      "status": "ok",
+      "itemCount": 65,
+      "durationMs": 16056,
+      "checkedAt": "2026-09-20T01:06:52.016Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
-      "status": "error",
-      "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-19T23:02:42.274Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-19T20:37:51.795Z"
+      "status": "ok",
+      "itemCount": 64,
+      "checkedAt": "2026-09-20T01:06:52.016Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
-      "status": "error",
-      "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-19T23:02:42.274Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-19T20:37:51.795Z"
+      "status": "ok",
+      "itemCount": 6,
+      "checkedAt": "2026-09-20T01:06:52.016Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-19T23:02:42.274Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-19T20:37:51.795Z"
+      "checkedAt": "2026-09-20T01:06:52.016Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 19,
-      "durationMs": 3609,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "durationMs": 2173,
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 8,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
       "itemCount": 27,
-      "durationMs": 5370,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "durationMs": 5596,
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -18318,7 +18451,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z"
+      "checkedAt": "2026-09-20T01:06:52.016Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -18327,7 +18460,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z"
+      "checkedAt": "2026-09-20T01:06:52.016Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -18336,59 +18469,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z"
+      "checkedAt": "2026-09-20T01:06:52.016Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 17,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 9,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 3223,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "durationMs": 3513,
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-19T23:02:42.274Z",
+      "checkedAt": "2026-09-20T01:06:52.016Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-19T23:02:42.274Z"
+      "lastSuccessAt": "2026-09-20T01:06:52.016Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
