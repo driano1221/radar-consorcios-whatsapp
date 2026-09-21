@@ -3217,7 +3217,7 @@
     },
     "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Municípios assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
@@ -3892,7 +3892,7 @@
     },
     "20dd0fd65ea13e0682554f8c53d468e42424246ac2c55c89a6a25a314843f42e": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Gaepe mineiro projeta reunião interinstitucional de articulação para alinhar operacionalização de força-tarefa",
@@ -3919,7 +3919,7 @@
     },
     "58ef7bfca6e168806dd3c10f7ec354818e75ae944b20e314f903388750682963": {
       "firstSeenAt": "2026-09-14T19:58:39.657Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Livro lançado no TCEMG resgata memórias da repressão e fortalece defesa da democracia",
@@ -5498,7 +5498,7 @@
     },
     "62b0cc135d8b40fe035bbb5b9ccc8d17c432bddd6371149be438dad7fc0d2976": {
       "firstSeenAt": "2026-09-14T22:30:22.881Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "PNTP 2026 entra na etapa de Garantia da Qualidade, confira os próximos passos",
@@ -5572,7 +5572,7 @@
     },
     "30f0fad5ec941d4d459701b873cbbc55a58d01be94aafbc54b264a08ffa510bd": {
       "firstSeenAt": "2026-09-15T01:26:50.377Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Ministério Público cobra retomada de cirurgias em hospital de Peixoto e prevê ação judicial - Só Notícias",
@@ -5758,15 +5758,15 @@
     },
     "1662dd453822a94ee37d5bcf9df8ed8be7972f8fea6fc502f37b547542a90260": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
-        "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - alagoasnanet.com.br",
+        "title": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste - Alagoas na Net",
         "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOYUh5OEx5RTZkdlB2bi0zOUFCYktNZEQyeVVIUWVtejBqUTBCLVZaNUEtQ2ZyeEVUR2NNbEtuMFN3akx6amU3eV9OcEladnV1Q0h5YmI2VXhJMWJlc0RXbHdONGxfaEotaTNwMFJfVXZDeGtYLW0tQy1RbVhkMGFwWEtoYkVzWnJTbGZYaHJhTmJmcm1DVGJnZUladG81b1BpRDNSMUpRZXhBNFpjQXhJV3prSk9jblZwR0h4VkNEWS1NaGdvc0ZPTmtqeWJjOUkyNmVwbzVPYw?oc=5",
         "sourceUrl": "https://www.alagoasnanet.com.br",
         "publishedAt": "2026-09-14T14:07:00.000Z",
-        "source": "alagoasnanet.com.br",
-        "summary": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+        "source": "Alagoas na Net",
+        "summary": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste Alagoas na Net",
         "classification": {
           "category": "ADESÃO",
           "emoji": "🟦",
@@ -5776,7 +5776,7 @@
             "ADESÃO"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste alagoasnanet.com.br",
+          "evidenceText": "Inhapi autoriza adesão ao Consórcio Intermunicipal do Agreste Alagoas na Net",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -5853,7 +5853,7 @@
     },
     "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079": {
       "firstSeenAt": "2026-09-15T07:43:01.000Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
@@ -5945,7 +5945,7 @@
     },
     "b9243454fd8f696c89efe2a28513f85297f0f66807f108cb8166887e4be3e357": {
       "firstSeenAt": "2026-09-15T13:32:10.950Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional em Peixoto de Azevedo - Web Rádio Terra",
@@ -6200,7 +6200,7 @@
     },
     "3f5b7b86c6f8909d0733cf127e65b91b8450a4bd255004996b0470fa96d8739e": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC participa de Encontro Cidades Verdes Resili... - Consórcio Intermunicipal - Grande ABC",
@@ -6294,7 +6294,7 @@
     },
     "57cbc5c4169c8017e9c5c3f545acfe2f06058d8effea13d29d4e1c70a0d76c0c": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Acompanhamento de Matéria - sapl.patobranco.pr.leg.br",
@@ -6317,7 +6317,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -6340,7 +6340,7 @@
     },
     "14a939bc0c54983f74323beb211d40d0f034733f9633d9214d826d8f66fa273d": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Mutirão Brasil Cidades Amazônicas fortalece ação climática local em seis municípios",
@@ -6618,7 +6618,7 @@
     },
     "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Concurso CONSUD PR: gabaritos preliminares divulgados! - Estratégia Concursos",
@@ -6664,7 +6664,7 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
@@ -6940,7 +6940,7 @@
     },
     "bd14fb2413e3f263be8feff4397689363acc15b7529d2e4e0b40bb290487ff80": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Educação em primeiro lugar: TCEMG participa do 12º Fórum Mineiro de Educação",
@@ -6965,7 +6965,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -7226,7 +7226,7 @@
     },
     "aa4e7c489fd115157c5d5fd961b53f89eb3aa50e5f65149aea4945b06191373e": {
       "firstSeenAt": "2026-09-16T05:59:12.856Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara - TCE-PR",
@@ -7625,15 +7625,15 @@
     },
     "3b3368b3fd178566961ea830b393ed9c0c7326c30b3a8ff85845aa57e4cafdce": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-21T00:15:06.410Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
-        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - AtualMT",
+        "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - atualmt.com.br",
         "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5",
         "sourceUrl": "https://atualmt.com.br",
         "publishedAt": "2026-09-16T11:43:37.000Z",
-        "source": "AtualMT",
-        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
+        "source": "atualmt.com.br",
+        "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
         "classification": {
           "category": "CRISE",
           "emoji": "🟥",
@@ -7643,7 +7643,7 @@
             "SAÍDA"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde AtualMT",
+          "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
           "publicContext": true,
           "strongPublicContext": false
         }
@@ -7883,7 +7883,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -7911,7 +7911,7 @@
     },
     "06428e75937044b7bf4f96b4d416326c858195b05468d8997b9f41a19d058b11": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Licitação de R$ 31,2 milhões em Itanhomi é suspensa por indícios de restrição à concorrência",
@@ -7938,7 +7938,7 @@
     },
     "a8b47d06995b57b48ed350ecc23c3d3902f5b917aed230dd2239145a5a453af8": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "TCESP comunica abertura de consulta pública sobre o Guia de Custos para o Setor Público",
@@ -7989,7 +7989,7 @@
     },
     "a01af230da7740611782041760ef30c39464eb49867b2bd5bcf17062cd024dd0": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Prefeitura Municipal de Mogi Guaçu",
@@ -8014,7 +8014,7 @@
     },
     "a2abb2acfc15838aefcc78789a39eb9b3bf34cac36f29420e8a174a264394993": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Promotorias cobram solução para crise em hospital regional - O RONCADOR",
@@ -8037,7 +8037,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -8223,7 +8223,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -8248,7 +8248,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -8273,7 +8273,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -8300,7 +8300,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -8325,7 +8325,7 @@
     },
     "2e5ce60d1c9221face2410af24ae606ca016845ec74e44a1c2bb7d4bd2d21849": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Tribunal cobra soluções para problemas graves em escolas municipais de Almenara",
@@ -9113,7 +9113,7 @@
     },
     "bef6149ab0734de0a2921e8a77c5dc461f306f23c8d759757b5d8bd2ffc2653f": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Diálogo Federativo: na CNM, especialistas debatem desafios e potencialidade dos consórcios públicos - Confederação Nacional de Municípios",
@@ -9831,7 +9831,7 @@
     },
     "e5d8de61915e8319dad49430a6a60708e9d6641c64ce4742f111ed92178a5541": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Programa Mais Iguais leva gestoras à Semana do Clima em Nova York",
@@ -10088,7 +10088,7 @@
     },
     "61ed2b20c4aacdc3cd7d32cfb91108b781a29a3dc49e1f06cbac4a2f4d0a233d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Democracia se fortalece com autocrítica e instituições sólidas, afirma presidente do TCEMG em encontro nacional sobre avaliação dos Tribunais de Contas",
@@ -10113,7 +10113,7 @@
     },
     "6504f1773d4ed0fc68e9510f8a61ab54b79cbd3541ee8b84ca49fc9190db33a4": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "TCESP orienta municípios a fortalecerem bibliotecas públicas e ampliarem acesso a programas do Ministério da Cultura",
@@ -10139,7 +10139,7 @@
     },
     "ec4e340eeb726f98d0f5679ef5f31e8d3b6b9e201d07f556502b3e02522c62f7": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Santa Fé do Sul e Olímpia são as próximas cidades do Ciclo de Debates do TCESP",
@@ -10165,7 +10165,7 @@
     },
     "0c6651077853dffef47facc43511524b5c537550025e8bdce1f92cd1f08dc12b": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza fiscalização inédita para verificar acessibilidade em prédios com atendimento ao público",
@@ -10448,7 +10448,7 @@
     },
     "0c5ade03550e456b3996eb2b36f9d1eff477ae9872c868d1aa491444060df132": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "TCEMG adota aplicativo do Banco do Brasil para otimizar transporte e reduzir custos",
@@ -10473,7 +10473,7 @@
     },
     "561b71d1edd1e24c42134479b29c47d3f61de9246d934bd16dd227299920e313": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Encontro Técnico em Capelinha aproxima controle externo dos municípios do Vale do Jequitinhonha",
@@ -10498,7 +10498,7 @@
     },
     "cf02a3c30b248e0c07b6f19decd1614b8a78e61d852b7b5434b4b5b10273ecf2": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "II Simpósio Estadual sobre Saúde Mental debate papel da liderança na prevenção de riscos psicossociais",
@@ -10524,15 +10524,15 @@
     },
     "3459b276f1d8496813599e757f4528741f0bf8d5962b4bfce0d938454359b76c": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... - mogiguacuacontece.com.br",
+        "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... - Mogi Guaçu Acontece",
         "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNY3p1WDRfU2xsNWV1cUhYV0FCVkZNTmRzdDNkSkxrSFNaOUVjZHBCaUE3Z0lZenR0V2d0QWFXODBMTm9BOEtKSy1YTTctdlE1eE9OeW1VdEgwTU93cnd2TEwxaEhWM25GTDBBNWQxZVdGT0YybUpwRm1hQUw5TklacDV5LXkxS19DUXRDbHlleUxsallpU2pMODk3TzM0MllRaDhIOG5GN3JURU1zN2w0bU9EdVpWYU05Y2NlYVhPZDJrVlZRRFHSAcsBQVVfeXFMTkNJYTZPUUNxUHFLRGRISlRKdjdWNTdCNDNjX0xGMW5QR0pnRHR2R0NjSVQzWVk3azhqR1JQN0xYOFM1LVFobkZURVB4VFBxRGZ4eXdaOVREVjRpX2RFRHhVMDh2VG8wTXZ5dlV3eHkzVVNqLUwyTFE0QWZGXzltcGx4UHloZi1HQkYwTC1YNDN2NGhnY0tySXlMVFhtbUpsdzNsRHVMYTBWTUZBWHJaYWktYXEzRU52OExLZ0JManhzcHFDcC1KQ3g0c1E?oc=5",
         "sourceUrl": "https://mogiguacuacontece.com.br",
         "publishedAt": "2026-09-17T02:07:35.000Z",
-        "source": "mogiguacuacontece.com.br",
-        "summary": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... mogiguacuacontece.com.br",
+        "source": "Mogi Guaçu Acontece",
+        "summary": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... Mogi Guaçu Acontece",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -10541,7 +10541,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... mogiguacuacontece.com.br",
+          "evidenceText": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... Mogi Guaçu Acontece",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -10710,7 +10710,7 @@
     },
     "3c6775aa9d398dd8ed338cd2bf2c7fb16600a118b7bd18e76d518008f9f7b615": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de Direito da UFMG participam do Projeto Conhecer",
@@ -10735,7 +10735,7 @@
     },
     "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece": {
       "firstSeenAt": "2026-09-18T04:47:07.838Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
@@ -10921,7 +10921,7 @@
     },
     "928d130d02ef622dba128e747b0562e4d2543fb3e5d49b3bbd2f30184d4b4e29": {
       "firstSeenAt": "2026-09-18T09:44:20.602Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº /05 - Camara Municipal Varre-Sai",
@@ -10944,7 +10944,7 @@
     },
     "530064fc2d70255f4f1b0ee400c031c573cfff7bb5dc4b967d00c24059cd72f8": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - Portal MPA",
@@ -11336,7 +11336,7 @@
     },
     "95350af70d1e931587cd1ba9c3fce3434249f217f6aa438d4cc5d619a21c56dc": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Debate sobre dados e clima marca 2 mil participantes em série de webinários",
@@ -11359,7 +11359,7 @@
     },
     "d13be8ef98cc981c112d538823b8c7b81fc64645a5e0d0be29f581f555f30d7f": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta painel do IBS aos municípios paranaenses",
@@ -11382,7 +11382,7 @@
     },
     "156ec3c54c14ab1aa09a0be3b6147d1eaeda1480c78b67ff5ab4ef45ff56327b": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "FNP participa de assembleia da Abrasf e apresenta pautas prioritárias para os municípios",
@@ -11635,7 +11635,7 @@
     },
     "53e116cd8838ecf2c622c3d3b73dd4fc03919253d0d56519db0bcb12da0ae5d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Prédios públicos ainda impõem barreiras para acesso aos serviços, aponta fiscalização do TCESP",
@@ -12017,7 +12017,7 @@
     },
     "5b60207654cdd20d9bbd8d8521e329b8dfc1f9cad17f37e85ea38a97ff607b5a": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Tribunal realiza capacitação on-line sobre o Sistema de Processo Eletrônico (e-TCESP)",
@@ -12043,7 +12043,7 @@
     },
     "ce31526e2e9f5939a369ed3dec553d843cd9b65e54d128b7b6065b83f64707bb": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Memorial celebra dois anos preservando a história da Corte de Contas paulista",
@@ -12119,15 +12119,15 @@
     },
     "fece60f0ccb7211a4eed577a4e124d2062413576aba670fc1fa28bccdff1ef1d": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia - Consórcio CIMCERO",
+        "title": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia - consorciopublico.ro.gov.br",
         "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE42ZEp2N0ZBeFNGbDBTY25iV0ZWeHFKMEc2Mi1scWItazVNRWtBRThocDduMnV0ZnJJSHhZRUtDcmw5Q05PYkhmNHd2UUpMTVBwNmRDanVoZ3d2YmM?oc=5",
         "sourceUrl": "https://consorciopublico.ro.gov.br",
         "publishedAt": "2026-09-14T19:55:00.000Z",
-        "source": "Consórcio CIMCERO",
-        "summary": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia Consórcio CIMCERO",
+        "source": "consorciopublico.ro.gov.br",
+        "summary": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia consorciopublico.ro.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -12136,7 +12136,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia Consórcio CIMCERO",
+          "evidenceText": "Consórcio Público Intermunicipal da Região Centro Leste de Rondônia consorciopublico.ro.gov.br",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -12144,7 +12144,7 @@
     },
     "d77266b464e94ae5b770377c91b0c64571a7a68a15898d71786ac5df99241e89": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "FNP debate governança compartilhada e integração do transporte nas regiões metropolitanas",
@@ -12282,7 +12282,7 @@
     },
     "2696783687a9e33064da44cd82ce7b991b33720fe1975c30d2b122a293d19d88": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Seminário cultural celebra criação de lei contra violência doméstica",
@@ -12307,7 +12307,7 @@
     },
     "a8aba7661040d1ae6155878336c591b5e9b613f58c051b8d202544321ef913d6": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Futuro da Lei Maria da Penha e atuação em rede para proteção à mulher ganham destaque na sequência da programação",
@@ -12332,7 +12332,7 @@
     },
     "6e55814356c97042fda99c75179aba40fa764487809ea6831ef2ce7c0762a3ef": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Controle Externo discute impactos da reforma tributária nas concessões com a professora Cristiana Fortini",
@@ -12358,22 +12358,22 @@
     },
     "4ddc449611298193a3564f0ef640083a9722d214ceac08ee44cd76d17c975492": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
-        "title": "Promotorias cobram solução para crise em hospital regional - estacaolivremt.com.br",
+        "title": "Promotorias cobram solução para crise em hospital regional - Estação Livre MT",
         "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOdndrTzloUFdUcFJxRWhFUDJGeTYxdWdiNDlEbU1JcllQZzVqYWVpWkRIYzVybUxaSjNQOTcwelVELWNuem1qZnd0eWpiMEotUzQyYlc0N0lvN2c1QURfSk9iN1NSc1dvYkQzeXhESFNoampoUlVTVWNWb0I4NEJzSWYxRFNGWjNOSkwxbzA5Y3E3azA?oc=5",
         "sourceUrl": "https://estacaolivremt.com.br",
         "publishedAt": "2026-09-14T21:00:00.000Z",
-        "source": "estacaolivremt.com.br",
-        "summary": "Promotorias cobram solução para crise em hospital regional estacaolivremt.com.br",
+        "source": "Estação Livre MT",
+        "summary": "Promotorias cobram solução para crise em hospital regional Estação Livre MT",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Promotorias cobram solução para crise em hospital regional estacaolivremt.com.br",
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional Estação Livre MT",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -12497,7 +12497,7 @@
     },
     "effa861081e1c8064e543be046fee27d96fd50faab9a3919aeda2ebc6345861f": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS",
@@ -12660,7 +12660,7 @@
     },
     "9c2b997035c5a3ccb3396061cba2d756c4d021726aaf12d9f84432df8ef00a97": {
       "firstSeenAt": "2026-09-19T05:51:51.251Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
@@ -12686,22 +12686,22 @@
     },
     "8cd68dc0688da71808175317bb6b78ab024b9a6465021e99f10e70bc185cb839": {
       "firstSeenAt": "2026-09-19T05:51:51.251Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
-        "title": "Promotorias cobram solução para crise em hospital regional - oempallador.com.br",
+        "title": "Promotorias cobram solução para crise em hospital regional - O EMPALLADOR",
         "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPUlFRUzF5MWhYOU9CUXJ1ZkRtZkVoOTBJaG9kbWJHek81ekpkT2hBYzVZU1JXcUJWUXprV0pZSFF4bVlLeHNGbGVMT3Z5UjJBMW5WZWJnb3o0ajBSMDhPbHk5eFBkYjljenJGeXVLeG5wc01RZmZfYUFsQUNJRHNWQzJDeV9rUVE2cVRCcmdXOA?oc=5",
         "sourceUrl": "https://oempallador.com.br",
         "publishedAt": "2026-09-14T22:03:00.000Z",
-        "source": "oempallador.com.br",
-        "summary": "Promotorias cobram solução para crise em hospital regional oempallador.com.br",
+        "source": "O EMPALLADOR",
+        "summary": "Promotorias cobram solução para crise em hospital regional O EMPALLADOR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Promotorias cobram solução para crise em hospital regional oempallador.com.br",
+          "evidenceText": "Promotorias cobram solução para crise em hospital regional O EMPALLADOR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -13902,7 +13902,7 @@
     },
     "f112d94e28ec6b9fd08ee89b0d2b29b3bc790bf4905d52a2941cb1c945420e66": {
       "firstSeenAt": "2026-09-20T06:14:01.170Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Concurso CIDENNF RJ: provas em outubro; saiba mais! - Estratégia Concursos",
@@ -13925,22 +13925,22 @@
     },
     "b98909a6346fc754d95f43955d2fdc86abd1a14386fee33be2f8539cd08dab84": {
       "firstSeenAt": "2026-09-20T06:14:01.170Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
-        "title": "STP - Pautas - tce.pr.gov.br",
+        "title": "STP - Pautas - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdndCQ00wRHpBc2NKdnhobktlc0xoYnpTUlkzY05hY1NMRmdVNDVpejFtSGhZa19qUnYxRzJBdHV3c2VaUmZPRWRxcWxoZWxWaGhZS1dlSWozclpQTmt3ZWpyRXI1eUc0M2VoVlBsX1psYUdhMmpnYjRvYkdfTlFxMzRJRktEWXljOFRESmROcEJQcEY1UnNpYzVQaHBCcmRwQzdEaVkxRlNseGNSSFE?oc=5",
         "sourceUrl": "https://www.tce.pr.gov.br",
         "publishedAt": "2026-09-16T07:00:00.000Z",
-        "source": "tce.pr.gov.br",
-        "summary": "STP - Pautas tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "STP - Pautas TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "STP - Pautas tce.pr.gov.br",
+          "evidenceText": "STP - Pautas TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -14075,7 +14075,7 @@
     },
     "6d9e3c028e0c1483143413cb96434e7639559163776447e28fe6b22255ed146c": {
       "firstSeenAt": "2026-09-20T16:03:54.046Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Vale do Itajaí recicla cinco vezes mais que a média nacional e será referência para o Sul de SC - 4oito",
@@ -14098,7 +14098,7 @@
     },
     "76e2a536322cf045ecdfa697ad2010622bdc783630b033522b346825269f30a1": {
       "firstSeenAt": "2026-09-20T16:03:54.046Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Vale do Itajaí recicla cinco vezes mais que a média nacional e será referência para o Sul de SC - 4oito",
@@ -14353,7 +14353,7 @@
     },
     "0450c6d8ab639f3dd8fc3eace533c612439d29e8ee85b6178973dc56a4bd7783": {
       "firstSeenAt": "2026-09-20T18:46:23.647Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Brasil e EUA: entenda as relações após alerta sobre eleições",
@@ -14376,7 +14376,7 @@
     },
     "c8eb599edf4affa3afeebada4c6f8d9eb6606d2562f8ef6eedf3ae0c08c47a54": {
       "firstSeenAt": "2026-09-20T18:46:23.647Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Mulher de Moraes nega vínculo pessoal com Vorcaro em viagem de jatinho",
@@ -14399,7 +14399,7 @@
     },
     "911414934aab57a7200cfc9812e51ed57fa4ae507af52db89adda034b1161999": {
       "firstSeenAt": "2026-09-20T18:46:23.647Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Vôlei: Brasil vence Sul-Americano e está na Olimpíada 2028",
@@ -14422,7 +14422,7 @@
     },
     "ea331aa369ad709484c5746d668566022d04416da88e579309f6cd55c14e176d": {
       "firstSeenAt": "2026-09-20T18:46:23.647Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Roda de Choro celebra flautista Altamiro Carrilho na Rádio MEC",
@@ -14468,7 +14468,7 @@
     },
     "741925b54dd1cf0c5efe2ccf6699ecd305fdd39b8ba7b3869bcc883d730b92da": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel - Banda B",
@@ -14491,7 +14491,7 @@
     },
     "574658e37d4f5ffc237d816b22610cdb9355840f1cfff388bebc9ee932419d07": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "SANTA INÊS, Estado da Paraíba, no uso de suas atribuições - santaines.pb.leg.br",
@@ -14514,7 +14514,7 @@
     },
     "f29beb9c87540caf61f292b4cb24950735c38651ded9d23b4fdfe8926358c0cd": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Longa de André Novais vence o Festival de Brasília de Cinema",
@@ -14537,7 +14537,7 @@
     },
     "4d05880406e3f4f8ca5d45451e938af557dc7932657576e7f6a7d483109067ca": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Brasil fecha Copa do Mundo de ginástica com mais cinco pódios",
@@ -14560,7 +14560,7 @@
     },
     "5e25e7d2c2efa532924757b687e2206c7fd9b974260aa651351870c40295a84c": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Vasco é campeão do Brasileirão A2 Feminino",
@@ -14583,7 +14583,7 @@
     },
     "d8b12cdf3d98422f98cbf8c1c5ebdd6f5fbcd04d696745a0dafb2a8f26940963": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Museu do Folclore recebe bordados do Vale do Jequitinhonha",
@@ -14606,7 +14606,7 @@
     },
     "c025fcee17edce6476427020e3e3b607ebe983e449833ed2a881e83844335689": {
       "firstSeenAt": "2026-09-21T00:15:06.410Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Veja como foi o fim de semana dos candidatos a presidente",
@@ -14629,7 +14629,7 @@
     },
     "8f9d53970b6f0aa02f468b5409c664c6887d33d4d14025e28ad2af53754e9182": {
       "firstSeenAt": "2026-09-21T00:15:06.410Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "Cine Inclusão 60+ traz filmes dedicados ao debate sobre envelhecimento",
@@ -14652,7 +14652,7 @@
     },
     "dcec74f99198b643bcd72b43a774237e955976b14c92b495d2d03672d0766a06": {
       "firstSeenAt": "2026-09-21T04:57:53.608Z",
-      "lastSeenAt": "2026-09-21T04:57:53.608Z",
+      "lastSeenAt": "2026-09-21T10:41:35.182Z",
       "item": {
         "kind": "news",
         "title": "José Ivanir é reconduzido à presidência do CISMIV para o biênio 2027/2028 - Primeiro a Saber",
@@ -20057,25 +20057,164 @@
           "itemCount": 0
         }
       ]
+    },
+    "35590063713:1": {
+      "at": "2026-09-21T10:41:35.182Z",
+      "collected": 82,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 36,
+          "durationMs": 763
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 2998
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 19,
+          "durationMs": 3732
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 26,
+          "durationMs": 4548
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 17
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 3425
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 35,
-      "durationMs": 662,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "itemCount": 36,
+      "durationMs": 763,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
       "itemCount": 0,
-      "durationMs": 15936,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
-      "consecutiveFailures": 1,
+      "durationMs": 2998,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-21T00:15:06.410Z"
     },
     "Querido Diário — consulta 1": {
@@ -20083,8 +20222,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-21T04:57:53.608Z",
-      "consecutiveFailures": 1,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-21T00:15:06.410Z"
     },
     "Querido Diário — consulta 2": {
@@ -20092,8 +20231,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-21T04:57:53.608Z",
-      "consecutiveFailures": 1,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-21T00:15:06.410Z"
     },
     "Querido Diário — consulta 3": {
@@ -20101,84 +20240,83 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-21T04:57:53.608Z",
-      "consecutiveFailures": 1,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-21T00:15:06.410Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
-      "status": "degraded",
+      "status": "ok",
       "itemCount": 19,
-      "durationMs": 24502,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-21T00:15:06.410Z"
+      "durationMs": 3732,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "CIGA": {
       "name": "CIGA",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-21T04:57:53.608Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-21T00:15:06.410Z"
+      "checkedAt": "2026-09-21T10:41:35.182Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 8,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
       "itemCount": 26,
-      "durationMs": 4701,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "durationMs": 4548,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -20187,7 +20325,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z"
+      "checkedAt": "2026-09-21T10:41:35.182Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -20196,7 +20334,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z"
+      "checkedAt": "2026-09-21T10:41:35.182Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -20205,59 +20343,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z"
+      "checkedAt": "2026-09-21T10:41:35.182Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 17,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 9,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 3003,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "durationMs": 3425,
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-21T04:57:53.608Z",
+      "checkedAt": "2026-09-21T10:41:35.182Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-21T04:57:53.608Z"
+      "lastSuccessAt": "2026-09-21T10:41:35.182Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
