@@ -6401,7 +6401,7 @@
     },
     "453ec84a266fda36a5d3a7cffc209593163cc87914f2b07dfae0bb0ac2ef8bc4": {
       "firstSeenAt": "2026-09-15T18:10:58.887Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "FNP e Prefeitura de Teresina realizam evento sobre financiamento e governança municipal",
@@ -6748,22 +6748,22 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
-        "title": "Brava Energia vai operar Papa-Terra integralmente - agenciainfra.com",
+        "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
         "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNZUhoX1ZmbzBkbW11U0lOa1ROVDl4Q2NPNS1hZDhRR2JfZkZEaEttQV9TQ2VMa1pLTmRrU3h6LVptX3VpWHhKeXItcnM0NXFnaEQwYnFNOEwza0YyQ2xYOXJ5U2h3cG9pT1ROY25YVFBkYndNZnEyUE1OeEQxYVNDV1czOXFvdmM?oc=5",
         "sourceUrl": "https://agenciainfra.com",
         "publishedAt": "2026-09-15T20:37:59.000Z",
-        "source": "agenciainfra.com",
-        "summary": "Brava Energia vai operar Papa-Terra integralmente agenciainfra.com",
+        "source": "Agência iNFRA",
+        "summary": "Brava Energia vai operar Papa-Terra integralmente Agência iNFRA",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Brava Energia vai operar Papa-Terra integralmente agenciainfra.com",
+          "evidenceText": "Brava Energia vai operar Papa-Terra integralmente Agência iNFRA",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -7049,7 +7049,7 @@
     },
     "da2c787f73392ea5a87ad05fc32714c86f36c081384125ecd51add31e9c065d4": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "legislation",
         "title": "Ação Direta de Inconstitucionalidade nº 2.418, de 15 de setembro de 2026 — Unaí",
@@ -7967,7 +7967,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -7995,7 +7995,7 @@
     },
     "06428e75937044b7bf4f96b4d416326c858195b05468d8997b9f41a19d058b11": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Licitação de R$ 31,2 milhões em Itanhomi é suspensa por indícios de restrição à concorrência",
@@ -8121,7 +8121,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -8307,7 +8307,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -8332,7 +8332,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -8357,7 +8357,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -8384,7 +8384,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -9197,7 +9197,7 @@
     },
     "bef6149ab0734de0a2921e8a77c5dc461f306f23c8d759757b5d8bd2ffc2653f": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Diálogo Federativo: na CNM, especialistas debatem desafios e potencialidade dos consórcios públicos - Confederação Nacional de Municípios",
@@ -9915,7 +9915,7 @@
     },
     "e5d8de61915e8319dad49430a6a60708e9d6641c64ce4742f111ed92178a5541": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Programa Mais Iguais leva gestoras à Semana do Clima em Nova York",
@@ -10172,7 +10172,7 @@
     },
     "61ed2b20c4aacdc3cd7d32cfb91108b781a29a3dc49e1f06cbac4a2f4d0a233d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Democracia se fortalece com autocrítica e instituições sólidas, afirma presidente do TCEMG em encontro nacional sobre avaliação dos Tribunais de Contas",
@@ -10197,7 +10197,7 @@
     },
     "6504f1773d4ed0fc68e9510f8a61ab54b79cbd3541ee8b84ca49fc9190db33a4": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "TCESP orienta municípios a fortalecerem bibliotecas públicas e ampliarem acesso a programas do Ministério da Cultura",
@@ -10223,7 +10223,7 @@
     },
     "ec4e340eeb726f98d0f5679ef5f31e8d3b6b9e201d07f556502b3e02522c62f7": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Santa Fé do Sul e Olímpia são as próximas cidades do Ciclo de Debates do TCESP",
@@ -10249,7 +10249,7 @@
     },
     "0c6651077853dffef47facc43511524b5c537550025e8bdce1f92cd1f08dc12b": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza fiscalização inédita para verificar acessibilidade em prédios com atendimento ao público",
@@ -10532,7 +10532,7 @@
     },
     "0c5ade03550e456b3996eb2b36f9d1eff477ae9872c868d1aa491444060df132": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "TCEMG adota aplicativo do Banco do Brasil para otimizar transporte e reduzir custos",
@@ -10557,7 +10557,7 @@
     },
     "561b71d1edd1e24c42134479b29c47d3f61de9246d934bd16dd227299920e313": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Encontro Técnico em Capelinha aproxima controle externo dos municípios do Vale do Jequitinhonha",
@@ -10582,7 +10582,7 @@
     },
     "cf02a3c30b248e0c07b6f19decd1614b8a78e61d852b7b5434b4b5b10273ecf2": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "II Simpósio Estadual sobre Saúde Mental debate papel da liderança na prevenção de riscos psicossociais",
@@ -10608,7 +10608,7 @@
     },
     "3459b276f1d8496813599e757f4528741f0bf8d5962b4bfce0d938454359b76c": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... - Mogi Guaçu Acontece",
@@ -10794,7 +10794,7 @@
     },
     "3c6775aa9d398dd8ed338cd2bf2c7fb16600a118b7bd18e76d518008f9f7b615": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de Direito da UFMG participam do Projeto Conhecer",
@@ -10819,7 +10819,7 @@
     },
     "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece": {
       "firstSeenAt": "2026-09-18T04:47:07.838Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
@@ -11005,7 +11005,7 @@
     },
     "928d130d02ef622dba128e747b0562e4d2543fb3e5d49b3bbd2f30184d4b4e29": {
       "firstSeenAt": "2026-09-18T09:44:20.602Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº /05 - Camara Municipal Varre-Sai",
@@ -11028,22 +11028,22 @@
     },
     "530064fc2d70255f4f1b0ee400c031c573cfff7bb5dc4b967d00c24059cd72f8": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
-        "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - sistemampa.com.br",
+        "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - Portal MPA",
         "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMHdObEdST0JpWFRSZGkyWUtQa2tqNHoxU3NocVB5N1ZmTlA2cl9VU3NYMzBLQVBOcDAyZlNkekZoNHhtUk0xQ2d5VUxIVlZxdXhpQVFzVVdoTERBTjE5Q1pvUms5cUQ3MnRZc0dLNnFTNkNQQWhVbzVhbTVJTjhjdm5RdVVqMnI1eHRN?oc=5",
         "sourceUrl": "https://www.sistemampa.com.br",
         "publishedAt": "2026-09-18T12:06:00.000Z",
-        "source": "sistemampa.com.br",
-        "summary": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta sistemampa.com.br",
+        "source": "Portal MPA",
+        "summary": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta Portal MPA",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta sistemampa.com.br",
+          "evidenceText": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta Portal MPA",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -11420,7 +11420,7 @@
     },
     "95350af70d1e931587cd1ba9c3fce3434249f217f6aa438d4cc5d619a21c56dc": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Debate sobre dados e clima marca 2 mil participantes em série de webinários",
@@ -11443,7 +11443,7 @@
     },
     "d13be8ef98cc981c112d538823b8c7b81fc64645a5e0d0be29f581f555f30d7f": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta painel do IBS aos municípios paranaenses",
@@ -11466,7 +11466,7 @@
     },
     "156ec3c54c14ab1aa09a0be3b6147d1eaeda1480c78b67ff5ab4ef45ff56327b": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "FNP participa de assembleia da Abrasf e apresenta pautas prioritárias para os municípios",
@@ -11719,7 +11719,7 @@
     },
     "53e116cd8838ecf2c622c3d3b73dd4fc03919253d0d56519db0bcb12da0ae5d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Prédios públicos ainda impõem barreiras para acesso aos serviços, aponta fiscalização do TCESP",
@@ -12101,7 +12101,7 @@
     },
     "5b60207654cdd20d9bbd8d8521e329b8dfc1f9cad17f37e85ea38a97ff607b5a": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Tribunal realiza capacitação on-line sobre o Sistema de Processo Eletrônico (e-TCESP)",
@@ -12127,7 +12127,7 @@
     },
     "ce31526e2e9f5939a369ed3dec553d843cd9b65e54d128b7b6065b83f64707bb": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Memorial celebra dois anos preservando a história da Corte de Contas paulista",
@@ -12228,7 +12228,7 @@
     },
     "d77266b464e94ae5b770377c91b0c64571a7a68a15898d71786ac5df99241e89": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "FNP debate governança compartilhada e integração do transporte nas regiões metropolitanas",
@@ -12366,7 +12366,7 @@
     },
     "2696783687a9e33064da44cd82ce7b991b33720fe1975c30d2b122a293d19d88": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Seminário cultural celebra criação de lei contra violência doméstica",
@@ -12391,7 +12391,7 @@
     },
     "a8aba7661040d1ae6155878336c591b5e9b613f58c051b8d202544321ef913d6": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Futuro da Lei Maria da Penha e atuação em rede para proteção à mulher ganham destaque na sequência da programação",
@@ -12416,7 +12416,7 @@
     },
     "6e55814356c97042fda99c75179aba40fa764487809ea6831ef2ce7c0762a3ef": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Controle Externo discute impactos da reforma tributária nas concessões com a professora Cristiana Fortini",
@@ -12581,7 +12581,7 @@
     },
     "effa861081e1c8064e543be046fee27d96fd50faab9a3919aeda2ebc6345861f": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS",
@@ -12744,7 +12744,7 @@
     },
     "9c2b997035c5a3ccb3396061cba2d756c4d021726aaf12d9f84432df8ef00a97": {
       "firstSeenAt": "2026-09-19T05:51:51.251Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
@@ -13246,7 +13246,7 @@
     },
     "332c28c98e33581da97a5c333b932f7dd8db542094b7d0bdd888ddafff7f430b": {
       "firstSeenAt": "2026-09-19T14:24:15.414Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Recebe Curso Sobre Assistência Técnica Para Habitação De Interesse Social - ABC Agora",
@@ -13986,7 +13986,7 @@
     },
     "f112d94e28ec6b9fd08ee89b0d2b29b3bc790bf4905d52a2941cb1c945420e66": {
       "firstSeenAt": "2026-09-20T06:14:01.170Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Concurso CIDENNF RJ: provas em outubro; saiba mais! - Estratégia Concursos",
@@ -14009,7 +14009,7 @@
     },
     "b98909a6346fc754d95f43955d2fdc86abd1a14386fee33be2f8539cd08dab84": {
       "firstSeenAt": "2026-09-20T06:14:01.170Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "STP - Pautas - TCE-PR",
@@ -14182,7 +14182,7 @@
     },
     "76e2a536322cf045ecdfa697ad2010622bdc783630b033522b346825269f30a1": {
       "firstSeenAt": "2026-09-20T16:03:54.046Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Vale do Itajaí recicla cinco vezes mais que a média nacional e será referência para o Sul de SC - 4oito",
@@ -14552,7 +14552,7 @@
     },
     "741925b54dd1cf0c5efe2ccf6699ecd305fdd39b8ba7b3869bcc883d730b92da": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel - Banda B",
@@ -14575,7 +14575,7 @@
     },
     "574658e37d4f5ffc237d816b22610cdb9355840f1cfff388bebc9ee932419d07": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "SANTA INÊS, Estado da Paraíba, no uso de suas atribuições - santaines.pb.leg.br",
@@ -14736,7 +14736,7 @@
     },
     "dcec74f99198b643bcd72b43a774237e955976b14c92b495d2d03672d0766a06": {
       "firstSeenAt": "2026-09-21T04:57:53.608Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "José Ivanir é reconduzido à presidência do CISMIV para o biênio 2027/2028 - Primeiro a Saber",
@@ -14759,7 +14759,7 @@
     },
     "94f6bd413a3a578f882ce97c5375b2fb8e3105c2a8ff0d0de5ddb058d488ac6a": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul",
@@ -14785,22 +14785,22 @@
     },
     "9c48d7ce4d0ca03e97ec19f4a07b832acf592b0a632cc5d58ac1beefae9a1116": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 442/2022 - Primeira Câmara - TCE-PR",
+        "title": "Detalhes do Acórdão - 442/2022 - Primeira Câmara - viajuris.tce.pr.gov.br",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE94eUIzVm5TNC1pd1VkUXJvUjRqYTdQbTkyLThWYVZxU083QmtzNUF3TkJNOXJaVGZ1a2lUaHVFYWREZk94ZGpsZFk2TlhBemc4eF83SXdKVXdtWGxRYUh1WC1HM2JyNHFQN1VSbEJkMDA4V2ppaEE?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-21T05:16:21.000Z",
-        "source": "TCE-PR",
-        "summary": "Detalhes do Acórdão - 442/2022 - Primeira Câmara TCE-PR",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 442/2022 - Primeira Câmara viajuris.tce.pr.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 442/2022 - Primeira Câmara TCE-PR",
+          "evidenceText": "Detalhes do Acórdão - 442/2022 - Primeira Câmara viajuris.tce.pr.gov.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -14808,22 +14808,22 @@
     },
     "233b0307f90aedbfc8b63b68aa5f1e7d13e78202aeefc1a809ceca9f6c2384cf": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 495/2017 - Segunda Câmara - TCE-PR",
+        "title": "Detalhes do Acórdão - 495/2017 - Segunda Câmara - viajuris.tce.pr.gov.br",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBBRGlLM0pBcEp2a2NST0VaTl9zNk9VcDkxMXV4OXFYaXo4RU1MZ0FDMHJQaTR6a0hvLWxwMGwweFgzOU5qcEZpYV94REtiZ21Cc0M0eEZqRzFGQ3hGb3RFYjhmaUdBdzdkUDlzSEFNNDNieVU0UUE?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-16T11:45:43.000Z",
-        "source": "TCE-PR",
-        "summary": "Detalhes do Acórdão - 495/2017 - Segunda Câmara TCE-PR",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 495/2017 - Segunda Câmara viajuris.tce.pr.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 495/2017 - Segunda Câmara TCE-PR",
+          "evidenceText": "Detalhes do Acórdão - 495/2017 - Segunda Câmara viajuris.tce.pr.gov.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -15088,7 +15088,7 @@
     },
     "5d9eca87088481dccdc113fbab89f857be698b532a8c9df5bf2de668e3ae84ea": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "FNP lança guia para apoiar municípios na gestão de velocidades e na segurança viária",
@@ -15341,7 +15341,7 @@
     },
     "8d9d9c010a19ae4e4bde08b62c0eebf3bb256f788de89c2c69a66b396b4d7ad5": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "\"Amar é inadiável\": Socorro Acioli lança novo livro em evento do Sempre Um Papo em BH",
@@ -15366,7 +15366,7 @@
     },
     "2784fe05770418aaa377fd4039177139d92385b4ff539f1ae1e66d683d0afd19": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Faculdade AlfaUnipac homenageia durante Encontro Técnico em Capelinha",
@@ -15391,7 +15391,7 @@
     },
     "3def96bf8f888c89fb1b2b70887504383fe147a94977d5d03e28f009dcebc292": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Assessor da Presidência debate reforma tributária e federalismo em congresso jurídico do UNIFEMM",
@@ -15416,7 +15416,7 @@
     },
     "ca7a74c3c9be2802d101213681d6b9a894fb84cb80d05c0d578ec3f5cf022299": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Realiza Oficina Sobre Políticas De Atividade Física Nos Municípios - ABC Agora",
@@ -15439,7 +15439,7 @@
     },
     "1806d33968e6c96ce4f595c75ab7f15a77f2aa0f704ab8a3d5a7854f8e093738": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Avalia Tecnologia De Simulação Para Treinamento Das Guardas Municipais - ABC Agora",
@@ -15576,7 +15576,7 @@
     },
     "354ced75691f0170bc304307da6286384b6e304f643b79cc390e6bd40f2c9d48": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana de Curitiba",
@@ -15944,7 +15944,7 @@
     },
     "5ceb5e44221ed70d2cbc3254b2b740a0e76aee6dcc7269783b9bf17ff8d3549e": {
       "firstSeenAt": "2026-09-22T09:56:26.726Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
         "title": "Notícia - Consórcio ABC promove oficina para integrar políticas de atividade física na região - Consórcio Intermunicipal - Grande ABC",
@@ -15969,22 +15969,22 @@
     },
     "c25aac40c76d2cec74fbefb161ba65ed5068947f6a6b423f72f2bfd839bd5074": {
       "firstSeenAt": "2026-09-22T09:56:26.726Z",
-      "lastSeenAt": "2026-09-22T09:56:26.726Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara - TCE-PR",
+        "title": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara - viajuris.tce.pr.gov.br",
         "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFAyVzhsSGZLdVQ4QW03WUZwT1l2Tk1fNS1CQ0ZrYk8tSi1SUVNiZ2F4aG42WFNpQWNnY0o4VDJJVy1NdmNRcklyeTI5THVIbnNUN1pyZFFiSmFfQThEamkzUUVKbFNzWEhYZjBDR3JRNlFLYzB3bWZJ?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-19T05:30:03.000Z",
-        "source": "TCE-PR",
-        "summary": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara TCE-PR",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara viajuris.tce.pr.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara TCE-PR",
+          "evidenceText": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara viajuris.tce.pr.gov.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -16357,6 +16357,286 @@
           "evidenceText": "Executivo Período de Referência: Janeiro a Agosto de 2026 / Quadrimestre Maio-Agosto Pág 1 / 1 IPM Sistemas Ltda Atende.Net - WPR v:2013.01 Identificador: WPR4601101-104-LSMXNZKMCLAOC-1 - Emitido por: IDIMARA SCHLINDVEIN 17/09/2026 09:04:01 -03:00 RGF – ANEXO 5 (LRF, art. 55, Inciso III, alínea \"a\") R$ 1,00 IDENTIFICAÇÃO DOS RECURSOS DISPONIBILIDADE DE CAIXA BRUTA OBRIGAÇÕES FINANCEIRAS INSUFICIÊNCIA FINANCEIRA VERIFICADA NO CONSÓRCIO PÚBLICO DISPONIBILIDADE DE CAIXA LÍQUIDA (ANTES DA INSCRIÇÃO EM RESTOS A PAGAR NÃO PROCESSADOS DO EXERCÍCIO)1 RESTOS A PAGAR EMPENHADOS E NÃO LIQUIDADOS DO EXERCÍCIO EMPENHOS NÃO LIQUIDADOS CANCELADOS (NÃO INSCRITOS POR INSUFICIÊNCIA FINANCEIRA) DISPONIBILIDADE DE CAIXA LÍQUIDA (APÓS A INSCRIÇÃO EM RESTOS A PAGAR NÃO PROCESSADOS DO EXERCÍCIO) Restos a Pagar Liquidados e Não Pagos Restos a Pagar Empenhados e Não",
           "publicContext": true,
           "strongPublicContext": true
+        }
+      }
+    },
+    "85d8269d6d49cadb0db77cbad04af9e27246481823ed0270238ad952c9e4590e": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Imagem digitalizada - Câmara Municipal de Centenário do Sul",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5fc1A2RlZuVENVMFl5SXZZZzJ0dHdyWkFvSm1xV3V4TzVadjJfNWs5Z3JhVTdkb2RhRkROckVrU3REMlZhejFFYVRsS2R2NEc2RHNqdU1GLTVRS2tGQi1VWXQ3UU11MXFVdW5fOWdBNWIyZDNtOGc?oc=5",
+        "sourceUrl": "https://www.centenariodosul.pr.leg.br",
+        "publishedAt": "2026-09-21T21:40:13.000Z",
+        "source": "Câmara Municipal de Centenário do Sul",
+        "summary": "Imagem digitalizada Câmara Municipal de Centenário do Sul",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Imagem digitalizada Câmara Municipal de Centenário do Sul",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a0bd994139af861365e8ceaa391f07990b1ecd81f745e7e01bd94bad418385f7": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Detalhes do Acórdão - 726/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBtWlloUkxVYlpwSnp3UHFFeW1raXlNX1BzdUVmMFhxeWJualdTUDlRMzJ3RE1LSG9HNXBGRkZ5Q2ZYTFcyNVYwNE9XWF9LVEdIZG52UDdvU0ZRWjVkUnVCZXJtRmhUQVAwY19xa25sbzFDbnNvWUE?oc=5",
+        "sourceUrl": "https://viajuris.tce.pr.gov.br",
+        "publishedAt": "2026-09-16T01:39:59.000Z",
+        "source": "viajuris.tce.pr.gov.br",
+        "summary": "Detalhes do Acórdão - 726/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Detalhes do Acórdão - 726/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "48a476a3e23994dfca10d05a3504ba9c3d4ee9987dd107154ac443df88b33836": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Temporais provocam duas mortes e afetam mais de 527 mil pessoas no RS",
+        "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/temporais-provocam-duas-mortes-e-afetam-mais-de-527-mil-pessoas-no-rs",
+        "publishedAt": "2026-09-22T14:02:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Defesa Civil do Rio Grande do Sul confirmou a segunda morte decorrente do forte temporal que atingiu o estado nessa segunda-feira (21). A vítima é uma adolescente que estava desaparecida no município de Caxias do Sul. Outras três pessoas estão desaparecidas no município, que chegou a registrar 159,4 milímetros de chuva ontem. Notícias relacionadas: Defesa Civil alerta para risco muito alto de inundação do Taquari. Sob El Niño, primavera deve ter calor, seca e tempestades severas. Morador de Pelotas mostra nas redes estragos causados por tempestade. A primeira morte confirmada no estado foi a de um motociclista atingido pela queda de fios de alta tensão no momento do temporal na cidade de Pelotas. De acordo com a prefeitura de Pelotas, o evento climático, caracterizado principalmente por um forte vendaval que chegou a alcançar 89 km/h, provocou destelhamentos, quedas de árvores e de postes e falta de energia em diversos pontos da cidade. Os temporais ocorridos no estado também deixaram três pessoas feridas nas cidades de Aceguá, Caxias do Sul e Santa Maria. Balanço divulgado nesta manhã (22) pela Defesa Civil informou que, desde a última sexta-feira (18), foram registradas 151 ocorrências relacionadas a fortes ventos e chuvas em 146 municípios do estado. No total, mais de 527 mil pessoas de todo o estado foram afetadas pelos eventos climáticos dos últimos dias, sendo que 413 delas estão desabrigadas e 2.732, desalojadas. Os fortes ventos e chuvas também provocaram danos em 38 estabelecimentos de ensino e em 17 estabelecimentos de saúde.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Defesa Civil do Rio Grande do Sul confirmou a segunda morte decorrente do forte temporal que atingiu o estado nessa segunda-feira (21). A vítima é uma adolescente que estava desaparecida no município de Caxias do Sul. Outras três pessoas estão desaparecidas no município, que chegou a registrar 159,4 milímetros de chuva ontem. Notícias relacionadas: Defesa Civil alerta para risco muito alto de inundação do Taquari. Sob El Niño, primavera deve ter calor, seca e tempestades severas. Morador de Pelotas mostra nas redes estragos causados por tempestade. A primeira morte confirmada no estado foi a de um motociclista atingido pela queda de fios de alta tensão no momento do temporal na cidade de Pelotas. De acordo com a prefeitura de Pelotas, o evento climático, caracterizado principalmente por um forte vendaval que chegou a alcançar 89 km/h, provocou destelhamentos, quedas de árvores e de postes e falta de energia em diversos pontos da cidade. Os temporais ocorridos no estado também deixaram três pessoas feridas nas cidades de Aceguá, Caxias do Sul e Santa Maria. Balanço divulgado nesta manhã (22) pela Defesa Civil informou que, desde a última sexta-feira (18), foram registradas 151 ocorrências relacionadas a fortes ventos e chuvas em 146 municípios do estado. No total, mais de 527 mil pessoas de todo o estado foram afetadas pelos eventos climáticos dos últimos dias, sendo que 413 delas estão desabrigadas e 2.732, desalojadas. Os fortes ventos e chuvas também provocaram danos em 38 estabelecimentos de ensino e em 17 estabelecimentos de saúde.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "4a8aea160b6108f45b955fe516c98976816b011f098cc0a8a5fc7b4705c6a0fb": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Secretário-geral da ONU alerta para avanço de guerras e riscos da IA",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/secretario-geral-da-onu-alerta-para-avanco-de-guerras-e-riscos-da-ia",
+        "publishedAt": "2026-09-22T13:57:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O secretário-geral da Organização das Nações Unidas (ONU), António Guterres, abriu a 81ª assembleia geral da entidade nesta terça-feira (22) alertando para o avanço de conflitos e guerras, para ataques contra civis e trabalhadores humanitários e para o aprofundamento de divisões geopolíticas. “Nosso futuro será moldado pela forma como enfrentarmos quatro grandes testes de poder”, disse, citando conflitos armados e guerras, desigualdade, mudanças climáticas e inteligência artificial. Notícias relacionadas: ONU: Lula defende multilateralismo e reforma do Conselho de Segurança. IA pode representar risco “existencial”, alerta representante da ONU. \"Restaurar a confiança\" é tema da 81ª Assembleia-Geral da ONU. Ao abordar especificamente conflitos e guerras no Oriente Médio, na Ucrânia, no Sudão e em Mianmar, Guterres avaliou que o cenário demonstra o que acontece quando o poder sai do controle, a força se sobrepõe à diplomacia e a responsabilização não acontece. “Não estamos diante de crises separadas. Estamos diante de capítulos de uma mesma história: a história do poder — como ele é usado e como está mudando”, destacou em seu último discurso como secretário-geral da ONU, já que seu segundo mandato de cinco anos à frente da entidade se encerra em dezembro. Entre os principais riscos citados por Guterres está o avanço da inteligência artificial que, em sua avaliação, pode estar se desenvolvendo mais rápido do que a capacidade da própria humanidade de compreender seus efeitos. “Mesmo aqueles que criaram a inteligência artificial dizem que estão ficando cegos diante dela”, disse. “O perigo não é a tecnologia. O perigo é a tecnologia sem responsabilidade”, completou, ao conclamar os governos a fortalecerem o diálogo, a transparência, a confiança e a cooperação.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O secretário-geral da Organização das Nações Unidas (ONU), António Guterres, abriu a 81ª assembleia geral da entidade nesta terça-feira (22) alertando para o avanço de conflitos e guerras, para ataques contra civis e trabalhadores humanitários e para o aprofundamento de divisões geopolíticas. “Nosso futuro será moldado pela forma como enfrentarmos quatro grandes testes de poder”, disse, citando conflitos armados e guerras, desigualdade, mudanças climáticas e inteligência artificial. Notícias relacionadas: ONU: Lula defende multilateralismo e reforma do Conselho de Segurança. IA pode representar risco “existencial”, alerta representante da ONU. \"Restaurar a confiança\" é tema da 81ª Assembleia-Geral da ONU. Ao abordar especificamente conflitos e guerras no Oriente Médio, na Ucrânia, no Sudão e em Mianmar, Guterres avaliou que o cenário demonstra o que acontece quando o poder sai do controle, a força se sobrepõe à diplomacia e a responsabilização não acontece. “Não estamos diante de crises separadas. Estamos diante de capítulos de uma mesma história: a história do poder — como ele é usado e como está mudando”, destacou em seu último discurso como secretário-geral da ONU, já que seu segundo mandato de cinco anos à frente da entidade se encerra em dezembro. Entre os principais riscos citados por Guterres está o avanço da inteligência artificial que, em sua avaliação, pode estar se desenvolvendo mais rápido do que a capacidade da própria humanidade de compreender seus efeitos. “Mesmo aqueles que criaram a inteligência artificial dizem que estão ficando cegos diante dela”, disse. “O perigo não é a tecnologia. O perigo é a tecnologia sem responsabilidade”, completou, ao conclamar os governos a fortalecerem o diálogo, a transparência, a confiança e a cooperação.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "76a7f1d404c700276ebddd3aba16cffea64354c21215bfe7c11bf52ac66f7d95": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Jornalista Zuenir Ventura morre aos 95 anos",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/jornalista-zuenir-ventura-morre-aos-95-anos",
+        "publishedAt": "2026-09-22T13:49:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O jornalista Zuenir Ventura, de 95 anos, morreu na manhã desta terça-feira (22), em casa, em decorrência de uma pneumonia. A informação foi divulgada pela Academia Brasileira de Letras (ABL). Ventura era acadêmico da ABL desde 2015, como sucessor do escritor Ariano Suassuna. Nascido em 1931, em Além Paraíba (MG), ele era bacharel e licenciado em letras neolatinas e foi professor da Universidade Federal do Rio de Janeiro (UFRJ) e da Universidade do Estado do Rio de Janeiro (Uerj). Começou no jornalismo em 1956, como arquivista. Atuou como repórter, colunista, editor, chefe de reportagem e diretor de redação, tendo trabalhado em diversos veículos como o jornal O Globo, Correio da Manhã e Jornal do Brasil, além das revistas Fatos & Fotos, Cruzeiro, Visão e Veja. Como autor de livros, publicou obras como 1968 - o ano que não terminou , que vendeu centenas de milhares de cópias, e Cidade partida , um livro-reportagem sobre a violência no Rio de Janeiro, que lhe rendeu o Prêmio Jabuti de Reportagem. Segundo a ABL, seu corpo será velado nesta quarta-feira (23), na Academia Brasileira de Letras e enterrado no mausoléu da ABL no Cemitério São João Batista.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O jornalista Zuenir Ventura, de 95 anos, morreu na manhã desta terça-feira (22), em casa, em decorrência de uma pneumonia. A informação foi divulgada pela Academia Brasileira de Letras (ABL). Ventura era acadêmico da ABL desde 2015, como sucessor do escritor Ariano Suassuna. Nascido em 1931, em Além Paraíba (MG), ele era bacharel e licenciado em letras neolatinas e foi professor da Universidade Federal do Rio de Janeiro (UFRJ) e da Universidade do Estado do Rio de Janeiro (Uerj). Começou no jornalismo em 1956, como arquivista. Atuou como repórter, colunista, editor, chefe de reportagem e diretor de redação, tendo trabalhado em diversos veículos como o jornal O Globo, Correio da Manhã e Jornal do Brasil, além das revistas Fatos & Fotos, Cruzeiro, Visão e Veja. Como autor de livros, publicou obras como 1968 - o ano que não terminou , que vendeu centenas de milhares de cópias, e Cidade partida , um livro-reportagem sobre a violência no Rio de Janeiro, que lhe rendeu o Prêmio Jabuti de Reportagem. Segundo a ABL, seu corpo será velado nesta quarta-feira (23), na Academia Brasileira de Letras e enterrado no mausoléu da ABL no Cemitério São João Batista.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ab6d56a61ce392f793710c81f2a5dc72a6df5ca747fc36faca1b968fba821d50": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "União Europeia multa Google por uso indevido de dados de localização",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/uniao-europeia-multa-google-em-403-milhoes-de-euros",
+        "publishedAt": "2026-09-22T13:43:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A principal autoridade reguladora de proteção de dados da União Europeia (UE) multou o Google em 403 milhões de euros, após uma investigação sobre o tratamento de dados de localização. A empresa alega que suas políticas já foram atualizadas. Notícias relacionadas: AGU notifica Google para remover perfis que promovem apostas ilegais. Governo identifica 97 médicos falsos de IA no Youtube e aciona Google. TSE e Google lançam ferramenta para proteger candidatos de deepfakes. A Comissão de Proteção de Dados da Irlanda (DPC, na sigla em inglês) informou ter constatado que o Google havia infringido as regras de privacidade da UE, conhecidas como Regulamento Geral de Proteção de Dados, por meio de três de seus recursos específicos: “Atividade na Web e em aplicativos”, “Histórico de localização” e “Precisão de localização”. As infrações teriam ocorrido entre 2018 e 2020. Um porta-voz do Google afirmou que o caso girava em torno de políticas antigas e que a empresa havia lançado ferramentas robustas e aprimorado significativamente suas práticas de gerenciamento de dados de localização desde 2019. O Google, que está sujeito a três inquéritos legais distintos em andamento, foi intimado pelo órgão regulador a adequar seu processamento de dados de localização às normas em vigor no prazo de seis meses. A multa foi a quarta maior entre os mais de 4 bilhões de euros aplicados pela DPC desde que se tornou o principal órgão regulador da União Europeia para a maioria das grandes empresas de tecnologia dos EUA, conforme o regulamento de 2018, devido à localização das operações dessas companhias na Irlanda. “Como resultado das falhas do Google, as pessoas poderiam não ter percebido que sua localização estava sendo usada, por exemplo, para influenciá-las com anúncios ou para inferir seus inte",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A principal autoridade reguladora de proteção de dados da União Europeia (UE) multou o Google em 403 milhões de euros, após uma investigação sobre o tratamento de dados de localização. A empresa alega que suas políticas já foram atualizadas. Notícias relacionadas: AGU notifica Google para remover perfis que promovem apostas ilegais. Governo identifica 97 médicos falsos de IA no Youtube e aciona Google. TSE e Google lançam ferramenta para proteger candidatos de deepfakes. A Comissão de Proteção de Dados da Irlanda (DPC, na sigla em inglês) informou ter constatado que o Google havia infringido as regras de privacidade da UE, conhecidas como Regulamento Geral de Proteção de Dados, por meio de três de seus recursos específicos: “Atividade na Web e em aplicativos”, “Histórico de localização” e “Precisão de localização”. As infrações teriam ocorrido entre 2018 e 2020. Um porta-voz do Google afirmou que o caso girava em torno de políticas antigas e que a empresa havia lançado ferramentas robustas e aprimorado significativamente suas práticas de gerenciamento de dados de localização desde 2019. O Google, que está sujeito a três inquéritos legais distintos em andamento, foi intimado pelo órgão regulador a adequar seu processamento de dados de localização às normas em vigor no prazo de seis meses. A multa foi a quarta maior entre os mais de 4 bilhões de euros aplicados pela DPC desde que se tornou o principal órgão regulador da União Europeia para a maioria das grandes empresas de tecnologia dos EUA, conforme o regulamento de 2018, devido à localização das operações dessas companhias na Irlanda. “Como resultado das falhas do Google, as pessoas poderiam não ter percebido que sua localização estava sendo usada, por exemplo, para influenciá-las com anúncios ou para inferir seus inte",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "056212e4f9319a086bbb682552ffbd994312add9633041571ed9050632e594ab": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Renner pede orações para que parceiro Rick seja localizado",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/renner-pede-oracoes-para-que-parceiro-rick-seja-localizado",
+        "publishedAt": "2026-09-22T13:30:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O cantor Renner usou das redes sociais nesta manhã de terça-feira (21) para pedir orações ao parceiro, Rick. O helicóptero em que Rick embarcou, com outras três pessoas, está desaparecido desde a tarde dessa segunda-feira (21). A aeronave fazia o percurso entre as cidades de Porto Belo (região litorânea) e de São Joaquim, ambas em Santa Catarina. Notícias relacionadas: FAB e bombeiros buscam helicóptero com cantor Rick, desaparecido em SC. “Neste momento de angústia e incerteza, nos unimos em pensamentos positivos e orações pela busca do helicóptero que estava transportando o Rick.” Ele pede que Deus proteja Rick e os demais tripulantes. “Que as equipes de busca tenham força, sabedoria e que boas notícias cheguem o quanto antes. Vamos manter a fé e a esperança.” Mensagem divulgada no perfil oficial da dupla sertaneja destaca que os representantes dos cantores seguem aguardando dados oficiais sobre a localização do helicóptero de matrícula PP-MGR. “As equipes responsáveis pelas buscas seguem mobilizadas e acompanhamos cada atualização junto às autoridades competentes.” A assessoria dos cantores pede ainda que \"não sejam compartilhadas informações falsas\" e não confirmadas oficialmente. O helicóptero sumiu quando sobrevoava a Serra Catarinense, região montanhosa e com muita vegetação, o que dificulta as buscas. O trabalho de busca segue agora pela manhã na região de Urubici, área em que houve o último contato com o helicóptero, por volta das 16h de ontem. A Força Aérea Brasileira (FAB) e o corpo de bombeiros de Santa Catarina trabalham em conjunto, com o auxílio de cães farejadores e drones térmicos.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O cantor Renner usou das redes sociais nesta manhã de terça-feira (21) para pedir orações ao parceiro, Rick. O helicóptero em que Rick embarcou, com outras três pessoas, está desaparecido desde a tarde dessa segunda-feira (21). A aeronave fazia o percurso entre as cidades de Porto Belo (região litorânea) e de São Joaquim, ambas em Santa Catarina. Notícias relacionadas: FAB e bombeiros buscam helicóptero com cantor Rick, desaparecido em SC. “Neste momento de angústia e incerteza, nos unimos em pensamentos positivos e orações pela busca do helicóptero que estava transportando o Rick.” Ele pede que Deus proteja Rick e os demais tripulantes. “Que as equipes de busca tenham força, sabedoria e que boas notícias cheguem o quanto antes. Vamos manter a fé e a esperança.” Mensagem divulgada no perfil oficial da dupla sertaneja destaca que os representantes dos cantores seguem aguardando dados oficiais sobre a localização do helicóptero de matrícula PP-MGR. “As equipes responsáveis pelas buscas seguem mobilizadas e acompanhamos cada atualização junto às autoridades competentes.” A assessoria dos cantores pede ainda que \"não sejam compartilhadas informações falsas\" e não confirmadas oficialmente. O helicóptero sumiu quando sobrevoava a Serra Catarinense, região montanhosa e com muita vegetação, o que dificulta as buscas. O trabalho de busca segue agora pela manhã na região de Urubici, área em que houve o último contato com o helicóptero, por volta das 16h de ontem. A Força Aérea Brasileira (FAB) e o corpo de bombeiros de Santa Catarina trabalham em conjunto, com o auxílio de cães farejadores e drones térmicos.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c60b62fd06a97a28f1c5f44acee2412b4861d995330c7b2ddd8cfed022a4c4a0": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Ata do Copom atribui corte da Selic à desaceleração da economia",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/ata-do-copom-atribui-corte-da-selic-desaceleracao-da-economia",
+        "publishedAt": "2026-09-22T13:05:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A desaceleração da atividade econômica, da inflação e os efeitos dos juros elevados sobre o crédito e a demanda levaram o Comitê de Política Monetária (Copom) do Banco Central a reduzir a taxa Selic em 0,25 ponto percentual, de 14% para 13,75% ao ano . As justificativas constam da ata da reunião divulgada nesta terça-feira (22). O documento ressalta que os indicadores divulgados desde o encontro anterior mostram moderação gradual da atividade econômica, sobretudo nos setores mais sensíveis ao ciclo econômico, embora a economia continue resiliente e o mercado de trabalho permaneça aquecido. Notícias relacionadas: Entidades industriais e trabalhistas consideram tímida queda da Selic. Mercado reduz projeção da Selic para 13,50%. Segundo a ata, a leitura mais recente do Produto Interno Bruto (PIB), referente ao segundo trimestre deste ano, confirmou a desaceleração apontada por outros indicadores. O movimento foi mais intenso nas atividades econômicas e nos componentes da demanda mais sensíveis ao nível dos juros. O Copom reiterou que “o arrefecimento da demanda agregada é elemento essencial do processo de reequilíbrio entre oferta e demanda da economia e convergência da inflação à meta”. Inflação e crédito O documento também destaca que a inflação ao consumidor perdeu força nos últimos meses. De acordo com a ata, tanto o índice cheio quanto a média das medidas subjacentes desaceleraram. Em 12 meses, os dois indicadores passaram a ficar abaixo do limite superior do intervalo de tolerância da meta, embora ainda permaneçam acima do centro da meta de inflação. Outro fator citado pelo Banco Central foi o comportamento do mercado de crédito. Segundo o comitê, os dados mais recentes são compatíveis com um quadro de desaceleração do crescimento econômico em ambiente de política mo",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A desaceleração da atividade econômica, da inflação e os efeitos dos juros elevados sobre o crédito e a demanda levaram o Comitê de Política Monetária (Copom) do Banco Central a reduzir a taxa Selic em 0,25 ponto percentual, de 14% para 13,75% ao ano . As justificativas constam da ata da reunião divulgada nesta terça-feira (22). O documento ressalta que os indicadores divulgados desde o encontro anterior mostram moderação gradual da atividade econômica, sobretudo nos setores mais sensíveis ao ciclo econômico, embora a economia continue resiliente e o mercado de trabalho permaneça aquecido. Notícias relacionadas: Entidades industriais e trabalhistas consideram tímida queda da Selic. Mercado reduz projeção da Selic para 13,50%. Segundo a ata, a leitura mais recente do Produto Interno Bruto (PIB), referente ao segundo trimestre deste ano, confirmou a desaceleração apontada por outros indicadores. O movimento foi mais intenso nas atividades econômicas e nos componentes da demanda mais sensíveis ao nível dos juros. O Copom reiterou que “o arrefecimento da demanda agregada é elemento essencial do processo de reequilíbrio entre oferta e demanda da economia e convergência da inflação à meta”. Inflação e crédito O documento também destaca que a inflação ao consumidor perdeu força nos últimos meses. De acordo com a ata, tanto o índice cheio quanto a média das medidas subjacentes desaceleraram. Em 12 meses, os dois indicadores passaram a ficar abaixo do limite superior do intervalo de tolerância da meta, embora ainda permaneçam acima do centro da meta de inflação. Outro fator citado pelo Banco Central foi o comportamento do mercado de crédito. Segundo o comitê, os dados mais recentes são compatíveis com um quadro de desaceleração do crescimento econômico em ambiente de política mo",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b6e4ba8d819aafe8cfd075587bc63533590c808b0f038876f4d002f4eb987bac": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Defesa Civil alerta para risco muito alto de inundação do Taquari",
+        "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/defesa-civil-alerta-para-risco-muito-alto-de-inundacao-do-taquari",
+        "publishedAt": "2026-09-22T12:40:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Defesa Civil do Rio Grande do Sul anunciou alerta de risco muito alto, com vigência até as 6h40 desta quarta-feira (23), para inundação no Rio Taquari, entre Venâncio Aires e General Câmara. Nesse grau de severidade de alerta, o órgão orienta que a população busque abrigo ou permaneça em locais de segurança até cessarem as fontes de risco. Notícias relacionadas: Sob El Niño, primavera deve ter calor, seca e tempestades severas. Temporais provocam morte, desaparecimentos e atingem 119 cidades no RS. Além disso, não se deve voltar para áreas que foram evacuadas até que os órgãos oficiais confirmem a segurança do local. Em relação a animais domésticos, caso precise sair rapidamente, a orientação é levá-los junto ou deixá-los soltos de guias, coleiras ou gaiolas. Tempestades Nessa segunda-feira (21), uma pessoa morreu em Pelotas (RS) após o forte temporal que atingiu o estado. Segundo informações da Polícia Civil, a vítima era um motociclista – atingido pela queda de fios de alta tensão no momento do temporal na cidade. De acordo com a prefeitura de Pelotas, o evento climático, caracterizado principalmente por um forte vendaval que chegou a alcançar 89 km/h, provocou destelhamentos, quedas de árvores e de postes e falta de energia em diversos pontos da cidade. Em agosto, fortes chuvas em Porto Alegre causaram a morte de um menin o de oito anos. Outra pessoa ficou ferida após uma árvore atingir uma residência.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Defesa Civil do Rio Grande do Sul anunciou alerta de risco muito alto, com vigência até as 6h40 desta quarta-feira (23), para inundação no Rio Taquari, entre Venâncio Aires e General Câmara. Nesse grau de severidade de alerta, o órgão orienta que a população busque abrigo ou permaneça em locais de segurança até cessarem as fontes de risco. Notícias relacionadas: Sob El Niño, primavera deve ter calor, seca e tempestades severas. Temporais provocam morte, desaparecimentos e atingem 119 cidades no RS. Além disso, não se deve voltar para áreas que foram evacuadas até que os órgãos oficiais confirmem a segurança do local. Em relação a animais domésticos, caso precise sair rapidamente, a orientação é levá-los junto ou deixá-los soltos de guias, coleiras ou gaiolas. Tempestades Nessa segunda-feira (21), uma pessoa morreu em Pelotas (RS) após o forte temporal que atingiu o estado. Segundo informações da Polícia Civil, a vítima era um motociclista – atingido pela queda de fios de alta tensão no momento do temporal na cidade. De acordo com a prefeitura de Pelotas, o evento climático, caracterizado principalmente por um forte vendaval que chegou a alcançar 89 km/h, provocou destelhamentos, quedas de árvores e de postes e falta de energia em diversos pontos da cidade. Em agosto, fortes chuvas em Porto Alegre causaram a morte de um menin o de oito anos. Outra pessoa ficou ferida após uma árvore atingir uma residência.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b7fa3bf80ef4b9541e898ac118aebb65dc5a88b0e201fdad9f118e2912fea20b": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Estudante abre fogo do lado de fora de escola na Turquia",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/estudante-abre-fogo-do-lado-de-fora-de-escola-na-turquia",
+        "publishedAt": "2026-09-22T12:37:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Um estudante abriu fogo em frente à sua escola de ensino médio na província de Manisa, no oeste da Turquia, na madrugada desta terça-feira (22), ferindo pelo menos 11 alunos, informou o ministro da Justiça, Akin Gurlek. Dois dos feridos estavam em estado crítico, disse Gurlek. O agressor foi capturado e sua mãe, seu pai e seu avô — dono da arma usada no ataque — foram detidos, acrescentou o ministro. Notícias relacionadas: Estudante mata 9 pessoas no segundo ataque a escola da Turquia . “Quando se trata da segurança de nossas crianças, não é possível ignorar qualquer negligência ou irresponsabilidade”, afirmou Gurlek no X. “As circunstâncias em que a criança obteve a arma usada no ataque, as condições de armazenamento da arma, as obrigações dos pais quanto aos cuidados e à supervisão, e as alegações de bullying antes do incidente estão sendo investigadas minuciosamente, sob vários ângulos”, acrescentou. Imagens e vídeos postados na internet mostraram uma figura masculina caminhando por uma rua próxima à escola com um rifle nas mãos. Em seguida, ele foi visto correndo de volta pela mesma rua. Um vídeo gravado do lado de fora da escola mostrou a polícia afastando familiares e outras pessoas que estavam nos arredores. O motivo do ataque não ficou claro imediatamente. O gabinete do governador local informou que o ataque ocorreu por volta das 8h na Escola Secundária Profissional e Técnica da Anatólia Inci Uzmez, no distrito de Turgutlu. Dois tiroteios fatais em escolas, ocorridos em abril, causaram indignação na Turquia e levaram as autoridades a adotar novas medidas de segurança para o ano letivo de 2026-2027, incluindo controles mais rígidos sobre armas de fogo. Antes disso, o país não tinha histórico de ataques desse tipo. O vice-presidente Cevdet Yilmaz disse que o minis",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Um estudante abriu fogo em frente à sua escola de ensino médio na província de Manisa, no oeste da Turquia, na madrugada desta terça-feira (22), ferindo pelo menos 11 alunos, informou o ministro da Justiça, Akin Gurlek. Dois dos feridos estavam em estado crítico, disse Gurlek. O agressor foi capturado e sua mãe, seu pai e seu avô — dono da arma usada no ataque — foram detidos, acrescentou o ministro. Notícias relacionadas: Estudante mata 9 pessoas no segundo ataque a escola da Turquia . “Quando se trata da segurança de nossas crianças, não é possível ignorar qualquer negligência ou irresponsabilidade”, afirmou Gurlek no X. “As circunstâncias em que a criança obteve a arma usada no ataque, as condições de armazenamento da arma, as obrigações dos pais quanto aos cuidados e à supervisão, e as alegações de bullying antes do incidente estão sendo investigadas minuciosamente, sob vários ângulos”, acrescentou. Imagens e vídeos postados na internet mostraram uma figura masculina caminhando por uma rua próxima à escola com um rifle nas mãos. Em seguida, ele foi visto correndo de volta pela mesma rua. Um vídeo gravado do lado de fora da escola mostrou a polícia afastando familiares e outras pessoas que estavam nos arredores. O motivo do ataque não ficou claro imediatamente. O gabinete do governador local informou que o ataque ocorreu por volta das 8h na Escola Secundária Profissional e Técnica da Anatólia Inci Uzmez, no distrito de Turgutlu. Dois tiroteios fatais em escolas, ocorridos em abril, causaram indignação na Turquia e levaram as autoridades a adotar novas medidas de segurança para o ano letivo de 2026-2027, incluindo controles mais rígidos sobre armas de fogo. Antes disso, o país não tinha histórico de ataques desse tipo. O vice-presidente Cevdet Yilmaz disse que o minis",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "eded13341ce41b50693d957ba1cb6c037ba15a6b43c0c21622980e8ad8f13329": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Confira a agenda dos presidenciáveis nesta terça-feira (22)",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/confira-agenda-dos-presidenciaveis-nesta-terca-feira-22",
+        "publishedAt": "2026-09-22T12:08:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A agenda dos presidenciáveis nesta terça-feira (22) inclui caminhadas, carreatas e atos de campanha, além de entrevistas e participação em podcasts e sabatina. Também estão previstas visita a igreja, inauguração de comitê, plenária de mobilização e reunião com lideranças políticas. Augusto Cury (Avante) Participa de visita à Igreja Casa de Oração do Brás, em São Paulo (SP), e faz caminhada pelo bairro. À noite, participa de sabatina da Revista Veja. Notícias relacionadas: Maioria do TSE mantém suspensão da campanha de Deltan ao Senado. Escolas privadas fora de locais de votação terão aulas normais no DF. Clariana Barão (DC) Em João Pessoa, participa da inauguração do comitê do candidato a governador Pedro Coutinho, do Democracia Cristã. Edmilson Costa (PCB) Faz panfletagem e caminhada no Centro de Belo Horizonte e participa de ato de campanha das candidaturas do PCB na Casa dos Jornalistas. Flávio Bolsonaro (PL) Passa o dia em São Luís (MA). Às 10h22, começa moto-carreata, concentração no QG do Capitão, retorno do aeroporto. Às 12h, participa de comício no bairro Cohajap. Hertz Dias (PSTU) Participa dos podcasts Tamir Convida e IronTalks Renan Santos (Missão) Às 10h30, participa da missa no Santuário Nacional de Nossa Senhora da Conceição Aparecida, em Aparecida (SP). Às 11h30, participa de encontro no Estacionamento do Santuário. Às 13h, encontra estudantes e apoiadores na Universidade do Vale do Paraíba (Campus Castejón), em São José dos Campos (SP). Às 19h45, tem sabatina no Jornal da Record, São Paulo (SP). Romeu Zema (Novo) Passa o dia em Poços de Caldas (MG). Às 10h, concede entrevista ao vivo à TV Poços. Às 11h, grava entrevista para a Jovem Pan Poços. Às 12h, participa de entrevista ao vivo para a rádio Onda Poços. Às 12h30, tem almoço com empresários, no centro",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A agenda dos presidenciáveis nesta terça-feira (22) inclui caminhadas, carreatas e atos de campanha, além de entrevistas e participação em podcasts e sabatina. Também estão previstas visita a igreja, inauguração de comitê, plenária de mobilização e reunião com lideranças políticas. Augusto Cury (Avante) Participa de visita à Igreja Casa de Oração do Brás, em São Paulo (SP), e faz caminhada pelo bairro. À noite, participa de sabatina da Revista Veja. Notícias relacionadas: Maioria do TSE mantém suspensão da campanha de Deltan ao Senado. Escolas privadas fora de locais de votação terão aulas normais no DF. Clariana Barão (DC) Em João Pessoa, participa da inauguração do comitê do candidato a governador Pedro Coutinho, do Democracia Cristã. Edmilson Costa (PCB) Faz panfletagem e caminhada no Centro de Belo Horizonte e participa de ato de campanha das candidaturas do PCB na Casa dos Jornalistas. Flávio Bolsonaro (PL) Passa o dia em São Luís (MA). Às 10h22, começa moto-carreata, concentração no QG do Capitão, retorno do aeroporto. Às 12h, participa de comício no bairro Cohajap. Hertz Dias (PSTU) Participa dos podcasts Tamir Convida e IronTalks Renan Santos (Missão) Às 10h30, participa da missa no Santuário Nacional de Nossa Senhora da Conceição Aparecida, em Aparecida (SP). Às 11h30, participa de encontro no Estacionamento do Santuário. Às 13h, encontra estudantes e apoiadores na Universidade do Vale do Paraíba (Campus Castejón), em São José dos Campos (SP). Às 19h45, tem sabatina no Jornal da Record, São Paulo (SP). Romeu Zema (Novo) Passa o dia em Poços de Caldas (MG). Às 10h, concede entrevista ao vivo à TV Poços. Às 11h, grava entrevista para a Jovem Pan Poços. Às 12h, participa de entrevista ao vivo para a rádio Onda Poços. Às 12h30, tem almoço com empresários, no centro",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c48e1f47dcc0a09fa7ce71e3c514a45e3ebb65f72f55983f23621d68e355f85b": {
+      "firstSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "item": {
+        "kind": "news",
+        "title": "Maior violonista brasileiro, Dilermando Reis influenciou gerações",
+        "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-09/maior-violonista-brasileiro-dilermando-reis-influenciou-geracoes",
+        "publishedAt": "2026-09-22T12:02:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Violonista, compositor e arranjador, Dilermando Reis nasceu na cidade paulista de Guaratinguetá em 22 de setembro de 1916. Filho de violonista, aprendeu tocar ainda criança. Aos 18 anos se mudou para o Rio de Janeiro, onde iniciou a vida profissional como professor em lojas de instrumentos. Em 1935, Dilermando começou a trabalhar no rádio, primeiro na Rádio Guanabara e, logo depois, na Rádio Transmissora, onde tinha um programa de violão solo, uma novidade na época. Em 1940, foi contratado pela Rádio Clube do Brasil e criou a primeira orquestra de violões de que se tem notícia no país. Rádio Nacional Notícias relacionadas: Longa de André Novais vence o Festival de Brasília de Cinema. Primavera dos Museus busca ampliar acesso à cultura em todo o país. Em 1956, estreou na Rádio Nacional um programa próprio, o Sua Majestade, o Violão , que ficou 13 anos no ar. Dilermando também gravou diversos discos com composições próprias e de outros violonistas. É autor de clássicos como a valsa Se ela perguntar e o choro Dois destinos . Também foi responsável por popularizar obras de outros compositores, como Abismo de Rosas , de Canhoto. Ele é considerado por muitos o maior violonista brasileiro, tendo influenciado gerações de músicos. Ele morreu em 1977, aos 60 anos, de problemas cardíacos. Homenagem Nesta terça-feira, às 20h, o Clube do Choro de Brasília recebe o espetáculo “Especial Dilermando Reis – 110 anos: Sob o Céu de Brasília ”. O violonista Alessandro Borges homenageia a obra de um dos grandes nomes da música brasileira, resultado de mais de 20 anos de pesquisa sobre o repertório e a trajetória do compositor. O violonista Alessandro Borges e a cantora Pilar Acosta participam do programa Espaço Arte - Foto Fabio Rodrigues-Pozzebom/Agência Brasil \"Dilermando foi um dos grande",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Violonista, compositor e arranjador, Dilermando Reis nasceu na cidade paulista de Guaratinguetá em 22 de setembro de 1916. Filho de violonista, aprendeu tocar ainda criança. Aos 18 anos se mudou para o Rio de Janeiro, onde iniciou a vida profissional como professor em lojas de instrumentos. Em 1935, Dilermando começou a trabalhar no rádio, primeiro na Rádio Guanabara e, logo depois, na Rádio Transmissora, onde tinha um programa de violão solo, uma novidade na época. Em 1940, foi contratado pela Rádio Clube do Brasil e criou a primeira orquestra de violões de que se tem notícia no país. Rádio Nacional Notícias relacionadas: Longa de André Novais vence o Festival de Brasília de Cinema. Primavera dos Museus busca ampliar acesso à cultura em todo o país. Em 1956, estreou na Rádio Nacional um programa próprio, o Sua Majestade, o Violão , que ficou 13 anos no ar. Dilermando também gravou diversos discos com composições próprias e de outros violonistas. É autor de clássicos como a valsa Se ela perguntar e o choro Dois destinos . Também foi responsável por popularizar obras de outros compositores, como Abismo de Rosas , de Canhoto. Ele é considerado por muitos o maior violonista brasileiro, tendo influenciado gerações de músicos. Ele morreu em 1977, aos 60 anos, de problemas cardíacos. Homenagem Nesta terça-feira, às 20h, o Clube do Choro de Brasília recebe o espetáculo “Especial Dilermando Reis – 110 anos: Sob o Céu de Brasília ”. O violonista Alessandro Borges homenageia a obra de um dos grandes nomes da música brasileira, resultado de mais de 20 anos de pesquisa sobre o repertório e a trajetória do compositor. O violonista Alessandro Borges e a cantora Pilar Acosta participam do programa Espaço Arte - Foto Fabio Rodrigues-Pozzebom/Agência Brasil \"Dilermando foi um dos grande",
+          "publicContext": false,
+          "strongPublicContext": false
         }
       }
     }
@@ -22572,124 +22852,266 @@
           "itemCount": 0
         }
       ]
+    },
+    "35743194159:1": {
+      "at": "2026-09-22T14:51:23.572Z",
+      "collected": 73,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 29,
+          "durationMs": 844
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 3733
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 20,
+          "durationMs": 3495
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "degraded",
+          "itemCount": 23,
+          "durationMs": 5685
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 15
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Diário Municipal AMM-MG respondeu 500"
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 3212
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 30,
-      "durationMs": 632,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "itemCount": 29,
+      "durationMs": 844,
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
-      "status": "ok",
-      "itemCount": 78,
-      "durationMs": 13968,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 0,
+      "status": "degraded",
+      "itemCount": 0,
+      "durationMs": 3733,
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
-      "status": "ok",
-      "itemCount": 77,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 0,
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
-      "status": "ok",
-      "itemCount": 7,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 0,
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
-      "status": "ok",
+      "status": "error",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
-      "status": "degraded",
-      "itemCount": 21,
-      "durationMs": 24503,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-22T04:52:42.714Z"
+      "status": "ok",
+      "itemCount": 20,
+      "durationMs": 3495,
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "CIGA": {
       "name": "CIGA",
-      "status": "error",
+      "status": "ok",
       "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-22T04:52:42.714Z"
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
-      "itemCount": 10,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "itemCount": 9,
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
-      "status": "ok",
+      "status": "degraded",
       "itemCount": 23,
-      "durationMs": 4440,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 0,
+      "durationMs": 5685,
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Rede Nacional de Consórcios Públicos": {
@@ -22699,7 +23121,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z"
+      "checkedAt": "2026-09-22T14:51:23.572Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -22708,7 +23130,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z"
+      "checkedAt": "2026-09-22T14:51:23.572Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -22717,59 +23139,60 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z"
+      "checkedAt": "2026-09-22T14:51:23.572Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 15,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 8,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
-      "status": "ok",
+      "status": "error",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
-      "consecutiveFailures": 0,
+      "message": "Diário Municipal AMM-MG respondeu 500",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 3077,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "durationMs": 3212,
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T09:56:26.726Z",
+      "checkedAt": "2026-09-22T14:51:23.572Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
