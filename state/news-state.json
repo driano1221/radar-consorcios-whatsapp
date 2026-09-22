@@ -2926,6 +2926,25 @@
       "category": "ADESÃO",
       "source": "Diário de Caratinga",
       "publishedAt": "2026-09-22T16:25:00.000Z"
+    },
+    "5500d315ec61956451f9c3705425ad4884c960e5b7730a30a7915e04c86c5bdd": {
+      "sentAt": "2026-09-22T22:25:22.459Z",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDhmZzVUc3JGbnU4R0lDcXlmeUt3S0pDZXdhaXBHLW1kNWQzLXBRVmZuVmNkaTFGeWc0Sk5iSjZ4NlM5WmFZay1uQkU3SmZPYzlzT3FLbFlmUlVselZheTM5QzFNS0NzaENaMUJtQy16TFZkR1ptbnRiTlpUdEMxTFAzc21Qd3Nxc01sQUd6TnRWUENUcS1XMVVrbll2TWZCMGJCc2FTZ3B1aUYyWWx2aGJySm9MXzd1ZmJuWHBCQXlETDQ?oc=5",
+      "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - Diário do Grande ABC",
+      "titleFingerprint": "ef17b51f17fbef75236f029cfcda91022d37e5e07cc8f2b19b3208b29f52392a",
+      "contentTokens": [
+        "abc",
+        "agenda",
+        "atrair",
+        "brasilia",
+        "cria",
+        "grande",
+        "investimentos",
+        "setorial"
+      ],
+      "category": "CRIAÇÃO",
+      "source": "Diário do Grande ABC",
+      "publishedAt": "2026-09-22T19:00:00.000Z"
     }
   },
   "pending": {},
@@ -7994,7 +8013,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -8148,7 +8167,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -8334,7 +8353,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -8359,7 +8378,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -8384,7 +8403,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -8411,7 +8430,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -9224,7 +9243,7 @@
     },
     "bef6149ab0734de0a2921e8a77c5dc461f306f23c8d759757b5d8bd2ffc2653f": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Diálogo Federativo: na CNM, especialistas debatem desafios e potencialidade dos consórcios públicos - Confederação Nacional de Municípios",
@@ -9993,7 +10012,7 @@
     },
     "e5d8de61915e8319dad49430a6a60708e9d6641c64ce4742f111ed92178a5541": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Programa Mais Iguais leva gestoras à Semana do Clima em Nova York",
@@ -10250,7 +10269,7 @@
     },
     "61ed2b20c4aacdc3cd7d32cfb91108b781a29a3dc49e1f06cbac4a2f4d0a233d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Democracia se fortalece com autocrítica e instituições sólidas, afirma presidente do TCEMG em encontro nacional sobre avaliação dos Tribunais de Contas",
@@ -10275,7 +10294,7 @@
     },
     "6504f1773d4ed0fc68e9510f8a61ab54b79cbd3541ee8b84ca49fc9190db33a4": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCESP orienta municípios a fortalecerem bibliotecas públicas e ampliarem acesso a programas do Ministério da Cultura",
@@ -10301,7 +10320,7 @@
     },
     "ec4e340eeb726f98d0f5679ef5f31e8d3b6b9e201d07f556502b3e02522c62f7": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Santa Fé do Sul e Olímpia são as próximas cidades do Ciclo de Debates do TCESP",
@@ -10327,7 +10346,7 @@
     },
     "0c6651077853dffef47facc43511524b5c537550025e8bdce1f92cd1f08dc12b": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza fiscalização inédita para verificar acessibilidade em prédios com atendimento ao público",
@@ -10610,7 +10629,7 @@
     },
     "0c5ade03550e456b3996eb2b36f9d1eff477ae9872c868d1aa491444060df132": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCEMG adota aplicativo do Banco do Brasil para otimizar transporte e reduzir custos",
@@ -10635,7 +10654,7 @@
     },
     "561b71d1edd1e24c42134479b29c47d3f61de9246d934bd16dd227299920e313": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Encontro Técnico em Capelinha aproxima controle externo dos municípios do Vale do Jequitinhonha",
@@ -10660,7 +10679,7 @@
     },
     "cf02a3c30b248e0c07b6f19decd1614b8a78e61d852b7b5434b4b5b10273ecf2": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "II Simpósio Estadual sobre Saúde Mental debate papel da liderança na prevenção de riscos psicossociais",
@@ -10686,7 +10705,7 @@
     },
     "3459b276f1d8496813599e757f4528741f0bf8d5962b4bfce0d938454359b76c": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... - Mogi Guaçu Acontece",
@@ -10872,7 +10891,7 @@
     },
     "3c6775aa9d398dd8ed338cd2bf2c7fb16600a118b7bd18e76d518008f9f7b615": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de Direito da UFMG participam do Projeto Conhecer",
@@ -10897,7 +10916,7 @@
     },
     "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece": {
       "firstSeenAt": "2026-09-18T04:47:07.838Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
@@ -11106,7 +11125,7 @@
     },
     "530064fc2d70255f4f1b0ee400c031c573cfff7bb5dc4b967d00c24059cd72f8": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - Portal MPA",
@@ -11498,7 +11517,7 @@
     },
     "95350af70d1e931587cd1ba9c3fce3434249f217f6aa438d4cc5d619a21c56dc": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Debate sobre dados e clima marca 2 mil participantes em série de webinários",
@@ -11521,7 +11540,7 @@
     },
     "d13be8ef98cc981c112d538823b8c7b81fc64645a5e0d0be29f581f555f30d7f": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta painel do IBS aos municípios paranaenses",
@@ -11544,7 +11563,7 @@
     },
     "156ec3c54c14ab1aa09a0be3b6147d1eaeda1480c78b67ff5ab4ef45ff56327b": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "FNP participa de assembleia da Abrasf e apresenta pautas prioritárias para os municípios",
@@ -11797,7 +11816,7 @@
     },
     "53e116cd8838ecf2c622c3d3b73dd4fc03919253d0d56519db0bcb12da0ae5d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Prédios públicos ainda impõem barreiras para acesso aos serviços, aponta fiscalização do TCESP",
@@ -12295,7 +12314,7 @@
     },
     "5b60207654cdd20d9bbd8d8521e329b8dfc1f9cad17f37e85ea38a97ff607b5a": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Tribunal realiza capacitação on-line sobre o Sistema de Processo Eletrônico (e-TCESP)",
@@ -12321,7 +12340,7 @@
     },
     "ce31526e2e9f5939a369ed3dec553d843cd9b65e54d128b7b6065b83f64707bb": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Memorial celebra dois anos preservando a história da Corte de Contas paulista",
@@ -12422,7 +12441,7 @@
     },
     "d77266b464e94ae5b770377c91b0c64571a7a68a15898d71786ac5df99241e89": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "FNP debate governança compartilhada e integração do transporte nas regiões metropolitanas",
@@ -12560,7 +12579,7 @@
     },
     "2696783687a9e33064da44cd82ce7b991b33720fe1975c30d2b122a293d19d88": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Seminário cultural celebra criação de lei contra violência doméstica",
@@ -12585,7 +12604,7 @@
     },
     "a8aba7661040d1ae6155878336c591b5e9b613f58c051b8d202544321ef913d6": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Futuro da Lei Maria da Penha e atuação em rede para proteção à mulher ganham destaque na sequência da programação",
@@ -12610,7 +12629,7 @@
     },
     "6e55814356c97042fda99c75179aba40fa764487809ea6831ef2ce7c0762a3ef": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Controle Externo discute impactos da reforma tributária nas concessões com a professora Cristiana Fortini",
@@ -12830,7 +12849,7 @@
     },
     "effa861081e1c8064e543be046fee27d96fd50faab9a3919aeda2ebc6345861f": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS",
@@ -12993,7 +13012,7 @@
     },
     "9c2b997035c5a3ccb3396061cba2d756c4d021726aaf12d9f84432df8ef00a97": {
       "firstSeenAt": "2026-09-19T05:51:51.251Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
@@ -13554,7 +13573,7 @@
     },
     "332c28c98e33581da97a5c333b932f7dd8db542094b7d0bdd888ddafff7f430b": {
       "firstSeenAt": "2026-09-19T14:24:15.414Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Recebe Curso Sobre Assistência Técnica Para Habitação De Interesse Social - ABC Agora",
@@ -14294,22 +14313,22 @@
     },
     "f112d94e28ec6b9fd08ee89b0d2b29b3bc790bf4905d52a2941cb1c945420e66": {
       "firstSeenAt": "2026-09-20T06:14:01.170Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
-        "title": "Concurso CIDENNF RJ: provas em outubro; saiba mais! - Estratégia Concursos",
+        "title": "Concurso CIDENNF RJ: provas em outubro; saiba mais! - estrategiaconcursos.com.br",
         "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE16aXpUUDcwSVlUVXVXZldFMXVBNXhyOW4tNlp2Rk05UEJucnBGZEFNNEMwRnR1MW55US03Y0tFWWF5enVrWEtEbVgybUpIX0k0cjRrcXJnU05jaWdVZjZySHNJZlBQUlNUNmVQUzRWV0JXZ9IBd0FVX3lxTE9zNkpHWGVyQjh4ZlNZc3ptc0xoMWdjQlRXUjRfSFd2Nzc1YzFLZ3JRMkY4cWt6N0dXRmtIRnEzVkp1eTdZaVo1cXBDNHBCdlFtWUlDcHJ3NGVxWEpUaTFJMWtDdnE5aE8zd2IxTEdWSGlPNmZCbnUw?oc=5",
         "sourceUrl": "https://www.estrategiaconcursos.com.br",
         "publishedAt": "2026-09-18T07:00:00.000Z",
-        "source": "Estratégia Concursos",
-        "summary": "Concurso CIDENNF RJ: provas em outubro; saiba mais! Estratégia Concursos",
+        "source": "estrategiaconcursos.com.br",
+        "summary": "Concurso CIDENNF RJ: provas em outubro; saiba mais! estrategiaconcursos.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Concurso CIDENNF RJ: provas em outubro; saiba mais! Estratégia Concursos",
+          "evidenceText": "Concurso CIDENNF RJ: provas em outubro; saiba mais! estrategiaconcursos.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -14490,7 +14509,7 @@
     },
     "76e2a536322cf045ecdfa697ad2010622bdc783630b033522b346825269f30a1": {
       "firstSeenAt": "2026-09-20T16:03:54.046Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Vale do Itajaí recicla cinco vezes mais que a média nacional e será referência para o Sul de SC - 4oito",
@@ -14860,7 +14879,7 @@
     },
     "741925b54dd1cf0c5efe2ccf6699ecd305fdd39b8ba7b3869bcc883d730b92da": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel - Banda B",
@@ -14883,7 +14902,7 @@
     },
     "574658e37d4f5ffc237d816b22610cdb9355840f1cfff388bebc9ee932419d07": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "SANTA INÊS, Estado da Paraíba, no uso de suas atribuições - santaines.pb.leg.br",
@@ -15044,7 +15063,7 @@
     },
     "dcec74f99198b643bcd72b43a774237e955976b14c92b495d2d03672d0766a06": {
       "firstSeenAt": "2026-09-21T04:57:53.608Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "José Ivanir é reconduzido à presidência do CISMIV para o biênio 2027/2028 - Primeiro a Saber",
@@ -15067,7 +15086,7 @@
     },
     "94f6bd413a3a578f882ce97c5375b2fb8e3105c2a8ff0d0de5ddb058d488ac6a": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul",
@@ -15088,23 +15107,12 @@
           "evidenceText": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... Câmara Municipal de Centenário do Sul",
           "publicContext": true,
           "strongPublicContext": true
-        },
-        "id": "cf72720f6d8f61be6098bc0df69ed30f07d3ec123df2ebf4abed30e5f59f58b8",
-        "titleFingerprint": "44688ab359e1e50597640b8239bf9cb2c87e4be37e4c0f816d92eeba079af3dd",
-        "contentTokens": [
-          "autoriza",
-          "camara",
-          "centenario",
-          "ingresso",
-          "legislacao",
-          "saneamento",
-          "sul"
-        ]
+        }
       }
     },
     "9c48d7ce4d0ca03e97ec19f4a07b832acf592b0a632cc5d58ac1beefae9a1116": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 442/2022 - Primeira Câmara - TCE-PR",
@@ -15127,7 +15135,7 @@
     },
     "233b0307f90aedbfc8b63b68aa5f1e7d13e78202aeefc1a809ceca9f6c2384cf": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 495/2017 - Segunda Câmara - TCE-PR",
@@ -15407,7 +15415,7 @@
     },
     "5d9eca87088481dccdc113fbab89f857be698b532a8c9df5bf2de668e3ae84ea": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "FNP lança guia para apoiar municípios na gestão de velocidades e na segurança viária",
@@ -15660,7 +15668,7 @@
     },
     "8d9d9c010a19ae4e4bde08b62c0eebf3bb256f788de89c2c69a66b396b4d7ad5": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "\"Amar é inadiável\": Socorro Acioli lança novo livro em evento do Sempre Um Papo em BH",
@@ -15685,7 +15693,7 @@
     },
     "2784fe05770418aaa377fd4039177139d92385b4ff539f1ae1e66d683d0afd19": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Faculdade AlfaUnipac homenageia durante Encontro Técnico em Capelinha",
@@ -15710,7 +15718,7 @@
     },
     "3def96bf8f888c89fb1b2b70887504383fe147a94977d5d03e28f009dcebc292": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Assessor da Presidência debate reforma tributária e federalismo em congresso jurídico do UNIFEMM",
@@ -15735,7 +15743,7 @@
     },
     "ca7a74c3c9be2802d101213681d6b9a894fb84cb80d05c0d578ec3f5cf022299": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Realiza Oficina Sobre Políticas De Atividade Física Nos Municípios - ABC Agora",
@@ -15758,7 +15766,7 @@
     },
     "1806d33968e6c96ce4f595c75ab7f15a77f2aa0f704ab8a3d5a7854f8e093738": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Avalia Tecnologia De Simulação Para Treinamento Das Guardas Municipais - ABC Agora",
@@ -15895,7 +15903,7 @@
     },
     "354ced75691f0170bc304307da6286384b6e304f643b79cc390e6bd40f2c9d48": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana de Curitiba",
@@ -16263,7 +16271,7 @@
     },
     "5ceb5e44221ed70d2cbc3254b2b740a0e76aee6dcc7269783b9bf17ff8d3549e": {
       "firstSeenAt": "2026-09-22T09:56:26.726Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Notícia - Consórcio ABC promove oficina para integrar políticas de atividade física na região - Consórcio Intermunicipal - Grande ABC",
@@ -16288,7 +16296,7 @@
     },
     "c25aac40c76d2cec74fbefb161ba65ed5068947f6a6b423f72f2bfd839bd5074": {
       "firstSeenAt": "2026-09-22T09:56:26.726Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara - TCE-PR",
@@ -16739,7 +16747,7 @@
     },
     "85d8269d6d49cadb0db77cbad04af9e27246481823ed0270238ad952c9e4590e": {
       "firstSeenAt": "2026-09-22T14:51:23.572Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Imagem digitalizada - Câmara Municipal de Centenário do Sul",
@@ -16762,7 +16770,7 @@
     },
     "a0bd994139af861365e8ceaa391f07990b1ecd81f745e7e01bd94bad418385f7": {
       "firstSeenAt": "2026-09-22T14:51:23.572Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 726/2019 - Primeira Câmara - TCE-PR",
@@ -17019,15 +17027,15 @@
     },
     "181fe65e16b7a615ffa104bd5d99f0c3dd413ebdee625eb24425a39670a68b4a": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
-        "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - diariodecaratinga.com.br",
+        "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
         "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5",
         "sourceUrl": "https://diariodecaratinga.com.br",
         "publishedAt": "2026-09-22T16:25:00.000Z",
-        "source": "diariodecaratinga.com.br",
-        "summary": "Município é autorizado a integrar consórcio intermunicipal CIMINAS diariodecaratinga.com.br",
+        "source": "Diário de Caratinga",
+        "summary": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
         "classification": {
           "category": "ADESÃO",
           "emoji": "🟦",
@@ -17037,18 +17045,10 @@
             "ADESÃO"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Município é autorizado a integrar consórcio intermunicipal CIMINAS diariodecaratinga.com.br",
+          "evidenceText": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
           "publicContext": true,
           "strongPublicContext": true
-        },
-        "id": "274fccfe469797df0a7ba5d23a06c3698b861a2d2dc7e1fc3c75af6191e4103b",
-        "titleFingerprint": "e028d6adb31a24568d95748a7cd452f64ab702dc7363d1e1e8a6e8998f52c932",
-        "contentTokens": [
-          "autorizado",
-          "ciminas",
-          "diariodecaratinga",
-          "integrar"
-        ]
+        }
       }
     },
     "5d965aa1ecab51750a68b6f8cd928f01a7b4688ce315bb77bd505c8a0b56c033": {
@@ -17260,7 +17260,7 @@
     },
     "84eea0f2b05c0b5232e1b34c2d726a6b24b8abc768dad9d5ff29ec8ff48192a5": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Tribunal de Contas abre inscrições para cadastro de reserva de estágio remunerado",
@@ -17287,7 +17287,7 @@
     },
     "fb148ecb674e849eaab8f2d2d68c59970b6c4a5008a5fcbccceb661ce463a191": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCEMG cria coordenadoria especializada para analisar atos de admissão de pessoal",
@@ -17312,7 +17312,7 @@
     },
     "03e45ec2e3b52fbbca22140b63d7c80cf5274b59235477f0043b996cbc8f84a0": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza solenidade de entrega do Selo Ouvidoria Cidadã",
@@ -17338,7 +17338,7 @@
     },
     "0229942df2ee79c19f5e62ffbf908990080ec9364e4b7b68a65839660e740f2b": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "gazette-index",
         "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
@@ -17363,7 +17363,7 @@
     },
     "229de91ab9519c707a656f72a176b19a6f71c912b7b36c6f2a77d6c17a851779": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - Diário do Grande ABC",
@@ -17384,24 +17384,12 @@
           "evidenceText": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos Diário do Grande ABC",
           "publicContext": true,
           "strongPublicContext": true
-        },
-        "id": "5500d315ec61956451f9c3705425ad4884c960e5b7730a30a7915e04c86c5bdd",
-        "titleFingerprint": "ef17b51f17fbef75236f029cfcda91022d37e5e07cc8f2b19b3208b29f52392a",
-        "contentTokens": [
-          "abc",
-          "agenda",
-          "atrair",
-          "brasilia",
-          "cria",
-          "grande",
-          "investimentos",
-          "setorial"
-        ]
+        }
       }
     },
     "bed39762d57022e0700dd08435d6b9f5dcf2509380b369be9da318c655744010": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Dois anos depois, Corinthians e São Paulo decidem Brasileiro Feminino",
@@ -17424,7 +17412,7 @@
     },
     "d1c5f970396f2612c3ce45a28b6f5c0c10c06778c7a1e302e662d12527fe457b": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Polícia do Ceará prende João Munhoz, namorado de Isabelle Caracristi",
@@ -17447,7 +17435,7 @@
     },
     "d78cddccb37f95d0cea9723bf937f7f7b5789e9d6bb9543cba78f81332056c19": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Mendonça acusa Moraes de direcionar investigação no STF",
@@ -17470,7 +17458,7 @@
     },
     "b1dd32bdbebb26d481f81fb4134e3648f62f3e918ba89fb72114a6f27b6e3f93": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-22T20:06:01.205Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
       "item": {
         "kind": "news",
         "title": "Cenipa abre investigação para apurar causas de queda de helicóptero",
@@ -17486,6 +17474,226 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "O Centro de Investigação e Prevenção de Acidentes Aeronáuticos (Cenipa) vai abrir uma investigação para apurar as causas da queda do helicóptero de matrícula PP-MGR, localizado nesta terça-feira (22) na serra de Santa Catarina, na região de Urubici. O cantor Rick, da dupla Rick e Renner, estava a bordo da aeronave . Além dele, outras quatro pessoas viajavam no helicóptero. Nenhuma delas sobreviveu à queda. Peritos e investigadores foram mobilizados para realizar a chamada \"ação inicial\", etapa em que há coleta de dados, inspeção dos danos na aeronave e identificação dos fatores que contribuíram para o acidente. Para a tarefa, também foram mobilizados investigadores do Quinto Serviço Regional de Investigação e Prevenção de Acidentes Aeronáuticos (SERIPA V), órgão regional do Cenipa localizado em Canoas (RS). Notícias relacionadas: FAB e bombeiros buscam helicóptero com cantor Rick, desaparecido em SC. Bombeiros encontram helicóptero com corpo do cantor Rick. Segundo o Cenipa, os trabalhos de investigação serão concluídos no menor prazo possível, dependendo da complexidade dos levantamentos na área da ocorrência. A localização dos destroços foi feita pela Força Aérea Brasileira (FAB), através da aeronave SC-105 Amazonas, que acumulou cerca de 13 horas de voo na operação. Após avistar o local do acidente, a equipe orientou a aproximação de um helicóptero que estava mais próximo e sobrevoava a zona para dar suporte às operações no terreno. O planejamento da área de buscas esteve a cargo do Centro de Coordenação de Salvamento Aeronáutico de Curitiba (Salvaero Curitiba), que delimitou o perímetro com maior probabilidade de encontrar o aparelho.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b0a87abd482a02f962d29a462624539ee846e48414748ea1c2e426c492b72459": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "CGIBS lança cadastro de profissionais para futuras oportunidades",
+        "url": "https://fnp.org.br/noticias/item/3960-cgibs-lanca-cadastro-de-profissionais-para-futuras-oportunidades",
+        "publishedAt": "2026-09-22T20:36:42.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "O Comitê Gestor do Imposto sobre Bens e Serviços (CGIBS) disponibilizou o Cadastro de Perfil Profissional , formulário eletrônico para todos os servidores que atuam ou que pretendam atuar no CGIBS. O preenchimento deve ser feito até 27/9, domingo. A iniciativa tem como objetivo prospectar interessados/as em trabalhar no CG-IBS, que devem atender os requisitos técnicos e legais para atuar nas áreas de: - Administração Tributária (Fiscalização, Tributação, Informações Econômico-Fiscais - Arrecadação e Cobrança e Revisão do Crédito Tributário) - Tecnologia da Informação e Comunicação - Assessoria de Relações Institucionais e Interfederativas - Tesouraria, - Administrativo - Procuradorias O preenchimento do formulário não constitui inscrição em processo seletivo nem gera compromisso, garantia ou expectativa de direito quanto à seleção, à cessão ou à disponibilização do servidor ao CGIBS. Esta informação consta do próprio cadastro, cujos dados são tratados exclusivamente para subsidiar o levantamento de interesse na composição das unidades do CGIBS nos termos da Lei nº 13.709, de 14 de agosto de 2018. O cadastro alcança todos os servidores que atuam ou pretendam atuar no CGIBS, tendo em vista que o art. 3º da Resolução CGIBS número 18, que exige rol atualizado e publicizado desses servidores, bem como a necessidade de consolidar, em uma única base, as informações relativas tanto aos servidores já em atuação quanto àqueles que manifestem interesse em atuar no CGIBS. A base, portanto, passa a ser referência e substitui eventuais instrumentos similares anteriormente já preenchidos. Dúvidas pelo e-mail dirad@cgibs.gov.br . Acesse o cadastro AQUI .",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -30,
+          "reasons": [
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O Comitê Gestor do Imposto sobre Bens e Serviços (CGIBS) disponibilizou o Cadastro de Perfil Profissional , formulário eletrônico para todos os servidores que atuam ou que pretendam atuar no CGIBS. O preenchimento deve ser feito até 27/9, domingo. A iniciativa tem como objetivo prospectar interessados/as em trabalhar no CG-IBS, que devem atender os requisitos técnicos e legais para atuar nas áreas de: - Administração Tributária (Fiscalização, Tributação, Informações Econômico-Fiscais - Arrecadação e Cobrança e Revisão do Crédito Tributário) - Tecnologia da Informação e Comunicação - Assessoria de Relações Institucionais e Interfederativas - Tesouraria, - Administrativo - Procuradorias O preenchimento do formulário não constitui inscrição em processo seletivo nem gera compromisso, garantia ou expectativa de direito quanto à seleção, à cessão ou à disponibilização do servidor ao CGIBS. Esta informação consta do próprio cadastro, cujos dados são tratados exclusivamente para subsidiar o levantamento de interesse na composição das unidades do CGIBS nos termos da Lei nº 13.709, de 14 de agosto de 2018. O cadastro alcança todos os servidores que atuam ou pretendam atuar no CGIBS, tendo em vista que o art. 3º da Resolução CGIBS número 18, que exige rol atualizado e publicizado desses servidores, bem como a necessidade de consolidar, em uma única base, as informações relativas tanto aos servidores já em atuação quanto àqueles que manifestem interesse em atuar no CGIBS. A base, portanto, passa a ser referência e substitui eventuais instrumentos similares anteriormente já preenchidos. Dúvidas pelo e-mail dirad@cgibs.gov.br . Acesse o cadastro AQUI .",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "731a831bd13c1d511e76868635b27049f8f4d191eadf3c93b6e1b88a2192b150": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Instalação no Sesc Pompeia denuncia marcas do tráfico de escravizados",
+        "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-09/instalacao-no-sesc-pompeia-denuncia-marcas-do-trafico-de-escravizados",
+        "publishedAt": "2026-09-22T21:16:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "As marcas do tráfico transatlântico de africanos escravizados, considerado pela Assembleia Geral da Organização das Nações Unidas como o crime mais grave já praticado contra a humanidade , são denunciadas pela obra O Barco , que pode ser visitada a partir desta terça-feira (22) no Sesc Pompeia, em São Paulo. Durante cerca de 400 anos, milhões de africanos foram sequestrados e vendidos como mercadorias em colônias de nações europeias, crime que continuou a ser cometido mesmo após a independência de algumas delas. Notícias relacionadas: ONU: escravização de africanos foi maior crime contra humanidade. Conceição Evaristo é homenageada do CineBH. Plano Nacional de Promoção da Igualdade Racial recebe contribuições. O Brasil foi o principal destino desses escravizados . Por meio de muita violência e dos chamados navios negreiros, mais de 4,8 milhões de escravizados atravessaram o Oceano Atlântico para o trabalho forçado no Brasil. E é isso que nos lembra a obra da artista portuguesa Grada Kilomba, que lança uma provocação ao público: o que o fundo do oceano nos diria se fosse esvaziado de água hoje? “O Barco vem mostrar aquilo que estava no fundo de muitos barcos que aparecem nos monumentos da Europa e da América Latina e que glorificam uma história, que contam a história com glória, como um descobrimento, como uma expansão e como algo romântico e glorioso. Como artista, me interessa muito questionar o que é essa glória e o que esses barcos gloriosos traziam no fundo”, disse a artista, em entrevista à Agência Brasil . “Se esvaziássemos a água, o oceano e a terra em si iriam revelar uma série de trilhões de passagens de corpos humanos, não só no passado, mas no presente, em uma repetição da violência cíclica”. A obra escultórica e performática criada por Grada Kilomba é compos",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "As marcas do tráfico transatlântico de africanos escravizados, considerado pela Assembleia Geral da Organização das Nações Unidas como o crime mais grave já praticado contra a humanidade , são denunciadas pela obra O Barco , que pode ser visitada a partir desta terça-feira (22) no Sesc Pompeia, em São Paulo. Durante cerca de 400 anos, milhões de africanos foram sequestrados e vendidos como mercadorias em colônias de nações europeias, crime que continuou a ser cometido mesmo após a independência de algumas delas. Notícias relacionadas: ONU: escravização de africanos foi maior crime contra humanidade. Conceição Evaristo é homenageada do CineBH. Plano Nacional de Promoção da Igualdade Racial recebe contribuições. O Brasil foi o principal destino desses escravizados . Por meio de muita violência e dos chamados navios negreiros, mais de 4,8 milhões de escravizados atravessaram o Oceano Atlântico para o trabalho forçado no Brasil. E é isso que nos lembra a obra da artista portuguesa Grada Kilomba, que lança uma provocação ao público: o que o fundo do oceano nos diria se fosse esvaziado de água hoje? “O Barco vem mostrar aquilo que estava no fundo de muitos barcos que aparecem nos monumentos da Europa e da América Latina e que glorificam uma história, que contam a história com glória, como um descobrimento, como uma expansão e como algo romântico e glorioso. Como artista, me interessa muito questionar o que é essa glória e o que esses barcos gloriosos traziam no fundo”, disse a artista, em entrevista à Agência Brasil . “Se esvaziássemos a água, o oceano e a terra em si iriam revelar uma série de trilhões de passagens de corpos humanos, não só no passado, mas no presente, em uma repetição da violência cíclica”. A obra escultórica e performática criada por Grada Kilomba é compos",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "cf8410db14b697023a3776ca4f3d0e8ee20848becd7273627ca2ae182bce0fb1": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Olimpíada de Astronomia no Vietnã tem cinco estudantes brasileiros",
+        "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-09/olimpiada-de-astronomia-no-vietna-tem-cinco-estudantes-brasileiros",
+        "publishedAt": "2026-09-22T21:00:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "No sofá, a cearense Biatriz Silva assistia admirada na TV ao lançamento de foguetes. Os olhos brilhavam mais ainda ao observar, ao lado dela, os olhos do pai, Carlos, vendedor de móveis, também fascinado por filmes como Interestelar. Foi com ele e com a mãe, Leidiana, dona de casa, que a menina aprendeu a olhar as estrelas. Ensinaram que estudar ampliaria o seu espaço no mundo. Nesta quarta-feira (23), aos 17 anos, Biatriz fará uma viagem sem a família em busca das estrelas. Vai para Hanói, no Vietnã, para ser a única menina dos cinco estudantes brasileiros a participar da 19ª Olimpíada Internacional de Astronomia e Astrofísica (IOAA), uma das mais prestigiadas competições estudantis do mundo, que começa na próxima sexta-feira (25). Notícias relacionadas: Guia do Enem reúne orientações e métodos de estudo para provas. Moradora do bairro do Pici, da periferia de Fortaleza, Biatriz, que hoje está no terceiro ano do ensino médio, foi medalha de ouro na Olimpíada Brasileira de Astronomia em 2023. Ela quer repetir o feito agora no Vietnã. Serão quatro provas que envolvem conhecimentos teóricos, a análise de dados, telescópio e planetário. Ela volta ao Brasil no dia 6. “Eu tenho um caderno exclusivo onde estão anotadas mais de 380 estrelas e eu decoro também as posições”. A conquista nacional, quando ainda era estudante de escola pública, rendeu a ela uma bolsa de estudos para uma escola que tem preparação especial para ingressar no Instituto Tecnológico de Aeronáutica (ITA). Ela quer cursar engenharia. “Quem sabe aeroespacial”. A estudante diz que tem uma rotina de estudos normal e disciplinada. Como toda adolescente de sua idade, gosta de se divertir com os amigos e o estudo não faz o papel de inimigo. “Gosto também de desenhar”, acrescenta a estudante apaixonada pelo unive",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "No sofá, a cearense Biatriz Silva assistia admirada na TV ao lançamento de foguetes. Os olhos brilhavam mais ainda ao observar, ao lado dela, os olhos do pai, Carlos, vendedor de móveis, também fascinado por filmes como Interestelar. Foi com ele e com a mãe, Leidiana, dona de casa, que a menina aprendeu a olhar as estrelas. Ensinaram que estudar ampliaria o seu espaço no mundo. Nesta quarta-feira (23), aos 17 anos, Biatriz fará uma viagem sem a família em busca das estrelas. Vai para Hanói, no Vietnã, para ser a única menina dos cinco estudantes brasileiros a participar da 19ª Olimpíada Internacional de Astronomia e Astrofísica (IOAA), uma das mais prestigiadas competições estudantis do mundo, que começa na próxima sexta-feira (25). Notícias relacionadas: Guia do Enem reúne orientações e métodos de estudo para provas. Moradora do bairro do Pici, da periferia de Fortaleza, Biatriz, que hoje está no terceiro ano do ensino médio, foi medalha de ouro na Olimpíada Brasileira de Astronomia em 2023. Ela quer repetir o feito agora no Vietnã. Serão quatro provas que envolvem conhecimentos teóricos, a análise de dados, telescópio e planetário. Ela volta ao Brasil no dia 6. “Eu tenho um caderno exclusivo onde estão anotadas mais de 380 estrelas e eu decoro também as posições”. A conquista nacional, quando ainda era estudante de escola pública, rendeu a ela uma bolsa de estudos para uma escola que tem preparação especial para ingressar no Instituto Tecnológico de Aeronáutica (ITA). Ela quer cursar engenharia. “Quem sabe aeroespacial”. A estudante diz que tem uma rotina de estudos normal e disciplinada. Como toda adolescente de sua idade, gosta de se divertir com os amigos e o estudo não faz o papel de inimigo. “Gosto também de desenhar”, acrescenta a estudante apaixonada pelo unive",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "3696c264d6b8fb61f7b720ea38cb02028ba42d25056a9f9dd3bd2837b2fd8ffd": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Plano Nacional de Promoção da Igualdade Racial recebe contribuições",
+        "url": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-09/plano-nacional-de-promocao-da-igualdade-racial-recebe-contribuicoes",
+        "publishedAt": "2026-09-22T20:53:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A consulta pública para colaborar com os objetivos estratégicos do 2º Plano Nacional de Promoção da Igualdade Racial (Planapir) está aberta até o dia 16 de outubro, por meio da plataforma digital Brasil Participativo . O objetivo do plano é orientar a atuação do Estado brasileiro no enfrentamento do racismo estrutural, na reparação histórica, na redução das desigualdades e na efetivação de direitos. Notícias relacionadas: Morre Zélia Amador de Deus, referência da luta antirracista no Pará. Brasil reduz pobreza, mas amplia desigualdades, mostra estudo. O 2º Planapir conta com 16 eixos, e cada um deles traz uma série de objetivos estratégicos subsidiados pelas discussões da 5ª Conferência Nacional de Promoção da Igualdade Racial (Conapir), realizada em 2025. Por meio dos objetivos, se dará a definição e o aperfeiçoamento de ações, metas, responsabilidades institucionais, indicadores e mecanismos para acompanhar a promoção da igualdade racial no país. A sociedade é convidada a colaborar aprimorando a redação desses objetivos, propondo alterações ou até mesmo sugerindo novos objetivos que enfrentem os problemas tratados em cada eixo. Após o encerramento da consulta pública, as contribuições recebidas serão sistematizadas e analisadas para subsidiar ajustes de redação, ampliação ou reorganização dos objetivos na versão final do Planapir. Conheça os 16 eixos do 2º Planapir: Trabalho e inclusão produtiva Educação Saúde Integral e Enfrentamento ao Racismo no SUS Desenvolvimento Social, Assistência Social e Segurança Alimentar Cultura, Memória e Reparação Simbólica Justiça, Segurança Pública e Defesa de Direitos Comunidades Quilombolas Povos de Terreiro e de Matriz Africana Povos Ciganos Mulheres Negras Crianças, Adolescentes e Juventude Negra População LGBTQIAPN+ negra Justiça ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A consulta pública para colaborar com os objetivos estratégicos do 2º Plano Nacional de Promoção da Igualdade Racial (Planapir) está aberta até o dia 16 de outubro, por meio da plataforma digital Brasil Participativo . O objetivo do plano é orientar a atuação do Estado brasileiro no enfrentamento do racismo estrutural, na reparação histórica, na redução das desigualdades e na efetivação de direitos. Notícias relacionadas: Morre Zélia Amador de Deus, referência da luta antirracista no Pará. Brasil reduz pobreza, mas amplia desigualdades, mostra estudo. O 2º Planapir conta com 16 eixos, e cada um deles traz uma série de objetivos estratégicos subsidiados pelas discussões da 5ª Conferência Nacional de Promoção da Igualdade Racial (Conapir), realizada em 2025. Por meio dos objetivos, se dará a definição e o aperfeiçoamento de ações, metas, responsabilidades institucionais, indicadores e mecanismos para acompanhar a promoção da igualdade racial no país. A sociedade é convidada a colaborar aprimorando a redação desses objetivos, propondo alterações ou até mesmo sugerindo novos objetivos que enfrentem os problemas tratados em cada eixo. Após o encerramento da consulta pública, as contribuições recebidas serão sistematizadas e analisadas para subsidiar ajustes de redação, ampliação ou reorganização dos objetivos na versão final do Planapir. Conheça os 16 eixos do 2º Planapir: Trabalho e inclusão produtiva Educação Saúde Integral e Enfrentamento ao Racismo no SUS Desenvolvimento Social, Assistência Social e Segurança Alimentar Cultura, Memória e Reparação Simbólica Justiça, Segurança Pública e Defesa de Direitos Comunidades Quilombolas Povos de Terreiro e de Matriz Africana Povos Ciganos Mulheres Negras Crianças, Adolescentes e Juventude Negra População LGBTQIAPN+ negra Justiça ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ee91563630efe83182ece2ebb801ae5e15a6611be6ab540da183f10894886d8a": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Lei que amplia cargos da diretoria da OAB é sancionada",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/lei-que-amplia-cargos-da-diretoria-da-oab-e-sancionada",
+        "publishedAt": "2026-09-22T20:33:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O presidente da República em exercício, Geraldo Alckmin, sancionou nesta terça-feira (22) a lei que amplia a composição da Diretoria do Conselho Federal da Ordem dos Advogados do Brasil (OAB), modifica a nomenclatura do secretário-geral adjunto e faculta aos Conselhos Seccionais a criação de diretorias regimentais temporárias. A nova norma altera o Estatuto da Advocacia (Lei 8.906, de 1994) para criar novos cargos na diretoria do Conselho Federal da entidade. O núcleo executivo da OAB Nacional passa a ter sete cargos. Agora, conta com corregedor-geral, diretor tesoureiro, diretor administrativo e diretor executivo. Esses dois últimos cargos substituem o cargo de secretário-geral adjunto. Ficam mantidos os cargos de presidente, vice-presidente e secretário-geral. As funções de direção da OAB são exercidas de forma voluntária, sem remuneração. A mudança nos cargos de diretoria da OAB começou a ser discutida no Congresso Nacional, com o Projeto de Lei 1.743/2024. O projeto nasceu na Câmara, onde foi aprovado, e seguiu para o Senado. A aprovação no Senado ocorreu em 2 de setembro. De lá, seguiu para sanção presidencial. A OAB A Ordem dos Advogados do Brasil é a entidade máxima de representação dos advogados no país. Ela regulamenta o exercício da advocacia, fiscaliza e seleciona, através de um exame próprio, os profissionais em atuação no Brasil. Presidente interino Geraldo Alckmin assinou a sanção como presidente da República em exercício, uma vez que Luiz Inácio Lula da Silva estava em Nova York. Nesta terça, Lula discursou na abertura da 81ª Assembleia Geral da ONU . Ele deve desembarcar no Brasil ainda na noite de hoje.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O presidente da República em exercício, Geraldo Alckmin, sancionou nesta terça-feira (22) a lei que amplia a composição da Diretoria do Conselho Federal da Ordem dos Advogados do Brasil (OAB), modifica a nomenclatura do secretário-geral adjunto e faculta aos Conselhos Seccionais a criação de diretorias regimentais temporárias. A nova norma altera o Estatuto da Advocacia (Lei 8.906, de 1994) para criar novos cargos na diretoria do Conselho Federal da entidade. O núcleo executivo da OAB Nacional passa a ter sete cargos. Agora, conta com corregedor-geral, diretor tesoureiro, diretor administrativo e diretor executivo. Esses dois últimos cargos substituem o cargo de secretário-geral adjunto. Ficam mantidos os cargos de presidente, vice-presidente e secretário-geral. As funções de direção da OAB são exercidas de forma voluntária, sem remuneração. A mudança nos cargos de diretoria da OAB começou a ser discutida no Congresso Nacional, com o Projeto de Lei 1.743/2024. O projeto nasceu na Câmara, onde foi aprovado, e seguiu para o Senado. A aprovação no Senado ocorreu em 2 de setembro. De lá, seguiu para sanção presidencial. A OAB A Ordem dos Advogados do Brasil é a entidade máxima de representação dos advogados no país. Ela regulamenta o exercício da advocacia, fiscaliza e seleciona, através de um exame próprio, os profissionais em atuação no Brasil. Presidente interino Geraldo Alckmin assinou a sanção como presidente da República em exercício, uma vez que Luiz Inácio Lula da Silva estava em Nova York. Nesta terça, Lula discursou na abertura da 81ª Assembleia Geral da ONU . Ele deve desembarcar no Brasil ainda na noite de hoje.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c717e9ed32026af926428cd65cba411b61d78770af3ff66d96b25edcb1d33751": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Arthur Elias convoca seleção feminina para amistosos contra Argentina",
+        "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-09/arthur-elias-convoca-selecao-feminina-para-amistosos-contra-argentina",
+        "publishedAt": "2026-09-22T20:15:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O técnico Arthur Elias convocou 28 jogadoras que defenderão a seleção brasileira de futebol em dois amistosos em casa contra a Argentina em outubro, na penúltima Data Fifa deste ano. Entre as novidades na lista apresentada nesta terça-feira (22) está a goleira Yanne, do Bahia, e o retorno à equipe de três atletas da seleção sub-20 (Kayane, Clarinha e Thaís Lima) - embora convocadas anteriormente, elas ainda não entraram em campo pelo time principal. O primeiro jogo está programado para o dia 10 de outubro (um sábado), às 16h30 (horário de Brasília), no Estádio Beira Rio, em Porto Alegre. Três dias depois, as brasileiras encaram as argentinas na Arena Pernambuco, em Recife, às 20h30. Notícias relacionadas: Dois anos depois, Corinthians e São Paulo decidem Brasileiro Feminino. Vasco é campeão do Brasileirão A2 Feminino. Federação Alemã diz que carta de Infantino é \"manobra\" para reeleição. Ver esse post no Instagram Um post compartilhado por EC Bahia (@ecbahia) A quase nove meses para a abertura da primeira Copa do Mundo Feminina de futebol no Brasil, o técnico Arthur Elias destacou a importância do embate contra a equipe sul-americana. “O confronto contra a Argentina é interessante porque talvez seja o último antes da Copa contra uma equipe sul-americana”, afirmou Elias, durante a coletiva na sede da CBF, no Rio de Janeiro. “A Argentina fez uma grande campanha nas eliminatórias e também na Copa América. Então, a gente espera dois jogos bastante difíceis e um estilo diferente que a gente vai pegar nas próximas Data Fifa, então a gente vai aproveita bastante”, pontuou. Ver esse post no Instagram Um post compartilhado por Seleção Feminina de Futebol (@selecaofemininadefutebol) O treinador também elencou os critérios utilizados na convocação. “A performance [nos clubes] é ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O técnico Arthur Elias convocou 28 jogadoras que defenderão a seleção brasileira de futebol em dois amistosos em casa contra a Argentina em outubro, na penúltima Data Fifa deste ano. Entre as novidades na lista apresentada nesta terça-feira (22) está a goleira Yanne, do Bahia, e o retorno à equipe de três atletas da seleção sub-20 (Kayane, Clarinha e Thaís Lima) - embora convocadas anteriormente, elas ainda não entraram em campo pelo time principal. O primeiro jogo está programado para o dia 10 de outubro (um sábado), às 16h30 (horário de Brasília), no Estádio Beira Rio, em Porto Alegre. Três dias depois, as brasileiras encaram as argentinas na Arena Pernambuco, em Recife, às 20h30. Notícias relacionadas: Dois anos depois, Corinthians e São Paulo decidem Brasileiro Feminino. Vasco é campeão do Brasileirão A2 Feminino. Federação Alemã diz que carta de Infantino é \"manobra\" para reeleição. Ver esse post no Instagram Um post compartilhado por EC Bahia (@ecbahia) A quase nove meses para a abertura da primeira Copa do Mundo Feminina de futebol no Brasil, o técnico Arthur Elias destacou a importância do embate contra a equipe sul-americana. “O confronto contra a Argentina é interessante porque talvez seja o último antes da Copa contra uma equipe sul-americana”, afirmou Elias, durante a coletiva na sede da CBF, no Rio de Janeiro. “A Argentina fez uma grande campanha nas eliminatórias e também na Copa América. Então, a gente espera dois jogos bastante difíceis e um estilo diferente que a gente vai pegar nas próximas Data Fifa, então a gente vai aproveita bastante”, pontuou. Ver esse post no Instagram Um post compartilhado por Seleção Feminina de Futebol (@selecaofemininadefutebol) O treinador também elencou os critérios utilizados na convocação. “A performance [nos clubes] é ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d41193568aaedce9875cfbd800c419e55ad9175e0ba10ab3d366be4ef73cf377": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Trump rejeita limitar IA e critica governança global da tecnologia",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/trump-rejeita-limitar-ia-e-critica-governanca-global-da-tecnologia",
+        "publishedAt": "2026-09-22T19:42:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Em discurso na sede das Nações Unidas (ONU), o presidente dos Estados Unidos (EUA) Donald Trump criticou as iniciativas globais de regulação e governança da Inteligência Artificial (IA). “Os Estados Unidos também rejeitam totalmente qualquer tentativa de criar um esquema globalista para controlar a inteligência artificial”, afirmou, durante o discurso na abertura da 81ª Assembleia Geral da ONU, nesta quarta-feira (22). Notícias relacionadas: Na ONU, Trump ameaça novamente usar força militar na América Latina. \"O Brasil não cabe no quintal de ninguém”, diz Lula em discurso na ONU. ONU vive momento crítico, diz Lula ao citar indignação com guerras. A China e os EUA lideram iniciativas distintas que buscam influenciar a cadeia produtiva em torno da IA. De um lado, a iniciativa de Washington prevê um sistema com “parceiros confiáveis” para controlar o desenvolvimento da IA. De outro, a proposta liderada por Pequim convoca todas as nações para participar da governança da IA por meio de sistemas de códigos abertos, que permite a apropriação da tecnologia por qualquer empresa ou organização. >>Waico e Pax Silica: entenda disputa entre China e EUA por futuro da IA O especialista em governança de IA Ettore Arpini, fundador da organização Plures de apoio a profissionais para atuação em IA, destacou à Agência Brasil que a posição de Trump se opõe a diversas iniciativas, inclusive na ONU, com objetivo de deixar as empresas sem regulação alguma. “Isso é totalmente contrário ao movimento de outros países de formar uma aliança de potências médias para colaborarem, para trazerem de novo um multilateralismo e criarem um modelo de governança e de regulamentações internacionais para IA”, comentou. Limites à IA O presidente dos EUA Donald Trump ainda rejeitou que o país vá limitar o avanço",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Em discurso na sede das Nações Unidas (ONU), o presidente dos Estados Unidos (EUA) Donald Trump criticou as iniciativas globais de regulação e governança da Inteligência Artificial (IA). “Os Estados Unidos também rejeitam totalmente qualquer tentativa de criar um esquema globalista para controlar a inteligência artificial”, afirmou, durante o discurso na abertura da 81ª Assembleia Geral da ONU, nesta quarta-feira (22). Notícias relacionadas: Na ONU, Trump ameaça novamente usar força militar na América Latina. \"O Brasil não cabe no quintal de ninguém”, diz Lula em discurso na ONU. ONU vive momento crítico, diz Lula ao citar indignação com guerras. A China e os EUA lideram iniciativas distintas que buscam influenciar a cadeia produtiva em torno da IA. De um lado, a iniciativa de Washington prevê um sistema com “parceiros confiáveis” para controlar o desenvolvimento da IA. De outro, a proposta liderada por Pequim convoca todas as nações para participar da governança da IA por meio de sistemas de códigos abertos, que permite a apropriação da tecnologia por qualquer empresa ou organização. >>Waico e Pax Silica: entenda disputa entre China e EUA por futuro da IA O especialista em governança de IA Ettore Arpini, fundador da organização Plures de apoio a profissionais para atuação em IA, destacou à Agência Brasil que a posição de Trump se opõe a diversas iniciativas, inclusive na ONU, com objetivo de deixar as empresas sem regulação alguma. “Isso é totalmente contrário ao movimento de outros países de formar uma aliança de potências médias para colaborarem, para trazerem de novo um multilateralismo e criarem um modelo de governança e de regulamentações internacionais para IA”, comentou. Limites à IA O presidente dos EUA Donald Trump ainda rejeitou que o país vá limitar o avanço",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5e9f147e58fae32b748f19249df9a409b17a0c5bc33f0f16ee53604bc6319fbe": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Tribunal mantém suspensas atas de pregão de R$ 56,8 milhões para solução educacional em municípios do Sul de Minas",
+        "url": "https://www.tce.mg.gov.br/Tribunal-mantem-suspensas-atas-de-pregao-de-R-56-8-milhoes-para-solucao-educacional-em-municipios-do-Sul-de-Minas.html/Noticia/1111629189",
+        "publishedAt": "2026-09-22T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "A Segunda Câmara do Tribunal de Contas do Estado de Minas Gerais (TCEMG) referendou, nesta terça-feira (22/9), decisão cautelar do conselheiro em exercício Adonias Monteiro que suspendeu os efeitos de duas atas de registro de preços decorrentes de pregão eletrônico realizado pelo Consórcio Intermunicipal Multifinalitário do Alto Rio Grande (Cimarg). Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A Segunda Câmara do Tribunal de Contas do Estado de Minas Gerais (TCEMG) referendou, nesta terça-feira (22/9), decisão cautelar do conselheiro em exercício Adonias Monteiro que suspendeu os efeitos de duas atas de registro de preços decorrentes de pregão eletrônico realizado pelo Consórcio Intermunicipal Multifinalitário do Alto Rio Grande (Cimarg). Clique aqui",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "f6cbbbfef8754f25811c74693c9bd2d9fb0b574b25985d92ddbe4de82be5a241": {
+      "firstSeenAt": "2026-09-22T22:25:21.269Z",
+      "lastSeenAt": "2026-09-22T22:25:21.269Z",
+      "item": {
+        "kind": "news",
+        "title": "Câmara de Funilândia deve corrigir irregularidades em transparência fiscal, decide TCEMG",
+        "url": "https://www.tce.mg.gov.br/Camara-de-Funilandia-deve-corrigir-irregularidades-em-transparencia-fiscal-decide-TCEMG.html/Noticia/1111629192",
+        "publishedAt": "2026-09-22T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "A Primeira Câmara do Tribunal de Contas do Estado de Minas Gerais (TCEMG) julgou procedente representação feita contra a Câmara Municipal de Funilândia em razão do descumprimento das normas relativas à transparência da gestão fiscal e ao acesso à informação. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Primeira Câmara do Tribunal de Contas do Estado de Minas Gerais (TCEMG) julgou procedente representação feita contra a Câmara Municipal de Funilândia em razão do descumprimento das normas relativas à transparência da gestão fiscal e ao acesso à informação. Clique aqui",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -24128,6 +24336,151 @@
           "itemCount": 0
         }
       ]
+    },
+    "35792217906:1": {
+      "at": "2026-09-22T22:25:21.269Z",
+      "collected": 77,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 29,
+          "durationMs": 638
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 30503
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 20,
+          "durationMs": 2371
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 28,
+          "durationMs": 4969
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 18
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 2875
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 3124
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
@@ -24135,120 +24488,120 @@
       "name": "Google News",
       "status": "ok",
       "itemCount": 29,
-      "durationMs": 2747,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "durationMs": 638,
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
       "itemCount": 0,
-      "durationMs": 2633,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
-      "consecutiveFailures": 3,
+      "durationMs": 30503,
+      "checkedAt": "2026-09-22T22:25:21.269Z",
+      "consecutiveFailures": 4,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-22T20:06:01.205Z",
-      "consecutiveFailures": 3,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
+      "consecutiveFailures": 4,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-22T20:06:01.205Z",
-      "consecutiveFailures": 3,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
+      "consecutiveFailures": 4,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
       "status": "error",
       "itemCount": 0,
-      "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-22T20:06:01.205Z",
-      "consecutiveFailures": 3,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
+      "consecutiveFailures": 4,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
-      "itemCount": 19,
-      "durationMs": 3058,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "itemCount": 20,
+      "durationMs": 2371,
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
-      "itemCount": 8,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "itemCount": 9,
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
-      "itemCount": 26,
-      "durationMs": 5057,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "itemCount": 28,
+      "durationMs": 4969,
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -24257,7 +24610,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z"
+      "checkedAt": "2026-09-22T22:25:21.269Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -24266,7 +24619,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z"
+      "checkedAt": "2026-09-22T22:25:21.269Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -24275,59 +24628,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z"
+      "checkedAt": "2026-09-22T22:25:21.269Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
-      "itemCount": 16,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "itemCount": 18,
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 9,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 0,
-      "durationMs": 1898,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "durationMs": 2875,
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T20:06:01.205Z",
+      "checkedAt": "2026-09-22T22:25:21.269Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T20:06:01.205Z"
+      "lastSuccessAt": "2026-09-22T22:25:21.269Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
