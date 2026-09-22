@@ -2911,6 +2911,21 @@
       "category": "PROTOCOLO",
       "source": "Querido Diário",
       "publishedAt": "2026-09-21T12:00:00-03:00"
+    },
+    "18ff4bea6c59d6e68940383919890c47640fd55006bdf992291df1d7c41c0ea4": {
+      "sentAt": "2026-09-22T18:53:15.288Z",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5",
+      "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
+      "titleFingerprint": "0f49c76f88887cd44cb88a874c2445cdbe254fb9da5e781bf6f1efda1e13260b",
+      "contentTokens": [
+        "autorizado",
+        "caratinga",
+        "ciminas",
+        "integrar"
+      ],
+      "category": "ADESÃO",
+      "source": "Diário de Caratinga",
+      "publishedAt": "2026-09-22T16:25:00.000Z"
     }
   },
   "pending": {},
@@ -6748,7 +6763,7 @@
     },
     "ffbcbce6d00d785b673289a1f3b31355057c7b7ec32ca2fa3dd99f4fe01a7976": {
       "firstSeenAt": "2026-09-15T21:18:44.745Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Brava Energia vai operar Papa-Terra integralmente - Agência iNFRA",
@@ -7967,7 +7982,7 @@
     },
     "a1bd236037f5999635c608bf44353466707a5a77658947b85d55bced1a5a06c0": {
       "firstSeenAt": "2026-09-16T16:52:30.454Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "TCE suspende licitação para solução educacional baseada em neurociência",
@@ -8121,7 +8136,7 @@
     },
     "76d123c4769d0147705a749727ed52915df0a0e41e9697b354dfe9f67b55e9ca": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Webinário da FNP orienta municípios sobre a escolha da direção escolar e impacto no Fundeb",
@@ -8307,7 +8322,7 @@
     },
     "9e9fbbd264262c392ed1285e4de87aa9ac7de609c723ad6cfff4140d3f82f462": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "TCEMG julga regulares as contas de 2023 e 2024 do Tribunal de Justiça de Minas Gerais",
@@ -8332,7 +8347,7 @@
     },
     "869629ccde75332528855480adb3065b719273b17b1c9bae2ac2e2bb3c4be676": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Fábio de Melo lança novo livro no TCEMG e emociona público em auditório lotado",
@@ -8357,7 +8372,7 @@
     },
     "74bc051cec0d7fe7dfde86eb404e45aad9291497df7a356c63ab16dd2ef46d48": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "TCEMG multa gestor público por descumprimento de determinações e insistência em concurso público com irregularidades",
@@ -8384,7 +8399,7 @@
     },
     "0bc4d1c8f046268fae484769511d5b3f596e7c0f01cd712b98f480987d8a3f55": {
       "firstSeenAt": "2026-09-16T20:06:29.557Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Tribunal reforça papel do controle na efetividade das políticas públicas durante encontro nacional",
@@ -9197,7 +9212,7 @@
     },
     "bef6149ab0734de0a2921e8a77c5dc461f306f23c8d759757b5d8bd2ffc2653f": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Diálogo Federativo: na CNM, especialistas debatem desafios e potencialidade dos consórcios públicos - Confederação Nacional de Municípios",
@@ -9915,7 +9930,7 @@
     },
     "e5d8de61915e8319dad49430a6a60708e9d6641c64ce4742f111ed92178a5541": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Programa Mais Iguais leva gestoras à Semana do Clima em Nova York",
@@ -10172,7 +10187,7 @@
     },
     "61ed2b20c4aacdc3cd7d32cfb91108b781a29a3dc49e1f06cbac4a2f4d0a233d": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Democracia se fortalece com autocrítica e instituições sólidas, afirma presidente do TCEMG em encontro nacional sobre avaliação dos Tribunais de Contas",
@@ -10197,7 +10212,7 @@
     },
     "6504f1773d4ed0fc68e9510f8a61ab54b79cbd3541ee8b84ca49fc9190db33a4": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "TCESP orienta municípios a fortalecerem bibliotecas públicas e ampliarem acesso a programas do Ministério da Cultura",
@@ -10206,7 +10221,7 @@
         "source": "TCE-SP",
         "sourceUrl": "https://www.tce.sp.gov.br/noticias",
         "stateCode": "SP",
-        "summary": "17/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por intermédio de sua Secretaria-Diretoria Geral, comunicou aos municípios jurisdicionados a existência de programas, ações e mecanismos de apoio disponibilizados pelo Ministério da Cultura destinados à qualificação e ao fortalecimento das bibliotecas públicas. O Comunicado SDG nº 48/2026 foi disponibilizado na 895ª edição do Diário Oficial Eletrônico do TCESP, desta quinta-feira, 17 de setembro. No documento, a Corte destaca o papel das bibliotecas públicas municipais como importantes equipamentos culturais para a promoção da leitura, o exercício da cidadania, a inclusão social e o desenvolvimento educacional e cultural, e recomenda aos gestores uma série de providências para qualificar e fortalecer esses espaços. O comunicado informa que o Ministério da Cultura, por meio da Secretaria de Formação Artística e Cultural, Livro e Leitura e do Sistema Nacional de Bibliotecas Públicas (SNBP), oferece aos municípios: assistência técnica, ações de formação e capacitação, apoio à gestão, qualificação de acervos, e oportunidades de participação em editais e chamadas públicas específicas. Plataforma BiblioBr e PNLD+Bibliotecas Merece especial atenção, segundo o comunicado, o cadastramento e a atualização das informações das bibliotecas municipais na plataforma BiblioBr, medida que possibilita a integração ao Sistema Nacional de Bibliotecas Públicas e amplia o acesso às políticas públicas federais do setor, inclusive editais, programas e outras iniciativas promovidas pelo SNBP. O documento destaca ainda o programa PNLD+Bibliotecas, decorrente da atualização do Programa Nacional do Livro e do Material Didático (PNLD), que passou a contemplar bibliotecas públicas e comunitárias cadastradas no SNBP com o r",
+        "summary": "17/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por intermédio de sua Secretaria-Diretoria Geral, comunicou aos municípios jurisdicionados a existência de programas, ações e mecanismos de apoio disponibilizados pelo Ministério da Cultura destinados à qualificação e ao fortalecimento das bibliotecas...",
         "scraper": "tce-sp",
         "previewOnly": false,
         "classification": {
@@ -10215,7 +10230,7 @@
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "17/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por intermédio de sua Secretaria-Diretoria Geral, comunicou aos municípios jurisdicionados a existência de programas, ações e mecanismos de apoio disponibilizados pelo Ministério da Cultura destinados à qualificação e ao fortalecimento das bibliotecas públicas. O Comunicado SDG nº 48/2026 foi disponibilizado na 895ª edição do Diário Oficial Eletrônico do TCESP, desta quinta-feira, 17 de setembro. No documento, a Corte destaca o papel das bibliotecas públicas municipais como importantes equipamentos culturais para a promoção da leitura, o exercício da cidadania, a inclusão social e o desenvolvimento educacional e cultural, e recomenda aos gestores uma série de providências para qualificar e fortalecer esses espaços. O comunicado informa que o Ministério da Cultura, por meio da Secretaria de Formação Artística e Cultural, Livro e Leitura e do Sistema Nacional de Bibliotecas Públicas (SNBP), oferece aos municípios: assistência técnica, ações de formação e capacitação, apoio à gestão, qualificação de acervos, e oportunidades de participação em editais e chamadas públicas específicas. Plataforma BiblioBr e PNLD+Bibliotecas Merece especial atenção, segundo o comunicado, o cadastramento e a atualização das informações das bibliotecas municipais na plataforma BiblioBr, medida que possibilita a integração ao Sistema Nacional de Bibliotecas Públicas e amplia o acesso às políticas públicas federais do setor, inclusive editais, programas e outras iniciativas promovidas pelo SNBP. O documento destaca ainda o programa PNLD+Bibliotecas, decorrente da atualização do Programa Nacional do Livro e do Material Didático (PNLD), que passou a contemplar bibliotecas públicas e comunitárias cadastradas no SNBP com o r",
+          "evidenceText": "17/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP), por intermédio de sua Secretaria-Diretoria Geral, comunicou aos municípios jurisdicionados a existência de programas, ações e mecanismos de apoio disponibilizados pelo Ministério da Cultura destinados à qualificação e ao fortalecimento das bibliotecas...",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -10223,7 +10238,7 @@
     },
     "ec4e340eeb726f98d0f5679ef5f31e8d3b6b9e201d07f556502b3e02522c62f7": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Santa Fé do Sul e Olímpia são as próximas cidades do Ciclo de Debates do TCESP",
@@ -10249,7 +10264,7 @@
     },
     "0c6651077853dffef47facc43511524b5c537550025e8bdce1f92cd1f08dc12b": {
       "firstSeenAt": "2026-09-17T18:12:13.879Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza fiscalização inédita para verificar acessibilidade em prédios com atendimento ao público",
@@ -10532,7 +10547,7 @@
     },
     "0c5ade03550e456b3996eb2b36f9d1eff477ae9872c868d1aa491444060df132": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "TCEMG adota aplicativo do Banco do Brasil para otimizar transporte e reduzir custos",
@@ -10557,7 +10572,7 @@
     },
     "561b71d1edd1e24c42134479b29c47d3f61de9246d934bd16dd227299920e313": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Encontro Técnico em Capelinha aproxima controle externo dos municípios do Vale do Jequitinhonha",
@@ -10582,7 +10597,7 @@
     },
     "cf02a3c30b248e0c07b6f19decd1614b8a78e61d852b7b5434b4b5b10273ecf2": {
       "firstSeenAt": "2026-09-17T21:20:14.007Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "II Simpósio Estadual sobre Saúde Mental debate papel da liderança na prevenção de riscos psicossociais",
@@ -10608,7 +10623,7 @@
     },
     "3459b276f1d8496813599e757f4528741f0bf8d5962b4bfce0d938454359b76c": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... - Mogi Guaçu Acontece",
@@ -10794,7 +10809,7 @@
     },
     "3c6775aa9d398dd8ed338cd2bf2c7fb16600a118b7bd18e76d518008f9f7b615": {
       "firstSeenAt": "2026-09-18T00:16:00.318Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de Direito da UFMG participam do Projeto Conhecer",
@@ -10819,7 +10834,7 @@
     },
     "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece": {
       "firstSeenAt": "2026-09-18T04:47:07.838Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
@@ -11005,7 +11020,7 @@
     },
     "928d130d02ef622dba128e747b0562e4d2543fb3e5d49b3bbd2f30184d4b4e29": {
       "firstSeenAt": "2026-09-18T09:44:20.602Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei nº /05 - Camara Municipal Varre-Sai",
@@ -11028,7 +11043,7 @@
     },
     "530064fc2d70255f4f1b0ee400c031c573cfff7bb5dc4b967d00c24059cd72f8": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - Portal MPA",
@@ -11420,7 +11435,7 @@
     },
     "95350af70d1e931587cd1ba9c3fce3434249f217f6aa438d4cc5d619a21c56dc": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Debate sobre dados e clima marca 2 mil participantes em série de webinários",
@@ -11443,7 +11458,7 @@
     },
     "d13be8ef98cc981c112d538823b8c7b81fc64645a5e0d0be29f581f555f30d7f": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta painel do IBS aos municípios paranaenses",
@@ -11466,7 +11481,7 @@
     },
     "156ec3c54c14ab1aa09a0be3b6147d1eaeda1480c78b67ff5ab4ef45ff56327b": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "FNP participa de assembleia da Abrasf e apresenta pautas prioritárias para os municípios",
@@ -11719,7 +11734,7 @@
     },
     "53e116cd8838ecf2c622c3d3b73dd4fc03919253d0d56519db0bcb12da0ae5d4": {
       "firstSeenAt": "2026-09-18T14:30:57.201Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Prédios públicos ainda impõem barreiras para acesso aos serviços, aponta fiscalização do TCESP",
@@ -12101,7 +12116,7 @@
     },
     "5b60207654cdd20d9bbd8d8521e329b8dfc1f9cad17f37e85ea38a97ff607b5a": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Tribunal realiza capacitação on-line sobre o Sistema de Processo Eletrônico (e-TCESP)",
@@ -12127,7 +12142,7 @@
     },
     "ce31526e2e9f5939a369ed3dec553d843cd9b65e54d128b7b6065b83f64707bb": {
       "firstSeenAt": "2026-09-18T18:27:12.503Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Memorial celebra dois anos preservando a história da Corte de Contas paulista",
@@ -12228,7 +12243,7 @@
     },
     "d77266b464e94ae5b770377c91b0c64571a7a68a15898d71786ac5df99241e89": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "FNP debate governança compartilhada e integração do transporte nas regiões metropolitanas",
@@ -12366,7 +12381,7 @@
     },
     "2696783687a9e33064da44cd82ce7b991b33720fe1975c30d2b122a293d19d88": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Seminário cultural celebra criação de lei contra violência doméstica",
@@ -12391,7 +12406,7 @@
     },
     "a8aba7661040d1ae6155878336c591b5e9b613f58c051b8d202544321ef913d6": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Futuro da Lei Maria da Penha e atuação em rede para proteção à mulher ganham destaque na sequência da programação",
@@ -12416,7 +12431,7 @@
     },
     "6e55814356c97042fda99c75179aba40fa764487809ea6831ef2ce7c0762a3ef": {
       "firstSeenAt": "2026-09-18T21:40:29.729Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Controle Externo discute impactos da reforma tributária nas concessões com a professora Cristiana Fortini",
@@ -12581,7 +12596,7 @@
     },
     "effa861081e1c8064e543be046fee27d96fd50faab9a3919aeda2ebc6345861f": {
       "firstSeenAt": "2026-09-19T00:19:29.351Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "ACORDO COPIRN E INSTITUTO ATENA DE PESQUISAS CLÍNICAS VIABILIZA, EM CARATER “PRO BONO”, PROCEDIMENTOS E CONSULTAS ESPECIALIZADAS",
@@ -12744,7 +12759,7 @@
     },
     "9c2b997035c5a3ccb3396061cba2d756c4d021726aaf12d9f84432df8ef00a97": {
       "firstSeenAt": "2026-09-19T05:51:51.251Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
@@ -13246,7 +13261,7 @@
     },
     "332c28c98e33581da97a5c333b932f7dd8db542094b7d0bdd888ddafff7f430b": {
       "firstSeenAt": "2026-09-19T14:24:15.414Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Recebe Curso Sobre Assistência Técnica Para Habitação De Interesse Social - ABC Agora",
@@ -13986,7 +14001,7 @@
     },
     "f112d94e28ec6b9fd08ee89b0d2b29b3bc790bf4905d52a2941cb1c945420e66": {
       "firstSeenAt": "2026-09-20T06:14:01.170Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Concurso CIDENNF RJ: provas em outubro; saiba mais! - Estratégia Concursos",
@@ -14009,7 +14024,7 @@
     },
     "b98909a6346fc754d95f43955d2fdc86abd1a14386fee33be2f8539cd08dab84": {
       "firstSeenAt": "2026-09-20T06:14:01.170Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "STP - Pautas - TCE-PR",
@@ -14182,7 +14197,7 @@
     },
     "76e2a536322cf045ecdfa697ad2010622bdc783630b033522b346825269f30a1": {
       "firstSeenAt": "2026-09-20T16:03:54.046Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Vale do Itajaí recicla cinco vezes mais que a média nacional e será referência para o Sul de SC - 4oito",
@@ -14552,7 +14567,7 @@
     },
     "741925b54dd1cf0c5efe2ccf6699ecd305fdd39b8ba7b3869bcc883d730b92da": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel - Banda B",
@@ -14575,7 +14590,7 @@
     },
     "574658e37d4f5ffc237d816b22610cdb9355840f1cfff388bebc9ee932419d07": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "SANTA INÊS, Estado da Paraíba, no uso de suas atribuições - santaines.pb.leg.br",
@@ -14736,7 +14751,7 @@
     },
     "dcec74f99198b643bcd72b43a774237e955976b14c92b495d2d03672d0766a06": {
       "firstSeenAt": "2026-09-21T04:57:53.608Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "José Ivanir é reconduzido à presidência do CISMIV para o biênio 2027/2028 - Primeiro a Saber",
@@ -14759,7 +14774,7 @@
     },
     "94f6bd413a3a578f882ce97c5375b2fb8e3105c2a8ff0d0de5ddb058d488ac6a": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul",
@@ -14785,22 +14800,22 @@
     },
     "9c48d7ce4d0ca03e97ec19f4a07b832acf592b0a632cc5d58ac1beefae9a1116": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 442/2022 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 442/2022 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE94eUIzVm5TNC1pd1VkUXJvUjRqYTdQbTkyLThWYVZxU083QmtzNUF3TkJNOXJaVGZ1a2lUaHVFYWREZk94ZGpsZFk2TlhBemc4eF83SXdKVXdtWGxRYUh1WC1HM2JyNHFQN1VSbEJkMDA4V2ppaEE?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-21T05:16:21.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 442/2022 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 442/2022 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 442/2022 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 442/2022 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -14808,22 +14823,22 @@
     },
     "233b0307f90aedbfc8b63b68aa5f1e7d13e78202aeefc1a809ceca9f6c2384cf": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 495/2017 - Segunda Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 495/2017 - Segunda Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBBRGlLM0pBcEp2a2NST0VaTl9zNk9VcDkxMXV4OXFYaXo4RU1MZ0FDMHJQaTR6a0hvLWxwMGwweFgzOU5qcEZpYV94REtiZ21Cc0M0eEZqRzFGQ3hGb3RFYjhmaUdBdzdkUDlzSEFNNDNieVU0UUE?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-16T11:45:43.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 495/2017 - Segunda Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 495/2017 - Segunda Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 495/2017 - Segunda Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 495/2017 - Segunda Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -15088,7 +15103,7 @@
     },
     "5d9eca87088481dccdc113fbab89f857be698b532a8c9df5bf2de668e3ae84ea": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "FNP lança guia para apoiar municípios na gestão de velocidades e na segurança viária",
@@ -15341,7 +15356,7 @@
     },
     "8d9d9c010a19ae4e4bde08b62c0eebf3bb256f788de89c2c69a66b396b4d7ad5": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "\"Amar é inadiável\": Socorro Acioli lança novo livro em evento do Sempre Um Papo em BH",
@@ -15366,7 +15381,7 @@
     },
     "2784fe05770418aaa377fd4039177139d92385b4ff539f1ae1e66d683d0afd19": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Faculdade AlfaUnipac homenageia durante Encontro Técnico em Capelinha",
@@ -15391,7 +15406,7 @@
     },
     "3def96bf8f888c89fb1b2b70887504383fe147a94977d5d03e28f009dcebc292": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Assessor da Presidência debate reforma tributária e federalismo em congresso jurídico do UNIFEMM",
@@ -15416,7 +15431,7 @@
     },
     "ca7a74c3c9be2802d101213681d6b9a894fb84cb80d05c0d578ec3f5cf022299": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Realiza Oficina Sobre Políticas De Atividade Física Nos Municípios - ABC Agora",
@@ -15439,7 +15454,7 @@
     },
     "1806d33968e6c96ce4f595c75ab7f15a77f2aa0f704ab8a3d5a7854f8e093738": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Avalia Tecnologia De Simulação Para Treinamento Das Guardas Municipais - ABC Agora",
@@ -15576,7 +15591,7 @@
     },
     "354ced75691f0170bc304307da6286384b6e304f643b79cc390e6bd40f2c9d48": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana de Curitiba",
@@ -15944,7 +15959,7 @@
     },
     "5ceb5e44221ed70d2cbc3254b2b740a0e76aee6dcc7269783b9bf17ff8d3549e": {
       "firstSeenAt": "2026-09-22T09:56:26.726Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Notícia - Consórcio ABC promove oficina para integrar políticas de atividade física na região - Consórcio Intermunicipal - Grande ABC",
@@ -15969,22 +15984,22 @@
     },
     "c25aac40c76d2cec74fbefb161ba65ed5068947f6a6b423f72f2bfd839bd5074": {
       "firstSeenAt": "2026-09-22T09:56:26.726Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFAyVzhsSGZLdVQ4QW03WUZwT1l2Tk1fNS1CQ0ZrYk8tSi1SUVNiZ2F4aG42WFNpQWNnY0o4VDJJVy1NdmNRcklyeTI5THVIbnNUN1pyZFFiSmFfQThEamkzUUVKbFNzWEhYZjBDR3JRNlFLYzB3bWZJ?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-19T05:30:03.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 3548/2016 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -16362,7 +16377,7 @@
     },
     "85d8269d6d49cadb0db77cbad04af9e27246481823ed0270238ad952c9e4590e": {
       "firstSeenAt": "2026-09-22T14:51:23.572Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Imagem digitalizada - Câmara Municipal de Centenário do Sul",
@@ -16385,22 +16400,22 @@
     },
     "a0bd994139af861365e8ceaa391f07990b1ecd81f745e7e01bd94bad418385f7": {
       "firstSeenAt": "2026-09-22T14:51:23.572Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
-        "title": "Detalhes do Acórdão - 726/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "title": "Detalhes do Acórdão - 726/2019 - Primeira Câmara - TCE-PR",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBtWlloUkxVYlpwSnp3UHFFeW1raXlNX1BzdUVmMFhxeWJualdTUDlRMzJ3RE1LSG9HNXBGRkZ5Q2ZYTFcyNVYwNE9XWF9LVEdIZG52UDdvU0ZRWjVkUnVCZXJtRmhUQVAwY19xa25sbzFDbnNvWUE?oc=5",
         "sourceUrl": "https://viajuris.tce.pr.gov.br",
         "publishedAt": "2026-09-16T01:39:59.000Z",
-        "source": "viajuris.tce.pr.gov.br",
-        "summary": "Detalhes do Acórdão - 726/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+        "source": "TCE-PR",
+        "summary": "Detalhes do Acórdão - 726/2019 - Primeira Câmara TCE-PR",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Detalhes do Acórdão - 726/2019 - Primeira Câmara viajuris.tce.pr.gov.br",
+          "evidenceText": "Detalhes do Acórdão - 726/2019 - Primeira Câmara TCE-PR",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -16408,7 +16423,7 @@
     },
     "48a476a3e23994dfca10d05a3504ba9c3d4ee9987dd107154ac443df88b33836": {
       "firstSeenAt": "2026-09-22T14:51:23.572Z",
-      "lastSeenAt": "2026-09-22T14:51:23.572Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
       "item": {
         "kind": "news",
         "title": "Temporais provocam duas mortes e afetam mais de 527 mil pessoas no RS",
@@ -16635,6 +16650,342 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "Violonista, compositor e arranjador, Dilermando Reis nasceu na cidade paulista de Guaratinguetá em 22 de setembro de 1916. Filho de violonista, aprendeu tocar ainda criança. Aos 18 anos se mudou para o Rio de Janeiro, onde iniciou a vida profissional como professor em lojas de instrumentos. Em 1935, Dilermando começou a trabalhar no rádio, primeiro na Rádio Guanabara e, logo depois, na Rádio Transmissora, onde tinha um programa de violão solo, uma novidade na época. Em 1940, foi contratado pela Rádio Clube do Brasil e criou a primeira orquestra de violões de que se tem notícia no país. Rádio Nacional Notícias relacionadas: Longa de André Novais vence o Festival de Brasília de Cinema. Primavera dos Museus busca ampliar acesso à cultura em todo o país. Em 1956, estreou na Rádio Nacional um programa próprio, o Sua Majestade, o Violão , que ficou 13 anos no ar. Dilermando também gravou diversos discos com composições próprias e de outros violonistas. É autor de clássicos como a valsa Se ela perguntar e o choro Dois destinos . Também foi responsável por popularizar obras de outros compositores, como Abismo de Rosas , de Canhoto. Ele é considerado por muitos o maior violonista brasileiro, tendo influenciado gerações de músicos. Ele morreu em 1977, aos 60 anos, de problemas cardíacos. Homenagem Nesta terça-feira, às 20h, o Clube do Choro de Brasília recebe o espetáculo “Especial Dilermando Reis – 110 anos: Sob o Céu de Brasília ”. O violonista Alessandro Borges homenageia a obra de um dos grandes nomes da música brasileira, resultado de mais de 20 anos de pesquisa sobre o repertório e a trajetória do compositor. O violonista Alessandro Borges e a cantora Pilar Acosta participam do programa Espaço Arte - Foto Fabio Rodrigues-Pozzebom/Agência Brasil \"Dilermando foi um dos grande",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "181fe65e16b7a615ffa104bd5d99f0c3dd413ebdee625eb24425a39670a68b4a": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5",
+        "sourceUrl": "https://diariodecaratinga.com.br",
+        "publishedAt": "2026-09-22T16:25:00.000Z",
+        "source": "Diário de Caratinga",
+        "summary": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+        "classification": {
+          "category": "ADESÃO",
+          "emoji": "🟦",
+          "score": 12,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "5d965aa1ecab51750a68b6f8cd928f01a7b4688ce315bb77bd505c8a0b56c033": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Governo reduz projeção do PIB para 2% em 2026 e 2,3% em 2027",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/governo-reduz-projecao-do-pib-para-2-em-2026-e-23-em-2027",
+        "publishedAt": "2026-09-22T18:18:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Ministério da Fazenda reduziu de 2,3% para 2% a projeção de crescimento do Produto Interno Bruto (PIB) em 2026. Para 2027, a estimativa também foi revisada para baixo, de 2,5% para 2,3%. As novas projeções constam do Boletim Macrofiscal da Secretaria de Política Econômica (SPE), divulgado nesta terça-feira (22). Segundo a SPE, a revisão reflete principalmente os efeitos dos juros ainda restritivos sobre a atividade econômica, com impacto mais acentuado nos setores de serviços e indústria. A equipe econômica também passou a considerar uma trajetória de flexibilização monetária \"marginalmente mais gradual do que o previsto\" anteriormente. Inflação em 4,9% Notícias relacionadas: Arrecadação federal ultrapassa R$ 2 trilhões em oito meses. Ata do Copom atribui corte da Selic à desaceleração da economia . Mercado reduz projeção da Selic para 13,50%. A projeção para o Índice Nacional de Preços ao Consumidor Amplo (IPCA) em 2026 caiu de 5,1% para 4,9%. Apesar da melhora, a estimativa continua acima do teto da meta de inflação, de 4,5%. A meta contínua estabelecida para o país é de 3%, com intervalo de tolerância de 1,5 ponto percentual para cima ou para baixo. O limite superior, portanto, é de 4,5%. Segundo a SPE, a revisão incorpora os resultados do IPCA até julho, que ficaram parcialmente abaixo do previsto anteriormente, principalmente no caso dos preços de alimentos consumidos nos domicílios e, em menor medida, dos serviços. A Fazenda também citou a melhora das expectativas de inflação e a manutenção da Taxa Selic (juros básicos da economia) em nível contracionista, que desestimula a atividade econômica. \"A revisão também incorpora a melhora das expectativas de inflação para 2026, a manutenção da taxa Selic em patamar contracionista ao longo do ano e a desaceleração esper",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Ministério da Fazenda reduziu de 2,3% para 2% a projeção de crescimento do Produto Interno Bruto (PIB) em 2026. Para 2027, a estimativa também foi revisada para baixo, de 2,5% para 2,3%. As novas projeções constam do Boletim Macrofiscal da Secretaria de Política Econômica (SPE), divulgado nesta terça-feira (22). Segundo a SPE, a revisão reflete principalmente os efeitos dos juros ainda restritivos sobre a atividade econômica, com impacto mais acentuado nos setores de serviços e indústria. A equipe econômica também passou a considerar uma trajetória de flexibilização monetária \"marginalmente mais gradual do que o previsto\" anteriormente. Inflação em 4,9% Notícias relacionadas: Arrecadação federal ultrapassa R$ 2 trilhões em oito meses. Ata do Copom atribui corte da Selic à desaceleração da economia . Mercado reduz projeção da Selic para 13,50%. A projeção para o Índice Nacional de Preços ao Consumidor Amplo (IPCA) em 2026 caiu de 5,1% para 4,9%. Apesar da melhora, a estimativa continua acima do teto da meta de inflação, de 4,5%. A meta contínua estabelecida para o país é de 3%, com intervalo de tolerância de 1,5 ponto percentual para cima ou para baixo. O limite superior, portanto, é de 4,5%. Segundo a SPE, a revisão incorpora os resultados do IPCA até julho, que ficaram parcialmente abaixo do previsto anteriormente, principalmente no caso dos preços de alimentos consumidos nos domicílios e, em menor medida, dos serviços. A Fazenda também citou a melhora das expectativas de inflação e a manutenção da Taxa Selic (juros básicos da economia) em nível contracionista, que desestimula a atividade econômica. \"A revisão também incorpora a melhora das expectativas de inflação para 2026, a manutenção da taxa Selic em patamar contracionista ao longo do ano e a desaceleração esper",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "51e88311cdb5c202af992f517648531bc8cb5e7ddc65a9e0a0aba04b67ee1b56": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Fux vai relatar ação sobre idas da esposa de Moraes ao Senado",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/fux-vai-relatar-acao-sobre-idas-da-esposa-de-moraes-ao-senado",
+        "publishedAt": "2026-09-22T17:46:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ministro Luiz Fux, do Supremo Tribunal Federal (STF), foi sorteado nesta terça-feira (22) para relatar a ação que pede acesso a eventuais registros de entrada e saída no Senado da advogada Viviane Barci, mulher do ministro Alexandre de Moraes, e do ex-banqueiro Daniel Vorcaro. O sorteio da relatoria foi determinado pelo presidente da Corte, ministro Edson Fachin, após Moraes se declarar impedido de analisar o caso . Notícias relacionadas: Moraes se declara impedido em ação sobre ida de sua esposa ao Senado. Mulher de Moraes nega vínculo pessoal com Vorcaro em viagem de jatinho. Defesa de Daniel Vorcaro pede revogação de prisão preventiva a Fachin. Na decisão, que foi proferida na segunda-feira (21), Moraes citou a regra do Código de Processo Civil (CPC) que proíbe um magistrado de analisar um caso quando há um parente como parte. \"Com fundamento no art. 144, IV, do CPC, declaro-me impedido de atuar no presente feito\", decidiu. O caso chegou ao Supremo por meio de uma ação protocolada pelo vereador de Curitiba Guilherme Kilter (Novo). O parlamentar quer obrigar o Senado a fornecer eventuais registros de entrada e saída de Viviane Barci, de Vorcaro, do empresário Antônio Carlos Camilo Antunes, o Careca do INSS, e do empresário Fábio Luís Lula da Silva, filho do presidente Luiz Inácio Lula da Silva, nas dependências da Casa. Segundo o vereador, os pedidos de acesso aos dados foram negados pelo Senado por envolverem \"informações de caráter pessoal\".",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O ministro Luiz Fux, do Supremo Tribunal Federal (STF), foi sorteado nesta terça-feira (22) para relatar a ação que pede acesso a eventuais registros de entrada e saída no Senado da advogada Viviane Barci, mulher do ministro Alexandre de Moraes, e do ex-banqueiro Daniel Vorcaro. O sorteio da relatoria foi determinado pelo presidente da Corte, ministro Edson Fachin, após Moraes se declarar impedido de analisar o caso . Notícias relacionadas: Moraes se declara impedido em ação sobre ida de sua esposa ao Senado. Mulher de Moraes nega vínculo pessoal com Vorcaro em viagem de jatinho. Defesa de Daniel Vorcaro pede revogação de prisão preventiva a Fachin. Na decisão, que foi proferida na segunda-feira (21), Moraes citou a regra do Código de Processo Civil (CPC) que proíbe um magistrado de analisar um caso quando há um parente como parte. \"Com fundamento no art. 144, IV, do CPC, declaro-me impedido de atuar no presente feito\", decidiu. O caso chegou ao Supremo por meio de uma ação protocolada pelo vereador de Curitiba Guilherme Kilter (Novo). O parlamentar quer obrigar o Senado a fornecer eventuais registros de entrada e saída de Viviane Barci, de Vorcaro, do empresário Antônio Carlos Camilo Antunes, o Careca do INSS, e do empresário Fábio Luís Lula da Silva, filho do presidente Luiz Inácio Lula da Silva, nas dependências da Casa. Segundo o vereador, os pedidos de acesso aos dados foram negados pelo Senado por envolverem \"informações de caráter pessoal\".",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "cc4aefa369e4be1037b1ffb4f5897a1c8ab5c077ac0cbf5090ee2b4ad81f95f2": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Na ONU, Trump ameaça novamente usar força militar na América Latina",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/na-onu-trump-ameaca-novamente-usar-forca-militar-na-america-latina",
+        "publishedAt": "2026-09-22T17:31:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Em discurso de quase 40 minutos na sede das Nações Unidas (ONU), o presidente dos Estados Unidos (EUA) Donald Trump voltou a fazer ameaças de uso da força militar em países da América Latina e Caribe para garantir os interesses da Casa Branca na região. “Nossas ações na Venezuela provam que os EUA não permitirão mais que ameaças à América [EUA] ganhem terreno em qualquer parte do Hemisfério Ocidental. E, se necessário, usaremos nosso poderio militar inigualável para garantir os interesses nacionais vitais dos EUA”, disse. Notícias relacionadas: \"O Brasil não cabe no quintal de ninguém”, diz Lula em discurso na ONU. ONU vive momento crítico, diz Lula ao citar indignação com guerras. Secretário-geral da ONU alerta para avanço de guerras e riscos da IA. Trump participou, nesta terça-feira (22), da abertura da 81º Assembleia Geral da ONU, em Nova York. Ele discursou logo após o presidente brasileiro Luiz Inácio Lula da Silva, que ressaltou, entre outros temas, que o Brasil “não cabe no quintal de ninguém” . O presidente dos EUA Donald Trump destacou, em seu discurso na ONU, a invasão ilegal promovida contra a Venezuela, em janeiro deste ano. Ele comemorou o “acordo” petroleiro firmado com a presidente encarregada Delcy Rodríguez, que garante o controle de até 21% do petróleo da Venezuela a uma empresa ligada ao Pentágono. “Foi uma guerra, mas talvez seja o maior negócio já realizado. Ao vencedor pertencem os espólios; todos vocês já ouviram isso”, comentou Trump. Os EUA invadiram a Venezuela e sequestraram o presidente Nicolás Maduro alegando que Caracas seria um “narcoestado”, argumento rejeitado por especialistas . Após a prisão de Maduro, o Departamento de Justiça dos EUA retirou a acusação de que ele lideraria o suposto “Cartel de Los Soles”. A existência desse grupo nã",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Em discurso de quase 40 minutos na sede das Nações Unidas (ONU), o presidente dos Estados Unidos (EUA) Donald Trump voltou a fazer ameaças de uso da força militar em países da América Latina e Caribe para garantir os interesses da Casa Branca na região. “Nossas ações na Venezuela provam que os EUA não permitirão mais que ameaças à América [EUA] ganhem terreno em qualquer parte do Hemisfério Ocidental. E, se necessário, usaremos nosso poderio militar inigualável para garantir os interesses nacionais vitais dos EUA”, disse. Notícias relacionadas: \"O Brasil não cabe no quintal de ninguém”, diz Lula em discurso na ONU. ONU vive momento crítico, diz Lula ao citar indignação com guerras. Secretário-geral da ONU alerta para avanço de guerras e riscos da IA. Trump participou, nesta terça-feira (22), da abertura da 81º Assembleia Geral da ONU, em Nova York. Ele discursou logo após o presidente brasileiro Luiz Inácio Lula da Silva, que ressaltou, entre outros temas, que o Brasil “não cabe no quintal de ninguém” . O presidente dos EUA Donald Trump destacou, em seu discurso na ONU, a invasão ilegal promovida contra a Venezuela, em janeiro deste ano. Ele comemorou o “acordo” petroleiro firmado com a presidente encarregada Delcy Rodríguez, que garante o controle de até 21% do petróleo da Venezuela a uma empresa ligada ao Pentágono. “Foi uma guerra, mas talvez seja o maior negócio já realizado. Ao vencedor pertencem os espólios; todos vocês já ouviram isso”, comentou Trump. Os EUA invadiram a Venezuela e sequestraram o presidente Nicolás Maduro alegando que Caracas seria um “narcoestado”, argumento rejeitado por especialistas . Após a prisão de Maduro, o Departamento de Justiça dos EUA retirou a acusação de que ele lideraria o suposto “Cartel de Los Soles”. A existência desse grupo nã",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "747c235966a008b257c359f3b79e3fb30bda3de643fb1cf2e647adf0aff40bec": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Guia do Enem reúne orientações e métodos de estudo para provas",
+        "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-09/guia-do-enem-traz-orientacoes-e-metodos-de-estudo-para-provas",
+        "publishedAt": "2026-09-22T16:37:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A 47 dias para aplicação das provas do primeiro dia do Exame Nacional do Ensino Médio (Enem) 2026, em 8 de novembro, os inscritos podem conferir orientações oficiais sobre as provas, tutoriais de preparação para o exame e cronogramas de todo o processo em um único site - o Guia do Enem - lançado pelo Ministério da Educação (MEC) nesta segunda-feira (21). Na ferramenta, o material pedagógico produzido pelo MEC estão no formato de textos e de vídeos. Notícias relacionadas: Pé-de-Meia começa a pagar sexta parcela a estudantes nesta segunda. Cartilha reúne orientações para a redação do Enem 2026. Analfabetismo entre jovens e adultos com deficiência é 12 vezes maior. A iniciativa tem o objetivo de ajudar o participante a se preparar melhor para as provas e a compreender melhor o Enem, com vídeos sobre funcionamento do exame e suas etapas, desde a solicitação da isenção da taxa de inscrição, passando pela consulta dos resultados pós-prova, até o passo final que é o acesso à educação superior. Tudo em um só lugar Com o conteúdo organizado, os estudantes podem acessar no Guia do Enem o material de apoio que contribui para sua rotina de estudos, conforme as necessidades individuais. De acordo com o MEC, os destaques da nova página são as dicas de professores, orientações sobre métodos de estudo e vídeos com orientações sobre os procedimentos e a aplicação das provas. Aplicativos gratuitos Há também uma área de acesso gratuitos a aplicativos da pasta para dispositivos móveis, a partir do cadastro no portal Gov.br. São eles : MEC Enem - aplicativo de estudos com simulados de questões alternativas, correção automatizada de redação, materiais de reforço e assistente virtual, com inteligência artificial; MEC Idiomas - aplicativo de aprendizagem bilíngue autoinstrucional, que oferece ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A 47 dias para aplicação das provas do primeiro dia do Exame Nacional do Ensino Médio (Enem) 2026, em 8 de novembro, os inscritos podem conferir orientações oficiais sobre as provas, tutoriais de preparação para o exame e cronogramas de todo o processo em um único site - o Guia do Enem - lançado pelo Ministério da Educação (MEC) nesta segunda-feira (21). Na ferramenta, o material pedagógico produzido pelo MEC estão no formato de textos e de vídeos. Notícias relacionadas: Pé-de-Meia começa a pagar sexta parcela a estudantes nesta segunda. Cartilha reúne orientações para a redação do Enem 2026. Analfabetismo entre jovens e adultos com deficiência é 12 vezes maior. A iniciativa tem o objetivo de ajudar o participante a se preparar melhor para as provas e a compreender melhor o Enem, com vídeos sobre funcionamento do exame e suas etapas, desde a solicitação da isenção da taxa de inscrição, passando pela consulta dos resultados pós-prova, até o passo final que é o acesso à educação superior. Tudo em um só lugar Com o conteúdo organizado, os estudantes podem acessar no Guia do Enem o material de apoio que contribui para sua rotina de estudos, conforme as necessidades individuais. De acordo com o MEC, os destaques da nova página são as dicas de professores, orientações sobre métodos de estudo e vídeos com orientações sobre os procedimentos e a aplicação das provas. Aplicativos gratuitos Há também uma área de acesso gratuitos a aplicativos da pasta para dispositivos móveis, a partir do cadastro no portal Gov.br. São eles : MEC Enem - aplicativo de estudos com simulados de questões alternativas, correção automatizada de redação, materiais de reforço e assistente virtual, com inteligência artificial; MEC Idiomas - aplicativo de aprendizagem bilíngue autoinstrucional, que oferece ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a25f4ebf86607a40a1e2867b98832d7113b2739cb94b98120e4552f0afd8c0f8": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Bombeiros encontram helicóptero com corpo do cantor Rick",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/bombeiros-encontram-helicoptero-com-corpo-do-cantor-rick",
+        "publishedAt": "2026-09-22T16:03:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Os bombeiros de Santa Catarina encontraram nesta terça-feira (22), por volta das 12h, na Serra Catarinense (SC), os destroços do helicóptero no qual viajava o cantor Rick, da dupla Rick e Renner. Havia cinco pessoas a bordo e não há sobreviventes. Notícias relacionadas: Renner pede orações para que parceiro Rick seja localizado. FAB e bombeiros buscam helicóptero com cantor Rick, desaparecido em SC. Além do artista, estavam na aeronave o piloto e copiloto, o empresário Bruno Avelar e ainda o videomaker Paulo Soares. A aeronave desapareceu na tarde de ontem, quando saiu de Porto Belo (região litorânea) em direção à cidade de São Joaquim, ambas em Santa Catarina. As buscas invadiram a madrugada e tiveram de ser brevemente interrompidas devido à falta de visibilidade. Os trabalhos foram retomados de manhã. Após encontrar a aeronave, os bombeiros agora trabalham para retirar os corpos do local e para que a Polícia Científica faça a perícia e as investigações necessárias. A operação de resgate teve o apoio de um helicóptero, mais de 40 bombeiros, cães farejadores e drones de identificação térmica. O helicóptero de matrícula PP-MGR foi localizado pela Força Aérea Brasileira (FAB), que fez 13 horas de sobrevoos na serra catarinense. A equipe da FAB avistou a aeronave em que estava o cantor Rick e direcionou para o local um outro helicóptero que estava mais próximo da ocorrência.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Os bombeiros de Santa Catarina encontraram nesta terça-feira (22), por volta das 12h, na Serra Catarinense (SC), os destroços do helicóptero no qual viajava o cantor Rick, da dupla Rick e Renner. Havia cinco pessoas a bordo e não há sobreviventes. Notícias relacionadas: Renner pede orações para que parceiro Rick seja localizado. FAB e bombeiros buscam helicóptero com cantor Rick, desaparecido em SC. Além do artista, estavam na aeronave o piloto e copiloto, o empresário Bruno Avelar e ainda o videomaker Paulo Soares. A aeronave desapareceu na tarde de ontem, quando saiu de Porto Belo (região litorânea) em direção à cidade de São Joaquim, ambas em Santa Catarina. As buscas invadiram a madrugada e tiveram de ser brevemente interrompidas devido à falta de visibilidade. Os trabalhos foram retomados de manhã. Após encontrar a aeronave, os bombeiros agora trabalham para retirar os corpos do local e para que a Polícia Científica faça a perícia e as investigações necessárias. A operação de resgate teve o apoio de um helicóptero, mais de 40 bombeiros, cães farejadores e drones de identificação térmica. O helicóptero de matrícula PP-MGR foi localizado pela Força Aérea Brasileira (FAB), que fez 13 horas de sobrevoos na serra catarinense. A equipe da FAB avistou a aeronave em que estava o cantor Rick e direcionou para o local um outro helicóptero que estava mais próximo da ocorrência.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "66cf2e9af03473b96699486b2fc5f05cd7f4c855e15ebb504eb50fa3f85dc712": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "\"O Brasil não cabe no quintal de ninguém”, diz Lula em discurso na ONU",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/o-brasil-nao-cabe-no-quintal-de-ninguem-diz-lula-na-onu",
+        "publishedAt": "2026-09-22T15:10:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O presidente Luiz Inácio Lula da Silva voltou a defender a soberania dos países, citando especificamente os cenários da América Latina e do Brasil, onde, segundo o presidente, há tentativas de influência estrangeira sobre processos políticos nacionais. Lula disse que a região da América Latina e do Caribe convive com pressões decorrentes da proximidade com grandes potências. Notícias relacionadas: ONU vive momento crítico, diz Lula ao citar indignação com guerras. “Na América Latina e Caribe, a proximidade geográfica com a maior potência militar do mundo é inescapável, sobretudo no contexto do recrudescimento de tentações hegemônicas. O Brasil não cabe no quintal de ninguém”, afirmou durante discurso na cerimônia de abertura da 81ª Assembleia Geral da ONU, nesta terça-feira (22) em Nova York. “Voltamos a presenciar a ingerência externa em processos eleitorais, a divisão do mundo em zonas de influência e investidas neocoloniais com recursos estratégicos constituem gestos anacrônicos”, destacou, ao citar contextos recentes registrados na Venezuela, na Nicarágua, no Haiti e em Cuba. Segundo o presidente, a região percorreu um longo caminho para consolidar regimes democráticos após períodos de ditadura e autoritarismo. Nesse contexto, ele defendeu maior integração regional e o respeito à autodeterminação dos povos. \"Precisamos de parceiros com uma agenda positiva que fomente o desenvolvimento. Diferenças ideológicas não devem ser obstáculo para uma maior integração entre vizinhos. Os países da região reconheceram os horrores dos regimes de exceção. Percorremos um longo caminho para restaurar a vontade popular\", disse. Democracia em xeque Lula também alertou para o que classificou como retorno de práticas incompatíveis com a ordem internacional contemporânea. \"A democracia e",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O presidente Luiz Inácio Lula da Silva voltou a defender a soberania dos países, citando especificamente os cenários da América Latina e do Brasil, onde, segundo o presidente, há tentativas de influência estrangeira sobre processos políticos nacionais. Lula disse que a região da América Latina e do Caribe convive com pressões decorrentes da proximidade com grandes potências. Notícias relacionadas: ONU vive momento crítico, diz Lula ao citar indignação com guerras. “Na América Latina e Caribe, a proximidade geográfica com a maior potência militar do mundo é inescapável, sobretudo no contexto do recrudescimento de tentações hegemônicas. O Brasil não cabe no quintal de ninguém”, afirmou durante discurso na cerimônia de abertura da 81ª Assembleia Geral da ONU, nesta terça-feira (22) em Nova York. “Voltamos a presenciar a ingerência externa em processos eleitorais, a divisão do mundo em zonas de influência e investidas neocoloniais com recursos estratégicos constituem gestos anacrônicos”, destacou, ao citar contextos recentes registrados na Venezuela, na Nicarágua, no Haiti e em Cuba. Segundo o presidente, a região percorreu um longo caminho para consolidar regimes democráticos após períodos de ditadura e autoritarismo. Nesse contexto, ele defendeu maior integração regional e o respeito à autodeterminação dos povos. \"Precisamos de parceiros com uma agenda positiva que fomente o desenvolvimento. Diferenças ideológicas não devem ser obstáculo para uma maior integração entre vizinhos. Os países da região reconheceram os horrores dos regimes de exceção. Percorremos um longo caminho para restaurar a vontade popular\", disse. Democracia em xeque Lula também alertou para o que classificou como retorno de práticas incompatíveis com a ordem internacional contemporânea. \"A democracia e",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "7299fe1f13d4c75e558c9b49b9b09ebd05ef4bb96bd3665196b301f6251b7407": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Sobe para quatro o número de mortos em decorrência dos temporais no RS",
+        "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/sobe-para-quatro-o-numero-de-mortos-em-decorrencia-dos-temporais-no-rs",
+        "publishedAt": "2026-09-22T14:53:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O estado do Rio Grande do Sul já registra quatro mortes decorrentes do forte temporal que atingiu o estado nesta segunda-feira (21), sendo três vítimas em Caxias do Sul e uma em Pelotas. As informações são da Defesa Civil estadual . A primeira morte registrada foi de um motociclista, atingido pela queda de fios de alta tensão no momento do temporal na cidade de Pelotas. De acordo com a prefeitura, o evento climático, caracterizado principalmente por um forte vendaval que chegou a alcançar 89 km/h, provocou destelhamentos, quedas de árvores e de postes e falta de energia em diversos pontos da cidade. Notícias relacionadas: Temporais provocam duas mortes e afetam mais de 527 mil pessoas no RS. Sob El Niño, primavera deve ter calor, seca e tempestades severas. Defesa Civil alerta para risco muito alto de inundação do Taquari. Em Caxias do Sul, cidade que chegou a registrar 159,4 milímetros de chuva somente nesta segunda-feira, foram encontradas mortas duas vítimas que estavam em um veículo arrastado pela enxurrada. São elas uma adolescente de 13 anos e uma criança de quatro anos. A mulher de 43 anos que também estava no veículo segue desaparecida. Além disso, também em Caxias do Sul, foi encontrado o corpo de um homem que foi arrastado pela água no bairro De Lazzer, enquanto limpava uma galeria. Balanço divulgado nesta manhã (22) pela Defesa Civil apontou que, desde a última sexta-feira (18), foram registradas 151 ocorrências relacionadas a fortes ventos e chuvas em 146 municípios do estado. No total, mais de 527 mil pessoas de todo o estado foram afetadas pelos eventos climáticos dos últimos dias, sendo que 413 delas estão desabrigadas e 2.732, desalojadas. Os fortes ventos e chuvas também provocaram danos em 38 estabelecimentos de ensino e em 17 estabelecimentos de saúde",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O estado do Rio Grande do Sul já registra quatro mortes decorrentes do forte temporal que atingiu o estado nesta segunda-feira (21), sendo três vítimas em Caxias do Sul e uma em Pelotas. As informações são da Defesa Civil estadual . A primeira morte registrada foi de um motociclista, atingido pela queda de fios de alta tensão no momento do temporal na cidade de Pelotas. De acordo com a prefeitura, o evento climático, caracterizado principalmente por um forte vendaval que chegou a alcançar 89 km/h, provocou destelhamentos, quedas de árvores e de postes e falta de energia em diversos pontos da cidade. Notícias relacionadas: Temporais provocam duas mortes e afetam mais de 527 mil pessoas no RS. Sob El Niño, primavera deve ter calor, seca e tempestades severas. Defesa Civil alerta para risco muito alto de inundação do Taquari. Em Caxias do Sul, cidade que chegou a registrar 159,4 milímetros de chuva somente nesta segunda-feira, foram encontradas mortas duas vítimas que estavam em um veículo arrastado pela enxurrada. São elas uma adolescente de 13 anos e uma criança de quatro anos. A mulher de 43 anos que também estava no veículo segue desaparecida. Além disso, também em Caxias do Sul, foi encontrado o corpo de um homem que foi arrastado pela água no bairro De Lazzer, enquanto limpava uma galeria. Balanço divulgado nesta manhã (22) pela Defesa Civil apontou que, desde a última sexta-feira (18), foram registradas 151 ocorrências relacionadas a fortes ventos e chuvas em 146 municípios do estado. No total, mais de 527 mil pessoas de todo o estado foram afetadas pelos eventos climáticos dos últimos dias, sendo que 413 delas estão desabrigadas e 2.732, desalojadas. Os fortes ventos e chuvas também provocaram danos em 38 estabelecimentos de ensino e em 17 estabelecimentos de saúde",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d4247080c68a0849c5be7b6ea8f59e46db4cf43b21ee86e6ea881c9c90b211cf": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Arrecadação federal ultrapassa R$ 2 trilhões em oito meses",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/arrecadacao-federal-ultrapassa-r-2-trilhoes-em-oito-meses",
+        "publishedAt": "2026-09-22T14:41:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O governo federal acumula arrecadação de R$ 2,019 trilhões, de janeiro a agosto de 2026, segundo dados divulgados nesta terça-feira (22) pela Receita Federal . Além da inflação medida pelo IPCA , para o período, o valor representa crescimento de 7,12% na comparação com os mesmos oito meses de 2025. Em agosto, a arrecadação federal alcançou R$ 235,5 bilhões. O valor representa alta acima de inflação de 8,25% em relação a agosto do último ano. Desse total, R$227,8 bilhões arrecadados são administrados pela Receita Federal, excluídos os fatores não recorrentes e de alterações na legislação. Notícias relacionadas: Arrecadação federal cresce 8,97% em julho e chega a R$ 289,3 bilhões. Arrecadação federal cresce 7,7% em junho e soma R$ 264,4 bilhões. De acordo com análise divulgada pelo órgão, os acréscimos são resultado do aumento na arrecadação da contribuição para a Previdência Social, Programa de Integração Social (PIS) e Contribuição para o Financiamento da Seguridade Social (Cofins), que reflete o aumento das vendas. Também o avanço nas arrecadações do Imposto de Renda Retido na Fonte (IRRF) e Imposto de Renda Pessoa Jurídica (IRPJ), além do desempenho da arrecadação do Contribuição Social sobre o Lucro Líquido (CSLL), foi determinante nos resultados apresentados. Neste mês, o Imposto de Exportação sobre óleo bruto também teve destaque entre os fatores que alavancaram os resultados, com arrecadação de R$1,9 bilhão em agosto, o que resultou no acumulado de R$9,9 bilhões de janeiro a agosto de 2026.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O governo federal acumula arrecadação de R$ 2,019 trilhões, de janeiro a agosto de 2026, segundo dados divulgados nesta terça-feira (22) pela Receita Federal . Além da inflação medida pelo IPCA , para o período, o valor representa crescimento de 7,12% na comparação com os mesmos oito meses de 2025. Em agosto, a arrecadação federal alcançou R$ 235,5 bilhões. O valor representa alta acima de inflação de 8,25% em relação a agosto do último ano. Desse total, R$227,8 bilhões arrecadados são administrados pela Receita Federal, excluídos os fatores não recorrentes e de alterações na legislação. Notícias relacionadas: Arrecadação federal cresce 8,97% em julho e chega a R$ 289,3 bilhões. Arrecadação federal cresce 7,7% em junho e soma R$ 264,4 bilhões. De acordo com análise divulgada pelo órgão, os acréscimos são resultado do aumento na arrecadação da contribuição para a Previdência Social, Programa de Integração Social (PIS) e Contribuição para o Financiamento da Seguridade Social (Cofins), que reflete o aumento das vendas. Também o avanço nas arrecadações do Imposto de Renda Retido na Fonte (IRRF) e Imposto de Renda Pessoa Jurídica (IRPJ), além do desempenho da arrecadação do Contribuição Social sobre o Lucro Líquido (CSLL), foi determinante nos resultados apresentados. Neste mês, o Imposto de Exportação sobre óleo bruto também teve destaque entre os fatores que alavancaram os resultados, com arrecadação de R$1,9 bilhão em agosto, o que resultou no acumulado de R$9,9 bilhões de janeiro a agosto de 2026.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c6757f4b70559927ac2fa351d0087d562c5314f3aea172185f7bf26804a20c47": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "ONU vive momento crítico, diz Lula ao citar indignação com guerras",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/onu-vive-momento-critico-diz-lula-ao-citar-indignacao-com-guerras",
+        "publishedAt": "2026-09-22T14:36:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O presidente Luiz Inácio Lula da Silva disse nesta terça-feira (22) que a Organização das Nações Unidas (ONU) vive, desde 2003, seu momento mais crítico. “A ONU está falhando em uma de suas missões mais elevadas: a de livrar a humanidade do flagelo da guerra. Sua credibilidade nunca esteve tão baixa”. “O sentimento que me move hoje é o da indignação”, disse . “A capacidade da ONU de proteger os mais vulneráveis, os que não têm exércitos nem arsenais, nunca foi tão pequena”, completou. Notícias relacionadas: Secretário-geral da ONU alerta para avanço de guerras e riscos da IA. A declaração foi feita durante a abertura do debate geral da 81ª Assembleia Geral da ONU, em Nova York. Em sua fala, Lula lembrou que essa é a 10ª vez em que abre o debate geral e, da tribuna, voltou a criticar especificamente o trabalho do Conselho de Segurança da organização. “Somos todos reféns do imobilismo de um Conselho de Segurança que não cumpre o seu papel”, disse. “Em 1946, já na primeira sessão dessa assembleia, o Brasil alertava para o alto preço que a comunidade internacional pagaria pelo direito de veto. Esse vício conferiu às grandes potências o privilégio da insensatez”. Antes do pronunciamento, Lula se reuniu com o secretário-geral da ONU, António Guterres. O presidente brasileiro subiu à tribuna logo no início da sessão, antes do presidente dos Estados Unidos, Donald Trump. Na segunda-feira (21), Lula se reuniu, já em Nova York, com o presidente do Uruguai, Yamandú Orsi, com o prefeito de Nova York, Zohran Mamdani, e com o senador americano Bernie Sanders. Após o discurso na assembleia geral da ONU, ele deve deixar Nova York ainda nesta terça-feira. O embarque está previsto para 13h50 no horário local, 14h50 no horário de Brasília, com chegada à capital federal prevista para as 23",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O presidente Luiz Inácio Lula da Silva disse nesta terça-feira (22) que a Organização das Nações Unidas (ONU) vive, desde 2003, seu momento mais crítico. “A ONU está falhando em uma de suas missões mais elevadas: a de livrar a humanidade do flagelo da guerra. Sua credibilidade nunca esteve tão baixa”. “O sentimento que me move hoje é o da indignação”, disse . “A capacidade da ONU de proteger os mais vulneráveis, os que não têm exércitos nem arsenais, nunca foi tão pequena”, completou. Notícias relacionadas: Secretário-geral da ONU alerta para avanço de guerras e riscos da IA. A declaração foi feita durante a abertura do debate geral da 81ª Assembleia Geral da ONU, em Nova York. Em sua fala, Lula lembrou que essa é a 10ª vez em que abre o debate geral e, da tribuna, voltou a criticar especificamente o trabalho do Conselho de Segurança da organização. “Somos todos reféns do imobilismo de um Conselho de Segurança que não cumpre o seu papel”, disse. “Em 1946, já na primeira sessão dessa assembleia, o Brasil alertava para o alto preço que a comunidade internacional pagaria pelo direito de veto. Esse vício conferiu às grandes potências o privilégio da insensatez”. Antes do pronunciamento, Lula se reuniu com o secretário-geral da ONU, António Guterres. O presidente brasileiro subiu à tribuna logo no início da sessão, antes do presidente dos Estados Unidos, Donald Trump. Na segunda-feira (21), Lula se reuniu, já em Nova York, com o presidente do Uruguai, Yamandú Orsi, com o prefeito de Nova York, Zohran Mamdani, e com o senador americano Bernie Sanders. Após o discurso na assembleia geral da ONU, ele deve deixar Nova York ainda nesta terça-feira. O embarque está previsto para 13h50 no horário local, 14h50 no horário de Brasília, com chegada à capital federal prevista para as 23",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "84eea0f2b05c0b5232e1b34c2d726a6b24b8abc768dad9d5ff29ec8ff48192a5": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "Tribunal de Contas abre inscrições para cadastro de reserva de estágio remunerado",
+        "url": "https://www.tce.mg.gov.br/Tribunal-de-Contas-abre-inscricoes-para-cadastro-de-reserva-de-estagio-remunerado---.html/Noticia/1111629187",
+        "publishedAt": "2026-09-22T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) abriu processo seletivo simplificado para formação de cadastro de reserva de estagiários de nível superior. As inscrições são gratuitas e podem ser feitas de 21 de setembro a 6 de outubro de 2026, por meio do formulário eletrônico disponível em https://questionarios.tce.mg.gov.br/index.php/461956. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -29,
+          "reasons": [
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) abriu processo seletivo simplificado para formação de cadastro de reserva de estagiários de nível superior. As inscrições são gratuitas e podem ser feitas de 21 de setembro a 6 de outubro de 2026, por meio do formulário eletrônico disponível em https://questionarios.tce.mg.gov.br/index.php/461956. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "fb148ecb674e849eaab8f2d2d68c59970b6c4a5008a5fcbccceb661ce463a191": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "TCEMG cria coordenadoria especializada para analisar atos de admissão de pessoal",
+        "url": "https://www.tce.mg.gov.br/TCEMG-cria-coordenadoria-especializada-para-analisar-atos-de-admissao-de-pessoal.html/Noticia/1111629188",
+        "publishedAt": "2026-09-22T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) passa a contar com uma unidade dedicada exclusivamente à análise dos atos de admissão de pessoal. A criação da Coordenadoria de Registro de Atos de Admissão (CRAD) foi formalizada pela Resolução Delegada nº 6, de 18 de setembro de 2026, publicada no Diário Oficial de Contas desta segunda-feira (21/9). Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Tribunal de Contas do Estado de Minas Gerais (TCEMG) passa a contar com uma unidade dedicada exclusivamente à análise dos atos de admissão de pessoal. A criação da Coordenadoria de Registro de Atos de Admissão (CRAD) foi formalizada pela Resolução Delegada nº 6, de 18 de setembro de 2026, publicada no Diário Oficial de Contas desta segunda-feira (21/9). Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "03e45ec2e3b52fbbca22140b63d7c80cf5274b59235477f0043b996cbc8f84a0": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "news",
+        "title": "TCESP realiza solenidade de entrega do Selo Ouvidoria Cidadã",
+        "url": "https://www.tce.sp.gov.br/6524-tcesp-realiza-solenidade-entrega-selo-ouvidoria-cidada",
+        "publishedAt": "2026-09-21T15:00:00.000Z",
+        "source": "TCE-SP",
+        "sourceUrl": "https://www.tce.sp.gov.br/noticias",
+        "stateCode": "SP",
+        "summary": "21/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP) realizará, no dia 05/10, às 10h, a Solenidade de Entrega do Selo TCESP Ouvidoria Cidadã – Categorias Ouro, Prata e Bronze, no Auditório Nobre \"Professor José Luiz de Anhaia Mello\", na sede da Corte, na capital paulista. Em formato híbrido, com transmissão online, o evento é o resultado da iniciativa da Ouvidoria do TCESP, lançada em março de 2026, por ocasião da celebração do Dia Nacional do Ouvidor e da Ouvidora, com o lançamento do Programa de Aperfeiçoamento e Fortalecimento das Ouvidorias Municipais, voltado a disseminar a importância das ouvidorias públicas como ferramentas de transparência, participação e controle social e de aperfeiçoamento da gestão pública. A premiação por meio da concessão de selos de qualidade tem a finalidade de dar reconhecimento e visibilidade às Ouvidorias Municipais formalmente instituídas junto a Prefeituras e Câmaras Municipais, estimulando o seu constante aprimoramento. Os selos indicam os diferentes níveis de maturidade e qualidade dos serviços prestados: Selo Bronze – reconhece Ouvidorias que cumprem os requisitos de governança, do ponto de vista institucional e formal; Selo Prata – destina-se a Ouvidorias que adotam boas práticas voltadas à gestão e à qualidade do atendimento aos usuários; Selo Ouro – reconhece Ouvidorias que apresentam iniciativas voltadas à acessibilidade, inclusão, prevenção e combate a todas as formas de discriminação e assédio, prevenção e combate à violência contra mulheres e ao estímulo da participação social. Programação A abertura do evento contará com a presença da Conselheira Presidente do TCESP, Cristiana de Castro Moraes, bem como do Conselheiro Renato Martins Costa, Coordenador da Ouvidoria, e da Ouvidora Ana Amélia Caldas Sa",
+        "scraper": "tce-sp",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "21/09/2026 – SÃO PAULO – O Tribunal de Contas do Estado de São Paulo (TCESP) realizará, no dia 05/10, às 10h, a Solenidade de Entrega do Selo TCESP Ouvidoria Cidadã – Categorias Ouro, Prata e Bronze, no Auditório Nobre \"Professor José Luiz de Anhaia Mello\", na sede da Corte, na capital paulista. Em formato híbrido, com transmissão online, o evento é o resultado da iniciativa da Ouvidoria do TCESP, lançada em março de 2026, por ocasião da celebração do Dia Nacional do Ouvidor e da Ouvidora, com o lançamento do Programa de Aperfeiçoamento e Fortalecimento das Ouvidorias Municipais, voltado a disseminar a importância das ouvidorias públicas como ferramentas de transparência, participação e controle social e de aperfeiçoamento da gestão pública. A premiação por meio da concessão de selos de qualidade tem a finalidade de dar reconhecimento e visibilidade às Ouvidorias Municipais formalmente instituídas junto a Prefeituras e Câmaras Municipais, estimulando o seu constante aprimoramento. Os selos indicam os diferentes níveis de maturidade e qualidade dos serviços prestados: Selo Bronze – reconhece Ouvidorias que cumprem os requisitos de governança, do ponto de vista institucional e formal; Selo Prata – destina-se a Ouvidorias que adotam boas práticas voltadas à gestão e à qualidade do atendimento aos usuários; Selo Ouro – reconhece Ouvidorias que apresentam iniciativas voltadas à acessibilidade, inclusão, prevenção e combate a todas as formas de discriminação e assédio, prevenção e combate à violência contra mulheres e ao estímulo da participação social. Programação A abertura do evento contará com a presença da Conselheira Presidente do TCESP, Cristiana de Castro Moraes, bem como do Conselheiro Renato Martins Costa, Coordenador da Ouvidoria, e da Ouvidora Ana Amélia Caldas Sa",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "0229942df2ee79c19f5e62ffbf908990080ec9364e4b7b68a65839660e740f2b": {
+      "firstSeenAt": "2026-09-22T18:53:11.883Z",
+      "lastSeenAt": "2026-09-22T18:53:11.883Z",
+      "item": {
+        "kind": "gazette-index",
+        "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
+        "url": "https://www-storage.voxtecnologia.com.br/?m=sigpub.publicacao&f=182&i=publicado_118442_2026-09-21_b97751cac4ab34f488ebc4766cc7b474.pdf",
+        "publishedAt": "2026-09-22T15:00:00.000Z",
+        "source": "Diário Municipal AMM-MG",
+        "sourceUrl": "https://www.diariomunicipal.com.br/amm-mg/",
+        "summary": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
+        "scraper": "diario-municipal-index",
+        "previewOnly": true,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -22992,25 +23343,165 @@
           "itemCount": 0
         }
       ]
+    },
+    "35770107163:1": {
+      "at": "2026-09-22T18:53:11.883Z",
+      "collected": 76,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 31,
+          "durationMs": 1268
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 3881
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "degraded",
+          "itemCount": 19,
+          "durationMs": 2763
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "CIGA",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Resposta não é RSS/Atom válido"
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 26,
+          "durationMs": 7963
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 16
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 9
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 4252
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 29,
-      "durationMs": 844,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "itemCount": 31,
+      "durationMs": 1268,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
       "itemCount": 0,
-      "durationMs": 3733,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 1,
+      "durationMs": 3881,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 1": {
@@ -23018,8 +23509,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 1,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 2": {
@@ -23027,8 +23518,8 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 1,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Querido Diário — consulta 3": {
@@ -23036,83 +23527,84 @@
       "status": "error",
       "itemCount": 0,
       "message": "Querido Diário respondeu 503",
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 1,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-22T09:56:26.726Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
-      "status": "ok",
-      "itemCount": 20,
-      "durationMs": 3495,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 0,
+      "status": "degraded",
+      "itemCount": 19,
+      "durationMs": 2763,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "CIGA": {
       "name": "CIGA",
-      "status": "ok",
+      "status": "error",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 0,
+      "message": "Resposta não é RSS/Atom válido",
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-22T14:51:23.572Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
-      "itemCount": 9,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "itemCount": 8,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
-      "status": "degraded",
-      "itemCount": 23,
-      "durationMs": 5685,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "status": "ok",
+      "itemCount": 26,
+      "durationMs": 7963,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -23121,7 +23613,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z"
+      "checkedAt": "2026-09-22T18:53:11.883Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -23130,7 +23622,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z"
+      "checkedAt": "2026-09-22T18:53:11.883Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -23139,60 +23631,59 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z"
+      "checkedAt": "2026-09-22T18:53:11.883Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
-      "itemCount": 15,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "itemCount": 16,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
-      "itemCount": 8,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "itemCount": 9,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
-      "status": "error",
-      "itemCount": 0,
-      "message": "Diário Municipal AMM-MG respondeu 500",
-      "checkedAt": "2026-09-22T14:51:23.572Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-09-22T09:56:26.726Z"
+      "status": "ok",
+      "itemCount": 1,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
-      "itemCount": 1,
-      "durationMs": 3212,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "itemCount": 0,
+      "durationMs": 4252,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
-      "itemCount": 1,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "itemCount": 0,
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-22T14:51:23.572Z",
+      "checkedAt": "2026-09-22T18:53:11.883Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-22T14:51:23.572Z"
+      "lastSuccessAt": "2026-09-22T18:53:11.883Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
