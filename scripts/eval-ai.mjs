@@ -6,8 +6,8 @@ const root = path.resolve(import.meta.dirname, '..');
 const outputDir = path.join(root, 'output');
 const cases = [
   ['agenda-abc', 'cria agenda setorial', '2026-09-22', true, ['ATUAÇÃO'], false],
-  ['adesao-centenario', 'Autoriza o ingresso do Município de Centenário do Sul', '2026-09-21', true, ['ADESÃO'], false],
-  ['adesao-caratinga', 'Município é autorizado a integrar consórcio intermunicipal CIMINAS', '2026-09-22', true, ['ADESÃO'], false],
+  ['adesao-centenario', 'Autoriza o ingresso do Município de Centenário do Sul', '2026-09-21', true, ['ADESÃO AUTORIZADA'], false],
+  ['adesao-caratinga', 'Município é autorizado a integrar consórcio intermunicipal CIMINAS', '2026-09-22', true, ['ADESÃO AUTORIZADA'], false],
   ['adesao-neves', 'Ribeirão das Neves oficializa adesão', '2026-09-17', true, ['ADESÃO'], false],
   ['crise-mt', 'Inadimplência deixa oito municípios', '2026-09-16', true, ['CRISE'], false],
   ['protocolo-simao-dias', 'Diário Oficial de Simão Dias', '2026-09-18', true, ['PROTOCOLO', 'GOVERNANÇA', 'ADESÃO'], false],
@@ -59,7 +59,7 @@ if (!process.argv.includes('--deepseek')) process.exit(0);
 
 const key = process.env.DEEPSEEK_API_KEY;
 if (!key) throw new Error('DEEPSEEK_API_KEY ausente.');
-const system = `Você é revisor de notícias sobre consórcios públicos intermunicipais brasileiros. Classifique APENAS o fato comprovado no texto recebido. CRIAÇÃO significa fundação de uma NOVA entidade consorcial; se um consórcio existente criou agenda, projeto ou serviço, classifique ATUAÇÃO. ADESÃO exige ato de ingresso, não proposta ou mera possibilidade. RATEIO exige ato/contrato concreto, não linha contábil, balanço, orçamento ou menção normativa. PROTOCOLO exige ratificação, assinatura ou alteração como fato principal, não citação incidental em contrato de serviço. CONTROLE exige fiscalização real, não cláusula genérica sobre improbidade. Se o texto não comprova evento novo, marque relevante=false e categoria=IRRELEVANTE. Responda somente JSON: {"relevante":boolean,"categoria":"CRIAÇÃO|ADESÃO|SAÍDA|RATEIO|PROTOCOLO|GOVERNANÇA|CONTROLE|CRISE|ATUAÇÃO|IRRELEVANTE|INCERTO","novo_consorcio":boolean,"evidencia":"trecho literal curto do texto","justificativa":"uma frase"}. Não invente fatos nem use conhecimento externo.`;
+const system = `Você é revisor de notícias sobre consórcios públicos intermunicipais brasileiros. Classifique APENAS o fato comprovado no texto recebido. CRIAÇÃO significa fundação de uma NOVA entidade consorcial; se um consórcio existente criou agenda ou projeto relevante, classifique ATUAÇÃO. ADESÃO é ingresso oficializado; ADESÃO AUTORIZADA é lei ou ato que autoriza ingresso, relevante, mas NÃO prova adesão concluída; mera proposta sem autorização é irrelevante. CRISE inclui inadimplência que retire financiamento, paralise atividade ou cause prejuízo concreto a municípios. RATEIO exige ato/contrato concreto, não linha contábil, balanço, orçamento ou menção normativa. PROTOCOLO exige ratificação, assinatura ou alteração como fato principal, não citação incidental em contrato de serviço. Contrato rotineiro de prestação de serviço ou locação, mesmo com consórcio, não é notícia estrutural relevante. CONTROLE exige fiscalização real, não cláusula genérica sobre improbidade. Se o texto não comprova evento novo, marque relevante=false e categoria=IRRELEVANTE. Responda somente JSON: {"relevante":boolean,"categoria":"CRIAÇÃO|ADESÃO|ADESÃO AUTORIZADA|SAÍDA|RATEIO|PROTOCOLO|GOVERNANÇA|CONTROLE|CRISE|ATUAÇÃO|IRRELEVANTE|INCERTO","novo_consorcio":boolean,"evidencia":"trecho literal curto do texto","justificativa":"uma frase"}. Não invente fatos nem use conhecimento externo.`;
 const results = [];
 for (const item of dataset) {
   const user = JSON.stringify({ titulo: item.title, resumo: item.summary.slice(0, 700), trecho: item.evidence.slice(0, 1400), fonte: item.source });
@@ -84,7 +84,7 @@ for (const item of dataset) {
   console.log(`${item.id}: relevante=${answer.relevante}, categoria=${answer.categoria}, novo=${answer.novo_consorcio}; acertos=${Number(result.relevantCorrect)}/${Number(result.categoryCorrect)}/${Number(result.creationCorrect)}`);
 }
 const summary = {
-  model: 'deepseek-flash', sampleSize: results.length,
+  model: 'deepseek-flash', promptVersion: 2, sampleSize: results.length,
   relevantCorrect: results.filter((r) => r.relevantCorrect).length,
   categoryCorrect: results.filter((r) => r.categoryCorrect).length,
   creationCorrect: results.filter((r) => r.creationCorrect).length,
