@@ -2,7 +2,7 @@ name: Radar de Consórcios
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '11,26,41,56 * * * *'
       timezone: America/Sao_Paulo
   workflow_dispatch:
     inputs:
@@ -42,25 +42,32 @@ jobs:
           node-version: 22
           cache: npm
 
+      - name: Evitar coletas repetidas por atraso do agendador
+        id: freshness
+        run: node scripts/should-collect.mjs
+
       - name: Instalar dependências
+        if: steps.freshness.outputs.run == 'true'
         run: npm ci
 
       - name: Testes de regressão
+        if: steps.freshness.outputs.run == 'true'
         run: npm test
 
       - name: Restaurar sessão criptografada
-        if: env.SEND_ENABLED == 'true'
+        if: steps.freshness.outputs.run == 'true' && env.SEND_ENABLED == 'true'
         run: npm run session:decrypt
 
       - name: Executar radar
+        if: steps.freshness.outputs.run == 'true'
         run: npm run collect
 
       - name: Atualizar sessão criptografada
-        if: always() && env.SEND_ENABLED == 'true'
+        if: always() && steps.freshness.outputs.run == 'true' && env.SEND_ENABLED == 'true'
         run: npm run session:encrypt
 
       - name: Persistir sessão e notícias enviadas
-        if: always() && env.PERSIST_STATE == 'true'
+        if: always() && steps.freshness.outputs.run == 'true' && env.PERSIST_STATE == 'true'
         shell: bash
         run: |
           git config user.name "radar-consorcios[bot]"
@@ -75,7 +82,7 @@ jobs:
           git push origin "HEAD:${GITHUB_REF_NAME}"
 
       - name: Guardar relatórios de coleta
-        if: always()
+        if: always() && steps.freshness.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: radar-${{ github.run_id }}
@@ -87,7 +94,7 @@ jobs:
           retention-days: 7
 
       - name: Alertar falhas persistentes
-        if: always() && github.ref_name == 'main'
+        if: always() && github.ref_name == 'main' && (steps.freshness.outputs.run == 'true' || failure())
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RUN_STATUS: ${{ job.status }}

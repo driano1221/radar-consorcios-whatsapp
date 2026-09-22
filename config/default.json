@@ -81,7 +81,8 @@
       {
         "name": "CIGA",
         "url": "https://consorciociga.gov.br/feed/",
-        "stateCode": "SC"
+        "stateCode": "SC",
+        "enabled": false
       },
       {
         "name": "CISREC",
@@ -110,6 +111,14 @@
         "url": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml"
       }
     ]
+  },
+  "ciga": {
+    "enabled": true,
+    "baseUrl": "https://consorciociga.gov.br",
+    "pageSize": 100,
+    "maxPages": 2,
+    "timeoutMs": 12000,
+    "retries": 1
   },
   "sapl": {
     "enabled": true,

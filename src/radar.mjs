@@ -22,6 +22,7 @@ import { sendMessages } from './lib/whatsapp.mjs';
 import { buildSourceFunnel, formatSourceFunnel } from './lib/run-metrics.mjs';
 import { observeRun } from './lib/history.mjs';
 import { fetchSapl } from './lib/sources/sapl.mjs';
+import { fetchCiga } from './lib/sources/ciga.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -41,6 +42,7 @@ async function main() {
     ['Feeds RSS', () => fetchRssFeeds(config.rssFeeds, since)],
     ['Scrapers web', () => fetchWebScrapers(config.webScrapers, since)],
     ['SAPL', () => fetchSapl(config.sapl, since)],
+    ['CIGA', () => fetchCiga(config.ciga, since)],
   ];
   const results = await Promise.allSettled(
     sourceRequests.map(async ([name, request]) => {

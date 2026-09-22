@@ -1,6 +1,6 @@
 # Radar de Consórcios no WhatsApp
 
-Radar automatizado de notícias e atos oficiais sobre consórcios intermunicipais. O projeto consulta fontes públicas uma vez por hora, identifica acontecimentos relevantes, evita repetições e publica resumos curtos em um grupo do WhatsApp.
+Radar automatizado de notícias e atos oficiais sobre consórcios intermunicipais. O projeto tenta consultar fontes públicas aproximadamente uma vez por hora, identifica acontecimentos relevantes, evita repetições e publica resumos curtos em um grupo do WhatsApp.
 
 O piloto apoia a pesquisa do Ipea **“Avanços e Limites da Coordenação Federativa por meio de Consórcios Intermunicipais: aprendendo com os ‘fracassos’”**.
 
@@ -9,7 +9,7 @@ O piloto apoia a pesquisa do Ipea **“Avanços e Limites da Coordenação Feder
 - piloto ativo desde 14 de agosto de 2026;
 - repositório público e runners padrão do GitHub Actions;
 - destino atual: grupo **Radar Consórcios - Teste**;
-- 24 coletas por dia, no minuto 17 de cada hora, no fuso de São Paulo;
+- agendamento redundante nos minutos 11, 26, 41 e 56; coletas com menos de 50 minutos de intervalo são dispensadas;
 - até 3 publicações por rodada e 72 por dia, somente quando houver conteúdo novo;
 - sem API paga, n8n ou servidor permanente;
 - sessão do WhatsApp cifrada com AES-256-GCM;
@@ -37,13 +37,16 @@ O radar combina cinco famílias de fontes:
 
 - Google News RSS, com 21 consultas temáticas, incluindo controle, Ministério Público, Legislativo e filtros para RNCP, CNM, CISAMAPI e TCE-PR;
 - API pública do Querido Diário, dividida em três grupos de termos;
-- feeds diretos do COPIRN, CIGA, CISREC, CONIAPE, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil;
+- feeds diretos do COPIRN, CISREC, CONIAPE, Observatório das Metrópoles, Frente Nacional de Prefeitas e Prefeitos e Agência Brasil;
+- API de artigos do Consórcio de Inovação na Gestão Pública (CIGA), usando a data editorial da notícia;
 - portais TCE-MG, TCE-SP e índice da AMM-MG; adaptadores RNCP/CISAMAPI disponíveis, mas desativados no Actions por HTTP 403;
 - APIs SAPL de normas jurídicas de Unaí e São João da Boa Vista.
 
-A CNM direta continua desativada por bloqueio HTTP; sua descoberta pelo Google permanece. RNCP e CISAMAPI funcionaram localmente, mas falharam no GitHub. TCE-PR direto ainda não foi homologado.
+A CNM direta continua desativada por bloqueio HTTP; sua descoberta pelo Google permanece. RNCP e CISAMAPI funcionaram localmente, mas falharam no GitHub. O antigo endereço de RSS do CIGA passou a devolver HTML, por isso foi substituído pela API de artigos do próprio consórcio. TCE-PR direto ainda não foi homologado.
 
 Cada família é consultada de forma independente. A falha temporária de uma fonte não interrompe as demais.
+
+O Querido Diário tem períodos de HTTP 503 no serviço de origem. Essas falhas ficam visíveis na saúde das fontes; as consultas seguintes repetem a janela de sete dias para recuperar publicações quando a API voltar. A disponibilidade desse serviço externo não pode ser garantida pelo radar.
 
 Cada scraper possui ativação própria. TCE-MG e TCE-SP podem publicar quando os critérios forem atendidos. AMM-MG monitora somente o índice, em prévia. Falhas na leitura do artigo mantêm o item em prévia. Relatórios e prévias ficam em `output/` e nos artefatos das execuções.
 
@@ -87,7 +90,7 @@ O repositório é público: os minutos de runners padrão são gratuitos segundo
 - Dados criptográficos internos são filtrados dos logs.
 - `.local/`, sessões abertas, senha, número pessoal e ID do grupo não entram no Git.
 - O destino é definido por um secret do GitHub.
-- O Actions é periódico e pode sofrer pequenos atrasos.
+- O agendador do Actions pode atrasar ou descartar execuções. Os quatro horários aumentam as oportunidades de disparo; o estado impede coletas repetidas em menos de 50 minutos, sem garantir uma execução exata a cada hora.
 - Se o WhatsApp desvincular o aparelho, será necessário parear novamente.
 - Mesmo sem notícias novas, a sessão é verificada a cada 24 horas para que uma desconexão não fique escondida atrás de execuções verdes.
 
