@@ -79,6 +79,12 @@ A deduplicação combina:
 
 Isso permite reconhecer, por exemplo, o mesmo ato publicado por duas fontes com títulos e endereços diferentes. Nenhum método é infalível; casos reais observados durante o piloto serão usados para calibrar os limiares.
 
+## Apresentação de títulos e links
+
+Quando o Google Notícias entrega uma manchete terminada em reticências, o radar procura a ementa completa no portal legislativo de origem. Se encontra a norma e confirma o endereço direto, usa um título curto baseado na ementa. Caso contrário, apresenta um título editorial conservador, sem reproduzir a frase cortada.
+
+Links longos são enviados aos encurtadores gratuitos [CleanURI](https://cleanuri.com/docs) e [is.gd](https://www.is.gd/developers.php), somente para os candidatos selecionados. A resposta fica em cache no estado. Se ambos estiverem indisponíveis, a mensagem usa o endereço original. O endereço original continua guardado para deduplicação e conferência.
+
 ## Frequência e cota gratuita
 
 O repositório é público: os minutos de runners padrão são gratuitos segundo a [documentação do GitHub](https://docs.github.com/en/billing/concepts/product-billing/github-actions). O coletor tem timeout de oito minutos, a saúde da sessão de três e o resumo semanal de cinco; esses limites não são a duração esperada. Artefatos de coleta expiram em sete dias e os resumos em 14 dias para limitar armazenamento. Nenhum serviço pago foi acrescentado.

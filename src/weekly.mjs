@@ -6,6 +6,7 @@ import { loadState, saveState } from './lib/dedupe.mjs';
 import { weeklyWindow, buildWeeklyReport } from './lib/history.mjs';
 import { formatWeeklyMessage } from './lib/format.mjs';
 import { sendMessages } from './lib/whatsapp.mjs';
+import { presentItem } from './lib/message-presentation.mjs';
 
 async function main() {
   const config = await loadConfig();
@@ -19,7 +20,12 @@ async function main() {
     console.log('Resumo desta semana já enviado para este destino.');
     return;
   }
-  const report = existing?.report || buildWeeklyReport(state, window, config.minimumScore);
+  state.shortLinks ||= {};
+  const baseReport = existing?.report || buildWeeklyReport(state, window, config.minimumScore);
+  const report = existing?.text ? baseReport : { ...baseReport, highlights: [] };
+  if (!existing?.text) {
+    for (const item of baseReport.highlights) report.highlights.push(await presentItem(item, state.shortLinks));
+  }
   const text = existing?.text || formatWeeklyMessage(report, process.env.WEEKLY_TEST === 'true');
   await mkdir(config.outputDir, { recursive: true });
   await writeFile(path.join(config.outputDir, 'weekly-preview.txt'), text + '\n');

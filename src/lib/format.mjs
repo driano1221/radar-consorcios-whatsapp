@@ -140,10 +140,13 @@ function gazetteKeyPoints(item) {
 
 export function buildSummary(item) {
   if (item.kind === 'gazette') return gazetteLead(item);
+  if (item.verifiedSummary) return firstCompleteSentence(item.verifiedSummary, item.presentationTitle || item.title);
+  if (/(?:\.\.\.|…)/.test(item.title || '') && /(?:\.\.\.|…)/.test(item.summary || '')) return '';
   return firstCompleteSentence(item.classification?.evidenceText || item.summary || item.rawText, item.title);
 }
 
 export function displayTitle(item) {
+  if (item.presentationTitle) return cleanInline(item.presentationTitle);
   if (item.kind !== 'gazette') return cleanInline(item.title);
   const locality = cleanInline(item.territoryName || 'Município');
   const consortium = extractConsortiumLabel(item);
@@ -184,13 +187,13 @@ export function formatWhatsAppMessage(item) {
       : categoryLabels[classification.category] || categoryLabels.GERAL;
   const points = item.kind === 'gazette' ? gazetteKeyPoints(item) : [];
   const sourceLabel = cleanInline(item.source);
-  const linkLabel = item.kind === 'gazette' ? 'Acesse o ato oficial (PDF)' : 'Leia a notícia completa';
+  const linkLabel = item.kind === 'gazette' ? 'Acesse o ato oficial (PDF)' : item.officialLegislation ? 'Acesse a legislação oficial' : 'Leia a notícia completa';
   const lines = [
     `${classification.emoji} *${category}*`,
     `*${cleanInline(displayTitle(item))}*`,
   ];
   const summary = cleanInline(buildSummary(item));
-  if (normalizeForMatch(summary).replace(/[.!?]+$/, '') !== normalizeForMatch(displayTitle(item)).replace(/[.!?]+$/, '')) {
+  if (summary && normalizeForMatch(summary).replace(/[.!?]+$/, '') !== normalizeForMatch(displayTitle(item)).replace(/[.!?]+$/, '')) {
     lines.push('', `> ${summary}`);
   }
 
@@ -202,7 +205,7 @@ export function formatWhatsAppMessage(item) {
     '',
     `_📅 ${formatDate(item.publishedAt)}  ·  📰 ${sourceLabel}_`,
     `🔗 *${linkLabel}:*`,
-    item.url,
+    item.displayUrl || item.url,
   );
   return lines.filter((line, index, all) => line !== '' || all[index - 1] !== '').join('\n').trim();
 }
@@ -213,7 +216,7 @@ export function formatRunSummary(items, sendEnabled) {
     ? items.map(
         (item) =>
           `- ${item.classification.emoji} **${item.classification.category}** ` +
-          `(${item.classification.score} pontos): [${item.title}](${item.url})`,
+          `(${item.classification.score} pontos): [${displayTitle(item)}](${item.displayUrl || item.url})`,
       )
     : ['- Nenhuma notícia nova atingiu a pontuação mínima.'];
   return [`## ${header}`, '', ...rows, ''].join('\n');
@@ -269,7 +272,7 @@ export function formatWeeklyMessage(report, test = false) {
   for (const [index, item] of report.highlights.entries()) {
     const title = cleanInline(displayTitle(item));
     const block = [`${index + 1}. *${title}*${item.previewOnly ? ' _(em prévia)_' : ''}`,
-      `${cleanInline(item.source)} · ${date(item.publishedAt)}`, item.url, ''];
+      `${cleanInline(item.source)} · ${date(item.publishedAt)}`, item.displayUrl || item.url, ''];
     if ([...rows, ...block].join('\n').length > 4800) break;
     rows.push(...block);
   }

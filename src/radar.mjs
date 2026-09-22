@@ -23,6 +23,7 @@ import { buildSourceFunnel, formatSourceFunnel } from './lib/run-metrics.mjs';
 import { observeRun } from './lib/history.mjs';
 import { fetchSapl } from './lib/sources/sapl.mjs';
 import { fetchCiga } from './lib/sources/ciga.mjs';
+import { presentItem } from './lib/message-presentation.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -101,6 +102,9 @@ async function main() {
   if (config.persistState) await saveState(config.stateFile, state);
   const available = config.sendEnabled ? listPending(state) : discovered;
   const unseen = available.slice(0, Math.min(config.maxPostsPerRun, remainingToday));
+  state.shortLinks ||= {};
+  const presentedUnseen = [];
+  for (const item of unseen) presentedUnseen.push(await presentItem(item, state.shortLinks));
   const scraperPreview = selectUnseen(previewRelevant, state).slice(0, 50);
   const scraperObservations = collected.filter((item) => item.scraper);
   const funnel = buildSourceFunnel({
@@ -122,7 +126,7 @@ async function main() {
   );
   await writeFile(
     path.join(config.outputDir, 'preview.txt'),
-    `${unseen.map(formatWhatsAppMessage).join('\n\n──────────\n\n')}\n`,
+    `${presentedUnseen.map(formatWhatsAppMessage).join('\n\n──────────\n\n')}\n`,
     'utf8',
   );
   await writeFile(
@@ -184,7 +188,7 @@ async function main() {
 
   if (!config.sendEnabled) {
     console.log('SEND_ENABLED=false: prévia concluída sem publicar no WhatsApp.');
-    const summary = formatRunSummary(unseen, false);
+    const summary = formatRunSummary(presentedUnseen, false);
     console.log(summary);
     await appendGitHubSummary(`${summary}\n${scraperSummary}\n${funnelSummary}`);
     return;
@@ -197,7 +201,7 @@ async function main() {
     return;
   }
 
-  const payload = unseen.map((item) => ({ item, text: formatWhatsAppMessage(item) }));
+  const payload = unseen.map((item, index) => ({ item, presented: presentedUnseen[index], text: formatWhatsAppMessage(presentedUnseen[index]) }));
   await saveState(config.stateFile, state);
   let sent;
   try {
@@ -217,7 +221,7 @@ async function main() {
     throw error;
   }
   await appendGitHubSummary(
-    `${formatRunSummary(sent.map((entry) => entry.item), true)}\n${scraperSummary}\n${funnelSummary}`,
+    `${formatRunSummary(sent.map((entry) => entry.presented), true)}\n${scraperSummary}\n${funnelSummary}`,
   );
   console.log(`${sent.length} mensagem(ns) publicada(s) no grupo.`);
 }
