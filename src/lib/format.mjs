@@ -253,32 +253,37 @@ export function formatScraperSummary(items, observationsCount, diagnostics = [])
 export { formatDate };
 
 export function formatWeeklyMessage(report, test = false) {
-  const count = (n, singular, plural) => `${n} ${n === 1 ? singular : plural}`;
-  const date = (value) => new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit' }).format(new Date(value));
-  const rows = [test ? '🧪 *PRÉVIA DO RESUMO SEMANAL*' : '🗓️ *RADAR CONSÓRCIOS | RESUMO SEMANAL*',
-    `_${date(report.start)} a ${date(report.end)} · corte às ${new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit' }).format(new Date(report.end))}_`, '',
-    '*A semana em números*',
-    `- ${count(report.observations, 'publicação única encontrada', 'publicações únicas encontradas')}`,
-    `- ${count(report.events, 'achado relevante', 'achados relevantes')} após deduplicação`,
-    `- ${count(report.sent, 'notícia enviada', 'notícias enviadas')} · ${count(report.pending, 'achado em fila', 'achados em fila')}`,
-    `- ${count(Object.keys(report.sources).length, 'fonte', 'fontes')} nos achados · ${count(report.runs, 'coleta', 'coletas')}`,
+  const date = (value) => new Intl.DateTimeFormat('pt-BR', {
+    timeZone: 'America/Sao_Paulo', day: '2-digit', month: '2-digit',
+  }).format(new Date(value));
+  const hour = new Intl.DateTimeFormat('pt-BR', {
+    timeZone: 'America/Sao_Paulo', hour: '2-digit', minute: '2-digit',
+  }).format(new Date(report.end));
+  const labels = {
+    CRISE: 'ALERTA', SAÍDA: 'SAÍDA', CRIAÇÃO: 'NOVO CONSÓRCIO', ADESÃO: 'ADESÃO',
+    RATEIO: 'RATEIO', PROTOCOLO: 'PROTOCOLO', GOVERNANÇA: 'GESTÃO',
+    CONTROLE: 'FISCALIZAÇÃO', FINANÇAS: 'FINANÇAS', ATUAÇÃO: 'ATUAÇÃO', AÇÃO: 'ATUAÇÃO',
+  };
+  const rows = [
+    `${test ? '🧪 *PRÉVIA · ' : '🗞️ *'}RADAR CONSÓRCIOS*`,
+    `_${date(report.start)} a ${date(report.end)} · atualizado às ${hour}_`,
+    '',
+    `*${report.events} ${report.events === 1 ? 'achado relevante' : 'achados relevantes'}*`,
   ];
-  if (report.preview) rows.push(`- ${count(report.preview, 'achado ainda em prévia', 'achados ainda em prévia')}`);
-  if (report.partial) rows.push('', 'ℹ️ Histórico parcial: o registro detalhado começou durante ou após o início deste período.');
-  if (Object.keys(report.categories).length) rows.push('', '*Temas identificados*',
-    ...Object.entries(report.categories).sort((a,b) => b[1]-a[1]).map(([label, n]) => `- ${cleanInline(categoryLabels[label] || label)}: ${n}`));
-  rows.push('', '*Principais achados*');
-  if (!report.highlights.length) rows.push('Nenhum achado atingiu os critérios nesta janela. Isso não significa ausência de eventos fora das fontes consultadas.');
+  if (!report.highlights.length) rows.push('', 'Nenhum achado atingiu os critérios nesta janela.');
   for (const [index, item] of report.highlights.entries()) {
-    const title = cleanInline(displayTitle(item));
-    const block = [`${index + 1}. *${title}*${item.previewOnly ? ' _(em prévia)_' : ''}`,
-      `${cleanInline(item.source)} · ${date(item.publishedAt)}`, item.displayUrl || item.url, ''];
-    if ([...rows, ...block].join('\n').length > 4800) break;
-    rows.push(...block);
+    const ratifiedProtocol = item.kind === 'gazette' && item.classification?.category === 'GOVERNANÇA' &&
+      /ratifica.{0,35}protocolo de intenções/i.test(item.summary || '');
+    const title = ratifiedProtocol
+      ? `${cleanInline(item.territoryName || 'Município')} ratifica protocolo de intenções${extractConsortiumLabel(item) ? ` do ${extractConsortiumLabel(item)}` : ''}`
+      : cleanInline(displayTitle(item));
+    const source = cleanInline(item.source || 'Fonte não informada');
+    const suffix = ` - ${source}`;
+    const headline = title.toLocaleLowerCase('pt-BR').endsWith(suffix.toLocaleLowerCase('pt-BR'))
+      ? title.slice(0, -suffix.length) : title;
+    const category = labels[item.classification?.category] || 'CONSÓRCIOS';
+    rows.push('', `${index + 1}. *${category} · ${headline}*`,
+      `_${source} · ${date(item.publishedAt)}_`, item.displayUrl || item.url);
   }
-  const rankedSources = Object.entries(report.sources).sort((a,b) => b[1]-a[1]);
-  if (rankedSources.length) rows.push('*Origem dos achados*', ...rankedSources.slice(0, 6).map(([s,n])=>`- ${cleanInline(s)}: ${n}`));
-  if (report.failures.length) rows.push('', '⚠️ *Cobertura com falhas no período*', report.failures.map(cleanInline).slice(0, 8).join(' · '));
-  rows.push('', '_Os achados são selecionados por regras automáticas. Consulte os links para verificar cada publicação._');
-  return rows.join('\n').replace(/\n{3,}/g, '\n\n').trim();
+  return rows.join('\n').trim();
 }

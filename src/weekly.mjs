@@ -6,14 +6,16 @@ import { loadState, saveState } from './lib/dedupe.mjs';
 import { weeklyWindow, buildWeeklyReport } from './lib/history.mjs';
 import { formatWeeklyMessage } from './lib/format.mjs';
 import { sendMessages } from './lib/whatsapp.mjs';
-import { presentItem } from './lib/message-presentation.mjs';
+import { presentItem, shortenLongUrl } from './lib/message-presentation.mjs';
 
 async function main() {
   const config = await loadConfig();
   const state = await loadState(config.stateFile);
   const groupId = process.env.WHATSAPP_WEEKLY_GROUP_ID?.trim() || config.groupId;
   const window = weeklyWindow(new Date(), !config.sendEnabled || process.env.WEEKLY_TEST === 'true');
-  const id = `${process.env.WEEKLY_TEST === 'true' ? 'test:' : ''}${window.end.toISOString().slice(0, 10)}:${createHash('sha256').update(groupId).digest('hex').slice(0, 12)}`;
+  const edition = process.env.WEEKLY_EDITION?.trim() || '';
+  if (edition && !/^[a-z0-9-]{1,40}$/.test(edition)) throw new Error('WEEKLY_EDITION inválida.');
+  const id = `${process.env.WEEKLY_TEST === 'true' ? 'test:' : ''}${window.end.toISOString().slice(0, 10)}:${edition ? `${edition}:` : ''}${createHash('sha256').update(groupId).digest('hex').slice(0, 12)}`;
   state.weekly ||= {};
   const existing = state.weekly[id];
   if (config.sendEnabled && existing?.sentAt) {
@@ -24,7 +26,11 @@ async function main() {
   const baseReport = existing?.report || buildWeeklyReport(state, window, config.minimumScore);
   const report = existing?.text ? baseReport : { ...baseReport, highlights: [] };
   if (!existing?.text) {
-    for (const item of baseReport.highlights) report.highlights.push(await presentItem(item, state.shortLinks));
+    for (const item of baseReport.highlights) {
+      const presented = await presentItem(item, state.shortLinks);
+      const displayUrl = await shortenLongUrl(presented.displayUrl || item.url, state.shortLinks, fetch, 80);
+      report.highlights.push({ ...presented, displayUrl });
+    }
   }
   const text = existing?.text || formatWeeklyMessage(report, process.env.WEEKLY_TEST === 'true');
   await mkdir(config.outputDir, { recursive: true });

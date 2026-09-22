@@ -28,8 +28,8 @@ const RULES = [
   {
     category: 'CRIAÇÃO', emoji: '🟩', weight: 8, priority: 85, requiresPublicContext: true,
     patterns: [
-      /\b(cria|criado|criacao|institui|formaliza)\b.{0,140}\bconsorcio/,
-      /\b(constitui|constituicao)\b.{0,50}\b(um |do )consorcio/,
+      /\b(cria|criado|institui|formaliza|constitui)\s+(?:(?:o|um|novo)\s+)?consorcio/,
+      /\b(criacao|constituicao)\s+(?:de|do|de um|do novo)\s+consorcio/,
       /\bnovo consorcio\b/,
     ],
   },
@@ -86,6 +86,7 @@ const RULES = [
     patterns: [
       /\bconsorcio\b.{0,120}\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta|firmou|firma|assinou|inaugurou|ampliou)\b/,
       /\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta)\b.{0,120}\bconsorcio/,
+      /\bconsorcio\b.{0,100}\b(cria agenda|articula investimentos|estabelece agenda)\b/,
     ],
   },
 ];

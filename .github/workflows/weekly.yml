@@ -14,6 +14,10 @@ on:
         description: Usar janela até agora e identificar como prévia de teste
         type: boolean
         default: false
+      edition:
+        description: Identificador opcional para reenviar uma versão revisada da prévia
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -33,6 +37,7 @@ jobs:
       WHATSAPP_WEEKLY_GROUP_ID: ${{ secrets.WHATSAPP_WEEKLY_GROUP_ID }}
       SEND_ENABLED: ${{ github.event_name == 'schedule' && (vars.SEND_ENABLED || 'false') || format('{0}', inputs.send_enabled) }}
       WEEKLY_TEST: ${{ format('{0}', inputs.test_preview) }}
+      WEEKLY_EDITION: ${{ inputs.edition }}
     steps:
       - uses: actions/checkout@v7
         with:

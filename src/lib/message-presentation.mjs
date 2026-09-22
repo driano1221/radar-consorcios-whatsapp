@@ -56,8 +56,8 @@ export async function findOfficialLegislation(item, fetchImpl = fetch) {
   return match;
 }
 
-export async function shortenLongUrl(target, cache = {}, fetchImpl = fetch) {
-  if (target.length <= 180) return target;
+export async function shortenLongUrl(target, cache = {}, fetchImpl = fetch, maxLength = 180) {
+  if (target.length <= maxLength) return target;
   if (cache[target]) return cache[target];
   const failures = [];
   try {

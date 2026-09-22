@@ -32,7 +32,7 @@ test('resumo inclui achados não enviados sem somar observações repetidas', ()
   assert.equal(report.partial, true);
   assert.deepEqual(report.failures, ['API']);
   assert.match(formatWeeklyMessage(report), /1 achado relevante/);
-  assert.match(formatWeeklyMessage(report), /Histórico parcial/);
+  assert.doesNotMatch(formatWeeklyMessage(report), /publicações únicas|Histórico parcial|Cobertura com falhas/);
 });
 
 test('contadores de saúde zeram apenas depois de uma coleta saudável', () => {
@@ -61,4 +61,40 @@ test('resumo vazio informa cobertura e não inventa notícias', () => {
   assert.match(text, /0 achados relevantes/);
   assert.match(text, /Nenhum achado atingiu/);
   assert.doesNotMatch(text, /undefined|NaN/);
+});
+
+test('resumo lista todos os achados, sem limite de cinco e sem estatísticas de coleta', () => {
+  const state = { seen: {}, pending: {} };
+  const now = new Date('2026-09-18T17:00:00Z');
+  const categories = ['ADESÃO', 'RATEIO', 'SAÍDA', 'CRISE', 'GOVERNANÇA', 'PROTOCOLO', 'FINANÇAS'];
+  for (let i = 0; i < 7; i++) {
+    observeRun(state, [{ ...item, title: `Achado real ${i + 1}`, url: `https://exemplo.gov.br/noticia-${i + 1}`,
+      classification: { ...item.classification, category: categories[i] } }],
+      [{ name: 'API', status: 'error' }], 5, now, `run-${i}`);
+  }
+  const report = buildWeeklyReport(state, weeklyWindow(new Date('2026-09-19T13:00:00Z')));
+  const text = formatWeeklyMessage(report);
+  assert.equal(report.events, 7);
+  assert.equal(report.highlights.length, 7);
+  assert.match(text, /7\. \*FINANÇAS · Achado real 7\*/);
+  assert.doesNotMatch(text, /publicações únicas|coletas|Cobertura com falhas|Origem dos achados/);
+});
+
+test('boletim omite menções contábeis e corrige rótulos históricos enganosos', () => {
+  const state = { seen: {}, pending: {} };
+  const now = new Date('2026-09-18T17:00:00Z');
+  const rows = [
+    { ...item, url: 'https://exemplo.gov.br/rateio', kind: 'gazette', title: 'Diário Oficial de Arataca',
+      classification: { ...item.classification, category: 'RATEIO', evidenceText: 'RELATÓRIO RESUMIDO DA EXECUÇÃO ORÇAMENTÁRIA. Valores transferidos por contrato de rateio.' } },
+    { ...item, url: 'https://exemplo.gov.br/contrato', kind: 'gazette', title: 'Diário Oficial de Campo Mourão',
+      classification: { ...item.classification, category: 'PROTOCOLO', evidenceText: 'EXTRATO DO CONTRATO DE PRESTAÇÃO DE SERVIÇOS. Locação de equipamentos de acordo com o Protocolo de Intenções.' } },
+    { ...item, url: 'https://exemplo.gov.br/agenda', title: 'Consórcio Intermunicipal cria agenda setorial com Brasília',
+      classification: { ...item.classification, category: 'CRIAÇÃO' } },
+    { ...item, url: 'https://exemplo.gov.br/lei', title: 'Município autoriza adesão ao consórcio' },
+  ];
+  observeRun(state, rows, [{ name: 'API', status: 'ok' }], 5, now);
+  const report = buildWeeklyReport(state, weeklyWindow(new Date('2026-09-19T13:00:00Z')));
+  assert.equal(report.events, 2);
+  assert.deepEqual(report.categories, { 'ATUAÇÃO': 1, 'ADESÃO': 1 });
+  assert.doesNotMatch(formatWeeklyMessage(report), /Arataca|Campo Mourão|NOVO CONSÓRCIO/);
 });

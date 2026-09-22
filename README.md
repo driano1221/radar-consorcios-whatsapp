@@ -177,7 +177,7 @@ Se o WhatsApp desvincular a sessão, execute `npm run pair` e depois `npm run se
 
 O radar coleta a cada hora (minuto 17), busca publicações dos últimos **sete dias** e mantém até três envios por rodada. Fontes diretas adicionadas: TCE-SP, RSS de CONIAPE/CIGA/CISREC e APIs SAPL de Unaí e São João da Boa Vista. RNCP e CISAMAPI têm adaptadores testados localmente, mas dependem de cobertura via Google no Actions. O Querido Diário usa o endereço atual, mas ainda apresenta oscilações externas.
 
-**Resumo semanal:** sábado às **9h de Brasília**, com nova tentativa às 12h somente se ainda não tiver sido confirmado. Destino: `WHATSAPP_WEEKLY_GROUP_ID` ou, na ausência, o grupo já configurado. A operação atual continua no grupo de teste. O resumo conta achados descobertos no período, não apenas mensagens enviadas. Histórico inicial parcial é informado na mensagem.
+**Resumo semanal:** sábado às **9h de Brasília**, com nova tentativa às 12h somente se ainda não tiver sido confirmado. Destino: `WHATSAPP_WEEKLY_GROUP_ID` ou, na ausência, o grupo já configurado. A operação atual continua no grupo de teste. O boletim lista todos os achados relevantes do período em ordem de publicação, com fonte, data e link curto quando necessário; não mostra volume bruto de coleta nem falhas técnicas. Menções contábeis e contratuais de rotina são retiradas da lista. No despacho manual, `test_preview=true` usa a janela até agora; `edition` permite enviar uma versão revisada sem repetir acidentalmente a mesma edição.
 
 **Alertas:** workflows abrem uma ocorrência no GitHub em caso de falha; fontes geram alerta após três falhas consecutivas. Ocorrências são reaproveitadas e encerradas após recuperação. As notificações seguem suas preferências do GitHub.
 

@@ -23,6 +23,15 @@ test('classifica adesão real ao consórcio', () => {
   assert.ok(result.score >= 4);
 });
 
+test('criar agenda de um consórcio existente não é criação de consórcio', () => {
+  const result = classifyItem({
+    kind: 'news',
+    title: 'Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos',
+    summary: 'Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos',
+  });
+  assert.equal(result.category, 'ATUAÇÃO');
+});
+
 test('penaliza adesão a ata de registro de preços', () => {
   const result = classifyItem({
     title: 'Adesão a ata de registro de preços',

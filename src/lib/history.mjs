@@ -1,6 +1,24 @@
 import { createHash } from 'node:crypto';
 import { canonicalUrl, selectUnseen } from './dedupe.mjs';
 import { isPublishableClassification } from './classifier.mjs';
+import { normalizeForMatch } from './text.mjs';
+
+function weeklyFinding(item) {
+  const category = item.classification?.category;
+  const evidence = normalizeForMatch(`${item.classification?.evidenceText || ''} ${item.summary || ''}`);
+  const title = normalizeForMatch(item.title || '');
+  if (item.kind === 'gazette') {
+    if (category === 'RATEIO' && /balanco patrimonial|relatorio resumido da execucao orcamentaria|demonstrativo da despesa com manutencao|nao se aplicam.{0,160}recursos entregues a consorcios publicos/.test(evidence)) return null;
+    if (category === 'PROTOCOLO' && /extrato do contrato de prestacao de servicos/.test(evidence) && /de acordo com o protocolo de intencoes/.test(evidence)) return null;
+    if (category === 'CONTROLE' && /constitui ato de improbidade administrativa/.test(evidence) && /contrato de rateio/.test(evidence) && !/auditoria|investigacao|irregularidade apurada|contas rejeitadas/.test(evidence)) {
+      return { ...item, classification: { ...item.classification, category: 'RATEIO', emoji: '🟪' } };
+    }
+  }
+  if (category === 'CRIAÇÃO' && /consorcio.{0,50}cria agenda/.test(title)) {
+    return { ...item, classification: { ...item.classification, category: 'ATUAÇÃO', emoji: '📰' } };
+  }
+  return item;
+}
 
 export function observeRun(state, items, health, minimumScore, now = new Date(), runId = now.toISOString()) {
   state.observations ||= {};
@@ -50,9 +68,11 @@ export function buildWeeklyReport(state, { start, end }, minimumScore = 5) {
   const inside = (date) => new Date(date) >= start && new Date(date) < end;
   const observations = Object.values(state.observations || {}).filter((r) => inside(r.firstSeenAt));
   const relevant = observations.map((r) => r.item).filter((i) =>
-    isPublishableClassification(i.classification, minimumScore) && i.kind !== 'gazette-index');
+    isPublishableClassification(i.classification, minimumScore) && i.kind !== 'gazette-index')
+    .map(weeklyFinding).filter(Boolean);
   const sorted = relevant.sort((a, b) => b.classification.score - a.classification.score || new Date(b.publishedAt) - new Date(a.publishedAt));
   const events = selectUnseen(sorted, { seen: {}, pending: {} });
+  events.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt) || b.classification.score - a.classification.score);
   const sources = {};
   const categories = {};
   for (const item of events) {
@@ -70,5 +90,5 @@ export function buildWeeklyReport(state, { start, end }, minimumScore = 5) {
     observations: observations.length, events: events.length, categories, sources,
     sent: Object.values(state.seen).filter((r) => inside(r.sentAt)).length,
     pending, preview: events.filter((i) => i.previewOnly).length,
-    runs: runs.length, failures, highlights: events.slice(0, 5) };
+    runs: runs.length, failures, highlights: events };
 }
