@@ -44,6 +44,27 @@ test('elimina cobertura equivalente publicada em outro endereço', () => {
   assert.equal(selectUnseen([republicado], state).length, 0);
 });
 
+test('não reenvia o mesmo fato quando IA corrige categoria e a fonte muda de nome', () => {
+  const original = {
+    title: 'Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - Diário do Grande ABC',
+    summary: 'Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos Diário do Grande ABC',
+    source: 'Diário do Grande ABC', publishedAt: '2026-09-22T19:00:00Z',
+    url: 'https://news.google.com/rss/articles/antigo',
+    classification: { category: 'CRIAÇÃO' },
+  };
+  const state = { seen: {}, pending: {} };
+  markSeen(state, original, '2026-09-22T22:25:00Z');
+  const corrected = {
+    ...original,
+    title: 'Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - dgabc.com.br',
+    summary: 'Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos dgabc.com.br',
+    source: 'dgabc.com.br', url: 'https://news.google.com/rss/articles/novo',
+    classification: { category: 'ATUAÇÃO' },
+  };
+  assert.equal(selectUnseen([corrected], state).length, 0);
+  assert.equal(selectUnseen([{ ...corrected, publishedAt: '2026-10-20T19:00:00Z' }], state).length, 1);
+});
+
 test('mantém candidato em fila até a confirmação do envio', () => {
   const state = { version: 3, seen: {}, pending: {}, session: {} };
   const item = {

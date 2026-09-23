@@ -92,15 +92,24 @@ export function pruneState(state, retentionDays, pendingRetentionDays = 30) {
   }
 }
 
+function eventHeadline(title = '', source = '') {
+  const normalized = normalizeForMatch(title);
+  const suffix = normalizeForMatch(source);
+  return suffix && normalized.endsWith(` - ${suffix}`)
+    ? normalized.slice(0, -(` - ${suffix}`).length) : normalized;
+}
+
 function resemblesKnownEvent(item, tokens, records, threshold = 0.66) {
-  return records.some(
-    (record) =>
-      record.category === item.classification?.category &&
-      (!item.publishedAt || !(record.publishedAt || record.sentAt) ||
-        Math.abs(new Date(item.publishedAt) - new Date(record.publishedAt || record.sentAt)) <= 7 * 86400000) &&
-      record.contentTokens?.length >= 4 &&
-      jaccard(tokens, record.contentTokens) >= threshold,
-  );
+  return records.some((record) => {
+    const closeInTime = !item.publishedAt || !(record.publishedAt || record.sentAt) ||
+      Math.abs(new Date(item.publishedAt) - new Date(record.publishedAt || record.sentAt)) <= 7 * 86400000;
+    if (!closeInTime) return false;
+    const headline = eventHeadline(item.title, item.source);
+    const knownHeadline = eventHeadline(record.title, record.source);
+    if (headline.length >= 30 && headline === knownHeadline) return true;
+    return record.category === item.classification?.category && record.contentTokens?.length >= 4 &&
+      jaccard(tokens, record.contentTokens) >= threshold;
+  });
 }
 
 export function selectUnseen(items, state) {
@@ -109,6 +118,8 @@ export function selectUnseen(items, state) {
     contentTokens: item.contentTokens,
     titleFingerprint: item.titleFingerprint,
     publishedAt: item.publishedAt,
+    title: item.title,
+    source: item.source,
   }));
   const records = [...Object.values(state.seen), ...pendingRecords];
   // Títulos genéricos de diários antigos não identificam o ato nem sua edição.
@@ -133,7 +144,8 @@ export function selectUnseen(items, state) {
     item.titleFingerprint = fingerprint;
     item.contentTokens = contentTokens;
     batchFingerprints.add(fingerprint);
-    batchRecords.push({ category: item.classification?.category, contentTokens, publishedAt: item.publishedAt });
+    batchRecords.push({ category: item.classification?.category, contentTokens,
+      publishedAt: item.publishedAt, title: item.title, source: item.source });
     return true;
   });
 }
