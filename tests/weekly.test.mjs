@@ -80,6 +80,19 @@ test('resumo lista todos os achados, sem limite de cinco e sem estatísticas de 
   assert.doesNotMatch(text, /publicações únicas|coletas|Cobertura com falhas|Origem dos achados/);
 });
 
+test('observação guarda o trecho forte quando busca posterior só encontra menção fraca', () => {
+  const state = { seen: {}, pending: {} };
+  const strong = { ...item, kind: 'gazette', title: 'Diário Oficial de Simão Dias',
+    summary: 'Lei ratifica protocolo de intenções do consórcio.',
+    classification: { ...item.classification, category: 'GOVERNANÇA', score: 18 } };
+  const weak = { ...strong, summary: 'Cláusula orçamentária menciona contrato de rateio.',
+    classification: { ...strong.classification, category: 'RATEIO', score: 17 } };
+  observeRun(state, [strong], [], 5, new Date('2026-09-18T12:00:00Z'));
+  observeRun(state, [weak], [], 5, new Date('2026-09-19T12:00:00Z'));
+  assert.equal(Object.values(state.observations)[0].item.classification.category, 'GOVERNANÇA');
+  assert.equal(Object.values(state.observations)[0].lastSeenAt, '2026-09-19T12:00:00.000Z');
+});
+
 test('boletim extenso é dividido sem perder achados nem exceder tamanho seguro', () => {
   const report = { start: '2026-09-12T12:00:00Z', end: '2026-09-19T12:00:00Z', events: 25,
     highlights: Array.from({ length: 25 }, (_, index) => ({ ...item,

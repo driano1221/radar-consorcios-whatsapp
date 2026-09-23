@@ -32,9 +32,18 @@ export function observeRun(state, items, health, minimumScore, now = new Date(),
   for (const item of items) {
     const key = createHash('sha256').update(canonicalUrl(item.url)).digest('hex');
     const old = state.observations[key];
+    const previous = old?.item;
+    const oldReviewed = Boolean(previous?.aiReview);
+    const newReviewed = Boolean(item.aiReview);
+    const newerReview = newReviewed && (!oldReviewed ||
+      new Date(item.aiReview.reviewedAt || 0) > new Date(previous.aiReview.reviewedAt || 0));
+    const preservePrevious = previous &&
+      !newerReview && ((oldReviewed && !newReviewed) ||
+        (oldReviewed === newReviewed && (previous.classification?.score || 0) > (item.classification?.score || 0)));
+    const bestItem = preservePrevious ? previous : item;
     state.observations[key] = {
       firstSeenAt: old?.firstSeenAt || now.toISOString(), lastSeenAt: now.toISOString(),
-      item: { ...item, summary: (item.summary || '').slice(0, 1800), rawText: undefined, excerpts: undefined },
+      item: { ...bestItem, summary: (bestItem.summary || '').slice(0, 1800), rawText: undefined, excerpts: undefined },
     };
   }
   state.runs[runId] = { at: now.toISOString(), collected: items.length, minimumScore, health };
