@@ -13181,7 +13181,69 @@
           "evidenceText": "cento) do Fundo de Participação do Município - FPM e do Imposto sobre Circulação de Mercadorias e Prestação de Serviços - ICMS (ou IBS - Imposto sobre Bens e Serviços ou tributo equivalente), podendo o percentual ou modalidade de tributo serem alterados por deliberação da Assembleia Geral, mediante resolução específica, e observado o previsto no Contrato de Consórcio e limites desta lei; cujo valor será formalizado anualmente por Contrato de Rateio Ordinário, nos termos do art. 8º da Lei Federal nº 11.107/2005. Parágrafo único. O valor do rateio ordinário terá o limite de 0,5% (zero virgula cinco por cento) e somente poderá ser elevado acima deste percentual por deliberação da Assembleia Geral, mediante nova lei municipal de ratificação do instrumento alterado, observado o procedimento previsto no art. 12 da Lei Federal nº 11.107/2005. Art. 7º. Fica o Chefe do Poder",
           "publicContext": true,
           "strongPublicContext": false
-        }
+        },
+        "id": "6f0a38b3d7886483c4c99617ae43ca0deb19856384786f97c86ef7c292dd4010",
+        "titleFingerprint": "3b998c8a4c20a5565af6235fe66e00a7d877eaede3e53b2d19819c9e40d4f8f3",
+        "contentTokens": [
+          "acao",
+          "adesao",
+          "alem",
+          "ambiente",
+          "aprovacao",
+          "automatica",
+          "cada",
+          "carbono",
+          "conscensul",
+          "contrato",
+          "credito",
+          "demais",
+          "desenvolvimento",
+          "desta",
+          "deste",
+          "dias",
+          "diploma",
+          "educacao",
+          "entre",
+          "especifico",
+          "especificos",
+          "expressa",
+          "finalidades",
+          "financeira",
+          "formalizada",
+          "funcoes",
+          "gera",
+          "implica",
+          "incluindo",
+          "informacao",
+          "infraestrutura",
+          "legal",
+          "lei",
+          "mediante",
+          "meio",
+          "multifinalitarias",
+          "nao",
+          "normas",
+          "obrigacao",
+          "observadas",
+          "outras",
+          "participacao",
+          "previstas",
+          "programa",
+          "publica",
+          "qualquer",
+          "rate",
+          "rateio",
+          "rural",
+          "saude",
+          "seguranca",
+          "sempre",
+          "sera",
+          "setorial",
+          "simao",
+          "social",
+          "tecnologia",
+          "voluntaria"
+        ]
       }
     },
     "de9b0b12fe0071df0ce715f3be10deeb410a3c11887d7573426385dadf5c299c": {
@@ -25904,6 +25966,330 @@
       "createdAt": "2026-09-22T23:44:38.593Z",
       "attempts": 1,
       "sentAt": "2026-09-22T23:44:39.885Z"
+    },
+    "test:2026-09-23:visual-ia-2026-09-22:f242646b94d4": {
+      "report": {
+        "start": "2026-09-16T00:34:57.250Z",
+        "end": "2026-09-23T00:34:57.250Z",
+        "historyStartedAt": "2026-09-14T19:58:39.657Z",
+        "partial": false,
+        "observations": 413,
+        "events": 6,
+        "categories": {
+          "ATUAÇÃO": 1,
+          "ADESÃO AUTORIZADA": 2,
+          "RATEIO": 1,
+          "ADESÃO": 1,
+          "CRISE": 1
+        },
+        "sources": {
+          "dgabc.com.br": 1,
+          "Diário de Caratinga": 1,
+          "Câmara Municipal de Centenário do Sul": 1,
+          "Querido Diário": 1,
+          "RibeiraoDasNeves.net": 1,
+          "atualmt.com.br": 1
+        },
+        "sent": 12,
+        "pending": 0,
+        "preview": 0,
+        "runs": 42,
+        "failures": [
+          "Querido Diário",
+          "Google News",
+          "Feeds RSS",
+          "CISREC",
+          "Scrapers web",
+          "TCE-SP",
+          "CIGA",
+          "Diário Municipal AMM-MG"
+        ],
+        "highlights": [
+          {
+            "kind": "news",
+            "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - dgabc.com.br",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDhmZzVUc3JGbnU4R0lDcXlmeUt3S0pDZXdhaXBHLW1kNWQzLXBRVmZuVmNkaTFGeWc0Sk5iSjZ4NlM5WmFZay1uQkU3SmZPYzlzT3FLbFlmUlVselZheTM5QzFNS0NzaENaMUJtQy16TFZkR1ptbnRiTlpUdEMxTFAzc21Qd3Nxc01sQUd6TnRWUENUcS1XMVVrbll2TWZCMGJCc2FTZ3B1aUYyWWx2aGJySm9MXzd1ZmJuWHBCQXlETDQ?oc=5",
+            "sourceUrl": "https://www.dgabc.com.br",
+            "publishedAt": "2026-09-22T19:00:00.000Z",
+            "source": "dgabc.com.br",
+            "summary": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos dgabc.com.br",
+            "classification": {
+              "category": "ATUAÇÃO",
+              "emoji": "📰",
+              "score": 9,
+              "reasons": [
+                "contexto público forte",
+                "ATUAÇÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos dgabc.com.br",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "ea8ee5deacbc1c955b0812975620ab59ad4455152abe2e691d45eb2ecd3977a0",
+            "titleFingerprint": "ab1ffe377fb63779061188b5aefe7c0759d2aca70e495e9e3fd376aa4a521502",
+            "contentTokens": [
+              "agenda",
+              "atrair",
+              "brasilia",
+              "cria",
+              "dgabc",
+              "investimentos",
+              "setorial"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ATUAÇÃO",
+              "evidence": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 524,
+                "outputTokens": 73
+              },
+              "reviewedAt": "2026-09-23T00:32:35.496Z"
+            },
+            "displayUrl": "https://cleanuri.com/vGQWOm"
+          },
+          {
+            "kind": "news",
+            "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5",
+            "sourceUrl": "https://diariodecaratinga.com.br",
+            "publishedAt": "2026-09-22T16:25:00.000Z",
+            "source": "Diário de Caratinga",
+            "summary": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+            "classification": {
+              "category": "ADESÃO AUTORIZADA",
+              "emoji": "🟦",
+              "score": 12,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "18ff4bea6c59d6e68940383919890c47640fd55006bdf992291df1d7c41c0ea4",
+            "titleFingerprint": "0f49c76f88887cd44cb88a874c2445cdbe254fb9da5e781bf6f1efda1e13260b",
+            "contentTokens": [
+              "autorizado",
+              "caratinga",
+              "ciminas",
+              "integrar"
+            ],
+            "displayUrl": "https://cleanuri.com/yEygXQ"
+          },
+          {
+            "kind": "news",
+            "title": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul",
+            "url": "https://news.google.com/rss/articles/CBMitwNBVV95cUxOaUpPRWhiMHdncmlNTEprT04xZm52R0lxZDMxS2dHRl9DWU40UjVlMDI1ZWZXM2V0UUg3N3hDODF5NE84TE1nT3lkNFowMjJsTTVmNm9CbEZqR2VFWmxRYXpKa25waGhpREhhOHpueS1NbFprNFBjVjlxSG9Ndm4yN2dub1pmLWdaYUtUTzkzNDI1d3N5QUdrYWRfNHRXeWYxajlSQVc4ODRvWjA0N1pGbTZpLThWRkt5bjVNYjFoR0VnOG4tYkt3TWhlX1hkaWdLT1FsSEpraGZWVHBHRVI4OTlaa2ZQTVlaNjh4V1BwQ0g1YjFyUUV5bGRLQnF3TGtiZ2d1VW1BZ1FSNGFaREVBcTVUUHRldmtYVFVlX29qaEEzVE1JQ0VuVmhOUEhidEFSR3BGSW1ud2xpc3JzOFVRa2xSUFU5RVNOZTRqZ0p6aUZjRWZ1Tm9raVZwZ2t3amd0RFVHVmxlaVNyQkpDUDZnM09nc2Jqcy1YMVd1eFNGRkNKWko4QnhTX2d4bTFnNWwtWEVsdldqRzluR1hZM2JVMWJQUjNXSGRfNjRDdHgzN2FpUlBfWkJZ?oc=5",
+            "sourceUrl": "https://www.centenariodosul.pr.leg.br",
+            "publishedAt": "2026-09-21T12:04:22.000Z",
+            "source": "Câmara Municipal de Centenário do Sul",
+            "summary": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... Câmara Municipal de Centenário do Sul",
+            "classification": {
+              "category": "ADESÃO AUTORIZADA",
+              "emoji": "🟦",
+              "score": 13,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... Câmara Municipal de Centenário do Sul",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "cf72720f6d8f61be6098bc0df69ed30f07d3ec123df2ebf4abed30e5f59f58b8",
+            "titleFingerprint": "44688ab359e1e50597640b8239bf9cb2c87e4be37e4c0f816d92eeba079af3dd",
+            "contentTokens": [
+              "autoriza",
+              "camara",
+              "centenario",
+              "ingresso",
+              "legislacao",
+              "saneamento",
+              "sul"
+            ],
+            "presentationTitle": "Centenário do Sul autoriza ingresso no CISPAR",
+            "verifiedSummary": "Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento do Paraná (CISPAR), bem como ratifica o seu Contrato de Consórcio Público e o seu Estatuto Social.",
+            "displayUrl": "https://cleanuri.com/0v1GE5",
+            "officialLegislation": true
+          },
+          {
+            "kind": "gazette",
+            "title": "Diário Oficial de Simão Dias (SE)",
+            "url": "https://data.queridodiario.ok.org.br/2807105/2026-09-18/1b2b9740ea1e1eac8863348801352068dd918de1.pdf",
+            "publishedAt": "2026-09-18T12:00:00-03:00",
+            "source": "Querido Diário",
+            "summary": "incluindo, entre outras, infraestrutura, meio ambiente, saúde pública, educação, desenvolvimento rural, tecnologia da informação, ação social, segurança pública, crédito de carbono e demais finalidades previstas no Contrato de Consórcio. §1º. A participação do Município nas funções multifinalitárias será sempre voluntária, formalizada mediante adesão expressa a cada Programa Setorial ou Específico, por Contrato de Programa e Contrato de Rateio Específicos, observadas as normas do Contrato de Consórcio e deste diploma legal. §2º. A aprovação desta Lei não implica adesão automática do Município a qualquer Programa Setorial ou Específico do CONSCENSUL, não gera obrigação financeira além do rateio ordinário e não vincula o Município à execução de ações além das funções originárias já vigentes. §3º. O Município que não aderir a qualquer Programa Setorial ou Específico cento) do Fundo de Participação do Município - FPM e do Imposto sobre Circulação de Mercadorias e Prestação de Serviços - ICMS (ou IBS - Imposto sobre Bens e Serviços ou tributo equivalente), podendo o percentual ou modalidade de tributo serem alterados por deliberação da Assembleia Geral, mediante resolução específica, e observado o previsto no Contrato de Consórcio e limites desta lei; cujo valor será formalizado anualmente por Contrato de Rateio Ordinário, nos termos do art. 8º da Lei Federal nº 11.107/2005. Parágrafo único. O valor do rateio ordinário terá o limite de 0,5% (zero virgula cinco por cento) e somente poderá ser elevado acima deste percentual por deliberação da Assembleia Geral, mediante nova lei municipal de ratificação do instrumento alterado, observado o procedimento previsto no art. 12 da Lei Federal nº 11.107/2005. Art. 7º. Fica o Chefe do Poder exercícios correspondentes; II – a compatibil",
+            "territoryId": "2807105",
+            "territoryName": "Simão Dias",
+            "stateCode": "SE",
+            "edition": "1447",
+            "classification": {
+              "category": "RATEIO",
+              "emoji": "🟪",
+              "score": 17,
+              "reasons": [
+                "RATEIO",
+                "GOVERNANÇA"
+              ],
+              "evidenceIndex": 1,
+              "evidenceText": "cento) do Fundo de Participação do Município - FPM e do Imposto sobre Circulação de Mercadorias e Prestação de Serviços - ICMS (ou IBS - Imposto sobre Bens e Serviços ou tributo equivalente), podendo o percentual ou modalidade de tributo serem alterados por deliberação da Assembleia Geral, mediante resolução específica, e observado o previsto no Contrato de Consórcio e limites desta lei; cujo valor será formalizado anualmente por Contrato de Rateio Ordinário, nos termos do art. 8º da Lei Federal nº 11.107/2005. Parágrafo único. O valor do rateio ordinário terá o limite de 0,5% (zero virgula cinco por cento) e somente poderá ser elevado acima deste percentual por deliberação da Assembleia Geral, mediante nova lei municipal de ratificação do instrumento alterado, observado o procedimento previsto no art. 12 da Lei Federal nº 11.107/2005. Art. 7º. Fica o Chefe do Poder",
+              "publicContext": true,
+              "strongPublicContext": false
+            },
+            "id": "6f0a38b3d7886483c4c99617ae43ca0deb19856384786f97c86ef7c292dd4010",
+            "titleFingerprint": "3b998c8a4c20a5565af6235fe66e00a7d877eaede3e53b2d19819c9e40d4f8f3",
+            "contentTokens": [
+              "acao",
+              "adesao",
+              "alem",
+              "ambiente",
+              "aprovacao",
+              "automatica",
+              "cada",
+              "carbono",
+              "conscensul",
+              "contrato",
+              "credito",
+              "demais",
+              "desenvolvimento",
+              "desta",
+              "deste",
+              "dias",
+              "diploma",
+              "educacao",
+              "entre",
+              "especifico",
+              "especificos",
+              "expressa",
+              "finalidades",
+              "financeira",
+              "formalizada",
+              "funcoes",
+              "gera",
+              "implica",
+              "incluindo",
+              "informacao",
+              "infraestrutura",
+              "legal",
+              "lei",
+              "mediante",
+              "meio",
+              "multifinalitarias",
+              "nao",
+              "normas",
+              "obrigacao",
+              "observadas",
+              "outras",
+              "participacao",
+              "previstas",
+              "programa",
+              "publica",
+              "qualquer",
+              "rate",
+              "rateio",
+              "rural",
+              "saude",
+              "seguranca",
+              "sempre",
+              "sera",
+              "setorial",
+              "simao",
+              "social",
+              "tecnologia",
+              "voluntaria"
+            ],
+            "displayUrl": "https://cleanuri.com/6z6G6D"
+          },
+          {
+            "kind": "news",
+            "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5",
+            "sourceUrl": "https://ribeiraodasneves.net",
+            "publishedAt": "2026-09-17T19:28:42.000Z",
+            "source": "RibeiraoDasNeves.net",
+            "summary": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
+            "classification": {
+              "category": "ADESÃO",
+              "emoji": "🟦",
+              "score": 12,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "79e27719b1731820c55e0b4908347b188149b0788681cee870593437e8a27241",
+            "titleFingerprint": "6082d44f199154aa89e1bcf2f9e6819feac5f57db5dc2e36ba0e1275fa79469d",
+            "contentTokens": [
+              "adesao",
+              "ampliar",
+              "icismep",
+              "net",
+              "neves",
+              "oficializa",
+              "ribeirao",
+              "ribeiraodasneves",
+              "saude",
+              "servicos"
+            ],
+            "displayUrl": "https://cleanuri.com/j9151r"
+          },
+          {
+            "kind": "news",
+            "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - atualmt.com.br",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5",
+            "sourceUrl": "https://atualmt.com.br",
+            "publishedAt": "2026-09-16T11:43:37.000Z",
+            "source": "atualmt.com.br",
+            "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
+            "classification": {
+              "category": "CRISE",
+              "emoji": "🟥",
+              "score": 19,
+              "reasons": [
+                "CRISE",
+                "SAÍDA"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
+              "publicContext": true,
+              "strongPublicContext": false
+            },
+            "id": "c99922f23e78f1bca8b89e1a708fd370ec9697f236a0bf91d0087c990b495782",
+            "titleFingerprint": "a422363e72c9ec4346c5b3ff96a0c2338824401a9cb595c84dd375006c41dd85",
+            "contentTokens": [
+              "atualmt",
+              "deixa",
+              "estadual",
+              "inadimplencia",
+              "incentivo",
+              "oito",
+              "saude",
+              "sem"
+            ],
+            "displayUrl": "https://cleanuri.com/gmE5LL"
+          }
+        ]
+      },
+      "messages": [
+        "🧪 *RADAR CONSÓRCIOS*\n*Prévia do resumo semanal* · 15/09–22/09\n_Atualizado às 21:34 (Brasília)_\n\n*6 achados relevantes*\n\n1. *ATUAÇÃO*\n*Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos*\n_22/09 · dgabc.com.br_\n🔗 https://cleanuri.com/vGQWOm\n\n2. *INGRESSO AUTORIZADO*\n*Município é autorizado a integrar consórcio intermunicipal CIMINAS*\n_22/09 · Diário de Caratinga_\n🔗 https://cleanuri.com/yEygXQ\n\n3. *INGRESSO AUTORIZADO*\n*Centenário do Sul autoriza ingresso no CISPAR*\n_21/09 · Câmara Municipal de Centenário do Sul_\n🔗 https://cleanuri.com/0v1GE5\n\n4. *RATEIO*\n*Simão Dias publica contrato de rateio*\n_18/09 · Querido Diário_\n🔗 https://cleanuri.com/6z6G6D\n\n5. *ADESÃO*\n*Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde*\n_17/09 · RibeiraoDasNeves.net_\n🔗 https://cleanuri.com/j9151r\n\n6. *ALERTA*\n*Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde*\n_16/09 · atualmt.com.br_\n🔗 https://cleanuri.com/gmE5LL"
+      ],
+      "createdAt": "2026-09-23T00:35:00.267Z",
+      "attempts": 1,
+      "sentParts": {
+        "0": "2026-09-23T00:35:01.127Z"
+      },
+      "sentAt": "2026-09-23T00:35:01.127Z"
     }
   },
   "shortLinks": {
@@ -25912,7 +26298,8 @@
     "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5": "https://cleanuri.com/yEygXQ",
     "https://data.queridodiario.ok.org.br/2807105/2026-09-18/1b2b9740ea1e1eac8863348801352068dd918de1.pdf": "https://cleanuri.com/6z6G6D",
     "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5": "https://cleanuri.com/j9151r",
-    "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf": "https://cleanuri.com/vGQWQ1"
+    "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf": "https://cleanuri.com/vGQWQ1",
+    "https://www.centenariodosul.pr.leg.br/legislacao/detalhe/1339": "https://cleanuri.com/0v1GE5"
   },
   "aiReviews": {
     "ea8ee5deacbc1c955b0812975620ab59ad4455152abe2e691d45eb2ecd3977a0": {
