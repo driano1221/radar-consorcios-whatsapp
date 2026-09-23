@@ -4,6 +4,7 @@ import { isPublishableClassification } from './classifier.mjs';
 import { normalizeForMatch } from './text.mjs';
 
 function weeklyFinding(item) {
+  if (item.aiReview?.status === 'disputed') return null;
   const category = item.classification?.category;
   const evidence = normalizeForMatch(`${item.classification?.evidenceText || ''} ${item.summary || ''}`);
   const title = normalizeForMatch(item.title || '');
@@ -16,6 +17,9 @@ function weeklyFinding(item) {
   }
   if (category === 'CRIAÇÃO' && /consorcio.{0,50}cria agenda/.test(title)) {
     return { ...item, classification: { ...item.classification, category: 'ATUAÇÃO', emoji: '📰' } };
+  }
+  if (category === 'ADESÃO' && /\b(autoriza(?:do)?|autorizacao)\b.{0,100}\b(ingresso|integrar|adesao)\b|\b(ingresso|integrar|adesao)\b.{0,100}\bautorizad[oa]\b/.test(`${title} ${evidence.slice(0, 300)}`)) {
+    return { ...item, classification: { ...item.classification, category: 'ADESÃO AUTORIZADA', emoji: '🟦' } };
   }
   return item;
 }

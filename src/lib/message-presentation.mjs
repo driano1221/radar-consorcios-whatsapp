@@ -110,6 +110,6 @@ export async function presentItem(item, cache = {}, fetchImpl = fetch) {
       console.warn(`[título] Fonte oficial indisponível; título editorial usado: ${error.message}`);
     }
   }
-  presented.displayUrl = await shortenLongUrl(presented.displayUrl || item.url, cache, fetchImpl);
+  presented.displayUrl = await shortenLongUrl(presented.displayUrl || item.url, cache, fetchImpl, 50);
   return presented;
 }

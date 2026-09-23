@@ -15,9 +15,10 @@ test('formata mensagem curta com fonte e link', () => {
   });
   assert.match(message, /Prefeitura de Exemplo/);
   assert.match(message, /https:\/\/exemplo\.gov\.br\/noticia/);
-  assert.match(message, /^🟦 \*ADESÃO A CONSÓRCIO\*/);
+  assert.match(message, /^\*RADAR CONSÓRCIOS\*\n🟦 \*ADESÃO A CONSÓRCIO\*/);
   assert.match(message, /> A Câmara aprovou a participação municipal\./);
-  assert.match(message, /_📅 14 ago\. 2026  ·  📰 Prefeitura de Exemplo_/);
+  assert.match(message, /_14 ago\. 2026 · Prefeitura de Exemplo_/);
+  assert.doesNotMatch(message, /\]\(https?:\/\//);
 });
 
 test('cria manchete específica para ato oficial', () => {

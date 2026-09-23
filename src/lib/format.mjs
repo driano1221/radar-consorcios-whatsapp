@@ -5,6 +5,7 @@ const categoryLabels = {
   SAÍDA: 'SAÍDA DE CONSÓRCIO',
   CRIAÇÃO: 'CRIAÇÃO DE CONSÓRCIO',
   ADESÃO: 'ADESÃO A CONSÓRCIO',
+  'ADESÃO AUTORIZADA': 'INGRESSO AUTORIZADO',
   RATEIO: 'CONTRATO DE RATEIO',
   PROTOCOLO: 'PROTOCOLO DE INTENÇÕES',
   GOVERNANÇA: 'GESTÃO DO CONSÓRCIO',
@@ -30,6 +31,13 @@ function formatDate(value) {
 
 function cleanInline(value = '') {
   return escapeWhatsApp(value).replace(/[*_~`]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function withoutSourceSuffix(title, source) {
+  const cleanTitle = cleanInline(title);
+  const suffix = ` - ${cleanInline(source)}`;
+  return suffix.length > 3 && cleanTitle.toLocaleLowerCase('pt-BR').endsWith(suffix.toLocaleLowerCase('pt-BR'))
+    ? cleanTitle.slice(0, -suffix.length) : cleanTitle;
 }
 
 function extractConsortiumLabel(item) {
@@ -92,6 +100,7 @@ function gazetteLead(item) {
   const templates = {
     SAÍDA: `${legalPrefix} autoriza ${locality} a se retirar d${target}.`,
     ADESÃO: `${legalPrefix} autoriza ${locality} a integrar ${target}.`,
+    'ADESÃO AUTORIZADA': `${legalPrefix} autoriza ${locality} a integrar ${target}; a autorização não comprova o ingresso efetivado.`,
     CRIAÇÃO: `${legalPrefix} trata da criação de um novo consórcio intermunicipal em ${locality}.`,
     RATEIO: /contrato(s)? de rateio/.test(
       normalizeForMatch(`${item.summary || ''} ${item.rawText || ''}`).slice(0, 700),
@@ -142,12 +151,18 @@ export function buildSummary(item) {
   if (item.kind === 'gazette') return gazetteLead(item);
   if (item.verifiedSummary) return firstCompleteSentence(item.verifiedSummary, item.presentationTitle || item.title);
   if (/(?:\.\.\.|…)/.test(item.title || '') && /(?:\.\.\.|…)/.test(item.summary || '')) return '';
-  return firstCompleteSentence(item.classification?.evidenceText || item.summary || item.rawText, item.title);
+  const candidate = item.classification?.evidenceText || item.summary || item.rawText || '';
+  const normal = (value) => normalizeForMatch(value).replace(/[.!?\s-]+$/g, '').trim();
+  const headline = normal(displayTitle(item));
+  const core = normal(candidate);
+  if (core === headline || core === `${headline} ${normal(item.source)}` ||
+    core === `${headline} - ${normal(item.source)}`) return '';
+  return firstCompleteSentence(candidate, item.title);
 }
 
 export function displayTitle(item) {
   if (item.presentationTitle) return cleanInline(item.presentationTitle);
-  if (item.kind !== 'gazette') return cleanInline(item.title);
+  if (item.kind !== 'gazette') return withoutSourceSuffix(item.title, item.source);
   const locality = cleanInline(item.territoryName || 'Município');
   const consortium = extractConsortiumLabel(item);
   if (item.classification?.category === 'ADESÃO' && /proposta de ingresso|proposta de adesao/.test(normalizeForMatch(item.summary || ''))) {
@@ -161,6 +176,7 @@ export function displayTitle(item) {
     SAÍDA: `${locality} autoriza saída${consortium ? ` do ${consortium}` : ' de consórcio'}`,
     CRIAÇÃO: `${locality} formaliza criação de consórcio`,
     ADESÃO: `${locality} autoriza adesão${consortium ? ` ao ${consortium}` : ' a consórcio'}`,
+    'ADESÃO AUTORIZADA': `${locality} autoriza ingresso${consortium ? ` no ${consortium}` : ' em consórcio'}`,
     RATEIO: /contrato(s)? de rateio/.test(
       normalizeForMatch(`${item.title || ''} ${item.summary || ''}`),
     )
@@ -187,9 +203,10 @@ export function formatWhatsAppMessage(item) {
       : categoryLabels[classification.category] || categoryLabels.GERAL;
   const points = item.kind === 'gazette' ? gazetteKeyPoints(item) : [];
   const sourceLabel = cleanInline(item.source);
-  const linkLabel = item.kind === 'gazette' ? 'Acesse o ato oficial (PDF)' : item.officialLegislation ? 'Acesse a legislação oficial' : 'Leia a notícia completa';
   const lines = [
+    '*RADAR CONSÓRCIOS*',
     `${classification.emoji} *${category}*`,
+    '',
     `*${cleanInline(displayTitle(item))}*`,
   ];
   const summary = cleanInline(buildSummary(item));
@@ -203,9 +220,8 @@ export function formatWhatsAppMessage(item) {
 
   lines.push(
     '',
-    `_📅 ${formatDate(item.publishedAt)}  ·  📰 ${sourceLabel}_`,
-    `🔗 *${linkLabel}:*`,
-    item.displayUrl || item.url,
+    `_${formatDate(item.publishedAt)} · ${sourceLabel}_`,
+    `🔗 ${item.displayUrl || item.url}`,
   );
   return lines.filter((line, index, all) => line !== '' || all[index - 1] !== '').join('\n').trim();
 }
@@ -261,12 +277,14 @@ export function formatWeeklyMessage(report, test = false) {
   }).format(new Date(report.end));
   const labels = {
     CRISE: 'ALERTA', SAÍDA: 'SAÍDA', CRIAÇÃO: 'NOVO CONSÓRCIO', ADESÃO: 'ADESÃO',
+    'ADESÃO AUTORIZADA': 'INGRESSO AUTORIZADO',
     RATEIO: 'RATEIO', PROTOCOLO: 'PROTOCOLO', GOVERNANÇA: 'GESTÃO',
     CONTROLE: 'FISCALIZAÇÃO', FINANÇAS: 'FINANÇAS', ATUAÇÃO: 'ATUAÇÃO', AÇÃO: 'ATUAÇÃO',
   };
   const rows = [
-    `${test ? '🧪 *PRÉVIA · ' : '🗞️ *'}RADAR CONSÓRCIOS*`,
-    `_${date(report.start)} a ${date(report.end)} · atualizado às ${hour}_`,
+    `${test ? '🧪 ' : '🗞️ '}*RADAR CONSÓRCIOS*`,
+    `*${test ? 'Prévia do resumo semanal' : 'Resumo semanal'}* · ${date(report.start)}–${date(report.end)}`,
+    `_Atualizado às ${hour} (Brasília)_`,
     '',
     `*${report.events} ${report.events === 1 ? 'achado relevante' : 'achados relevantes'}*`,
   ];
@@ -278,12 +296,34 @@ export function formatWeeklyMessage(report, test = false) {
       ? `${cleanInline(item.territoryName || 'Município')} ratifica protocolo de intenções${extractConsortiumLabel(item) ? ` do ${extractConsortiumLabel(item)}` : ''}`
       : cleanInline(displayTitle(item));
     const source = cleanInline(item.source || 'Fonte não informada');
-    const suffix = ` - ${source}`;
-    const headline = title.toLocaleLowerCase('pt-BR').endsWith(suffix.toLocaleLowerCase('pt-BR'))
-      ? title.slice(0, -suffix.length) : title;
+    const headline = withoutSourceSuffix(title, source);
     const category = labels[item.classification?.category] || 'CONSÓRCIOS';
-    rows.push('', `${index + 1}. *${category} · ${headline}*`,
-      `_${source} · ${date(item.publishedAt)}_`, item.displayUrl || item.url);
+    rows.push('', `${index + 1}. *${category}*`,
+      `*${headline}*`, `_${date(item.publishedAt)} · ${source}_`,
+      `🔗 ${item.displayUrl || item.url}`);
   }
   return rows.join('\n').trim();
+}
+
+export function formatWeeklyMessages(report, test = false, maxChars = 3400) {
+  const text = formatWeeklyMessage(report, test);
+  if (text.length <= maxChars) return [text];
+  const blocks = text.split('\n\n');
+  const header = blocks.slice(0, 2).join('\n\n');
+  const findings = blocks.slice(2);
+  const chunks = [];
+  let current = [];
+  for (const finding of findings) {
+    const candidate = [...current, finding];
+    if (current.length && `${header}\n_Parte 00/00_\n\n${candidate.join('\n\n')}`.length > maxChars) {
+      chunks.push(current);
+      current = [finding];
+    } else current = candidate;
+  }
+  if (current.length) chunks.push(current);
+  const messages = chunks.map((chunk, index) => `${header}\n_Parte ${index + 1}/${chunks.length}_\n\n${chunk.join('\n\n')}`);
+  if (messages.some((message) => message.length > maxChars)) {
+    throw new Error('Um achado semanal excede o limite de tamanho de uma mensagem.');
+  }
+  return messages;
 }

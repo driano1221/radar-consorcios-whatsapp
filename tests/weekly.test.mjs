@@ -4,7 +4,7 @@ import { mkdtemp, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { observeRun, weeklyWindow, buildWeeklyReport } from '../src/lib/history.mjs';
-import { formatWeeklyMessage } from '../src/lib/format.mjs';
+import { formatWeeklyMessage, formatWeeklyMessages } from '../src/lib/format.mjs';
 import { loadState, saveState } from '../src/lib/dedupe.mjs';
 
 const item = { kind: 'news', title: 'Município adere ao consórcio intermunicipal regional',
@@ -76,8 +76,22 @@ test('resumo lista todos os achados, sem limite de cinco e sem estatísticas de 
   const text = formatWeeklyMessage(report);
   assert.equal(report.events, 7);
   assert.equal(report.highlights.length, 7);
-  assert.match(text, /7\. \*FINANÇAS · Achado real 7\*/);
+  assert.match(text, /7\. \*FINANÇAS\*\n\*Achado real 7\*/);
   assert.doesNotMatch(text, /publicações únicas|coletas|Cobertura com falhas|Origem dos achados/);
+});
+
+test('boletim extenso é dividido sem perder achados nem exceder tamanho seguro', () => {
+  const report = { start: '2026-09-12T12:00:00Z', end: '2026-09-19T12:00:00Z', events: 25,
+    highlights: Array.from({ length: 25 }, (_, index) => ({ ...item,
+      title: `Fato consorcial específico ${index + 1} e seu município`,
+      url: `https://exemplo.gov.br/noticia-${index + 1}`,
+    })) };
+  const parts = formatWeeklyMessages(report, false, 950);
+  assert.ok(parts.length > 1);
+  assert.ok(parts.every((part) => part.length <= 950 && part.includes('RADAR CONSÓRCIOS')));
+  assert.match(parts[0], /Parte 1\//);
+  assert.match(parts.at(-1), /25\. \*ADESÃO\*/);
+  assert.equal((parts.join('\n').match(/https:\/\/exemplo\.gov\.br\/noticia-/g) || []).length, 25);
 });
 
 test('boletim omite menções contábeis e corrige rótulos históricos enganosos', () => {
@@ -95,6 +109,16 @@ test('boletim omite menções contábeis e corrige rótulos históricos enganoso
   observeRun(state, rows, [{ name: 'API', status: 'ok' }], 5, now);
   const report = buildWeeklyReport(state, weeklyWindow(new Date('2026-09-19T13:00:00Z')));
   assert.equal(report.events, 2);
-  assert.deepEqual(report.categories, { 'ATUAÇÃO': 1, 'ADESÃO': 1 });
+  assert.deepEqual(report.categories, { 'ATUAÇÃO': 1, 'ADESÃO AUTORIZADA': 1 });
   assert.doesNotMatch(formatWeeklyMessage(report), /Arataca|Campo Mourão|NOVO CONSÓRCIO/);
+});
+
+test('boletim distingue autorização de ingresso de adesão efetivada', () => {
+  const state = { seen: {}, pending: {} };
+  const news = { ...item, title: 'Lei autoriza o ingresso de Exemplo no consórcio público regional',
+    summary: 'A lei municipal autoriza o ingresso de Exemplo no consórcio público regional.' };
+  observeRun(state, [news], [{ name: 'API', status: 'ok' }], 5, new Date('2026-09-18T17:00:00Z'));
+  const report = buildWeeklyReport(state, weeklyWindow(new Date('2026-09-19T13:00:00Z')));
+  assert.deepEqual(report.categories, { 'ADESÃO AUTORIZADA': 1 });
+  assert.match(formatWeeklyMessage(report), /INGRESSO AUTORIZADO/);
 });

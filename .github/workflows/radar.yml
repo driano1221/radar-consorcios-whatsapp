@@ -26,6 +26,8 @@ jobs:
     timeout-minutes: 8
     env:
       BOT_STATE_PASSWORD: ${{ secrets.BOT_STATE_PASSWORD }}
+      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      AI_REVIEW_ENABLED: ${{ vars.AI_REVIEW_ENABLED || 'true' }}
       WHATSAPP_GROUP_ID: ${{ secrets.WHATSAPP_GROUP_ID }}
       SEND_ENABLED: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.send_enabled) || vars.SEND_ENABLED || 'false' }}
       PERSIST_STATE: ${{ github.event_name == 'schedule' || inputs.send_enabled }}
@@ -91,6 +93,7 @@ jobs:
             output/source-health.json
             output/source-funnel.json
             output/classification-audit.json
+            output/ai-review-audit.json
           retention-days: 7
 
       - name: Alertar falhas persistentes

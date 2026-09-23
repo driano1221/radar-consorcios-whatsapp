@@ -24,6 +24,8 @@ import { observeRun } from './lib/history.mjs';
 import { fetchSapl } from './lib/sources/sapl.mjs';
 import { fetchCiga } from './lib/sources/ciga.mjs';
 import { presentItem } from './lib/message-presentation.mjs';
+import { applyAiReview, reviewQueue } from './lib/ai-review.mjs';
+import { itemId } from './lib/dedupe.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -32,6 +34,9 @@ async function appendGitHubSummary(markdown) {
 
 async function main() {
   const config = await loadConfig();
+  if (config.sendEnabled && config.aiReviewEnabled && !process.env.DEEPSEEK_API_KEY) {
+    throw new Error('DEEPSEEK_API_KEY ausente; envio suspenso para não publicar sem revisão.');
+  }
   const since = new Date(Date.now() - config.lookbackHours * 60 * 60 * 1000);
   const state = await loadState(config.stateFile);
   pruneState(state, config.stateRetentionDays, config.pendingRetentionDays);
@@ -82,10 +87,11 @@ async function main() {
       console.warn(`[fonte] ${sourceRequests[index][0]}: ${result.reason.message}`);
     }
   }
-  const classified = collected.map((item) => ({ ...item, classification: classifyItem(item) }));
-  observeRun(state, classified, sourceHealth, config.minimumScore, new Date(),
-    process.env.GITHUB_RUN_ID ? `${process.env.GITHUB_RUN_ID}:${process.env.GITHUB_RUN_ATTEMPT || 1}` : undefined);
-  if (config.persistState) await saveState(config.stateFile, state);
+  const classified = collected.map((item) => {
+    const classifiedItem = { ...item, classification: classifyItem(item) };
+    return config.aiReviewEnabled
+      ? applyAiReview(classifiedItem, state.aiReviews?.[itemId(classifiedItem)]) : classifiedItem;
+  });
   if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
   const relevant = classified
     .filter((item) => isPublishableClassification(item.classification, config.minimumScore))
@@ -101,7 +107,24 @@ async function main() {
   if (config.sendEnabled) enqueuePending(state, discovered);
   if (config.persistState) await saveState(config.stateFile, state);
   const available = config.sendEnabled ? listPending(state) : discovered;
-  const unseen = available.slice(0, Math.min(config.maxPostsPerRun, remainingToday));
+  const reviewResult = config.aiReviewEnabled && config.sendEnabled && remainingToday > 0
+    ? await reviewQueue(available, state, {
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      maxPosts: Math.min(config.maxPostsPerRun, remainingToday),
+      maxCallsRun: config.maxAiReviewsPerRun,
+      maxCallsDay: config.maxAiReviewsPerDay,
+    }) : null;
+  const unseen = reviewResult?.selected || available.slice(0, Math.min(config.maxPostsPerRun, remainingToday));
+  if (reviewResult) {
+    console.log(`[ia] ${reviewResult.callsRun} chamada(s); ${reviewResult.audit.filter((r) => r.status === 'approved').length} aprovado(s); ` +
+      `${reviewResult.audit.filter((r) => r.status === 'rejected').length} rejeitado(s); ` +
+      `${reviewResult.audit.filter((r) => ['deferred', 'disputed'].includes(r.status)).length} pendente(s).`);
+  }
+  const finalClassified = classified.map((item) => config.aiReviewEnabled
+    ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item);
+  observeRun(state, finalClassified, sourceHealth, config.minimumScore, new Date(),
+    process.env.GITHUB_RUN_ID ? `${process.env.GITHUB_RUN_ID}:${process.env.GITHUB_RUN_ATTEMPT || 1}` : undefined);
+  if (config.persistState) await saveState(config.stateFile, state);
   state.shortLinks ||= {};
   const presentedUnseen = [];
   for (const item of unseen) presentedUnseen.push(await presentItem(item, state.shortLinks));
@@ -165,12 +188,14 @@ async function main() {
     `${JSON.stringify({
       generatedAt: new Date().toISOString(),
       minimumScore: config.minimumScore,
-      items: classified.map(({ title, url, source, sourceUrl, kind, previewOnly, classification }) => ({
-        title, url, source, sourceUrl, kind, previewOnly, classification,
+      items: finalClassified.map(({ title, url, source, sourceUrl, kind, previewOnly, classification, aiReview }) => ({
+        title, url, source, sourceUrl, kind, previewOnly, classification, aiReview,
       })),
     }, null, 2)}\n`,
     'utf8',
   );
+  await writeFile(path.join(config.outputDir, 'ai-review-audit.json'),
+    `${JSON.stringify({ enabled: config.aiReviewEnabled, ...reviewResult }, null, 2)}\n`, 'utf8');
 
   console.log(
     `${collected.length} itens coletados; ${relevant.length} relevantes; ${discovered.length} novos candidatos; ` +

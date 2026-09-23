@@ -149,11 +149,15 @@ Em **Settings → Secrets and variables → Actions**:
 ### Secrets
 
 - `BOT_STATE_PASSWORD`: senha que cifra a sessão;
-- `WHATSAPP_GROUP_ID`: ID do grupo de destino.
+- `WHATSAPP_GROUP_ID`: ID do grupo de destino;
+- `DEEPSEEK_API_KEY`: chave da segunda revisão editorial por IA.
 
 ### Variable
 
 - `SEND_ENABLED`: `true` para publicar ou `false` para pausar.
+- `AI_REVIEW_ENABLED`: `true` para exigir revisão por IA antes de publicar; `false` para desligá-la sem mudar o código.
+
+Com IA ativa, o radar faz no máximo 12 revisões por rodada e 60 por dia. Decisões são guardadas no estado para não pagar novamente pela mesma notícia. Erro de API, JSON inválido ou evidência ausente suspendem o envio daquele item; discordância sobre rateio fica na fila e no relatório de auditoria. O teste isolado da integração está no workflow **Avaliação pontual de IA**.
 
 ## Homologação até domingo
 
@@ -175,12 +179,14 @@ Se o WhatsApp desvincular a sessão, execute `npm run pair` e depois `npm run se
 
 ## Atualização operacional — 14/09/2026
 
-O radar coleta a cada hora (minuto 17), busca publicações dos últimos **sete dias** e mantém até três envios por rodada. Fontes diretas adicionadas: TCE-SP, RSS de CONIAPE/CIGA/CISREC e APIs SAPL de Unaí e São João da Boa Vista. RNCP e CISAMAPI têm adaptadores testados localmente, mas dependem de cobertura via Google no Actions. O Querido Diário usa o endereço atual, mas ainda apresenta oscilações externas.
+O radar coleta a cada **15 minutos** (minutos 11, 26, 41 e 56), busca publicações dos últimos **sete dias** e mantém até três envios por rodada. Fontes diretas adicionadas: TCE-SP, RSS de CONIAPE/CIGA/CISREC e APIs SAPL de Unaí e São João da Boa Vista. RNCP e CISAMAPI têm adaptadores testados localmente, mas dependem de cobertura via Google no Actions. O Querido Diário usa o endereço atual, mas ainda apresenta oscilações externas.
 
 **Resumo semanal:** sábado às **9h de Brasília**, com nova tentativa às 12h somente se ainda não tiver sido confirmado. Destino: `WHATSAPP_WEEKLY_GROUP_ID` ou, na ausência, o grupo já configurado. A operação atual continua no grupo de teste. O boletim lista todos os achados relevantes do período em ordem de publicação, com fonte, data e link curto quando necessário; não mostra volume bruto de coleta nem falhas técnicas. Menções contábeis e contratuais de rotina são retiradas da lista. No despacho manual, `test_preview=true` usa a janela até agora; `edition` permite enviar uma versão revisada sem repetir acidentalmente a mesma edição.
 
 **Alertas:** workflows abrem uma ocorrência no GitHub em caso de falha; fontes geram alerta após três falhas consecutivas. Ocorrências são reaproveitadas e encerradas após recuperação. As notificações seguem suas preferências do GitHub.
 
-Comandos adicionais: `npm run weekly` gera a prévia; `node scripts/validate-sources.mjs` testa fontes ao vivo; `node scripts/preview-messages.mjs output/research-final-state.json` cria uma simulação visual a partir do estado de pesquisa. Use `SEND_ENABLED=false` para prévias. `PERSIST_STATE=true` registra observações sem enviar, e `NEWS_STATE_FILE` permite isolar o estado de teste.
+Comandos adicionais: `npm run weekly` gera a prévia; `node scripts/validate-sources.mjs` testa fontes ao vivo; `node scripts/preview-messages.mjs` cria uma simulação visual em `output/message-preview.html` a partir do estado atual. Use `SEND_ENABLED=false` para prévias. `PERSIST_STATE=true` registra observações sem enviar, e `NEWS_STATE_FILE` permite isolar o estado de teste.
+
+As mensagens usam a sintaxe nativa do WhatsApp (`*negrito*`, `_itálico_`, `> citação` e lista numerada), com URL simples em vez de link Markdown. Resumos extensos são divididos em partes de até 3.400 caracteres, preservando todos os achados. O estudo e os limites da IA estão em [docs/avaliacao-ia-2026-09-22.md](docs/avaliacao-ia-2026-09-22.md).
 
 Detalhes, fontes, exemplos antes/depois e limitações: [pesquisa e validação](docs/PESQUISA_E_VALIDACAO_2026-09-14.md).

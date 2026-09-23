@@ -23,7 +23,7 @@ test('ementa da Câmara substitui título cortado e fornece link oficial curto',
   assert.equal(item.displayUrl, 'https://www.centenariodosul.pr.leg.br/legislacao/detalhe/1339');
   assert.equal(item.url, clipped.url);
   const message = formatWhatsAppMessage(item);
-  assert.match(message, /Acesse a legislação oficial/);
+  assert.match(message, /🔗 https:\/\/www\.centenariodosul\.pr\.leg\.br\/legislacao\/detalhe\/1339/);
   assert.match(message, /ratifica o seu Contrato/);
   assert.doesNotMatch(message, /d\.\.\.|news\.google\.com/);
 });

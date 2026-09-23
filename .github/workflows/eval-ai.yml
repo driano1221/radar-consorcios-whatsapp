@@ -18,9 +18,12 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/eval-ai.mjs --deepseek
+      - run: node scripts/ai-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: avaliacao-ia-${{ github.run_id }}
-          path: output/ai-eval-*.json
+          path: |
+            output/ai-eval-*.json
+            output/ai-smoke.json
           retention-days: 7

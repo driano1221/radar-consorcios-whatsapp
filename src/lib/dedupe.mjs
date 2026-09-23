@@ -87,6 +87,9 @@ export function pruneState(state, retentionDays, pendingRetentionDays = 30) {
   for (const [id, record] of Object.entries(state.pending || {})) {
     if (new Date(record.queuedAt).getTime() < pendingCutoff) delete state.pending[id];
   }
+  for (const [id, review] of Object.entries(state.aiReviews || {})) {
+    if (new Date(review.reviewedAt).getTime() < cutoff) delete state.aiReviews[id];
+  }
 }
 
 function resemblesKnownEvent(item, tokens, records, threshold = 0.66) {
