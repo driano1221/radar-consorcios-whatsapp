@@ -7,6 +7,7 @@ import { weeklyWindow, buildWeeklyReport } from './lib/history.mjs';
 import { formatWeeklyMessages } from './lib/format.mjs';
 import { sendMessages } from './lib/whatsapp.mjs';
 import { presentItem, shortenLongUrl } from './lib/message-presentation.mjs';
+import { reviewWeeklyFindings } from './lib/ai-review.mjs';
 
 async function main() {
   const config = await loadConfig();
@@ -24,9 +25,16 @@ async function main() {
   }
   state.shortLinks ||= {};
   const baseReport = existing?.report || buildWeeklyReport(state, window, config.minimumScore);
-  const report = existing?.text || existing?.messages ? baseReport : { ...baseReport, highlights: [] };
+  const ai = config.aiReviewEnabled && !existing?.text && !existing?.messages
+    ? await reviewWeeklyFindings(baseReport.highlights, state, { apiKey: process.env.DEEPSEEK_API_KEY }) : null;
+  const reviewedReport = ai ? { ...baseReport, highlights: ai.highlights, events: ai.highlights.length,
+    categories: Object.fromEntries([...new Set(ai.highlights.map((item) => item.classification.category))]
+      .map((category) => [category, ai.highlights.filter((item) => item.classification.category === category).length])),
+    sources: Object.fromEntries([...new Set(ai.highlights.map((item) => item.source))]
+      .map((source) => [source, ai.highlights.filter((item) => item.source === source).length])) } : baseReport;
+  const report = existing?.text || existing?.messages ? reviewedReport : { ...reviewedReport, highlights: [] };
   if (!existing?.text && !existing?.messages) {
-    for (const item of baseReport.highlights) {
+    for (const item of reviewedReport.highlights) {
       const presented = await presentItem(item, state.shortLinks);
       const displayUrl = await shortenLongUrl(presented.displayUrl || item.url, state.shortLinks, fetch, 50);
       report.highlights.push({ ...presented, displayUrl });
@@ -38,6 +46,8 @@ async function main() {
   await mkdir(config.outputDir, { recursive: true });
   await writeFile(path.join(config.outputDir, 'weekly-preview.txt'), text + '\n');
   await writeFile(path.join(config.outputDir, 'weekly-report.json'), JSON.stringify(report, null, 2) + '\n');
+  await writeFile(path.join(config.outputDir, 'weekly-ai-audit.json'), JSON.stringify({ enabled: config.aiReviewEnabled,
+    calls: ai?.calls || 0, audit: ai?.audit || [] }, null, 2) + '\n');
   console.log(text);
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `## Resumo semanal\n\n${text}\n`);
   if (!config.sendEnabled) return;

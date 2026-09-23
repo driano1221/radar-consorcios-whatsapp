@@ -290,7 +290,7 @@ export function formatWeeklyMessage(report, test = false) {
   ];
   if (!report.highlights.length) rows.push('', 'Nenhum achado atingiu os critérios nesta janela.');
   for (const [index, item] of report.highlights.entries()) {
-    const ratifiedProtocol = item.kind === 'gazette' && item.classification?.category === 'GOVERNANÇA' &&
+    const ratifiedProtocol = item.kind === 'gazette' && ['GOVERNANÇA', 'PROTOCOLO'].includes(item.classification?.category) &&
       /ratifica.{0,35}protocolo de intenções/i.test(item.summary || '');
     const title = ratifiedProtocol
       ? `${cleanInline(item.territoryName || 'Município')} ratifica protocolo de intenções${extractConsortiumLabel(item) ? ` do ${extractConsortiumLabel(item)}` : ''}`

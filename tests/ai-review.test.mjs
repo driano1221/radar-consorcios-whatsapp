@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { AI_PROMPT_VERSION, applyAiReview, reviewQueue, reviewWithDeepSeek } from '../src/lib/ai-review.mjs';
+import { AI_PROMPT_VERSION, applyAiReview, reviewQueue, reviewWeeklyFindings, reviewWithDeepSeek } from '../src/lib/ai-review.mjs';
 import { itemId } from '../src/lib/dedupe.mjs';
 
 const item = (title, category = 'CRIAÇÃO') => ({
@@ -75,4 +75,23 @@ test('falha de API não vira aprovação automática', async () => {
   assert.equal(reviewed.selected.length, 0);
   assert.equal(reviewed.audit[0].status, 'deferred');
   assert.ok(state.pending[itemId(candidate)]);
+});
+
+test('resumo semanal revisa todos os achados, retém rateio documentado e remove ruído', async () => {
+  const agenda = item('Consórcio cria agenda', 'CRIAÇÃO');
+  const balance = item('Balanço contábil menciona consórcio', 'RATEIO');
+  const rateio = { ...item('Município publica contrato de rateio', 'RATEIO'), kind: 'gazette',
+    summary: 'Contrato de Rateio. CLÁUSULA QUARTA - DO VALOR E DA COMPOSIÇÃO DO CONTRATO.' };
+  const state = {};
+  const reviewed = await reviewWeeklyFindings([agenda, balance, rateio], state, {
+    apiKey: 'segredo-falso', reviewImpl: async (entry) => entry === agenda
+      ? result('approved', 'ATUAÇÃO') : result('rejected', 'IRRELEVANTE'),
+  });
+  assert.deepEqual(reviewed.highlights.map((entry) => entry.classification.category), ['ATUAÇÃO', 'RATEIO']);
+  assert.deepEqual(reviewed.audit.map((entry) => entry.status), ['approved', 'rejected', 'disputed-kept']);
+  assert.equal(reviewed.calls, 3);
+  const again = await reviewWeeklyFindings([agenda], state, {
+    apiKey: 'segredo-falso', reviewImpl: async () => { throw new Error('não deveria consultar'); },
+  });
+  assert.equal(again.calls, 0);
 });

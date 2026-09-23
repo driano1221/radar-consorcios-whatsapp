@@ -123,3 +123,42 @@ export async function reviewQueue(items, state, {
   }
   return { selected, audit, callsRun, usage: { ...state.aiUsage } };
 }
+
+function concreteRateio(item) {
+  if (item.kind !== 'gazette') return false;
+  const text = normalizeWhitespace(`${item.summary || ''} ${item.classification?.evidenceText || ''}`).toLocaleLowerCase('pt-BR');
+  return /contrato de rateio/.test(text) &&
+    /cláusula\s+(?:[a-z]+|\d+)|do valor e da composição do contrato/.test(text) &&
+    !/balanço patrimonial|relatório resumido da execução orçamentária|demonstrativo da despesa com pessoal/.test(text);
+}
+
+export async function reviewWeeklyFindings(items, state, {
+  apiKey, maxCalls = 40, reviewImpl = reviewWithDeepSeek, now = new Date(),
+} = {}) {
+  if (!apiKey) throw new Error('DEEPSEEK_API_KEY ausente; resumo não enviado sem revisão.');
+  state.aiReviews ||= {};
+  const highlights = [];
+  const audit = [];
+  let calls = 0;
+  for (const item of items) {
+    const id = item.id || itemId(item);
+    let review = state.aiReviews[id];
+    if (!review || review.promptVersion !== AI_PROMPT_VERSION) {
+      if (calls >= maxCalls) throw new Error('Resumo excedeu o teto de revisões por IA; envio suspenso.');
+      calls += 1;
+      review = await reviewImpl(item, { apiKey });
+      state.aiReviews[id] = { ...review, reviewedAt: now.toISOString() };
+    }
+    if (review.status === 'approved') {
+      highlights.push(applyAiReview(item, state.aiReviews[id]));
+      audit.push({ id, status: 'approved', category: review.category });
+    } else if (item.classification?.category === 'RATEIO' && concreteRateio(item)) {
+      state.aiReviews[id] = { ...state.aiReviews[id], status: 'disputed' };
+      highlights.push(item);
+      audit.push({ id, status: 'disputed-kept', category: 'RATEIO' });
+    } else {
+      audit.push({ id, status: 'rejected', category: item.classification?.category });
+    }
+  }
+  return { highlights, audit, calls };
+}

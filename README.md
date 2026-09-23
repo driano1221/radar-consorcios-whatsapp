@@ -157,7 +157,7 @@ Em **Settings → Secrets and variables → Actions**:
 - `SEND_ENABLED`: `true` para publicar ou `false` para pausar.
 - `AI_REVIEW_ENABLED`: `true` para exigir revisão por IA antes de publicar; `false` para desligá-la sem mudar o código.
 
-Com IA ativa, o radar faz no máximo 12 revisões por rodada e 60 por dia. Decisões são guardadas no estado para não pagar novamente pela mesma notícia. Erro de API, JSON inválido ou evidência ausente suspendem o envio daquele item; discordância sobre rateio fica na fila e no relatório de auditoria. O teste isolado da integração está no workflow **Avaliação pontual de IA**.
+Com IA ativa, o radar faz no máximo 12 revisões por rodada e 60 por dia. O boletim semanal também revisa achados ainda não avaliados, com teto de 40 chamadas por edição. Decisões são guardadas no estado para não pagar novamente pela mesma notícia. Erro de API, JSON inválido ou evidência ausente suspendem o envio daquele item; discordância sobre rateio fica na fila e no relatório de auditoria. Na edição semanal, rateio documentado por cláusulas de um contrato pode permanecer com divergência registrada. O teste isolado da integração está no workflow **Avaliação pontual de IA**.
 
 ## Homologação até domingo
 
