@@ -35,21 +35,27 @@ test('quando a fonte oficial falha, título editorial não repete trecho cortado
   assert.doesNotMatch(message, /d\.\.\./);
 });
 
-test('encurtador é opcional, usa cache e preserva o original em falha', async () => {
+test('Spoo.me valida o destino, substitui cache antigo e preserva o original em falha', async () => {
   const long = 'https://news.google.com/rss/articles/' + 'B'.repeat(250);
-  const cache = {};
+  const cache = { [long]: 'https://cleanuri.com/abc123' };
   let calls = 0;
-  const fetchImpl = async (_, options) => {
+  const fetchImpl = async (url, options) => {
     calls += 1;
+    if (String(url) === 'https://spoo.me/abc123') {
+      assert.equal(options.method, 'HEAD');
+      return new Response(null, { status: 302, headers: { location: long } });
+    }
+    assert.equal(String(url), 'https://spoo.me/api/v1/shorten');
     assert.equal(options.method, 'POST');
-    assert.equal(new URLSearchParams(options.body).get('url'), long);
-    return Response.json({ result_url: 'https://cleanuri.com/abc123' });
+    assert.equal(JSON.parse(options.body).long_url, long);
+    return Response.json({ short_url: 'https://spoo.me/abc123', long_url: long });
   };
-  assert.equal(await shortenLongUrl(long, cache, fetchImpl), 'https://cleanuri.com/abc123');
-  assert.equal(await shortenLongUrl(long, cache, fetchImpl), 'https://cleanuri.com/abc123');
+  assert.equal(await shortenLongUrl(long, cache, fetchImpl), 'https://spoo.me/abc123');
+  assert.equal(await shortenLongUrl(long, cache, fetchImpl), 'https://spoo.me/abc123');
   assert.equal(await shortenLongUrl('https://example.org/' + 'a'.repeat(85), cache, fetchImpl, 180), 'https://example.org/' + 'a'.repeat(85));
-  assert.equal(calls, 1);
+  assert.equal(calls, 2);
   assert.equal(await shortenLongUrl(long, {}, async () => new Response('', { status: 503 })), long);
-  assert.equal(await shortenLongUrl(long, {}, async (url) => String(url).includes('cleanuri.com')
-    ? new Response('', { status: 503 }) : Response.json({ shorturl: 'https://is.gd/Qwert1' })), 'https://is.gd/Qwert1');
+  assert.equal(await shortenLongUrl(long, {}, async (url) => String(url).includes('spoo.me/abc123')
+    ? new Response(null, { status: 302, headers: { location: 'https://example.org/wrong' } })
+    : Response.json({ short_url: 'https://spoo.me/abc123', long_url: long })), long);
 });

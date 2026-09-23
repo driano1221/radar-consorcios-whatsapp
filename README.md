@@ -83,7 +83,7 @@ Isso permite reconhecer, por exemplo, o mesmo ato publicado por duas fontes com 
 
 Quando o Google Notícias entrega uma manchete terminada em reticências, o radar procura a ementa completa no portal legislativo de origem. Se encontra a norma e confirma o endereço direto, usa um título curto baseado na ementa. Caso contrário, apresenta um título editorial conservador, sem reproduzir a frase cortada.
 
-Links longos são enviados aos encurtadores gratuitos [CleanURI](https://cleanuri.com/docs) e [is.gd](https://www.is.gd/developers.php), somente para os candidatos selecionados. A resposta fica em cache no estado. Se ambos estiverem indisponíveis, a mensagem usa o endereço original. O endereço original continua guardado para deduplicação e conferência.
+Links de até 100 caracteres são mantidos diretos, privilegiando o endereço da fonte. Para links maiores, o radar usa a API gratuita do [Spoo.me](https://spoo.me/docs/api-reference/url-shortening/create-shortened-url) e confirma que o endereço curto redireciona para a fonte correta antes de publicá-lo. A resposta validada fica em cache; entradas antigas do CleanURI e is.gd são ignoradas. Se o serviço falhar, a mensagem usa o endereço original. O endereço original continua guardado para deduplicação e conferência.
 
 ## Frequência e cota gratuita
 
@@ -181,7 +181,7 @@ Se o WhatsApp desvincular a sessão, execute `npm run pair` e depois `npm run se
 
 O agendador verifica a cada **15 minutos** (minutos 11, 26, 41 e 56); uma coleta recente faz a execução ser dispensada, de modo que a coleta efetiva ocorre em torno de **uma vez por hora**. O radar busca publicações dos últimos **sete dias** e mantém até três envios por rodada. Fontes diretas adicionadas: TCE-SP, RSS de CONIAPE/CIGA/CISREC e APIs SAPL de Unaí e São João da Boa Vista. RNCP e CISAMAPI têm adaptadores testados localmente, mas dependem de cobertura via Google no Actions. O Querido Diário usa o endereço atual, mas ainda apresenta oscilações externas.
 
-**Resumo semanal:** sábado às **9h de Brasília**, com nova tentativa às 12h somente se ainda não tiver sido confirmado. Destino: `WHATSAPP_WEEKLY_GROUP_ID` ou, na ausência, o grupo já configurado. A operação atual continua no grupo de teste. O boletim lista todos os achados relevantes do período em ordem de publicação, com fonte, data e link curto quando necessário; não mostra volume bruto de coleta nem falhas técnicas. Menções contábeis e contratuais de rotina são retiradas da lista. No despacho manual, `test_preview=true` usa a janela até agora; `edition` permite enviar uma versão revisada sem repetir acidentalmente a mesma edição.
+**Resumo semanal:** sábado às **9h de Brasília**, com nova tentativa às 12h somente se ainda não tiver sido confirmado. Destino: `WHATSAPP_WEEKLY_GROUP_ID` ou, na ausência, o grupo já configurado. A operação atual continua no grupo de teste. O boletim usa uma linha do tempo, da publicação mais recente à mais antiga, com categoria, fonte, data e link curto quando necessário; lista todos os achados relevantes e não mostra volume bruto de coleta nem falhas técnicas. Menções contábeis e contratuais de rotina são retiradas da lista. No despacho manual, `test_preview=true` usa a janela até agora; `edition` permite enviar uma versão revisada sem repetir acidentalmente a mesma edição.
 
 **Alertas:** workflows abrem uma ocorrência no GitHub em caso de falha; fontes geram alerta após três falhas consecutivas. Ocorrências são reaproveitadas e encerradas após recuperação. As notificações seguem suas preferências do GitHub.
 

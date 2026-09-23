@@ -36,7 +36,9 @@ async function main() {
   if (!existing?.text && !existing?.messages) {
     for (const item of reviewedReport.highlights) {
       const presented = await presentItem(item, state.shortLinks);
-      const displayUrl = await shortenLongUrl(presented.displayUrl || item.url, state.shortLinks, fetch, 50);
+      const target = /^(?:https:\/\/cleanuri\.com\/|https:\/\/is\.gd\/)/.test(presented.displayUrl || '')
+        ? item.url : presented.displayUrl || item.url;
+      const displayUrl = await shortenLongUrl(target, state.shortLinks, fetch, 100);
       report.highlights.push({ ...presented, displayUrl });
     }
   }

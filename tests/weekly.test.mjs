@@ -76,7 +76,7 @@ test('resumo lista todos os achados, sem limite de cinco e sem estatísticas de 
   const text = formatWeeklyMessage(report);
   assert.equal(report.events, 7);
   assert.equal(report.highlights.length, 7);
-  assert.match(text, /7\. \*FINANÇAS\*\n\*Achado real 7\*/);
+  assert.match(text, /🟪 \*15\/09 · FINANÇAS\*\nAchado real 7/);
   assert.doesNotMatch(text, /publicações únicas|coletas|Cobertura com falhas|Origem dos achados/);
 });
 
@@ -103,7 +103,7 @@ test('boletim extenso é dividido sem perder achados nem exceder tamanho seguro'
   assert.ok(parts.length > 1);
   assert.ok(parts.every((part) => part.length <= 950 && part.includes('RADAR CONSÓRCIOS')));
   assert.match(parts[0], /Parte 1\//);
-  assert.match(parts.at(-1), /25\. \*ADESÃO\*/);
+  assert.match(parts.at(-1), /🟦 \*15\/09 · ADESÃO\*/);
   assert.equal((parts.join('\n').match(/https:\/\/exemplo\.gov\.br\/noticia-/g) || []).length, 25);
 });
 
@@ -133,5 +133,18 @@ test('boletim distingue autorização de ingresso de adesão efetivada', () => {
   observeRun(state, [news], [{ name: 'API', status: 'ok' }], 5, new Date('2026-09-18T17:00:00Z'));
   const report = buildWeeklyReport(state, weeklyWindow(new Date('2026-09-19T13:00:00Z')));
   assert.deepEqual(report.categories, { 'ADESÃO AUTORIZADA': 1 });
-  assert.match(formatWeeklyMessage(report), /INGRESSO AUTORIZADO/);
+  assert.match(formatWeeklyMessage(report), /🟦 \*15\/09 · INGRESSO AUTORIZADO\*/);
+});
+
+test('linha do tempo ordena por data e preserva a fonte e todos os links', () => {
+  const report = { start: '2026-09-15T12:00:00Z', end: '2026-09-22T12:00:00Z', events: 2,
+    highlights: [
+      { ...item, title: 'Fato antigo', publishedAt: '2026-09-16T15:00:00Z', url: 'https://exemplo.gov.br/antigo' },
+      { ...item, title: 'Fato recente', publishedAt: '2026-09-21T15:00:00Z', url: 'https://exemplo.gov.br/recente' },
+    ] };
+  const text = formatWeeklyMessage(report);
+  assert.match(text, /Linha do tempo/);
+  assert.ok(text.indexOf('Fato recente') < text.indexOf('Fato antigo'));
+  assert.equal((text.match(/Portal oficial/g) || []).length, 2);
+  assert.equal((text.match(/https:\/\/exemplo\.gov\.br\//g) || []).length, 2);
 });

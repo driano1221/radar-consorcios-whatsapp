@@ -7,7 +7,7 @@ const report = buildWeeklyReport(state, weeklyWindow(new Date(), true));
 const shortLinks = state.shortLinks || {};
 report.highlights = await Promise.all(report.highlights.map(async (item) => {
   const presented = await presentItem(item, shortLinks);
-  return { ...presented, displayUrl: await shortenLongUrl(presented.displayUrl || item.url, shortLinks, fetch, 50) };
+  return { ...presented, displayUrl: await shortenLongUrl(presented.displayUrl || item.url, shortLinks, fetch, 100) };
 }));
 const weeklyMessages = formatWeeklyMessages(report, true);
 const messages = [...weeklyMessages, ...report.highlights.slice(0, 3).map(formatWhatsAppMessage)];

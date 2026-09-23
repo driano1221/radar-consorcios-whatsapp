@@ -281,15 +281,23 @@ export function formatWeeklyMessage(report, test = false) {
     RATEIO: 'RATEIO', PROTOCOLO: 'PROTOCOLO', GOVERNANÇA: 'GESTÃO',
     CONTROLE: 'FISCALIZAÇÃO', FINANÇAS: 'FINANÇAS', ATUAÇÃO: 'ATUAÇÃO', AÇÃO: 'ATUAÇÃO',
   };
+  const icons = {
+    CRISE: '🟥', SAÍDA: '🟧', CRIAÇÃO: '🟩', ADESÃO: '🟦',
+    'ADESÃO AUTORIZADA': '🟦', RATEIO: '🟪', PROTOCOLO: '🟪',
+    GOVERNANÇA: '🟪', CONTROLE: '🟨', FINANÇAS: '🟪',
+    ATUAÇÃO: '🟩', AÇÃO: '🟩',
+  };
   const rows = [
     `${test ? '🧪 ' : '🗞️ '}*RADAR CONSÓRCIOS*`,
-    `*${test ? 'Prévia do resumo semanal' : 'Resumo semanal'}* · ${date(report.start)}–${date(report.end)}`,
+    `*${test ? 'Prévia · linha do tempo' : 'Linha do tempo'}* · ${date(report.start)}–${date(report.end)}`,
     `_Atualizado às ${hour} (Brasília)_`,
     '',
     `*${report.events} ${report.events === 1 ? 'achado relevante' : 'achados relevantes'}*`,
   ];
   if (!report.highlights.length) rows.push('', 'Nenhum achado atingiu os critérios nesta janela.');
-  for (const [index, item] of report.highlights.entries()) {
+  const chronological = [...report.highlights].sort((a, b) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+  for (const item of chronological) {
     const ratifiedProtocol = item.kind === 'gazette' && ['GOVERNANÇA', 'PROTOCOLO'].includes(item.classification?.category) &&
       /ratifica.{0,35}protocolo de intenções/i.test(item.summary || '');
     const title = ratifiedProtocol
@@ -298,8 +306,9 @@ export function formatWeeklyMessage(report, test = false) {
     const source = cleanInline(item.source || 'Fonte não informada');
     const headline = withoutSourceSuffix(title, source);
     const category = labels[item.classification?.category] || 'CONSÓRCIOS';
-    rows.push('', `${index + 1}. *${category}*`,
-      `*${headline}*`, `_${date(item.publishedAt)} · ${source}_`,
+    const icon = icons[item.classification?.category] || '📰';
+    rows.push('', `${icon} *${date(item.publishedAt)} · ${category}*`,
+      headline, `_${source}_`,
       `🔗 ${item.displayUrl || item.url}`);
   }
   return rows.join('\n').trim();

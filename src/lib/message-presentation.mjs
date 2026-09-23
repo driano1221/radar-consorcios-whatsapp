@@ -2,7 +2,7 @@ import { load } from 'cheerio';
 import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
 
 const clippedTitle = /(?:\.\.\.|…)(?:\s+-\s+[^-]+)?\s*$/;
-let lastCleanUriAttempt = 0;
+const newShortLink = /^https:\/\/spoo\.me\/[A-Za-z0-9_-]+$/;
 
 function fallbackTitle(item) {
   const title = normalizeWhitespace(item.title || '');
@@ -58,39 +58,28 @@ export async function findOfficialLegislation(item, fetchImpl = fetch) {
 
 export async function shortenLongUrl(target, cache = {}, fetchImpl = fetch, maxLength = 180) {
   if (target.length <= maxLength) return target;
-  if (cache[target]) return cache[target];
-  const failures = [];
+  // Older CleanURI/is.gd entries are deliberately ignored after the provider change.
+  if (newShortLink.test(cache[target] || '')) return cache[target];
   try {
-    const waitMs = Math.max(0, 550 - (Date.now() - lastCleanUriAttempt));
-    if (waitMs) await new Promise((resolve) => setTimeout(resolve, waitMs));
-    lastCleanUriAttempt = Date.now();
-    const response = await fetchImpl('https://cleanuri.com/api/v1/shorten', {
-      method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ url: target }), signal: AbortSignal.timeout(8000),
+    const response = await fetchImpl('https://spoo.me/api/v1/shorten', {
+      method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ long_url: target }), signal: AbortSignal.timeout(8000),
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const { result_url: short } = await response.json();
-    if (!/^https:\/\/cleanuri\.com\/[A-Za-z0-9]+$/.test(short || '')) throw new Error('Resposta inesperada');
+    const { short_url: short, long_url: destination } = await response.json();
+    if (!newShortLink.test(short || '') || destination !== target) throw new Error('Resposta inesperada');
+    const check = await fetchImpl(short, {
+      method: 'HEAD', redirect: 'manual', signal: AbortSignal.timeout(8000),
+    });
+    if (![301, 302, 303, 307, 308].includes(check.status) || check.headers.get('location') !== target) {
+      throw new Error('Redirecionamento divergente');
+    }
     cache[target] = short;
     return short;
   } catch (error) {
-    failures.push(`CleanURI: ${error.message}`);
+    console.warn(`[link] Spoo.me indisponível ou redirecionamento inválido; endereço original mantido (${error.message}).`);
+    return target;
   }
-  try {
-    const endpoint = new URL('https://is.gd/create.php');
-    endpoint.searchParams.set('format', 'json');
-    endpoint.searchParams.set('url', target);
-    const response = await fetchImpl(endpoint, { signal: AbortSignal.timeout(8000) });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const { shorturl: short } = await response.json();
-    if (!/^https:\/\/is\.gd\/[A-Za-z0-9]+$/.test(short || '')) throw new Error('Resposta inesperada');
-    cache[target] = short;
-    return short;
-  } catch (error) {
-    failures.push(`is.gd: ${error.message}`);
-  }
-  console.warn(`[link] Encurtadores indisponíveis; endereço original mantido (${failures.join('; ')}).`);
-  return target;
 }
 
 export async function presentItem(item, cache = {}, fetchImpl = fetch) {
@@ -110,6 +99,8 @@ export async function presentItem(item, cache = {}, fetchImpl = fetch) {
       console.warn(`[título] Fonte oficial indisponível; título editorial usado: ${error.message}`);
     }
   }
-  presented.displayUrl = await shortenLongUrl(presented.displayUrl || item.url, cache, fetchImpl, 50);
+  const target = /^(?:https:\/\/cleanuri\.com\/|https:\/\/is\.gd\/)/.test(presented.displayUrl || '')
+    ? item.url : presented.displayUrl || item.url;
+  presented.displayUrl = await shortenLongUrl(target, cache, fetchImpl, 100);
   return presented;
 }
