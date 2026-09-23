@@ -26758,6 +26758,487 @@
         "0": "2026-09-23T00:39:18.572Z"
       },
       "sentAt": "2026-09-23T00:39:18.572Z"
+    },
+    "test:2026-09-23:final-ia-visual-2026-09-22:f242646b94d4": {
+      "report": {
+        "start": "2026-09-16T00:45:01.439Z",
+        "end": "2026-09-23T00:45:01.439Z",
+        "historyStartedAt": "2026-09-14T19:58:39.657Z",
+        "partial": false,
+        "observations": 413,
+        "events": 7,
+        "categories": {
+          "ATUAÇÃO": 1,
+          "ADESÃO AUTORIZADA": 2,
+          "PROTOCOLO": 1,
+          "ADESÃO": 1,
+          "RATEIO": 1,
+          "CRISE": 1
+        },
+        "sources": {
+          "dgabc.com.br": 1,
+          "Diário de Caratinga": 1,
+          "Câmara Municipal de Centenário do Sul": 1,
+          "Querido Diário": 2,
+          "RibeiraoDasNeves.net": 1,
+          "atualmt.com.br": 1
+        },
+        "sent": 12,
+        "pending": 0,
+        "preview": 0,
+        "runs": 42,
+        "failures": [
+          "Querido Diário",
+          "Google News",
+          "Feeds RSS",
+          "CISREC",
+          "Scrapers web",
+          "TCE-SP",
+          "CIGA",
+          "Diário Municipal AMM-MG"
+        ],
+        "highlights": [
+          {
+            "kind": "news",
+            "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - dgabc.com.br",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDhmZzVUc3JGbnU4R0lDcXlmeUt3S0pDZXdhaXBHLW1kNWQzLXBRVmZuVmNkaTFGeWc0Sk5iSjZ4NlM5WmFZay1uQkU3SmZPYzlzT3FLbFlmUlVselZheTM5QzFNS0NzaENaMUJtQy16TFZkR1ptbnRiTlpUdEMxTFAzc21Qd3Nxc01sQUd6TnRWUENUcS1XMVVrbll2TWZCMGJCc2FTZ3B1aUYyWWx2aGJySm9MXzd1ZmJuWHBCQXlETDQ?oc=5",
+            "sourceUrl": "https://www.dgabc.com.br",
+            "publishedAt": "2026-09-22T19:00:00.000Z",
+            "source": "dgabc.com.br",
+            "summary": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos dgabc.com.br",
+            "classification": {
+              "category": "ATUAÇÃO",
+              "emoji": "📰",
+              "score": 9,
+              "reasons": [
+                "contexto público forte",
+                "ATUAÇÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos dgabc.com.br",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "ea8ee5deacbc1c955b0812975620ab59ad4455152abe2e691d45eb2ecd3977a0",
+            "titleFingerprint": "ab1ffe377fb63779061188b5aefe7c0759d2aca70e495e9e3fd376aa4a521502",
+            "contentTokens": [
+              "agenda",
+              "atrair",
+              "brasilia",
+              "cria",
+              "dgabc",
+              "investimentos",
+              "setorial"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ATUAÇÃO",
+              "evidence": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 524,
+                "outputTokens": 73
+              },
+              "reviewedAt": "2026-09-23T00:32:35.496Z"
+            },
+            "displayUrl": "https://cleanuri.com/vGQWOm"
+          },
+          {
+            "kind": "news",
+            "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5",
+            "sourceUrl": "https://diariodecaratinga.com.br",
+            "publishedAt": "2026-09-22T16:25:00.000Z",
+            "source": "Diário de Caratinga",
+            "summary": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+            "classification": {
+              "category": "ADESÃO AUTORIZADA",
+              "emoji": "🟦",
+              "score": 12,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "18ff4bea6c59d6e68940383919890c47640fd55006bdf992291df1d7c41c0ea4",
+            "titleFingerprint": "0f49c76f88887cd44cb88a874c2445cdbe254fb9da5e781bf6f1efda1e13260b",
+            "contentTokens": [
+              "autorizado",
+              "caratinga",
+              "ciminas",
+              "integrar"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ADESÃO AUTORIZADA",
+              "evidence": "Município é autorizado a integrar consórcio intermunicipal CIMINAS",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 526,
+                "outputTokens": 81
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "displayUrl": "https://cleanuri.com/yEygXQ"
+          },
+          {
+            "kind": "news",
+            "title": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul",
+            "url": "https://news.google.com/rss/articles/CBMitwNBVV95cUxOaUpPRWhiMHdncmlNTEprT04xZm52R0lxZDMxS2dHRl9DWU40UjVlMDI1ZWZXM2V0UUg3N3hDODF5NE84TE1nT3lkNFowMjJsTTVmNm9CbEZqR2VFWmxRYXpKa25waGhpREhhOHpueS1NbFprNFBjVjlxSG9Ndm4yN2dub1pmLWdaYUtUTzkzNDI1d3N5QUdrYWRfNHRXeWYxajlSQVc4ODRvWjA0N1pGbTZpLThWRkt5bjVNYjFoR0VnOG4tYkt3TWhlX1hkaWdLT1FsSEpraGZWVHBHRVI4OTlaa2ZQTVlaNjh4V1BwQ0g1YjFyUUV5bGRLQnF3TGtiZ2d1VW1BZ1FSNGFaREVBcTVUUHRldmtYVFVlX29qaEEzVE1JQ0VuVmhOUEhidEFSR3BGSW1ud2xpc3JzOFVRa2xSUFU5RVNOZTRqZ0p6aUZjRWZ1Tm9raVZwZ2t3amd0RFVHVmxlaVNyQkpDUDZnM09nc2Jqcy1YMVd1eFNGRkNKWko4QnhTX2d4bTFnNWwtWEVsdldqRzluR1hZM2JVMWJQUjNXSGRfNjRDdHgzN2FpUlBfWkJZ?oc=5",
+            "sourceUrl": "https://www.centenariodosul.pr.leg.br",
+            "publishedAt": "2026-09-21T12:04:22.000Z",
+            "source": "Câmara Municipal de Centenário do Sul",
+            "summary": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... Câmara Municipal de Centenário do Sul",
+            "classification": {
+              "category": "ADESÃO AUTORIZADA",
+              "emoji": "🟦",
+              "score": 13,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... Câmara Municipal de Centenário do Sul",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "cf72720f6d8f61be6098bc0df69ed30f07d3ec123df2ebf4abed30e5f59f58b8",
+            "titleFingerprint": "44688ab359e1e50597640b8239bf9cb2c87e4be37e4c0f816d92eeba079af3dd",
+            "contentTokens": [
+              "autoriza",
+              "camara",
+              "centenario",
+              "ingresso",
+              "legislacao",
+              "saneamento",
+              "sul"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ADESÃO AUTORIZADA",
+              "evidence": "Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 587,
+                "outputTokens": 96
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "presentationTitle": "Centenário do Sul autoriza ingresso no CISPAR",
+            "verifiedSummary": "Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento do Paraná (CISPAR), bem como ratifica o seu Contrato de Consórcio Público e o seu Estatuto Social.",
+            "displayUrl": "https://cleanuri.com/0v1GE5",
+            "officialLegislation": true
+          },
+          {
+            "kind": "gazette",
+            "title": "Diário Oficial de Simão Dias (SE)",
+            "url": "https://data.queridodiario.ok.org.br/2807105/2026-09-18/1b2b9740ea1e1eac8863348801352068dd918de1.pdf",
+            "publishedAt": "2026-09-18T12:00:00-03:00",
+            "source": "Querido Diário",
+            "summary": "● LEI Nº 1.194/2026 - Ratifica o IV Protocolo de Intenções do Consórcio Público Multifinalitário Intermunicipal da Região Sul e Centro-Sul de Sergipe - CONSCENSUL, aprovado em Assembleia Geral de Consorciados, autoriza a participação do Município nas modalidades de gestão associada nele previstas, fixa limite para comprometimento de Receita Corrente Líquida e dá outras providências. ● DECRETO Nº 178/2026 - Dispõe sobre a exoneração da servidora por Aposentadoria. ● PORTARIA Nº 474/2026 - Mudança de Lotação. ● PORTARIA Nº 475/2026 - Dispõe sobre a Concessão de Adicional de 1/3 por 25 anos de trabalho. ● EXTRATO - TERMO DE COMPROMISSO Nº 082/2026/SEMCULT ● PORTARIA Nº 476/2026 - Dispõe sobre a Concessão de Adicional de 1/3 por 25 anos de trabalho. ● PORTARIA Nº 477/2026 - Dispõe sobre a Concessão de Licença Prêmio. ● DIVERSAS ATAS E EXTRATOS - DIVERSAS ATAS E EXTRATOS ● DECRETO Ratifica o IV Protocolo de Intenções do Consórcio Público Multifinalitário Intermunicipal da Região Sul e Centro-Sul de Sergipe - CONSCENSUL, aprovado em Assembleia Geral de Consorciados, autoriza a participação do Município nas modalidades de gestão associada nele previstas, fixa limite para comprometimento de Receita Corrente Líquida e dá outras providências. O PREFEITO MUNICIPAL DE SIMÃO DIAS, ESTADO DE SERGIPE, no uso de suas atribuições legais, faz saber que a câmara municipal aprovou e eu sanciono a seguinte lei: TÍTULO I DAS DISPOSIÇÕES GERAIS Art. 1º. Fica ratificado, nos termos do art. 241 da Constituição Federal, da Lei Federal nº 11.107, de 6 de abril de 2005, e do Decreto Federal nº 6.017, de 17 de janeiro de 2007, ou outras normas que a substituam, o IV Protocolo de Intenções do, doravante intitulado Consórcio Público Multifinalitário Assembleia Geral de Consorciados, e passa a constit",
+            "territoryId": "2807105",
+            "territoryName": "Simão Dias",
+            "stateCode": "SE",
+            "edition": "1447",
+            "classification": {
+              "category": "PROTOCOLO",
+              "emoji": "🟨",
+              "score": 18,
+              "reasons": [
+                "contexto público forte",
+                "PROTOCOLO",
+                "GOVERNANÇA"
+              ],
+              "evidenceIndex": 2,
+              "evidenceText": "Assembleia Geral de Consorciados, e passa a constituir o Contrato de Consórcio Público com força de lei municipal, incorporado a esta Lei como Anexo Único. §1º. A ratificação de que trata o caput é feita sem reservas de qualquer natureza ao instrumento. §2º. O CONSCENSUL, por esta lei, é reconhecido enquanto associação pública com personalidade jurídica de direito público interno e natureza autárquica interfederativa, nos termos do art. 6º, §1º, da Lei Federal nº 11.107/2005, submetendo-se ao regime jurídico de direito público e ao controle pelos Tribunais de Contas competentes, passando, doravante, a integrar a Administração Pública Indireta do Município em suas finalidades multifinalitárias. Art. 2º. Esta Lei tem por finalidade: I – converter o Protocolo de Intenções em Contrato de Consórcio Público, nos termos legais; II – autorizar a participação do Município",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "6f0a38b3d7886483c4c99617ae43ca0deb19856384786f97c86ef7c292dd4010",
+            "titleFingerprint": "3b998c8a4c20a5565af6235fe66e00a7d877eaede3e53b2d19819c9e40d4f8f3",
+            "contentTokens": [
+              "082",
+              "178",
+              "194",
+              "2026",
+              "474",
+              "475",
+              "476",
+              "adicional",
+              "anos",
+              "aposentadoria",
+              "aprovado",
+              "assembleia",
+              "associada",
+              "autoriza",
+              "centro",
+              "comprometimento",
+              "compromisso",
+              "concessao",
+              "conscensul",
+              "consorciados",
+              "corrente",
+              "decreto",
+              "dias",
+              "dispoe",
+              "exoneracao",
+              "extrato",
+              "fixa",
+              "geral",
+              "gestao",
+              "intencoes",
+              "lei",
+              "limite",
+              "liquida",
+              "lotacao",
+              "modalidades",
+              "mudanca",
+              "multifinalitario",
+              "nele",
+              "outras",
+              "participacao",
+              "portaria",
+              "previstas",
+              "protocolo",
+              "providencias",
+              "ratifica",
+              "receita",
+              "regiao",
+              "semcult",
+              "sergipe",
+              "servidora",
+              "simao",
+              "sobre",
+              "sul",
+              "termo",
+              "trabalho"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "PROTOCOLO",
+              "evidence": "Ratifica o IV Protocolo de Intenções do Consórcio Público Multifinalitário Intermunicipal da Região Sul e Centro-Sul de Sergipe - CONSCENSUL",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 1160,
+                "outputTokens": 107
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "displayUrl": "https://cleanuri.com/6z6G6D"
+          },
+          {
+            "kind": "news",
+            "title": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net",
+            "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5",
+            "sourceUrl": "https://ribeiraodasneves.net",
+            "publishedAt": "2026-09-17T19:28:42.000Z",
+            "source": "RibeiraoDasNeves.net",
+            "summary": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
+            "classification": {
+              "category": "ADESÃO",
+              "emoji": "🟦",
+              "score": 12,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde RibeiraoDasNeves.net",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "79e27719b1731820c55e0b4908347b188149b0788681cee870593437e8a27241",
+            "titleFingerprint": "6082d44f199154aa89e1bcf2f9e6819feac5f57db5dc2e36ba0e1275fa79469d",
+            "contentTokens": [
+              "adesao",
+              "ampliar",
+              "icismep",
+              "net",
+              "neves",
+              "oficializa",
+              "ribeirao",
+              "ribeiraodasneves",
+              "saude",
+              "servicos"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ADESÃO",
+              "evidence": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 561,
+                "outputTokens": 79
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "displayUrl": "https://cleanuri.com/j9151r"
+          },
+          {
+            "kind": "gazette",
+            "title": "Diário Oficial de Votuporanga (SP)",
+            "url": "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf",
+            "publishedAt": "2026-09-17T12:00:00-03:00",
+            "source": "Querido Diário",
+            "summary": "projetos consistentes em programas e ações contemplados em Plano Plurianual ou em Gestão Associada de Serviços Públicos. Parágrafo Primeiro - É vedado ao Consórcio Público a aplicação dos recursos entregues por meio deste Contrato de Rateio para atendimento de despesas genéricas, inclusive transferências ou operações de crédito. Parágrafo Segundo - Os Entes Consorciados, isolados ou em conjunto, bem como o Consórcio Público, são partes legítimas para exigir o cumprimento das obrigações previstas neste Contrato de Rateio. Parágrafo Terceiro - Os recursos arrecadados por meio deste Contrato de Rateio não poderão ser utilizados para custeio de viagem, incluindo transporte, hospedagem e alimentação, dos membros do Consórcio Público, exceto nos casos em que a Gerência Administrativa e membros do Conselho Consultivo de Turismo que representem a Diretoria do Fórum Permanente de Turismo Turismo da Região Turística Maravilhas do Rio Grande necessitem de deslocamento para representar exclusivamente a Região Turística Maravilhas do Rio Grande em atividades de interesse do Consórcio Público, os custeios previsto na cláusula segunda deste contrato poderão ser suportados pelo Consórcio Público, com autorização de seu Presidente. IV - DO VALOR E DA COMPOSIÇÃO DO CONTRATO DIÁRIO OFICIAL ELETRÔNICO DE VOTUPORANGA Conforme Lei Municipal 5.927, de 02 de março de 2017 Quinta-feira, 17 de setembro de 2026 Ano XI | Edição nº 2697 Diário Oficial Eletrônico de Votuporanga | 35 Consórcio de Turismo Intermunicipal da Região Turística “Maravilhas do Rio Grande” Av. Francisco Ramalho de Mendonça, 3112 - Jardim Alvorada - CEP: 15.500-370 – Votuporanga/SP Tel. (17) 3405-9670 - e-mail: cotimarg@cotimarg.tur.br - CNPJ: 40.465.813/0001-71 Consórcio de Turismo Intermunicipal correrão à conta das dotaçõe",
+            "territoryId": "3557105",
+            "territoryName": "Votuporanga",
+            "stateCode": "SP",
+            "edition": "2697",
+            "classification": {
+              "category": "RATEIO",
+              "emoji": "🟪",
+              "score": 19,
+              "reasons": [
+                "contexto público forte",
+                "CONTROLE",
+                "RATEIO"
+              ],
+              "evidenceIndex": 2,
+              "evidenceText": "correrão à conta das dotações orçamentárias de cada Ente Consorciado. CLÁUSULA ONZE - Os Entes Consorciados aportarão no exercício de 2027, o valor de seus repasses definidos para o exercício financeiro de 2027, onerando as dotações correspondentes do Orçamento Municipal de cada Ente, sob a seguinte Natureza de Despesa e Elemento Econômico: 3.3.00.00.00 - OUTRAS DESPESAS CORRENTES 3.3.71.70.00 - Rateio pela Participação em Consórcio Público CLÁUSULA DOZE - Conforme previsão legal, constitui ato de improbidade administrativa, nos termos do disposto no art. 10, inciso XV, da Lei no 8.429, de 2 de junho de 1992, celebrar Contrato de Rateio sem suficiente e prévia dotação orçamentária, ou sem observar as formalidades previstas em Lei. CLÁUSULA TREZE - A não consignação, pelo Ente Consorciado, em sua lei orçamentária ou em créditos adicionais, das dotações suficientes",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "766066102eab798c844cea748c7e4cc88ea5a8f1311d7db621a8d3d4935290e0",
+            "titleFingerprint": "adfbbf05bc5166d9b270aff33cf6be3ed2522ce705bc1f3c9c03705d9f7627df",
+            "contentTokens": [
+              "acoes",
+              "alimenta",
+              "aplicacao",
+              "arrecadados",
+              "associada",
+              "atendimento",
+              "bem",
+              "como",
+              "conjunto",
+              "consistentes",
+              "consorciados",
+              "contemplados",
+              "contrato",
+              "credito",
+              "cumprimento",
+              "custeio",
+              "despesas",
+              "deste",
+              "entes",
+              "entregues",
+              "exigir",
+              "genericas",
+              "gestao",
+              "hospedagem",
+              "incluindo",
+              "inclusive",
+              "isolados",
+              "legitimas",
+              "meio",
+              "nao",
+              "neste",
+              "obrigacoes",
+              "operacoes",
+              "paragrafo",
+              "partes",
+              "plano",
+              "plurianual",
+              "poderao",
+              "previstas",
+              "primeiro",
+              "programas",
+              "projetos",
+              "rateio",
+              "recursos",
+              "sao",
+              "segundo",
+              "ser",
+              "servicos",
+              "terceiro",
+              "transferencias",
+              "transporte",
+              "utilizados",
+              "vedado",
+              "viagem",
+              "votuporanga"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "RATEIO",
+              "evidence": "Os Entes Consorciados aportarão no exercício de 2027, o valor de seus repasses definidos para o exercício financeiro de 2027",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 1127,
+                "outputTokens": 107
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "displayUrl": "https://cleanuri.com/vGQWQ1"
+          },
+          {
+            "kind": "news",
+            "title": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - atualmt.com.br",
+            "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5",
+            "sourceUrl": "https://atualmt.com.br",
+            "publishedAt": "2026-09-16T11:43:37.000Z",
+            "source": "atualmt.com.br",
+            "summary": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
+            "classification": {
+              "category": "CRISE",
+              "emoji": "🟥",
+              "score": 19,
+              "reasons": [
+                "CRISE",
+                "SAÍDA"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde atualmt.com.br",
+              "publicContext": true,
+              "strongPublicContext": false
+            },
+            "id": "c99922f23e78f1bca8b89e1a708fd370ec9697f236a0bf91d0087c990b495782",
+            "titleFingerprint": "a422363e72c9ec4346c5b3ff96a0c2338824401a9cb595c84dd375006c41dd85",
+            "contentTokens": [
+              "atualmt",
+              "deixa",
+              "estadual",
+              "inadimplencia",
+              "incentivo",
+              "oito",
+              "saude",
+              "sem"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "CRISE",
+              "evidence": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 534,
+                "outputTokens": 82
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "displayUrl": "https://cleanuri.com/gmE5LL"
+          }
+        ]
+      },
+      "messages": [
+        "🧪 *RADAR CONSÓRCIOS*\n*Prévia do resumo semanal* · 15/09–22/09\n_Atualizado às 21:45 (Brasília)_\n\n*7 achados relevantes*\n\n1. *ATUAÇÃO*\n*Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos*\n_22/09 · dgabc.com.br_\n🔗 https://cleanuri.com/vGQWOm\n\n2. *INGRESSO AUTORIZADO*\n*Município é autorizado a integrar consórcio intermunicipal CIMINAS*\n_22/09 · Diário de Caratinga_\n🔗 https://cleanuri.com/yEygXQ\n\n3. *INGRESSO AUTORIZADO*\n*Centenário do Sul autoriza ingresso no CISPAR*\n_21/09 · Câmara Municipal de Centenário do Sul_\n🔗 https://cleanuri.com/0v1GE5\n\n4. *PROTOCOLO*\n*Simão Dias ratifica protocolo de intenções*\n_18/09 · Querido Diário_\n🔗 https://cleanuri.com/6z6G6D\n\n5. *ADESÃO*\n*Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde*\n_17/09 · RibeiraoDasNeves.net_\n🔗 https://cleanuri.com/j9151r\n\n6. *RATEIO*\n*Votuporanga publica contrato de rateio*\n_17/09 · Querido Diário_\n🔗 https://cleanuri.com/vGQWQ1\n\n7. *ALERTA*\n*Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde*\n_16/09 · atualmt.com.br_\n🔗 https://cleanuri.com/gmE5LL"
+      ],
+      "createdAt": "2026-09-23T00:45:09.056Z",
+      "attempts": 1,
+      "sentParts": {
+        "0": "2026-09-23T00:45:10.200Z"
+      },
+      "sentAt": "2026-09-23T00:45:10.200Z"
     }
   },
   "shortLinks": {
@@ -26781,6 +27262,78 @@
         "outputTokens": 73
       },
       "reviewedAt": "2026-09-23T00:32:35.496Z"
+    },
+    "18ff4bea6c59d6e68940383919890c47640fd55006bdf992291df1d7c41c0ea4": {
+      "status": "approved",
+      "category": "ADESÃO AUTORIZADA",
+      "evidence": "Município é autorizado a integrar consórcio intermunicipal CIMINAS",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 526,
+        "outputTokens": 81
+      },
+      "reviewedAt": "2026-09-23T00:45:01.446Z"
+    },
+    "cf72720f6d8f61be6098bc0df69ed30f07d3ec123df2ebf4abed30e5f59f58b8": {
+      "status": "approved",
+      "category": "ADESÃO AUTORIZADA",
+      "evidence": "Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 587,
+        "outputTokens": 96
+      },
+      "reviewedAt": "2026-09-23T00:45:01.446Z"
+    },
+    "6f0a38b3d7886483c4c99617ae43ca0deb19856384786f97c86ef7c292dd4010": {
+      "status": "approved",
+      "category": "PROTOCOLO",
+      "evidence": "Ratifica o IV Protocolo de Intenções do Consórcio Público Multifinalitário Intermunicipal da Região Sul e Centro-Sul de Sergipe - CONSCENSUL",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 1160,
+        "outputTokens": 107
+      },
+      "reviewedAt": "2026-09-23T00:45:01.446Z"
+    },
+    "79e27719b1731820c55e0b4908347b188149b0788681cee870593437e8a27241": {
+      "status": "approved",
+      "category": "ADESÃO",
+      "evidence": "Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 561,
+        "outputTokens": 79
+      },
+      "reviewedAt": "2026-09-23T00:45:01.446Z"
+    },
+    "766066102eab798c844cea748c7e4cc88ea5a8f1311d7db621a8d3d4935290e0": {
+      "status": "approved",
+      "category": "RATEIO",
+      "evidence": "Os Entes Consorciados aportarão no exercício de 2027, o valor de seus repasses definidos para o exercício financeiro de 2027",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 1127,
+        "outputTokens": 107
+      },
+      "reviewedAt": "2026-09-23T00:45:01.446Z"
+    },
+    "c99922f23e78f1bca8b89e1a708fd370ec9697f236a0bf91d0087c990b495782": {
+      "status": "approved",
+      "category": "CRISE",
+      "evidence": "Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 534,
+        "outputTokens": 82
+      },
+      "reviewedAt": "2026-09-23T00:45:01.446Z"
     }
   },
   "aiUsage": {
