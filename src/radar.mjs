@@ -119,6 +119,9 @@ async function main() {
     console.log(`[ia] ${reviewResult.callsRun} chamada(s); ${reviewResult.audit.filter((r) => r.status === 'approved').length} aprovado(s); ` +
       `${reviewResult.audit.filter((r) => r.status === 'rejected').length} rejeitado(s); ` +
       `${reviewResult.audit.filter((r) => ['deferred', 'disputed'].includes(r.status)).length} pendente(s).`);
+    const apiFailure = reviewResult.audit.find((entry) => entry.status === 'deferred' && entry.reason !== 'limite de chamadas');
+    sourceHealth.push({ name: 'DeepSeek', status: apiFailure ? 'error' : 'ok',
+      itemCount: reviewResult.callsRun, ...(apiFailure ? { message: apiFailure.reason } : {}) });
   }
   const finalClassified = classified.map((item) => config.aiReviewEnabled
     ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item);
