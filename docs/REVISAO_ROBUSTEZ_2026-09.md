@@ -20,7 +20,7 @@ O código já reduz o risco ao conectar só quando há mensagem para enviar e um
 
 ### 2. Prévia que não mostra a decisão da IA
 
-No disparo manual sem envio, a revisão por IA não roda, então a prévia pode listar itens que a IA depois rejeitaria (aconteceu em 24/09: a prévia mostrou 2 selecionados e o envio real, 0). Sugestão: uma opção `ai_preview` no disparo manual que roda a revisão sem enviar e sem salvar estado. O custo é baixo (cerca de 1.000 tokens por item).
+No disparo manual sem envio, a revisão por IA não roda, então a prévia pode listar itens que a IA depois rejeitaria (aconteceu em 24/09: a prévia mostrou 2 selecionados e o envio real, 0). Feito em 24/09: a opção `ai_preview` no disparo manual roda a revisão sem enviar e sem salvar estado. O custo é baixo (cerca de 1.000 tokens por item).
 
 ### 3. Versão do Baileys
 

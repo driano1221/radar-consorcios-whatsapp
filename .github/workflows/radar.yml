@@ -13,6 +13,11 @@ on:
         type: boolean
         required: true
         default: false
+      ai_preview:
+        description: Na prévia sem envio, rodar também a revisão por IA (mostra o que seria publicado)
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -32,6 +37,7 @@ jobs:
       AI_REVIEW_ENABLED: ${{ vars.AI_REVIEW_ENABLED || 'true' }}
       WHATSAPP_GROUP_ID: ${{ secrets.WHATSAPP_GROUP_ID }}
       SEND_ENABLED: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.send_enabled) || vars.SEND_ENABLED || 'false' }}
+      AI_PREVIEW: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.ai_preview) || 'false' }}
       PERSIST_STATE: ${{ github.event_name == 'schedule' || inputs.send_enabled }}
 
     steps:

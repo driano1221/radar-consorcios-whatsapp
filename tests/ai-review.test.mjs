@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { AI_PROMPT_VERSION, applyAiReview, reviewQueue, reviewWeeklyFindings, reviewWithDeepSeek } from '../src/lib/ai-review.mjs';
+import { AI_PROMPT_VERSION, applyAiReview, reviewQueue, reviewWeeklyFindings, reviewWithDeepSeek, shouldReviewWithAi } from '../src/lib/ai-review.mjs';
 import { itemId } from '../src/lib/dedupe.mjs';
 
 const item = (title, category = 'CRIAÇÃO') => ({
@@ -94,4 +94,13 @@ test('resumo semanal revisa todos os achados, retém rateio documentado e remove
     apiKey: 'segredo-falso', reviewImpl: async () => { throw new Error('não deveria consultar'); },
   });
   assert.equal(again.calls, 0);
+});
+
+test('IA revisa no envio e na prévia só quando pedida', () => {
+  const base = { aiReviewEnabled: true, sendEnabled: false, aiPreview: false };
+  assert.equal(shouldReviewWithAi(base, 5), false);
+  assert.equal(shouldReviewWithAi({ ...base, aiPreview: true }, 5), true);
+  assert.equal(shouldReviewWithAi({ ...base, sendEnabled: true }, 5), true);
+  assert.equal(shouldReviewWithAi({ ...base, sendEnabled: true }, 0), false);
+  assert.equal(shouldReviewWithAi({ ...base, aiReviewEnabled: false, aiPreview: true }, 5), false);
 });

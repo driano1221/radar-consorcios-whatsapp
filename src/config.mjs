@@ -24,6 +24,7 @@ export async function loadConfig() {
     configPath,
     sendEnabled: parseBoolean(process.env.SEND_ENABLED, false),
     aiReviewEnabled: parseBoolean(process.env.AI_REVIEW_ENABLED, false),
+    aiPreview: parseBoolean(process.env.AI_PREVIEW, false),
     maxAiReviewsPerRun: parsePositiveInteger(process.env.MAX_AI_REVIEWS_PER_RUN, 12),
     maxAiReviewsPerDay: parsePositiveInteger(process.env.MAX_AI_REVIEWS_PER_DAY, 60),
     persistState: parseBoolean(process.env.PERSIST_STATE, parseBoolean(process.env.SEND_ENABLED, false)),

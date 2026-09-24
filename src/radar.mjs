@@ -24,7 +24,7 @@ import { observeRun } from './lib/history.mjs';
 import { fetchSapl } from './lib/sources/sapl.mjs';
 import { fetchCiga } from './lib/sources/ciga.mjs';
 import { presentItem } from './lib/message-presentation.mjs';
-import { applyAiReview, reviewQueue } from './lib/ai-review.mjs';
+import { applyAiReview, reviewQueue, shouldReviewWithAi } from './lib/ai-review.mjs';
 import { itemId } from './lib/dedupe.mjs';
 
 async function appendGitHubSummary(markdown) {
@@ -34,8 +34,8 @@ async function appendGitHubSummary(markdown) {
 
 async function main() {
   const config = await loadConfig();
-  if (config.sendEnabled && config.aiReviewEnabled && !process.env.DEEPSEEK_API_KEY) {
-    throw new Error('DEEPSEEK_API_KEY ausente; envio suspenso para não publicar sem revisão.');
+  if ((config.sendEnabled || config.aiPreview) && config.aiReviewEnabled && !process.env.DEEPSEEK_API_KEY) {
+    throw new Error('DEEPSEEK_API_KEY ausente; envio e prévia com IA suspensos para não mostrar itens sem revisão.');
   }
   const since = new Date(Date.now() - config.lookbackHours * 60 * 60 * 1000);
   const state = await loadState(config.stateFile);
@@ -107,7 +107,7 @@ async function main() {
   if (config.sendEnabled) enqueuePending(state, discovered);
   if (config.persistState) await saveState(config.stateFile, state);
   const available = config.sendEnabled ? listPending(state) : discovered;
-  const reviewResult = config.aiReviewEnabled && config.sendEnabled && remainingToday > 0
+  const reviewResult = shouldReviewWithAi(config, remainingToday)
     ? await reviewQueue(available, state, {
       apiKey: process.env.DEEPSEEK_API_KEY,
       maxPosts: Math.min(config.maxPostsPerRun, remainingToday),
@@ -215,7 +215,7 @@ async function main() {
   console.log(funnelSummary);
 
   if (!config.sendEnabled) {
-    console.log('SEND_ENABLED=false: prévia concluída sem publicar no WhatsApp.');
+    console.log(`SEND_ENABLED=false: prévia concluída sem publicar no WhatsApp${reviewResult ? ', já com a revisão da IA' : ' (sem revisão da IA; use ai_preview para incluí-la)'}.`);
     const summary = formatRunSummary(presentedUnseen, false);
     console.log(summary);
     await appendGitHubSummary(`${summary}\n${scraperSummary}\n${funnelSummary}`);

@@ -3,6 +3,11 @@ import { normalizeWhitespace } from './text.mjs';
 
 export const AI_PROMPT_VERSION = 2;
 
+// A IA revisa no envio real e, se pedido, na prévia (para a prévia mostrar o que de fato seria publicado).
+export function shouldReviewWithAi({ aiReviewEnabled, sendEnabled, aiPreview }, remainingToday) {
+  return Boolean(aiReviewEnabled && (sendEnabled || aiPreview) && remainingToday > 0);
+}
+
 const EMOJI = {
   CRIAÇÃO: '🟩', ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', SAÍDA: '🟧',
   RATEIO: '🟪', PROTOCOLO: '🟨', GOVERNANÇA: '🟨', CONTROLE: '🔎',

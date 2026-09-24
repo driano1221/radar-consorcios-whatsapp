@@ -185,7 +185,7 @@ O agendador roda a cada **2 horas** (minuto 17). Até 23/09/2026 ele pedia execu
 
 **Alertas:** workflows abrem uma ocorrência no GitHub em caso de falha; fontes geram alerta após três falhas consecutivas. Ocorrências são reaproveitadas e encerradas após recuperação. As notificações seguem suas preferências do GitHub.
 
-Comandos adicionais: `npm run weekly` gera a prévia; `node scripts/validate-sources.mjs` testa fontes ao vivo; `node scripts/preview-messages.mjs` cria uma simulação visual em `output/message-preview.html` a partir do estado atual. Use `SEND_ENABLED=false` para prévias. `PERSIST_STATE=true` registra observações sem enviar, e `NEWS_STATE_FILE` permite isolar o estado de teste.
+Comandos adicionais: `npm run weekly` gera a prévia; `node scripts/validate-sources.mjs` testa fontes ao vivo; `node scripts/preview-messages.mjs` cria uma simulação visual em `output/message-preview.html` a partir do estado atual. Use `SEND_ENABLED=false` para prévias; com `AI_PREVIEW=true` (ou a opção `ai_preview` no disparo manual do workflow) a prévia também passa pela revisão da IA e mostra só o que de fato seria publicado, sem enviar nem salvar estado. `PERSIST_STATE=true` registra observações sem enviar, e `NEWS_STATE_FILE` permite isolar o estado de teste.
 
 As mensagens usam a sintaxe nativa do WhatsApp (`*negrito*`, `_itálico_`, `> citação` e lista numerada), com URL simples em vez de link Markdown. Resumos extensos são divididos em partes de até 3.400 caracteres, preservando todos os achados. O estudo e os limites da IA estão em [docs/avaliacao-ia-2026-09-22.md](docs/avaliacao-ia-2026-09-22.md).
 
