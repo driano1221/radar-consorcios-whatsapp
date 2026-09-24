@@ -2,7 +2,9 @@ name: Radar de Consórcios
 
 on:
   schedule:
-    - cron: '11,26,41,56 * * * *'
+    # a cada 2 horas: o GitHub já pulava a maioria dos disparos de 15 em 15 min, e agenda
+    # muito frequente é padrão de abuso (conta sinalizada em 23/09/2026)
+    - cron: '17 */2 * * *'
       timezone: America/Sao_Paulo
   workflow_dispatch:
     inputs:
