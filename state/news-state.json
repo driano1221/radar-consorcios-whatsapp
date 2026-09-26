@@ -15330,7 +15330,18 @@
             "outputTokens": 96
           },
           "reviewedAt": "2026-09-23T00:45:01.446Z"
-        }
+        },
+        "id": "cf72720f6d8f61be6098bc0df69ed30f07d3ec123df2ebf4abed30e5f59f58b8",
+        "titleFingerprint": "44688ab359e1e50597640b8239bf9cb2c87e4be37e4c0f816d92eeba079af3dd",
+        "contentTokens": [
+          "autoriza",
+          "camara",
+          "centenario",
+          "ingresso",
+          "legislacao",
+          "saneamento",
+          "sul"
+        ]
       }
     },
     "9c48d7ce4d0ca03e97ec19f4a07b832acf592b0a632cc5d58ac1beefae9a1116": {
@@ -17225,7 +17236,15 @@
             "outputTokens": 81
           },
           "reviewedAt": "2026-09-23T00:45:01.446Z"
-        }
+        },
+        "id": "18ff4bea6c59d6e68940383919890c47640fd55006bdf992291df1d7c41c0ea4",
+        "titleFingerprint": "0f49c76f88887cd44cb88a874c2445cdbe254fb9da5e781bf6f1efda1e13260b",
+        "contentTokens": [
+          "autorizado",
+          "caratinga",
+          "ciminas",
+          "integrar"
+        ]
       }
     },
     "5d965aa1ecab51750a68b6f8cd928f01a7b4688ce315bb77bd505c8a0b56c033": {
@@ -34920,12 +34939,384 @@
         "0": "2026-09-23T00:45:10.200Z"
       },
       "sentAt": "2026-09-23T00:45:10.200Z"
+    },
+    "2026-09-26:f242646b94d4": {
+      "report": {
+        "start": "2026-09-19T12:00:00.000Z",
+        "end": "2026-09-26T12:00:00.000Z",
+        "historyStartedAt": "2026-09-14T19:58:39.657Z",
+        "partial": false,
+        "observations": 357,
+        "events": 5,
+        "categories": {
+          "RATEIO": 1,
+          "ADESÃO AUTORIZADA": 3,
+          "ATUAÇÃO": 1
+        },
+        "sources": {
+          "Querido Diário": 2,
+          "dgabc.com.br": 1,
+          "Diário de Caratinga": 1,
+          "Câmara Municipal de Centenário do Sul": 1
+        },
+        "sent": 7,
+        "pending": 0,
+        "preview": 0,
+        "runs": 36,
+        "failures": [
+          "Querido Diário",
+          "Feeds RSS",
+          "CISREC",
+          "CIGA",
+          "Scrapers web",
+          "TCE-SP",
+          "Diário Municipal AMM-MG",
+          "SAPL",
+          "SAPL Unaí",
+          "SAPL São João da Boa Vista"
+        ],
+        "highlights": [
+          {
+            "kind": "gazette",
+            "title": "Diário Oficial de Primeiro de Maio (PR)",
+            "url": "https://data.queridodiario.ok.org.br/4120507/2026-09-24/99b95ee42c3ecb4d57d91e45cf6ad0a8111adc61.pdf",
+            "publishedAt": "2026-09-24T12:00:00-03:00",
+            "source": "Querido Diário",
+            "summary": "(quatorze mil, cento e cinquenta reais). Primeiro de Maio - PR, 24 de setembro de 2026 BRUNO EDUARDO SANTA ROSA BAUERMAMM ESTEVAM PREFEITO AUTORIZAÇÃO PARA REALIZAÇÃO DE DISPENSA DE LICITAÇÃO Em atenção aos andamentos verificados no presente processo administrativo sob o protocolo nº 269/2026, referente a formalização de Contrato de Rateio com o Consórcio Intermunicipal de Saúde do Médio Paranapanema - Cismepar, com a finalidade de ratear despesas administrativas referentes ao exercício do ano de 2027, a favor da empresa CONSORCIO INTERMUNICIPAL DE SAUDE DO MEDIO PARANAPANEMA, inscrita no CNPJ nº 00.445.188/0001-81, no valor total de R$ 207.973,68 (duzentos e sete mil, novecentos e setenta e três reais e sessenta e oito centavos), venho autorizar a realização de Dispensa de Licitação, com espeque no Art. 2º, § 1º, Inc. III; e no Art. 8º, Lei nº 11.107/2005; Arts. 13 e seguintes do Decreto decorada, e insumos inclusos (açúcar cri Loc 1 R$ 1.000,00 R$ 1.000,00 VALOR TOTAL HOMOLOGADO E ADJUDICADO: R$ 14.150,00 (quatorze mil, cento e cinquenta reais). Primeiro de Maio - PR, 24 de setembro de 2026 BRUNO EDUARDO SANTA ROSA BAUERMAMM ESTEVAM PREFEITO AUTORIZAÇÃO PARA REALIZAÇÃO DE DISPENSA DE LICITAÇÃO Em atenção aos andamentos verificados no presente processo administrativo sob o protocolo nº 269/2026, referente a formalização de Contrato de Rateio com o Consórcio Intermunicipal de Saúde do Médio Paranapanema - Cismepar, com a finalidade de ratear despesas administrativas referentes ao exercício do ano de 2027, a favor da empresa CONSORCIO INTERMUNICIPAL DE SAUDE DO MEDIO PARANAPANEMA, inscrita no CNPJ nº 00.445.188/0001-81, no valor total de R$ 207.973,68 (duzentos e sete mil, novecentos e setenta e três reais e sessenta e oito centavos), venho autorizar a realização de Disp",
+            "territoryId": "4120507",
+            "territoryName": "Primeiro de Maio",
+            "stateCode": "PR",
+            "edition": "1128",
+            "classification": {
+              "category": "RATEIO",
+              "emoji": "🟪",
+              "score": 12,
+              "reasons": [
+                "contexto público forte",
+                "RATEIO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "(quatorze mil, cento e cinquenta reais). Primeiro de Maio - PR, 24 de setembro de 2026 BRUNO EDUARDO SANTA ROSA BAUERMAMM ESTEVAM PREFEITO AUTORIZAÇÃO PARA REALIZAÇÃO DE DISPENSA DE LICITAÇÃO Em atenção aos andamentos verificados no presente processo administrativo sob o protocolo nº 269/2026, referente a formalização de Contrato de Rateio com o Consórcio Intermunicipal de Saúde do Médio Paranapanema - Cismepar, com a finalidade de ratear despesas administrativas referentes ao exercício do ano de 2027, a favor da empresa CONSORCIO INTERMUNICIPAL DE SAUDE DO MEDIO PARANAPANEMA, inscrita no CNPJ nº 00.445.188/0001-81, no valor total de R$ 207.973,68 (duzentos e sete mil, novecentos e setenta e três reais e sessenta e oito centavos), venho autorizar a realização de Dispensa de Licitação, com espeque no Art. 2º, § 1º, Inc. III; e no Art. 8º, Lei nº 11.107/2005; Arts. 13 e seguintes do Decreto",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "d3b10f6064ddb819ea5f50834d90bca9ab1857a17ccea3df3afb503a2cbbc58e",
+            "titleFingerprint": "90fc8464b69c91a414b9d74515f971e58dc20d31260dc741451baaae6e52ba68",
+            "contentTokens": [
+              "0001",
+              "188",
+              "2026",
+              "2027",
+              "207",
+              "269",
+              "445",
+              "973",
+              "administrativas",
+              "administrativo",
+              "andamentos",
+              "ano",
+              "atencao",
+              "autorizacao",
+              "bauermamm",
+              "bruno",
+              "cento",
+              "cinquenta",
+              "cismepar",
+              "cnpj",
+              "contrato",
+              "despesas",
+              "dispensa",
+              "duzentos",
+              "eduardo",
+              "empresa",
+              "estevam",
+              "exercicio",
+              "favor",
+              "finalidade",
+              "formalizacao",
+              "inscrita",
+              "licitacao",
+              "maio",
+              "medio",
+              "mil",
+              "novecentos",
+              "paranapanema",
+              "prefeito",
+              "presente",
+              "primeiro",
+              "processo",
+              "protocolo",
+              "quatorze",
+              "ratear",
+              "rateio",
+              "reais",
+              "realizacao",
+              "referente",
+              "referentes",
+              "rosa",
+              "santa",
+              "saude",
+              "sete",
+              "setembro",
+              "setenta",
+              "sob",
+              "total",
+              "valor",
+              "verificados"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "RATEIO",
+              "evidence": "referente a formalização de Contrato de Rateio com o Consórcio Intermunicipal de Saúde do Médio Paranapanema - Cismepar, com a finalidade de ratear despesas administrativas referentes ao exercício do ano de 2027",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 1236,
+                "outputTokens": 123
+              },
+              "reviewedAt": "2026-09-26T08:34:47.216Z"
+            },
+            "displayUrl": "https://data.queridodiario.ok.org.br/4120507/2026-09-24/99b95ee42c3ecb4d57d91e45cf6ad0a8111adc61.pdf"
+          },
+          {
+            "kind": "gazette",
+            "title": "Diário Oficial de Pinhais (PR)",
+            "url": "https://data.queridodiario.ok.org.br/4119152/2026-09-24/06113aedac50ca8bfe694c1bbc276f6feb869edf.pdf",
+            "publishedAt": "2026-09-24T12:00:00-03:00",
+            "source": "Querido Diário",
+            "summary": "ROSA MARIA DE JESUS COLOMBO Prefeita Municipal Lei 3322/2026, de 23/09/2026 Ratifica a redação do Contrato de Consórcio Público e do Estatuto Social do Consórcio Intermunicipal de Saneamento do Paraná (CISPAR) e autoriza o ingresso do Município no referido Consórcio. A CÂMARA MUNICIPAL DE PINHAIS, Estado do Paraná, aprovou e eu, Prefeita Municipal, sanciono a seguinte Lei: Art. 1° Esta Lei autoriza o ingresso do Município de Pinhais/PR no CISPAR e ratifica as redações do Contrato de Consórcio Público e do Estatuto Social do CISPAR, conforme documentos que integram o protocolo municipal de nº 46.237/2026 - IPM. Parágrafo Único. Diante da aprovação de que trata o caput, fica autorizado que o Município se submeta às disposições do Contrato de Consórcio Público, do Estatuto Social e de todas as demais deliberações aprovadas pela Assembléia Geral ou pelos órgãos do CISPAR, nos",
+            "territoryId": "4119152",
+            "territoryName": "Pinhais",
+            "stateCode": "PR",
+            "edition": "2292",
+            "classification": {
+              "category": "ADESÃO AUTORIZADA",
+              "emoji": "🟦",
+              "score": 11,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "ROSA MARIA DE JESUS COLOMBO Prefeita Municipal Lei 3322/2026, de 23/09/2026 Ratifica a redação do Contrato de Consórcio Público e do Estatuto Social do Consórcio Intermunicipal de Saneamento do Paraná (CISPAR) e autoriza o ingresso do Município no referido Consórcio. A CÂMARA MUNICIPAL DE PINHAIS, Estado do Paraná, aprovou e eu, Prefeita Municipal, sanciono a seguinte Lei: Art. 1° Esta Lei autoriza o ingresso do Município de Pinhais/PR no CISPAR e ratifica as redações do Contrato de Consórcio Público e do Estatuto Social do CISPAR, conforme documentos que integram o protocolo municipal de nº 46.237/2026 - IPM. Parágrafo Único. Diante da aprovação de que trata o caput, fica autorizado que o Município se submeta às disposições do Contrato de Consórcio Público, do Estatuto Social e de todas as demais deliberações aprovadas pela Assembléia Geral ou pelos órgãos do CISPAR, nos",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "1d006e99506cdb1243ada055083becbc7637a23044dcf1c2da280c1bd5fb15b6",
+            "titleFingerprint": "bc74fdd3073734801bd56defe0c0056fbb747de8ae819f121b26764e835087d7",
+            "contentTokens": [
+              "2026",
+              "237",
+              "3322",
+              "aprovacao",
+              "aprovou",
+              "art",
+              "autoriza",
+              "autorizado",
+              "camara",
+              "caput",
+              "cispar",
+              "colombo",
+              "conforme",
+              "contrato",
+              "diante",
+              "documentos",
+              "esta",
+              "estado",
+              "estatuto",
+              "fica",
+              "ingresso",
+              "integram",
+              "ipm",
+              "jesus",
+              "lei",
+              "maria",
+              "paragrafo",
+              "parana",
+              "pinhais",
+              "prefeita",
+              "protocolo",
+              "ratifica",
+              "redacao",
+              "redacoes",
+              "referido",
+              "rosa",
+              "sanciono",
+              "saneamento",
+              "seguinte",
+              "social",
+              "trata",
+              "unico"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ADESÃO AUTORIZADA",
+              "evidence": "Esta Lei autoriza o ingresso do Município de Pinhais/PR no CISPAR",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 1011,
+                "outputTokens": 83
+              },
+              "reviewedAt": "2026-09-26T08:34:47.216Z"
+            },
+            "displayUrl": "https://data.queridodiario.ok.org.br/4119152/2026-09-24/06113aedac50ca8bfe694c1bbc276f6feb869edf.pdf"
+          },
+          {
+            "kind": "news",
+            "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - dgabc.com.br",
+            "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDhmZzVUc3JGbnU4R0lDcXlmeUt3S0pDZXdhaXBHLW1kNWQzLXBRVmZuVmNkaTFGeWc0Sk5iSjZ4NlM5WmFZay1uQkU3SmZPYzlzT3FLbFlmUlVselZheTM5QzFNS0NzaENaMUJtQy16TFZkR1ptbnRiTlpUdEMxTFAzc21Qd3Nxc01sQUd6TnRWUENUcS1XMVVrbll2TWZCMGJCc2FTZ3B1aUYyWWx2aGJySm9MXzd1ZmJuWHBCQXlETDQ?oc=5",
+            "sourceUrl": "https://www.dgabc.com.br",
+            "publishedAt": "2026-09-22T19:00:00.000Z",
+            "source": "dgabc.com.br",
+            "summary": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos dgabc.com.br",
+            "classification": {
+              "category": "ATUAÇÃO",
+              "emoji": "📰",
+              "score": 9,
+              "reasons": [
+                "contexto público forte",
+                "ATUAÇÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos dgabc.com.br",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "id": "ea8ee5deacbc1c955b0812975620ab59ad4455152abe2e691d45eb2ecd3977a0",
+            "titleFingerprint": "ab1ffe377fb63779061188b5aefe7c0759d2aca70e495e9e3fd376aa4a521502",
+            "contentTokens": [
+              "agenda",
+              "atrair",
+              "brasilia",
+              "cria",
+              "dgabc",
+              "investimentos",
+              "setorial"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ATUAÇÃO",
+              "evidence": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 524,
+                "outputTokens": 73
+              },
+              "reviewedAt": "2026-09-23T00:32:35.496Z"
+            },
+            "displayUrl": "https://spoo.me/737tIWd"
+          },
+          {
+            "kind": "news",
+            "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
+            "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5",
+            "sourceUrl": "https://diariodecaratinga.com.br",
+            "publishedAt": "2026-09-22T16:25:00.000Z",
+            "source": "Diário de Caratinga",
+            "summary": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+            "classification": {
+              "category": "ADESÃO AUTORIZADA",
+              "emoji": "🟦",
+              "score": 12,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Município é autorizado a integrar consórcio intermunicipal CIMINAS Diário de Caratinga",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "aiReview": {
+              "status": "approved",
+              "category": "ADESÃO AUTORIZADA",
+              "evidence": "Município é autorizado a integrar consórcio intermunicipal CIMINAS",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 526,
+                "outputTokens": 81
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "id": "18ff4bea6c59d6e68940383919890c47640fd55006bdf992291df1d7c41c0ea4",
+            "titleFingerprint": "0f49c76f88887cd44cb88a874c2445cdbe254fb9da5e781bf6f1efda1e13260b",
+            "contentTokens": [
+              "autorizado",
+              "caratinga",
+              "ciminas",
+              "integrar"
+            ],
+            "displayUrl": "https://spoo.me/KNZqNAX"
+          },
+          {
+            "kind": "news",
+            "title": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul",
+            "url": "https://news.google.com/rss/articles/CBMitwNBVV95cUxOaUpPRWhiMHdncmlNTEprT04xZm52R0lxZDMxS2dHRl9DWU40UjVlMDI1ZWZXM2V0UUg3N3hDODF5NE84TE1nT3lkNFowMjJsTTVmNm9CbEZqR2VFWmxRYXpKa25waGhpREhhOHpueS1NbFprNFBjVjlxSG9Ndm4yN2dub1pmLWdaYUtUTzkzNDI1d3N5QUdrYWRfNHRXeWYxajlSQVc4ODRvWjA0N1pGbTZpLThWRkt5bjVNYjFoR0VnOG4tYkt3TWhlX1hkaWdLT1FsSEpraGZWVHBHRVI4OTlaa2ZQTVlaNjh4V1BwQ0g1YjFyUUV5bGRLQnF3TGtiZ2d1VW1BZ1FSNGFaREVBcTVUUHRldmtYVFVlX29qaEEzVE1JQ0VuVmhOUEhidEFSR3BGSW1ud2xpc3JzOFVRa2xSUFU5RVNOZTRqZ0p6aUZjRWZ1Tm9raVZwZ2t3amd0RFVHVmxlaVNyQkpDUDZnM09nc2Jqcy1YMVd1eFNGRkNKWko4QnhTX2d4bTFnNWwtWEVsdldqRzluR1hZM2JVMWJQUjNXSGRfNjRDdHgzN2FpUlBfWkJZ?oc=5",
+            "sourceUrl": "https://www.centenariodosul.pr.leg.br",
+            "publishedAt": "2026-09-21T12:04:22.000Z",
+            "source": "Câmara Municipal de Centenário do Sul",
+            "summary": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... Câmara Municipal de Centenário do Sul",
+            "classification": {
+              "category": "ADESÃO AUTORIZADA",
+              "emoji": "🟦",
+              "score": 13,
+              "reasons": [
+                "contexto público forte",
+                "ADESÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... Câmara Municipal de Centenário do Sul",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "aiReview": {
+              "status": "approved",
+              "category": "ADESÃO AUTORIZADA",
+              "evidence": "Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento",
+              "promptVersion": 2,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 587,
+                "outputTokens": 96
+              },
+              "reviewedAt": "2026-09-23T00:45:01.446Z"
+            },
+            "id": "cf72720f6d8f61be6098bc0df69ed30f07d3ec123df2ebf4abed30e5f59f58b8",
+            "titleFingerprint": "44688ab359e1e50597640b8239bf9cb2c87e4be37e4c0f816d92eeba079af3dd",
+            "contentTokens": [
+              "autoriza",
+              "camara",
+              "centenario",
+              "ingresso",
+              "legislacao",
+              "saneamento",
+              "sul"
+            ],
+            "presentationTitle": "Centenário do Sul autoriza ingresso no CISPAR",
+            "verifiedSummary": "Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento do Paraná (CISPAR), bem como ratifica o seu Contrato de Consórcio Público e o seu Estatuto Social.",
+            "displayUrl": "https://www.centenariodosul.pr.leg.br/legislacao/detalhe/1339",
+            "officialLegislation": true
+          }
+        ]
+      },
+      "messages": [
+        "🗞️ *RADAR CONSÓRCIOS*\n*Linha do tempo* · 19/09–26/09\n_Atualizado às 09:00 (Brasília)_\n\n*5 achados relevantes*\n\n🟪 *24/09 · RATEIO*\nPrimeiro de Maio publica contrato de rateio\n_Querido Diário_\n🔗 https://data.queridodiario.ok.org.br/4120507/2026-09-24/99b95ee42c3ecb4d57d91e45cf6ad0a8111adc61.pdf\n\n🟦 *24/09 · INGRESSO AUTORIZADO*\nPinhais autoriza ingresso no CISPAR\n_Querido Diário_\n🔗 https://data.queridodiario.ok.org.br/4119152/2026-09-24/06113aedac50ca8bfe694c1bbc276f6feb869edf.pdf\n\n🟩 *22/09 · ATUAÇÃO*\nConsórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos\n_dgabc.com.br_\n🔗 https://spoo.me/737tIWd\n\n🟦 *22/09 · INGRESSO AUTORIZADO*\nMunicípio é autorizado a integrar consórcio intermunicipal CIMINAS\n_Diário de Caratinga_\n🔗 https://spoo.me/KNZqNAX\n\n🟦 *21/09 · INGRESSO AUTORIZADO*\nCentenário do Sul autoriza ingresso no CISPAR\n_Câmara Municipal de Centenário do Sul_\n🔗 https://www.centenariodosul.pr.leg.br/legislacao/detalhe/1339"
+      ],
+      "createdAt": "2026-09-26T15:11:08.619Z",
+      "attempts": 1,
+      "sentParts": {
+        "0": "2026-09-26T15:11:09.549Z"
+      },
+      "sentAt": "2026-09-26T15:11:09.549Z"
     }
   },
   "shortLinks": {
     "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5": "https://cleanuri.com/gmE5LL",
-    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDhmZzVUc3JGbnU4R0lDcXlmeUt3S0pDZXdhaXBHLW1kNWQzLXBRVmZuVmNkaTFGeWc0Sk5iSjZ4NlM5WmFZay1uQkU3SmZPYzlzT3FLbFlmUlVselZheTM5QzFNS0NzaENaMUJtQy16TFZkR1ptbnRiTlpUdEMxTFAzc21Qd3Nxc01sQUd6TnRWUENUcS1XMVVrbll2TWZCMGJCc2FTZ3B1aUYyWWx2aGJySm9MXzd1ZmJuWHBCQXlETDQ?oc=5": "https://cleanuri.com/vGQWOm",
-    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5": "https://cleanuri.com/yEygXQ",
+    "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDhmZzVUc3JGbnU4R0lDcXlmeUt3S0pDZXdhaXBHLW1kNWQzLXBRVmZuVmNkaTFGeWc0Sk5iSjZ4NlM5WmFZay1uQkU3SmZPYzlzT3FLbFlmUlVselZheTM5QzFNS0NzaENaMUJtQy16TFZkR1ptbnRiTlpUdEMxTFAzc21Qd3Nxc01sQUd6TnRWUENUcS1XMVVrbll2TWZCMGJCc2FTZ3B1aUYyWWx2aGJySm9MXzd1ZmJuWHBCQXlETDQ?oc=5": "https://spoo.me/737tIWd",
+    "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5": "https://spoo.me/KNZqNAX",
     "https://data.queridodiario.ok.org.br/2807105/2026-09-18/1b2b9740ea1e1eac8863348801352068dd918de1.pdf": "https://cleanuri.com/6z6G6D",
     "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5": "https://cleanuri.com/j9151r",
     "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf": "https://cleanuri.com/vGQWQ1",
