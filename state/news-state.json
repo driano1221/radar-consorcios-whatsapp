@@ -15090,22 +15090,22 @@
     },
     "741925b54dd1cf0c5efe2ccf6699ecd305fdd39b8ba7b3869bcc883d730b92da": {
       "firstSeenAt": "2026-09-20T21:31:57.754Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
-        "title": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel - Banda B",
+        "title": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel - bandab.com.br",
         "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQSTZmaUtMMW1fSVZYUlgxa1U4NVNwWnd0ZC1rM21hT0tWeVpXV1lVd0dWaWFxSzREV0w2VER0X3hpTkpCSzMydWF5X09NVGtOSjhRNGtUZ3FtSDkyeXRpTDB5c0dYMUZla2Y1ZnBvdzRjNnAzbVZ1d1IteTdVSFhlWjBGQ2FSbG1Sd0wwTFpB0gGTAUFVX3lxTE5KY2c3NWRpVzFGNG5HWWtkTGxub0J4TldmbEc1SjdCRGpjVGRYa3NfRlZuaW5iVDh0c3lsZUF3VDc0YlZldW04NGNHcWgxSWN1YUNnNzIwRE9qZ2d0Qm02LVFlbFU5VXVJSDlrOE1DdVp5YlZFMEpWX0FKNC1oRjJ0SWlwM0VXQnh2QUVGZ0Qyb284QQ?oc=5",
         "sourceUrl": "https://www.bandab.com.br",
         "publishedAt": "2026-09-20T19:08:00.000Z",
-        "source": "Banda B",
-        "summary": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel Banda B",
+        "source": "bandab.com.br",
+        "summary": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel bandab.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel Banda B",
+          "evidenceText": "Sem energia e sem consultas: vândalos invadem o Cisop, levam fiação e paralisam atendimentos em Cascavel bandab.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -15297,7 +15297,7 @@
     },
     "94f6bd413a3a578f882ce97c5375b2fb8e3105c2a8ff0d0de5ddb058d488ac6a": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul",
@@ -15330,23 +15330,12 @@
             "outputTokens": 96
           },
           "reviewedAt": "2026-09-23T00:45:01.446Z"
-        },
-        "id": "cf72720f6d8f61be6098bc0df69ed30f07d3ec123df2ebf4abed30e5f59f58b8",
-        "titleFingerprint": "44688ab359e1e50597640b8239bf9cb2c87e4be37e4c0f816d92eeba079af3dd",
-        "contentTokens": [
-          "autoriza",
-          "camara",
-          "centenario",
-          "ingresso",
-          "legislacao",
-          "saneamento",
-          "sul"
-        ]
+        }
       }
     },
     "9c48d7ce4d0ca03e97ec19f4a07b832acf592b0a632cc5d58ac1beefae9a1116": {
       "firstSeenAt": "2026-09-21T17:02:57.673Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 442/2022 - Primeira Câmara - TCE-PR",
@@ -15649,7 +15638,7 @@
     },
     "5d9eca87088481dccdc113fbab89f857be698b532a8c9df5bf2de668e3ae84ea": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "FNP lança guia para apoiar municípios na gestão de velocidades e na segurança viária",
@@ -15902,7 +15891,7 @@
     },
     "8d9d9c010a19ae4e4bde08b62c0eebf3bb256f788de89c2c69a66b396b4d7ad5": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "\"Amar é inadiável\": Socorro Acioli lança novo livro em evento do Sempre Um Papo em BH",
@@ -15927,7 +15916,7 @@
     },
     "2784fe05770418aaa377fd4039177139d92385b4ff539f1ae1e66d683d0afd19": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Faculdade AlfaUnipac homenageia durante Encontro Técnico em Capelinha",
@@ -15952,7 +15941,7 @@
     },
     "3def96bf8f888c89fb1b2b70887504383fe147a94977d5d03e28f009dcebc292": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Assessor da Presidência debate reforma tributária e federalismo em congresso jurídico do UNIFEMM",
@@ -15977,7 +15966,7 @@
     },
     "ca7a74c3c9be2802d101213681d6b9a894fb84cb80d05c0d578ec3f5cf022299": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Realiza Oficina Sobre Políticas De Atividade Física Nos Municípios - ABC Agora",
@@ -16000,7 +15989,7 @@
     },
     "1806d33968e6c96ce4f595c75ab7f15a77f2aa0f704ab8a3d5a7854f8e093738": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Avalia Tecnologia De Simulação Para Treinamento Das Guardas Municipais - ABC Agora",
@@ -16137,7 +16126,7 @@
     },
     "354ced75691f0170bc304307da6286384b6e304f643b79cc390e6bd40f2c9d48": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana de Curitiba",
@@ -16923,7 +16912,7 @@
     },
     "85d8269d6d49cadb0db77cbad04af9e27246481823ed0270238ad952c9e4590e": {
       "firstSeenAt": "2026-09-22T14:51:23.572Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Imagem digitalizada - Câmara Municipal de Centenário do Sul",
@@ -17203,7 +17192,7 @@
     },
     "181fe65e16b7a615ffa104bd5d99f0c3dd413ebdee625eb24425a39670a68b4a": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
@@ -17236,15 +17225,7 @@
             "outputTokens": 81
           },
           "reviewedAt": "2026-09-23T00:45:01.446Z"
-        },
-        "id": "18ff4bea6c59d6e68940383919890c47640fd55006bdf992291df1d7c41c0ea4",
-        "titleFingerprint": "0f49c76f88887cd44cb88a874c2445cdbe254fb9da5e781bf6f1efda1e13260b",
-        "contentTokens": [
-          "autorizado",
-          "caratinga",
-          "ciminas",
-          "integrar"
-        ]
+        }
       }
     },
     "5d965aa1ecab51750a68b6f8cd928f01a7b4688ce315bb77bd505c8a0b56c033": {
@@ -17456,7 +17437,7 @@
     },
     "84eea0f2b05c0b5232e1b34c2d726a6b24b8abc768dad9d5ff29ec8ff48192a5": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Tribunal de Contas abre inscrições para cadastro de reserva de estágio remunerado",
@@ -17483,7 +17464,7 @@
     },
     "fb148ecb674e849eaab8f2d2d68c59970b6c4a5008a5fcbccceb661ce463a191": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "TCEMG cria coordenadoria especializada para analisar atos de admissão de pessoal",
@@ -17508,7 +17489,7 @@
     },
     "03e45ec2e3b52fbbca22140b63d7c80cf5274b59235477f0043b996cbc8f84a0": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza solenidade de entrega do Selo Ouvidoria Cidadã",
@@ -17559,7 +17540,7 @@
     },
     "229de91ab9519c707a656f72a176b19a6f71c912b7b36c6f2a77d6c17a851779": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - dgabc.com.br",
@@ -17700,7 +17681,7 @@
     },
     "b0a87abd482a02f962d29a462624539ee846e48414748ea1c2e426c492b72459": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "CGIBS lança cadastro de profissionais para futuras oportunidades",
@@ -17867,7 +17848,7 @@
     },
     "5e9f147e58fae32b748f19249df9a409b17a0c5bc33f0f16ee53604bc6319fbe": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Tribunal mantém suspensas atas de pregão de R$ 56,8 milhões para solução educacional em municípios do Sul de Minas",
@@ -17895,7 +17876,7 @@
     },
     "f6cbbbfef8754f25811c74693c9bd2d9fb0b574b25985d92ddbe4de82be5a241": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Câmara de Funilândia deve corrigir irregularidades em transparência fiscal, decide TCEMG",
@@ -17989,7 +17970,7 @@
     },
     "7460d067f4c86bc51dbff0f07bd604efda2e01ad17603ef1032732c428ec89c2": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense abre concurso para auxiliar administrativo - Qconcursos Folha Dirigida",
@@ -18014,7 +17995,7 @@
     },
     "7bfe3d22290b37671a36cfa3e898fe9fc85dae1df23555cf56358957f6025c91": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC inicia segunda fase do ABC + Seguro com foco em tecnologia e capacitação das GCMs - ABC Repórter",
@@ -18037,7 +18018,7 @@
     },
     "b187ce5dd0d6bfe971e1d070cc0d00569aa56828d6c9ad74fe62939bb82f5b2b": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "GCMs Do ABC Recebem Certificados Após Curso Regional - ABC Agora",
@@ -18606,7 +18587,7 @@
     },
     "e2a3937fa6e334a367a1b73f17825f757af07b34bcf45f6ceb5a8cb7d49d1197": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "EDITAL Nº 001/2026 – PROCESSO SELETIVO SIMPLIFICADO",
@@ -18632,7 +18613,7 @@
     },
     "98cf64ca7aa14ad14e83d9c05a34adfe930cd4c78badea08cae303f47471fcff": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "COMUNICADO – REMARCAÇÃO DE REUNIÃO",
@@ -18890,7 +18871,7 @@
     },
     "50417ecca08b74c6f541e397a086bab75bd0166c5380da63837bdfa6223e60e4": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "ChatUAI é finalista de prêmio nacional de inovação",
@@ -18915,7 +18896,7 @@
     },
     "4f3ced68ccc0d592963ab09734f3056816202a78958b99e489e5f92e81b116ca": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Município de Lagoa Dourada recebe recomendações de medidas para aprimorar atendimento à primeira infância",
@@ -18965,7 +18946,7 @@
     },
     "62b8a5a51393068f7f1274dd7c3f52214741b80b22d79181cc02fb722df21097": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Projeto Conhecer leva estudantes de Direito e Ciências Contábeis ao TCEMG",
@@ -18990,7 +18971,7 @@
     },
     "4846557426428cbba8a21b16069279a54c2226f1c17a22bd22306dbb11acb45c": {
       "firstSeenAt": "2026-09-24T09:54:50.649Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao - Prefeitura Municipal de Rio Espera",
@@ -19471,7 +19452,7 @@
     },
     "7831e8d35ddce7eebccae22ee02705dc986224988ac194175307420e0e59640a": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 325/2019 - Segunda Câmara - TCE-PR",
@@ -19655,7 +19636,7 @@
     },
     "0dcf2fc0e10067e2c2ae80d39f21fe1439c6677761ebd1a44e67ec386a47042b": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Fraternidade de Assistência aos Condenados recebe doação de computadores do TCEMG",
@@ -19680,7 +19661,7 @@
     },
     "9ac1e76d3f95070d7776f94ce210f5b264121306a0026a4b18f1dbcf1eee62a6": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Inscrições abertas para a XII Jornada de Contabilidade Pública",
@@ -19707,7 +19688,7 @@
     },
     "1d7df7f6d68f78124ba53020e354bd28e8bc4ebca38563138bc0720000c3c574": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Ex-prefeito é multado e terá de devolver mais de R$ 100 mil após saque em espécie sem justificativa",
@@ -19732,7 +19713,7 @@
     },
     "0d562db2165689a70ebe4907fe7bae98f487934a110f1e09e1b65e4fcbd6b21e": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "TCEMG emite parecer prévio pela rejeição das contas de Formoso referentes a 2022",
@@ -19757,7 +19738,7 @@
     },
     "ab3972bf3dd246f51fd034eda9c7bae41b0bbedb3e39bacb676ec2605b2636d2": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "TCESP promoverá encontro sobre nova ferramenta que coletará dados do IEG-M e IEG-Prev",
@@ -19808,7 +19789,7 @@
     },
     "279b9b6a1f36e445362485313e883318ef0b5780183447322b44bec9cab6459f": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais: 3º encontro apresenta estudo sobre a Reforma Tributária",
@@ -20061,7 +20042,7 @@
     },
     "3ffc040c801fd3f6349bf01ef99a45c1f03e6efee4bdfcbb1aecfc21ebbacc0f": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Semana da Sustentabilidade reúne palestras e atividades sobre consumo consciente e gestão de resíduos",
@@ -20086,7 +20067,7 @@
     },
     "1ec2bde552e98294baab22d4f44cc42f9fb1c855295f9490af2bca64a0c270b2": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Especialistas debatem desafios da democracia contemporânea em seminário na UFMG",
@@ -20111,7 +20092,7 @@
     },
     "09223a9933a9c52d9fd3a23adef429398d3f5edeb6177c63afb95b300b335b8d": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "legislation",
         "title": "Portaria do Legislativo nº 5.858, de 24 de setembro de 2026 — Unaí",
@@ -20139,7 +20120,7 @@
     },
     "b22ddc035ce36fa3968dcc54437a4a966b7df4c06070e8042b7aa37250556e1a": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multifinalitário CIS-VERDE abre concurso para assistente administrativo - Qconcursos Folha Dirigida",
@@ -20164,7 +20145,7 @@
     },
     "b45f5adaa90715c4baaf998c4c46edf3e725f751d8d45720f28366b51c2b96cd": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "CIS-VERDE - MG abre processo seletivo para Assistente Administrativo - PCI Concursos",
@@ -20398,7 +20379,7 @@
     },
     "82b0238b268707dab4628126b052a44730fe2751e58a6daea463598b64f4d71a": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada em Santa Fé do Sul",
@@ -20953,7 +20934,7 @@
     },
     "d90d3fd8375cde6fea5140a06eda79a350eb3dd25b1437c4d4d6765cb41f2671": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Evento Cidades Ativas reúne gestores do Piauí e Maranhão para debater Agenda 2030",
@@ -21206,7 +21187,7 @@
     },
     "b22b66cfb04f0b56e9b058f18f1b5fcbc5a4db177b5faf08bc24e868ff4f00bd": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "TCE comunica indisponibilidade programada de sistemas",
@@ -21231,7 +21212,7 @@
     },
     "ee90ca7d34a26e4af31a396b2ec697bf7f84817bb49f7564ed558cf0a2d6abad": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Força-tarefa atua para acertar caixas escolares; Gaepe oferece plantão com técnicos do MEC",
@@ -21256,7 +21237,7 @@
     },
     "12edc6c64656842eaac8c0c9ff1f51240b6c781b34de1391dc4d862e35cec715": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Mais de 500 agentes públicos prestigiam Ciclo de Debates do TCESP em Olímpia",
@@ -21282,7 +21263,7 @@
     },
     "aab70477f369b63da77d49f06e6cc75cb8a116b479a5f37e4a1f8e62c8920eda": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "TCESP apresentará live com resultados da Fiscalização Ordenada sobre acessibilidade em prédios públicos",
@@ -21308,7 +21289,7 @@
     },
     "81f487f5dd19b01f5008168fed0b91a76f842462931624a5d4428efaa798699e": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "gazette-index",
         "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
@@ -21333,7 +21314,7 @@
     },
     "0ebe468d3475edb0c1967c3d4fdfd4531982cdb8957b11d892de2866f227bc5d": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade abre processo seletivo simplificado para educador social - Qconcursos Folha Dirigida",
@@ -21359,7 +21340,7 @@
     },
     "b940d09451244b1070878272f181eba9686128954f39b4717f43f19562e7d340": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC realiza visita técnica ao Centro de Formação da GCM de Santo André - Folha do ABC",
@@ -21382,7 +21363,7 @@
     },
     "582a79b62f7f4cd503f6caefb437e6f525c67c2c6327d129601ff5fc102223a2": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Avança Em Diagnóstico Regional Sobre Políticas De Atividade Física - ABC Agora",
@@ -21405,7 +21386,7 @@
     },
     "7c558f80060889044967bba151182d92ea9f4ac3fec7c588f1012488f7cb384c": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Financiamento metropolitano é tema do quinto webinário de mobilidade urbana",
@@ -21428,7 +21409,7 @@
     },
     "6d22a78524891cb740d7b0d57e800d41d49cd784f51080d079741a854bcafe41": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Guia de Gestão de Velocidades é lançado na FNP",
@@ -21752,7 +21733,7 @@
     },
     "6a0e9d2a82541d0e64a0c0cf903d7df97d7808aa2fc3ace435c4e4b36990c73c": {
       "firstSeenAt": "2026-09-26T01:32:52.243Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Corte Digital debate inteligência artificial e linguagem simples como caminhos para a clareza em escala",
@@ -23046,7 +23027,7 @@
     },
     "71fcf401d5045f6655faa6cdcaf055384513ca69f95a37fb977f94e8073516f8": {
       "firstSeenAt": "2026-09-26T13:45:09.792Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "SAFI - Itá/SC abre processo seletivo para Educador Social - PCI Concursos",
@@ -23071,7 +23052,7 @@
     },
     "c6f7209d1bede34317ef232402c69b5004b516751bac404d02689a36b22dd2c6": {
       "firstSeenAt": "2026-09-26T13:45:09.792Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Confira a agenda dos presidenciáveis neste fim de semana (26 e 27)",
@@ -23094,7 +23075,7 @@
     },
     "885bdf30ab9004a7afecc5dcbe1490b593e82ef3399ef4a96176fc26516d5f43": {
       "firstSeenAt": "2026-09-26T13:45:09.792Z",
-      "lastSeenAt": "2026-09-26T13:45:09.792Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
       "item": {
         "kind": "news",
         "title": "Professor de ciências precisa de formação constante, diz pesquisadora",
@@ -23294,6 +23275,264 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "A edição inédita do reality show musical Duelo de Guitarras , da TV Brasil , revela a história da baiana Lui Rabello e sua trajetória durante o programa neste sábado (26), às 13h30. Com a leveza do seu jeito manso, a experiente guitarrista conquistou a casa e fez amizades com os participantes da competição. Integrante por 16 anos da banda Altas Horas, do programa de televisão homônimo, a veterana apresenta suas ideias musicais e recebe o carinho dos concorrentes com quem conviveu no reality exibido pelo canal público. Notícias relacionadas: Jazz Livre, da Rádio MEC, destaca centenário de John Coltrane. Festa Literária das Periferias (Flup) vai até domingo no centro do Rio. No decorrer da disputa, a guitarrista encarou Lucas Moscardini na bossa nova e jazz na primeira rodada. Também fez solo com Roger Oliveira no baião ainda na fase classificatória. Já na semifinal, Lui Rabello escolheu o xote para duelar de novo com Lucas Moscardini, que optou pelo blues. \"É um desafio na minha vida estar aqui com vocês\", declara Lui Rabello que é econômica ao ponderar sobre sua impressão a respeito da disputa com tantos jovens. \"Quero deixar a marquinha da minha participação\", afirma. Ela conta que ficou feliz em interagir com os jovens. \"Quando eu entrei no reality, eu sabia que era um risco. Uma pessoa com uma trajetória tocando com gente muito mais nova. Estou aprendendo com eles. Me dão muita energia e me tiraram da zona de conforto\", afirma a baiana. Quanto à mentoria e aos ensaios, ela também se mostra comedida. \"Não deu tempo de mudar muita coisa, mas eu tentei aprimorar. Eu fui me defender em algo que já conhecia e busquei melhorar\", argumenta ao explicar a escolha por ritmos com os quais tinha mais segurança. Lui Rabello explica sua ideia para a performance. \"Pretendo utilizar",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "9df6e6c7a7435e76d5941feb7ef4ade38217088371fc5202e38e3ba3a32a4545": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio Público Intermunicipal de Saúde do Triângulo Mineiro abre processo seletivo com 3 vagas para farmacêuticos - Qconcursos Folha Dirigida",
+        "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOOGpHeWt5d3Vxc0FFVkEyaTJGcXpJQ2o2SjZkQi04ZV8zVU1aT0pXcUhadVlKclhOVFh4S3BJMHhnckdnOE1kOXc5SE9yd0REZ1BsaDc0Qm1yT0pZY3JOS3VpMDkxUDVTZG5PLXpFVVFNWGh3Z29vQVZLaUgyUnFQSFE1RWp2S0JMc09BT1ZhWHZfdTJ2Z1pobldvRTNrMllkNE1YMVV5c0lLNUlXUk9IdFotVWhVOExlU1B0YmZod1JFSEZ0S18xWmVCNGNTZ1hYNVJnVmZXTEEzR19fRFJ5Yg?oc=5",
+        "sourceUrl": "https://folha.qconcursos.com",
+        "publishedAt": "2026-09-23T23:19:30.000Z",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Público Intermunicipal de Saúde do Triângulo Mineiro abre processo seletivo com 3 vagas para farmacêuticos Qconcursos Folha Dirigida",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio Público Intermunicipal de Saúde do Triângulo Mineiro abre processo seletivo com 3 vagas para farmacêuticos Qconcursos Folha Dirigida",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "08883f1fac6129ed8e58b5939ce34e4e9ba953d55329987619adcce9e5876b4d": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio Público Intermunicipal do Rio Grande do Norte abre concurso com 2 vagas - Qconcursos Folha Dirigida",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPTUE3VWczZm5wczNaYmJHa1ZjSlVXakgxRHVEVTRMcTlwZ1VQOVlnTUFDN2k1YWVxNHg5bmh0ZEg2UDNsTlhJa29tSUVPSzNFdnpUYzRLekZhc2dCQlM0czE5UFI1NXpmX0xzQzN4QkVwUlNHaDZ0VG56QmFPVTVXSkxUSndFZGxaSUtCaHltWDZPckNiZXpJVkw2anNoN0FnYmFPVFg3ZUppdlJrY3p1cXh3?oc=5",
+        "sourceUrl": "https://folha.qconcursos.com",
+        "publishedAt": "2026-09-23T21:56:57.000Z",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Público Intermunicipal do Rio Grande do Norte abre concurso com 2 vagas Qconcursos Folha Dirigida",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 5,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio Público Intermunicipal do Rio Grande do Norte abre concurso com 2 vagas Qconcursos Folha Dirigida",
+          "publicContext": true,
+          "strongPublicContext": true
+        }
+      }
+    },
+    "f701411f9df2f52ecc0a480c4d0f69f65cc389c6c820460372a63ab0ef80f079": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "LEI Nº 8028/2022 - Câmara Municipal de São Miguel do Oeste",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBPREN3UFpFOHBUbF9UQzRybkV1bGxQLTI4UkJEYWtJUThnNDFiT09CN2h4dEJqdHAxazUzMG9ZNF9YUElQcGpyRVdNamZjSm9xeG5kV0FlVS1UT0tsSFQ3REhvcmRMLVpQelF4YmQ1X2gzQQ?oc=5",
+        "sourceUrl": "https://www.saomigueldooeste.sc.leg.br",
+        "publishedAt": "2026-09-23T13:47:14.000Z",
+        "source": "Câmara Municipal de São Miguel do Oeste",
+        "summary": "LEI Nº 8028/2022 Câmara Municipal de São Miguel do Oeste",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "LEI Nº 8028/2022 Câmara Municipal de São Miguel do Oeste",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "38f4ff9f6ee21376c9f44652637f107cf1f42682aab8e2f59c35b4ed9c2c1ea4": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Caderno de Música aborda relação entre Beethoven e Napoleão",
+        "url": "https://agenciabrasil.ebc.com.br/cultura/noticia/2026-09/caderno-de-musica-aborda-relacao-entre-beethoven-e-napoleao",
+        "publishedAt": "2026-09-26T17:03:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Rádio MEC transmite neste domingo (27), às 12h30, uma nova edição da série Música e História, do programa Caderno de Música . A produção da emissora pública destaca a relação entre o compositor Ludwig van Beethoven e o líder francês Napoleão Bonaparte, marcada pela admiração, pela decepção e pelos conflitos das guerras napoleônicas. O objetivo da série Música e História é explorar as fascinantes conexões entre grandes obras da música erudita e os acontecimentos políticos, sociais e culturais que transformaram o mundo ao longo dos séculos. Neste domingo, os ouvintes vão entender como o contexto da época deixou marcas na vida e na obra de Beethoven. Notícias relacionadas: Jazz Livre, da Rádio MEC, destaca centenário de John Coltrane. EBC tem três finalistas no prêmio de jornalismo Vladimir Herzog. Caderno de Música lembra 120 anos de nascimento de Dmitri Shostakovich. Durante o programa, vão ao ar trechos de composições de Beethoven que ilustram a influência dos acontecimentos e da relação entre o músico e o estadista nas peças. São elas a Sinfonia número 3 em mi bemol maior, opus 55 \"Eroica\", com a Orquestra Filarmônica de Berlim, sob a regência de Herbert von Karajan; a marcha fúnebre, segundo movimento da Sinfonia número 3 – Eroica, novamente com a Orquestra Filarmônica de Berlim, sob a regência de Herbert von Karajan; a Sonata número 26 em mi bemol maior \"Les Adieux\" (o adeus), com o pianista Gerhard Oppitz e a “A Vitória de Wellington”, Op. 91, com a Orquestra Filarmônica de Berlim, sob a regência de Herbert von Karajan. Sobre o Caderno de Música Programa que desvenda o universo musical, se propondo a explicar ao ouvinte o que é uma sonata, uma sinfonia, um concerto, spalla, allegro, moderato e os diversos termos da linguagem musical. Aborda os gêneros, formas e fo",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Rádio MEC transmite neste domingo (27), às 12h30, uma nova edição da série Música e História, do programa Caderno de Música . A produção da emissora pública destaca a relação entre o compositor Ludwig van Beethoven e o líder francês Napoleão Bonaparte, marcada pela admiração, pela decepção e pelos conflitos das guerras napoleônicas. O objetivo da série Música e História é explorar as fascinantes conexões entre grandes obras da música erudita e os acontecimentos políticos, sociais e culturais que transformaram o mundo ao longo dos séculos. Neste domingo, os ouvintes vão entender como o contexto da época deixou marcas na vida e na obra de Beethoven. Notícias relacionadas: Jazz Livre, da Rádio MEC, destaca centenário de John Coltrane. EBC tem três finalistas no prêmio de jornalismo Vladimir Herzog. Caderno de Música lembra 120 anos de nascimento de Dmitri Shostakovich. Durante o programa, vão ao ar trechos de composições de Beethoven que ilustram a influência dos acontecimentos e da relação entre o músico e o estadista nas peças. São elas a Sinfonia número 3 em mi bemol maior, opus 55 \"Eroica\", com a Orquestra Filarmônica de Berlim, sob a regência de Herbert von Karajan; a marcha fúnebre, segundo movimento da Sinfonia número 3 – Eroica, novamente com a Orquestra Filarmônica de Berlim, sob a regência de Herbert von Karajan; a Sonata número 26 em mi bemol maior \"Les Adieux\" (o adeus), com o pianista Gerhard Oppitz e a “A Vitória de Wellington”, Op. 91, com a Orquestra Filarmônica de Berlim, sob a regência de Herbert von Karajan. Sobre o Caderno de Música Programa que desvenda o universo musical, se propondo a explicar ao ouvinte o que é uma sonata, uma sinfonia, um concerto, spalla, allegro, moderato e os diversos termos da linguagem musical. Aborda os gêneros, formas e fo",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "80639bb0e1f85d58aafac857c945f49941c0fc4fca0e3b8d6ebdbf810c5c7db4": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Internet grátis pode derrubar rede móvel na eleição, diz Anatel ao STF",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/internet-gratis-pode-derrubar-rede-movel-na-eleicao-diz-anatel-ao-stf",
+        "publishedAt": "2026-09-26T16:55:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Agência Nacional de Telecomunicações (Anatel) alertou o ministro Cristiano Zanin, do Supremo Tribunal Federal (STF), que a liberação irrestrita do acesso à internet móvel durante as eleições pode provocar picos de tráfego capazes de interromper a conectividade em aparelhos celulares, em especial na proximidade de zonas eleitorais. Na quinta-feira (24), Zanin havia dado 48 horas para a Anatel apresentar um parecer sobre um pedido da Confederação Nacional dos Trabalhadores em Educação (CNTE) e do Partido Verde (PV) para que a internet móvel seja liberada em todo o país nas 72 horas anteriores e nas 24 horas posteriores a cada turno de votação . Notícias relacionadas: Eleições 2026: saiba em quantos candidatos votar e a ordem de votação . Quase 1 milhão de brasileiros no exterior poderão votar nas eleições. Carteira de Identidade Nacional possibilita ter conta ouro no GOV.BR. Entre os principais argumentos do pedido está o de que a limitação provocada por franquias pré-pagas gera uma desigualdade no acesso à informação por parte das camadas mais pobres da população. Isso porque quando acaba o crédito, a velocidade da internet é drasticamente reduzida, ficando liberado apenas o tráfego em aplicativos patrocinados por empresas, como serviços de mensageria, por exemplo. Para os autores da ação, isso favorece a desinformação nos dias que antecedem o pleito, uma vez que os eleitores não conseguem checar eventuais notícias falsas em fontes idôneas na internet. Colapso Para a Anatel, o argumento não condiz com a realidade. A agência frisou que o combate às chamadas fake news envolve desafios sociais e regulatórios que não passam pela questão da conectividade móvel. A agência reforça que uma pesquisa feita pelo próprio órgão em 2025 constatou que 70% dos usuários de franquias mó",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Agência Nacional de Telecomunicações (Anatel) alertou o ministro Cristiano Zanin, do Supremo Tribunal Federal (STF), que a liberação irrestrita do acesso à internet móvel durante as eleições pode provocar picos de tráfego capazes de interromper a conectividade em aparelhos celulares, em especial na proximidade de zonas eleitorais. Na quinta-feira (24), Zanin havia dado 48 horas para a Anatel apresentar um parecer sobre um pedido da Confederação Nacional dos Trabalhadores em Educação (CNTE) e do Partido Verde (PV) para que a internet móvel seja liberada em todo o país nas 72 horas anteriores e nas 24 horas posteriores a cada turno de votação . Notícias relacionadas: Eleições 2026: saiba em quantos candidatos votar e a ordem de votação . Quase 1 milhão de brasileiros no exterior poderão votar nas eleições. Carteira de Identidade Nacional possibilita ter conta ouro no GOV.BR. Entre os principais argumentos do pedido está o de que a limitação provocada por franquias pré-pagas gera uma desigualdade no acesso à informação por parte das camadas mais pobres da população. Isso porque quando acaba o crédito, a velocidade da internet é drasticamente reduzida, ficando liberado apenas o tráfego em aplicativos patrocinados por empresas, como serviços de mensageria, por exemplo. Para os autores da ação, isso favorece a desinformação nos dias que antecedem o pleito, uma vez que os eleitores não conseguem checar eventuais notícias falsas em fontes idôneas na internet. Colapso Para a Anatel, o argumento não condiz com a realidade. A agência frisou que o combate às chamadas fake news envolve desafios sociais e regulatórios que não passam pela questão da conectividade móvel. A agência reforça que uma pesquisa feita pelo próprio órgão em 2025 constatou que 70% dos usuários de franquias mó",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "01d79716ace50bed19db624ebea47440939bc295ae03f8afce58a46f4d4c1425": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Fazenda mantém subsídio de R$ 2,12 ao óleo diesel",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/fazenda-mantem-subsidio-de-r-212-ao-oleo-diesel",
+        "publishedAt": "2026-09-26T15:33:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O Ministério da Fazenda publicou nessa sexta-feira (25), em edição extra do Diário Oficial da União , uma portaria que assegura a manutenção da subvenção de R$ 2,12 por litro ao óleo diesel. A Portaria nº 2.946 evita a redução do benefício, prevista para este sábado (26) após o término da vigência da Medida Provisória nº 1.363/2026. Notícias relacionadas: Subsídio de R$ 2,12 ao diesel deve ser mantido por 30 dias. Petrobras aumenta diesel, mas subsídio mantém valor final; entenda. De acordo com o ministério, a continuidade da subvenção se deve à persistência da volatilidade dos preços internacionais do petróleo e dos combustíveis. “Como a MP 1.363/2026 encerra sua vigência em 26 de setembro, o Ministério da Fazenda ajustou a portaria para que, a partir de 27 de setembro, o valor de R$ 2,12 por litro passe a ser estabelecido integralmente”, justificou a pasta. Histórico O ministério lembra que a subvenção ao diesel foi criada inicialmente tendo como valor R$ 1,12 por litro . “Posteriormente, diante do agravamento do cenário externo, a MP 1.391 autorizou o Ministério da Fazenda a definir, por ato próprio, o valor da subvenção ao diesel”, acrescentou. Com base nessa autorização, o ministério fixou uma subvenção adicional de R$ 1 por litro, elevando o valor total para R$ 2,12. Em nota, a Fazenda informou que a nova portaria não aumenta a subvenção, e que o objetivo é assegurar a manutenção do valor atualmente praticado diante da persistência da volatilidade dos preços internacionais do petróleo e dos combustíveis.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O Ministério da Fazenda publicou nessa sexta-feira (25), em edição extra do Diário Oficial da União , uma portaria que assegura a manutenção da subvenção de R$ 2,12 por litro ao óleo diesel. A Portaria nº 2.946 evita a redução do benefício, prevista para este sábado (26) após o término da vigência da Medida Provisória nº 1.363/2026. Notícias relacionadas: Subsídio de R$ 2,12 ao diesel deve ser mantido por 30 dias. Petrobras aumenta diesel, mas subsídio mantém valor final; entenda. De acordo com o ministério, a continuidade da subvenção se deve à persistência da volatilidade dos preços internacionais do petróleo e dos combustíveis. “Como a MP 1.363/2026 encerra sua vigência em 26 de setembro, o Ministério da Fazenda ajustou a portaria para que, a partir de 27 de setembro, o valor de R$ 2,12 por litro passe a ser estabelecido integralmente”, justificou a pasta. Histórico O ministério lembra que a subvenção ao diesel foi criada inicialmente tendo como valor R$ 1,12 por litro . “Posteriormente, diante do agravamento do cenário externo, a MP 1.391 autorizou o Ministério da Fazenda a definir, por ato próprio, o valor da subvenção ao diesel”, acrescentou. Com base nessa autorização, o ministério fixou uma subvenção adicional de R$ 1 por litro, elevando o valor total para R$ 2,12. Em nota, a Fazenda informou que a nova portaria não aumenta a subvenção, e que o objetivo é assegurar a manutenção do valor atualmente praticado diante da persistência da volatilidade dos preços internacionais do petróleo e dos combustíveis.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "3eb8e8712e9a7682392b0ee70cd6c7d33604abf06fb79e184b7702d3271a87cf": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Eleições 2026: saiba em quantos candidatos votar e a ordem de votação",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/eleicoes2026-saiba-em-quantos-candidatos-votar-e-ordem-de-votacao",
+        "publishedAt": "2026-09-26T15:15:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O eleitor poderá escolher até seis candidatos no 1º turno das Eleições 2026 , que serão realizadas no próximo domingo, dia 4 de outubro. Cada cargo é identificado por uma sequência numérica: para votar em deputado federal, é necessário teclar 4 dígitos na urna eletrônica. Para deputado estadual, são 5 números. Para senadores, 3 dígitos. Já para governador e presidente da República, são 2 dígitos. Notícias relacionadas: Quase 1 milhão de brasileiros no exterior poderão votar nas eleições. Meta desabilitou anúncios do perfil de Lula no Facebook. Exército brasileiro promove exercício de defesa cibernética . A ordem de votação na urna eletrônica será: Deputado federal (quatro dígitos) Deputado estadual ou distrital (cinco dígitos) Primeiro senador (três dígitos) Segundo senador (três dígitos) Governador (dois dígitos) Presidente da República (dois dígitos) Cola A Justiça Eleitoral recomenda que os eleitores anotem os números dos seis candidatos em um papel antes de irem às zonas eleitorais. A medida ajuda a evitar erros e também contribui para reduzir filas. >> A cola pode ser baixada aqui << A colinha em papel é importante porque não será permitido entrar com o celular na cabine de votação . A restrição proíbe também o uso de câmeras fotográficas, filmadoras ou qualquer outro equipamento eletrônico, mesmo que desligados. Os aparelhos deverão ser deixados perto dos mesários. A medida tem a finalidade de proteger o sigilo do voto. O celular poderá ser utilizado apenas para a identificação do eleitor aos mesários por meio do aplicativo e-Título (desde que mostre a foto do eleitor) ou pela apresentação de outros documentos oficiais em formato digital, como a CNH Digital e o RG Digital. “São seis cargos, muitos dígitos, ou seja, muito para se decorar. Essa demora ou dúvida gera",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O eleitor poderá escolher até seis candidatos no 1º turno das Eleições 2026 , que serão realizadas no próximo domingo, dia 4 de outubro. Cada cargo é identificado por uma sequência numérica: para votar em deputado federal, é necessário teclar 4 dígitos na urna eletrônica. Para deputado estadual, são 5 números. Para senadores, 3 dígitos. Já para governador e presidente da República, são 2 dígitos. Notícias relacionadas: Quase 1 milhão de brasileiros no exterior poderão votar nas eleições. Meta desabilitou anúncios do perfil de Lula no Facebook. Exército brasileiro promove exercício de defesa cibernética . A ordem de votação na urna eletrônica será: Deputado federal (quatro dígitos) Deputado estadual ou distrital (cinco dígitos) Primeiro senador (três dígitos) Segundo senador (três dígitos) Governador (dois dígitos) Presidente da República (dois dígitos) Cola A Justiça Eleitoral recomenda que os eleitores anotem os números dos seis candidatos em um papel antes de irem às zonas eleitorais. A medida ajuda a evitar erros e também contribui para reduzir filas. >> A cola pode ser baixada aqui << A colinha em papel é importante porque não será permitido entrar com o celular na cabine de votação . A restrição proíbe também o uso de câmeras fotográficas, filmadoras ou qualquer outro equipamento eletrônico, mesmo que desligados. Os aparelhos deverão ser deixados perto dos mesários. A medida tem a finalidade de proteger o sigilo do voto. O celular poderá ser utilizado apenas para a identificação do eleitor aos mesários por meio do aplicativo e-Título (desde que mostre a foto do eleitor) ou pela apresentação de outros documentos oficiais em formato digital, como a CNH Digital e o RG Digital. “São seis cargos, muitos dígitos, ou seja, muito para se decorar. Essa demora ou dúvida gera",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "618f242339b601f757ebed2af1e9137cb92c16fdad097c459c07e025b8349829": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "STF condena Eduardo Bolsonaro por difamar deputada Tábata Amaral",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/stf-condena-eduardo-bolsonaro-por-difamar-deputada-tabata-amaral",
+        "publishedAt": "2026-09-26T14:35:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O plenário do Supremo Tribunal Federal (STF) decidiu condenar, por 7 votos a 3, o ex-deputado Eduardo Bolsonaro (PL-SP) a um ano de detenção, mais multa de R$ 80 mil, por ter difamado a deputada Tabata Amaral (PSB-SP). O julgamento foi realizado em plenário virtual, prevalecendo ao final o entendimento do relator, ministro Alexandre de Moraes. Notícias relacionadas: Ministério da Justiça demite Eduardo Bolsonaro por abandono de cargo. STF condena Eduardo Bolsonaro a inelegibilidade e a 4 anos de prisão. TSE manda Eduardo Bolsonaro retirar posts de desinformação sobre urnas. O caso está relacionado a publicações nas redes sociais feitas por Eduardo em outubro de 2021, quando ele afirmou que Tábata atendia aos interesses do empresário Jorge Paulo Lehmann, sócio de uma marca de produtos de higiene, ao defender um programa de distribuição de absorventes. Moraes acatou os argumentos dos advogados da deputada, entendendo que as manifestações de Eduardo, feitas quando ele também era deputado, foram além do simples debate político e não poderiam estar protegidas pela imunidade parlamentar, pois feriram a honra de Tabata. O relator foi acompanhado por Cármen Lúcia, Flávio Dino, Cristiano Zanin, Edson Fachin, Gilmar Mendes e Dias Toffoli. Ficaram vencidos os ministros Luiz Fux, Nunes Marques e André Mendonça, que votaram pela absolvição. Desde fevereiro de 2025, Eduardo Bolsonaro encontra-se nos Estados Unidos, para onde diz ter ido para se proteger do que chama de “perseguição” jurídica no Brasil. O ex-deputado teve concedido um greencard (permissão de residência) pelo governo norte-americano. Ele acabou sendo cassado pela Câmara por excesso de faltas.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O plenário do Supremo Tribunal Federal (STF) decidiu condenar, por 7 votos a 3, o ex-deputado Eduardo Bolsonaro (PL-SP) a um ano de detenção, mais multa de R$ 80 mil, por ter difamado a deputada Tabata Amaral (PSB-SP). O julgamento foi realizado em plenário virtual, prevalecendo ao final o entendimento do relator, ministro Alexandre de Moraes. Notícias relacionadas: Ministério da Justiça demite Eduardo Bolsonaro por abandono de cargo. STF condena Eduardo Bolsonaro a inelegibilidade e a 4 anos de prisão. TSE manda Eduardo Bolsonaro retirar posts de desinformação sobre urnas. O caso está relacionado a publicações nas redes sociais feitas por Eduardo em outubro de 2021, quando ele afirmou que Tábata atendia aos interesses do empresário Jorge Paulo Lehmann, sócio de uma marca de produtos de higiene, ao defender um programa de distribuição de absorventes. Moraes acatou os argumentos dos advogados da deputada, entendendo que as manifestações de Eduardo, feitas quando ele também era deputado, foram além do simples debate político e não poderiam estar protegidas pela imunidade parlamentar, pois feriram a honra de Tabata. O relator foi acompanhado por Cármen Lúcia, Flávio Dino, Cristiano Zanin, Edson Fachin, Gilmar Mendes e Dias Toffoli. Ficaram vencidos os ministros Luiz Fux, Nunes Marques e André Mendonça, que votaram pela absolvição. Desde fevereiro de 2025, Eduardo Bolsonaro encontra-se nos Estados Unidos, para onde diz ter ido para se proteger do que chama de “perseguição” jurídica no Brasil. O ex-deputado teve concedido um greencard (permissão de residência) pelo governo norte-americano. Ele acabou sendo cassado pela Câmara por excesso de faltas.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "b404ff5ebb0acc0ae1e16a5af1f11c665eb1f8f9ba826bed156de2f2afc218a3": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Inmet: calor acima da média e chuvas irregulares devem marcar outubro",
+        "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/inmet-calor-acima-da-media-e-chuvas-irregulares-devem-marcar-outubro",
+        "publishedAt": "2026-09-26T14:09:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O mês de outubro deve ser marcado por temperaturas acima da média em grande parte do país e por uma distribuição desigual das chuvas entre as regiões, segundo previsão climática divulgada pelo Instituto Nacional de Meteorologia (Inmet). O prognóstico foi apresentado em meio a uma onda de calor prevista para o fim de setembro, com temperaturas que podem superar 40°C em áreas de diversos estados. Notícias relacionadas: Estudo prevê até 13,3 mil mortes no Brasil com calor do Super El Niño. Sob El Niño, primavera deve ter calor, seca e tempestades severas. De acordo com o instituto, os maiores desvios de temperatura em outubro estão previstos para as regiões Centro-Oeste e Sudeste. Em algumas áreas de Goiás, do Distrito Federal e de Minas Gerais, os termômetros podem registrar médias superiores em mais de 2°C aos valores normalmente observados no período. Chuvas Em relação às chuvas, a tendência é de acumulados acima da média em áreas do Sul, de Mato Grosso do Sul, de São Paulo e do sudeste de Minas Gerais. No Rio de Janeiro, os volumes devem ficar próximos da média histórica. Parte das regiões Norte, Nordeste e Centro-Oeste deve registrar precipitações abaixo do padrão climatológico para outubro. O prognóstico também aponta distribuição irregular das chuvas em Minas Gerais e no Espírito Santo. Impactos O cenário pode provocar impactos na agricultura. Em Mato Grosso e Goiás, a combinação de calor e chuvas irregulares tende a dificultar a recuperação da umidade do solo e o avanço da semeadura da safra de verão. Em Mato Grosso do Sul, a expectativa de chuvas mais frequentes pode favorecer a recuperação da umidade do solo e oferecer melhores condições para a semeadura e o desenvolvimento inicial das lavouras.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O mês de outubro deve ser marcado por temperaturas acima da média em grande parte do país e por uma distribuição desigual das chuvas entre as regiões, segundo previsão climática divulgada pelo Instituto Nacional de Meteorologia (Inmet). O prognóstico foi apresentado em meio a uma onda de calor prevista para o fim de setembro, com temperaturas que podem superar 40°C em áreas de diversos estados. Notícias relacionadas: Estudo prevê até 13,3 mil mortes no Brasil com calor do Super El Niño. Sob El Niño, primavera deve ter calor, seca e tempestades severas. De acordo com o instituto, os maiores desvios de temperatura em outubro estão previstos para as regiões Centro-Oeste e Sudeste. Em algumas áreas de Goiás, do Distrito Federal e de Minas Gerais, os termômetros podem registrar médias superiores em mais de 2°C aos valores normalmente observados no período. Chuvas Em relação às chuvas, a tendência é de acumulados acima da média em áreas do Sul, de Mato Grosso do Sul, de São Paulo e do sudeste de Minas Gerais. No Rio de Janeiro, os volumes devem ficar próximos da média histórica. Parte das regiões Norte, Nordeste e Centro-Oeste deve registrar precipitações abaixo do padrão climatológico para outubro. O prognóstico também aponta distribuição irregular das chuvas em Minas Gerais e no Espírito Santo. Impactos O cenário pode provocar impactos na agricultura. Em Mato Grosso e Goiás, a combinação de calor e chuvas irregulares tende a dificultar a recuperação da umidade do solo e o avanço da semeadura da safra de verão. Em Mato Grosso do Sul, a expectativa de chuvas mais frequentes pode favorecer a recuperação da umidade do solo e oferecer melhores condições para a semeadura e o desenvolvimento inicial das lavouras.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "034e7736dee7eacbd350abd730d139e96b1fbd02194035d21a0fbb0cbacb2046": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Fórmula 1: Russell supera Verstappen por 0.1s e vence GP do Azerbaijão",
+        "url": "https://agenciabrasil.ebc.com.br/esportes/noticia/2026-09/f1-russell-supera-verstappen-por-01s-e-vence-gp-do-azerbaijao",
+        "publishedAt": "2026-09-26T13:49:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O GP do Azerbaijão, na manhã deste sábado (26), teve fim emocionante. Numa corrida com seis abandonos e muitas bandeiras amarelas, o britânico George Russell, da Mercedes, terminou apenas 0.196s à frente do holandês Max Verstappen, da Red Bull, em uma das corridas mais apertadas da história. O triunfo foi fundamental para Russell se aproximar do companheiro de equipe, Kimi Antonelli, na briga pelo título. O francês Isack Hadjar, companheiro de Verstappen na Red Bull, completou o pódio. Notícias relacionadas: Interesse feminino em esportes tem skate em alta e avanço do futebol. Brasileirão Feminino: TV Brasil transmite Corinthians e São Paulo . Vasco é campeão do Brasileirão A2 Feminino. Antonelli, líder da corrida do Mundial de pilotos, com 302 pontos, teve um fim de semana para esquecer. O italiano sofreu um acidente ainda na classificação e largou na 16ª posição, longe da disputa pelo topo. Lá em cima, Russell seguiu soberano depois de largar na pole, mas viu os adversários se aproximarem depois das diversas pausas durante a corrida. Na reta final, Verstappen colocou pressão no britânico, passando várias voltas a menos de um segundo de distância do líder. Enquanto isso, o brasileiro Gabriel Bortoleto, da Audi, que havia largado logo atrás de Antonelli, na 17ª posição, se aproveitou de algumas desistências para ganhar posições, terminando em 13º. Russell aguentou a pressão de Verstappen e garantiu a terceira vitória na temporada, chegando a 236 pontos na tabela de classificação de pilotos, em segundo lugar. Antonelli, que fechou a corrida em quinto, ainda tem uma frente confortável. Os pilotos já voltam às pistas no próximo fim de semana, quando ocorre o GP do Bahrein.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O GP do Azerbaijão, na manhã deste sábado (26), teve fim emocionante. Numa corrida com seis abandonos e muitas bandeiras amarelas, o britânico George Russell, da Mercedes, terminou apenas 0.196s à frente do holandês Max Verstappen, da Red Bull, em uma das corridas mais apertadas da história. O triunfo foi fundamental para Russell se aproximar do companheiro de equipe, Kimi Antonelli, na briga pelo título. O francês Isack Hadjar, companheiro de Verstappen na Red Bull, completou o pódio. Notícias relacionadas: Interesse feminino em esportes tem skate em alta e avanço do futebol. Brasileirão Feminino: TV Brasil transmite Corinthians e São Paulo . Vasco é campeão do Brasileirão A2 Feminino. Antonelli, líder da corrida do Mundial de pilotos, com 302 pontos, teve um fim de semana para esquecer. O italiano sofreu um acidente ainda na classificação e largou na 16ª posição, longe da disputa pelo topo. Lá em cima, Russell seguiu soberano depois de largar na pole, mas viu os adversários se aproximarem depois das diversas pausas durante a corrida. Na reta final, Verstappen colocou pressão no britânico, passando várias voltas a menos de um segundo de distância do líder. Enquanto isso, o brasileiro Gabriel Bortoleto, da Audi, que havia largado logo atrás de Antonelli, na 17ª posição, se aproveitou de algumas desistências para ganhar posições, terminando em 13º. Russell aguentou a pressão de Verstappen e garantiu a terceira vitória na temporada, chegando a 236 pontos na tabela de classificação de pilotos, em segundo lugar. Antonelli, que fechou a corrida em quinto, ainda tem uma frente confortável. Os pilotos já voltam às pistas no próximo fim de semana, quando ocorre o GP do Bahrein.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d65d2567ede882613f229a419e65971b16f9dba510cd4ba3068edb4168828310": {
+      "firstSeenAt": "2026-09-26T18:37:03.048Z",
+      "lastSeenAt": "2026-09-26T18:37:03.048Z",
+      "item": {
+        "kind": "news",
+        "title": "Saiba como funcionará compra de dívidas pela União",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/saiba-como-funcionara-compra-de-dividas-pela-uniao",
+        "publishedAt": "2026-09-26T13:02:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Criada nessa sexta-feira (25) por medida provisória, a terceira fase do programa de renegociação de dívidas de pessoas físicas, chamada de Desenrola 3.0, traz mudança importante em relação às etapas anteriores. A União poderá comprar em leilões, carteiras de dívidas inadimplidas e repassar integralmente ao devedor o desconto obtido na operação. Nas fases anteriores, os débitos eram negociados diretamente entre credores e devedores. Notícias relacionadas: Governo cria 3ª fase do Desenrola com compra de dívidas pela União. MP das Bets: veja o que muda e saiba datas para devolução de valores. Bets passam a ser proibidas no país e apostador receberá saldo. A expectativa do governo é que até R$ 150 bilhões em dívidas sejam elegíveis ao programa, com potencial para beneficiar até 15 milhões de pessoas. Como funcionará? A nova fase será voltada a dívidas bancárias e não bancárias de até R$ 10 mil, considerando o valor original da dívida. Para participar da operação, os débitos deverão estar em atraso de 720 dias a 1.645 dias, contados a partir de 25 de setembro de 2026. Na prática, o processo será dividido em etapas: 1. A União realizará leilões para comprar as carteiras de dívidas. 2. Os credores apresentarão propostas de desconto. 3. As propostas serão classificadas pelo maior deságio oferecido. 4. O desconto obtido pela União será repassado integralmente ao devedor. 5. O consumidor poderá quitar o saldo à vista ou parcelá-lo. 6. No caso de parcelamento, as condições ainda serão definidas pelo Conselho Monetário Nacional (CMN). Quem poderá participar? A MP estabelece como critérios principais: • Dívidas de até R$ 10 mil, pelo valor original; • Inadimplência superior a 720 dias; • Inadimplência inferior a 1.645 dias; • Dívidas bancárias e não bancárias. O Ministério da Fazend",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Criada nessa sexta-feira (25) por medida provisória, a terceira fase do programa de renegociação de dívidas de pessoas físicas, chamada de Desenrola 3.0, traz mudança importante em relação às etapas anteriores. A União poderá comprar em leilões, carteiras de dívidas inadimplidas e repassar integralmente ao devedor o desconto obtido na operação. Nas fases anteriores, os débitos eram negociados diretamente entre credores e devedores. Notícias relacionadas: Governo cria 3ª fase do Desenrola com compra de dívidas pela União. MP das Bets: veja o que muda e saiba datas para devolução de valores. Bets passam a ser proibidas no país e apostador receberá saldo. A expectativa do governo é que até R$ 150 bilhões em dívidas sejam elegíveis ao programa, com potencial para beneficiar até 15 milhões de pessoas. Como funcionará? A nova fase será voltada a dívidas bancárias e não bancárias de até R$ 10 mil, considerando o valor original da dívida. Para participar da operação, os débitos deverão estar em atraso de 720 dias a 1.645 dias, contados a partir de 25 de setembro de 2026. Na prática, o processo será dividido em etapas: 1. A União realizará leilões para comprar as carteiras de dívidas. 2. Os credores apresentarão propostas de desconto. 3. As propostas serão classificadas pelo maior deságio oferecido. 4. O desconto obtido pela União será repassado integralmente ao devedor. 5. O consumidor poderá quitar o saldo à vista ou parcelá-lo. 6. No caso de parcelamento, as condições ainda serão definidas pelo Conselho Monetário Nacional (CMN). Quem poderá participar? A MP estabelece como critérios principais: • Dívidas de até R$ 10 mil, pelo valor original; • Inadimplência superior a 720 dias; • Inadimplência inferior a 1.645 dias; • Dívidas bancárias e não bancárias. O Ministério da Fazend",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -32314,127 +32553,277 @@
           "itemCount": 0
         }
       ]
+    },
+    "36263150650:1": {
+      "at": "2026-09-26T18:37:03.048Z",
+      "collected": 71,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 26,
+          "durationMs": 918
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 16014
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 19,
+          "durationMs": 3964
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 2
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 7
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 25,
+          "durationMs": 5610
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 18
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 6
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 3561
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 3806
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "DeepSeek",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 23,
-      "durationMs": 865,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "itemCount": 26,
+      "durationMs": 918,
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
       "itemCount": 0,
-      "durationMs": 30504,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
-      "consecutiveFailures": 1,
+      "durationMs": 16014,
+      "checkedAt": "2026-09-26T18:37:03.048Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-26T08:34:55.131Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
       "status": "error",
       "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-26T13:45:09.792Z",
-      "consecutiveFailures": 1,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-26T08:34:55.131Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
       "status": "error",
       "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-26T13:45:09.792Z",
-      "consecutiveFailures": 1,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-26T08:34:55.131Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
       "status": "error",
       "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-26T13:45:09.792Z",
-      "consecutiveFailures": 1,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-09-26T08:34:55.131Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 19,
-      "durationMs": 2151,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "durationMs": 3964,
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 2,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 7,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
       "itemCount": 25,
-      "durationMs": 5786,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "durationMs": 5610,
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -32443,7 +32832,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z"
+      "checkedAt": "2026-09-26T18:37:03.048Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -32452,7 +32841,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z"
+      "checkedAt": "2026-09-26T18:37:03.048Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -32461,67 +32850,67 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z"
+      "checkedAt": "2026-09-26T18:37:03.048Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 18,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 6,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 3591,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "durationMs": 3561,
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     },
     "DeepSeek": {
       "name": "DeepSeek",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-26T13:45:09.792Z",
+      "checkedAt": "2026-09-26T18:37:03.048Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-26T13:45:09.792Z"
+      "lastSuccessAt": "2026-09-26T18:37:03.048Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
