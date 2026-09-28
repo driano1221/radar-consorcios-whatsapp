@@ -15638,7 +15638,7 @@
     },
     "5d9eca87088481dccdc113fbab89f857be698b532a8c9df5bf2de668e3ae84ea": {
       "firstSeenAt": "2026-09-21T21:03:29.215Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "FNP lança guia para apoiar municípios na gestão de velocidades e na segurança viária",
@@ -15966,7 +15966,7 @@
     },
     "ca7a74c3c9be2802d101213681d6b9a894fb84cb80d05c0d578ec3f5cf022299": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC Realiza Oficina Sobre Políticas De Atividade Física Nos Municípios - ABC Agora",
@@ -16126,7 +16126,7 @@
     },
     "354ced75691f0170bc304307da6286384b6e304f643b79cc390e6bd40f2c9d48": {
       "firstSeenAt": "2026-09-22T00:05:18.953Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Conexão Urbana realiza visitas técnicas na Região Metropolitana de Curitiba",
@@ -16912,22 +16912,22 @@
     },
     "85d8269d6d49cadb0db77cbad04af9e27246481823ed0270238ad952c9e4590e": {
       "firstSeenAt": "2026-09-22T14:51:23.572Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
-        "title": "Imagem digitalizada - Câmara Municipal de Centenário do Sul",
+        "title": "Imagem digitalizada - centenariodosul.pr.leg.br",
         "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5fc1A2RlZuVENVMFl5SXZZZzJ0dHdyWkFvSm1xV3V4TzVadjJfNWs5Z3JhVTdkb2RhRkROckVrU3REMlZhejFFYVRsS2R2NEc2RHNqdU1GLTVRS2tGQi1VWXQ3UU11MXFVdW5fOWdBNWIyZDNtOGc?oc=5",
         "sourceUrl": "https://www.centenariodosul.pr.leg.br",
         "publishedAt": "2026-09-21T21:40:13.000Z",
-        "source": "Câmara Municipal de Centenário do Sul",
-        "summary": "Imagem digitalizada Câmara Municipal de Centenário do Sul",
+        "source": "centenariodosul.pr.leg.br",
+        "summary": "Imagem digitalizada centenariodosul.pr.leg.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "Imagem digitalizada Câmara Municipal de Centenário do Sul",
+          "evidenceText": "Imagem digitalizada centenariodosul.pr.leg.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -17192,7 +17192,7 @@
     },
     "181fe65e16b7a615ffa104bd5d99f0c3dd413ebdee625eb24425a39670a68b4a": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
@@ -17437,7 +17437,7 @@
     },
     "84eea0f2b05c0b5232e1b34c2d726a6b24b8abc768dad9d5ff29ec8ff48192a5": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Tribunal de Contas abre inscrições para cadastro de reserva de estágio remunerado",
@@ -17464,7 +17464,7 @@
     },
     "fb148ecb674e849eaab8f2d2d68c59970b6c4a5008a5fcbccceb661ce463a191": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "TCEMG cria coordenadoria especializada para analisar atos de admissão de pessoal",
@@ -17540,7 +17540,7 @@
     },
     "229de91ab9519c707a656f72a176b19a6f71c912b7b36c6f2a77d6c17a851779": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - dgabc.com.br",
@@ -17670,7 +17670,7 @@
     },
     "b0a87abd482a02f962d29a462624539ee846e48414748ea1c2e426c492b72459": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "CGIBS lança cadastro de profissionais para futuras oportunidades",
@@ -17837,7 +17837,7 @@
     },
     "5e9f147e58fae32b748f19249df9a409b17a0c5bc33f0f16ee53604bc6319fbe": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Tribunal mantém suspensas atas de pregão de R$ 56,8 milhões para solução educacional em municípios do Sul de Minas",
@@ -17865,7 +17865,7 @@
     },
     "f6cbbbfef8754f25811c74693c9bd2d9fb0b574b25985d92ddbe4de82be5a241": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Câmara de Funilândia deve corrigir irregularidades em transparência fiscal, decide TCEMG",
@@ -17959,7 +17959,7 @@
     },
     "7460d067f4c86bc51dbff0f07bd604efda2e01ad17603ef1032732c428ec89c2": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense abre concurso para auxiliar administrativo - Qconcursos Folha Dirigida",
@@ -18007,7 +18007,7 @@
     },
     "b187ce5dd0d6bfe971e1d070cc0d00569aa56828d6c9ad74fe62939bb82f5b2b": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "GCMs Do ABC Recebem Certificados Após Curso Regional - ABC Agora",
@@ -18576,7 +18576,7 @@
     },
     "e2a3937fa6e334a367a1b73f17825f757af07b34bcf45f6ceb5a8cb7d49d1197": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "EDITAL Nº 001/2026 – PROCESSO SELETIVO SIMPLIFICADO",
@@ -18602,7 +18602,7 @@
     },
     "98cf64ca7aa14ad14e83d9c05a34adfe930cd4c78badea08cae303f47471fcff": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "COMUNICADO – REMARCAÇÃO DE REUNIÃO",
@@ -18860,7 +18860,7 @@
     },
     "50417ecca08b74c6f541e397a086bab75bd0166c5380da63837bdfa6223e60e4": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "ChatUAI é finalista de prêmio nacional de inovação",
@@ -18885,7 +18885,7 @@
     },
     "4f3ced68ccc0d592963ab09734f3056816202a78958b99e489e5f92e81b116ca": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Município de Lagoa Dourada recebe recomendações de medidas para aprimorar atendimento à primeira infância",
@@ -18935,7 +18935,7 @@
     },
     "62b8a5a51393068f7f1274dd7c3f52214741b80b22d79181cc02fb722df21097": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Projeto Conhecer leva estudantes de Direito e Ciências Contábeis ao TCEMG",
@@ -18960,7 +18960,7 @@
     },
     "4846557426428cbba8a21b16069279a54c2226f1c17a22bd22306dbb11acb45c": {
       "firstSeenAt": "2026-09-24T09:54:50.649Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao - Prefeitura Municipal de Rio Espera",
@@ -19441,7 +19441,7 @@
     },
     "7831e8d35ddce7eebccae22ee02705dc986224988ac194175307420e0e59640a": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 325/2019 - Segunda Câmara - TCE-PR",
@@ -19625,7 +19625,7 @@
     },
     "0dcf2fc0e10067e2c2ae80d39f21fe1439c6677761ebd1a44e67ec386a47042b": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Fraternidade de Assistência aos Condenados recebe doação de computadores do TCEMG",
@@ -19650,7 +19650,7 @@
     },
     "9ac1e76d3f95070d7776f94ce210f5b264121306a0026a4b18f1dbcf1eee62a6": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Inscrições abertas para a XII Jornada de Contabilidade Pública",
@@ -19677,7 +19677,7 @@
     },
     "1d7df7f6d68f78124ba53020e354bd28e8bc4ebca38563138bc0720000c3c574": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Ex-prefeito é multado e terá de devolver mais de R$ 100 mil após saque em espécie sem justificativa",
@@ -19702,7 +19702,7 @@
     },
     "0d562db2165689a70ebe4907fe7bae98f487934a110f1e09e1b65e4fcbd6b21e": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "TCEMG emite parecer prévio pela rejeição das contas de Formoso referentes a 2022",
@@ -19727,7 +19727,7 @@
     },
     "ab3972bf3dd246f51fd034eda9c7bae41b0bbedb3e39bacb676ec2605b2636d2": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "TCESP promoverá encontro sobre nova ferramenta que coletará dados do IEG-M e IEG-Prev",
@@ -19778,7 +19778,7 @@
     },
     "279b9b6a1f36e445362485313e883318ef0b5780183447322b44bec9cab6459f": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais: 3º encontro apresenta estudo sobre a Reforma Tributária",
@@ -20031,7 +20031,7 @@
     },
     "3ffc040c801fd3f6349bf01ef99a45c1f03e6efee4bdfcbb1aecfc21ebbacc0f": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Semana da Sustentabilidade reúne palestras e atividades sobre consumo consciente e gestão de resíduos",
@@ -20056,7 +20056,7 @@
     },
     "1ec2bde552e98294baab22d4f44cc42f9fb1c855295f9490af2bca64a0c270b2": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Especialistas debatem desafios da democracia contemporânea em seminário na UFMG",
@@ -20081,7 +20081,7 @@
     },
     "09223a9933a9c52d9fd3a23adef429398d3f5edeb6177c63afb95b300b335b8d": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "legislation",
         "title": "Portaria do Legislativo nº 5.858, de 24 de setembro de 2026 — Unaí",
@@ -20109,7 +20109,7 @@
     },
     "b22ddc035ce36fa3968dcc54437a4a966b7df4c06070e8042b7aa37250556e1a": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multifinalitário CIS-VERDE abre concurso para assistente administrativo - Qconcursos Folha Dirigida",
@@ -20134,7 +20134,7 @@
     },
     "b45f5adaa90715c4baaf998c4c46edf3e725f751d8d45720f28366b51c2b96cd": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "CIS-VERDE - MG abre processo seletivo para Assistente Administrativo - PCI Concursos",
@@ -20368,7 +20368,7 @@
     },
     "82b0238b268707dab4628126b052a44730fe2751e58a6daea463598b64f4d71a": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada em Santa Fé do Sul",
@@ -20923,7 +20923,7 @@
     },
     "d90d3fd8375cde6fea5140a06eda79a350eb3dd25b1437c4d4d6765cb41f2671": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Evento Cidades Ativas reúne gestores do Piauí e Maranhão para debater Agenda 2030",
@@ -21176,7 +21176,7 @@
     },
     "b22b66cfb04f0b56e9b058f18f1b5fcbc5a4db177b5faf08bc24e868ff4f00bd": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "TCE comunica indisponibilidade programada de sistemas",
@@ -21201,7 +21201,7 @@
     },
     "ee90ca7d34a26e4af31a396b2ec697bf7f84817bb49f7564ed558cf0a2d6abad": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Força-tarefa atua para acertar caixas escolares; Gaepe oferece plantão com técnicos do MEC",
@@ -21226,7 +21226,7 @@
     },
     "12edc6c64656842eaac8c0c9ff1f51240b6c781b34de1391dc4d862e35cec715": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Mais de 500 agentes públicos prestigiam Ciclo de Debates do TCESP em Olímpia",
@@ -21252,7 +21252,7 @@
     },
     "aab70477f369b63da77d49f06e6cc75cb8a116b479a5f37e4a1f8e62c8920eda": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "TCESP apresentará live com resultados da Fiscalização Ordenada sobre acessibilidade em prédios públicos",
@@ -21303,7 +21303,7 @@
     },
     "0ebe468d3475edb0c1967c3d4fdfd4531982cdb8957b11d892de2866f227bc5d": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade abre processo seletivo simplificado para educador social - Qconcursos Folha Dirigida",
@@ -21329,7 +21329,7 @@
     },
     "b940d09451244b1070878272f181eba9686128954f39b4717f43f19562e7d340": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC realiza visita técnica ao Centro de Formação da GCM de Santo André - Folha do ABC",
@@ -21375,7 +21375,7 @@
     },
     "7c558f80060889044967bba151182d92ea9f4ac3fec7c588f1012488f7cb384c": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Financiamento metropolitano é tema do quinto webinário de mobilidade urbana",
@@ -21398,7 +21398,7 @@
     },
     "6d22a78524891cb740d7b0d57e800d41d49cd784f51080d079741a854bcafe41": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Guia de Gestão de Velocidades é lançado na FNP",
@@ -21722,7 +21722,7 @@
     },
     "6a0e9d2a82541d0e64a0c0cf903d7df97d7808aa2fc3ace435c4e4b36990c73c": {
       "firstSeenAt": "2026-09-26T01:32:52.243Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Corte Digital debate inteligência artificial e linguagem simples como caminhos para a clareza em escala",
@@ -22688,7 +22688,7 @@
     },
     "71fcf401d5045f6655faa6cdcaf055384513ca69f95a37fb977f94e8073516f8": {
       "firstSeenAt": "2026-09-26T13:45:09.792Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "SAFI - Itá/SC abre processo seletivo para Educador Social - PCI Concursos",
@@ -22994,22 +22994,22 @@
     },
     "f701411f9df2f52ecc0a480c4d0f69f65cc389c6c820460372a63ab0ef80f079": {
       "firstSeenAt": "2026-09-26T18:37:03.048Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
-        "title": "LEI Nº 8028/2022 - Câmara Municipal de São Miguel do Oeste",
+        "title": "LEI Nº 8028/2022 - saomigueldooeste.sc.leg.br",
         "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBPREN3UFpFOHBUbF9UQzRybkV1bGxQLTI4UkJEYWtJUThnNDFiT09CN2h4dEJqdHAxazUzMG9ZNF9YUElQcGpyRVdNamZjSm9xeG5kV0FlVS1UT0tsSFQ3REhvcmRMLVpQelF4YmQ1X2gzQQ?oc=5",
         "sourceUrl": "https://www.saomigueldooeste.sc.leg.br",
         "publishedAt": "2026-09-23T13:47:14.000Z",
-        "source": "Câmara Municipal de São Miguel do Oeste",
-        "summary": "LEI Nº 8028/2022 Câmara Municipal de São Miguel do Oeste",
+        "source": "saomigueldooeste.sc.leg.br",
+        "summary": "LEI Nº 8028/2022 saomigueldooeste.sc.leg.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 1,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "LEI Nº 8028/2022 Câmara Municipal de São Miguel do Oeste",
+          "evidenceText": "LEI Nº 8028/2022 saomigueldooeste.sc.leg.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -23339,7 +23339,7 @@
     },
     "e9614aaf76501045d3c4a39cbf6ac831fd34fccc6ba5a9712dfa7ad2f0479cd4": {
       "firstSeenAt": "2026-09-27T14:42:32.941Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "PROJETO DE LEI ORDINÁRIA nº 28 de 2026 - sapl.guarujadosul.sc.leg.br",
@@ -23787,7 +23787,7 @@
     },
     "f9d60676462c0953c4aa8b4e9e882d573b471dfa9a13c009df6536d0ead8d976": {
       "firstSeenAt": "2026-09-27T22:10:13.698Z",
-      "lastSeenAt": "2026-09-28T09:44:43.609Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC inicia segunda fase do ABC + Seguro com foco em tecnologia e capacitação das GCMs - Consórcio Intermunicipal - Grande ABC",
@@ -23897,6 +23897,359 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "No último fim de semana antes do primeiro turno das eleições, no próximo domingo (4), os candidatos à Presidência da República priorizaram atividades nas ruas pelo país, com eventos como caminhadas e carreatas pelo interior e capitais. Veja abaixo detalhes das agendas no sábado (26) e no domingo (27): Leonardo Avalanche (PRTB) A agenda do candidato não foi divulgada. Lula (PT) Notícias relacionadas: Eleitor deve se antecipar na consulta a local de votação, alerta TSE. Eleições 2026: saiba em quantos candidatos votar e a ordem de votação . Quase 1 milhão de brasileiros no exterior poderão votar nas eleições. Presidente e candidato à reeleição, Luiz Inácio Lula da Silva (PT) participou de uma caminhada na Zona Leste de São Paulo (SP) no sábado (26). No evento, Lula defendeu a proibição da operação de bets no Brasil, assinada por ele na sexta (25). “Quem quiser ganhar dinheiro, que arrume um jeito honesto de ganhar, mas não matando o povo pobre, endividando o povo pobre, vendendo mentira”, disse Lula. Ele garantiu que o governo também vai intensificar a fiscalização das casas clandestinas de apostas. Ele voltou a destacar a importância do fim da escala 6x1 que tramita no Congresso. No domingo, Lula não teve compromissos públicos. Renan Santos (Missão) O candidato passou o sábado em Minas Gerais e se encontrou com apoiadores nas cidades de Belo Horizonte e Divinópolis. Ele defendeu a redução de impostos e dos custos pelo Estado. Neste domingo, Santos foi a Salvador (BA). Romeu Zema (Novo) No sábado (26), o candidato também esteve em Minas Gerais. Em Pouso Alegre, ele concedeu entrevista a uma rádio local e se encontrou com apoiadores. Depois, foi a Varginha, onde participou de uma caminhada. O candidato defendeu mais crédito para o agronegócio e a criação de um seguro-safra",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "e99806831f305ba71fe0e6e40b6e6a4bcc12a782afd9bd9958ff17cad87b6cd3": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Cidades buscam caminhos para acessar financiamento climático internacional",
+        "url": "https://fnp.org.br/noticias/item/3967-cidades-buscam-caminhos-para-acessar-financiamento-climatico-internacional",
+        "publishedAt": "2026-09-28T17:41:07.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "A 5ª reunião do Grupo de Trabalho de Financiamento Climático Subnacional, realizada em 24/9, discutiu como as cidades brasileiras podem chegar ao crédito internacional para enfrentar a emergência climática. O encontro reuniu 15 secretárias e secretários municipais e representantes de 34 municípios em 13 estados e trouxe à mesa a Comissão de Financiamentos Externos, vinculado ao Ministério do Planejamento e Orçamento (COFIEX), e duas das principais agências internacionais que financiam projetos urbanos no país, o banco alemão KfW e a Agência Francesa de Desenvolvimento (AFD). A abertura ficou com Gustavo Nascimento, prefeito de Curvelo/MG e vice-presidente de Economia Verde e Financiamento Climático da FNP, que apresentou uma dificuldade comum a boa parte das cidades brasileiras: ter boas iniciativas e não conseguir transformá-las em projetos elegíveis ao financiamento. \"Além do acesso ao crédito, é necessária uma assistência técnica mais estruturada aos municípios para que boas iniciativas ganhem escala e se convertam em investimentos\", defendeu o prefeito. Giovanna Victer, secretária de Fazenda de Salvador/BA e coordenadora do GT, lembrou que a agenda do grupo não se limita ao crédito. \"Não queremos discutir apenas financiamento oneroso, mas alternativas para financiar essas políticas, incluindo recursos não onerosos ou em condições especiais\", afirmou, ressaltando que a crise climática é global e não deve sobrecarregar apenas os orçamentos das cidades. Anael Jacob, coordenador de Projetos Sociais e Sustentabilidade na COFIEX, detalhou o caminho para que os municípios acessem recursos externos. As vantagens são claras, com juros menores que os do mercado interno e prazos mais longos, proporcionando alívio fiscal às prefeituras. Entretanto, o percurso é longo, variando ",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A 5ª reunião do Grupo de Trabalho de Financiamento Climático Subnacional, realizada em 24/9, discutiu como as cidades brasileiras podem chegar ao crédito internacional para enfrentar a emergência climática. O encontro reuniu 15 secretárias e secretários municipais e representantes de 34 municípios em 13 estados e trouxe à mesa a Comissão de Financiamentos Externos, vinculado ao Ministério do Planejamento e Orçamento (COFIEX), e duas das principais agências internacionais que financiam projetos urbanos no país, o banco alemão KfW e a Agência Francesa de Desenvolvimento (AFD). A abertura ficou com Gustavo Nascimento, prefeito de Curvelo/MG e vice-presidente de Economia Verde e Financiamento Climático da FNP, que apresentou uma dificuldade comum a boa parte das cidades brasileiras: ter boas iniciativas e não conseguir transformá-las em projetos elegíveis ao financiamento. \"Além do acesso ao crédito, é necessária uma assistência técnica mais estruturada aos municípios para que boas iniciativas ganhem escala e se convertam em investimentos\", defendeu o prefeito. Giovanna Victer, secretária de Fazenda de Salvador/BA e coordenadora do GT, lembrou que a agenda do grupo não se limita ao crédito. \"Não queremos discutir apenas financiamento oneroso, mas alternativas para financiar essas políticas, incluindo recursos não onerosos ou em condições especiais\", afirmou, ressaltando que a crise climática é global e não deve sobrecarregar apenas os orçamentos das cidades. Anael Jacob, coordenador de Projetos Sociais e Sustentabilidade na COFIEX, detalhou o caminho para que os municípios acessem recursos externos. As vantagens são claras, com juros menores que os do mercado interno e prazos mais longos, proporcionando alívio fiscal às prefeituras. Entretanto, o percurso é longo, variando ",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "2c6ea20f9a4fd7f62c862439c039fae225388e0ded1ad891aaeee0a86de44194": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Fórum Unicidades promove diálogo sobre Agenda 2030 e ODS nos municípios",
+        "url": "https://fnp.org.br/noticias/item/3966-forum-unicidades-promove-dialogo-sobre-agenda-2030-e-ods-nos-municipios",
+        "publishedAt": "2026-09-28T17:38:39.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "A Frente Nacional de Prefeitas e Prefeitos (FNP) e o Fórum Unicidades realizaram mais uma edição do Diálogos Abertos, desta vez dedicada à Agenda 2030 e aos Objetivos de Desenvolvimento Sustentável (ODS). O encontro reuniu representantes de instituições e gestores públicos para compartilhar experiências e discutir caminhos para transformar os compromissos globais em ações concretas nos territórios. A programação abordou a importância do planejamento, da definição de metas e indicadores e da integração dos ODS às políticas públicas locais. Para Ludmila Araújo, coordenadora do Centro de Governança ODS da Casa Civil da Prefeitura de Vitória da Conquista/BA, o debate promovido pelo fórum para aproximar a Agenda 2030 da realidade dos municípios é fundamental para transformar os compromissos em iniciativas concretas no dia a dia das cidades. Miriam Salete Licnerski Barreto, assessora técnica do Programa das Nações Unidas para o Desenvolvimento (PNUD), destacou que é nos municípios que as ações previstas na Agenda 2030 precisam ser efetivamente implementadas. Segundo ela, o compromisso com os ODS passa pela adaptação das metas globais às diferentes realidades nacionais e locais, de forma a garantir que ninguém fique para trás. Ela também apresentou iniciativas do governo federal relacionadas à implementação da Agenda 2030 e explicou o funcionamento do Meu Município pelos ODS, iniciativa que busca apoiar as administrações municipais na incorporação dos objetivos à gestão pública. A experiência de Santos/SP foi apresentada por Fábio Tatsubo, diretor do Departamento de Política Pública dos ODS e coordenador do Comitê ODS Santos 2030. Ele compartilhou aspectos da trajetória do município na consolidação de políticas relacionadas aos ODS e ressaltou o papel das cidades na implementa",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Frente Nacional de Prefeitas e Prefeitos (FNP) e o Fórum Unicidades realizaram mais uma edição do Diálogos Abertos, desta vez dedicada à Agenda 2030 e aos Objetivos de Desenvolvimento Sustentável (ODS). O encontro reuniu representantes de instituições e gestores públicos para compartilhar experiências e discutir caminhos para transformar os compromissos globais em ações concretas nos territórios. A programação abordou a importância do planejamento, da definição de metas e indicadores e da integração dos ODS às políticas públicas locais. Para Ludmila Araújo, coordenadora do Centro de Governança ODS da Casa Civil da Prefeitura de Vitória da Conquista/BA, o debate promovido pelo fórum para aproximar a Agenda 2030 da realidade dos municípios é fundamental para transformar os compromissos em iniciativas concretas no dia a dia das cidades. Miriam Salete Licnerski Barreto, assessora técnica do Programa das Nações Unidas para o Desenvolvimento (PNUD), destacou que é nos municípios que as ações previstas na Agenda 2030 precisam ser efetivamente implementadas. Segundo ela, o compromisso com os ODS passa pela adaptação das metas globais às diferentes realidades nacionais e locais, de forma a garantir que ninguém fique para trás. Ela também apresentou iniciativas do governo federal relacionadas à implementação da Agenda 2030 e explicou o funcionamento do Meu Município pelos ODS, iniciativa que busca apoiar as administrações municipais na incorporação dos objetivos à gestão pública. A experiência de Santos/SP foi apresentada por Fábio Tatsubo, diretor do Departamento de Política Pública dos ODS e coordenador do Comitê ODS Santos 2030. Ele compartilhou aspectos da trajetória do município na consolidação de políticas relacionadas aos ODS e ressaltou o papel das cidades na implementa",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8fe4501be0d9303a04779978f68f51f4ceb5cace2007fb6a8a2cc2652b8fb675": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Educação em situações de crise: FNP debate planos de contingência escolares para eventos climáticos",
+        "url": "https://fnp.org.br/noticias/item/3965-educacao-em-situacoes-de-crise-fnp-debate-planos-de-contingencia-escolares-para-eventos-climaticos",
+        "publishedAt": "2026-09-28T12:19:57.000Z",
+        "source": "Frente Nacional de Prefeitas e Prefeitos",
+        "sourceUrl": "https://fnp.org.br/noticias?format=feed&type=rss",
+        "summary": "Para debater a continuidade da educação em situações de crise, a Frente Nacional de Prefeitas e Prefeitos (FNP), por meio da Comissão de Adaptação, Mitigação e Prevenção de Desastres/CAMP e do Programa Embaixadores da Educação, que conta com o apoio da Fundação Lemann e do Centro Lemann, promoveu o 12º webinário com o tema \" Garantia do Direito à Educação em Contextos de Crise: Guias, Legislação e Casos Práticos \", mais uma etapa da série voltada a preparar os municípios para os impactos do fenômeno em 2026/2027. A abertura ficou a cargo de Silvio Barros, prefeito de Maringá/PR e presidente da CAMP/FNP, e de Elizabeth Schmidt, prefeita de Ponta Grossa/PR e vice-presidente de Fundeb da FNP. \"O tema da discussão não poderia ser mais oportuno. Quando a suspensão das aulas for inevitável, é preciso garantir continuidade educativa, manutenção de alimentação escolar e, posteriormente, um planejamento sério de recuperação da aprendizagem e talvez usar da questão digital\", afirmou a prefeita. Nota técnica orienta redes de ensino O primeiro painel apresentou a nota técnica elaborada pelo Cemaden/MCTI em parceria com o Instituto Alana, com orientações para fortalecer as estratégias de adaptação às mudanças climáticas no contexto escolar, em conformidade com a Lei nº 15.388/2026 , que institui o Plano Nacional de Educação 2026-2036. O debate tratou da dimensão técnica do tema, apontando como a metodologia pode ser traduzida em ações concretas junto às secretarias municipais de educação e às comunidades escolares, para que elas consigam estabelecer rotinas de prevenção e reação à mitigação, adaptação ao clima e desastres climáticos. Participaram do debate Rachel Trajber, coordenadora do Programa Cemaden Educação; Marcos Sorrentino, diretor do Departamento de Educação Ambiental e Ci",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Para debater a continuidade da educação em situações de crise, a Frente Nacional de Prefeitas e Prefeitos (FNP), por meio da Comissão de Adaptação, Mitigação e Prevenção de Desastres/CAMP e do Programa Embaixadores da Educação, que conta com o apoio da Fundação Lemann e do Centro Lemann, promoveu o 12º webinário com o tema \" Garantia do Direito à Educação em Contextos de Crise: Guias, Legislação e Casos Práticos \", mais uma etapa da série voltada a preparar os municípios para os impactos do fenômeno em 2026/2027. A abertura ficou a cargo de Silvio Barros, prefeito de Maringá/PR e presidente da CAMP/FNP, e de Elizabeth Schmidt, prefeita de Ponta Grossa/PR e vice-presidente de Fundeb da FNP. \"O tema da discussão não poderia ser mais oportuno. Quando a suspensão das aulas for inevitável, é preciso garantir continuidade educativa, manutenção de alimentação escolar e, posteriormente, um planejamento sério de recuperação da aprendizagem e talvez usar da questão digital\", afirmou a prefeita. Nota técnica orienta redes de ensino O primeiro painel apresentou a nota técnica elaborada pelo Cemaden/MCTI em parceria com o Instituto Alana, com orientações para fortalecer as estratégias de adaptação às mudanças climáticas no contexto escolar, em conformidade com a Lei nº 15.388/2026 , que institui o Plano Nacional de Educação 2026-2036. O debate tratou da dimensão técnica do tema, apontando como a metodologia pode ser traduzida em ações concretas junto às secretarias municipais de educação e às comunidades escolares, para que elas consigam estabelecer rotinas de prevenção e reação à mitigação, adaptação ao clima e desastres climáticos. Participaram do debate Rachel Trajber, coordenadora do Programa Cemaden Educação; Marcos Sorrentino, diretor do Departamento de Educação Ambiental e Ci",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "9623c76416f0bcd77fe3276a60ceeeb3faf49d0ff42c6783a2afb7940f75a805": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Rio: operação policial na Maré deixa um morto e 10 feridos",
+        "url": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-09/rio-operacao-policial-na-mare-deixa-um-morto-e-10-feridos",
+        "publishedAt": "2026-09-28T17:37:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Uma operação da Polícia Militar nas comunidades do Timbau e Baixa do Sapateiro, no Conjunto de Favelas da Maré, na zona norte do Rio de Janeiro, deixou 10 homens feridos, entre eles um PM, e um morto. Todos foram levados para o Hospital Federal de Bonsucesso. Conforme o hospital, uma vítima tem estado grave. Durante a ação, dois ônibus com alunos da Escola Eleva que iam para uma excursão escolar foram sequestrados por criminosos e usados como barricada para atrapalhar a atuação dos policiais no local. Depois da atuação de policiais militares, os alunos foram transferidos para outros ônibus e seguiram viagem. Notícias relacionadas: Quilombo urbano na zona sul do Rio guarda lições de resistência. Geledés lança guia para acesso às políticas de cuidados. ONU lança propostas para proteção das mulheres. Na ação, dois adolescentes, um de 12 anos e outro de 15 anos, foram atingidos pelos tiros. De acordo com a ONG Redes da Maré, a criança de 12 anos foi atendida e liberada. O jovem de 15 anos permanece em atendimento. A equipe da ONG apurou também que três pessoas foram mortas no confronto e que ainda há possibilidade de mais mortes. Essa informação não foi confirmada pela PM. Segundo a Secretaria de Estado da Polícia Militar, a ação, que começou nas primeiras horas da manhã desta segunda-feira (28) e ainda não foi encerrada, tem o objetivo de “combater a atuação de criminosos e reprimir atividades relacionadas ao tráfico de drogas e à circulação de armas na região”. Participam da operação cerca de 200 policiais militares de unidades especializadas, entre elas o Batalhão de Operações Policiais Especiais (BOPE), o Batalhão Tático de Motociclistas (BTM), o Batalhão de Polícia de Choque (BPChq) e o Batalhão de Ações com Cães (BAC). “A operação também conta com o emprego de equipam",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Uma operação da Polícia Militar nas comunidades do Timbau e Baixa do Sapateiro, no Conjunto de Favelas da Maré, na zona norte do Rio de Janeiro, deixou 10 homens feridos, entre eles um PM, e um morto. Todos foram levados para o Hospital Federal de Bonsucesso. Conforme o hospital, uma vítima tem estado grave. Durante a ação, dois ônibus com alunos da Escola Eleva que iam para uma excursão escolar foram sequestrados por criminosos e usados como barricada para atrapalhar a atuação dos policiais no local. Depois da atuação de policiais militares, os alunos foram transferidos para outros ônibus e seguiram viagem. Notícias relacionadas: Quilombo urbano na zona sul do Rio guarda lições de resistência. Geledés lança guia para acesso às políticas de cuidados. ONU lança propostas para proteção das mulheres. Na ação, dois adolescentes, um de 12 anos e outro de 15 anos, foram atingidos pelos tiros. De acordo com a ONG Redes da Maré, a criança de 12 anos foi atendida e liberada. O jovem de 15 anos permanece em atendimento. A equipe da ONG apurou também que três pessoas foram mortas no confronto e que ainda há possibilidade de mais mortes. Essa informação não foi confirmada pela PM. Segundo a Secretaria de Estado da Polícia Militar, a ação, que começou nas primeiras horas da manhã desta segunda-feira (28) e ainda não foi encerrada, tem o objetivo de “combater a atuação de criminosos e reprimir atividades relacionadas ao tráfico de drogas e à circulação de armas na região”. Participam da operação cerca de 200 policiais militares de unidades especializadas, entre elas o Batalhão de Operações Policiais Especiais (BOPE), o Batalhão Tático de Motociclistas (BTM), o Batalhão de Polícia de Choque (BPChq) e o Batalhão de Ações com Cães (BAC). “A operação também conta com o emprego de equipam",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ecdd9ef591e73a6096f7c0720a3942a4500c0dbb1152ccd169fc46262b4ccd8c": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Ex-presidente José Sarney segue internado em hospital de São Paulo",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/ex-presidente-jose-sarney-segue-internado-em-hospital-de-sao-paulo",
+        "publishedAt": "2026-09-28T17:25:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O ex-presidente da República, José Sarney, de 96 anos, continua internado no Hospital Sírio-Libanês, na capital paulista. Ele deu entrada no hospital na última quinta-feira (24) para fazer um check-up após receber um diagnóstico de pneumonia. Segundo o hospital, o quadro de saúde de Sarney é o mesmo de quinta-feira, quando foi divulgado o último boletim médico informando que ele havia sido internado para avaliação clínica e continuidade do tratamento de uma pneumonia bacteriana. O quadro clínico no ex-presidente é estável. Notícias relacionadas: Sarney é internado no Sírio-Libanês para tratar pneumonia. Ex-presidente José Sarney é internado com quadro de pneumonia. Sarney foi internado no dia 13 de setembro no Maranhão. Boletim divulgado pelo UDI Hospital, da Rede D’Or, no Maranhão, já informava sobre um quadro de infecção respiratória (pneumonia), com condição estável. Na semana passada, Sarney postou um vídeo em suas redes sociais comunicando sua ida a São Paulo para fazer uma avaliação. “Estou indo a São Paulo porque, depois da pneumonia que eu tive, eu tenho necessidade de fazer um checkup para ver como estou, uma vez que tenho 96 anos”, disse ele. José Sarney foi presidente do Brasil entre os anos de 1985-1990. Foi também senador da República e governador do Maranhão. Em 2014 ele anunciou sua aposentadoria da carreira política.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O ex-presidente da República, José Sarney, de 96 anos, continua internado no Hospital Sírio-Libanês, na capital paulista. Ele deu entrada no hospital na última quinta-feira (24) para fazer um check-up após receber um diagnóstico de pneumonia. Segundo o hospital, o quadro de saúde de Sarney é o mesmo de quinta-feira, quando foi divulgado o último boletim médico informando que ele havia sido internado para avaliação clínica e continuidade do tratamento de uma pneumonia bacteriana. O quadro clínico no ex-presidente é estável. Notícias relacionadas: Sarney é internado no Sírio-Libanês para tratar pneumonia. Ex-presidente José Sarney é internado com quadro de pneumonia. Sarney foi internado no dia 13 de setembro no Maranhão. Boletim divulgado pelo UDI Hospital, da Rede D’Or, no Maranhão, já informava sobre um quadro de infecção respiratória (pneumonia), com condição estável. Na semana passada, Sarney postou um vídeo em suas redes sociais comunicando sua ida a São Paulo para fazer uma avaliação. “Estou indo a São Paulo porque, depois da pneumonia que eu tive, eu tenho necessidade de fazer um checkup para ver como estou, uma vez que tenho 96 anos”, disse ele. José Sarney foi presidente do Brasil entre os anos de 1985-1990. Foi também senador da República e governador do Maranhão. Em 2014 ele anunciou sua aposentadoria da carreira política.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "fbf2a2688018d02d22330de99f1b9fb58ca69c7f49db4f6dc82c362afd26100d": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "PF prende candidato de extrema direita por depredar patrimônio da UnB",
+        "url": "https://agenciabrasil.ebc.com.br/geral/noticia/2026-09/pf-prende-candidato-de-extrema-direita-por-depredar-patrimonio-da-unb",
+        "publishedAt": "2026-09-28T16:52:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Universidade de Brasília (UnB) divulgou nota de repúdio contra “atos de violência e depredação de patrimônio público” que teriam sido praticados por um candidato de extrema direita no campus universitário. Segundo a UnB, Wilker Leão, candidato a deputado federal pelo Novo, foi preso em flagrante pela Polícia Federal, após depredar pinturas em muro do Instituto de Artes, acompanhado de apoiadores que teriam agredido estudantes no local. Notícias relacionadas: Estudante é expulso da UnB por gravar aulas e debochar de professores. Extremistas que ameaçaram estudantes da UnB suspendem ato em campus. Em nota, a universidade associa o ataque a “métodos adotados pela extrema-direita” que, além de ilegais, “são covardes, porque só se viabilizam na impossibilidade do debate qualificado”. “Por isso, a união da comunidade em defesa da Universidade é tão importante.” Leão tem sido pivô de uma série de conflitos com a comunidade universitária. Recentemente, ele foi expulso da UnB, onde cursava História, após processo disciplinar que o condenou por gravar sem consentimento professores e alunos, com o objetivo de ridicularizá-los . Em abril, acompanhado de outros militantes de direita, chegaram a convocar um ato na UnB que estimulava violência contra estudantes da instituição . Na convocação, foram feitas menções como “trocar porrada com os vermes” e “porrada nos comunistas”. Protocolo de segurança Neste domingo, Leão retornou ao campus para pintar de branco o muro do Instituto de Artes, destruindo pinturas feitas por alunos. A UnB, então, colocou em prática o protocolo de segurança previsto para esse tipo de situação. “Forças policiais foram acionadas e houve prisão em flagrante pela Polícia Federal. A Universidade está adotando todas as providências administrativas e jurídicas cab",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -12,
+          "reasons": [
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "A Universidade de Brasília (UnB) divulgou nota de repúdio contra “atos de violência e depredação de patrimônio público” que teriam sido praticados por um candidato de extrema direita no campus universitário. Segundo a UnB, Wilker Leão, candidato a deputado federal pelo Novo, foi preso em flagrante pela Polícia Federal, após depredar pinturas em muro do Instituto de Artes, acompanhado de apoiadores que teriam agredido estudantes no local. Notícias relacionadas: Estudante é expulso da UnB por gravar aulas e debochar de professores. Extremistas que ameaçaram estudantes da UnB suspendem ato em campus. Em nota, a universidade associa o ataque a “métodos adotados pela extrema-direita” que, além de ilegais, “são covardes, porque só se viabilizam na impossibilidade do debate qualificado”. “Por isso, a união da comunidade em defesa da Universidade é tão importante.” Leão tem sido pivô de uma série de conflitos com a comunidade universitária. Recentemente, ele foi expulso da UnB, onde cursava História, após processo disciplinar que o condenou por gravar sem consentimento professores e alunos, com o objetivo de ridicularizá-los . Em abril, acompanhado de outros militantes de direita, chegaram a convocar um ato na UnB que estimulava violência contra estudantes da instituição . Na convocação, foram feitas menções como “trocar porrada com os vermes” e “porrada nos comunistas”. Protocolo de segurança Neste domingo, Leão retornou ao campus para pintar de branco o muro do Instituto de Artes, destruindo pinturas feitas por alunos. A UnB, então, colocou em prática o protocolo de segurança previsto para esse tipo de situação. “Forças policiais foram acionadas e houve prisão em flagrante pela Polícia Federal. A Universidade está adotando todas as providências administrativas e jurídicas cab",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8642da4c24b089ab48a7a77b3bd0d1d59cae048aa786f3a49724285b5f775e7b": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Semana começa com termômetros a 40°C no Centro-Oeste, Sudeste e Sul",
+        "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/semana-comeca-com-termometros-40degc-no-centro-oeste-sudeste-e-sul",
+        "publishedAt": "2026-09-28T16:30:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Cidades do interior do Centro-Oeste, Sudeste e Sul do Brasil podem registrar temperaturas superiores a 40°C neste início de semana, em decorrência da onda de calor que atinge boa parte do país desde sábado (26). De acordo com o Instituto Nacional de Meteorologia (Inmet) , o tempo começa a ficar mais ameno na quarta-feira (30), com o avanço de uma frente fria pelo sul do Brasil. Nesta segunda-feira (28), Mato Grosso do Sul deve concentrar algumas das maiores temperaturas, principalmente em áreas do oeste e noroeste, mas o calor intenso também deve atingir cidades de outros estados. Entre as localidades com possibilidade de superar os 40°C estão: Corumbá (MS); Porto Murtinho (MS); Três Lagoas (MS); Cuiabá (MT); Água Boa (MT); Rondonópolis (MT); Barra do Garças (MT); Goiás (GO); Quirinópolis (GO); Ituiutaba (MG); Jales (SP); Gurupi (TO); Araguaçu (TO). Aviso vermelho Até esta terça-feira (29), as maiores temperaturas devem ocorrer principalmente em partes de Mato Grosso, Mato Grosso do Sul, Goiás, Tocantins, Piauí, Bahia, São Paulo e Minas Gerais. No período, está vigente aviso vermelho para onda de calor, que pode afetar áreas do Centro-Oeste, Sudeste e Sul do Brasil. As maiores temperaturas predominarão em Mato Grosso do Sul, Mato Grosso, Goiás, São Paulo e Triângulo Mineiro, com possibilidade de valores superiores a 40°C. O calor também pode atingir áreas do noroeste do Paraná.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Cidades do interior do Centro-Oeste, Sudeste e Sul do Brasil podem registrar temperaturas superiores a 40°C neste início de semana, em decorrência da onda de calor que atinge boa parte do país desde sábado (26). De acordo com o Instituto Nacional de Meteorologia (Inmet) , o tempo começa a ficar mais ameno na quarta-feira (30), com o avanço de uma frente fria pelo sul do Brasil. Nesta segunda-feira (28), Mato Grosso do Sul deve concentrar algumas das maiores temperaturas, principalmente em áreas do oeste e noroeste, mas o calor intenso também deve atingir cidades de outros estados. Entre as localidades com possibilidade de superar os 40°C estão: Corumbá (MS); Porto Murtinho (MS); Três Lagoas (MS); Cuiabá (MT); Água Boa (MT); Rondonópolis (MT); Barra do Garças (MT); Goiás (GO); Quirinópolis (GO); Ituiutaba (MG); Jales (SP); Gurupi (TO); Araguaçu (TO). Aviso vermelho Até esta terça-feira (29), as maiores temperaturas devem ocorrer principalmente em partes de Mato Grosso, Mato Grosso do Sul, Goiás, Tocantins, Piauí, Bahia, São Paulo e Minas Gerais. No período, está vigente aviso vermelho para onda de calor, que pode afetar áreas do Centro-Oeste, Sudeste e Sul do Brasil. As maiores temperaturas predominarão em Mato Grosso do Sul, Mato Grosso, Goiás, São Paulo e Triângulo Mineiro, com possibilidade de valores superiores a 40°C. O calor também pode atingir áreas do noroeste do Paraná.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5c104fb757a10e15b5b22b051ef12358b1c193c49f5b9e3c3a208fef90ed2ec0": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Preço do petróleo sobe, após Trump rejeitar proposta de paz do Irã",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/preco-do-petroleo-sobe-apos-trump-rejeitar-proposta-de-paz-do-ira",
+        "publishedAt": "2026-09-28T16:21:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Os eira principais índices de Wall Street caíram nesta segunda-feira (28) depois que o presidente dos Estados Unidos (EUA), Donald Trump, rejeitou proposta iraniana para pôr fim ao conflito no Oriente Médio, o que levou a um aumento nos preços do petróleo bruto e reacendeu os temores de inflação , elevando os rendimentos dos Treasuries - títulos de dívida emitidos pelo governo norte-americano para captar recursos no mercado Em compensação, a Nvidia (empresa de tecnologia dos Estados Unidos que cria chips de computador avançados) registrava alta de 3,2%, depois de anunciar autorização de recompra de ações no valor de US$ 150 bilhões, tornando-se o maior aumento já registrado na história da empresa em termos de recompra de ações. Notícias relacionadas: Irã insiste em solução diplomática após Trump rejeitar plano de paz. Irã apresenta na ONU proposta de abrir Ormuz; Trump diz que rejeita. Presidente do Irã diz na ONU que \"paz não virá do campo de batalha\" . O Irã anunciou uma proposta de paz na Assembleia Geral das Nações Unidas, realizada na semana passada em Nova York, afirmando que ela havia sido transmitida aos Estados Unidos por meio de mediadores do Catar . Embora Trump tenha dito no sábado que rejeitou a oferta, ele afirmou ao Axios no domingo que esperava que os negociadores norte-americanos continuassem as conversas nesta semana. Os preços do petróleo bruto subiram 2%, para cerca de US$ 107 por barril, e pressionavam os Treasuries, levando os rendimentos de títulos de prazo mais longo a novas máximas em várias décadas. “A energia tem sido a única pressão consistente de alta sobre a inflação, e qualquer fator que continue a pressionar a inflação será algo que motivará o Fed (banco central norte-americano) a elevar os juros”, disse Art Hogan, estrategista-chefe de m",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Os eira principais índices de Wall Street caíram nesta segunda-feira (28) depois que o presidente dos Estados Unidos (EUA), Donald Trump, rejeitou proposta iraniana para pôr fim ao conflito no Oriente Médio, o que levou a um aumento nos preços do petróleo bruto e reacendeu os temores de inflação , elevando os rendimentos dos Treasuries - títulos de dívida emitidos pelo governo norte-americano para captar recursos no mercado Em compensação, a Nvidia (empresa de tecnologia dos Estados Unidos que cria chips de computador avançados) registrava alta de 3,2%, depois de anunciar autorização de recompra de ações no valor de US$ 150 bilhões, tornando-se o maior aumento já registrado na história da empresa em termos de recompra de ações. Notícias relacionadas: Irã insiste em solução diplomática após Trump rejeitar plano de paz. Irã apresenta na ONU proposta de abrir Ormuz; Trump diz que rejeita. Presidente do Irã diz na ONU que \"paz não virá do campo de batalha\" . O Irã anunciou uma proposta de paz na Assembleia Geral das Nações Unidas, realizada na semana passada em Nova York, afirmando que ela havia sido transmitida aos Estados Unidos por meio de mediadores do Catar . Embora Trump tenha dito no sábado que rejeitou a oferta, ele afirmou ao Axios no domingo que esperava que os negociadores norte-americanos continuassem as conversas nesta semana. Os preços do petróleo bruto subiram 2%, para cerca de US$ 107 por barril, e pressionavam os Treasuries, levando os rendimentos de títulos de prazo mais longo a novas máximas em várias décadas. “A energia tem sido a única pressão consistente de alta sobre a inflação, e qualquer fator que continue a pressionar a inflação será algo que motivará o Fed (banco central norte-americano) a elevar os juros”, disse Art Hogan, estrategista-chefe de m",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "0294b253b6eeb93f8edf2513b0443418ba1339b8c3cfc199db4276a84ce3d56e": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Associações de jogos acionam STF contra MP que proibiu apostas online",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/associacoes-de-jogos-acionam-stf-contra-mp-que-proibiu-apostas-online",
+        "publishedAt": "2026-09-28T16:09:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "A Associação Nacional de Jogos e Loterias (ANJL) e o Instituto Brasileiro de Jogo Responsável (IBJR) pediram nesta segunda-feira (28) ao Supremo Tribunal Federal (STF) a suspensão da medida provisória que vedou as bets no Brasil. A MP foi assinada pelo presidente Luiz Inácio Lula da Silva na sexta-feira (25). A MP proibiu em todo território nacional a exploração, a oferta, a intermediação e a publicidade de apostas de quotas fixas, as chamadas bets. As plataformas já estão impedidas de receber novas apostas. Notícias relacionadas: Governo monitora rede de divulgação de bets e derruba 506 sites. Saiba como as bets adoeceram e endividaram os brasileiros. MP das Bets: veja o que muda e saiba datas para devolução de valores. As entidades representativas do setor argumentam que a medida foi abrupta, provocando prejuízos bilionários para as empresas que acreditaram no marco regulatório vigente no país e fizeram investimentos. As associações alegam ainda desvio de finalidade da MP, pois o governo não teria demonstrado a urgência que justificasse o atropelo do processo legislativo sobre o tema. Na peça inicial, as entidades destacam que o próprio governo Lula enviou ao Congresso um projeto de lei para regulamentar o mercado de apostas online, o que foi aprovado e resultou no marco regulatório sobre o tema, sancionado em 2023. Sobre esse marco, há no Supremo ao menos três ações que questionam essa legislação. As associações pediram ao relator desses processos, ministro Luiz Fux, a suspensão imediata dos efeitos da MP, ao menos até que o STF julgue o tema ou que o Congresso delibere novamente sobre o assunto. Enquanto isso, deve prevalecer a legislação anterior à MP, defendem as entidades representativas do setor. O ministro Luiz Fux deve agora decidir se delibera sobre o assunto",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A Associação Nacional de Jogos e Loterias (ANJL) e o Instituto Brasileiro de Jogo Responsável (IBJR) pediram nesta segunda-feira (28) ao Supremo Tribunal Federal (STF) a suspensão da medida provisória que vedou as bets no Brasil. A MP foi assinada pelo presidente Luiz Inácio Lula da Silva na sexta-feira (25). A MP proibiu em todo território nacional a exploração, a oferta, a intermediação e a publicidade de apostas de quotas fixas, as chamadas bets. As plataformas já estão impedidas de receber novas apostas. Notícias relacionadas: Governo monitora rede de divulgação de bets e derruba 506 sites. Saiba como as bets adoeceram e endividaram os brasileiros. MP das Bets: veja o que muda e saiba datas para devolução de valores. As entidades representativas do setor argumentam que a medida foi abrupta, provocando prejuízos bilionários para as empresas que acreditaram no marco regulatório vigente no país e fizeram investimentos. As associações alegam ainda desvio de finalidade da MP, pois o governo não teria demonstrado a urgência que justificasse o atropelo do processo legislativo sobre o tema. Na peça inicial, as entidades destacam que o próprio governo Lula enviou ao Congresso um projeto de lei para regulamentar o mercado de apostas online, o que foi aprovado e resultou no marco regulatório sobre o tema, sancionado em 2023. Sobre esse marco, há no Supremo ao menos três ações que questionam essa legislação. As associações pediram ao relator desses processos, ministro Luiz Fux, a suspensão imediata dos efeitos da MP, ao menos até que o STF julgue o tema ou que o Congresso delibere novamente sobre o assunto. Enquanto isso, deve prevalecer a legislação anterior à MP, defendem as entidades representativas do setor. O ministro Luiz Fux deve agora decidir se delibera sobre o assunto",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "6ed143dba816e0caf0b63b27874c4edf2172821d662f8d10e409f867f716a90c": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Governo monitora rede de divulgação de bets e derruba 506 sites",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/governo-monitora-rede-de-divulgacao-de-bets-e-derruba-506-sites",
+        "publishedAt": "2026-09-28T14:51:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Uma força-tarefa do governo federal derrubou 506 sites com indícios de oferta irregular de apostas online depois da edição da medida provisória (MP) que proibiu as bets no Brasil. Uma rede para divulgação de apostas online com 212 mil usuários no Telegram também é monitorada. O Ministério da Justiça e Segurança Pública (MJSP) informou que ampliou o monitoramento do mercado de apostas online no ambiente digital depois da publicação da MP do fim das bets por meio de força-tarefa entre a pasta e o Ministério da Fazenda (MF). Notícias relacionadas: Saiba como as bets adoeceram e endividaram os brasileiros. MP das Bets: veja o que muda e saiba datas para devolução de valores. Bets que continuarem no ar após prazo serão bloqueadas, diz Durigan. “O trabalho busca interromper o acesso a plataformas que operem sem autorização e impedir que novos endereços sejam usados para oferecer apostas ao público brasileiro”, informou, em nota, o MJSP. Um relatório do Laboratório de Operações Cibernéticas (Ciberlab) do MJSP identificou que a publicidade de bets continuava circulando em plataformas da Meta, do Google e no TikTok. Os anúncios chamavam para novos cadastros com oferta de bônus e incentivos como \"convide amigos e ganhe R$ 888,00\" e \"Ganhe R$ 50,00 grátis\". A MP editada na sexta-feira (25) prevê dez dias de prazo para retirada de publicidade que já estava em circulação, proibindo qualquer novo anúncio. No Google, foram identificados 1,9 mil anúncios de bets. “Não foi possível separar, nesse conjunto, quais anúncios eram novos e quais já estavam ativos antes da proibição”, diz o informe do ministério. O Ciberlab anunciou que vai continuar monitorando as plataformas para verificar o cumprimento da legislação e pediu medidas das bigtechs para detectar páginas com identidade dissimula",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Uma força-tarefa do governo federal derrubou 506 sites com indícios de oferta irregular de apostas online depois da edição da medida provisória (MP) que proibiu as bets no Brasil. Uma rede para divulgação de apostas online com 212 mil usuários no Telegram também é monitorada. O Ministério da Justiça e Segurança Pública (MJSP) informou que ampliou o monitoramento do mercado de apostas online no ambiente digital depois da publicação da MP do fim das bets por meio de força-tarefa entre a pasta e o Ministério da Fazenda (MF). Notícias relacionadas: Saiba como as bets adoeceram e endividaram os brasileiros. MP das Bets: veja o que muda e saiba datas para devolução de valores. Bets que continuarem no ar após prazo serão bloqueadas, diz Durigan. “O trabalho busca interromper o acesso a plataformas que operem sem autorização e impedir que novos endereços sejam usados para oferecer apostas ao público brasileiro”, informou, em nota, o MJSP. Um relatório do Laboratório de Operações Cibernéticas (Ciberlab) do MJSP identificou que a publicidade de bets continuava circulando em plataformas da Meta, do Google e no TikTok. Os anúncios chamavam para novos cadastros com oferta de bônus e incentivos como \"convide amigos e ganhe R$ 888,00\" e \"Ganhe R$ 50,00 grátis\". A MP editada na sexta-feira (25) prevê dez dias de prazo para retirada de publicidade que já estava em circulação, proibindo qualquer novo anúncio. No Google, foram identificados 1,9 mil anúncios de bets. “Não foi possível separar, nesse conjunto, quais anúncios eram novos e quais já estavam ativos antes da proibição”, diz o informe do ministério. O Ciberlab anunciou que vai continuar monitorando as plataformas para verificar o cumprimento da legislação e pediu medidas das bigtechs para detectar páginas com identidade dissimula",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "243372206329e9855c1064a8b293f65000ea6c6232d04b3be09c525e877e4d9f": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Déficit nas contas externas soma US$ 5,1 bilhões em agosto",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/deficit-nas-contas-externas-soma-us-51-bilhoes-em-agosto",
+        "publishedAt": "2026-09-28T14:05:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O déficit em transações correntes do Brasil somou US$ 5,1 bilhões em agosto deste ano, informou nesta segunda-feira (28) o Banco Central (BC). O resultado ficou acima do déficit de US$ 3,8 bilhões registrado no mesmo mês de 2025. De acordo com as estatísticas do setor externo, o aumento do déficit ocorreu apesar da melhora da balança comercial, em razão da ampliação dos gastos líquidos com serviços e das remessas de lucros e dividendos ao exterior. Notícias relacionadas: Mercado eleva projeção de inflação para 4,99% e reduz PIB. Fazenda mantém subsídio de R$ 2,12 ao óleo diesel. Saiba como funcionará compra de dívidas pela União. Em 12 meses encerrados em agosto, o déficit em transações correntes alcançou US$ 63 bilhões, o equivalente a 2,47% do Produto Interno Bruto (PIB). A balança comercial registrou superávit de US$ 6,6 bilhões em agosto, ante US$ 5,3 bilhões no mesmo mês do ano passado As exportações de bens somaram US$ 33,3 bilhões, com crescimento de 12,1% na comparação anual, enquanto as importações atingiram US$ 26,7 bilhões, alta de 9,4%. Na conta de serviços, o déficit chegou a US$ 5,3 bilhões, um aumento de 28,2% em relação a agosto de 2025. As maiores despesas líquidas ocorreram nos segmentos de transporte (US$ 1,5 bilhão), telecomunicações, computação e informações (US$ 1,3 bilhão), aluguel de equipamentos (US$ 1,1 bilhão) e propriedade intelectual (US$ 1 bilhão). O déficit com viagens internacionais permaneceu em US$ 1 bilhão. Renda Primária e investimentos A conta de renda primária, que inclui lucros, dividendos e juros, registrou déficit de US$ 7 bilhões em agosto, ante US$ 5,4 bilhões um ano antes. As despesas líquidas com lucros e dividendos somaram US$ 5,9 bilhões. Os investimentos diretos no país (IDP), indicador considerado de melhor qualidade para",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O déficit em transações correntes do Brasil somou US$ 5,1 bilhões em agosto deste ano, informou nesta segunda-feira (28) o Banco Central (BC). O resultado ficou acima do déficit de US$ 3,8 bilhões registrado no mesmo mês de 2025. De acordo com as estatísticas do setor externo, o aumento do déficit ocorreu apesar da melhora da balança comercial, em razão da ampliação dos gastos líquidos com serviços e das remessas de lucros e dividendos ao exterior. Notícias relacionadas: Mercado eleva projeção de inflação para 4,99% e reduz PIB. Fazenda mantém subsídio de R$ 2,12 ao óleo diesel. Saiba como funcionará compra de dívidas pela União. Em 12 meses encerrados em agosto, o déficit em transações correntes alcançou US$ 63 bilhões, o equivalente a 2,47% do Produto Interno Bruto (PIB). A balança comercial registrou superávit de US$ 6,6 bilhões em agosto, ante US$ 5,3 bilhões no mesmo mês do ano passado As exportações de bens somaram US$ 33,3 bilhões, com crescimento de 12,1% na comparação anual, enquanto as importações atingiram US$ 26,7 bilhões, alta de 9,4%. Na conta de serviços, o déficit chegou a US$ 5,3 bilhões, um aumento de 28,2% em relação a agosto de 2025. As maiores despesas líquidas ocorreram nos segmentos de transporte (US$ 1,5 bilhão), telecomunicações, computação e informações (US$ 1,3 bilhão), aluguel de equipamentos (US$ 1,1 bilhão) e propriedade intelectual (US$ 1 bilhão). O déficit com viagens internacionais permaneceu em US$ 1 bilhão. Renda Primária e investimentos A conta de renda primária, que inclui lucros, dividendos e juros, registrou déficit de US$ 7 bilhões em agosto, ante US$ 5,4 bilhões um ano antes. As despesas líquidas com lucros e dividendos somaram US$ 5,9 bilhões. Os investimentos diretos no país (IDP), indicador considerado de melhor qualidade para",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c46a56f869af6968f1c62abe39695427d2fe9830f3052296bcc833627d519039": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Protestos em Madri entram no 3º dia após despejo de aposentada",
+        "url": "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-09/protestos-em-madri-entram-no-3o-dia-apos-despejo-de-aposentada",
+        "publishedAt": "2026-09-28T13:49:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Manifestantes iniciaram nesta segunda-feira (28) o terceiro dia acampados em frente à sede do governo regional de Madri para se opor ao despejo de uma idosa e exigir maior proteção aos inquilinos diante da escassez de moradias e do aumento vertiginoso dos aluguéis. Os protestos se intensificaram na semana passada depois que a polícia despejou Maricarmen Abascal, de 87 anos, em uma maca, de sua casa em Madri, onde morava há mais de sete décadas, devido a uma ordem de despejo obtida pelo fundo de investimento que comprou seu apartamento. Notícias relacionadas: Pessoas com deficiência vivem em piores condições de moradia, diz IBGE. Campanha da Fraternidade da CNBB foca no direito à moradia digna. Centenas de pessoas do lado de fora do prédio entraram em confronto com a polícia, enquanto o governo central de esquerda condenou o governo regional de centro-direita, que não conseguiu impedir o despejo. Centenas de barracas ocupavam hoje a praça central Puerta del Sol, ecoando os protestos de 2011, quando o local ficou ocupado por um mês por ativistas que se manifestavam contra as medidas de austeridade adotadas durante a crise financeira global. No sábado (26), cerca de 30 mil pessoas marcharam por Madri para se opor ao tratamento dado a Maricarmen e a outras pessoas expulsas de suas casas por fundos de investimento. Os manifestantes agitavam chaves e carregavam faixas com slogans como “Especuladores, voltem para casa” e “Moradia é para morar”. Ao cair da noite na Puerta del Sol, onde fica o escritório de Isabel Díaz Ayuso, presidente de centro-direita da Comunidade de Madri, dezenas de ativistas montaram barracas, e seu número vem crescendo constantemente desde então. Blanca, uma estudante, disse que os jovens espanhóis estão enfrentando dificuldades para sair da casa dos pai",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Manifestantes iniciaram nesta segunda-feira (28) o terceiro dia acampados em frente à sede do governo regional de Madri para se opor ao despejo de uma idosa e exigir maior proteção aos inquilinos diante da escassez de moradias e do aumento vertiginoso dos aluguéis. Os protestos se intensificaram na semana passada depois que a polícia despejou Maricarmen Abascal, de 87 anos, em uma maca, de sua casa em Madri, onde morava há mais de sete décadas, devido a uma ordem de despejo obtida pelo fundo de investimento que comprou seu apartamento. Notícias relacionadas: Pessoas com deficiência vivem em piores condições de moradia, diz IBGE. Campanha da Fraternidade da CNBB foca no direito à moradia digna. Centenas de pessoas do lado de fora do prédio entraram em confronto com a polícia, enquanto o governo central de esquerda condenou o governo regional de centro-direita, que não conseguiu impedir o despejo. Centenas de barracas ocupavam hoje a praça central Puerta del Sol, ecoando os protestos de 2011, quando o local ficou ocupado por um mês por ativistas que se manifestavam contra as medidas de austeridade adotadas durante a crise financeira global. No sábado (26), cerca de 30 mil pessoas marcharam por Madri para se opor ao tratamento dado a Maricarmen e a outras pessoas expulsas de suas casas por fundos de investimento. Os manifestantes agitavam chaves e carregavam faixas com slogans como “Especuladores, voltem para casa” e “Moradia é para morar”. Ao cair da noite na Puerta del Sol, onde fica o escritório de Isabel Díaz Ayuso, presidente de centro-direita da Comunidade de Madri, dezenas de ativistas montaram barracas, e seu número vem crescendo constantemente desde então. Blanca, uma estudante, disse que os jovens espanhóis estão enfrentando dificuldades para sair da casa dos pai",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "78870ccbc06874bbde3d1b62f30d7260579e2b46dfe32bc2a8b7c0baba12297b": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "Mercado eleva projeção de inflação para 4,99% e reduz PIB",
+        "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/mercado-aumenta-projecao-de-inflacao-para-499-e-reduz-pib",
+        "publishedAt": "2026-09-28T13:22:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O mercado financeiro elevou a expectativa para a inflação e reduziu a estimativa de crescimento da economia em 2026. Os dados constam do boletim Focus, divulgado nesta segunda-feira (28) pelo Banco Central. A projeção para o Índice Nacional de Preços ao Consumidor Amplo (IPCA) passou de 4,92% para 4,99%. Para 2027, a estimativa sobe de 4,3% para 4,31%, enquanto a para 2028 foi mantida em 3,8%. Notícias relacionadas: MP das Bets: veja o que muda e saiba datas para devolução de valores. Fazenda mantém subsídio de R$ 2,12 ao óleo diesel. Saiba como funcionará compra de dívidas pela União. As estimativas inflacionárias ocorrem após a divulgação, na última sexta-feira (25), do Índice Nacional de Preços ao Consumidor Amplo 15 (IPCA-15), prévia da inflação oficial. O indicador ficou em 0,7% em setembro, depois de registrar deflação de 0,4% em agosto. Com o resultado, a inflação acumulada em 12 meses subiu para 4,47%, ante 4,24% registrados em agosto. Segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), a alta foi impulsionada principalmente pelo fim do desconto do bônus de Itaipu nas contas de energia elétrica. PIB A previsão para o crescimento da economia caiu pela terceira semana consecutiva. A projeção para o Produto Interno Bruto (PIB) recuou de 1,88% para 1,86% em 2026. Há quatro semanas, as expectativas, segundo o Focus, era de que a economia do país cresceria 1,92%. Para 2027, a expectativa passou de 1,43% para 1,41%. Em 2028, a previsão caiu de 1,87% para 1,83%. Selic A expectativa para a taxa básica de juros (Selic) permanece estável. O mercado projeta a taxa em 13,5% ao ano no fim de 2026. Para 2027, a previsão continua em 12% ao ano e, para 2028, em 10,5%. A taxa básica de juros é o principal instrumento utilizado pelo Banco Central para controlar a inf",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O mercado financeiro elevou a expectativa para a inflação e reduziu a estimativa de crescimento da economia em 2026. Os dados constam do boletim Focus, divulgado nesta segunda-feira (28) pelo Banco Central. A projeção para o Índice Nacional de Preços ao Consumidor Amplo (IPCA) passou de 4,92% para 4,99%. Para 2027, a estimativa sobe de 4,3% para 4,31%, enquanto a para 2028 foi mantida em 3,8%. Notícias relacionadas: MP das Bets: veja o que muda e saiba datas para devolução de valores. Fazenda mantém subsídio de R$ 2,12 ao óleo diesel. Saiba como funcionará compra de dívidas pela União. As estimativas inflacionárias ocorrem após a divulgação, na última sexta-feira (25), do Índice Nacional de Preços ao Consumidor Amplo 15 (IPCA-15), prévia da inflação oficial. O indicador ficou em 0,7% em setembro, depois de registrar deflação de 0,4% em agosto. Com o resultado, a inflação acumulada em 12 meses subiu para 4,47%, ante 4,24% registrados em agosto. Segundo o Instituto Brasileiro de Geografia e Estatística (IBGE), a alta foi impulsionada principalmente pelo fim do desconto do bônus de Itaipu nas contas de energia elétrica. PIB A previsão para o crescimento da economia caiu pela terceira semana consecutiva. A projeção para o Produto Interno Bruto (PIB) recuou de 1,88% para 1,86% em 2026. Há quatro semanas, as expectativas, segundo o Focus, era de que a economia do país cresceria 1,92%. Para 2027, a expectativa passou de 1,43% para 1,41%. Em 2028, a previsão caiu de 1,87% para 1,83%. Selic A expectativa para a taxa básica de juros (Selic) permanece estável. O mercado projeta a taxa em 13,5% ao ano no fim de 2026. Para 2027, a previsão continua em 12% ao ano e, para 2028, em 10,5%. A taxa básica de juros é o principal instrumento utilizado pelo Banco Central para controlar a inf",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "fb3d5ebbce525e81fe87ef84d0ac13843b38d30bf67b66dccb947eafc948c087": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "news",
+        "title": "TCEMG forma 185 brigadistas para prevenção e atuação em situações de emergência",
+        "url": "https://www.tce.mg.gov.br/TCEMG-forma-185-brigadistas-para-prevencao-e-atuacao-em-situacoes-de-emergencia-.html/Noticia/1111629206",
+        "publishedAt": "2026-09-28T15:00:00.000Z",
+        "source": "TCE-MG",
+        "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+        "summary": "O auditório Vivaldi Moreira do Tribunal de Contas do Estado de Minas Gerais (TCEMG) foi palco nesta segunda-feira, 28/9, da solenidade de posse dos seus 185 novos brigadistas. Realizada em parceria com o Corpo de Bombeiros Militar de Minas Gerais, a capacitação preparou os servidores e colaboradores para atuar na prevenção e na resposta inicial a situações de emergência nas dependências do TCEMG. Clique aqui",
+        "scraper": "tce-mg",
+        "previewOnly": false,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 1,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O auditório Vivaldi Moreira do Tribunal de Contas do Estado de Minas Gerais (TCEMG) foi palco nesta segunda-feira, 28/9, da solenidade de posse dos seus 185 novos brigadistas. Realizada em parceria com o Corpo de Bombeiros Militar de Minas Gerais, a capacitação preparou os servidores e colaboradores para atuar na prevenção e na resposta inicial a situações de emergência nas dependências do TCEMG. Clique aqui",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d8e008187b53e11eaa0c482e4eb284fd9604a5be01b2f0a20adc5307c4b04e30": {
+      "firstSeenAt": "2026-09-28T18:36:23.022Z",
+      "lastSeenAt": "2026-09-28T18:36:23.022Z",
+      "item": {
+        "kind": "gazette-index",
+        "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
+        "url": "https://www-storage.voxtecnologia.com.br/?m=sigpub.publicacao&f=182&i=publicado_118446_2026-09-25_4cca571134fdd49bf14e0f95763d6e0c.pdf",
+        "publishedAt": "2026-09-28T15:00:00.000Z",
+        "source": "Diário Municipal AMM-MG",
+        "sourceUrl": "https://www.diariomunicipal.com.br/amm-mg/",
+        "summary": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
+        "scraper": "diario-municipal-index",
+        "previewOnly": true,
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Monitoramento do índice da edição. O PDF ainda não é analisado por este coletor.",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -34253,124 +34606,277 @@
           "itemCount": 0
         }
       ]
+    },
+    "36466309313:1": {
+      "at": "2026-09-28T18:36:23.022Z",
+      "collected": 63,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 18,
+          "durationMs": 1175
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 16236
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "Querido Diário respondeu 503"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 22,
+          "durationMs": 3593
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 2
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 22,
+          "durationMs": 8754
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 16
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 5
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 4415
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 3859
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "DeepSeek",
+          "status": "ok",
+          "itemCount": 0
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 21,
-      "durationMs": 645,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "itemCount": 18,
+      "durationMs": 1175,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
-      "status": "ok",
-      "itemCount": 76,
-      "durationMs": 6251,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
-      "consecutiveFailures": 0,
+      "status": "degraded",
+      "itemCount": 0,
+      "durationMs": 16236,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-28T09:44:43.609Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
-      "status": "ok",
-      "itemCount": 76,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
-      "consecutiveFailures": 0,
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-28T09:44:43.609Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
-      "status": "ok",
-      "itemCount": 3,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
-      "consecutiveFailures": 0,
+      "status": "error",
+      "itemCount": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-28T09:44:43.609Z"
     },
     "Querido Diário — consulta 3": {
       "name": "Querido Diário — consulta 3",
-      "status": "ok",
+      "status": "error",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
-      "consecutiveFailures": 0,
+      "message": "Querido Diário respondeu 503",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-28T09:44:43.609Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
-      "itemCount": 19,
-      "durationMs": 3330,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "itemCount": 22,
+      "durationMs": 3593,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 2,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
-      "itemCount": 7,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "itemCount": 10,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
-      "itemCount": 24,
-      "durationMs": 4539,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "itemCount": 22,
+      "durationMs": 8754,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -34379,7 +34885,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z"
+      "checkedAt": "2026-09-28T18:36:23.022Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -34388,7 +34894,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z"
+      "checkedAt": "2026-09-28T18:36:23.022Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -34397,67 +34903,67 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z"
+      "checkedAt": "2026-09-28T18:36:23.022Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
-      "itemCount": 18,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "itemCount": 16,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
-      "itemCount": 6,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "itemCount": 5,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
-      "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "itemCount": 1,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 2908,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "durationMs": 4415,
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     },
     "DeepSeek": {
       "name": "DeepSeek",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T09:44:43.609Z",
+      "checkedAt": "2026-09-28T18:36:23.022Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T09:44:43.609Z"
+      "lastSuccessAt": "2026-09-28T18:36:23.022Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
