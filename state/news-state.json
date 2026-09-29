@@ -3087,6 +3087,26 @@
       "category": "ADESÃO AUTORIZADA",
       "source": "Querido Diário",
       "publishedAt": "2026-09-24T12:00:00-03:00"
+    },
+    "9905e9ea7ec9ec88e8d2748dc0ce7171307819f55256a5ef72cdd16c85236abf": {
+      "sentAt": "2026-09-29T06:54:23.406Z",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zLXlRaXRTUUtyTDY1dEpFUG4xUWxlR24wSmEtMEN3R3VYcW5KMGpwTGV3ZDVJaUNiZE5UWGNSZHhrNEo3WWRIelRzWjRCMElBWnJFN01mbGZTcjA?oc=5",
+      "title": "PROJETO DE LEI N°. 54, DE DE DE 2022 Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde do Mé - Câmara Municipal de Guanhães",
+      "titleFingerprint": "6be0ff29bb9cc721a866aed8e6a401f7bec12db42dcec12db608adebbe5c5e0a",
+      "contentTokens": [
+        "2022",
+        "camara",
+        "guanhaes",
+        "intencoes",
+        "lei",
+        "projeto",
+        "protocolo",
+        "ratifica",
+        "saude"
+      ],
+      "category": "PROTOCOLO",
+      "source": "Câmara Municipal de Guanhães",
+      "publishedAt": "2026-09-28T08:34:57.000Z"
     }
   },
   "pending": {
@@ -17285,7 +17305,7 @@
     },
     "181fe65e16b7a615ffa104bd5d99f0c3dd413ebdee625eb24425a39670a68b4a": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Município é autorizado a integrar consórcio intermunicipal CIMINAS - Diário de Caratinga",
@@ -17530,7 +17550,7 @@
     },
     "84eea0f2b05c0b5232e1b34c2d726a6b24b8abc768dad9d5ff29ec8ff48192a5": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Tribunal de Contas abre inscrições para cadastro de reserva de estágio remunerado",
@@ -17557,7 +17577,7 @@
     },
     "fb148ecb674e849eaab8f2d2d68c59970b6c4a5008a5fcbccceb661ce463a191": {
       "firstSeenAt": "2026-09-22T18:53:11.883Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "TCEMG cria coordenadoria especializada para analisar atos de admissão de pessoal",
@@ -17633,7 +17653,7 @@
     },
     "229de91ab9519c707a656f72a176b19a6f71c912b7b36c6f2a77d6c17a851779": {
       "firstSeenAt": "2026-09-22T20:06:01.205Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - dgabc.com.br",
@@ -17763,7 +17783,7 @@
     },
     "b0a87abd482a02f962d29a462624539ee846e48414748ea1c2e426c492b72459": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "CGIBS lança cadastro de profissionais para futuras oportunidades",
@@ -17930,7 +17950,7 @@
     },
     "5e9f147e58fae32b748f19249df9a409b17a0c5bc33f0f16ee53604bc6319fbe": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Tribunal mantém suspensas atas de pregão de R$ 56,8 milhões para solução educacional em municípios do Sul de Minas",
@@ -17958,7 +17978,7 @@
     },
     "f6cbbbfef8754f25811c74693c9bd2d9fb0b574b25985d92ddbe4de82be5a241": {
       "firstSeenAt": "2026-09-22T22:25:21.269Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Câmara de Funilândia deve corrigir irregularidades em transparência fiscal, decide TCEMG",
@@ -18052,7 +18072,7 @@
     },
     "7460d067f4c86bc51dbff0f07bd604efda2e01ad17603ef1032732c428ec89c2": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense abre concurso para auxiliar administrativo - Qconcursos Folha Dirigida",
@@ -18077,7 +18097,7 @@
     },
     "7bfe3d22290b37671a36cfa3e898fe9fc85dae1df23555cf56358957f6025c91": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC inicia segunda fase do ABC + Seguro com foco em tecnologia e capacitação das GCMs - ABC Repórter",
@@ -18100,7 +18120,7 @@
     },
     "b187ce5dd0d6bfe971e1d070cc0d00569aa56828d6c9ad74fe62939bb82f5b2b": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "GCMs Do ABC Recebem Certificados Após Curso Regional - ABC Agora",
@@ -18669,7 +18689,7 @@
     },
     "e2a3937fa6e334a367a1b73f17825f757af07b34bcf45f6ceb5a8cb7d49d1197": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "EDITAL Nº 001/2026 – PROCESSO SELETIVO SIMPLIFICADO",
@@ -18695,7 +18715,7 @@
     },
     "98cf64ca7aa14ad14e83d9c05a34adfe930cd4c78badea08cae303f47471fcff": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "COMUNICADO – REMARCAÇÃO DE REUNIÃO",
@@ -18953,7 +18973,7 @@
     },
     "50417ecca08b74c6f541e397a086bab75bd0166c5380da63837bdfa6223e60e4": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "ChatUAI é finalista de prêmio nacional de inovação",
@@ -18978,7 +18998,7 @@
     },
     "4f3ced68ccc0d592963ab09734f3056816202a78958b99e489e5f92e81b116ca": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Município de Lagoa Dourada recebe recomendações de medidas para aprimorar atendimento à primeira infância",
@@ -19028,7 +19048,7 @@
     },
     "62b8a5a51393068f7f1274dd7c3f52214741b80b22d79181cc02fb722df21097": {
       "firstSeenAt": "2026-09-24T05:05:12.492Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Projeto Conhecer leva estudantes de Direito e Ciências Contábeis ao TCEMG",
@@ -19053,15 +19073,15 @@
     },
     "4846557426428cbba8a21b16069279a54c2226f1c17a22bd22306dbb11acb45c": {
       "firstSeenAt": "2026-09-24T09:54:50.649Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
-        "title": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao - Prefeitura Municipal de Rio Espera",
+        "title": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao - rioespera.mg.gov.br",
         "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9xMlg3dDh1UEM1cERsNEs0RVBiYmJzWjYwNDhheG5sWmVQRGN3akttOTFzc1d5UDBPR3NmN0VzcVhjVVVHdjZ4SmtFVlBIT3Nwc0FSSjJwMA?oc=5",
         "sourceUrl": "https://rioespera.mg.gov.br",
         "publishedAt": "2026-09-23T07:41:22.000Z",
-        "source": "Prefeitura Municipal de Rio Espera",
-        "summary": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao Prefeitura Municipal de Rio Espera",
+        "source": "rioespera.mg.gov.br",
+        "summary": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao rioespera.mg.gov.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -19070,7 +19090,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao Prefeitura Municipal de Rio Espera",
+          "evidenceText": "Delegação do Município de Rio Espera – MG ao Consórcio Público Intermunicipal de Saúde do Alto Paraopeba e Vale do Piranga – CISAP-VP da execução orçamentária e a respectiva transferência parcial dos serviços públicos para oferta de transporte ao rioespera.mg.gov.br",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -19534,7 +19554,7 @@
     },
     "7831e8d35ddce7eebccae22ee02705dc986224988ac194175307420e0e59640a": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 325/2019 - Segunda Câmara - TCE-PR",
@@ -19718,7 +19738,7 @@
     },
     "0dcf2fc0e10067e2c2ae80d39f21fe1439c6677761ebd1a44e67ec386a47042b": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Fraternidade de Assistência aos Condenados recebe doação de computadores do TCEMG",
@@ -19743,7 +19763,7 @@
     },
     "9ac1e76d3f95070d7776f94ce210f5b264121306a0026a4b18f1dbcf1eee62a6": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Inscrições abertas para a XII Jornada de Contabilidade Pública",
@@ -19770,7 +19790,7 @@
     },
     "1d7df7f6d68f78124ba53020e354bd28e8bc4ebca38563138bc0720000c3c574": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Ex-prefeito é multado e terá de devolver mais de R$ 100 mil após saque em espécie sem justificativa",
@@ -19795,7 +19815,7 @@
     },
     "0d562db2165689a70ebe4907fe7bae98f487934a110f1e09e1b65e4fcbd6b21e": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "TCEMG emite parecer prévio pela rejeição das contas de Formoso referentes a 2022",
@@ -19820,7 +19840,7 @@
     },
     "ab3972bf3dd246f51fd034eda9c7bae41b0bbedb3e39bacb676ec2605b2636d2": {
       "firstSeenAt": "2026-09-24T15:27:58.703Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "TCESP promoverá encontro sobre nova ferramenta que coletará dados do IEG-M e IEG-Prev",
@@ -19871,7 +19891,7 @@
     },
     "279b9b6a1f36e445362485313e883318ef0b5780183447322b44bec9cab6459f": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Diálogos Finanças Municipais: 3º encontro apresenta estudo sobre a Reforma Tributária",
@@ -20124,7 +20144,7 @@
     },
     "3ffc040c801fd3f6349bf01ef99a45c1f03e6efee4bdfcbb1aecfc21ebbacc0f": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Semana da Sustentabilidade reúne palestras e atividades sobre consumo consciente e gestão de resíduos",
@@ -20149,7 +20169,7 @@
     },
     "1ec2bde552e98294baab22d4f44cc42f9fb1c855295f9490af2bca64a0c270b2": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Especialistas debatem desafios da democracia contemporânea em seminário na UFMG",
@@ -20174,7 +20194,7 @@
     },
     "09223a9933a9c52d9fd3a23adef429398d3f5edeb6177c63afb95b300b335b8d": {
       "firstSeenAt": "2026-09-24T19:09:42.997Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "legislation",
         "title": "Portaria do Legislativo nº 5.858, de 24 de setembro de 2026 — Unaí",
@@ -20202,7 +20222,7 @@
     },
     "b22ddc035ce36fa3968dcc54437a4a966b7df4c06070e8042b7aa37250556e1a": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Multifinalitário CIS-VERDE abre concurso para assistente administrativo - Qconcursos Folha Dirigida",
@@ -20227,7 +20247,7 @@
     },
     "b45f5adaa90715c4baaf998c4c46edf3e725f751d8d45720f28366b51c2b96cd": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "CIS-VERDE - MG abre processo seletivo para Assistente Administrativo - PCI Concursos",
@@ -20461,7 +20481,7 @@
     },
     "82b0238b268707dab4628126b052a44730fe2751e58a6daea463598b64f4d71a": {
       "firstSeenAt": "2026-09-24T22:23:58.170Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Ciclo de Debates do TCESP faz parada em Santa Fé do Sul",
@@ -21016,7 +21036,7 @@
     },
     "d90d3fd8375cde6fea5140a06eda79a350eb3dd25b1437c4d4d6765cb41f2671": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Evento Cidades Ativas reúne gestores do Piauí e Maranhão para debater Agenda 2030",
@@ -21269,7 +21289,7 @@
     },
     "b22b66cfb04f0b56e9b058f18f1b5fcbc5a4db177b5faf08bc24e868ff4f00bd": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "TCE comunica indisponibilidade programada de sistemas",
@@ -21294,7 +21314,7 @@
     },
     "ee90ca7d34a26e4af31a396b2ec697bf7f84817bb49f7564ed558cf0a2d6abad": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Força-tarefa atua para acertar caixas escolares; Gaepe oferece plantão com técnicos do MEC",
@@ -21319,7 +21339,7 @@
     },
     "12edc6c64656842eaac8c0c9ff1f51240b6c781b34de1391dc4d862e35cec715": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Mais de 500 agentes públicos prestigiam Ciclo de Debates do TCESP em Olímpia",
@@ -21345,7 +21365,7 @@
     },
     "aab70477f369b63da77d49f06e6cc75cb8a116b479a5f37e4a1f8e62c8920eda": {
       "firstSeenAt": "2026-09-25T19:15:26.609Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "TCESP apresentará live com resultados da Fiscalização Ordenada sobre acessibilidade em prédios públicos",
@@ -21396,7 +21416,7 @@
     },
     "0ebe468d3475edb0c1967c3d4fdfd4531982cdb8957b11d892de2866f227bc5d": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade abre processo seletivo simplificado para educador social - Qconcursos Folha Dirigida",
@@ -21468,7 +21488,7 @@
     },
     "7c558f80060889044967bba151182d92ea9f4ac3fec7c588f1012488f7cb384c": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Financiamento metropolitano é tema do quinto webinário de mobilidade urbana",
@@ -21491,7 +21511,7 @@
     },
     "6d22a78524891cb740d7b0d57e800d41d49cd784f51080d079741a854bcafe41": {
       "firstSeenAt": "2026-09-25T22:23:30.239Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Guia de Gestão de Velocidades é lançado na FNP",
@@ -21815,7 +21835,7 @@
     },
     "6a0e9d2a82541d0e64a0c0cf903d7df97d7808aa2fc3ace435c4e4b36990c73c": {
       "firstSeenAt": "2026-09-26T01:32:52.243Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Corte Digital debate inteligência artificial e linguagem simples como caminhos para a clareza em escala",
@@ -22781,7 +22801,7 @@
     },
     "71fcf401d5045f6655faa6cdcaf055384513ca69f95a37fb977f94e8073516f8": {
       "firstSeenAt": "2026-09-26T13:45:09.792Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "SAFI - Itá/SC abre processo seletivo para Educador Social - PCI Concursos",
@@ -23087,7 +23107,7 @@
     },
     "f701411f9df2f52ecc0a480c4d0f69f65cc389c6c820460372a63ab0ef80f079": {
       "firstSeenAt": "2026-09-26T18:37:03.048Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "LEI Nº 8028/2022 - Câmara Municipal de São Miguel do Oeste",
@@ -23432,7 +23452,7 @@
     },
     "e9614aaf76501045d3c4a39cbf6ac831fd34fccc6ba5a9712dfa7ad2f0479cd4": {
       "firstSeenAt": "2026-09-27T14:42:32.941Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "PROJETO DE LEI ORDINÁRIA nº 28 de 2026 - sapl.guarujadosul.sc.leg.br",
@@ -23997,7 +24017,7 @@
     },
     "e99806831f305ba71fe0e6e40b6e6a4bcc12a782afd9bd9958ff17cad87b6cd3": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Cidades buscam caminhos para acessar financiamento climático internacional",
@@ -24022,7 +24042,7 @@
     },
     "2c6ea20f9a4fd7f62c862439c039fae225388e0ded1ad891aaeee0a86de44194": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Fórum Unicidades promove diálogo sobre Agenda 2030 e ODS nos municípios",
@@ -24045,7 +24065,7 @@
     },
     "8fe4501be0d9303a04779978f68f51f4ceb5cace2007fb6a8a2cc2652b8fb675": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Educação em situações de crise: FNP debate planos de contingência escolares para eventos climáticos",
@@ -24300,7 +24320,7 @@
     },
     "fb3d5ebbce525e81fe87ef84d0ac13843b38d30bf67b66dccb947eafc948c087": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "TCEMG forma 185 brigadistas para prevenção e atuação em situações de emergência",
@@ -24350,7 +24370,7 @@
     },
     "590f6b08c063ceb2018055d613261dc41f7853b364906a70cdee87d91fd4fb15": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Concurso CIDASG: inscrições encerradas; iniciais até 5 mil! - Estratégia Concursos",
@@ -24373,7 +24393,7 @@
     },
     "bf7875b2692f9e05cf73ad7c897242c4dad971bf7f0fcb0265e8964fc895d9a5": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC avança em mapeamento regional de políticas de promoção da atividade física - Consórcio Intermunicipal - Grande ABC",
@@ -24496,7 +24516,7 @@
     },
     "b2447026873fb09ba9cd02b339a0aac11143f706485496e7c968b15404f54786": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Zanin libera acesso gratuito a sites da Justiça Eleitoral nas eleições",
@@ -24519,7 +24539,7 @@
     },
     "3ff8816e708a2b81e447890a09a92ae3c5aadda40b24b4ff34adad160a299ed6": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Lei define padrões de qualidade a hospitais particulares",
@@ -24542,7 +24562,7 @@
     },
     "432e30c9eea52f42a90437fb8c2f30a25cbd283ae34f8f7bc1e31ffa5d5400a9": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Após empate frustrante, Brasil reencontra Austrália em novo amistoso",
@@ -24565,7 +24585,7 @@
     },
     "ed22e544de28348969a70d0f628a9fae62252b8349126e36cc31b8444f669b0a": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Dólar sobe para R$ 5,22 e atinge maior nível desde março",
@@ -24588,7 +24608,7 @@
     },
     "105221e89e5869ec164dacd2461aac1962879f5259f353454b3b2eed3a319e22": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Presidente do TSE reclama de interferência em decisões da Corte",
@@ -24611,7 +24631,7 @@
     },
     "40858dea0ca6543fd739446c4aa359c18e9ecd3ae5bbce345d59fb39f23983f8": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Renegociação de dívidas de adimplentes é prorrogada até 26 de outubro",
@@ -24728,7 +24748,7 @@
     },
     "1103b2b4d5f2bb8bfa8cc59feb6bc3c8b67210c4ecb5de0b9e6249223bf867d8": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o controle externo nas parcerias com o Terceiro Setor",
@@ -24754,7 +24774,7 @@
     },
     "36969185e6f23c9e3fb273ec5e94162c8815daf7253fec2f49f8d3a557b1577e": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-09-28T23:49:57.321Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
       "item": {
         "kind": "news",
         "title": "Discussões sobre integridade e governança no setor público dominam evento em Araraquara",
@@ -24773,6 +24793,198 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "28/09/2026 - ARARAQUARA - Mais de 300 agentes públicos de 140 cidades paulistas acompanharam as discussões do Encontro de Controle Interno e Integridade na Gestão Pública, realizado na sede da Unidade Regional de Araraquara (UR-13) do Tribunal de Contas do Estado de São Paulo (TCESP), nesta segunda-feira, 28/09. Em paralelo, mais de 3,7 mil pessoas acompanharam o evento pela transmissão ao vivo no YouTube da Escola de Contas. A abertura do evento foi realizada pelo Vice-Presidente do TCESP, Conselheiro Dimas Ramalho. Ele reforçou que a atuação do controle interno não pode ser vista como \"coisa de burocrata\". \"Pelo contrário, isso é coisa de democrata. Se o dinheiro é teu, como você quiser pode aplicar, mas dinheiro público não. Lembre-se sempre do artigo 37 da Constituição Federal: legalidade, impessoalidade, moralidade, transparência, publicidade e eficiência\", apontou. Dimas Ramalho foi além. Lembrou, ainda que questões de compliance, integridade e accountability, por exemplo, não podem ficar no discurso, mas sim como realidade. \"Hoje, não aceito que os gestores públicos digam: 'eu não sabia', 'a cidade do interior é pequena, não tem como verificar' e 'eu não tive tempo'. Levem a possibilidade de, ao fazer o certo, ajudar a construir um país melhor para nós, para nossos filhos e aqueles que virão\", concluiu o Conselheiro. A Escola de Contas do TCESP atuou na organização do conteúdo com as instituições parceiras. Bibiana Camargo, diretora da EPCP, contou que o evento foi idealizado a partir de experiências. \"Para que os gestores possam aprender com experiências exitosas e também trocar informações, tirar dúvidas. Esse é o caminho para conseguirmos levar cada vez mais conhecimento, trazer experiências práticas.\" Marcos Carbone, Chefe de Gabinete da Controladoria Geral d",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8e412a100a330658cc7aac997d5f828c8a53795fd07f1bf62dba8a96fe04b2e0": {
+      "firstSeenAt": "2026-09-29T06:54:19.985Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
+      "item": {
+        "kind": "news",
+        "title": "Consórcio ABC realiza visita técnica ao Centro de Formação da GCM de Santo André - folhajornal.com.br",
+        "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1Dak9nM3JBZENLTUxEN29qUFU0YVA2X1Y1a3d5UUYtN1otTWZwSURUQUJWY3Zsdk95ekVyU3h6S1BtZHFWR0swNDl6UWZDdG4tM0JtNkw1VkFKSUlFMzlaX2lidzVFUWI2MW1zNGtYMmxxcU4wd0NJ?oc=5",
+        "sourceUrl": "https://folhajornal.com.br",
+        "publishedAt": "2026-09-27T16:30:00.000Z",
+        "source": "folhajornal.com.br",
+        "summary": "Consórcio ABC realiza visita técnica ao Centro de Formação da GCM de Santo André folhajornal.com.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 2,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio ABC realiza visita técnica ao Centro de Formação da GCM de Santo André folhajornal.com.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "a88be8bd648a38ad5114edf7e362b68a6e874f653a8edc544a1ba4882998dec9": {
+      "firstSeenAt": "2026-09-29T06:54:19.985Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
+      "item": {
+        "kind": "news",
+        "title": "PROCESSO SELETIVO SIMPLIFICADO EDITAL N. 01/2026 - cisurgmp.mg.gov.br",
+        "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBmWWx1YUNhRDNUSURGZFdMSl95eUZObDVoaEl5X1hqWUlRalFqdlFBdEdMSHJ6WTRZaFc2RE5kMkpGX0lhQ1lHWXVqZERfX1poUVpmQjYxMHctaHdLZG5Wa0gzMA?oc=5",
+        "sourceUrl": "https://www.cisurgmp.mg.gov.br",
+        "publishedAt": "2026-09-26T19:25:00.000Z",
+        "source": "cisurgmp.mg.gov.br",
+        "summary": "PROCESSO SELETIVO SIMPLIFICADO EDITAL N. 01/2026 cisurgmp.mg.gov.br",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -29,
+          "reasons": [
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "PROCESSO SELETIVO SIMPLIFICADO EDITAL N. 01/2026 cisurgmp.mg.gov.br",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "326d93d46f5cecdeb5f57ad5d110eac7db62c2dc588705a442d485da8ed06852": {
+      "firstSeenAt": "2026-09-29T06:54:19.985Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
+      "item": {
+        "kind": "news",
+        "title": "PROJETO DE LEI N°. 54, DE DE DE 2022 Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde do Mé - Câmara Municipal de Guanhães",
+        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zLXlRaXRTUUtyTDY1dEpFUG4xUWxlR24wSmEtMEN3R3VYcW5KMGpwTGV3ZDVJaUNiZE5UWGNSZHhrNEo3WWRIelRzWjRCMElBWnJFN01mbGZTcjA?oc=5",
+        "sourceUrl": "https://www.guanhaes.mg.leg.br",
+        "publishedAt": "2026-09-28T08:34:57.000Z",
+        "source": "Câmara Municipal de Guanhães",
+        "summary": "PROJETO DE LEI N°. 54, DE DE DE 2022 Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde do Mé Câmara Municipal de Guanhães",
+        "classification": {
+          "category": "PROTOCOLO",
+          "emoji": "🟨",
+          "score": 19,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO",
+            "PROTOCOLO"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "PROJETO DE LEI N°. 54, DE DE DE 2022 Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde do Mé Câmara Municipal de Guanhães",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "id": "9905e9ea7ec9ec88e8d2748dc0ce7171307819f55256a5ef72cdd16c85236abf",
+        "titleFingerprint": "6be0ff29bb9cc721a866aed8e6a401f7bec12db42dcec12db608adebbe5c5e0a",
+        "contentTokens": [
+          "2022",
+          "camara",
+          "guanhaes",
+          "intencoes",
+          "lei",
+          "projeto",
+          "protocolo",
+          "ratifica",
+          "saude"
+        ],
+        "aiReview": {
+          "status": "approved",
+          "category": "PROTOCOLO",
+          "evidence": "Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde do Mé",
+          "promptVersion": 2,
+          "model": "deepseek-flash",
+          "usage": {
+            "inputTokens": 606,
+            "outputTokens": 87
+          },
+          "reviewedAt": "2026-09-29T06:54:18.695Z"
+        }
+      }
+    },
+    "f2017f62a8b09393ea2f2ad9f8733c4532b153e8b8f5fa8d53a3e3ec85f44e17": {
+      "firstSeenAt": "2026-09-29T06:54:19.985Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
+      "item": {
+        "kind": "news",
+        "title": "Confira como foi a segunda-feira (28) dos candidatos a presidente",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-09/confira-como-foi-segunda-feira-28-dos-candidatos-presidente",
+        "publishedAt": "2026-09-29T00:37:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Na última semana de campanha política, os candidatos à Presidência intensificam as agendas com entrevistas para veículos de imprensa e atos em todo o país. >> Veja como foi o dia dos candidatos Luiz Inácio Lula da Silva (PT) O candidato Luiz Inácio Lula da Silva participou de atos de campanha em Belém e em Manaus. Notícias relacionadas: Zanin libera acesso gratuito a sites da Justiça Eleitoral nas eleições. Eleitor deve se antecipar na consulta a local de votação, alerta TSE. Eleições 2026: saiba em quantos candidatos votar e a ordem de votação . Em Belém, Lula prometeu a ampliação do acesso da população a exames modernos, diagnósticos mais rápidos e consultas com médicos especialistas pela rede pública de saúde. \"É um direito do povo ser tratado com respeito e decência\", afirmou. Renan Santos (Missão) O candidato Renan Santos cumpriu agenda de campanha no Espírito Santo, onde se encontrou, à noite, com apoiadores no centro de Vitória. Romeu Zema (Novo) O candidato Romeu Zema almoçou com apoiadores em Caeté (MG). Ele concedeu entrevista para a Rádio Alfa, de Nova Era (MG). Ronaldo Caiado (PSD) O candidato Ronaldo Caiado fez caminhada no bairro Jardim Guanabara, em Goiânia. Ele voltou a defender limitar o crescimento dos gastos obrigatórios a 50% do crescimento do Produto Interno Bruto (PIB) e corte de 25% dos gastos discricionários. “[Gestão de] gasto público nós mostramos como fazer aqui no estado. O que se precisa no Brasil é saber governar. Mas não só saber governar, é ter autoridade moral para governar”, afirmou. Rui Costa Pimenta (PCO) O candidato Rui Costa Pimenta não teve agenda pública de campanha. Samara Martins (UP) A candidata Samara Martins cumpriu agenda de campanha em São Paulo. Ela fez panfletagem no bairro da Mooca, na zona leste da capital, e participou",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Na última semana de campanha política, os candidatos à Presidência intensificam as agendas com entrevistas para veículos de imprensa e atos em todo o país. >> Veja como foi o dia dos candidatos Luiz Inácio Lula da Silva (PT) O candidato Luiz Inácio Lula da Silva participou de atos de campanha em Belém e em Manaus. Notícias relacionadas: Zanin libera acesso gratuito a sites da Justiça Eleitoral nas eleições. Eleitor deve se antecipar na consulta a local de votação, alerta TSE. Eleições 2026: saiba em quantos candidatos votar e a ordem de votação . Em Belém, Lula prometeu a ampliação do acesso da população a exames modernos, diagnósticos mais rápidos e consultas com médicos especialistas pela rede pública de saúde. \"É um direito do povo ser tratado com respeito e decência\", afirmou. Renan Santos (Missão) O candidato Renan Santos cumpriu agenda de campanha no Espírito Santo, onde se encontrou, à noite, com apoiadores no centro de Vitória. Romeu Zema (Novo) O candidato Romeu Zema almoçou com apoiadores em Caeté (MG). Ele concedeu entrevista para a Rádio Alfa, de Nova Era (MG). Ronaldo Caiado (PSD) O candidato Ronaldo Caiado fez caminhada no bairro Jardim Guanabara, em Goiânia. Ele voltou a defender limitar o crescimento dos gastos obrigatórios a 50% do crescimento do Produto Interno Bruto (PIB) e corte de 25% dos gastos discricionários. “[Gestão de] gasto público nós mostramos como fazer aqui no estado. O que se precisa no Brasil é saber governar. Mas não só saber governar, é ter autoridade moral para governar”, afirmou. Rui Costa Pimenta (PCO) O candidato Rui Costa Pimenta não teve agenda pública de campanha. Samara Martins (UP) A candidata Samara Martins cumpriu agenda de campanha em São Paulo. Ela fez panfletagem no bairro da Mooca, na zona leste da capital, e participou",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "e89c528c815b4e3268fa5f15e450b5fad3430864a64f19bf37892b3ad9eb8bfb": {
+      "firstSeenAt": "2026-09-29T06:54:19.985Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
+      "item": {
+        "kind": "news",
+        "title": "Temporais em Santa Catarina e Rio Grande do Sul afetam 4,8 mil casas",
+        "url": "https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-09/temporais-em-santa-catarina-e-rio-grande-do-sul-afetam-48-mil-casas",
+        "publishedAt": "2026-09-29T00:27:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Os estados de Santa Catarina e Rio Grande do Sul enfrentam vendavais e tempestade desde a última sexta-feira (25), afetando 18 municípios catarinenses e 78 gaúchos. No total cerca de 4,8 mil residências foram afetadas. No Rio Grande do Sul, quatro pessoas ficaram feridas. No domingo, foi registrada ocorrência de granizo, vendavais e chuvas intensas em Santa Catarina, com 1.423 habitações afetadas. Sete municípios decretaram situação de emergência: Arabutã, Santiago do Sul, Seara, Ponte Serrada, Ipumirim, São Domingos e Formosa do Sul, segundo a Defesa Civil estadual. Notícias relacionadas: Tsunami meteorológico: entenda o evento raro e rápido que atingiu SC. Guaíba: Defesa Civil de Porto Alegre alerta para risco de inundação . Também foram registradas sete solicitações de itens de assistência humanitária (IAH) pelas cidades de Santiago do Sul, São Domingos, Arabutã, Seara, Ipumirim, Anita Garibaldi e Formosa do Sul. Em Seara, uma tempestade com granizo atingiu todo o município e destelhou mais de 808 residências. Três postos de saúde, dez escolas e quatro edificações públicas municipais também foram afetados. Em Santiago do Sul, chuvas intensas, vendavais e granizo deixaram 180 residências afetadas, com danos em diversos prédios públicos. Em Ponte Serrada, o granizo atingiu o Centro, o Bairro Moroso e a Linha Alegre, com 100 edificações atingidas. Em Anita Garibaldi, o granizo atingiu o município durante a madrugada e afetou 89 habitações, levando a distribuição de lonas. Em Arabutã, 76 residências sofreram danos. Em Ipumirim, foram 45, e em Formosa do Sul, 27. Em São Domingos, 37 habitações e cerca de 90 pessoas foram afetadas, além de dois aviários danificados. Em Quilombo, granizo e vendavais atingiram a área rural, com 40 propriedades afetadas. A queda de árvores pr",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Os estados de Santa Catarina e Rio Grande do Sul enfrentam vendavais e tempestade desde a última sexta-feira (25), afetando 18 municípios catarinenses e 78 gaúchos. No total cerca de 4,8 mil residências foram afetadas. No Rio Grande do Sul, quatro pessoas ficaram feridas. No domingo, foi registrada ocorrência de granizo, vendavais e chuvas intensas em Santa Catarina, com 1.423 habitações afetadas. Sete municípios decretaram situação de emergência: Arabutã, Santiago do Sul, Seara, Ponte Serrada, Ipumirim, São Domingos e Formosa do Sul, segundo a Defesa Civil estadual. Notícias relacionadas: Tsunami meteorológico: entenda o evento raro e rápido que atingiu SC. Guaíba: Defesa Civil de Porto Alegre alerta para risco de inundação . Também foram registradas sete solicitações de itens de assistência humanitária (IAH) pelas cidades de Santiago do Sul, São Domingos, Arabutã, Seara, Ipumirim, Anita Garibaldi e Formosa do Sul. Em Seara, uma tempestade com granizo atingiu todo o município e destelhou mais de 808 residências. Três postos de saúde, dez escolas e quatro edificações públicas municipais também foram afetados. Em Santiago do Sul, chuvas intensas, vendavais e granizo deixaram 180 residências afetadas, com danos em diversos prédios públicos. Em Ponte Serrada, o granizo atingiu o Centro, o Bairro Moroso e a Linha Alegre, com 100 edificações atingidas. Em Anita Garibaldi, o granizo atingiu o município durante a madrugada e afetou 89 habitações, levando a distribuição de lonas. Em Arabutã, 76 residências sofreram danos. Em Ipumirim, foram 45, e em Formosa do Sul, 27. Em São Domingos, 37 habitações e cerca de 90 pessoas foram afetadas, além de dois aviários danificados. Em Quilombo, granizo e vendavais atingiram a área rural, com 40 propriedades afetadas. A queda de árvores pr",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "d25aa5831b7e73257bce619bf8ed21eaaa99ad668624f0d58f7034af3cf36d40": {
+      "firstSeenAt": "2026-09-29T06:54:19.985Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
+      "item": {
+        "kind": "news",
+        "title": "TSE recebeu mais de 50 mil denúncias de propaganda irregular",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/tse-recebeu-mais-de-50-mil-denuncias-de-propaganda-irregular",
+        "publishedAt": "2026-09-28T23:39:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Desde o início da campanha para as eleições gerais de 2026, a Justiça Eleitoral já recebeu 51.395 denúncias de propaganda irregular por meio do aplicativo Pardal , um sistema eletrônico criado pelo Tribunal Superior Eleitoral (TSE) para receber esse tipo de ocorrência. Lideram o ranking São Paulo (10.388), seguido por Bahia (5.969), Minas Gerais (4.635) e Pernambuco (3.505). Os estados com menor quantidade de denúncias são Tocantins (74), Roraima (104) e Piauí (172). Notícias relacionadas: TSE recebe mais de mil denúncias nos primeiros dias de campanha. O principal tipo de ocorrência (43,78%) está relacionada a propagandas irregulares ou fora dos padrões em vias públicas. Em seguida vêm as propagandas irregulares em propriedade particular (11,94%), como a pintura de muros fora dos padrões aceitos pelo TSE, e publicidade em bens públicos. Isso inclui murais em prédios públicos ou publicidade institucional. Durante o período eleitoral esse tipo de publicidade só é permitido em situação excepcional e com autorização da Justiça Eleitoral. Há também denúncias por propaganda irregular na internet, jornais, revistas e emissoras de rádio e televisão; além de materiais gráficos, como adesivos de carros em tamanho maior que o permitido. Até agora a Justiça Eleitoral transformou 27% das denúncias recebidas em processos. Pardal O aplicativo Pardal pode ser baixado de forma gratuita nas lojas virtuais Google Play para celulares Android e App Store para iPhones. Clique aqui para saber mais sobre como baixar o software . Para acessar o aplicativo é preciso fazer login com a senha do e-título ou da plataforma Gov.br. O nome do autor da denúncia é mantido em sigilo. Além de descrever a irregularidade, o denunciante pode anexar fotos, vídeos, áudios ou endereços eletrônicos relacionados.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Desde o início da campanha para as eleições gerais de 2026, a Justiça Eleitoral já recebeu 51.395 denúncias de propaganda irregular por meio do aplicativo Pardal , um sistema eletrônico criado pelo Tribunal Superior Eleitoral (TSE) para receber esse tipo de ocorrência. Lideram o ranking São Paulo (10.388), seguido por Bahia (5.969), Minas Gerais (4.635) e Pernambuco (3.505). Os estados com menor quantidade de denúncias são Tocantins (74), Roraima (104) e Piauí (172). Notícias relacionadas: TSE recebe mais de mil denúncias nos primeiros dias de campanha. O principal tipo de ocorrência (43,78%) está relacionada a propagandas irregulares ou fora dos padrões em vias públicas. Em seguida vêm as propagandas irregulares em propriedade particular (11,94%), como a pintura de muros fora dos padrões aceitos pelo TSE, e publicidade em bens públicos. Isso inclui murais em prédios públicos ou publicidade institucional. Durante o período eleitoral esse tipo de publicidade só é permitido em situação excepcional e com autorização da Justiça Eleitoral. Há também denúncias por propaganda irregular na internet, jornais, revistas e emissoras de rádio e televisão; além de materiais gráficos, como adesivos de carros em tamanho maior que o permitido. Até agora a Justiça Eleitoral transformou 27% das denúncias recebidas em processos. Pardal O aplicativo Pardal pode ser baixado de forma gratuita nas lojas virtuais Google Play para celulares Android e App Store para iPhones. Clique aqui para saber mais sobre como baixar o software . Para acessar o aplicativo é preciso fazer login com a senha do e-título ou da plataforma Gov.br. O nome do autor da denúncia é mantido em sigilo. Além de descrever a irregularidade, o denunciante pode anexar fotos, vídeos, áudios ou endereços eletrônicos relacionados.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "308f701e56dc156b8a22ed361814ab13e9607fa2f7b5842d6f36577c8cbbcfd0": {
+      "firstSeenAt": "2026-09-29T06:54:19.985Z",
+      "lastSeenAt": "2026-09-29T06:54:19.985Z",
+      "item": {
+        "kind": "news",
+        "title": "Sociedade civil rebate Anatel sobre internet grátis na eleição",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/sociedade-civil-rebate-anatel-sobre-internet-gratis-na-eleicao",
+        "publishedAt": "2026-09-28T23:12:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Um grupo de 12 entidades da sociedade civil pediu ao Supremo Tribunal Federal (STF) para ingressar como amici curiae em processo que pede garantia de acesso à internet móvel para todos os brasileiros, independentemente do limite da franquia de dados, nas 72 horas que antecedem as eleições. Se o pedido for aceito, as entidades podem apresentar informações técnicas, científicos e dados importantes para esclarecer pontos do processo. É vedado, no entanto, fazer pedidos ao juiz da ação ou apresentar recursos quanto ao mérito. Notícias relacionadas: Entidades pedem livre acesso à internet nas 72h anteriores às eleições. Zanin libera acesso gratuito a sites da Justiça Eleitoral nas eleições. Essas 12 entidades rebatem o argumento da Agência Nacional de Telecomunicações (Anatel) que argumentou no processo que a liberação irrestrita do acesso à internet móvel durante as eleições pode provocar picos de tráfego capazes de interromper a conectividade em aparelhos celulares, em especial na proximidade de zonas eleitorais. Segundo o grupo que pede ingresso na ação, no entanto, a agência não informou qual seria o real impacto de universalizar o acesso. “A manifestação da Anatel [...] não apresenta, de modo individualizado para cada pedido cautelar, estimativa de quantos usuários estariam com a franquia esgotada durante a janela eleitoral, qual tráfego adicional efetivamente gerariam, onde esse tráfego se concentraria e quais medidas operacionais poderiam mitigar os riscos identificados”, afirmam as entidades à Justiça. Pediram ingresso na ação os grupos Sleeping Giants Brasil, Intervozes, Instituto Nupef, Coletivo Digital, Data Labe, Diracom – Direito à Comunicação e Democracia, CTRL+Z, Instituto Bem Estar Brasil (IBEBrasil), Instituto de Referência em Internet e Sociedade (IRIS), Fe",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Um grupo de 12 entidades da sociedade civil pediu ao Supremo Tribunal Federal (STF) para ingressar como amici curiae em processo que pede garantia de acesso à internet móvel para todos os brasileiros, independentemente do limite da franquia de dados, nas 72 horas que antecedem as eleições. Se o pedido for aceito, as entidades podem apresentar informações técnicas, científicos e dados importantes para esclarecer pontos do processo. É vedado, no entanto, fazer pedidos ao juiz da ação ou apresentar recursos quanto ao mérito. Notícias relacionadas: Entidades pedem livre acesso à internet nas 72h anteriores às eleições. Zanin libera acesso gratuito a sites da Justiça Eleitoral nas eleições. Essas 12 entidades rebatem o argumento da Agência Nacional de Telecomunicações (Anatel) que argumentou no processo que a liberação irrestrita do acesso à internet móvel durante as eleições pode provocar picos de tráfego capazes de interromper a conectividade em aparelhos celulares, em especial na proximidade de zonas eleitorais. Segundo o grupo que pede ingresso na ação, no entanto, a agência não informou qual seria o real impacto de universalizar o acesso. “A manifestação da Anatel [...] não apresenta, de modo individualizado para cada pedido cautelar, estimativa de quantos usuários estariam com a franquia esgotada durante a janela eleitoral, qual tráfego adicional efetivamente gerariam, onde esse tráfego se concentraria e quais medidas operacionais poderiam mitigar os riscos identificados”, afirmam as entidades à Justiça. Pediram ingresso na ação os grupos Sleeping Giants Brasil, Intervozes, Instituto Nupef, Coletivo Digital, Data Labe, Diracom – Direito à Comunicação e Democracia, CTRL+Z, Instituto Bem Estar Brasil (IBEBrasil), Instituto de Referência em Internet e Sociedade (IRIS), Fe",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -35428,25 +35640,175 @@
           "itemCount": 1
         }
       ]
+    },
+    "36533477031:1": {
+      "at": "2026-09-29T06:54:19.985Z",
+      "collected": 64,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 20,
+          "durationMs": 673
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 0,
+          "durationMs": 30504
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 20,
+          "durationMs": 3432
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 2
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 8
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 23,
+          "durationMs": 4958
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 16
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 7
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 1,
+          "durationMs": 2958
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 3149
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "DeepSeek",
+          "status": "ok",
+          "itemCount": 1
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 18,
-      "durationMs": 785,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "itemCount": 20,
+      "durationMs": 673,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
-      "itemCount": 4,
+      "itemCount": 0,
       "durationMs": 30504,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
-      "consecutiveFailures": 2,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
+      "consecutiveFailures": 3,
       "lastSuccessAt": "2026-09-28T09:44:43.609Z"
     },
     "Querido Diário — consulta 1": {
@@ -35454,16 +35816,17 @@
       "status": "error",
       "itemCount": 0,
       "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-28T23:49:57.321Z",
-      "consecutiveFailures": 2,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
+      "consecutiveFailures": 3,
       "lastSuccessAt": "2026-09-28T09:44:43.609Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
-      "status": "ok",
-      "itemCount": 4,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
-      "consecutiveFailures": 0,
+      "status": "error",
+      "itemCount": 0,
+      "message": "The operation was aborted due to timeout",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
+      "consecutiveFailures": 1,
       "lastSuccessAt": "2026-09-28T23:49:57.321Z"
     },
     "Querido Diário — consulta 3": {
@@ -35471,83 +35834,83 @@
       "status": "error",
       "itemCount": 0,
       "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-09-28T23:49:57.321Z",
-      "consecutiveFailures": 2,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
+      "consecutiveFailures": 3,
       "lastSuccessAt": "2026-09-28T09:44:43.609Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 20,
-      "durationMs": 3079,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "durationMs": 3432,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 2,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 8,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
-      "itemCount": 24,
-      "durationMs": 4426,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "itemCount": 23,
+      "durationMs": 4958,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -35556,7 +35919,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z"
+      "checkedAt": "2026-09-29T06:54:19.985Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -35565,7 +35928,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z"
+      "checkedAt": "2026-09-29T06:54:19.985Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -35574,67 +35937,67 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z"
+      "checkedAt": "2026-09-29T06:54:19.985Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 16,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 7,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
-      "itemCount": 1,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "itemCount": 0,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 1,
-      "durationMs": 2783,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "durationMs": 2958,
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     },
     "DeepSeek": {
       "name": "DeepSeek",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-09-28T23:49:57.321Z",
+      "checkedAt": "2026-09-29T06:54:19.985Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-09-28T23:49:57.321Z"
+      "lastSuccessAt": "2026-09-29T06:54:19.985Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
@@ -38433,7 +38796,8 @@
     "https://data.queridodiario.ok.org.br/2807105/2026-09-18/1b2b9740ea1e1eac8863348801352068dd918de1.pdf": "https://cleanuri.com/6z6G6D",
     "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5": "https://cleanuri.com/j9151r",
     "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf": "https://cleanuri.com/vGQWQ1",
-    "https://www.centenariodosul.pr.leg.br/legislacao/detalhe/1339": "https://cleanuri.com/0v1GE5"
+    "https://www.centenariodosul.pr.leg.br/legislacao/detalhe/1339": "https://cleanuri.com/0v1GE5",
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zLXlRaXRTUUtyTDY1dEpFUG4xUWxlR24wSmEtMEN3R3VYcW5KMGpwTGV3ZDVJaUNiZE5UWGNSZHhrNEo3WWRIelRzWjRCMElBWnJFN01mbGZTcjA?oc=5": "https://spoo.me/ZhyovH4"
   },
   "aiReviews": {
     "ea8ee5deacbc1c955b0812975620ab59ad4455152abe2e691d45eb2ecd3977a0": {
@@ -38639,12 +39003,24 @@
         "outputTokens": 94
       },
       "reviewedAt": "2026-09-28T23:49:53.946Z"
+    },
+    "9905e9ea7ec9ec88e8d2748dc0ce7171307819f55256a5ef72cdd16c85236abf": {
+      "status": "approved",
+      "category": "PROTOCOLO",
+      "evidence": "Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde do Mé",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 606,
+        "outputTokens": 87
+      },
+      "reviewedAt": "2026-09-29T06:54:18.695Z"
     }
   },
   "aiUsage": {
-    "day": "2026-09-28",
+    "day": "2026-09-29",
     "calls": 1,
-    "inputTokens": 1265,
-    "outputTokens": 94
+    "inputTokens": 606,
+    "outputTokens": 87
   }
 }
