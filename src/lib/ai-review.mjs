@@ -55,9 +55,17 @@ export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, time
   const payload = await response.json();
   let answer;
   try { answer = JSON.parse(payload.choices?.[0]?.message?.content || ''); }
-  catch { throw new Error('DeepSeek retornou JSON vazio ou inválido.'); }
+  catch {
+    const error = new Error('DeepSeek retornou JSON vazio ou inválido.');
+    error.code = 'INVALID_AI_DECISION';
+    throw error;
+  }
   const decision = validateAnswer(answer, input);
-  if (!decision) throw new Error('DeepSeek retornou decisão ou evidência inconsistente.');
+  if (!decision) {
+    const error = new Error('DeepSeek retornou decisão ou evidência inconsistente.');
+    error.code = 'INVALID_AI_DECISION';
+    throw error;
+  }
   return { ...decision, promptVersion: AI_PROMPT_VERSION, model: 'deepseek-flash',
     usage: { inputTokens: payload.usage?.prompt_tokens || 0, outputTokens: payload.usage?.completion_tokens || 0 } };
 }
@@ -107,13 +115,22 @@ export async function reviewQueue(items, state, {
       } catch (error) {
         audit.push({ id, status: 'deferred', reason: error.message });
         console.warn(`[ia] Revisão suspensa para ${id.slice(0, 10)}: ${error.message}`);
+        // Uma resposta inválida para um item não deve bloquear os demais; falhas de rede/API
+        // continuam interrompendo a rodada para evitar uma sequência de chamadas inúteis.
+        if (error.code === 'INVALID_AI_DECISION') continue;
         break;
       }
     }
-    // Divergência sobre rateio concreto fica na fila para auditoria; não se perde o registro.
+    // Apenas um contrato de rateio concreto merece auditoria manual. Linhas de orçamento,
+    // RREO e menções normativas rejeitadas pela IA não devem ocupar a fila indefinidamente.
     if (item.classification?.category === 'RATEIO' && ['rejected', 'disputed'].includes(review.status)) {
-      state.aiReviews[id] = { ...state.aiReviews[id], status: 'disputed' };
-      audit.push({ id, status: 'disputed', original: 'RATEIO', reviewed: 'IRRELEVANTE' });
+      if (concreteRateio(item)) {
+        state.aiReviews[id] = { ...state.aiReviews[id], status: 'disputed' };
+        audit.push({ id, status: 'disputed', original: 'RATEIO', reviewed: 'IRRELEVANTE' });
+        continue;
+      }
+      delete state.pending?.[id];
+      audit.push({ id, status: 'rejected', category: 'IRRELEVANTE', reason: 'rateio sem contrato concreto' });
       continue;
     }
     if (review.status === 'rejected') {

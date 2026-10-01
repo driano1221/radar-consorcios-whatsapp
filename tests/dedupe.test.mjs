@@ -5,6 +5,7 @@ import {
   enqueuePending,
   itemId,
   listPending,
+  reclassifyPending,
   markPendingFailure,
   markSeen,
   selectUnseen,
@@ -81,4 +82,18 @@ test('mantém candidato em fila até a confirmação do envio', () => {
   markSeen(state, fresh[0], '2026-09-14T14:00:00.000Z');
   assert.equal(listPending(state).length, 0);
   assert.equal(Object.keys(state.seen).length, 1);
+});
+
+test('reclassifica a fila antiga e descarta proposta sem aprovação', () => {
+  const proposal = { kind: 'gazette', title: 'Diário Oficial de Valinhos (SP)',
+    summary: 'Apresentação da proposta para ingresso ao SAMU Regional através de consórcio intermunicipal.',
+    url: 'https://exemplo.gov.br/proposta', classification: { category: 'ADESÃO', score: 11 } };
+  const approved = { kind: 'gazette', title: 'Diário Oficial de Município (MG)',
+    summary: 'Lei autoriza a adesão do Município ao Consórcio Intermunicipal de Saúde.',
+    url: 'https://exemplo.gov.br/lei', classification: { category: 'GERAL', score: 0 } };
+  const state = { pending: { [itemId(proposal)]: { item: proposal },
+    [itemId(approved)]: { item: approved } } };
+  assert.equal(reclassifyPending(state), 1);
+  assert.equal(listPending(state).length, 1);
+  assert.equal(listPending(state)[0].classification.category, 'ADESÃO');
 });

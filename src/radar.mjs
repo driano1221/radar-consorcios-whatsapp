@@ -7,6 +7,7 @@ import {
   markSeen,
   enqueuePending,
   listPending,
+  reclassifyPending,
   markPendingFailure,
   pruneState,
   saveState,
@@ -105,6 +106,10 @@ async function main() {
   const remainingToday = Math.max(0, config.maxPostsPerDay - sentToday);
   const discovered = selectUnseen(publishableRelevant, state);
   if (config.sendEnabled) enqueuePending(state, discovered);
+  if (config.sendEnabled) {
+    const removed = reclassifyPending(state, config.minimumScore);
+    if (removed) console.log(`[fila] ${removed} item(ns) antigos descartados após reclassificação.`);
+  }
   if (config.persistState) await saveState(config.stateFile, state);
   const available = config.sendEnabled ? listPending(state) : discovered;
   const reviewResult = shouldReviewWithAi(config, remainingToday)
