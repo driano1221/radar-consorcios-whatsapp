@@ -121,14 +121,27 @@ function hasPublicContext(text) {
 }
 
 function isGenericBudgetProvision(text) {
-  const explicitContract = /\b(contrato de rateio|contrato n\.?\s*\d+|celebram.{0,160}consorcio|objeto.{0,160}repasse)\b/.test(text);
+  const explicitContract = /\b(contrato n\.?\s*\d+|celebram.{0,160}consorcio|objeto.{0,160}repasse|clausula\s+(?:[a-z]+|\d+).{0,180}contrato de rateio)\b/.test(text);
   return (
     /\b(demonstrativo da despesa com pessoal|despesa bruta com pessoal|rgf.anexo)\b/.test(text) ||
+    /\b(valores transferidos por contrato de rateio)\b.{0,180}\b(despesas empenhadas|despesas liquidadas|despesas pagas|despesas executadas)\b/.test(text) ||
+    /\bdespesas com acoes e servicos publicos de saude\b.{0,120}\bexecutadas em consorcio publico\b/.test(text) ||
+    /\b(credito adicional suplementar|aberto credito adicional)\b.{0,650}\b(rateio|consorcio)\b/.test(text) ||
+    /\bdeverao ser discriminadas em acoes orcamentarias especificas\b.{0,350}\bcontrato de rateio\b/.test(text) ||
+    /\btransferencias? a consorcios intermunicipais de saude mediante contrato de rateio\b/.test(text) ||
+    /\btransferencia de recursos para consorcios publicos em decorrencia de contrato de rateio\b/.test(text) ||
+    /\bnao se aplicam as disposicoes\b.{0,160}\brecursos entregues a consorcios publicos mediante contrato de rateio\b/.test(text) ||
     (/\brateio do consorcio\b/.test(text) && /\b(subvencao social|termo de colaboracao|financiamento)\b/.test(text) && !explicitContract) ||
     /\blei orcamentaria\b.{0,500}\b(consorcios publicos|contrato de rateio)\b/.test(text) ||
     /\breservara recursos\b.{0,350}\bcontrato de rateio\b/.test(text) ||
     (/\brateio pela participacao em consorcio publico\b/.test(text) && !explicitContract)
   );
+}
+
+function isUnapprovedEntryProposal(text) {
+  return /\bproposta (?:para|de) (?:ingresso|adesao|integracao)\b/.test(text) &&
+    !/\b(lei|resolucao|decreto)\b.{0,120}\b(aprova|aprovou|autoriza|autorizou)\b.{0,140}\bproposta\b/.test(text) &&
+    !/\bproposta\b.{0,160}\b(foi aprovada|aprovada|foi autorizada|autorizada)\b/.test(text);
 }
 
 function isMeetingAgendaWithoutDecision(text) {
@@ -188,6 +201,10 @@ function evaluateSegment(item, evidence, index) {
   if (isMeetingAgendaWithoutDecision(text)) {
     score -= 12;
     reasons.push('rejeitado: agenda sem deliberação');
+  }
+  if (isUnapprovedEntryProposal(text)) {
+    score -= 12;
+    reasons.push('rejeitado: proposta de ingresso sem decisão comprovada no trecho');
   }
 
   const rejected = reasons.some((reason) => reason.startsWith('rejeitado:'));

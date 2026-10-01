@@ -53,7 +53,8 @@ test('fila preserva revisão aprovada, rejeita falso positivo e não paga duas v
 });
 
 test('discordância sobre rateio fica na fila e limite impede envio sem revisão', async () => {
-  const rateio = item('Município publicou contrato de rateio', 'RATEIO');
+  const rateio = { ...item('Município publicou contrato de rateio', 'RATEIO'), kind: 'gazette',
+    summary: 'Contrato de rateio celebrado com consórcio. CLÁUSULA QUARTA - DO VALOR E DA COMPOSIÇÃO DO CONTRATO.' };
   const next = item('Município cria consórcio', 'CRIAÇÃO');
   const state = { pending: { [itemId(rateio)]: { item: rateio } } };
   const reviewed = await reviewQueue([rateio, next], state, {
@@ -66,6 +67,32 @@ test('discordância sobre rateio fica na fila e limite impede envio sem revisão
   assert.ok(state.pending[itemId(rateio)]);
 });
 
+test('rateio meramente contábil rejeitado pela IA sai da fila', async () => {
+  const balance = { ...item('Diário Oficial de Antas', 'RATEIO'), kind: 'gazette',
+    summary: 'RREO – VALORES TRANSFERIDOS POR CONTRATO DE RATEIO. DESPESAS EXECUTADAS.' };
+  const id = itemId(balance);
+  const state = { pending: { [id]: { item: balance } } };
+  const reviewed = await reviewQueue([balance], state, {
+    reviewImpl: async () => result('rejected', 'IRRELEVANTE'),
+  });
+  assert.equal(reviewed.selected.length, 0);
+  assert.equal(reviewed.audit[0].status, 'rejected');
+  assert.equal(state.pending[id], undefined);
+});
+
+test('rateio contábil já marcado como divergente é limpo sem nova chamada', async () => {
+  const balance = { ...item('Diário Oficial de Deodápolis', 'RATEIO'), kind: 'gazette',
+    summary: 'VALORES TRANSFERIDOS POR CONTRATO DE RATEIO (a) 0,00 DESPESAS PAGAS 0,00.' };
+  const id = itemId(balance);
+  const state = { pending: { [id]: { item: balance } },
+    aiReviews: { [id]: result('disputed', 'IRRELEVANTE') } };
+  const reviewed = await reviewQueue([balance], state, {
+    reviewImpl: async () => { throw new Error('não deve chamar a IA novamente'); },
+  });
+  assert.equal(reviewed.callsRun, 0);
+  assert.equal(state.pending[id], undefined);
+});
+
 test('falha de API não vira aprovação automática', async () => {
   const candidate = item('Município integra consórcio', 'ADESÃO');
   const state = { pending: { [itemId(candidate)]: { item: candidate } } };
@@ -75,6 +102,27 @@ test('falha de API não vira aprovação automática', async () => {
   assert.equal(reviewed.selected.length, 0);
   assert.equal(reviewed.audit[0].status, 'deferred');
   assert.ok(state.pending[itemId(candidate)]);
+});
+
+test('resposta inválida da IA adia só o item afetado e não bloqueia o próximo', async () => {
+  const broken = item('Proposta de ingresso no consórcio', 'ADESÃO');
+  const valid = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
+  const state = { pending: {
+    [itemId(broken)]: { item: broken }, [itemId(valid)]: { item: valid },
+  } };
+  const reviewed = await reviewQueue([broken, valid], state, {
+    reviewImpl: async (entry) => {
+      if (entry === broken) {
+        const error = new Error('DeepSeek retornou decisão ou evidência inconsistente.');
+        error.code = 'INVALID_AI_DECISION';
+        throw error;
+      }
+      return result('approved', 'ADESÃO AUTORIZADA');
+    },
+  });
+  assert.deepEqual(reviewed.audit.map(({ status }) => status), ['deferred', 'approved']);
+  assert.equal(reviewed.selected.length, 1);
+  assert.ok(state.pending[itemId(broken)]);
 });
 
 test('resumo semanal revisa todos os achados, retém rateio documentado e remove ruído', async () => {

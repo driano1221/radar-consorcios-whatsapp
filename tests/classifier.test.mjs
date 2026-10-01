@@ -132,3 +132,23 @@ test('penaliza previsão orçamentária genérica de rateio', () => {
   });
   assert.ok(result.score < 5);
 });
+
+test('rejeita menções a rateio em RREO, crédito suplementar e diretriz orçamentária', () => {
+  const summaries = [
+    'Despesas com ASPS executadas em consórcio público. VALORES TRANSFERIDOS POR CONTRATO DE RATEIO (a) DESPESAS EMPENHADAS.',
+    'Fica aberto crédito adicional suplementar destinado a DESPESAS COM RATEIO DO CONSÓRCIO INTERMUNICIPAL DE SAÚDE.',
+    'Deverão ser discriminadas em ações orçamentárias específicas as dotações destinadas à transferência de recursos para Consórcios Públicos em decorrência de contrato de rateio.',
+    'MANUT. DO CONSÓRCIO COM O CISSUL/SAMU - CONTRATO DE RATEIO 3171.70.00 - RATEIO PELA PARTICIPAÇÃO EM CONSÓRCIO PÚBLICO.',
+  ];
+  for (const summary of summaries) {
+    const result = classifyItem({ kind: 'gazette', title: 'Diário Oficial de Exemplo', summary });
+    assert.ok(result.score < 5, `${summary}: ${result.score}`);
+  }
+});
+
+test('proposta de ingresso sem decisão no trecho não vira adesão', () => {
+  const result = classifyItem({ kind: 'gazette', title: 'Diário Oficial de Valinhos (SP)',
+    summary: 'Aprovado por unanimidade o item anterior. 4) Apresentação, discussão e votação da Proposta para ingresso ao SAMU Regional, através de um consórcio intermunicipal.' });
+  assert.ok(result.score < 5);
+  assert.match(result.reasons.join(' '), /proposta de ingresso sem decisão/);
+});

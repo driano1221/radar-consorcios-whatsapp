@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { normalizeForMatch } from './text.mjs';
+import { classifyItem, isPublishableClassification } from './classifier.mjs';
 
 const STOP_WORDS = new Set([
   'a', 'ao', 'aos', 'as', 'com', 'consorcio', 'consorcios', 'da', 'das', 'de', 'do', 'dos', 'e',
@@ -180,6 +181,22 @@ export function listPending(state) {
       return score || new Date(left.queuedAt) - new Date(right.queuedAt);
     })
     .map((record) => record.item);
+}
+
+// Uma regra editorial corrigida deve valer para a fila persistida antes de
+// consultar a IA ou enviar itens classificados em execuções antigas.
+export function reclassifyPending(state, minimumScore = 5) {
+  let removed = 0;
+  for (const [id, record] of Object.entries(state.pending || {})) {
+    const classification = classifyItem(record.item);
+    if (!isPublishableClassification(classification, minimumScore)) {
+      delete state.pending[id];
+      removed += 1;
+    } else {
+      record.item.classification = classification;
+    }
+  }
+  return removed;
 }
 
 export function markPendingFailure(state, items, error, attemptedAt = new Date().toISOString()) {
