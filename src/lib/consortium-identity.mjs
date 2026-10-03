@@ -24,9 +24,9 @@ export function identityKey(name) {
   return normalizeForMatch(name).replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
-function cleanName(value) {
+function cleanName(value, { preserveDashes = false } = {}) {
   let text = normalizeWhitespace(value)
-    .split(/\s+[–—-]\s+|\s*\([A-Z][A-Z\d-]{2,15}\)/)[0]
+    .split(preserveDashes ? /\s*\([A-Z][A-Z\d-]{2,15}\)/ : /\s+[–—-]\s+|\s*\([A-Z][A-Z\d-]{2,15}\)/)[0]
     .split(/[.,;:()]|\.\.\./)[0]
     .split(STOP)[0]
     .replace(/\s+(?:e|de|da|do|dos|das|para|na|no|com|em|a|o)$/i, '')
@@ -45,7 +45,7 @@ export function findIdentityMentions(row) {
   ];
   const mentions = [];
   for (const curated of row.curatedMentions || []) {
-    const name = cleanName(curated.nome || '');
+    const name = cleanName(curated.nome || '', { preserveDashes: true });
     if (!name || !/^https:\/\//i.test(curated.fonte_evidencia || '')) continue;
     mentions.push({ name, acronym: curated.sigla || '', cnpj: normalizeCnpj(curated.cnpj || ''),
       origin: 'fonte complementar', evidence: curated.evidencia || name,
@@ -134,7 +134,8 @@ export function buildIdentityCatalog(rows, previous = []) {
       let entity = identities.get(id);
       if (!entity) {
         entity = { id, nome: mention.name, sigla: mention.acronym, cnpj: mention.cnpj,
-          aliases: [], situacao: 'candidato — identidade não conferida', fonte_inicial: row.url };
+          aliases: [], situacao: 'candidato — identidade não conferida',
+          fonte_inicial: mention.evidenceUrl || row.url };
         identities.set(id, entity);
       } else {
         if (mention.cnpj && entity.cnpj && mention.cnpj !== entity.cnpj) {

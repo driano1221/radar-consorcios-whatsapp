@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { catalogRecord, mergeCatalogRecord, mergeStateIntoCatalog } from '../src/lib/catalog.mjs';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import { catalogRecord, mergeCatalogRecord, mergeStateIntoCatalog, saveCatalog } from '../src/lib/catalog.mjs';
 
 const at = '2026-10-02T15:00:00.000Z';
 
@@ -57,4 +60,26 @@ test('envio antigo sem evidência não vira fato confirmado nem supera triagem a
     source: 'Portal', summary: 'O consórcio existente cria agenda de reuniões.',
     classification: { category: 'CRIAÇÃO', score: 12 } }, firstSeenAt: at, lastSeenAt: at } } });
   assert.equal([...map.values()][0].tipo_evento, 'GERAL');
+});
+
+test('catálogo aplica evidência complementar por documento e exporta sua URL', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-catalogo-'));
+  try {
+    const row = catalogRecord({ title: 'Diário Oficial de Dracena (SP)',
+      url: 'https://exemplo.org/diario.pdf', source: 'Diário Oficial',
+      classification: { category: 'PROTOCOLO', score: 8 } }, at, at);
+    const evidence = { documento_id: row.id,
+      nome: 'Consórcio Intermunicipal de Serviços da Nova Alta Paulista', sigla: 'CISNAP',
+      fonte_evidencia: 'https://exemplo.org/diario.pdf', evidencia: 'PDF p. 2: nome e sigla' };
+    await writeFile(path.join(directory, 'evidencias-complementares.ndjson'), `${JSON.stringify(evidence)}\n`);
+    const result = await saveCatalog(directory, new Map([[row.id, row]]));
+    assert.equal(result.consortia, 1);
+    assert.equal(result.pendingIdentity, 0);
+    const links = await readFile(path.join(directory, 'vinculos-documentos.csv'), 'utf8');
+    assert.match(links, /url_evidencia/);
+    assert.match(links, /fonte complementar conferida/);
+    assert.match(links, /https:\/\/exemplo.org\/diario.pdf/);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
 });

@@ -231,7 +231,7 @@ export async function saveCatalog(directory, records) {
     '# Panorama da base histórica', '',
     `- ${all.length} documentos recuperados do histórico de coletas.`,
     `- ${relevant.length} registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.`,
-    `- ${identities.length} identidades candidatas de consórcios; ${links.filter((link) => link.consorcio_id).length} vínculos documentais automáticos, ainda não confirmados manualmente.`,
+    `- ${identities.length} identidades candidatas de consórcios; ${links.filter((link) => link.consorcio_id).length} vínculos documentais, dos quais ${links.filter((link) => link.consorcio_id && link.origem === 'fonte complementar').length} apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.`,
     `- ${pendingIdentity.length} documentos relevantes sem identidade segura, listados em \`identidade-pendente.csv\`.`,
     '', '## Registros por tema', '',
     '| Tema | Registros |', '|---|---:|',

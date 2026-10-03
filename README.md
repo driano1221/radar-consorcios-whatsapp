@@ -190,3 +190,7 @@ Comandos adicionais: `npm run weekly` gera a prévia; `node scripts/validate-sou
 As mensagens usam a sintaxe nativa do WhatsApp (`*negrito*`, `_itálico_`, `> citação` e lista numerada), com URL simples em vez de link Markdown. Resumos extensos são divididos em partes de até 3.400 caracteres, preservando todos os achados. O estudo e os limites da IA estão em [docs/avaliacao-ia-2026-09-22.md](docs/avaliacao-ia-2026-09-22.md).
 
 Detalhes, fontes, exemplos antes/depois e limitações: [pesquisa e validação](docs/PESQUISA_E_VALIDACAO_2026-09-14.md).
+
+## Base histórica de consórcios
+
+`npm run catalog:update` reconstrói `data/catalogo/consorcios.csv`, `vinculos-documentos.csv` e `identidade-pendente.csv` a partir do histórico. `evidencias-complementares.ndjson` guarda as conferências externas por documento; `recuperacao-pdf.ndjson` contém trechos paginados de PDFs antigos, **não** fatos confirmados. O vínculo de uma entidade com um documento não confirma adesão, retirada ou pagamento. A [auditoria de identidades](docs/AUDITORIA_IDENTIDADES_2026-10.md) registra método, números, fontes e pendências.

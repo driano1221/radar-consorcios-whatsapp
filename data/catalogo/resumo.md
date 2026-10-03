@@ -2,8 +2,8 @@
 
 - 1148 documentos recuperados do histórico de coletas.
 - 68 registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.
-- 15 identidades candidatas de consórcios; 17 vínculos documentais automáticos, ainda não confirmados manualmente.
-- 51 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 26 identidades candidatas de consórcios; 39 vínculos documentais, dos quais 27 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 30 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
