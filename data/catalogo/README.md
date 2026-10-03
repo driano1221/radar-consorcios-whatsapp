@@ -10,6 +10,7 @@ Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial 
 - `vinculos-documentos.csv`: uma linha por menção explícita, ligando o `id` de `arquivo-coletas.ndjson` ao `id` do consórcio, com origem e evidência. Um documento pode mencionar mais de um consórcio. Vínculo não comprova adesão nem veracidade do evento.
 - `identidades.ndjson`: registro técnico persistente das identidades e aliases; conserva a chave quando CNPJ ou variação de nome aparece depois. Divergência de CNPJ fica sem vínculo e exige revisão humana.
 - `identidade-pendente.csv`: documentos potencialmente relevantes cujo trecho não sustenta um vínculo seguro; é a fila de conferência da identidade, não uma lista de consórcios inexistentes.
+- `revisoes-identidades.ndjson`: exceções editoriais lacradas ao hash do trecho. Uma sigla ou nome ambíguo permanece pendente até que o documento permita identificar a entidade sem adivinhação.
 - `arquivo-coletas.ndjson`: arquivo técnico de todos os documentos recuperáveis do histórico, inclusive os classificados como `GERAL`, para auditoria e futura reclassificação. Uma linha JSON por URL canônica.
 
 ## Como ler um evento

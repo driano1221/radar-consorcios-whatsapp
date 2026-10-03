@@ -54,11 +54,11 @@ test('sigla antes do nome com travessão recupera CONSIRC', () => {
   assert.equal(result.identities[0].nome, 'CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DA REGIÃO DE CATANDUVA');
 });
 
-test('hífen sem espaço antes da sigla recupera CISMESTR', () => {
+test('hífen sem espaço antes da sigla recupera CISMETRO', () => {
   const result = buildIdentityCatalog([row('rio-claro',
-    'EMPRESA: CONSÓRCIO INTERMUNICIPAL DE SAÚDE NA REGIÃO METROPOLITANA DE PIRACICABA- CISMESTR')]);
+    'EMPRESA: CONSÓRCIO INTERMUNICIPAL DE SAÚDE NA REGIÃO METROPOLITANA DE PIRACICABA- CISMETRO')]);
   assert.equal(result.identities.length, 1);
-  assert.equal(result.identities[0].sigla, 'CISMESTR');
+  assert.equal(result.identities[0].sigla, 'CISMETRO');
 });
 
 test('sigla isolada só vincula quando já conhecida, única e no contexto de consórcio', () => {

@@ -38,6 +38,7 @@ function cleanName(value, { preserveDashes = false } = {}) {
 
 export function findIdentityMentions(row) {
   if (!row || row.tipo_evento === 'GERAL' || row.tipo_evento === 'NÃO CLASSIFICADO') return [];
+  if (row.suppressAutoIdentity) return [];
   const fields = [
     ['metadado', row.consorcio || ''],
     ['trecho', row.trecho || ''],
@@ -168,6 +169,7 @@ export function buildIdentityCatalog(rows, previous = []) {
     byAcronym.set(key, current && current !== entity.id ? null : entity.id);
   }
   for (const row of rows) {
+    if (row.suppressAutoIdentity) continue;
     const content = `${row.trecho || ''} ${row.titulo || ''}`;
     if (!/\bcons[oó]rcio\b/i.test(content)) continue;
     for (const [key, id] of byAcronym) {

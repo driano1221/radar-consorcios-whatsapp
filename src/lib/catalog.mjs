@@ -214,6 +214,18 @@ export async function saveCatalog(directory, records) {
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
+  let identityReviews = [];
+  try {
+    identityReviews = (await readFile(path.join(directory, 'revisoes-identidades.ndjson'), 'utf8'))
+      .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  const suppressedIdentity = new Map(identityReviews.filter((review) =>
+    review.decisao === 'pendente' && review.documento_id && review.motivo &&
+    /^https:\/\//.test(review.fonte_evidencia || '') &&
+    /^[a-f0-9]{64}$/.test(review.trecho_sha256 || ''))
+    .map((review) => [review.documento_id, review]));
   const evidenceByDocument = new Map();
   for (const item of reviewedEvidence) {
     if (!item.documento_id || !item.nome || !item.fonte_evidencia) continue;
@@ -221,7 +233,9 @@ export async function saveCatalog(directory, records) {
     evidenceByDocument.get(item.documento_id).push(item);
   }
   const enriched = relevant.map((row) => ({ ...row,
-    curatedMentions: evidenceByDocument.get(row.id) || [] }));
+    curatedMentions: evidenceByDocument.get(row.id) || [],
+    suppressAutoIdentity: suppressedIdentity.get(row.id)?.trecho_sha256 ===
+      createHash('sha256').update(row.trecho || '').digest('hex') }));
   const { identities, links } = buildIdentityCatalog(enriched, previousIdentities);
   await writeFile(path.join(directory, 'identidades.ndjson'), identities.map((row) => JSON.stringify(row)).join('\n') + '\n', 'utf8');
   const linkFields = ['documento_id', 'consorcio_id', 'situacao', 'nome_mencionado',
@@ -229,12 +243,13 @@ export async function saveCatalog(directory, records) {
   await writeFile(path.join(directory, 'vinculos-documentos.csv'), [linkFields.join(','),
     ...links.map((row) => linkFields.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
   const linkedDocuments = new Set(links.map((link) => link.consorcio_id ? link.documento_id : '').filter(Boolean));
-  const pendingIdentity = relevant.filter((row) => !linkedDocuments.has(row.id));
+  const pendingIdentity = enriched.filter((row) => !linkedDocuments.has(row.id));
   const pendingFields = ['documento_id', 'motivo', 'tipo_evento', 'titulo', 'url'];
   await writeFile(path.join(directory, 'identidade-pendente.csv'), [pendingFields.join(','),
     ...pendingIdentity.map((row) => {
       const values = { documento_id: row.id,
-        motivo: row.trecho ? 'nome completo e sigla não confirmados no trecho' : 'sem trecho preservado',
+        motivo: row.suppressAutoIdentity ? suppressedIdentity.get(row.id).motivo
+          : row.trecho ? 'nome completo e sigla não confirmados no trecho' : 'sem trecho preservado',
         tipo_evento: row.tipo_evento, titulo: row.titulo, url: row.url };
       return pendingFields.map((field) => csvCell(values[field])).join(',');
     })].join('\n') + '\n', 'utf8');

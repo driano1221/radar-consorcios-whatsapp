@@ -130,3 +130,28 @@ test('revisão editorial corrige categoria sem declarar adesão consumada', asyn
     await rm(directory, { recursive: true, force: true });
   }
 });
+
+test('sigla suspeita fica sem identidade até conferir o ato, com revisão lacrada ao trecho', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-identidade-pendente-'));
+  try {
+    const row = catalogRecord({ kind: 'gazette', title: 'Diário Oficial de Rio Claro (SP)',
+      url: 'https://exemplo.org/rio-claro.pdf', source: 'Diário Oficial',
+      classification: { category: 'FINANÇAS', score: 8,
+        evidenceText: 'CONSÓRCIO INTERMUNICIPAL DE SAÚDE NA REGIÃO METROPOLITANA DE PIRACICABA- CISMESTR' } }, at, at);
+    const review = { documento_id: row.id, decisao: 'pendente',
+      motivo: 'sigla diverge do portal oficial', fonte_evidencia: 'https://exemplo.org/protocolo.pdf',
+      trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+    await writeFile(path.join(directory, 'revisoes-identidades.ndjson'), `${JSON.stringify(review)}\n`);
+    const first = await saveCatalog(directory, new Map([[row.id, row]]));
+    assert.equal(first.relevant, 1);
+    assert.equal(first.links, 0);
+    assert.equal(first.pendingIdentity, 1);
+    assert.match(await readFile(path.join(directory, 'identidade-pendente.csv'), 'utf8'),
+      /sigla diverge do portal oficial/);
+    const changed = { ...row, trecho: `${row.trecho} Novo ato com sigla confirmada - CISMETRO.` };
+    const second = await saveCatalog(directory, new Map([[row.id, changed]]));
+    assert.equal(second.links, 1, 'revisão antiga não vale para evidência nova');
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
