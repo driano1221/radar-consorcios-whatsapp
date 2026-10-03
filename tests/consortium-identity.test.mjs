@@ -99,3 +99,23 @@ test('candidato antigo sem menção atual não fica preso no cadastro', () => {
     sigla: '', cnpj: '', aliases: [], situacao: 'candidato — identidade não conferida' }];
   assert.deepEqual(buildIdentityCatalog([], previous).identities, []);
 });
+
+test('fonte complementar revisada vincula um documento antigo sem trecho e preserva URL da evidência', () => {
+  const document = row('antigo', '', { curatedMentions: [{
+    nome: 'Consórcio Intermunicipal de Serviços da Nova Alta Paulista', sigla: 'CISNAP',
+    fonte_evidencia: 'https://exemplo.org/diario.pdf', evidencia: 'Página 2: nome e sigla do consórcio',
+  }] });
+  const { identities, links } = buildIdentityCatalog([document]);
+  assert.equal(identities.length, 1);
+  assert.equal(links[0].url_evidencia, 'https://exemplo.org/diario.pdf');
+  assert.match(links[0].situacao, /pendente de revisão humana/);
+  assert.equal(links[0].evidencia, 'Página 2: nome e sigla do consórcio');
+});
+
+test('fonte complementar sem HTTPS ou com nome genérico não vira identidade', () => {
+  const document = row('duvidoso', '', { curatedMentions: [
+    { nome: 'Consórcio Intermunicipal de Serviços da Nova Alta Paulista', fonte_evidencia: 'http://exemplo.org' },
+    { nome: 'Consórcio Intermunicipal', fonte_evidencia: 'https://exemplo.org' },
+  ] });
+  assert.equal(buildIdentityCatalog([document]).identities.length, 0);
+});

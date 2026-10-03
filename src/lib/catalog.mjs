@@ -184,10 +184,25 @@ export async function saveCatalog(directory, records) {
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
-  const { identities, links } = buildIdentityCatalog(relevant, previousIdentities);
+  let reviewedEvidence = [];
+  try {
+    reviewedEvidence = (await readFile(path.join(directory, 'evidencias-complementares.ndjson'), 'utf8'))
+      .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  const evidenceByDocument = new Map();
+  for (const item of reviewedEvidence) {
+    if (!item.documento_id || !item.nome || !item.fonte_evidencia) continue;
+    if (!evidenceByDocument.has(item.documento_id)) evidenceByDocument.set(item.documento_id, []);
+    evidenceByDocument.get(item.documento_id).push(item);
+  }
+  const enriched = relevant.map((row) => ({ ...row,
+    curatedMentions: evidenceByDocument.get(row.id) || [] }));
+  const { identities, links } = buildIdentityCatalog(enriched, previousIdentities);
   await writeFile(path.join(directory, 'identidades.ndjson'), identities.map((row) => JSON.stringify(row)).join('\n') + '\n', 'utf8');
   const linkFields = ['documento_id', 'consorcio_id', 'situacao', 'nome_mencionado',
-    'sigla_mencionada', 'cnpj_mencionado', 'origem', 'evidencia', 'url'];
+    'sigla_mencionada', 'cnpj_mencionado', 'origem', 'evidencia', 'url', 'url_evidencia'];
   await writeFile(path.join(directory, 'vinculos-documentos.csv'), [linkFields.join(','),
     ...links.map((row) => linkFields.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
   const linkedDocuments = new Set(links.map((link) => link.consorcio_id ? link.documento_id : '').filter(Boolean));

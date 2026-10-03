@@ -44,6 +44,13 @@ export function findIdentityMentions(row) {
     ['título', row.titulo || ''],
   ];
   const mentions = [];
+  for (const curated of row.curatedMentions || []) {
+    const name = cleanName(curated.nome || '');
+    if (!name || !/^https:\/\//i.test(curated.fonte_evidencia || '')) continue;
+    mentions.push({ name, acronym: curated.sigla || '', cnpj: normalizeCnpj(curated.cnpj || ''),
+      origin: 'fonte complementar', evidence: curated.evidencia || name,
+      evidenceUrl: curated.fonte_evidencia });
+  }
   for (const [origin, text] of fields) {
     if (origin === 'metadado') {
       const name = cleanName(text);
@@ -92,7 +99,8 @@ export function findIdentityMentions(row) {
   for (const mention of mentions) {
     const key = identityKey(mention.name);
     const old = unique.get(key);
-    if (!old || (mention.cnpj ? 4 : 0) + (mention.acronym ? 2 : 0) > (old.cnpj ? 4 : 0) + (old.acronym ? 2 : 0)) unique.set(key, mention);
+    if (!old || (mention.origin === 'fonte complementar' ? 8 : 0) + (mention.cnpj ? 4 : 0) + (mention.acronym ? 2 : 0) >
+      (old.origin === 'fonte complementar' ? 8 : 0) + (old.cnpj ? 4 : 0) + (old.acronym ? 2 : 0)) unique.set(key, mention);
   }
   return [...unique.values()];
 }
@@ -118,7 +126,8 @@ export function buildIdentityCatalog(rows, previous = []) {
       if (nameId && cnpjId && nameId !== cnpjId) {
         links.push({ documento_id: row.id, consorcio_id: '', situacao: 'conflito de identidade — revisão humana',
           nome_mencionado: mention.name, sigla_mencionada: mention.acronym, cnpj_mencionado: mention.cnpj,
-          origem: mention.origin, evidencia: mention.evidence, url: row.url });
+          origem: mention.origin, evidencia: mention.evidence, url: row.url,
+          url_evidencia: mention.evidenceUrl || row.url });
         continue;
       }
       const id = cnpjId || nameId || newIdentityId(mention.name);
@@ -131,7 +140,8 @@ export function buildIdentityCatalog(rows, previous = []) {
         if (mention.cnpj && entity.cnpj && mention.cnpj !== entity.cnpj) {
           links.push({ documento_id: row.id, consorcio_id: '', situacao: 'CNPJ divergente — revisão humana',
             nome_mencionado: mention.name, sigla_mencionada: mention.acronym, cnpj_mencionado: mention.cnpj,
-            origem: mention.origin, evidencia: mention.evidence, url: row.url });
+            origem: mention.origin, evidencia: mention.evidence, url: row.url,
+            url_evidencia: mention.evidenceUrl || row.url });
           continue;
         }
         if (key !== identityKey(entity.nome) && !entity.aliases.some((alias) => identityKey(alias) === key)) entity.aliases.push(mention.name);
@@ -140,9 +150,13 @@ export function buildIdentityCatalog(rows, previous = []) {
       }
       byName.set(key, id);
       if (mention.cnpj) byCnpj.set(mention.cnpj, id);
-      links.push({ documento_id: row.id, consorcio_id: id, situacao: 'menção automática — identidade não conferida',
+      links.push({ documento_id: row.id, consorcio_id: id,
+        situacao: mention.origin === 'fonte complementar'
+          ? 'fonte complementar conferida — identidade pendente de revisão humana'
+          : 'menção automática — identidade não conferida',
         nome_mencionado: mention.name, sigla_mencionada: mention.acronym, cnpj_mencionado: mention.cnpj,
-        origem: mention.origin, evidencia: mention.evidence, url: row.url });
+        origem: mention.origin, evidencia: mention.evidence, url: row.url,
+        url_evidencia: mention.evidenceUrl || row.url });
     }
   }
   const byAcronym = new Map();
@@ -166,7 +180,8 @@ export function buildIdentityCatalog(rows, previous = []) {
       if (!/\bcons[oó]rcio\b/i.test(evidence)) continue;
       links.push({ documento_id: row.id, consorcio_id: id,
         situacao: 'sigla conhecida no contexto — revisão humana', nome_mencionado: '',
-        sigla_mencionada: acronym, cnpj_mencionado: '', origem: 'sigla', evidencia: evidence.slice(0, 240), url: row.url });
+        sigla_mencionada: acronym, cnpj_mencionado: '', origem: 'sigla', evidencia: evidence.slice(0, 240),
+        url: row.url, url_evidencia: row.url });
     }
   }
   const linkedIds = new Set(links.map((link) => link.consorcio_id).filter(Boolean));
