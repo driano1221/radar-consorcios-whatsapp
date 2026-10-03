@@ -71,3 +71,9 @@ Os dois PDFs antes acima de 25 MiB foram processados em execução separada. Mar
 Os dez pendentes são: Apucarana, Piranhas, Maracaju, duas matérias sobre inadimplência municipal em MT, Valinhos (identidade formal não confirmada), Araçariguama, Votuporanga (consórcio do contrato não confirmado), Campo Mourão e Maravilha. Edições estaduais de AL contêm atos de muitos municípios e consórcios; não atribuir o primeiro nome encontrado ao município da manchete. Os três PDFs sem menção pesquisável e Maracaju podem exigir OCR ou consulta ao portal editor. As notícias de MT são eventos relevantes, mas não permitem atribuir cada município a um consórcio específico com a evidência disponível.
 
 Próximo passo analítico: verificar os dez casos remanescentes e validar a amostra dos 12 vínculos automáticos. Não usar o catálogo para inferir composição ou data de adesão sem o ato constitutivo, a ratificação e o marco temporal pertinentes.
+
+## Regressão dos falsos positivos — 03/10/2026
+
+Os 18 documentos marcados `nao_evento` agora são reexecutados em teste automático a partir dos trechos arquivados ou recuperados dos PDFs. Antes do ajuste, cinco ainda eram publicáveis pelas regras locais: Camaquã, Jaboticabal, Candeias, Votuporanga e Senhor do Bonfim. O classificador passou a rejeitar especificamente essas menções normativas, listas orçamentárias e quadros contábeis. O teste também simula uma fila antiga e um resumo semanal com rótulos anteriores: os 18 devem ser removidos da fila e nenhum pode compor o boletim.
+
+Essa proteção atua sobre o **trecho disponível**, não equivale a ler integralmente cada edição. Uma edição pode conter outro ato consorcial legítimo em página diferente; nesse caso, é preciso classificar o excerto desse ato separadamente. Mensagens já enviadas não são apagadas retroativamente.

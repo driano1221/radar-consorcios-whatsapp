@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { canonicalUrl, selectUnseen } from './dedupe.mjs';
-import { isPublishableClassification } from './classifier.mjs';
+import { classifyItem, isPublishableClassification } from './classifier.mjs';
 import { normalizeForMatch } from './text.mjs';
 
 function weeklyFinding(item) {
@@ -9,6 +9,14 @@ function weeklyFinding(item) {
   const evidence = normalizeForMatch(`${item.classification?.evidenceText || ''} ${item.summary || ''}`);
   const title = normalizeForMatch(item.title || '');
   if (item.kind === 'gazette') {
+    // O estado pode conter uma classificação anterior à correção editorial.
+    // Reaplicar as regras ao trecho guardado impede que o boletim ressuscite
+    // rubricas, atas de preços e outros falsos positivos já descartados.
+    const selectedEvidence = item.classification?.evidenceText;
+    const fresh = classifyItem(selectedEvidence
+      ? { ...item, excerpts: [selectedEvidence] }
+      : item);
+    if (!isPublishableClassification(fresh)) return null;
     if (category === 'RATEIO' && /balanco patrimonial|relatorio resumido da execucao orcamentaria|demonstrativo da despesa com manutencao|nao se aplicam.{0,160}recursos entregues a consorcios publicos/.test(evidence)) return null;
     if (category === 'PROTOCOLO' && /extrato do contrato de prestacao de servicos/.test(evidence) && /de acordo com o protocolo de intencoes/.test(evidence)) return null;
     if (category === 'CONTROLE' && /constitui ato de improbidade administrativa/.test(evidence) && /contrato de rateio/.test(evidence) && !/auditoria|investigacao|irregularidade apurada|contas rejeitadas/.test(evidence)) {

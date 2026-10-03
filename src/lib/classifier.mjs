@@ -124,6 +124,10 @@ function hasPublicContext(text) {
 function isGenericBudgetProvision(text) {
   const explicitContract = /\b(contrato n\.?\s*\d+|celebram.{0,160}consorcio|objeto.{0,160}repasse|clausula\s+(?:[a-z]+|\d+).{0,180}contrato de rateio)\b/.test(text);
   return (
+    /\bnao se aplicam a?s? disposicoes\b.{0,160}\brecursos entregues a consorcios publicos mediante contrato de rateio\b/.test(text) ||
+    /\brateio do consorcio intermunicipal\b.{0,100}\b(servicos medicos|despesas|pagamentos|fornecedores)\b/.test(text) ||
+    /creditos? de consorcios publicos decorrentes de contrato de rateio\b/.test(text) ||
+    /\bparticipacao em consorcio publico\s*-\s*execucao de contrato de rateio\b/.test(text) ||
     /\b(demonstrativo da despesa com pessoal|despesa bruta com pessoal|rgf.anexo)\b/.test(text) ||
     /\b(valores transferidos por contrato de rateio)\b.{0,180}\b(despesas empenhadas|despesas liquidadas|despesas pagas|despesas executadas)\b/.test(text) ||
     /\bdespesas com acoes e servicos publicos de saude\b.{0,120}\bexecutadas em consorcio publico\b/.test(text) ||
@@ -203,6 +207,11 @@ function evaluateSegment(item, evidence, index) {
   if (isGenericBudgetProvision(text)) {
     score -= 12;
     reasons.push('rejeitado: previsão orçamentária genérica');
+  }
+  if (/\bmodalidade(?:s)? de aplicacao\s*\d+\b/.test(text) &&
+    /\bexecucao orcamentaria delegada a consorcios publicos\b/.test(text)) {
+    score -= 30;
+    reasons.push('rejeitado: lista de modalidades orçamentárias');
   }
   if (isMeetingAgendaWithoutDecision(text)) {
     score -= 12;
