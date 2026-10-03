@@ -4,6 +4,7 @@ import path from 'node:path';
 import { canonicalUrl } from './dedupe.mjs';
 import { classifyItem } from './classifier.mjs';
 import { normalizeWhitespace } from './text.mjs';
+import { buildIdentityCatalog } from './consortium-identity.mjs';
 
 const FIELDS = [
   'id', 'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
@@ -176,19 +177,36 @@ export async function saveCatalog(directory, records) {
   await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), all.map((row) => JSON.stringify(row)).join('\n') + '\n');
   await writeFile(path.join(directory, 'eventos.csv'), [FIELDS.join(','), ...relevant.map((row) =>
     FIELDS.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
-  const consortia = new Map();
-  for (const row of relevant) {
-    if (!row.consorcio) continue;
-    const key = `${row.consorcio.toLowerCase()}|${row.sigla.toLowerCase()}`;
-    const old = consortia.get(key);
-    consortia.set(key, { nome: row.consorcio, sigla: row.sigla,
-      registros: (old?.registros || 0) + 1, fonte_exemplo: old?.fonte_exemplo || row.url,
-      situacao: 'identidade citada na fonte — composição não verificada' });
+  let previousIdentities = [];
+  try {
+    previousIdentities = (await readFile(path.join(directory, 'identidades.ndjson'), 'utf8'))
+      .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
   }
-  const entityFields = ['nome', 'sigla', 'registros', 'fonte_exemplo', 'situacao'];
+  const { identities, links } = buildIdentityCatalog(relevant, previousIdentities);
+  await writeFile(path.join(directory, 'identidades.ndjson'), identities.map((row) => JSON.stringify(row)).join('\n') + '\n', 'utf8');
+  const linkFields = ['documento_id', 'consorcio_id', 'situacao', 'nome_mencionado',
+    'sigla_mencionada', 'cnpj_mencionado', 'origem', 'evidencia', 'url'];
+  await writeFile(path.join(directory, 'vinculos-documentos.csv'), [linkFields.join(','),
+    ...links.map((row) => linkFields.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
+  const linkedDocuments = new Set(links.map((link) => link.consorcio_id ? link.documento_id : '').filter(Boolean));
+  const pendingIdentity = relevant.filter((row) => !linkedDocuments.has(row.id));
+  const pendingFields = ['documento_id', 'motivo', 'tipo_evento', 'titulo', 'url'];
+  await writeFile(path.join(directory, 'identidade-pendente.csv'), [pendingFields.join(','),
+    ...pendingIdentity.map((row) => {
+      const values = { documento_id: row.id,
+        motivo: row.trecho ? 'nome completo e sigla não confirmados no trecho' : 'sem trecho preservado',
+        tipo_evento: row.tipo_evento, titulo: row.titulo, url: row.url };
+      return pendingFields.map((field) => csvCell(values[field])).join(',');
+    })].join('\n') + '\n', 'utf8');
+  const mentionCounts = new Map();
+  for (const link of links) if (link.consorcio_id) mentionCounts.set(link.consorcio_id, (mentionCounts.get(link.consorcio_id) || 0) + 1);
+  const entityFields = ['id', 'nome', 'sigla', 'cnpj', 'aliases', 'documentos_vinculados', 'situacao', 'fonte_inicial'];
   await writeFile(path.join(directory, 'consorcios.csv'), [entityFields.join(','),
-    ...[...consortia.values()].sort((a, b) => a.nome.localeCompare(b.nome)).map((row) =>
-      entityFields.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
+    ...identities.map((entity) => entityFields.map((field) => csvCell(field === 'aliases'
+      ? entity.aliases.join(' | ') : field === 'documentos_vinculados'
+        ? mentionCounts.get(entity.id) || 0 : entity[field])).join(','))].join('\n') + '\n', 'utf8');
   const counts = new Map();
   for (const row of relevant) counts.set(row.tipo_evento, (counts.get(row.tipo_evento) || 0) + 1);
   const recent = [...relevant].filter((row) => !/^(rejeitado|divergente|legado)/.test(row.situacao_analise))
@@ -198,7 +216,8 @@ export async function saveCatalog(directory, records) {
     '# Panorama da base histórica', '',
     `- ${all.length} documentos recuperados do histórico de coletas.`,
     `- ${relevant.length} registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.`,
-    `- ${consortia.size} ${consortia.size === 1 ? 'consórcio identificado' : 'consórcios identificados'} pelo nome explícito nos metadados. Os demais documentos continuam acessíveis por link.`,
+    `- ${identities.length} identidades candidatas de consórcios; ${links.filter((link) => link.consorcio_id).length} vínculos documentais automáticos, ainda não confirmados manualmente.`,
+    `- ${pendingIdentity.length} documentos relevantes sem identidade segura, listados em \`identidade-pendente.csv\`.`,
     '', '## Registros por tema', '',
     '| Tema | Registros |', '|---|---:|',
     ...[...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([name, count]) => `| ${name} | ${count} |`),
@@ -208,5 +227,6 @@ export async function saveCatalog(directory, records) {
     '', 'Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.', '',
   ];
   await writeFile(path.join(directory, 'resumo.md'), summary.join('\n'), 'utf8');
-  return { all: all.length, relevant: relevant.length, consortia: consortia.size };
+  return { all: all.length, relevant: relevant.length, consortia: identities.length,
+    links: links.length, pendingIdentity: pendingIdentity.length };
 }

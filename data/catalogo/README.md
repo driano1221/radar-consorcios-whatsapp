@@ -6,7 +6,10 @@ Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial 
 
 - `resumo.md`: panorama legível, contagens por tema e links recentes para conferência.
 - `eventos.csv`: visão para Excel com registros que o classificador relacionou a criação, adesão, saída, protocolo, rateio, finanças, governança, atuação, controle ou crise. **Inclui candidatos e casos posteriormente rejeitados**; filtre `situacao_analise` antes de citar um fato.
-- `consorcios.csv`: nomes fornecidos explicitamente pelos metadados das fontes. É intencionalmente incompleto; não inventa nomes a partir de trechos truncados.
+- `consorcios.csv`: cadastro de **identidades candidatas** com chave estável `id`, denominação, sigla, CNPJ quando o trecho o associa explicitamente ao consórcio, variações de nome e quantidade de documentos vinculados. Não é um cadastro oficial validado.
+- `vinculos-documentos.csv`: uma linha por menção explícita, ligando o `id` de `arquivo-coletas.ndjson` ao `id` do consórcio, com origem e evidência. Um documento pode mencionar mais de um consórcio. Vínculo não comprova adesão nem veracidade do evento.
+- `identidades.ndjson`: registro técnico persistente das identidades e aliases; conserva a chave quando CNPJ ou variação de nome aparece depois. Divergência de CNPJ fica sem vínculo e exige revisão humana.
+- `identidade-pendente.csv`: documentos potencialmente relevantes cujo trecho não sustenta um vínculo seguro; é a fila de conferência da identidade, não uma lista de consórcios inexistentes.
 - `arquivo-coletas.ndjson`: arquivo técnico de todos os documentos recuperáveis do histórico, inclusive os classificados como `GERAL`, para auditoria e futura reclassificação. Uma linha JSON por URL canônica.
 
 ## Como ler um evento
@@ -22,3 +25,9 @@ Registros marcados como **“legado sem texto”** correspondem a envios antigos
 `npm run catalog:update` acrescenta/atualiza o que está no estado atual. `npm run catalog:backfill` também percorre as versões de `state/news-state.json` existentes no histórico Git. A carga retroativa recupera **o que foi preservado nessas versões**, não publicações que nunca foram coletadas nem o texto integral que o radar já descartou. Documentos repetidos na mesma URL são consolidados; fontes distintas sobre o mesmo fato ainda podem aparecer como linhas separadas.
 
 A base é versionada no repositório e não exige serviço externo. Revisão humana, resolução de identidade dos consórcios e confirmação da composição municipal são passos posteriores; não devem ser inferidos automaticamente apenas de uma notícia, projeto de lei ou contrato de rateio.
+
+## Identificação de consórcios (primeira etapa)
+
+A extração automática é conservadora: aceita o nome explícito fornecido pela fonte ou uma denominação completa acompanhada de sigla no título/trecho. Valida os dígitos do CNPJ e só o associa quando aparece próximo à denominação e no contexto do próprio consórcio. Não usa correspondência aproximada nem cria entidade a partir de “consórcio intermunicipal” genérico. Menções cortadas ou sem texto ficam sem vínculo até haver documento melhor.
+
+`id` é uma chave técnica imutável para o cadastro local; **não substitui o CNPJ**. Duas denominações só são unificadas automaticamente quando o nome normalizado ou o CNPJ validado coincidem. Siglas isoladas não bastam para unir entidades, pois podem ser ambíguas. Os resultados permanecem marcados como candidatos até conferência documental.
