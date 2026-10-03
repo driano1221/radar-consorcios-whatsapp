@@ -27,6 +27,7 @@ LARGE_IDS = {
     "d320cc255a2dbd8ceeee0586a15af0a5b78262674c2be85fd134099d01f0c8e0",
 }
 MAX_PAGES = 300
+MAX_PAGES_LARGE = 600
 MAX_SNIPPETS = 25
 TERM = re.compile(r"\bcons[oó]rci[oa]s?\b", re.IGNORECASE)
 CPF = re.compile(r"\b\d{3}\.\d{3}\.\d{3}-\d{2}\b")
@@ -38,10 +39,10 @@ def clean(value):
     return EMAIL.sub("[email omitido]", CPF.sub("[CPF omitido]", value))
 
 
-def snippets_from_pdf(content):
+def snippets_from_pdf(content, max_pages=MAX_PAGES):
     reader = PdfReader(io.BytesIO(content), strict=False)
     found = []
-    for page_number, page in enumerate(reader.pages[:MAX_PAGES], 1):
+    for page_number, page in enumerate(reader.pages[:max_pages], 1):
         text = clean(page.extract_text() or "")
         for match in TERM.finditer(text):
             excerpt = clean(text[max(0, match.start() - 100):match.end() + 230])
@@ -69,13 +70,13 @@ def fetch_pdf(url, max_bytes=MAX_BYTES):
     return content
 
 
-def recover(row, max_bytes=MAX_BYTES):
+def recover(row, max_bytes=MAX_BYTES, max_pages=MAX_PAGES):
     result = {"documento_id": row["documento_id"], "url": row["url"],
               "situacao": "", "paginas": 0, "trechos": []}
     for attempt in range(2):
         try:
             content = fetch_pdf(row["url"], max_bytes)
-            result["paginas"], result["trechos"] = snippets_from_pdf(content)
+            result["paginas"], result["trechos"] = snippets_from_pdf(content, max_pages)
             result["situacao"] = "texto recuperado" if result["trechos"] else "sem menção textual"
             return result
         except (urllib.error.URLError, TimeoutError, OSError, ValueError, PdfReadError) as error:
@@ -99,9 +100,10 @@ def main():
         pending = [row for row in pending if row["documento_id"] in LARGE_IDS]
     output = ROOT / "data" / "catalogo" / ("recuperacao-pdf-grandes.ndjson" if args.large_only else "recuperacao-pdf.ndjson")
     max_bytes = 45 * 1024 * 1024 if args.large_only else MAX_BYTES
+    max_pages = MAX_PAGES_LARGE if args.large_only else MAX_PAGES
     results = []
     for index, row in enumerate(pending, 1):
-        result = recover(row, max_bytes)
+        result = recover(row, max_bytes, max_pages)
         results.append(result)
         print(f"[{index}/{len(pending)}] {row['documento_id'][:12]}: {result['situacao']}; "
               f"{len(result['trechos'])} trechos", flush=True)

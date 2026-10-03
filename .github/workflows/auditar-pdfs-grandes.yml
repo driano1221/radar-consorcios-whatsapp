@@ -31,4 +31,4 @@ jobs:
           git config user.email "radar-consorcios[bot]@users.noreply.github.com"
           git add -- data/catalogo/recuperacao-pdf-grandes.ndjson
           git commit -m "data: recuperar PDFs grandes para revisão [skip ci]"
-          git push origin HEAD:refs/heads/audit/recuperacao-pdfs-grandes
+          git push origin HEAD:refs/heads/audit/recuperacao-pdfs-grandes-completa
