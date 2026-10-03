@@ -46,6 +46,33 @@ test('sigla antes da denominação entre parênteses é recuperada', () => {
   assert.equal(result.identities[0].nome, 'Consórcio Intermunicipal Multifinalitário da Área Mineira da Sudene');
 });
 
+test('sigla antes do nome com travessão recupera CONSIRC', () => {
+  const result = buildIdentityCatalog([row('catanduva',
+    'CONTRATANTE: CONSIRC – CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DA REGIÃO DE CATANDUVA. CONTRATADO: terceiro.')]);
+  assert.equal(result.identities.length, 1);
+  assert.equal(result.identities[0].sigla, 'CONSIRC');
+  assert.equal(result.identities[0].nome, 'CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DA REGIÃO DE CATANDUVA');
+});
+
+test('hífen sem espaço antes da sigla recupera CISMESTR', () => {
+  const result = buildIdentityCatalog([row('rio-claro',
+    'EMPRESA: CONSÓRCIO INTERMUNICIPAL DE SAÚDE NA REGIÃO METROPOLITANA DE PIRACICABA- CISMESTR')]);
+  assert.equal(result.identities.length, 1);
+  assert.equal(result.identities[0].sigla, 'CISMESTR');
+});
+
+test('sigla isolada só vincula quando já conhecida, única e no contexto de consórcio', () => {
+  const known = row('inhapi', 'Consórcio Intermunicipal do Agreste Alagoano – CONAGRESTE.');
+  const alias = row('junqueiro', 'O Consórcio Conagreste presta serviços ao Município.');
+  const unknown = row('simao-dias', 'O CONSCENSUL é uma associação pública.');
+  const result = buildIdentityCatalog([known, alias, unknown]);
+  assert.equal(result.identities.length, 1);
+  assert.equal(result.links.filter((link) => link.consorcio_id).length, 2);
+  assert.equal(result.links.find((link) => link.documento_id === 'junqueiro')?.situacao,
+    'sigla conhecida no contexto — revisão humana');
+  assert.equal(result.links.some((link) => link.documento_id === 'simao-dias'), false);
+});
+
 test('mesmo nome em documentos distintos mantém a mesma chave', () => {
   const docs = [row('a', 'Contrato com o Consórcio Intermunicipal de Saneamento do Paraná (CISPAR).'),
     row('b', 'Ratifica o estatuto do Consórcio Intermunicipal de Saneamento do Paraná (CISPAR).')];

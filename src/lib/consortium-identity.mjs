@@ -52,12 +52,15 @@ export function findIdentityMentions(row) {
     }
     for (const match of text.matchAll(NAME_START)) {
       const rest = text.slice(match.index, match.index + 190);
-      const before = text.slice(Math.max(0, match.index - 26), match.index);
-      const precedingAcronym = /\b([A-Z][A-Z0-9-]{2,14})\s*\(\s*$/.exec(before)?.[1];
-      const delimiter = /\s+[–—-]\s+|\s*\(/g;
-      let candidate = precedingAcronym && rest.includes(')')
-        ? { name: rest.slice(0, rest.indexOf(')')), acronym: precedingAcronym, end: rest.indexOf(')') + 1 }
-        : undefined;
+      const before = text.slice(Math.max(0, match.index - 28), match.index);
+      const precedingParenthesis = /\b([A-Z][A-Z0-9-]{2,14})\s*\(\s*$/.exec(before)?.[1];
+      const precedingDash = /\b([A-Z][A-Z0-9-]{2,14})\s*[–—-]\s*$/.exec(before)?.[1];
+      const delimiter = /\s*[–—-]\s+|\s*\(/g;
+      let candidate = precedingParenthesis && rest.includes(')')
+        ? { name: rest.slice(0, rest.indexOf(')')), acronym: precedingParenthesis, end: rest.indexOf(')') + 1 }
+        : precedingDash && /[.;]/.test(rest)
+          ? { name: rest.split(/[.;]/)[0], acronym: precedingDash, end: rest.search(/[.;]/) + 1 }
+          : undefined;
       if (!candidate) {
         for (const boundary of rest.matchAll(delimiter)) {
           const tail = rest.slice(boundary.index);
@@ -140,6 +143,30 @@ export function buildIdentityCatalog(rows, previous = []) {
       links.push({ documento_id: row.id, consorcio_id: id, situacao: 'menção automática — identidade não conferida',
         nome_mencionado: mention.name, sigla_mencionada: mention.acronym, cnpj_mencionado: mention.cnpj,
         origem: mention.origin, evidencia: mention.evidence, url: row.url });
+    }
+  }
+  const byAcronym = new Map();
+  for (const entity of identities.values()) {
+    const key = identityKey(entity.sigla).replaceAll(' ', '');
+    if (!key || key.length < 5) continue;
+    const current = byAcronym.get(key);
+    byAcronym.set(key, current && current !== entity.id ? null : entity.id);
+  }
+  for (const row of rows) {
+    const content = `${row.trecho || ''} ${row.titulo || ''}`;
+    if (!/\bcons[oó]rcio\b/i.test(content)) continue;
+    for (const [key, id] of byAcronym) {
+      if (!id || links.some((link) => link.documento_id === row.id && link.consorcio_id === id)) continue;
+      const entity = identities.get(id);
+      const acronym = entity.sigla;
+      const escaped = acronym.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s+');
+      const match = new RegExp(`\\b${escaped}\\b`, 'i').exec(content);
+      if (!match) continue;
+      const evidence = normalizeWhitespace(content.slice(Math.max(0, match.index - 90), match.index + match[0].length + 90));
+      if (!/\bcons[oó]rcio\b/i.test(evidence)) continue;
+      links.push({ documento_id: row.id, consorcio_id: id,
+        situacao: 'sigla conhecida no contexto — revisão humana', nome_mencionado: '',
+        sigla_mencionada: acronym, cnpj_mencionado: '', origem: 'sigla', evidencia: evidence.slice(0, 240), url: row.url });
     }
   }
   const linkedIds = new Set(links.map((link) => link.consorcio_id).filter(Boolean));
