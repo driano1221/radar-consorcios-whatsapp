@@ -9,6 +9,8 @@
   },
   "scripts": {
     "collect": "node src/radar.mjs",
+    "catalog:update": "node scripts/update-catalog.mjs",
+    "catalog:backfill": "node scripts/update-catalog.mjs --history",
     "weekly": "node src/weekly.mjs",
     "health:report": "node scripts/report-health.mjs",
     "pair": "node scripts/pair-whatsapp.mjs",

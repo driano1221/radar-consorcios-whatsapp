@@ -72,6 +72,10 @@ jobs:
         if: steps.freshness.outputs.run == 'true'
         run: npm run collect
 
+      - name: Atualizar base histórica de consórcios
+        if: steps.freshness.outputs.run == 'true' && env.PERSIST_STATE == 'true'
+        run: npm run catalog:update
+
       - name: Atualizar sessão criptografada
         if: always() && steps.freshness.outputs.run == 'true' && env.SEND_ENABLED == 'true'
         run: npm run session:encrypt
@@ -82,7 +86,7 @@ jobs:
         run: |
           git config user.name "radar-consorcios[bot]"
           git config user.email "radar-consorcios[bot]@users.noreply.github.com"
-          git add -- state/auth.enc state/auth.sha256 state/news-state.json
+          git add -- state/auth.enc state/auth.sha256 state/news-state.json data/catalogo
           if git diff --cached --quiet; then
             echo "Nenhuma alteração de estado."
             exit 0
