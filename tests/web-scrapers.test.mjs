@@ -6,6 +6,8 @@ import {
   parseDiarioMunicipalIndex,
   parseRncp,
   parseTceMg,
+  parseTcePrHome,
+  parseAmmMtIndex,
   fetchWebScrapers,
 } from '../src/lib/sources/web-scrapers.mjs';
 
@@ -13,7 +15,46 @@ const since = new Date('2026-08-13T00:00:00Z');
 
 test('converte data brasileira sem deslocar o dia', () => {
   assert.equal(parseBrazilianDate('17/08/2026'), '2026-08-17T15:00:00.000Z');
+  assert.equal(parseBrazilianDate('02/10/26'), '2026-10-02T15:00:00.000Z');
   assert.equal(parseBrazilianDate('sem data'), null);
+});
+
+test('extrai índice AMM-MT com link para próxima página', () => {
+  const html = `<ol id="publications-list"><li><a href="/publicacao/1919144/">
+    <div class="publication-title">LEI MUNICIPAL Nº 1193/2026</div>
+    <div class="entity-title">Consórcio Portal do Araguaia</div>
+    <span class="date">02/10/26</span></a></li></ol>
+    <a href="/publicacoes/?sa=next">Próxima Página</a>`;
+  const result = parseAmmMtIndex(html,
+    { name: 'AMM-MT', url: 'https://amm.diariomunicipal.org/publicacoes/' }, since);
+  assert.equal(result.items.length, 1);
+  assert.equal(result.items[0].url, 'https://amm.diariomunicipal.org/publicacao/1919144/');
+  assert.equal(result.items[0].stateCode, 'MT');
+  assert.equal(result.nextUrl, 'https://amm.diariomunicipal.org/publicacoes/?sa=next');
+});
+
+test('extrai manchetes TCE-PR com data e URL próprios', () => {
+  const html = `<a class="home-latest-news__card" href="noticias/decisao.htm">
+    <h3 class="home-latest-news__card-title">TCE decide sobre consórcio</h3>
+    <time datetime="02/10/2026 14:00">2 de outubro</time></a>`;
+  const items = parseTcePrHome(html, { name: 'TCE-PR', url: 'https://www.tce.pr.gov.br/' }, since);
+  assert.equal(items.length, 1);
+  assert.equal(items[0].url, 'https://www.tce.pr.gov.br/noticias/decisao.htm');
+});
+
+test('AMM-MT enriquece texto do ato mas mantém publicação em prévia', async () => {
+  const index = `<ol id="publications-list"><li><a href="/publicacao/1919144/">
+    <div class="publication-title">LEI MUNICIPAL Nº 1193/2026</div>
+    <div class="entity-title">Consórcio Portal do Araguaia</div>
+    <span class="date">02/10/26</span></a></li></ol>`;
+  const article = `<div id="publication-text"><p>Ratifica o Estatuto Consolidado do Consórcio Intermunicipal CIDESAPA e altera o contrato de consórcio público.</p></div>`;
+  const result = await fetchWebScrapers({ enabled: true, timeoutMs: 1000, retries: 0,
+    sites: [{ name: 'AMM-MT', adapter: 'amm-mt', url: 'https://amm.diariomunicipal.org/publicacoes/', publish: false }] },
+  since, async (url) => new Response(url.includes('/publicacao/') ? article : index, { status: 200 }));
+  assert.equal(result.items.length, 1);
+  assert.match(result.items[0].rawText, /Ratifica o Estatuto/);
+  assert.equal(result.items[0].previewOnly, true);
+  assert.equal(result.diagnostics[0].status, 'ok');
 });
 
 test('extrai cards de noticias da RNCP', () => {

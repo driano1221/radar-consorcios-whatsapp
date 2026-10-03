@@ -6,11 +6,43 @@ const DEFAULT_USER_AGENT =
   'RadarConsorciosIPEA/0.3 (+pesquisa academica; https://github.com/driano1221/radar-consorcios-whatsapp)';
 
 function parseBrazilianDate(value) {
-  const match = String(value || '').match(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/);
+  const match = String(value || '').match(/\b(\d{1,2})\/(\d{1,2})\/(\d{2}|\d{4})\b/);
   if (!match) return null;
-  const [, day, month, year] = match;
+  const [, day, month, rawYear] = match;
+  const year = rawYear.length === 2 ? `20${rawYear}` : rawYear;
   const date = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T12:00:00-03:00`);
   return Number.isNaN(date.getTime()) ? null : date.toISOString();
+}
+
+export function parseAmmMtIndex(html, site, since) {
+  const $ = load(html);
+  const list = $('#publications-list');
+  if (!list.length) throw new Error('AMM-MT: lista de publicações não encontrada');
+  const items = list.find('a[href^="/publicacao/"]').map((_, element) => {
+    const anchor = $(element);
+    const title = normalizeWhitespace(anchor.find('.publication-title').text());
+    const entity = normalizeWhitespace(anchor.find('.entity-title').text());
+    const publishedAt = parseBrazilianDate(anchor.find('.date').text());
+    return { kind: 'gazette', title, url: absoluteUrl(anchor.attr('href'), site.url),
+      publishedAt, source: site.name, sourceUrl: site.url, stateCode: 'MT',
+      summary: entity, rawText: entity };
+  }).get().filter((item) => withinWindow(item, since) &&
+    !/\b(?:RGF|RREO|cr[eé]dito (?:adicional|suplementar)|altera[cç][aã]o de fonte de recursos)\b/i.test(item.title));
+  const next = list.parent().find('a').filter((_, el) => /próxima página/i.test($(el).text())).first().attr('href');
+  return { items, nextUrl: next ? absoluteUrl(next, site.url) : null };
+}
+
+export function parseTcePrHome(html, site, since) {
+  const $ = load(html);
+  const cards = $('.home-latest-news__card');
+  if (!cards.length) throw new Error('TCE-PR: manchetes da página inicial não encontradas');
+  return cards.map((_, element) => {
+    const card = $(element);
+    return { kind: 'news', title: normalizeWhitespace(card.find('.home-latest-news__card-title').text()),
+      url: absoluteUrl(card.attr('href'), site.url),
+      publishedAt: parseBrazilianDate(card.find('time').attr('datetime') || card.find('time').text()),
+      source: site.name, sourceUrl: site.url, stateCode: 'PR', summary: '', rawText: '' };
+  }).get().filter((item) => withinWindow(item, since));
 }
 
 function absoluteUrl(value, baseUrl) {
@@ -188,9 +220,53 @@ const PARSERS = {
   'tce-sp': parseTceSp,
   cisamapi: parseCisamapi,
   'diario-municipal-index': parseDiarioMunicipalIndex,
+  'tce-pr-home': parseTcePrHome,
 };
 
+async function fetchAmmMt(site, since, config, fetchImpl) {
+  const origin = new URL(site.url).origin;
+  const searchUrl = new URL(site.url);
+  searchUrl.searchParams.set('q', site.query || 'consórcio');
+  let pageUrl = searchUrl.toString();
+  const items = [];
+  const visited = new Set();
+  for (let page = 0; page < (site.maxPages || 2) && pageUrl; page += 1) {
+    if (visited.has(pageUrl) || new URL(pageUrl).origin !== origin) break;
+    visited.add(pageUrl);
+    const response = await fetchWithRetry(pageUrl, { fetchImpl, timeoutMs: config.timeoutMs,
+      retries: config.retries, headers: { 'user-agent': config.userAgent || DEFAULT_USER_AGENT } });
+    if (!response.ok) throw new Error(`AMM-MT respondeu ${response.status}`);
+    const parsed = parseAmmMtIndex(await responseText(response), site, since);
+    items.push(...parsed.items);
+    pageUrl = parsed.nextUrl;
+  }
+  const enriched = [];
+  for (const item of items) {
+    try {
+      if (new URL(item.url).origin !== origin) throw new Error('Domínio inesperado');
+      const response = await fetchWithRetry(item.url, { fetchImpl, timeoutMs: config.timeoutMs,
+        retries: 0, headers: { 'user-agent': config.userAgent || DEFAULT_USER_AGENT } });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const $ = load(await responseText(response));
+      const body = $('#publication-text').first().clone();
+      body.find('script,style,nav,footer,form').remove();
+      body.find('p,li,h1,h2,h3,h4,br').append(' ');
+      const rawText = normalizeWhitespace(body.text());
+      if (rawText.length < 50) throw new Error('Texto da publicação não encontrado');
+      enriched.push({ ...item, summary: rawText.slice(0, 4000), rawText: rawText.slice(0, 4000) });
+    } catch (error) {
+      enriched.push({ ...item, previewOnly: true, extractionError: error.message });
+    }
+  }
+  return enriched;
+}
+
 async function fetchSite(site, since, config, fetchImpl) {
+  if (site.adapter === 'amm-mt') {
+    const items = await fetchAmmMt(site, since, config, fetchImpl);
+    return items.map((item) => ({ ...item, scraper: site.adapter,
+      previewOnly: item.previewOnly || site.publish !== true }));
+  }
   const parser = PARSERS[site.adapter];
   if (!parser) throw new Error(`adaptador desconhecido: ${site.adapter}`);
   const response = await fetchWithRetry(site.url, {

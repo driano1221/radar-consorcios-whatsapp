@@ -168,6 +168,22 @@
         "publish": true
       },
       {
+        "name": "TCE-PR (manchetes)",
+        "adapter": "tce-pr-home",
+        "url": "https://www.tce.pr.gov.br/",
+        "articleSelector": ".news_text_container",
+        "maxArticles": 3,
+        "publish": false
+      },
+      {
+        "name": "Jornal Oficial AMM-MT",
+        "adapter": "amm-mt",
+        "url": "https://amm.diariomunicipal.org/publicacoes/",
+        "query": "consórcio",
+        "maxPages": 2,
+        "publish": false
+      },
+      {
         "name": "CISAMAPI",
         "adapter": "cisamapi",
         "enabled": false,
