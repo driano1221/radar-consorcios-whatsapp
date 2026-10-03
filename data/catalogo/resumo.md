@@ -1,8 +1,8 @@
 # Panorama da base histórica
 
-- 1148 documentos recuperados do histórico de coletas.
-- 50 registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.
-- 26 identidades candidatas de consórcios; 40 vínculos documentais, dos quais 29 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 1170 documentos recuperados do histórico de coletas.
+- 51 registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.
+- 27 identidades candidatas de consórcios; 41 vínculos documentais, dos quais 29 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 11 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
@@ -10,10 +10,10 @@
 | Tema | Registros |
 |---|---:|
 | ADESÃO | 13 |
+| GOVERNANÇA | 6 |
 | PROTOCOLO | 6 |
 | RATEIO | 6 |
 | CONTROLE | 5 |
-| GOVERNANÇA | 5 |
 | ADESÃO AUTORIZADA | 3 |
 | ATUAÇÃO | 3 |
 | CRISE | 3 |
@@ -26,7 +26,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
-| 2026-09-30 | FINANÇAS — ato publicado — efeito a verificar | candidato — requer revisão | [Diário Oficial de Mamborê (PR)](https://data.queridodiario.ok.org.br/4114005/2026-09-30/60040400ded84eda33c6162db92bd6889a9c4f61.pdf) |
+| 2026-10-02 | GOVERNANÇA — ato publicado — efeito a verificar | candidato — requer revisão | [LEI MUNICIPAL Nº 1193/2026, DE 02 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1919144/) |
 | 2026-09-29 | PROPOSTA DE ADESÃO — proposta aprovada no Conselho de Saúde — ingresso não comprovado | categoria corrigida por revisão editorial — conselho aprovou proposta, não adesão efetiva | [Diário Oficial de Valinhos (SP)](https://data.queridodiario.ok.org.br/3556206/2026-09-29/90c5c576997adb1e4eb3696885e8be88ae79adf6.pdf) |
 | 2026-09-29 | ADESÃO AUTORIZADA — autorização — ingresso não comprovado | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Junqueiro (AL)](https://data.queridodiario.ok.org.br/2700000/2026-09-29/eba66af2865d380a493a4d7847c64109ee2821b4.pdf) |
 | 2026-09-28 | PROTOCOLO — proposta — não aprovada | publicado pelo radar — não confirmado manualmente | [PROJETO DE LEI N°. 54, DE DE DE 2022 Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde do Mé - Câmara Municipal de Guanhães](https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zLXlRaXRTUUtyTDY1dEpFUG4xUWxlR24wSmEtMEN3R3VYcW5KMGpwTGV3ZDVJaUNiZE5UWGNSZHhrNEo3WWRIelRzWjRCMElBWnJFN01mbGZTcjA?oc=5) |
