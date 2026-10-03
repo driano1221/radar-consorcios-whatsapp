@@ -1,0 +1,34 @@
+name: Recuperar dois PDFs grandes para auditoria
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recuperar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Baixar o projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar leitor de PDF
+        run: python -m pip install 'pypdf==6.10.0'
+
+      - name: Recuperar apenas Maracaju e Marília
+        run: python scripts/recover-identity-pdf.py --large-only
+
+      - name: Guardar trechos em ramo isolado
+        run: |
+          git config user.name "radar-consorcios[bot]"
+          git config user.email "radar-consorcios[bot]@users.noreply.github.com"
+          git add -- data/catalogo/recuperacao-pdf-grandes.ndjson
+          git commit -m "data: recuperar PDFs grandes para revisão [skip ci]"
+          git push origin HEAD:refs/heads/audit/recuperacao-pdfs-grandes

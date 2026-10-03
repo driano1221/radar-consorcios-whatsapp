@@ -5,6 +5,7 @@ It does not classify events, assert memberships, or modify the source catalog.
 """
 
 import csv
+import argparse
 import io
 import json
 import re
@@ -20,8 +21,11 @@ from pypdf.errors import PdfReadError
 
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE = ROOT / "data" / "catalogo" / "identidade-pendente.csv"
-OUTPUT = ROOT / "data" / "catalogo" / "recuperacao-pdf.ndjson"
 MAX_BYTES = 25 * 1024 * 1024
+LARGE_IDS = {
+    "3544e0dda30ba959901b5569331d5d2d169a416f323f82b4b98447e7d58d109a",
+    "d320cc255a2dbd8ceeee0586a15af0a5b78262674c2be85fd134099d01f0c8e0",
+}
 MAX_PAGES = 300
 MAX_SNIPPETS = 25
 TERM = re.compile(r"\bcons[oó]rci[oa]s?\b", re.IGNORECASE)
@@ -48,29 +52,29 @@ def snippets_from_pdf(content):
     return len(reader.pages), found
 
 
-def fetch_pdf(url):
+def fetch_pdf(url, max_bytes=MAX_BYTES):
     request = urllib.request.Request(url, headers={
         "User-Agent": "RadarConsorciosIPEA/0.3 (academic research; identity audit)",
         "Accept": "application/pdf",
     })
     with urllib.request.urlopen(request, timeout=35) as response:
         content_length = int(response.headers.get("Content-Length") or 0)
-        if content_length > MAX_BYTES:
-            raise ValueError("PDF acima do limite de 25 MiB")
-        content = response.read(MAX_BYTES + 1)
-    if len(content) > MAX_BYTES:
-        raise ValueError("PDF acima do limite de 25 MiB")
+        if content_length > max_bytes:
+            raise ValueError(f"PDF acima do limite de {max_bytes // (1024 * 1024)} MiB")
+        content = response.read(max_bytes + 1)
+    if len(content) > max_bytes:
+        raise ValueError(f"PDF acima do limite de {max_bytes // (1024 * 1024)} MiB")
     if not content.startswith(b"%PDF-"):
         raise ValueError("resposta não é PDF")
     return content
 
 
-def recover(row):
+def recover(row, max_bytes=MAX_BYTES):
     result = {"documento_id": row["documento_id"], "url": row["url"],
               "situacao": "", "paginas": 0, "trechos": []}
     for attempt in range(2):
         try:
-            content = fetch_pdf(row["url"])
+            content = fetch_pdf(row["url"], max_bytes)
             result["paginas"], result["trechos"] = snippets_from_pdf(content)
             result["situacao"] = "texto recuperado" if result["trechos"] else "sem menção textual"
             return result
@@ -83,21 +87,28 @@ def recover(row):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--large-only", action="store_true")
+    args = parser.parse_args()
     with QUEUE.open(encoding="utf-8", newline="") as stream:
         pending = [row for row in csv.DictReader(stream)
                    if row["motivo"] == "sem trecho preservado"
                    and urlparse(row["url"]).hostname == "data.queridodiario.ok.org.br"
                    and row["url"].lower().endswith(".pdf")]
+    if args.large_only:
+        pending = [row for row in pending if row["documento_id"] in LARGE_IDS]
+    output = ROOT / "data" / "catalogo" / ("recuperacao-pdf-grandes.ndjson" if args.large_only else "recuperacao-pdf.ndjson")
+    max_bytes = 45 * 1024 * 1024 if args.large_only else MAX_BYTES
     results = []
     for index, row in enumerate(pending, 1):
-        result = recover(row)
+        result = recover(row, max_bytes)
         results.append(result)
         print(f"[{index}/{len(pending)}] {row['documento_id'][:12]}: {result['situacao']}; "
               f"{len(result['trechos'])} trechos", flush=True)
         time.sleep(1.1)  # well below the publisher's documented request-rate reference
-    OUTPUT.write_text("\n".join(json.dumps(row, ensure_ascii=False) for row in results) + "\n",
+    output.write_text("\n".join(json.dumps(row, ensure_ascii=False) for row in results) + "\n",
                       encoding="utf-8")
-    print(f"Resultado: {OUTPUT}; documentos: {len(results)}", flush=True)
+    print(f"Resultado: {output}; documentos: {len(results)}", flush=True)
 
 
 if __name__ == "__main__":
