@@ -173,8 +173,31 @@ export async function loadCatalog(file) {
 export async function saveCatalog(directory, records) {
   await mkdir(directory, { recursive: true });
   const all = [...records.values()].sort((a, b) => a.id.localeCompare(b.id));
-  const relevant = all.filter((row) => row.tipo_evento !== 'GERAL' && row.tipo_evento !== 'NÃO CLASSIFICADO');
   await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), all.map((row) => JSON.stringify(row)).join('\n') + '\n');
+  let editorialReviews = [];
+  try {
+    editorialReviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
+      .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  const decisions = new Map(editorialReviews.filter((review) =>
+    (review.decisao === 'nao_evento' || (review.decisao === 'corrigir_categoria' && review.categoria)) &&
+    review.documento_id && review.evidencia && review.motivo &&
+    /^[a-f0-9]{64}$/.test(review.trecho_sha256 || ''))
+    .map((review) => [review.documento_id, review]));
+  const reviewStillMatches = (row) => decisions.get(row.id)?.trecho_sha256 ===
+    createHash('sha256').update(row.trecho || '').digest('hex');
+  const reviewed = all.map((row) => {
+    if (!reviewStillMatches(row)) return row;
+    const review = decisions.get(row.id);
+    return { ...row,
+      tipo_evento: review.decisao === 'nao_evento' ? 'GERAL' : review.categoria,
+      etapa: review.etapa || row.etapa,
+      situacao_analise: `${review.decisao === 'nao_evento' ? 'rejeitado' : 'categoria corrigida'} por revisão editorial — ${review.motivo}`,
+      revisao_editorial: review };
+  });
+  const relevant = reviewed.filter((row) => row.tipo_evento !== 'GERAL' && row.tipo_evento !== 'NÃO CLASSIFICADO');
   await writeFile(path.join(directory, 'eventos.csv'), [FIELDS.join(','), ...relevant.map((row) =>
     FIELDS.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
   let previousIdentities = [];

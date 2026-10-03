@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
@@ -79,6 +80,52 @@ test('catálogo aplica evidência complementar por documento e exporta sua URL',
     assert.match(links, /url_evidencia/);
     assert.match(links, /fonte complementar conferida/);
     assert.match(links, /https:\/\/exemplo.org\/diario.pdf/);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test('revisão editorial tira falso evento das tabelas sem apagar o registro bruto', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-revisao-'));
+  try {
+    const row = catalogRecord({ title: 'Diário Oficial de Andradina (SP)',
+      url: 'https://exemplo.org/andradina.pdf', source: 'Diário Oficial',
+      classification: { category: 'CRISE', score: 10,
+        evidenceText: 'Extinção amigável de contrato de locação do consórcio.' } }, at, at);
+    const review = { documento_id: row.id, decisao: 'nao_evento',
+      motivo: 'extinção de contrato, não do consórcio', evidencia: 'Contrato de locação 30/2025',
+      trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+    await writeFile(path.join(directory, 'revisoes-eventos.ndjson'), `${JSON.stringify(review)}\n`);
+    const result = await saveCatalog(directory, new Map([[row.id, row]]));
+    assert.equal(result.all, 1);
+    assert.equal(result.relevant, 0);
+    assert.match(await readFile(path.join(directory, 'arquivo-coletas.ndjson'), 'utf8'), /"tipo_evento":"CRISE"/);
+    assert.doesNotMatch(await readFile(path.join(directory, 'eventos.csv'), 'utf8'), /Andradina/);
+    const richer = { ...row, trecho: `${row.trecho} Dissolução do consórcio confirmada pela assembleia.` };
+    const refreshed = await saveCatalog(directory, new Map([[row.id, richer]]));
+    assert.equal(refreshed.relevant, 1);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test('revisão editorial corrige categoria sem declarar adesão consumada', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-categoria-'));
+  try {
+    const row = catalogRecord({ title: 'Proposta de ingresso em consórcio regional',
+      url: 'https://exemplo.org/proposta', source: 'Conselho de Saúde',
+      classification: { category: 'ADESÃO', score: 8,
+        evidenceText: 'Conselho aprova proposta de ingresso em consórcio intermunicipal.' } }, at, at);
+    const review = { documento_id: row.id, decisao: 'corrigir_categoria',
+      categoria: 'PROPOSTA DE ADESÃO', etapa: 'ingresso não comprovado',
+      motivo: 'somente proposta aprovada', evidencia: 'Ata do conselho',
+      trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+    await writeFile(path.join(directory, 'revisoes-eventos.ndjson'), `${JSON.stringify(review)}\n`);
+    const result = await saveCatalog(directory, new Map([[row.id, row]]));
+    assert.equal(result.relevant, 1);
+    const events = await readFile(path.join(directory, 'eventos.csv'), 'utf8');
+    assert.match(events, /PROPOSTA DE ADESÃO/);
+    assert.match(events, /ingresso não comprovado/);
   } finally {
     await rm(directory, { recursive: true, force: true });
   }

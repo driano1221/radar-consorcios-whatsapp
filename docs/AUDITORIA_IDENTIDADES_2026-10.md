@@ -46,3 +46,28 @@ npm run check
 ```
 
 O workflow de recuperação é manual, limitado, usa PDFs públicos e grava somente trechos com página em ramo separado; não envia mensagens nem altera a base principal sem revisão.
+
+## Segunda revisão editorial — 02/10/2026
+
+Uma segunda passagem examinou os 30 pendentes da primeira auditoria e separou **identidade** de **validade do evento**. A decisão é armazenada em `data/catalogo/revisoes-eventos.ndjson`, com motivo, evidência e SHA-256 do trecho arquivado. `npm run reviews:seal` lacra novas decisões; se o trecho mudar em uma coleta futura, a decisão antiga deixa de ser aplicada até nova revisão. O arquivo bruto de 1.148 documentos não é apagado nem reescrito com essas decisões.
+
+| Indicador após a segunda revisão | Resultado |
+|---|---:|
+| Possíveis eventos, após retirar falsos positivos documentados | 50 |
+| Falsos eventos excluídos das tabelas derivadas | 18 |
+| Categorias corrigidas sem excluir o documento | 4 |
+| Consórcios candidatos | 27 |
+| Vínculos documento–consórcio | 41 |
+| Eventos ainda sem identidade segura | 10 |
+
+Os 18 excluídos incluem rubricas e balanços orçamentários, adesão a atas de preços, campo-modelo de contrato, o consórcio de instituições CESGRANRIO/UFJF e a **extinção de locação do CIENSP**, que não significa fim do consórcio. Casos reais foram preservados: a notícia integral do [Diário do Grande ABC](https://www.dgabc.com.br/noticia/4348436/consorcio-intermunicipal-cria-agenda-setorial-com-brasilia-para-atrair-investimentos) identifica o consórcio existente, mas trata de uma agenda setorial, não de sua criação. A lei de Marília, no PDF p. 2, identifica o CONDESU e **autoriza** o ingresso, sem provar que todas as etapas foram concluídas.
+
+Em Valinhos, a [página oficial do Conselho Municipal de Saúde](https://www.valinhos.sp.gov.br/portal/secretarias-paginas/404/publicacoes/) registra a aprovação de uma *proposta* de ingresso no SAMU Regional Hortolândia/Sumaré: a categoria do evento foi corrigida para `PROPOSTA DE ADESÃO`, mas não foi criada uma identidade jurídica sem nome formal comprovado. O trecho de Votuporanga relativo a cláusulas de rateio deixou de ser `CONTROLE`; permanece `RATEIO` com contrato completo a conferir.
+
+Marília passou de `ADESÃO` para `ADESÃO AUTORIZADA`; o CI-DTSA passou de `CRIAÇÃO` para `CRIAÇÃO EM TRAMITAÇÃO`, pois o protocolo já constava em 2022 e a constituição em agosto de 2026 não foi comprovada pela manchete.
+
+Os dois PDFs antes acima de 25 MiB foram processados em execução separada. Marília (143 páginas) trouxe a Lei 9.498/2026 na p. 2. Maracaju (474 páginas pesquisadas) trouxe apenas menção a “administração de consórcios para aquisição de bens e direitos” em uma tabela de atividades econômicas; **não há evidência textual suficiente para confirmar o protocolo** indicado pelo registro antigo. Maracaju permanece pendente, pois extração de texto não substitui OCR de eventuais páginas digitalizadas. O resultado fica em `data/catalogo/recuperacao-pdf-grandes.ndjson`.
+
+Os dez pendentes são: Apucarana, Piranhas, Maracaju, duas matérias sobre inadimplência municipal em MT, Valinhos (identidade formal não confirmada), Araçariguama, Votuporanga (consórcio do contrato não confirmado), Campo Mourão e Maravilha. Edições estaduais de AL contêm atos de muitos municípios e consórcios; não atribuir o primeiro nome encontrado ao município da manchete. Os três PDFs sem menção pesquisável e Maracaju podem exigir OCR ou consulta ao portal editor. As notícias de MT são eventos relevantes, mas não permitem atribuir cada município a um consórcio específico com a evidência disponível.
+
+Próximo passo analítico: verificar os dez casos remanescentes e validar a amostra dos 12 vínculos automáticos. Não usar o catálogo para inferir composição ou data de adesão sem o ato constitutivo, a ratificação e o marco temporal pertinentes.

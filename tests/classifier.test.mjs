@@ -122,6 +122,19 @@ test('não confunde cláusula de extinção em anexo com crise atual', () => {
   assert.equal(result.category, 'ADESÃO');
 });
 
+test('extinção de locação do consórcio não é crise institucional', () => {
+  const result = classifyItem({ kind: 'gazette', title: 'Diário Oficial de Andradina',
+    summary: 'CIENSP - CONSÓRCIO INTERMUNICIPAL DO EXTREMO NOROESTE DE SÃO PAULO. EXTRATO DE TERMO DE EXTINÇÃO AMIGÁVEL CONTRATO Nº 30/2025. LOCATÁRIO: CONSÓRCIO INTERMUNICIPAL DO EXTREMO NOROESTE DE SÃO PAULO.' });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.reasons.join(' '), /término de contrato/);
+});
+
+test('consórcio de instituições contratadas não vira consórcio intermunicipal', () => {
+  const result = classifyItem({ kind: 'gazette', title: 'Diário Oficial de Niterói',
+    summary: 'PARTES: FUNDAÇÃO MUNICIPAL DE EDUCAÇÃO e CONSÓRCIO CESGRANRIO - UFJF/CAEd. Contratação de solução para avaliação da rede municipal.' });
+  assert.equal(result.category, 'GERAL');
+});
+
 test('penaliza previsão orçamentária genérica de rateio', () => {
   const result = classifyItem({
     kind: 'gazette',

@@ -97,6 +97,7 @@ const NEGATIVE_PATTERNS = [
   { pattern: /\b(ata de registro de precos|registro de precos|intencao de registro de precos|orgao nao participante)\b/, penalty: 30, reason: 'contratação/ata de preços' },
   { pattern: /\bcarona\b.{0,100}\b(ata|registro de precos|arp)\b/, penalty: 30, reason: 'carona em ata de preços' },
   { pattern: /\b(consorcio de empresas|consorcio empresarial|consorcio vencedor|empresa consorciada)\b/, penalty: 30, reason: 'consórcio empresarial' },
+  { pattern: /\bconsorcio cesgranrio\b/, penalty: 30, reason: 'consórcio de entidades contratadas, não intermunicipal' },
   { pattern: /\b(administradora de consorcio|cota de consorcio|consorcio imobiliario|consorcio de veiculos)\b/, penalty: 30, reason: 'consórcio comercial' },
 ];
 
@@ -148,6 +149,11 @@ function isMeetingAgendaWithoutDecision(text) {
   const agendaSignal = /\b(convoca|convocam|convocar|convocacao|reuniao|pauta|assuntos abordados|informes gerais)\b/.test(text);
   const decisionSignal = /\b(lei|decreto|autoriza|ratifica|aprovou|sanciona|promulga|delibera|eleitos?|eleitas?|elegeu|elege|eleicao)\b/.test(text);
   return agendaSignal && !decisionSignal;
+}
+
+function isContractTerminationNotConsortium(text) {
+  return /\b(extincao|rescisao|encerramento)\s+(amigavel\s+)?(?:(do|de)\s+)?contrato\b/.test(text) &&
+    !/\b(extincao|dissolucao|liquidacao)\s+(do|de)\s+consorcio\b/.test(text);
 }
 
 function evaluateSegment(item, evidence, index) {
@@ -205,6 +211,10 @@ function evaluateSegment(item, evidence, index) {
   if (isUnapprovedEntryProposal(text)) {
     score -= 12;
     reasons.push('rejeitado: proposta de ingresso sem decisão comprovada no trecho');
+  }
+  if (isContractTerminationNotConsortium(text)) {
+    score -= 30;
+    reasons.push('rejeitado: término de contrato, não do consórcio');
   }
 
   const rejected = reasons.some((reason) => reason.startsWith('rejeitado:'));

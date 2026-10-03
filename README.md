@@ -194,3 +194,5 @@ Detalhes, fontes, exemplos antes/depois e limitações: [pesquisa e validação]
 ## Base histórica de consórcios
 
 `npm run catalog:update` reconstrói `data/catalogo/consorcios.csv`, `vinculos-documentos.csv` e `identidade-pendente.csv` a partir do histórico. `evidencias-complementares.ndjson` guarda as conferências externas por documento; `recuperacao-pdf.ndjson` contém trechos paginados de PDFs antigos, **não** fatos confirmados. O vínculo de uma entidade com um documento não confirma adesão, retirada ou pagamento. A [auditoria de identidades](docs/AUDITORIA_IDENTIDADES_2026-10.md) registra método, números, fontes e pendências.
+
+`data/catalogo/revisoes-eventos.ndjson` registra descartes e correções editoriais, sem apagar o histórico bruto. Cada decisão é vinculada ao trecho exato por SHA-256; caso o texto mude, precisa ser revista. Para uma nova decisão, adicione documento, decisão, motivo e evidência, execute `npm run reviews:seal` e depois `npm run catalog:update`.
