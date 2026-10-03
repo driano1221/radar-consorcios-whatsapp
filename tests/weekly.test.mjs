@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { observeRun, weeklyWindow, buildWeeklyReport } from '../src/lib/history.mjs';
 import { formatWeeklyMessage, formatWeeklyMessages } from '../src/lib/format.mjs';
-import { loadState, saveState } from '../src/lib/dedupe.mjs';
+import { loadState, saveState, itemId, reclassifyPending } from '../src/lib/dedupe.mjs';
 
 const item = { kind: 'news', title: 'Município adere ao consórcio intermunicipal regional',
   url: 'https://exemplo.gov.br/noticia', source: 'Portal oficial', publishedAt: '2026-09-15T15:00:00Z',
@@ -134,6 +134,21 @@ test('boletim distingue autorização de ingresso de adesão efetivada', () => {
   const report = buildWeeklyReport(state, weeklyWindow(new Date('2026-09-19T13:00:00Z')));
   assert.deepEqual(report.categories, { 'ADESÃO AUTORIZADA': 1 });
   assert.match(formatWeeklyMessage(report), /🟦 \*15\/09 · INGRESSO AUTORIZADO\*/);
+});
+
+test('boletim não ressuscita PDF de 2022 reindexado pelo Google em 2026', () => {
+  const state = { seen: {}, pending: {} };
+  const old = { ...item, title: 'PROJETO DE LEI N°. 54, DE DE DE 2022 Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal',
+    url: 'https://news.google.com/rss/articles/antigo', publishedAt: '2026-09-28T08:34:57Z',
+    classification: { ...item.classification, category: 'PROTOCOLO', score: 19 } };
+  observeRun(state, [old], [], 5, new Date('2026-09-29T06:54:19Z'));
+  const report = buildWeeklyReport(state, {
+    start: new Date('2026-09-26T12:00:00Z'), end: new Date('2026-10-03T12:00:00Z'),
+  });
+  assert.equal(report.events, 0);
+  const id = itemId(old);
+  state.pending[id] = { item: old, queuedAt: '2026-09-29T06:54:19Z' };
+  assert.equal(reclassifyPending(state), 1);
 });
 
 test('linha do tempo ordena por data e preserva a fonte e todos os links', () => {

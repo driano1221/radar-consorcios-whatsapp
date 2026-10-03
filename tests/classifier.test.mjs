@@ -165,3 +165,12 @@ test('proposta de ingresso sem decisão no trecho não vira adesão', () => {
   assert.ok(result.score < 5);
   assert.match(result.reasons.join(' '), /proposta de ingresso sem decisão/);
 });
+
+test('PDF de projeto de lei de 2022 reindexado em 2026 não vira notícia atual', () => {
+  const old = { kind: 'news', title: 'PROJETO DE LEI N°. 54, DE DE DE 2022 Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal',
+    summary: 'Ratifica o Protocolo de Intenções do Consórcio Público Intermunicipal de Saúde.',
+    publishedAt: '2026-09-28T08:34:57Z' };
+  assert.equal(classifyItem(old).category, 'GERAL');
+  assert.match(classifyItem(old).reasons.join(' '), /data recente de indexação/);
+  assert.notEqual(classifyItem({ ...old, title: old.title.replace('2022', '2026') }).category, 'GERAL');
+});

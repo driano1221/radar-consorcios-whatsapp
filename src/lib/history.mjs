@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
 import { canonicalUrl, selectUnseen } from './dedupe.mjs';
-import { classifyItem, isPublishableClassification } from './classifier.mjs';
+import { classifyItem, isPublishableClassification, isStaleLegislativeDocument } from './classifier.mjs';
 import { normalizeForMatch } from './text.mjs';
 
 function weeklyFinding(item) {
   if (item.aiReview?.status === 'disputed') return null;
+  if (isStaleLegislativeDocument(item)) return null;
   const category = item.classification?.category;
   const evidence = normalizeForMatch(`${item.classification?.evidenceText || ''} ${item.summary || ''}`);
   const title = normalizeForMatch(item.title || '');

@@ -160,6 +160,18 @@ function isContractTerminationNotConsortium(text) {
     !/\b(extincao|dissolucao|liquidacao)\s+(do|de)\s+consorcio\b/.test(text);
 }
 
+// O Google Notícias pode republicar o endereço de um PDF antigo com data de
+// indexação recente. Só usamos o ano explícito de um ato numerado no começo
+// do título; uma notícia atual que comenta uma lei antiga não entra aqui.
+export function isStaleLegislativeDocument(item) {
+  if (item.kind !== 'news' || !item.publishedAt) return false;
+  const publicationYear = new Date(item.publishedAt).getUTCFullYear();
+  if (!Number.isFinite(publicationYear)) return false;
+  const title = normalizeForMatch(item.title || '');
+  const match = /^(?:projeto de lei|lei|decreto|resolucao|portaria)\s*(?:n(?:[º°o]|r)?\.?\s*)?\d{1,6}\b.{0,45}\b(20\d{2})\b/.exec(title);
+  return Boolean(match && publicationYear - Number(match[1]) >= 2);
+}
+
 function evaluateSegment(item, evidence, index) {
   const title = normalizeForMatch(item.title);
   const entityContext = item.entityName && item.entityAlias &&
@@ -242,6 +254,11 @@ function evaluateSegment(item, evidence, index) {
 }
 
 export function classifyItem(item) {
+  if (isStaleLegislativeDocument(item)) {
+    return { category: 'GERAL', emoji: '📰', score: 0,
+      reasons: ['rejeitado: ato antigo com data recente de indexação'], evidenceIndex: -1,
+      evidenceText: '', publicContext: false, strongPublicContext: false };
+  }
   const classifications = evidenceSegments(item).map((evidence, index) => evaluateSegment(item, evidence, index));
   if (!classifications.length) {
     return { category: 'GERAL', emoji: '📰', score: 0, reasons: ['rejeitado: sem texto para classificação'], evidenceIndex: -1, evidenceText: '', publicContext: false, strongPublicContext: false };
