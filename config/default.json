@@ -38,36 +38,20 @@
     "pageSize": 100,
     "excerptSize": 900,
     "numberOfExcerpts": 3,
-    "timeoutMs": 25000,
-    "retries": 2,
+    "timeoutMs": 16000,
+    "retries": 1,
     "maxConcurrent": 2,
     "queryGroups": [
-      [
-        "consórcio intermunicipal",
-        "consorcio intermunicipal",
-        "consórcio público",
-        "consorcio publico",
-        "protocolo de intenções",
-        "protocolo de intencoes"
-      ],
-      [
-        "contrato de rateio",
-        "termo aditivo ao contrato de rateio",
-        "adesão ao consórcio",
-        "adesao ao consorcio",
-        "ingresso no consórcio",
-        "ratifica o protocolo de intenções"
-      ],
-      [
-        "retirada do consórcio",
-        "desligamento do consórcio",
-        "desvinculação do consórcio",
-        "exclusão do consórcio",
-        "dissolução do consórcio",
-        "extinção do consórcio",
-        "inadimplência do consórcio",
-        "denúncia do protocolo de intenções"
-      ]
+      ["consórcio intermunicipal", "consorcio intermunicipal"],
+      ["consórcio público", "consorcio publico"],
+      ["protocolo de intenções", "protocolo de intencoes"],
+      ["contrato de rateio", "termo aditivo ao contrato de rateio"],
+      ["adesão ao consórcio", "adesao ao consorcio"],
+      ["ingresso no consórcio", "ratifica o protocolo de intenções"],
+      ["retirada do consórcio", "desligamento do consórcio"],
+      ["desvinculação do consórcio", "exclusão do consórcio"],
+      ["dissolução do consórcio", "extinção do consórcio"],
+      ["inadimplência do consórcio", "denúncia do protocolo de intenções"]
     ]
   },
   "rssFeeds": {

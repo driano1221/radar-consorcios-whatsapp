@@ -41,6 +41,7 @@ export function recordRunDecisions(state, items, options = {}) {
     state.decisions[key] = {
       id: key, url, title: String(item.title || '').slice(0, 300),
       source: String(item.source || '').slice(0, 120),
+      articleUrl: String(item.articleUrl || previous?.articleUrl || '').slice(0, 1200),
       publishedAt: item.publishedAt || '',
       firstSeenAt: previous?.firstSeenAt || at, lastSeenAt: at,
       observedCount: (previous?.observedCount || 0) + 1,

@@ -28,6 +28,7 @@ import { presentItem } from './lib/message-presentation.mjs';
 import { applyAiReview, reviewQueue, shouldReviewWithAi } from './lib/ai-review.mjs';
 import { itemId } from './lib/dedupe.mjs';
 import { recordRunDecisions } from './lib/decision-ledger.mjs';
+import { enrichArticles, classifyEnrichedItem } from './lib/article-enrichment.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -89,8 +90,13 @@ async function main() {
       console.warn(`[fonte] ${sourceRequests[index][0]}: ${result.reason.message}`);
     }
   }
-  const classified = collected.map((item) => {
-    const classifiedItem = { ...item, classification: classifyItem(item) };
+  const articleResult = await enrichArticles(collected);
+  sourceHealth.push({ name: 'Texto das páginas originais',
+    status: articleResult.failed ? 'degraded' : 'ok', itemCount: articleResult.enriched,
+    message: `${articleResult.attempted} tentativa(s); ${articleResult.enriched} texto(s) obtido(s); ${articleResult.failed} falha(s).` });
+  console.log(`[texto] ${articleResult.enriched}/${articleResult.attempted} páginas enriquecidas; ${articleResult.failed} falhas.`);
+  const classified = articleResult.items.map((item, index) => {
+    const classifiedItem = classifyEnrichedItem(item, collected[index]);
     return config.aiReviewEnabled
       ? applyAiReview(classifiedItem, state.aiReviews?.[itemId(classifiedItem)]) : classifiedItem;
   });

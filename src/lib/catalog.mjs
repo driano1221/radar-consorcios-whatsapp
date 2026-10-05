@@ -74,7 +74,10 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
     consorcio: safeText(item.entityName, 180), sigla: safeText(item.entityAlias, 40),
     municipio: safeText(territory, 100), uf: safeText(stateCode, 2),
     titulo: title, fonte: safeText(item.source, 120), url,
-    trecho: safeText(item.classification?.evidenceText || (item.classification?.category !== 'GERAL' ? item.summary : ''), 500),
+    article_url: item.articleUrl || '',
+    trecho: safeText(item.classification?.category === 'GERAL'
+      ? (item.summary || item.classification?.evidenceText)
+      : (item.classification?.evidenceText || item.summary), 500),
     pontuacao: item.classification?.score ?? '', revisao_ia: item.aiReview?.status || '', enviado_em: sentAt || '',
   };
 }
@@ -109,6 +112,9 @@ export function mergeCatalogRecord(existing, incoming) {
       ? incoming.etapa : best.etapa,
     municipio: best.municipio || existing.municipio || incoming.municipio,
     uf: best.uf || existing.uf || incoming.uf,
+    article_url: existing.article_url || incoming.article_url || '',
+    article_attempted_at: existing.article_attempted_at || incoming.article_attempted_at || '',
+    article_attempts: Math.max(Number(existing.article_attempts || 0), Number(incoming.article_attempts || 0)),
     data_publicacao: best.data_publicacao || existing.data_publicacao || incoming.data_publicacao,
   };
 }

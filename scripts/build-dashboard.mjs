@@ -83,7 +83,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       : curated?.situacao_analise?.startsWith('categoria corrigida') ? curated.situacao_analise
         : decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
     return {
-      id: row.id, title: row.titulo, source: row.fonte, url: row.url,
+      id: row.id, title: row.titulo, source: row.fonte,
+      url: decision?.articleUrl || row.article_url || row.url,
       publishedAt: row.data_publicacao, firstSeenAt: row.primeira_coleta,
       lastSeenAt: decision?.lastSeenAt || row.ultima_coleta,
       category: inEvents ? curated.tipo_evento : 'GERAL',
@@ -157,6 +158,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       score: classification.score,
       classificationReasons: classification.reasons || [],
       lastSeenAt: observation.lastSeenAt,
+      articleUrl: item.articleUrl || '',
       reasonBasis: 'recalculado com as regras atuais',
     }];
   })), ...state.decisions };

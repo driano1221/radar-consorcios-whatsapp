@@ -1,0 +1,46 @@
+name: Recuperar textos antigos
+
+on:
+  schedule:
+    - cron: '37 3 * * *'
+      timezone: America/Sao_Paulo
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radar-consorcios-whatsapp
+  cancel-in-progress: false
+
+jobs:
+  recuperar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Preparar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Instalar dependências
+        run: npm ci
+      - name: Recuperar até 20 textos sem enviar ao WhatsApp
+        run: node scripts/backfill-article-text.mjs --limit=20 --apply
+      - name: Guardar resultados na base
+        shell: bash
+        run: |
+          git config user.name "radar-consorcios[bot]"
+          git config user.email "radar-consorcios[bot]@users.noreply.github.com"
+          git add -- data/catalogo
+          if git diff --cached --quiet; then
+            echo "Nenhum texto ou tentativa nova."
+            exit 0
+          fi
+          git commit -m "chore: recuperar textos antigos [skip ci]"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

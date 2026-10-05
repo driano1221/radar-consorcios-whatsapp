@@ -6,6 +6,16 @@ import os from 'node:os';
 import path from 'node:path';
 import { catalogRecord, mergeCatalogRecord, mergeStateIntoCatalog, saveCatalog } from '../src/lib/catalog.mjs';
 
+test('catálogo guarda o texto de itens gerais e preserva o link direto recuperado', () => {
+  const item = { kind: 'news', title: 'Consórcio abre seleção', url: 'https://news.google.com/rss/articles/id',
+    articleUrl: 'https://example.org/materia', summary: 'A seleção oferece onze vagas para profissionais de saúde.',
+    classification: { category: 'GERAL', score: 0 } };
+  const enriched = catalogRecord(item, '2026-10-05T00:00:00Z', '2026-10-05T00:00:00Z');
+  assert.match(enriched.trecho, /onze vagas/);
+  assert.equal(enriched.article_url, item.articleUrl);
+  assert.equal(mergeCatalogRecord(enriched, { ...enriched, article_url: '' }).article_url, item.articleUrl);
+});
+
 const at = '2026-10-02T15:00:00.000Z';
 
 test('lei que autoriza ingresso não vira participação confirmada', () => {
