@@ -1,16 +1,16 @@
 # Panorama da base histórica
 
-- 1233 documentos recuperados do histórico de coletas.
-- 51 registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.
+- 1244 documentos recuperados do histórico de coletas.
+- 52 registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.
 - 27 identidades candidatas de consórcios; 41 vínculos documentais, dos quais 29 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 11 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 12 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
 | ADESÃO | 13 |
-| PROTOCOLO | 7 |
+| PROTOCOLO | 8 |
 | RATEIO | 6 |
 | CONTROLE | 5 |
 | GOVERNANÇA | 5 |
@@ -26,6 +26,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-04 | PROTOCOLO — relato — conferir documento original | publicado pelo radar — não confirmado manualmente | [14/03/2022 - LEI Nº559-2022 (Ratifica o protocolo de intenções do Consórcio publico sustentavel) - Câmara Municipal de Condado - PB](https://news.google.com/rss/articles/CBMidEFVX3lxTE9oRGNUMmZrT3hpYnZkcW56bUpWZ0MzYUVUUUJCUDY0cVNMNDQxVlJOZlBtQXVSQUQtcEU2SVlWbFlqc0gzeFJWX1h2QXhsUXNiQnRNZ3RVOEFNZjVVQ2NHSjk2T09NVGlLR0RPTFBQakxfeERV?oc=5) |
 | 2026-10-02 | PROTOCOLO — ato publicado — efeito a verificar | aprovado pela IA — não confirmado manualmente | [LEI MUNICIPAL Nº 1193/2026, DE 02 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1919144/) |
 | 2026-09-29 | PROPOSTA DE ADESÃO — proposta aprovada no Conselho de Saúde — ingresso não comprovado | categoria corrigida por revisão editorial — conselho aprovou proposta, não adesão efetiva | [Diário Oficial de Valinhos (SP)](https://data.queridodiario.ok.org.br/3556206/2026-09-29/90c5c576997adb1e4eb3696885e8be88ae79adf6.pdf) |
 | 2026-09-29 | ADESÃO AUTORIZADA — autorização — ingresso não comprovado | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Junqueiro (AL)](https://data.queridodiario.ok.org.br/2700000/2026-09-29/eba66af2865d380a493a4d7847c64109ee2821b4.pdf) |
@@ -40,6 +41,5 @@
 | 2026-09-17 | ADESÃO — relato — conferir documento original | publicado pelo radar — não confirmado manualmente | [Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net](https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5) |
 | 2026-09-17 | ADESÃO — relato — conferir documento original | candidato — requer revisão | [Ribeirão das Neves oficializa adesão ao consórcio intermunicipal Icismep para ampliar serviços de saúde - RibeiraoDasNeves.net](https://news.google.com/rss/articles/CBMi_AFBVV95cUxOYUtVUXhxeUFXb0R4R1haOHlOTUFGTkFxSFNWQzZybFc1UXNvT1I0RVAxYk9tci15dWJvd3lPak1FZHc0aklOUEhrbFI2ZndubGFfRzBaNHBpWlA0bUQweW5FTkZNbnJCNFo2c0p0M2pic3VDeGluUGNIMmJ4bER3MFExWGtzTWdEU1ZMdUtXdDVIbl9WS0JoN1Zhb1NPdGJJNU15QzNCOFM0R05oUU0tTmpsRndpMkJNREpuUVplMU5uWV9rOHprdk44NmgxYUVpVXc2eGRlUGtEMUR5a2NjVFhaS0VOUjF5YXFYemxsWWM3M3UwQnNhQ09TTS0?oc=5) |
 | 2026-09-17 | RATEIO — cláusula de rateio — contrato completo a conferir | categoria corrigida por revisão editorial — trecho de contrato de rateio não documenta fiscalização | [Diário Oficial de Votuporanga (SP)](https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf) |
-| 2026-09-16 | CRISE — relato — conferir documento original | candidato — requer revisão | [Inadimplência deixa oito municípios de MT sem incentivo estadual para consórcios de Saúde - atualmt.com.br](https://news.google.com/rss/articles/CBMiwgFBVV95cUxQMEpwU1NwakU2VHV5R09aLUM0WUZ6UzQ2U0F4ZFpFV21WazNCTkN1X2ZVY1B3WmRsYVJxenZIdDhmU295Qk5oRWY3dnNBTFkxZ1dwZjlVblh0OUNUdGMzZU5TZ09ydURfTnVubk45UmhzendPZ0RsVGp1WEU0TVVTbkpPQWQ4SDNOOU9hUjQ2QmtuYlpCUDBaazRFV1RacjNtcHNTV0IwQndzNk4xaFVDTjNRRmdsZ1cwaElJdzE5U1hDdw?oc=5) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.

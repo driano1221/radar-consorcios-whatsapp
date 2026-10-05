@@ -3165,6 +3165,26 @@
       "category": "ADESÃO AUTORIZADA",
       "source": "Querido Diário",
       "publishedAt": "2026-09-29T12:00:00-03:00"
+    },
+    "6c3f79115ca55f702997088ff7a1b91d4a6b6b9474c8a335680d1891ff5572e9": {
+      "sentAt": "2026-10-05T02:00:36.304Z",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oRGNUMmZrT3hpYnZkcW56bUpWZ0MzYUVUUUJCUDY0cVNMNDQxVlJOZlBtQXVSQUQtcEU2SVlWbFlqc0gzeFJWX1h2QXhsUXNiQnRNZ3RVOEFNZjVVQ2NHSjk2T09NVGlLR0RPTFBQakxfeERV?oc=5",
+      "title": "14/03/2022 - LEI Nº559-2022 (Ratifica o protocolo de intenções do Consórcio publico sustentavel) - Câmara Municipal de Condado - PB",
+      "titleFingerprint": "575683b8095568678385c0d16f6429536214513560def3d5ceab12acbf162251",
+      "contentTokens": [
+        "2022",
+        "559",
+        "camara",
+        "condado",
+        "intencoes",
+        "lei",
+        "protocolo",
+        "ratifica",
+        "sustentavel"
+      ],
+      "category": "PROTOCOLO",
+      "source": "Câmara Municipal de Condado - PB",
+      "publishedAt": "2026-10-04T11:02:26.000Z"
     }
   },
   "pending": {},
@@ -23705,7 +23725,7 @@
     },
     "e99806831f305ba71fe0e6e40b6e6a4bcc12a782afd9bd9958ff17cad87b6cd3": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Cidades buscam caminhos para acessar financiamento climático internacional",
@@ -23730,7 +23750,7 @@
     },
     "2c6ea20f9a4fd7f62c862439c039fae225388e0ded1ad891aaeee0a86de44194": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Fórum Unicidades promove diálogo sobre Agenda 2030 e ODS nos municípios",
@@ -23753,7 +23773,7 @@
     },
     "8fe4501be0d9303a04779978f68f51f4ceb5cace2007fb6a8a2cc2652b8fb675": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Educação em situações de crise: FNP debate planos de contingência escolares para eventos climáticos",
@@ -24008,7 +24028,7 @@
     },
     "fb3d5ebbce525e81fe87ef84d0ac13843b38d30bf67b66dccb947eafc948c087": {
       "firstSeenAt": "2026-09-28T18:36:23.022Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCEMG forma 185 brigadistas para prevenção e atuação em situações de emergência",
@@ -24106,7 +24126,7 @@
     },
     "fd9b21f13d2026312dfbe03c534d40c4a9e1c6ad09ff4200045f082c74b8374a": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Antas (BA)",
@@ -24423,7 +24443,7 @@
     },
     "1103b2b4d5f2bb8bfa8cc59feb6bc3c8b67210c4ecb5de0b9e6249223bf867d8": {
       "firstSeenAt": "2026-09-28T23:49:57.321Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "PodContas debate o controle externo nas parcerias com o Terceiro Setor",
@@ -24907,7 +24927,7 @@
     },
     "850762ca388d577cce4e57099ef3ae8206db65b797aa5e47140a09abaa0b31ee": {
       "firstSeenAt": "2026-09-29T19:59:15.650Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Ex-presidente do CISALP depõe à CPI da Saúde e questiona criação de novo consórcio em Patos de Minas - patosja.com.br",
@@ -24932,7 +24952,7 @@
     },
     "a14f47ed82d1bd78edaeabfd3237d709236117d554bd46b6023fc3255ce4511f": {
       "firstSeenAt": "2026-09-29T19:59:15.650Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Público para Desenvolvimento do Alto Paraopeba - altoparaopeba.mg.gov.br",
@@ -25187,7 +25207,7 @@
     },
     "c85555550d948101240d575f5121c556ad09091e409d3a8739eac3a4b8dbd09b": {
       "firstSeenAt": "2026-09-29T19:59:15.650Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Uberaba é o próximo destino do Tribunal de Contas de Minas Gerais; \"capital do Zebu\" recente encontro técnico, em 8/10",
@@ -25335,7 +25355,7 @@
     },
     "c756a3f6f6963cc98ffaace6067a8b8c38d33c25c195feac130ec023227c1d42": {
       "firstSeenAt": "2026-09-30T00:26:49.614Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Pauta da sessão de 09/09 da Câmara de BC - Câmara de Vereadores de Balneário Camboriú",
@@ -25613,7 +25633,7 @@
     },
     "d283b8302c2c04f2aa84870f596a8fd126dfee675a430648980a6d7b4265cc67": {
       "firstSeenAt": "2026-09-30T00:26:49.614Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCEMG aponta falhas em concurso público da Prefeitura de Perdões",
@@ -25690,7 +25710,7 @@
     },
     "a1c4447613fdbc678271bd87933346f9568a1071c02c0205c07aeda8bb912e80": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-03T00:30:11.524Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Detalhes do Acórdão - 6678/2014 - Primeira Câmara - TCE-PR",
@@ -25713,7 +25733,7 @@
     },
     "748d3531f21847fb60aacf75f6f08ba47bb0525096e5f005d60515651a0caa8d": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Ipiranga (PR)",
@@ -25743,7 +25763,7 @@
     },
     "7595b7e7657aef666c1459187e0ef5935634387704ff7c3fade58f7150819719": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Caetité (BA)",
@@ -25771,7 +25791,7 @@
     },
     "73cf95b2fd33a92cc17e2ad523a68c200c4db1d7ac52a7f210170129f7bb02cb": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jeremoabo (BA)",
@@ -25799,7 +25819,7 @@
     },
     "81b62902ab032049117ac93f50a09cbc3858b0d3d642b136e44f1fb81646f7d3": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Salto (SP)",
@@ -25827,7 +25847,7 @@
     },
     "6ce62f55c6dde32c9682299f89a25071919dc45efbd132530f5d849fca360750": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Junqueiro (AL)",
@@ -25868,7 +25888,7 @@
     },
     "d66ffe5dd98359a42705449164c86f4a48433e8c0b29b7df595730e89ccc8fae": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Uberaba (MG)",
@@ -25896,7 +25916,7 @@
     },
     "5d34f8dac233af97c7e4612ed2d282505437c8b15dcc26bbcdc17297562cfe33": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Juatuba (MG)",
@@ -25924,7 +25944,7 @@
     },
     "48535452b334474d281ae46bb8a3996b759eed6c246c4de1f3b9e649c4910cf1": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itajubá (MG)",
@@ -25953,7 +25973,7 @@
     },
     "f4169054e3aa855c72f73133e900b686028cd8104e37da75c7fd838ce7fe995e": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Antônio Olinto (PR)",
@@ -25981,7 +26001,7 @@
     },
     "1320d2fa2280786f646f0ff46397ff995101f04f45c17788c029692c9feb0bb7": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Paranhos (MS)",
@@ -26009,7 +26029,7 @@
     },
     "0a2f11f3ddc9b3a1c3aff4fed88db6ca73bc3b622592e11ff32bb813dc45ac29": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Nova Serrana (MG)",
@@ -26037,7 +26057,7 @@
     },
     "714546b5fb393c869fa1bff74671f8fe93e2c2a033c3100582e87e96110091b3": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Águas de São Pedro (SP)",
@@ -26065,7 +26085,7 @@
     },
     "d89d6a6bd62807ae4665e464aa1cc214a98f6342aaa2efc4a8e89517bfb1cbd2": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jaguaquara (BA)",
@@ -26094,7 +26114,7 @@
     },
     "538becc0c698f5ea7c20d83a73f8584076540eecd3ae1e2b5f649b3b9fa80adf": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Votuporanga (SP)",
@@ -26124,7 +26144,7 @@
     },
     "c6d78f6ce26438f9d510039764e16adff0b70415456e527a958f79f31cdbe2ae": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Monte Mor (SP)",
@@ -26152,7 +26172,7 @@
     },
     "e7bde2d06f8be5d5aeb0702e7c3789e2604fd532ac445c88ede92a849fa448e1": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Taubaté (SP)",
@@ -26318,7 +26338,7 @@
     },
     "ca989923585542971a87f8530ed8ef473801ab36c9c714997ffe2105d9543788": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Estudantes de cinco instituições assumem a cadeira de Conselheiros do TCESP em outubro",
@@ -26344,7 +26364,7 @@
     },
     "4d54fbb72353ba9210e33a92df3fcfc63115f98a2670fe9acd8854f0acfd3004": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCESP lança programa \"Gestão que Gera Resultado\"; tema de estreia é Reforma Tributária",
@@ -26370,7 +26390,7 @@
     },
     "8f27be50939fc562c353fcbd697ef058dedb9e302197cd2ac7d129ba3e179e76": {
       "firstSeenAt": "2026-09-30T06:42:47.269Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCESP realiza final do concurso \"Faça (a sua) Parte!\" nesta quarta-feira",
@@ -26419,7 +26439,7 @@
     },
     "57eb95fd999964380db40e025c5486455306079d41a0dbdf86337e8d5f971fea": {
       "firstSeenAt": "2026-09-30T13:42:33.002Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "FNP apresenta propostas para os presidenciáveis",
@@ -26904,7 +26924,7 @@
     },
     "0b5d899917f1fe7393e652d6ab09ffb45ef8189efe27adb332ee8f22b0523366": {
       "firstSeenAt": "2026-09-30T20:01:13.908Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Termo de Ajustamento de Gestão com o município de Cruzília prevê medidas para regularizar gestão de pessoal",
@@ -26929,7 +26949,7 @@
     },
     "d15aec7d135a8ab86ec5e9cf2cf0fbf035395fd537de94fd1f4e020024ab3d1d": {
       "firstSeenAt": "2026-09-30T20:01:13.908Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Literatura, ancestralidade e futebol se encontram no Sempre Um Papo TCE Cultural",
@@ -26954,7 +26974,7 @@
     },
     "aad8bf2c2df4df1e4eee4f42bbbdc9a9a25a63dfb6338992618abc2daa8b71bf": {
       "firstSeenAt": "2026-09-30T20:01:13.908Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Indisponibilidade temporária de sistemas",
@@ -26980,7 +27000,7 @@
     },
     "078f6a096634863ed96d2ff733f11612d9b05ac19dc0555affac7c3bd9816bde": {
       "firstSeenAt": "2026-09-30T20:01:13.908Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCESP simplifica obrigações da Fase III do Audesp para contratações temporárias de pessoal",
@@ -27265,7 +27285,7 @@
     },
     "9800f9de3aa4f0b2b4dd57745b9db2d53edcab0ff86a37ce117df3fb731672e3": {
       "firstSeenAt": "2026-10-01T00:32:53.782Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "R$ 1 bilhão: Decisão do TCE economiza recursos e recomenda modernização no tratamento do Córrego do Onça",
@@ -27290,7 +27310,7 @@
     },
     "46261bcabb53c275f0a1244f0f52bc645fd2d49931397266c27ac08e51b695e6": {
       "firstSeenAt": "2026-10-01T07:11:08.010Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Zona Oeste da Região Metropolitana de São Paulo agora tem Consórcio Intermunicipal - Prefeitura de Carapicuíba/SP",
@@ -27384,7 +27404,7 @@
     },
     "d4a23f08a7c2d2776bb5737736641253908a429a22dd281718a63c90a0e5c1ff": {
       "firstSeenAt": "2026-10-01T07:11:08.010Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Alunos de Santa Fé do Sul vencem concurso \"Faça (a sua) Parte!\" 2026",
@@ -27433,7 +27453,7 @@
     },
     "0bbc1b30eeee7232080da257e39dddc6052a32f7268acfa1e7db3eb2260ad0b1": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Notícia - Nota de pesar - Consórcio Intermunicipal - Grande ABC",
@@ -27458,7 +27478,7 @@
     },
     "e33b019855b25e1b3baccee70fc99c5734e82d8b36fb076f994cae5d20a0c83c": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -27486,7 +27506,7 @@
     },
     "d2f26ee66b481711cc98e5eea37d41c46ce4debb6610e967bce05a49c633d4ad": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -27514,7 +27534,7 @@
     },
     "3a2444b152ed69542bbb572885637da4a71279252bdd47905b5c54879057a0bd": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -27542,7 +27562,7 @@
     },
     "855a6e74d29fb5e8b4431a715c8450b3310502fc47a4982b17849a09a9d5952f": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Juranda (PR)",
@@ -27573,7 +27593,7 @@
     },
     "79d8300cc63ddf59f45498736f58d9300b8f0f57ef9097effbf8a13f5d94ad49": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Jaboti (PR)",
@@ -27603,7 +27623,7 @@
     },
     "a0f2eb3166e8f6af0d4ba045ab5e4b9fcc18ffa0b616d764bb65dc3edee33b66": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Ipiranga (PR)",
@@ -27631,7 +27651,7 @@
     },
     "a64b86cfd173cd5e46418fdd3e92f9cb57475b881252143aba669659c8ac379f": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mogi Guaçu (SP)",
@@ -27660,7 +27680,7 @@
     },
     "3fc29b1c3e81c7f29962bf77a87859a472b908ebba1e2e66847df3154bbb01c6": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Salto (SP)",
@@ -27688,7 +27708,7 @@
     },
     "e609d4dfb8ef105beeac7af5a22dcd4c7ce8765c37bc64b5390597b3b3f4624d": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Mamborê (PR)",
@@ -27728,7 +27748,7 @@
     },
     "9480a8b7a39fcb616aa42ad9e7a26744d09206f5e8385305457884feef9b1866": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Salinas (MG)",
@@ -27769,7 +27789,7 @@
     },
     "65508941bac268df95bbd30f86a32dd57d7453054bf9017123d3e157324fb84a": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Itajubá (MG)",
@@ -27798,7 +27818,7 @@
     },
     "9dd06ce2bf7e16b0e7b53efbfff4c4a750f3f9f4695357939b18bf5933666072": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Deodápolis (MS)",
@@ -27839,7 +27859,7 @@
     },
     "3db4328709d4df4faee0e526f1b8a4639dbc6bdf9f6044fbe2e42975988b099b": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Costa Rica (MS)",
@@ -27867,7 +27887,7 @@
     },
     "72def1d3897f6bbcc25103a03d9ef5e1810fec196faa16fce55e574d2fd20ea0": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Quissamã (RJ)",
@@ -27895,7 +27915,7 @@
     },
     "82545830049f0278bccdfcb872bea1edf022f69636d8ecbdb2f68cb8bd82f579": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Águas de São Pedro (SP)",
@@ -27923,7 +27943,7 @@
     },
     "c4f1ce371e197e6c116c87bd60b7aac7dde373498c31071f1f007a6cfdc6ae09": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -27951,7 +27971,7 @@
     },
     "28ab1ef0bf2752052eac8da921a5311f9da9c409cefa5b7b6edc2cafc5f2b145": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -27979,7 +27999,7 @@
     },
     "5626fa254e0fbe9b6da93832a6e60354687d8423b2be2376c9ec984fe6ab3df1": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Joinville (SC)",
@@ -28007,7 +28027,7 @@
     },
     "b95726c7143491afee4a3dedd629a14db2399e4ee14dd60486d73da437ba9333": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Sobradinho (RS)",
@@ -28035,7 +28055,7 @@
     },
     "3c976cae9eec0d8d397ce658979f2c127072eca2d95382471dc0b1a4af8dcd52": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Catanduva (SP)",
@@ -28063,7 +28083,7 @@
     },
     "aa77775ec6bca19cd0aad6cc70fd4ebce39ed57fbfc85cb4beeb4179b42dd238": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Botucatu (SP)",
@@ -28091,7 +28111,7 @@
     },
     "7102a237d334b8209bdaf68d67461d3150ef62569ca7f03f09ff804268c32af2": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Birigui (SP)",
@@ -28119,7 +28139,7 @@
     },
     "edf1c761b69d9cef796f232dafbc6f6f80d46c61e0c2097fd634f74d6b1d2508": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -28147,7 +28167,7 @@
     },
     "9f2330785fd68c6c2b65d94aedfa9c741df49fdbfe575143a87d73799008e24b": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -28175,7 +28195,7 @@
     },
     "55e702b50fb5f67fb1d7b3cd744fa2f3e3b77028ef8e9e3856c237c5359509aa": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Valinhos (SP)",
@@ -28204,7 +28224,7 @@
     },
     "74f0421333d9c0c0c9663f66e83703e2631c9aa1e0887df7b37f88f56f5ce538": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de São Manuel (SP)",
@@ -28232,7 +28252,7 @@
     },
     "576980e5bd445f176958147782fe4ab0b29d9a969c861c06206dc70e5b0cfde8": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Vinhedo (SP)",
@@ -28260,7 +28280,7 @@
     },
     "6b7cb3474cb6b683e2d8fe94fa2644465e7d645529222a0e5febb08a5d2d2b95": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Tamboara (PR)",
@@ -28290,7 +28310,7 @@
     },
     "f438d167f0c9dac4842560ab7c4c2094ec513f68274939d91ae674904ec8755d": {
       "firstSeenAt": "2026-10-01T14:27:49.805Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Andradina (SP)",
@@ -28653,22 +28673,22 @@
     },
     "9e51dae987b55f1a6b4e95dc67cb5a9420e7ac8b4e0ba343589ffba1d49080d4": {
       "firstSeenAt": "2026-10-01T20:21:10.757Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
-        "title": "TCE rejeita contas das Câmaras de Igaracy e Mato Grosso e manda gestores devolverem recursos - Repórter PB",
+        "title": "TCE rejeita contas das Câmaras de Igaracy e Mato Grosso e manda gestores devolverem recursos - reporterpb.com.br",
         "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOekZoWThBNUh4T0JQeU5wQjZzcXRxdC1IX0FrUkVmYno0UWpCa1c2RldpX0xFY3d0NjJqWk5fZ3RDbWYwZGNoam11T25Zd2Y4c2w0OFhVeXgyRWdoSktEaFR6ZXdoLThWUkhYWWo5cFBleWVfWDlYeGRIcnhScDRNbG5Nbklmd0JRVWRhdnM5QmZFcEdTdXplelppRUw2VXFzNjZmLWhqaWxUWE1ubHZxOEJvRFdjSTlVUmR1XzZTM0w5SXp0X3RadTMza215STE1SmdJV2dfS0lhbm5mcjhnblZabWU3SGg4WWFJN0RKWWp5eEU?oc=5",
         "sourceUrl": "https://www.reporterpb.com.br",
         "publishedAt": "2026-10-01T15:45:00.000Z",
-        "source": "Repórter PB",
-        "summary": "TCE rejeita contas das Câmaras de Igaracy e Mato Grosso e manda gestores devolverem recursos Repórter PB",
+        "source": "reporterpb.com.br",
+        "summary": "TCE rejeita contas das Câmaras de Igaracy e Mato Grosso e manda gestores devolverem recursos reporterpb.com.br",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
           "score": 0,
           "reasons": [],
           "evidenceIndex": 0,
-          "evidenceText": "TCE rejeita contas das Câmaras de Igaracy e Mato Grosso e manda gestores devolverem recursos Repórter PB",
+          "evidenceText": "TCE rejeita contas das Câmaras de Igaracy e Mato Grosso e manda gestores devolverem recursos reporterpb.com.br",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -28676,7 +28696,7 @@
     },
     "dbc933715a40b10450f5bc9403e70ccd9023f1390e14e9b187b69f2ec3b7923e": {
       "firstSeenAt": "2026-10-01T20:21:10.757Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Acompanhamento de Matéria - sapl.limaduarte.mg.leg.br",
@@ -28699,7 +28719,7 @@
     },
     "92c89dd6f20f6c744fee1ed192ca30442535de532155df449f5c21f48c966d7c": {
       "firstSeenAt": "2026-10-01T20:21:10.757Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "PROCESSO SELETIVO SIMPLIFICADO – RESULTADO PRELIMINAR DA ANÁLISE CURRICULAR",
@@ -28954,7 +28974,7 @@
     },
     "788addd9608a5f25d02dd7483001dc2b2d22e143d89185ab78a801a3693be50e": {
       "firstSeenAt": "2026-10-01T20:21:10.757Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Agostinho Patrus toma posse no Conselho Diretor do Colegiado Nacional de Controle Externo do IBS",
@@ -28979,7 +28999,7 @@
     },
     "7202f0f17648c936c5515d32769d20afb56805f0d99ce95430a6f90b7001b4e8": {
       "firstSeenAt": "2026-10-01T20:21:10.757Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "2º Seminário de Consórcios Públicos debate desafios e oportunidades da gestão no setor",
@@ -29006,7 +29026,7 @@
     },
     "b39f0a4681fbf01c8b1ab048cd05088edf6ded83b9a46a9781a43cff1f107027": {
       "firstSeenAt": "2026-10-01T20:21:10.757Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Alunos de Direito Digital visitam TCEMG através do Projeto Conhecer",
@@ -29031,7 +29051,7 @@
     },
     "2aeb0ddbc543843cf7cfd9490b07a3ded22e3cce54df68a4b86c70a1b0c2d260": {
       "firstSeenAt": "2026-10-01T20:21:10.757Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Um corte que transforma: TCESP promoverá Campanha de Doação de Cabelo",
@@ -29082,15 +29102,15 @@
     },
     "d9406dcf2836016d945f9e42b1ce1b65773a9bad995a63b3dbd469acc398a5ea": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal de Serviços de Acolhimento para Crianças e Adolescentes nas Modalidades Familiar e Institucional da Região da AMURC SC abre processo seletivo com 9 vagas - folha.qconcursos.com",
+        "title": "Consórcio Intermunicipal de Serviços de Acolhimento para Crianças e Adolescentes nas Modalidades Familiar e Institucional da Região da AMURC SC abre processo seletivo com 9 vagas - Qconcursos Folha Dirigida",
         "url": "https://news.google.com/rss/articles/CBMiswJBVV95cUxQdjYwbTdRNnNfT1pRQTI0ZVB3QVhVZ1h6VG1sZ1BBUGVRc09JSVNPMFNfZC1CS0VCYzZKelBEX0lVd1lxSWVRTGtmMU10Ny1UOVlRZnFrOUx6dktBWXVVODFoNkRrWG1KenN0eFQzT0pFM2F2VTg0dmwxRXhtT1V1V2F2V1JnQWJXYmx5WWt5ZVpONVAzVmVGQWkxZWoycnZQT2xFU1B1OWhZbUFQdWJ6d3d2WmFXQU1tOWVFWFlxalVMSkIzajZqRGYzajZIQ3BNMWlRaEV1ejRwY05mNlhSMzBGUGVMcVdyZ2s0QXZjOW43UGtQQzQwRjBiV0dCX3ZRQkZycmhDR1A3bVJjUkpOczRGNk45ZVZQSzVoQkhnTVB5ZThiVVpzd191V3FnQWVKRmtN?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-10-01T23:04:56.000Z",
-        "source": "folha.qconcursos.com",
-        "summary": "Consórcio Intermunicipal de Serviços de Acolhimento para Crianças e Adolescentes nas Modalidades Familiar e Institucional da Região da AMURC SC abre processo seletivo com 9 vagas folha.qconcursos.com",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal de Serviços de Acolhimento para Crianças e Adolescentes nas Modalidades Familiar e Institucional da Região da AMURC SC abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -29100,7 +29120,7 @@
             "rejeitado: recrutamento sem evento institucional"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal de Serviços de Acolhimento para Crianças e Adolescentes nas Modalidades Familiar e Institucional da Região da AMURC SC abre processo seletivo com 9 vagas folha.qconcursos.com",
+          "evidenceText": "Consórcio Intermunicipal de Serviços de Acolhimento para Crianças e Adolescentes nas Modalidades Familiar e Institucional da Região da AMURC SC abre processo seletivo com 9 vagas Qconcursos Folha Dirigida",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -29108,7 +29128,7 @@
     },
     "56941a036aaa8cc8e74753c8087fdc5bebcff0b63d36795cb47de19bbccf7482": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal da Região da AMURC - SC abre processo seletivo para diversos níveis - pciconcursos.com.br",
@@ -29134,7 +29154,7 @@
     },
     "7a5aefb225ba892d61f76c0ef28ce395cf796edbf9b4204bf4c03280e537e327": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCE-PB aplica multa a gestor após reprovar contas de consórcio de saúde do Vale do Piancó - Fonte 83",
@@ -29157,15 +29177,15 @@
     },
     "2810f325fe686571d22a7aca62e7827448781dfb6b9483dc36517072ad6406e1": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal Multifinalitário do Médio Espinhaço abre concurso com 11 vagas - folha.qconcursos.com",
+        "title": "Consórcio Intermunicipal Multifinalitário do Médio Espinhaço abre concurso com 11 vagas - Qconcursos Folha Dirigida",
         "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWW9VZTFtMzdKa1ZRREJUQmtTQmVmaUNRTktoMklSOHJuV3JOdzZ2SmNTeDdVUXBEZU9Hb0ZnYlVxRWFYbFY5cXZ1OXBQaUNneVlCc1ZTeHQ4U0ZFOXBHUWZlSjUzNF9UazdFaTNGaGRzVTNZVm9rc2NVUEtRZzZXU0J2ZC1iQ0VsMHFJV0lqNS10Y0VnTmY5NVg2QXRsMWcwUFVaYzhnU3I2NlJkZlRsSTVZc2FJY2JDMkE?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-10-01T21:04:33.000Z",
-        "source": "folha.qconcursos.com",
-        "summary": "Consórcio Intermunicipal Multifinalitário do Médio Espinhaço abre concurso com 11 vagas folha.qconcursos.com",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal Multifinalitário do Médio Espinhaço abre concurso com 11 vagas Qconcursos Folha Dirigida",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -29174,7 +29194,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal Multifinalitário do Médio Espinhaço abre concurso com 11 vagas folha.qconcursos.com",
+          "evidenceText": "Consórcio Intermunicipal Multifinalitário do Médio Espinhaço abre concurso com 11 vagas Qconcursos Folha Dirigida",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -29208,7 +29228,7 @@
     },
     "eecb7a8bc14f1b5abc9fca889931f980a9afc600bf75af0845442a924b10b9b1": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCE-PB reprova contas de 2023 do Consórcio de Saúde do Vale do Piancó e multa gestor em R$ 3 mil - poderpb.com.br",
@@ -29231,7 +29251,7 @@
     },
     "bfcb4dddbe01e18afab87eeefed0f95c93a1822bad67826466ed59fc128e85e9": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Presidentes de Câmaras Municipais têm contas reprovadas por subsídios recebidos em excesso - Patos Online",
@@ -29277,7 +29297,7 @@
     },
     "e8ff996c47e00311614a4fb25b32d94a11d3caea12164f011cedd3c5013f571c": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Ourinhos (SP)",
@@ -29305,7 +29325,7 @@
     },
     "a0a0570945eed0f18e1a5c7ab9101bffc641938c9bdaea918629f23d1ae8ee83": {
       "firstSeenAt": "2026-10-02T00:47:29.957Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Sarutaiá (SP)",
@@ -29591,7 +29611,7 @@
     },
     "2480bc28d15bf077d76787f7e4ddd3f84844955640d302adff4d7020a5e045b5": {
       "firstSeenAt": "2026-10-02T07:00:24.328Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Consórcio Intermunicipal Cioeste traz conquistas para a região - Prefeitura de Carapicuíba/SP",
@@ -29616,7 +29636,7 @@
     },
     "cfbb82ef4da4e9f28b3b424e3aea2e29de4ec3c29db4364a3cb45eaad399bc67": {
       "firstSeenAt": "2026-10-02T07:00:24.328Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC inicia tratativas para construção de um Plano Regional de Mudanças Climáticas - Portal Opinião Publica",
@@ -29731,7 +29751,7 @@
     },
     "a708afb1a101cfaafebf0d78bb7bf91e507f088d81e26fae97967c0139c605be": {
       "firstSeenAt": "2026-10-02T07:00:24.328Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "III Congresso Nacional de Saneamento dos Tribunais de Contas é aberto em São Paulo",
@@ -29757,7 +29777,7 @@
     },
     "0c2c9c6b97c7fbbba3229c5f0da590b9bc8f7a14a5274eaa360c9c68ac84f8e0": {
       "firstSeenAt": "2026-10-02T13:51:40.344Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Amurc abre novo processo seletivo para completar equipe de Consórcio de Acolhimento em Curitibanos - Jornal A Semana",
@@ -29782,7 +29802,7 @@
     },
     "1e5f2c5ab75fffa4662bf8bfcf0f802668f7049cb7d8c6a11b40d80129c58b89": {
       "firstSeenAt": "2026-10-02T13:51:40.344Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "CIMME - MG abre processo seletivo com salários de até R$ 3.749,00 - pciconcursos.com.br",
@@ -29807,7 +29827,7 @@
     },
     "7da862e6abd89730da1acfd5e5fcae36cee7c29f69b5cff755caa5cff3812cbc": {
       "firstSeenAt": "2026-10-02T13:51:40.344Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "CPI da Saúde – Ex-presidente do Cisalp diz que Prefeitura coordenava prestadores - Patos Notícias",
@@ -29991,7 +30011,7 @@
     },
     "ebe3cd8e743333ec3c00fb491eb94641487853853312d4620d0a18897d0ffe14": {
       "firstSeenAt": "2026-10-02T13:51:40.344Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCE determina devolução de R$ 994 mil aos cofres de Ressaquinha após desvio de recursos públicos",
@@ -30016,7 +30036,7 @@
     },
     "1bc0934defc33f24f038b7da1b7b16603c59d861efb9604c0d1ef254154cb61e": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Consórcio ABC e Associação Paulista de Municípios debatem avanços em compras compartilhadas - ABC Agora",
@@ -30062,7 +30082,7 @@
     },
     "611d49b6989d88fc0428d8f3421c327dfd76f7e1d70556813ddfbdc84dd14101": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Dr. Eugênio rebate boato sofre fim do Consórcio de Saúde e reforça participação de São Félix do Araguaia na… - Araguaia Notícia",
@@ -30085,15 +30105,15 @@
     },
     "e8a5daf6927a35a7f1b6bf5d0fd48708eb1a2d704a1469655374c5080279162e": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Público da Região Norte do Espírito Santo - CIM Norte - Deliberação - cimnorte.es.gov.br",
+        "title": "Consórcio Público da Região Norte do Espírito Santo - CIM Norte - Deliberação - Cim Norte",
         "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPb2ZpSHpfNE1nNkNsVnVxUmptc3lvMVVsaEoxUFg5V2pNNEhjRFBUampmakxHckkyVjlETHUtYnU2UmFEOVFaeG5GM25tT0dvSThKZHZ1Q3NFaTZOZk42bEROejJvalY0XzNYWUltTElRV2Y1T1d5dldtUk85N1paRjQ5WE5hWmdhRDNFWA?oc=5",
         "sourceUrl": "https://www.cimnorte.es.gov.br",
         "publishedAt": "2026-10-02T06:48:17.000Z",
-        "source": "cimnorte.es.gov.br",
-        "summary": "Consórcio Público da Região Norte do Espírito Santo - CIM Norte - Deliberação cimnorte.es.gov.br",
+        "source": "Cim Norte",
+        "summary": "Consórcio Público da Região Norte do Espírito Santo - CIM Norte - Deliberação Cim Norte",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -30102,7 +30122,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Público da Região Norte do Espírito Santo - CIM Norte - Deliberação cimnorte.es.gov.br",
+          "evidenceText": "Consórcio Público da Região Norte do Espírito Santo - CIM Norte - Deliberação Cim Norte",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -30110,7 +30130,7 @@
     },
     "6e3a6eaa9df9f86b97ead552a5356fb9857190fe931d5e0aaba9f44e2ddcfb4f": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Autoriza a abertura de crédito adicional suplementar, e dá outras providências - Câmara Municipal de Sabáudia",
@@ -30133,7 +30153,7 @@
     },
     "91a683d49ddaff3bcb48de6e3357d2a7c5754af8f13a553ffaafea5a45b1a313": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Saiba como sua cidade pode aderir ao Pacto Global de Prefeitos pelo Clima e a Energia",
@@ -30156,7 +30176,7 @@
     },
     "3b1e93a186cec29bf2b28bfee9d9b68b17dc3db6437a22a3b6e7e0614bb01e8c": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "FNP debate alternativas para financiamento do transporte público",
@@ -30411,7 +30431,7 @@
     },
     "7ffc978aeb1bc8bfac4099cb06cee9d592534afcf9a2a3c3b73aecf57ab6b5b0": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCEMG sediará seminário sobre os impactos da reforma tributária nas licitações e contratos administrativos",
@@ -30436,7 +30456,7 @@
     },
     "6b92db6dabf80acde408730d927ed1a064594e859cccdc020fae34c0a24f499a": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Dia da Inovação reúne experiências que aproximam tecnologia, conhecimento e controle externo",
@@ -30461,7 +30481,7 @@
     },
     "67cda1c265f0ca8c1411ec2867dff6500507c8c103b81ce17f34f3fdf75091e6": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Neste domingo, 4/10, quando acontece primeiro turno das Eleições 2026, TCE recebe quatro sessões",
@@ -30486,7 +30506,7 @@
     },
     "4ad8ed86afff62415f567e581f9ada381c052197f6ced2cc025f0bdcb085bba1": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCE mantém suspensas licitações de consórcios públicos após identificar possíveis falhas em processos de contratação",
@@ -30513,7 +30533,7 @@
     },
     "e794c474d0ce5e4ac9e95a7b3fd20d106f545e2203c0e7f3b071a4df02170e8e": {
       "firstSeenAt": "2026-10-02T19:57:30.410Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette-index",
         "title": "Edição oficial mais recente — Diário Municipal AMM-MG",
@@ -30770,7 +30790,7 @@
     },
     "e83e77317f3a2342c72d87359effd15d3f45cecb26ccc5b186b107f536048597": {
       "firstSeenAt": "2026-10-03T00:30:11.524Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Tribunais de Contas têm papel preponderante para Brasil atingir universalização do saneamento",
@@ -30821,15 +30841,15 @@
     },
     "61b1a8509943cba8efd9a7fa98684efa3db3bc9fb5172c3e075b394eb4ea1da6": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
-        "title": "Consórcio Intermunicipal de Gestão e Desenvolvimento Ambiental Sustentável das Vertentes abre concurso com 3 vagas - folha.qconcursos.com",
+        "title": "Consórcio Intermunicipal de Gestão e Desenvolvimento Ambiental Sustentável das Vertentes abre concurso com 3 vagas - Qconcursos Folha Dirigida",
         "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNeHVjN2lSNHgycUdRM3FIUXZMTUpyaWk5RU16MWY5S05WM1RMTHhOX01kZG9ZNXBPZ01YNXVJZ2liQ2FZbTUtQ2o1VjVVQU1YQXdnOV9XczRTQjVMaG45WWFXZ3lWM1dDdUd5SFdaWjY5LXkwM014M2xSckx4U3F5WXVJVzNjWDBlRUpPeUo3bUhRalRaNjc3NUpsUkFsVVAzOUVRUlphWXVtRFdnWVhWcmdtZWRwTXljbmNoaDV3RkN4UDg2YWYwWk1qc1dJZ3RGMXlYUzNTUDdsem9idFE?oc=5",
         "sourceUrl": "https://folha.qconcursos.com",
         "publishedAt": "2026-10-02T23:03:49.000Z",
-        "source": "folha.qconcursos.com",
-        "summary": "Consórcio Intermunicipal de Gestão e Desenvolvimento Ambiental Sustentável das Vertentes abre concurso com 3 vagas folha.qconcursos.com",
+        "source": "Qconcursos Folha Dirigida",
+        "summary": "Consórcio Intermunicipal de Gestão e Desenvolvimento Ambiental Sustentável das Vertentes abre concurso com 3 vagas Qconcursos Folha Dirigida",
         "classification": {
           "category": "GERAL",
           "emoji": "📰",
@@ -30838,7 +30858,7 @@
             "contexto público forte"
           ],
           "evidenceIndex": 0,
-          "evidenceText": "Consórcio Intermunicipal de Gestão e Desenvolvimento Ambiental Sustentável das Vertentes abre concurso com 3 vagas folha.qconcursos.com",
+          "evidenceText": "Consórcio Intermunicipal de Gestão e Desenvolvimento Ambiental Sustentável das Vertentes abre concurso com 3 vagas Qconcursos Folha Dirigida",
           "publicContext": true,
           "strongPublicContext": true
         }
@@ -30846,7 +30866,7 @@
     },
     "eb83961573964b9716f97a920c7941a29c19762fa3a9f39c61475de53509e06a": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T17:34:40.550Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Diário Oficial de Caetité (BA)",
@@ -30922,7 +30942,7 @@
     },
     "02b7e8a103446297ea07451e53f6adfa28a447ec1b4c0cfb06e1633bb67aef42": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCE-PR estabelece novos procedimentos para selecionar e contratar estagiários",
@@ -30948,7 +30968,7 @@
     },
     "e1ccf42d77aa81607cb59ce636f485711d27eed96a9adcecf02773f6a1aeef30": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "TCE-PR libera licitação de R$ 94 milhões para corredor de ônibus BRT em Curitiba",
@@ -30974,7 +30994,7 @@
     },
     "3a36b2bc9b6f4cc0b0c198e2dfd22eaddf49a655488419d83b30323f62f6499c": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Evento, nos dias 13 e 14, debaterá políticas públicas nas 8 áreas avaliadas pelo Progov",
@@ -31000,7 +31020,7 @@
     },
     "ec8a2c3463cd16bb979f15e2596a7c27f9a3903e76d5dc1ff831e58f04e85e7f": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "LEI MUNICIPAL Nº 1193/2026, DE 02 DE OUTUBRO DE 2026",
@@ -31041,7 +31061,7 @@
     },
     "148d7c2ef4493c77a67c8f3097de0083bdb199b6457fe5ebb8cb8ae5dc4885fe": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "TERMO DE COOPERAÇÃO TÉCNICA Nº 001/2026",
@@ -31069,7 +31089,7 @@
     },
     "d87a1d50b0c4a6cbfe5d4a2c7c1f1f83bde7146c3d97ec5ef0630e597142beeb": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "EDITAL COMPLEMENTAR Nº 17 AO EDITAL DE ABERTURA DO PROCESSO SELETIVO SIMPLIFICADO Nº 01/2026",
@@ -31099,7 +31119,7 @@
     },
     "2ffbccfc2cb9c3ac236f68dda09e9442f1a045bd6d92a355750513b9686db5ba": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "EDITAL DE PRORROGAÇÃO DE PRAZO",
@@ -31127,7 +31147,7 @@
     },
     "69604828685d2cc69ba20c9b58d6df18eaca63dfe2f8d4735029fc95c8571150": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "DECRETO Nº 134 , DE 01 DE OUTUBRO DE 2026 - LEI N.1275",
@@ -31157,7 +31177,7 @@
     },
     "c0bc86d4b828c9fe3447bd317cb2c717738b6d3befaa11cb7239df0ffa4fa855": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "DECRETO Nº 73/2026",
@@ -31186,7 +31206,7 @@
     },
     "3b958668dfca21e44a8902da0d9a85b2748995343a9396d392126c235abbd2bd": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "EDITAL DE PUBLICAÇÃO N°159/2026, DE 30 DE SETEMBRO DE 2026",
@@ -31216,7 +31236,7 @@
     },
     "ed2d51aa4755bb552927fd90f040f4a067edef3c50708be21d4f170c7cda9c9a": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "PORTARIA Nº 834, DE 01 DE OUTUBRO DE 2026.",
@@ -31244,7 +31264,7 @@
     },
     "adcdd4a48221b1770efc5dbb01b6274684d7069daa568308cb69dfbf44016a7b": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "AVISO DE RESULTADO",
@@ -31274,7 +31294,7 @@
     },
     "9d6211b3a6cfb8a8ce653c91216e07576840183addc305af672e54ed309a4431": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "Lei nº. 2.218/2026 DE: 01.10.2026",
@@ -31300,7 +31320,7 @@
     },
     "b183450503e916aa6bc45e8660fc44d44f4ea78efc79c76da92bef20cbc36bb4": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "PORTARIA Nº 136/2025",
@@ -31326,7 +31346,7 @@
     },
     "25c7154a70d7e5be964fe146e1c05fe0c0c1b2f6b38adb1364088b508328f1bf": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "EXTRATO DE CONTRATO TEMPORÁRIO",
@@ -31354,7 +31374,7 @@
     },
     "1e81925e8aa29d4daccbe12c0f26607bfded93b8a44638d953aba471afb8cdd1": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "EXTRATO DE CONTRATO TEMPORÁRIO",
@@ -31382,7 +31402,7 @@
     },
     "c671c3fc3cabe63177150bc4cbf2e68ab4425acba7ee806acfcf78ac6dc9a1af": {
       "firstSeenAt": "2026-10-03T06:31:58.228Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "gazette",
         "title": "EXTRATO DE CONTRATO TEMPORÁRIO",
@@ -31479,7 +31499,7 @@
     },
     "86ee507f4131c62110dd3a341216a0eb0aa1066ab4074bb4a4f4a883ce3c3af4": {
       "firstSeenAt": "2026-10-03T17:16:29.630Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "CIGEDAS - MG abre processo seletivo com salários de até R$ 5.152,55 - pciconcursos.com.br",
@@ -31504,7 +31524,7 @@
     },
     "afae42c54290cb9ca929261038e4d3aed096336bbf1aabdb03172a51ee079ec1": {
       "firstSeenAt": "2026-10-03T17:16:29.630Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Despacho em Matéria - sapl.indaiatuba.sp.leg.br",
@@ -31849,7 +31869,7 @@
     },
     "23fbaf11114547fe25b149e64ba4c97fb2445be364178ab6b67553af23fc7040": {
       "firstSeenAt": "2026-10-03T23:46:58.778Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "SELO SIM: Câmara de Guanhães sedia evento em prol do Desenvolvimento Regional - Câmara Municipal de Guanhães",
@@ -31872,7 +31892,7 @@
     },
     "9daa3afd5e2e6565030e811690c909431be2ded9b058eab69efff7c8a09e06e4": {
       "firstSeenAt": "2026-10-03T23:46:58.778Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Projeto de Lei Ordinária do Executivo nº 32 de 2026 - sapl.limaduarte.mg.leg.br",
@@ -31987,7 +32007,7 @@
     },
     "3c70e982022c68d1f9b1bd95b733b0c3b93d8d1d4e83dd82060319d296a0be14": {
       "firstSeenAt": "2026-10-04T06:50:25.722Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Justiça determina regularização do Centro de Especialidades Odontológicas de Viçosa - Rádio Itatiaia",
@@ -32102,7 +32122,7 @@
     },
     "77de468ea47125c069012293cf620d39d35d087ccadef05d58467a089e5eca91": {
       "firstSeenAt": "2026-10-04T13:11:57.748Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "Publicações - CÂMARA MUNICIPAL DE CANGUARETAMA",
@@ -32608,7 +32628,7 @@
     },
     "969acc27a13387750bb93f099b90c5e84c6a0e279d8aaa9999c25d9ef7ede03d": {
       "firstSeenAt": "2026-10-04T22:20:38.460Z",
-      "lastSeenAt": "2026-10-04T22:20:38.460Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
       "item": {
         "kind": "news",
         "title": "MP-BA investiga contrato de R$ 18 milhões da Prefeitura de Correntina com consórcio público - Bahia Notícias",
@@ -32856,6 +32876,288 @@
           "reasons": [],
           "evidenceIndex": 0,
           "evidenceText": "No terceiro boletim do dia, o Tribunal Superior Eleitoral (TSE) informou que 1.543 urnas eletrônicas precisaram ser substituídas até as 15h30 em todo o país neste domingo (4) de primeiro turno das eleições. O número corresponde a 0,28% das 499.248 urnas empregadas na votação deste ano. Outros 50.038 equipamentos seguem disponíveis para substituição, se necessário. Notícias relacionadas: Analfabetos e ex-alunos votam sob emoção em escola que já foi curral. Eleições 2026: acompanhe a apuração em tempo real pela Agência Brasil. Jornais dizem que voto no Brasil define geopolítica na América Latina. A Justiça Federal não detalha os motivos que levaram à substituição das urnas. Em geral a troca ocorre devido a falhas operacionais. Caso até mesmo a urna eletrônica substituída apresente falha, a legislação prevê que como último recurso seja adotada a votação com cédula de papel. Até o momento, contudo, isso não foi necessário nas eleições deste ano. Neste domingo (4), mais de 158 milhões de eleitores estão aptos a votar para os cargos de presidente, governador, senador, deputado federal e deputado estadual ou distrital. *Matéria atualizada às 16h52 para correção do número de urnas substituídas.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c84b8d852b0eb82af271aa1bcd21477fc24431da4a4c6eae1cd99889660f180a": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "14/03/2022 - LEI Nº559-2022 (Ratifica o protocolo de intenções do Consórcio publico sustentavel) - Câmara Municipal de Condado - PB",
+        "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oRGNUMmZrT3hpYnZkcW56bUpWZ0MzYUVUUUJCUDY0cVNMNDQxVlJOZlBtQXVSQUQtcEU2SVlWbFlqc0gzeFJWX1h2QXhsUXNiQnRNZ3RVOEFNZjVVQ2NHSjk2T09NVGlLR0RPTFBQakxfeERV?oc=5",
+        "sourceUrl": "https://condado.pb.leg.br",
+        "publishedAt": "2026-10-04T11:02:26.000Z",
+        "source": "Câmara Municipal de Condado - PB",
+        "summary": "14/03/2022 - LEI Nº559-2022 (Ratifica o protocolo de intenções do Consórcio publico sustentavel) Câmara Municipal de Condado - PB",
+        "classification": {
+          "category": "PROTOCOLO",
+          "emoji": "🟨",
+          "score": 19,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO",
+            "PROTOCOLO"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "14/03/2022 - LEI Nº559-2022 (Ratifica o protocolo de intenções do Consórcio publico sustentavel) Câmara Municipal de Condado - PB",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "id": "6c3f79115ca55f702997088ff7a1b91d4a6b6b9474c8a335680d1891ff5572e9",
+        "titleFingerprint": "575683b8095568678385c0d16f6429536214513560def3d5ceab12acbf162251",
+        "contentTokens": [
+          "2022",
+          "559",
+          "camara",
+          "condado",
+          "intencoes",
+          "lei",
+          "protocolo",
+          "ratifica",
+          "sustentavel"
+        ],
+        "aiReview": {
+          "status": "approved",
+          "category": "PROTOCOLO",
+          "evidence": "Ratifica o protocolo de intenções do Consórcio publico sustentavel",
+          "promptVersion": 2,
+          "model": "deepseek-flash",
+          "usage": {
+            "inputTokens": 586,
+            "outputTokens": 76
+          },
+          "reviewedAt": "2026-10-05T02:00:31.522Z"
+        }
+      }
+    },
+    "f6e610499a63b93524bf3a03a20931857f10fe24437fe6a1a2bd4f85ccaf64a4": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Congestionamento no sistema de dados gerou atraso na apuração, diz TSE",
+        "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/congestionamento-no-sistema-de-dados-gerou-atraso-na-apuracao-diz-tse",
+        "publishedAt": "2026-10-05T01:14:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "O presidente do Tribunal Superior Eleitoral (TSE), Kassio Nunes Marques, confirmou neste domingo (4) que houve um atraso na totalização dos votos do primeiro turno das eleições. Segundo o ministro, o atraso de uma hora na divulgação dos dados ocorreu por causa de um congestionamento do sistema de dados da Corte. Notícias relacionadas: Flávio e Lula vão disputar 2º turno para presidente da República. Seis estados e o DF terão segundo turno para governador. Por volta das 19h, a totalização nacional dos votos para presidente da República ficou travada no patamar de 64%. A totalização foi retomada por volta das 20h, quando a contagem passou para 84%. “O que ocorreu foi um congestionamento de dados. A cada eleição, nós somos surpreendidos com alguma intercorrência, o que é natural para quem lida com sistemas complexos e tão variados˜, afirmou. De acordo com o presidente, quando o problema foi detectado pela equipe de tecnologia da informação do tribunal, um protocolo foi acionado para garantir a segurança do sistema. “A princípio, não se sabe se isso foi derivado de outro problema. O que a nossa TI constatou foi um fluxo [de dados] superior ao normal, e esse congestionamento gerou um atraso”, completou.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "O presidente do Tribunal Superior Eleitoral (TSE), Kassio Nunes Marques, confirmou neste domingo (4) que houve um atraso na totalização dos votos do primeiro turno das eleições. Segundo o ministro, o atraso de uma hora na divulgação dos dados ocorreu por causa de um congestionamento do sistema de dados da Corte. Notícias relacionadas: Flávio e Lula vão disputar 2º turno para presidente da República. Seis estados e o DF terão segundo turno para governador. Por volta das 19h, a totalização nacional dos votos para presidente da República ficou travada no patamar de 64%. A totalização foi retomada por volta das 20h, quando a contagem passou para 84%. “O que ocorreu foi um congestionamento de dados. A cada eleição, nós somos surpreendidos com alguma intercorrência, o que é natural para quem lida com sistemas complexos e tão variados˜, afirmou. De acordo com o presidente, quando o problema foi detectado pela equipe de tecnologia da informação do tribunal, um protocolo foi acionado para garantir a segurança do sistema. “A princípio, não se sabe se isso foi derivado de outro problema. O que a nossa TI constatou foi um fluxo [de dados] superior ao normal, e esse congestionamento gerou um atraso”, completou.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "2419c3f01efc3d0307decfb3b4894a5bccb0ba70601268334972d8d55966f508": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Espírito Santo terá 2º turno entre Lorenzo Pazolini e Ricardo Ferraço",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/espirito-santo-tera-2o-turno-entre-lorenzo-pazolini-e-ricardo-ferraco",
+        "publishedAt": "2026-10-05T01:06:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Lorenzo Pazolini (Republicanos) e Ricardo Ferraço (MDB) vão disputar o segundo turno da eleição para governador do Espírito Santo. Os dois candidatos foram os mais votados no primeiro turno, realizado neste domingo (4), segundo dados do Tribunal Superior Eleitoral (TSE). Com 100% das urnas apuradas, Pazolini ficou em primeiro lugar, com 49,65% dos votos válidos, ou 1.048.633 votos. Ferraço ficou em segundo, com 34,06%, equivalente a 719.397 votos. Como nenhum dos candidatos obteve mais da metade dos votos válidos, a eleição para governador do Espírito Santo será decidida em segundo turno, marcado para 25 de outubro. Os demais candidatos obtiveram: Helder Salomão (PT): 15,32% Breno Barcelos (Missão): 0,85% Rafael Demuner (UP): 0,13%",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Lorenzo Pazolini (Republicanos) e Ricardo Ferraço (MDB) vão disputar o segundo turno da eleição para governador do Espírito Santo. Os dois candidatos foram os mais votados no primeiro turno, realizado neste domingo (4), segundo dados do Tribunal Superior Eleitoral (TSE). Com 100% das urnas apuradas, Pazolini ficou em primeiro lugar, com 49,65% dos votos válidos, ou 1.048.633 votos. Ferraço ficou em segundo, com 34,06%, equivalente a 719.397 votos. Como nenhum dos candidatos obteve mais da metade dos votos válidos, a eleição para governador do Espírito Santo será decidida em segundo turno, marcado para 25 de outubro. Os demais candidatos obtiveram: Helder Salomão (PT): 15,32% Breno Barcelos (Missão): 0,85% Rafael Demuner (UP): 0,13%",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "c6f1f80dd327bedd5ddd9792c0ea57b332c511f841593702b6cbc71626727ffa": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Cleitinho Azevedo é eleito governador de Minas Gerais no 1º turno",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/cleitinho-azevedo-e-eleito-governador-de-minas-gerais-no-primeiro-turn",
+        "publishedAt": "2026-10-05T00:52:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Cleitinho Azevedo (Republicanos) foi eleito governador de Minas Gerais neste domingo (4), no primeiro turno das eleições de 2026. O candidato obteve 55,41% dos votos válidos, o equivalente a 6.276.925 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até às 21h50, 99,34% das urnas haviam sido totalizadas no estado. Cleitinho Azevedo ficou à frente de Patrus Ananias (PT), que recebeu 26,28% dos votos (2.977.570). A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo de Minas Gerais. Senador por Minas Gerais, Cleitinho Azevedo é empresário e músico. Foi vereador de Divinópolis e deputado estadual antes de chegar ao Senado, em 2023. Este ano, disputou pela primeira vez o governo de Minas.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Cleitinho Azevedo (Republicanos) foi eleito governador de Minas Gerais neste domingo (4), no primeiro turno das eleições de 2026. O candidato obteve 55,41% dos votos válidos, o equivalente a 6.276.925 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até às 21h50, 99,34% das urnas haviam sido totalizadas no estado. Cleitinho Azevedo ficou à frente de Patrus Ananias (PT), que recebeu 26,28% dos votos (2.977.570). A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo de Minas Gerais. Senador por Minas Gerais, Cleitinho Azevedo é empresário e músico. Foi vereador de Divinópolis e deputado estadual antes de chegar ao Senado, em 2023. Este ano, disputou pela primeira vez o governo de Minas.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "8569dfc38531be0f46a82e69746f8e3c54f46d7dc05f492c866ed0d76995aece": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Seis estados e o DF terão segundo turno para governador",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/Seis-estados-e-o-DF-terao-segundo-turno-para-governador",
+        "publishedAt": "2026-10-05T00:50:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Após a realização do primeiro turno das eleições de 2026, realizado neste domingo (4), sete estados não definiram o governador e a disputa irá para o segundo turno. A nova rodada está marcada para o dia 25 de outubro. Os estados que terão segundo turno são: Acre, Amazonas, Distrito Federal, Espírito Santo, Rio de Janeiro, Rio Grande do Norte e Tocantins Notícias relacionadas: Flávio e Lula vão disputar 2º turno para presidente da República. Crimes eleitorais: PF apreende quase R$ 1 milhão em bens e valores. No Acre, Mailza Assis (PP) e Alan Rick (Republicanos) vão disputar o segundo turno. Mailza terminou a apuração em primeiro lugar, com 49,76% dos votos válidos e Rick ficou em segundo, com 32,27%. Omar Aziz (PSD) e Professora Maria do Carmo (PL) vão disputar o segundo turno da eleição para governador do Amazonas.Aziz terminou a apuração em primeiro lugar, com 40,38% dos votos válidos e Maria do Carmo ficou em segundo, com 24,72%. No Distrito Federal , Celina Leão (PP) terminou a apuração em primeiro lugar, com 49,93% dos votos válidos e Leandro Grass (PT) ficou em segundo, com 34,48%. Lorenzo Pazolini (Republicanos) e Ricardo Ferraço (MDB) vão disputar o segundo turno no Espírito Santo. Pazolini obteve 49,65% dos votos válidos e Ferraço ficou com 34,06%. No Rio de Janeiro, Douglas Ruas (PL) e Eduardo Paes (PSD) se enfrentarão no dia 25 de outubro na disputa pelo governo do estado. No primeiro turno, Ruas ficou com 49,27% e Paes obteve 42,76% dos votos. Allyson (União) e Cadu de Lula (PT) vão disputar o segundo turno da eleição para governador do Rio Grande do Norte. Allyson ficou em primeiro lugar, com 36,83% dos votos válidos e Cadu de Lula obteve 36,21% dos votos. No Tocantins, Professora Dorinha (União) e Vicentinho Júnior (PSDB) vão disputar o segundo turno da ele",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Após a realização do primeiro turno das eleições de 2026, realizado neste domingo (4), sete estados não definiram o governador e a disputa irá para o segundo turno. A nova rodada está marcada para o dia 25 de outubro. Os estados que terão segundo turno são: Acre, Amazonas, Distrito Federal, Espírito Santo, Rio de Janeiro, Rio Grande do Norte e Tocantins Notícias relacionadas: Flávio e Lula vão disputar 2º turno para presidente da República. Crimes eleitorais: PF apreende quase R$ 1 milhão em bens e valores. No Acre, Mailza Assis (PP) e Alan Rick (Republicanos) vão disputar o segundo turno. Mailza terminou a apuração em primeiro lugar, com 49,76% dos votos válidos e Rick ficou em segundo, com 32,27%. Omar Aziz (PSD) e Professora Maria do Carmo (PL) vão disputar o segundo turno da eleição para governador do Amazonas.Aziz terminou a apuração em primeiro lugar, com 40,38% dos votos válidos e Maria do Carmo ficou em segundo, com 24,72%. No Distrito Federal , Celina Leão (PP) terminou a apuração em primeiro lugar, com 49,93% dos votos válidos e Leandro Grass (PT) ficou em segundo, com 34,48%. Lorenzo Pazolini (Republicanos) e Ricardo Ferraço (MDB) vão disputar o segundo turno no Espírito Santo. Pazolini obteve 49,65% dos votos válidos e Ferraço ficou com 34,06%. No Rio de Janeiro, Douglas Ruas (PL) e Eduardo Paes (PSD) se enfrentarão no dia 25 de outubro na disputa pelo governo do estado. No primeiro turno, Ruas ficou com 49,27% e Paes obteve 42,76% dos votos. Allyson (União) e Cadu de Lula (PT) vão disputar o segundo turno da eleição para governador do Rio Grande do Norte. Allyson ficou em primeiro lugar, com 36,83% dos votos válidos e Cadu de Lula obteve 36,21% dos votos. No Tocantins, Professora Dorinha (União) e Vicentinho Júnior (PSDB) vão disputar o segundo turno da ele",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "503fee4d1bfffe66ee07b4ed7e15e8177e2bb0ae4fd34e9b01670ada7efa8961": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Alagoas elege JHC governador no primeiro turno",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/alagoas-elege-jhc-governador-no-primeiro-turno",
+        "publishedAt": "2026-10-05T00:42:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "JHC foi eleito governador de Alagoas neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PSDB obteve 52,09% dos votos válidos, o equivalente a 873.978 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h38, 98,28% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. JHC ficou à frente de Renan Filho (MDB), que recebeu 47,48% dos votos (796.530). Na sequência, aparecem os seguintes candidatos: Lenilda Luna (UP), 0,38%; Márcio Jambo (Democrata), 0,05%. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo de Alagoas. João Henrique Caldas, o JHC, foi deputado estadual e deputado federal antes de ser eleito prefeito de Maceió em 2020 e reeleito em 2024. Renunciou à prefeitura em abril de 2026 para disputar o governo de Alagoas. A votação para governador ocorreu simultaneamente à eleição para presidente, senador e deputados federal, estadual ou distrital (no caso do Distrito Federal).",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "JHC foi eleito governador de Alagoas neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PSDB obteve 52,09% dos votos válidos, o equivalente a 873.978 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h38, 98,28% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. JHC ficou à frente de Renan Filho (MDB), que recebeu 47,48% dos votos (796.530). Na sequência, aparecem os seguintes candidatos: Lenilda Luna (UP), 0,38%; Márcio Jambo (Democrata), 0,05%. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo de Alagoas. João Henrique Caldas, o JHC, foi deputado estadual e deputado federal antes de ser eleito prefeito de Maceió em 2020 e reeleito em 2024. Renunciou à prefeitura em abril de 2026 para disputar o governo de Alagoas. A votação para governador ocorreu simultaneamente à eleição para presidente, senador e deputados federal, estadual ou distrital (no caso do Distrito Federal).",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "dc2f225293d4e01d9c6365dcb9f37b9c15b49235ae988f83bfdb6ce5f0714a33": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Douglas Ruas e Eduardo Paes disputam o 2º turno para o governo do Rio",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/douglas-ruas-e-eduardo-paes-disputam-o-2o-turno-para-o-governo-do-rio",
+        "publishedAt": "2026-10-05T00:42:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Douglas Ruas (PL) e Eduardo Paes (PSD) vão disputar o segundo turno da eleição para governador do Rio de Janeiro. Os dois candidatos foram os mais votados no primeiro turno, realizado neste domingo (4), segundo dados do Tribunal Superior Eleitoral (TSE). Ruas terminou a apuração em primeiro lugar, com 49,27% dos votos válidos, ou 4.268.884 votos. Paes ficou em segundo, com 42,76%, equivalente a 3.704.372 votos. Até as 21h32, 99,95% das urnas haviam sido totalizadas. Como nenhum dos candidatos obteve mais da metade dos votos válidos, a eleição para governador do Rio de Janeiro será decidida em segundo turno, marcado para 25 de outubro. Os demais candidatos obtiveram: Garotinho (Republicanos): 3,17% William Siri (PSOL): 2,71%, Coronel Busnello (Missão): 0,98% André Marinho (Novo): 0,52% Juliete (UP): 0,39% Cyro Garcia (PSTU): 0,17% Luan Monteiro (PCO) 0,03% O resultado acima ainda será ratificado pelo próprio TSE: caso o tribunal decida por invalidar os votos de Garotinho, Ruas vencerá no primeiro turno.",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Douglas Ruas (PL) e Eduardo Paes (PSD) vão disputar o segundo turno da eleição para governador do Rio de Janeiro. Os dois candidatos foram os mais votados no primeiro turno, realizado neste domingo (4), segundo dados do Tribunal Superior Eleitoral (TSE). Ruas terminou a apuração em primeiro lugar, com 49,27% dos votos válidos, ou 4.268.884 votos. Paes ficou em segundo, com 42,76%, equivalente a 3.704.372 votos. Até as 21h32, 99,95% das urnas haviam sido totalizadas. Como nenhum dos candidatos obteve mais da metade dos votos válidos, a eleição para governador do Rio de Janeiro será decidida em segundo turno, marcado para 25 de outubro. Os demais candidatos obtiveram: Garotinho (Republicanos): 3,17% William Siri (PSOL): 2,71%, Coronel Busnello (Missão): 0,98% André Marinho (Novo): 0,52% Juliete (UP): 0,39% Cyro Garcia (PSTU): 0,17% Luan Monteiro (PCO) 0,03% O resultado acima ainda será ratificado pelo próprio TSE: caso o tribunal decida por invalidar os votos de Garotinho, Ruas vencerá no primeiro turno.",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "df00d4919001d347292419b12b14ae1792c1de7b62e388c8aeac6feee0080310": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Jerônimo é reeleito governador no primeiro turno na Bahia",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/jeronimo-e-reeleito-governador-no-primeiro-turno-na-bahia",
+        "publishedAt": "2026-10-05T00:30:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Jerônimo Rodrigues foi reeleito governador da Bahia neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PT obteve 55,41% dos votos válidos, o equivalente a 4.440.938 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h23, 96,73% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. Jerônimo ficou à frente de ACM Neto (União), que recebeu 44,11% dos votos (3.535.498). Na sequência, aparecem os seguintes candidatos: Ronaldo Mansur (PSOL), 0,34%; Aroldo Felix (UP), 0,06%; Maria Bona (PCO), 0,05%; Ariel Capistrano (DC), 0,03. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo da Bahia. Atual governador, Jerônimo Rodrigues é engenheiro agrônomo e professor universitário. Foi secretário estadual de Desenvolvimento Rural e de Educação e secretário nacional do Desenvolvimento Territorial. Buscava a reeleição. Nas redes sociais, Jerônimo celebrou a reeleição e escreveu que trabalhará para eleger o presidente Luiz Inácio Lula da Silva no segundo turno. \"A Bahia vai seguir avançando! Chegamos até aqui porque cada baiano e cada baiana acreditou no nosso projeto. Agora, vamos arregaçar as mangas e seguir para o segundo turno das eleições, ao lado do presidente Lula, para garantirmos a vitória da democracia. Vamos à luta! Obrigado\", postou o governador reeleito, A votação para governador ocorreu simultaneamente à eleição para presidente, senador e deputados federal, estadual ou distrital (no caso do Distrito Federal).",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Jerônimo Rodrigues foi reeleito governador da Bahia neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PT obteve 55,41% dos votos válidos, o equivalente a 4.440.938 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h23, 96,73% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. Jerônimo ficou à frente de ACM Neto (União), que recebeu 44,11% dos votos (3.535.498). Na sequência, aparecem os seguintes candidatos: Ronaldo Mansur (PSOL), 0,34%; Aroldo Felix (UP), 0,06%; Maria Bona (PCO), 0,05%; Ariel Capistrano (DC), 0,03. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo da Bahia. Atual governador, Jerônimo Rodrigues é engenheiro agrônomo e professor universitário. Foi secretário estadual de Desenvolvimento Rural e de Educação e secretário nacional do Desenvolvimento Territorial. Buscava a reeleição. Nas redes sociais, Jerônimo celebrou a reeleição e escreveu que trabalhará para eleger o presidente Luiz Inácio Lula da Silva no segundo turno. \"A Bahia vai seguir avançando! Chegamos até aqui porque cada baiano e cada baiana acreditou no nosso projeto. Agora, vamos arregaçar as mangas e seguir para o segundo turno das eleições, ao lado do presidente Lula, para garantirmos a vitória da democracia. Vamos à luta! Obrigado\", postou o governador reeleito, A votação para governador ocorreu simultaneamente à eleição para presidente, senador e deputados federal, estadual ou distrital (no caso do Distrito Federal).",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "5b93f79d42b9eb66bbc507f21fd1c8c2f879fda1d4bd4c7e0705f917a142d948": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Maranhão elege Eduardo Braide governador no primeiro turno",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/maranhao-elege-eduardo-braide-governador-no-primeiro-turno",
+        "publishedAt": "2026-10-05T00:21:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Eduardo Braide foi eleito governador do Maranhão neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PSD obteve 54,10% dos votos válidos, o equivalente a 2.074.520 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h17, 98,42% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. Braide ficou à frente de Orleans Brandão (MDB), que recebeu 34,68% dos votos (1.329.874). Na sequência, aparecem os seguintes candidatos: Felipe Camarão (PT), 9,59%; Roberto Rocha (PRTB), 1,27%; André Luís (Missão), 0,20%; Saulo Arcangeli (PSTU), 0,12%; Reginaldo Lima (PCB), 0,03%; Dimas Cassimiro (PCO), 0,01%. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo do Maranhão. “Recebo esta vitória com muita gratidão e, acima de tudo, com um profundo senso de responsabilidade. O Maranhão escolheu um novo caminho, e cabe a nós honrar cada voto, trabalhando para melhorar a vida das pessoas em todas as regiões do nosso estado”, afirmou Eduardo Braide em nota. O governador eleito prometeu ampliar o diálogo com a sociedade e unir esforços. “Essa não é uma vitória de uma pessoa. É uma vitória de todos aqueles que acreditaram que é possível fazer mais pelo Maranhão. A partir de hoje, nosso compromisso é com todos os maranhenses, independentemente de onde moram ou de como votaram. Vamos trabalhar para construir um Maranhão mais forte, desenvolvido e com mais oportunidades para todos”, acrescentou. Eduardo Braide foi prefeito de São Luís por dois mandatos, eleito em 2020 e reeleito em 2024. Antes, foi deputado estadual por dois mandatos e deputado federal. Em 2026, deixou a prefeitura para disputar o govern",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Eduardo Braide foi eleito governador do Maranhão neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PSD obteve 54,10% dos votos válidos, o equivalente a 2.074.520 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h17, 98,42% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. Braide ficou à frente de Orleans Brandão (MDB), que recebeu 34,68% dos votos (1.329.874). Na sequência, aparecem os seguintes candidatos: Felipe Camarão (PT), 9,59%; Roberto Rocha (PRTB), 1,27%; André Luís (Missão), 0,20%; Saulo Arcangeli (PSTU), 0,12%; Reginaldo Lima (PCB), 0,03%; Dimas Cassimiro (PCO), 0,01%. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo do Maranhão. “Recebo esta vitória com muita gratidão e, acima de tudo, com um profundo senso de responsabilidade. O Maranhão escolheu um novo caminho, e cabe a nós honrar cada voto, trabalhando para melhorar a vida das pessoas em todas as regiões do nosso estado”, afirmou Eduardo Braide em nota. O governador eleito prometeu ampliar o diálogo com a sociedade e unir esforços. “Essa não é uma vitória de uma pessoa. É uma vitória de todos aqueles que acreditaram que é possível fazer mais pelo Maranhão. A partir de hoje, nosso compromisso é com todos os maranhenses, independentemente de onde moram ou de como votaram. Vamos trabalhar para construir um Maranhão mais forte, desenvolvido e com mais oportunidades para todos”, acrescentou. Eduardo Braide foi prefeito de São Luís por dois mandatos, eleito em 2020 e reeleito em 2024. Antes, foi deputado estadual por dois mandatos e deputado federal. Em 2026, deixou a prefeitura para disputar o govern",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "ac1839f7ec02a3db507a692fe668caef38dd118f8a81ea0544d0eda9040b6030": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Ceará reelege Elmano governador no primeiro turno",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/ceara-reelege-elmano-governador-no-primeiro-turno",
+        "publishedAt": "2026-10-05T00:12:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Elmano de Freitas foi reeleito governador do Ceará neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PT obteve 52,88% dos votos válidos, o equivalente a 2.770.571 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h08, 96,79% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. Elmano ficou à frente de Ciro Gomes (PSDB), que recebeu 46,52% dos votos (2.437.165). Na sequência, aparecem os seguintes candidatos: Delegado Huggo (Missão), 0,32%; Verá Lúcua (Novo), 0,11%; Serley Leal (UP), 0,08%; Zé Batista (PSTU), 0,04%; Danilo Soares (Democrata), 0,03%; Ieri Braga (PCO), 0,01%. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo do Ceará. Nas redes sociais, o governador reeleito disse a vitória representa o reconhecimento da gestão e a união do povo cearense. \"Vencemos ao lado do povo cearense! Essa vitória é o reconhecimento de um trabalho construído com compromisso, resultados e, acima de tudo, união\", postou. Segundo Elmano, a vitória indica que o Ceará continuará progredindo. \"Meu agradecimento a todos e todas que caminharam com a gente e fizeram parte dessa conquista. Juntos, vamos fazer muito mais, e o Ceará vai seguir avançando!\", concluiu. Atual governador, Elmano de Freitas é formado em Direito. Foi secretário de Educação de Fortaleza e deputado estadual por dois mandatos. Em 2012, disputou a prefeitura da capital cearense. Eleito governador em 2022, buscava a reeleição em 2026. A votação para governador ocorreu simultaneamente à eleição para presidente, senador e deputados federal, estadual ou distrital (no caso do Distrito Federal).",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Elmano de Freitas foi reeleito governador do Ceará neste domingo (4), no primeiro turno das eleições de 2026. O candidato do PT obteve 52,88% dos votos válidos, o equivalente a 2.770.571 votos, segundo dados do Tribunal Superior Eleitoral (TSE). Até as 21h08, 96,79% das urnas haviam sido totalizadas no estado. Com o resultado, ele está matematicamente eleito. Elmano ficou à frente de Ciro Gomes (PSDB), que recebeu 46,52% dos votos (2.437.165). Na sequência, aparecem os seguintes candidatos: Delegado Huggo (Missão), 0,32%; Verá Lúcua (Novo), 0,11%; Serley Leal (UP), 0,08%; Zé Batista (PSTU), 0,04%; Danilo Soares (Democrata), 0,03%; Ieri Braga (PCO), 0,01%. A eleição para governador é definida em primeiro turno quando uma candidatura obtém mais da metade dos votos válidos. Com o resultado, não haverá segundo turno para o governo do Ceará. Nas redes sociais, o governador reeleito disse a vitória representa o reconhecimento da gestão e a união do povo cearense. \"Vencemos ao lado do povo cearense! Essa vitória é o reconhecimento de um trabalho construído com compromisso, resultados e, acima de tudo, união\", postou. Segundo Elmano, a vitória indica que o Ceará continuará progredindo. \"Meu agradecimento a todos e todas que caminharam com a gente e fizeram parte dessa conquista. Juntos, vamos fazer muito mais, e o Ceará vai seguir avançando!\", concluiu. Atual governador, Elmano de Freitas é formado em Direito. Foi secretário de Educação de Fortaleza e deputado estadual por dois mandatos. Em 2012, disputou a prefeitura da capital cearense. Eleito governador em 2022, buscava a reeleição em 2026. A votação para governador ocorreu simultaneamente à eleição para presidente, senador e deputados federal, estadual ou distrital (no caso do Distrito Federal).",
+          "publicContext": false,
+          "strongPublicContext": false
+        }
+      }
+    },
+    "426cbaedc7e1290d32dc981d8aca363688baaf5f5155d90bc2456273a26a5ebd": {
+      "firstSeenAt": "2026-10-05T02:00:32.771Z",
+      "lastSeenAt": "2026-10-05T02:00:32.771Z",
+      "item": {
+        "kind": "news",
+        "title": "Aziz e Maria do Carmo vão disputar o 2° turno para governo do Amazonas",
+        "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/aziz-e-maria-do-carmo-vao-disputar-o-2deg-turno-para-governo-do-amazonas",
+        "publishedAt": "2026-10-05T00:11:00.000Z",
+        "source": "Agência Brasil",
+        "sourceUrl": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+        "summary": "Omar Aziz (PSD) e Professora Maria do Carmo (PL) vão disputar o segundo turno da eleição para governador do Amazonas. Os dois candidatos foram os mais votados no primeiro turno, realizado neste domingo (4), segundo dados do Tribunal Superior Eleitoral (TSE). Aziz terminou a apuração em primeiro lugar, com 40,34% dos votos válidos, ou 818.967 votos. Maria do Carmo ficou em segundo, com 24,78%, equivalente a 503.081 votos. Como nenhum dos candidatos obteve mais da metade dos votos válidos, a eleição para governador do Amazonas será decidida em segundo turno, marcado para 25 de outubro. Os demais candidatos obtiveram: Roberto Cidade (União Brasil): 21,8% David Almeida (Avante): 10,62% Cabo Daciolo (Mobiliza): 1,77% Isael Munduruku (Rede): 0,56% Gilberto Vasconcelos (PSTU): 0,14%",
+        "classification": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "Omar Aziz (PSD) e Professora Maria do Carmo (PL) vão disputar o segundo turno da eleição para governador do Amazonas. Os dois candidatos foram os mais votados no primeiro turno, realizado neste domingo (4), segundo dados do Tribunal Superior Eleitoral (TSE). Aziz terminou a apuração em primeiro lugar, com 40,34% dos votos válidos, ou 818.967 votos. Maria do Carmo ficou em segundo, com 24,78%, equivalente a 503.081 votos. Como nenhum dos candidatos obteve mais da metade dos votos válidos, a eleição para governador do Amazonas será decidida em segundo turno, marcado para 25 de outubro. Os demais candidatos obtiveram: Roberto Cidade (União Brasil): 21,8% David Almeida (Avante): 10,62% Cabo Daciolo (Mobiliza): 1,77% Isael Munduruku (Rede): 0,56% Gilberto Vasconcelos (PSTU): 0,14%",
           "publicContext": false,
           "strongPublicContext": false
         }
@@ -47362,43 +47664,203 @@
           "itemCount": 0
         }
       ]
+    },
+    "37253597935:1": {
+      "at": "2026-10-05T02:00:32.771Z",
+      "collected": 144,
+      "minimumScore": 5,
+      "health": [
+        {
+          "name": "Google News",
+          "status": "ok",
+          "itemCount": 36,
+          "durationMs": 658
+        },
+        {
+          "name": "Querido Diário",
+          "status": "degraded",
+          "itemCount": 49,
+          "durationMs": 30511
+        },
+        {
+          "name": "Querido Diário — consulta 1",
+          "status": "ok",
+          "itemCount": 49
+        },
+        {
+          "name": "Querido Diário — consulta 2",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Querido Diário — consulta 3",
+          "status": "error",
+          "itemCount": 0,
+          "message": "The operation was aborted due to timeout"
+        },
+        {
+          "name": "Feeds RSS",
+          "status": "ok",
+          "itemCount": 17,
+          "durationMs": 3016
+        },
+        {
+          "name": "COPIRN",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "CISREC",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CONIAPE",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Observatório das Metrópoles",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "Frente Nacional de Prefeitas e Prefeitos",
+          "status": "ok",
+          "itemCount": 6
+        },
+        {
+          "name": "Agência Brasil",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "Scrapers web",
+          "status": "ok",
+          "itemCount": 42,
+          "durationMs": 7051
+        },
+        {
+          "name": "Rede Nacional de Consórcios Públicos",
+          "adapter": "rncp",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "Confederação Nacional de Municípios",
+          "adapter": "cnm",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cnm.org.br"
+        },
+        {
+          "name": "CISAMAPI",
+          "adapter": "cisamapi",
+          "status": "disabled",
+          "itemCount": 0,
+          "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026"
+        },
+        {
+          "name": "TCE-MG",
+          "adapter": "tce-mg",
+          "status": "ok",
+          "itemCount": 14
+        },
+        {
+          "name": "TCE-SP",
+          "adapter": "tce-sp",
+          "status": "ok",
+          "itemCount": 10
+        },
+        {
+          "name": "TCE-PR (manchetes)",
+          "adapter": "tce-pr-home",
+          "status": "ok",
+          "itemCount": 3
+        },
+        {
+          "name": "Jornal Oficial AMM-MT",
+          "adapter": "amm-mt",
+          "status": "ok",
+          "itemCount": 14
+        },
+        {
+          "name": "Diário Municipal AMM-MG",
+          "adapter": "diario-municipal-index",
+          "status": "ok",
+          "itemCount": 1
+        },
+        {
+          "name": "SAPL",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 3471
+        },
+        {
+          "name": "SAPL Unaí",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "SAPL São João da Boa Vista",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0,
+          "durationMs": 3694
+        },
+        {
+          "name": "CIGA",
+          "status": "ok",
+          "itemCount": 0
+        },
+        {
+          "name": "DeepSeek",
+          "status": "ok",
+          "itemCount": 1
+        }
+      ]
     }
   },
   "health": {
     "Google News": {
       "name": "Google News",
       "status": "ok",
-      "itemCount": 35,
-      "durationMs": 767,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "itemCount": 36,
+      "durationMs": 658,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Querido Diário": {
       "name": "Querido Diário",
       "status": "degraded",
-      "itemCount": 0,
-      "durationMs": 30505,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
-      "consecutiveFailures": 5,
+      "itemCount": 49,
+      "durationMs": 30511,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
+      "consecutiveFailures": 6,
       "lastSuccessAt": "2026-10-03T19:57:33.466Z"
     },
     "Querido Diário — consulta 1": {
       "name": "Querido Diário — consulta 1",
-      "status": "error",
-      "itemCount": 0,
-      "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-04T22:20:38.460Z",
-      "consecutiveFailures": 1,
-      "lastSuccessAt": "2026-10-04T17:34:40.550Z"
+      "status": "ok",
+      "itemCount": 49,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
+      "consecutiveFailures": 0,
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Querido Diário — consulta 2": {
       "name": "Querido Diário — consulta 2",
       "status": "error",
       "itemCount": 0,
       "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-04T22:20:38.460Z",
-      "consecutiveFailures": 3,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
+      "consecutiveFailures": 4,
       "lastSuccessAt": "2026-10-04T06:50:25.722Z"
     },
     "Querido Diário — consulta 3": {
@@ -47406,83 +47868,83 @@
       "status": "error",
       "itemCount": 0,
       "message": "The operation was aborted due to timeout",
-      "checkedAt": "2026-10-04T22:20:38.460Z",
-      "consecutiveFailures": 1,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
+      "consecutiveFailures": 2,
       "lastSuccessAt": "2026-10-04T17:34:40.550Z"
     },
     "Feeds RSS": {
       "name": "Feeds RSS",
       "status": "ok",
       "itemCount": 17,
-      "durationMs": 3486,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "durationMs": 3016,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "COPIRN": {
       "name": "COPIRN",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "CIGA": {
       "name": "CIGA",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "CISREC": {
       "name": "CISREC",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "CONIAPE": {
       "name": "CONIAPE",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Observatório das Metrópoles": {
       "name": "Observatório das Metrópoles",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Frente Nacional de Prefeitas e Prefeitos": {
       "name": "Frente Nacional de Prefeitas e Prefeitos",
       "status": "ok",
       "itemCount": 6,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Agência Brasil": {
       "name": "Agência Brasil",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Scrapers web": {
       "name": "Scrapers web",
       "status": "ok",
       "itemCount": 42,
-      "durationMs": 6849,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "durationMs": 7051,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Rede Nacional de Consórcios Públicos": {
       "name": "Rede Nacional de Consórcios Públicos",
@@ -47491,7 +47953,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z"
+      "checkedAt": "2026-10-05T02:00:32.771Z"
     },
     "Confederação Nacional de Municípios": {
       "name": "Confederação Nacional de Municípios",
@@ -47500,7 +47962,7 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cnm.org.br",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z"
+      "checkedAt": "2026-10-05T02:00:32.771Z"
     },
     "CISAMAPI": {
       "name": "CISAMAPI",
@@ -47509,85 +47971,85 @@
       "itemCount": 0,
       "message": "cobertura alternativa: Google News com filtro site:cisamapi.mg.gov.br; HTTP 403 confirmado no Actions em 14/09/2026",
       "consecutiveFailures": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z"
+      "checkedAt": "2026-10-05T02:00:32.771Z"
     },
     "TCE-MG": {
       "name": "TCE-MG",
       "adapter": "tce-mg",
       "status": "ok",
       "itemCount": 14,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "TCE-SP": {
       "name": "TCE-SP",
       "adapter": "tce-sp",
       "status": "ok",
       "itemCount": 10,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Diário Municipal AMM-MG": {
       "name": "Diário Municipal AMM-MG",
       "adapter": "diario-municipal-index",
       "status": "ok",
       "itemCount": 1,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "SAPL": {
       "name": "SAPL",
       "status": "ok",
       "itemCount": 0,
-      "durationMs": 4534,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "durationMs": 3471,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "SAPL Unaí": {
       "name": "SAPL Unaí",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "SAPL São João da Boa Vista": {
       "name": "SAPL São João da Boa Vista",
       "status": "ok",
       "itemCount": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "DeepSeek": {
       "name": "DeepSeek",
       "status": "ok",
-      "itemCount": 0,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "itemCount": 1,
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "TCE-PR (manchetes)": {
       "name": "TCE-PR (manchetes)",
       "adapter": "tce-pr-home",
       "status": "ok",
       "itemCount": 3,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     },
     "Jornal Oficial AMM-MT": {
       "name": "Jornal Oficial AMM-MT",
       "adapter": "amm-mt",
       "status": "ok",
       "itemCount": 14,
-      "checkedAt": "2026-10-04T22:20:38.460Z",
+      "checkedAt": "2026-10-05T02:00:32.771Z",
       "consecutiveFailures": 0,
-      "lastSuccessAt": "2026-10-04T22:20:38.460Z"
+      "lastSuccessAt": "2026-10-05T02:00:32.771Z"
     }
   },
   "historyStartedAt": "2026-09-14T19:58:39.657Z",
@@ -50606,7 +51068,8 @@
     "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOaS1URnQ2bE0yOWJYR1Q1a0F1ZjBLa0h6a3BmX2JuOWc5SVI4REdDMmUzRmNOZjRWRkladHhVSTBHbWV1c1hkYS1OLW1aUFlDRTZqeTJDQjVEQlVPZlAzQWRoN3JyMUxmYlVlTHN3YU9TVGxGR3I0UWhUcV80R0ZSajEzZ3QzalAyXy0zcnZCblJnRTZQdVhoMzduU1dnWFpveUxhckxZaU1nLWF1MmVWeThHcEVUOHNnS2kxR1J3Z2hXZ1hkcnN4QUF2SFhoTm8tQ2xaSzJXVnNXUzJxQ1E5UnQxQmMxRWFHUFNiRVQ0X2g?oc=5": "https://cleanuri.com/j9151r",
     "https://data.queridodiario.ok.org.br/3557105/2026-09-17/5311f7229ce889098f28c69005a640e653aab421.pdf": "https://cleanuri.com/vGQWQ1",
     "https://www.centenariodosul.pr.leg.br/legislacao/detalhe/1339": "https://cleanuri.com/0v1GE5",
-    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zLXlRaXRTUUtyTDY1dEpFUG4xUWxlR24wSmEtMEN3R3VYcW5KMGpwTGV3ZDVJaUNiZE5UWGNSZHhrNEo3WWRIelRzWjRCMElBWnJFN01mbGZTcjA?oc=5": "https://spoo.me/ZhyovH4"
+    "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9zLXlRaXRTUUtyTDY1dEpFUG4xUWxlR24wSmEtMEN3R3VYcW5KMGpwTGV3ZDVJaUNiZE5UWGNSZHhrNEo3WWRIelRzWjRCMElBWnJFN01mbGZTcjA?oc=5": "https://spoo.me/ZhyovH4",
+    "https://news.google.com/rss/articles/CBMidEFVX3lxTE9oRGNUMmZrT3hpYnZkcW56bUpWZ0MzYUVUUUJCUDY0cVNMNDQxVlJOZlBtQXVSQUQtcEU2SVlWbFlqc0gzeFJWX1h2QXhsUXNiQnRNZ3RVOEFNZjVVQ2NHSjk2T09NVGlLR0RPTFBQakxfeERV?oc=5": "https://spoo.me/KNggfsZ"
   },
   "aiReviews": {
     "ea8ee5deacbc1c955b0812975620ab59ad4455152abe2e691d45eb2ecd3977a0": {
@@ -50884,12 +51347,24 @@
         "outputTokens": 106
       },
       "reviewedAt": "2026-10-03T15:16:53.147Z"
+    },
+    "6c3f79115ca55f702997088ff7a1b91d4a6b6b9474c8a335680d1891ff5572e9": {
+      "status": "approved",
+      "category": "PROTOCOLO",
+      "evidence": "Ratifica o protocolo de intenções do Consórcio publico sustentavel",
+      "promptVersion": 2,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 586,
+        "outputTokens": 76
+      },
+      "reviewedAt": "2026-10-05T02:00:31.522Z"
     }
   },
   "aiUsage": {
     "day": "2026-10-04",
-    "calls": 0,
-    "inputTokens": 0,
-    "outputTokens": 0
+    "calls": 1,
+    "inputTokens": 586,
+    "outputTokens": 76
   }
 }
