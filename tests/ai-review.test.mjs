@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { AI_PROMPT_VERSION, applyAiReview, reviewQueue, reviewWeeklyFindings, reviewWithDeepSeek, shouldReviewWithAi } from '../src/lib/ai-review.mjs';
+import { classifyItem } from '../src/lib/classifier.mjs';
 import { itemId } from '../src/lib/dedupe.mjs';
 
 const item = (title, category = 'CRIAÇÃO') => ({
@@ -11,6 +12,16 @@ const item = (title, category = 'CRIAÇÃO') => ({
 });
 const result = (status, category) => ({ status, category, promptVersion: AI_PROMPT_VERSION,
   evidence: 'Consórcio Intermunicipal', usage: { inputTokens: 200, outputTokens: 50 } });
+
+test('aprovação antiga da IA não ressuscita lei de 2022 rejeitada pela regra atual', () => {
+  const old = { ...item('14/03/2022 - LEI Nº559-2022 (Ratifica protocolo de intenções do Consórcio publico)'),
+    kind: 'news', publishedAt: '2026-10-04T11:02:26Z' };
+  old.classification = classifyItem(old);
+  assert.equal(old.classification.category, 'GERAL');
+  const reviewed = applyAiReview(old, result('approved', 'PROTOCOLO'));
+  assert.equal(reviewed.classification.category, 'GERAL');
+  assert.equal(reviewed.classification.score, 0);
+});
 
 test('DeepSeek exige JSON consistente e evidência literal', async () => {
   const entry = item('Consórcio Intermunicipal cria agenda de investimentos');

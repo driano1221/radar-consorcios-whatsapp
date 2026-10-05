@@ -74,6 +74,11 @@ export function applyAiReview(item, review) {
   if (!review || review.promptVersion !== AI_PROMPT_VERSION) return item;
   if (review.status === 'rejected') return { ...item, aiReview: review,
     classification: { ...item.classification, category: 'GERAL', score: 0, emoji: '📰', reasons: ['rejeitado pela segunda revisão de IA'] } };
+  // Uma aprovação antiga não pode ressuscitar um item que as regras atuais
+  // agora rejeitam (por exemplo, lei de 2022 reindexada em 2026).
+  if (item.classification?.category === 'GERAL' || (item.classification?.score ?? 0) < 5) {
+    return { ...item, aiReview: review };
+  }
   if (review.status === 'approved') return { ...item, aiReview: review,
     classification: { ...item.classification, category: review.category,
       score: Math.max(5, item.classification?.score || 0), emoji: EMOJI[review.category] } };

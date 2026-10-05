@@ -122,9 +122,10 @@ export function mergeStateIntoCatalog(records, state) {
     const recheckItem = preservedEvidence
       ? { ...original, excerpts: [preservedEvidence, original.summary].filter(Boolean) }
       : original;
-    const classification = original?.aiReview?.status === 'approved' && original.aiReview.category
-      ? { ...classifyItem(recheckItem), category: original.aiReview.category }
-      : original ? classifyItem(recheckItem) : null;
+    const fresh = original ? classifyItem(recheckItem) : null;
+    const classification = original?.aiReview?.status === 'approved' && original.aiReview.category &&
+      fresh.category !== 'GERAL' && fresh.score >= 5
+      ? { ...fresh, category: original.aiReview.category } : fresh;
     const item = original ? { ...original, classification } : null;
     if (!item?.url) continue;
     const sent = seenByUrl.get(canonicalUrl(item.url))?.sentAt || '';

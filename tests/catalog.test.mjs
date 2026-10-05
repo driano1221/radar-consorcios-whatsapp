@@ -82,6 +82,17 @@ test('lei de 2022 já enviada permanece no arquivo bruto, mas sai dos eventos de
   }
 });
 
+test('revisão de IA aprovada não supera reclassificação determinística do catálogo', () => {
+  const map = new Map();
+  const old = { kind: 'news', title: '14/03/2022 - LEI Nº559-2022 (Ratifica protocolo de intenções do Consórcio publico)',
+    url: 'https://news.google.com/rss/articles/lei-antiga', publishedAt: '2026-10-04T11:02:26Z',
+    summary: 'Ratifica protocolo de intenções do consórcio público intermunicipal.',
+    aiReview: { status: 'approved', category: 'PROTOCOLO' },
+    classification: { category: 'PROTOCOLO', score: 19 } };
+  mergeStateIntoCatalog(map, { observations: { x: { item: old, firstSeenAt: at, lastSeenAt: at } } });
+  assert.equal([...map.values()][0].tipo_evento, 'GERAL');
+});
+
 test('catálogo aplica evidência complementar por documento e exporta sua URL', async () => {
   const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-catalogo-'));
   try {
