@@ -15,10 +15,9 @@ Abra `http://127.0.0.1:4173/`. O servidor aceita conexões **somente deste compu
 
 ## O que aparece
 
-- **Visão geral:** documentos arquivados, eventos candidatos, identidades candidatas, pendências, vínculos e distribuição por tema.
-- **Últimas coletas:** busca por título, fonte e consórcio; filtros por entrada na base de eventos, arquivo bruto, envio ao WhatsApp e acompanhamento. Cada ficha mostra motivo, trecho preservado, datas, classificação e fonte original.
-- **Para acompanhar:** documentos sem identidade segura e, a partir das próximas execuções persistentes, itens em prévia, fila ou revisão divergente.
-- **Consórcios:** nomes, siglas, CNPJ associado apenas quando o trecho permite, e documentos vinculados.
+- **Início:** quantas publicações foram encontradas, quantas parecem importantes, quantos consórcios são citados e quantas precisam de conferência.
+- **Publicações:** busca e filtros simples: todas, possíveis achados, fora da lista, precisam de conferência e enviadas ao WhatsApp. Cada ficha responde se entrou na lista e por quê, mostra o trecho lido e abre a fonte original. Termos técnicos ficam recolhidos em “Ver detalhes da análise”.
+- **Consórcios:** nomes, siglas, CNPJ associado apenas quando o trecho permite, e publicações que citam cada consórcio.
 
 O painel lê as tabelas de `data/catalogo/` e o estado versionado. A categoria e a etapa **revisadas editorialmente** prevalecem sobre o registro bruto. Atos antigos reindexados recentemente permanecem no arquivo histórico, mas não aparecem como eventos atuais. A tela nunca equipara documento, menção ou autorização legal a ingresso/saída efetiva.
 
