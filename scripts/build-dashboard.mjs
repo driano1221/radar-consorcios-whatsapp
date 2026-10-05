@@ -1,7 +1,8 @@
 import { readFile, mkdir, copyFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isStaleLegislativeDocument } from '../src/lib/classifier.mjs';
+import { createHash } from 'node:crypto';
+import { classifyItem, isStaleLegislativeDocument } from '../src/lib/classifier.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = path.join(root, 'data', 'catalogo');
@@ -37,13 +38,16 @@ async function readNdjson(name) {
     .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 }
 
-export function buildDashboardData({ archive, events, consortia, links, pendingIdentity, decisions = {} }, generatedAt = new Date().toISOString()) {
+export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
+  decisions = {}, editorialReviews = [] }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
   }));
   const eventById = new Map(currentEvents.map((row) => [row.id, row]));
   const eventIds = new Set(eventById.keys());
   const pendingIds = new Map(pendingIdentity.map((row) => [row.documento_id, row.motivo]));
+  const reviewById = new Map(editorialReviews.filter((review) => review.documento_id && review.motivo)
+    .map((review) => [review.documento_id, review]));
   const linkedByDocument = new Map();
   for (const link of links) {
     if (!linkedByDocument.has(link.documento_id)) linkedByDocument.set(link.documento_id, []);
@@ -58,7 +62,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const curated = eventById.get(row.id);
     const inEvents = Boolean(curated);
     const stale = isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: row.data_publicacao });
+    const review = reviewById.get(row.id);
+    const rejectedByReview = review?.decisao === 'nao_evento' && review.trecho_sha256 ===
+      createHash('sha256').update(row.trecho || '').digest('hex');
     const reason = stale ? 'Ato antigo com data recente de indexação.'
+      : rejectedByReview ? `Rejeitado por revisão editorial — ${review.motivo}`
       : curated?.situacao_analise?.startsWith('categoria corrigida') ? curated.situacao_analise
         : decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
     return {
@@ -66,10 +74,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       publishedAt: row.data_publicacao, firstSeenAt: row.primeira_coleta,
       lastSeenAt: decision?.lastSeenAt || row.ultima_coleta,
       category: inEvents ? curated.tipo_evento : 'GERAL',
-      score: stale ? '' : decision?.score ?? row.pontuacao,
+      score: stale || rejectedByReview ? '' : decision?.score ?? row.pontuacao,
       baseStatus: inEvents ? 'evento_candidato' : 'arquivo_bruto',
-      decisionStatus: stale ? 'descartado' : decision?.status || (inEvents ? 'historico' : 'sem_evento'),
+      decisionStatus: stale || rejectedByReview ? 'descartado' : decision?.status || (inEvents ? 'historico' : 'sem_evento'),
       reason, classificationReasons: decision?.classificationReasons || [],
+      reasonBasis: stale || rejectedByReview ? 'regra ou revisão atual' : decision?.reasonBasis || 'catálogo',
       stage: curated?.etapa || row.etapa,
       analysis: inEvents ? curated.situacao_analise : stale ? 'triagem: ato antigo' : row.situacao_analise,
       documentType: curated?.tipo_documento || row.tipo_documento,
@@ -111,13 +120,27 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const [archive, events, consortia, links, pendingIdentity] = await Promise.all([
+  const [archive, events, consortia, links, pendingIdentity, editorialReviews] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'), readCsv('eventos.csv'), readCsv('consorcios.csv'),
-    readCsv('vinculos-documentos.csv'), readCsv('identidade-pendente.csv'),
+    readCsv('vinculos-documentos.csv'), readCsv('identidade-pendente.csv'), readNdjson('revisoes-eventos.ndjson'),
   ]);
   const state = JSON.parse(await readFile(path.join(root, 'state', 'news-state.json'), 'utf8'));
+  const decisions = { ...Object.fromEntries(Object.entries(state.observations || {}).map(([id, observation]) => {
+    const item = observation.item || {};
+    const evidence = item.classification?.evidenceText;
+    const classification = classifyItem(evidence ? { ...item, excerpts: [evidence, item.summary].filter(Boolean) } : item);
+    return [id, {
+      status: classification.category === 'GERAL' ? 'descartado' : 'historico',
+      reason: classification.reasons?.find((value) => value.startsWith('rejeitado:')) ||
+        (classification.category === 'GERAL' ? 'Não foi identificado evento consorcial comprovado.' : 'Candidato histórico; decisão individual não foi preservada.'),
+      score: classification.score,
+      classificationReasons: classification.reasons || [],
+      lastSeenAt: observation.lastSeenAt,
+      reasonBasis: 'recalculado com as regras atuais',
+    }];
+  })), ...state.decisions };
   const data = buildDashboardData({ archive, events, consortia, links, pendingIdentity,
-    decisions: state.decisions || {} });
+    editorialReviews, decisions });
   await mkdir(destination, { recursive: true });
   await Promise.all(['index.html', 'style.css', 'app.js'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));

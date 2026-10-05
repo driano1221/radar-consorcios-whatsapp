@@ -104,6 +104,7 @@ function detail(item, target) {
   panel.replaceChildren(head, node('h3', 'detail-head', item.title),
     node('div', 'detail-meta', `${item.source || 'Fonte não informada'} · ${item.documentType || 'Documento'}`),
     decision, grid);
+  if (item.reasonBasis === 'recalculado com as regras atuais') panel.append(node('p', 'detail-copy', 'Motivo reconstruído com as regras atuais; a decisão original não foi preservada individualmente.'));
   if (item.identityPending) {
     panel.append(label('Identidade pendente'), node('p', 'detail-copy', item.identityPending));
   }

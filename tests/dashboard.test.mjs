@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { buildDashboardData } from '../scripts/build-dashboard.mjs';
 
 test('painel separa arquivo bruto, evento candidato e ato antigo reindexado', () => {
@@ -35,4 +36,18 @@ test('painel usa a categoria e etapa corrigidas pela revisão editorial', () => 
   assert.equal(result.items[0].category, 'PROPOSTA DE ADESÃO');
   assert.match(result.items[0].reason, /não adesão efetiva/);
   assert.match(result.items[0].stage, /ingresso não comprovado/);
+});
+
+test('revisão editorial de falso evento explica por que não entrou na base', () => {
+  const row = { id: 'falso', titulo: 'Notícia ambígua', fonte: 'Portal',
+    url: 'https://example.org/falso', data_publicacao: '2026-10-04T00:00:00Z',
+    primeira_coleta: '2026-10-04T00:00:00Z', ultima_coleta: '2026-10-05T00:00:00Z',
+    tipo_evento: 'CRIAÇÃO', situacao_analise: 'candidato', trecho: 'Cria agenda, não um consórcio' };
+  const review = { documento_id: row.id, decisao: 'nao_evento', motivo: 'agenda de entidade já existente',
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+  const result = buildDashboardData({ archive: [row], events: [], consortia: [], links: [],
+    pendingIdentity: [], editorialReviews: [review], decisions: {} });
+  assert.equal(result.items[0].baseStatus, 'arquivo_bruto');
+  assert.match(result.items[0].reason, /agenda de entidade já existente/);
+  assert.equal(result.items[0].score, '');
 });
