@@ -174,3 +174,12 @@ test('PDF de projeto de lei de 2022 reindexado em 2026 não vira notícia atual'
   assert.match(classifyItem(old).reasons.join(' '), /data recente de indexação/);
   assert.notEqual(classifyItem({ ...old, title: old.title.replace('2022', '2026') }).category, 'GERAL');
 });
+
+test('lei de 2022 com data anteposta não vira notícia de 2026', () => {
+  const old = { kind: 'news', title: '14/03/2022 - LEI Nº559-2022 (Ratifica o protocolo de intenções do Consórcio publico sustentavel)',
+    summary: 'Lei ratifica protocolo de intenções do consórcio público intermunicipal.',
+    publishedAt: '2026-10-04T21:59:00Z' };
+  assert.equal(classifyItem(old).category, 'GERAL');
+  assert.match(classifyItem(old).reasons.join(' '), /data recente de indexação/);
+  assert.notEqual(classifyItem({ ...old, title: old.title.replaceAll('2022', '2026') }).category, 'GERAL');
+});

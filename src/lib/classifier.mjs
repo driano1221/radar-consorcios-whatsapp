@@ -163,13 +163,17 @@ function isContractTerminationNotConsortium(text) {
 // O Google Notícias pode republicar o endereço de um PDF antigo com data de
 // indexação recente. Só usamos o ano explícito de um ato numerado no começo
 // do título; uma notícia atual que comenta uma lei antiga não entra aqui.
+// Alguns índices antepõem a data do próprio ato: "14/03/2022 - LEI Nº559-2022".
 export function isStaleLegislativeDocument(item) {
   if (item.kind !== 'news' || !item.publishedAt) return false;
   const publicationYear = new Date(item.publishedAt).getUTCFullYear();
   if (!Number.isFinite(publicationYear)) return false;
   const title = normalizeForMatch(item.title || '');
-  const match = /^(?:projeto de lei|lei|decreto|resolucao|portaria)\s*(?:n(?:[º°o]|r)?\.?\s*)?\d{1,6}\b.{0,45}\b(20\d{2})\b/.exec(title);
-  return Boolean(match && publicationYear - Number(match[1]) >= 2);
+  const match = /^(?:(\d{1,2}[/-]\d{1,2}[/-]20\d{2})\s*[-–—:]\s*)?(?:projeto de lei|lei|decreto|resolucao|portaria)\s*(?:n(?:[º°o]|r)?\.?\s*)?\d{1,6}\b.{0,45}\b(20\d{2})\b/.exec(title);
+  if (!match) return false;
+  const actYear = Number(match[2]);
+  const dateYear = match[1] ? Number(match[1].slice(-4)) : actYear;
+  return publicationYear - actYear >= 2 && publicationYear - dateYear >= 2;
 }
 
 function evaluateSegment(item, evidence, index) {

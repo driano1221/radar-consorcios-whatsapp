@@ -151,6 +151,21 @@ test('boletim não ressuscita PDF de 2022 reindexado pelo Google em 2026', () =>
   assert.equal(reclassifyPending(state), 1);
 });
 
+test('boletim e fila rejeitam lei antiga com data no começo do título', () => {
+  const state = { seen: {}, pending: {} };
+  const old = { ...item, kind: 'news', title: '14/03/2022 - LEI Nº559-2022 (Ratifica o protocolo de intenções do Consórcio publico sustentavel)',
+    summary: 'Ratifica o protocolo de intenções do consórcio público intermunicipal.',
+    url: 'https://news.google.com/rss/articles/lei-559-2022', publishedAt: '2026-10-04T21:59:00Z',
+    classification: { ...item.classification, category: 'PROTOCOLO', score: 19 } };
+  observeRun(state, [old], [], 5, new Date('2026-10-04T22:00:00Z'));
+  const report = buildWeeklyReport(state, {
+    start: new Date('2026-10-03T12:00:00Z'), end: new Date('2026-10-10T12:00:00Z'),
+  });
+  assert.equal(report.events, 0);
+  state.pending[itemId(old)] = { item: old, queuedAt: '2026-10-04T22:00:00Z' };
+  assert.equal(reclassifyPending(state), 1);
+});
+
 test('linha do tempo ordena por data e preserva a fonte e todos os links', () => {
   const report = { start: '2026-09-15T12:00:00Z', end: '2026-09-22T12:00:00Z', events: 2,
     highlights: [

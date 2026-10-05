@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { canonicalUrl } from './dedupe.mjs';
-import { classifyItem } from './classifier.mjs';
+import { classifyItem, isStaleLegislativeDocument } from './classifier.mjs';
 import { normalizeWhitespace } from './text.mjs';
 import { buildIdentityCatalog } from './consortium-identity.mjs';
 
@@ -189,13 +189,22 @@ export async function saveCatalog(directory, records) {
   const reviewStillMatches = (row) => decisions.get(row.id)?.trecho_sha256 ===
     createHash('sha256').update(row.trecho || '').digest('hex');
   const reviewed = all.map((row) => {
-    if (!reviewStillMatches(row)) return row;
-    const review = decisions.get(row.id);
-    return { ...row,
+    let result = row;
+    if (reviewStillMatches(row)) {
+      const review = decisions.get(row.id);
+      result = { ...row,
       tipo_evento: review.decisao === 'nao_evento' ? 'GERAL' : review.categoria,
       etapa: review.etapa || row.etapa,
       situacao_analise: `${review.decisao === 'nao_evento' ? 'rejeitado' : 'categoria corrigida'} por revisão editorial — ${review.motivo}`,
       revisao_editorial: review };
+    }
+    // O arquivo bruto mantém inclusive envios antigos, mas uma data de indexação
+    // recente não deve transformá-los em eventos atuais nas tabelas derivadas.
+    if (isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: row.data_publicacao })) {
+      return { ...result, tipo_evento: 'GERAL',
+        situacao_analise: 'triagem: ato antigo com data recente de indexação' };
+    }
+    return result;
   });
   const relevant = reviewed.filter((row) => row.tipo_evento !== 'GERAL' && row.tipo_evento !== 'NÃO CLASSIFICADO');
   await writeFile(path.join(directory, 'eventos.csv'), [FIELDS.join(','), ...relevant.map((row) =>

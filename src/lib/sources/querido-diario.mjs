@@ -48,9 +48,21 @@ function mergeGazettes(groups) {
 export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
   if (!config.enabled) return [];
   const groups = queryGroups(config);
-  const settled = await Promise.allSettled(
-    groups.map((terms) => fetchGroup(terms, config, since, fetchImpl)),
-  );
+  // Consultas longas ao índice podem ficar lentas. Limitar simultaneidade
+  // reduz a carga na API pública sem deixar uma falha bloquear os outros grupos.
+  const settled = new Array(groups.length);
+  let nextGroup = 0;
+  const worker = async () => {
+    while (nextGroup < groups.length) {
+      const index = nextGroup++;
+      try {
+        settled[index] = { status: 'fulfilled', value: await fetchGroup(groups[index], config, since, fetchImpl) };
+      } catch (reason) {
+        settled[index] = { status: 'rejected', reason };
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(Math.max(1, config.maxConcurrent || 2), groups.length) }, worker));
   const results = [];
   let successfulGroups = 0;
   const diagnostics = [];

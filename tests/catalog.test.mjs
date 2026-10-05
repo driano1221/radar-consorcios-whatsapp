@@ -63,6 +63,25 @@ test('envio antigo sem evidência não vira fato confirmado nem supera triagem a
   assert.equal([...map.values()][0].tipo_evento, 'GERAL');
 });
 
+test('lei de 2022 já enviada permanece no arquivo bruto, mas sai dos eventos derivados', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-ato-antigo-'));
+  try {
+    const row = catalogRecord({ kind: 'news',
+      title: '14/03/2022 - LEI Nº559-2022 (Ratifica protocolo de intenções do consórcio público)',
+      url: 'https://news.google.com/rss/articles/lei-antiga', source: 'Câmara Municipal',
+      publishedAt: '2026-10-04T11:02:26Z',
+      classification: { category: 'PROTOCOLO', score: 19, evidenceText: 'Ratifica o protocolo de intenções.' } },
+    at, at, at);
+    const result = await saveCatalog(directory, new Map([[row.id, row]]));
+    assert.equal(result.all, 1);
+    assert.equal(result.relevant, 0);
+    assert.match(await readFile(path.join(directory, 'arquivo-coletas.ndjson'), 'utf8'), /"tipo_evento":"PROTOCOLO"/);
+    assert.doesNotMatch(await readFile(path.join(directory, 'eventos.csv'), 'utf8'), /LEI Nº559-2022/);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
 test('catálogo aplica evidência complementar por documento e exporta sua URL', async () => {
   const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-catalogo-'));
   try {
