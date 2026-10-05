@@ -12,6 +12,8 @@
     "catalog:update": "node scripts/update-catalog.mjs",
     "reviews:seal": "node scripts/seal-event-reviews.mjs",
     "catalog:backfill": "node scripts/update-catalog.mjs --history",
+    "dashboard:build": "node scripts/build-dashboard.mjs",
+    "dashboard:serve": "node scripts/serve-dashboard.mjs",
     "weekly": "node src/weekly.mjs",
     "health:report": "node scripts/report-health.mjs",
     "pair": "node scripts/pair-whatsapp.mjs",
@@ -20,7 +22,7 @@
     "session:prepare": "node scripts/prepare-session.mjs",
     "session:check": "node scripts/check-session.mjs",
     "test": "node --test",
-    "check": "node --check src/radar.mjs && node --check src/weekly.mjs && node --check src/lib/ai-review.mjs && node --check src/lib/format.mjs && node --check src/lib/classifier.mjs && node --check src/lib/consortium-identity.mjs && node --check src/lib/catalog.mjs && node --check src/lib/run-metrics.mjs && node --check src/lib/sources/web-scrapers.mjs && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
+    "check": "node --check src/radar.mjs && node --check src/weekly.mjs && node --check src/lib/ai-review.mjs && node --check src/lib/format.mjs && node --check src/lib/classifier.mjs && node --check src/lib/consortium-identity.mjs && node --check src/lib/catalog.mjs && node --check src/lib/run-metrics.mjs && node --check src/lib/decision-ledger.mjs && node --check src/lib/sources/web-scrapers.mjs && node --check scripts/build-dashboard.mjs && node --check scripts/serve-dashboard.mjs && node --check dashboard/src/app.js && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.7.24",

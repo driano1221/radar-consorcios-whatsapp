@@ -1,6 +1,7 @@
 node_modules/
 .local/
 output/
+dashboard/dist/
 .env
 *.log
 

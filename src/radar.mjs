@@ -27,6 +27,7 @@ import { fetchCiga } from './lib/sources/ciga.mjs';
 import { presentItem } from './lib/message-presentation.mjs';
 import { applyAiReview, reviewQueue, shouldReviewWithAi } from './lib/ai-review.mjs';
 import { itemId } from './lib/dedupe.mjs';
+import { recordRunDecisions } from './lib/decision-ledger.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -130,6 +131,11 @@ async function main() {
   }
   const finalClassified = classified.map((item) => config.aiReviewEnabled
     ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item);
+  if (config.persistState) recordRunDecisions(state, finalClassified, {
+    minimumScore: config.minimumScore,
+    relevant, discovered, selected: unseen,
+    runId: process.env.GITHUB_RUN_ID || '',
+  });
   observeRun(state, finalClassified, sourceHealth, config.minimumScore, new Date(),
     process.env.GITHUB_RUN_ID ? `${process.env.GITHUB_RUN_ID}:${process.env.GITHUB_RUN_ATTEMPT || 1}` : undefined);
   if (config.persistState) await saveState(config.stateFile, state);
