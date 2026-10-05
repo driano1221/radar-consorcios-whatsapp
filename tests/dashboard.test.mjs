@@ -1,7 +1,25 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { buildDashboardData } from '../scripts/build-dashboard.mjs';
+import { buildDashboardData, contentQuality } from '../scripts/build-dashboard.mjs';
+
+test('painel distingue ausência de texto de um trecho disponível', () => {
+  assert.equal(contentQuality('Consórcio abre concurso - Portal', 'Consórcio abre concurso Portal'), 'apenas_titulo');
+  assert.equal(contentQuality('Consórcio abre concurso', ''), 'sem_trecho');
+  assert.equal(contentQuality('Consórcio abre concurso', 'O edital do concurso prevê onze vagas e inscrições até outubro.'), 'trecho_disponivel');
+});
+
+test('painel expõe falhas da última coleta sem confundir fonte desativada com erro', () => {
+  const row = { id: 'titulo', titulo: 'Consórcio abre concurso - Portal', trecho: 'Consórcio abre concurso Portal',
+    fonte: 'Portal', url: 'https://example.org', ultima_coleta: '2026-10-05T13:00:00Z' };
+  const result = buildDashboardData({ archive: [row], events: [], consortia: [], links: [], pendingIdentity: [],
+    sourceHealth: { Portal: { name: 'Portal', status: 'error', checkedAt: '2026-10-05T13:00:00Z', message: 'Timeout' },
+      Outra: { name: 'Outra', status: 'disabled', checkedAt: '2026-10-05T13:00:00Z' } } });
+  assert.equal(result.stats.insufficientContent, 1);
+  assert.equal(result.items[0].contentQuality, 'apenas_titulo');
+  assert.equal(result.collectionHealth[0].message, 'Timeout');
+  assert.equal(result.collectionHealth[1].status, 'disabled');
+});
 
 test('painel separa arquivo bruto, evento candidato e ato antigo reindexado', () => {
   const makeRow = (id, title) => ({ id, titulo: title, fonte: 'Câmara', url: `https://example.org/${id}`,

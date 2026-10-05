@@ -26,12 +26,19 @@ function link(label, url) {
   return anchor;
 }
 function label(text) { return node('div', 'detail-label', text.toUpperCase()); }
+function sourceMessage(row) {
+  if (/timeout|aborted due to timeout/i.test(row.message)) return 'A consulta demorou demais e expirou.';
+  if (/\b503\b/.test(row.message)) return 'O site estava temporariamente indisponível (erro 503).';
+  return row.message || 'A fonte respondeu parcialmente ou não entregou dados nesta coleta.';
+}
 function status(item) {
   if (needsAttention(item)) return ['Precisa conferir', 'wait'];
   if (item.baseStatus === 'evento_candidato') return ['Possível achado', 'event'];
   return ['Fora da lista', 'raw'];
 }
 function readableReason(item) {
+  if (item.contentQuality !== 'trecho_disponivel' && item.baseStatus !== 'evento_candidato')
+    return 'O robô não recebeu texto suficiente para avaliar a matéria com segurança. A decisão pode ter usado apenas o título.';
   if (/ato antigo com data recente/i.test(item.reason)) return 'É um ato antigo que reapareceu em uma busca recente. Não é uma novidade.';
   if (item.reason.startsWith('Rejeitado por revisão editorial')) return item.reason.replace('Rejeitado por revisão editorial — ', 'Uma revisão mostrou que ');
   if (item.baseStatus === 'evento_candidato') {
@@ -58,6 +65,24 @@ function renderOverview() {
     stat('03', stats.consortiaCandidates, 'Consórcios citados', 'NOMES ENCONTRADOS NOS DOCUMENTOS'),
     stat('04', stats.pendingIdentity, 'Para conferir', 'CONSÓRCIO AINDA NÃO IDENTIFICADO'),
   );
+  const health = state.data.collectionHealth || [];
+  const problems = health.filter((row) => row.status === 'error' || row.status === 'degraded');
+  const disabled = health.filter((row) => row.status === 'disabled');
+  const latestCheck = health.map((row) => row.checkedAt).filter(Boolean).sort().at(-1);
+  $('#health-checked-at').textContent = latestCheck ? `SITUAÇÃO EM ${date(latestCheck, true)}` : 'SEM HISTÓRICO DE SAÚDE';
+  $('#health-summary').textContent = problems.length ? `Ver fontes com problema (${problems.length})` : 'Ver situação das fontes';
+  $('#quality-summary').replaceChildren(
+    node('p', '', `${number.format(stats.insufficientContent || 0)} publicações têm apenas o título ou nenhum trecho. Nelas, a classificação não substitui a leitura da fonte original.`),
+    node('p', '', problems.length ? `${problems.length} fontes ou consultas tiveram problemas na última coleta registrada.` : 'Nenhuma falha de fonte registrada na última coleta.'),
+  );
+  const problemList = $('#source-problems');
+  problemList.replaceChildren(...problems.map((row) => {
+    const entry = node('div', 'source-problem');
+    entry.append(node('strong', '', row.name === 'Scrapers web' ? 'Coleta em sites' : row.name),
+      node('span', '', row.status === 'error' ? 'FALHOU' : 'PARCIAL'), node('p', '', sourceMessage(row)));
+    return entry;
+  }));
+  if (disabled.length) problemList.append(node('p', 'source-note', `${disabled.length} fontes estão desativadas de propósito e não foram contadas como falhas.`));
   const categories = Object.entries(stats.categories).sort((a, b) => b[1] - a[1]).slice(0, 6);
   const max = Math.max(1, ...categories.map(([, count]) => count));
   $('#category-chart').replaceChildren(...categories.map(([name, count]) => {
@@ -83,7 +108,7 @@ function feedRow(item, index, selected, onClick) {
   const button = node('button', `feed-item${selected ? ' active' : ''}`); button.type = 'button';
   const body = node('div'); const top = node('div', 'item-top');
   const [statusText, tone] = status(item);
-  top.append(node('span', 'item-tag', statusText),
+  top.append(node('span', 'item-tag', item.contentQuality === 'trecho_disponivel' ? statusText : `${statusText} · TEXTO INSUFICIENTE`),
     node('span', 'item-date', date(item.lastSeenAt)));
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
@@ -99,7 +124,7 @@ function detail(item, target) {
   const head = node('div', 'detail-kicker');
   head.append(node('span', '', 'SOBRE ESTA PUBLICAÇÃO'), node('span', '', item.id.slice(0, 8).toUpperCase()));
   const decision = node('div', `decision-card ${tone}`);
-  decision.append(node('b', '', item.baseStatus === 'evento_candidato' ? 'SIM — ENTROU NA LISTA DE POSSÍVEIS ACHADOS' : 'NÃO — FICOU FORA DA LISTA PRINCIPAL'),
+  decision.append(node('b', '', item.baseStatus === 'evento_candidato' ? 'SIM — ENTROU NA LISTA DE POSSÍVEIS ACHADOS' : item.contentQuality !== 'trecho_disponivel' ? 'NÃO ENTROU — TEXTO INSUFICIENTE PARA CONCLUIR' : 'NÃO — FICOU FORA DA LISTA PRINCIPAL'),
     node('p', '', readableReason(item)));
   const grid = node('div', 'detail-grid');
   const fields = [
@@ -114,6 +139,12 @@ function detail(item, target) {
   panel.replaceChildren(head, node('h3', 'detail-head', item.title),
     node('div', 'detail-meta', item.source || 'Fonte não informada'),
     decision, grid);
+  if (item.contentQuality !== 'trecho_disponivel') {
+    const warning = node('div', 'content-warning');
+    warning.append(node('strong', '', item.contentQuality === 'sem_trecho' ? 'Nenhum trecho foi coletado' : 'Só o título foi coletado'),
+      node('p', '', 'O texto integral não está nesta base. Abra a publicação original para avaliar o conteúdo.'));
+    panel.append(warning);
+  }
   if (item.identityPending) {
     panel.append(label('O que falta conferir?'), node('p', 'detail-copy', 'Ainda não identificamos com segurança qual consórcio este documento menciona.'));
   }
@@ -126,8 +157,8 @@ function detail(item, target) {
       panel.append(row);
     }
   }
-  if (item.evidence) {
-    panel.append(label('Trecho que o robô leu'), node('p', 'detail-copy evidence', item.evidence));
+  if (item.evidence && item.contentQuality === 'trecho_disponivel') {
+    panel.append(label('Trecho disponível (não é o texto integral)'), node('p', 'detail-copy evidence', item.evidence));
   }
   panel.append(link('ABRIR PUBLICAÇÃO ORIGINAL', item.url));
   const technical = node('details', 'technical-details');
@@ -153,6 +184,7 @@ function filteredFeed() {
     if (filter === 'raw' && item.baseStatus !== 'arquivo_bruto') return false;
     if (filter === 'sent' && !item.sentAt) return false;
     if (filter === 'pending' && !needsAttention(item)) return false;
+    if (filter === 'incomplete' && item.contentQuality === 'trecho_disponivel') return false;
     return !query || [item.title, item.source, item.category, item.links.map((row) => row.name).join(' ')]
       .join(' ').toLocaleLowerCase('pt-BR').includes(query);
   });
@@ -233,6 +265,7 @@ async function init() {
     renderOverview();
     document.querySelectorAll('.nav-button').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
     $('#open-feed').addEventListener('click', () => switchView('feed'));
+    $('#open-incomplete').addEventListener('click', () => { $('#status-filter').value = 'incomplete'; switchView('feed'); });
     $('#search').addEventListener('input', () => { state.limit = 40; renderFeed(); });
     $('#status-filter').addEventListener('change', () => { state.limit = 40; renderFeed(); });
     $('#consortium-search').addEventListener('input', renderConsortia);

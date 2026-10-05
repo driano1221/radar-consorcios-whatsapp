@@ -38,8 +38,21 @@ async function readNdjson(name) {
     .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 }
 
+function comparableText(value) {
+  return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+export function contentQuality(title, excerpt) {
+  const text = comparableText(excerpt);
+  if (!text) return 'sem_trecho';
+  const heading = comparableText(title);
+  if (text.length >= 25 && (heading.includes(text) || text === heading)) return 'apenas_titulo';
+  return 'trecho_disponivel';
+}
+
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
-  decisions = {}, editorialReviews = [] }, generatedAt = new Date().toISOString()) {
+  decisions = {}, editorialReviews = [], sourceHealth = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
   }));
@@ -83,6 +96,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       analysis: inEvents ? curated.situacao_analise : stale ? 'triagem: ato antigo' : row.situacao_analise,
       documentType: curated?.tipo_documento || row.tipo_documento,
       evidence: curated?.trecho || row.trecho,
+      contentQuality: contentQuality(row.titulo, curated?.trecho || row.trecho),
       sentAt: row.enviado_em, aiStatus: decision?.aiStatus || row.revisao_ia,
       previewOnly: Boolean(decision?.previewOnly),
       identityPending: pendingIds.get(row.id) || '',
@@ -97,6 +111,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     categories[item.category] = (categories[item.category] || 0) + 1;
     sources[item.source] = (sources[item.source] || 0) + 1;
   }
+  const collectionHealth = Object.values(sourceHealth).filter((row) => row && row.name).map((row) => ({
+    name: row.name, status: row.status, checkedAt: row.checkedAt || '',
+    lastSuccessAt: row.lastSuccessAt || '', itemCount: row.itemCount ?? null,
+    consecutiveFailures: row.consecutiveFailures || 0, message: row.message || '',
+  }));
   return {
     generatedAt,
     lastCollectionAt: items[0]?.lastSeenAt || '',
@@ -108,8 +127,10 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       pendingIdentity: pendingIds.size,
       sent: items.filter((row) => row.sentAt).length,
       recentDecisions: items.filter((row) => decisions[row.id]).length,
+      insufficientContent: items.filter((row) => row.contentQuality !== 'trecho_disponivel').length,
       categories, sources,
     },
+    collectionHealth,
     items,
     consortia: consortia.map((row) => ({
       id: row.id, name: row.nome, alias: row.sigla, cnpj: row.cnpj,
@@ -140,7 +161,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     }];
   })), ...state.decisions };
   const data = buildDashboardData({ archive, events, consortia, links, pendingIdentity,
-    editorialReviews, decisions });
+    editorialReviews, decisions, sourceHealth: state.health || {} });
   await mkdir(destination, { recursive: true });
   await Promise.all(['index.html', 'style.css', 'app.js'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
