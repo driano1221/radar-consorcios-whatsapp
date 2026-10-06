@@ -1,18 +1,18 @@
 # Panorama da base histórica
 
-- 1293 documentos recuperados do histórico de coletas.
-- 56 registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.
+- 1329 documentos recuperados do histórico de coletas.
+- 58 registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.
 - 27 identidades candidatas de consórcios; 42 vínculos documentais, dos quais 28 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 15 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 17 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ADESÃO | 14 |
+| ADESÃO | 15 |
 | RATEIO | 8 |
+| GOVERNANÇA | 7 |
 | PROTOCOLO | 7 |
-| GOVERNANÇA | 6 |
 | CONTROLE | 5 |
 | ADESÃO AUTORIZADA | 3 |
 | ATUAÇÃO | 3 |
@@ -27,6 +27,8 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-06 | GOVERNANÇA — ato publicado — efeito a verificar | candidato — requer revisão | [LEI Nº 1376 DE 05 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1920370/) |
+| 2026-10-06 | ADESÃO — relato — conferir documento original | candidato — requer revisão | [Câmara aprova adesão de Umuarama a consórcio de prevenção a desastres - Umuarama News](https://news.google.com/rss/articles/CBMitgFBVV95cUxPZTEzT2M2OUhGRGd4V09WZlVRZEx3SV9rRks4MV9yWGJLTnNHUURVNm44WVNCLXcxVHZVc29hRnh5X1prTFZjcHRKQk9kbGpfc2lFZFBFSENCZFY5SDhxa2t3eGhLQWdlR2ExTGtKRG9JUWlLVnQ1cTJ6M05TdU52VlViRlhMcXJvYm5fYUoxZ2hLaGxDRlZ6SUdLLTJHcC1KNlJkTjNmakJSOVRPd3JDVi1va0lmdw?oc=5) |
 | 2026-10-05 | RATEIO — ato publicado — efeito a verificar | candidato — requer revisão | [CONTRATO DE RATEIO N.º 055/2.026 - CONSÓRCIO INTERMUNICIPAL DE SAUDE](https://amm.diariomunicipal.org/publicacao/1919732/) |
 | 2026-10-05 | GOVERNANÇA — ato publicado — efeito a verificar | candidato — requer revisão | [RETIFICAÇÃO DO REGULAMENTO ELEITORAL – BIÊNIO 2027/2028 ELEIÇÃO DA DIRETORIA DO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL DO MÉDIO ARAGUAIA – CODEMA](https://amm.diariomunicipal.org/publicacao/1919389/) |
 | 2026-10-05 | RATEIO — ato publicado — efeito a verificar | candidato — requer revisão | [SEGUNDO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1919856/) |
@@ -40,7 +42,5 @@
 | 2026-09-24 | ADESÃO AUTORIZADA — autorização — ingresso não comprovado | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Pinhais (PR)](https://data.queridodiario.ok.org.br/4119152/2026-09-24/06113aedac50ca8bfe694c1bbc276f6feb869edf.pdf) |
 | 2026-09-22 | ATUAÇÃO — relato — conferir documento original | publicado pelo radar — não confirmado manualmente | [Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - Diário do Grande ABC](https://news.google.com/rss/articles/CBMiwwFBVV95cUxNNDhmZzVUc3JGbnU4R0lDcXlmeUt3S0pDZXdhaXBHLW1kNWQzLXBRVmZuVmNkaTFGeWc0Sk5iSjZ4NlM5WmFZay1uQkU3SmZPYzlzT3FLbFlmUlVselZheTM5QzFNS0NzaENaMUJtQy16TFZkR1ptbnRiTlpUdEMxTFAzc21Qd3Nxc01sQUd6TnRWUENUcS1XMVVrbll2TWZCMGJCc2FTZ3B1aUYyWWx2aGJySm9MXzd1ZmJuWHBCQXlETDQ?oc=5) |
 | 2026-09-22 | ADESÃO — autorização — ingresso não comprovado | publicado pelo radar — não confirmado manualmente | [Município é autorizado a integrar consórcio intermunicipal CIMINAS - diariodecaratinga.com.br](https://news.google.com/rss/articles/CBMiqwFBVV95cUxNbkR3NTEtVGJzeGh4a1owODFLVzFSMmk3QlR0V2lYMTRGd2ZCYmQ2SEd6dHVFMEIxZGNVRFZ6UU4yUFZzbmc0NXB5Q3lnLUVnNmgwMWdYa2tmSndidkJlazRENkhTbkNGclo0ckhNS2hCTFJUUjBEVlNuOF94QzUzLUI0V19naC1iU3NQd1RwclFCd1lCeUFuX2VSZ0hTM01oeDNuM3drbHh5c1k?oc=5) |
-| 2026-09-21 | ADESÃO — autorização — ingresso não comprovado | publicado pelo radar — não confirmado manualmente | [Legislação - Autoriza o ingresso do Município de Centenário do Sul no Consórcio Intermunicipal de Saneamento d... - Câmara Municipal de Centenário do Sul](https://news.google.com/rss/articles/CBMitwNBVV95cUxOaUpPRWhiMHdncmlNTEprT04xZm52R0lxZDMxS2dHRl9DWU40UjVlMDI1ZWZXM2V0UUg3N3hDODF5NE84TE1nT3lkNFowMjJsTTVmNm9CbEZqR2VFWmxRYXpKa25waGhpREhhOHpueS1NbFprNFBjVjlxSG9Ndm4yN2dub1pmLWdaYUtUTzkzNDI1d3N5QUdrYWRfNHRXeWYxajlSQVc4ODRvWjA0N1pGbTZpLThWRkt5bjVNYjFoR0VnOG4tYkt3TWhlX1hkaWdLT1FsSEpraGZWVHBHRVI4OTlaa2ZQTVlaNjh4V1BwQ0g1YjFyUUV5bGRLQnF3TGtiZ2d1VW1BZ1FSNGFaREVBcTVUUHRldmtYVFVlX29qaEEzVE1JQ0VuVmhOUEhidEFSR3BGSW1ud2xpc3JzOFVRa2xSUFU5RVNOZTRqZ0p6aUZjRWZ1Tm9raVZwZ2t3amd0RFVHVmxlaVNyQkpDUDZnM09nc2Jqcy1YMVd1eFNGRkNKWko4QnhTX2d4bTFnNWwtWEVsdldqRzluR1hZM2JVMWJQUjNXSGRfNjRDdHgzN2FpUlBfWkJZ?oc=5) |
-| 2026-09-21 | PROTOCOLO — ato publicado — efeito a verificar | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-09-21/b740c77d9bdaf69e95ca926a078281a9614480fd.pdf) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
