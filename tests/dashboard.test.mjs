@@ -87,3 +87,12 @@ test('painel mostra aceitação editorial, fatos e consórcio já identificado s
   assert.equal(result.items[0].editorialReview.facts.valor, 'R$ 200.010,82');
   assert.equal(result.items[0].identityPending, '');
 });
+
+test('painel expõe ano de ingresso distinto do ano da última evidência', () => {
+  const participation = { consorcio_id: 'cidespa', municipio: 'Marcelândia/MT', ano_ingresso: '',
+    ano_ultima_evidencia_participacao: '2026', fonte_ultima_evidencia: 'https://example.org/lei' };
+  const data = buildDashboardData({ archive: [], events: [], links: [], pendingIdentity: [],
+    consortia: [{ id: 'cidespa', nome: 'CIDESPA', documentos_vinculados: '1' }],
+    participations: [participation] });
+  assert.deepEqual(data.consortia[0].participations, [participation]);
+});

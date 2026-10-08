@@ -1,8 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdtemp, rm } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import os from 'node:os';
+import path from 'node:path';
 import { classifyItem } from '../src/lib/classifier.mjs';
+import { saveCatalog } from '../src/lib/catalog.mjs';
 
 const root = new URL('../', import.meta.url);
 const state = JSON.parse(await readFile(new URL('state/news-state.json', root), 'utf8'));
@@ -34,3 +37,25 @@ for (const [prefix, expectedAutomatic, expectedDecision, expectedEditorial] of c
     assert.ok(review.evidencia && review.motivo);
   });
 }
+
+test('Marcelândia tem última evidência em 2026, sem inventar ano de ingresso', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-participacao-'));
+  try {
+    const row = [...archive.values()].find((item) => item.id.startsWith('64146b92'));
+    const review = reviews.find((item) => item.documento_id === row.id);
+    await writeFile(path.join(directory, 'revisoes-eventos.ndjson'), `${JSON.stringify(review)}\n`);
+    await saveCatalog(directory, new Map([[row.id, row]]));
+    const csv = await readFile(path.join(directory, 'participacoes.csv'), 'utf8');
+    const [header, record] = csv.trim().split('\n');
+    const fields = header.split(',');
+    const cells = record.match(/(?:"[^"]*(?:""[^"]*)*"|[^,]*)(?:,|$)/g).map((cell) => cell.replace(/,$/, '').replace(/^"|"$/g, ''));
+    const participation = Object.fromEntries(fields.map((field, index) => [field, cells[index]]));
+    assert.equal(participation.municipio, 'Marcelândia/MT');
+    assert.equal(participation.ano_ingresso, '');
+    assert.equal(participation.ano_ultima_evidencia_participacao, '2026');
+    assert.equal(participation.cnpj_municipio, '03.238.987/0001-75');
+    assert.equal(participation.fonte_ultima_evidencia, 'https://amm.diariomunicipal.org/publicacao/1920936/');
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});

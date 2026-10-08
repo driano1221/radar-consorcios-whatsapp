@@ -52,7 +52,7 @@ export function contentQuality(title, excerpt) {
 }
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
-  decisions = {}, editorialReviews = [], sourceHealth = {} }, generatedAt = new Date().toISOString()) {
+  participations = [], decisions = {}, editorialReviews = [], sourceHealth = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
   }));
@@ -123,6 +123,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     lastSuccessAt: row.lastSuccessAt || '', itemCount: row.itemCount ?? null,
     consecutiveFailures: row.consecutiveFailures || 0, message: row.message || '',
   }));
+  const participationsByConsortium = new Map();
+  for (const participation of participations) {
+    if (!participationsByConsortium.has(participation.consorcio_id)) participationsByConsortium.set(participation.consorcio_id, []);
+    participationsByConsortium.get(participation.consorcio_id).push(participation);
+  }
   return {
     generatedAt,
     lastCollectionAt: items[0]?.lastSeenAt || '',
@@ -144,15 +149,16 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     consortia: consortia.map((row) => ({
       id: row.id, name: row.nome, alias: row.sigla, cnpj: row.cnpj,
       documents: Number(row.documentos_vinculados || 0), status: row.situacao,
-      aliases: row.aliases,
+      aliases: row.aliases, participations: participationsByConsortium.get(row.id) || [],
     })).sort((a, b) => b.documents - a.documents || a.name.localeCompare(b.name, 'pt-BR')),
   };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const [archive, events, consortia, links, pendingIdentity, editorialReviews] = await Promise.all([
+  const [archive, events, consortia, links, pendingIdentity, editorialReviews, participations] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'), readCsv('eventos.csv'), readCsv('consorcios.csv'),
     readCsv('vinculos-documentos.csv'), readCsv('identidade-pendente.csv'), readNdjson('revisoes-eventos.ndjson'),
+    readCsv('participacoes.csv'),
   ]);
   const state = JSON.parse(await readFile(path.join(root, 'state', 'news-state.json'), 'utf8'));
   const decisions = { ...Object.fromEntries(Object.entries(state.observations || {}).map(([id, observation]) => {
@@ -171,7 +177,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     }];
   })), ...state.decisions };
   const data = buildDashboardData({ archive, events, consortia, links, pendingIdentity,
-    editorialReviews, decisions, sourceHealth: state.health || {} });
+    editorialReviews, participations, decisions, sourceHealth: state.health || {} });
   await mkdir(destination, { recursive: true });
   await Promise.all(['index.html', 'style.css', 'app.js'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));

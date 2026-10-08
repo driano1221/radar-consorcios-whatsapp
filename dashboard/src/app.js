@@ -271,6 +271,17 @@ function renderConsortia() {
     node('p', '', 'Encontrar o nome não confirma quais municípios fazem parte dele hoje.'));
   panel.append(box, label('CNPJ encontrado'), node('p', 'detail-copy', row.cnpj || 'Não identificado com segurança.'),
     label('Outros nomes encontrados'), node('p', 'detail-copy', row.aliases || 'Nenhum registrado.'));
+  if (row.participations?.length) {
+    panel.append(label('Municípios com participação documentada'));
+    for (const participation of row.participations) {
+      const entry = node('div', 'identity-row');
+      entry.append(node('strong', '', participation.municipio),
+        node('small', '', `Ano de ingresso: ${participation.ano_ingresso || 'não identificado'} · Última evidência de participação: ${participation.ano_ultima_evidencia_participacao}`),
+        link('Ver documento comprobatório', participation.fonte_ultima_evidencia));
+      panel.append(entry);
+    }
+    panel.append(node('p', 'detail-copy', 'O ano da evidência não é, necessariamente, o ano em que o município entrou no consórcio.'));
+  }
   const docs = state.data.items.filter((item) => item.links.some((binding) => binding.consortiumId === row.id));
   panel.append(label(`Publicações que o citam (${docs.length})`));
   for (const item of docs.slice(0, 12)) panel.append(link(item.title, item.url));

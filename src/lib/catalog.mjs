@@ -4,7 +4,7 @@ import path from 'node:path';
 import { canonicalUrl } from './dedupe.mjs';
 import { classifyItem, isStaleLegislativeDocument } from './classifier.mjs';
 import { normalizeWhitespace } from './text.mjs';
-import { buildIdentityCatalog } from './consortium-identity.mjs';
+import { buildIdentityCatalog, identityKey } from './consortium-identity.mjs';
 
 const FIELDS = [
   'id', 'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
@@ -258,6 +258,42 @@ export async function saveCatalog(directory, records) {
     'sigla_mencionada', 'cnpj_mencionado', 'origem', 'evidencia', 'url', 'url_evidencia'];
   await writeFile(path.join(directory, 'vinculos-documentos.csv'), [linkFields.join(','),
     ...links.map((row) => linkFields.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
+  // Participação é relação município–consórcio, não atributo do consórcio.
+  // Uma notícia recente comprova, no máximo, o ano daquela evidência; não a data de ingresso.
+  const participantByKey = new Map();
+  const identityById = new Map(identities.map((entity) => [entity.id, entity]));
+  for (const row of reviewed) {
+    const review = row.revisao_editorial;
+    const facts = review?.fatos || {};
+    if (review?.decisao !== 'confirmar_evento' || !facts.participacao || !facts.municipio || !facts.consorcio) continue;
+    const matching = links.filter((link) => {
+      if (link.documento_id !== row.id || !link.consorcio_id) return false;
+      const entity = identityById.get(link.consorcio_id);
+      return [entity?.nome, entity?.sigla, ...(entity?.aliases || [])]
+        .some((name) => name && identityKey(name) === identityKey(facts.consorcio));
+    });
+    if (new Set(matching.map((link) => link.consorcio_id)).size !== 1) continue;
+    const consortiumId = matching[0].consorcio_id;
+    const year = /^\d{4}/.exec(row.data_publicacao || '')?.[0] || '';
+    if (!year) continue;
+    const key = `${consortiumId}:${facts.municipio.toLocaleLowerCase('pt-BR')}`;
+    const prior = participantByKey.get(key);
+    if (!prior || Number(year) > Number(prior.ano_ultima_evidencia_participacao)) {
+      participantByKey.set(key, {
+        consorcio_id: consortiumId, consorcio: facts.consorcio,
+        municipio: facts.municipio, cnpj_municipio: facts.cnpj_municipio || '',
+        ano_ingresso: facts.ano_ingresso || '', ano_ultima_evidencia_participacao: year,
+        situacao: 'participação documentada; situação atual não inferida',
+        documento_id: row.id, fonte_ultima_evidencia: row.article_url || row.url,
+      });
+    }
+  }
+  const participantFields = ['consorcio_id', 'consorcio', 'municipio', 'cnpj_municipio',
+    'ano_ingresso', 'ano_ultima_evidencia_participacao', 'situacao', 'documento_id', 'fonte_ultima_evidencia'];
+  await writeFile(path.join(directory, 'participacoes.csv'), [participantFields.join(','),
+    ...[...participantByKey.values()].sort((a, b) => a.consorcio.localeCompare(b.consorcio, 'pt-BR') ||
+      a.municipio.localeCompare(b.municipio, 'pt-BR')).map((participant) =>
+      participantFields.map((field) => csvCell(participant[field])).join(','))].join('\n') + '\n', 'utf8');
   const linkedDocuments = new Set(links.map((link) => link.consorcio_id ? link.documento_id : '').filter(Boolean));
   const pendingIdentity = enriched.filter((row) => !linkedDocuments.has(row.id));
   const pendingFields = ['documento_id', 'motivo', 'tipo_evento', 'titulo', 'url'];
@@ -284,7 +320,7 @@ export async function saveCatalog(directory, records) {
   const summary = [
     '# Panorama da base histórica', '',
     `- ${all.length} documentos recuperados do histórico de coletas.`,
-    `- ${relevant.length} registros relacionados a eventos de consórcios, **ainda não confirmados manualmente**.`,
+    `- ${relevant.length} registros relacionados a possíveis eventos de consórcios; ${relevant.filter((row) => row.revisao_editorial?.decisao === 'confirmar_evento').length} aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.`,
     `- ${identities.length} identidades candidatas de consórcios; ${links.filter((link) => link.consorcio_id).length} vínculos documentais, dos quais ${links.filter((link) => link.consorcio_id && link.origem === 'fonte complementar').length} apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.`,
     `- ${pendingIdentity.length} documentos relevantes sem identidade segura, listados em \`identidade-pendente.csv\`.`,
     '', '## Registros por tema', '',
