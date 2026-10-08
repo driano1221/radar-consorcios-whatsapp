@@ -189,7 +189,7 @@ export async function saveCatalog(directory, records) {
     if (error.code !== 'ENOENT') throw error;
   }
   const decisions = new Map(editorialReviews.filter((review) =>
-    (review.decisao === 'nao_evento' || (review.decisao === 'corrigir_categoria' && review.categoria)) &&
+    (review.decisao === 'nao_evento' || (['corrigir_categoria', 'confirmar_evento'].includes(review.decisao) && review.categoria)) &&
     review.documento_id && review.evidencia && review.motivo &&
     /^[a-f0-9]{64}$/.test(review.trecho_sha256 || ''))
     .map((review) => [review.documento_id, review]));
@@ -202,7 +202,7 @@ export async function saveCatalog(directory, records) {
       result = { ...row,
       tipo_evento: review.decisao === 'nao_evento' ? 'GERAL' : review.categoria,
       etapa: review.etapa || row.etapa,
-      situacao_analise: `${review.decisao === 'nao_evento' ? 'rejeitado' : 'categoria corrigida'} por revisão editorial — ${review.motivo}`,
+      situacao_analise: `${review.decisao === 'nao_evento' ? 'rejeitado' : review.decisao === 'confirmar_evento' ? 'confirmado' : 'categoria corrigida'} por revisão editorial — ${review.motivo}`,
       revisao_editorial: review };
     }
     // O arquivo bruto mantém inclusive envios antigos, mas uma data de indexação

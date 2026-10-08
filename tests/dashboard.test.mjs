@@ -69,3 +69,21 @@ test('revisão editorial de falso evento explica por que não entrou na base', (
   assert.match(result.items[0].reason, /agenda de entidade já existente/);
   assert.equal(result.items[0].score, '');
 });
+
+test('painel mostra aceitação editorial, fatos e consórcio já identificado sem pendência falsa', () => {
+  const row = { id: 'confirmado', titulo: 'Contrato de rateio 055/2026', fonte: 'Diário oficial',
+    url: 'https://example.org/ato', data_publicacao: '2026-10-05T00:00:00Z',
+    primeira_coleta: '2026-10-05T00:00:00Z', ultima_coleta: '2026-10-05T12:00:00Z',
+    tipo_evento: 'RATEIO', trecho: 'Resolvem celebrar o presente contrato de rateio.' };
+  const review = { documento_id: row.id, decisao: 'confirmar_evento', categoria: 'RATEIO',
+    motivo: 'contrato efetivamente celebrado', evidencia: row.trecho,
+    fatos: { municipio: 'Alto Paraguai/MT', consorcio: 'CISCN', valor: 'R$ 200.010,82' },
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+  const result = buildDashboardData({ archive: [row], events: [row], consortia: [], links: [],
+    pendingIdentity: [{ documento_id: row.id, motivo: 'identidade ainda não extraída automaticamente' }],
+    editorialReviews: [review] });
+  assert.equal(result.stats.confirmed, 1);
+  assert.equal(result.stats.pendingIdentity, 0);
+  assert.equal(result.items[0].editorialReview.facts.valor, 'R$ 200.010,82');
+  assert.equal(result.items[0].identityPending, '');
+});

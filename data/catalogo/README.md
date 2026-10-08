@@ -5,7 +5,8 @@ Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial 
 ## Por onde começar
 
 - `resumo.md`: panorama legível, contagens por tema e links recentes para conferência.
-- `eventos.csv`: visão para Excel com registros que o classificador relacionou a criação, adesão, saída, protocolo, rateio, finanças, governança, atuação, controle ou crise. Revisões editoriais marcadas `nao_evento` são excluídas desta tabela, mas continuam no arquivo bruto. Os registros restantes ainda são candidatos; filtre `situacao_analise` antes de citar um fato.
+- `eventos.csv`: visão para Excel com registros que o classificador relacionou a criação, adesão, saída, protocolo, rateio, finanças, governança, atuação, controle ou crise. Revisões editoriais marcadas `nao_evento` são excluídas desta tabela, mas continuam no arquivo bruto. Apenas registros com `situacao_analise` iniciada por `confirmado por revisão editorial` foram aceitos manualmente; os demais ainda são candidatos ou correções parciais.
+- `revisoes-eventos.ndjson`: decisões humanas por documento (`confirmar_evento`, `corrigir_categoria`, `nao_evento`), justificativa, evidência e fatos extraídos. O hash do trecho impede aplicar uma decisão antiga a texto alterado.
 - `consorcios.csv`: cadastro de **identidades candidatas** com chave estável `id`, denominação, sigla, CNPJ quando o trecho o associa explicitamente ao consórcio, variações de nome e quantidade de documentos vinculados. Não é um cadastro oficial validado.
 - `vinculos-documentos.csv`: uma linha por menção explícita, ligando o `id` de `arquivo-coletas.ndjson` ao `id` do consórcio, com origem e evidência. Um documento pode mencionar mais de um consórcio. Vínculo não comprova adesão nem veracidade do evento.
 - `identidades.ndjson`: registro técnico persistente das identidades e aliases; conserva a chave quando CNPJ ou variação de nome aparece depois. Divergência de CNPJ fica sem vínculo e exige revisão humana.

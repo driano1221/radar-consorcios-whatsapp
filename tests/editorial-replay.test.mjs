@@ -10,7 +10,7 @@ async function readNdjson(name) {
   return text.trim().split('\n').map((line) => JSON.parse(line));
 }
 
-test('18 falsos positivos editoriais não retornam à coleta, fila ou resumo semanal', async () => {
+test('falsos positivos editoriais não retornam à coleta, fila ou resumo semanal', async () => {
   const [archive, recovered, reviews] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'),
     readNdjson('recuperacao-pdf.ndjson'),
@@ -19,7 +19,7 @@ test('18 falsos positivos editoriais não retornam à coleta, fila ou resumo sem
   const byId = new Map(archive.map((row) => [row.id, row]));
   const pdfById = new Map(recovered.map((row) => [row.documento_id, row]));
   const rejected = reviews.filter((row) => row.decisao === 'nao_evento');
-  assert.equal(rejected.length, 18, 'alteração no corpus exige nova revisão editorial');
+  assert.equal(rejected.length, 20, 'alteração no corpus exige nova revisão editorial');
 
   const state = { seen: {}, pending: {}, observations: {} };
   const at = '2026-10-02T15:00:00.000Z';
@@ -44,7 +44,7 @@ test('18 falsos positivos editoriais não retornam à coleta, fila ou resumo sem
     state.observations[id] = { item: stale, firstSeenAt: at, lastSeenAt: at };
   }
 
-  assert.equal(reclassifyPending(state), 18);
+  assert.equal(reclassifyPending(state), rejected.length);
   assert.equal(Object.keys(state.pending).length, 0);
   const report = buildWeeklyReport(state, {
     start: new Date('2026-09-27T12:00:00.000Z'),

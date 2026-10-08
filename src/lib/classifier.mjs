@@ -149,6 +149,18 @@ function isUnapprovedEntryProposal(text) {
     !/\bproposta\b.{0,160}\b(foi aprovada|aprovada|foi autorizada|autorizada)\b/.test(text);
 }
 
+function isPendingEntryVote(text) {
+  return /\b(vota|votara|sera analisad[oa]|para discutir e votar)\b.{0,130}\b(adesao|ingresso|participacao|ratifica)\b/.test(text) &&
+    /\b(caso aprovado|se aprovado|sera analisad[oa]|votacao prevista)\b/.test(text) &&
+    !/\b(aprovou|foi aprovad[oa]|sancionou|promulgou)\b/.test(text);
+}
+
+function isHypotheticalCreation(text) {
+  return /\b(questiona|questionou|eventual|possivel|hipotetica|necessidade de)\b.{0,85}\bcriacao de (?:um |novo )?consorcio\b/.test(text) &&
+    !/\b(lei|protocolo de intencoes|ato constitutivo)\b.{0,110}\b(cria|institui|constitui|formaliza)\b/.test(text) &&
+    !/\b(foi criado|foi constituido|consorcio constituido)\b/.test(text);
+}
+
 function isMeetingAgendaWithoutDecision(text) {
   const agendaSignal = /\b(convoca|convocam|convocar|convocacao|reuniao|pauta|assuntos abordados|informes gerais)\b/.test(text);
   const decisionSignal = /\b(lei|decreto|autoriza|ratifica|aprovou|sanciona|promulga|delibera|eleitos?|eleitas?|elegeu|elege|eleicao)\b/.test(text);
@@ -213,6 +225,12 @@ function evaluateSegment(item, evidence, index) {
     }
   }
 
+  if (selected.category === 'ADESÃO' && /\bratifica(?:do|cao)?\b.{0,90}\balteracao do protocolo de intencoes\b/.test(text) &&
+    !/\b(nova adesao|novo ingresso|autoriza a adesao|autoriza o ingresso|passa a integrar)\b/.test(text)) {
+    selected = RULES.find((rule) => rule.category === 'GOVERNANÇA');
+    reasons.push('alteração de protocolo sem ingresso novo comprovado');
+  }
+
   for (const negative of NEGATIVE_PATTERNS) {
     if (negative.pattern.test(text)) {
       score -= negative.penalty;
@@ -236,6 +254,14 @@ function evaluateSegment(item, evidence, index) {
   if (isUnapprovedEntryProposal(text)) {
     score -= 12;
     reasons.push('rejeitado: proposta de ingresso sem decisão comprovada no trecho');
+  }
+  if (isPendingEntryVote(text)) {
+    score -= 20;
+    reasons.push('rejeitado: votação de ingresso ainda prevista, sem resultado');
+  }
+  if (isHypotheticalCreation(text)) {
+    score -= 30;
+    reasons.push('rejeitado: criação apenas questionada ou hipotética');
   }
   if (isContractTerminationNotConsortium(text)) {
     score -= 30;

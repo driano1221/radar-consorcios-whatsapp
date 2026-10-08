@@ -76,11 +76,12 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const inEvents = Boolean(curated);
     const stale = isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: row.data_publicacao });
     const review = reviewById.get(row.id);
-    const rejectedByReview = review?.decisao === 'nao_evento' && review.trecho_sha256 ===
-      createHash('sha256').update(row.trecho || '').digest('hex');
+    const reviewValid = review?.trecho_sha256 === createHash('sha256').update(row.trecho || '').digest('hex');
+    const appliedReview = reviewValid && !stale ? review : null;
+    const rejectedByReview = appliedReview?.decisao === 'nao_evento';
     const reason = stale ? 'Ato antigo com data recente de indexação.'
       : rejectedByReview ? `Rejeitado por revisão editorial — ${review.motivo}`
-      : curated?.situacao_analise?.startsWith('categoria corrigida') ? curated.situacao_analise
+      : appliedReview?.motivo ? appliedReview.motivo
         : decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
     return {
       id: row.id, title: row.titulo, source: row.fonte,
@@ -100,7 +101,12 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       contentQuality: contentQuality(row.titulo, curated?.trecho || row.trecho),
       sentAt: row.enviado_em, aiStatus: decision?.aiStatus || row.revisao_ia,
       previewOnly: Boolean(decision?.previewOnly),
-      identityPending: pendingIds.get(row.id) || '',
+      identityPending: appliedReview?.fatos?.consorcio ? '' : pendingIds.get(row.id) || '',
+      editorialReview: appliedReview ? {
+        decision: appliedReview.decisao, reason: appliedReview.motivo,
+        evidence: appliedReview.evidencia, facts: appliedReview.fatos || {},
+        relatedDocumentId: appliedReview.documento_relacionado || '',
+      } : null,
       links: linkedByDocument.get(row.id) || [],
       runId: decision?.runId || '', observedCount: decision?.observedCount || null,
     };
@@ -125,10 +131,12 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       documents: items.length, eventCandidates: eventIds.size,
       consortiaCandidates: consortia.length,
       documentLinks: links.filter((row) => row.consorcio_id).length,
-      pendingIdentity: pendingIds.size,
+      pendingIdentity: items.filter((row) => row.identityPending).length,
       sent: items.filter((row) => row.sentAt).length,
       recentDecisions: items.filter((row) => decisions[row.id]).length,
       insufficientContent: items.filter((row) => row.contentQuality !== 'trecho_disponivel').length,
+      confirmed: items.filter((row) => row.editorialReview?.decision === 'confirmar_evento').length,
+      editoriallyDiscarded: items.filter((row) => row.editorialReview?.decision === 'nao_evento').length,
       categories, sources,
     },
     collectionHealth,

@@ -32,11 +32,15 @@ function sourceMessage(row) {
   return row.message || 'A fonte respondeu parcialmente ou não entregou dados nesta coleta.';
 }
 function status(item) {
+  if (item.editorialReview?.decision === 'confirmar_evento') return ['Conferido · aceito', 'event'];
+  if (item.editorialReview?.decision === 'nao_evento') return ['Conferido · descartado', 'raw'];
+  if (item.editorialReview?.decision === 'corrigir_categoria') return ['Conferido · corrigido', 'event'];
   if (needsAttention(item)) return ['Precisa conferir', 'wait'];
   if (item.baseStatus === 'evento_candidato') return ['Possível achado', 'event'];
   return ['Fora da lista', 'raw'];
 }
 function readableReason(item) {
+  if (item.editorialReview?.reason) return item.editorialReview.reason;
   if (item.contentQuality !== 'trecho_disponivel' && item.baseStatus !== 'evento_candidato')
     return 'O robô não recebeu texto suficiente para avaliar a matéria com segurança. A decisão pode ter usado apenas o título.';
   if (/ato antigo com data recente/i.test(item.reason)) return 'É um ato antigo que reapareceu em uma busca recente. Não é uma novidade.';
@@ -93,6 +97,8 @@ function renderOverview() {
     body.append(top, bar); row.append(body); return row;
   }));
   $('#base-extra').replaceChildren(
+    node('span', '', `${number.format(stats.confirmed || 0)} achados aceitos após conferência`),
+    node('span', '', `${number.format(stats.editoriallyDiscarded || 0)} publicações descartadas após conferência`),
     node('span', '', `${number.format(stats.documentLinks)} ligações entre documentos e consórcios`),
     node('span', '', `${number.format(stats.sent)} publicações já enviadas ao WhatsApp`),
   );
@@ -124,7 +130,13 @@ function detail(item, target) {
   const head = node('div', 'detail-kicker');
   head.append(node('span', '', 'SOBRE ESTA PUBLICAÇÃO'), node('span', '', item.id.slice(0, 8).toUpperCase()));
   const decision = node('div', `decision-card ${tone}`);
-  decision.append(node('b', '', item.baseStatus === 'evento_candidato' ? 'SIM — ENTROU NA LISTA DE POSSÍVEIS ACHADOS' : item.contentQuality !== 'trecho_disponivel' ? 'NÃO ENTROU — TEXTO INSUFICIENTE PARA CONCLUIR' : 'NÃO — FICOU FORA DA LISTA PRINCIPAL'),
+  const verdict = item.editorialReview?.decision === 'confirmar_evento' ? 'SIM — ACHADO CONFERIDO E ACEITO'
+    : item.editorialReview?.decision === 'nao_evento' ? 'NÃO — DESCARTADO APÓS CONFERÊNCIA'
+      : item.editorialReview?.decision === 'corrigir_categoria' ? 'SIM — CATEGORIA CORRIGIDA APÓS CONFERÊNCIA'
+        : item.baseStatus === 'evento_candidato' ? 'POSSÍVEL ACHADO — AINDA NÃO CONFERIDO'
+          : item.contentQuality !== 'trecho_disponivel' ? 'NÃO ENTROU — TEXTO INSUFICIENTE PARA CONCLUIR'
+            : 'NÃO — FICOU FORA DA LISTA PRINCIPAL';
+  decision.append(node('b', '', verdict),
     node('p', '', readableReason(item)));
   const grid = node('div', 'detail-grid');
   const fields = [
@@ -139,6 +151,27 @@ function detail(item, target) {
   panel.replaceChildren(head, node('h3', 'detail-head', item.title),
     node('div', 'detail-meta', item.source || 'Fonte não informada'),
     decision, grid);
+  if (item.editorialReview) {
+    const facts = Object.entries(item.editorialReview.facts || {});
+    if (facts.length) {
+      panel.append(label('Informações confirmadas e limites'));
+      for (const [key, value] of facts) {
+        const field = node('div', 'identity-row');
+        field.append(node('small', '', key.replaceAll('_', ' ').toUpperCase()), node('strong', '', value));
+        panel.append(field);
+      }
+    }
+    panel.append(label('Evidência usada na conferência'), node('p', 'detail-copy evidence', item.editorialReview.evidence));
+    if (item.editorialReview.relatedDocumentId) {
+      const related = state.data.items.find((row) => row.id === item.editorialReview.relatedDocumentId);
+      if (related) {
+        const button = node('button', 'detail-link', `Ver publicação posterior: ${related.title} →`);
+        button.type = 'button';
+        button.addEventListener('click', () => { state.selectedItem = related.id; renderFeed(); });
+        panel.append(button);
+      }
+    }
+  }
   if (item.contentQuality !== 'trecho_disponivel') {
     const warning = node('div', 'content-warning');
     warning.append(node('strong', '', item.contentQuality === 'sem_trecho' ? 'Nenhum trecho foi coletado' : 'Só o título foi coletado'),
@@ -181,15 +214,19 @@ function filteredFeed() {
   const filter = $('#status-filter').value;
   return state.data.items.filter((item) => {
     if (filter === 'event' && item.baseStatus !== 'evento_candidato') return false;
+    if (filter === 'confirmed' && item.editorialReview?.decision !== 'confirmar_evento') return false;
+    if (filter === 'editorially-discarded' && item.editorialReview?.decision !== 'nao_evento') return false;
     if (filter === 'raw' && item.baseStatus !== 'arquivo_bruto') return false;
     if (filter === 'sent' && !item.sentAt) return false;
     if (filter === 'pending' && !needsAttention(item)) return false;
     if (filter === 'incomplete' && item.contentQuality === 'trecho_disponivel') return false;
-    return !query || [item.title, item.source, item.category, item.links.map((row) => row.name).join(' ')]
+    return !query || [item.title, item.source, item.category,
+      item.links.map((row) => row.name).join(' '), Object.values(item.editorialReview?.facts || {}).join(' ')]
       .join(' ').toLocaleLowerCase('pt-BR').includes(query);
   });
 }
 function needsAttention(item) {
+  if (item.editorialReview) return false;
   return Boolean(item.identityPending || ['fila', 'previa', 'revisao'].includes(item.decisionStatus));
 }
 function renderFeed() {
