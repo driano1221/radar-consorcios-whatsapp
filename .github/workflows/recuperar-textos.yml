@@ -17,6 +17,8 @@ jobs:
   recuperar:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    outputs:
+      catalog_changed: ${{ steps.persist.outputs.changed }}
     steps:
       - name: Baixar projeto
         uses: actions/checkout@v7
@@ -46,6 +48,7 @@ jobs:
       - name: Atualizar sugestões sem publicar automaticamente
         run: node scripts/review-recovered-texts.mjs --apply
       - name: Guardar resultados na base
+        id: persist
         shell: bash
         run: |
           git config user.name "radar-consorcios[bot]"
@@ -53,8 +56,20 @@ jobs:
           git add -- data/catalogo
           if git diff --cached --quiet; then
             echo "Nenhum texto ou tentativa nova."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "chore: recuperar textos antigos [skip ci]"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+  publish_dashboard:
+    needs: recuperar
+    if: needs.recuperar.outputs.catalog_changed == 'true' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/publish-dashboard.yml

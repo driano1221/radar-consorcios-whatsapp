@@ -31,6 +31,8 @@ jobs:
   radar:
     runs-on: ubuntu-latest
     timeout-minutes: 8
+    outputs:
+      state_changed: ${{ steps.persist.outputs.changed }}
     env:
       BOT_STATE_PASSWORD: ${{ secrets.BOT_STATE_PASSWORD }}
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -93,6 +95,7 @@ jobs:
         run: npm run session:encrypt
 
       - name: Persistir sessão e notícias enviadas
+        id: persist
         if: always() && steps.freshness.outputs.run == 'true' && env.PERSIST_STATE == 'true'
         shell: bash
         run: |
@@ -101,11 +104,13 @@ jobs:
           git add -- state/auth.enc state/auth.sha256 state/news-state.json data/catalogo
           if git diff --cached --quiet; then
             echo "Nenhuma alteração de estado."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git commit -m "chore: atualizar estado do radar [skip ci]"
           git pull --rebase origin "${GITHUB_REF_NAME}"
           git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Guardar relatórios de coleta
         if: always() && steps.freshness.outputs.run == 'true'
@@ -126,3 +131,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RUN_STATUS: ${{ job.status }}
         run: npm run health:report
+
+  publish_dashboard:
+    needs: radar
+    if: always() && needs.radar.outputs.state_changed == 'true' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/publish-dashboard.yml

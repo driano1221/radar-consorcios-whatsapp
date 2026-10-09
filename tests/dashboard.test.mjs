@@ -2,7 +2,23 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
-import { buildDashboardData, contentQuality, dashboardSourceCatalog, makeBaseTable } from '../scripts/build-dashboard.mjs';
+import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboardSourceCatalog, makeBaseTable } from '../scripts/build-dashboard.mjs';
+
+test('versão pública preserva decisões e tabelas, mas não republica texto integral nem identificadores pessoais', () => {
+  const input = { generatedAt: '2026-10-09T12:00:00Z', items: [{ id: '1', title: 'Ato publicado',
+    evidence: 'Consórcio ratificou o protocolo.', fullText: 'Texto integral extenso.',
+    reason: 'Contato exemplo@site.org; CPF 123.456.789-09' }],
+  baseTables: [{ id: 'eventos', columns: [{ key: 'titulo' }], rows: [{ titulo: 'Ato publicado' }] }] };
+  const publicData = buildPublicDashboardData(input);
+  assert.equal(input.items[0].fullText, 'Texto integral extenso.');
+  assert.equal(publicData.public, true);
+  assert.equal(publicData.items[0].fullText, '');
+  assert.equal(publicData.items[0].hasFullText, true);
+  assert.equal(publicData.items[0].evidence, 'Consórcio ratificou o protocolo.');
+  assert.match(publicData.items[0].reason, /e-mail omitido/);
+  assert.match(publicData.items[0].reason, /CPF omitido/);
+  assert.equal(publicData.baseTables[0].rows[0].titulo, 'Ato publicado');
+});
 
 test('painel usa registro com decisão e evidência visíveis, sem janela XP ou navegação por cartas', async () => {
   const html = await readFile(new URL('../dashboard/src/index.html', import.meta.url), 'utf8');

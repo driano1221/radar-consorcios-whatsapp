@@ -16,6 +16,7 @@
     "articles:review": "node scripts/review-recovered-texts.mjs",
     "pdfs:backfill": "node scripts/backfill-google-pdfs.mjs",
     "dashboard:build": "node scripts/build-dashboard.mjs",
+    "dashboard:build:public": "node scripts/build-dashboard.mjs --public",
     "dashboard:serve": "node scripts/serve-dashboard.mjs",
     "weekly": "node src/weekly.mjs",
     "health:report": "node scripts/report-health.mjs",

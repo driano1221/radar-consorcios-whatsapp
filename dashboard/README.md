@@ -40,4 +40,8 @@ O radar passa a guardar em `state/news-state.json` um registro compacto das deci
 
 ## GitHub Pages
 
-**Não ativado.** O usuário escolheu manter o painel privado por enquanto. Mesmo com repositório privado, um site GitHub Pages pessoal pode ficar público; a possibilidade de Pages no repositório privado também depende do plano GitHub. Não criar workflow de deploy, alterar a visibilidade do repositório ou publicar `data.json` sem nova autorização específica e revisão do conteúdo exposto. Uma publicação pública exigiria minimizar dados e remover qualquer informação interna dos registros de triagem.
+O painel público é gerado pelo workflow `Publicar painel do Radar` a partir do ramo `main`. O repositório já é público; o site também é público e continua **somente de leitura**. O pacote publicado inclui decisões, trechos curtos, links e tabelas consultáveis, mas não republica os textos integrais recuperados. E-mails, CPFs formatados e IDs de grupo são omitidos no arquivo publicado; uma verificação adicional bloqueia o deploy se esses identificadores escaparem.
+
+Um push humano ao `main` publica a nova fotografia. As coletas programadas, a recuperação de textos e o resumo semanal chamam o mesmo workflow após persistirem mudanças, pois commits feitos pelo `GITHUB_TOKEN` não disparam outro workflow de `push`. O site consulta `version.json` a cada cinco minutos enquanto está aberto e também ao voltar para a aba; quando há versão nova, atualiza os dados sem perder a seção em uso. Há alguns minutos de atraso possíveis entre a coleta e a publicação pelo GitHub Pages.
+
+Para conferir o pacote antes do deploy: `npm run dashboard:build:public` e `node scripts/check-public-dashboard.mjs`. O build local padrão (`npm run dashboard:build`) continua preservando o texto integral para auditoria local.

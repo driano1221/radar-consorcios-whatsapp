@@ -416,6 +416,32 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   };
 }
 
+function redactPublicText(value) {
+  return value
+    .replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, '[e-mail omitido]')
+    .replace(/\b\d{3}\.\d{3}\.\d{3}-\d{2}\b/g, '[CPF omitido]')
+    .replace(/\b\d{10,20}@g\.us\b/g, '[grupo omitido]');
+}
+
+function redactPublicValue(value) {
+  if (typeof value === 'string') return redactPublicText(value);
+  if (Array.isArray(value)) return value.map(redactPublicValue);
+  if (value && typeof value === 'object') return Object.fromEntries(
+    Object.entries(value).map(([key, entry]) => [key, redactPublicValue(entry)]));
+  return value;
+}
+
+export function buildPublicDashboardData(data) {
+  const publicData = redactPublicValue(data);
+  publicData.public = true;
+  publicData.items = publicData.items.map((item) => ({
+    ...item,
+    hasFullText: Boolean(item.fullText),
+    fullText: '',
+  }));
+  return publicData;
+}
+
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const [archive, events, consortia, links, pendingIdentity, editorialReviews, participations, pdfRecovery, articleTexts] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'), readCsv('eventos.csv'), readCsv('consorcios.csv'),
@@ -459,9 +485,15 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       makeBaseTable('arquivo-coletas', archive),
       makeBaseTable('revisoes-eventos', editorialReviews),
     ] });
+  const publicMode = process.argv.includes('--public');
+  const outputData = publicMode ? buildPublicDashboardData(data) : data;
   await mkdir(destination, { recursive: true });
   await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'app.js', 'triage-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
-  await writeFile(path.join(destination, 'data.json'), `${JSON.stringify(data)}\n`, 'utf8');
-  console.log(`[painel] ${data.stats.documents} documentos; ${data.stats.eventCandidates} eventos candidatos; ${data.stats.consortiaCandidates} identidades. Arquivos em ${destination}`);
+  await Promise.all([
+    writeFile(path.join(destination, 'data.json'), `${JSON.stringify(outputData)}\n`, 'utf8'),
+    writeFile(path.join(destination, 'version.json'), `${JSON.stringify({ generatedAt: outputData.generatedAt,
+      lastCollectionAt: outputData.lastCollectionAt })}\n`, 'utf8'),
+  ]);
+  console.log(`[painel] ${data.stats.documents} documentos; ${data.stats.eventCandidates} eventos candidatos; ${data.stats.consortiaCandidates} identidades. Modo ${publicMode ? 'público' : 'local'} em ${destination}`);
 }

@@ -216,3 +216,10 @@ Esta seção registra **desde a ideia de criar uma base**, e não apenas as últ
 - A ficha de Publicações põe decisão, motivo, evidência e WhatsApp em linguagem direta; demais dados continuam disponíveis em seção expansível. A Base mostra campos principais sem rolagem horizontal, mas preserva todos os campos na ficha da linha. Como funciona passou a localizar a IA no fluxo e a listar as fontes da configuração atual.
 - **Objetivo futuro explícito:** quase toda publicação deve chegar a aceite ou descarte, com prova e justificativa. Candidatura e pendência são exceções temporárias. Trabalhar nos cinco candidatos e nos marcadores de identidade, prévia, divergência e nova pista; não reclassificar à força apenas para zerar contadores. Para cada regra corrigida, reprocessar o histórico e acrescentar regressão.
 - O painel permanece **local e privado**. Nenhum GitHub Pages foi ativado.
+
+## Publicação contínua do painel — 09/10/2026
+
+- O usuário autorizou posteriormente colocar o painel online e exigiu que ele acompanhe as atualizações do GitHub. Essa decisão substitui a restrição anterior de não publicar. O repositório já estava público; a hospedagem escolhida é GitHub Pages, somente para consulta.
+- O workflow `publish-dashboard.yml` gera um pacote público sem textos integrais recuperados, valida o pacote e publica somente `dashboard/dist`. Dados de acesso ao WhatsApp e arquivos de sessão não fazem parte do pacote.
+- Pushes humanos ao `main` acionam publicação. Coletas do radar, recuperação de textos e resumo semanal chamam o mesmo workflow após persistirem dados, porque pushes feitos por `GITHUB_TOKEN` não acionam novos workflows de `push`. Uma aba aberta verifica `version.json` a cada cinco minutos e atualiza os dados quando há nova versão.
+- A conclusão depende de confirmar o primeiro deploy no GitHub Pages e abrir a URL pública para verificar a fotografia mais recente. Falha de publicação não deve ser descrita como painel atualizado.

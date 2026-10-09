@@ -26,6 +26,7 @@ function safeUrl(value) {
   try { const url = new URL(value); return /^https?:$/.test(url.protocol) ? url.href : ''; }
   catch { return ''; }
 }
+function hasRecoveredFullText(item) { return Boolean(item.fullText || item.hasFullText); }
 function link(label, url) {
   const href = safeUrl(url);
   if (!href) return node('span', 'detail-copy', label);
@@ -54,7 +55,7 @@ function status(item) {
   if (item.baseDecision === 'descartado' && item.recoverySuggestion) return ['Fora da base · nova pista', 'raw'];
   if (item.baseDecision === 'descartado' && item.decisionStatus === 'revisao') return ['Fora da base · revisar', 'raw'];
   if (item.recoverySuggestion) return ['Texto recuperado · revisar', 'wait'];
-  if (item.baseStatus === 'arquivo_bruto' && item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length && !item.fullText)
+  if (item.baseStatus === 'arquivo_bruto' && item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length && !hasRecoveredFullText(item))
     return ['Só título · sem conclusão', 'wait'];
   if (needsAttention(item)) return ['Precisa conferir', 'wait'];
   if (item.baseStatus === 'evento_candidato') return ['Possível achado', 'event'];
@@ -305,6 +306,8 @@ function renderDetailedRecord(item, target) {
     full.append(node('summary', '', 'Ler texto integral recuperado'),
       node('p', 'detail-copy evidence', item.fullText));
     panel.append(full);
+  } else if (item.hasFullText && !item.editorialReview) {
+    panel.append(node('p', 'detail-copy', 'O texto integral foi recuperado para a triagem, mas não é republicado nesta página. Consulte a fonte original.'));
   }
   if (item.articleDuplicateOf) {
     const original = state.data.items.find((row) => row.id === item.articleDuplicateOf);
@@ -417,7 +420,7 @@ function filteredFeed() {
     if (filter === 'raw' && item.baseStatus !== 'arquivo_bruto') return false;
     if (filter === 'sent' && !item.sentAt) return false;
     if (filter === 'pending' && !needsAttention(item)) return false;
-    if (filter === 'incomplete' && (!needsAttention(item) || item.contentQuality === 'trecho_disponivel' || item.pdfEvidence?.length || item.fullText)) return false;
+    if (filter === 'incomplete' && (!needsAttention(item) || item.contentQuality === 'trecho_disponivel' || item.pdfEvidence?.length || hasRecoveredFullText(item))) return false;
     return !query || [item.title, item.stage, item.source, item.category,
       item.links.map((row) => row.name).join(' '), Object.values(item.editorialReview?.facts || {}).join(' ')]
       .join(' ').toLocaleLowerCase('pt-BR').includes(query);
@@ -427,7 +430,7 @@ function needsAttention(item) {
   if (item.editorialReview && item.editorialReview.decision !== 'corrigir_categoria') return false;
   return Boolean(item.identityPending || ['fila', 'previa', 'revisao'].includes(item.decisionStatus) ||
     item.recoverySuggestion ||
-    (item.baseStatus === 'arquivo_bruto' && item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length && !item.fullText));
+    (item.baseStatus === 'arquivo_bruto' && item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length && !hasRecoveredFullText(item)));
 }
 function renderFeed() {
   const items = filteredFeed();
@@ -639,14 +642,44 @@ function switchView(view, focusDetail = false) {
     $('#detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
   else window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+function renderSnapshot() {
+  $('#last-collection').textContent = date(state.data.lastCollectionAt, true);
+  $('#generated-at').textContent = `Painel gerado em ${date(state.data.generatedAt, true)}`;
+  $('#rail-mode').textContent = state.data.public ? 'Consulta pública' : 'Consulta local';
+  $('#hosting-badge').textContent = state.data.public ? 'Consulta pública · atualização automática' : 'Consulta local · somente leitura';
+  $('#footer-mode').textContent = `RADAR CONSÓRCIOS / CONSULTA ${state.data.public ? 'PÚBLICA' : 'LOCAL'}`;
+  renderOverview();
+  if (state.view === 'feed') renderFeed();
+  if (state.view === 'base') renderBase();
+  if (state.view === 'method') renderMethod();
+}
+let refreshInProgress = false;
+async function refreshPublishedData() {
+  if (!state.data?.public || refreshInProgress || document.visibilityState === 'hidden') return;
+  refreshInProgress = true;
+  try {
+    const versionResponse = await fetch(`./version.json?check=${Date.now()}`, { cache: 'no-store' });
+    if (!versionResponse.ok) return;
+    const version = await versionResponse.json();
+    if (!version.generatedAt || version.generatedAt === state.data.generatedAt) return;
+    const response = await fetch(`./data.json?version=${encodeURIComponent(version.generatedAt)}`, { cache: 'no-store' });
+    if (!response.ok) return;
+    const nextData = await response.json();
+    if (nextData.generatedAt !== version.generatedAt) return;
+    state.data = nextData;
+    renderSnapshot();
+  } catch (error) {
+    console.warn('A atualização do painel será tentada novamente.', error);
+  } finally {
+    refreshInProgress = false;
+  }
+}
 async function init() {
   try {
     const response = await fetch('./data.json', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     state.data = await response.json();
-    $('#last-collection').textContent = date(state.data.lastCollectionAt, true);
-    $('#generated-at').textContent = `Painel gerado em ${date(state.data.generatedAt, true)}`;
-    renderOverview();
+    renderSnapshot();
     document.querySelectorAll('.nav-button').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
     $('#open-feed').addEventListener('click', () => switchView('feed'));
     $('#deck-search').addEventListener('input', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
@@ -656,6 +689,10 @@ async function init() {
     $('#more-button').addEventListener('click', () => { state.limit += 40; renderFeed(); });
     $('#base-search').addEventListener('input', () => { state.baseRowIndex = 0; state.baseLimit = 25; renderBase(); });
     $('#base-more').addEventListener('click', () => { state.baseLimit += 25; renderBase(); });
+    if (state.data.public) {
+      setInterval(refreshPublishedData, 5 * 60 * 1000);
+      document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') refreshPublishedData(); });
+    }
   } catch (error) {
     console.error('Falha ao abrir painel:', error);
     $('#error').hidden = false;
