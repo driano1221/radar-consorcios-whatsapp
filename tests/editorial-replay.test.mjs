@@ -45,6 +45,26 @@ test('duplicatas revistas também são bloqueadas na coleta futura', async () =>
   }
 });
 
+test('fatos históricos confirmados ficam na base, mas não voltam à fila como notícia nova', async () => {
+  const [archive, reviews] = await Promise.all([
+    readNdjson('arquivo-coletas.ndjson'), readNdjson('revisoes-eventos.ndjson'),
+  ]);
+  const byId = new Map(archive.map((row) => [row.id, row]));
+  const guard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
+  const withheld = reviews.filter((review) => review.publicar === false);
+  assert.ok(withheld.length >= 2);
+  for (const review of withheld) {
+    assert.equal(review.decisao, 'confirmar_evento');
+    const row = byId.get(review.documento_id);
+    const protectedItem = applyEditorialGuard({ url: row.url,
+      classification: { category: 'PROTOCOLO', score: 12, reasons: [] } }, guard);
+    assert.equal(protectedItem.classification.category, 'GERAL', row.id);
+    assert.equal(protectedItem.publicationDecision, 'arquivar_sem_envio');
+    assert.equal(isPublishableClassification(protectedItem.classification), false);
+    assert.match(protectedItem.classification.reasons.at(-1), /não publicar/);
+  }
+});
+
 test('falsos positivos editoriais não retornam à coleta, fila ou resumo semanal', async () => {
   const [archive, recovered, largeRecovered, reviews] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'),

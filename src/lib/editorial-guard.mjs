@@ -41,6 +41,14 @@ export function applyEditorialGuard(item, guard) {
   if (!review) return item;
   const previous = item.classification || {};
   if (['confirmar_evento', 'corrigir_categoria'].includes(review.decisao)) {
+    // Um fato pode ser válido para a base histórica sem ser notícia nova.
+    // A revisão continua positiva no catálogo, mas não reabre a fila de envio.
+    if (review.publicar === false) return { ...item, classification: {
+      ...previous, category: 'GERAL', emoji: '📰', score: 0,
+      stage: 'fato histórico registrado; sem novidade para envio',
+      evidenceText: review.evidencia,
+      reasons: [...(previous.reasons || []), `não publicar: revisão editorial — ${review.motivo_publicacao || review.motivo}`],
+    }, editorialDecision: review.decisao, publicationDecision: 'arquivar_sem_envio' };
     return { ...item, previewOnly: false, reviewReason: '', classification: {
       ...previous, category: review.categoria, emoji: EMOJI[review.categoria],
       score: Math.max(5, previous.score || 0),
