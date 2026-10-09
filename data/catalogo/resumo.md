@@ -1,8 +1,8 @@
 # Panorama da base histórica
 
-- 1532 documentos recuperados do histórico de coletas.
-- 76 registros relacionados a possíveis eventos de consórcios; 72 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 42 identidades candidatas de consórcios; 57 vínculos documentais, dos quais 34 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 1572 documentos recuperados do histórico de coletas.
+- 78 registros relacionados a possíveis eventos de consórcios; 72 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 43 identidades candidatas de consórcios; 59 vínculos documentais, dos quais 34 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 24 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
@@ -12,10 +12,10 @@
 | ATUAÇÃO | 19 |
 | GOVERNANÇA | 17 |
 | ADESÃO AUTORIZADA | 13 |
+| RATEIO | 8 |
 | CONTROLE | 7 |
-| RATEIO | 7 |
 | FINANÇAS | 5 |
-| ADESÃO | 1 |
+| ADESÃO | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | COOPERAÇÃO AUTORIZADA | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
@@ -28,6 +28,8 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-09 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [EXTRATO DO 2º TERMO ADITIVO AO CONTRATO ADMINISTRATIVO Nº 283/2024 - ADESÃO 08/2024](https://amm.diariomunicipal.org/publicacao/1922706/) |
+| 2026-10-09 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA](https://amm.diariomunicipal.org/publicacao/1923116/) |
 | 2026-10-09 | ATUAÇÃO — ato publicado — efeito a verificar | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Mogi Guaçu (SP)](https://data.queridodiario.ok.org.br/3530706/2026-10-09/04512dfa6065751937309d0d73d72b65f5cc0c20.pdf) |
 | 2026-10-08 | ATUAÇÃO — nova sede em construção; assembleia e visita ainda futuras | confirmado por revisão editorial — a construção da nova sede é atuação em curso; o anúncio de assembleia não prova que a reunião ou a visita já ocorreram | [CONIAPE realiza Assembleia Ordinária e Visita Técnica à nova sede nesta quarta-feira (14)](https://consorcioconiape.pe.gov.br/2026/10/08/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-nesta-quarta-feira-14/) |
 | 2026-10-08 | ATUAÇÃO — norma operacional do serviço de inspeção publicada | confirmado por revisão editorial — a Resolução 004/2026 estabelece procedimentos de inspeção do SIM vinculado ao CIDESAA; protocolo e estatuto aparecem como fundamentos, não como alterações constitutivas | [RESOLUÇÃO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1921831/) |
@@ -41,7 +43,5 @@
 | 2026-10-06 | ATUAÇÃO — parceria com a Universidade Metodista firmada em setembro; recepção de documentos prevista para novembro | confirmado por revisão editorial — texto integral da fonte oficial confirma parceria já firmada, mas a entrega de documentos ainda era futura; notícia de outras duas fontes corrobora o mesmo fato | [Consórcio ABC recebe documentação para concessão de bolsas de estudo na Universidade Metodista - Consórcio Intermunicipal - Grande ABC](https://news.google.com/rss/articles/CBMi3wFBVV95cUxPWS05bFdLdGJlaEtRS004OFRBaXdlWlc1ckI4YVNPQzBWbnZSRkZ1MTQ2NkluN3VqVXRfNEk1M1E3RzlKbWVkUDg5eUJLWjdIaWktRUxKOFFGaU1tbk5LWjhmM3JsdHhyeHZudEFjVEwwWjVnWTNJMFNha1NhSm1UMU5pM1NNWDRTSzVQX0JBdUtkSkRibnNDeV9zdl9sNVB1dzRZM0RuMTVlMTliNFJBS01HeVhZTm9wVkUyZHBrYWJoSHNYdGxVTzBEYW9nWmp4U2NOT09pVThZT0xDNXkw?oc=5) |
 | 2026-10-06 | ATUAÇÃO — CIMU abriu chamamento público 01/2026 para ônibus Rio Negro–Mafra | confirmado por revisão editorial — abertura concreta do chamamento foi confirmada pela ANTT; contratação ou início de operação de nova empresa ainda não comprovados | [Rio Negro (PR) e Mafra (SC) buscam empresa para ligação de ônibus após histórico de crise e operações provisórias - Diário do Transporte](https://news.google.com/rss/articles/CBMi6wFBVV95cUxPQmd3bzBfbWE3SnhSRGItak9qSFozbHZUVnJUa0tjZ0pHNXdnUnUxYXExaExydnU2aktiWlRvTzJpaDF4N0czRG9lbVFlNS1KWFBvUnN3YkRvM1V0SERHSnNCZVBpVW93V3hsRElxSGVqLWZzNWxhQ3JJSzdXcUVFWHhYRWVjM0w4bS11RHJwd0FDbVBrd0dfRS1EUXUwbVV5ZWdzZE9rRFkzT1ROX3pPN0NqaWN1MzJFY1B1eWIzam8yV0RXeHVMblFJSngxaW1qLXowc0xjT1RzUl9kQkk5ZWtucklpS2pRM2530gHwAUFVX3lxTE9adkhNTkNVWFVmbU5HZnF5TzIyWXJaOUROSnBCQldvS1U0WkY5a0FLYTY1R3NaVHFGNjB1cGJMRzR6eDc2b1NpUGhJYUhjX29WbnE0UUdDcm5Xd1FyeVpQSVBSVEI1V3RUdURLQ1dqWTVEVG80clJ1QmQyTU9ZUEwwVm1TbGRLMkd4dEo1MHJjLU5Fd25qZDlab2lRQ0doZm9HaUNkdTNKM3ZDRnFWTTN4LTJIOTRWeTZlYXh5RWNCSlVZams5dFY3ZElTbFdHU2dZal92WHlHY2dZei14ZGdRSE1pMHEtM0tEWENXaHRxUA?oc=5) |
 | 2026-10-06 | GOVERNANÇA — estatuto consolidado ratificado por lei municipal | confirmado por revisão editorial — o art. 1º ratifica estatuto do CIDESAPA e alteração contratual correspondente; a ementa sobre créditos tributários não descreve o conteúdo real do ato | [LEI Nº 1376 DE 05 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1920370/) |
-| 2026-10-06 | ADESÃO AUTORIZADA — projeto de ratificação aprovado pela Câmara em dois turnos — ingresso efetivo não comprovado | confirmado por revisão editorial — a reportagem confirma aprovação legislativa da participação de Umuarama no Conclima, não a conclusão independente do ingresso | [Câmara aprova adesão de Umuarama a consórcio de prevenção a desastres - Umuarama News](https://news.google.com/rss/articles/CBMitgFBVV95cUxPZTEzT2M2OUhGRGd4V09WZlVRZEx3SV9rRks4MV9yWGJLTnNHUURVNm44WVNCLXcxVHZVc29hRnh5X1prTFZjcHRKQk9kbGpfc2lFZFBFSENCZFY5SDhxa2t3eGhLQWdlR2ExTGtKRG9JUWlLVnQ1cTJ6M05TdU52VlViRlhMcXJvYm5fYUoxZ2hLaGxDRlZ6SUdLLTJHcC1KNlJkTjNmakJSOVRPd3JDVi1va0lmdw?oc=5) |
-| 2026-10-06 | FINANÇAS — LDO 2027 prevê ação orçamentária para CISCOPAR; execução futura não comprovada | confirmado por revisão editorial — página física 22 da LDO 2027 traz ação específica de repasse ao CISCOPAR e valor planejado; é previsão orçamentária, não repasse executado | [Diário Oficial de Ouro Verde do Oeste (PR)](https://data.queridodiario.ok.org.br/4117453/2026-10-06/f020529238ef21a58bef7d3c9e1822b988a61b90.pdf) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
