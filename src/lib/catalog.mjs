@@ -34,6 +34,7 @@ function documentType(item) {
 }
 
 function stage(item, type) {
+  if (item.classification?.stage) return item.classification.stage;
   if (type === 'projeto de lei') return 'proposta — não aprovada';
   if (item.classification?.category === 'ADESÃO AUTORIZADA' ||
     /\bautoriza\b.{0,100}\b(?:ingresso|ades[aã]o|integrar)\b/i.test(item.classification?.evidenceText || '')) {
@@ -75,7 +76,7 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
     municipio: safeText(territory, 100), uf: safeText(stateCode, 2),
     titulo: title, fonte: safeText(item.source, 120), url,
     article_url: item.articleUrl || '',
-    trecho: safeText(item.classification?.category === 'GERAL'
+    trecho: safeText(item.classification?.category === 'GERAL' && !item.classification?.stage
       ? (item.summary || item.classification?.evidenceText)
       : (item.classification?.evidenceText || item.summary), 500),
     pontuacao: item.classification?.score ?? '', revisao_ia: item.aiReview?.status || '', enviado_em: sentAt || '',
@@ -83,6 +84,9 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
 }
 
 function statusPriority(status) {
+  // A leitura integral posterior corrige o estado histórico; uma observação
+  // antiga (inclusive um envio) não pode restaurar a categoria já corrigida.
+  if (status.startsWith('categoria recalculada') || status.startsWith('descartado após leitura integral')) return 6;
   if (status.startsWith('legado')) return 0;
   if (status.startsWith('rejeitado') || status.startsWith('divergente')) return 5;
   if (status.startsWith('publicado')) return 4;
@@ -115,6 +119,14 @@ export function mergeCatalogRecord(existing, incoming) {
     article_url: existing.article_url || incoming.article_url || '',
     article_attempted_at: existing.article_attempted_at || incoming.article_attempted_at || '',
     article_attempts: Math.max(Number(existing.article_attempts || 0), Number(incoming.article_attempts || 0)),
+    article_text_sha256: existing.article_text_sha256 || incoming.article_text_sha256 || '',
+    article_reader: existing.article_reader || incoming.article_reader || '',
+    article_recovery_reason: existing.article_text_sha256 ? ''
+      : existing.article_recovery_reason || incoming.article_recovery_reason || '',
+    article_suggested_category: existing.article_suggested_category || incoming.article_suggested_category || '',
+    article_suggested_score: existing.article_suggested_score || incoming.article_suggested_score || '',
+    article_suggestion_evidence: existing.article_suggestion_evidence || incoming.article_suggestion_evidence || '',
+    article_duplicate_of: existing.article_duplicate_of || incoming.article_duplicate_of || '',
     data_publicacao: best.data_publicacao || existing.data_publicacao || incoming.data_publicacao,
   };
 }
@@ -146,7 +158,7 @@ export function mergeStateIntoCatalog(records, state) {
     const old = records.get(row.id);
     if (old) {
       records.set(row.id, { ...old, enviado_em: seen.sentAt || old.enviado_em,
-        situacao_analise: old.tipo_evento === 'GERAL' || /^(rejeitado|divergente)/.test(old.situacao_analise)
+        situacao_analise: old.tipo_evento === 'GERAL' || /^(rejeitado|divergente|categoria recalculada|descartado após leitura integral)/.test(old.situacao_analise)
           ? old.situacao_analise : old.trecho
             ? 'publicado pelo radar — não confirmado manualmente'
             : 'legado sem texto — publicação antiga, requer conferência' });
@@ -189,7 +201,9 @@ export async function saveCatalog(directory, records) {
     if (error.code !== 'ENOENT') throw error;
   }
   const decisions = new Map(editorialReviews.filter((review) =>
-    (review.decisao === 'nao_evento' || (['corrigir_categoria', 'confirmar_evento'].includes(review.decisao) && review.categoria)) &&
+    (['nao_evento', 'duplicata'].includes(review.decisao) ||
+      (['corrigir_categoria', 'confirmar_evento'].includes(review.decisao) && review.categoria)) &&
+    (review.decisao !== 'duplicata' || review.documento_relacionado) &&
     review.documento_id && review.evidencia && review.motivo &&
     /^[a-f0-9]{64}$/.test(review.trecho_sha256 || ''))
     .map((review) => [review.documento_id, review]));
@@ -200,16 +214,17 @@ export async function saveCatalog(directory, records) {
     if (reviewStillMatches(row)) {
       const review = decisions.get(row.id);
       result = { ...row,
-      tipo_evento: review.decisao === 'nao_evento' ? 'GERAL' : review.categoria,
+      tipo_evento: ['nao_evento', 'duplicata'].includes(review.decisao) ? 'GERAL' : review.categoria,
       etapa: review.etapa || row.etapa,
-      situacao_analise: `${review.decisao === 'nao_evento' ? 'rejeitado' : review.decisao === 'confirmar_evento' ? 'confirmado' : 'categoria corrigida'} por revisão editorial — ${review.motivo}`,
+      situacao_analise: `${review.decisao === 'nao_evento' ? 'rejeitado' : review.decisao === 'duplicata' ? 'duplicata descartada' : review.decisao === 'confirmar_evento' ? 'confirmado' : 'categoria corrigida'} por revisão editorial — ${review.motivo}`,
       revisao_editorial: review };
     }
     // O arquivo bruto mantém inclusive envios antigos, mas uma data de indexação
     // recente não deve transformá-los em eventos atuais nas tabelas derivadas.
     if (isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: row.data_publicacao })) {
       return { ...result, tipo_evento: 'GERAL',
-        situacao_analise: 'triagem: ato antigo com data recente de indexação' };
+        situacao_analise: reviewStillMatches(row) && decisions.get(row.id)?.decisao === 'nao_evento'
+          ? result.situacao_analise : 'triagem: ato antigo com data recente de indexação' };
     }
     return result;
   });

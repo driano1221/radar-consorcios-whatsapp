@@ -7,6 +7,8 @@ const categoryLabels = {
   ADESÃO: 'ADESÃO A CONSÓRCIO',
   'ADESÃO AUTORIZADA': 'INGRESSO AUTORIZADO',
   RATEIO: 'CONTRATO DE RATEIO',
+  'RATEIO EM TRAMITAÇÃO': 'RATEIO EM TRAMITAÇÃO',
+  'COOPERAÇÃO AUTORIZADA': 'COOPERAÇÃO AUTORIZADA',
   PROTOCOLO: 'PROTOCOLO DE INTENÇÕES',
   GOVERNANÇA: 'GESTÃO DO CONSÓRCIO',
   CONTROLE: 'FISCALIZAÇÃO E CONTROLE',
@@ -115,6 +117,8 @@ function gazetteLead(item) {
           )
         ? `${locality} publicou dotação orçamentária relacionada à participação em consórcio público.`
         : `${locality} publicou ato relativo ao rateio com ${target}.`,
+    'RATEIO EM TRAMITAÇÃO': `${locality} autorizou a etapa administrativa para formalizar rateio com ${target}; este ato não comprova assinatura do contrato.`,
+    'COOPERAÇÃO AUTORIZADA': `${locality} autorizou convênio de serviços com ${target}; este ato não comprova que o convênio foi assinado nem adesão ao consórcio.`,
     PROTOCOLO: `${locality} publicou ato relacionado ao protocolo de intenções d${target}.`,
     CRISE: `${locality} publicou ato relacionado à dissolução, extinção ou situação crítica d${target}.`,
     GOVERNANÇA: protocolChange
@@ -182,6 +186,8 @@ export function displayTitle(item) {
     )
       ? `${locality} publica contrato de rateio${consortium ? ` com o ${consortium}` : ''}`
       : `${locality} publica ato sobre rateio consorcial`,
+    'RATEIO EM TRAMITAÇÃO': `${locality} autoriza etapa para formalizar rateio${consortium ? ` com o ${consortium}` : ''}`,
+    'COOPERAÇÃO AUTORIZADA': `${locality} autoriza convênio de serviços${consortium ? ` com o ${consortium}` : ''}`,
     PROTOCOLO: `${locality} publica protocolo de intenções`,
     GOVERNANÇA: protocolChange
       ? `${locality} ratifica alteração do protocolo${consortium ? ` do ${consortium}` : ''}`
@@ -278,12 +284,12 @@ export function formatWeeklyMessage(report, test = false) {
   const labels = {
     CRISE: 'ALERTA', SAÍDA: 'SAÍDA', CRIAÇÃO: 'NOVO CONSÓRCIO', ADESÃO: 'ADESÃO',
     'ADESÃO AUTORIZADA': 'INGRESSO AUTORIZADO',
-    RATEIO: 'RATEIO', PROTOCOLO: 'PROTOCOLO', GOVERNANÇA: 'GESTÃO',
+    RATEIO: 'RATEIO', 'RATEIO EM TRAMITAÇÃO': 'RATEIO EM TRAMITAÇÃO', 'COOPERAÇÃO AUTORIZADA': 'COOPERAÇÃO AUTORIZADA', PROTOCOLO: 'PROTOCOLO', GOVERNANÇA: 'GESTÃO',
     CONTROLE: 'FISCALIZAÇÃO', FINANÇAS: 'FINANÇAS', ATUAÇÃO: 'ATUAÇÃO', AÇÃO: 'ATUAÇÃO',
   };
   const icons = {
     CRISE: '🟥', SAÍDA: '🟧', CRIAÇÃO: '🟩', ADESÃO: '🟦',
-    'ADESÃO AUTORIZADA': '🟦', RATEIO: '🟪', PROTOCOLO: '🟪',
+    'ADESÃO AUTORIZADA': '🟦', RATEIO: '🟪', 'RATEIO EM TRAMITAÇÃO': '🟪', 'COOPERAÇÃO AUTORIZADA': '📰', PROTOCOLO: '🟪',
     GOVERNANÇA: '🟪', CONTROLE: '🟨', FINANÇAS: '🟪',
     ATUAÇÃO: '🟩', AÇÃO: '🟩',
   };

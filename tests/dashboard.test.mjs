@@ -16,9 +16,25 @@ test('painel expõe falhas da última coleta sem confundir fonte desativada com 
     sourceHealth: { Portal: { name: 'Portal', status: 'error', checkedAt: '2026-10-05T13:00:00Z', message: 'Timeout' },
       Outra: { name: 'Outra', status: 'disabled', checkedAt: '2026-10-05T13:00:00Z' } } });
   assert.equal(result.stats.insufficientContent, 1);
+  assert.equal(result.stats.insufficientRaw, 1);
   assert.equal(result.items[0].contentQuality, 'apenas_titulo');
   assert.equal(result.collectionHealth[0].message, 'Timeout');
   assert.equal(result.collectionHealth[1].status, 'disabled');
+  assert.equal(result.stats.titleOnlyUnverified, 1);
+});
+
+test('painel preserva texto integral separadamente e mostra cinco vínculos para uma portaria multi-consórcio', () => {
+  const row = { id: 'paici', titulo: 'Portaria PAICI', trecho: 'Portaria PAICI',
+    url: 'https://example.org/portaria', fonte: 'IOMAT', article_recovery_reason: '',
+    ultima_coleta: '2026-10-09T12:00:00Z' };
+  const links = Array.from({ length: 5 }, (_, index) => ({ documento_id: row.id,
+    consorcio_id: `c${index}`, nome_mencionado: `Consórcio ${index}`,
+    evidencia: `Bloco ${index} da portaria`, url_evidencia: row.url }));
+  const result = buildDashboardData({ archive: [row], events: [], consortia: [], links,
+    pendingIdentity: [], articleTexts: [{ documento_id: row.id, texto: 'Texto completo da portaria', leitor: 'ocr' }] });
+  assert.equal(result.items[0].links.length, 5);
+  assert.equal(result.items[0].fullText, 'Texto completo da portaria');
+  assert.equal(result.stats.titleOnlyUnverified, 0);
 });
 
 test('painel separa arquivo bruto, evento candidato e ato antigo reindexado', () => {
@@ -34,6 +50,7 @@ test('painel separa arquivo bruto, evento candidato e ato antigo reindexado', ()
     links: [{ documento_id: 'recent', consorcio_id: 'c1', nome_mencionado: 'Consórcio X' }],
     pendingIdentity: [{ documento_id: 'recent', motivo: 'sigla ambígua' }], decisions: {} });
   assert.equal(result.stats.documents, 3);
+  assert.equal(result.stats.missingSourceCandidates, 0);
   assert.equal(result.stats.eventCandidates, 1);
   assert.equal(result.items.find((row) => row.id === 'recent').baseStatus, 'evento_candidato');
   assert.equal(result.items.find((row) => row.id === 'stale').baseStatus, 'arquivo_bruto');
@@ -70,6 +87,21 @@ test('revisão editorial de falso evento explica por que não entrou na base', (
   assert.equal(result.items[0].score, '');
 });
 
+test('painel mostra data original conferida em vez da data de indexação do Google', () => {
+  const row = { id: 'antiga', titulo: 'Assembleia do consórcio', fonte: 'Câmara',
+    url: 'https://example.org/antiga', data_publicacao: '2026-10-02T00:00:00Z',
+    primeira_coleta: '2026-10-03T00:00:00Z', ultima_coleta: '2026-10-08T00:00:00Z',
+    tipo_evento: 'GERAL', trecho: 'Assembleia do consórcio' };
+  const review = { documento_id: row.id, decisao: 'nao_evento', motivo: 'notícia antiga reindexada',
+    evidencia: 'Publicada em 02/12/2021', fatos: { data_publicacao_original: '2021-12-02' },
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+  const result = buildDashboardData({ archive: [row], events: [], consortia: [], links: [],
+    pendingIdentity: [], editorialReviews: [review] });
+  assert.equal(result.items[0].publishedAt, '2021-12-02T12:00:00Z');
+  assert.equal(result.items[0].publishedDateSource, 'revisao_editorial');
+  assert.equal(result.stats.insufficientRaw, 0);
+});
+
 test('painel mostra aceitação editorial, fatos e consórcio já identificado sem pendência falsa', () => {
   const row = { id: 'confirmado', titulo: 'Contrato de rateio 055/2026', fonte: 'Diário oficial',
     url: 'https://example.org/ato', data_publicacao: '2026-10-05T00:00:00Z',
@@ -83,9 +115,45 @@ test('painel mostra aceitação editorial, fatos e consórcio já identificado s
     pendingIdentity: [{ documento_id: row.id, motivo: 'identidade ainda não extraída automaticamente' }],
     editorialReviews: [review] });
   assert.equal(result.stats.confirmed, 1);
+  assert.equal(result.stats.pendingReview, 0);
   assert.equal(result.stats.pendingIdentity, 0);
   assert.equal(result.items[0].editorialReview.facts.valor, 'R$ 200.010,82');
   assert.equal(result.items[0].identityPending, '');
+});
+
+test('confirmação editorial prevalece sobre descarte automático antigo no painel', () => {
+  const row = { id: 'proposta', titulo: 'Diário Oficial de Valinhos', fonte: 'Querido Diário',
+    url: 'https://example.org/proposta', data_publicacao: '2026-09-29T00:00:00Z',
+    primeira_coleta: '2026-10-01T00:00:00Z', ultima_coleta: '2026-10-02T00:00:00Z',
+    tipo_evento: 'ADESÃO', situacao_analise: 'candidato', trecho: 'Proposta de ingresso aprovada pelo Conselho.' };
+  const review = { documento_id: row.id, decisao: 'confirmar_evento', categoria: 'PROPOSTA DE ADESÃO',
+    etapa: 'proposta aprovada; ingresso não comprovado', motivo: 'deliberação confirmada',
+    evidencia: 'Conselho aprovou proposta',
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+  const result = buildDashboardData({ archive: [row], events: [{ ...row, tipo_evento: review.categoria }],
+    consortia: [], links: [], pendingIdentity: [], editorialReviews: [review],
+    decisions: { proposta: { status: 'descartado', reason: 'regra automática antiga' } } });
+  assert.equal(result.items[0].decisionStatus, 'confirmado');
+  assert.equal(result.items[0].pendingReview, false);
+  assert.equal(result.items[0].stage, review.etapa);
+});
+
+test('painel separa pendências reais de aceitos, correções intermediárias e duplicatas', () => {
+  const make = (id) => ({ id, titulo: `Ato ${id} sobre consórcio`, fonte: 'Diário',
+    url: `https://example.org/${id}`, trecho: `Consórcio público: ato ${id}.`,
+    tipo_evento: 'CONTROLE', situacao_analise: 'candidato', ultima_coleta: '2026-10-08T12:00:00Z' });
+  const rows = ['novo', 'aceito', 'corrigido', 'duplicado'].map(make);
+  const review = (row, decisao) => ({ documento_id: row.id, decisao,
+    motivo: 'revisão com fonte original', evidencia: row.trecho, categoria: 'CONTROLE',
+    documento_relacionado: decisao === 'duplicata' ? 'aceito' : undefined,
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') });
+  const result = buildDashboardData({ archive: rows, events: rows.slice(0, 3),
+    editorialReviews: [review(rows[1], 'confirmar_evento'), review(rows[2], 'corrigir_categoria'),
+      review(rows[3], 'duplicata')], consortia: [], links: [], pendingIdentity: [] });
+  assert.equal(result.stats.pendingReview, 2);
+  assert.equal(result.stats.confirmed, 1);
+  assert.equal(result.stats.duplicates, 1);
+  assert.equal(result.items.find((row) => row.id === 'duplicado').editorialReview.relatedDocumentId, 'aceito');
 });
 
 test('painel expõe ano de ingresso distinto do ano da última evidência', () => {
@@ -95,4 +163,105 @@ test('painel expõe ano de ingresso distinto do ano da última evidência', () =
     consortia: [{ id: 'cidespa', nome: 'CIDESPA', documentos_vinculados: '1' }],
     participations: [participation] });
   assert.deepEqual(data.consortia[0].participations, [participation]);
+});
+
+test('painel mostra a página da prova recuperada de um PDF sem afirmar validação do evento', () => {
+  const row = { id: 'pdf1', titulo: 'Diário Oficial de Dracena (SP)', fonte: 'Querido Diário',
+    url: 'https://example.org/diario.pdf', trecho: 'Lei altera protocolo de intenções.',
+    ultima_coleta: '2026-10-08T12:00:00Z' };
+  const data = buildDashboardData({ archive: [row], events: [], links: [], pendingIdentity: [], consortia: [],
+    pdfRecovery: [{ documento_id: 'pdf1', url: row.url, situacao: 'texto recuperado',
+      trechos: [{ pagina: 2, coluna: 'direita', texto: 'Lei 5.302 ratifica alterações do protocolo do CISNAP.' }] }] });
+  assert.equal(data.items[0].baseStatus, 'arquivo_bruto');
+  assert.deepEqual(data.items[0].pdfEvidence, [{ page: 2, column: 'direita',
+    text: 'Lei 5.302 ratifica alterações do protocolo do CISNAP.' }]);
+  assert.equal(data.items[0].pdfEvidenceUrl, row.url);
+});
+
+test('data de edição do Querido Diário preenche a publicação quando o legado não guardou data', () => {
+  const row = { id: 'antigo', titulo: 'Diário Oficial de Recife (PE)',
+    url: 'https://data.queridodiario.ok.org.br/2611606/2026-08-20/edicao.pdf',
+    data_publicacao: '', ultima_coleta: '2026-08-21T13:10:00Z', trecho: '' };
+  const data = buildDashboardData({ archive: [row], events: [], links: [],
+    pendingIdentity: [], consortia: [] });
+  assert.equal(data.items[0].publishedAt, '2026-08-20T12:00:00Z');
+});
+
+test('revisão de legado prevalece sobre rótulo antigo e prioriza todas as páginas da prova', () => {
+  const row = { id: 'recife', titulo: 'Diário Oficial do Recife', fonte: 'Querido Diário',
+    url: 'https://example.org/recife.pdf', trecho: '', tipo_evento: 'ADESÃO',
+    etapa: 'adesão concluída', situacao_analise: 'legado sem texto',
+    ultima_coleta: '2026-10-08T12:00:00Z' };
+  const review = { documento_id: row.id, decisao: 'confirmar_evento',
+    categoria: 'ADESÃO EM TRAMITAÇÃO', etapa: 'PL aprovado; sanção não comprovada',
+    motivo: 'segunda votação comprovada', evidencia: 'Ata da Câmara, pp. 45-46',
+    fonte_evidencia: row.url, fatos: { paginas_pdf: [45, 46] },
+    trecho_sha256: createHash('sha256').update('').digest('hex') };
+  const snippets = [38, 45, 45, 45, 45, 46].map((pagina, index) =>
+    ({ pagina, texto: `Menção distinta ${index}: consórcio intermunicipal.` }));
+  const data = buildDashboardData({ archive: [row], events: [row], editorialReviews: [review],
+    pdfRecovery: [{ documento_id: row.id, url: row.url, trechos: snippets }],
+    links: [], pendingIdentity: [], consortia: [] });
+  assert.equal(data.stats.legacyUnverifiedRecords, 0);
+  assert.equal(data.items[0].category, 'ADESÃO EM TRAMITAÇÃO');
+  assert.equal(data.items[0].stage, review.etapa);
+  assert.deepEqual(data.items[0].pdfEvidence.slice(0, 2).map((snippet) => snippet.page), [45, 46]);
+  assert.equal(data.items[0].editorialReview.evidenceUrl, row.url);
+});
+
+test('painel separa resultados brutos de documentos novos na última rodada', () => {
+  const before = '2026-10-08T16:28:18.840Z';
+  const after = '2026-10-08T22:04:12.553Z';
+  const old = { id: 'old', titulo: 'Notícia antiga', primeira_coleta: '2026-10-08T12:00:00Z',
+    ultima_coleta: after, trecho: 'Evento antigo' };
+  const recent = { id: 'recent', titulo: 'Lei recente', primeira_coleta: '2026-10-08T20:00:00Z',
+    ultima_coleta: after, trecho: 'Lei autoriza ingresso em consórcio.' };
+  const data = buildDashboardData({ archive: [old, recent], events: [recent], consortia: [],
+    links: [], pendingIdentity: [], runs: {
+      earlier: { at: before, collected: 137, health: [] },
+      latest: { at: after, collected: 133, health: [
+        { name: 'Google News', itemCount: 27 }, { name: 'Querido Diário', itemCount: 37 },
+        { name: 'Feeds RSS', itemCount: 19 }, { name: 'Scrapers web', itemCount: 50 },
+      ] },
+    } });
+  assert.equal(data.collection.rawCollected, 133);
+  assert.equal(data.collection.newDocuments, 1);
+  assert.equal(data.collection.newCandidates, 1);
+  assert.equal(data.collection.sources.reduce((sum, row) => sum + row.count, 0), 133);
+  assert.equal(data.lastCollectionAt, after);
+});
+
+test('rejeitados e legados sem texto não inflam possíveis achados nem novidade da rodada', () => {
+  const before = '2026-10-08T16:00:00Z';
+  const after = '2026-10-08T22:00:00Z';
+  const make = (id, analysis) => ({ id, titulo: `Ato ${id}`, fonte: 'Diário',
+    url: `https://example.org/${id}`, tipo_evento: 'ADESÃO', situacao_analise: analysis,
+    primeira_coleta: '2026-10-08T20:00:00Z', ultima_coleta: after });
+  const accepted = make('active', 'candidato — requer revisão');
+  const rejected = make('rejected', 'rejeitado pela revisão automática');
+  const legacy = make('legacy', 'legado sem texto — publicação antiga, requer conferência');
+  const data = buildDashboardData({ archive: [accepted, rejected, legacy],
+    events: [accepted, rejected, legacy], consortia: [], links: [], pendingIdentity: [],
+    runs: { prior: { at: before }, last: { at: after, collected: 9 } } });
+  assert.equal(data.stats.eventRecords, 3);
+  assert.equal(data.stats.eventCandidates, 1);
+  assert.equal(data.stats.rejectedEventRecords, 1);
+  assert.equal(data.stats.legacyUnverifiedRecords, 1);
+  assert.equal(data.collection.newCandidates, 1);
+  assert.equal(data.collection.newDocuments, 3);
+});
+
+test('releitura do PDF corrige adesão confundida com alteração de protocolo e evita trechos duplicados', () => {
+  const row = { id: 'dracena', titulo: 'Diário Oficial de Dracena (SP)', fonte: 'Querido Diário',
+    url: 'https://example.org/diario.pdf', trecho: '', tipo_evento: 'ADESÃO',
+    ultima_coleta: '2026-10-08T12:00:00Z' };
+  const original = 'Ratifica as alterações realizadas no Protocolo de Intenções do Consórcio Intermunicipal de Serviços da Nova Alta Paulista - CISNAP, firmado entre este Município e o Consórcio Público.';
+  const data = buildDashboardData({ archive: [row], events: [row], links: [],
+    pendingIdentity: [], consortia: [], pdfRecovery: [{ documento_id: row.id, url: row.url,
+      trechos: [{ pagina: 2, texto: original }, { pagina: 2, texto: `${original} Art. 2º A alteração integra o contrato.` }] }] });
+  assert.equal(data.items[0].category, 'GOVERNANÇA');
+  assert.equal(data.items[0].decisionStatus, 'revisao');
+  assert.equal(data.items[0].pdfReassessment, true);
+  assert.equal(data.items[0].pdfEvidence.length, 1);
+  assert.match(data.items[0].reason, /não comprova nova adesão/);
 });

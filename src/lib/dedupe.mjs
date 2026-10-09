@@ -185,10 +185,12 @@ export function listPending(state) {
 
 // Uma regra editorial corrigida deve valer para a fila persistida antes de
 // consultar a IA ou enviar itens classificados em execuções antigas.
-export function reclassifyPending(state, minimumScore = 5) {
+export function reclassifyPending(state, minimumScore = 5, editorialGuard = null) {
   let removed = 0;
   for (const [id, record] of Object.entries(state.pending || {})) {
-    const classification = classifyItem(record.item);
+    const classification = editorialGuard
+      ? editorialGuard(record.item, classifyItem(record.item))
+      : classifyItem(record.item);
     if (!isPublishableClassification(classification, minimumScore)) {
       delete state.pending[id];
       removed += 1;

@@ -60,6 +60,18 @@ jobs:
         if: steps.freshness.outputs.run == 'true'
         run: npm ci
 
+      - name: Preparar Python para leitura de notícias
+        if: steps.freshness.outputs.run == 'true'
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements-extraction.txt
+
+      - name: Instalar Trafilatura
+        if: steps.freshness.outputs.run == 'true'
+        run: python -m pip install -r requirements-extraction.txt
+
       - name: Testes de regressão
         if: steps.freshness.outputs.run == 'true'
         run: npm test

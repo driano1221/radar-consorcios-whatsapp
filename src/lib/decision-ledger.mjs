@@ -12,7 +12,7 @@ function decisionFor(item, context) {
   if (item.aiReview?.status === 'disputed') return ['revisao', 'Revisão automática divergente; requer conferência humana.'];
   if (category === 'GERAL') return ['descartado', item.classification?.reasons?.find((reason) => reason.startsWith('rejeitado:')) || 'Não foi identificado evento consorcial comprovado.'];
   if (score < minimumScore) return ['abaixo_limiar', `Pontuação ${score}, abaixo do limiar ${minimumScore}.`];
-  if (item.previewOnly) return ['previa', 'Fonte ainda em prévia; não publica automaticamente.'];
+  if (item.previewOnly) return ['previa', item.reviewReason || 'Fonte ainda em prévia; não publica automaticamente.'];
   if (state.seen?.[id]) return ['enviado', 'Já enviado ao WhatsApp anteriormente.'];
   if (selected.has(id)) return ['selecionado', 'Selecionado nesta rodada; envio depende da confirmação de entrega.'];
   if (state.pending?.[id]) return ['fila', 'Na fila persistente para a próxima seleção.'];

@@ -15,7 +15,7 @@ const reviews = (await readFile(new URL('data/catalogo/revisoes-eventos.ndjson',
   .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 
 const cases = [
-  ['07d6615f', 'ADESÃO', 'confirmar_evento', 'ADESÃO AUTORIZADA'],
+  ['07d6615f', 'ADESÃO AUTORIZADA', 'confirmar_evento', 'ADESÃO AUTORIZADA'],
   ['c94feca9', 'GERAL', 'nao_evento', ''],
   ['64146b92', 'GOVERNANÇA', 'confirmar_evento', 'GOVERNANÇA'],
   ['35799042', 'RATEIO', 'confirmar_evento', 'RATEIO'],

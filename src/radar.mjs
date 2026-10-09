@@ -29,6 +29,8 @@ import { applyAiReview, reviewQueue, shouldReviewWithAi } from './lib/ai-review.
 import { itemId } from './lib/dedupe.mjs';
 import { recordRunDecisions } from './lib/decision-ledger.mjs';
 import { enrichArticles, classifyEnrichedItem } from './lib/article-enrichment.mjs';
+import { applyEditorialGuard, loadEditorialGuard } from './lib/editorial-guard.mjs';
+import { fileURLToPath } from 'node:url';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -42,6 +44,8 @@ async function main() {
   }
   const since = new Date(Date.now() - config.lookbackHours * 60 * 60 * 1000);
   const state = await loadState(config.stateFile);
+  const editorialGuard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
+  console.log(`[revisão] ${editorialGuard.size} URLs descartadas ou duplicadas protegidas contra reenvio.`);
   pruneState(state, config.stateRetentionDays, config.pendingRetentionDays);
 
   console.log(`Coletando publicações desde ${since.toISOString()}...`);
@@ -96,7 +100,7 @@ async function main() {
     message: `${articleResult.attempted} tentativa(s); ${articleResult.enriched} texto(s) obtido(s); ${articleResult.failed} falha(s).` });
   console.log(`[texto] ${articleResult.enriched}/${articleResult.attempted} páginas enriquecidas; ${articleResult.failed} falhas.`);
   const classified = articleResult.items.map((item, index) => {
-    const classifiedItem = classifyEnrichedItem(item, collected[index]);
+    const classifiedItem = applyEditorialGuard(classifyEnrichedItem(item, collected[index]), editorialGuard);
     return config.aiReviewEnabled
       ? applyAiReview(classifiedItem, state.aiReviews?.[itemId(classifiedItem)]) : classifiedItem;
   });
@@ -114,7 +118,8 @@ async function main() {
   const discovered = selectUnseen(publishableRelevant, state);
   if (config.sendEnabled) enqueuePending(state, discovered);
   if (config.sendEnabled) {
-    const removed = reclassifyPending(state, config.minimumScore);
+    const removed = reclassifyPending(state, config.minimumScore,
+      (item, classification) => applyEditorialGuard({ ...item, classification }, editorialGuard).classification);
     if (removed) console.log(`[fila] ${removed} item(ns) antigos descartados após reclassificação.`);
   }
   if (config.persistState) await saveState(config.stateFile, state);

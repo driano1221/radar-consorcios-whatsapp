@@ -16,7 +16,7 @@ concurrency:
 jobs:
   recuperar:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 10
     steps:
       - name: Baixar projeto
         uses: actions/checkout@v7
@@ -29,8 +29,22 @@ jobs:
           cache: npm
       - name: Instalar dependências
         run: npm ci
+      - name: Preparar Python para leitura de notícias
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements-extraction.txt
+      - name: Instalar Trafilatura
+        run: python -m pip install -r requirements-extraction.txt
       - name: Recuperar até 20 textos sem enviar ao WhatsApp
         run: node scripts/backfill-article-text.mjs --limit=20 --apply
+      - name: Recuperar até 20 títulos antigos do Google Notícias
+        run: node scripts/backfill-article-text.mjs --title-only-google --retry-failed --limit=20 --apply
+      - name: Localizar prova por página em até 10 PDFs antigos
+        run: node scripts/backfill-google-pdfs.mjs --retry-failed --limit=10 --apply
+      - name: Atualizar sugestões sem publicar automaticamente
+        run: node scripts/review-recovered-texts.mjs --apply
       - name: Guardar resultados na base
         shell: bash
         run: |

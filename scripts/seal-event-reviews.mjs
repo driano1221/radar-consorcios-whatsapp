@@ -13,7 +13,8 @@ const reviews = (await readFile(file, 'utf8')).split(/\r?\n/).filter(Boolean)
   .map((line) => JSON.parse(line));
 for (const review of reviews) {
   const row = records.get(review.documento_id);
-  if (!row || !['nao_evento', 'corrigir_categoria', 'confirmar_evento'].includes(review.decisao) ||
+  if (!row || !['nao_evento', 'duplicata', 'corrigir_categoria', 'confirmar_evento'].includes(review.decisao) ||
+    (review.decisao === 'duplicata' && !records.has(review.documento_relacionado)) ||
     (['corrigir_categoria', 'confirmar_evento'].includes(review.decisao) && !review.categoria) ||
     !review.evidencia || !review.motivo) {
     throw new Error(`Revisão incompleta ou documento ausente: ${review.documento_id}`);

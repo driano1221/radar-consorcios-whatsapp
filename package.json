@@ -13,6 +13,8 @@
     "reviews:seal": "node scripts/seal-event-reviews.mjs",
     "catalog:backfill": "node scripts/update-catalog.mjs --history",
     "articles:backfill": "node scripts/backfill-article-text.mjs",
+    "articles:review": "node scripts/review-recovered-texts.mjs",
+    "pdfs:backfill": "node scripts/backfill-google-pdfs.mjs",
     "dashboard:build": "node scripts/build-dashboard.mjs",
     "dashboard:serve": "node scripts/serve-dashboard.mjs",
     "weekly": "node src/weekly.mjs",
@@ -23,13 +25,15 @@
     "session:prepare": "node scripts/prepare-session.mjs",
     "session:check": "node scripts/check-session.mjs",
     "test": "node --test",
-    "check": "node --check src/radar.mjs && node --check src/weekly.mjs && node --check src/lib/ai-review.mjs && node --check src/lib/article-enrichment.mjs && node --check src/lib/format.mjs && node --check src/lib/classifier.mjs && node --check src/lib/consortium-identity.mjs && node --check src/lib/catalog.mjs && node --check src/lib/run-metrics.mjs && node --check src/lib/decision-ledger.mjs && node --check src/lib/sources/web-scrapers.mjs && node --check scripts/build-dashboard.mjs && node --check scripts/backfill-article-text.mjs && node --check scripts/serve-dashboard.mjs && node --check dashboard/src/app.js && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
+    "check": "node --check src/radar.mjs && node --check src/weekly.mjs && node --check src/lib/ai-review.mjs && node --check src/lib/article-enrichment.mjs && node --check src/lib/article-text-store.mjs && node --check src/lib/editorial-guard.mjs && node --check src/lib/format.mjs && node --check src/lib/classifier.mjs && node --check src/lib/consortium-identity.mjs && node --check src/lib/catalog.mjs && node --check src/lib/run-metrics.mjs && node --check src/lib/decision-ledger.mjs && node --check src/lib/sources/web-scrapers.mjs && node --check scripts/build-dashboard.mjs && node --check scripts/backfill-article-text.mjs && node --check scripts/backfill-google-pdfs.mjs && node --check scripts/review-recovered-texts.mjs && node --check scripts/serve-dashboard.mjs && node --check dashboard/src/app.js && node --check scripts/pair-whatsapp.mjs && node --check scripts/session-state.mjs"
   },
   "dependencies": {
+    "@mozilla/readability": "^0.6.0",
     "@whiskeysockets/baileys": "6.7.24",
     "cheerio": "1.1.2",
     "fast-xml-parser": "5.10.1",
     "google-news-url-decoder": "1.2.2",
+    "jsdom": "^29.1.1",
     "pino": "10.3.1",
     "qrcode": "1.5.4",
     "tar": "7.5.22"

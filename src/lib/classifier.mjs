@@ -1,4 +1,5 @@
 import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
+import { refineEventProof } from './event-proof.mjs';
 
 const PUBLIC_CONTEXT = /\b(consorcios? publicos?|consorcio intermunicipal|consorcios intermunicipais|consorcios? interfederativos?|associacao publica|lei 11\.?107)\b/;
 const MUNICIPAL_CONTEXT = /\b(municipios?|municipal|municipais|prefeituras?|camaras? municipa(?:l|is)|poder executivo)\b/;
@@ -37,6 +38,7 @@ const RULES = [
     category: 'ADESÃO', emoji: '🟦', weight: 7, priority: 80, requiresPublicContext: true,
     patterns: [
       /\b(adesao|ingresso|integracao|filiacao|inclusao)\b.{0,130}\b(ao |no )?consorcio/,
+      /\bmunicipio\b.{0,90}\b(?:foi\s+)?autorizad[oa]\s+a\s+(?:ingressar|integrar|aderir)\b.{0,100}\bconsorcio/,
       /\b(autoriza|autorizado)\b.{0,140}\b(municipio|prefeitura|poder executivo)\b.{0,140}\b(participar|integrar|aderir)\b.{0,100}\bconsorcio/,
       /\b(passa a integrar|torna-se membro|municipio consorciado)\b.{0,100}\bconsorcio/,
       /\bratifica\b.{0,140}\bprotocolo de intencoes/,
@@ -49,6 +51,8 @@ const RULES = [
     patterns: [
       /\b(auditoria|investigacao|operacao|acao civil publica|recomendacao)\b.{0,140}\bconsorcio/,
       /\b(irregularidades?|fraude|suspende|suspendem|condena|fiscaliza)\b.{0,140}\bconsorcio/,
+      /\b(suspensao|suspensa|suspenso|suspendeu)\b.{0,160}\bconsorcio/,
+      /\bconsorcio\b.{0,160}\b(suspensao|suspensa|suspenso|suspendeu)\b/,
       /\bconsorcio\b.{0,140}\b(irregularidades?|fraude|desvio|improbidade|contas rejeitadas)\b/,
       /\b(tribunal de contas|ministerio publico|tce|tcu)\b.{0,80}\b(fiscaliza|suspende|determina|condena|julga|investiga|aponta|recomenda)\b.{0,120}\bconsorcio/,
     ],
@@ -72,6 +76,7 @@ const RULES = [
     category: 'GOVERNANÇA', emoji: '⬛', weight: 8, priority: 60, requiresPublicContext: true,
     patterns: [
       /\b(alteracao|revisao|mudanca)\b.{0,100}\b(estatuto|estatutar)/,
+      /\bratifica\s+o\s+estatuto\s+consolidado\s+do\s+consorcio/,
       /\b(alteracoes|consolidacao)\b.{0,160}\b(contrato de consorcio|estatuto)/,
       /\b(ratificacao|consolidacao)\b.{0,120}\balteracao\b.{0,100}\bprotocolo de intencoes/,
       /\bassembleia\b.{0,120}\bconsorcio/,
@@ -84,7 +89,9 @@ const RULES = [
   {
     category: 'ATUAÇÃO', emoji: '📰', weight: 4, priority: 40, requiresPublicContext: true,
     patterns: [
+      /\bresolucao\s+n[º°.]?\s*\d+\/20\d{2}\s+dispoe\s+sobre\s+os\s+procedimentos\s+de\s+inspecao/,
       /\bconsorcio\b.{0,120}\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta|firmou|firma|assinou|inaugurou|ampliou)\b/,
+      /\bextrato\s+do\s+contrato\s+de\s+prestacao\s+de\s+servicos\b.{0,350}\bpartes\s*:\s*o\s+municipio\b.{0,160}\bconsorcio/,
       /\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta)\b.{0,120}\bconsorcio/,
       /\bconsorcio\b.{0,100}\b(cria agenda|articula investimentos|estabelece agenda)\b/,
     ],
@@ -94,6 +101,7 @@ const RULES = [
 const NEGATIVE_PATTERNS = [
   { pattern: /\b(processo seletivo|concurso publico|inscricoes abertas|vagas de emprego)\b/, penalty: 30, reason: 'recrutamento sem evento institucional' },
   { pattern: /\badesao (a|de|em) (a )?(ata|atas|arp)( de registro de precos)?\b/, penalty: 30, reason: 'adesão a ata de preços' },
+  { pattern: /\badesao\b.{0,240}\bcredenciamento\b/, penalty: 30, reason: 'adesão a credenciamento de serviços, não ao consórcio' },
   { pattern: /\b(ata de registro de precos|registro de precos|intencao de registro de precos|orgao nao participante)\b/, penalty: 30, reason: 'contratação/ata de preços' },
   { pattern: /\bcarona\b.{0,100}\b(ata|registro de precos|arp)\b/, penalty: 30, reason: 'carona em ata de preços' },
   { pattern: /\b(consorcio de empresas|consorcio empresarial|consorcio vencedor|empresa consorciada)\b/, penalty: 30, reason: 'consórcio empresarial' },
@@ -112,9 +120,20 @@ function isOfficialUrl(value = '') {
 
 function evidenceSegments(item) {
   const excerpts = Array.isArray(item.excerpts) ? item.excerpts : [];
-  const segments = excerpts.length ? excerpts : [item.summary || item.rawText || ''];
   const limit = item.kind === 'gazette' ? 1200 : 1800;
-  return segments.map((segment) => normalizeWhitespace(segment).slice(0, limit)).filter(Boolean);
+  const source = excerpts.length ? excerpts : [item.rawText || item.summary || ''];
+  return source.flatMap((segment) => {
+    const text = normalizeWhitespace(segment);
+    if (!text) return [];
+    if (text.length <= limit) return [text];
+    const windows = [];
+    const overlap = 250;
+    for (let start = 0; start < text.length; start += limit - overlap) {
+      windows.push(text.slice(start, start + limit));
+      if (start + limit >= text.length) break;
+    }
+    return windows;
+  });
 }
 
 function hasPublicContext(text) {
@@ -163,7 +182,7 @@ function isHypotheticalCreation(text) {
 
 function isMeetingAgendaWithoutDecision(text) {
   const agendaSignal = /\b(convoca|convocam|convocar|convocacao|reuniao|pauta|assuntos abordados|informes gerais)\b/.test(text);
-  const decisionSignal = /\b(lei|decreto|autoriza|ratifica|aprovou|sanciona|promulga|delibera|eleitos?|eleitas?|elegeu|elege|eleicao)\b/.test(text);
+  const decisionSignal = /\b(lei|decreto|autoriza|ratifica|aprovou|sanciona|promulga|delibera|eleitos?|eleitas?|elegeu|elege|eleicao|determinou|decidiu|referendou|suspensao|suspendeu|suspensa|suspenso)\b/.test(text);
   return agendaSignal && !decisionSignal;
 }
 
@@ -284,6 +303,19 @@ function evaluateSegment(item, evidence, index) {
 }
 
 export function classifyItem(item) {
+  const articleUrl = item.articleUrl || item.url || '';
+  const documentText = normalizeForMatch(`${item.title || ''} ${item.rawText || item.summary || item.excerpts?.join(' ') || ''}`);
+  if (/\b(?:materia\s*:\s*|tipo\s*:\s*req\s*-\s*)requerimento\b.{0,250}\b(?:solicita|requer)\b/.test(documentText)) {
+    return { category: 'GERAL', emoji: '📰', score: 0,
+      stage: 'requerimento; ato de ingresso não comprovado',
+      reasons: ['rejeitado: requerimento solicita providência, não a executa'], evidenceIndex: -1,
+      evidenceText: '', publicContext: false, strongPublicContext: false };
+  }
+  if (item.kind === 'news' && /\/@@search(?:\?|$)|[?&](?:SearchableText|b_start:int)=/i.test(articleUrl)) {
+    return { category: 'GERAL', emoji: '📰', score: 0,
+      reasons: ['rejeitado: página de busca, não documento individual'], evidenceIndex: -1,
+      evidenceText: '', publicContext: false, strongPublicContext: false };
+  }
   if (isStaleLegislativeDocument(item)) {
     return { category: 'GERAL', emoji: '📰', score: 0,
       reasons: ['rejeitado: ato antigo com data recente de indexação'], evidenceIndex: -1,
@@ -293,7 +325,7 @@ export function classifyItem(item) {
   if (!classifications.length) {
     return { category: 'GERAL', emoji: '📰', score: 0, reasons: ['rejeitado: sem texto para classificação'], evidenceIndex: -1, evidenceText: '', publicContext: false, strongPublicContext: false };
   }
-  return classifications.sort((left, right) => right.score - left.score)[0];
+  return refineEventProof(item, classifications.sort((left, right) => right.score - left.score)[0]);
 }
 
 export function isPublishableClassification(classification, minimumScore = 5) {

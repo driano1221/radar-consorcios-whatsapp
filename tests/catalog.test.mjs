@@ -16,6 +16,16 @@ test('catálogo guarda o texto de itens gerais e preserva o link direto recupera
   assert.equal(mergeCatalogRecord(enriched, { ...enriched, article_url: '' }).article_url, item.articleUrl);
 });
 
+test('descarte com prova explícita mostra o trecho que explica a decisão', () => {
+  const row = catalogRecord({ kind: 'news', title: 'Questiona criação de consórcio',
+    url: 'https://example.org/depoimento', summary: 'Resumo genérico sobre uma audiência.',
+    classification: { category: 'GERAL', score: 0, stage: 'criação apenas cogitada',
+      evidenceText: 'O depoente questionou a possível criação de um novo consórcio.' } },
+  '2026-10-08T12:00:00Z', '2026-10-08T12:00:00Z');
+  assert.match(row.trecho, /questionou a possível criação/);
+  assert.equal(row.etapa, 'criação apenas cogitada');
+});
+
 const at = '2026-10-02T15:00:00.000Z';
 
 test('lei que autoriza ingresso não vira participação confirmada', () => {
@@ -71,6 +81,21 @@ test('envio antigo sem evidência não vira fato confirmado nem supera triagem a
     source: 'Portal', summary: 'O consórcio existente cria agenda de reuniões.',
     classification: { category: 'CRIAÇÃO', score: 12 } }, firstSeenAt: at, lastSeenAt: at } } });
   assert.equal([...map.values()][0].tipo_evento, 'GERAL');
+});
+
+test('leitura integral corrigida prevalece sobre estado antigo publicado', () => {
+  const url = 'https://portal.exemplo/adesao-autorizada';
+  const corrected = catalogRecord({ title: 'Lei autoriza ingresso no consórcio', url,
+    classification: { category: 'ADESÃO AUTORIZADA', score: 10,
+      evidenceText: 'A lei autoriza o ingresso, sem comprovar a adesão consumada.' } }, at, at, at);
+  corrected.situacao_analise = 'categoria recalculada após leitura integral — ADESÃO → ADESÃO AUTORIZADA; conferir';
+  const map = new Map([[corrected.id, corrected]]);
+  mergeStateIntoCatalog(map, { seen: { x: { url, title: corrected.titulo, category: 'ADESÃO', sentAt: at } },
+    observations: { x: { item: { title: corrected.titulo, url,
+      classification: { category: 'ADESÃO', score: 8 } }, firstSeenAt: at, lastSeenAt: at } } });
+  const after = map.get(corrected.id);
+  assert.equal(after.tipo_evento, 'ADESÃO AUTORIZADA');
+  assert.match(after.situacao_analise, /categoria recalculada/);
 });
 
 test('lei de 2022 já enviada permanece no arquivo bruto, mas sai dos eventos derivados', async () => {
@@ -147,6 +172,24 @@ test('revisão editorial tira falso evento das tabelas sem apagar o registro bru
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
+});
+
+test('duplicata sai da tabela de eventos mas conserva o vínculo com o documento principal', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-duplicata-'));
+  try {
+    const row = catalogRecord({ title: 'TCE suspende credenciamento de consórcio',
+      url: 'https://exemplo.org/noticia-alternativa', source: 'TCE',
+      classification: { category: 'CONTROLE', score: 10,
+        evidenceText: 'TCE suspendeu o credenciamento do consórcio público.' } }, at, at);
+    const review = { documento_id: row.id, decisao: 'duplicata', documento_relacionado: 'documento-principal',
+      motivo: 'mesma página oficial e mesmo ato', evidencia: row.trecho,
+      trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+    await writeFile(path.join(directory, 'revisoes-eventos.ndjson'), `${JSON.stringify(review)}\n`);
+    const result = await saveCatalog(directory, new Map([[row.id, row]]));
+    assert.equal(result.relevant, 0);
+    assert.match(await readFile(path.join(directory, 'arquivo-coletas.ndjson'), 'utf8'), /"tipo_evento":"CONTROLE"/);
+    assert.doesNotMatch(await readFile(path.join(directory, 'eventos.csv'), 'utf8'), /noticia-alternativa/);
+  } finally { await rm(directory, { recursive: true, force: true }); }
 });
 
 test('revisão editorial corrige categoria sem declarar adesão consumada', async () => {

@@ -28,7 +28,7 @@ LARGE_IDS = {
 }
 MAX_PAGES = 300
 MAX_PAGES_LARGE = 600
-MAX_SNIPPETS = 25
+MAX_SNIPPETS_PER_PAGE = 8
 TERM = re.compile(r"\bcons[oó]rci[oa]s?\b", re.IGNORECASE)
 CPF = re.compile(r"\b\d{3}\.\d{3}\.\d{3}-\d{2}\b")
 EMAIL = re.compile(r"[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}")
@@ -44,12 +44,14 @@ def snippets_from_pdf(content, max_pages=MAX_PAGES):
     found = []
     for page_number, page in enumerate(reader.pages[:max_pages], 1):
         text = clean(page.extract_text() or "")
+        page_snippets = 0
         for match in TERM.finditer(text):
             excerpt = clean(text[max(0, match.start() - 100):match.end() + 230])
             if excerpt and not any(item["texto"] == excerpt for item in found):
                 found.append({"pagina": page_number, "texto": excerpt})
-            if len(found) >= MAX_SNIPPETS:
-                return len(reader.pages), found
+                page_snippets += 1
+            if page_snippets >= MAX_SNIPPETS_PER_PAGE:
+                break
     return len(reader.pages), found
 
 

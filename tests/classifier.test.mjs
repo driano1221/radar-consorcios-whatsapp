@@ -14,13 +14,23 @@ test('protege os casos reais de regressão editorial', async () => {
   }
 });
 
-test('classifica adesão real ao consórcio', () => {
+test('lei de autorização não prova ingresso já efetivado', () => {
   const result = classifyItem({
     title: 'Município aprova adesão ao consórcio intermunicipal',
     summary: 'A lei autoriza o ingresso do município no consórcio público regional.',
   });
-  assert.equal(result.category, 'ADESÃO');
+  assert.equal(result.category, 'ADESÃO AUTORIZADA');
   assert.ok(result.score >= 4);
+});
+
+test('encontra decisão no fim do texto integral, depois do antigo corte', () => {
+  const rawText = `${'Contexto administrativo sem evento. '.repeat(170)} ` +
+    'A Câmara aprovou a adesão do município ao consórcio intermunicipal de prevenção de desastres.';
+  const result = classifyItem({ kind: 'news', title: 'Participação em consórcio',
+    summary: rawText.slice(0, 1800), rawText });
+  assert.equal(result.category, 'ADESÃO AUTORIZADA');
+  assert.match(result.evidenceText, /Câmara aprovou a adesão/);
+  assert.ok(result.evidenceText.length <= 1800);
 });
 
 test('criar agenda de um consórcio existente não é criação de consórcio', () => {
@@ -40,6 +50,15 @@ test('penaliza adesão a ata de registro de preços', () => {
   assert.ok(result.score < 4);
 });
 
+test('adesão a credenciamento do consórcio não é ingresso no consórcio', () => {
+  const result = classifyItem({
+    kind: 'gazette', title: 'Aviso de Adesão - processo 36/2026',
+    summary: 'O Município de Dois Irmãos ratificou o processo de adesão para prestação de serviços de coleta de resíduos através de adesão ao Credenciamento 03/2026 do Consórcio Público CPSINOS.',
+  });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.reasons.join(' '), /credenciamento de serviços/);
+});
+
 test('prioriza dissolução como crise', () => {
   const result = classifyItem({
     title: 'Prefeitos discutem dissolução do consórcio público',
@@ -57,14 +76,14 @@ test('reconhece contrato de rateio', () => {
   assert.equal(result.category, 'RATEIO');
 });
 
-test('prioriza adesão quando a lei também altera o protocolo', () => {
+test('prioriza autorização de adesão quando a lei também altera o protocolo', () => {
   const result = classifyItem({
     kind: 'gazette',
     title: 'Diário Oficial de Exemplo',
     summary:
       'Lei autoriza a adesão do Município ao Consórcio Intermunicipal Regional, mediante ratificação da alteração do protocolo de intenções, nos termos da Lei 11.107.',
   });
-  assert.equal(result.category, 'ADESÃO');
+  assert.equal(result.category, 'ADESÃO AUTORIZADA');
 });
 
 test('rejeita consórcio empresarial em licitação', () => {
@@ -182,4 +201,42 @@ test('lei de 2022 com data anteposta não vira notícia de 2026', () => {
   assert.equal(classifyItem(old).category, 'GERAL');
   assert.match(classifyItem(old).reasons.join(' '), /data recente de indexação/);
   assert.notEqual(classifyItem({ ...old, title: old.title.replaceAll('2022', '2026') }).category, 'GERAL');
+});
+
+test('requerimento aprovado que pede adesão não vira adesão aprovada', () => {
+  const result = classifyItem({ kind: 'news', title: 'Votação Simbólica',
+    articleUrl: 'https://sapl.exemplo.pe.leg.br/sessao/914/votacao-simbolica-transparencia/4911/9957',
+    rawText: 'Matéria: Requerimento nº 352 de 2026. Ementa: Solicita a adesão e participação do município no consórcio público para gestão climática. Resultado da Votação: Aprovado.' });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.stage, /requerimento/);
+});
+
+test('pedido de informações sobre projeto de adesão não vira autorização', () => {
+  const result = classifyItem({ kind: 'news', title: 'Acompanhamento de Matéria',
+    articleUrl: 'https://sapl.exemplo.pr.leg.br/materia/33573/acompanhar-materia/',
+    rawText: 'Tipo: REQ - Requerimento Número: 314. Requer ao Executivo informações sobre o Projeto de Lei 69/2026, que autoriza o ingresso do Município de Pato Branco no Consórcio Intermunicipal de Saneamento do Paraná.' });
+  assert.equal(result.category, 'GERAL');
+});
+
+test('pauta de projeto não comprova aprovação nem lei gerada', () => {
+  const result = classifyItem({ kind: 'news', title: 'Ordem do Dia',
+    articleUrl: 'https://sapl.exemplo.pr.leg.br/sessao/ordemdia/1884',
+    rawText: 'Matérias da Ordem do Dia. Projeto de Lei Ordinária nº 33 de 2026. Autoriza o ingresso do Município de Campina Grande do Sul no Consórcio Intermunicipal de Saneamento do Paraná. Tipo de votação nominal. Situação de Pauta.' });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.stage, /pauta/);
+});
+
+test('recomendação do MP com dissolução apenas hipotética é controle, não extinção', () => {
+  const result = classifyItem({ kind: 'news', title: 'MP cobra medidas para hospital gerido pelo consórcio',
+    rawText: 'O Ministério Público deu 10 dias aos municípios do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto. A Recomendação nº 23/2026 pede a retomada de cirurgias. Entre as alternativas futuras para regularizar o consórcio foi apresentada a dissolução da entidade, sem decisão tomada.' });
+  assert.equal(result.category, 'CONTROLE');
+  assert.match(result.stage, /dissolução apenas alternativa/);
+});
+
+test('resultado de busca legislativa não vira ato individual', () => {
+  const result = classifyItem({ kind: 'news', title: 'Autoriza crédito adicional',
+    articleUrl: 'https://camara.exemplo.pr.leg.br/@@search?SearchableText=lei&b_start:int=2670',
+    rawText: 'Resultados de busca por lei. Consórcio intermunicipal citado no rodapé.' });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.reasons.join(' '), /página de busca/);
 });

@@ -95,5 +95,5 @@ test('reclassifica a fila antiga e descarta proposta sem aprovação', () => {
     [itemId(approved)]: { item: approved } } };
   assert.equal(reclassifyPending(state), 1);
   assert.equal(listPending(state).length, 1);
-  assert.equal(listPending(state)[0].classification.category, 'ADESÃO');
+  assert.equal(listPending(state)[0].classification.category, 'ADESÃO AUTORIZADA');
 });

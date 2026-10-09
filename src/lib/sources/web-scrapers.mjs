@@ -100,7 +100,7 @@ export async function enrichArticles(items, site, config, fetchImpl) {
       body.find('p,li,h1,h2,h3,h4,br').append(' ');
       const text = normalizeWhitespace(body.text());
       if (text.length < 80) throw new Error('Texto da notícia não encontrado');
-      enriched.push({ ...item, summary: text.slice(0, 4000), rawText: text.slice(0, 4000) });
+      enriched.push({ ...item, summary: text.slice(0, 1800), rawText: text });
     } catch (error) {
       console.warn(`[artigo:${site.name}] ${error.message}`);
       enriched.push({ ...item, previewOnly: true, extractionError: error.message });
@@ -253,7 +253,7 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
       body.find('p,li,h1,h2,h3,h4,br').append(' ');
       const rawText = normalizeWhitespace(body.text());
       if (rawText.length < 50) throw new Error('Texto da publicação não encontrado');
-      enriched.push({ ...item, summary: rawText.slice(0, 4000), rawText: rawText.slice(0, 4000) });
+      enriched.push({ ...item, summary: rawText.slice(0, 1800), rawText });
     } catch (error) {
       enriched.push({ ...item, previewOnly: true, extractionError: error.message });
     }
