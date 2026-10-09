@@ -1,8 +1,8 @@
 import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs';
 
 const $ = (selector) => document.querySelector(selector);
-const state = { data: null, view: 'overview', selectedItem: '', limit: 40,
-  deckIndex: 0, baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0 };
+const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
+  baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0 };
 const dateTime = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const dateOnly = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const number = new Intl.NumberFormat('pt-BR');
@@ -64,7 +64,7 @@ function readableReason(item) {
   if (item.editorialReview?.reason) return item.editorialReview.reason;
   if (item.rejectedEvent) return item.reason || 'A triagem rejeitou este registro; ele permanece no histórico para consulta.';
   if (item.legacyUnverified) return 'Registro antigo ainda sem reconfirmação documental. O texto pode estar disponível, mas a decisão precisa de prova revisada.';
-  if (item.pdfReassessment) return item.reason;
+  if (item.pdfReassessment) return item.reason || 'A categoria foi reavaliada pelo PDF e precisa de conferência.';
   if (item.articleDuplicateOf) return 'O texto integral recuperado é idêntico ao de outra publicação já guardada. Não contar como um segundo achado.';
   if (item.recoverySuggestion) return 'A decisão da base não mudou. O texto recuperado sugeriu outro enquadramento, que ainda precisa ser conferido na fonte.';
   if (item.identityPending) return `O fato foi guardado, mas a identidade do consórcio ainda precisa de prova: ${item.identityPending}.`;
@@ -72,7 +72,7 @@ function readableReason(item) {
   if (item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length && item.baseStatus !== 'evento_candidato')
     return 'Ainda não há prova suficiente para aceitar ou descartar. É preciso obter a publicação integral ou outro documento oficial.';
   if (/ato antigo com data recente/i.test(item.reason)) return 'É um ato antigo que reapareceu em uma busca recente. Não é uma novidade.';
-  if (item.reason.startsWith('Rejeitado por revisão editorial')) return item.reason.replace('Rejeitado por revisão editorial — ', 'Uma revisão mostrou que ');
+  if ((item.reason || '').startsWith('Rejeitado por revisão editorial')) return item.reason.replace('Rejeitado por revisão editorial — ', 'Uma revisão mostrou que ');
   if (item.baseStatus === 'evento_candidato') {
     if (item.category === 'PROPOSTA DE ADESÃO') return 'O texto fala de uma proposta. Ele não comprova que o município já entrou no consórcio.';
     if (item.category === 'ADESÃO AUTORIZADA') return 'Uma lei autorizou a entrada, mas ainda não comprova que ela aconteceu.';
@@ -100,17 +100,13 @@ function openItem(item) {
 }
 function renderDeck() {
   const items = deckItems();
-  state.deckIndex = Math.min(state.deckIndex, Math.max(0, items.length - 1));
-  const item = items[state.deckIndex];
   const counts = { accepted: 0, rejected: 0, pending: 0 };
   for (const row of state.data.items) counts[triageBucket(row)] += 1;
-  $('#accepted-count').textContent = number.format(counts.accepted);
-  $('#rejected-count').textContent = number.format(counts.rejected);
   $('#triage-summary').replaceChildren(...[
-    [state.data.stats.documents, 'documentos no arquivo'],
-    [counts.accepted, 'eventos confirmados'],
+    [state.data.stats.documents, 'publicações arquivadas'],
+    [counts.accepted, 'fatos confirmados'],
     [counts.rejected, 'fora da base'],
-    [counts.pending, 'candidatos sem confirmação'],
+    [counts.pending, 'candidatos'],
   ].map(([value, title]) => {
     const box = node('div', 'summary-number');
     box.append(node('strong', '', number.format(value)), node('span', '', title)); return box;
@@ -122,69 +118,70 @@ function renderDeck() {
     button.append(node('strong', '', number.format(count)), node('span', '', kind.title),
       node('small', '', kind.description));
     button.addEventListener('click', () => { $('#deck-filter').value = kind.key;
-      state.deckIndex = 0; renderDeck(); $('#decision-stage').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); $('#decision-stage').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     return button;
   }));
-  const pile = $('#deck-stack');
-  pile.replaceChildren();
-  if (!item) {
-    pile.append(node('p', 'deck-empty', 'Nenhuma publicação corresponde à busca.'));
-    $('#deck-position').textContent = '0 de 0';
-    $('#rejected-reason').textContent = 'Sem decisão nesta busca.';
-    $('#accepted-reason').textContent = 'Sem decisão nesta busca.';
-    return;
-  }
+  if (!items.some((item) => item.id === state.selectedOverviewItem)) state.selectedOverviewItem = items[0]?.id || '';
+  const list = $('#deck-stack');
+  const previousScroll = list.scrollTop;
+  const listHead = node('div', 'overview-list-head', `${number.format(items.length)} ${items.length === 1 ? 'publicação' : 'publicações'} nesta seleção`);
+  const rows = items.slice(0, 80).map((item) => {
+    const bucket = triageBucket(item);
+    const row = node('button', `overview-row ${bucket}${item.id === state.selectedOverviewItem ? ' active' : ''}`);
+    row.type = 'button'; row.setAttribute('aria-pressed', String(item.id === state.selectedOverviewItem));
+    row.title = readableReason(item);
+    const body = node('span', 'overview-row-body');
+    body.append(node('strong', '', displayTitle(item)), node('small', '', item.source || 'Fonte não informada'));
+    row.append(node('time', '', date(item.publishedAt || item.lastSeenAt)), body,
+      node('span', `overview-verdict ${bucket}`, bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'));
+    row.addEventListener('click', () => {
+      state.selectedOverviewItem = item.id; renderDeck();
+      if (window.matchMedia('(max-width: 780px)').matches) $('#overview-detail').scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start',
+      });
+    });
+    return row;
+  });
+  list.replaceChildren(listHead, ...rows);
+  list.scrollTop = previousScroll;
+  if (!items.length) list.append(node('p', 'empty', 'Nenhuma publicação corresponde à busca.'));
+  if (items.length > 80) list.append(node('p', 'overview-more', 'Exibindo as 80 primeiras. Use a busca ou abra o arquivo completo para ver todas.'));
+  renderOverviewDetail(items.find((item) => item.id === state.selectedOverviewItem));
+}
+function renderOverviewDetail(item) {
+  const panel = $('#overview-detail');
+  if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
   const bucket = triageBucket(item);
-  const card = node('article', `deck-card ${bucket}`);
-  const route = bucket === 'accepted' ? 'CONFIRMADA NA BASE' : bucket === 'rejected' ? 'FORA DA BASE' : 'CANDIDATA · NÃO CONFIRMADA';
-  const lead = node('div', 'deck-card-lead');
-  lead.append(node('span', 'deck-route', route), node('span', 'deck-index', `${state.deckIndex + 1} / ${items.length}`));
-  const rawEvidence = bucket === 'accepted' ? (item.editorialReview?.evidence || item.evidence || '') : '';
-  const cleanedEvidence = rawEvidence.replace(/\.{8,}/g, ' ').replace(/\s+/g, ' ').trim();
-  const cardCopy = cleanedEvidence.length >= 35 ? cleanedEvidence : readableReason(item);
-  const cardTitle = item.editorialReview && /ainda futur[oa]s|ainda não realizad[oa]s/i.test(item.stage || '')
-    ? `${item.source || 'Consórcio'} — ${item.stage}` : displayTitle(item);
-  card.append(lead, node('h3', '', cardTitle),
-    node('p', 'deck-meta', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
-    node('p', 'deck-evidence', cardCopy.slice(0, 250)),
-    node('button', 'deck-open', 'VER FICHA, PROVA E DECISÃO DE ALERTA ↗'));
+  const decision = bucket === 'accepted' ? 'Confirmada na base' : bucket === 'rejected' ? 'Fora da base' : 'Candidata · não confirmada';
+  const reasonTitle = bucket === 'accepted' ? 'Por que entrou' : bucket === 'rejected' ? 'Por que ficou fora' : 'O que falta para concluir';
+  const rawEvidence = item.editorialReview?.evidence || item.pdfEvidence?.[0]?.text ||
+    (item.contentQuality === 'trecho_disponivel' ? item.evidence : '');
+  const evidence = /\.{10,}/.test(rawEvidence) && !item.editorialReview ? '' : rawEvidence;
+  const evidenceTitle = item.pdfEvidence?.length && !item.editorialReview ?
+    `Trecho localizado · página ${item.pdfEvidence[0].page || 'não identificada'}` : 'Trecho ou informação disponível';
+  const head = node('div', 'overview-detail-head');
+  head.append(node('span', `overview-verdict ${bucket}`, decision), node('span', 'overview-id', item.id.slice(0, 8).toUpperCase()));
+  const why = node('section', `overview-why ${bucket}`);
+  why.append(node('h4', '', reasonTitle), node('p', '', readableReason(item)));
+  const proof = node('section', 'overview-proof');
+  proof.append(node('h4', '', evidenceTitle), node('blockquote', '', evidence || (rawEvidence
+    ? 'O trecho coletado parece ser índice ou rodapé e não comprova o fato. Confira a fonte original.'
+    : 'Nenhum trecho de prova foi recuperado para esta publicação. Confira a fonte original.')));
+  const actions = node('div', 'overview-actions');
+  actions.append(link('Abrir fonte original', item.editorialReview?.evidenceUrl || item.pdfEvidenceUrl || item.url));
+  const full = node('button', 'detail-link', 'Ver ficha completa →'); full.type = 'button';
+  full.addEventListener('click', () => openItem(item)); actions.append(full);
+  const back = node('button', 'detail-link overview-back', 'Voltar à lista ↑'); back.type = 'button';
+  back.addEventListener('click', () => $('#deck-stack').scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  actions.append(back);
+  panel.replaceChildren(head, node('h3', '', displayTitle(item)),
+    node('p', 'overview-source', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
+    why, proof, actions);
   const pending = pendingLabels(item);
-  if (pending.length) card.insertBefore(node('p', 'deck-followup', `A conferir: ${pending.join(' · ')}`), card.querySelector('button'));
-  card.querySelector('button').addEventListener('click', () => openItem(item));
-  pile.append(node('div', 'deck-back back-two'), node('div', 'deck-back back-one'), card);
-  const reason = readableReason(item);
-  $('#rejected-reason').textContent = bucket === 'rejected' ? reason : 'Esta carta não foi descartada.';
-  $('#accepted-reason').textContent = bucket === 'accepted' ? reason : 'Esta carta não foi aceita na base.';
-  $('#deck-caption').textContent = bucket === 'pending'
-    ? `Candidato ainda não confirmado: ${reason}`
-    : `Passe o mouse ou toque no destino “${bucket === 'accepted' ? 'Aceitas na base' : 'Descartadas'}” para ver a justificativa. A ficha traz o texto e a fonte.`;
-  $('#deck-position').textContent = `${number.format(state.deckIndex + 1)} de ${number.format(items.length)}`;
-  $('#deck-prev').disabled = state.deckIndex === 0;
-  $('#deck-next').disabled = state.deckIndex >= items.length - 1;
-  $('#rejected-lane').classList.toggle('current', bucket === 'rejected');
-  $('#accepted-lane').classList.toggle('current', bucket === 'accepted');
+  if (pending.length) panel.append(node('p', 'overview-caveat', `Também a conferir: ${pending.join(' · ')}.`));
+  panel.append(node('p', 'overview-caveat', 'A decisão da base e a decisão de enviar ao WhatsApp são independentes.'));
 }
-function advanceDeck(direction) {
-  const items = deckItems();
-  const next = state.deckIndex + direction;
-  if (next < 0 || next >= items.length) return;
-  const card = $('#deck-stack .deck-card');
-  if (card && direction > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    card.classList.add(`fly-${triageBucket(items[state.deckIndex])}`);
-    setTimeout(() => { state.deckIndex = next; renderDeck(); }, 280);
-  } else { state.deckIndex = next; renderDeck(); }
-}
-function renderRecent() {
-  $('#recent-list').replaceChildren(...state.data.items.slice(0, 6).map((item) => {
-    const button = node('button', 'recent-row'); button.type = 'button';
-    button.append(node('span', `recent-mark ${triageBucket(item)}`),
-      node('span', 'recent-title', displayTitle(item)),
-      node('span', 'recent-source', item.source || 'Fonte não informada'),
-      node('span', 'recent-date', date(item.lastSeenAt)));
-    button.addEventListener('click', () => openItem(item)); return button;
-  }));
-}
-function renderOverview() { renderDeck(); renderRecent(); }
+function renderOverview() { renderDeck(); }
 function feedRow(item, index, selected, onClick) {
   const button = node('button', `feed-item${selected ? ' active' : ''}`); button.type = 'button';
   const body = node('div'); const top = node('div', 'item-top');
@@ -524,13 +521,13 @@ function renderMethod() {
 }
 function switchView(view) {
   state.view = view;
-  const titles = { overview: ['Triagem', 'Triagem de publicações'], feed: ['Publicações', 'Arquivo de publicações'],
+  const titles = { overview: ['Triagem', 'Registro de publicações'], feed: ['Publicações', 'Arquivo de publicações'],
     base: ['Base completa', 'Base de dados'], method: ['Como funciona', 'Fluxo e critérios'] };
   document.querySelectorAll('.view').forEach((section) => section.classList.toggle('active', section.id === view));
   document.querySelectorAll('.nav-button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
   $('#breadcrumb-current').textContent = titles[view][0];
   $('#page-title').textContent = titles[view][1];
-  const descriptions = { overview: 'Veja o que entrou na base, o que foi descartado e o motivo.',
+  const descriptions = { overview: 'O que entrou na base, o que foi descartado e qual documento sustenta cada decisão.',
     feed: 'Todas as coletas guardadas, com filtros, evidências e fonte original.',
     base: 'Consulte cada tabela, inclusive colunas vazias, com explicação e prévia da linha.',
     method: 'Entenda onde entram as regras, a IA e a revisão humana.' };
@@ -551,14 +548,8 @@ async function init() {
     renderOverview();
     document.querySelectorAll('.nav-button').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
     $('#open-feed').addEventListener('click', () => switchView('feed'));
-    $('#deck-search').addEventListener('input', () => { state.deckIndex = 0; renderDeck(); });
-    $('#deck-filter').addEventListener('change', () => { state.deckIndex = 0; renderDeck(); });
-    $('#deck-prev').addEventListener('click', () => advanceDeck(-1));
-    $('#deck-next').addEventListener('click', () => advanceDeck(1));
-    document.addEventListener('keydown', (event) => { if (state.view !== 'overview' ||
-      /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement?.tagName || '')) return;
-    if (event.key === 'ArrowRight') advanceDeck(1);
-    if (event.key === 'ArrowLeft') advanceDeck(-1); });
+    $('#deck-search').addEventListener('input', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
+    $('#deck-filter').addEventListener('change', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
     $('#search').addEventListener('input', () => { state.limit = 40; renderFeed(); });
     $('#status-filter').addEventListener('change', () => { state.limit = 40; renderFeed(); });
     $('#more-button').addEventListener('click', () => { state.limit += 40; renderFeed(); });

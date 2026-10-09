@@ -1,7 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 import { buildDashboardData, contentQuality, makeBaseTable } from '../scripts/build-dashboard.mjs';
+
+test('painel usa registro com decisão e evidência visíveis, sem janela XP ou navegação por cartas', async () => {
+  const html = await readFile(new URL('../dashboard/src/index.html', import.meta.url), 'utf8');
+  const script = await readFile(new URL('../dashboard/src/app.js', import.meta.url), 'utf8');
+  assert.match(html, /registry\.css/);
+  assert.doesNotMatch(html, /xp\.css|window-controls|deck-prev|deck-next/);
+  assert.match(html, /id="overview-detail"/);
+  assert.match(script, /renderOverviewDetail\(/);
+  assert.match(script, /Nenhum trecho de prova foi recuperado/);
+});
 
 test('base expõe todas as colunas, até em tabela vazia, com explicação e ordem legível', () => {
   const empty = makeBaseTable('participacoes', [], ['consorcio', 'municipio', 'ano_ingresso']);
