@@ -51,6 +51,19 @@ test('mês conhecido basta para barrar evento antigo sem inventar dia exato', ()
   assert.equal(item.eventAt, undefined);
 });
 
+test('resultado do Google sem data da fonte não usa reindexação como novidade', () => {
+  const item = decidePublication({ ...base,
+    url: 'https://news.google.com/rss/articles/exemplo',
+    articleUrl: 'https://portal.example/noticia-antiga',
+  }, { now });
+  assert.equal(item.catalogDecision, 'candidato');
+  assert.equal(item.publicationDecision, 'data_nao_verificada');
+  assert.equal(isNotifiable(item), false);
+  const verified = decidePublication({ ...item, publicationDecision: '',
+    sourcePublishedAt: '2026-10-08T10:00:00Z' }, { now });
+  assert.equal(verified.publicationDecision, 'elegivel');
+});
+
 test('fila antiga também remove evento que envelheceu, sem apagar evidência da base', () => {
   const id = itemId(base);
   const state = { pending: { [id]: { item: { ...base, eventAt: '2026-06-23T00:00:00Z' } } } };

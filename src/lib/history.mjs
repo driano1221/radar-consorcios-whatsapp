@@ -48,7 +48,7 @@ export function observeRun(state, items, health, minimumScore, now = new Date(),
     const newerReview = newReviewed && (!oldReviewed ||
       new Date(item.aiReview.reviewedAt || 0) > new Date(previous.aiReview.reviewedAt || 0));
     const preservePrevious = previous &&
-      !['historico', 'descartado', 'data_inconsistente'].includes(item.publicationDecision) &&
+      !['historico', 'descartado', 'data_inconsistente', 'data_nao_verificada'].includes(item.publicationDecision) &&
       !newerReview && ((oldReviewed && !newReviewed) ||
         (oldReviewed === newReviewed && (previous.classification?.score || 0) > (item.classification?.score || 0)));
     const bestItem = preservePrevious ? previous : item;

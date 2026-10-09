@@ -209,6 +209,7 @@ function detail(item, target) {
       : item.alertDecision === 'enviado' ? 'Já enviado'
         : item.alertDecision === 'elegivel' ? 'Pode ser avaliado para envio'
           : item.alertDecision === 'data_inconsistente' ? 'Data precisa de conferência'
+            : item.alertDecision === 'data_nao_verificada' ? 'Data original não verificada'
             : item.alertDecision === 'descartado' ? 'Não enviar' : 'Ainda sem decisão'],
     ...(item.stage && displayTitle(item) !== item.stage ? [['ETAPA COMPROVADA', item.stage]] : []),
     ...(item.eventAt ? [['DATA DO FATO', date(item.eventAt)]] : []),

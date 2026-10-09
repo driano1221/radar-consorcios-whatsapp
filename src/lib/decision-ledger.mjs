@@ -10,6 +10,7 @@ function decisionFor(item, context) {
   const score = Number(item.classification?.score || 0);
   if (item.publicationDecision === 'historico') return ['historico', item.publicationReason || 'Fato válido para a base, sem novidade para envio.'];
   if (item.publicationDecision === 'data_inconsistente') return ['revisao', item.publicationReason || 'Data da publicação precisa de conferência.'];
+  if (item.publicationDecision === 'data_nao_verificada') return ['revisao', item.publicationReason || 'Data da fonte original não verificada.'];
   if (item.aiReview?.status === 'rejected') return ['rejeitado', 'Rejeitado pela revisão automática.'];
   if (item.aiReview?.status === 'disputed') return ['revisao', 'Revisão automática divergente; requer conferência humana.'];
   if (category === 'GERAL') return ['descartado', item.classification?.reasons?.find((reason) => reason.startsWith('rejeitado:')) || 'Não foi identificado evento consorcial comprovado.'];
