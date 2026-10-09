@@ -190,9 +190,38 @@ function distinctPdfSnippets(snippets, preferredPages = []) {
   return selected.map(({ words, ...item }) => item);
 }
 
+function brazilDay(value) {
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return '';
+  const parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo',
+    year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(parsed);
+  const field = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${field.year}-${field.month}-${field.day}`;
+}
+
+export function dashboardSourceCatalog(config = {}) {
+  const sources = [];
+  const add = (family, name, url, enabled = true, mode = 'Coleta ativa', fallback = '') => {
+    sources.push({ family, name, url: url || '', enabled, mode, fallback });
+  };
+  if (config.googleNews) add('Google Notícias', `Buscas por consórcios (${config.googleNews.queries?.length || 0} consultas)`,
+    'https://news.google.com/', config.googleNews.enabled !== false);
+  if (config.queridoDiario) add('Querido Diário', `Diários oficiais (${config.queridoDiario.queryGroups?.length || 0} grupos de termos)`,
+    config.queridoDiario.baseUrl, config.queridoDiario.enabled !== false);
+  for (const feed of config.rssFeeds?.feeds || []) add('Feeds RSS', feed.enabled === false && feed.name === 'CIGA' ? 'CIGA (feed RSS antigo)' : feed.name, feed.url,
+    config.rssFeeds.enabled !== false && feed.enabled !== false);
+  for (const site of config.webScrapers?.sites || []) add('Portais e diários', site.name, site.url,
+    config.webScrapers.enabled !== false && site.enabled !== false,
+    site.publish === false || config.webScrapers.publish === false && site.publish !== true ? 'Coleta em prévia' : 'Coleta ativa', site.fallback);
+  for (const site of config.sapl?.sites || []) add('Câmaras (SAPL)', site.name, site.url,
+    config.sapl.enabled !== false && site.enabled !== false);
+  if (config.ciga) add('CIGA', 'Notícias do Consórcio CIGA', config.ciga.baseUrl, config.ciga.enabled !== false);
+  return sources;
+}
+
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
   participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
-  articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [] }, generatedAt = new Date().toISOString()) {
+  articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
   }));
@@ -324,12 +353,17 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   const previousRun = orderedRuns.at(-2);
   const recentItems = latestRun && previousRun
     ? items.filter((item) => item.firstSeenAt > previousRun.at && item.firstSeenAt <= latestRun.at) : [];
-  const primarySources = ['Google News', 'Querido Diário', 'Feeds RSS', 'Scrapers web'];
+  const primarySources = ['Google News', 'Querido Diário', 'Feeds RSS', 'Scrapers web', 'SAPL', 'CIGA'];
+  const latestDay = brazilDay(latestRun?.at);
+  const todayRuns = latestDay ? orderedRuns.filter((run) => brazilDay(run.at) === latestDay) : [];
+  const todayNew = latestDay ? items.filter((item) => brazilDay(item.firstSeenAt) === latestDay &&
+    item.firstSeenAt <= latestRun.at) : [];
   const collection = latestRun ? {
     at: latestRun.at,
     rawCollected: Number(latestRun.collected) || 0,
     newDocuments: recentItems.length,
     newCandidates: recentItems.filter((item) => item.activeCandidate).length,
+    today: { day: latestDay, runs: todayRuns.length, newDocuments: todayNew.length },
     previousAt: previousRun?.at || '',
     sources: primarySources.map((name) => ({ name,
       count: Number(latestRun.health?.find((row) => row.name === name)?.itemCount) || 0 })),
@@ -370,6 +404,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       categories, sources,
     },
     collectionHealth,
+    sourceCatalog: dashboardSourceCatalog(sourceConfig),
     items,
     baseTables,
     consortia: consortia.map((row) => ({
@@ -411,8 +446,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       reasonBasis: 'recalculado com as regras atuais',
     }];
   })), ...state.decisions };
+  const sourceConfig = JSON.parse(await readFile(path.join(root, 'config', 'default.json'), 'utf8'));
   const data = buildDashboardData({ archive, events, consortia, links, pendingIdentity,
     editorialReviews, participations, pdfRecovery, articleTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
+    sourceConfig,
     baseTables: [
       makeBaseTable('eventos', events, eventColumns),
       makeBaseTable('consorcios', consortia, consortiumColumns),

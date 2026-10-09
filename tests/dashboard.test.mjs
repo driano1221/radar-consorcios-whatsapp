@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
-import { buildDashboardData, contentQuality, makeBaseTable } from '../scripts/build-dashboard.mjs';
+import { buildDashboardData, contentQuality, dashboardSourceCatalog, makeBaseTable } from '../scripts/build-dashboard.mjs';
 
 test('painel usa registro com decisão e evidência visíveis, sem janela XP ou navegação por cartas', async () => {
   const html = await readFile(new URL('../dashboard/src/index.html', import.meta.url), 'utf8');
@@ -263,8 +263,26 @@ test('painel separa resultados brutos de documentos novos na última rodada', ()
   assert.equal(data.collection.rawCollected, 133);
   assert.equal(data.collection.newDocuments, 1);
   assert.equal(data.collection.newCandidates, 1);
+  assert.equal(data.collection.today.newDocuments, 2);
+  assert.equal(data.collection.today.runs, 2);
+  assert.equal(data.collection.today.day, '2026-10-08');
   assert.equal(data.collection.sources.reduce((sum, row) => sum + row.count, 0), 133);
+  assert.ok(data.collection.sources.some((row) => row.name === 'SAPL'));
   assert.equal(data.lastCollectionAt, after);
+});
+
+test('catálogo de fontes distingue coleta ativa, prévia e fonte desativada', () => {
+  const rows = dashboardSourceCatalog({
+    rssFeeds: { enabled: true, feeds: [{ name: 'CIGA', url: 'https://example.org/feed', enabled: false }] },
+    webScrapers: { enabled: true, publish: false, sites: [
+      { name: 'TCE-MG', url: 'https://example.org/tce', publish: true },
+      { name: 'AMM-MT', url: 'https://example.org/amm', publish: false },
+    ] },
+  });
+  assert.equal(rows.find((row) => row.family === 'Feeds RSS').name, 'CIGA (feed RSS antigo)');
+  assert.equal(rows.find((row) => row.name === 'TCE-MG').mode, 'Coleta ativa');
+  assert.equal(rows.find((row) => row.name === 'AMM-MT').mode, 'Coleta em prévia');
+  assert.equal(rows.filter((row) => row.enabled).length, 2);
 });
 
 test('rejeitados e legados sem texto não inflam possíveis achados nem novidade da rodada', () => {

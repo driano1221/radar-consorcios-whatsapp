@@ -96,7 +96,7 @@ function openItem(item) {
   $('#search').value = '';
   state.limit = Math.max(40, state.data.items.findIndex((row) => row.id === item.id) + 1);
   state.selectedItem = item.id;
-  switchView('feed');
+  switchView('feed', true);
 }
 function renderDeck() {
   const items = deckItems();
@@ -111,6 +111,7 @@ function renderDeck() {
     const box = node('div', 'summary-number');
     box.append(node('strong', '', number.format(value)), node('span', '', title)); return box;
   }));
+  renderCollectionCompare();
   $('#pending-breakdown').replaceChildren(...pendingKinds.map((kind) => {
     const count = state.data.items.filter(kind.matches).length;
     const button = node('button', 'pending-kind'); button.type = 'button';
@@ -148,6 +149,24 @@ function renderDeck() {
   if (items.length > 80) list.append(node('p', 'overview-more', 'Exibindo as 80 primeiras. Use a busca ou abra o arquivo completo para ver todas.'));
   renderOverviewDetail(items.find((item) => item.id === state.selectedOverviewItem));
 }
+function renderCollectionCompare() {
+  const target = $('#collection-compare');
+  const collection = state.data.collection;
+  if (!collection) {
+    target.replaceChildren(node('p', 'empty', 'Ainda não há uma execução registrada para separar os números da última coleta.'));
+    return;
+  }
+  const day = node('section', 'collection-scope');
+  day.append(node('span', 'collection-scope-label', `NO DIA ${date(collection.at)}`),
+    node('strong', '', number.format(collection.today?.newDocuments || 0)),
+    node('p', '', `documentos novos no arquivo, em ${number.format(collection.today?.runs || 0)} ${collection.today?.runs === 1 ? 'execução' : 'execuções'}.`));
+  const run = node('section', 'collection-scope');
+  run.append(node('span', 'collection-scope-label', `ÚLTIMA EXECUÇÃO · ${date(collection.at, true)}`),
+    node('strong', '', number.format(collection.newDocuments)),
+    node('p', '', `documentos novos entre ${number.format(collection.rawCollected)} resultados retornados pelas fontes.`));
+  target.replaceChildren(day, run);
+  target.append(node('p', 'collection-definition', 'Os quatro totais do acervo são históricos. “Resultado” pode repetir publicação conhecida; “documento novo” conta sua primeira entrada no arquivo.'));
+}
 function renderOverviewDetail(item) {
   const panel = $('#overview-detail');
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
@@ -184,9 +203,11 @@ function renderOverviewDetail(item) {
 function renderOverview() { renderDeck(); }
 function feedRow(item, index, selected, onClick) {
   const button = node('button', `feed-item${selected ? ' active' : ''}`); button.type = 'button';
+  button.title = readableReason(item);
   const body = node('div'); const top = node('div', 'item-top');
   const [statusText, tone] = status(item);
-  top.append(node('span', 'item-tag', item.editorialReview || item.contentQuality === 'trecho_disponivel' || item.pdfEvidence?.length ? statusText : `${statusText} · TEXTO INSUFICIENTE`),
+  const bucket = triageBucket(item);
+  top.append(node('span', `decision-flag ${bucket}`, bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'),
     node('span', 'item-date', date(item.lastSeenAt)));
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
@@ -195,7 +216,7 @@ function feedRow(item, index, selected, onClick) {
   button.addEventListener('click', onClick);
   return button;
 }
-function detail(item, target) {
+function renderDetailedRecord(item, target) {
   const panel = $(target);
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ver os detalhes.')); return; }
   const [statusText, tone] = status(item);
@@ -338,6 +359,52 @@ function detail(item, target) {
   if (item.runId) technical.append(label('Última coleta'), node('p', 'detail-copy', `Rodada ${item.runId}; visto ${item.observedCount || 1} vez(es) recentemente.`));
   panel.append(technical);
 }
+function detail(item, target) {
+  const panel = $(target);
+  if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
+  const bucket = triageBucket(item);
+  const verdict = bucket === 'accepted' ? 'Entrou na base' : bucket === 'rejected' ? 'Ficou fora da base' : 'Exceção: conferir';
+  const intro = node('div', 'readable-intro');
+  intro.append(node('span', `overview-verdict ${bucket}`, verdict), node('small', '', `Registro ${item.id.slice(0, 8).toUpperCase()}`));
+  const decision = node('section', `readable-decision ${bucket}`);
+  decision.append(node('h4', '', 'Por quê?'), node('p', '', readableReason(item)));
+  const rawProof = item.editorialReview?.evidence || item.pdfEvidence?.[0]?.text ||
+    (item.contentQuality === 'trecho_disponivel' ? item.evidence : '');
+  const usableProof = /\.{10,}/.test(rawProof) && !item.editorialReview ? '' : rawProof;
+  const proof = node('section', 'readable-proof');
+  const location = item.pdfEvidence?.length && !item.editorialReview ?
+    ` · página ${item.pdfEvidence[0].page || 'não identificada'}` : '';
+  const proofTitle = item.editorialReview ? 'Trecho usado na conferência' :
+    bucket === 'rejected' ? `Trecho coletado — não prova o fato por si só${location}` : `Trecho disponível${location}`;
+  const proofPreview = usableProof && !item.editorialReview && usableProof.length > 400
+    ? `${usableProof.slice(0, 400).trimEnd()}…` : usableProof;
+  proof.append(node('h4', '', proofTitle), node('blockquote', '', proofPreview || (rawProof
+    ? 'O trecho coletado parece ser índice ou rodapé. Ele não comprova o fato; confira a fonte original.'
+    : 'Não há trecho suficiente guardado. A publicação original precisa ser conferida.')));
+  const alert = node('section', 'readable-alert');
+  const alertText = item.sentAt ? `Enviado ao WhatsApp em ${date(item.sentAt, true)}.`
+    : item.alertDecision === 'historico' ? 'Não enviado: é um fato histórico, não uma novidade da coleta.'
+      : item.alertDecision === 'elegivel' ? 'Pode ser considerado para o WhatsApp após as verificações do envio.'
+        : item.alertDecision === 'descartado' ? 'Não será enviado ao WhatsApp.'
+          : 'O envio ao WhatsApp ainda depende de verificação.';
+  alert.append(node('h4', '', 'E o WhatsApp?'), node('p', '', alertText));
+  if (item.alertReason && !item.sentAt) alert.append(node('small', '', item.alertReason));
+  const actions = node('div', 'readable-actions');
+  actions.append(link('Abrir fonte original', item.editorialReview?.evidenceUrl || item.pdfEvidenceUrl || item.url));
+  const back = node('button', 'detail-link readable-back', 'Voltar à lista ↑'); back.type = 'button';
+  back.addEventListener('click', () => $('#feed-list').scrollIntoView({ behavior: 'smooth', block: 'start' }));
+  actions.append(back);
+  const full = node('details', 'record-more');
+  full.append(node('summary', '', 'Ver todas as datas, vínculos e detalhes da análise'));
+  const fullBody = node('div'); fullBody.id = 'detail-full-record'; full.append(fullBody);
+  panel.replaceChildren(intro, node('h3', 'detail-head', displayTitle(item)),
+    node('p', 'readable-meta', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
+    decision, proof, alert, actions, full);
+  renderDetailedRecord(item, '#detail-full-record');
+  for (const selector of ['.detail-kicker', '.detail-head', '.detail-meta', '.decision-card']) {
+    fullBody.querySelector(selector)?.remove();
+  }
+}
 function filteredFeed() {
   const query = $('#search').value.toLocaleLowerCase('pt-BR').trim();
   const filter = $('#status-filter').value;
@@ -369,6 +436,9 @@ function renderFeed() {
   if (!visible.some((item) => item.id === state.selectedItem)) state.selectedItem = visible[0]?.id || '';
   $('#feed-list').replaceChildren(...visible.map((item, index) => feedRow(item, index, item.id === state.selectedItem, () => {
     state.selectedItem = item.id; renderFeed();
+    if (window.matchMedia('(max-width: 780px)').matches) $('#detail').scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start',
+    });
   })));
   if (!visible.length) $('#feed-list').append(node('p', 'empty', 'Nenhuma publicação corresponde à busca.'));
   $('#more-button').hidden = visible.length >= items.length;
@@ -474,8 +544,9 @@ function renderBase() {
   $('#base-table-title').textContent = table.title;
   $('#base-table-description').textContent = table.description;
   $('#base-table-count').textContent = `${number.format(table.rows.length)} LINHAS · ${number.format(table.columns.length)} COLUNAS`;
+  const previewColumns = table.columns.slice(0, 3);
   const head = $('#base-table thead'); const header = node('tr');
-  for (const column of table.columns) {
+  for (const column of previewColumns) {
     const cell = node('th', '', column.label); cell.title = column.description; cell.scope = 'col'; header.append(cell);
   }
   head.replaceChildren(header);
@@ -488,7 +559,7 @@ function renderBase() {
     entry.addEventListener('click', selectRow);
     entry.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault(); selectRow(); } });
-    for (const column of table.columns) {
+    for (const column of previewColumns) {
       const value = tableValue(row[column.key]);
       const cell = node('td', value === 'Não informado' ? 'missing-value' : '', value);
       cell.title = value; entry.append(cell);
@@ -496,7 +567,7 @@ function renderBase() {
     return entry;
   }));
   if (!visible.length) { const empty = node('tr'); const cell = node('td', 'empty', 'Nenhuma linha corresponde à busca.');
-    cell.colSpan = table.columns.length || 1; empty.append(cell); body.append(empty); }
+    cell.colSpan = previewColumns.length || 1; empty.append(cell); body.append(empty); }
   $('#base-range').textContent = `MOSTRANDO ${number.format(visible.length)} DE ${number.format(rows.length)} LINHAS`;
   $('#base-more').hidden = visible.length >= rows.length;
   renderBasePreview(table, rows[state.baseRowIndex]);
@@ -507,7 +578,35 @@ function renderBase() {
   }));
 }
 function renderMethod() {
+  const catalog = state.data.sourceCatalog || [];
+  const familyCountNames = { 'Google Notícias': 'Google News', 'Querido Diário': 'Querido Diário',
+    'Feeds RSS': 'Feeds RSS', 'Portais e diários': 'Scrapers web', 'Câmaras (SAPL)': 'SAPL', CIGA: 'CIGA' };
+  const groups = [...new Set(catalog.map((row) => row.family))];
+  const sourceTarget = $('#source-catalog');
+  sourceTarget.replaceChildren(...groups.map((family) => {
+    const rows = catalog.filter((row) => row.family === family);
+    const count = state.data.collection?.sources?.find((row) => row.name === familyCountNames[family])?.count;
+    const group = node('section', 'source-family');
+    group.append(node('h3', '', family), node('p', 'source-family-count',
+      `${rows.filter((row) => row.enabled).length} ${rows.filter((row) => row.enabled).length === 1 ? 'fonte ativa' : 'fontes ativas'}${count === undefined ? '' : ` · ${number.format(count)} resultados na última execução`}`));
+    const list = node('ul', 'source-list');
+    for (const row of rows) {
+      const entry = node('li', row.enabled ? 'source-active' : 'source-disabled');
+      const name = safeUrl(row.url) ? link(row.name, row.url) : node('strong', '', row.name);
+      entry.append(name, node('span', 'source-mode', row.enabled ? row.mode : 'Desativada'));
+      if (row.fallback) entry.append(node('small', '', `Cobertura alternativa: ${row.fallback}`));
+      list.append(entry);
+    }
+    group.append(list); return group;
+  }));
+  if (groups.length) sourceTarget.prepend(node('p', 'source-overall',
+    `${number.format(catalog.filter((row) => row.enabled).length)} fontes ativas na configuração · ${number.format(catalog.filter((row) => !row.enabled).length)} desativadas. Fontes em prévia são coletadas, mas não liberadas automaticamente para alertas.`));
+  if (!groups.length) sourceTarget.append(node('p', 'empty', 'A configuração das fontes não está nesta fotografia do painel.'));
   const health = state.data.collectionHealth || [];
+  const ai = health.find((row) => row.name === 'DeepSeek');
+  $('#ai-runtime-status').textContent = ai
+    ? `Na última execução: ${number.format(ai.itemCount || 0)} ${ai.itemCount === 1 ? 'revisão' : 'revisões'} pelo DeepSeek${ai.status === 'ok' ? ', sem erro registrado.' : '; houve uma falha ou resposta inconsistente, e itens sem validação não são liberados automaticamente.'}`
+    : 'Na última execução, não há revisão do DeepSeek registrada.';
   const problems = health.filter((row) => ['error', 'degraded'].includes(row.status));
   const target = $('#method-health');
   target.replaceChildren(node('p', '', problems.length
@@ -519,7 +618,7 @@ function renderMethod() {
     target.append(entry);
   }
 }
-function switchView(view) {
+function switchView(view, focusDetail = false) {
   state.view = view;
   const titles = { overview: ['Triagem', 'Registro de publicações'], feed: ['Publicações', 'Arquivo de publicações'],
     base: ['Base completa', 'Base de dados'], method: ['Como funciona', 'Fluxo e critérios'] };
@@ -536,7 +635,9 @@ function switchView(view) {
   if (view === 'overview') renderDeck();
   if (view === 'base') renderBase();
   if (view === 'method') renderMethod();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (focusDetail && view === 'feed' && window.matchMedia('(max-width: 780px)').matches)
+    $('#detail').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 async function init() {
   try {

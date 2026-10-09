@@ -209,3 +209,10 @@ Esta seção registra **desde a ideia de criar uma base**, e não apenas as últ
 - Fotografia local após reprocessar a base: 1.251 documentos, 50 eventos candidatos, 26 identidades candidatas e 11 documentos relevantes sem identidade segura. Nenhum desses totais é comprovação jurídica automática.
 - O usuário escolheu **não publicar ainda**. GitHub Pages não foi ativado, nem foi criado workflow de deploy. O painel permanece local e privado até nova decisão explícita sobre a exposição pública dos dados.
 - A primeira versão ficou abstrata para o usuário. Em 05/10, a interface foi simplificada para três áreas — **Início, Publicações e Consórcios** —, com rótulos diretos (“possível achado”, “fora da lista”, “precisa conferir”), decisão em linguagem comum e detalhes técnicos recolhidos. A fila passou a ser o filtro “Precisam de conferência” dentro das publicações. A distinção entre proposta, autorização e adesão efetiva continua preservada.
+
+## Painel e meta de triagem — 09/10/2026
+
+- O usuário escolheu a direção visual **Registro**, rejeitando a janela XP. A triagem distingue acervo acumulado, documentos inéditos no dia e resultados/documentos inéditos na última execução. Resultado de fonte não equivale a novo documento.
+- A ficha de Publicações põe decisão, motivo, evidência e WhatsApp em linguagem direta; demais dados continuam disponíveis em seção expansível. A Base mostra campos principais sem rolagem horizontal, mas preserva todos os campos na ficha da linha. Como funciona passou a localizar a IA no fluxo e a listar as fontes da configuração atual.
+- **Objetivo futuro explícito:** quase toda publicação deve chegar a aceite ou descarte, com prova e justificativa. Candidatura e pendência são exceções temporárias. Trabalhar nos cinco candidatos e nos marcadores de identidade, prévia, divergência e nova pista; não reclassificar à força apenas para zerar contadores. Para cada regra corrigida, reprocessar o histórico e acrescentar regressão.
+- O painel permanece **local e privado**. Nenhum GitHub Pages foi ativado.

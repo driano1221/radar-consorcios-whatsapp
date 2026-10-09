@@ -15,12 +15,14 @@ Abra `http://127.0.0.1:4173/`. O servidor aceita conexões **somente deste compu
 
 ## O que aparece
 
-- **Triagem:** lista das decisões já registradas, com filtro por confirmadas/fora da base/candidatas, busca e ficha de justificativa e evidência. A lista mostra até 80 registros por seleção; o arquivo completo contém todos. Quatro filtros adicionais mostram pendências de informação: identidade incompleta, fonte em teste, leitura divergente e nova pista no texto. São marcadores independentes da decisão: um registro descartado pode ter pista nova sem virar automaticamente um achado.
-- **Publicações:** arquivo pesquisável com filtros. Cada ficha mostra a decisão de base **separada** da decisão de alerta, o motivo, a prova, eventuais páginas de PDF e a fonte original. Texto recuperado e sugestões não viram automaticamente fatos confirmados.
-- **Base completa:** todas as linhas e colunas de `eventos.csv`, `consorcios.csv`, `participacoes.csv`, `vinculos-documentos.csv`, `identidade-pendente.csv`, `arquivo-coletas.ndjson` e `revisoes-eventos.ndjson`. Há busca por tabela, prévia integral da linha e glossário de todas as colunas, mesmo que a tabela ou as células estejam vazias. Célula vazia aparece como “Não informado”. A ordem visual prioriza título/nome e decisão; nenhum campo é removido.
-- **Como funciona:** coleta, extração, classificação, destinos separados, papel limitado do DeepSeek, regras principais e próximos passos. Fontes com erro ficam recolhidas ao final para não poluir a leitura principal.
+- **Triagem:** o acervo acumulado é separado dos documentos novos no dia e na última execução. “Resultados retornados” podem repetir documentos conhecidos; só a primeira entrada conta como documento novo. A lista mostra até 80 registros por seleção, com flags visíveis de confirmação/descarte/candidatura. Quatro filtros mostram pendências independentes da decisão.
+- **Publicações:** arquivo pesquisável com filtros. A ficha mostra primeiro o resultado, o motivo, a prova disponível e o destino no WhatsApp. Datas, vínculos, demais trechos de PDF e detalhes técnicos ficam em “Ver todas as datas, vínculos e detalhes da análise”. Texto recuperado e sugestões não viram automaticamente fatos confirmados.
+- **Base completa:** todas as linhas e colunas de `eventos.csv`, `consorcios.csv`, `participacoes.csv`, `vinculos-documentos.csv`, `identidade-pendente.csv`, `arquivo-coletas.ndjson` e `revisoes-eventos.ndjson`. A lista resume os campos principais sem rolagem horizontal; a ficha exibe **todas as colunas**, inclusive vazias como “Não informado”. Há busca e glossário.
+- **Como funciona:** um diagrama localiza coleta, leitura, regras, decisão da base e a segunda leitura opcional da IA antes do WhatsApp. O cadastro de fontes é gerado da configuração atual e distingue ativas, em prévia e desativadas. Falhas da última coleta ficam recolhidas ao final.
 
 O painel lê as tabelas de `data/catalogo/` e o estado versionado. A categoria e a etapa **revisadas editorialmente** prevalecem sobre o registro bruto. Atos antigos reindexados recentemente permanecem no arquivo histórico, mas não aparecem como eventos atuais. A tela nunca equipara documento, menção ou autorização legal a ingresso/saída efetiva.
+
+**Meta de qualidade ainda não concluída:** reduzir candidatos e pendências até que quase todo documento seja aceito ou descartado com justificativa e evidência. Candidato deve ser exceção temporária para insuficiência real de prova ou conflito relevante. A interface não pode “zerar” pendências apenas trocando o rótulo: recuperar texto, conferir identidade, resolver divergências e reprocessar o acervo com testes de regressão. A fotografia atual ainda contém casos a conferir.
 
 ## Direção visual
 
