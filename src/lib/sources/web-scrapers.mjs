@@ -248,13 +248,14 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
         retries: 0, headers: { 'user-agent': config.userAgent || DEFAULT_USER_AGENT } });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const $ = load(await responseText(response));
-      const body = $('#publication-text').first().clone();
-      body.find('script,style,nav,footer,form').remove();
+      const body = $('#publication-text, .publication-text, [itemprop="articleBody"], article').first().clone();
+      body.find('script,style,nav,footer,form,aside,.breadcrumb,.share-buttons').remove();
       body.find('p,li,h1,h2,h3,h4,br').append(' ');
       const rawText = normalizeWhitespace(body.text());
       if (rawText.length < 50) throw new Error('Texto da publicação não encontrado');
       enriched.push({ ...item, summary: rawText.slice(0, 1800), rawText });
     } catch (error) {
+      console.warn(`[artigo:${site.name}] ${item.url}: ${error.message}`);
       enriched.push({ ...item, previewOnly: true, extractionError: error.message });
     }
   }

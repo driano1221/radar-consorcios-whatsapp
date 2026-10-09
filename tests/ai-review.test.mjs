@@ -43,6 +43,16 @@ test('DeepSeek exige JSON consistente e evidência literal', async () => {
   await assert.rejects(reviewWithDeepSeek(entry), /DEEPSEEK_API_KEY ausente/);
 });
 
+test('DeepSeek aceita só diferença de pontuação em evidência fiel ao texto', async () => {
+  const entry = { ...item('Consórcio Intermunicipal firma parceria'),
+    summary: 'O consórcio firmou, em setembro, parceria com o ministério.' };
+  const fetchImpl = async () => Response.json({ choices: [{ message: { content: JSON.stringify({
+    relevante: true, categoria: 'ATUAÇÃO', novo_consorcio: false,
+    evidencia: 'O consórcio firmou em setembro parceria com o ministério', justificativa: 'Acordo firmado.',
+  }) } }] });
+  assert.equal((await reviewWithDeepSeek(entry, { apiKey: 'teste', fetchImpl })).status, 'approved');
+});
+
 test('fila preserva revisão aprovada, rejeita falso positivo e não paga duas vezes', async () => {
   const falsePositive = item('Consórcio cria agenda', 'CRIAÇÃO');
   const authorized = item('Lei autoriza ingresso em consórcio', 'ADESÃO');

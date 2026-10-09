@@ -57,6 +57,17 @@ test('AMM-MT enriquece texto do ato mas mantém publicação em prévia', async 
   assert.equal(result.diagnostics[0].status, 'ok');
 });
 
+test('AMM-MT usa corpo article quando o seletor específico mudou', async () => {
+  const index = '<ol id="publications-list"><li><a href="/publicacao/1/"><div class="publication-title">LEI MUNICIPAL Nº 10/2026</div><div class="entity-title">Consórcio</div><span class="date">02/10/26</span></a></li></ol>';
+  const article = '<article><nav>Menu irrelevante</nav><p>Ratifica o protocolo de intenções do Consórcio Intermunicipal e autoriza participação do município.</p></article>';
+  const result = await fetchWebScrapers({ enabled: true, timeoutMs: 1000, retries: 0,
+    sites: [{ name: 'AMM-MT', adapter: 'amm-mt', url: 'https://amm.diariomunicipal.org/publicacoes/', publish: false }] },
+  since, async (url) => new Response(url.includes('/publicacao/') ? article : index));
+  assert.match(result.items[0].rawText, /Ratifica o protocolo/);
+  assert.doesNotMatch(result.items[0].rawText, /Menu irrelevante/);
+  assert.equal(result.diagnostics[0].status, 'ok');
+});
+
 test('extrai cards de noticias da RNCP', () => {
   const html = `<div class="post-item">
     <span class="post-date updated">14/08/2026</span>

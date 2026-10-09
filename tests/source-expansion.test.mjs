@@ -102,6 +102,18 @@ test('Querido Diário não mascara HTML ou JSON inesperado como coleta vazia sau
   assert.equal(result.items.length, 0);
 });
 
+test('Querido Diário recupera OR expirado com consultas simples e sinaliza cobertura parcial', async () => {
+  const result = await fetchQueridoDiario({ enabled: true, retries: 0, queryGroups: [['consórcio', 'rateio']] },
+    new Date('2026-09-01'), async (url) => {
+      const query = new URL(url).searchParams.get('querystring');
+      if (query.includes('|') || query.includes('rateio')) throw new DOMException('Tempo esgotado', 'TimeoutError');
+      return Response.json({ gazettes: [{ url: 'https://exemplo.gov.br/ato.pdf', territory_name: 'Exemplo', date: '2026-09-10', excerpts: ['consórcio intermunicipal'] }] });
+    });
+  assert.equal(result.items.length, 1);
+  assert.equal(result.diagnostics[0].status, 'degraded');
+  assert.match(result.diagnostics[0].message, /cobertura parcial/);
+});
+
 test('demonstrativos contábeis não viram novo contrato de rateio', () => {
   for (const summary of [
     'Demonstrativo da Despesa com Pessoal — Consórcios Públicos. VALORES TRANSFERIDOS POR CONTRATO DE RATEIO. Despesa Total com Pessoal — DTP.',

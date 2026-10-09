@@ -2,6 +2,7 @@ import { mkdir } from 'node:fs/promises';
 import makeWASocket, {
   DisconnectReason,
   fetchLatestBaileysVersion,
+  makeCacheableSignalKeyStore,
   useMultiFileAuthState,
 } from '@whiskeysockets/baileys';
 import pino from 'pino';
@@ -33,7 +34,9 @@ async function connectOnce({ authDir, onQr, timeoutMs }) {
   const { version } = await fetchLatestBaileysVersion();
   const socket = makeWASocket({
     version,
-    auth: state,
+    // Cache recomendado pelo Baileys: reduz leituras repetidas das chaves
+    // Signal durante o curto período em que o Actions permanece conectado.
+    auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, logger) },
     logger,
     printQRInTerminal: false,
     syncFullHistory: false,

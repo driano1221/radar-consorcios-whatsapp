@@ -30,7 +30,11 @@ function validateAnswer(answer, input) {
     typeof answer?.categoria !== 'string' || typeof answer?.evidencia !== 'string') return null;
   const evidence = normalizeWhitespace(answer.evidencia);
   const supplied = normalizeWhitespace(`${input.titulo} ${input.resumo} ${input.trecho}`);
-  if (evidence.length < 12 || !supplied.includes(evidence)) return null;
+  // O modelo por vezes troca aspas, travessões ou espaços do PDF. Exigimos as
+  // mesmas palavras na mesma ordem; paráfrase ou fato ausente segue bloqueado.
+  const comparable = (value) => normalizeWhitespace(value.normalize('NFKC')
+    .replace(/[\p{P}\p{S}]+/gu, ' ')).toLocaleLowerCase('pt-BR');
+  if (evidence.length < 12 || !comparable(supplied).includes(comparable(evidence))) return null;
   if (answer.relevante) {
     if (!Object.hasOwn(EMOJI, answer.categoria)) return null;
     if ((answer.categoria === 'CRIAÇÃO') !== answer.novo_consorcio) return null;

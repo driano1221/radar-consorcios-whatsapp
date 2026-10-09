@@ -10,7 +10,7 @@ function queryGroups(config) {
   return config.queryTerms?.length ? [config.queryTerms] : [];
 }
 
-async function fetchGroup(terms, config, since, fetchImpl) {
+async function fetchGroup(terms, config, since, fetchImpl, timeoutMs = config.timeoutMs || 15000, retries = config.retries ?? 1) {
   const querystring = terms.map((term) => `"${term}"`).join(' | ');
   const params = new URLSearchParams({
     querystring,
@@ -23,14 +23,37 @@ async function fetchGroup(terms, config, since, fetchImpl) {
   const url = `${config.baseUrl || 'https://queridodiario.ok.org.br/api'}/gazettes?${params}`;
   const response = await fetchWithRetry(url, {
     fetchImpl,
-    timeoutMs: config.timeoutMs || 15000,
-    retries: config.retries ?? 1,
+    timeoutMs,
+    retries,
     headers: { 'user-agent': 'RadarConsorciosIPEA/0.2 (+pesquisa acadêmica)' },
   });
   if (!response.ok) throw new Error(`Querido Diário respondeu ${response.status}`);
   const payload = await response.json();
   if (!Array.isArray(payload.gazettes)) throw new Error('Querido Diário: formato inesperado (gazettes ausente)');
   return { gazettes: payload.gazettes, truncated: payload.gazettes.length >= (config.pageSize || 100) };
+}
+
+function timedOut(error) {
+  return /timeout|timed? out|abort/i.test(`${error?.name || ''} ${error?.message || ''}`);
+}
+
+async function fetchGroupWithFallback(terms, config, since, fetchImpl) {
+  try {
+    return await fetchGroup(terms, config, since, fetchImpl);
+  } catch (error) {
+    // O índice às vezes demora com OR. Consultas simples recuperam parte da
+    // cobertura sem transformar uma resposta incompleta em sucesso silencioso.
+    if (!timedOut(error) || terms.length < 2) throw error;
+    const fallbackConfig = { ...config, pageSize: Math.min(config.pageSize || 100, 50) };
+    const attempts = await Promise.allSettled(terms.map((term) => fetchGroup([term], fallbackConfig, since, fetchImpl,
+      config.fallbackTimeoutMs || 16000, 0)));
+    const recovered = attempts.filter((result) => result.status === 'fulfilled').map((result) => result.value);
+    if (!recovered.length) throw error;
+    return { gazettes: mergeGazettes(recovered.map((result) => result.gazettes)),
+      truncated: recovered.some((result) => result.truncated),
+      partial: recovered.length < terms.length,
+      fallback: true };
+  }
 }
 
 function mergeGazettes(groups) {
@@ -56,7 +79,7 @@ export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
     while (nextGroup < groups.length) {
       const index = nextGroup++;
       try {
-        settled[index] = { status: 'fulfilled', value: await fetchGroup(groups[index], config, since, fetchImpl) };
+        settled[index] = { status: 'fulfilled', value: await fetchGroupWithFallback(groups[index], config, since, fetchImpl) };
       } catch (reason) {
         settled[index] = { status: 'rejected', reason };
       }
@@ -70,9 +93,13 @@ export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
     if (result.status === 'fulfilled') {
       successfulGroups += 1;
       results.push(result.value.gazettes);
-      diagnostics.push({ name: `Querido Diário — consulta ${index + 1}`, status: result.value.truncated ? 'degraded' : 'ok',
+      diagnostics.push({ name: `Querido Diário — consulta ${index + 1}`, status: result.value.truncated || result.value.partial ? 'degraded' : 'ok',
         itemCount: result.value.gazettes.length,
-        ...(result.value.truncated ? { message: 'Página cheia; pode haver resultados adicionais fora do limite' } : {}) });
+        ...(result.value.truncated || result.value.partial || result.value.fallback ? {
+          message: [result.value.fallback ? 'Consulta OR expirou; busca simples de recuperação usada' : '',
+            result.value.partial ? 'cobertura parcial' : '',
+            result.value.truncated ? 'página cheia; resultados adicionais possíveis' : ''].filter(Boolean).join('; '),
+        } : {}) });
     } else {
       console.warn(`[fonte:querido-diario:${index + 1}] ${result.reason.message}`);
       diagnostics.push({ name: `Querido Diário — consulta ${index + 1}`, status: 'error', itemCount: 0, message: result.reason.message });

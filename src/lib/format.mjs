@@ -85,8 +85,22 @@ function firstCompleteSentence(value, fallback) {
   return /[.!?]$/.test(cleanFallback) ? cleanFallback : `${cleanFallback}.`;
 }
 
+function gazetteActionSentence(item) {
+  const evidence = normalizeWhitespace(item.classification?.evidenceText || item.summary || '');
+  const sentences = [...new Intl.Segmenter('pt-BR', { granularity: 'sentence' }).segment(evidence)]
+    .map(({ segment }) => segment.trim());
+  const boilerplate = /assinado digitalmente|autenticidade, validade jur[ií]dica|integridade|edi[cç][aã]o n[º°]|p[aá]gina \d+ de \d+/i;
+  return sentences
+    .filter((sentence) => sentence.length >= 45 && sentence.length <= 420 &&
+      !boilerplate.test(sentence) && /[.!?][”"']?$/.test(sentence) &&
+      /cons[oó]rcio|\b[A-Z]{4,12}\b/.test(sentence) &&
+      /execu|realiz|implant|inici|firm|entreg|receb|lan[cç]|aprov|particip|atend|oper|public|institu/i.test(sentence))
+    .sort((a, b) => Number(/cons[oó]rcio/i.test(b)) - Number(/cons[oó]rcio/i.test(a)))[0] || '';
+}
+
 function gazetteLead(item) {
   const category = item.classification?.category;
+  if (category === 'ATUAÇÃO' || category === 'AÇÃO') return gazetteActionSentence(item);
   const locality = cleanInline(item.territoryName || 'O município');
   const consortium = extractConsortiumLabel(item);
   const instrument = extractLegalInstrument(item);

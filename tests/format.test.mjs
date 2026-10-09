@@ -71,3 +71,17 @@ test('extrai sigla entre parênteses sem capturar palavras do anexo', () => {
   assert.match(message, /Itápolis autoriza adesão ao CONCLIMA/);
   assert.doesNotMatch(message, /FEIRA/);
 });
+
+test('atuação em diário mostra a frase do fato e nunca autenticação do PDF', () => {
+  const item = {
+    kind: 'gazette', title: 'Diário Oficial de Mogi Guaçu (SP)', territoryName: 'Mogi Guaçu',
+    source: 'Querido Diário', publishedAt: '2026-10-09T12:00:00-03:00', url: 'https://exemplo.gov.br/ato.pdf',
+    summary: 'Diário Oficial assinado digitalmente conforme MP nº 2.200-2, garantindo autenticidade, validade jurídica e integridade. A partir de maio de 2026, observa-se uma mudança no modelo de gestão, com a execução direta do serviço pelo CREAS, por meio do Consórcio Intermunicipal CEMMIL, mantendo o cofinanciamento estadual.',
+    classification: { category: 'ATUAÇÃO', emoji: '📰', evidenceText: 'A partir de maio de 2026, observa-se uma mudança no modelo de gestão, com a execução direta do serviço pelo CREAS, por meio do Consórcio Intermunicipal CEMMIL, mantendo o cofinanciamento estadual.' },
+  };
+  const message = formatWhatsAppMessage(item);
+  assert.match(message, /execução direta do serviço pelo CREAS/);
+  assert.doesNotMatch(message, /assinado digitalmente|autenticidade/);
+  const noEvidence = formatWhatsAppMessage({ ...item, summary: 'Diário Oficial assinado digitalmente conforme MP nº 2.200-2, garantindo autenticidade, validade jurídica e integridade.', classification: { category: 'ATUAÇÃO', emoji: '📰' } });
+  assert.doesNotMatch(noEvidence, /^> /m);
+});
