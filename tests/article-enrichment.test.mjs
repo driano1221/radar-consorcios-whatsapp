@@ -37,6 +37,18 @@ test('resolve Google News e preserva a URL original para deduplicação', async 
   assert.equal(result.contentProvenance, 'pagina_original');
 });
 
+test('guarda a data da notícia original sem substituir a data do Google', async () => {
+  const article = { kind: 'news', title: 'Consórcio aprova atualização do protocolo',
+    url: 'https://example.org/noticia', publishedAt: '2026-10-08T12:00:00Z', summary: '' };
+  const html = '<meta property="article:published_time" content="2026-09-10T14:53:00-03:00">' +
+    `<article>${'O consórcio intermunicipal aprovou a alteração do protocolo de intenções. '.repeat(8)}</article>`;
+  const result = await enrichArticle(article, {
+    fetchImpl: async () => new Response(html, { headers: { 'content-type': 'text/html' } }),
+  });
+  assert.equal(result.publishedAt, article.publishedAt);
+  assert.equal(result.sourcePublishedAt, '2026-09-10T17:53:00.000Z');
+});
+
 test('resumo parcial também dispara leitura integral do artigo', async () => {
   const article = { kind: 'news', title: 'Consórcio de prevenção a desastres',
     url: 'https://example.org/noticia', summary: 'A cidade discute o consórcio de prevenção a desastres.' };

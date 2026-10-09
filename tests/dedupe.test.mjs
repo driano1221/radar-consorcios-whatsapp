@@ -45,6 +45,35 @@ test('elimina cobertura equivalente publicada em outro endereço', () => {
   assert.equal(selectUnseen([republicado], state).length, 0);
 });
 
+test('mesma página original não reaparece com outro link do Google', () => {
+  const original = { title: 'Consórcio publica decisão', url: 'https://news.google.com/rss/articles/um',
+    articleUrl: 'https://portal.gov.br/noticia/123', classification: { category: 'GOVERNANÇA', score: 8 } };
+  const state = { seen: {}, pending: {} };
+  markSeen(state, original);
+  const republicado = { ...original, title: 'Decisão do consórcio em destaque',
+    url: 'https://news.google.com/rss/articles/dois', publishedAt: '2026-10-09T12:00:00Z' };
+  assert.equal(selectUnseen([republicado], state).length, 0);
+});
+
+test('mesma lei municipal em fontes diferentes compartilha identidade de evento', () => {
+  const original = { title: 'Lei 3.309/2026 autoriza ingresso de Centenário do Sul no CISPAR',
+    url: 'https://camara.pr.leg.br/lei/3309',
+    classification: { category: 'ADESÃO AUTORIZADA', score: 10,
+      evidenceText: 'Lei 3.309/2026 autoriza o ingresso do Município de Centenário do Sul no CISPAR.' } };
+  const state = { seen: {}, pending: {} };
+  markSeen(state, original);
+  const otherSource = { title: 'Autorizado ingresso de Centenário do Sul no consórcio',
+    url: 'https://jornal.com.br/centenario', publishedAt: '2026-10-09T12:00:00Z',
+    classification: { category: 'ADESÃO AUTORIZADA', score: 9,
+      evidenceText: 'O Município de Centenário do Sul foi autorizado pela Lei nº 3309/2026 a ingressar no CISPAR.' } };
+  assert.equal(selectUnseen([otherSource], state).length, 0);
+  const anotherCity = { ...otherSource, url: 'https://jornal.com.br/outra-cidade',
+    title: 'Autorizado ingresso do Município de Pinhais no consórcio',
+    classification: { ...otherSource.classification,
+      evidenceText: 'O Município de Pinhais foi autorizado pela Lei nº 3309/2026 a ingressar no CISPAR.' } };
+  assert.equal(selectUnseen([anotherCity], state).length, 1);
+});
+
 test('não reenvia o mesmo fato quando IA corrige categoria e a fonte muda de nome', () => {
   const original = {
     title: 'Consórcio Intermunicipal cria agenda setorial com Brasília para atrair investimentos - Diário do Grande ABC',

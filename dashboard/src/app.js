@@ -203,7 +203,17 @@ function detail(item, target) {
   const fields = [
     ['ASSUNTO', item.rejectedEvent ? 'Não classificado como achado'
       : item.baseStatus === 'evento_candidato' ? item.category : 'Não classificado como achado'],
+    ['BASE', item.baseDecision === 'confirmado' ? 'Fato confirmado' : item.baseDecision === 'descartado'
+      ? 'Fora da base de eventos' : 'Candidato, ainda não confirmado'],
+    ['ALERTA', item.alertDecision === 'historico' ? 'Não enviar — fato antigo'
+      : item.alertDecision === 'enviado' ? 'Já enviado'
+        : item.alertDecision === 'elegivel' ? 'Pode ser avaliado para envio'
+          : item.alertDecision === 'data_inconsistente' ? 'Data precisa de conferência'
+            : item.alertDecision === 'descartado' ? 'Não enviar' : 'Ainda sem decisão'],
     ...(item.stage && displayTitle(item) !== item.stage ? [['ETAPA COMPROVADA', item.stage]] : []),
+    ...(item.eventAt ? [['DATA DO FATO', date(item.eventAt)]] : []),
+    ...(item.eventMonth ? [['MÊS DO FATO', item.eventMonth.slice(5) + '/' + item.eventMonth.slice(0, 4)]] : []),
+    ...(item.originalPublishedAt ? [['DATA NA FONTE ORIGINAL', date(item.originalPublishedAt)]] : []),
     [item.publishedDateSource === 'url_edicao' ? 'DATA DA EDIÇÃO' : 'PUBLICADO EM', date(item.publishedAt)],
     ['ENCONTRADO PELA ÚLTIMA VEZ', date(item.lastSeenAt, true)],
     ['WHATSAPP', item.sentAt ? `Enviado em ${date(item.sentAt, true)}` : 'Não foi enviado'],
@@ -214,6 +224,8 @@ function detail(item, target) {
   panel.replaceChildren(head, node('h3', 'detail-head', displayTitle(item)),
     node('div', 'detail-meta', `${item.source || 'Fonte não informada'}${displayTitle(item) !== item.title ? ` · ${item.title}` : ''}`),
     decision, grid);
+  if (item.alertReason && item.alertDecision !== 'enviado') panel.append(label('Por que essa decisão de alerta?'),
+    node('p', 'detail-copy', item.alertReason));
   if (item.editorialReview) {
     const facts = Object.entries(item.editorialReview.facts || {});
     if (facts.length) {

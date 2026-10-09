@@ -9,6 +9,20 @@ test('painel distingue ausência de texto de um trecho disponível', () => {
   assert.equal(contentQuality('Consórcio abre concurso', 'O edital do concurso prevê onze vagas e inscrições até outubro.'), 'trecho_disponivel');
 });
 
+test('painel mostra fato confirmado na base, mas histórico para alerta', () => {
+  const row = { id: 'historico', titulo: 'Lei autoriza ingresso', fonte: 'Câmara',
+    url: 'https://example.org/lei', data_publicacao: '2026-10-08T00:00:00Z',
+    data_fato: '2026-06-23T12:00:00Z', decisao_base: 'confirmado',
+    decisao_alerta: 'historico', motivo_alerta: 'Lei de junho reindexada em outubro.',
+    primeira_coleta: '2026-10-08T00:00:00Z', ultima_coleta: '2026-10-09T00:00:00Z',
+    tipo_evento: 'ADESÃO AUTORIZADA', situacao_analise: 'confirmado por revisão editorial' };
+  const result = buildDashboardData({ archive: [row], events: [row], consortia: [], links: [], pendingIdentity: [] });
+  assert.equal(result.items[0].baseDecision, 'confirmado');
+  assert.equal(result.items[0].alertDecision, 'historico');
+  assert.equal(result.items[0].eventAt, '2026-06-23T12:00:00Z');
+  assert.match(result.items[0].alertReason, /reindexada/);
+});
+
 test('painel expõe falhas da última coleta sem confundir fonte desativada com erro', () => {
   const row = { id: 'titulo', titulo: 'Consórcio abre concurso - Portal', trecho: 'Consórcio abre concurso Portal',
     fonte: 'Portal', url: 'https://example.org', ultima_coleta: '2026-10-05T13:00:00Z' };

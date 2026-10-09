@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { canonicalUrl, selectUnseen } from './dedupe.mjs';
 import { classifyItem, isPublishableClassification, isStaleLegislativeDocument } from './classifier.mjs';
 import { normalizeForMatch } from './text.mjs';
+import { publicationDate, isNotifiable } from './publication-gate.mjs';
 
 function weeklyFinding(item) {
   if (item.aiReview?.status === 'disputed') return null;
@@ -47,6 +48,7 @@ export function observeRun(state, items, health, minimumScore, now = new Date(),
     const newerReview = newReviewed && (!oldReviewed ||
       new Date(item.aiReview.reviewedAt || 0) > new Date(previous.aiReview.reviewedAt || 0));
     const preservePrevious = previous &&
+      !['historico', 'descartado', 'data_inconsistente'].includes(item.publicationDecision) &&
       !newerReview && ((oldReviewed && !newReviewed) ||
         (oldReviewed === newReviewed && (previous.classification?.score || 0) > (item.classification?.score || 0)));
     const bestItem = preservePrevious ? previous : item;
@@ -89,8 +91,11 @@ export function weeklyWindow(now = new Date(), rolling = false) {
 export function buildWeeklyReport(state, { start, end }, minimumScore = 5) {
   const inside = (date) => new Date(date) >= start && new Date(date) < end;
   const observations = Object.values(state.observations || {}).filter((r) => inside(r.firstSeenAt));
-  const relevant = observations.map((r) => r.item).filter((i) =>
-    isPublishableClassification(i.classification, minimumScore) && i.kind !== 'gazette-index')
+  const relevant = observations.map((r) => r.item).filter((i) => {
+    const date = publicationDate(i)?.date;
+    return isNotifiable(i, minimumScore) && i.kind !== 'gazette-index' &&
+      (!date || new Date(date) >= start);
+  })
     .map(weeklyFinding).filter(Boolean);
   const sorted = relevant.sort((a, b) => b.classification.score - a.classification.score || new Date(b.publishedAt) - new Date(a.publishedAt));
   const events = selectUnseen(sorted, { seen: {}, pending: {} });

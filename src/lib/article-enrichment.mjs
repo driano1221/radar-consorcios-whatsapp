@@ -4,6 +4,7 @@ import { fetchWithRetry } from './http.mjs';
 import { normalizeWhitespace } from './text.mjs';
 import { classifyItem } from './classifier.mjs';
 import { readWithReadability, readWithTrafilatura } from './article-readers.mjs';
+import { sourcePublicationDate } from './publication-date.mjs';
 
 const { GoogleDecoder } = googleNewsDecoder;
 const decoder = new GoogleDecoder();
@@ -114,6 +115,7 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
     /(?:cf-chl-|challenge-platform|checking your browser before accessing)/i.test(html)) {
     onFailure(item, 'bloqueio_antibot'); return item;
   }
+  const publication = sourcePublicationDate(html);
   const tceText = new URL(articleUrl).hostname === 'www.tce.mg.gov.br' ? extractTceMgText(html) : '';
   const [readerResult, trafilaturaResult] = await Promise.allSettled([
     Promise.resolve().then(() => readability(html, articleUrl)),
@@ -132,6 +134,8 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   const incompleteComparison = !validReader || !validTrafilatura;
   const disagreement = !incompleteComparison && readerCategory !== trafilaturaCategory;
   return { ...item, articleUrl, summary: text.slice(0, 1800), rawText: text,
+    sourcePublishedAt: publication?.date || item.sourcePublishedAt || '',
+    sourceDateEvidence: publication?.source || item.sourceDateEvidence || '',
     contentProvenance: 'pagina_original', articleReader: text === tceText ? 'tce_mg_corpo'
       : validReader ? 'readability' : validTrafilatura ? 'trafilatura' : 'seletor_original',
     extractionCategories: { readability: readerCategory, trafilatura: trafilaturaCategory },

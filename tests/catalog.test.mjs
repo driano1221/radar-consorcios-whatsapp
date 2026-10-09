@@ -214,6 +214,28 @@ test('revisão editorial corrige categoria sem declarar adesão consumada', asyn
   }
 });
 
+test('replay histórico separa aceitação na base de alerta atual', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-base-alerta-'));
+  try {
+    const row = catalogRecord({ kind: 'news', title: 'Lei autoriza ingresso no consórcio',
+      url: 'https://exemplo.org/lei', publishedAt: '2026-10-08T12:00:00Z',
+      classification: { category: 'ADESÃO AUTORIZADA', score: 10,
+        evidenceText: 'Lei 1117/2026 autoriza ingresso de Campina Grande do Sul no CISPAR.' } }, at, at);
+    const review = { documento_id: row.id, decisao: 'confirmar_evento',
+      categoria: 'ADESÃO AUTORIZADA', motivo: 'lei sancionada em junho', evidencia: row.trecho,
+      data_fato: '2026-06-23T12:00:00Z',
+      trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+    await writeFile(path.join(directory, 'revisoes-eventos.ndjson'), `${JSON.stringify(review)}\n`);
+    const result = await saveCatalog(directory, new Map([[row.id, row]]),
+      { now: new Date('2026-10-09T12:00:00Z') });
+    assert.equal(result.relevant, 1);
+    const events = await readFile(path.join(directory, 'eventos.csv'), 'utf8');
+    assert.match(events, /decisao_base,decisao_alerta/);
+    assert.match(events, /"confirmado","historico"/);
+    assert.match(events, /2026-06-23T12:00:00Z/);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
 test('sigla suspeita fica sem identidade até conferir o ato, com revisão lacrada ao trecho', async () => {
   const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-identidade-pendente-'));
   try {

@@ -54,8 +54,8 @@ Cada scraper possui ativação própria. TCE-MG e TCE-SP podem publicar quando o
 
 1. consulta as fontes em paralelo, com timeout e nova tentativa;
 2. normaliza e reúne as publicações;
-3. classifica os eventos e calcula a relevância;
-4. elimina duplicidades;
+3. classifica os eventos e decide separadamente se entram na base e se são novidade para o WhatsApp;
+4. confere a data da página original e do ato quando disponíveis, e elimina duplicidades;
 5. ordena por pontuação e, em caso de empate, pela publicação mais recente;
 6. seleciona até três candidatos, respeitando o limite diário;
 7. envia as mensagens com intervalo de seis segundos;
@@ -76,6 +76,8 @@ A deduplicação combina:
 - similaridade do conteúdo dentro da mesma categoria;
 - comparação entre fontes na mesma rodada;
 - histórico persistente das notícias enviadas por 365 dias.
+- endereço original do artigo quando o Google fornece outro link;
+- identidade da lei quando número e município constam explicitamente do texto.
 
 Isso permite reconhecer, por exemplo, o mesmo ato publicado por duas fontes com títulos e endereços diferentes. Nenhum método é infalível; casos reais observados durante o piloto serão usados para calibrar os limiares.
 

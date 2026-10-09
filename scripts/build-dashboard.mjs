@@ -160,6 +160,12 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
         : appliedReview?.categoria || (pdfReassessment ? 'GOVERNANÇA' : inEvents ? curated.tipo_evento : 'GERAL'),
       score: stale || rejectedByReview || duplicateByReview ? '' : decision?.score ?? row.pontuacao,
       baseStatus: inEvents ? 'evento_candidato' : 'arquivo_bruto',
+      baseDecision: curated?.decisao_base || row.decisao_base || (inEvents ? 'candidato' : 'descartado'),
+      alertDecision: curated?.decisao_alerta || row.decisao_alerta || '',
+      alertReason: curated?.motivo_alerta || row.motivo_alerta || '',
+      eventAt: curated?.data_fato || row.data_fato || '',
+      eventMonth: curated?.mes_fato || row.mes_fato || '',
+      originalPublishedAt: curated?.data_noticia_original || row.data_noticia_original || '',
       activeCandidate, pendingReview, rejectedEvent, legacyUnverified,
       decisionStatus: stale || rejectedByReview || duplicateByReview ? 'descartado'
         : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'

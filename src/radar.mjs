@@ -1,7 +1,7 @@
 import { mkdir, writeFile, appendFile } from 'node:fs/promises';
 import path from 'node:path';
 import { loadConfig } from './config.mjs';
-import { classifyItem, isPublishableClassification } from './lib/classifier.mjs';
+import { classifyItem } from './lib/classifier.mjs';
 import {
   loadState,
   markSeen,
@@ -29,8 +29,9 @@ import { applyAiReview, reviewQueue, shouldReviewWithAi } from './lib/ai-review.
 import { itemId } from './lib/dedupe.mjs';
 import { recordRunDecisions } from './lib/decision-ledger.mjs';
 import { enrichArticles, classifyEnrichedItem } from './lib/article-enrichment.mjs';
-import { applyEditorialGuard, loadEditorialGuard } from './lib/editorial-guard.mjs';
+import { applyEditorialGuard, loadConfirmedEventRegistry, loadEditorialGuard } from './lib/editorial-guard.mjs';
 import { resolveArticlePreviews } from './lib/preview-resolution.mjs';
+import { decidePublication, isNotifiable } from './lib/publication-gate.mjs';
 import { fileURLToPath } from 'node:url';
 
 async function appendGitHubSummary(markdown) {
@@ -45,8 +46,12 @@ async function main() {
   }
   const since = new Date(Date.now() - config.lookbackHours * 60 * 60 * 1000);
   const state = await loadState(config.stateFile);
-  const editorialGuard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
+  const catalogDirectory = fileURLToPath(new URL('../data/catalogo/', import.meta.url));
+  const [editorialGuard, confirmedEvents] = await Promise.all([
+    loadEditorialGuard(catalogDirectory), loadConfirmedEventRegistry(catalogDirectory),
+  ]);
   console.log(`[revisão] ${editorialGuard.size} decisões editoriais recuperadas (aceites, descartes e duplicatas).`);
+  console.log(`[episódios] ${confirmedEvents.size} atos formais com identidade confirmada no catálogo.`);
   pruneState(state, config.stateRetentionDays, config.pendingRetentionDays);
 
   console.log(`Coletando publicações desde ${since.toISOString()}...`);
@@ -118,9 +123,11 @@ async function main() {
       `${classified.filter((item) => item.triageResolution?.decision === 'adotado').length} adotado(s); ` +
       `${classified.filter((item) => item.triageResolution?.decision === 'descartado').length} descartado(s).`);
   }
+  const publicationOptions = { lookbackHours: config.lookbackHours, minimumScore: config.minimumScore };
+  classified = classified.map((item) => decidePublication(item, publicationOptions));
   if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
   const relevant = classified
-    .filter((item) => isPublishableClassification(item.classification, config.minimumScore))
+    .filter((item) => isNotifiable(item, config.minimumScore))
     .sort((a, b) => {
       const scoreDifference = b.classification.score - a.classification.score;
       return scoreDifference || new Date(b.publishedAt) - new Date(a.publishedAt);
@@ -129,11 +136,13 @@ async function main() {
   const publishableRelevant = relevant.filter((item) => !item.previewOnly);
   const sentToday = countSentToday(state);
   const remainingToday = Math.max(0, config.maxPostsPerDay - sentToday);
-  const discovered = selectUnseen(publishableRelevant, state);
+  const discovered = selectUnseen(publishableRelevant, state, { confirmedEvents });
   if (config.sendEnabled) enqueuePending(state, discovered);
   if (config.sendEnabled) {
     const removed = reclassifyPending(state, config.minimumScore,
-      (item, classification) => applyEditorialGuard({ ...item, classification }, editorialGuard).classification);
+      (item, classification) => applyEditorialGuard({ ...item, classification }, editorialGuard).classification,
+      (item, classification) => isNotifiable(decidePublication(
+        applyEditorialGuard({ ...item, classification }, editorialGuard), publicationOptions), config.minimumScore));
     if (removed) console.log(`[fila] ${removed} item(ns) antigos descartados após reclassificação.`);
   }
   if (config.persistState) await saveState(config.stateFile, state);
@@ -154,8 +163,8 @@ async function main() {
     sourceHealth.push({ name: 'DeepSeek', status: apiFailure ? 'error' : 'ok',
       itemCount: reviewResult.callsRun, ...(apiFailure ? { message: apiFailure.reason } : {}) });
   }
-  const finalClassified = classified.map((item) => config.aiReviewEnabled
-    ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item);
+  const finalClassified = classified.map((item) => decidePublication(config.aiReviewEnabled
+    ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item, publicationOptions));
   if (config.persistState) recordRunDecisions(state, finalClassified, {
     minimumScore: config.minimumScore,
     relevant, discovered, selected: unseen,
@@ -167,7 +176,7 @@ async function main() {
   state.shortLinks ||= {};
   const presentedUnseen = [];
   for (const item of unseen) presentedUnseen.push(await presentItem(item, state.shortLinks));
-  const scraperPreview = selectUnseen(previewRelevant, state).slice(0, 50);
+  const scraperPreview = selectUnseen(previewRelevant, state, { confirmedEvents }).slice(0, 50);
   const scraperObservations = collected.filter((item) => item.scraper);
   const funnel = buildSourceFunnel({
     collected,
@@ -228,8 +237,11 @@ async function main() {
       generatedAt: new Date().toISOString(),
       minimumScore: config.minimumScore,
       items: finalClassified.map(({ title, url, source, sourceUrl, kind, previewOnly, reviewReason,
-        triageResolution, classification, aiReview }) => ({
+        triageResolution, classification, aiReview, catalogDecision, publicationDecision,
+        publicationReason, publicationDateSource, sourcePublishedAt, eventAt, eventMonth, eventKey }) => ({
         title, url, source, sourceUrl, kind, previewOnly, reviewReason, triageResolution, classification, aiReview,
+        catalogDecision, publicationDecision, publicationReason, publicationDateSource,
+        sourcePublishedAt, eventAt, eventMonth, eventKey,
       })),
     }, null, 2)}\n`,
     'utf8',

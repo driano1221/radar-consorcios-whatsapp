@@ -36,6 +36,7 @@ const RATIFIED_STATUTE = /\bratifica\s+o\s+estatuto\s+consolidado\s+do\s+cons[o�
 const SERVICE_CONTRACT = /\bextrato\s+do\s+contrato\s+de\s+presta[cç][aã]o\s+de\s+servi[cç]os\s+n[º°.]?\s*\d+\/20\d{2}[\s\S]{0,700}\bpartes\s*:\s*o\s+munic[ií]pio[\s\S]{0,180}\bcons[oó]rcio/i;
 const PAICI_WITHHELD = /\binadimpl[eê]ncia\b[\s\S]{0,300}\b(?:munic[ií]pios|incentivo\s+estadual)\b[\s\S]{0,650}\bPAICI\b/i;
 const HQ_CONSTRUCTION = /\bnova\s+sede\b.{0,100}\b(?:em\s+fase\s+de\s+constru[cç][aã]o|em\s+constru[cç][aã]o)/i;
+const CONSTRUCTION_MILESTONE = /\b(?:assinou\s+(?:a\s+)?ordem\s+de\s+servi[cç]o|iniciou\s+(?:as\s+)?obras|concluiu\s+(?:as\s+)?obras|inaugurou\s+(?:a\s+)?(?:nova\s+)?sede)\b/i;
 const FUTURE_ASSEMBLY = /\b(?:realizar[aá]|acontecer[aá])\b.{0,150}\b(?:assembleia|reuni[aã]o|visita\s+t[eé]cnica)|\b(?:assembleia|reuni[aã]o|visita\s+t[eé]cnica)\b.{0,150}\b(?:realizar[aá]|acontecer[aá])/i;
 const ACCOUNTS_REJECTED = /\b(?:reprovou|desaprovou|rejeitou)\s+(?:a\s+)?(?:presta[cç][aã]o\s+de\s+)?contas\s+(?:de\s+20\d{2}\s+)?d[oa]\s+cons[oó]rcio|\bcontas\s+(?:de\s+20\d{2}\s+)?d[oa]\s+cons[oó]rcio\b.{0,100}\b(?:reprovadas|desaprovadas|rejeitadas)/i;
 const CALL_OPENED = /\bcons[oó]rcio\b.{0,180}\b(?:(?:abriu|publicou|lan[cç]ou)\s+(?:o\s+|um\s+)?chamamento\s+p[uú]blico|recebe\s+a\s+documenta[cç][aã]o\s+das\s+interessadas)/i;
@@ -174,12 +175,12 @@ export function refineEventProof(item, classification) {
     literalEvidence(text, [ELECTION_RESCHEDULED], 25, 170));
   }
 
-  if (['GOVERNANÇA', 'ATUAÇÃO'].includes(classification.category) &&
-    FUTURE_ASSEMBLY.test(`${title} ${text}`) && HQ_CONSTRUCTION.test(text)) {
-    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰',
-      stage: 'sede em construção; reunião e visita ainda futuras',
-      reasons: [...classification.reasons, 'construção presente comprovada; agenda futura não realizada'] },
-    literalEvidence(text, [HQ_CONSTRUCTION], 60, 140));
+  if (FUTURE_ASSEMBLY.test(`${title} ${text}`) && HQ_CONSTRUCTION.test(text) &&
+    !CONSTRUCTION_MILESTONE.test(text)) {
+    return withEvidence({ ...classification, category: 'GERAL', emoji: '📰', score: 0,
+      stage: 'agenda futura; obra em andamento citada como contexto',
+      reasons: [...classification.reasons, 'rejeitado: anúncio de reunião futura não comprova novo marco da obra'] },
+    literalEvidence(text, [FUTURE_ASSEMBLY, HQ_CONSTRUCTION], 50, 140));
   }
   if (['GOVERNANÇA', 'ATUAÇÃO'].includes(classification.category) &&
     FUTURE_ASSEMBLY.test(`${title} ${text}`) &&

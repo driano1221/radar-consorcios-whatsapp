@@ -8,12 +8,29 @@ import { formatWeeklyMessages } from './lib/format.mjs';
 import { sendMessages } from './lib/whatsapp.mjs';
 import { presentItem, shortenLongUrl } from './lib/message-presentation.mjs';
 import { reviewWeeklyFindings } from './lib/ai-review.mjs';
+import { applyEditorialGuard, loadEditorialGuard } from './lib/editorial-guard.mjs';
+import { decidePublication } from './lib/publication-gate.mjs';
+import { classifyItem } from './lib/classifier.mjs';
+import { fileURLToPath } from 'node:url';
 
 async function main() {
   const config = await loadConfig();
   const state = await loadState(config.stateFile);
   const groupId = process.env.WHATSAPP_WEEKLY_GROUP_ID?.trim() || config.groupId;
   const window = weeklyWindow(new Date(), !config.sendEnabled || process.env.WEEKLY_TEST === 'true');
+  const editorialGuard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
+  const reportState = { ...state, observations: Object.fromEntries(
+    Object.entries(state.observations || {}).map(([key, observation]) => [key, {
+      ...observation,
+      item: observation.item ? decidePublication(applyEditorialGuard({ ...observation.item,
+        classification: classifyItem({ ...observation.item,
+          rawText: observation.item.summary || observation.item.rawText || '',
+          excerpts: [observation.item.classification?.evidenceText, observation.item.summary].filter(Boolean),
+        }),
+      }, editorialGuard),
+      { now: window.end, lookbackHours: config.lookbackHours, minimumScore: config.minimumScore }) : observation.item,
+    }]),
+  ) };
   const edition = process.env.WEEKLY_EDITION?.trim() || '';
   if (edition && !/^[a-z0-9-]{1,40}$/.test(edition)) throw new Error('WEEKLY_EDITION inválida.');
   const id = `${process.env.WEEKLY_TEST === 'true' ? 'test:' : ''}${window.end.toISOString().slice(0, 10)}:${edition ? `${edition}:` : ''}${createHash('sha256').update(groupId).digest('hex').slice(0, 12)}`;
@@ -24,7 +41,7 @@ async function main() {
     return;
   }
   state.shortLinks ||= {};
-  const baseReport = existing?.report || buildWeeklyReport(state, window, config.minimumScore);
+  const baseReport = existing?.report || buildWeeklyReport(reportState, window, config.minimumScore);
   const ai = config.aiReviewEnabled && !existing?.text && !existing?.messages
     ? await reviewWeeklyFindings(baseReport.highlights, state, { apiKey: process.env.DEEPSEEK_API_KEY }) : null;
   const reviewedReport = ai ? { ...baseReport, highlights: ai.highlights, events: ai.highlights.length,

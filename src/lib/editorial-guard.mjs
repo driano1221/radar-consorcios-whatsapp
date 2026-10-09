@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { canonicalUrl } from './dedupe.mjs';
+import { formalEventKey } from './event-identity.mjs';
 
 const EMOJI = { CRIAÇÃO: '🟩', ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', SAÍDA: '🟧',
   RATEIO: '🟪', PROTOCOLO: '🟨', GOVERNANÇA: '🟨', CONTROLE: '🔎', CRISE: '🟥', ATUAÇÃO: '📰' };
@@ -36,31 +37,55 @@ export async function loadEditorialGuard(directory) {
   return guard;
 }
 
+// Documentos diferentes sobre a mesma lei permanecem na base, mas o ato
+// confirmado por uma fonte não deve gerar novo alerta por outra fonte.
+export async function loadConfirmedEventRegistry(directory) {
+  const [archive, reviews] = await Promise.all([
+    readNdjson(path.join(directory, 'arquivo-coletas.ndjson')),
+    readNdjson(path.join(directory, 'revisoes-eventos.ndjson')),
+  ]);
+  const byId = new Map(archive.map((row) => [row.id, row]));
+  const registry = new Map();
+  for (const review of reviews) {
+    if (!['confirmar_evento', 'corrigir_categoria'].includes(review.decisao)) continue;
+    const row = byId.get(review.documento_id);
+    if (!row || !review.trecho_sha256 || createHash('sha256').update(row.trecho || '').digest('hex') !== review.trecho_sha256) continue;
+    const key = formalEventKey({ title: row.titulo,
+      classification: { category: review.categoria, evidenceText: review.evidencia },
+      editorialFacts: review.fatos || {} });
+    if (!key) continue;
+    if (!registry.has(key)) registry.set(key, new Set());
+    registry.get(key).add(canonicalUrl(row.url));
+    if (row.article_url) registry.get(key).add(canonicalUrl(row.article_url));
+  }
+  return registry;
+}
+
 export function applyEditorialGuard(item, guard) {
   const review = guard.get(canonicalUrl(item.url || ''));
   if (!review) return item;
   const previous = item.classification || {};
   if (['confirmar_evento', 'corrigir_categoria'].includes(review.decisao)) {
-    // Um fato pode ser válido para a base histórica sem ser notícia nova.
-    // A revisão continua positiva no catálogo, mas não reabre a fila de envio.
-    if (review.publicar === false) return { ...item, classification: {
-      ...previous, category: 'GERAL', emoji: '📰', score: 0,
-      stage: 'fato histórico registrado; sem novidade para envio',
-      evidenceText: review.evidencia,
-      reasons: [...(previous.reasons || []), `não publicar: revisão editorial — ${review.motivo_publicacao || review.motivo}`],
-    }, editorialDecision: review.decisao, publicationDecision: 'arquivar_sem_envio' };
     return { ...item, previewOnly: false, reviewReason: '', classification: {
       ...previous, category: review.categoria, emoji: EMOJI[review.categoria],
       score: Math.max(5, previous.score || 0),
       stage: review.etapa || previous.stage,
       evidenceText: review.evidencia,
       reasons: [...(previous.reasons || []), `confirmado por revisão editorial — ${review.motivo}`],
-    }, editorialDecision: review.decisao };
+    }, editorialDecision: review.decisao, catalogDecision: 'confirmado',
+    editorialFacts: review.fatos || {},
+    ...(review.data_fato ? { eventAt: review.data_fato } : {}),
+    ...(review.mes_fato ? { eventMonth: review.mes_fato } : {}),
+    ...(review.publicar === false ? {
+      publicationDecision: 'historico',
+      publicationReason: review.motivo_publicacao || review.motivo,
+    } : {}) };
   }
   return { ...item, classification: {
     ...previous, category: 'GERAL', emoji: '📰', score: 0,
     stage: review.decisao === 'duplicata' ? 'episódio já registrado' : 'descartado após revisão documental',
     reasons: [...(previous.reasons || []), `rejeitado: revisão editorial — ${review.motivo}`],
     evidenceText: review.evidencia,
-  }, editorialDecision: review.decisao };
+  }, editorialDecision: review.decisao, catalogDecision: 'descartado',
+    publicationDecision: 'descartado', publicationReason: review.motivo };
 }

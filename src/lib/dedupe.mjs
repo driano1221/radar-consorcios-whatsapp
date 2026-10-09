@@ -3,6 +3,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { normalizeForMatch } from './text.mjs';
 import { classifyItem, isPublishableClassification } from './classifier.mjs';
+import { formalEventKey } from './event-identity.mjs';
 
 const STOP_WORDS = new Set([
   'a', 'ao', 'aos', 'as', 'com', 'consorcio', 'consorcios', 'da', 'das', 'de', 'do', 'dos', 'e',
@@ -102,8 +103,10 @@ function eventHeadline(title = '', source = '') {
 
 function resemblesKnownEvent(item, tokens, records, threshold = 0.66) {
   return records.some((record) => {
-    const closeInTime = !item.publishedAt || !(record.publishedAt || record.sentAt) ||
-      Math.abs(new Date(item.publishedAt) - new Date(record.publishedAt || record.sentAt)) <= 7 * 86400000;
+    const itemDate = item.eventAt || item.sourcePublishedAt || item.publishedAt;
+    const recordDate = record.eventAt || record.sourcePublishedAt || record.publishedAt || record.sentAt;
+    const closeInTime = !itemDate || !recordDate ||
+      Math.abs(new Date(itemDate) - new Date(recordDate)) <= 7 * 86400000;
     if (!closeInTime) return false;
     const headline = eventHeadline(item.title, item.source);
     const knownHeadline = eventHeadline(record.title, record.source);
@@ -113,27 +116,45 @@ function resemblesKnownEvent(item, tokens, records, threshold = 0.66) {
   });
 }
 
-export function selectUnseen(items, state) {
+export function selectUnseen(items, state, { confirmedEvents = new Map() } = {}) {
   const pendingRecords = Object.values(state.pending || {}).map(({ item }) => ({
     category: item.classification?.category,
     contentTokens: item.contentTokens,
     titleFingerprint: item.titleFingerprint,
     publishedAt: item.publishedAt,
+    sourcePublishedAt: item.sourcePublishedAt, eventAt: item.eventAt,
+    articleUrl: item.articleUrl, eventKey: item.eventKey || formalEventKey(item),
     title: item.title,
     source: item.source,
   }));
   const records = [...Object.values(state.seen), ...pendingRecords];
+  const sentUrls = new Set(Object.values(state.seen || {}).map((record) => canonicalUrl(record.url || '')).filter(Boolean));
+  const sentObservations = Object.values(state.observations || {}).map((record) => record.item)
+    .filter((item) => item && sentUrls.has(canonicalUrl(item.url || '')));
   // Títulos genéricos de diários antigos não identificam o ato nem sua edição.
   const knownFingerprints = new Set(records.filter((r) => !/^Diário Oficial de /i.test(r.title || '')).map((record) => record.titleFingerprint).filter(Boolean));
+  const knownArticles = new Set([...records, ...sentObservations]
+    .map((record) => canonicalUrl(record.articleUrl || '')).filter(Boolean));
+  const knownEvents = new Set([...records, ...sentObservations]
+    .map((record) => record.eventKey || formalEventKey(record)).filter(Boolean));
   const batchFingerprints = new Set();
+  const batchArticles = new Set();
+  const batchEvents = new Set();
   const batchRecords = [];
 
   return items.filter((item) => {
     const id = itemId(item);
     const fingerprint = titleFingerprint(item);
+    const articleUrl = canonicalUrl(item.articleUrl || '');
+    const eventKey = item.eventKey || formalEventKey(item);
+    const confirmedUrls = eventKey ? confirmedEvents.get(eventKey) : null;
     const contentTokens = significantTokens(item);
     if (
       state.seen[id] ||
+      (confirmedUrls?.size && !confirmedUrls.has(canonicalUrl(item.url || '')) &&
+        !confirmedUrls.has(articleUrl)) ||
+      (articleUrl && (knownArticles.has(articleUrl) || batchArticles.has(articleUrl))) ||
+      (eventKey && (knownEvents.has(eventKey) || batchEvents.has(eventKey))) ||
       knownFingerprints.has(fingerprint) ||
       batchFingerprints.has(fingerprint) ||
       resemblesKnownEvent(item, contentTokens, records) ||
@@ -143,10 +164,14 @@ export function selectUnseen(items, state) {
     }
     item.id = id;
     item.titleFingerprint = fingerprint;
+    if (eventKey) item.eventKey = eventKey;
     item.contentTokens = contentTokens;
     batchFingerprints.add(fingerprint);
+    if (articleUrl) batchArticles.add(articleUrl);
+    if (eventKey) batchEvents.add(eventKey);
     batchRecords.push({ category: item.classification?.category, contentTokens,
-      publishedAt: item.publishedAt, title: item.title, source: item.source });
+      publishedAt: item.publishedAt, sourcePublishedAt: item.sourcePublishedAt, eventAt: item.eventAt,
+      articleUrl: item.articleUrl, eventKey, title: item.title, source: item.source });
     return true;
   });
 }
@@ -166,6 +191,7 @@ export function enqueuePending(state, items, queuedAt = new Date().toISOString()
         ...item,
         id,
         titleFingerprint: item.titleFingerprint || titleFingerprint(item),
+        eventKey: item.eventKey || formalEventKey(item),
         contentTokens: item.contentTokens || significantTokens(item),
       },
     };
@@ -185,13 +211,14 @@ export function listPending(state) {
 
 // Uma regra editorial corrigida deve valer para a fila persistida antes de
 // consultar a IA ou enviar itens classificados em execuções antigas.
-export function reclassifyPending(state, minimumScore = 5, editorialGuard = null) {
+export function reclassifyPending(state, minimumScore = 5, editorialGuard = null, eligible = null) {
   let removed = 0;
   for (const [id, record] of Object.entries(state.pending || {})) {
     const classification = editorialGuard
       ? editorialGuard(record.item, classifyItem(record.item))
       : classifyItem(record.item);
-    if (!isPublishableClassification(classification, minimumScore)) {
+    if (!isPublishableClassification(classification, minimumScore) ||
+      (eligible && !eligible(record.item, classification))) {
       delete state.pending[id];
       removed += 1;
     } else {
@@ -234,6 +261,8 @@ export function markSeen(state, item, sentAt = new Date().toISOString()) {
     category: item.classification?.category || 'GERAL',
     source: item.source,
     publishedAt: item.publishedAt,
+    sourcePublishedAt: item.sourcePublishedAt || '', eventAt: item.eventAt || '',
+    articleUrl: item.articleUrl || '', eventKey: item.eventKey || formalEventKey(item),
   };
   if (state.pending) delete state.pending[id];
 }

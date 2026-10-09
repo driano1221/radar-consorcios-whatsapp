@@ -19,13 +19,15 @@ Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial 
 
 `tipo_evento` é uma hipótese de classificação. `etapa` distingue projeto, autorização, ato publicado e relato. `situacao_analise` distingue candidato, revisão por IA, publicação no WhatsApp e rejeição. **Nenhum desses campos comprova sozinho que um município entrou ou saiu de um consórcio.** Por isso `efeito_na_participacao` permanece “não inferido automaticamente” até haver revisão documental específica.
 
+`decisao_base` e `decisao_alerta` são decisões diferentes: um acontecimento pode estar **confirmado** na base e ser **histórico** para o WhatsApp. `data_fato` guarda apenas uma data exata comprovada; `mes_fato` registra mês conhecido sem inventar dia; `data_noticia_original` vem da página da fonte, não do Google. O alerta usa primeiro a data do fato, depois a data expressa no título de um ato formal, depois a data original da página e, por último, a data da coleta. A janela padrão de novidade é de sete dias. Quando a data original não está disponível, a decisão conserva essa limitação; não presume que a data do Google é a data do ato.
+
 Cada linha mantém título, data da publicação, município/UF quando conhecidos, fonte, URL, um pequeno trecho de evidência e datas da primeira/última coleta. Campos vazios indicam informação não identificada com segurança, não ausência do fato. O arquivo técnico omite o texto integral e mascara CPF e e-mail nos trechos para não duplicar dados pessoais desnecessariamente.
 
 Registros marcados como **“legado sem texto”** correspondem a envios antigos cujo trecho original não foi preservado. Eles permanecem na base para rastreabilidade, mas exigem abrir o documento antes de qualquer uso analítico.
 
 ## Atualização e limites da recuperação
 
-`npm run catalog:update` acrescenta/atualiza o que está no estado atual. `npm run catalog:backfill` também percorre as versões de `state/news-state.json` existentes no histórico Git. A carga retroativa recupera **o que foi preservado nessas versões**, não publicações que nunca foram coletadas nem o texto integral que o radar já descartou. Documentos repetidos na mesma URL são consolidados; fontes distintas sobre o mesmo fato ainda podem aparecer como linhas separadas.
+`npm run catalog:update` acrescenta/atualiza o que está no estado atual e reaplica a decisão de novidade às linhas históricas de `eventos.csv`. `npm run catalog:backfill` também percorre as versões de `state/news-state.json` existentes no histórico Git. A carga retroativa recupera **o que foi preservado nessas versões**, não publicações que nunca foram coletadas nem o texto integral que o radar já descartou. Documentos repetidos na mesma URL são consolidados; fontes distintas sobre o mesmo fato ainda podem aparecer como linhas separadas na base para preservar a proveniência. No envio, o radar compara também o endereço original da página e a identidade do ato quando município e número da lei estão explícitos.
 
 A base é versionada no repositório e não exige serviço externo. Revisão humana, resolução de identidade dos consórcios e confirmação da composição municipal são passos posteriores; não devem ser inferidos automaticamente apenas de uma notícia, projeto de lei ou contrato de rateio.
 

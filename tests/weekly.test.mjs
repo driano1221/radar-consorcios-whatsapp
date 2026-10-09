@@ -35,6 +35,15 @@ test('resumo inclui achados não enviados sem somar observações repetidas', ()
   assert.doesNotMatch(formatWeeklyMessage(report), /publicações únicas|Histórico parcial|Cobertura com falhas/);
 });
 
+test('resumo não ressuscita notícia reindexada cujo fato é de outra semana', () => {
+  const state = { seen: {}, pending: {} };
+  const old = { ...item, publishedAt: '2026-09-18T15:00:00Z',
+    eventAt: '2026-08-12T12:00:00Z', publicationDecision: 'historico' };
+  observeRun(state, [old], [], 5, new Date('2026-09-18T17:00:00Z'));
+  const report = buildWeeklyReport(state, weeklyWindow(new Date('2026-09-19T13:00:00Z')));
+  assert.equal(report.events, 0);
+});
+
 test('contadores de saúde zeram apenas depois de uma coleta saudável', () => {
   const state = { seen: {} };
   for (let n = 0; n < 3; n++) observeRun(state, [], [{ name: 'QD', status: 'error' }], 5);

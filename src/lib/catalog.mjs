@@ -5,9 +5,12 @@ import { canonicalUrl } from './dedupe.mjs';
 import { classifyItem, isStaleLegislativeDocument } from './classifier.mjs';
 import { normalizeWhitespace } from './text.mjs';
 import { buildIdentityCatalog, identityKey } from './consortium-identity.mjs';
+import { decidePublication } from './publication-gate.mjs';
+import { formalActDate } from './publication-date.mjs';
 
 const FIELDS = [
   'id', 'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
+  'data_noticia_original', 'data_fato', 'mes_fato', 'decisao_base', 'decisao_alerta', 'motivo_alerta',
   'etapa', 'situacao_analise', 'efeito_na_participacao', 'tipo_documento',
   'consorcio', 'sigla', 'municipio', 'uf', 'titulo', 'fonte', 'url',
   'trecho', 'pontuacao', 'revisao_ia', 'enviado_em',
@@ -70,6 +73,10 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
     id,
     primeira_coleta: firstSeenAt || '', ultima_coleta: lastSeenAt || '',
     data_publicacao: item.publishedAt || '', tipo_evento: item.classification?.category || 'NÃO CLASSIFICADO',
+    data_noticia_original: item.sourcePublishedAt || '', data_fato: item.eventAt || '',
+    mes_fato: item.eventMonth || '',
+    decisao_base: item.catalogDecision || (item.classification?.category === 'GERAL' ? 'descartado' : 'candidato'),
+    decisao_alerta: item.publicationDecision || '', motivo_alerta: safeText(item.publicationReason, 300),
     etapa: stage(item, type), situacao_analise: analysisStatus(item, sentAt),
     efeito_na_participacao: 'não inferido automaticamente', tipo_documento: type,
     consorcio: safeText(item.entityName, 180), sigla: safeText(item.entityAlias, 40),
@@ -128,6 +135,12 @@ export function mergeCatalogRecord(existing, incoming) {
     article_suggestion_evidence: existing.article_suggestion_evidence || incoming.article_suggestion_evidence || '',
     article_duplicate_of: existing.article_duplicate_of || incoming.article_duplicate_of || '',
     data_publicacao: best.data_publicacao || existing.data_publicacao || incoming.data_publicacao,
+    data_noticia_original: incoming.data_noticia_original || existing.data_noticia_original || '',
+    data_fato: incoming.data_fato || existing.data_fato || '',
+    mes_fato: incoming.mes_fato || existing.mes_fato || '',
+    decisao_base: incoming.decisao_base || existing.decisao_base || 'candidato',
+    decisao_alerta: incoming.decisao_alerta || existing.decisao_alerta || '',
+    motivo_alerta: incoming.motivo_alerta || existing.motivo_alerta || '',
   };
 }
 
@@ -189,7 +202,7 @@ export async function loadCatalog(file) {
   }
 }
 
-export async function saveCatalog(directory, records) {
+export async function saveCatalog(directory, records, { now = new Date(), lookbackHours = 168 } = {}) {
   await mkdir(directory, { recursive: true });
   const all = [...records.values()].sort((a, b) => a.id.localeCompare(b.id));
   await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), all.map((row) => JSON.stringify(row)).join('\n') + '\n');
@@ -215,10 +228,32 @@ export async function saveCatalog(directory, records) {
       const review = decisions.get(row.id);
       result = { ...row,
       tipo_evento: ['nao_evento', 'duplicata'].includes(review.decisao) ? 'GERAL' : review.categoria,
+      pontuacao: ['nao_evento', 'duplicata'].includes(review.decisao) ? 0 : Math.max(5, Number(row.pontuacao || 0)),
       etapa: review.etapa || row.etapa,
       situacao_analise: `${review.decisao === 'nao_evento' ? 'rejeitado' : review.decisao === 'duplicata' ? 'duplicata descartada' : review.decisao === 'confirmar_evento' ? 'confirmado' : 'categoria corrigida'} por revisão editorial — ${review.motivo}`,
+      decisao_base: ['nao_evento', 'duplicata'].includes(review.decisao) ? 'descartado' : 'confirmado',
+      decisao_alerta: review.publicar === false ? 'historico' : row.decisao_alerta || '',
+      motivo_alerta: review.publicar === false ? review.motivo_publicacao || review.motivo : row.motivo_alerta || '',
+      data_fato: review.data_fato || row.data_fato || '',
+      mes_fato: review.mes_fato || row.mes_fato || '',
       revisao_editorial: review };
     }
+    result = { ...result, data_fato: result.data_fato || formalActDate({ title: result.titulo }, now) };
+    const alert = decidePublication({
+      title: result.titulo,
+      publishedAt: result.data_publicacao,
+      sourcePublishedAt: result.data_noticia_original,
+      eventAt: result.data_fato,
+      eventMonth: result.mes_fato,
+      classification: { category: result.tipo_evento, score: Number(result.pontuacao || 5) },
+      publicationDecision: reviewStillMatches(row) && decisions.get(row.id)?.publicar === false ? 'historico' : '',
+      publicationReason: reviewStillMatches(row) && decisions.get(row.id)?.publicar === false
+        ? result.motivo_alerta : '',
+    }, { now, lookbackHours });
+    result = { ...result,
+      decisao_alerta: result.enviado_em ? 'enviado' : alert.publicationDecision,
+      motivo_alerta: result.enviado_em ? 'Enviado ao WhatsApp anteriormente.' : alert.publicationReason,
+    };
     // O arquivo bruto mantém inclusive envios antigos, mas uma data de indexação
     // recente não deve transformá-los em eventos atuais nas tabelas derivadas.
     if (isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: row.data_publicacao })) {

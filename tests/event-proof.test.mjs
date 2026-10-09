@@ -127,12 +127,12 @@ test('cláusula-padrão de improbidade em contrato de rateio não é fiscalizaç
   assert.match(result.reasons.join(' '), /não é ato de controle/);
 });
 
-test('CONIAPE tem sede em construção, sem declarar assembleia futura já realizada', () => {
+test('CONIAPE anuncia assembleia futura; obra em andamento é contexto, não novo marco', () => {
   const rawText = 'O CONIAPE, Consórcio Público Intermunicipal do Agreste, realizará sua Assembleia Ordinária em 14 de outubro. O encontro acontecerá nas instalações da nova sede, que se encontra atualmente em fase de construção. Haverá visita técnica e sessão de prestação de contas.';
   const result = classifyItem({ kind: 'news', title: 'CONIAPE realiza assembleia e visita técnica', rawText });
-  assert.equal(result.category, 'ATUAÇÃO');
-  assert.match(result.stage, /reunião e visita ainda futuras/);
-  assert.match(result.evidenceText, /nova sede/);
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.stage, /agenda futura/);
+  assert.match(result.reasons.join(' '), /novo marco da obra/);
 });
 
 test('agenda futura sem obra ou ato consumado não vira evento', () => {
