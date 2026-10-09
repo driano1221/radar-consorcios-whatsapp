@@ -1,7 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { buildDashboardData, contentQuality } from '../scripts/build-dashboard.mjs';
+import { buildDashboardData, contentQuality, makeBaseTable } from '../scripts/build-dashboard.mjs';
+
+test('base expõe todas as colunas, até em tabela vazia, com explicação e ordem legível', () => {
+  const empty = makeBaseTable('participacoes', [], ['consorcio', 'municipio', 'ano_ingresso']);
+  assert.equal(empty.rows.length, 0);
+  assert.deepEqual(empty.columns.map((column) => column.key), ['consorcio', 'municipio', 'ano_ingresso']);
+  assert.ok(empty.columns.every((column) => column.description.length > 20));
+  const events = makeBaseTable('eventos', [{ id: '1', titulo: 'Lei municipal', decisao_base: 'confirmado' }],
+    ['id', 'decisao_base', 'titulo']);
+  assert.deepEqual(events.columns.map((column) => column.key), ['titulo', 'decisao_base', 'id']);
+  assert.equal(events.rows[0].id, '1');
+});
 
 test('painel distingue ausência de texto de um trecho disponível', () => {
   assert.equal(contentQuality('Consórcio abre concurso - Portal', 'Consórcio abre concurso Portal'), 'apenas_titulo');

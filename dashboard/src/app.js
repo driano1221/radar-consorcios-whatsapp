@@ -1,5 +1,6 @@
 const $ = (selector) => document.querySelector(selector);
-const state = { data: null, view: 'overview', selectedItem: '', selectedConsortium: '', limit: 40 };
+const state = { data: null, view: 'overview', selectedItem: '', limit: 40,
+  deckIndex: 0, baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0 };
 const dateTime = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const dateOnly = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const number = new Intl.NumberFormat('pt-BR');
@@ -76,95 +77,103 @@ function readableReason(item) {
   if (/ata de pre[cç]os|contrata[cç][aã]o/i.test(item.reason)) return 'Trata de uma compra ou contratação, não de entrada de município no consórcio.';
   return 'O texto não mostrou um acontecimento sobre consórcios que deva entrar na lista principal.';
 }
-function stat(index, value, title, foot) {
-  const card = node('div', 'stat');
-  card.append(node('div', 'stat-index', index), node('div', 'stat-value', number.format(value)),
-    node('div', 'stat-label', title), node('div', 'stat-foot', foot));
-  return card;
+function triageBucket(item) {
+  const review = item.editorialReview?.decision;
+  if (['confirmar_evento', 'corrigir_categoria'].includes(review) || item.baseDecision === 'confirmado') return 'accepted';
+  if (['nao_evento', 'duplicata'].includes(review) || item.rejectedEvent ||
+    (item.baseDecision === 'descartado' && !needsAttention(item) &&
+      (item.contentQuality === 'trecho_disponivel' || item.pdfEvidence?.length || item.fullText))) return 'rejected';
+  return 'pending';
 }
-function renderOverview() {
-  const { stats, items, collection } = state.data;
-  $('#stats').replaceChildren(
-    stat('01', stats.documents, 'Publicações encontradas', 'TODAS AS COLETAS GUARDADAS'),
-    stat('02', (stats.pendingReview || 0) + (stats.insufficientRaw || 0) + (stats.recoveredSuggestions || 0),
-      'Para conferir', 'SUGESTÕES E TÍTULOS SEM TEXTO'),
-    stat('03', stats.consortiaCandidates, 'Consórcios citados', 'NOMES ENCONTRADOS NOS DOCUMENTOS'),
-    stat('04', stats.pendingIdentity, 'Para conferir', 'CONSÓRCIO AINDA NÃO IDENTIFICADO'),
-  );
-  $('#collection-run-at').textContent = collection?.at ? date(collection.at, true) : 'SEM RODADA REGISTRADA';
-  $('#collection-kpis').replaceChildren(...(collection ? [
-    [collection.rawCollected, 'Resultados retornados'],
-    [collection.newDocuments, 'Novas publicações'],
-    [collection.newCandidates, 'Novos possíveis achados'],
+function deckItems() {
+  const query = $('#deck-search').value.toLocaleLowerCase('pt-BR').trim();
+  const filter = $('#deck-filter').value;
+  return state.data.items.filter((item) => (filter === 'all' || triageBucket(item) === filter) &&
+    (!query || [item.title, item.source, item.stage, item.category,
+      item.links.map((link) => link.name).join(' ')].join(' ').toLocaleLowerCase('pt-BR').includes(query)));
+}
+function openItem(item) {
+  $('#status-filter').value = 'all';
+  $('#search').value = '';
+  state.limit = Math.max(40, state.data.items.findIndex((row) => row.id === item.id) + 1);
+  state.selectedItem = item.id;
+  switchView('feed');
+}
+function renderDeck() {
+  const items = deckItems();
+  state.deckIndex = Math.min(state.deckIndex, Math.max(0, items.length - 1));
+  const item = items[state.deckIndex];
+  const counts = { accepted: 0, rejected: 0, pending: 0 };
+  for (const row of state.data.items) counts[triageBucket(row)] += 1;
+  $('#accepted-count').textContent = number.format(counts.accepted);
+  $('#rejected-count').textContent = number.format(counts.rejected);
+  $('#triage-summary').replaceChildren(...[
+    [state.data.stats.documents, 'documentos no arquivo'],
+    [counts.accepted, 'aceitos na base'],
+    [counts.rejected, 'fora da base'],
+    [counts.pending, 'sem conclusão segura'],
   ].map(([value, title]) => {
-    const card = node('div', 'collection-kpi');
-    card.append(node('strong', '', number.format(value)), node('span', '', title));
-    return card;
-  }) : [node('p', 'empty', 'A última rodada ainda não foi registrada neste arquivo.')]));
-  const sourceMax = Math.max(1, ...(collection?.sources || []).map((row) => row.count));
-  $('#collection-sources').replaceChildren(...(collection?.sources || []).map((row) => {
-    const entry = node('div', 'collection-source');
-    const top = node('div', 'collection-source-top');
-    top.append(node('span', '', row.name === 'Scrapers web' ? 'Portais e diários' : row.name),
-      node('strong', '', number.format(row.count)));
-    const bar = node('div', 'collection-source-bar');
-    const fill = node('span'); fill.style.width = `${Math.round(row.count / sourceMax * 100)}%`;
-    bar.append(fill); entry.append(top, bar); return entry;
+    const box = node('div', 'summary-number');
+    box.append(node('strong', '', number.format(value)), node('span', '', title)); return box;
   }));
-  const health = state.data.collectionHealth || [];
-  const problems = health.filter((row) => row.status === 'error' || row.status === 'degraded');
-  const disabled = health.filter((row) => row.status === 'disabled');
-  const latestCheck = health.map((row) => row.checkedAt).filter(Boolean).sort().at(-1);
-  $('#health-checked-at').textContent = latestCheck ? `SITUAÇÃO EM ${date(latestCheck, true)}` : 'SEM HISTÓRICO DE SAÚDE';
-  $('#health-summary').textContent = problems.length ? `Ver fontes com problema (${problems.length})` : 'Ver situação das fontes';
-  $('#quality-summary').replaceChildren(
-    node('p', '', `${number.format(stats.insufficientContent || 0)} registros têm só título ou nenhum trecho no arquivo original — alguns já foram conferidos pelo PDF. Ainda pedem texto: ${number.format(stats.insufficientActive || 0)} achado, ${number.format(stats.insufficientLegacy || 0)} ${stats.insufficientLegacy === 1 ? 'legado' : 'legados'} e ${number.format(stats.insufficientRaw || 0)} do arquivo bruto. Estes últimos não são descartes confirmados.`),
-    node('p', '', problems.length ? `${problems.length} ${problems.length === 1 ? 'fonte ou consulta teve problema' : 'fontes ou consultas tiveram problemas'} na última coleta registrada.` : 'Nenhuma falha de fonte registrada na última coleta.'),
-    node('p', '', `${number.format(stats.missingSourceCandidates || 0)} registros de eventos estão sem nome da fonte no catálogo; o link original foi preservado para conferência.`),
-    node('p', '', stats.legacyUnverifiedRecords || stats.rejectedEventRecords
-      ? `Dos ${number.format(stats.eventRecords || 0)} registros relacionados a eventos, ${number.format(stats.rejectedEventRecords || 0)} foram rejeitados pela triagem e ${number.format(stats.legacyUnverifiedRecords || 0)} são legados ainda por verificar.`
-      : `Os ${number.format(stats.eventRecords || 0)} registros da lista principal têm decisão registrada; não há legados por verificar.`),
-  );
-  const problemList = $('#source-problems');
-  problemList.replaceChildren(...problems.map((row) => {
-    const entry = node('div', 'source-problem');
-    entry.append(node('strong', '', row.name === 'Scrapers web' ? 'Coleta em sites' : row.name),
-      node('span', '', row.status === 'error' ? 'FALHOU' : 'PARCIAL'), node('p', '', sourceMessage(row)));
-    return entry;
-  }));
-  if (disabled.length) problemList.append(node('p', 'source-note', `${disabled.length} fontes estão desativadas de propósito e não foram contadas como falhas.`));
-  const categories = Object.entries(stats.categories).sort((a, b) => b[1] - a[1]).slice(0, 6);
-  const max = Math.max(1, ...categories.map(([, count]) => count));
-  $('#category-chart').replaceChildren(...categories.map(([name, count]) => {
-    const row = node('div', 'category-row');
-    const body = node('div'); const top = node('div', 'category-top');
-    top.append(node('span', '', name), node('span', '', number.format(count)));
-    const bar = node('div', 'bar'); const fill = node('span'); fill.style.width = `${Math.round(count / max * 100)}%`; bar.append(fill);
-    body.append(top, bar); row.append(body); return row;
-  }));
-  $('#base-extra').replaceChildren(
-    node('span', '', `${number.format(stats.confirmed || 0)} achados aceitos após conferência`),
-    node('span', '', `${number.format(stats.editoriallyDiscarded || 0)} publicações descartadas após conferência`),
-    node('span', '', `${number.format(stats.duplicates || 0)} duplicatas identificadas`),
-    node('span', '', `${number.format(stats.documentLinks)} ligações entre documentos e consórcios`),
-    node('span', '', `${number.format(stats.recoveredSuggestions || 0)} sugestões após recuperar texto, aguardando revisão`),
-    node('span', '', `${number.format(stats.sent)} publicações já enviadas ao WhatsApp`),
-  );
-  const pendingRecent = items.filter((item) => item.pendingReview);
-  const overviewRecent = pendingRecent.length ? pendingRecent
-    : items.filter((item) => item.editorialReview?.decision === 'confirmar_evento');
-  $('#overview-recent-heading').textContent = pendingRecent.length ? 'Na fila de triagem' : 'Últimos achados conferidos';
-  $('#overview-recent').replaceChildren(...overviewRecent.slice(0, 3).map((item) => {
-    const button = node('button', 'recent-card'); button.type = 'button';
-    button.append(node('span', 'item-tag', status(item)[0]), node('strong', '', displayTitle(item)),
-      node('small', '', `${item.source || 'Fonte não informada'}  ·  ${date(item.lastSeenAt)}`));
-    button.addEventListener('click', () => {
-      $('#status-filter').value = item.pendingReview ? 'event' : 'confirmed';
-      state.selectedItem = item.id; switchView('feed');
-    });
-    return button;
+  const pile = $('#deck-stack');
+  pile.replaceChildren();
+  if (!item) {
+    pile.append(node('p', 'deck-empty', 'Nenhuma publicação corresponde à busca.'));
+    $('#deck-position').textContent = '0 de 0';
+    $('#rejected-reason').textContent = 'Sem decisão nesta busca.';
+    $('#accepted-reason').textContent = 'Sem decisão nesta busca.';
+    return;
+  }
+  const bucket = triageBucket(item);
+  const card = node('article', `deck-card ${bucket}`);
+  const route = bucket === 'accepted' ? 'ACEITA NA BASE' : bucket === 'rejected' ? 'DESCARTADA' : 'SEM CONCLUSÃO';
+  const lead = node('div', 'deck-card-lead');
+  lead.append(node('span', 'deck-route', route), node('span', 'deck-index', `${state.deckIndex + 1} / ${items.length}`));
+  const rawEvidence = bucket === 'accepted' ? (item.editorialReview?.evidence || item.evidence || '') : '';
+  const cleanedEvidence = rawEvidence.replace(/\.{8,}/g, ' ').replace(/\s+/g, ' ').trim();
+  const cardCopy = cleanedEvidence.length >= 35 ? cleanedEvidence : readableReason(item);
+  const cardTitle = item.editorialReview && /ainda futur[oa]s|ainda não realizad[oa]s/i.test(item.stage || '')
+    ? `${item.source || 'Consórcio'} — ${item.stage}` : displayTitle(item);
+  card.append(lead, node('h3', '', cardTitle),
+    node('p', 'deck-meta', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
+    node('p', 'deck-evidence', cardCopy.slice(0, 250)),
+    node('button', 'deck-open', 'VER FICHA, PROVA E DECISÃO DE ALERTA ↗'));
+  card.querySelector('button').addEventListener('click', () => openItem(item));
+  pile.append(node('div', 'deck-back back-two'), node('div', 'deck-back back-one'), card);
+  const reason = readableReason(item);
+  $('#rejected-reason').textContent = bucket === 'rejected' ? reason : 'Esta carta não foi descartada.';
+  $('#accepted-reason').textContent = bucket === 'accepted' ? reason : 'Esta carta não foi aceita na base.';
+  $('#deck-caption').textContent = bucket === 'pending'
+    ? `Ainda sem conclusão segura: ${reason}`
+    : `Passe o mouse ou toque no destino “${bucket === 'accepted' ? 'Aceitas na base' : 'Descartadas'}” para ver a justificativa. A ficha traz o texto e a fonte.`;
+  $('#deck-position').textContent = `${number.format(state.deckIndex + 1)} de ${number.format(items.length)}`;
+  $('#deck-prev').disabled = state.deckIndex === 0;
+  $('#deck-next').disabled = state.deckIndex >= items.length - 1;
+  $('#rejected-lane').classList.toggle('current', bucket === 'rejected');
+  $('#accepted-lane').classList.toggle('current', bucket === 'accepted');
+}
+function advanceDeck(direction) {
+  const items = deckItems();
+  const next = state.deckIndex + direction;
+  if (next < 0 || next >= items.length) return;
+  const card = $('#deck-stack .deck-card');
+  if (card && direction > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    card.classList.add(`fly-${triageBucket(items[state.deckIndex])}`);
+    setTimeout(() => { state.deckIndex = next; renderDeck(); }, 280);
+  } else { state.deckIndex = next; renderDeck(); }
+}
+function renderRecent() {
+  $('#recent-list').replaceChildren(...state.data.items.slice(0, 6).map((item) => {
+    const button = node('button', 'recent-row'); button.type = 'button';
+    button.append(node('span', `recent-mark ${triageBucket(item)}`),
+      node('span', 'recent-title', displayTitle(item)),
+      node('span', 'recent-source', item.source || 'Fonte não informada'),
+      node('span', 'recent-date', date(item.lastSeenAt)));
+    button.addEventListener('click', () => openItem(item)); return button;
   }));
 }
+function renderOverview() { renderDeck(); renderRecent(); }
 function feedRow(item, index, selected, onClick) {
   const button = node('button', `feed-item${selected ? ' active' : ''}`); button.type = 'button';
   const body = node('div'); const top = node('div', 'item-top');
@@ -411,20 +420,114 @@ function renderConsortia() {
     panel.append(entry);
   }
 }
+function tableValue(value) {
+  if (value === null || value === undefined || value === '') return 'Não informado';
+  if (Array.isArray(value)) return value.length ? value.join(', ') : 'Não informado';
+  if (typeof value === 'object') return Object.keys(value).length ? JSON.stringify(value, null, 2) : 'Não informado';
+  return String(value);
+}
+function currentTable() {
+  return (state.data.baseTables || []).find((table) => table.id === state.baseTableId) || state.data.baseTables?.[0];
+}
+function filteredBaseRows(table) {
+  const query = $('#base-search').value.toLocaleLowerCase('pt-BR').trim();
+  return !query ? table.rows : table.rows.filter((row) =>
+    table.columns.some(({ key }) => tableValue(row[key]).toLocaleLowerCase('pt-BR').includes(query)));
+}
+function renderBasePreview(table, row) {
+  const target = $('#base-preview'); target.replaceChildren();
+  if (!row) { target.append(node('p', 'empty', 'Selecione uma linha para examinar todos os campos.')); return; }
+  const title = tableValue(row.titulo || row.nome || row.consorcio || row.municipio || row.id || row.documento_id);
+  target.append(node('h3', '', title), node('p', 'preview-help', `Linha ${state.baseRowIndex + 1} · ${table.title}. Todos os campos da tabela aparecem abaixo, inclusive os vazios.`));
+  for (const column of table.columns) {
+    const field = node('div', 'base-field');
+    const value = tableValue(row[column.key]);
+    field.append(node('span', 'base-field-name', column.label), node('small', 'base-field-description', column.description));
+    if (safeUrl(value) && /^(?:url|fonte_|article_url)/.test(column.key)) field.append(link('Abrir fonte', value));
+    else field.append(node('strong', value === 'Não informado' ? 'missing-value' : '', value));
+    target.append(field);
+  }
+}
+function renderBase() {
+  const tables = state.data.baseTables || [];
+  $('#base-tabs').replaceChildren(...tables.map((table) => {
+    const button = node('button', table.id === state.baseTableId ? 'base-tab active' : 'base-tab',
+      `${table.title}  ${number.format(table.rows.length)}`);
+    button.type = 'button'; button.setAttribute('role', 'tab');
+    button.setAttribute('aria-selected', table.id === state.baseTableId ? 'true' : 'false');
+    button.addEventListener('click', () => { state.baseTableId = table.id; state.baseLimit = 25;
+      state.baseRowIndex = 0; $('#base-search').value = ''; renderBase(); });
+    return button;
+  }));
+  const table = currentTable();
+  if (!table) return;
+  const rows = filteredBaseRows(table);
+  state.baseRowIndex = Math.min(state.baseRowIndex, Math.max(0, rows.length - 1));
+  $('#base-table-title').textContent = table.title;
+  $('#base-table-description').textContent = table.description;
+  $('#base-table-count').textContent = `${number.format(table.rows.length)} LINHAS · ${number.format(table.columns.length)} COLUNAS`;
+  const head = $('#base-table thead'); const header = node('tr');
+  for (const column of table.columns) {
+    const cell = node('th', '', column.label); cell.title = column.description; cell.scope = 'col'; header.append(cell);
+  }
+  head.replaceChildren(header);
+  const visible = rows.slice(0, state.baseLimit);
+  const body = $('#base-table tbody'); body.replaceChildren(...visible.map((row, index) => {
+    const entry = node('tr', index === state.baseRowIndex ? 'active' : '');
+    entry.tabIndex = 0; entry.setAttribute('aria-label', `Abrir linha ${index + 1} de ${table.title}`);
+    const selectRow = () => { state.baseRowIndex = index; renderBase();
+      if (window.matchMedia('(max-width:1170px)').matches) $('#base-preview').scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+    entry.addEventListener('click', selectRow);
+    entry.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault(); selectRow(); } });
+    for (const column of table.columns) {
+      const value = tableValue(row[column.key]);
+      const cell = node('td', value === 'Não informado' ? 'missing-value' : '', value);
+      cell.title = value; entry.append(cell);
+    }
+    return entry;
+  }));
+  if (!visible.length) { const empty = node('tr'); const cell = node('td', 'empty', 'Nenhuma linha corresponde à busca.');
+    cell.colSpan = table.columns.length || 1; empty.append(cell); body.append(empty); }
+  $('#base-range').textContent = `MOSTRANDO ${number.format(visible.length)} DE ${number.format(rows.length)} LINHAS`;
+  $('#base-more').hidden = visible.length >= rows.length;
+  renderBasePreview(table, rows[state.baseRowIndex]);
+  $('#glossary-count').textContent = `(${table.columns.length})`;
+  $('#base-glossary').replaceChildren(...table.columns.map((column) => {
+    const card = node('div', 'glossary-entry');
+    card.append(node('strong', '', column.label), node('p', '', column.description)); return card;
+  }));
+}
+function renderMethod() {
+  const health = state.data.collectionHealth || [];
+  const problems = health.filter((row) => ['error', 'degraded'].includes(row.status));
+  const target = $('#method-health');
+  target.replaceChildren(node('p', '', problems.length
+    ? `${problems.length} consultas ou fontes registraram falha parcial na última situação guardada. As outras continuam independentes.`
+    : 'Nenhuma falha de fonte registrada na última situação guardada.'));
+  for (const row of problems) {
+    const entry = node('div', 'method-health-row');
+    entry.append(node('strong', '', row.name), node('span', '', sourceMessage(row)));
+    target.append(entry);
+  }
+}
 function switchView(view) {
   state.view = view;
-  const titles = { overview: ['INÍCIO', 'Acompanhe as publicações'], feed: ['PUBLICAÇÕES', 'Publicações encontradas'],
-    consortia: ['CONSÓRCIOS', 'Consórcios citados'] };
+  const titles = { overview: ['TRIAGEM', 'Cada notícia, uma decisão'], feed: ['PUBLICAÇÕES', 'O arquivo de publicações'],
+    base: ['BASE COMPLETA', 'A base, por dentro'], method: ['COMO FUNCIONA', 'Fluxo e critérios'] };
   document.querySelectorAll('.view').forEach((section) => section.classList.toggle('active', section.id === view));
   document.querySelectorAll('.nav-button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
   $('#breadcrumb-current').textContent = titles[view][0];
   $('#page-title').replaceChildren(node('span', '', titles[view][1]), node('span', 'period', '.'));
-  const descriptions = { overview: 'Veja o que foi encontrado, o que pode ser importante e o que ainda precisa ser conferido.',
-    feed: 'A lista começa pelos achados conferidos. Use o filtro para ver a fila, os descartes e todas as coletas.',
-    consortia: 'Nomes de consórcios encontrados nas publicações.' };
+  const descriptions = { overview: 'Acompanhe o caminho das publicações com a justificativa de cada decisão.',
+    feed: 'Todas as coletas guardadas, com filtros, evidências e fonte original.',
+    base: 'Consulte cada tabela, inclusive colunas vazias, com explicação e prévia da linha.',
+    method: 'Entenda onde entram as regras, a IA e a revisão humana.' };
   $('#page-description').textContent = descriptions[view];
   if (view === 'feed') renderFeed();
-  if (view === 'consortia') renderConsortia();
+  if (view === 'overview') renderDeck();
+  if (view === 'base') renderBase();
+  if (view === 'method') renderMethod();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 async function init() {
@@ -436,15 +539,20 @@ async function init() {
     $('#generated-at').textContent = `Painel gerado em ${date(state.data.generatedAt, true)}`;
     renderOverview();
     document.querySelectorAll('.nav-button').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
-    $('#open-feed').addEventListener('click', () => {
-      $('#status-filter').value = state.data.stats.pendingReview ? 'event' : 'confirmed';
-      switchView('feed');
-    });
-    $('#open-incomplete').addEventListener('click', () => { $('#status-filter').value = 'incomplete'; switchView('feed'); });
+    $('#open-feed').addEventListener('click', () => switchView('feed'));
+    $('#deck-search').addEventListener('input', () => { state.deckIndex = 0; renderDeck(); });
+    $('#deck-filter').addEventListener('change', () => { state.deckIndex = 0; renderDeck(); });
+    $('#deck-prev').addEventListener('click', () => advanceDeck(-1));
+    $('#deck-next').addEventListener('click', () => advanceDeck(1));
+    document.addEventListener('keydown', (event) => { if (state.view !== 'overview' ||
+      /^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement?.tagName || '')) return;
+    if (event.key === 'ArrowRight') advanceDeck(1);
+    if (event.key === 'ArrowLeft') advanceDeck(-1); });
     $('#search').addEventListener('input', () => { state.limit = 40; renderFeed(); });
     $('#status-filter').addEventListener('change', () => { state.limit = 40; renderFeed(); });
-    $('#consortium-search').addEventListener('input', renderConsortia);
     $('#more-button').addEventListener('click', () => { state.limit += 40; renderFeed(); });
+    $('#base-search').addEventListener('input', () => { state.baseRowIndex = 0; state.baseLimit = 25; renderBase(); });
+    $('#base-more').addEventListener('click', () => { state.baseLimit += 25; renderBase(); });
   } catch (error) {
     console.error('Falha ao abrir painel:', error);
     $('#error').hidden = false;

@@ -1,6 +1,6 @@
 # Painel de acompanhamento do Radar
 
-Interface estática, **somente de leitura**, para acompanhar os documentos coletados, a triagem, as pendências de identidade e o estado atual da base de consórcios. O visual é inspirado na clareza de uma urna: etapas numeradas, alto contraste, poucos elementos e ações explícitas. Não há login, editor, envio ao WhatsApp nem chamada a APIs externas no navegador.
+Interface estática, **somente de leitura**, para acompanhar documentos, decisões e a base histórica. O visual prioriza uma pilha de notícias: ao avançar, a carta desliza à esquerda (descarte), à direita (aceite) ou permanece neutra (prova insuficiente). Passe o mouse ou dê foco na coluna para ver o motivo; a ficha abre a evidência completa. A animação **não toma decisões novas**. Não há login, editor, envio ao WhatsApp nem chamada a APIs externas no navegador.
 
 ## Abrir localmente
 
@@ -15,9 +15,10 @@ Abra `http://127.0.0.1:4173/`. O servidor aceita conexões **somente deste compu
 
 ## O que aparece
 
-- **Início:** quantas publicações foram encontradas, quantas têm sugestão ou texto faltante para conferir, quantos consórcios são citados e quantas precisam de conferência de identidade. Registros rejeitados pela triagem e legados sem texto ficam no histórico, mas não inflam a contagem de possíveis achados. “O que a coleta trouxe” separa resultados brutos (podem repetir) de documentos que entraram no acervo desde a rodada anterior e divide o volume entre Google News, Querido Diário, RSS e portais/diários. A caixa “O que ainda falta conferir” mostra conteúdo insuficiente, fontes sem nome no catálogo e falhas da última coleta; fontes desativadas são identificadas à parte.
-- **Publicações:** busca e filtros simples: possíveis achados, rejeitados pela triagem, legados sem texto, todas, sem texto suficiente, fora da lista, precisam de conferência e enviadas ao WhatsApp. Cada ficha responde se entrou na lista e por quê, avisa quando só houve título ou nenhum trecho, mostra o motivo da falha de recuperação e abre a fonte original. Textos integrais recuperados aparecem recolhidos na ficha; sugestões feitas a partir deles **não entram automaticamente** na base de eventos. Uma portaria pode apresentar vários consórcios com prova distinta para cada vínculo.
-- **Consórcios:** nomes, siglas, CNPJ associado apenas quando o trecho permite, e publicações que citam cada consórcio.
+- **Triagem:** pilha visual das decisões já registradas, filtro por aceitas/descartadas/sem conclusão, busca e publicações recentes. Os contadores distinguem arquivo, base aceita, itens fora da base e prova insuficiente. Em telas pequenas, as colunas ficam abaixo da carta. Teclas ←/→ percorrem a pilha quando o foco não está em um campo de texto.
+- **Publicações:** arquivo pesquisável com filtros. Cada ficha mostra a decisão de base **separada** da decisão de alerta, o motivo, a prova, eventuais páginas de PDF e a fonte original. Texto recuperado e sugestões não viram automaticamente fatos confirmados.
+- **Base completa:** todas as linhas e colunas de `eventos.csv`, `consorcios.csv`, `participacoes.csv`, `vinculos-documentos.csv`, `identidade-pendente.csv`, `arquivo-coletas.ndjson` e `revisoes-eventos.ndjson`. Há busca por tabela, prévia integral da linha e glossário de todas as colunas, mesmo que a tabela ou as células estejam vazias. Célula vazia aparece como “Não informado”. A ordem visual prioriza título/nome e decisão; nenhum campo é removido.
+- **Como funciona:** coleta, extração, classificação, destinos separados, papel limitado do DeepSeek, regras principais e próximos passos. Fontes com erro ficam recolhidas ao final para não poluir a leitura principal.
 
 O painel lê as tabelas de `data/catalogo/` e o estado versionado. A categoria e a etapa **revisadas editorialmente** prevalecem sobre o registro bruto. Atos antigos reindexados recentemente permanecem no arquivo histórico, mas não aparecem como eventos atuais. A tela nunca equipara documento, menção ou autorização legal a ingresso/saída efetiva.
 

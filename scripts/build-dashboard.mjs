@@ -33,9 +33,111 @@ async function readCsv(name) {
   return csvRows(await readFile(path.join(catalog, name), 'utf8'));
 }
 
+async function readCsvColumns(name) {
+  const firstLine = (await readFile(path.join(catalog, name), 'utf8')).split(/\r?\n/, 1)[0];
+  return firstLine.split(',').map((value) => value.trim()).filter(Boolean);
+}
+
 async function readNdjson(name) {
   return (await readFile(path.join(catalog, name), 'utf8'))
     .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+}
+
+const TABLES = [
+  ['eventos', 'Eventos', 'Fatos e candidatos relacionados a consórcios; só a revisão editorial confirma um acontecimento.'],
+  ['consorcios', 'Consórcios', 'Identidades encontradas nos documentos. Não é cadastro oficial nem composição atual.'],
+  ['participacoes', 'Participações', 'Relações município–consórcio com evidência documental revisada.'],
+  ['vinculos-documentos', 'Vínculos documentais', 'Menções que conectam documentos e consórcios; menção não comprova adesão.'],
+  ['identidade-pendente', 'Identidade pendente', 'Documentos cujo consórcio ainda não pôde ser identificado com segurança.'],
+  ['arquivo-coletas', 'Arquivo de coletas', 'Todos os documentos guardados, inclusive descartes e títulos sem texto.'],
+  ['revisoes-eventos', 'Revisões editoriais', 'Decisões humanas lacradas ao trecho do documento e sua justificativa.'],
+];
+
+const COLUMN_DOCS = {
+  id: 'Identificador técnico estável da linha; não é CNPJ.',
+  documento_id: 'ID do documento no arquivo de coletas.',
+  documento_relacionado: 'ID de outro documento que representa o mesmo episódio.',
+  consorcio_id: 'ID da identidade do consórcio nesta base.',
+  primeira_coleta: 'Data em que o radar encontrou esta URL pela primeira vez.',
+  ultima_coleta: 'Data da última vez em que o radar encontrou esta URL.',
+  data_publicacao: 'Data informada pelo feed, portal ou edição; pode não ser a data do fato.',
+  data_noticia_original: 'Data publicada na página original, quando recuperada.',
+  data_fato: 'Data exata do acontecimento, somente quando comprovada.',
+  mes_fato: 'Mês do acontecimento quando o dia exato não foi comprovado.',
+  tipo_evento: 'Categoria atribuída ao acontecimento ou hipótese de triagem.',
+  decisao_base: 'Situação do fato para o catálogo: confirmado, candidato ou descartado.',
+  decisao_alerta: 'Situação do envio ao WhatsApp; pode diferir da decisão da base.',
+  motivo_alerta: 'Explicação da decisão de enviar ou não enviar.',
+  etapa: 'Estágio comprovado: proposta, autorização, ato assinado ou atuação.',
+  situacao_analise: 'Descrição da revisão, da pendência ou do descarte.',
+  efeito_na_participacao: 'Efeito comprovado sobre a participação municipal; vazio ou não inferido não significa ausência de efeito.',
+  tipo_documento: 'Natureza da fonte, como lei, contrato, notícia ou diário.',
+  consorcio: 'Nome do consórcio mencionado no registro.',
+  nome: 'Denominação da identidade do consórcio.',
+  sigla: 'Sigla associada à entidade quando identificada.',
+  cnpj: 'CNPJ atribuído ao consórcio apenas quando a fonte permite a associação.',
+  aliases: 'Outros nomes ou grafias encontrados para a mesma identidade.',
+  municipio: 'Município citado ou relacionado ao consórcio.',
+  cnpj_municipio: 'CNPJ do município, distinto do CNPJ do consórcio.',
+  uf: 'Unidade da Federação associada ao registro.',
+  titulo: 'Título capturado da publicação; pode ser genérico em diários oficiais.',
+  fonte: 'Portal ou veículo em que o registro foi encontrado.',
+  fonte_inicial: 'Primeira fonte usada para registrar a identidade.',
+  fonte_ultima_evidencia: 'Endereço do documento da última evidência de participação.',
+  url: 'Endereço original do documento ou da notícia.',
+  article_url: 'Endereço da página original quando o resultado veio de um agregador.',
+  url_evidencia: 'Endereço do documento que sustenta o vínculo.',
+  trecho: 'Excerto guardado pelo radar; não é necessariamente o texto integral.',
+  evidencia: 'Trecho ou descrição específica que sustenta a decisão.',
+  nome_mencionado: 'Nome do consórcio como aparece neste documento.',
+  sigla_mencionada: 'Sigla do consórcio como aparece neste documento.',
+  cnpj_mencionado: 'CNPJ citado no documento; não significa associação já validada.',
+  origem: 'Parte do documento de onde saiu o vínculo.',
+  pontuacao: 'Pontuação da regra de triagem; não é probabilidade nem validação humana.',
+  revisao_ia: 'Resultado da revisão automática por IA, quando executada.',
+  enviado_em: 'Data do envio ao WhatsApp, se houve.',
+  documentos_vinculados: 'Quantidade de documentos ligados à identidade.',
+  situacao: 'Estado da identidade, participação ou vínculo nesta tabela.',
+  ano_ingresso: 'Ano de adesão, apenas quando comprovado; vazio significa desconhecido.',
+  ano_ultima_evidencia_participacao: 'Ano do documento mais recente que comprova participação; não é ano de ingresso.',
+  motivo: 'Justificativa da pendência ou da revisão.',
+  decisao: 'Decisão humana sobre o documento: confirmar, corrigir, descartar ou duplicar.',
+  categoria: 'Categoria atribuída após a revisão editorial.',
+  fonte_evidencia: 'Endereço da fonte consultada na revisão.',
+  fatos: 'Dados estruturados extraídos e conferidos na revisão.',
+  trecho_sha256: 'Hash do trecho revisado; impede reaplicar a decisão se o texto mudar.',
+  publicar: 'Indica se um fato confirmado também deve gerar alerta; falso mantém o fato na base.',
+  motivo_publicacao: 'Explicação de por que o alerta foi bloqueado.',
+  article_attempted_at: 'Data da última tentativa de recuperar o texto original.',
+  article_attempts: 'Número de tentativas de recuperar o artigo.',
+  article_text_sha256: 'Hash do texto integral recuperado, guardado separadamente.',
+  article_reader: 'Leitor que extraiu o texto da página.',
+  article_recovery_reason: 'Motivo pelo qual a leitura integral não foi possível.',
+  article_suggested_category: 'Categoria sugerida após ler o texto; não altera sozinha a decisão.',
+  article_suggested_score: 'Pontuação da sugestão após recuperação de texto.',
+  article_suggestion_evidence: 'Trecho usado para a sugestão após recuperação.',
+  article_duplicate_of: 'ID de outro documento com o mesmo texto recuperado.',
+};
+
+const FIRST_COLUMNS = {
+  eventos: ['titulo', 'tipo_evento', 'decisao_base', 'decisao_alerta', 'consorcio', 'municipio', 'data_fato', 'data_publicacao'],
+  consorcios: ['nome', 'sigla', 'cnpj', 'situacao', 'documentos_vinculados'],
+  participacoes: ['consorcio', 'municipio', 'ano_ingresso', 'ano_ultima_evidencia_participacao', 'situacao'],
+  'vinculos-documentos': ['nome_mencionado', 'situacao', 'evidencia', 'documento_id'],
+  'identidade-pendente': ['titulo', 'motivo', 'tipo_evento'],
+  'arquivo-coletas': ['titulo', 'fonte', 'tipo_evento', 'decisao_base', 'data_publicacao'],
+  'revisoes-eventos': ['documento_id', 'decisao', 'categoria', 'motivo', 'evidencia'],
+};
+
+export function makeBaseTable(id, rows, columns = []) {
+  const definition = TABLES.find(([key]) => key === id);
+  const keys = columns.length ? columns : [...new Set(rows.flatMap((row) => Object.keys(row)))];
+  const preferred = FIRST_COLUMNS[id] || [];
+  const ordered = [...preferred.filter((key) => keys.includes(key)), ...keys.filter((key) => !preferred.includes(key))];
+  return { id, title: definition?.[1] || id, description: definition?.[2] || '',
+    columns: ordered.map((key) => ({ key, label: key.replaceAll('_', ' '),
+      description: COLUMN_DOCS[key] || `Campo técnico “${key}” preservado como consta na fonte da tabela.` })),
+    rows };
 }
 
 function comparableText(value) {
@@ -90,7 +192,7 @@ function distinctPdfSnippets(snippets, preferredPages = []) {
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
   participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
-  articleTexts = [], sourceHealth = {}, runs = {} }, generatedAt = new Date().toISOString()) {
+  articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [] }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
   }));
@@ -269,6 +371,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     },
     collectionHealth,
     items,
+    baseTables,
     consortia: consortia.map((row) => ({
       id: row.id, name: row.nome, alias: row.sigla, cnpj: row.cnpj,
       documents: Number(row.documentos_vinculados || 0), status: row.situacao,
@@ -290,6 +393,9 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     readNdjson('textos-artigos.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error)),
   ]);
   const state = JSON.parse(await readFile(path.join(root, 'state', 'news-state.json'), 'utf8'));
+  const [eventColumns, consortiumColumns, participationColumns, linkColumns, pendingColumns] = await Promise.all(
+    ['eventos.csv', 'consorcios.csv', 'participacoes.csv', 'vinculos-documentos.csv', 'identidade-pendente.csv']
+      .map(readCsvColumns));
   const decisions = { ...Object.fromEntries(Object.entries(state.observations || {}).map(([id, observation]) => {
     const item = observation.item || {};
     const evidence = item.classification?.evidenceText;
@@ -306,9 +412,18 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     }];
   })), ...state.decisions };
   const data = buildDashboardData({ archive, events, consortia, links, pendingIdentity,
-    editorialReviews, participations, pdfRecovery, articleTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {} });
+    editorialReviews, participations, pdfRecovery, articleTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
+    baseTables: [
+      makeBaseTable('eventos', events, eventColumns),
+      makeBaseTable('consorcios', consortia, consortiumColumns),
+      makeBaseTable('participacoes', participations, participationColumns),
+      makeBaseTable('vinculos-documentos', links, linkColumns),
+      makeBaseTable('identidade-pendente', pendingIdentity, pendingColumns),
+      makeBaseTable('arquivo-coletas', archive),
+      makeBaseTable('revisoes-eventos', editorialReviews),
+    ] });
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'app.js'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'app.js'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFile(path.join(destination, 'data.json'), `${JSON.stringify(data)}\n`, 'utf8');
   console.log(`[painel] ${data.stats.documents} documentos; ${data.stats.eventCandidates} eventos candidatos; ${data.stats.consortiaCandidates} identidades. Arquivos em ${destination}`);
