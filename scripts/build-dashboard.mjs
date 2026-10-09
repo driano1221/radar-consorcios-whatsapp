@@ -423,7 +423,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       makeBaseTable('revisoes-eventos', editorialReviews),
     ] });
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'redesign.css', 'app.js'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'xp.css', 'app.js', 'triage-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFile(path.join(destination, 'data.json'), `${JSON.stringify(data)}\n`, 'utf8');
   console.log(`[painel] ${data.stats.documents} documentos; ${data.stats.eventCandidates} eventos candidatos; ${data.stats.consortiaCandidates} identidades. Arquivos em ${destination}`);

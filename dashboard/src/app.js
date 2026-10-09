@@ -1,3 +1,5 @@
+import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs';
+
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', limit: 40,
   deckIndex: 0, baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0 };
@@ -49,6 +51,8 @@ function status(item) {
   if (item.rejectedEvent) return ['Rejeitado pela triagem', 'raw'];
   if (item.legacyUnverified) return ['Legado por verificar', 'wait'];
   if (item.articleDuplicateOf) return ['Mesmo texto de outra publicação', 'raw'];
+  if (item.baseDecision === 'descartado' && item.recoverySuggestion) return ['Fora da base · nova pista', 'raw'];
+  if (item.baseDecision === 'descartado' && item.decisionStatus === 'revisao') return ['Fora da base · revisar', 'raw'];
   if (item.recoverySuggestion) return ['Texto recuperado · revisar', 'wait'];
   if (item.baseStatus === 'arquivo_bruto' && item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length && !item.fullText)
     return ['Só título · sem conclusão', 'wait'];
@@ -62,7 +66,9 @@ function readableReason(item) {
   if (item.legacyUnverified) return 'Registro antigo ainda sem reconfirmação documental. O texto pode estar disponível, mas a decisão precisa de prova revisada.';
   if (item.pdfReassessment) return item.reason;
   if (item.articleDuplicateOf) return 'O texto integral recuperado é idêntico ao de outra publicação já guardada. Não contar como um segundo achado.';
-  if (item.recoverySuggestion) return 'A leitura integral encontrou sinais de um possível achado. A classificação original foi mantida até conferirmos o trecho e a fonte.';
+  if (item.recoverySuggestion) return 'A decisão da base não mudou. O texto recuperado sugeriu outro enquadramento, que ainda precisa ser conferido na fonte.';
+  if (item.identityPending) return `O fato foi guardado, mas a identidade do consórcio ainda precisa de prova: ${item.identityPending}.`;
+  if (item.decisionStatus === 'revisao') return item.reason || 'A revisão automática divergiu da decisão anterior; conferir o documento.';
   if (item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length && item.baseStatus !== 'evento_candidato')
     return 'Ainda não há prova suficiente para aceitar ou descartar. É preciso obter a publicação integral ou outro documento oficial.';
   if (/ato antigo com data recente/i.test(item.reason)) return 'É um ato antigo que reapareceu em uma busca recente. Não é uma novidade.';
@@ -77,18 +83,11 @@ function readableReason(item) {
   if (/ata de pre[cç]os|contrata[cç][aã]o/i.test(item.reason)) return 'Trata de uma compra ou contratação, não de entrada de município no consórcio.';
   return 'O texto não mostrou um acontecimento sobre consórcios que deva entrar na lista principal.';
 }
-function triageBucket(item) {
-  const review = item.editorialReview?.decision;
-  if (['confirmar_evento', 'corrigir_categoria'].includes(review) || item.baseDecision === 'confirmado') return 'accepted';
-  if (['nao_evento', 'duplicata'].includes(review) || item.rejectedEvent ||
-    (item.baseDecision === 'descartado' && !needsAttention(item) &&
-      (item.contentQuality === 'trecho_disponivel' || item.pdfEvidence?.length || item.fullText))) return 'rejected';
-  return 'pending';
-}
 function deckItems() {
   const query = $('#deck-search').value.toLocaleLowerCase('pt-BR').trim();
   const filter = $('#deck-filter').value;
-  return state.data.items.filter((item) => (filter === 'all' || triageBucket(item) === filter) &&
+  return state.data.items.filter((item) => (filter === 'all' || triageBucket(item) === filter ||
+    pendingKinds.some((kind) => kind.key === filter && kind.matches(item))) &&
     (!query || [item.title, item.source, item.stage, item.category,
       item.links.map((link) => link.name).join(' ')].join(' ').toLocaleLowerCase('pt-BR').includes(query)));
 }
@@ -109,12 +108,22 @@ function renderDeck() {
   $('#rejected-count').textContent = number.format(counts.rejected);
   $('#triage-summary').replaceChildren(...[
     [state.data.stats.documents, 'documentos no arquivo'],
-    [counts.accepted, 'aceitos na base'],
+    [counts.accepted, 'eventos confirmados'],
     [counts.rejected, 'fora da base'],
-    [counts.pending, 'sem conclusão segura'],
+    [counts.pending, 'candidatos sem confirmação'],
   ].map(([value, title]) => {
     const box = node('div', 'summary-number');
     box.append(node('strong', '', number.format(value)), node('span', '', title)); return box;
+  }));
+  $('#pending-breakdown').replaceChildren(...pendingKinds.map((kind) => {
+    const count = state.data.items.filter(kind.matches).length;
+    const button = node('button', 'pending-kind'); button.type = 'button';
+    button.title = `${kind.title}: ${kind.description} Clique para ver os registros.`;
+    button.append(node('strong', '', number.format(count)), node('span', '', kind.title),
+      node('small', '', kind.description));
+    button.addEventListener('click', () => { $('#deck-filter').value = kind.key;
+      state.deckIndex = 0; renderDeck(); $('#decision-stage').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    return button;
   }));
   const pile = $('#deck-stack');
   pile.replaceChildren();
@@ -127,7 +136,7 @@ function renderDeck() {
   }
   const bucket = triageBucket(item);
   const card = node('article', `deck-card ${bucket}`);
-  const route = bucket === 'accepted' ? 'ACEITA NA BASE' : bucket === 'rejected' ? 'DESCARTADA' : 'SEM CONCLUSÃO';
+  const route = bucket === 'accepted' ? 'CONFIRMADA NA BASE' : bucket === 'rejected' ? 'FORA DA BASE' : 'CANDIDATA · NÃO CONFIRMADA';
   const lead = node('div', 'deck-card-lead');
   lead.append(node('span', 'deck-route', route), node('span', 'deck-index', `${state.deckIndex + 1} / ${items.length}`));
   const rawEvidence = bucket === 'accepted' ? (item.editorialReview?.evidence || item.evidence || '') : '';
@@ -139,13 +148,15 @@ function renderDeck() {
     node('p', 'deck-meta', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
     node('p', 'deck-evidence', cardCopy.slice(0, 250)),
     node('button', 'deck-open', 'VER FICHA, PROVA E DECISÃO DE ALERTA ↗'));
+  const pending = pendingLabels(item);
+  if (pending.length) card.insertBefore(node('p', 'deck-followup', `A conferir: ${pending.join(' · ')}`), card.querySelector('button'));
   card.querySelector('button').addEventListener('click', () => openItem(item));
   pile.append(node('div', 'deck-back back-two'), node('div', 'deck-back back-one'), card);
   const reason = readableReason(item);
   $('#rejected-reason').textContent = bucket === 'rejected' ? reason : 'Esta carta não foi descartada.';
   $('#accepted-reason').textContent = bucket === 'accepted' ? reason : 'Esta carta não foi aceita na base.';
   $('#deck-caption').textContent = bucket === 'pending'
-    ? `Ainda sem conclusão segura: ${reason}`
+    ? `Candidato ainda não confirmado: ${reason}`
     : `Passe o mouse ou toque no destino “${bucket === 'accepted' ? 'Aceitas na base' : 'Descartadas'}” para ver a justificativa. A ficha traz o texto e a fonte.`;
   $('#deck-position').textContent = `${number.format(state.deckIndex + 1)} de ${number.format(items.length)}`;
   $('#deck-prev').disabled = state.deckIndex === 0;
@@ -513,13 +524,13 @@ function renderMethod() {
 }
 function switchView(view) {
   state.view = view;
-  const titles = { overview: ['TRIAGEM', 'Cada notícia, uma decisão'], feed: ['PUBLICAÇÕES', 'O arquivo de publicações'],
-    base: ['BASE COMPLETA', 'A base, por dentro'], method: ['COMO FUNCIONA', 'Fluxo e critérios'] };
+  const titles = { overview: ['Triagem', 'Triagem de publicações'], feed: ['Publicações', 'Arquivo de publicações'],
+    base: ['Base completa', 'Base de dados'], method: ['Como funciona', 'Fluxo e critérios'] };
   document.querySelectorAll('.view').forEach((section) => section.classList.toggle('active', section.id === view));
   document.querySelectorAll('.nav-button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
   $('#breadcrumb-current').textContent = titles[view][0];
-  $('#page-title').replaceChildren(node('span', '', titles[view][1]), node('span', 'period', '.'));
-  const descriptions = { overview: 'Acompanhe o caminho das publicações com a justificativa de cada decisão.',
+  $('#page-title').textContent = titles[view][1];
+  const descriptions = { overview: 'Veja o que entrou na base, o que foi descartado e o motivo.',
     feed: 'Todas as coletas guardadas, com filtros, evidências e fonte original.',
     base: 'Consulte cada tabela, inclusive colunas vazias, com explicação e prévia da linha.',
     method: 'Entenda onde entram as regras, a IA e a revisão humana.' };

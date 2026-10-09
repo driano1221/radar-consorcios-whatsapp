@@ -1,6 +1,6 @@
 # Painel de acompanhamento do Radar
 
-Interface estática, **somente de leitura**, para acompanhar documentos, decisões e a base histórica. O visual prioriza uma pilha de notícias: ao avançar, a carta desliza à esquerda (descarte), à direita (aceite) ou permanece neutra (prova insuficiente). Passe o mouse ou dê foco na coluna para ver o motivo; a ficha abre a evidência completa. A animação **não toma decisões novas**. Não há login, editor, envio ao WhatsApp nem chamada a APIs externas no navegador.
+Interface estática, **somente de leitura**, para acompanhar documentos, decisões e a base histórica. O visual de aplicativo clássico, inspirado no Windows XP, prioriza uma pilha de notícias: ao avançar, a carta desliza à esquerda (descarte), à direita (aceite) ou permanece neutra (candidata não confirmada). Passe o mouse ou dê foco na coluna para ver o motivo; a ficha abre a evidência completa. A animação **não toma decisões novas**. Não há login, editor, envio ao WhatsApp nem chamada a APIs externas no navegador.
 
 ## Abrir localmente
 
@@ -15,7 +15,7 @@ Abra `http://127.0.0.1:4173/`. O servidor aceita conexões **somente deste compu
 
 ## O que aparece
 
-- **Triagem:** pilha visual das decisões já registradas, filtro por aceitas/descartadas/sem conclusão, busca e publicações recentes. Os contadores distinguem arquivo, base aceita, itens fora da base e prova insuficiente. Em telas pequenas, as colunas ficam abaixo da carta. Teclas ←/→ percorrem a pilha quando o foco não está em um campo de texto.
+- **Triagem:** pilha visual das decisões já registradas, filtro por confirmadas/fora da base/candidatas, busca e publicações recentes. Quatro filtros adicionais mostram pendências de informação: identidade incompleta, fonte em teste, leitura divergente e nova pista no texto. São marcadores independentes da decisão: um registro descartado pode ter pista nova sem virar automaticamente um achado. Em telas pequenas, as colunas ficam abaixo da carta. Teclas ←/→ percorrem a pilha quando o foco não está em um campo de texto.
 - **Publicações:** arquivo pesquisável com filtros. Cada ficha mostra a decisão de base **separada** da decisão de alerta, o motivo, a prova, eventuais páginas de PDF e a fonte original. Texto recuperado e sugestões não viram automaticamente fatos confirmados.
 - **Base completa:** todas as linhas e colunas de `eventos.csv`, `consorcios.csv`, `participacoes.csv`, `vinculos-documentos.csv`, `identidade-pendente.csv`, `arquivo-coletas.ndjson` e `revisoes-eventos.ndjson`. Há busca por tabela, prévia integral da linha e glossário de todas as colunas, mesmo que a tabela ou as células estejam vazias. Célula vazia aparece como “Não informado”. A ordem visual prioriza título/nome e decisão; nenhum campo é removido.
 - **Como funciona:** coleta, extração, classificação, destinos separados, papel limitado do DeepSeek, regras principais e próximos passos. Fontes com erro ficam recolhidas ao final para não poluir a leitura principal.
