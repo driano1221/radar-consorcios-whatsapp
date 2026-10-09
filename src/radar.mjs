@@ -30,6 +30,7 @@ import { itemId } from './lib/dedupe.mjs';
 import { recordRunDecisions } from './lib/decision-ledger.mjs';
 import { enrichArticles, classifyEnrichedItem } from './lib/article-enrichment.mjs';
 import { applyEditorialGuard, loadEditorialGuard } from './lib/editorial-guard.mjs';
+import { resolveArticlePreviews } from './lib/preview-resolution.mjs';
 import { fileURLToPath } from 'node:url';
 
 async function appendGitHubSummary(markdown) {
@@ -45,7 +46,7 @@ async function main() {
   const since = new Date(Date.now() - config.lookbackHours * 60 * 60 * 1000);
   const state = await loadState(config.stateFile);
   const editorialGuard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
-  console.log(`[revisão] ${editorialGuard.size} URLs descartadas ou duplicadas protegidas contra reenvio.`);
+  console.log(`[revisão] ${editorialGuard.size} decisões editoriais recuperadas (aceites, descartes e duplicatas).`);
   pruneState(state, config.stateRetentionDays, config.pendingRetentionDays);
 
   console.log(`Coletando publicações desde ${since.toISOString()}...`);
@@ -99,11 +100,24 @@ async function main() {
     status: articleResult.failed ? 'degraded' : 'ok', itemCount: articleResult.enriched,
     message: `${articleResult.attempted} tentativa(s); ${articleResult.enriched} texto(s) obtido(s); ${articleResult.failed} falha(s).` });
   console.log(`[texto] ${articleResult.enriched}/${articleResult.attempted} páginas enriquecidas; ${articleResult.failed} falhas.`);
-  const classified = articleResult.items.map((item, index) => {
+  let classified = articleResult.items.map((item, index) => {
     const classifiedItem = applyEditorialGuard(classifyEnrichedItem(item, collected[index]), editorialGuard);
     return config.aiReviewEnabled
       ? applyAiReview(classifiedItem, state.aiReviews?.[itemId(classifiedItem)]) : classifiedItem;
   });
+  let previewReviewCalls = 0;
+  if (config.aiReviewEnabled && (config.sendEnabled || config.aiPreview)) {
+    const resolution = await resolveArticlePreviews(classified, collected, state, {
+      apiKey: process.env.DEEPSEEK_API_KEY,
+      maxCallsRun: Math.min(3, config.maxAiReviewsPerRun),
+      maxCallsDay: config.maxAiReviewsPerDay,
+    });
+    classified = resolution.items;
+    previewReviewCalls = resolution.callsRun;
+    console.log(`[segunda passagem] ${resolution.callsRun} revisão(ões) de artigo; ` +
+      `${classified.filter((item) => item.triageResolution?.decision === 'adotado').length} adotado(s); ` +
+      `${classified.filter((item) => item.triageResolution?.decision === 'descartado').length} descartado(s).`);
+  }
   if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
   const relevant = classified
     .filter((item) => isPublishableClassification(item.classification, config.minimumScore))
@@ -128,7 +142,7 @@ async function main() {
     ? await reviewQueue(available, state, {
       apiKey: process.env.DEEPSEEK_API_KEY,
       maxPosts: Math.min(config.maxPostsPerRun, remainingToday),
-      maxCallsRun: config.maxAiReviewsPerRun,
+      maxCallsRun: Math.max(0, config.maxAiReviewsPerRun - previewReviewCalls),
       maxCallsDay: config.maxAiReviewsPerDay,
     }) : null;
   const unseen = reviewResult?.selected || available.slice(0, Math.min(config.maxPostsPerRun, remainingToday));
@@ -213,8 +227,9 @@ async function main() {
     `${JSON.stringify({
       generatedAt: new Date().toISOString(),
       minimumScore: config.minimumScore,
-      items: finalClassified.map(({ title, url, source, sourceUrl, kind, previewOnly, classification, aiReview }) => ({
-        title, url, source, sourceUrl, kind, previewOnly, classification, aiReview,
+      items: finalClassified.map(({ title, url, source, sourceUrl, kind, previewOnly, reviewReason,
+        triageResolution, classification, aiReview }) => ({
+        title, url, source, sourceUrl, kind, previewOnly, reviewReason, triageResolution, classification, aiReview,
       })),
     }, null, 2)}\n`,
     'utf8',
