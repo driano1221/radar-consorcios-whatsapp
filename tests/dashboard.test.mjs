@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboardSourceCatalog, makeBaseTable } from '../scripts/build-dashboard.mjs';
+import { desktopFlowSvg, mobileFlowSvg } from '../scripts/build-flow-diagram.mjs';
 
 test('versão pública preserva decisões e tabelas, mas não republica texto integral nem identificadores pessoais', () => {
   const input = { generatedAt: '2026-10-09T12:00:00Z', items: [{ id: '1', title: 'Ato publicado',
@@ -28,6 +29,26 @@ test('painel usa registro com decisão e evidência visíveis, sem janela XP ou 
   assert.match(html, /id="overview-detail"/);
   assert.match(script, /renderOverviewDetail\(/);
   assert.match(script, /Nenhum trecho de prova foi recuperado/);
+});
+
+test('fluxograma vetorial mostra os dois caminhos reais e tem versão legível no celular', async () => {
+  const html = await readFile(new URL('../dashboard/src/index.html', import.meta.url), 'utf8');
+  const desktop = desktopFlowSvg();
+  const mobile = mobileFlowSvg();
+  assert.match(html, /<picture>[\s\S]*fluxo-radar-mobile\.svg[\s\S]*fluxo-radar\.svg/);
+  assert.match(html, /Ler o fluxograma em texto/);
+  for (const svg of [desktop, mobile]) {
+    assert.match(svg, /<svg[^>]+role="img"/);
+    assert.match(svg, /<title id="title">/);
+    assert.match(svg, /DENTRO|Fato comprovado/);
+    assert.match(svg, /FORA|Descartado com motivo/);
+    assert.match(svg, /Candidato/);
+    assert.match(svg, /DeepSeek confere/);
+    assert.match(svg, /Mensagem no grupo/);
+    assert.match(svg, /marker-end="url\(#arrow\)"/);
+  }
+  assert.match(desktop, /viewBox="0 0 1160 994"/);
+  assert.match(mobile, /viewBox="0 0 440 1783"/);
 });
 
 test('base expõe todas as colunas, até em tabela vazia, com explicação e ordem legível', () => {

@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { classifyItem, isStaleLegislativeDocument } from '../src/lib/classifier.mjs';
+import { writeFlowDiagrams } from './build-flow-diagram.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = path.join(root, 'data', 'catalogo');
@@ -490,6 +491,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   await mkdir(destination, { recursive: true });
   await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'app.js', 'triage-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
+  await writeFlowDiagrams(destination);
   await Promise.all([
     writeFile(path.join(destination, 'data.json'), `${JSON.stringify(outputData)}\n`, 'utf8'),
     writeFile(path.join(destination, 'version.json'), `${JSON.stringify({ generatedAt: outputData.generatedAt,

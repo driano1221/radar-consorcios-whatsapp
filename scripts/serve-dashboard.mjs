@@ -12,6 +12,8 @@ const files = new Map([
   ['/registry.css', ['registry.css', 'text/css; charset=utf-8']],
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/triage-model.mjs', ['triage-model.mjs', 'text/javascript; charset=utf-8']],
+  ['/fluxo-radar.svg', ['fluxo-radar.svg', 'image/svg+xml']],
+  ['/fluxo-radar-mobile.svg', ['fluxo-radar-mobile.svg', 'image/svg+xml']],
   ['/data.json', ['data.json', 'application/json; charset=utf-8']],
 ]);
 const port = Number(process.env.DASHBOARD_PORT || 4173);
