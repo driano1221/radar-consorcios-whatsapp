@@ -41,6 +41,28 @@ test('lei que autoriza ingresso não vira participação confirmada', () => {
   assert.equal(row.municipio, 'Pains');
 });
 
+test('catálogo corrige Campo Mourão retroativamente sem apagar o envio antigo', () => {
+  const url = 'https://exemplo.gov.br/campo-mourao.pdf';
+  const rawText = 'DISPENSA DE LICITAÇÃO Nº 157/2026. Fica autorizada a dispensa de licitação ' +
+    'para FORMALIZAÇÃO DE CONTRATO DE RATEIO COM O CONSÓRCIO INTERMUNICIPAL DE SAÚDE ' +
+    'DA REGIÃO DE CAMPO MOURÃO, referente ao exercício de 2027.';
+  const item = { kind: 'gazette', title: 'Diário Oficial de Campo Mourão (PR)', url,
+    source: 'Querido Diário', summary: rawText, rawText, aiReview: {
+      status: 'approved', category: 'RATEIO', promptVersion: 2 },
+    classification: { category: 'RATEIO', score: 12, evidenceText: rawText,
+      stage: 'contrato de rateio citado; celebração a conferir' } };
+  const oldRow = catalogRecord(item, at, at, at);
+  const records = new Map([[oldRow.id, oldRow]]);
+  mergeStateIntoCatalog(records, { observations: { x: { item, firstSeenAt: at, lastSeenAt: at } },
+    seen: { x: { url, title: item.title, category: 'RATEIO', sentAt: at } } });
+  const corrected = records.get(oldRow.id);
+  assert.equal(corrected.tipo_evento, 'RATEIO EM TRAMITAÇÃO');
+  assert.equal(corrected.tipo_documento, 'ato autorizativo de rateio');
+  assert.match(corrected.etapa, /contrato não assinado/);
+  assert.equal(corrected.enviado_em, at);
+  assert.equal(corrected.revisao_ia, 'approved (categoria corrigida)');
+});
+
 test('projeto de lei continua identificado como proposta', () => {
   const row = catalogRecord({ kind: 'legislative', title: 'PROJETO DE LEI 14/2026: adesão ao consórcio',
     url: 'https://camara.exemplo/materia/14', classification: { category: 'ADESÃO', score: 9 } }, at, at);

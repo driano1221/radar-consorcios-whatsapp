@@ -23,6 +23,21 @@ test('aprovação antiga da IA não ressuscita lei de 2022 rejeitada pela regra 
   assert.equal(reviewed.classification.score, 0);
 });
 
+test('IA não promove dispensa autorizada a contrato de rateio celebrado', async () => {
+  const authorized = { ...item('Campo Mourão autoriza dispensa para formalizar rateio', 'RATEIO EM TRAMITAÇÃO'),
+    kind: 'gazette', classification: { category: 'RATEIO EM TRAMITAÇÃO', score: 12, emoji: '🟪',
+      stage: 'dispensa autorizada para formalizar rateio; contrato não assinado no ato' } };
+  const state = { pending: { [itemId(authorized)]: { item: authorized } } };
+  const reviewed = await reviewQueue([authorized], state, {
+    reviewImpl: async () => result('approved', 'RATEIO'), maxPosts: 1,
+  });
+  assert.equal(reviewed.selected[0].classification.category, 'RATEIO EM TRAMITAÇÃO');
+  assert.equal(reviewed.selected[0].aiReview.proposedCategory, 'RATEIO');
+  assert.equal(reviewed.audit[0].category, 'RATEIO EM TRAMITAÇÃO');
+  assert.equal(applyAiReview(authorized, state.aiReviews[itemId(authorized)]).classification.category,
+    'RATEIO EM TRAMITAÇÃO');
+});
+
 test('DeepSeek exige JSON consistente e evidência literal', async () => {
   const entry = item('Consórcio Intermunicipal cria agenda de investimentos');
   const response = (answer) => async (_url, options) => {

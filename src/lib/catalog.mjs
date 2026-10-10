@@ -7,6 +7,7 @@ import { normalizeWhitespace } from './text.mjs';
 import { buildIdentityCatalog, identityKey } from './consortium-identity.mjs';
 import { decidePublication } from './publication-gate.mjs';
 import { formalActDate } from './publication-date.mjs';
+import { AI_PROMPT_VERSION, applyAiReview } from './ai-review.mjs';
 
 const FIELDS = [
   'id', 'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
@@ -25,6 +26,7 @@ function safeText(value, limit = 500) {
 }
 
 function documentType(item) {
+  if (item.classification?.category === 'RATEIO EM TRAMITAÇÃO') return 'ato autorizativo de rateio';
   const text = item.kind === 'gazette'
     ? `${item.title || ''} ${item.classification?.evidenceText || ''}`.slice(0, 500)
     : String(item.title || '');
@@ -48,7 +50,8 @@ function stage(item, type) {
 }
 
 function analysisStatus(item, sentAt) {
-  const ai = item.aiReview?.status;
+  const ai = ['rejected', 'disputed'].includes(item.aiReview?.status) ||
+    item.aiReview?.promptVersion === AI_PROMPT_VERSION ? item.aiReview?.status : '';
   if (ai === 'rejected') return 'rejeitado pela revisão automática';
   if (ai === 'disputed') return 'divergente — requer revisão humana';
   if (item.classification?.category === 'GERAL' || (item.classification?.score ?? 0) < 5) {
@@ -104,15 +107,24 @@ function statusPriority(status) {
 
 export function mergeCatalogRecord(existing, incoming) {
   if (!existing) return incoming;
+  const correctedRateioStage = existing.tipo_evento === 'RATEIO' &&
+    incoming.tipo_evento === 'RATEIO EM TRAMITAÇÃO' &&
+    /contrato não assinado/i.test(incoming.etapa);
+  const oldAiRateioApproval = incoming.tipo_evento === 'RATEIO EM TRAMITAÇÃO' &&
+    /contrato não assinado|assinatura pendente/i.test(incoming.etapa) &&
+    existing.revisao_ia === 'approved';
   const incomingBetter = statusPriority(incoming.situacao_analise) > statusPriority(existing.situacao_analise) ||
     (statusPriority(incoming.situacao_analise) === statusPriority(existing.situacao_analise) &&
       (incoming.trecho.length > existing.trecho.length ||
         (incoming.pontuacao || 0) > (existing.pontuacao || 0)));
-  const best = incomingBetter ? incoming : existing;
+  const best = correctedRateioStage || incomingBetter ? incoming : existing;
   return { ...best,
     primeira_coleta: [existing.primeira_coleta, incoming.primeira_coleta].filter(Boolean).sort()[0] || '',
     ultima_coleta: [existing.ultima_coleta, incoming.ultima_coleta].filter(Boolean).sort().at(-1) || '',
     enviado_em: existing.enviado_em || incoming.enviado_em || '',
+    revisao_ia: (correctedRateioStage || oldAiRateioApproval) && existing.revisao_ia
+      ? `${existing.revisao_ia} (categoria corrigida)`
+      : best.revisao_ia || existing.revisao_ia || incoming.revisao_ia || '',
     consorcio: best.consorcio || existing.consorcio || incoming.consorcio,
     sigla: best.sigla || existing.sigla || incoming.sigla,
     trecho: [existing.trecho, incoming.trecho].sort((a, b) => b.length - a.length)[0],
@@ -154,10 +166,8 @@ export function mergeStateIntoCatalog(records, state) {
       ? { ...original, excerpts: [preservedEvidence, original.summary].filter(Boolean) }
       : original;
     const fresh = original ? classifyItem(recheckItem) : null;
-    const classification = original?.aiReview?.status === 'approved' && original.aiReview.category &&
-      fresh.category !== 'GERAL' && fresh.score >= 5
-      ? { ...fresh, category: original.aiReview.category } : fresh;
-    const item = original ? { ...original, classification } : null;
+    const candidate = original ? { ...original, classification: fresh } : null;
+    const item = candidate ? applyAiReview(candidate, candidate.aiReview) : null;
     if (!item?.url) continue;
     const sent = seenByUrl.get(canonicalUrl(item.url))?.sentAt || '';
     const row = catalogRecord(item, observation.firstSeenAt, observation.lastSeenAt, sent);

@@ -103,8 +103,13 @@ async function main() {
   const articleResult = await enrichArticles(collected);
   sourceHealth.push({ name: 'Texto das páginas originais',
     status: articleResult.failed ? 'degraded' : 'ok', itemCount: articleResult.enriched,
-    message: `${articleResult.attempted} tentativa(s); ${articleResult.enriched} texto(s) obtido(s); ${articleResult.failed} falha(s).` });
-  console.log(`[texto] ${articleResult.enriched}/${articleResult.attempted} páginas enriquecidas; ${articleResult.failed} falhas.`);
+    message: `${articleResult.attempted} tentativa(s); ${articleResult.enriched} texto(s) obtido(s); ` +
+      `${articleResult.missingText.length} sem texto aproveitável; ${articleResult.failed} erro(s) técnico(s).` });
+  console.log(`[texto] ${articleResult.enriched}/${articleResult.attempted} páginas enriquecidas; ` +
+    `${articleResult.missingText.length} sem texto aproveitável; ${articleResult.failed} erros técnicos.`);
+  for (const gap of articleResult.missingText) {
+    console.log(`[texto] sem texto (${gap.reason}): ${gap.source} — ${gap.title.slice(0, 120)} — ${gap.url}`);
+  }
   let classified = articleResult.items.map((item, index) => {
     const classifiedItem = applyEditorialGuard(classifyEnrichedItem(item, collected[index]), editorialGuard);
     return config.aiReviewEnabled
@@ -229,6 +234,13 @@ async function main() {
   await writeFile(
     path.join(config.outputDir, 'source-health.json'),
     `${JSON.stringify({ generatedAt: new Date().toISOString(), sources: sourceHealth }, null, 2)}\n`,
+    'utf8',
+  );
+  await writeFile(
+    path.join(config.outputDir, 'article-enrichment-audit.json'),
+    `${JSON.stringify({ generatedAt: new Date().toISOString(), attempted: articleResult.attempted,
+      enriched: articleResult.enriched, technicalErrors: articleResult.failed,
+      missingText: articleResult.missingText }, null, 2)}\n`,
     'utf8',
   );
   await writeFile(

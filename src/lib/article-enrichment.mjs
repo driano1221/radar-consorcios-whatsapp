@@ -154,16 +154,24 @@ export async function enrichArticles(items, { limit = 12, concurrency = 3, inclu
     .slice(0, limit);
   const output = [...items];
   let next = 0; let enriched = 0; let failed = 0;
+  const missingText = [];
   await Promise.all(Array.from({ length: Math.min(concurrency, selected.length) }, async () => {
     while (next < selected.length) {
       const { item, index } = selected[next++];
+      const recordMissing = (source, reason) => {
+        missingText.push({ index, source: source.source || '', title: source.title || '',
+          url: source.url || '', reason });
+        deps.onFailure?.(source, reason);
+      };
       try {
-        output[index] = await enrichArticle(item, deps);
+        output[index] = await enrichArticle(item, { ...deps, onFailure: recordMissing });
         if (output[index] !== item) enriched += 1;
-      } catch (error) { failed += 1; deps.onFailure?.(item, `erro: ${error.message}`); console.warn(`[texto] ${item.source}: ${error.message}`); }
+      } catch (error) { failed += 1; recordMissing(item, `erro: ${error.message}`); console.warn(`[texto] ${item.source}: ${error.message}`); }
     }
   }));
-  return { items: output, attempted: selected.length, enriched, failed };
+  missingText.sort((left, right) => left.index - right.index);
+  return { items: output, attempted: selected.length, enriched, failed,
+    missingText: missingText.map(({ index, ...entry }) => entry) };
 }
 
 export function classifyEnrichedItem(item, original) {

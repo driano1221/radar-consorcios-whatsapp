@@ -120,6 +120,7 @@ jobs:
           path: |
             output/*preview.txt
             output/source-health.json
+            output/article-enrichment-audit.json
             output/source-funnel.json
             output/classification-audit.json
             output/ai-review-audit.json

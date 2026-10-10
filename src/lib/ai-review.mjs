@@ -1,7 +1,7 @@
 import { itemId } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
 
-export const AI_PROMPT_VERSION = 2;
+export const AI_PROMPT_VERSION = 3;
 
 // A IA revisa no envio real e, se pedido, na prévia (para a prévia mostrar o que de fato seria publicado).
 export function shouldReviewWithAi({ aiReviewEnabled, sendEnabled, aiPreview }, remainingToday) {
@@ -10,17 +10,18 @@ export function shouldReviewWithAi({ aiReviewEnabled, sendEnabled, aiPreview }, 
 
 const EMOJI = {
   CRIAÇÃO: '🟩', ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', SAÍDA: '🟧',
-  RATEIO: '🟪', PROTOCOLO: '🟨', GOVERNANÇA: '🟨', CONTROLE: '🔎',
+  RATEIO: '🟪', 'RATEIO EM TRAMITAÇÃO': '🟪', PROTOCOLO: '🟨', GOVERNANÇA: '🟨', CONTROLE: '🔎',
   CRISE: '🟥', ATUAÇÃO: '📰',
 };
 
-const SYSTEM = `Você revisa notícias sobre consórcios públicos intermunicipais brasileiros. Classifique APENAS o fato comprovado no texto recebido. CRIAÇÃO significa fundação de NOVA entidade consorcial; se consórcio existente criou agenda ou projeto relevante, classifique ATUAÇÃO. ADESÃO é ingresso oficializado; ADESÃO AUTORIZADA é lei ou ato que autoriza ingresso, relevante, mas NÃO prova adesão concluída; mera proposta sem autorização é irrelevante. CRISE inclui inadimplência que retire financiamento, paralise atividade ou cause prejuízo concreto a municípios. RATEIO exige contrato de rateio concreto publicado ou celebrado, não linha contábil, balanço, orçamento ou menção normativa. PROTOCOLO exige ratificação, assinatura ou alteração como fato principal, não citação incidental em contrato de serviço. Contrato rotineiro de prestação de serviço ou locação, mesmo com consórcio, não é notícia estrutural relevante. CONTROLE exige fiscalização real, não cláusula genérica sobre improbidade. Se o texto não comprova evento novo, marque relevante=false e categoria=IRRELEVANTE. Responda somente JSON: {"relevante":boolean,"categoria":"CRIAÇÃO|ADESÃO|ADESÃO AUTORIZADA|SAÍDA|RATEIO|PROTOCOLO|GOVERNANÇA|CONTROLE|CRISE|ATUAÇÃO|IRRELEVANTE|INCERTO","novo_consorcio":boolean,"evidencia":"trecho literal curto do texto","justificativa":"uma frase"}. Não invente fatos nem use conhecimento externo.`;
+const SYSTEM = `Você revisa notícias sobre consórcios públicos intermunicipais brasileiros. Classifique APENAS o fato comprovado no texto recebido. CRIAÇÃO significa fundação de NOVA entidade consorcial; se consórcio existente criou agenda ou projeto relevante, classifique ATUAÇÃO. ADESÃO é ingresso oficializado; ADESÃO AUTORIZADA é lei ou ato que autoriza ingresso, relevante, mas NÃO prova adesão concluída; mera proposta sem autorização é irrelevante. CRISE inclui inadimplência que retire financiamento, paralise atividade ou cause prejuízo concreto a municípios. RATEIO exige contrato de rateio concreto publicado ou celebrado, não linha contábil, balanço, orçamento ou menção normativa. RATEIO EM TRAMITAÇÃO é autorização específica de dispensa ou outra etapa para formalizar contrato de rateio, sem prova de que foi assinado; nunca chame esse ato de contrato publicado. PROTOCOLO exige ratificação, assinatura ou alteração como fato principal, não citação incidental em contrato de serviço. Contrato rotineiro de prestação de serviço ou locação, mesmo com consórcio, não é notícia estrutural relevante. CONTROLE exige fiscalização real, não cláusula genérica sobre improbidade. Se o texto não comprova evento novo, marque relevante=false e categoria=IRRELEVANTE. Responda somente JSON: {"relevante":boolean,"categoria":"CRIAÇÃO|ADESÃO|ADESÃO AUTORIZADA|SAÍDA|RATEIO|RATEIO EM TRAMITAÇÃO|PROTOCOLO|GOVERNANÇA|CONTROLE|CRISE|ATUAÇÃO|IRRELEVANTE|INCERTO","novo_consorcio":boolean,"evidencia":"trecho literal curto do texto","justificativa":"uma frase"}. Não invente fatos nem use conhecimento externo.`;
 
 function inputFor(item) {
   return {
     titulo: item.title || '',
     resumo: (item.summary || '').slice(0, 1400),
     trecho: (item.classification?.evidenceText || item.rawText || '').slice(0, 2200),
+    etapa_identificada: item.classification?.stage || '',
     fonte: item.source || '',
   };
 }
@@ -83,9 +84,17 @@ export function applyAiReview(item, review) {
   if (item.classification?.category === 'GERAL' || (item.classification?.score ?? 0) < 5) {
     return { ...item, aiReview: review };
   }
-  if (review.status === 'approved') return { ...item, aiReview: review,
-    classification: { ...item.classification, category: review.category,
-      score: Math.max(5, item.classification?.score || 0), emoji: EMOJI[review.category] } };
+  if (review.status === 'approved') {
+    // A segunda leitura não pode transformar uma autorização preparatória em
+    // contrato celebrado, mesmo que o modelo devolva a categoria RATEIO.
+    const category = item.classification.category === 'RATEIO EM TRAMITAÇÃO'
+      ? 'RATEIO EM TRAMITAÇÃO' : review.category;
+    const boundedReview = category === review.category ? review
+      : { ...review, category, proposedCategory: review.category, boundedBy: 'etapa do ato' };
+    return { ...item, aiReview: boundedReview,
+      classification: { ...item.classification, category,
+        score: Math.max(5, item.classification?.score || 0), emoji: EMOJI[category] } };
+  }
   if (review.status === 'disputed') return { ...item, aiReview: review };
   return item;
 }
@@ -148,8 +157,9 @@ export async function reviewQueue(items, state, {
       continue;
     }
     if (review.status === 'approved') {
-      selected.push(applyAiReview(item, review));
-      audit.push({ id, status: 'approved', category: review.category });
+      const approvedItem = applyAiReview(item, review);
+      selected.push(approvedItem);
+      audit.push({ id, status: 'approved', category: approvedItem.classification.category });
     }
   }
   return { selected, audit, callsRun, usage: { ...state.aiUsage } };

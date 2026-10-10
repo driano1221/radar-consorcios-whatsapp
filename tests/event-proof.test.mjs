@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { classifyItem } from '../src/lib/classifier.mjs';
+import { formatWhatsAppMessage } from '../src/lib/format.mjs';
 import { readFile } from 'node:fs/promises';
 
 test('aprovação de projeto para participar do Conclima é autorização, não ingresso comprovado', () => {
@@ -167,6 +168,31 @@ test('autorização de dispensa para formalizar rateio não é contrato assinado
   const result = classifyItem({ kind: 'gazette', title: 'Diário Oficial de Primeiro de Maio', rawText });
   assert.equal(result.category, 'RATEIO EM TRAMITAÇÃO');
   assert.match(result.stage, /contrato não assinado/);
+});
+
+test('Campo Mourão: dispensa autorizada para rateio de 2027 não vira contrato publicado', () => {
+  const rawText = 'Campo Mourão - Sexta-feira - 09/10/2026 DISPENSA DE LICITAÇÃO N° 157/2026. ' +
+    'Processo digital nº 44800/2026 – fica autorizada a dispensa de licitação para FORMALIZAÇÃO DE CONTRATO DE RATEIO ' +
+    'COM O CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA COMUNIDADE DOS MUNICÍPIOS DA REGIÃO DE CAMPO MOURÃO - CISCOMCAM, ' +
+    'para pagamento da taxa de contribuição mensal referente ao exercício de 2027.';
+  const item = { kind: 'gazette', title: 'Diário Oficial de Campo Mourão (PR)',
+    territoryName: 'Campo Mourão', source: 'Querido Diário', publishedAt: '2026-10-09T12:00:00-03:00',
+    url: 'https://exemplo.gov.br/campo-mourao.pdf', summary: rawText, rawText };
+  const classification = classifyItem(item);
+  assert.equal(classification.category, 'RATEIO EM TRAMITAÇÃO');
+  assert.match(classification.stage, /contrato não assinado/);
+  assert.match(classification.evidenceText, /fica autorizada a dispensa de licitação/);
+  const message = formatWhatsAppMessage({ ...item, classification });
+  assert.match(message, /autoriza etapa para formalizar rateio/);
+  assert.doesNotMatch(message, /publica contrato de rateio|publicou contrato de rateio/);
+});
+
+test('contrato efetivamente celebrado não é rebaixado por autorização preparatória no mesmo texto', () => {
+  const rawText = 'Fica autorizada a dispensa de licitação para formalização de contrato de rateio com o ' +
+    'Consórcio Intermunicipal de Saúde. O Município e o consórcio celebram o presente contrato de rateio, ' +
+    'assinado pelos representantes das partes.';
+  const result = classifyItem({ kind: 'gazette', title: 'Contrato de rateio', rawText });
+  assert.equal(result.category, 'RATEIO');
 });
 
 test('notícia de ingresso autorizado não declara entrada consumada', () => {

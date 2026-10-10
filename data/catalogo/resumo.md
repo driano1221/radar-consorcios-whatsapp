@@ -12,16 +12,16 @@
 | ATUAÇÃO | 19 |
 | GOVERNANÇA | 17 |
 | ADESÃO AUTORIZADA | 13 |
-| RATEIO | 9 |
+| RATEIO | 8 |
 | CONTROLE | 7 |
 | FINANÇAS | 5 |
 | ADESÃO | 2 |
+| RATEIO EM TRAMITAÇÃO | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | COOPERAÇÃO AUTORIZADA | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
 | PROPOSTA DE ADESÃO | 1 |
 | PROTOCOLO | 1 |
-| RATEIO EM TRAMITAÇÃO | 1 |
 | SAÍDA AUTORIZADA | 1 |
 
 ## Registros recentes para conferir
@@ -31,7 +31,7 @@
 | 2026-10-09 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [EXTRATO DO 2º TERMO ADITIVO AO CONTRATO ADMINISTRATIVO Nº 283/2024 - ADESÃO 08/2024](https://amm.diariomunicipal.org/publicacao/1922706/) |
 | 2026-10-09 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA](https://amm.diariomunicipal.org/publicacao/1923116/) |
 | 2026-10-09 | ATUAÇÃO — ato publicado — efeito a verificar | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Mogi Guaçu (SP)](https://data.queridodiario.ok.org.br/3530706/2026-10-09/04512dfa6065751937309d0d73d72b65f5cc0c20.pdf) |
-| 2026-10-09 | RATEIO — contrato de rateio citado; celebração a conferir | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-09/8a6f89e74a3d28002fc4dad419e3d843d96eca82.pdf) |
+| 2026-10-09 | RATEIO EM TRAMITAÇÃO — dispensa autorizada para formalizar rateio; contrato não assinado no ato | publicado pelo radar — não confirmado manualmente | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-09/8a6f89e74a3d28002fc4dad419e3d843d96eca82.pdf) |
 | 2026-10-08 | ATUAÇÃO — nova sede em construção; assembleia e visita ainda futuras | confirmado por revisão editorial — a construção da nova sede é atuação em curso; o anúncio de assembleia não prova que a reunião ou a visita já ocorreram | [CONIAPE realiza Assembleia Ordinária e Visita Técnica à nova sede nesta quarta-feira (14)](https://consorcioconiape.pe.gov.br/2026/10/08/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-nesta-quarta-feira-14/) |
 | 2026-10-08 | ATUAÇÃO — norma operacional do serviço de inspeção publicada | confirmado por revisão editorial — a Resolução 004/2026 estabelece procedimentos de inspeção do SIM vinculado ao CIDESAA; protocolo e estatuto aparecem como fundamentos, não como alterações constitutivas | [RESOLUÇÃO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1921831/) |
 | 2026-10-08 | ATUAÇÃO — CIDESAA publicou instrução normativa do Serviço de Inspeção Municipal em 02/10/2026 | confirmado por revisão editorial — ato oficial assinado pelo presidente do consórcio estabelece procedimentos técnicos para o SIM/SISBI-POA; a palavra suspensão refere-se a estabelecimentos e produtos, não ao consórcio | [INSTRUÇÃO NORMATIVA Nº 016 DE 02 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1921829/) |

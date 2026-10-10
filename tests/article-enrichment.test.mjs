@@ -102,6 +102,23 @@ test('limita tentativas por rodada e mantém itens intocados quando falham', asy
   assert.deepEqual(result.items, items);
 });
 
+test('relatório distingue páginas sem texto de erros técnicos', async () => {
+  const items = [
+    { kind: 'news', title: 'Consórcio com acesso bloqueado', source: 'Portal A',
+      url: 'https://exemplo.gov.br/bloqueio', summary: '' },
+    { kind: 'news', title: 'Consórcio com página vazia', source: 'Portal B',
+      url: 'https://exemplo.gov.br/vazia', summary: '' },
+  ];
+  const result = await enrichArticles(items, { fetchImpl: async (url) => url.endsWith('/bloqueio')
+    ? new Response('Bloqueado', { status: 403, headers: { 'content-type': 'text/html' } })
+    : new Response('<html><main>Sem notícia</main></html>', { headers: { 'content-type': 'text/html' } }) });
+  assert.equal(result.attempted, 2);
+  assert.equal(result.enriched, 0);
+  assert.equal(result.failed, 0);
+  assert.deepEqual(result.missingText.map((row) => row.reason), ['http_403', 'texto_ausente_ou_sem_consorcio']);
+  assert.equal(result.missingText[0].url, items[0].url);
+});
+
 test('mudança de categoria após ler artigo fica em prévia, sem envio automático', () => {
   const original = { kind: 'news', title: 'Municípios discutem cooperação',
     url: 'https://example.org/a', summary: '' };

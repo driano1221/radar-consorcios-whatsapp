@@ -16,7 +16,7 @@ const APPROVED_PROJECT = /\b(?:c[aâ]mara|vereadores|legislativo)\b.{0,150}\b(?:
 const FORMAL_AUTHORIZATION = /\b(?:lei|decreto|resolu[cç][aã]o)\b.{0,100}\b(?:autoriza|ratifica)\b.{0,130}\b(?:ingresso|ades[aã]o|participa[cç][aã]o|integrar)\b/i;
 const AUTHORIZED_INGRESS = /\b(?:munic[ií]pio\s+de\s+[A-Za-zÀ-ÿ ]{2,65}\s+)?(?:foi\s+)?autorizad[oa]\s+a\s+(?:ingressar|integrar|aderir)\s+(?:no|ao|a[oà])\s+cons[oó]rcio|\bautoriza\s+(?:o\s+)?ingresso\s+do\s+munic[ií]pio\s+de\s+.{2,65}\s+(?:no|ao)\s+cons[oó]rcio/i;
 const AUTHORIZED_ADHESION_TITLE = /\bautoriza\s+(?:a\s+)?ades[aã]o\s+(?:ao|a[oà])\s+cons[oó]rcio/i;
-const EXECUTED_RATEIO = /(?:celebrad[oa]s?|assinado|firmado)\s+(?:o\s+|um\s+|presente\s+)?contrato\s+de\s+rateio|contrato\s+de\s+rateio\s+(?:foi\s+)?(?:celebrad[oa]s?|assinado|firmado)/i;
+const EXECUTED_RATEIO = /(?:celebram|celebra|celebrad[oa]s?|assinam|assina|assinado|firmam|firma|firmado)\s+(?:(?:o|um|presente)\s+){0,2}contrato\s+de\s+rateio|contrato\s+de\s+rateio\s+(?:foi\s+)?(?:celebrad[oa]s?|assinado|firmado)/i;
 const UNAPPROVED_PROPOSAL = /\b(?:projeto|proposta|pretende|poder[aá]|estuda|discute|votar[aá])\b.{0,160}\b(?:ades[aã]o|ingresso|cria[cç][aã]o|constitui[cç][aã]o)\b/i;
 const PROPOSED_AMENDMENT = /\bprojeto de lei\b.{0,100}\b(?:pretende|prop[oõ]e|visa)\b.{0,140}\b(?:ratificar|alterar|atualizar)\b.{0,120}\b(?:protocolo|contrato|cons[oó]rcio)\b/i;
 const ASSEMBLY_APPROVED_PROTOCOL = /\b(?:consolida[cç][aã]o|altera[cç][oõ]es|novas?\s+ades[oõ]es)\b.{0,150}\baprovad[ao]s?\b.{0,110}\b(?:assembleia|prefeitos|integrantes\s+do\s+cons[oó]rcio)/i;
@@ -29,7 +29,11 @@ const APPROVED_ENTRY_PROPOSAL = [
 ];
 const GENERIC_RATEIO_IMPROBITY_CLAUSE = /\bcl[aá]usula\s+(?:doze|12)\b.{0,150}\bconstitui\s+ato\s+de\s+improbidade\b/i;
 const SIM_PROCEDURE_RESOLUTION = /\bresolu[cç][aã]o\s+n[º°.]?\s*\d+\/20\d{2}\s+disp[oõ]e\s+sobre\s+os\s+procedimentos\s+de\s+inspe[cç][aã]o/i;
-const RATEIO_AUTHORIZATION = /\bautoriza[cç][aã]o\s+para\s+realiza[cç][aã]o\s+de\s+dispensa\s+de\s+licita[cç][aã]o[\s\S]{0,900}\bformaliza[cç][aã]o\s+de\s+contrato\s+de\s+rateio/i;
+const RATEIO_AUTHORIZATION = [
+  /\bautoriza[cç][aã]o\s+para\s+realiza[cç][aã]o\s+de\s+dispensa\s+de\s+licita[cç][aã]o[\s\S]{0,900}\bformaliza[cç][aã]o\s+de\s+contrato\s+de\s+rateio/i,
+  /\b(?:fica\s+)?autorizad[oa]\s+(?:a\s+)?dispensa\s+de\s+licita[cç][aã]o[\s\S]{0,900}\b(?:para\s+)?formaliza[cç][aã]o\s+de\s+contrato\s+de\s+rateio/i,
+  /\b(?:fica\s+)?autorizad[oa]\s+(?:a\s+)?formaliza[cç][aã]o\s+(?:do|de um)\s+contrato\s+de\s+rateio/i,
+];
 const ELECTION_RESCHEDULED = /\bretifica[cç][aã]o\s+do\s+regulamento\s+eleitoral/i;
 const AUTHORIZED_COOPERATION = /\blei\s+n[º°.]?\s*\d+\/20\d{2}[\s\S]{0,300}\bautoriza\s+o\s+poder\s+executivo\s+a\s+firmar\s+conv[eê]nio[\s\S]{0,260}\bcons[oó]rcio/i;
 const RATIFIED_STATUTE = /\bratifica\s+o\s+estatuto\s+consolidado\s+do\s+cons[oó]rcio/i;
@@ -282,11 +286,11 @@ export function refineEventProof(item, classification) {
   }
 
   if (classification.category === 'RATEIO') {
-    if (RATEIO_AUTHORIZATION.test(text) && !EXECUTED_RATEIO.test(text)) {
+    if (RATEIO_AUTHORIZATION.some((pattern) => pattern.test(text)) && !EXECUTED_RATEIO.test(text)) {
       return withEvidence({ ...classification, category: 'RATEIO EM TRAMITAÇÃO', emoji: '🟪',
         stage: 'dispensa autorizada para formalizar rateio; contrato não assinado no ato',
         reasons: [...classification.reasons, 'ato preparatório específico não comprova contrato celebrado'] },
-      literalEvidence(text, [RATEIO_AUTHORIZATION], 20, 180));
+      literalEvidence(text, RATEIO_AUTHORIZATION, 20, 180));
     }
     if (AUTHORIZED_INGRESS.test(text) && !EXECUTED_RATEIO.test(text)) {
       return withEvidence({ ...classification, category: 'ADESÃO AUTORIZADA', emoji: '🟦',
