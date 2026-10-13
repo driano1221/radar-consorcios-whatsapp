@@ -3,7 +3,7 @@
   <desc id="description">Faixa editorial com um radar estilizado e as etapas observar, verificar e registrar.</desc>
   <rect width="1200" height="300" rx="12" fill="#f6f5ef"/>
   <rect x="0.5" y="0.5" width="1199" height="299" rx="11.5" fill="none" stroke="#d8ddd5"/>
-  <path d="M47 47h480" stroke="#285b54" stroke-width="2"/>
+  <path d="M47 65h480" stroke="#285b54" stroke-width="2"/>
   <rect x="47" y="37" width="9" height="20" fill="#d16b47"/>
   <text x="70" y="50" fill="#285b54" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="2.4">OBSERVATÓRIO EXPERIMENTAL · FONTES PÚBLICAS</text>
   <text x="47" y="127" fill="#193c39" font-family="Georgia, 'Times New Roman', serif" font-size="57" font-weight="700">Radar Consórcios</text>
