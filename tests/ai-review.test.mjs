@@ -180,6 +180,55 @@ test('resumo semanal revisa todos os achados, retém rateio documentado e remove
   assert.equal(again.calls, 0);
 });
 
+test('resumo semanal tenta novamente uma decisão inválida sem duplicar achados', async () => {
+  const candidate = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
+  const state = {};
+  let attempts = 0;
+  const reviewed = await reviewWeeklyFindings([candidate], state, {
+    apiKey: 'segredo-falso', reviewImpl: async () => {
+      attempts += 1;
+      if (attempts === 1) {
+        const error = new Error('DeepSeek retornou decisão ou evidência inconsistente.');
+        error.code = 'INVALID_AI_DECISION';
+        throw error;
+      }
+      return result('approved', 'ADESÃO AUTORIZADA');
+    },
+  });
+  assert.equal(reviewed.calls, 2);
+  assert.deepEqual(reviewed.audit.map(({ status }) => status), ['approved']);
+  assert.equal(reviewed.highlights.length, 1);
+  assert.equal(state.aiReviews[itemId(candidate)].status, 'approved');
+});
+
+test('duas decisões inválidas adiam só o achado afetado e preservam o próximo', async () => {
+  const broken = item('Proposta de ingresso no consórcio', 'ADESÃO');
+  const valid = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
+  const state = {};
+  const reviewed = await reviewWeeklyFindings([broken, valid], state, {
+    apiKey: 'segredo-falso', reviewImpl: async (entry) => {
+      if (entry === broken) {
+        const error = new Error('DeepSeek retornou decisão ou evidência inconsistente.');
+        error.code = 'INVALID_AI_DECISION';
+        throw error;
+      }
+      return result('approved', 'ADESÃO AUTORIZADA');
+    },
+  });
+  assert.equal(reviewed.calls, 3);
+  assert.deepEqual(reviewed.audit.map(({ status }) => status), ['deferred', 'approved']);
+  assert.equal(reviewed.audit[0].attempts, 2);
+  assert.deepEqual(reviewed.highlights.map(({ title }) => title), [valid.title]);
+  assert.equal(state.aiReviews[itemId(broken)], undefined);
+});
+
+test('falha de API no resumo continua bloqueando envio em vez de aprovar sem revisão', async () => {
+  const candidate = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
+  await assert.rejects(reviewWeeklyFindings([candidate], {}, {
+    apiKey: 'segredo-falso', reviewImpl: async () => { throw new Error('DeepSeek respondeu HTTP 503.'); },
+  }), /HTTP 503/);
+});
+
 test('IA revisa no envio e na prévia só quando pedida', () => {
   const base = { aiReviewEnabled: true, sendEnabled: false, aiPreview: false };
   assert.equal(shouldReviewWithAi(base, 5), false);

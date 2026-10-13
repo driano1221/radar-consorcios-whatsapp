@@ -17,7 +17,9 @@ async function main() {
   const config = await loadConfig();
   const state = await loadState(config.stateFile);
   const groupId = process.env.WHATSAPP_WEEKLY_GROUP_ID?.trim() || config.groupId;
-  const window = weeklyWindow(new Date(), !config.sendEnabled || process.env.WEEKLY_TEST === 'true');
+  // A prévia sem envio usa a mesma janela da execução agendada. Só a opção
+  // explícita de teste mostra uma janela móvel até o instante da prévia.
+  const window = weeklyWindow(new Date(), process.env.WEEKLY_TEST === 'true');
   const editorialGuard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
   const reportState = { ...state, observations: Object.fromEntries(
     Object.entries(state.observations || {}).map(([key, observation]) => [key, {
@@ -67,6 +69,9 @@ async function main() {
   await writeFile(path.join(config.outputDir, 'weekly-report.json'), JSON.stringify(report, null, 2) + '\n');
   await writeFile(path.join(config.outputDir, 'weekly-ai-audit.json'), JSON.stringify({ enabled: config.aiReviewEnabled,
     calls: ai?.calls || 0, audit: ai?.audit || [] }, null, 2) + '\n');
+  if (ai?.audit.some((entry) => entry.status === 'deferred') && !ai.highlights.length) {
+    throw new Error('Nenhum achado pôde ser validado; resumo não enviado. Consulte weekly-ai-audit.json.');
+  }
   console.log(text);
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `## Resumo semanal\n\n${text}\n`);
   if (!config.sendEnabled) return;

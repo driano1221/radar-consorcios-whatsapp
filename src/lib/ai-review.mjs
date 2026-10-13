@@ -28,21 +28,29 @@ function inputFor(item) {
 
 function validateAnswer(answer, input) {
   if (typeof answer?.relevante !== 'boolean' || typeof answer?.novo_consorcio !== 'boolean' ||
-    typeof answer?.categoria !== 'string' || typeof answer?.evidencia !== 'string') return null;
+    typeof answer?.categoria !== 'string' || typeof answer?.evidencia !== 'string') {
+    return { reason: 'campos obrigatórios ausentes' };
+  }
   const evidence = normalizeWhitespace(answer.evidencia);
   const supplied = normalizeWhitespace(`${input.titulo} ${input.resumo} ${input.trecho}`);
   // O modelo por vezes troca aspas, travessões ou espaços do PDF. Exigimos as
   // mesmas palavras na mesma ordem; paráfrase ou fato ausente segue bloqueado.
   const comparable = (value) => normalizeWhitespace(value.normalize('NFKC')
     .replace(/[\p{P}\p{S}]+/gu, ' ')).toLocaleLowerCase('pt-BR');
-  if (evidence.length < 12 || !comparable(supplied).includes(comparable(evidence))) return null;
-  if (answer.relevante) {
-    if (!Object.hasOwn(EMOJI, answer.categoria)) return null;
-    if ((answer.categoria === 'CRIAÇÃO') !== answer.novo_consorcio) return null;
-    return { status: 'approved', category: answer.categoria, evidence };
+  if (evidence.length < 12 || !comparable(supplied).includes(comparable(evidence))) {
+    return { reason: 'evidência não localizada no texto fornecido' };
   }
-  if (answer.categoria !== 'IRRELEVANTE' || answer.novo_consorcio) return null;
-  return { status: 'rejected', category: 'IRRELEVANTE', evidence };
+  if (answer.relevante) {
+    if (!Object.hasOwn(EMOJI, answer.categoria)) return { reason: 'categoria relevante inválida' };
+    if ((answer.categoria === 'CRIAÇÃO') !== answer.novo_consorcio) {
+      return { reason: 'categoria e criação de consórcio contraditórias' };
+    }
+    return { decision: { status: 'approved', category: answer.categoria, evidence } };
+  }
+  if (answer.categoria !== 'IRRELEVANTE' || answer.novo_consorcio) {
+    return { reason: 'irrelevância e categoria contraditórias' };
+  }
+  return { decision: { status: 'rejected', category: 'IRRELEVANTE', evidence } };
 }
 
 export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, timeoutMs = 25000 } = {}) {
@@ -65,9 +73,9 @@ export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, time
     error.code = 'INVALID_AI_DECISION';
     throw error;
   }
-  const decision = validateAnswer(answer, input);
+  const { decision, reason } = validateAnswer(answer, input);
   if (!decision) {
-    const error = new Error('DeepSeek retornou decisão ou evidência inconsistente.');
+    const error = new Error(`DeepSeek retornou decisão ou evidência inconsistente: ${reason}.`);
     error.code = 'INVALID_AI_DECISION';
     throw error;
   }
@@ -185,10 +193,25 @@ export async function reviewWeeklyFindings(items, state, {
     const id = item.id || itemId(item);
     let review = state.aiReviews[id];
     if (!review || review.promptVersion !== AI_PROMPT_VERSION) {
-      if (calls >= maxCalls) throw new Error('Resumo excedeu o teto de revisões por IA; envio suspenso.');
-      calls += 1;
-      review = await reviewImpl(item, { apiKey });
-      state.aiReviews[id] = { ...review, reviewedAt: now.toISOString() };
+      review = null;
+      for (let attempt = 1; attempt <= 2; attempt += 1) {
+        if (calls >= maxCalls) throw new Error('Resumo excedeu o teto de revisões por IA; envio suspenso.');
+        calls += 1;
+        try {
+          review = await reviewImpl(item, { apiKey });
+          state.aiReviews[id] = { ...review, reviewedAt: now.toISOString() };
+          break;
+        } catch (error) {
+          // Só decisões inválidas são isoladas. Falhas da API ou da rede não
+          // permitem concluir a revisão e continuam bloqueando o boletim.
+          if (error.code !== 'INVALID_AI_DECISION') throw error;
+          if (attempt === 2) {
+            audit.push({ id, status: 'deferred', reason: error.message, attempts: attempt });
+            console.warn(`[ia] Achado semanal ${id.slice(0, 10)} adiado após ${attempt} respostas inválidas: ${error.message}`);
+          }
+        }
+      }
+      if (!review) continue;
     }
     if (review.status === 'approved') {
       highlights.push(applyAiReview(item, state.aiReviews[id]));
