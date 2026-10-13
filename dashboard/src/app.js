@@ -1,8 +1,9 @@
 import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs';
+import { buildResults } from './results-model.mjs';
 
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
-  baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0 };
+  baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0, resultPeriod: 'all', resultMode: 'discovery' };
 const dateTime = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const dateOnly = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const number = new Intl.NumberFormat('pt-BR');
@@ -626,21 +627,135 @@ function renderMethod() {
     target.append(entry);
   }
 }
+function svgElement(tag, attributes = {}, value = '') {
+  const element = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [key, entry] of Object.entries(attributes)) element.setAttribute(key, String(entry));
+  if (value !== '') element.textContent = value;
+  return element;
+}
+function chartLabel(key, monthly) {
+  const [year, month, day] = key.split('-');
+  return monthly ? `${month}/${year.slice(2)}` : `${day}/${month}`;
+}
+function renderResultsChart(result) {
+  const target = $('#results-chart'); target.replaceChildren();
+  const { buckets, monthly } = result;
+  if (!buckets.length) { target.append(node('p', 'results-empty', 'Ainda não há datas para este gráfico.')); return; }
+  const mobile = window.matchMedia('(max-width: 650px)').matches;
+  const chart = svgElement('svg', { viewBox: mobile ? '0 0 344 242' : '0 0 920 270', role: 'img',
+    'aria-label': `Gráfico de ${buckets.length} períodos com ${result.confirmedCount} fatos confirmados. Consulte a tabela logo abaixo para os valores exatos.` });
+  const title = svgElement('title', {}, 'Fatos confirmados por período'); chart.append(title);
+  const max = Math.max(1, ...buckets.map((bucket) => bucket.count));
+  const plot = mobile ? { left: 30, top: 18, right: 329, bottom: 192 }
+    : { left: 42, top: 20, right: 900, bottom: 215 };
+  const height = plot.bottom - plot.top;
+  const gridSteps = Math.min(3, max);
+  for (let step = 0; step <= gridSteps; step += 1) {
+    const value = Math.round(max * step / gridSteps);
+    const y = plot.bottom - height * step / gridSteps;
+    chart.append(svgElement('line', { x1: plot.left, x2: plot.right, y1: y, y2: y, class: 'results-gridline' }),
+      svgElement('text', { x: plot.left - 10, y: y + 4, class: 'results-axis-label', 'text-anchor': 'end' }, String(value)));
+  }
+  const slot = (plot.right - plot.left) / buckets.length;
+  const width = Math.min(mobile ? 24 : 33, Math.max(mobile ? 3 : 5, slot * .58));
+  const visibleTicks = Math.min(mobile ? 4 : 7, buckets.length);
+  const tickStep = Math.max(1, Math.ceil((buckets.length - 1) / Math.max(1, visibleTicks - 1)));
+  buckets.forEach((bucket, index) => {
+    const x = plot.left + slot * (index + .5);
+    const barHeight = bucket.count ? Math.max(3, bucket.count / max * height) : 0;
+    const bar = svgElement('rect', { x: x - width / 2, y: plot.bottom - barHeight, width, height: barHeight,
+      rx: Math.min(3, width / 4), class: `results-bar ${result.mode}` });
+    bar.append(svgElement('title', {}, `${chartLabel(bucket.key, monthly)}: ${bucket.count} ${bucket.count === 1 ? 'fato' : 'fatos'}`));
+    chart.append(bar);
+    if (index % tickStep === 0 || index === buckets.length - 1) chart.append(svgElement('text', {
+      x, y: plot.bottom + 24, class: 'results-axis-label', 'text-anchor': 'middle',
+    }, chartLabel(bucket.key, monthly)));
+  });
+  target.append(chart);
+  const details = node('details', 'results-chart-data');
+  details.append(node('summary', '', 'Ler valores do gráfico'));
+  const table = node('table'); const head = node('tr');
+  head.append(node('th', '', 'Período'), node('th', '', 'Fatos'));
+  table.append(head);
+  for (const bucket of buckets) { const row = node('tr');
+    row.append(node('td', '', chartLabel(bucket.key, monthly)), node('td', '', number.format(bucket.count))); table.append(row); }
+  details.append(table); target.append(details);
+}
+function renderResultsBreakdown(title, subtitle, rows) {
+  const card = node('section', 'results-breakdown');
+  card.append(node('h3', '', title), node('p', '', subtitle));
+  const top = rows.slice(0, 6);
+  if (rows.length > 6) top.push({ name: 'Outros', count: rows.slice(6).reduce((sum, row) => sum + row.count, 0) });
+  if (!top.length) { card.append(node('p', 'results-empty', 'Sem fatos neste período.')); return card; }
+  const max = Math.max(...top.map((row) => row.count));
+  for (const row of top) {
+    const entry = node('div', 'results-breakdown-row');
+    const textLine = node('div', 'results-breakdown-line');
+    const name = node('span', '', row.name); name.title = row.name;
+    textLine.append(name, node('strong', '', number.format(row.count)));
+    const track = node('div', 'results-breakdown-track');
+    const fill = node('span'); fill.style.width = `${row.count / max * 100}%`; track.append(fill);
+    entry.append(textLine, track); card.append(entry);
+  }
+  return card;
+}
+function renderResults() {
+  const result = buildResults(state.data, { period: state.resultPeriod, mode: state.resultMode });
+  document.querySelectorAll('.results-period-button').forEach((button) => {
+    const active = button.dataset.period === state.resultPeriod;
+    button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
+  });
+  document.querySelectorAll('.results-mode button').forEach((button) => {
+    const active = button.dataset.mode === state.resultMode;
+    button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
+  });
+  const periodText = { all: 'desde o início', '30d': 'nos últimos 30 dias', '7d': 'nos últimos 7 dias' }[state.resultPeriod];
+  const metric = (numberValue, heading, description, detail = '') => {
+    const card = node('article', 'results-metric');
+    card.append(node('span', 'results-metric-heading', heading), node('strong', '', number.format(numberValue)),
+      node('p', '', description));
+    if (detail) card.append(node('small', '', detail));
+    return card;
+  };
+  $('#results-metrics').replaceChildren(
+    metric(result.consortiaCount, 'CONSÓRCIOS IDENTIFICADOS', `Primeira menção no acervo ${periodText}.`,
+      `${number.format(result.cnpjCount)} com CNPJ associado na base`),
+    metric(result.confirmedCount, 'FATOS CONFIRMADOS', `No recorte ${state.resultMode === 'discovery' ? 'da descoberta' : 'da ocorrência'} ${periodText}.`,
+      'Decisão “confirmado” na tabela de eventos'),
+    metric(result.municipalityCount, 'MUNICÍPIOS COM PARTICIPAÇÃO', `Participação documentada e descoberta ${periodText}.`,
+      'Não equivale a um censo de membros atuais'),
+  );
+  $('#results-chart-caption').textContent = state.resultMode === 'discovery'
+    ? 'Data em que o radar encontrou cada registro pela primeira vez.'
+    : 'Data do fato, quando comprovada; na falta dela, data da publicação original. Sem dia seguro, o registro não é colocado no gráfico diário.';
+  $('#results-chart-note').textContent = state.resultMode === 'occurrence'
+    ? `Ocorrência · ${result.monthly ? 'agrupamento mensal' : 'agrupamento diário'} · ${result.missingOccurrenceDate} ${result.missingOccurrenceDate === 1 ? 'registro descoberto no período sem data suficiente' : 'registros descobertos no período sem data suficiente'} para posicionar no tempo.`
+    : `Descoberta · ${result.monthly ? 'agrupamento mensal' : 'agrupamento diário'} · ${result.undated} ${result.undated === 1 ? 'registro sem data plotável' : 'registros sem data plotável'} neste recorte.`;
+  renderResultsChart(result);
+  $('#results-breakdowns').replaceChildren(
+    renderResultsBreakdown('Por assunto', 'Tipos dos fatos confirmados no período.', result.breakdowns.categories),
+    renderResultsBreakdown('Por UF', 'Apenas a UF identificada no registro; lacunas ficam explícitas.', result.breakdowns.states),
+    renderResultsBreakdown('Por fonte', 'Veículos e portais onde o radar encontrou a publicação.', result.breakdowns.sources),
+    renderResultsBreakdown('Consórcios em evidência', 'Menções nos fatos confirmados; um fato pode citar mais de um.', result.breakdowns.consortia),
+  );
+}
 function switchView(view, focusDetail = false) {
   state.view = view;
-  const titles = { overview: ['Triagem', 'Registro de publicações'], feed: ['Publicações', 'Arquivo de publicações'],
+  const titles = { overview: ['Triagem', 'Registro de publicações'], results: ['Resultados', 'Resultados do radar'], feed: ['Publicações', 'Arquivo de publicações'],
     base: ['Base completa', 'Base de dados'], method: ['Como funciona', 'Fluxo e critérios'] };
   document.querySelectorAll('.view').forEach((section) => section.classList.toggle('active', section.id === view));
   document.querySelectorAll('.nav-button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
   $('#breadcrumb-current').textContent = titles[view][0];
   $('#page-title').textContent = titles[view][1];
   const descriptions = { overview: 'O que entrou na base, o que foi descartado e qual documento sustenta cada decisão.',
+    results: 'Consórcios, fatos e participação documentada, com recortes temporais e fontes visíveis.',
     feed: 'Todas as coletas guardadas, com filtros, evidências e fonte original.',
     base: 'Consulte cada tabela, inclusive colunas vazias, com explicação e prévia da linha.',
     method: 'Entenda onde entram as regras, a IA e a revisão humana.' };
   $('#page-description').textContent = descriptions[view];
   if (view === 'feed') renderFeed();
   if (view === 'overview') renderDeck();
+  if (view === 'results') renderResults();
   if (view === 'base') renderBase();
   if (view === 'method') renderMethod();
   if (focusDetail && view === 'feed' && window.matchMedia('(max-width: 780px)').matches)
@@ -654,6 +769,7 @@ function renderSnapshot() {
   $('#hosting-badge').textContent = state.data.public ? 'Consulta pública · atualização automática' : 'Consulta local · somente leitura';
   $('#footer-mode').textContent = `RADAR CONSÓRCIOS / CONSULTA ${state.data.public ? 'PÚBLICA' : 'LOCAL'}`;
   renderOverview();
+  if (state.view === 'results') renderResults();
   if (state.view === 'feed') renderFeed();
   if (state.view === 'base') renderBase();
   if (state.view === 'method') renderMethod();
@@ -686,6 +802,17 @@ async function init() {
     state.data = await response.json();
     renderSnapshot();
     document.querySelectorAll('.nav-button').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
+    document.querySelectorAll('.results-period-button').forEach((button) => button.addEventListener('click', () => {
+      state.resultPeriod = button.dataset.period; renderResults();
+    }));
+    document.querySelectorAll('.results-mode button').forEach((button) => button.addEventListener('click', () => {
+      state.resultMode = button.dataset.mode; renderResults();
+    }));
+    let resultChartMobile = window.matchMedia('(max-width: 650px)').matches;
+    window.addEventListener('resize', () => {
+      const nextMobile = window.matchMedia('(max-width: 650px)').matches;
+      if (nextMobile !== resultChartMobile) { resultChartMobile = nextMobile; if (state.view === 'results') renderResultsChart(buildResults(state.data, { period: state.resultPeriod, mode: state.resultMode })); }
+    });
     $('#open-feed').addEventListener('click', () => switchView('feed'));
     $('#deck-search').addEventListener('input', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
     $('#deck-filter').addEventListener('change', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });

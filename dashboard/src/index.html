@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./redesign.css">
   <link rel="stylesheet" href="./registry.css">
+  <link rel="stylesheet" href="./results.css">
   <script src="./app.js" type="module"></script>
 </head>
 <body>
@@ -16,9 +17,10 @@
       <div class="brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><div><strong>Radar Consórcios</strong><small>Arquivo de pesquisa</small></div></div>
       <nav class="nav" aria-label="Seções">
         <button class="nav-button active" data-view="overview" type="button"><span class="nav-number">01</span> Triagem</button>
-        <button class="nav-button" data-view="feed" type="button"><span class="nav-number">02</span> Publicações</button>
-        <button class="nav-button" data-view="base" type="button"><span class="nav-number">03</span> Base completa</button>
-        <button class="nav-button" data-view="method" type="button"><span class="nav-number">04</span> Como funciona</button>
+        <button class="nav-button" data-view="results" type="button"><span class="nav-number">02</span> Resultados</button>
+        <button class="nav-button" data-view="feed" type="button"><span class="nav-number">03</span> Publicações</button>
+        <button class="nav-button" data-view="base" type="button"><span class="nav-number">04</span> Base completa</button>
+        <button class="nav-button" data-view="method" type="button"><span class="nav-number">05</span> Como funciona</button>
       </nav>
       <div class="rail-bottom"><span class="live-indicator"><span class="live-dot"></span> <span id="rail-mode">Consulta local</span></span><p>Nada nesta página altera a triagem nem envia mensagens.</p></div>
     </aside>
@@ -36,6 +38,26 @@
           <div class="deck-filters"><label class="search-wrap"><input id="deck-search" type="search" placeholder="Buscar título, fonte ou consórcio" aria-label="Buscar publicações na triagem"></label><label class="select-wrap"><span>Decisão</span><select id="deck-filter" aria-label="Filtrar a triagem"><option value="all">Todas</option><option value="accepted">Aceitas</option><option value="rejected">Descartadas</option><option value="pending">Candidatas</option><option value="identity">Identidade incompleta</option><option value="preview">Fontes em teste</option><option value="divergence">Revisões divergentes</option><option value="suggestion">Novas pistas no texto</option></select></label></div>
           <div class="decision-stage" id="decision-stage"><div class="overview-list" id="deck-stack" aria-label="Publicações da triagem"></div><aside id="overview-detail" class="overview-detail" aria-label="Decisão e evidência da publicação"></aside></div>
           <section class="pending-panel" aria-labelledby="pending-heading"><div class="pending-panel-head"><div><h2 id="pending-heading">Pontos a conferir</h2></div><p>A decisão da publicação é uma coisa; lacunas na leitura e na identidade são outra.</p></div><div id="pending-breakdown" class="pending-breakdown"></div></section>
+        </section>
+
+        <section id="results" class="view" aria-label="Resultados do radar">
+          <div class="results-lead"><span class="results-eyebrow">RESULTADOS / BASE DOCUMENTAL</span><p>Indicadores calculados a partir dos registros guardados. A data de uma descoberta pode ser diferente da data do fato.</p></div>
+          <div class="results-period" role="group" aria-label="Período dos resultados">
+            <span>PERÍODO</span>
+            <button class="results-period-button active" type="button" data-period="all" aria-pressed="true">Desde o início</button>
+            <button class="results-period-button" type="button" data-period="30d" aria-pressed="false">Últimos 30 dias</button>
+            <button class="results-period-button" type="button" data-period="7d" aria-pressed="false">Últimos 7 dias</button>
+          </div>
+          <div class="results-metrics" id="results-metrics" aria-live="polite"></div>
+          <figure class="results-chart-card" aria-labelledby="results-chart-title">
+            <div class="results-chart-head"><div><span class="results-eyebrow">RITMO DOS ACHADOS</span><h3 id="results-chart-title">Fatos confirmados no tempo</h3><p id="results-chart-caption"></p></div>
+              <div class="results-mode" role="group" aria-label="Data usada no gráfico"><button type="button" data-mode="discovery" class="active" aria-pressed="true">Descoberta</button><button type="button" data-mode="occurrence" aria-pressed="false">Ocorrência</button></div>
+            </div>
+            <div class="results-chart" id="results-chart"></div>
+            <figcaption id="results-chart-note"></figcaption>
+          </figure>
+          <div class="results-breakdowns" id="results-breakdowns"></div>
+          <p class="results-method">“Confirmado” significa que o registro passou pela decisão da base; não certifica situação atual de adesão. CNPJ associado significa que há um número registrado para a entidade na base, ainda sujeito à conferência documental e não homologado pelo Ipea. Períodos são relativos à última coleta disponível.</p>
         </section>
 
         <section id="feed" class="view" aria-label="Publicações"><div class="section-intro"><div><h2>Todas as publicações</h2><p>Escolha um registro. A ficha explica primeiro o resultado e a prova; detalhes técnicos ficam recolhidos.</p></div><div id="result-count" class="result-count">—</div></div><div class="filter-bar"><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar por título, fonte ou consórcio" aria-label="Buscar publicações"></label><label class="select-wrap">MOSTRAR <select id="status-filter" aria-label="Filtrar publicações"><option value="all" selected>Todas</option><option value="confirmed">Aceitas após conferência</option><option value="editorially-discarded">Descartadas e duplicatas</option><option value="event">Candidatas</option><option value="auto-rejected">Rejeitadas pela triagem</option><option value="incomplete">Sem texto suficiente</option><option value="pending">Precisam de conferência</option><option value="sent">Enviadas ao WhatsApp</option></select></label></div><div class="ledger-layout"><div class="panel list-panel"><div id="feed-list" class="feed-list"></div><button id="more-button" class="more-button" type="button">MOSTRAR MAIS ↓</button></div><aside id="detail" class="panel detail-panel" aria-label="Detalhes da publicação"></aside></div></section>

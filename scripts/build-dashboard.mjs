@@ -505,7 +505,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const publicMode = process.argv.includes('--public');
   const outputData = publicMode ? buildPublicDashboardData(data) : data;
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'app.js', 'triage-model.mjs'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'triage-model.mjs', 'results-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFlowDiagrams(destination);
   await Promise.all([
