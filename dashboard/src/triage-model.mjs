@@ -6,11 +6,17 @@ export function triageBucket(item) {
   return 'pending';
 }
 
+function hasSettledReview(item) {
+  return ['confirmar_evento', 'corrigir_categoria', 'nao_evento', 'duplicata']
+    .includes(item.editorialReview?.decision);
+}
+
 export const pendingKinds = [
   { key: 'identity', title: 'Identidade incompleta', description: 'Publicação ainda aproveitável, mas o vínculo exato com o consórcio precisa de prova.', matches: (item) => Boolean(item.identityPending) && triageBucket(item) !== 'rejected' },
   { key: 'preview', title: 'Fonte em teste', description: 'Publicação encontrada numa fonte ainda não liberada para alertas automáticos.', matches: (item) => item.decisionStatus === 'previa' },
-  { key: 'divergence', title: 'Leituras divergentes', description: 'A IA ou a releitura do PDF discordou da regra; veja o texto antes de decidir.', matches: (item) => item.decisionStatus === 'revisao' || Boolean(item.pdfReassessment) ||
-    (item.aiStatus === 'disputed' && item.baseDecision === 'candidato') },
+  { key: 'divergence', title: 'Leituras divergentes', description: 'A IA ou a releitura do PDF discordou da regra; veja o texto antes de decidir.', matches: (item) => !hasSettledReview(item) &&
+    (item.decisionStatus === 'revisao' || Boolean(item.pdfReassessment) ||
+      (item.aiStatus === 'disputed' && item.baseDecision === 'candidato')) },
   { key: 'suggestion', title: 'Nova pista no texto', description: 'Texto recuperado sugere outro enquadramento; a decisão original não mudou.', matches: (item) => Boolean(item.recoverySuggestion) },
 ];
 

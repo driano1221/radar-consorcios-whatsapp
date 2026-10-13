@@ -25,3 +25,10 @@ test('fonte em teste e divergência são marcadores diferentes da decisão', () 
   assert.deepEqual(pendingLabels({ baseDecision: 'candidato', rejectedEvent: true, decisionStatus: 'rejeitado',
     aiStatus: 'disputed', identityPending: 'entidade ambígua' }), ['Leituras divergentes']);
 });
+
+test('divergência antiga desaparece após decisão editorial documentada', () => {
+  assert.deepEqual(pendingLabels({ baseDecision: 'candidato', decisionStatus: 'revisao', aiStatus: 'disputed',
+    editorialReview: { decision: 'confirmar_evento' } }), []);
+  assert.deepEqual(pendingLabels({ baseDecision: 'descartado', decisionStatus: 'revisao', aiStatus: 'disputed',
+    editorialReview: { decision: 'nao_evento' } }), []);
+});
