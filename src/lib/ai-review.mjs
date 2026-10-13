@@ -53,7 +53,8 @@ function validateAnswer(answer, input) {
   return { decision: { status: 'rejected', category: 'IRRELEVANTE', evidence } };
 }
 
-export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, timeoutMs = 25000 } = {}) {
+export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, timeoutMs = 25000,
+  retryStrict = false } = {}) {
   if (!apiKey) throw new Error('DEEPSEEK_API_KEY ausente. Publicação suspensa.');
   const input = inputFor(item);
   const response = await fetchImpl('https://api.deepseek.com/chat/completions', {
@@ -61,7 +62,8 @@ export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, time
     headers: { authorization: `Bearer ${apiKey}`, 'content-type': 'application/json' },
     body: JSON.stringify({ model: 'deepseek-flash', thinking: { type: 'disabled' },
       response_format: { type: 'json_object' }, max_tokens: 250,
-      messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: JSON.stringify(input) }] }),
+      messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: JSON.stringify(input) },
+        ...(retryStrict ? [{ role: 'user', content: 'A resposta precisa ter campos coerentes. Em evidencia, copie uma frase curta e CONTÍGUA exatamente de titulo, resumo ou trecho acima. Não use paráfrase, reticências, colchetes nem informação externa. Se não houver prova textual, responda relevante=false com evidencia literal da menção examinada.' }] : [])] }),
     signal: AbortSignal.timeout(timeoutMs),
   });
   if (!response.ok) throw new Error(`DeepSeek respondeu HTTP ${response.status}.`);
@@ -198,7 +200,7 @@ export async function reviewWeeklyFindings(items, state, {
         if (calls >= maxCalls) throw new Error('Resumo excedeu o teto de revisões por IA; envio suspenso.');
         calls += 1;
         try {
-          review = await reviewImpl(item, { apiKey });
+          review = await reviewImpl(item, { apiKey, retryStrict: attempt === 2 });
           state.aiReviews[id] = { ...review, reviewedAt: now.toISOString() };
           break;
         } catch (error) {

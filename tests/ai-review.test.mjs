@@ -68,6 +68,20 @@ test('DeepSeek aceita só diferença de pontuação em evidência fiel ao texto'
   assert.equal((await reviewWithDeepSeek(entry, { apiKey: 'teste', fetchImpl })).status, 'approved');
 });
 
+test('segunda tentativa do DeepSeek pede citação contígua e mantém validação literal', async () => {
+  const entry = item('Câmara aprova participação de Umuarama no Conclima', 'PROTOCOLO');
+  const fetchImpl = async (_url, options) => {
+    const request = JSON.parse(options.body);
+    assert.match(request.messages.at(-1).content, /CONTÍGUA/);
+    return Response.json({ choices: [{ message: { content: JSON.stringify({
+      relevante: true, categoria: 'PROTOCOLO', novo_consorcio: false,
+      evidencia: 'Câmara aprova participação de Umuarama no Conclima', justificativa: 'Projeto aprovado.',
+    }) } }] });
+  };
+  const reviewed = await reviewWithDeepSeek(entry, { apiKey: 'teste', fetchImpl, retryStrict: true });
+  assert.equal(reviewed.status, 'approved');
+});
+
 test('fila preserva revisão aprovada, rejeita falso positivo e não paga duas vezes', async () => {
   const falsePositive = item('Consórcio cria agenda', 'CRIAÇÃO');
   const authorized = item('Lei autoriza ingresso em consórcio', 'ADESÃO');
