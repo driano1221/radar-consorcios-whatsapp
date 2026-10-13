@@ -1,0 +1,22 @@
+{
+  "153e40c31fe4d83492b480824fe3da9d0dbb92f9e560a87f82676389aed75786": {
+    "ufs": ["SP"],
+    "evidence": "O Distrito Turístico Serra Azul abrange Louveira, Itupeva, Vinhedo e Jundiaí, em São Paulo.",
+    "source": "https://louveira.sp.gov.br/servico/distrito-turistico"
+  },
+  "229de91ab9519c707a656f72a176b19a6f71c912b7b36c6f2a77d6c17a851779": {
+    "ufs": ["SP"],
+    "evidence": "O Consórcio Intermunicipal Grande ABC é formado por municípios da Região Metropolitana de São Paulo.",
+    "source": "https://www.consorcioabc.sp.gov.br/pagina/112/abctur/"
+  },
+  "dcec74f99198b643bcd72b43a774237e955976b14c92b495d2d03672d0766a06": {
+    "ufs": ["MG"],
+    "evidence": "O CISMIV reúne municípios da Zona da Mata mineira, na microrregião de Viçosa.",
+    "source": "https://www.cismiv.mg.gov.br/"
+  },
+  "e5771a63441467b0edb47b5733ac86e31e2256eb3c7640045cf508b166cc55f1": {
+    "ufs": ["RS"],
+    "evidence": "O COIS é o Consórcio Intermunicipal de Saúde de São Luiz Gonzaga, no Rio Grande do Sul.",
+    "source": "https://cois.saoluizgonzaga.rs.gov.br/"
+  }
+}

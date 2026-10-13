@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { classifyItem, isStaleLegislativeDocument } from '../src/lib/classifier.mjs';
+import { resolveGeography } from '../dashboard/src/geography-model.mjs';
 import { writeFlowDiagrams } from './build-flow-diagram.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -49,7 +50,7 @@ const TABLES = [
   ['consorcios', 'Consórcios', 'Identidades encontradas nos documentos. Não é cadastro oficial nem composição atual.'],
   ['participacoes', 'Participações', 'Relações município–consórcio com evidência documental revisada.'],
   ['vinculos-documentos', 'Vínculos documentais', 'Menções que conectam documentos e consórcios; menção não comprova adesão.'],
-  ['identidade-pendente', 'Identidade pendente', 'Documentos cujo consórcio ainda não pôde ser identificado com segurança.'],
+  ['identidade-pendente', 'Sinalizações de identidade', 'Histórico de documentos sinalizados na extração; alguns já foram descartados ou esclarecidos. Os pontos atuais ficam na triagem.'],
   ['arquivo-coletas', 'Arquivo de coletas', 'Todos os documentos guardados, inclusive descartes e títulos sem texto.'],
   ['revisoes-eventos', 'Revisões editoriais', 'Decisões humanas lacradas ao trecho do documento e sua justificativa.'],
 ];
@@ -200,6 +201,16 @@ function brazilDay(value) {
   return `${field.year}-${field.month}-${field.day}`;
 }
 
+export function hasVerifiedMultiConsortiumNames(facts, text) {
+  const aliases = facts?.consorcios;
+  if (!Array.isArray(aliases) || aliases.length < 2 || !text) return false;
+  return aliases.every((alias) => {
+    const safeAlias = String(alias).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (!safeAlias) return false;
+    return new RegExp(`Cons[oó]rcio\\s+[\\p{L}\\p{M}\\s-]{12,150}\\(\\s*${safeAlias}\\s*\\)`, 'iu').test(text);
+  });
+}
+
 export function dashboardSourceCatalog(config = {}) {
   const sources = [];
   const add = (family, name, url, enabled = true, mode = 'Coleta ativa', fallback = '') => {
@@ -222,7 +233,7 @@ export function dashboardSourceCatalog(config = {}) {
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
   participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
-  articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {} }, generatedAt = new Date().toISOString()) {
+  articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
   }));
@@ -341,7 +352,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       } : null,
       sentAt: row.enviado_em, aiStatus: decision?.aiStatus || row.revisao_ia,
       previewOnly: Boolean(decision?.previewOnly),
-      identityPending: appliedReview?.fatos?.consorcio ? '' : pendingIds.get(row.id) || '',
+      identityPending: appliedReview?.fatos?.consorcio || hasVerifiedMultiConsortiumNames(appliedReview?.fatos, articleText?.texto)
+        ? '' : pendingIds.get(row.id) || '',
       editorialReview: appliedReview ? {
         decision: appliedReview.decisao, reason: appliedReview.motivo,
         evidence: appliedReview.evidencia, evidenceUrl: appliedReview.fonte_evidencia || '',
@@ -390,6 +402,22 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     if (!participationsByConsortium.has(participation.consorcio_id)) participationsByConsortium.set(participation.consorcio_id, []);
     participationsByConsortium.get(participation.consorcio_id).push(participation);
   }
+  const itemById = new Map(items.map((item) => [item.id, item]));
+  const geographicTables = baseTables.map((table) => {
+    if (table.id !== 'eventos') return table;
+    const addedColumns = [
+      { key: 'uf_criterio', label: 'Como a UF foi identificada', description: 'Origem da localização: catálogo, revisão editorial, título, domínio oficial, trecho ou revisão documental.' },
+      { key: 'uf_evidencia', label: 'Evidência da UF', description: 'Texto que permitiu associar a publicação a uma ou mais unidades da Federação.' },
+      { key: 'uf_fonte', label: 'Fonte da UF', description: 'Documento ou página consultada para determinar a localização.' },
+    ];
+    return { ...table, columns: [...table.columns, ...addedColumns], rows: table.rows.map((row) => {
+      const item = itemById.get(row.id) || {};
+      const reviewed = geographyReviews[row.id] || {};
+      const geography = resolveGeography(row, item, reviewed);
+      return { ...row, uf: geography.ufs.join('/'), uf_criterio: geography.basis,
+        uf_evidencia: geography.evidence, uf_fonte: reviewed.source || item.url || row.url || '' };
+    }) };
+  });
   return {
     generatedAt,
     lastCollectionAt: collection?.at || items[0]?.lastSeenAt || '',
@@ -423,7 +451,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     collectionHealth,
     sourceCatalog: dashboardSourceCatalog(sourceConfig),
     items,
-    baseTables,
+    baseTables: geographicTables,
+    geographyReviews,
     consortia: consortia.map((row) => ({
       id: row.id, name: row.nome, alias: row.sigla, cnpj: row.cnpj,
       documents: Number(row.documentos_vinculados || 0), status: row.situacao,
@@ -490,9 +519,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     }];
   })), ...state.decisions };
   const sourceConfig = JSON.parse(await readFile(path.join(root, 'config', 'default.json'), 'utf8'));
+  const geographyReviews = JSON.parse(await readFile(path.join(catalog, 'ufs-revisadas.json'), 'utf8'));
   const data = buildDashboardData({ archive, events, consortia, links, pendingIdentity,
     editorialReviews, participations, pdfRecovery, articleTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
-    sourceConfig,
+    sourceConfig, geographyReviews,
     baseTables: [
       makeBaseTable('eventos', events, eventColumns),
       makeBaseTable('consorcios', consortia, consortiumColumns),
@@ -505,7 +535,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const publicMode = process.argv.includes('--public');
   const outputData = publicMode ? buildPublicDashboardData(data) : data;
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'triage-model.mjs', 'results-model.mjs'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFlowDiagrams(destination);
   await Promise.all([

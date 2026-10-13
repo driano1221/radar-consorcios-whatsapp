@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
-import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboardSourceCatalog, makeBaseTable } from '../scripts/build-dashboard.mjs';
+import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboardSourceCatalog, makeBaseTable,
+  hasVerifiedMultiConsortiumNames } from '../scripts/build-dashboard.mjs';
 import { desktopFlowSvg, mobileFlowSvg } from '../scripts/build-flow-diagram.mjs';
 
 test('versão pública preserva decisões e tabelas, mas não republica texto integral nem identificadores pessoais', () => {
@@ -19,6 +20,14 @@ test('versão pública preserva decisões e tabelas, mas não republica texto in
   assert.match(publicData.items[0].reason, /e-mail omitido/);
   assert.match(publicData.items[0].reason, /CPF omitido/);
   assert.equal(publicData.baseTables[0].rows[0].titulo, 'Ato publicado');
+});
+
+test('duas siglas só encerram pendência de identidade quando o texto expande ambos os nomes', () => {
+  const facts = { consorcios: ['CIMINAS', 'CONSANE'] };
+  const complete = 'Consórcio Interfederativo de Minas Gerais (Ciminas). Consórcio Público para o Desenvolvimento do Alto Paraopeba (Consane).';
+  assert.equal(hasVerifiedMultiConsortiumNames(facts, complete), true);
+  assert.equal(hasVerifiedMultiConsortiumNames(facts, 'Ciminas e Consane participaram da sessão.'), false);
+  assert.equal(hasVerifiedMultiConsortiumNames(facts, 'Consórcio Interfederativo de Minas Gerais (Ciminas).'), false);
 });
 
 test('painel usa registro com decisão e evidência visíveis, sem janela XP ou navegação por cartas', async () => {

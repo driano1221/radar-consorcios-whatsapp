@@ -13,10 +13,15 @@ test('identidade incompleta é pendência adicional mesmo para evento confirmado
   const item = { baseDecision: 'confirmado', identityPending: 'sigla não comprovada' };
   assert.equal(triageBucket(item), 'accepted');
   assert.deepEqual(pendingLabels(item), ['Identidade incompleta']);
+  assert.deepEqual(pendingLabels({ baseDecision: 'descartado', identityPending: 'sigla não comprovada' }), []);
 });
 
 test('fonte em teste e divergência são marcadores diferentes da decisão', () => {
   assert.deepEqual(pendingKinds.map((kind) => kind.key), ['identity', 'preview', 'divergence', 'suggestion']);
   assert.equal(triageBucket({ baseDecision: 'candidato', decisionStatus: 'previa' }), 'pending');
   assert.deepEqual(pendingLabels({ baseDecision: 'descartado', decisionStatus: 'revisao' }), ['Leituras divergentes']);
+  assert.deepEqual(pendingLabels({ baseDecision: 'candidato', decisionStatus: 'rejeitado', aiStatus: 'disputed',
+    identityPending: 'entidade ambígua' }), ['Identidade incompleta', 'Leituras divergentes']);
+  assert.deepEqual(pendingLabels({ baseDecision: 'candidato', rejectedEvent: true, decisionStatus: 'rejeitado',
+    aiStatus: 'disputed', identityPending: 'entidade ambígua' }), ['Leituras divergentes']);
 });

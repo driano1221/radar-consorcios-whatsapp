@@ -734,7 +734,7 @@ function renderResults() {
   renderResultsChart(result);
   $('#results-breakdowns').replaceChildren(
     renderResultsBreakdown('Por assunto', 'Tipos dos fatos confirmados no período.', result.breakdowns.categories),
-    renderResultsBreakdown('Por UF', 'Apenas a UF identificada no registro; lacunas ficam explícitas.', result.breakdowns.states),
+    renderResultsBreakdown('Por UF', 'Local do fato; uma notícia interestadual conta em cada UF envolvida.', result.breakdowns.states),
     renderResultsBreakdown('Por fonte', 'Veículos e portais onde o radar encontrou a publicação.', result.breakdowns.sources),
     renderResultsBreakdown('Consórcios em evidência', 'Menções nos fatos confirmados; um fato pode citar mais de um.', result.breakdowns.consortia),
   );

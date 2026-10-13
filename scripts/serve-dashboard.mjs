@@ -14,6 +14,7 @@ const files = new Map([
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/triage-model.mjs', ['triage-model.mjs', 'text/javascript; charset=utf-8']],
   ['/results-model.mjs', ['results-model.mjs', 'text/javascript; charset=utf-8']],
+  ['/geography-model.mjs', ['geography-model.mjs', 'text/javascript; charset=utf-8']],
   ['/fluxo-radar.svg', ['fluxo-radar.svg', 'image/svg+xml']],
   ['/fluxo-radar-mobile.svg', ['fluxo-radar-mobile.svg', 'image/svg+xml']],
   ['/data.json', ['data.json', 'application/json; charset=utf-8']],

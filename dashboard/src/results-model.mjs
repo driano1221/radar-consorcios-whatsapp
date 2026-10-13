@@ -1,3 +1,4 @@
+import { resolveGeography } from './geography-model.mjs';
 const ZONE = 'America/Sao_Paulo';
 const localParts = new Intl.DateTimeFormat('en-US', {
   timeZone: ZONE, year: 'numeric', month: '2-digit', day: '2-digit',
@@ -120,7 +121,10 @@ export function buildResults(data, { period = 'all', mode = 'discovery' } = {}) 
     ...timelineData,
     breakdowns: {
       categories: groupCount(selected, (row) => [row.tipo_evento]),
-      states: groupCount(selected, (row) => [row.uf || itemById.get(row.id)?.editorialReview?.facts?.municipio?.match(/\/([A-Z]{2})$/)?.[1]]),
+      states: groupCount(selected, (row) => {
+        const geography = resolveGeography(row, itemById.get(row.id) || {}, data.geographyReviews?.[row.id]);
+        return geography.ufs.length ? geography.ufs : ['Não identificado'];
+      }),
       sources: groupCount(selected, (row) => [row.fonte || itemById.get(row.id)?.source]),
       consortia: groupCount(selected, (row) => {
         const linked = (itemById.get(row.id)?.links || []).map((link) => consortiumNames.get(link.consortiumId) || link.name).filter(Boolean);
