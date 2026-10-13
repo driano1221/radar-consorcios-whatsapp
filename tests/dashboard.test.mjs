@@ -259,7 +259,8 @@ test('painel mostra atos da mesma edição com decisões e páginas próprias', 
   const parent = { id: 'edicao', titulo: 'Diário Oficial de Joinville (SC)',
     fonte: 'Querido Diário', url: 'https://example.org/joinville.pdf',
     trecho: 'Trecho antigo misturava compra e rateio.',
-    ultima_coleta: '2026-10-10T12:00:00Z', data_publicacao: '2026-10-09T12:00:00Z' };
+    ultima_coleta: '2026-10-10T12:00:00Z', data_publicacao: '2026-10-09T12:00:00Z',
+    decisao_alerta: 'elegivel' };
   const compra = { ...parent, id: 'compra', documento_pai_id: parent.id,
     titulo: 'Autorização de fornecimento', url: `${parent.url}#page=95`,
     pagina_inicio: '95', pagina_fim: '95', trecho: 'Compra do hospital com fornecedor.',
@@ -288,6 +289,7 @@ test('painel mostra atos da mesma edição com decisões e páginas próprias', 
   assert.equal(result.stats.acts, 2);
   assert.equal(result.stats.confirmed, 1);
   assert.equal(result.items.find((item) => item.id === parent.id).baseDecision, 'desdobrado');
+  assert.equal(result.items.find((item) => item.id === parent.id).alertDecision, 'historico');
   assert.equal(result.items.find((item) => item.id === parent.id).editorialReview, null);
   assert.equal(result.items.find((item) => item.id === compra.id).baseDecision, 'descartado');
   assert.equal(result.items.find((item) => item.id === rateio.id).baseDecision, 'confirmado');

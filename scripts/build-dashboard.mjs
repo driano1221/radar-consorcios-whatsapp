@@ -337,9 +337,10 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
           : recoveredSuggestion ? 'candidato'
             : !inEvents ? 'descartado'
               : curated?.decisao_base || row.decisao_base || 'candidato',
-      alertDecision: rejectedByReview || duplicateByReview ? 'descartado'
+      alertDecision: isSplitParent ? 'historico' : rejectedByReview || duplicateByReview ? 'descartado'
         : curated?.decisao_alerta || row.decisao_alerta || '',
-      alertReason: rejectedByReview || duplicateByReview ? review.motivo
+      alertReason: isSplitParent ? 'A edição inteira não gera alerta; cada ato é avaliado separadamente.'
+        : rejectedByReview || duplicateByReview ? review.motivo
         : curated?.motivo_alerta || row.motivo_alerta || '',
       eventAt: curated?.data_fato || row.data_fato || '',
       eventMonth: curated?.mes_fato || row.mes_fato || '',
