@@ -46,6 +46,21 @@ test('duplicatas revistas também são bloqueadas na coleta futura', async () =>
   }
 });
 
+test('todas as categorias confirmadas são reaplicadas na coleta futura', async () => {
+  const [archive, reviews] = await Promise.all([
+    readNdjson('arquivo-coletas.ndjson'), readNdjson('revisoes-eventos.ndjson'),
+  ]);
+  const byId = new Map(archive.map((row) => [row.id, row]));
+  const guard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
+  for (const review of reviews.filter((row) => row.decisao === 'confirmar_evento')) {
+    const row = byId.get(review.documento_id);
+    const protectedItem = applyEditorialGuard({ url: row.url,
+      classification: { category: 'PROTOCOLO', score: 12, reasons: [] } }, guard);
+    assert.equal(protectedItem.classification.category, review.categoria, row.id);
+    assert.equal(protectedItem.catalogDecision, 'confirmado', row.id);
+  }
+});
+
 test('fatos históricos confirmados ficam na base, mas não voltam à fila como notícia nova', async () => {
   const [archive, reviews] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'), readNdjson('revisoes-eventos.ndjson'),

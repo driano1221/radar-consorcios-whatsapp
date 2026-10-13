@@ -307,6 +307,7 @@ test('replay histórico separa aceitação na base de alerta atual', async () =>
     const review = { documento_id: row.id, decisao: 'confirmar_evento',
       categoria: 'ADESÃO AUTORIZADA', motivo: 'lei sancionada em junho', evidencia: row.trecho,
       data_fato: '2026-06-23T12:00:00Z',
+      fatos: { data_publicacao_original: '2026-06-23' },
       trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
     await writeFile(path.join(directory, 'revisoes-eventos.ndjson'), `${JSON.stringify(review)}\n`);
     const result = await saveCatalog(directory, new Map([[row.id, row]]),
@@ -316,6 +317,7 @@ test('replay histórico separa aceitação na base de alerta atual', async () =>
     assert.match(events, /decisao_base,decisao_alerta/);
     assert.match(events, /"confirmado","historico"/);
     assert.match(events, /2026-06-23T12:00:00Z/);
+    assert.match(events, /"2026-10-08T12:00:00Z","ADESÃO AUTORIZADA","2026-06-23T12:00:00Z"/);
   } finally { await rm(directory, { recursive: true, force: true }); }
 });
 

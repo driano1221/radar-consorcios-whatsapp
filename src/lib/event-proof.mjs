@@ -48,6 +48,7 @@ const CALL_OPENED = /\bcons[oó]rcio\b.{0,180}\b(?:(?:abriu|publicou|lan[cç]ou)
 const SERVICE_INTERRUPTED = /\bcons[oó]rcio\b.{0,190}\b(?:paralisa[cç][aã]o\s+(?:total\s+)?dos\s+servi[cç]os|suspendeu\s+(?:os\s+)?atendimentos|cancelou\s+(?:todas?\s+)?as\s+consultas)/i;
 const EQUIPMENT_RECEIVED = /\bcons[oó]rcio\b.{0,110}\brecebeu\s+(?:um\s+|o\s+)?(?:consult[oó]rio|equipamento|ve[ií]culo|ambul[aâ]ncia)\b/i;
 const APPROVED_EXIT_STEP = /\b(?:aprovado|aprovou|aprovada|autoriza[cç][aã]o)\b.{0,100}\b(?:fim\s+da\s+ades[aã]o|deixe\s+um\s+cons[oó]rcio|subscrever\s+a\s+extin[cç][aã]o\s+d[oa]\s+cons[oó]rcio)/i;
+const PROGRAM_LAUNCH = /\bcons[oó]rcio\b.{0,150}\blan[cç](?:a|ou)\b.{0,90}\b(?:o\s+)?programa\b/i;
 
 function literalEvidence(text, patterns, before = 100, after = 260) {
   for (const pattern of patterns) {
@@ -103,6 +104,13 @@ export function refineEventProof(item, classification) {
       stage: 'equipamento recebido; início de atendimentos não comprovado',
       reasons: [...classification.reasons, 'recebimento de equipamento não é adesão municipal'] },
     literalEvidence(text, [EQUIPMENT_RECEIVED], 80, 170));
+  }
+  if (['ADESÃO', 'GOVERNANÇA', 'ATUAÇÃO'].includes(classification.category) &&
+    PROGRAM_LAUNCH.test(title) && PROGRAM_LAUNCH.test(text)) {
+    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰',
+      stage: 'programa lançado pelo consórcio; adesão municipal não comprovada',
+      reasons: [...classification.reasons, 'integração regional no programa não é ingresso de município'] },
+    literalEvidence(text, [PROGRAM_LAUNCH], 40, 180));
   }
 
   // Páginas do SAPL podem repetir a ementa de uma futura lei. A aprovação de

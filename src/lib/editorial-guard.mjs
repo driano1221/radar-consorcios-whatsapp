@@ -4,8 +4,12 @@ import path from 'node:path';
 import { canonicalUrl } from './dedupe.mjs';
 import { formalEventKey } from './event-identity.mjs';
 
-const EMOJI = { CRIAÇÃO: '🟩', ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', SAÍDA: '🟧',
-  RATEIO: '🟪', PROTOCOLO: '🟨', GOVERNANÇA: '🟨', CONTROLE: '🔎', CRISE: '🟥', ATUAÇÃO: '📰' };
+const EMOJI = { CRIAÇÃO: '🟩', 'CRIAÇÃO EM TRAMITAÇÃO': '🟩',
+  ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', 'ADESÃO EM TRAMITAÇÃO': '🟦',
+  'PROPOSTA DE ADESÃO': '🟦', SAÍDA: '🟧', 'SAÍDA AUTORIZADA': '🟧',
+  RATEIO: '🟪', 'RATEIO EM TRAMITAÇÃO': '🟪', FINANÇAS: '🟪',
+  PROTOCOLO: '🟨', GOVERNANÇA: '🟨', 'COOPERAÇÃO AUTORIZADA': '📰',
+  CONTROLE: '🔎', CRISE: '🟥', ATUAÇÃO: '📰' };
 
 async function readNdjson(file) {
   try {

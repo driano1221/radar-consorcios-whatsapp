@@ -68,6 +68,40 @@ test('painel distingue ausência de texto de um trecho disponível', () => {
   assert.equal(contentQuality('Consórcio abre concurso', 'O edital do concurso prevê onze vagas e inscrições até outubro.'), 'trecho_disponivel');
 });
 
+test('revisão de falso positivo aparece como fora da base, não como candidato', () => {
+  const row = { id: 'compra', titulo: 'Adesão 008/2024 a pregão',
+    url: 'https://example.org/compra', trecho: 'Contrato com empresa; consórcio é origem do pregão.',
+    decisao_base: 'candidato', tipo_evento: 'ADESÃO' };
+  const editorialReviews = [{ documento_id: row.id, decisao: 'nao_evento',
+    motivo: 'Adesão a pregão, não ingresso no consórcio.', evidencia: row.trecho,
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') }];
+  const result = buildDashboardData({ archive: [row], events: [], consortia: [], links: [],
+    pendingIdentity: [], editorialReviews });
+  assert.equal(result.items[0].baseDecision, 'descartado');
+  assert.equal(result.items[0].alertDecision, 'descartado');
+  assert.equal(result.items[0].decisionStatus, 'descartado');
+  assert.equal(result.items[0].pendingReview, false);
+});
+
+test('sugestão de texto integral recuperado entra na fila visível até decisão lacrada', () => {
+  const row = { id: 'recuperado', titulo: 'Tribunal mantém suspensão de licitação de consórcio',
+    url: 'https://example.org/decisao', trecho: 'Texto inicialmente insuficiente.',
+    tipo_evento: 'GERAL', decisao_base: 'descartado',
+    article_suggested_category: 'CONTROLE',
+    article_suggestion_evidence: 'A Câmara manteve a medida cautelar.' };
+  const input = { archive: [row], events: [], consortia: [], links: [], pendingIdentity: [] };
+  const before = buildDashboardData(input);
+  assert.equal(before.items[0].pendingReview, true);
+  assert.equal(before.items[0].baseDecision, 'candidato');
+  assert.match(before.items[0].reason, /texto integral recuperado sugere CONTROLE/i);
+  const editorialReviews = [{ documento_id: row.id, decisao: 'confirmar_evento', categoria: 'CONTROLE',
+    motivo: 'medida cautelar confirmada', evidencia: row.article_suggestion_evidence,
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') }];
+  const after = buildDashboardData({ ...input, editorialReviews });
+  assert.equal(after.items[0].pendingReview, false);
+  assert.equal(after.items[0].baseDecision, 'confirmado');
+});
+
 test('painel mostra fato confirmado na base, mas histórico para alerta', () => {
   const row = { id: 'historico', titulo: 'Lei autoriza ingresso', fonte: 'Câmara',
     url: 'https://example.org/lei', data_publicacao: '2026-10-08T00:00:00Z',

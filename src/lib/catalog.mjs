@@ -291,6 +291,8 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
       motivo_alerta: review.publicar === false ? review.motivo_publicacao || review.motivo : row.motivo_alerta || '',
       data_fato: review.data_fato || row.data_fato || '',
       mes_fato: review.mes_fato || row.mes_fato || '',
+      data_noticia_original: /^\d{4}-\d{2}-\d{2}$/.test(review.fatos?.data_publicacao_original || '')
+        ? `${review.fatos.data_publicacao_original}T12:00:00Z` : row.data_noticia_original || '',
       revisao_editorial: review };
     }
     result = { ...result, data_fato: result.data_fato || formalActDate({ title: result.titulo }, now) };

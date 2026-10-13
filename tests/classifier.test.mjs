@@ -59,6 +59,22 @@ test('adesão a credenciamento do consórcio não é ingresso no consórcio', ()
   assert.match(result.reasons.join(' '), /credenciamento de serviços/);
 });
 
+test('adesão numerada a pregão conduzido por consórcio não é entrada de município', () => {
+  const result = classifyItem({ kind: 'gazette',
+    title: 'EXTRATO DO 2º TERMO ADITIVO AO CONTRATO ADMINISTRATIVO Nº 283/2024 - ADESÃO 08/2024',
+    rawText: 'ADESÃO Nº: 008/2024 (Pregão Eletrônico nº 02/2024 – Consórcio Público Intermunicipal de Desenvolvimento Sustentável do Alto Paranaíba). CONTRATANTE: MUNICÍPIO DE POXORÉU. CONTRATADA: 1DOC TECNOLOGIA SA. OBJETO: prorrogação do prazo e reajuste.' });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.reasons.join(' '), /adesão numerada a pregão/);
+});
+
+test('integração regional de programa cultural não é adesão municipal', () => {
+  const result = classifyItem({ kind: 'news',
+    title: 'Consórcio ABC lança programa ABC + Cultura para fortalecer integração regional',
+    rawText: 'O Consórcio Intermunicipal Grande ABC lançou o programa ABC + Cultura durante a Assembleia de Prefeitos. O programa tem como pilar a Integração Regional e prevê intercâmbio cultural entre as cidades.' });
+  assert.equal(result.category, 'ATUAÇÃO');
+  assert.match(result.stage, /programa lançado/);
+});
+
 test('adesão ao consórcio de geração compartilhada CEMIG SIM não é ingresso intermunicipal', () => {
   const result = classifyItem({
     kind: 'gazette', title: 'Diário Oficial de Betim (MG)',

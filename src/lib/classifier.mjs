@@ -37,7 +37,8 @@ const RULES = [
   {
     category: 'ADESÃO', emoji: '🟦', weight: 7, priority: 80, requiresPublicContext: true,
     patterns: [
-      /\b(adesao|ingresso|integracao|filiacao|inclusao)\b.{0,130}\b(ao |no )?consorcio/,
+      /\b(adesao|ingresso|filiacao|inclusao)\b.{0,130}\b(ao |no )?consorcio/,
+      /\bintegracao\s+do\s+municipio\b.{0,90}\b(?:ao|no)\s+consorcio/,
       /\bmunicipio\b.{0,90}\b(?:foi\s+)?autorizad[oa]\s+a\s+(?:ingressar|integrar|aderir)\b.{0,100}\bconsorcio/,
       /\b(autoriza|autorizado)\b.{0,140}\b(municipio|prefeitura|poder executivo)\b.{0,140}\b(participar|integrar|aderir)\b.{0,100}\bconsorcio/,
       /\b(passa a integrar|torna-se membro|municipio consorciado)\b.{0,100}\bconsorcio/,
@@ -102,6 +103,8 @@ const NEGATIVE_PATTERNS = [
   { pattern: /\b(processo seletivo|concurso publico|inscricoes abertas|vagas de emprego)\b/, penalty: 30, reason: 'recrutamento sem evento institucional' },
   { pattern: /\badesao (a|de|em) (a )?(ata|atas|arp)( de registro de precos)?\b/, penalty: 30, reason: 'adesão a ata de preços' },
   { pattern: /\badesao\b.{0,240}\bcredenciamento\b/, penalty: 30, reason: 'adesão a credenciamento de serviços, não ao consórcio' },
+  { pattern: /\badesao\s+n[º°o.]?\s*:?\s*\d{1,4}\/20\d{2}\b.{0,100}\bpregao\b/, penalty: 30,
+    reason: 'adesão numerada a pregão, não ingresso no consórcio' },
   { pattern: /\b(ata de registro de precos|registro de precos|intencao de registro de precos|orgao nao participante)\b/, penalty: 30, reason: 'contratação/ata de preços' },
   { pattern: /\bcarona\b.{0,100}\b(ata|registro de precos|arp)\b/, penalty: 30, reason: 'carona em ata de preços' },
   { pattern: /\b(consorcio de empresas|consorcio empresarial|consorcio vencedor|empresa consorciada)\b/, penalty: 30, reason: 'consórcio empresarial' },

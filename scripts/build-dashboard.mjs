@@ -275,10 +275,13 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const legacyUnverified = inEvents && !appliedReview &&
       /^legado sem texto/i.test(curated.situacao_analise || '');
     const activeCandidate = inEvents && !stale && !rejectedEvent && !legacyUnverified;
-    const pendingReview = activeCandidate && !['confirmar_evento', 'nao_evento', 'duplicata'].includes(appliedReview?.decisao);
+    const recoveredSuggestion = !appliedReview && !stale && Boolean(row.article_suggested_category);
+    const pendingReview = activeCandidate && !['confirmar_evento', 'nao_evento', 'duplicata'].includes(appliedReview?.decisao)
+      || recoveredSuggestion;
     const reason = stale ? 'Ato antigo com data recente de indexação.'
       : rejectedByReview ? `Rejeitado por revisão editorial — ${review.motivo}`
       : duplicateByReview ? `Duplicata vinculada a ${review.documento_relacionado} — ${review.motivo}`
+      : recoveredSuggestion ? `O texto integral recuperado sugere ${row.article_suggested_category}, mas a decisão ainda não foi refeita. ${row.article_suggestion_evidence || ''}`.trim()
       : correctedOutOfBase ? `${row.situacao_analise}.${row.enviado_em ? ' Foi enviado antes da correção; o histórico do envio foi mantido.' : ''}`
       : appliedReview?.motivo ? appliedReview.motivo
         : pdfReassessment ? `Leitura do PDF (página ${pdfEvidence[0]?.page || '?'}) indica alteração de protocolo; não comprova nova adesão. Categoria anterior: ADESÃO. Conferência humana pendente.`
@@ -297,16 +300,22 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       score: stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? ''
         : ruleReclassified ? row.pontuacao : decision?.score ?? row.pontuacao,
       baseStatus: inEvents ? 'evento_candidato' : 'arquivo_bruto',
-      baseDecision: curated?.decisao_base || row.decisao_base || (inEvents ? 'candidato' : 'descartado'),
-      alertDecision: curated?.decisao_alerta || row.decisao_alerta || '',
-      alertReason: curated?.motivo_alerta || row.motivo_alerta || '',
+      baseDecision: rejectedByReview || duplicateByReview ? 'descartado'
+        : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'
+          : recoveredSuggestion ? 'candidato'
+            : !inEvents ? 'descartado'
+              : curated?.decisao_base || row.decisao_base || 'candidato',
+      alertDecision: rejectedByReview || duplicateByReview ? 'descartado'
+        : curated?.decisao_alerta || row.decisao_alerta || '',
+      alertReason: rejectedByReview || duplicateByReview ? review.motivo
+        : curated?.motivo_alerta || row.motivo_alerta || '',
       eventAt: curated?.data_fato || row.data_fato || '',
       eventMonth: curated?.mes_fato || row.mes_fato || '',
       originalPublishedAt: curated?.data_noticia_original || row.data_noticia_original || '',
       activeCandidate, pendingReview, rejectedEvent, legacyUnverified,
       decisionStatus: stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? 'descartado'
         : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'
-          : rejectedEvent ? 'rejeitado' : legacyUnverified ? 'revisao' : pdfReassessment ? 'revisao'
+          : rejectedEvent ? 'rejeitado' : legacyUnverified || recoveredSuggestion ? 'revisao' : pdfReassessment ? 'revisao'
             : decision?.status || (inEvents ? 'historico' : 'sem_evento'),
       reason, classificationReasons: ruleReclassified
         ? [row.situacao_analise.split('; ').at(-1)].filter(Boolean) : decision?.classificationReasons || [],
