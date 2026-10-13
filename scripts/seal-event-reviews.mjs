@@ -2,12 +2,16 @@ import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { materializeDocumentActs } from '../src/lib/document-acts.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'data', 'catalogo');
 const archive = (await readFile(path.join(directory, 'arquivo-coletas.ndjson'), 'utf8'))
   .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
-const records = new Map(archive.map((row) => [row.id, row]));
+const definitions = (await readFile(path.join(directory, 'atos-identificados.ndjson'), 'utf8'))
+  .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+const records = new Map([...archive, ...materializeDocumentActs(archive, definitions)]
+  .map((row) => [row.id, row]));
 const file = path.join(directory, 'revisoes-eventos.ndjson');
 const reviews = (await readFile(file, 'utf8')).split(/\r?\n/).filter(Boolean)
   .map((line) => JSON.parse(line));

@@ -19,4 +19,6 @@ if (/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i.test(raw) ||
     /\b\d{3}\.\d{3}\.\d{3}-\d{2}\b/.test(raw) || /\b\d{10,20}@g\.us\b/.test(raw))
   throw new Error('Identificador pessoal detectado no pacote público.');
 if (size.size > 10_000_000) throw new Error('Pacote público excede 10 MB; revisar conteúdo antes de publicar.');
-console.log(`[painel] Pacote público validado: ${data.items.length} publicações, ${(size.size / 1_000_000).toFixed(2)} MB.`);
+if (data.items.length !== data.stats.documents + data.stats.acts)
+  throw new Error('Quantidade de publicações e atos não corresponde aos registros do painel.');
+console.log(`[painel] Pacote público validado: ${data.stats.documents} publicações e ${data.stats.acts} atos, ${(size.size / 1_000_000).toFixed(2)} MB.`);

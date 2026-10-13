@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { canonicalUrl } from './dedupe.mjs';
 import { formalEventKey } from './event-identity.mjs';
+import { materializeDocumentActs } from './document-acts.mjs';
 
 const EMOJI = { CRIAÇÃO: '🟩', 'CRIAÇÃO EM TRAMITAÇÃO': '🟩',
   ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', 'ADESÃO EM TRAMITAÇÃO': '🟦',
@@ -24,19 +25,27 @@ async function readNdjson(file) {
 // URLs de páginas agregadoras descartadas também permanecem bloqueadas:
 // documentos novos devem ganhar links próprios, não reutilizar o índice.
 export async function loadEditorialGuard(directory) {
-  const [archive, reviews] = await Promise.all([
+  const [archive, reviews, actDefinitions] = await Promise.all([
     readNdjson(path.join(directory, 'arquivo-coletas.ndjson')),
     readNdjson(path.join(directory, 'revisoes-eventos.ndjson')),
+    readNdjson(path.join(directory, 'atos-identificados.ndjson')),
   ]);
   const byId = new Map(archive.map((row) => [row.id, row]));
+  const splitParents = new Set(actDefinitions.map((act) => act.documento_pai_id));
   const guard = new Map();
   for (const review of reviews) {
     if (!['nao_evento', 'duplicata', 'confirmar_evento', 'corrigir_categoria'].includes(review.decisao)) continue;
+    if (splitParents.has(review.documento_id)) continue;
     const row = byId.get(review.documento_id);
     if (!row || !review.motivo || !review.evidencia || !review.trecho_sha256) continue;
     if (['confirmar_evento', 'corrigir_categoria'].includes(review.decisao) && !EMOJI[review.categoria]) continue;
     if (createHash('sha256').update(row.trecho || '').digest('hex') !== review.trecho_sha256) continue;
     guard.set(canonicalUrl(row.url), review);
+  }
+  for (const id of splitParents) {
+    const row = byId.get(id);
+    if (row) guard.set(canonicalUrl(row.url), { decisao: 'desdobrado',
+      motivo: 'Edição já separada em atos com decisões individuais na base; não enviar o PDF inteiro como um evento.' });
   }
   return guard;
 }
@@ -44,14 +53,18 @@ export async function loadEditorialGuard(directory) {
 // Documentos diferentes sobre a mesma lei permanecem na base, mas o ato
 // confirmado por uma fonte não deve gerar novo alerta por outra fonte.
 export async function loadConfirmedEventRegistry(directory) {
-  const [archive, reviews] = await Promise.all([
+  const [archive, reviews, actDefinitions] = await Promise.all([
     readNdjson(path.join(directory, 'arquivo-coletas.ndjson')),
     readNdjson(path.join(directory, 'revisoes-eventos.ndjson')),
+    readNdjson(path.join(directory, 'atos-identificados.ndjson')),
   ]);
-  const byId = new Map(archive.map((row) => [row.id, row]));
+  const splitParents = new Set(actDefinitions.map((act) => act.documento_pai_id));
+  const byId = new Map([...archive, ...materializeDocumentActs(archive, actDefinitions)]
+    .map((row) => [row.id, row]));
   const registry = new Map();
   for (const review of reviews) {
     if (!['confirmar_evento', 'corrigir_categoria'].includes(review.decisao)) continue;
+    if (splitParents.has(review.documento_id)) continue;
     const row = byId.get(review.documento_id);
     if (!row || !review.trecho_sha256 || createHash('sha256').update(row.trecho || '').digest('hex') !== review.trecho_sha256) continue;
     const key = formalEventKey({ title: row.titulo,
@@ -69,6 +82,12 @@ export function applyEditorialGuard(item, guard) {
   const review = guard.get(canonicalUrl(item.url || ''));
   if (!review) return item;
   const previous = item.classification || {};
+  if (review.decisao === 'desdobrado') return { ...item, classification: {
+    ...previous, category: 'GERAL', emoji: '📰', score: 0,
+    stage: 'edição separada em atos individualizados',
+    reasons: [...(previous.reasons || []), `rejeitado: ${review.motivo}`],
+  }, editorialDecision: 'desdobrado', catalogDecision: 'desdobrado',
+  publicationDecision: 'historico', publicationReason: review.motivo };
   if (['confirmar_evento', 'corrigir_categoria'].includes(review.decisao)) {
     return { ...item, previewOnly: false, reviewReason: '', classification: {
       ...previous, category: review.categoria, emoji: EMOJI[review.categoria],

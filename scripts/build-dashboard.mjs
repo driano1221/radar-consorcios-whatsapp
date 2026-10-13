@@ -52,12 +52,17 @@ const TABLES = [
   ['vinculos-documentos', 'Vínculos documentais', 'Menções que conectam documentos e consórcios; menção não comprova adesão.'],
   ['identidade-pendente', 'Sinalizações de identidade', 'Histórico de documentos sinalizados na extração; alguns já foram descartados ou esclarecidos. Os pontos atuais ficam na triagem.'],
   ['arquivo-coletas', 'Arquivo de coletas', 'Todos os documentos guardados, inclusive descartes e títulos sem texto.'],
+  ['atos', 'Atos dentro dos documentos', 'Atos individualizados de uma mesma edição, cada um com decisão e página próprias.'],
   ['revisoes-eventos', 'Revisões editoriais', 'Decisões humanas lacradas ao trecho do documento e sua justificativa.'],
 ];
 
 const COLUMN_DOCS = {
   id: 'Identificador técnico estável da linha; não é CNPJ.',
   documento_id: 'ID do documento no arquivo de coletas.',
+  documento_pai_id: 'ID da edição ou PDF que contém este ato.',
+  chave_ato: 'Identificador estável do ato dentro do PDF, independente da página.',
+  pagina_inicio: 'Primeira página do PDF em que o ato aparece.',
+  pagina_fim: 'Última página do PDF em que o ato aparece.',
   documento_relacionado: 'ID de outro documento que representa o mesmo episódio.',
   consorcio_id: 'ID da identidade do consórcio nesta base.',
   primeira_coleta: 'Data em que o radar encontrou esta URL pela primeira vez.',
@@ -128,6 +133,7 @@ const FIRST_COLUMNS = {
   'vinculos-documentos': ['nome_mencionado', 'situacao', 'evidencia', 'documento_id'],
   'identidade-pendente': ['titulo', 'motivo', 'tipo_evento'],
   'arquivo-coletas': ['titulo', 'fonte', 'tipo_evento', 'decisao_base', 'data_publicacao'],
+  atos: ['titulo', 'tipo_evento', 'decisao_base', 'pagina_inicio', 'pagina_fim', 'documento_pai_id'],
   'revisoes-eventos': ['documento_id', 'decisao', 'categoria', 'motivo', 'evidencia'],
 };
 
@@ -232,7 +238,7 @@ export function dashboardSourceCatalog(config = {}) {
 }
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
-  participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
+  acts = [], participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
   articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
@@ -246,6 +252,12 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     .map((row) => [row.documento_id, row]));
   const articleTextById = new Map(articleTexts.filter((row) => row.documento_id && row.texto)
     .map((row) => [row.documento_id, row]));
+  const actsByParent = new Map();
+  for (const act of acts) {
+    if (!actsByParent.has(act.documento_pai_id)) actsByParent.set(act.documento_pai_id, []);
+    actsByParent.get(act.documento_pai_id).push({ id: act.id, title: act.titulo,
+      page: Number(act.pagina_inicio), decision: act.decisao_base });
+  }
   const linkedByDocument = new Map();
   for (const link of links) {
     if (!linkedByDocument.has(link.documento_id)) linkedByDocument.set(link.documento_id, []);
@@ -255,22 +267,27 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       evidenceUrl: link.url_evidencia,
     });
   }
-  const items = archive.map((row) => {
+  const items = [...archive, ...acts].map((row) => {
+    const isSplitParent = actsByParent.has(row.id);
+    const isAct = Boolean(row.documento_pai_id);
     const decision = decisions[row.id] || null;
     const curated = eventById.get(row.id);
     const inEvents = Boolean(curated);
     const stale = isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: publicationDate(row) });
-    const review = reviewById.get(row.id);
+    const review = isSplitParent ? null : reviewById.get(row.id);
     const reviewValid = review?.trecho_sha256 === createHash('sha256').update(row.trecho || '').digest('hex');
     // Um ato antigo continua fora de eventos atuais, mas a revisão que explica
     // por que ele foi descartado deve permanecer visível ao usuário.
     const appliedReview = reviewValid ? review : null;
-    const recovered = pdfById.get(row.id);
-    const preferredPages = [review?.fatos?.pagina_pdf, ...(review?.fatos?.paginas_pdf || [])]
+    const recovered = pdfById.get(row.documento_pai_id || row.id);
+    const preferredPages = [row.pagina_inicio, row.pagina_fim,
+      review?.fatos?.pagina_pdf, ...(review?.fatos?.paginas_pdf || [])]
       .map(Number).filter(Boolean);
-    const pdfEvidence = distinctPdfSnippets(recovered?.trechos, preferredPages);
-    const articleText = articleTextById.get(row.id);
-    const pdfText = (recovered?.trechos || []).map((snippet) => snippet.texto || '').join(' ');
+    const relevantSnippets = isAct ? recovered?.trechos?.filter((snippet) =>
+      Number(snippet.pagina) >= Number(row.pagina_inicio) && Number(snippet.pagina) <= Number(row.pagina_fim)) : recovered?.trechos;
+    const pdfEvidence = distinctPdfSnippets(relevantSnippets, preferredPages);
+    const articleText = articleTextById.get(row.documento_pai_id || row.id);
+    const pdfText = (relevantSnippets || []).map((snippet) => snippet.texto || '').join(' ');
     const pdfProof = pdfText && inEvents && !appliedReview && curated.tipo_evento === 'ADESÃO'
       ? classifyItem({ kind: 'gazette', title: row.titulo, rawText: pdfText,
         summary: pdfText, excerpts: [pdfText], url: row.url }) : null;
@@ -289,7 +306,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const recoveredSuggestion = !appliedReview && !stale && Boolean(row.article_suggested_category);
     const pendingReview = activeCandidate && !['confirmar_evento', 'nao_evento', 'duplicata'].includes(appliedReview?.decisao)
       || recoveredSuggestion;
-    const reason = stale ? 'Ato antigo com data recente de indexação.'
+    const reason = isSplitParent ? `Esta edição contém ${actsByParent.get(row.id).length} atos individualizados. A decisão sobre cada ato aparece abaixo.`
+      : stale ? 'Ato antigo com data recente de indexação.'
       : rejectedByReview ? `Rejeitado por revisão editorial — ${review.motivo}`
       : duplicateByReview ? `Duplicata vinculada a ${review.documento_relacionado} — ${review.motivo}`
       : recoveredSuggestion ? `O texto integral recuperado sugere ${row.article_suggested_category}, mas a decisão ainda não foi refeita. ${row.article_suggestion_evidence || ''}`.trim()
@@ -300,6 +318,9 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
           decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
     return {
       id: row.id, title: row.titulo, source: sourceName(row),
+      documentParentId: row.documento_pai_id || '',
+      relatedActs: actsByParent.get(row.documento_pai_id || row.id) || [],
+      actPage: isAct ? Number(row.pagina_inicio) : null,
       url: decision?.articleUrl || row.article_url || row.url,
       publishedAt: publicationDate(row, appliedReview), publishedDateSource: appliedReview?.fatos?.data_publicacao_original
         ? 'revisao_editorial' : row.data_publicacao ? 'catalogo'
@@ -311,7 +332,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       score: stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? ''
         : ruleReclassified ? row.pontuacao : decision?.score ?? row.pontuacao,
       baseStatus: inEvents ? 'evento_candidato' : 'arquivo_bruto',
-      baseDecision: rejectedByReview || duplicateByReview ? 'descartado'
+      baseDecision: isSplitParent ? 'desdobrado' : rejectedByReview || duplicateByReview ? 'descartado'
         : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'
           : recoveredSuggestion ? 'candidato'
             : !inEvents ? 'descartado'
@@ -324,7 +345,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       eventMonth: curated?.mes_fato || row.mes_fato || '',
       originalPublishedAt: curated?.data_noticia_original || row.data_noticia_original || '',
       activeCandidate, pendingReview, rejectedEvent, legacyUnverified,
-      decisionStatus: stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? 'descartado'
+      decisionStatus: isSplitParent ? 'desdobrado'
+        : stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? 'descartado'
         : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'
           : rejectedEvent ? 'rejeitado' : legacyUnverified || recoveredSuggestion ? 'revisao' : pdfReassessment ? 'revisao'
             : decision?.status || (inEvents ? 'historico' : 'sem_evento'),
@@ -338,7 +360,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       documentType: curated?.tipo_documento || row.tipo_documento,
       evidence: pdfReassessment ? pdfProof.evidenceText : curated?.trecho || row.trecho,
       pdfEvidence,
-      pdfEvidenceUrl: recovered?.url_pdf || recovered?.url || '',
+      pdfEvidenceUrl: isAct ? row.url : recovered?.url_pdf || recovered?.url || '',
       pdfReassessment: Boolean(pdfReassessment),
       contentQuality: contentQuality(row.titulo, curated?.trecho || row.trecho),
       fullText: articleText?.texto || '', fullTextReader: articleText?.leitor || '',
@@ -381,11 +403,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   const latestRun = orderedRuns.at(-1);
   const previousRun = orderedRuns.at(-2);
   const recentItems = latestRun && previousRun
-    ? items.filter((item) => item.firstSeenAt > previousRun.at && item.firstSeenAt <= latestRun.at) : [];
+    ? items.filter((item) => !item.documentParentId && item.firstSeenAt > previousRun.at && item.firstSeenAt <= latestRun.at) : [];
   const primarySources = ['Google News', 'Querido Diário', 'Feeds RSS', 'Scrapers web', 'SAPL', 'CIGA'];
   const latestDay = brazilDay(latestRun?.at);
   const todayRuns = latestDay ? orderedRuns.filter((run) => brazilDay(run.at) === latestDay) : [];
-  const todayNew = latestDay ? items.filter((item) => brazilDay(item.firstSeenAt) === latestDay &&
+  const todayNew = latestDay ? items.filter((item) => !item.documentParentId && brazilDay(item.firstSeenAt) === latestDay &&
     item.firstSeenAt <= latestRun.at) : [];
   const collection = latestRun ? {
     at: latestRun.at,
@@ -424,7 +446,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     collection,
     disclaimer: 'O painel mostra documentos e hipóteses de eventos. Não comprova composição municipal ou efeito jurídico.',
     stats: {
-      documents: items.length, eventCandidates: items.filter((row) => row.activeCandidate).length,
+      documents: archive.length, acts: acts.length, eventCandidates: items.filter((row) => row.activeCandidate).length,
       pendingReview: items.filter((row) => row.pendingReview).length,
       eventRecords: eventIds.size,
       rejectedEventRecords: items.filter((row) => row.rejectedEvent).length,
@@ -489,8 +511,8 @@ export function buildPublicDashboardData(data) {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const [archive, events, consortia, links, pendingIdentity, editorialReviews, participations, pdfRecovery, articleTexts] = await Promise.all([
-    readNdjson('arquivo-coletas.ndjson'), readCsv('eventos.csv'), readCsv('consorcios.csv'),
+  const [archive, acts, events, consortia, links, pendingIdentity, editorialReviews, participations, pdfRecovery, articleTexts] = await Promise.all([
+    readNdjson('arquivo-coletas.ndjson'), readCsv('atos.csv'), readCsv('eventos.csv'), readCsv('consorcios.csv'),
     readCsv('vinculos-documentos.csv'), readCsv('identidade-pendente.csv'), readNdjson('revisoes-eventos.ndjson'),
     readCsv('participacoes.csv'),
     Promise.all([readNdjson('recuperacao-pdf.ndjson'), readNdjson('recuperacao-pdf-grandes.ndjson'),
@@ -500,8 +522,8 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     readNdjson('textos-artigos.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error)),
   ]);
   const state = JSON.parse(await readFile(path.join(root, 'state', 'news-state.json'), 'utf8'));
-  const [eventColumns, consortiumColumns, participationColumns, linkColumns, pendingColumns] = await Promise.all(
-    ['eventos.csv', 'consorcios.csv', 'participacoes.csv', 'vinculos-documentos.csv', 'identidade-pendente.csv']
+  const [eventColumns, actColumns, consortiumColumns, participationColumns, linkColumns, pendingColumns] = await Promise.all(
+    ['eventos.csv', 'atos.csv', 'consorcios.csv', 'participacoes.csv', 'vinculos-documentos.csv', 'identidade-pendente.csv']
       .map(readCsvColumns));
   const decisions = { ...Object.fromEntries(Object.entries(state.observations || {}).map(([id, observation]) => {
     const item = observation.item || {};
@@ -520,11 +542,12 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   })), ...state.decisions };
   const sourceConfig = JSON.parse(await readFile(path.join(root, 'config', 'default.json'), 'utf8'));
   const geographyReviews = JSON.parse(await readFile(path.join(catalog, 'ufs-revisadas.json'), 'utf8'));
-  const data = buildDashboardData({ archive, events, consortia, links, pendingIdentity,
+  const data = buildDashboardData({ archive, acts, events, consortia, links, pendingIdentity,
     editorialReviews, participations, pdfRecovery, articleTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
     sourceConfig, geographyReviews,
     baseTables: [
       makeBaseTable('eventos', events, eventColumns),
+      makeBaseTable('atos', acts, actColumns),
       makeBaseTable('consorcios', consortia, consortiumColumns),
       makeBaseTable('participacoes', participations, participationColumns),
       makeBaseTable('vinculos-documentos', links, linkColumns),

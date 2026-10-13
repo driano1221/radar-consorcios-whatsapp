@@ -46,6 +46,7 @@ function sourceMessage(row) {
   return row.message || 'A fonte respondeu parcialmente ou não entregou dados nesta coleta.';
 }
 function status(item) {
+  if (item.baseDecision === 'desdobrado') return ['Edição · ver atos separados', 'raw'];
   if (item.editorialReview?.decision === 'confirmar_evento') return ['Conferido · aceito', 'event'];
   if (item.editorialReview?.decision === 'nao_evento') return ['Conferido · descartado', 'raw'];
   if (item.editorialReview?.decision === 'duplicata') return ['Conferido · duplicata', 'raw'];
@@ -63,6 +64,7 @@ function status(item) {
   return ['Fora da lista', 'raw'];
 }
 function readableReason(item) {
+  if (item.baseDecision === 'desdobrado') return item.reason;
   if (item.editorialReview?.reason) return item.editorialReview.reason;
   if (item.rejectedEvent) return item.reason || 'A triagem rejeitou este registro; ele permanece no histórico para consulta.';
   if (item.legacyUnverified) return 'Registro antigo ainda sem reconfirmação documental. O texto pode estar disponível, mas a decisão precisa de prova revisada.';
@@ -104,10 +106,12 @@ function renderDeck() {
   const items = deckItems();
   const counts = { accepted: 0, rejected: 0, pending: 0 };
   for (const row of state.data.items) counts[triageBucket(row)] += 1;
+  const rejectedDocuments = state.data.items.filter((row) => !row.documentParentId &&
+    row.baseDecision !== 'desdobrado' && triageBucket(row) === 'rejected').length;
   $('#triage-summary').replaceChildren(...[
     [state.data.stats.documents, 'publicações arquivadas'],
     [counts.accepted, 'fatos confirmados'],
-    [counts.rejected, 'fora da base'],
+    [rejectedDocuments, 'publicações fora da base'],
     [counts.pending, 'candidatos'],
   ].map(([value, title]) => {
     const box = node('div', 'summary-number');
@@ -127,7 +131,7 @@ function renderDeck() {
   if (!items.some((item) => item.id === state.selectedOverviewItem)) state.selectedOverviewItem = items[0]?.id || '';
   const list = $('#deck-stack');
   const previousScroll = list.scrollTop;
-  const listHead = node('div', 'overview-list-head', `${number.format(items.length)} ${items.length === 1 ? 'publicação' : 'publicações'} nesta seleção`);
+  const listHead = node('div', 'overview-list-head', `${number.format(items.length)} ${items.length === 1 ? 'registro' : 'registros'} nesta seleção${state.data.stats.acts ? ` · acervo inclui ${number.format(state.data.stats.acts)} atos separados de publicações` : ''}`);
   const rows = items.slice(0, 80).map((item) => {
     const bucket = triageBucket(item);
     const row = node('button', `overview-row ${bucket}${item.id === state.selectedOverviewItem ? ' active' : ''}`);
@@ -136,7 +140,7 @@ function renderDeck() {
     const body = node('span', 'overview-row-body');
     body.append(node('strong', '', displayTitle(item)), node('small', '', item.source || 'Fonte não informada'));
     row.append(node('time', '', date(item.publishedAt || item.lastSeenAt)), body,
-      node('span', `overview-verdict ${bucket}`, bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'));
+      node('span', `overview-verdict ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'));
     row.addEventListener('click', () => {
       state.selectedOverviewItem = item.id; renderDeck();
       if (window.matchMedia('(max-width: 780px)').matches) $('#overview-detail').scrollIntoView({
@@ -173,8 +177,8 @@ function renderOverviewDetail(item) {
   const panel = $('#overview-detail');
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
   const bucket = triageBucket(item);
-  const decision = bucket === 'accepted' ? 'Confirmada na base' : bucket === 'rejected' ? 'Fora da base' : 'Candidata · não confirmada';
-  const reasonTitle = bucket === 'accepted' ? 'Por que entrou' : bucket === 'rejected' ? 'Por que ficou fora' : 'O que falta para concluir';
+  const decision = item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada na base' : bucket === 'rejected' ? 'Fora da base' : 'Candidata · não confirmada';
+  const reasonTitle = item.baseDecision === 'desdobrado' ? 'O que esta edição contém' : bucket === 'accepted' ? 'Por que entrou' : bucket === 'rejected' ? 'Por que ficou fora' : 'O que falta para concluir';
   const rawEvidence = item.editorialReview?.evidence || item.pdfEvidence?.[0]?.text ||
     (item.contentQuality === 'trecho_disponivel' ? item.evidence : '');
   const evidence = /\.{10,}/.test(rawEvidence) && !item.editorialReview ? '' : rawEvidence;
@@ -209,7 +213,7 @@ function feedRow(item, index, selected, onClick) {
   const body = node('div'); const top = node('div', 'item-top');
   const [statusText, tone] = status(item);
   const bucket = triageBucket(item);
-  top.append(node('span', `decision-flag ${bucket}`, bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'),
+  top.append(node('span', `decision-flag ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'),
     node('span', 'item-date', date(item.lastSeenAt)));
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
@@ -223,9 +227,11 @@ function renderDetailedRecord(item, target) {
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ver os detalhes.')); return; }
   const [statusText, tone] = status(item);
   const head = node('div', 'detail-kicker');
-  head.append(node('span', '', 'SOBRE ESTA PUBLICAÇÃO'), node('span', '', item.id.slice(0, 8).toUpperCase()));
+  head.append(node('span', '', item.documentParentId ? 'SOBRE ESTE ATO' : 'SOBRE ESTA PUBLICAÇÃO'),
+    node('span', '', item.id.slice(0, 8).toUpperCase()));
   const decision = node('div', `decision-card ${tone}`);
-  const verdict = item.editorialReview?.decision === 'confirmar_evento' ? 'SIM — ACHADO CONFERIDO E ACEITO'
+  const verdict = item.baseDecision === 'desdobrado' ? 'EDIÇÃO — DECISÕES NOS ATOS ABAIXO'
+    : item.editorialReview?.decision === 'confirmar_evento' ? 'SIM — ACHADO CONFERIDO E ACEITO'
     : item.editorialReview?.decision === 'nao_evento' ? 'NÃO — DESCARTADO APÓS CONFERÊNCIA'
       : item.editorialReview?.decision === 'duplicata' ? 'NÃO — JÁ REPRESENTADO POR OUTRA PUBLICAÇÃO'
       : item.editorialReview?.decision === 'corrigir_categoria' ? 'SIM — CATEGORIA CORRIGIDA APÓS CONFERÊNCIA'
@@ -241,10 +247,11 @@ function renderDetailedRecord(item, target) {
     node('p', '', readableReason(item)));
   const grid = node('div', 'detail-grid');
   const fields = [
-    ['ASSUNTO', item.rejectedEvent ? 'Não classificado como achado'
+    ['ASSUNTO', item.baseDecision === 'desdobrado' ? 'Edição com atos separados' : item.rejectedEvent ? 'Não classificado como achado'
       : item.baseStatus === 'evento_candidato' ? item.category : 'Não classificado como achado'],
-    ['BASE', item.baseDecision === 'confirmado' ? 'Fato confirmado' : item.baseDecision === 'descartado'
+    ['BASE', item.baseDecision === 'desdobrado' ? 'Decisão por ato' : item.baseDecision === 'confirmado' ? 'Fato confirmado' : item.baseDecision === 'descartado'
       ? 'Fora da base de eventos' : 'Candidato, ainda não confirmado'],
+    ...(item.actPage ? [['PÁGINA DO ATO', String(item.actPage)]] : []),
     ['ALERTA', item.alertDecision === 'historico' ? 'Não enviar — fato antigo'
       : item.alertDecision === 'enviado' ? item.baseDecision === 'descartado'
         ? 'Enviado antes da correção' : 'Já enviado'
@@ -267,6 +274,17 @@ function renderDetailedRecord(item, target) {
   panel.replaceChildren(head, node('h3', 'detail-head', displayTitle(item)),
     node('div', 'detail-meta', `${item.source || 'Fonte não informada'}${displayTitle(item) !== item.title ? ` · ${item.title}` : ''}`),
     decision, grid);
+  if (item.relatedActs?.length) {
+    panel.append(label('Atos individualizados nesta edição'));
+    for (const act of item.relatedActs) {
+      const button = node('button', 'detail-link', `Pág. ${act.page} · ${act.title}${act.decision === 'confirmado' ? ' · aceito' : act.decision === 'descartado' ? ' · descartado' : ''} →`);
+      button.type = 'button';
+      button.addEventListener('click', () => {
+        $('#status-filter').value = 'all'; state.selectedItem = act.id; renderFeed();
+      });
+      panel.append(button);
+    }
+  }
   if (item.alertReason && item.alertDecision !== 'enviado') panel.append(label('Por que essa decisão de alerta?'),
     node('p', 'detail-copy', item.alertReason));
   if (item.editorialReview) {
@@ -369,7 +387,7 @@ function detail(item, target) {
   const panel = $(target);
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
   const bucket = triageBucket(item);
-  const verdict = bucket === 'accepted' ? 'Entrou na base' : bucket === 'rejected' ? 'Ficou fora da base' : 'Exceção: conferir';
+  const verdict = item.baseDecision === 'desdobrado' ? 'Edição com atos separados' : bucket === 'accepted' ? 'Entrou na base' : bucket === 'rejected' ? 'Ficou fora da base' : 'Exceção: conferir';
   const intro = node('div', 'readable-intro');
   intro.append(node('span', `overview-verdict ${bucket}`, verdict), node('small', '', `Registro ${item.id.slice(0, 8).toUpperCase()}`));
   const decision = node('section', `readable-decision ${bucket}`);
@@ -380,7 +398,7 @@ function detail(item, target) {
   const proof = node('section', 'readable-proof');
   const location = item.pdfEvidence?.length && !item.editorialReview ?
     ` · página ${item.pdfEvidence[0].page || 'não identificada'}` : '';
-  const proofTitle = item.editorialReview ? 'Trecho usado na conferência' :
+  const proofTitle = item.baseDecision === 'desdobrado' ? 'Trecho histórico da coleta; veja cada ato abaixo' : item.editorialReview ? 'Trecho usado na conferência' :
     bucket === 'rejected' ? `Trecho coletado — não prova o fato por si só${location}` : `Trecho disponível${location}`;
   const proofPreview = usableProof && !item.editorialReview && usableProof.length > 400
     ? `${usableProof.slice(0, 400).trimEnd()}…` : usableProof;
@@ -391,15 +409,28 @@ function detail(item, target) {
   const alertText = item.sentAt ? item.baseDecision === 'descartado'
     ? `Enviado ao WhatsApp em ${date(item.sentAt, true)}, antes da correção. Hoje está fora da base de eventos.`
     : `Enviado ao WhatsApp em ${date(item.sentAt, true)}.`
-    : item.alertDecision === 'historico' ? 'Não enviado: é um fato histórico, não uma novidade da coleta.'
+    : item.baseDecision === 'desdobrado' ? 'A edição inteira não gera alerta; cada ato é avaliado separadamente.'
+      : item.alertDecision === 'historico' ? `Não enviado: ${item.alertReason || 'é um fato histórico, não uma novidade da coleta.'}`
       : item.alertDecision === 'elegivel' ? 'Pode ser considerado para o WhatsApp após as verificações do envio.'
         : item.alertDecision === 'previa' ? 'Fonte em teste; não será enviado automaticamente.'
         : item.alertDecision === 'descartado' ? 'Não será enviado ao WhatsApp.'
           : 'O envio ao WhatsApp ainda depende de verificação.';
   alert.append(node('h4', '', 'E o WhatsApp?'), node('p', '', alertText));
-  if (item.alertReason && !item.sentAt) alert.append(node('small', '', item.alertReason));
+  if (item.alertReason && !item.sentAt && item.alertDecision !== 'historico') alert.append(node('small', '', item.alertReason));
   const actions = node('div', 'readable-actions');
   actions.append(link('Abrir fonte original', item.editorialReview?.evidenceUrl || item.pdfEvidenceUrl || item.url));
+  let siblings = null;
+  if (item.relatedActs?.length) {
+    siblings = node('section', 'readable-proof');
+    siblings.append(node('h4', '', 'Atos nesta edição'));
+    for (const act of item.relatedActs) {
+      const button = node('button', 'detail-link', `Página ${act.page}: ${act.title} →`);
+      button.type = 'button'; button.addEventListener('click', () => {
+        $('#status-filter').value = 'all'; state.selectedItem = act.id; renderFeed();
+      });
+      siblings.append(button);
+    }
+  }
   const back = node('button', 'detail-link readable-back', 'Voltar à lista ↑'); back.type = 'button';
   back.addEventListener('click', () => $('#feed-list').scrollIntoView({ behavior: 'smooth', block: 'start' }));
   actions.append(back);
@@ -408,7 +439,7 @@ function detail(item, target) {
   const fullBody = node('div'); fullBody.id = 'detail-full-record'; full.append(fullBody);
   panel.replaceChildren(intro, node('h3', 'detail-head', displayTitle(item)),
     node('p', 'readable-meta', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
-    decision, proof, alert, actions, full);
+    decision, proof, alert, ...(siblings ? [siblings] : []), actions, full);
   renderDetailedRecord(item, '#detail-full-record');
   for (const selector of ['.detail-kicker', '.detail-head', '.detail-meta', '.decision-card']) {
     fullBody.querySelector(selector)?.remove();
@@ -440,7 +471,7 @@ function needsAttention(item) {
 }
 function renderFeed() {
   const items = filteredFeed();
-  $('#result-count').textContent = `${number.format(items.length)} ${items.length === 1 ? 'PUBLICAÇÃO' : 'PUBLICAÇÕES'}`;
+  $('#result-count').textContent = `${number.format(items.length)} ${items.length === 1 ? 'REGISTRO' : 'REGISTROS'}`;
   const visible = items.slice(0, state.limit);
   if (!visible.some((item) => item.id === state.selectedItem)) state.selectedItem = visible[0]?.id || '';
   $('#feed-list').replaceChildren(...visible.map((item, index) => feedRow(item, index, item.id === state.selectedItem, () => {

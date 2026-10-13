@@ -5,6 +5,7 @@ import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { catalogRecord, mergeCatalogRecord, mergeStateIntoCatalog, saveCatalog } from '../src/lib/catalog.mjs';
+import { documentActId, materializeDocumentActs } from '../src/lib/document-acts.mjs';
 
 test('catálogo guarda o texto de itens gerais e preserva o link direto recuperado', () => {
   const item = { kind: 'news', title: 'Consórcio abre seleção', url: 'https://news.google.com/rss/articles/id',
@@ -27,6 +28,56 @@ test('descarte com prova explícita mostra o trecho que explica a decisão', () 
 });
 
 const at = '2026-10-02T15:00:00.000Z';
+
+test('uma edição pode conter dois atos estáveis e independentes sem duplicar a publicação', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-atos-'));
+  try {
+    const parent = catalogRecord({ kind: 'gazette', title: 'Diário Oficial de Joinville (SC)',
+      url: 'https://example.org/joinville.pdf', source: 'Querido Diário',
+      publishedAt: '2026-10-09T12:00:00Z', classification: { category: 'RATEIO', score: 10,
+        evidenceText: 'Trecho misto do diário com compra e rateio.' } }, at, at);
+    const definitions = [
+      { documento_pai_id: parent.id, chave_ato: 'compra-1532-2026', pagina_inicio: 95,
+        titulo: 'Compra municipal pelo pregão do CISNORDESTE', categoria: 'GERAL',
+        trecho: 'Hospital e fornecedor assinaram autorização de fornecimento.' },
+      { documento_pai_id: parent.id, chave_ato: 'rateio-01-2026', pagina_inicio: 159,
+        pagina_fim: 160, titulo: 'Apostilamento de rateio do CINCATARINA', categoria: 'RATEIO',
+        trecho: 'Município e CINCATARINA são partícipes do apostilamento.' },
+    ];
+    const acts = materializeDocumentActs([parent], definitions);
+    assert.equal(new Set(acts.map((act) => act.id)).size, 2);
+    assert.equal(acts[1].id, documentActId(parent.id, 'rateio-01-2026'));
+    assert.equal(materializeDocumentActs([parent], [{ ...definitions[1], pagina_inicio: 158 }])[0].id, acts[1].id);
+    assert.throws(() => materializeDocumentActs([parent], [definitions[0], definitions[0]]), /repetido/);
+    await writeFile(path.join(directory, 'atos-identificados.ndjson'),
+      `${definitions.map((row) => JSON.stringify(row)).join('\n')}\n`);
+    const reviews = [
+      { documento_id: parent.id, decisao: 'confirmar_evento', categoria: 'RATEIO',
+        motivo: 'revisão antiga da edição', evidencia: parent.trecho,
+        trecho_sha256: createHash('sha256').update(parent.trecho).digest('hex') },
+      { documento_id: acts[0].id, decisao: 'nao_evento', motivo: 'compra municipal',
+        evidencia: acts[0].trecho, trecho_sha256: createHash('sha256').update(acts[0].trecho).digest('hex') },
+      { documento_id: acts[1].id, decisao: 'confirmar_evento', categoria: 'RATEIO',
+        motivo: 'apostilamento assinado', evidencia: acts[1].trecho, publicar: false,
+        trecho_sha256: createHash('sha256').update(acts[1].trecho).digest('hex') },
+    ];
+    await writeFile(path.join(directory, 'revisoes-eventos.ndjson'),
+      `${reviews.map((row) => JSON.stringify(row)).join('\n')}\n`);
+    const result = await saveCatalog(directory, new Map([[parent.id, parent]]));
+    assert.equal(result.all, 1);
+    assert.equal(result.acts, 2);
+    assert.equal(result.relevant, 1);
+    const archive = await readFile(path.join(directory, 'arquivo-coletas.ndjson'), 'utf8');
+    const events = await readFile(path.join(directory, 'eventos.csv'), 'utf8');
+    const actTable = await readFile(path.join(directory, 'atos.csv'), 'utf8');
+    assert.equal(archive.trim().split('\n').length, 1);
+    assert.match(events, new RegExp(acts[1].id));
+    assert.doesNotMatch(events, new RegExp(parent.id + '",""'));
+    assert.doesNotMatch(events, new RegExp(acts[0].id));
+    assert.match(actTable, /compra municipal/);
+    assert.match(actTable, /apostilamento assinado/);
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
 
 test('lei que autoriza ingresso não vira participação confirmada', () => {
   const row = catalogRecord({ kind: 'gazette', title: 'LEI Nº 42/2026',

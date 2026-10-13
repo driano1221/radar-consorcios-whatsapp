@@ -8,6 +8,7 @@ import { itemId, reclassifyPending, selectUnseen } from '../src/lib/dedupe.mjs';
 import { applyEditorialGuard, loadConfirmedEventRegistry, loadEditorialGuard } from '../src/lib/editorial-guard.mjs';
 import { decidePublication, isNotifiable } from '../src/lib/publication-gate.mjs';
 import { fileURLToPath } from 'node:url';
+import { materializeDocumentActs } from '../src/lib/document-acts.mjs';
 
 async function readNdjson(name) {
   const text = await readFile(new URL(`../data/catalogo/${name}`, import.meta.url), 'utf8');
@@ -15,10 +16,12 @@ async function readNdjson(name) {
 }
 
 test('todas as revisões apontam para registro e trecho vigentes; duplicatas têm documento principal', async () => {
-  const [archive, reviews] = await Promise.all([
+  const [archive, reviews, actDefinitions] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'), readNdjson('revisoes-eventos.ndjson'),
+    readNdjson('atos-identificados.ndjson'),
   ]);
-  const byId = new Map(archive.map((row) => [row.id, row]));
+  const byId = new Map([...archive, ...materializeDocumentActs(archive, actDefinitions)]
+    .map((row) => [row.id, row]));
   for (const review of reviews) {
     const row = byId.get(review.documento_id);
     assert.ok(row, `documento ausente: ${review.documento_id}`);
@@ -54,6 +57,7 @@ test('todas as categorias confirmadas são reaplicadas na coleta futura', async 
   const guard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
   for (const review of reviews.filter((row) => row.decisao === 'confirmar_evento')) {
     const row = byId.get(review.documento_id);
+    if (!row || guard.get(new URL(row.url).origin + new URL(row.url).pathname)?.decisao === 'desdobrado') continue;
     const protectedItem = applyEditorialGuard({ url: row.url,
       classification: { category: 'PROTOCOLO', score: 12, reasons: [] } }, guard);
     assert.equal(protectedItem.classification.category, review.categoria, row.id);
@@ -74,6 +78,7 @@ test('fatos históricos confirmados ficam na base, mas não voltam à fila como 
   for (const review of withheld) {
     assert.equal(review.decisao, 'confirmar_evento');
     const row = byId.get(review.documento_id);
+    if (!row || guard.get(new URL(row.url).origin + new URL(row.url).pathname)?.decisao === 'desdobrado') continue;
     const protectedItem = decidePublication(applyEditorialGuard({ url: row.url,
       classification: { category: 'PROTOCOLO', score: 12, reasons: [] } }, guard));
     assert.equal(protectedItem.classification.category, review.categoria, row.id);
@@ -108,7 +113,7 @@ test('falsos positivos editoriais não retornam à coleta, fila ou resumo semana
   const byId = new Map(archive.map((row) => [row.id, row]));
   const pdfById = new Map([...recovered, ...largeRecovered.filter((row) => row.trechos?.length)]
     .map((row) => [row.documento_id, row]));
-  const rejected = reviews.filter((row) => row.decisao === 'nao_evento');
+  const rejected = reviews.filter((row) => row.decisao === 'nao_evento' && byId.has(row.documento_id));
   assert.ok(rejected.length >= 33, 'as decisões editoriais históricas devem permanecer');
   const guard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
 
@@ -146,4 +151,14 @@ test('falsos positivos editoriais não retornam à coleta, fila ou resumo semana
   });
   assert.equal(report.events, 0);
   assert.equal(report.highlights.length, 0);
+});
+
+test('edição desdobrada não volta à fila como rateio único nem como compra de consórcio', async () => {
+  const guard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
+  const url = 'https://data.queridodiario.ok.org.br/4209102/2026-10-09/e724cedc98aef3a88dc6f167373c355c0d837af4.pdf';
+  const item = applyEditorialGuard({ url, classification: { category: 'RATEIO', score: 12, reasons: [] } }, guard);
+  assert.equal(item.classification.category, 'GERAL');
+  assert.equal(item.editorialDecision, 'desdobrado');
+  assert.equal(item.publicationDecision, 'historico');
+  assert.equal(isNotifiable(item), false);
 });

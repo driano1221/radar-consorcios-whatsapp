@@ -255,6 +255,46 @@ test('painel mostra aceitação editorial, fatos e consórcio já identificado s
   assert.equal(result.items[0].identityPending, '');
 });
 
+test('painel mostra atos da mesma edição com decisões e páginas próprias', () => {
+  const parent = { id: 'edicao', titulo: 'Diário Oficial de Joinville (SC)',
+    fonte: 'Querido Diário', url: 'https://example.org/joinville.pdf',
+    trecho: 'Trecho antigo misturava compra e rateio.',
+    ultima_coleta: '2026-10-10T12:00:00Z', data_publicacao: '2026-10-09T12:00:00Z' };
+  const compra = { ...parent, id: 'compra', documento_pai_id: parent.id,
+    titulo: 'Autorização de fornecimento', url: `${parent.url}#page=95`,
+    pagina_inicio: '95', pagina_fim: '95', trecho: 'Compra do hospital com fornecedor.',
+    tipo_evento: 'GERAL', decisao_base: 'descartado' };
+  const rateio = { ...parent, id: 'rateio', documento_pai_id: parent.id,
+    titulo: 'Apostilamento de rateio', url: `${parent.url}#page=159`,
+    pagina_inicio: '159', pagina_fim: '160', trecho: 'Joinville e CINCATARINA são partícipes.',
+    tipo_evento: 'RATEIO', decisao_base: 'confirmado' };
+  const reviews = [
+    { documento_id: parent.id, decisao: 'confirmar_evento', categoria: 'RATEIO',
+      motivo: 'revisão antiga', evidencia: parent.trecho,
+      trecho_sha256: createHash('sha256').update(parent.trecho).digest('hex') },
+    { documento_id: compra.id, decisao: 'nao_evento', motivo: 'compra municipal',
+      evidencia: compra.trecho, trecho_sha256: createHash('sha256').update(compra.trecho).digest('hex') },
+    { documento_id: rateio.id, decisao: 'confirmar_evento', categoria: 'RATEIO',
+      motivo: 'apostilamento assinado', evidencia: rateio.trecho,
+      trecho_sha256: createHash('sha256').update(rateio.trecho).digest('hex') },
+  ];
+  const result = buildDashboardData({ archive: [parent], acts: [compra, rateio],
+    events: [rateio], consortia: [], links: [], pendingIdentity: [], editorialReviews: reviews,
+    pdfRecovery: [{ documento_id: parent.id, trechos: [
+      { pagina: 95, texto: 'Compra do hospital com fornecedor.' },
+      { pagina: 159, texto: 'Joinville e CINCATARINA são partícipes.' },
+    ] }] });
+  assert.equal(result.stats.documents, 1);
+  assert.equal(result.stats.acts, 2);
+  assert.equal(result.stats.confirmed, 1);
+  assert.equal(result.items.find((item) => item.id === parent.id).baseDecision, 'desdobrado');
+  assert.equal(result.items.find((item) => item.id === parent.id).editorialReview, null);
+  assert.equal(result.items.find((item) => item.id === compra.id).baseDecision, 'descartado');
+  assert.equal(result.items.find((item) => item.id === rateio.id).baseDecision, 'confirmado');
+  assert.deepEqual(result.items.find((item) => item.id === compra.id).pdfEvidence.map((item) => item.page), [95]);
+  assert.deepEqual(result.items.find((item) => item.id === rateio.id).pdfEvidence.map((item) => item.page), [159]);
+});
+
 test('confirmação editorial prevalece sobre descarte automático antigo no painel', () => {
   const row = { id: 'proposta', titulo: 'Diário Oficial de Valinhos', fonte: 'Querido Diário',
     url: 'https://example.org/proposta', data_publicacao: '2026-09-29T00:00:00Z',

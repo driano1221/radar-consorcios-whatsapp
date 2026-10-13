@@ -8,9 +8,11 @@ import { buildIdentityCatalog, identityKey } from './consortium-identity.mjs';
 import { decidePublication } from './publication-gate.mjs';
 import { formalActDate } from './publication-date.mjs';
 import { AI_PROMPT_VERSION, applyAiReview } from './ai-review.mjs';
+import { materializeDocumentActs } from './document-acts.mjs';
 
 const FIELDS = [
-  'id', 'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
+  'id', 'documento_pai_id', 'chave_ato', 'pagina_inicio', 'pagina_fim',
+  'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
   'data_noticia_original', 'data_fato', 'mes_fato', 'decisao_base', 'decisao_alerta', 'motivo_alerta',
   'etapa', 'situacao_analise', 'efeito_na_participacao', 'tipo_documento',
   'consorcio', 'sigla', 'municipio', 'uf', 'titulo', 'fonte', 'url',
@@ -260,7 +262,18 @@ export async function loadCatalog(file) {
 export async function saveCatalog(directory, records, { now = new Date(), lookbackHours = 168 } = {}) {
   await mkdir(directory, { recursive: true });
   const all = [...records.values()].sort((a, b) => a.id.localeCompare(b.id));
+  let actDefinitions = [];
+  try {
+    actDefinitions = (await readFile(path.join(directory, 'atos-identificados.ndjson'), 'utf8'))
+      .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  const acts = materializeDocumentActs(all, actDefinitions);
   await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), all.map((row) => JSON.stringify(row)).join('\n') + '\n');
+  const splitParents = new Map();
+  for (const act of acts) splitParents.set(act.documento_pai_id,
+    (splitParents.get(act.documento_pai_id) || 0) + 1);
   let editorialReviews = [];
   try {
     editorialReviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
@@ -277,7 +290,10 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     .map((review) => [review.documento_id, review]));
   const reviewStillMatches = (row) => decisions.get(row.id)?.trecho_sha256 ===
     createHash('sha256').update(row.trecho || '').digest('hex');
-  const reviewed = all.map((row) => {
+  const reviewed = [...all, ...acts].map((row) => {
+    if (splitParents.has(row.id)) return { ...row, tipo_evento: 'GERAL',
+      decisao_base: 'desdobrado', decisao_alerta: 'historico',
+      situacao_analise: `edição desdobrada em ${splitParents.get(row.id)} atos individualizados` };
     let result = row;
     if (reviewStillMatches(row)) {
       const review = decisions.get(row.id);
@@ -326,6 +342,9 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     return result;
   });
   const relevant = reviewed.filter((row) => row.tipo_evento !== 'GERAL' && row.tipo_evento !== 'NÃO CLASSIFICADO');
+  const reviewedActs = reviewed.filter((row) => row.registro_tipo === 'ato');
+  await writeFile(path.join(directory, 'atos.csv'), [FIELDS.join(','), ...reviewedActs.map((row) =>
+    FIELDS.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
   await writeFile(path.join(directory, 'eventos.csv'), [FIELDS.join(','), ...relevant.map((row) =>
     FIELDS.map((field) => csvCell(row[field])).join(','))].join('\n') + '\n', 'utf8');
   let previousIdentities = [];
@@ -431,7 +450,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     .slice(0, 15);
   const summary = [
     '# Panorama da base histórica', '',
-    `- ${all.length} documentos recuperados do histórico de coletas.`,
+    `- ${all.length} documentos recuperados do histórico de coletas; ${acts.length} atos individualizados dentro deles.`,
     `- ${relevant.length} registros relacionados a possíveis eventos de consórcios; ${relevant.filter((row) => row.revisao_editorial?.decisao === 'confirmar_evento').length} aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.`,
     `- ${identities.length} identidades candidatas de consórcios; ${links.filter((link) => link.consorcio_id).length} vínculos documentais, dos quais ${links.filter((link) => link.consorcio_id && link.origem === 'fonte complementar').length} apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.`,
     `- ${pendingIdentity.length} documentos relevantes sem identidade segura, listados em \`identidade-pendente.csv\`.`,
@@ -444,6 +463,6 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     '', 'Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.', '',
   ];
   await writeFile(path.join(directory, 'resumo.md'), summary.join('\n'), 'utf8');
-  return { all: all.length, relevant: relevant.length, consortia: identities.length,
+  return { all: all.length, acts: acts.length, relevant: relevant.length, consortia: identities.length,
     links: links.length, pendingIdentity: pendingIdentity.length };
 }

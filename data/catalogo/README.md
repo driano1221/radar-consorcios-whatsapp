@@ -5,7 +5,9 @@ Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial 
 ## Por onde começar
 
 - `resumo.md`: panorama legível, contagens por tema e links recentes para conferência.
-- `eventos.csv`: visão para Excel com registros que o classificador relacionou a criação, adesão, saída, protocolo, rateio, finanças, governança, atuação, controle ou crise. Revisões editoriais marcadas `nao_evento` são excluídas desta tabela, mas continuam no arquivo bruto. Apenas registros com `situacao_analise` iniciada por `confirmado por revisão editorial` foram aceitos manualmente; os demais ainda são candidatos ou correções parciais.
+- `eventos.csv`: visão para Excel com registros que o classificador relacionou a criação, adesão, saída, protocolo, rateio, finanças, governança, atuação, controle ou crise. Pode conter um ato individual de um PDF extenso, com `documento_pai_id` e páginas. Revisões editoriais marcadas `nao_evento` são excluídas desta tabela, mas permanecem rastreáveis. Apenas registros com `situacao_analise` iniciada por `confirmado por revisão editorial` foram aceitos manualmente; os demais ainda são candidatos ou correções parciais.
+- `atos-identificados.ndjson`: atos individualizados e conferidos dentro de uma edição extensa. `chave_ato` identifica o ato por número estável (não só pela página); as páginas localizam a prova. É uma camada editorial, não uma extração automática de todos os atos da edição.
+- `atos.csv`: decisões separadas dos atos identificados, inclusive os descartados. Um PDF continua sendo uma publicação no arquivo, mas pode ter vários atos com decisões diferentes.
 - `revisoes-eventos.ndjson`: decisões humanas por documento (`confirmar_evento`, `corrigir_categoria`, `nao_evento`), justificativa, evidência e fatos extraídos. O hash do trecho impede aplicar uma decisão antiga a texto alterado.
 - `consorcios.csv`: cadastro de **identidades candidatas** com chave estável `id`, denominação, sigla, CNPJ quando o trecho o associa explicitamente ao consórcio, variações de nome e quantidade de documentos vinculados. Não é um cadastro oficial validado.
 - `participacoes.csv`: uma linha por relação município–consórcio **confirmada em revisão documental**. `ano_ingresso` fica vazio se o ato não o informar; `ano_ultima_evidencia_participacao` é o ano de publicação do documento que comprova a participação, não o ano da adesão nem garantia da composição atual. Cada linha traz o documento e o link de origem.
@@ -13,7 +15,7 @@ Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial 
 - `identidades.ndjson`: registro técnico persistente das identidades e aliases; conserva a chave quando CNPJ ou variação de nome aparece depois. Divergência de CNPJ fica sem vínculo e exige revisão humana.
 - `identidade-pendente.csv`: documentos potencialmente relevantes cujo trecho não sustenta um vínculo seguro; é a fila de conferência da identidade, não uma lista de consórcios inexistentes.
 - `revisoes-identidades.ndjson`: exceções editoriais lacradas ao hash do trecho. Uma sigla ou nome ambíguo permanece pendente até que o documento permita identificar a entidade sem adivinhação.
-- `arquivo-coletas.ndjson`: arquivo técnico de todos os documentos recuperáveis do histórico, inclusive os classificados como `GERAL`, para auditoria e futura reclassificação. Uma linha JSON por URL canônica.
+- `arquivo-coletas.ndjson`: arquivo técnico de todos os documentos recuperáveis do histórico, inclusive os classificados como `GERAL`, para auditoria e futura reclassificação. Uma linha JSON por URL canônica. Atos separados não multiplicam a contagem de publicações deste arquivo.
 
 ## Como ler um evento
 
@@ -30,6 +32,8 @@ Registros marcados como **“legado sem texto”** correspondem a envios antigos
 `npm run catalog:update` acrescenta/atualiza o que está no estado atual e reaplica a decisão de novidade às linhas históricas de `eventos.csv`. `npm run catalog:backfill` também percorre as versões de `state/news-state.json` existentes no histórico Git. A carga retroativa recupera **o que foi preservado nessas versões**, não publicações que nunca foram coletadas nem o texto integral que o radar já descartou. Documentos repetidos na mesma URL são consolidados; fontes distintas sobre o mesmo fato ainda podem aparecer como linhas separadas na base para preservar a proveniência. No envio, o radar compara também o endereço original da página e a identidade do ato quando município e número da lei estão explícitos.
 
 A base é versionada no repositório e não exige serviço externo. Revisão humana, resolução de identidade dos consórcios e confirmação da composição municipal são passos posteriores; não devem ser inferidos automaticamente apenas de uma notícia, projeto de lei ou contrato de rateio.
+
+Quando uma edição é desdobrada em atos, a revisão antiga que tratava a URL inteira como um só evento deixa de gerar fato ou alerta; prevalecem as revisões lacradas aos trechos de cada ato. A reentrada da URL inteira na coleta é bloqueada como evento único, para não confundir uma compra com um rateio. O cadastro atual de atos é um piloto editorial: a detecção automática de limites entre atos em PDFs futuros ainda requer validação, especialmente nas páginas com múltiplos extratos.
 
 ## Identificação de consórcios (primeira etapa)
 
