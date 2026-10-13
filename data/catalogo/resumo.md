@@ -1,8 +1,8 @@
 # Panorama da base histórica
 
-- 1684 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
-- 86 registros relacionados a possíveis eventos de consórcios; 84 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 45 identidades candidatas de consórcios; 61 vínculos documentais, dos quais 35 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 1723 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
+- 90 registros relacionados a possíveis eventos de consórcios; 84 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 46 identidades candidatas de consórcios; 65 vínculos documentais, dos quais 35 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 30 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
@@ -10,10 +10,10 @@
 | Tema | Registros |
 |---|---:|
 | ATUAÇÃO | 23 |
-| GOVERNANÇA | 17 |
+| GOVERNANÇA | 18 |
 | ADESÃO AUTORIZADA | 13 |
-| CONTROLE | 11 |
-| RATEIO | 8 |
+| CONTROLE | 12 |
+| RATEIO | 10 |
 | FINANÇAS | 6 |
 | RATEIO EM TRAMITAÇÃO | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
@@ -27,6 +27,10 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-13 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [PORTARIA Nº 869, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923332/) |
+| 2026-10-13 | GOVERNANÇA — estatuto consolidado ratificado por lei municipal; consórcio já existente | candidato — requer revisão | [LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923527/) |
+| 2026-10-13 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [EXTRATO DO CONTRATO DE RATEIO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1923311/) |
+| 2026-10-12 | CONTROLE — relato — conferir documento original | aprovado pela IA — não confirmado manualmente | [Ex-presidente de consórcio do Rio Paraná é multado por atraso no envio de dados - TCE-PR](https://news.google.com/rss/articles/CBMi8wFBVV95cUxNT3VXai0zb2pPcl9kUjJ6eElWbGw4eE9NNmY3TW1weTZQS0pVUW43SHdQa21ZOW5oeDVmb2tZd3oxS1dQUHNfZ3FWZUV3eTZ6a1d2aFpKWXN1cXJIczRiY0piR1l0Qk9yb2FzbGQxOVQwaFV1b0lEdlhkVE5ZeHBENjlzNGRXOS1Cc1JXQnEybWE4SjBITXB1ZUE2eURxWVJHRllxZUJnVXVLYUc5UTNaZTB5WFZYakVvcXlKeEczMWFtbWRIY21VYU10OXVrdEhQcXIxS291U256S3JyaW8zaFVKem5UVzNxY2JIODB5MC1NejA?oc=5) |
 | 2026-10-09 | FINANÇAS — Lei 1.244/2026 autoriza repasse de R$ 150 mil ao CIDESA-NA; transferência não comprovada | confirmado por revisão editorial — lei municipal confirma autorização orçamentária para aquisição de terreno de aterro; não comprova que o repasse ocorreu ou que contrato de rateio foi assinado | [LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA](https://amm.diariomunicipal.org/publicacao/1923116/) |
 | 2026-10-09 | ATUAÇÃO — execução do serviço socioeducativo pelo CREAS por meio do CEMMIL desde maio de 2026 | confirmado por revisão editorial — o plano municipal comprova atuação do CEMMIL no serviço, mas descreve mudança iniciada em maio; não é novo contrato ou repasse assinado em outubro | [Diário Oficial de Mogi Guaçu (SP)](https://data.queridodiario.ok.org.br/3530706/2026-10-09/04512dfa6065751937309d0d73d72b65f5cc0c20.pdf) |
 | 2026-10-09 | RATEIO EM TRAMITAÇÃO — dispensa 157/2026 autorizada para futura formalização do rateio de 2027; contrato não demonstrado | confirmado por revisão editorial — o ato publicado autoriza a dispensa de licitação visando formalizar o contrato de rateio; não é contrato de rateio já celebrado nem pagamento executado | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-09/8a6f89e74a3d28002fc4dad419e3d843d96eca82.pdf) |
@@ -38,9 +42,5 @@
 | 2026-10-08 | ATUAÇÃO — CIDESAA publicou instrução normativa do Serviço de Inspeção Municipal em 02/10/2026 | confirmado por revisão editorial — ato oficial assinado pelo presidente do consórcio estabelece procedimentos técnicos para o SIM/SISBI-POA; a palavra suspensão refere-se a estabelecimentos e produtos, não ao consórcio | [INSTRUÇÃO NORMATIVA Nº 016 DE 02 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1921829/) |
 | 2026-10-08 | ATUAÇÃO — instrução de trabalho 010/2026 sobre inspeção de produtos de origem animal publicada em 08/10/2026 | confirmado por revisão editorial — publicação do consórcio descreve programa de prevenção de fraudes em produtos fiscalizados pelo SIM; não acusa o consórcio de fraude, e os campos de emissão/aprovação estão em branco | [IT - INSTRUÇÃO DE TRABALHO Nº 010/2026 PROGRAMA DE PREVENÇÃO E COMBATE À FRAUDE.](https://amm.diariomunicipal.org/publicacao/1921820/) |
 | 2026-10-08 | RATEIO — aditivo ao contrato de rateio 006/2026 publicado | confirmado por revisão editorial — edital oficial identifica consórcio, município, objeto, aporte extra e nova vigência; não é mera rubrica orçamentária | [EDITAL DE PUBLICAÇÃO N°160/2026, DE 07 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1921937/) |
-| 2026-10-08 | ATUAÇÃO — apostilamento 20/2026 reajusta contrato de serviço do CONIRPI em 07/10/2026 | confirmado por revisão editorial — página 4 registra ato contratual efetivo do consórcio, embora não seja mudança de membros nem decisão do TCE | [Diário Oficial de Salto (SP)](https://data.queridodiario.ok.org.br/3545209/2026-10-08/a845a7ed2e1bec8d4ec2986fbf2723f8fbaa9490.pdf) |
-| 2026-10-07 | ATUAÇÃO — Consórcio ABC realizou reunião inicial para estruturar cadeia produtiva do cambuci em 07/10/2026 | confirmado por revisão editorial — a reunião de mobilização ocorreu; cadastro, plano de ação e reconhecimento no SP Produz são objetivos futuros, não entregas já concluídas | [Consórcio ABC Lança Ação Para Estruturar Cadeia Do Cambuci - ABC Agora](https://news.google.com/rss/articles/CBMidkFVX3lxTE9uV0tRZmFhdFpuX0lOYzExWVgxTlVmS0NmQ0dORkM0REY0T1J2RGxreGJhMlR4RWQxYWdWZ3IyYW5aWC14Ump0aW9FbDVRYkxxay1iajBiUmhERUJGOWlabWhYSzRQeHNqY1lsZlNZU2dqTnBQdlE?oc=5) |
-| 2026-10-07 | GOVERNANÇA — consolidação do protocolo aprovada em assembleia; projeto de ratificação municipal em análise | confirmado por revisão editorial — matéria relata aprovação de alterações pelo COIN-GM em assembleia e projeto de lei para ratificá-las; não é criação nova nem comprova que a ratificação municipal já ocorreu | [Consórcio da Guarda Municipal de Curitiba pode atuar no Litoral do Paraná; entenda a proposta - Bem Paraná](https://news.google.com/rss/articles/CBMi1AFBVV95cUxPUjJFQ2ZiVWJkb1dHVG4td2pJS2JrZHRYc1ZVd1AtSXI5dXhDdDVHLS1hczMyUlF4YldYRzdkUGxLVGc5Y082ck5KM3VxbXRLMEIxdXRVSEpvLWd6TExkQm9wRE1va0lEbGh4ZElwWUV0YmQzMEtoMHdNblVIX0ZwbTRDVVU5UFY3amZ2NlZmdGkyc3p0SGcyOTRWdk0ySjQ4UmVyZjBMUTFuRE9fTVpXWEJ6MU1OcTRDS1BYdko2TmFsZG9KeDZNek16b2FTRHVESFZEStIB2gFBVV95cUxPR3V6cUF2dlFPSjZFZVJ3ZHN4WXFuUk9GRHctemZhWHpISmFLWG5ZckE5eGxnYmE0LWJZT2JCSGpKU0IwS21iY1E1cUpVUWFZSHhOYjlhMkdwZ01HQ3FOSGlLb0ROOTdoOUZBSFYtVU9meEgwWlFSQ0ItSWM2QnY0N0JZd19KTXRTSUNfMkw5YUM5bHBoSWpta19pOU9WRmtueTFnSjh3NzhzQTdpMHNOX0I1NVVadmh2TkVEcEhCYnRkcGtHUFY5YVNJSDJEcU5JT182SklCMk5aUQ?oc=5) |
-| 2026-10-07 | GOVERNANÇA — Lei 1.261/2026 ratifica alteração do protocolo e delega o SIM ao CIDESPA | confirmado por revisão editorial — a lei comprova ratificação da alteração e lista Marcelândia entre os consorciados; não documenta ingresso novo em 2026 | [LEI MUNICIPAL Nº 1.261/2026 SÚMULA: “RATIFICA A ALTERAÇÃO DO PROTOCOLO DE INTENÇÕES E DO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO SUSTENTÁVEL PORTAL DA AMAZÔNIA - CIDESPA, EM CONFORMIDADE COM A LE](https://amm.diariomunicipal.org/publicacao/1920936/) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
