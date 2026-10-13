@@ -59,6 +59,15 @@ test('adesão a credenciamento do consórcio não é ingresso no consórcio', ()
   assert.match(result.reasons.join(' '), /credenciamento de serviços/);
 });
 
+test('adesão ao consórcio de geração compartilhada CEMIG SIM não é ingresso intermunicipal', () => {
+  const result = classifyItem({
+    kind: 'gazette', title: 'Diário Oficial de Betim (MG)',
+    summary: 'Dispensa de Licitação nº 14/2026 – Ato de Autorização – cujo objeto é “Adesão ao consórcio CEMIG SIM, no âmbito do sistema de geração compartilhada, visando desconto nas faturas de energia elétrica das unidades consumidoras”.',
+  });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.reasons.join(' '), /consórcio de geração de energia/);
+});
+
 test('prioriza dissolução como crise', () => {
   const result = classifyItem({
     title: 'Prefeitos discutem dissolução do consórcio público',

@@ -97,13 +97,17 @@ export function applyAiReview(item, review) {
   if (review.status === 'approved') {
     // A segunda leitura não pode transformar uma autorização preparatória em
     // contrato celebrado, mesmo que o modelo devolva a categoria RATEIO.
-    const category = item.classification.category === 'RATEIO EM TRAMITAÇÃO'
-      ? 'RATEIO EM TRAMITAÇÃO' : review.category;
+    const originalCategory = item.classification.category;
+    const preparatory = ['RATEIO EM TRAMITAÇÃO', 'ADESÃO AUTORIZADA', 'COOPERAÇÃO AUTORIZADA']
+      .includes(originalCategory) || (originalCategory === 'FINANÇAS' &&
+        /contrato de rateio não comprovado/i.test(item.classification.stage || ''));
+    const category = preparatory ? originalCategory : review.category;
     const boundedReview = category === review.category ? review
       : { ...review, category, proposedCategory: review.category, boundedBy: 'etapa do ato' };
     return { ...item, aiReview: boundedReview,
       classification: { ...item.classification, category,
-        score: Math.max(5, item.classification?.score || 0), emoji: EMOJI[category] } };
+        score: Math.max(5, item.classification?.score || 0),
+        emoji: EMOJI[category] || item.classification.emoji } };
   }
   if (review.status === 'disputed') return { ...item, aiReview: review };
   return item;

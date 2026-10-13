@@ -187,6 +187,14 @@ test('Campo Mourão: dispensa autorizada para rateio de 2027 não vira contrato 
   assert.doesNotMatch(message, /publica contrato de rateio|publicou contrato de rateio/);
 });
 
+test('lei de Porto Alegre do Norte autoriza repasse, mas não publica contrato de rateio', () => {
+  const rawText = 'LEI Nº 1244/2026. Dispõe sobre repasse de recursos ao Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia – CIDESA-NA. Art. 1º - Fica o Executivo Municipal autorizado a repassar no exercício de 2026 recursos financeiros ao Consórcio Intermunicipal, a importância de R$ 150.000,00 para aquisição de terreno. Dotação: Transferência a Consórcios Públicos mediante Contrato de Rateio.';
+  const result = classifyItem({ kind: 'gazette', title: 'Lei nº 1244/2026', rawText });
+  assert.equal(result.category, 'FINANÇAS');
+  assert.match(result.stage, /contrato de rateio não comprovados/);
+  assert.match(result.evidenceText, /autorizado a repassar/);
+});
+
 test('contrato efetivamente celebrado não é rebaixado por autorização preparatória no mesmo texto', () => {
   const rawText = 'Fica autorizada a dispensa de licitação para formalização de contrato de rateio com o ' +
     'Consórcio Intermunicipal de Saúde. O Município e o consórcio celebram o presente contrato de rateio, ' +

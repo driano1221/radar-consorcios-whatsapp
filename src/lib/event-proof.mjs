@@ -34,6 +34,7 @@ const RATEIO_AUTHORIZATION = [
   /\b(?:fica\s+)?autorizad[oa]\s+(?:a\s+)?dispensa\s+de\s+licita[cç][aã]o[\s\S]{0,900}\b(?:para\s+)?formaliza[cç][aã]o\s+de\s+contrato\s+de\s+rateio/i,
   /\b(?:fica\s+)?autorizad[oa]\s+(?:a\s+)?formaliza[cç][aã]o\s+(?:do|de um)\s+contrato\s+de\s+rateio/i,
 ];
+const AUTHORIZED_TRANSFER = /\b(?:fica\s+)?(?:o\s+)?(?:poder\s+)?executivo(?:\s+municipal)?\s+autorizad[oa]\s+a\s+repassar[\s\S]{0,250}\bcons[oó]rcio/i;
 const ELECTION_RESCHEDULED = /\bretifica[cç][aã]o\s+do\s+regulamento\s+eleitoral/i;
 const AUTHORIZED_COOPERATION = /\blei\s+n[º°.]?\s*\d+\/20\d{2}[\s\S]{0,300}\bautoriza\s+o\s+poder\s+executivo\s+a\s+firmar\s+conv[eê]nio[\s\S]{0,260}\bcons[oó]rcio/i;
 const RATIFIED_STATUTE = /\bratifica\s+o\s+estatuto\s+consolidado\s+do\s+cons[oó]rcio/i;
@@ -286,6 +287,12 @@ export function refineEventProof(item, classification) {
   }
 
   if (classification.category === 'RATEIO') {
+    if (AUTHORIZED_TRANSFER.test(text) && !EXECUTED_RATEIO.test(text)) {
+      return withEvidence({ ...classification, category: 'FINANÇAS', emoji: '💰',
+        stage: 'lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados',
+        reasons: [...classification.reasons, 'autorização de repasse não comprova contrato de rateio celebrado'] },
+      literalEvidence(text, [AUTHORIZED_TRANSFER], 45, 180));
+    }
     if (RATEIO_AUTHORIZATION.some((pattern) => pattern.test(text)) && !EXECUTED_RATEIO.test(text)) {
       return withEvidence({ ...classification, category: 'RATEIO EM TRAMITAÇÃO', emoji: '🟪',
         stage: 'dispensa autorizada para formalizar rateio; contrato não assinado no ato',

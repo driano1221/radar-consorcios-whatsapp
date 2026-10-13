@@ -38,6 +38,19 @@ test('IA não promove dispensa autorizada a contrato de rateio celebrado', async
     'RATEIO EM TRAMITAÇÃO');
 });
 
+test('IA não converte autorização de ingresso ou de repasse em ato consumado', () => {
+  const entry = { ...item('Betim autoriza ingresso no consórcio', 'ADESÃO AUTORIZADA'),
+    classification: { category: 'ADESÃO AUTORIZADA', score: 12, emoji: '🟦',
+      stage: 'lei autoriza ingresso; adesão não comprovada' } };
+  const transfer = { ...item('Lei autoriza repasse ao consórcio', 'FINANÇAS'),
+    classification: { category: 'FINANÇAS', score: 12, emoji: '💰',
+      stage: 'lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados' } };
+  assert.equal(applyAiReview(entry, result('approved', 'ADESÃO')).classification.category,
+    'ADESÃO AUTORIZADA');
+  assert.equal(applyAiReview(transfer, result('approved', 'RATEIO')).classification.category,
+    'FINANÇAS');
+});
+
 test('DeepSeek exige JSON consistente e evidência literal', async () => {
   const entry = item('Consórcio Intermunicipal cria agenda de investimentos');
   const response = (answer) => async (_url, options) => {

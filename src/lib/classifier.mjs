@@ -107,6 +107,8 @@ const NEGATIVE_PATTERNS = [
   { pattern: /\b(consorcio de empresas|consorcio empresarial|consorcio vencedor|empresa consorciada)\b/, penalty: 30, reason: 'consórcio empresarial' },
   { pattern: /\bconsorcio cesgranrio\b/, penalty: 30, reason: 'consórcio de entidades contratadas, não intermunicipal' },
   { pattern: /\b(administradora de consorcio|cota de consorcio|consorcio imobiliario|consorcio de veiculos)\b/, penalty: 30, reason: 'consórcio comercial' },
+  { pattern: /\bconsorcio cemig sim\b|\badesao ao consorcio\b.{0,100}\bsistema de geracao compartilhada\b/, penalty: 30,
+    reason: 'consórcio de geração de energia, não intermunicipal' },
 ];
 
 function isOfficialUrl(value = '') {
