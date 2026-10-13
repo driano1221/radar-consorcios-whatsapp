@@ -64,6 +64,16 @@ function analysisStatus(item, sentAt) {
   return 'candidato — requer revisão';
 }
 
+function strongRuleCorrection(classification) {
+  if (classification?.category === 'FINANÇAS' &&
+    /lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados/i.test(classification.stage || '')) {
+    return classification.stage;
+  }
+  if (classification?.category !== 'GERAL') return '';
+  return classification.reasons?.find((reason) =>
+    reason.startsWith('rejeitado:') && !/sem contexto público|sem contexto publico/i.test(reason)) || '';
+}
+
 export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
   const url = canonicalUrl(item.url || '');
   if (!/^https?:\/\//i.test(url)) return null;
@@ -79,7 +89,12 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
     data_noticia_original: item.sourcePublishedAt || '', data_fato: item.eventAt || '',
     mes_fato: item.eventMonth || '',
     decisao_base: item.catalogDecision || (item.classification?.category === 'GERAL' ? 'descartado' : 'candidato'),
-    decisao_alerta: item.publicationDecision || '', motivo_alerta: safeText(item.publicationReason, 300),
+    decisao_alerta: item.previewOnly && item.classification?.category !== 'GERAL' &&
+      (!item.publicationDecision || item.publicationDecision === 'elegivel')
+      ? 'previa' : item.publicationDecision || '',
+    motivo_alerta: item.previewOnly && item.classification?.category !== 'GERAL' &&
+      (!item.publicationDecision || item.publicationDecision === 'elegivel')
+      ? 'Fonte em prévia; não publica automaticamente.' : safeText(item.publicationReason, 300),
     etapa: stage(item, type), situacao_analise: analysisStatus(item, sentAt),
     efeito_na_participacao: 'não inferido automaticamente', tipo_documento: type,
     consorcio: safeText(item.entityName, 180), sigla: safeText(item.entityAlias, 40),
@@ -150,13 +165,16 @@ export function mergeCatalogRecord(existing, incoming) {
     data_noticia_original: incoming.data_noticia_original || existing.data_noticia_original || '',
     data_fato: incoming.data_fato || existing.data_fato || '',
     mes_fato: incoming.mes_fato || existing.mes_fato || '',
-    decisao_base: incoming.decisao_base || existing.decisao_base || 'candidato',
-    decisao_alerta: incoming.decisao_alerta || existing.decisao_alerta || '',
-    motivo_alerta: incoming.motivo_alerta || existing.motivo_alerta || '',
+    decisao_base: /^categoria recalculada pelas regras atuais/i.test(existing.situacao_analise || '')
+      ? existing.decisao_base : incoming.decisao_base || existing.decisao_base || 'candidato',
+    decisao_alerta: /^categoria recalculada pelas regras atuais/i.test(existing.situacao_analise || '')
+      ? existing.decisao_alerta : incoming.decisao_alerta || existing.decisao_alerta || '',
+    motivo_alerta: /^categoria recalculada pelas regras atuais/i.test(existing.situacao_analise || '')
+      ? existing.motivo_alerta : incoming.motivo_alerta || existing.motivo_alerta || '',
   };
 }
 
-export function mergeStateIntoCatalog(records, state) {
+export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() } = {}) {
   const seenByUrl = new Map(Object.values(state.seen || {}).filter((row) => row.url)
     .map((row) => [canonicalUrl(row.url), row]));
   for (const observation of Object.values(state.observations || {})) {
@@ -171,7 +189,34 @@ export function mergeStateIntoCatalog(records, state) {
     if (!item?.url) continue;
     const sent = seenByUrl.get(canonicalUrl(item.url))?.sentAt || '';
     const row = catalogRecord(item, observation.firstSeenAt, observation.lastSeenAt, sent);
-    if (row) records.set(row.id, mergeCatalogRecord(records.get(row.id), row));
+    if (row) {
+      const old = records.get(row.id);
+      const alreadyReconciled = /^categoria recalculada pelas regras atuais/i.test(old?.situacao_analise || '');
+      const correction = old && (old.tipo_evento !== row.tipo_evento || alreadyReconciled) &&
+        !reviewedIds.has(row.id) &&
+        !/^(?:categoria recalculada após leitura integral|descartado após leitura integral)/i.test(old.situacao_analise || '') &&
+        strongRuleCorrection(fresh);
+      const merged = mergeCatalogRecord(old, row);
+      const fullEvidence = String(original.summary || fresh.evidenceText || '');
+      const correctionStart = /consórcio de geração de energia/i.test(correction)
+        ? fullEvidence.search(/ades[aã]o ao cons[oó]rcio CEMIG SIM/i)
+        : /lei autoriza repasse de recursos/i.test(correction)
+          ? fullEvidence.search(/Art\.\s*1[º°o]?\s*[-–]?\s*Fica o Executivo/i) : -1;
+      records.set(row.id, correction ? { ...merged,
+        tipo_evento: row.tipo_evento,
+        pontuacao: row.pontuacao,
+        etapa: row.tipo_evento === 'GERAL' ? '' : row.etapa,
+        trecho: correctionStart >= 0 ? safeText(fullEvidence.slice(correctionStart), 500) : row.trecho,
+        decisao_base: row.tipo_evento === 'GERAL' ? 'descartado' : row.decisao_base,
+        decisao_alerta: row.tipo_evento === 'GERAL' ? sent ? 'enviado' : 'descartado' : row.decisao_alerta,
+        motivo_alerta: row.tipo_evento === 'GERAL' ? sent
+          ? 'Enviado antes da correção; registro atual descartado da base de eventos.'
+          : correction : row.motivo_alerta,
+        situacao_analise: alreadyReconciled ? old.situacao_analise
+          : `categoria recalculada pelas regras atuais — ${old.tipo_evento} → ${row.tipo_evento}; ${correction}`,
+        revisao_ia: old.revisao_ia || row.revisao_ia,
+      } : merged);
+    }
   }
   for (const seen of Object.values(state.seen || {})) {
     const row = catalogRecord({ title: seen.title, url: seen.url, source: seen.source,
@@ -261,8 +306,13 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
         ? result.motivo_alerta : '',
     }, { now, lookbackHours });
     result = { ...result,
-      decisao_alerta: result.enviado_em ? 'enviado' : alert.publicationDecision,
-      motivo_alerta: result.enviado_em ? 'Enviado ao WhatsApp anteriormente.' : alert.publicationReason,
+      decisao_alerta: result.enviado_em ? 'enviado'
+        : reviewStillMatches(row) && decisions.get(row.id)?.publicar === false ? 'historico'
+          : alert.publicationDecision === 'historico' ? 'historico'
+            : result.decisao_alerta === 'previa' ? 'previa' : alert.publicationDecision,
+      motivo_alerta: result.enviado_em ? 'Enviado ao WhatsApp anteriormente.'
+        : alert.publicationDecision === 'historico' ? alert.publicationReason
+          : result.decisao_alerta === 'previa' ? result.motivo_alerta : alert.publicationReason,
     };
     // O arquivo bruto mantém inclusive envios antigos, mas uma data de indexação
     // recente não deve transformá-los em eventos atuais nas tabelas derivadas.

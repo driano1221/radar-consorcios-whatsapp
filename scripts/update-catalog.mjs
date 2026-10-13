@@ -7,6 +7,9 @@ import { loadCatalog, mergeStateIntoCatalog, saveCatalog } from '../src/lib/cata
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'data', 'catalogo');
 const statePath = path.join(root, 'state', 'news-state.json');
+const editorialReviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
+  .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+const reviewedIds = new Set(editorialReviews.map((review) => review.documento_id).filter(Boolean));
 const records = process.argv.includes('--history')
   ? new Map()
   : await loadCatalog(path.join(directory, 'arquivo-coletas.ndjson'));
@@ -18,12 +21,12 @@ if (process.argv.includes('--history')) {
   for (const commit of commits) {
     const content = execFileSync('git', ['show', `${commit}:state/news-state.json`],
       { cwd: root, encoding: 'utf8', maxBuffer: 30 * 1024 * 1024 });
-    mergeStateIntoCatalog(records, JSON.parse(content));
+    mergeStateIntoCatalog(records, JSON.parse(content), { reviewedIds });
     recovered += 1;
   }
   console.log(`[catálogo] ${recovered} versões históricas do estado processadas.`);
 }
 
-mergeStateIntoCatalog(records, JSON.parse(await readFile(statePath, 'utf8')));
+mergeStateIntoCatalog(records, JSON.parse(await readFile(statePath, 'utf8')), { reviewedIds });
 const counts = await saveCatalog(directory, records);
 console.log(`[catálogo] ${counts.all} documentos encontrados; ${counts.relevant} classificados como potenciais eventos; ${counts.consortia} consórcios identificados explicitamente.`);

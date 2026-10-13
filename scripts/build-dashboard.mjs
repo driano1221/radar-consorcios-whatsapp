@@ -267,6 +267,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       pdfProof.stage === 'alteração do protocolo; ingresso novo não comprovado';
     const rejectedByReview = appliedReview?.decisao === 'nao_evento';
     const duplicateByReview = appliedReview?.decisao === 'duplicata';
+    const ruleReclassified = /^categoria recalculada pelas regras atuais/i.test(row.situacao_analise || '');
+    const correctedOutOfBase = !inEvents && row.decisao_base === 'descartado' && ruleReclassified;
     const rejectedEvent = inEvents && (rejectedByReview || duplicateByReview || (!appliedReview &&
       (/^(?:rejeitado|divergente)/i.test(curated.situacao_analise || '') ||
         ['rejeitado', 'descartado'].includes(decision?.status))));
@@ -277,9 +279,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const reason = stale ? 'Ato antigo com data recente de indexação.'
       : rejectedByReview ? `Rejeitado por revisão editorial — ${review.motivo}`
       : duplicateByReview ? `Duplicata vinculada a ${review.documento_relacionado} — ${review.motivo}`
+      : correctedOutOfBase ? `${row.situacao_analise}.${row.enviado_em ? ' Foi enviado antes da correção; o histórico do envio foi mantido.' : ''}`
       : appliedReview?.motivo ? appliedReview.motivo
         : pdfReassessment ? `Leitura do PDF (página ${pdfEvidence[0]?.page || '?'}) indica alteração de protocolo; não comprova nova adesão. Categoria anterior: ADESÃO. Conferência humana pendente.`
-        : decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
+        : ruleReclassified ? [decision?.reason, row.situacao_analise].filter(Boolean).join(' ') :
+          decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
     return {
       id: row.id, title: row.titulo, source: sourceName(row),
       url: decision?.articleUrl || row.article_url || row.url,
@@ -290,7 +294,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       lastSeenAt: decision?.lastSeenAt || row.ultima_coleta,
       category: rejectedByReview || duplicateByReview ? 'GERAL'
         : appliedReview?.categoria || (pdfReassessment ? 'GOVERNANÇA' : inEvents ? curated.tipo_evento : 'GERAL'),
-      score: stale || rejectedByReview || duplicateByReview ? '' : decision?.score ?? row.pontuacao,
+      score: stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? ''
+        : ruleReclassified ? row.pontuacao : decision?.score ?? row.pontuacao,
       baseStatus: inEvents ? 'evento_candidato' : 'arquivo_bruto',
       baseDecision: curated?.decisao_base || row.decisao_base || (inEvents ? 'candidato' : 'descartado'),
       alertDecision: curated?.decisao_alerta || row.decisao_alerta || '',
@@ -299,12 +304,14 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       eventMonth: curated?.mes_fato || row.mes_fato || '',
       originalPublishedAt: curated?.data_noticia_original || row.data_noticia_original || '',
       activeCandidate, pendingReview, rejectedEvent, legacyUnverified,
-      decisionStatus: stale || rejectedByReview || duplicateByReview ? 'descartado'
+      decisionStatus: stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? 'descartado'
         : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'
           : rejectedEvent ? 'rejeitado' : legacyUnverified ? 'revisao' : pdfReassessment ? 'revisao'
             : decision?.status || (inEvents ? 'historico' : 'sem_evento'),
-      reason, classificationReasons: decision?.classificationReasons || [],
-      reasonBasis: stale || rejectedByReview ? 'regra ou revisão atual' : pdfReassessment ? 'releitura automática do PDF' : decision?.reasonBasis || 'catálogo',
+      reason, classificationReasons: ruleReclassified
+        ? [row.situacao_analise.split('; ').at(-1)].filter(Boolean) : decision?.classificationReasons || [],
+      reasonBasis: stale || rejectedByReview || ruleReclassified ? 'regra ou revisão atual'
+        : pdfReassessment ? 'releitura automática do PDF' : decision?.reasonBasis || 'catálogo',
       stage: rejectedByReview || duplicateByReview ? ''
         : pdfReassessment ? pdfProof.stage : appliedReview?.etapa || curated?.etapa || row.etapa,
       analysis: inEvents ? curated.situacao_analise : stale ? 'triagem: ato antigo' : row.situacao_analise,

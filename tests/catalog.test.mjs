@@ -63,6 +63,67 @@ test('catálogo corrige Campo Mourão retroativamente sem apagar o envio antigo'
   assert.equal(corrected.revisao_ia, 'approved (categoria corrigida)');
 });
 
+test('regras atuais retiram consórcio de energia já enviado sem apagar o histórico', () => {
+  const item = { kind: 'gazette', title: 'Diário Oficial de Betim (MG)',
+    url: 'https://example.org/betim.pdf',
+    summary: 'Dispensa de Licitação. Objeto: Adesão ao consórcio CEMIG SIM, no âmbito do sistema de geração compartilhada, com desconto nas faturas de energia elétrica.',
+    classification: { category: 'ADESÃO', score: 9,
+      evidenceText: 'Adesão ao consórcio CEMIG SIM, no âmbito do sistema de geração compartilhada.' },
+    catalogDecision: 'candidato',
+    aiReview: { status: 'approved', category: 'ADESÃO', promptVersion: 2 } };
+  const old = catalogRecord(item, at, at, at);
+  const records = new Map([[old.id, old]]);
+  const state = { observations: { x: { item, firstSeenAt: at, lastSeenAt: at } },
+    seen: { x: { url: item.url, title: item.title, category: 'ADESÃO', sentAt: at } } };
+  mergeStateIntoCatalog(records, state);
+  mergeStateIntoCatalog(records, state);
+  const fixed = records.get(old.id);
+  assert.equal(fixed.tipo_evento, 'GERAL');
+  assert.equal(fixed.decisao_base, 'descartado');
+  assert.match(fixed.situacao_analise, /geração de energia, não intermunicipal/);
+  assert.match(fixed.trecho, /^Adesão ao consórcio CEMIG SIM/);
+  assert.equal(fixed.decisao_alerta, 'enviado');
+  assert.equal(fixed.enviado_em, at);
+});
+
+test('lei que só autoriza repasse deixa de ser rateio mesmo quando o escore antigo era alto', () => {
+  const item = { kind: 'gazette', title: 'LEI Nº 1244/2026 - repasse ao CIDESA-NA',
+    url: 'https://example.org/lei-1244',
+    summary: 'Lei municipal: Fica o Executivo Municipal autorizado a repassar recursos financeiros ao Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental, no valor de R$ 150.000. Elemento de despesa: Transferência a consórcios públicos mediante contrato de rateio.',
+    classification: { category: 'RATEIO', score: 18,
+      evidenceText: 'Elemento de despesa: Transferência a consórcios públicos mediante contrato de rateio.' },
+    catalogDecision: 'candidato' };
+  const old = catalogRecord(item, at, at);
+  const records = new Map([[old.id, old]]);
+  mergeStateIntoCatalog(records, { observations: { x: { item, firstSeenAt: at, lastSeenAt: at } } });
+  const fixed = records.get(old.id);
+  assert.equal(fixed.tipo_evento, 'FINANÇAS');
+  assert.match(fixed.etapa, /pagamento e contrato de rateio não comprovados/);
+  assert.match(fixed.trecho, /autorizado a repassar/);
+});
+
+test('fonte em prévia não aparece elegível para envio no catálogo', () => {
+  const row = catalogRecord({ kind: 'gazette', title: 'Lei autoriza repasse ao consórcio',
+    url: 'https://example.org/lei-previa', previewOnly: true, publicationDecision: 'elegivel',
+    classification: { category: 'FINANÇAS', score: 10,
+      evidenceText: 'Lei autoriza repasse ao consórcio intermunicipal.' } }, at, at);
+  assert.equal(row.decisao_alerta, 'previa');
+  assert.match(row.motivo_alerta, /não publica automaticamente/);
+});
+
+test('revisão humana protege um fato confirmado contra a correção automática do arquivo bruto', () => {
+  const item = { kind: 'news', title: 'Consórcio confirma atuação',
+    url: 'https://example.org/fato-confirmado',
+    summary: 'A proposta para ingresso no consórcio ainda será votada.',
+    classification: { category: 'ADESÃO', score: 12,
+      evidenceText: 'A proposta para ingresso no consórcio ainda será votada.' } };
+  const old = catalogRecord(item, at, at);
+  const records = new Map([[old.id, old]]);
+  mergeStateIntoCatalog(records, { observations: { x: { item, firstSeenAt: at, lastSeenAt: at } } },
+    { reviewedIds: new Set([old.id]) });
+  assert.equal(records.get(old.id).tipo_evento, 'ADESÃO');
+});
+
 test('projeto de lei continua identificado como proposta', () => {
   const row = catalogRecord({ kind: 'legislative', title: 'PROJETO DE LEI 14/2026: adesão ao consórcio',
     url: 'https://camara.exemplo/materia/14', classification: { category: 'ADESÃO', score: 9 } }, at, at);

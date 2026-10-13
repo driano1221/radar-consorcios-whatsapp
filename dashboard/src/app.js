@@ -245,8 +245,10 @@ function renderDetailedRecord(item, target) {
     ['BASE', item.baseDecision === 'confirmado' ? 'Fato confirmado' : item.baseDecision === 'descartado'
       ? 'Fora da base de eventos' : 'Candidato, ainda não confirmado'],
     ['ALERTA', item.alertDecision === 'historico' ? 'Não enviar — fato antigo'
-      : item.alertDecision === 'enviado' ? 'Já enviado'
+      : item.alertDecision === 'enviado' ? item.baseDecision === 'descartado'
+        ? 'Enviado antes da correção' : 'Já enviado'
         : item.alertDecision === 'elegivel' ? 'Pode ser avaliado para envio'
+          : item.alertDecision === 'previa' ? 'Fonte em teste — não enviar'
           : item.alertDecision === 'data_inconsistente' ? 'Data precisa de conferência'
             : item.alertDecision === 'data_nao_verificada' ? 'Data original não verificada'
             : item.alertDecision === 'descartado' ? 'Não enviar' : 'Ainda sem decisão'],
@@ -385,9 +387,12 @@ function detail(item, target) {
     ? 'O trecho coletado parece ser índice ou rodapé. Ele não comprova o fato; confira a fonte original.'
     : 'Não há trecho suficiente guardado. A publicação original precisa ser conferida.')));
   const alert = node('section', 'readable-alert');
-  const alertText = item.sentAt ? `Enviado ao WhatsApp em ${date(item.sentAt, true)}.`
+  const alertText = item.sentAt ? item.baseDecision === 'descartado'
+    ? `Enviado ao WhatsApp em ${date(item.sentAt, true)}, antes da correção. Hoje está fora da base de eventos.`
+    : `Enviado ao WhatsApp em ${date(item.sentAt, true)}.`
     : item.alertDecision === 'historico' ? 'Não enviado: é um fato histórico, não uma novidade da coleta.'
       : item.alertDecision === 'elegivel' ? 'Pode ser considerado para o WhatsApp após as verificações do envio.'
+        : item.alertDecision === 'previa' ? 'Fonte em teste; não será enviado automaticamente.'
         : item.alertDecision === 'descartado' ? 'Não será enviado ao WhatsApp.'
           : 'O envio ao WhatsApp ainda depende de verificação.';
   alert.append(node('h4', '', 'E o WhatsApp?'), node('p', '', alertText));

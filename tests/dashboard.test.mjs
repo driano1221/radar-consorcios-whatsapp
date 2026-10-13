@@ -160,6 +160,24 @@ test('revisão editorial de falso evento explica por que não entrou na base', (
   assert.equal(result.items[0].score, '');
 });
 
+test('envio anterior à correção aparece como descarte atual, sem sumir do histórico', () => {
+  const row = { id: 'betim', titulo: 'Diário Oficial de Betim (MG)', fonte: 'Querido Diário',
+    url: 'https://example.org/betim.pdf', data_publicacao: '2026-10-08T00:00:00Z',
+    primeira_coleta: '2026-10-09T00:00:00Z', ultima_coleta: '2026-10-13T00:00:00Z',
+    tipo_evento: 'GERAL', decisao_base: 'descartado', enviado_em: '2026-10-09T10:32:03Z',
+    decisao_alerta: 'enviado', trecho: 'Adesão ao consórcio CEMIG SIM, sistema de geração compartilhada',
+    situacao_analise: 'categoria recalculada pelas regras atuais — ADESÃO → GERAL; consórcio de geração de energia, não intermunicipal' };
+  const data = buildDashboardData({ archive: [row], events: [], consortia: [], links: [],
+    pendingIdentity: [], decisions: { betim: { status: 'enviado', reason: 'Já enviado ao WhatsApp anteriormente.' } } });
+  assert.equal(data.items[0].category, 'GERAL');
+  assert.equal(data.items[0].baseDecision, 'descartado');
+  assert.equal(data.items[0].decisionStatus, 'descartado');
+  assert.match(data.items[0].reason, /enviado antes da correção/i);
+  assert.equal(data.items[0].sentAt, row.enviado_em);
+  assert.equal(data.stats.eventRecords, 0);
+  assert.equal(data.stats.sent, 1);
+});
+
 test('painel mostra data original conferida em vez da data de indexação do Google', () => {
   const row = { id: 'antiga', titulo: 'Assembleia do consórcio', fonte: 'Câmara',
     url: 'https://example.org/antiga', data_publicacao: '2026-10-02T00:00:00Z',
