@@ -131,7 +131,7 @@ function renderDeck() {
   if (!items.some((item) => item.id === state.selectedOverviewItem)) state.selectedOverviewItem = items[0]?.id || '';
   const list = $('#deck-stack');
   const previousScroll = list.scrollTop;
-  const listHead = node('div', 'overview-list-head', `${number.format(items.length)} ${items.length === 1 ? 'registro' : 'registros'} nesta seleção${state.data.stats.acts ? ` · acervo inclui ${number.format(state.data.stats.acts)} atos separados de publicações` : ''}`);
+  const listHead = node('div', 'overview-list-head', `${number.format(items.length)} ${items.length === 1 ? 'registro' : 'registros'} nesta seleção · mais recentes pela primeira coleta${state.data.stats.acts ? ` · inclui ${number.format(state.data.stats.acts)} atos separados` : ''}`);
   const rows = items.slice(0, 80).map((item) => {
     const bucket = triageBucket(item);
     const row = node('button', `overview-row ${bucket}${item.id === state.selectedOverviewItem ? ' active' : ''}`);
@@ -139,7 +139,10 @@ function renderDeck() {
     row.title = readableReason(item);
     const body = node('span', 'overview-row-body');
     body.append(node('strong', '', displayTitle(item)), node('small', '', item.source || 'Fonte não informada'));
-    row.append(node('time', '', date(item.publishedAt || item.lastSeenAt)), body,
+    const dates = node('span', 'overview-dates');
+    dates.append(node('small', '', 'Coletado em'), node('time', '', date(item.firstSeenAt)),
+      node('small', '', 'Publicado em'), node('time', '', date(item.publishedAt)));
+    row.append(dates, body,
       node('span', `overview-verdict ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'));
     row.addEventListener('click', () => {
       state.selectedOverviewItem = item.id; renderDeck();
@@ -200,7 +203,8 @@ function renderOverviewDetail(item) {
   back.addEventListener('click', () => $('#deck-stack').scrollIntoView({ behavior: 'smooth', block: 'start' }));
   actions.append(back);
   panel.replaceChildren(head, node('h3', '', displayTitle(item)),
-    node('p', 'overview-source', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
+    node('p', 'overview-source', item.source || 'Fonte não informada'),
+    node('p', 'overview-date-summary', `Publicado em: ${date(item.publishedAt)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
     why, proof, actions);
   const pending = pendingLabels(item);
   if (pending.length) panel.append(node('p', 'overview-caveat', `Também a conferir: ${pending.join(' · ')}.`));
@@ -214,10 +218,11 @@ function feedRow(item, index, selected, onClick) {
   const [statusText, tone] = status(item);
   const bucket = triageBucket(item);
   top.append(node('span', `decision-flag ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'),
-    node('span', 'item-date', date(item.lastSeenAt)));
+    node('span', 'item-date', `Coletado em ${date(item.firstSeenAt)}`));
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
-  body.append(top, node('strong', '', displayTitle(item)), bottom);
+  body.append(top, node('strong', '', displayTitle(item)),
+    node('small', 'publication-date', `Publicado em ${date(item.publishedAt)}`), bottom);
   button.append(node('span', 'item-number', String(index + 1).padStart(2, '0')), body);
   button.addEventListener('click', onClick);
   return button;
@@ -265,6 +270,7 @@ function renderDetailedRecord(item, target) {
     ...(item.eventMonth ? [['MÊS DO FATO', item.eventMonth.slice(5) + '/' + item.eventMonth.slice(0, 4)]] : []),
     ...(item.originalPublishedAt ? [['DATA NA FONTE ORIGINAL', date(item.originalPublishedAt)]] : []),
     [item.publishedDateSource === 'url_edicao' ? 'DATA DA EDIÇÃO' : 'PUBLICADO EM', date(item.publishedAt)],
+    ['PRIMEIRA COLETA', date(item.firstSeenAt, true)],
     ['ENCONTRADO PELA ÚLTIMA VEZ', date(item.lastSeenAt, true)],
     ['WHATSAPP', item.sentAt ? `Enviado em ${date(item.sentAt, true)}` : 'Não foi enviado'],
   ];
@@ -438,7 +444,8 @@ function detail(item, target) {
   full.append(node('summary', '', 'Ver todas as datas, vínculos e detalhes da análise'));
   const fullBody = node('div'); fullBody.id = 'detail-full-record'; full.append(fullBody);
   panel.replaceChildren(intro, node('h3', 'detail-head', displayTitle(item)),
-    node('p', 'readable-meta', `${item.source || 'Fonte não informada'} · ${date(item.publishedAt || item.lastSeenAt)}`),
+    node('p', 'readable-meta', item.source || 'Fonte não informada'),
+    node('p', 'overview-date-summary', `Publicado em: ${date(item.publishedAt)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
     decision, proof, alert, ...(siblings ? [siblings] : []), actions, full);
   renderDetailedRecord(item, '#detail-full-record');
   for (const selector of ['.detail-kicker', '.detail-head', '.detail-meta', '.decision-card']) {

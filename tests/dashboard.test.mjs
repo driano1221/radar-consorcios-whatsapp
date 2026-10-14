@@ -6,6 +6,19 @@ import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboard
   hasVerifiedMultiConsortiumNames } from '../scripts/build-dashboard.mjs';
 import { desktopFlowSvg, mobileFlowSvg } from '../scripts/build-flow-diagram.mjs';
 
+test('triagem e arquivo começam por documentos novos; última coleta independe dessa ordenação', () => {
+  const rows = [
+    { id:'antigo', titulo:'Diário antigo reencontrado', tipo_evento:'GERAL', trecho:'',
+      primeira_coleta:'2026-10-10T12:00:00Z', ultima_coleta:'2026-10-14T18:00:00Z', data_publicacao:'2026-10-09' },
+    { id:'novo', titulo:'Nova descoberta', tipo_evento:'GERAL', trecho:'',
+      primeira_coleta:'2026-10-14T14:31:00Z', ultima_coleta:'2026-10-14T14:31:00Z', data_publicacao:'2026-06-01' },
+  ];
+  const data = buildDashboardData({ archive:rows, events:[], consortia:[], links:[], pendingIdentity:[] });
+  assert.deepEqual(data.items.map(item => item.id), ['novo', 'antigo']);
+  assert.equal(data.lastCollectionAt, '2026-10-14T18:00:00Z');
+  assert.equal(data.items[0].publishedAt, '2026-06-01');
+});
+
 test('data original armazenada prevalece sobre indexação mesmo sem data no parecer editorial', () => {
   const row = { id: 'original', titulo: 'Projeto de lei', fonte: 'Câmara', tipo_evento: 'GERAL',
     trecho: 'Matéria em Tramitação', url: 'https://example.org/pl',

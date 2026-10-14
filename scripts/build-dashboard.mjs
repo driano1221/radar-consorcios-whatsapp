@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 import { classifyItem, isStaleLegislativeDocument } from '../src/lib/classifier.mjs';
 import { resolveGeography } from '../dashboard/src/geography-model.mjs';
+import { compareNewestDiscovery } from '../dashboard/src/triage-model.mjs';
 import { writeFlowDiagrams } from './build-flow-diagram.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -389,7 +390,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       links: linkedByDocument.get(row.id) || [],
       runId: decision?.runId || '', observedCount: decision?.observedCount || null,
     };
-  }).sort((a, b) => b.lastSeenAt.localeCompare(a.lastSeenAt));
+  }).sort(compareNewestDiscovery);
   const categories = {};
   const sources = {};
   for (const item of items) {
@@ -446,7 +447,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   });
   return {
     generatedAt,
-    lastCollectionAt: collection?.at || items[0]?.lastSeenAt || '',
+    lastCollectionAt: collection?.at || items.reduce((latest, item) =>
+      Date.parse(item.lastSeenAt) > Date.parse(latest || '1970-01-01') ? item.lastSeenAt : latest, ''),
     collection,
     disclaimer: 'O painel mostra documentos e hipóteses de eventos. Não comprova composição municipal ou efeito jurídico.',
     stats: {

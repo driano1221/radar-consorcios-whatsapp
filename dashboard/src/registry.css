@@ -81,6 +81,12 @@ summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid #17634d; ou
 .overview-row:hover { background: #f7f9f6; }
 .overview-row.active { background: #edf3ee; box-shadow: inset 3px 0 var(--green); }
 .overview-row time { color: #758178; font: 11px/1.5 "Segoe UI", Arial, sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.overview-dates { display: grid; align-content: start; gap: 2px; }
+.overview-dates small { color: #66766c; font: 10px/1.4 "Segoe UI", Arial, sans-serif; }
+.overview-dates small:nth-of-type(2) { margin-top: 7px; }
+.overview-date-summary, .publication-date { display: block; color: #66766c; font: 11px/1.6 "Segoe UI", Arial, sans-serif; }
+.overview-date-summary { margin: 8px 0 0; }
+.publication-date { margin-top: 7px; }
 .overview-row-body { min-width: 0; }
 .overview-row-body strong { display: block; color: #293a31; font: 600 13px/1.35 "Segoe UI", Arial, sans-serif; overflow-wrap: anywhere; }
 .overview-row-body small { display: block; color: #78847b; font: 11px/1.4 "Segoe UI", Arial, sans-serif; margin-top: 6px; }
@@ -190,7 +196,9 @@ summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid #17634d; ou
   .deck-filters .search-wrap, .filter-bar .search-wrap { margin-bottom: 8px; }
   .deck-filters .select-wrap, .filter-bar .select-wrap { height: 45px; }
   .overview-row { grid-template-columns: minmax(0, 1fr) auto; gap: 3px 10px; padding: 15px; }
-  .overview-row time { grid-column: 1; font-size: 10px; }
+  .overview-row .overview-dates { grid-column: 1; display: flex; flex-wrap: wrap; gap: 2px 5px; }
+  .overview-dates small:nth-of-type(2) { margin: 0 0 0 6px; }
+  .overview-row time { font-size: 10px; }
   .overview-row-body { grid-column: 1 / -1; grid-row: 2; }
   .overview-row .overview-verdict { grid-column: 2; grid-row: 1; }
   .overview-detail { padding: 22px 18px; }

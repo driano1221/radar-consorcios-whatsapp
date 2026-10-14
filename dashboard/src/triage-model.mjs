@@ -1,3 +1,16 @@
+function dateMillis(value) {
+  const parsed = value ? Date.parse(value) : NaN;
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+// Rediscovery must not move an old document back above new arrivals.
+// Publication date breaks batch ties; absent first-collection dates stay last.
+export function compareNewestDiscovery(a, b) {
+  return dateMillis(b.firstSeenAt) - dateMillis(a.firstSeenAt) ||
+    dateMillis(b.publishedAt) - dateMillis(a.publishedAt) ||
+    String(a.id || '').localeCompare(String(b.id || ''));
+}
+
 // Decisão editorial e pendências de dados são eixos independentes.
 export function triageBucket(item) {
   const review = item.editorialReview?.decision;
