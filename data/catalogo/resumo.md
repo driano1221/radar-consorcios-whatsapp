@@ -1,22 +1,22 @@
 # Panorama da base histórica
 
-- 1763 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
-- 94 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 53 identidades candidatas de consórcios; 68 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 30 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 1798 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
+- 98 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 55 identidades candidatas de consórcios; 71 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 31 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
 | ATUAÇÃO | 25 |
-| GOVERNANÇA | 18 |
+| GOVERNANÇA | 19 |
 | ADESÃO AUTORIZADA | 13 |
 | CONTROLE | 13 |
-| RATEIO | 9 |
-| FINANÇAS | 7 |
+| RATEIO | 10 |
+| FINANÇAS | 8 |
+| ADESÃO | 2 |
 | RATEIO EM TRAMITAÇÃO | 2 |
-| ADESÃO | 1 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | COOPERAÇÃO AUTORIZADA | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
@@ -28,6 +28,10 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-14 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [DÉCIMO PRIMEIRO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1924395/) |
+| 2026-10-14 | GOVERNANÇA — alteração do protocolo; ingresso novo não comprovado | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.148, DE 08 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924135/) |
+| 2026-10-14 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.118, DE 25 DE JUNHO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924128/) |
+| 2026-10-14 | FINANÇAS — lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.136, DE 28 DE AGOSTO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924122/) |
 | 2026-10-13 | FINANÇAS — orientação tributária geral; não é ato de consórcio individual | confirmado por revisão editorial — orientação da CNM sobre a Cosit 145/2026, reproduzida pela AMA-AL; abrangência geral aprovada pelo usuário | [CNM orienta gestores sobre posição da Receita Federal que trata de consórcios públicos - Confederação Nacional de Municípios (CNM)](https://news.google.com/rss/articles/CBMixAFBVV95cUxQendEVC13b1UtLTBPNWU2eWpzaFZpczZ3d051ak9rOWJ1cHMzRGZOSVVoZDgzRTJfc3JxbDFPVHlGbjB2SG8zamZ1ZjlYLXN3NjdvMDB4YkpmbmEwUVFIa3dMZVhRZnl0ZEZXYlVBRW5tZHFMdU1oQnE1QzhZT19jSVpuby15WUZPc1ZmM0xmQmwzVjc5M0xJNXFLbGt0M1VXZ3RRSVJ2dER5aUIxaFcxcXctVG1zZ2E5U05UdEFMaFZvN3FU?oc=5) |
 | 2026-10-13 | GOVERNANÇA — ratificação do estatuto consolidado; sem adesão automática a serviços | confirmado por revisão editorial — Lei 1448/2026 ratifica o estatuto do CIDESAPA e preserva a continuidade da entidade; não comprova ingresso novo | [LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923527/) |
 | 2026-10-13 | RATEIO — contrato de rateio 004/2026 assinado; pagamento não comprovado | confirmado por revisão editorial — extrato identifica partes, valor, vigência e data de assinatura; portaria de fiscal é evidência complementar do mesmo contrato | [EXTRATO DO CONTRATO DE RATEIO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1923311/) |
@@ -39,9 +43,5 @@
 | 2026-10-09 | FINANÇAS — Lei 1.244/2026 autoriza repasse de R$ 150 mil ao CIDESA-NA; transferência não comprovada | confirmado por revisão editorial — lei municipal confirma autorização orçamentária para aquisição de terreno de aterro; não comprova que o repasse ocorreu ou que contrato de rateio foi assinado | [LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA](https://amm.diariomunicipal.org/publicacao/1923116/) |
 | 2026-10-09 | ATUAÇÃO — execução do serviço socioeducativo pelo CREAS por meio do CEMMIL desde maio de 2026 | confirmado por revisão editorial — o plano municipal comprova atuação do CEMMIL no serviço, mas descreve mudança iniciada em maio; não é novo contrato ou repasse assinado em outubro | [Diário Oficial de Mogi Guaçu (SP)](https://data.queridodiario.ok.org.br/3530706/2026-10-09/04512dfa6065751937309d0d73d72b65f5cc0c20.pdf) |
 | 2026-10-09 | RATEIO EM TRAMITAÇÃO — dispensa 157/2026 autorizada para futura formalização do rateio de 2027; contrato não demonstrado | confirmado por revisão editorial — o ato publicado autoriza a dispensa de licitação visando formalizar o contrato de rateio; não é contrato de rateio já celebrado nem pagamento executado | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-09/8a6f89e74a3d28002fc4dad419e3d843d96eca82.pdf) |
-| 2026-10-09 | RATEIO — apostilamento assinado do Contrato de Rateio 01/2026; dotação alterada, valor total mantido | confirmado por revisão editorial — as páginas 159-160 comprovam apostilamento ao rateio de Joinville com o CINCATARINA, não novo contrato nem pagamento; a compra do CISNORDESTE na página 95 é outro ato da edição | [Joinville: apostilamento do Contrato de Rateio 01/2026 com o CINCATARINA](https://data.queridodiario.ok.org.br/4209102/2026-10-09/e724cedc98aef3a88dc6f167373c355c0d837af4.pdf#page=159) |
-| 2026-10-09 | ATUAÇÃO — Consórcio ABC lançou o programa ABC + Cultura em 14/07/2026 | confirmado por revisão editorial — a página original data de julho e relata lançamento de programa cultural pelo consórcio; 'integração regional' não significa adesão de município novo | [Consórcio ABC lança programa ABC + Cultura para fortalecer integração regional e impulsionar a economia criativa - Consórcio Intermunicipal - Grande ABC](https://news.google.com/rss/articles/CBMi6wFBVV95cUxQcEhweEY0TERQZGNRTmlHRkRSUWkzcHI3enVJeDhpNlo5eE5IYlZrOERKZGp0WmhSblQtT3F0clVlQ1c1dUhmSmp1NjJ5bGF0bEFDUzFSY1Itc3libTJDLXpqMXlRQ0pYRlFPS0otbjFxQlUxVXcxNkI0QzRqbG1hMDN5OUZ5SFN5azFHRExFVGNWTG5sazdEWExoTGl6VVc2S2VuV3ExNGtDT3Iyd21PZllEX19VM0s4ODJVTnlvdkZPdGs1aldUb2licUtkNV9KQWxBaUlMYkVhTlFSQ1FtTy1UZFdhckJ4b01Z?oc=5) |
-| 2026-10-08 | CONTROLE — MPPR instaurou inquérito sobre possível cartel no credenciamento 007/2024 do CISMEPAR; irregularidade não comprovada | confirmado por revisão editorial — o texto integral recuperado relata procedimento investigativo concreto ligado ao chamamento do consórcio; as suspeitas contra empresas ainda estão sob apuração | [MP investiga suspeita de cartel na contratação de médicos em oito cidades do Paraná - Gazeta do Paraná](https://news.google.com/rss/articles/CBMivgFBVV95cUxQSjN2T2VJajBOZG9TZmU5cjZrLWU0TXRqd0dxRGVjVXVvSk1EbnJyaWFjUHFsYTM2QVgyWWJxYm5nRENaZzZaSXh5bW1nUFVERlRuNjZZRl94MHd4cUNKbmMwcWxoaUFYRTV1WXVFM1RhWDRkZmp0emIxUlNHYWRyZThGX1ZKQklGS0RnNDlHdXZOZ2pyTGxQdGQtVkxHbktxMVgzUkhZOTdObFNFck4zY3AyQXRoOW52S28yaXl3?oc=5) |
-| 2026-10-08 | ATUAÇÃO — nova sede em construção; assembleia e visita ainda futuras | confirmado por revisão editorial — a construção da nova sede é atuação em curso; o anúncio de assembleia não prova que a reunião ou a visita já ocorreram | [CONIAPE realiza Assembleia Ordinária e Visita Técnica à nova sede nesta quarta-feira (14)](https://consorcioconiape.pe.gov.br/2026/10/08/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-nesta-quarta-feira-14/) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
