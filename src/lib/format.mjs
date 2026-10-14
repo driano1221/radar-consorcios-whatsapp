@@ -218,7 +218,8 @@ export function formatWhatsAppMessage(item) {
     normalizeForMatch(`${item.title || ''} ${item.summary || ''}`),
   );
   const category =
-    classification.category === 'RATEIO' && !hasRateioContract
+    classification.scope === 'orientacao_geral' ? 'ORIENTAÇÃO GERAL'
+      : classification.category === 'RATEIO' && !hasRateioContract
       ? 'RATEIO CONSORCIAL'
       : categoryLabels[classification.category] || categoryLabels.GERAL;
   const points = item.kind === 'gazette' ? gazetteKeyPoints(item) : [];

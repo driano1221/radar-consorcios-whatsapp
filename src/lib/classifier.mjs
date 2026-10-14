@@ -67,6 +67,7 @@ const RULES = [
     patterns: [
       /\b(repasse|aporte|parcelamento|debito|prestacao de contas)\b.{0,120}\bconsorcio/,
       /\bconsorcio\b.{0,120}\b(repasse|aporte|parcelamento|debito|prestacao de contas)\b/,
+      /\b(?:solucao de consulta|cosit?)\b.{0,180}\bconsorcios publicos\b/,
     ],
   },
   {
@@ -90,6 +91,7 @@ const RULES = [
   {
     category: 'ATUAÇÃO', emoji: '📰', weight: 4, priority: 40, requiresPublicContext: true,
     patterns: [
+      /\bconsorcio\b.{0,130}\bviabilizou\s+(?:procedimentos|atendimentos|cirurgias)\b/,
       /\bresolucao\s+n[º°.]?\s*\d+\/20\d{2}\s+dispoe\s+sobre\s+os\s+procedimentos\s+de\s+inspecao/,
       /\bconsorcio\b.{0,120}\b(inaugura|lanca|investe|aprova|assina|recebe|amplia|implanta|firmou|firma|assinou|inaugurou|ampliou)\b/,
       /\bextrato\s+do\s+contrato\s+de\s+prestacao\s+de\s+servicos\b.{0,350}\bpartes\s*:\s*o\s+municipio\b.{0,160}\bconsorcio/,
@@ -310,6 +312,16 @@ function evaluateSegment(item, evidence, index) {
 export function classifyItem(item) {
   const articleUrl = item.articleUrl || item.url || '';
   const documentText = normalizeForMatch(`${item.title || ''} ${item.rawText || item.summary || item.excerpts?.join(' ') || ''}`);
+  if (item.kind === 'gazette' && /^lei\b/i.test(item.title || '') &&
+    /\b(?:autoriza|autorizada)\b.{0,30}\babertura de credito adicional\b/.test(documentText.slice(0, 700)) &&
+    /\belemento da despesa\b.{0,120}\btransferencias a consorcios publicos mediante contrato de rateio\b/.test(documentText) &&
+    !/\bcontrato de rateio\s+n[ºo.]?\s*\d|\b(?:celebram|assinam|firmam)\b.{0,100}\bcontrato de rateio\b/.test(documentText)) {
+    return { category: 'GERAL', emoji: '📰', score: 0,
+      stage: 'crédito orçamentário; contrato de rateio e pagamento não comprovados',
+      reasons: ['rejeitado: lei abre crédito em rubrica genérica de rateio'], evidenceIndex: 0,
+      evidenceText: normalizeWhitespace(item.rawText || item.summary || '').slice(0, 500),
+      publicContext: true, strongPublicContext: true };
+  }
   if (/\b(?:materia\s*:\s*|tipo\s*:\s*req\s*-\s*)requerimento\b.{0,250}\b(?:solicita|requer)\b/.test(documentText)) {
     return { category: 'GERAL', emoji: '📰', score: 0,
       stage: 'requerimento; ato de ingresso não comprovado',

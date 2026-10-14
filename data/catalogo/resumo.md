@@ -1,21 +1,22 @@
 # Panorama da base histórica
 
 - 1763 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
-- 90 registros relacionados a possíveis eventos de consórcios; 84 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 46 identidades candidatas de consórcios; 64 vínculos documentais, dos quais 35 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 31 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 93 registros relacionados a possíveis eventos de consórcios; 89 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 52 identidades candidatas de consórcios; 67 vínculos documentais, dos quais 39 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 30 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 23 |
-| GOVERNANÇA | 18 |
+| ATUAÇÃO | 25 |
+| GOVERNANÇA | 17 |
 | ADESÃO AUTORIZADA | 13 |
-| CONTROLE | 12 |
-| RATEIO | 10 |
-| FINANÇAS | 6 |
+| CONTROLE | 13 |
+| RATEIO | 9 |
+| FINANÇAS | 7 |
 | RATEIO EM TRAMITAÇÃO | 2 |
+| ADESÃO | 1 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | COOPERAÇÃO AUTORIZADA | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
@@ -27,10 +28,13 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
-| 2026-10-13 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [PORTARIA Nº 869, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923332/) |
-| 2026-10-13 | GOVERNANÇA — estatuto consolidado ratificado por lei municipal; consórcio já existente | candidato — requer revisão | [LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923527/) |
-| 2026-10-13 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [EXTRATO DO CONTRATO DE RATEIO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1923311/) |
+| 2026-10-13 | FINANÇAS — orientação tributária geral; não é ato de consórcio individual | confirmado por revisão editorial — orientação da CNM sobre a Cosit 145/2026, reproduzida pela AMA-AL; abrangência geral aprovada pelo usuário | [CNM orienta gestores sobre posição da Receita Federal que trata de consórcios públicos - Confederação Nacional de Municípios (CNM)](https://news.google.com/rss/articles/CBMixAFBVV95cUxQendEVC13b1UtLTBPNWU2eWpzaFZpczZ3d051ak9rOWJ1cHMzRGZOSVVoZDgzRTJfc3JxbDFPVHlGbjB2SG8zamZ1ZjlYLXN3NjdvMDB4YkpmbmEwUVFIa3dMZVhRZnl0ZEZXYlVBRW5tZHFMdU1oQnE1QzhZT19jSVpuby15WUZPc1ZmM0xmQmwzVjc5M0xJNXFLbGt0M1VXZ3RRSVJ2dER5aUIxaFcxcXctVG1zZ2E5U05UdEFMaFZvN3FU?oc=5) |
+| 2026-10-13 | GOVERNANÇA — ratificação do estatuto consolidado; sem adesão automática a serviços | confirmado por revisão editorial — Lei 1448/2026 ratifica o estatuto do CIDESAPA e preserva a continuidade da entidade; não comprova ingresso novo | [LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923527/) |
+| 2026-10-13 | RATEIO — contrato de rateio 004/2026 assinado; pagamento não comprovado | confirmado por revisão editorial — extrato identifica partes, valor, vigência e data de assinatura; portaria de fiscal é evidência complementar do mesmo contrato | [EXTRATO DO CONTRATO DE RATEIO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1923311/) |
+| 2026-10-13 | ATUAÇÃO — procedimentos oftalmológicos realizados em 100 pacientes | confirmado por revisão editorial — o corpo da notícia comprova atendimento executado pelo CISGA, não apenas uma intenção ou agenda | [Consórcio de Saúde Garças/Araguaia viabiliza procedimentos oftalmológicos para mais 100 pacientes da região - Araguaia Notícia](https://news.google.com/rss/articles/CBMi0AFBVV95cUxONHVZbThFaHI3dUVLTWxuWHdzZXBTbnpTX2hVRUc4M3RzTlMydDlIYmQxLV9YV2R0RUFsYVdReWEtcTBzdUtkWVFyRlVYV0JfSzNPQ21ORUdKelgxMXMzSG5lc1VJQUh4dDVuamtYSVh5aHlockZPaEVBLVEwenI5eUNwTFhzaW5MR01HX2ZKZkxENGliRVltNnRfRzJWU0xVeDlHc1hFckYzYVRwbFF5WkRSTGpYVHNFdEF6bzZVa2dpVmg2OWE4aG5rOG15NjJj?oc=5) |
+| 2026-10-13 | ATUAÇÃO — relato — conferir documento original | candidato — requer revisão | [ATENDIMENTO OFTALMOLÓGICO: Consórcio viabiliza procedimentos de YAG Laser para 100 pacientes do Araguaia - Rede da Notícia](https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2FVYno3OUxSUjc0VlNJc3BwaXFLYmVGQ2x6THV0MU5VSktuWnJqZG5aSHQxVVh5dEU4Q2FYTmhDcnF3amNsTWVSY3hpSktacXFCR2MwVTMyWllrRVkyd1V4czJsOThRdWUwT281dHdxbklSelZVWjluWXloaFFzNUZCNXFNdm1GQk5HTndmc2tkS3YwcWNVakxQOEQ1blliNGxQNnV2MHYwME1nUEtmZThjSzlTbDVzSWRHSXpHQzBjV3lSTHNQM1lNbXVVQQ?oc=5) |
 | 2026-10-12 | CONTROLE — relato — conferir documento original | aprovado pela IA — não confirmado manualmente | [Ex-presidente de consórcio do Rio Paraná é multado por atraso no envio de dados - TCE-PR](https://news.google.com/rss/articles/CBMi8wFBVV95cUxNT3VXai0zb2pPcl9kUjJ6eElWbGw4eE9NNmY3TW1weTZQS0pVUW43SHdQa21ZOW5oeDVmb2tZd3oxS1dQUHNfZ3FWZUV3eTZ6a1d2aFpKWXN1cXJIczRiY0piR1l0Qk9yb2FzbGQxOVQwaFV1b0lEdlhkVE5ZeHBENjlzNGRXOS1Cc1JXQnEybWE4SjBITXB1ZUE2eURxWVJHRllxZUJnVXVLYUc5UTNaZTB5WFZYakVvcXlKeEczMWFtbWRIY21VYU10OXVrdEhQcXIxS291U256S3JyaW8zaFVKem5UVzNxY2JIODB5MC1NejA?oc=5) |
+| 2026-10-09 | CONTROLE — contas de 2024 desaprovadas; cabe recurso | confirmado por revisão editorial — a notícia comprova julgamento do exercício 2024, diferente do exercício 2023 já registrado; não é duplicata desse julgamento anterior | [Falhas na concessão de gratificações levam TCE-PB a reprovar contas de consórcio de saúde do Vale do Piancó - Fonte 83](https://news.google.com/rss/articles/CBMi5wFBVV95cUxORENnc2laREt2bWpXTl8zX0t2R3h4em5URmVwMmNpejFmRGFpejAtVEJTVEZMb0pCY1FQQldmb1B2UEVCNm0zaWp6NzEyVEN0UUVoQzRIVU9OdmRRWjBOcTc5eU1ucjJWbUh3YTktX3JNTUE5S21mLWRlSUJQMlpYY3JvV0szbXZmd19OVFYxRnc1Y3J0czJ4ZFVqczNFMXpkR2tyZnlMbTAxMzBDckdraEJ3d2VicVFBUUVOVWx5MXNnZjF5cWdOUnk2ajNmMG1wT2V0Ti01TEFONG5kVkxCaEwwVkxoLVE?oc=5) |
 | 2026-10-09 | FINANÇAS — Lei 1.244/2026 autoriza repasse de R$ 150 mil ao CIDESA-NA; transferência não comprovada | confirmado por revisão editorial — lei municipal confirma autorização orçamentária para aquisição de terreno de aterro; não comprova que o repasse ocorreu ou que contrato de rateio foi assinado | [LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA](https://amm.diariomunicipal.org/publicacao/1923116/) |
 | 2026-10-09 | ATUAÇÃO — execução do serviço socioeducativo pelo CREAS por meio do CEMMIL desde maio de 2026 | confirmado por revisão editorial — o plano municipal comprova atuação do CEMMIL no serviço, mas descreve mudança iniciada em maio; não é novo contrato ou repasse assinado em outubro | [Diário Oficial de Mogi Guaçu (SP)](https://data.queridodiario.ok.org.br/3530706/2026-10-09/04512dfa6065751937309d0d73d72b65f5cc0c20.pdf) |
 | 2026-10-09 | RATEIO EM TRAMITAÇÃO — dispensa 157/2026 autorizada para futura formalização do rateio de 2027; contrato não demonstrado | confirmado por revisão editorial — o ato publicado autoriza a dispensa de licitação visando formalizar o contrato de rateio; não é contrato de rateio já celebrado nem pagamento executado | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-09/8a6f89e74a3d28002fc4dad419e3d843d96eca82.pdf) |
@@ -39,8 +43,5 @@
 | 2026-10-08 | CONTROLE — MPPR instaurou inquérito sobre possível cartel no credenciamento 007/2024 do CISMEPAR; irregularidade não comprovada | confirmado por revisão editorial — o texto integral recuperado relata procedimento investigativo concreto ligado ao chamamento do consórcio; as suspeitas contra empresas ainda estão sob apuração | [MP investiga suspeita de cartel na contratação de médicos em oito cidades do Paraná - Gazeta do Paraná](https://news.google.com/rss/articles/CBMivgFBVV95cUxQSjN2T2VJajBOZG9TZmU5cjZrLWU0TXRqd0dxRGVjVXVvSk1EbnJyaWFjUHFsYTM2QVgyWWJxYm5nRENaZzZaSXh5bW1nUFVERlRuNjZZRl94MHd4cUNKbmMwcWxoaUFYRTV1WXVFM1RhWDRkZmp0emIxUlNHYWRyZThGX1ZKQklGS0RnNDlHdXZOZ2pyTGxQdGQtVkxHbktxMVgzUkhZOTdObFNFck4zY3AyQXRoOW52S28yaXl3?oc=5) |
 | 2026-10-08 | ATUAÇÃO — nova sede em construção; assembleia e visita ainda futuras | confirmado por revisão editorial — a construção da nova sede é atuação em curso; o anúncio de assembleia não prova que a reunião ou a visita já ocorreram | [CONIAPE realiza Assembleia Ordinária e Visita Técnica à nova sede nesta quarta-feira (14)](https://consorcioconiape.pe.gov.br/2026/10/08/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-nesta-quarta-feira-14/) |
 | 2026-10-08 | ATUAÇÃO — norma operacional do serviço de inspeção publicada | confirmado por revisão editorial — a Resolução 004/2026 estabelece procedimentos de inspeção do SIM vinculado ao CIDESAA; protocolo e estatuto aparecem como fundamentos, não como alterações constitutivas | [RESOLUÇÃO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1921831/) |
-| 2026-10-08 | ATUAÇÃO — CIDESAA publicou instrução normativa do Serviço de Inspeção Municipal em 02/10/2026 | confirmado por revisão editorial — ato oficial assinado pelo presidente do consórcio estabelece procedimentos técnicos para o SIM/SISBI-POA; a palavra suspensão refere-se a estabelecimentos e produtos, não ao consórcio | [INSTRUÇÃO NORMATIVA Nº 016 DE 02 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1921829/) |
-| 2026-10-08 | ATUAÇÃO — instrução de trabalho 010/2026 sobre inspeção de produtos de origem animal publicada em 08/10/2026 | confirmado por revisão editorial — publicação do consórcio descreve programa de prevenção de fraudes em produtos fiscalizados pelo SIM; não acusa o consórcio de fraude, e os campos de emissão/aprovação estão em branco | [IT - INSTRUÇÃO DE TRABALHO Nº 010/2026 PROGRAMA DE PREVENÇÃO E COMBATE À FRAUDE.](https://amm.diariomunicipal.org/publicacao/1921820/) |
-| 2026-10-08 | RATEIO — aditivo ao contrato de rateio 006/2026 publicado | confirmado por revisão editorial — edital oficial identifica consórcio, município, objeto, aporte extra e nova vigência; não é mera rubrica orçamentária | [EDITAL DE PUBLICAÇÃO N°160/2026, DE 07 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1921937/) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.

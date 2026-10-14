@@ -93,6 +93,7 @@ export function applyEditorialGuard(item, guard) {
       ...previous, category: review.categoria, emoji: EMOJI[review.categoria],
       score: Math.max(5, previous.score || 0),
       stage: review.etapa || previous.stage,
+      ...(review.fatos?.identidade_nao_aplicavel ? { scope: 'orientacao_geral' } : {}),
       evidenceText: review.evidencia,
       reasons: [...(previous.reasons || []), `confirmado por revisão editorial — ${review.motivo}`],
     }, editorialDecision: review.decisao, catalogDecision: 'confirmado',

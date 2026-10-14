@@ -123,10 +123,11 @@ export function buildResults(data, { period = 'all', mode = 'discovery' } = {}) 
       categories: groupCount(selected, (row) => [row.tipo_evento]),
       states: groupCount(selected, (row) => {
         const geography = resolveGeography(row, itemById.get(row.id) || {}, data.geographyReviews?.[row.id]);
-        return geography.ufs.length ? geography.ufs : ['Não identificado'];
+        return geography.scope === 'nacional' ? ['Nacional'] : geography.ufs.length ? geography.ufs : ['Não identificado'];
       }),
       sources: groupCount(selected, (row) => [row.fonte || itemById.get(row.id)?.source]),
       consortia: groupCount(selected, (row) => {
+        if (row.abrangencia === 'nacional' || itemById.get(row.id)?.editorialReview?.facts?.identidade_nao_aplicavel) return ['Orientação geral (sem entidade)'];
         const linked = (itemById.get(row.id)?.links || []).map((link) => consortiumNames.get(link.consortiumId) || link.name).filter(Boolean);
         return linked.length ? linked : [itemById.get(row.id)?.editorialReview?.facts?.consorcio || row.consorcio || 'Não identificado'];
       }),

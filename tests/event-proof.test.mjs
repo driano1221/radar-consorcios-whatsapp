@@ -4,6 +4,45 @@ import { classifyItem } from '../src/lib/classifier.mjs';
 import { formatWhatsAppMessage } from '../src/lib/format.mjs';
 import { readFile } from 'node:fs/promises';
 
+test('orientação tributária geral tem abrangência própria sem inventar entidade', () => {
+  const rawText = 'A Receita Federal, por meio da Solução de Consulta Cosit 145/2026, esclarece a imunidade dos consórcios públicos de direito privado. A CNM traz orientações aos gestores.';
+  const result = classifyItem({ kind: 'news', title: 'CNM orienta gestores sobre consórcios públicos', rawText });
+  assert.equal(result.category, 'FINANÇAS');
+  assert.equal(result.scope, 'orientacao_geral');
+  assert.match(result.evidenceText, /145\/2026/);
+  assert.equal(classifyItem({ kind: 'news', title: 'Orientação aos gestores', rawText: 'Consórcios públicos podem buscar orientações tributárias.' }).category, 'GERAL');
+});
+
+test('portaria de fiscal não anuncia nova celebração do rateio', () => {
+  const result = classifyItem({ kind: 'gazette', title: 'PORTARIA Nº 869/2026', rawText: 'Nomeia fiscal do contrato de rateio 004/2026 celebrado com o Consórcio Intermunicipal CIDESASUL.' });
+  assert.equal(result.category, 'GERAL');
+  assert.match(result.stage, /documento de acompanhamento/);
+});
+
+test('textos recuperados em 14/10 distinguem controle, atuação, rateio e orientação', async () => {
+  const stored = (await readFile(new URL('../data/catalogo/textos-artigos.ndjson', import.meta.url), 'utf8')).trim().split('\n').map(JSON.parse);
+  const archive = (await readFile(new URL('../data/catalogo/arquivo-coletas.ndjson', import.meta.url), 'utf8')).trim().split('\n').map(JSON.parse);
+  for (const [prefix, category, stage] of [
+    ['1af51512','GERAL', /acompanhamento/],
+    ['1e4b6177','GOVERNANÇA', /estatuto/],
+    ['e0f4c638','RATEIO', /assinatura/],
+    ['26f6e6e1','FINANÇAS', /geral/],
+    ['421c342a','CONTROLE', /desaprovadas/],
+    ['a229b70e','ATUAÇÃO', null],
+    ['1e478dec','GERAL', null],
+    ['a41575af','ATUAÇÃO', /norma operacional/],
+    ['3c0f4467','GERAL', /crédito orçamentário/],
+    ['7c686c4b','GOVERNANÇA', /estatuto/],
+  ]) {
+    const row = archive.find(r => r.id.startsWith(prefix));
+    const text = stored.find(r => r.documento_id === row.id);
+    assert.ok(text, `texto integral ${prefix}`);
+    const result = classifyItem({ kind: row.url.includes('diariomunicipal') ? 'gazette' : 'news', title: row.titulo, rawText: text.texto });
+    assert.equal(result.category, category, prefix);
+    if (stage) assert.match(result.stage, stage, prefix);
+  }
+});
+
 test('aprovação de projeto para participar do Conclima é autorização, não ingresso comprovado', () => {
   const rawText = 'A Câmara Municipal aprovou, em dois turnos, o projeto que ratifica a participação de Umuarama no Consórcio Nacional para Gestão Climática e Prevenção de Desastres (Conclima). O ingresso formal dependerá das etapas seguintes.';
   const result = classifyItem({ kind: 'news', title: 'Câmara aprova adesão de Umuarama ao consórcio', rawText });

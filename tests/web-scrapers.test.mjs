@@ -8,10 +8,19 @@ import {
   parseTceMg,
   parseTcePrHome,
   parseAmmMtIndex,
+  parseAmmMtPublication,
   fetchWebScrapers,
 } from '../src/lib/sources/web-scrapers.mjs';
 
 const since = new Date('2026-08-13T00:00:00Z');
+
+test('AMM prioriza corpo do ato, conserva fim do texto e exclui navegação do artigo externo', () => {
+  const body = 'Texto oficial. '.repeat(500) + 'Artigo final: sem adesão automática.';
+  const result = parseAmmMtPublication(`<article>Navegação irrelevante<div id="publication-text"><p>${body}</p></div><footer>Rodapé</footer></article>`, { url: 'https://example.org/ato' });
+  assert.ok(result.rawText.length > 6000);
+  assert.match(result.rawText, /sem adesão automática\.$/);
+  assert.doesNotMatch(result.rawText, /Navegação|Rodapé/);
+});
 
 test('converte data brasileira sem deslocar o dia', () => {
   assert.equal(parseBrazilianDate('17/08/2026'), '2026-08-17T15:00:00.000Z');

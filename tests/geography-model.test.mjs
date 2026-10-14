@@ -2,6 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { resolveGeography } from '../dashboard/src/geography-model.mjs';
 
+test('orientação nacional não herda UF do portal que a reproduziu', () => {
+  const result = resolveGeography({ uf: 'AL', abrangencia: 'nacional' });
+  assert.deepEqual(result.ufs, []);
+  assert.equal(result.scope, 'nacional');
+});
+
 test('UF explícita, múltiplas UFs e revisão editorial prevalecem sobre o domínio', () => {
   assert.deepEqual(resolveGeography({ uf: 'MG', titulo: 'Consórcio publicado' }).ufs, ['MG']);
   assert.deepEqual(resolveGeography({ titulo: 'Rio Negro (PR) e Mafra (SC) discutem transporte' }).ufs, ['PR', 'SC']);

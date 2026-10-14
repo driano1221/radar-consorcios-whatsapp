@@ -37,13 +37,13 @@ const RATEIO_AUTHORIZATION = [
 const AUTHORIZED_TRANSFER = /\b(?:fica\s+)?(?:o\s+)?(?:poder\s+)?executivo(?:\s+municipal)?\s+autorizad[oa]\s+a\s+repassar[\s\S]{0,250}\bcons[oó]rcio/i;
 const ELECTION_RESCHEDULED = /\bretifica[cç][aã]o\s+do\s+regulamento\s+eleitoral/i;
 const AUTHORIZED_COOPERATION = /\blei\s+n[º°.]?\s*\d+\/20\d{2}[\s\S]{0,300}\bautoriza\s+o\s+poder\s+executivo\s+a\s+firmar\s+conv[eê]nio[\s\S]{0,260}\bcons[oó]rcio/i;
-const RATIFIED_STATUTE = /\bratifica\s+o\s+estatuto\s+consolidado\s+do\s+cons[oó]rcio/i;
+const RATIFIED_STATUTE = /\b(?:ratifica\s+o|fica\s+ratificado(?:,\s*[^.;]{0,100},)?\s+o)\s+estatuto\s+consolidado\s+do\s+cons[oó]rcio/i;
 const SERVICE_CONTRACT = /\bextrato\s+do\s+contrato\s+de\s+presta[cç][aã]o\s+de\s+servi[cç]os\s+n[º°.]?\s*\d+\/20\d{2}[\s\S]{0,700}\bpartes\s*:\s*o\s+munic[ií]pio[\s\S]{0,180}\bcons[oó]rcio/i;
 const PAICI_WITHHELD = /\binadimpl[eê]ncia\b[\s\S]{0,300}\b(?:munic[ií]pios|incentivo\s+estadual)\b[\s\S]{0,650}\bPAICI\b/i;
 const HQ_CONSTRUCTION = /\bnova\s+sede\b.{0,100}\b(?:em\s+fase\s+de\s+constru[cç][aã]o|em\s+constru[cç][aã]o)/i;
 const CONSTRUCTION_MILESTONE = /\b(?:assinou\s+(?:a\s+)?ordem\s+de\s+servi[cç]o|iniciou\s+(?:as\s+)?obras|concluiu\s+(?:as\s+)?obras|inaugurou\s+(?:a\s+)?(?:nova\s+)?sede)\b/i;
 const FUTURE_ASSEMBLY = /\b(?:realizar[aá]|acontecer[aá])\b.{0,150}\b(?:assembleia|reuni[aã]o|visita\s+t[eé]cnica)|\b(?:assembleia|reuni[aã]o|visita\s+t[eé]cnica)\b.{0,150}\b(?:realizar[aá]|acontecer[aá])/i;
-const ACCOUNTS_REJECTED = /\b(?:reprovou|desaprovou|rejeitou)\s+(?:a\s+)?(?:presta[cç][aã]o\s+de\s+)?contas\s+(?:de\s+20\d{2}\s+)?d[oa]\s+cons[oó]rcio|\bcontas\s+(?:de\s+20\d{2}\s+)?d[oa]\s+cons[oó]rcio\b.{0,100}\b(?:reprovadas|desaprovadas|rejeitadas)/i;
+const ACCOUNTS_REJECTED = /\b(?:reprovou|desaprovou|rejeitou)\s+(?:as?\s+)?(?:presta[cç][aã]o\s+de\s+)?contas\s+(?:de\s+20\d{2}\s+)?d[oa]\s+cons[oó]rcio|\bcontas\s+(?:de\s+20\d{2}\s+)?d[oa]\s+cons[oó]rcio\b.{0,100}\b(?:reprovadas|desaprovadas|rejeitadas)/i;
 const CALL_OPENED = /\bcons[oó]rcio\b.{0,180}\b(?:(?:abriu|publicou|lan[cç]ou)\s+(?:o\s+|um\s+)?chamamento\s+p[uú]blico|recebe\s+a\s+documenta[cç][aã]o\s+das\s+interessadas)/i;
 const SERVICE_INTERRUPTED = /\bcons[oó]rcio\b.{0,190}\b(?:paralisa[cç][aã]o\s+(?:total\s+)?dos\s+servi[cç]os|suspendeu\s+(?:os\s+)?atendimentos|cancelou\s+(?:todas?\s+)?as\s+consultas)/i;
 const EQUIPMENT_RECEIVED = /\bcons[oó]rcio\b.{0,110}\brecebeu\s+(?:um\s+|o\s+)?(?:consult[oó]rio|equipamento|ve[ií]culo|ambul[aâ]ncia)\b/i;
@@ -71,6 +71,34 @@ export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
   if (!text || classification.category === 'GERAL') return classification;
+
+  if (/^instru[cç][aã]o normativa\b/i.test(title) &&
+    /^.{0,100}estabelece os procedimentos.{0,180}estabelecimentos e produtos.{0,60}servi[cç]o de inspe[cç][aã]o municipal/i.test(text) &&
+    /\bcons[oó]rcio intermunicipal\b/i.test(text.slice(0, 700))) {
+    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰',
+      stage: 'norma operacional de inspeção publicada; suspensão de produtos é procedimento, não punição ao consórcio',
+      reasons: [...classification.reasons, 'norma estabelece procedimentos sanitários, não fiscalização contra o consórcio'] },
+    literalEvidence(text, [/\bestabelece os procedimentos\b/i], 0, 420));
+  }
+
+  if (/\bcons[oó]rcios p[uú]blicos\b/i.test(text) && /\bReceita Federal\b/i.test(text) &&
+    /\b(?:Cosit?|Solu[cç][aã]o de Consulta)\b.{0,100}\b\d+\/20\d{2}\b/i.test(text) &&
+    /\borienta(?:[cç][oõ]es|[cç][aã]o|\s+gestores)\b/i.test(`${title} ${text}`)) {
+    return withEvidence({ ...classification, category: 'FINANÇAS', emoji: '💰',
+      scope: 'orientacao_geral', stage: 'orientação tributária geral; não é ato de consórcio individual',
+      reasons: [...classification.reasons, 'orientação geral com ato tributário identificado'] },
+    literalEvidence(text, [/\bReceita Federal\b.{0,180}\b\d+\/20\d{2}\b/i,
+      /\bSolu[cç][aã]o de Consulta\b.{0,100}\b\d+\/20\d{2}\b/i], 2, 240));
+  }
+
+  if (/^portaria\b/i.test(title) && /\b(?:nomeia|nomear|designa|designar)\b/i.test(text) &&
+    /\b(?:fiscal|acompanhamento)\b.{0,90}\bcontrato de rateio/i.test(text) &&
+    /\b(?:celebrado|firmado)\b.{0,60}\bcons[oó]rcio/i.test(text)) {
+    return withEvidence({ ...classification, category: 'GERAL', emoji: '📰', score: 0,
+      stage: 'fiscal designado para rateio já celebrado; documento de acompanhamento',
+      reasons: [...classification.reasons, 'rejeitado: portaria comprova acompanhamento do rateio, não nova celebração'] },
+    literalEvidence(text, [/\b(?:fiscal|acompanhamento)\b.{0,90}\bcontrato de rateio/i], 80, 200));
+  }
 
   // A relação verbo–objeto vale mais que palavras próximas: "saída" do prédio
   // ou "suspensão" de consultas não é saída de município; proposta de
@@ -295,6 +323,14 @@ export function refineEventProof(item, classification) {
   }
 
   if (classification.category === 'RATEIO') {
+    if (/^extrato\s+(?:do\s+)?contrato\s+de\s+rateio\b/i.test(title) &&
+      /\b(?:concedente|contratante|partes)\s*:/i.test(text) &&
+      /\b(?:proponente|contratad[oa]|consorciad[oa])\s*:/i.test(text) &&
+      /\bassinatura\s*:\s*[^:]{0,90}\b\d{1,2}\s+de\s+\w+\s+de\s+20\d{2}\b/i.test(text)) {
+      return withEvidence({ ...classification, stage: 'extrato de rateio com data de assinatura; pagamento não comprovado',
+        reasons: [...classification.reasons, 'extrato individual identifica partes e data de assinatura'] },
+      literalEvidence(text, [/\bassinatura\s*:/i], 0, 160));
+    }
     if (AUTHORIZED_TRANSFER.test(text) && !EXECUTED_RATEIO.test(text)) {
       return withEvidence({ ...classification, category: 'FINANÇAS', emoji: '💰',
         stage: 'lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados',

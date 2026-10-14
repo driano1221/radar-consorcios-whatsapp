@@ -27,7 +27,7 @@ export function identityKey(name) {
 function cleanName(value, { preserveDashes = false } = {}) {
   let text = normalizeWhitespace(value)
     .split(preserveDashes ? /\s*\([A-Z][A-Z\d-]{2,15}\)/ : /\s+[–—-]\s+|\s*\([A-Z][A-Z\d-]{2,15}\)/)[0]
-    .split(/[.,;:()]|\.\.\./)[0]
+    .split(/[.;:()]|,(?!\s*(?:social|(?:e\s+)?ambiental)\b)|\.\.\./i)[0]
     .split(STOP)[0]
     .replace(/\s+(?:e|de|da|do|dos|das|para|na|no|com|em|a|o)$/i, '')
     .trim();

@@ -28,5 +28,17 @@ if (process.argv.includes('--history')) {
 }
 
 mergeStateIntoCatalog(records, JSON.parse(await readFile(statePath, 'utf8')), { reviewedIds });
+// Full-text evidence is stored separately, never substituted for a sealed excerpt.
+try {
+  const texts = (await readFile(path.join(directory, 'textos-artigos.ndjson'), 'utf8'))
+    .split(/\r?\n/).filter(Boolean).map(JSON.parse);
+  for (const text of texts) {
+    const row = records.get(text.documento_id);
+    if (!row) continue;
+    records.set(row.id, { ...row, article_text_sha256: text.texto_sha256,
+      article_reader: text.leitor, article_url: row.article_url || text.url_artigo,
+      article_recovery_reason: '' });
+  }
+} catch (error) { if (error.code !== 'ENOENT') throw error; }
 const counts = await saveCatalog(directory, records);
 console.log(`[catálogo] ${counts.all} documentos encontrados; ${counts.relevant} classificados como potenciais eventos; ${counts.consortia} consórcios identificados explicitamente.`);

@@ -33,6 +33,7 @@ import { applyEditorialGuard, loadConfirmedEventRegistry, loadEditorialGuard } f
 import { resolveArticlePreviews } from './lib/preview-resolution.mjs';
 import { decidePublication, isNotifiable } from './lib/publication-gate.mjs';
 import { fileURLToPath } from 'node:url';
+import { persistArticleTexts } from './lib/article-text-store.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -101,6 +102,10 @@ async function main() {
     }
   }
   const articleResult = await enrichArticles(collected);
+  if (config.persistState) {
+    const stored = await persistArticleTexts(catalogDirectory, articleResult.items);
+    console.log(`[texto] ${stored} leitura(s) integral(is) nova(s) preservada(s) no catálogo.`);
+  }
   sourceHealth.push({ name: 'Texto das páginas originais',
     status: articleResult.failed ? 'degraded' : 'ok', itemCount: articleResult.enriched,
     message: `${articleResult.attempted} tentativa(s); ${articleResult.enriched} texto(s) obtido(s); ` +

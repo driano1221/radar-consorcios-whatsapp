@@ -6,6 +6,17 @@ import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboard
   hasVerifiedMultiConsortiumNames } from '../scripts/build-dashboard.mjs';
 import { desktopFlowSvg, mobileFlowSvg } from '../scripts/build-flow-diagram.mjs';
 
+test('rejeição editorial elimina pendência de identidade do contador, sem apagar motivo', () => {
+  const row = { id:'rejeitado', titulo:'Rubrica de orçamento', trecho:'Previsão genérica de rateio',
+    url:'https://example.org/a', ultima_coleta:'2026-10-14', tipo_evento:'RATEIO' };
+  const review = { documento_id:row.id, decisao:'nao_evento', motivo:'previsão não é contrato', evidencia:row.trecho,
+    trecho_sha256:createHash('sha256').update(row.trecho).digest('hex') };
+  const result = buildDashboardData({archive:[row],events:[],consortia:[],links:[],editorialReviews:[review],
+    pendingIdentity:[{documento_id:row.id,motivo:'sem entidade'}]});
+  assert.equal(result.stats.pendingIdentity,0);
+  assert.match(result.items[0].reason,/previsão não é contrato/);
+});
+
 test('versão pública preserva decisões e tabelas, mas não republica texto integral nem identificadores pessoais', () => {
   const input = { generatedAt: '2026-10-09T12:00:00Z', items: [{ id: '1', title: 'Ato publicado',
     evidence: 'Consórcio ratificou o protocolo.', fullText: 'Texto integral extenso.',

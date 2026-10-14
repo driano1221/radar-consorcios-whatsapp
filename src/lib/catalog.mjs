@@ -15,7 +15,7 @@ const FIELDS = [
   'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
   'data_noticia_original', 'data_fato', 'mes_fato', 'decisao_base', 'decisao_alerta', 'motivo_alerta',
   'etapa', 'situacao_analise', 'efeito_na_participacao', 'tipo_documento',
-  'consorcio', 'sigla', 'municipio', 'uf', 'titulo', 'fonte', 'url',
+  'consorcio', 'sigla', 'municipio', 'uf', 'abrangencia', 'titulo', 'fonte', 'url',
   'trecho', 'pontuacao', 'revisao_ia', 'enviado_em',
 ];
 
@@ -28,6 +28,7 @@ function safeText(value, limit = 500) {
 }
 
 function documentType(item) {
+  if (/^portaria\b/i.test(item.title || '')) return 'portaria';
   if (item.classification?.category === 'RATEIO EM TRAMITAÇÃO') return 'ato autorizativo de rateio';
   const text = item.kind === 'gazette'
     ? `${item.title || ''} ${item.classification?.evidenceText || ''}`.slice(0, 500)
@@ -101,6 +102,7 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
     efeito_na_participacao: 'não inferido automaticamente', tipo_documento: type,
     consorcio: safeText(item.entityName, 180), sigla: safeText(item.entityAlias, 40),
     municipio: safeText(territory, 100), uf: safeText(stateCode, 2),
+    abrangencia: item.classification?.scope === 'orientacao_geral' ? 'nacional' : '',
     titulo: title, fonte: safeText(item.source, 120), url,
     article_url: item.articleUrl || '',
     trecho: safeText(item.classification?.category === 'GERAL' && !item.classification?.stage
@@ -310,6 +312,8 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
       data_noticia_original: /^\d{4}-\d{2}-\d{2}$/.test(review.fatos?.data_publicacao_original || '')
         ? `${review.fatos.data_publicacao_original}T12:00:00Z` : row.data_noticia_original || '',
       revisao_editorial: review };
+      if (review.fatos?.identidade_nao_aplicavel) result = { ...result,
+        consorcio: '', sigla: '', municipio: '', uf: '', abrangencia: review.fatos.abrangencia || 'nacional' };
     }
     result = { ...result, data_fato: result.data_fato || formalActDate({ title: result.titulo }, now) };
     const alert = decidePublication({
@@ -379,7 +383,8 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     if (!evidenceByDocument.has(item.documento_id)) evidenceByDocument.set(item.documento_id, []);
     evidenceByDocument.get(item.documento_id).push(item);
   }
-  const enriched = relevant.map((row) => ({ ...row,
+  const enriched = relevant.filter((row) => row.abrangencia !== 'nacional' &&
+    !row.revisao_editorial?.fatos?.identidade_nao_aplicavel).map((row) => ({ ...row,
     curatedMentions: evidenceByDocument.get(row.id) || [],
     suppressAutoIdentity: suppressedIdentity.get(row.id)?.trecho_sha256 ===
       createHash('sha256').update(row.trecho || '').digest('hex') }));

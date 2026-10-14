@@ -79,6 +79,7 @@ const COLUMN_DOCS = {
   situacao_analise: 'Descrição da revisão, da pendência ou do descarte.',
   efeito_na_participacao: 'Efeito comprovado sobre a participação municipal; vazio ou não inferido não significa ausência de efeito.',
   tipo_documento: 'Natureza da fonte, como lei, contrato, notícia ou diário.',
+  abrangencia: 'Nacional para orientações gerais; não representa a sede de um consórcio.',
   consorcio: 'Nome do consórcio mencionado no registro.',
   nome: 'Denominação da identidade do consórcio.',
   sigla: 'Sigla associada à entidade quando identificada.',
@@ -375,7 +376,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       } : null,
       sentAt: row.enviado_em, aiStatus: decision?.aiStatus || row.revisao_ia,
       previewOnly: Boolean(decision?.previewOnly),
-      identityPending: appliedReview?.fatos?.consorcio || hasVerifiedMultiConsortiumNames(appliedReview?.fatos, articleText?.texto)
+      identityPending: !activeCandidate || appliedReview?.fatos?.identidade_nao_aplicavel || appliedReview?.fatos?.consorcio || hasVerifiedMultiConsortiumNames(appliedReview?.fatos, articleText?.texto)
         ? '' : pendingIds.get(row.id) || '',
       editorialReview: appliedReview ? {
         decision: appliedReview.decisao, reason: appliedReview.motivo,

@@ -7,6 +7,19 @@ function row(id, trecho, extra = {}) {
     url: `https://exemplo.org/${id}`, ...extra };
 }
 
+test('vírgula interna não junta CIDESAPA e CIDESASUL nem transfere CNPJ entre eles', () => {
+  const prefix = 'Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental';
+  const docs = [row('araguaia', `${prefix} do Portal do Araguaia - CIDESAPA.`),
+    row('sul', '', { curatedMentions: [{ nome:`${prefix} da Região Sul`, sigla:'CIDESASUL',
+      cnpj:'08.051.612/0001.15', fonte_evidencia:'https://example.org/contrato', evidencia:'Proponente CIDESASUL' }] })];
+  const { identities, links } = buildIdentityCatalog(docs);
+  assert.equal(identities.length,2);
+  assert.notEqual(links[0].consorcio_id,links[1].consorcio_id);
+  assert.equal(identities.find(x=>x.sigla==='CIDESAPA').cnpj,'');
+  assert.equal(identities.find(x=>x.sigla==='CIDESASUL').cnpj,'08051612000115');
+  assert.match(identities.find(x=>x.sigla==='CIDESASUL').nome,/Social e Ambiental da Região Sul$/);
+});
+
 test('CNPJ só é aceito com dígitos verificadores válidos', () => {
   assert.equal(normalizeCnpj('95.640.322/0001-01'), '95640322000101');
   assert.equal(normalizeCnpj('95.640.322/0001-02'), '');

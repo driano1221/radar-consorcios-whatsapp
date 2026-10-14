@@ -40,6 +40,9 @@ function result(ufs, basis, evidence = '') {
 }
 
 export function resolveGeography(row = {}, item = {}, reviewed = {}) {
+  if (row.abrangencia === 'nacional' || item.editorialReview?.facts?.abrangencia === 'nacional') {
+    return { ufs: [], scope: 'nacional', basis: 'orientação geral; abrangência nacional', evidence: '' };
+  }
   if (reviewed.ufs?.length) return result(reviewed.ufs, 'revisão documental', reviewed.evidence || '');
   const recorded = String(row.uf || '').split(/[,;/ ]+/).filter((uf) => VALID_UFS.has(uf));
   if (recorded.length) return result(recorded, 'catálogo', row.municipio || row.titulo || '');

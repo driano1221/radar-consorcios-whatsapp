@@ -1,7 +1,7 @@
 import { itemId } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
 
-export const AI_PROMPT_VERSION = 3;
+export const AI_PROMPT_VERSION = 4;
 
 // A IA revisa no envio real e, se pedido, na prévia (para a prévia mostrar o que de fato seria publicado).
 export function shouldReviewWithAi({ aiReviewEnabled, sendEnabled, aiPreview }, remainingToday) {
@@ -11,7 +11,7 @@ export function shouldReviewWithAi({ aiReviewEnabled, sendEnabled, aiPreview }, 
 const EMOJI = {
   CRIAÇÃO: '🟩', ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', SAÍDA: '🟧',
   RATEIO: '🟪', 'RATEIO EM TRAMITAÇÃO': '🟪', PROTOCOLO: '🟨', GOVERNANÇA: '🟨', CONTROLE: '🔎',
-  CRISE: '🟥', ATUAÇÃO: '📰',
+  CRISE: '🟥', ATUAÇÃO: '📰', FINANÇAS: '💰',
 };
 
 const SYSTEM = `Você revisa notícias sobre consórcios públicos intermunicipais brasileiros. Classifique APENAS o fato comprovado no texto recebido. CRIAÇÃO significa fundação de NOVA entidade consorcial; se consórcio existente criou agenda ou projeto relevante, classifique ATUAÇÃO. ADESÃO é ingresso oficializado; ADESÃO AUTORIZADA é lei ou ato que autoriza ingresso, relevante, mas NÃO prova adesão concluída; mera proposta sem autorização é irrelevante. CRISE inclui inadimplência que retire financiamento, paralise atividade ou cause prejuízo concreto a municípios. RATEIO exige contrato de rateio concreto publicado ou celebrado, não linha contábil, balanço, orçamento ou menção normativa. RATEIO EM TRAMITAÇÃO é autorização específica de dispensa ou outra etapa para formalizar contrato de rateio, sem prova de que foi assinado; nunca chame esse ato de contrato publicado. PROTOCOLO exige ratificação, assinatura ou alteração como fato principal, não citação incidental em contrato de serviço. Contrato rotineiro de prestação de serviço ou locação, mesmo com consórcio, não é notícia estrutural relevante. CONTROLE exige fiscalização real, não cláusula genérica sobre improbidade. Se o texto não comprova evento novo, marque relevante=false e categoria=IRRELEVANTE. Responda somente JSON: {"relevante":boolean,"categoria":"CRIAÇÃO|ADESÃO|ADESÃO AUTORIZADA|SAÍDA|RATEIO|RATEIO EM TRAMITAÇÃO|PROTOCOLO|GOVERNANÇA|CONTROLE|CRISE|ATUAÇÃO|IRRELEVANTE|INCERTO","novo_consorcio":boolean,"evidencia":"trecho literal curto do texto","justificativa":"uma frase"}. Não invente fatos nem use conhecimento externo.`;
@@ -22,6 +22,7 @@ function inputFor(item) {
     resumo: (item.summary || '').slice(0, 1400),
     trecho: (item.classification?.evidenceText || item.rawText || '').slice(0, 2200),
     etapa_identificada: item.classification?.stage || '',
+    abrangencia: item.classification?.scope || '',
     fonte: item.source || '',
   };
 }
@@ -62,7 +63,8 @@ export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, time
     headers: { authorization: `Bearer ${apiKey}`, 'content-type': 'application/json' },
     body: JSON.stringify({ model: 'deepseek-flash', thinking: { type: 'disabled' },
       response_format: { type: 'json_object' }, max_tokens: 250,
-      messages: [{ role: 'system', content: SYSTEM }, { role: 'user', content: JSON.stringify(input) },
+      messages: [{ role: 'system', content: SYSTEM.replace('|CRISE|ATUAÇÃO|', '|CRISE|ATUAÇÃO|FINANÇAS|') +
+        '\nFINANÇAS também inclui orientação tributária geral, com ato identificado, aplicável a consórcios públicos. É relevante mesmo sem entidade individual: preserve a abrangência geral, sem inventar nome ou CNPJ. Portaria que só nomeia fiscal de rateio já celebrado é documento de acompanhamento, não novo contrato nem novo alerta.' }, { role: 'user', content: JSON.stringify(input) },
         ...(retryStrict ? [{ role: 'user', content: 'A resposta precisa ter campos coerentes. Em evidencia, copie uma frase curta e CONTÍGUA exatamente de titulo, resumo ou trecho acima. Não use paráfrase, reticências, colchetes nem informação externa. Se não houver prova textual, responda relevante=false com evidencia literal da menção examinada.' }] : [])] }),
     signal: AbortSignal.timeout(timeoutMs),
   });
@@ -101,7 +103,7 @@ export function applyAiReview(item, review) {
     const preparatory = ['RATEIO EM TRAMITAÇÃO', 'ADESÃO AUTORIZADA', 'COOPERAÇÃO AUTORIZADA']
       .includes(originalCategory) || (originalCategory === 'FINANÇAS' &&
         /contrato de rateio não comprovado/i.test(item.classification.stage || ''));
-    const category = preparatory ? originalCategory : review.category;
+    const category = preparatory || item.classification.scope === 'orientacao_geral' ? originalCategory : review.category;
     const boundedReview = category === review.category ? review
       : { ...review, category, proposedCategory: review.category, boundedBy: 'etapa do ato' };
     return { ...item, aiReview: boundedReview,

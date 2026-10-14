@@ -7,6 +7,19 @@ import path from 'node:path';
 import { catalogRecord, mergeCatalogRecord, mergeStateIntoCatalog, saveCatalog } from '../src/lib/catalog.mjs';
 import { documentActId, materializeDocumentActs } from '../src/lib/document-acts.mjs';
 
+test('orientação nacional permanece na base sem entidade ou pendência de identidade fictícia', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-general-'));
+  try {
+    const row = catalogRecord({url:'https://example.org/orientacao',title:'Orientação aos consórcios públicos',
+      classification:{category:'FINANÇAS',score:10,scope:'orientacao_geral',evidenceText:'Solução de Consulta 145/2026: orientação aos consórcios públicos.'}},'2026-10-14','2026-10-14');
+    assert.equal(row.abrangencia,'nacional');
+    await saveCatalog(directory,new Map([[row.id,row]]));
+    assert.equal((await readFile(path.join(directory,'identidades.ndjson'),'utf8')).trim(),'');
+    assert.equal((await readFile(path.join(directory,'identidade-pendente.csv'),'utf8')).trim().split('\n').length,1);
+    assert.match(await readFile(path.join(directory,'eventos.csv'),'utf8'),/nacional/);
+  } finally { await rm(directory,{recursive:true,force:true}); }
+});
+
 test('catálogo guarda o texto de itens gerais e preserva o link direto recuperado', () => {
   const item = { kind: 'news', title: 'Consórcio abre seleção', url: 'https://news.google.com/rss/articles/id',
     articleUrl: 'https://example.org/materia', summary: 'A seleção oferece onze vagas para profissionais de saúde.',

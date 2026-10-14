@@ -223,6 +223,21 @@ const PARSERS = {
   'tce-pr-home': parseTcePrHome,
 };
 
+export function parseAmmMtPublication(html, item) {
+  const $ = load(html);
+  // Prefer the specific body even when article appears earlier in the DOM.
+  const selector = ['#publication-text', '.publication-text', '[itemprop="articleBody"]', 'article']
+    .find((candidate) => $(candidate).length);
+  const body = $(selector || '#publication-text').first().clone();
+  body.find('script,style,nav,footer,form,aside,.breadcrumb,.share-buttons').remove();
+  body.find('a[href="#publication-title"]').remove();
+  body.find('p,li,h1,h2,h3,h4,br').append(' ');
+  const rawText = normalizeWhitespace(body.text());
+  if (rawText.length < 50) throw new Error('Texto da publicação não encontrado');
+  return { ...item, summary: rawText.slice(0, 1800), rawText,
+    articleUrl: item.url, articleReader: 'amm_mt_corpo', contentProvenance: 'pagina_original' };
+}
+
 async function fetchAmmMt(site, since, config, fetchImpl) {
   const origin = new URL(site.url).origin;
   const searchUrl = new URL(site.url);
@@ -245,15 +260,9 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
     try {
       if (new URL(item.url).origin !== origin) throw new Error('Domínio inesperado');
       const response = await fetchWithRetry(item.url, { fetchImpl, timeoutMs: config.timeoutMs,
-        retries: 0, headers: { 'user-agent': config.userAgent || DEFAULT_USER_AGENT } });
+        retries: Math.min(1, config.retries ?? 1), headers: { 'user-agent': config.userAgent || DEFAULT_USER_AGENT } });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const $ = load(await responseText(response));
-      const body = $('#publication-text, .publication-text, [itemprop="articleBody"], article').first().clone();
-      body.find('script,style,nav,footer,form,aside,.breadcrumb,.share-buttons').remove();
-      body.find('p,li,h1,h2,h3,h4,br').append(' ');
-      const rawText = normalizeWhitespace(body.text());
-      if (rawText.length < 50) throw new Error('Texto da publicação não encontrado');
-      enriched.push({ ...item, summary: rawText.slice(0, 1800), rawText });
+      enriched.push(parseAmmMtPublication(await responseText(response), item));
     } catch (error) {
       console.warn(`[artigo:${site.name}] ${item.url}: ${error.message}`);
       enriched.push({ ...item, previewOnly: true, extractionError: error.message });
