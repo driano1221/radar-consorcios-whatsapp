@@ -57,6 +57,8 @@ flowchart TD
 
 O fluxo tem **dois destinos independentes**: a base histórica e o envio ao WhatsApp. Um fato pode estar confirmado na base e ser antigo demais para virar mensagem. O [fluxograma detalhado do painel](https://driano1221.github.io/radar-consorcios-whatsapp/) mostra também as verificações de novidade, fila e revisão por IA.
 
+Desde 14/10/2026, a AMM-MT está habilitada para alertas, mantendo a revisão por IA. Um corte de ativação bloqueia publicações anteriores e datas não verificáveis, inclusive na fila: habilitar uma fonte não libera seu acervo antigo. Textos fornecidos manualmente são identificados como tal, sem simular sucesso do coletor.
+
 ## Onde os dados ficam
 
 | Camada | O que representa | Onde consultar |

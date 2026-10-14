@@ -24,10 +24,10 @@ export function identityKey(name) {
   return normalizeForMatch(name).replace(/[^a-z0-9]+/g, ' ').trim();
 }
 
-function cleanName(value, { preserveDashes = false } = {}) {
+function cleanName(value, { preserveDashes = false, preserveCommas = false } = {}) {
   let text = normalizeWhitespace(value)
     .split(preserveDashes ? /\s*\([A-Z][A-Z\d-]{2,15}\)/ : /\s+[–—-]\s+|\s*\([A-Z][A-Z\d-]{2,15}\)/)[0]
-    .split(/[.;:()]|,(?!\s*(?:social|(?:e\s+)?ambiental)\b)|\.\.\./i)[0]
+    .split(preserveCommas ? /[.;:()]|\.\.\./ : /[.;:()]|,(?!\s*(?:social|(?:e\s+)?ambiental)\b)|\.\.\./i)[0]
     .split(STOP)[0]
     .replace(/\s+(?:e|de|da|do|dos|das|para|na|no|com|em|a|o)$/i, '')
     .trim();
@@ -46,7 +46,9 @@ export function findIdentityMentions(row) {
   ];
   const mentions = [];
   for (const curated of row.curatedMentions || []) {
-    const name = cleanName(curated.nome || '', { preserveDashes: true });
+    // This field is already an explicitly reviewed name, not a free-text
+    // sentence: commas may separate geographical regions in the legal name.
+    const name = cleanName(curated.nome || '', { preserveDashes: true, preserveCommas: true });
     if (!name || !/^https:\/\//i.test(curated.fonte_evidencia || '')) continue;
     mentions.push({ name, acronym: curated.sigla || '', cnpj: normalizeCnpj(curated.cnpj || ''),
       origin: 'fonte complementar', evidence: curated.evidencia || name,

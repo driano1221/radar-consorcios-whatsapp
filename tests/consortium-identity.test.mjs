@@ -7,6 +7,16 @@ function row(id, trecho, extra = {}) {
     url: `https://exemplo.org/${id}`, ...extra };
 }
 
+test('nome conferido do CICANASTRA preserva todas as regiões separadas por vírgula', () => {
+  const name = 'Consórcio Intermunicipal da Serra da Canastra, Alto São Francisco e Médio Rio Grande';
+  const mentions = findIdentityMentions(row('cicanastra', '', { curatedMentions: [{
+    nome: name, sigla: 'CICANASTRA', fonte_evidencia: 'https://www.corregofundo.mg.leg.br/proposicoes/469',
+  }] }));
+  assert.equal(mentions.length, 1);
+  assert.equal(mentions[0].name, name);
+  assert.equal(mentions[0].cnpj, '');
+});
+
 test('vírgula interna não junta CIDESAPA e CIDESASUL nem transfere CNPJ entre eles', () => {
   const prefix = 'Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental';
   const docs = [row('araguaia', `${prefix} do Portal do Araguaia - CIDESAPA.`),

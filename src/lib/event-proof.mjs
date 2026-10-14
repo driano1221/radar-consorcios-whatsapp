@@ -70,6 +70,21 @@ function withEvidence(result, evidence) {
 export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
+  // A draft includes the future law's enactment formula. The actual page status
+  // takes precedence; an earlier assembly decision is a separate, limited fact.
+  if (/^projeto de lei(?: ordin[aá]ria)?\b/i.test(title) && /\bmat[eé]ria em tramita[cç][aã]o\b/i.test(text)) {
+    const assembly = /\baltera[cç][aã]o do contrato de cons[oó]rcio p[uú]blico\b.{0,230}\baprovada pelas assembleias gerais\b.{0,100}\b\d{2}\/\d{2}\/20\d{2}\b/i;
+    if (assembly.test(text)) return withEvidence({ ...classification, category: 'GOVERNANÇA', emoji: '⬛',
+      score: Math.max(5, classification.score || 0),
+      stage: 'alteração aprovada em assembleias segundo o projeto; ratificação municipal ainda em tramitação',
+      reasons: [...classification.reasons.filter((reason) => !reason.startsWith('rejeitado:')),
+        'projeto relata aprovação prévia em assembleias; fórmula da minuta não comprova sanção municipal'] },
+    literalEvidence(text, [assembly], 10, 100));
+    return withEvidence({ ...classification, category: 'GERAL', emoji: '📰', score: 0,
+      stage: 'projeto em tramitação; aprovação e sanção municipais não comprovadas',
+      reasons: [...classification.reasons, 'rejeitado: fórmula de promulgação na minuta não prova lei sancionada'] },
+    literalEvidence(text, [/\bmat[eé]ria em tramita[cç][aã]o\b/i], 0, 150));
+  }
   if (!text || classification.category === 'GERAL') return classification;
 
   if (/^instru[cç][aã]o normativa\b/i.test(title) &&

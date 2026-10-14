@@ -133,7 +133,8 @@ async function main() {
       `${classified.filter((item) => item.triageResolution?.decision === 'adotado').length} adotado(s); ` +
       `${classified.filter((item) => item.triageResolution?.decision === 'descartado').length} descartado(s).`);
   }
-  const publicationOptions = { lookbackHours: config.lookbackHours, minimumScore: config.minimumScore };
+  const publicationOptions = { lookbackHours: config.lookbackHours, minimumScore: config.minimumScore,
+    sourceActivations: config.webScrapers?.sites?.filter((site) => site.alertsFrom) || [] };
   classified = classified.map((item) => decidePublication(item, publicationOptions));
   if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
   const relevant = classified

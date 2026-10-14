@@ -157,6 +157,7 @@ function comparableText(value) {
 function publicationDate(row, review = null) {
   const verified = review?.fatos?.data_publicacao_original;
   if (/^\d{4}-\d{2}-\d{2}$/.test(verified || '')) return `${verified}T12:00:00Z`;
+  if (row.data_noticia_original && Number.isFinite(Date.parse(row.data_noticia_original))) return row.data_noticia_original;
   if (row.data_publicacao) return row.data_publicacao;
   const match = /^https:\/\/data\.queridodiario\.ok\.org\.br\/\d+\/(\d{4}-\d{2}-\d{2})\//.exec(row.url || '');
   return match ? `${match[1]}T12:00:00Z` : '';
@@ -324,7 +325,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       actPage: isAct ? Number(row.pagina_inicio) : null,
       url: decision?.articleUrl || row.article_url || row.url,
       publishedAt: publicationDate(row, appliedReview), publishedDateSource: appliedReview?.fatos?.data_publicacao_original
-        ? 'revisao_editorial' : row.data_publicacao ? 'catalogo'
+        ? 'revisao_editorial' : row.data_noticia_original && Number.isFinite(Date.parse(row.data_noticia_original))
+          ? 'fonte_original' : row.data_publicacao ? 'catalogo'
         : publicationDate(row) ? 'url_edicao' : '',
       firstSeenAt: row.primeira_coleta,
       lastSeenAt: decision?.lastSeenAt || row.ultima_coleta,

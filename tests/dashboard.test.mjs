@@ -6,6 +6,17 @@ import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboard
   hasVerifiedMultiConsortiumNames } from '../scripts/build-dashboard.mjs';
 import { desktopFlowSvg, mobileFlowSvg } from '../scripts/build-flow-diagram.mjs';
 
+test('data original armazenada prevalece sobre indexação mesmo sem data no parecer editorial', () => {
+  const row = { id: 'original', titulo: 'Projeto de lei', fonte: 'Câmara', tipo_evento: 'GERAL',
+    trecho: 'Matéria em Tramitação', url: 'https://example.org/pl',
+    data_publicacao: '2026-10-09T20:46:00Z', data_noticia_original: '2026-06-01T18:55:00Z' };
+  const data = buildDashboardData({ archive: [row], events: [], consortia: [], links: [], pendingIdentity: [] });
+  assert.equal(data.items[0].publishedAt, row.data_noticia_original);
+  assert.equal(data.items[0].publishedDateSource, 'fonte_original');
+  const fallback = buildDashboardData({ archive: [{ ...row, data_noticia_original: 'inválida' }], events: [], consortia: [], links: [], pendingIdentity: [] });
+  assert.equal(fallback.items[0].publishedAt, row.data_publicacao);
+});
+
 test('rejeição editorial elimina pendência de identidade do contador, sem apagar motivo', () => {
   const row = { id:'rejeitado', titulo:'Rubrica de orçamento', trecho:'Previsão genérica de rateio',
     url:'https://example.org/a', ultima_coleta:'2026-10-14', tipo_evento:'RATEIO' };

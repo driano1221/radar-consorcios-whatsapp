@@ -4,6 +4,20 @@ import { classifyItem } from '../src/lib/classifier.mjs';
 import { formatWhatsAppMessage } from '../src/lib/format.mjs';
 import { readFile } from 'node:fs/promises';
 
+test('Córrego Fundo: minuta não é sanção, mas relata alteração anterior aprovada nas assembleias', async () => {
+  const rawText = await readFile(new URL('./fixtures/corrego-fundo-pl1129.txt', import.meta.url), 'utf8');
+  const item = { kind: 'news', title: 'PROJETO DE LEI ORDINÁRIA N.º 1129/2026', rawText };
+  const result = classifyItem(item);
+  assert.equal(result.category, 'GOVERNANÇA');
+  assert.match(result.stage, /segundo o projeto; ratificação municipal ainda em tramitação/);
+  assert.match(result.evidenceText, /aprovada pelas Assembleias Gerais/);
+  assert.match(result.evidenceText, /12\/02\/2026/);
+  const draftOnly = classifyItem({ ...item, rawText: rawText.replace(/Art\. 1º\.[\s\S]*?(?=Art\. 2º\.)/, '') });
+  assert.equal(draftOnly.category, 'GERAL');
+  assert.match(draftOnly.stage, /sanção municipais não comprovadas/);
+  assert.equal(classifyItem({ ...item, rawText: rawText.replace('aprovada pelas Assembleias Gerais', 'a ser submetida às Assembleias Gerais') }).category, 'GERAL');
+});
+
 test('orientação tributária geral tem abrangência própria sem inventar entidade', () => {
   const rawText = 'A Receita Federal, por meio da Solução de Consulta Cosit 145/2026, esclarece a imunidade dos consórcios públicos de direito privado. A CNM traz orientações aos gestores.';
   const result = classifyItem({ kind: 'news', title: 'CNM orienta gestores sobre consórcios públicos', rawText });

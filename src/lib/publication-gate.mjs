@@ -21,7 +21,8 @@ export function publicationDate(item, now = new Date()) {
   return null;
 }
 
-export function decidePublication(item, { now = new Date(), lookbackHours = 168, minimumScore = 5 } = {}) {
+export function decidePublication(item, { now = new Date(), lookbackHours = 168, minimumScore = 5,
+  sourceActivations = [] } = {}) {
   if (!isPublishableClassification(item.classification, minimumScore)) return {
     ...item, catalogDecision: item.catalogDecision || 'descartado',
     publicationDecision: 'descartado',
@@ -29,6 +30,25 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
   };
   const catalogDecision = item.catalogDecision || 'candidato';
   if (item.publicationDecision === 'historico') return { ...item, catalogDecision };
+  // Re-evaluate this against configuration even for queued or editorially
+  // approved items: activating a source must never release its old backlog.
+  const activation = sourceActivations.find((source) => source.alertsFrom && (
+    source.name === item.source || [item.url, item.articleUrl, item.sourceUrl].some((url) => {
+      try { return new URL(url).hostname === new URL(source.url).hostname; }
+      catch { return false; }
+    })));
+  if (activation) {
+    const original = item.sourcePublishedAt ||
+      (!/^https?:\/\/news\.google\.com\//i.test(item.url || '') ? item.publishedAt : null);
+    const cutoff = timestamp(activation.alertsFrom);
+    const date = timestamp(original);
+    if (!Number.isFinite(cutoff) || !Number.isFinite(date)) return {
+      ...item, catalogDecision, publicationDecision: 'data_nao_verificada',
+      publicationReason: 'Fonte recém-habilitada: falta data original válida para comprovar novidade após a ativação.',
+    };
+    if (date < cutoff) return { ...item, catalogDecision, publicationDecision: 'historico',
+      publicationReason: `Publicação anterior à ativação dos alertas da fonte (${activation.alertsFrom}); sem envio retroativo.` };
+  }
   const evidence = publicationDate(item, now);
   // O RSS do Google pode exibir hoje uma página publicada há meses. Sem data
   // do ato ou da fonte original, a data do feed não prova novidade.

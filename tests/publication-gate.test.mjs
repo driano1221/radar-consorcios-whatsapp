@@ -8,6 +8,25 @@ const now = new Date('2026-10-09T12:00:00Z');
 const base = { title: 'Consórcio realiza assembleia', url: 'https://exemplo.org/noticia',
   publishedAt: '2026-10-08T12:00:00Z', classification: { category: 'GOVERNANÇA', score: 9, reasons: [] } };
 
+test('ativação da AMM libera só publicações posteriores, sem perder registro histórico', () => {
+  const source = { name: 'Jornal Oficial AMM-MT', url: 'https://amm.diariomunicipal.org/publicacoes/',
+    alertsFrom: '2026-10-08T18:00:00Z' };
+  const options = { now, sourceActivations: [source] };
+  const old = { ...base, url: 'https://amm.diariomunicipal.org/publicacao/1/', catalogDecision: 'confirmado' };
+  assert.equal(decidePublication(old, options).publicationDecision, 'historico');
+  assert.equal(decidePublication(old, options).catalogDecision, 'confirmado');
+  const fresh = { ...old, publishedAt: '2026-10-09T00:00:00Z' };
+  assert.equal(decidePublication(fresh, options).publicationDecision, 'elegivel');
+  assert.equal(decidePublication({ ...fresh, sourcePublishedAt: old.publishedAt }, options).publicationDecision, 'historico');
+  assert.equal(decidePublication({ ...old, publishedAt: '' }, options).publicationDecision, 'data_nao_verificada');
+  assert.equal(decidePublication({ ...fresh, url: 'https://news.google.com/rss/articles/1', articleUrl: old.url }, options).publicationDecision, 'data_nao_verificada');
+  assert.equal(decidePublication(base, options).publicationDecision, 'elegivel');
+  assert.equal(decidePublication(fresh, { ...options, sourceActivations: [{ ...source, alertsFrom: 'invalid' }] }).publicationDecision, 'data_nao_verificada');
+  const state = { pending: { [itemId(old)]: { item: old } } };
+  assert.equal(reclassifyPending(state, 5, null,
+    (item, classification) => isNotifiable(decidePublication({ ...item, classification }, options))), 1);
+});
+
 test('data da página original prevalece sobre a reindexação do Google', () => {
   const html = '<html><head><meta property="article:published_time" content="2026-09-10T14:53:00-03:00"><meta property="article:modified_time" content="2026-10-08T12:00:00-03:00"></head><body></body></html>';
   const published = sourcePublicationDate(html, now);
