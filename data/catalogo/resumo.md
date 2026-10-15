@@ -1,6 +1,6 @@
 # Panorama da base histórica
 
-- 1893 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
+- 1907 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
 - 100 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 55 identidades candidatas de consórcios; 72 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 32 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
@@ -16,24 +16,25 @@
 | RATEIO | 10 |
 | FINANÇAS | 8 |
 | ADESÃO | 2 |
-| PROTOCOLO | 2 |
 | RATEIO EM TRAMITAÇÃO | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | COOPERAÇÃO AUTORIZADA | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
 | PROPOSTA DE ADESÃO | 1 |
+| PROTOCOLO | 1 |
+| SAÍDA | 1 |
 | SAÍDA AUTORIZADA | 1 |
 
 ## Registros recentes para conferir
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-15 | SAÍDA — ato publicado — efeito a verificar | candidato — requer revisão | [125-2026 - Termo de Inex 02.2026 - HOSPITAL SANTA RITA VG](https://amm.diariomunicipal.org/publicacao/1926182/) |
 | 2026-10-15 | ATUAÇÃO — relato — conferir documento original | publicado pelo radar — não confirmado manualmente | [CONIAPE realiza Assembleia Ordinária e visita técnica à nova sede em construção](https://consorcioconiape.pe.gov.br/2026/10/15/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-em-construcao/) |
 | 2026-10-14 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [DÉCIMO PRIMEIRO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1924395/) |
 | 2026-10-14 | GOVERNANÇA — alteração do protocolo; ingresso novo não comprovado | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.148, DE 08 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924135/) |
 | 2026-10-14 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.118, DE 25 DE JUNHO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924128/) |
 | 2026-10-14 | FINANÇAS — lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.136, DE 28 DE AGOSTO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924122/) |
-| 2026-10-14 | PROTOCOLO — ato publicado — efeito a verificar | candidato — requer revisão | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-14/5fa7ac803b84ea71acb8fccf99b08403e1bdf668.pdf) |
 | 2026-10-13 | FINANÇAS — orientação tributária geral; não é ato de consórcio individual | confirmado por revisão editorial — orientação da CNM sobre a Cosit 145/2026, reproduzida pela AMA-AL; abrangência geral aprovada pelo usuário | [CNM orienta gestores sobre posição da Receita Federal que trata de consórcios públicos - Confederação Nacional de Municípios (CNM)](https://news.google.com/rss/articles/CBMixAFBVV95cUxQendEVC13b1UtLTBPNWU2eWpzaFZpczZ3d051ak9rOWJ1cHMzRGZOSVVoZDgzRTJfc3JxbDFPVHlGbjB2SG8zamZ1ZjlYLXN3NjdvMDB4YkpmbmEwUVFIa3dMZVhRZnl0ZEZXYlVBRW5tZHFMdU1oQnE1QzhZT19jSVpuby15WUZPc1ZmM0xmQmwzVjc5M0xJNXFLbGt0M1VXZ3RRSVJ2dER5aUIxaFcxcXctVG1zZ2E5U05UdEFMaFZvN3FU?oc=5) |
 | 2026-10-13 | GOVERNANÇA — ratificação do estatuto consolidado; sem adesão automática a serviços | confirmado por revisão editorial — Lei 1448/2026 ratifica o estatuto do CIDESAPA e preserva a continuidade da entidade; não comprova ingresso novo | [LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923527/) |
 | 2026-10-13 | RATEIO — contrato de rateio 004/2026 assinado; pagamento não comprovado | confirmado por revisão editorial — extrato identifica partes, valor, vigência e data de assinatura; portaria de fiscal é evidência complementar do mesmo contrato | [EXTRATO DO CONTRATO DE RATEIO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1923311/) |
