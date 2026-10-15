@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 1811 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
-- 98 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 1842 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
+- 99 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 55 identidades candidatas de consórcios; 71 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 31 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 32 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -16,12 +16,12 @@
 | RATEIO | 10 |
 | FINANÇAS | 8 |
 | ADESÃO | 2 |
+| PROTOCOLO | 2 |
 | RATEIO EM TRAMITAÇÃO | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | COOPERAÇÃO AUTORIZADA | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
 | PROPOSTA DE ADESÃO | 1 |
-| PROTOCOLO | 1 |
 | SAÍDA AUTORIZADA | 1 |
 
 ## Registros recentes para conferir
@@ -32,6 +32,7 @@
 | 2026-10-14 | GOVERNANÇA — alteração do protocolo; ingresso novo não comprovado | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.148, DE 08 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924135/) |
 | 2026-10-14 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.118, DE 25 DE JUNHO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924128/) |
 | 2026-10-14 | FINANÇAS — lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.136, DE 28 DE AGOSTO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924122/) |
+| 2026-10-14 | PROTOCOLO — ato publicado — efeito a verificar | candidato — requer revisão | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-14/5fa7ac803b84ea71acb8fccf99b08403e1bdf668.pdf) |
 | 2026-10-13 | FINANÇAS — orientação tributária geral; não é ato de consórcio individual | confirmado por revisão editorial — orientação da CNM sobre a Cosit 145/2026, reproduzida pela AMA-AL; abrangência geral aprovada pelo usuário | [CNM orienta gestores sobre posição da Receita Federal que trata de consórcios públicos - Confederação Nacional de Municípios (CNM)](https://news.google.com/rss/articles/CBMixAFBVV95cUxQendEVC13b1UtLTBPNWU2eWpzaFZpczZ3d051ak9rOWJ1cHMzRGZOSVVoZDgzRTJfc3JxbDFPVHlGbjB2SG8zamZ1ZjlYLXN3NjdvMDB4YkpmbmEwUVFIa3dMZVhRZnl0ZEZXYlVBRW5tZHFMdU1oQnE1QzhZT19jSVpuby15WUZPc1ZmM0xmQmwzVjc5M0xJNXFLbGt0M1VXZ3RRSVJ2dER5aUIxaFcxcXctVG1zZ2E5U05UdEFMaFZvN3FU?oc=5) |
 | 2026-10-13 | GOVERNANÇA — ratificação do estatuto consolidado; sem adesão automática a serviços | confirmado por revisão editorial — Lei 1448/2026 ratifica o estatuto do CIDESAPA e preserva a continuidade da entidade; não comprova ingresso novo | [LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923527/) |
 | 2026-10-13 | RATEIO — contrato de rateio 004/2026 assinado; pagamento não comprovado | confirmado por revisão editorial — extrato identifica partes, valor, vigência e data de assinatura; portaria de fiscal é evidência complementar do mesmo contrato | [EXTRATO DO CONTRATO DE RATEIO Nº 004/2026](https://amm.diariomunicipal.org/publicacao/1923311/) |
@@ -42,6 +43,5 @@
 | 2026-10-09 | CONTROLE — contas de 2024 desaprovadas; cabe recurso | confirmado por revisão editorial — a notícia comprova julgamento do exercício 2024, diferente do exercício 2023 já registrado; não é duplicata desse julgamento anterior | [Falhas na concessão de gratificações levam TCE-PB a reprovar contas de consórcio de saúde do Vale do Piancó - Fonte 83](https://news.google.com/rss/articles/CBMi5wFBVV95cUxORENnc2laREt2bWpXTl8zX0t2R3h4em5URmVwMmNpejFmRGFpejAtVEJTVEZMb0pCY1FQQldmb1B2UEVCNm0zaWp6NzEyVEN0UUVoQzRIVU9OdmRRWjBOcTc5eU1ucjJWbUh3YTktX3JNTUE5S21mLWRlSUJQMlpYY3JvV0szbXZmd19OVFYxRnc1Y3J0czJ4ZFVqczNFMXpkR2tyZnlMbTAxMzBDckdraEJ3d2VicVFBUUVOVWx5MXNnZjF5cWdOUnk2ajNmMG1wT2V0Ti01TEFONG5kVkxCaEwwVkxoLVE?oc=5) |
 | 2026-10-09 | FINANÇAS — Lei 1.244/2026 autoriza repasse de R$ 150 mil ao CIDESA-NA; transferência não comprovada | confirmado por revisão editorial — lei municipal confirma autorização orçamentária para aquisição de terreno de aterro; não comprova que o repasse ocorreu ou que contrato de rateio foi assinado | [LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA](https://amm.diariomunicipal.org/publicacao/1923116/) |
 | 2026-10-09 | ATUAÇÃO — execução do serviço socioeducativo pelo CREAS por meio do CEMMIL desde maio de 2026 | confirmado por revisão editorial — o plano municipal comprova atuação do CEMMIL no serviço, mas descreve mudança iniciada em maio; não é novo contrato ou repasse assinado em outubro | [Diário Oficial de Mogi Guaçu (SP)](https://data.queridodiario.ok.org.br/3530706/2026-10-09/04512dfa6065751937309d0d73d72b65f5cc0c20.pdf) |
-| 2026-10-09 | RATEIO EM TRAMITAÇÃO — dispensa 157/2026 autorizada para futura formalização do rateio de 2027; contrato não demonstrado | confirmado por revisão editorial — o ato publicado autoriza a dispensa de licitação visando formalizar o contrato de rateio; não é contrato de rateio já celebrado nem pagamento executado | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-09/8a6f89e74a3d28002fc4dad419e3d843d96eca82.pdf) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
