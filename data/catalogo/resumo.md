@@ -1,15 +1,15 @@
 # Panorama da base histórica
 
-- 1851 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
-- 99 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 55 identidades candidatas de consórcios; 71 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 1893 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
+- 100 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 55 identidades candidatas de consórcios; 72 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 32 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 25 |
+| ATUAÇÃO | 26 |
 | GOVERNANÇA | 19 |
 | ADESÃO AUTORIZADA | 13 |
 | CONTROLE | 13 |
@@ -28,6 +28,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-15 | ATUAÇÃO — relato — conferir documento original | publicado pelo radar — não confirmado manualmente | [CONIAPE realiza Assembleia Ordinária e visita técnica à nova sede em construção](https://consorcioconiape.pe.gov.br/2026/10/15/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-em-construcao/) |
 | 2026-10-14 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [DÉCIMO PRIMEIRO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1924395/) |
 | 2026-10-14 | GOVERNANÇA — alteração do protocolo; ingresso novo não comprovado | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.148, DE 08 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924135/) |
 | 2026-10-14 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [LEI ORDINÁRIA Nº 1.118, DE 25 DE JUNHO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924128/) |
@@ -42,6 +43,5 @@
 | 2026-10-09 | GOVERNANÇA — alteração aprovada em assembleias segundo o projeto; ratificação municipal ainda em tramitação | confirmado por revisão editorial — O artigo 1º do projeto relata aprovação anterior nas assembleias do CICANASTRA. Aceitar apenas esse antecedente de governança; não afirmar ratificação municipal sancionada nem mudança do mandato já vigente. Texto fornecido pelo usuário após bloqueio por CAPTCHA. | [PROJETO DE LEI ORDINÁRIA N.º 1129/2026 - corregofundo.mg.leg.br](https://news.google.com/rss/articles/CBMijgFBVV95cUxOYUlWMVYzSnRfbU1JeDN2WFpUaGQ0MnlYNm1paEdGY2hIR05JR18xUTQtbkJDa196dEE0NG1CMjVDTWlmQ3RrOXF3RmJCY3JOR1J5endoQ0hTU1lRUnMyVk5xQ3F6dDQtbnFYSkdWelNyNm9nS2IyODk4Ry1vM3FodXJjNm5iOEJBakU0RHFB?oc=5) |
 | 2026-10-09 | CONTROLE — contas de 2024 desaprovadas; cabe recurso | confirmado por revisão editorial — a notícia comprova julgamento do exercício 2024, diferente do exercício 2023 já registrado; não é duplicata desse julgamento anterior | [Falhas na concessão de gratificações levam TCE-PB a reprovar contas de consórcio de saúde do Vale do Piancó - Fonte 83](https://news.google.com/rss/articles/CBMi5wFBVV95cUxORENnc2laREt2bWpXTl8zX0t2R3h4em5URmVwMmNpejFmRGFpejAtVEJTVEZMb0pCY1FQQldmb1B2UEVCNm0zaWp6NzEyVEN0UUVoQzRIVU9OdmRRWjBOcTc5eU1ucjJWbUh3YTktX3JNTUE5S21mLWRlSUJQMlpYY3JvV0szbXZmd19OVFYxRnc1Y3J0czJ4ZFVqczNFMXpkR2tyZnlMbTAxMzBDckdraEJ3d2VicVFBUUVOVWx5MXNnZjF5cWdOUnk2ajNmMG1wT2V0Ti01TEFONG5kVkxCaEwwVkxoLVE?oc=5) |
 | 2026-10-09 | FINANÇAS — Lei 1.244/2026 autoriza repasse de R$ 150 mil ao CIDESA-NA; transferência não comprovada | confirmado por revisão editorial — lei municipal confirma autorização orçamentária para aquisição de terreno de aterro; não comprova que o repasse ocorreu ou que contrato de rateio foi assinado | [LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA](https://amm.diariomunicipal.org/publicacao/1923116/) |
-| 2026-10-09 | ATUAÇÃO — execução do serviço socioeducativo pelo CREAS por meio do CEMMIL desde maio de 2026 | confirmado por revisão editorial — o plano municipal comprova atuação do CEMMIL no serviço, mas descreve mudança iniciada em maio; não é novo contrato ou repasse assinado em outubro | [Diário Oficial de Mogi Guaçu (SP)](https://data.queridodiario.ok.org.br/3530706/2026-10-09/04512dfa6065751937309d0d73d72b65f5cc0c20.pdf) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
