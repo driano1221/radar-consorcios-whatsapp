@@ -1,5 +1,15 @@
 # Auditoria da terceira rodada — critérios, erros e evidências complementares
 
+## Fechamento
+
+[Resultado final v3.2](SIMULACAO-ORIGINAIS-V32-2026-10-16.md): **80/82 decisões**, incluindo os 40 originais sem pendências. Nos mesmos 70, nove → dois retidos; nos 12 adicionais, um aceite e 11 descartes. Nenhuma ativação.
+
+O complemento v3.1 [38963339185](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38963339185) passou 450 testes e fez 79 chamadas. Resolveu os casos de histórico, oficina, ordem judicial, alteração de protocolo e parceria firmada, mas a IA voltou a aceitar concurso CEMMIL como atuação; a regra bloqueou. Uma resposta do mural veio com JSON inválido; o descarte é sustentado pela regra explícita, não pela IA.
+
+O fechamento v3.2 [38963842366](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38963842366) passou 451 testes e repetiu **todas as respostas salvas**, sem nova chamada de IA, sem substituir respostas ruins. Separou-se versão da regra (3.2) e política de leitura (3.1). O único delta decisório sobre v3.1 foi CEMMIL: retido → descarte explícito de seleção de pessoal. Histórico e composição municipal comprovados continuam protegidos dessa exclusão. Permanecem apenas Divinópolis e a notícia com três processos TCE-MG.
+
+Não houve divergência de aceite/descarte ou categoria entre as 57 decisões concluídas que têm referência comparável. A auditoria dos casos novos é do assistente e a amostra foi usada para ajuste; não apresentar a taxa de decisão como precisão futura.
+
 ## Escopo e segurança
 
 Somente simulação na branch `test/original-triage-simulation`. Não alterar `src`, configuração, acervo, revisões, painel ou estado do WhatsApp. Não aplicar automaticamente decisões nem transformar republicações em fatos novos.
