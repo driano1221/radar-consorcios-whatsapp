@@ -1,5 +1,11 @@
 # Triagem automática — estado em 16/10/2026
 
+## Versão preparada, ainda não ativa
+
+A [simulação v7](SIMULACAO-ORIGINAIS-V7-2026-10-16.md) integra as revisões primárias de Divinópolis e TCE-MG sem substituir ou apagar a notícia original. Foram repetidos 118 documentos e acrescentados 12 corpos do acervo: 4 aceitos, 5 descartados e 3 exceções nesta amostra adicional. As exceções são texto cortado (Cisa), prova de outro momento (CIMU) e divergência entre título/origem e corpo (CNM). Não são descartes.
+
+`npm run triage:simulate -- --frozen` reproduz o teste sem API e sem gravar no catálogo. `primary-evidence.mjs` e `scripts/lib/original-v7.mjs` estão preparados, mas não importados pelo fluxo de produção. Revisão documental validada prevalece; sem revisão, regras e IA precisam concordar no **mesmo fato e etapa**, não apenas na categoria. Nenhuma habilitação ou reenvio foi realizado nesta rodada.
+
 ## O que já funciona sem pedir uma decisão a cada notícia
 
 1. **Descoberta e leitura:** coletores, Readability/Trafilatura, leitores de portais, PDF e OCR seletivos. CNM usa o conteúdo público estruturado da notícia individual; seu índice fornece apenas um resumo.

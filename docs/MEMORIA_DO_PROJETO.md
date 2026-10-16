@@ -2,6 +2,14 @@
 
 Atualização mais recente: **16 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Simulação v7 e integração das provas — 16/10/2026, atualização mais recente
+
+- Pedido: integrar Divinópolis e três processos do TCE, testar amostra adicional e alinhar código, **sem ativar nem reenviar**. Branch `test/original-triage-v7`; nenhuma alteração na base, estado de envio, agenda ou configuração de produção.
+- Integradas revisões aprovadas, com conferência de hash do PDF, página, trecho, selo e identidade canônica. Duplicata Divinópolis aponta ao fato existente. Três segmentos TCE resolvidos; divergência CONSANE preservada e vinculada explicitamente, sem fuzzy matching.
+- Repetidos 118 documentos anteriores; nenhuma mudança fora da integração aprovada. Mais 12 corpos do acervo (não novas coletas): resultado final 4 aceitos, 5 descartados, 3 retidos. Reeleição CISMIV passou sem afirmar posse; CIMU retido por prova histórica usada para chamamento atual; CNM retida no experimento de originais por título SC/corpo PR; Cisa continua sem íntegra. Não alterar as revisões anteriores por fonte alternativa a partir deste teste.
+- 508 testes locais; pacote público compilado sem publicar; 12 chamadas novas e replay congelado sem API. Respostas brutas e referência anterior preservadas. Primeira execução experimental falhou antes da API por segmento sem texto; erro do runner corrigido e coberto por teste.
+- [Relatório, antes/depois, comandos e próximos passos](SIMULACAO-ORIGINAIS-V7-2026-10-16.md). Workflow final somente leitura, sem segredos de IA/WhatsApp. Preparado não significa ativo; próximos passos são resolver as três exceções, testar amostra independente e apresentar ativação.
+
 ## Aplicação documental retroativa: Divinópolis e TCE-MG — 16/10/2026
 
 - Usuário autorizou aplicar as correções previamente apresentadas, atualizar o painel e preservar fontes/divergência do CONSANE, sem duplicar nem reenviar. Aplicação isolada da branch experimental: **não ativada a triagem automática de originais**. Sua simulação anterior permanece 80/82, não 82/82 automático.

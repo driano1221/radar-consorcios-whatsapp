@@ -9,6 +9,7 @@
   },
   "scripts": {
     "collect": "node src/radar.mjs",
+    "triage:simulate": "node scripts/simulate-original-v7.mjs",
     "catalog:update": "node scripts/update-catalog.mjs",
     "reviews:seal": "node scripts/seal-event-reviews.mjs",
     "catalog:backfill": "node scripts/update-catalog.mjs --history",

@@ -2,7 +2,7 @@ name: Integração documental v7 sem aplicação ou envios
 on:
   push:
     branches: [test/original-triage-v7]
-    paths: [docs/simulacao-v7-amostra-nova.json, scripts/simulate-original-v7.mjs, .github/workflows/simulate-original-v7.yml]
+    paths: [docs/simulacao-v7-resultado.json, scripts/simulate-original-v7.mjs, scripts/lib/original-v7.mjs, scripts/audit-original-v7.mjs, src/lib/primary-evidence.mjs, tests/original-v7-safety.test.mjs, tests/primary-evidence-integration.test.mjs, .github/workflows/simulate-original-v7.yml]
 permissions:
   contents: read
 jobs:
@@ -17,10 +17,13 @@ jobs:
           cache: npm
       - run: npm ci --ignore-scripts
       - run: npm test
-      - name: Integrar evidências em memória e avaliar apenas a amostra nova
-        run: node scripts/simulate-original-v7.mjs --ai
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      - run: npm run check
+      - name: Repetir integração e amostra com respostas congeladas, sem API
+        run: node scripts/simulate-original-v7.mjs --frozen
+      - name: Auditar provas e referência anterior à IA
+        run: node scripts/audit-original-v7.mjs output/original-v7/report.json
+      - name: Validar pacote público sem publicar
+        run: npm run dashboard:build:public
       - name: Garantir dados, estado e configuração preservados
         if: always()
         run: git diff --exit-code HEAD -- data state config

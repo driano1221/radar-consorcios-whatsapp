@@ -5,6 +5,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {prepareV6,decideV6,readV6,VERSION} from './lib/original-v6.mjs';
 import {prepareProcess} from './lib/original-v5.mjs';
+import {refineV7} from './lib/original-v7.mjs';
 import {sha} from './lib/original-triage-shadow.mjs';
 import {loadPrimaryEvidenceContext,integratePrimaryEvidence} from '../src/lib/primary-evidence.mjs';
 import {protectedSnapshot} from './pilot-retroactive-ten.mjs';
@@ -41,7 +42,9 @@ if(mode==='--freeze'){
       return {...c,proposal:decideV6(prepareProcess(p,segment),c.review)};
     });
     assert.deepEqual(proposal,x.proposal);assert.deepEqual(children.map(c=>c.proposal),x.children.map(c=>c.proposal));
-    return integratePrimaryEvidence({...x,group:'regression',proposal,children},context);
+    const integrated=integratePrimaryEvidence({...x,group:'regression',proposal,children},context);
+    if(!integrated.integrated.basis)integrated.integrated=refineV7(p,x.review,proposal);
+    return integrated;
   });
   if(mode==='--validate'){
     assert.deepEqual(await protectedSnapshot(),before);
@@ -57,8 +60,10 @@ if(mode==='--freeze'){
     assert.equal(p.segments.length,0);
     const review=frozen?frozen.get(t.id)?.review:await readV6(p,{apiKey:process.env.DEEPSEEK_API_KEY}).catch(e=>({error:e.message}));
     assert.ok(review);const proposal=decideV6(p,review);
-    results.push(integratePrimaryEvidence({id:row.id,title:row.titulo,url:p.item.articleUrl,textHash:p.textHash,inputHash:p.inputHash,
-      group:'additional',rule:p.rule,review,proposal,children:[]},context));console.log(`[v7] ${results.length}/130`);
+    const integrated=integratePrimaryEvidence({id:row.id,title:row.titulo,url:p.item.articleUrl,textHash:p.textHash,inputHash:p.inputHash,
+      group:'additional',rule:p.rule,review,proposal,children:[]},context);
+    if(!integrated.integrated.basis)integrated.integrated=refineV7(p,review,proposal);
+    results.push(integrated);console.log(`[v7] ${results.length}/130`);
   }}));
   const count=(rows,key)=>rows.reduce((a,x)=>(a[x[key].decision]=(a[x[key].decision]||0)+1,a),{});
   const regression=results.filter(x=>x.group==='regression'),additional=results.filter(x=>x.group==='additional');
@@ -66,8 +71,9 @@ if(mode==='--freeze'){
     for(const f of d.children||[d.canonicalFact||d])if(f.decision==='aceito'&&f.basis==='approved_primary_document_review')canonical.set(f.canonicalId,f);}
   assert.equal(canonical.size,4);assert.deepEqual(await protectedSnapshot(),before);
   const report={generatedAt:new Date().toISOString(),commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),
-    integrationVersion:'primary-evidence-1',modelPolicy:VERSION,mode,productionActivated:false,whatsappCalls:0,protectedFilesUnchanged:true,
+    integrationVersion:'primary-evidence-1',safetyVersion:'original-v7-safety-1',modelPolicy:VERSION,mode,productionActivated:false,whatsappCalls:0,protectedFilesUnchanged:true,
     calls:mode==='--ai'?12:0,reusedPrevious:118,errors:additional.filter(x=>x.review.error).length,
+    usageReused:mode==='--frozen',
     usage:additional.reduce((a,x)=>({input:a.input+(x.review.usage?.prompt_tokens||0),output:a.output+(x.review.usage?.completion_tokens||0)}),{input:0,output:0}),
     regression:{total:118,before:count(regression,'proposal'),after:count(regression,'integrated')},
     additional:{total:12,decisions:count(additional,'integrated')},canonicalPrimaryFacts:[...canonical.values()],
