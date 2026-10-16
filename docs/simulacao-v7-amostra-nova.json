@@ -1,0 +1,115 @@
+{
+  "frozenBeforeCalls": true,
+  "seed": "v7-new-body",
+  "caveat": "Textos do acervo fora dos 118 anteriores; podem representar fatos já conhecidos e conter revisões editoriais. Não são novas coletas.",
+  "cases": [
+    {
+      "id": "dcec74f99198b643bcd72b43a774237e955976b14c92b495d2d03672d0766a06",
+      "title": "José Ivanir é reconduzido à presidência do CISMIV para o biênio 2027/2028 - primeiroasaber.com.br",
+      "url": "https://primeiroasaber.com.br/2026/09/18/jose-ivanir-e-reconduzido-a-presidencia-do-cismiv-para-o-bienio-2027-2028/",
+      "textHash": "05287b97e7b89430c7fc77edf9434d9788d41c355c90a30db7752743d11eae94",
+      "inputHash": "f3de021423322384e754fbd0a9ede26d1416f417a65970d71f1558e20a446b92",
+      "rule": "GOVERNANÇA",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "532facdf6f324b9dbd06ec9d54f5d2db1aa0476f06813d500ca2f9eaae9e35f1",
+      "title": "Promotorias cobram solução para crise em hospital regional - novidadesmt.com.br",
+      "url": "https://novidadesmt.com.br/mato-grosso/promotorias-cobram-solucao-para-crise-em-hospital-regional/",
+      "textHash": "8228ba17e83a330315418ea31e5a26148c6d72a7d5c7601d90fee9a46820cdc1",
+      "inputHash": "3dc0dcfa240a1c509137323c3d9ce9587b6bdb12010232693f1c42463e137bbb",
+      "rule": "CONTROLE",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "898db3c314687e35498e5c19112e171ea130dce95f270fa5dd00e528eb6b3f09",
+      "title": "Consórcio ABC recebe documentação para concessão de bolsas de estudo na Universidade Metodista - ABCD Jornal",
+      "url": "https://abcdjornal.com.br/cidades/noticia/2026/10/07/consorcio-abc-recebe-documentacao-para-concessao-de-bolsas-de-estudo-na-universidade-metodista/",
+      "textHash": "c4069937c72ed865c1da5f7a47e952b3a82b23b860c3617593e1c1442b2fa86f",
+      "inputHash": "f02e31013f427c9fbb175f30a19e5a6c9bbd16d16f545093711d7951a5516d94",
+      "rule": "ATUAÇÃO",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "b999516d1ecffa6fe25d5b4e56adce42098c762d2fd474f7e95ac9d1c883d13d",
+      "title": "Rio Negro (PR) e Mafra (SC) buscam empresa para ligação de ônibus após histórico de crise e operações provisórias - Diário do Transporte",
+      "url": "https://diariodotransporte.com.br/2026/10/06/rio-negro-pr-e-mafra-sc-buscam-empresa-para-ligacao-de-onibus-apos-historico-de-crise-e-operacoes-provisorias/",
+      "textHash": "e452a2603af1b85c7eea1d2bc2dbcf0b71aea86373a49d3d502410cc32204485",
+      "inputHash": "d46f89d4e42ac4e8b5a445b7b62d3d8e08eb5a766dbee56eb7c740b17c09a121",
+      "rule": "ATUAÇÃO",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "4ddc449611298193a3564f0ef640083a9722d214ceac08ee44cd76d17c975492",
+      "title": "Promotorias cobram solução para crise em hospital regional - estacaolivremt.com.br",
+      "url": "https://estacaolivremt.com.br/promotorias-cobram-solucao-para-crise-em-hospital-regional/",
+      "textHash": "69747515a85e01b070f581a34ddcf29bcc297bf0e85596cf8014a14698bfa423",
+      "inputHash": "adc9336eff6e7b7a27be2cd5f2bde236fa4ba61333087f1be39edc66e6433a10",
+      "rule": "CONTROLE",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6",
+      "title": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
+      "url": "https://cnm.org.br/comunicacao/noticias/municipios-de-santa-catarina-assinam-adesao-ao-conclima-saiba-como-participar",
+      "textHash": "6c7b7a25812572e948639a9647780ecf8be40ffbe0f8dcf825a648ac8989b155",
+      "inputHash": "ec749b918a54656c6d4d3a82cdebba73a08391e8d412c1cca39192fef146a4bb",
+      "rule": "PROTOCOLO",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "ec4b7c14dd8b01197d099a30b50a5cd1306220c313d7fd119dc1ba9176e58ff7",
+      "title": "EXTRATO DO TERCEIRO TERMO ADITIVO AO CONTRATO Nº 005/2026",
+      "url": "https://amm.diariomunicipal.org/publicacao/1926561/",
+      "textHash": "fd0cb2d548343b251eb1ec8dae91e00c159ea275e75e9527077872c09a7e1fce",
+      "inputHash": "6a4c6003c90c8965c022aa1ce315c97992bac4aff8f68c09f46374ba510876f1",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "87dc5bd138979403ec9fee53b85a479ec90b79f9e7c523f074b5ecf85f71a27d",
+      "title": "Consórcio Cemmil - SP abre vagas para nível fundamental em Pirassununga - PCI Concursos",
+      "url": "https://www.pciconcursos.com.br/noticias/consorcio-cemmil-sp-abre-vagas-para-nivel-fundamental-em-pirassununga",
+      "textHash": "7c964b66225d82732eba88e992394cd110ebcf037d59d2c802fd2aac5fca205b",
+      "inputHash": "3ebfd3a08e77acc6675884c16110c39d363f7f75ba7d78ef17d12d1a257c628e",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "9df6e6c7a7435e76d5941feb7ef4ade38217088371fc5202e38e3ba3a32a4545",
+      "title": "Consórcio Público Intermunicipal de Saúde do Triângulo Mineiro abre processo seletivo com 3 vagas para farmacêuticos - Qconcursos Folha Dirigida",
+      "url": "https://folha.qconcursos.com/n/consorcio-publico-intermunicipal-de-saude-do-triangulo-mineiro-abre-processo-seletivo-com-3-vagas-para-farmaceuticos",
+      "textHash": "8fbb75a3eddf13f098ad93b751523312dc5ae81cb4c232a49eadafc2d414c588",
+      "inputHash": "3639bd4ebcf9b28c291c98806b867f34b812c80356043603ddd5ba1ea506d8ae",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "8b87bddf1226cd58b3fa3cdb16633848bb37a49871d9ba6e2e2f8a49e3cd36d8",
+      "title": "PORTARIA Nº. 408/2026 ADM DE 06 DE OUTUBRO DE 2026",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924352/",
+      "textHash": "f9c6413add8046b1bcca0cec59875792c0a8bf44e13fb5ecab5aab5159734b42",
+      "inputHash": "c85574fa48d3fd34770014dec4d4c3bac1c449f7db7a1dbd9d479109bd2ad2cc",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "f5b8ae6462e0e8d5f84a1355608c4ee23ab47978b908379398742018702b932b",
+      "title": "Dr. Eugênio rebate boato sofre fim do Consórcio de Saúde e reforça participação de São Félix do Araguaia na gestão de Hospital Regional - Agência da Notícia",
+      "url": "https://www.agenciadanoticia.com.br/mato-grosso/noticia/146732/dr-eugenio-rebate-boato-sofre-fim-do-consorcio-de-saude-e-reforca-participacao-de-sao-felix-do-araguaia-na-gestao-de-hospital-regional",
+      "textHash": "f64dd8f35e3252250f2f5555af68637862e0f4e3f3f0a87d56999b704769f437",
+      "inputHash": "b36ba46c55c9c504e5b29280c7e33b7b3478258dbfcb2cac828cff74ee14059c",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "1739f8fe1c9d74305739341314b5e7d738dbee99190676ab1bfc1ad3165191dc",
+      "title": "CONSÓRCIO INTERMUNICIPAL MULTIFINALITÁRIO – CIM-AMREC - Jornal Volta Grande",
+      "url": "https://voltagrandeonline.com.br/noticias/publicacao-legal/14216-consorcio-intermunicipal-multifinalitario-cim-amrec/",
+      "textHash": "b6b3604e5136db28ae04850317f90ad4f5e4f6f07101294a4a85facf58134d54",
+      "inputHash": "cae007bc2cf687c53909d93ee09dc656567d6fc436692ae4f71d242ef32d408e",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+name: Integração documental v7 sem aplicação ou envios
+on:
+  push:
+    branches: [test/original-triage-v7]
+    paths: [docs/simulacao-v7-amostra-nova.json, scripts/simulate-original-v7.mjs, .github/workflows/simulate-original-v7.yml]
+permissions:
+  contents: read
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - name: Integrar evidências em memória e avaliar apenas a amostra nova
+        run: node scripts/simulate-original-v7.mjs --ai
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      - name: Garantir dados, estado e configuração preservados
+        if: always()
+        run: git diff --exit-code HEAD -- data state config
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: original-v7
+          path: output/original-v7/
+          retention-days: 7
