@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-16",
+  "baselineCommit": "2c3b5d6",
+  "comparison": "same current corpus, rules only; editorial overrides excluded",
+  "publications": 1982,
+  "readings": 1985,
+  "originalFulltexts": 263,
+  "beforeRelevantReadings": 122,
+  "afterRelevantReadings": 135,
+  "changedReadings": 15,
+  "changedDocuments": 14,
+  "applied": {
+    "newFacts": 2,
+    "duplicates": 2,
+    "confirmedBefore": 115,
+    "confirmedAfter": 117,
+    "duplicatesBefore": 29,
+    "duplicatesAfter": 31,
+    "whatsappCalls": 0
+  },
+  "changes": [
+    {
+      "id": "0c2c9c6b97c7fbbba3229c5f0da590b9bc8f7a14a5274eaa360c9c68ac84f8e0",
+      "origin": "original_fulltext",
+      "title": "Amurc abre novo processo seletivo para completar equipe de Consórcio de Acolhimento em Curitibanos - asemanacuritibanos.com.br",
+      "before": "GERAL",
+      "after": "GOVERNANÇA",
+      "proofKind": "documented_composition",
+      "reviewed": true
+    },
+    {
+      "id": "1806d33968e6c96ce4f595c75ab7f15a77f2aa0f704ab8a3d5a7854f8e093738",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC Avalia Tecnologia De Simulação Para Treinamento Das Guardas Municipais - abcagora.com.br",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "performed_institutional_activity",
+      "reviewed": true
+    },
+    {
+      "id": "1bb8aa8da2195060a12b04ce02b33d5ff9c85ed3e6578bfdce247960c4a0a300",
+      "origin": "original_fulltext",
+      "title": "Consórcio e Metodista firmam parceria para bolsas a estudantes de baixa renda - reporterdiario.com.br",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "signed_cooperation",
+      "reviewed": true
+    },
+    {
+      "id": "39a744a7c4c155d8ce9ed31e7bbc9c3d8f4cb016b236b75efe1acc779ee17809",
+      "origin": "original_fulltext",
+      "title": "Grande ABC discute estratégias para reconversão industria... - Consórcio Intermunicipal - Grande ABC",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "performed_institutional_activity",
+      "reviewed": true
+    },
+    {
+      "id": "6816037279c26f44c5a61bccdde19512d21f267870fcc3a029703630559c1a68",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC e Metodista firmam parceria para até mil bolsas de estudo para estudantes de baixa renda - Portal Opinião Publica",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "signed_cooperation",
+      "reviewed": true
+    },
+    {
+      "id": "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6",
+      "origin": "original_fulltext",
+      "title": "Municípios de Santa Catarina assinam adesão ao Conclima; saiba como participar - Confederação Nacional de Municípios",
+      "before": "GERAL",
+      "after": "PROTOCOLO",
+      "proofKind": "signed_municipal_protocol",
+      "reviewed": true
+    },
+    {
+      "id": "74fb67727a0d5f5ee97c168d1942c450fefb9f1f2ad7962ffdc32e16614b63a6",
+      "origin": "alternative:0670413879375b3f1a84fece582188eaf33d9ac22b52962c4f06e54378339c89",
+      "title": "Municípios do Paraná subscrevem o Protocolo de Intenções do Conclima",
+      "before": "GERAL",
+      "after": "PROTOCOLO",
+      "proofKind": "signed_municipal_protocol",
+      "reviewed": true
+    },
+    {
+      "id": "965b6035308c7fe0bf920a6e079ce963b88d6336a936579494f6c7cc8c35d0af",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC e Braskem Debatem Fortalecimento do Polo Petroquímico e Reindustrialização Regional - abcagora.com.br",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "performed_institutional_activity",
+      "reviewed": true
+    },
+    {
+      "id": "a22322a625e0c279aaaabd730c248accf6e1bea468df613c44616b60764cf84b",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC e Metodista firmam parceria para até 1.000 bolsas de estudo para estudantes de baixa renda - ABCD Jornal",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "signed_cooperation",
+      "reviewed": true
+    },
+    {
+      "id": "b940d09451244b1070878272f181eba9686128954f39b4717f43f19562e7d340",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC realiza visita técnica ao Centro de Formação da GCM de Santo André - folhadoabc.com.br",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "performed_institutional_activity",
+      "reviewed": true
+    },
+    {
+      "id": "cea72684cd8fbc51576e30d661d687d68f16639fa83c83d5d0b8f4e5cdfb115f",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas - abcagora.com.br",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "signed_cooperation",
+      "reviewed": true
+    },
+    {
+      "id": "cecaed5b3a4626460cc38b4e04f14216b6e64c2e021fa8224ae8af65e68b91de",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC Lança Ação Para Estruturar Cadeia Do Cambuci - ABC Agora",
+      "before": "ATUAÇÃO",
+      "after": "ATUAÇÃO",
+      "proofKind": "performed_institutional_activity",
+      "reviewed": true
+    },
+    {
+      "id": "cfbb82ef4da4e9f28b3b424e3aea2e29de4ec3c29db4364a3cb45eaad399bc67",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC inicia tratativas para construção de um Plano Regional de Mudanças Climáticas - portalopiniaopublica.com.br",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "performed_institutional_activity",
+      "reviewed": true
+    },
+    {
+      "id": "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb",
+      "origin": "original_fulltext",
+      "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
+      "before": "GERAL",
+      "after": "GERAL",
+      "proofKind": "future_convocation",
+      "reviewed": true
+    },
+    {
+      "id": "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a",
+      "origin": "original_fulltext",
+      "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - abcdjornal.com.br",
+      "before": "GERAL",
+      "after": "ATUAÇÃO",
+      "proofKind": "performed_institutional_activity",
+      "reviewed": true
+    }
+  ]
+}
