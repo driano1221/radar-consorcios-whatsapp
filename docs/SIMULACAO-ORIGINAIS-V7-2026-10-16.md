@@ -63,7 +63,7 @@ Os rótulos finais concordam em 10/12 com a referência anterior, com zero falso
 - `npm run check`; pacote público do painel gerado localmente, sem publicar. Testes existentes continuam cobrindo evidência documental e bloqueio de reenvio diário/semanal.
 - 12 chamadas novas de IA, 42.989 tokens de entrada e 3.777 de saída; zero erros de API. Repetição posterior usa respostas congeladas, sem mais custo de API.
 - Primeira tentativa do workflow falhou **antes da API** por reconstrução de segmento sem `.text`. Corrigida com regressão no runner. Não foi falha de coleta ou de envio.
-- [Execução com a amostra adicional](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38980125052) aprovada. A validação final congelada é registrada abaixo após conclusão.
+- [Execução com a amostra adicional](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38980125052) aprovada. [Validação final congelada](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38980852455), commit `9aa5945`: sucesso em testes, análise sintática, simulação, auditoria, pacote público e invariantes. Artefato baixado e comparado: os 130 resultados são idênticos aos locais, zero chamadas de IA no replay, zero chamadas de WhatsApp, produção desativada no experimento. Relatório final versionado vem deste runner Linux.
 - `data/`, `state/` e `config/` preservados. Módulos novos não foram conectados ao coletor, catálogo ou remetente. Workflow final sem segredos de IA/WhatsApp e com permissão de leitura.
 
 ```sh

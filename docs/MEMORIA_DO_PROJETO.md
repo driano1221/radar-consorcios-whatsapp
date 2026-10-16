@@ -9,6 +9,7 @@ Atualização mais recente: **16 de outubro de 2026**. As primeiras seções sã
 - Repetidos 118 documentos anteriores; nenhuma mudança fora da integração aprovada. Mais 12 corpos do acervo (não novas coletas): resultado final 4 aceitos, 5 descartados, 3 retidos. Reeleição CISMIV passou sem afirmar posse; CIMU retido por prova histórica usada para chamamento atual; CNM retida no experimento de originais por título SC/corpo PR; Cisa continua sem íntegra. Não alterar as revisões anteriores por fonte alternativa a partir deste teste.
 - 508 testes locais; pacote público compilado sem publicar; 12 chamadas novas e replay congelado sem API. Respostas brutas e referência anterior preservadas. Primeira execução experimental falhou antes da API por segmento sem texto; erro do runner corrigido e coberto por teste.
 - [Relatório, antes/depois, comandos e próximos passos](SIMULACAO-ORIGINAIS-V7-2026-10-16.md). Workflow final somente leitura, sem segredos de IA/WhatsApp. Preparado não significa ativo; próximos passos são resolver as três exceções, testar amostra independente e apresentar ativação.
+- Validação final [38980852455](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38980852455), `9aa5945`: aprovada; artefato com 130 resultados idênticos aos locais. Build público aprovado sem deploy, dados/estado/configuração intactos. Código, memória e relatórios publicados somente na branch experimental, não mesclados ao `main` nesta rodada.
 
 ## Aplicação documental retroativa: Divinópolis e TCE-MG — 16/10/2026
 
