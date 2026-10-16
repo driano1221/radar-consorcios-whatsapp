@@ -12,7 +12,9 @@ const contracts = {
   hosted_activity:{type:'atividade_sediada',category:'ATUAÇÃO',aliases:['ATUAÇÃO'],
     check:q=>/consorcio intermunicipal/.test(q)&&/\bsediou\b/.test(q)&&/\b(?:oficina|curso|seminario)\b/.test(q)},
   judicial_order:{type:'ordem_judicial',category:'CONTROLE',aliases:['CONTROLE'],
-    check:q=>/\b(?:justica|juizo|tribunal) determinou que\b/.test(q)&&/consorcio intermunicipal/.test(q)&&/\b(?:promovam|promova|regularize|realize|providencie)\b/.test(q)},
+    check:q=>/consorcio intermunicipal/.test(q)&&(/\b(?:justica|juizo|tribunal) determinou que\b/.test(q)&&/\b(?:promovam|promova|regularize|realize|providencie)\b/.test(q)||/por sua vez, devera realizar/.test(q))},
+  signed_partnership_context:{type:'acordo_firmado',category:'ATUAÇÃO',aliases:['ATUAÇÃO','COOPERAÇÃO AUTORIZADA'],
+    check:q=>/\bfirmada em [a-z]+, a parceria preve\b/.test(q)},
 };
 export function factAgreement(rule, answer) {
   const c=contracts[rule.proofKind];

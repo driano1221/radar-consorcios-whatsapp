@@ -7,7 +7,7 @@ import { INSTITUTIONAL_REVIEW_POLICY } from '../../src/lib/institutional-proof.m
 import {refineShadow, entityProven} from './original-shadow-rules.mjs';
 import {factAgreement} from './shadow-facts.mjs';
 
-export const VERSION = 'original-shadow-3';
+export const VERSION = 'original-shadow-3.1';
 export const sha = value => createHash('sha256').update(value).digest('hex');
 const plain = value => normalizeWhitespace(String(value || '')).normalize('NFKC');
 export const literal = (body, quote, min = 25) => plain(quote).length >= min && plain(body).includes(plain(quote));
@@ -65,7 +65,7 @@ export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch} = {})
     method: 'POST', headers: {authorization: `Bearer ${apiKey}`, 'content-type': 'application/json'},
     body: JSON.stringify({model: 'deepseek-flash', thinking: {type: 'disabled'},
       response_format: {type: 'json_object'}, max_tokens: 1400,
-      messages: [{role: 'system', content: INSTITUTIONAL_REVIEW_POLICY+'\n'+SYSTEM+FACT_INSTRUCTIONS}, {role: 'user', content: JSON.stringify(input)}]}),
+      messages: [{role: 'system', content: INSTITUTIONAL_REVIEW_POLICY+'\n'+SYSTEM+FACT_INSTRUCTIONS+EXTRA_POLICY}, {role: 'user', content: JSON.stringify(input)}]}),
     signal: AbortSignal.timeout(45000),
   });
   if (!response.ok) throw new Error(`DeepSeek HTTP ${response.status}`);
@@ -77,12 +77,26 @@ export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch} = {})
 
 const FACT_INSTRUCTIONS=`\nAcrescente tipo_fato, escolhendo: constituicao_historica (formação já ocorrida relatada no histórico), alteracao_protocolo (ratificação de ALTERAÇÃO de protocolo existente), recomendacao_entregue (ato de controle efetivamente entregue pelo MP), atividade_sediada (consórcio sediou oficina/curso/seminário), ordem_judicial (Justiça determinou obrigação ao consórcio), outro, fora_escopo. O tipo descreve o FATO comprovado, não palavras soltas. Cite na evidencia a oração inteira que prova esse tipo, com agente e ação; "MP ressaltou que" ou anúncio genérico não prova a entrega de recomendação. Não trate recomendação para solucionar crise como dissolução ou crise institucional consumada. Em decisões judiciais, diferencie destinatários/prazos e não afirme trânsito em julgado. Para consórcio empresarial contratado por município, menção a ata gerenciada por consórcio público não o torna destinatário da cautelar. Relevante=true exige escopo entidade ou orientacao_geral; fora_escopo exige relevante=false. Não aceite texto de LEIA TAMBÉM como fato da notícia.`;
 
+const EXTRA_POLICY=`\nTambém existe tipo_fato acordo_firmado: notícia pode anunciar inscrições futuras e, separadamente, relatar uma parceria já firmada. Aproveite SOMENTE a assinatura histórica como ATUAÇÃO, citando a frase que diz firmada; não afirme que as inscrições/bolsas/atendimentos já ocorreram. Se apenas ocorrerá um evento, descarte: apoio ou título no presente não comprovam realização. Reajuste/recomposição tarifária de rotina fica fora por decisão editorial, mesmo emitido por agência de natureza consorcial. Normas gerais que estabelecem procedimentos SIM/SISBI continuam ATUAÇÃO normativa: cite o dispositivo que estabelece os procedimentos, não o CONSIDERANDO que cita outra resolução. Em ordem judicial com vários destinatários, evidencia deve mencionar o próprio consórcio e sua obrigação; prazo ou obrigação exclusiva da prefeitura não é prova da obrigação do consórcio. Copie evidencia_entidade exatamente, preservando travessão/hífen e acentos.`;
+
 export const contentReviewKey=p=>sha(VERSION+'\n'+p.item.rawText);
 export function bindContentReview(p, review) {
   if(review.version!==VERSION || review.textHash!==p.textHash || review.contentReviewKey!==contentReviewKey(p))
     throw new Error('Cannot reuse review of a different body or policy');
   return {...review,sourceInputHash:review.sourceInputHash||review.inputHash,inputHash:p.inputHash,
     binding:'same_complete_body'};
+}
+
+export function resolveIdentityEvidence(body,a) {
+  if(literal(body,a.evidencia_entidade)&&entityProven(body,a.entidade,a.evidencia_entidade))
+    return {quote:a.evidencia_entidade,origin:'segunda_leitura'};
+  // Recover ONLY a full name literally present in this body. This does not
+  // substitute factual evidence, infer an acronym or consult another document.
+  const name=plain(a.entidade);
+  if(name.length<25||name.length>220||!/^cons[oó]rcio\b/i.test(name))return null;
+  const escaped=name.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/[-–—]/g,'[-–—]');
+  const found=new RegExp(escaped,'i').exec(body)?.[0];
+  return found && literal(body,found)&&entityProven(body,name,found)?{quote:found,origin:'nome_localizado_no_corpo'}:null;
 }
 
 export function decideOriginal(prepared, review) {
@@ -112,6 +126,7 @@ export function decideOriginal(prepared, review) {
   if (!literal(body, evidence) || typeof a.justificativa !== 'string' || a.justificativa.length < 15)
     return pending('prova_literal_ausente');
   const accepted = rule.category !== 'GERAL' && rule.score >= 5;
+  const identity=accepted?resolveIdentityEvidence(body,a):null;
   const agreement=factAgreement(rule,a);
   if(accepted && agreement.supported && !agreement.matches) return pending('fato_ou_prova_divergente');
   if (accepted !== a.relevante || (accepted ? a.categoria !== rule.category && !agreement.matches : a.categoria !== 'IRRELEVANTE'))
@@ -121,13 +136,13 @@ export function decideOriginal(prepared, review) {
       return pending('etapa_ou_prova_da_regra_insuficiente');
     if (a.escopo === 'orientacao_geral') {
       if (rule.scope !== 'orientacao_geral' || a.entidade) return pending('escopo_geral_incoerente');
-    } else if (a.escopo !== 'entidade' || !plain(a.entidade) || !literal(body, a.evidencia_entidade) ||
-      !entityProven(body,a.entidade,a.evidencia_entidade)) return pending('identidade_sem_prova_literal');
+    } else if (a.escopo !== 'entidade' || !identity) return pending('identidade_sem_prova_literal');
   }
   return {decision: accepted ? 'aceito' : 'descartado', category: accepted ? rule.category : 'GERAL',
     stage: rule.stage || '', reason: a.justificativa, evidence,
     ...(agreement.matches?{factType:agreement.type,categoryResolution:a.categoria===rule.category?'concordante':'mesmo_fato_com_rotulo_normalizado',modelCategory:a.categoria}:{}),
     evidenceOrigin:fallback?'regra_concordante':'segunda_leitura',
     ...(rule.sourceQualification?{sourceQualification:rule.sourceQualification,reportedYear:rule.reportedYear}:{}),
+    ...(identity?{identityEvidence:identity.quote,identityEvidenceOrigin:identity.origin}:{}),
     entity: accepted ? a.entidade || '' : '', scope: a.escopo};
 }

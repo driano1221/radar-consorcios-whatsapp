@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {prepareOriginal,decideOriginal,reviewOriginal,bindContentReview,contentReviewKey,sha,VERSION} from '../scripts/lib/original-triage-shadow.mjs';
+import {prepareOriginal,decideOriginal,reviewOriginal,bindContentReview,contentReviewKey,resolveIdentityEvidence,sha,VERSION} from '../scripts/lib/original-triage-shadow.mjs';
 import {refineShadow,entityProven} from '../scripts/lib/original-shadow-rules.mjs';
 import {factAgreement,processSegments} from '../scripts/lib/shadow-facts.mjs';
 const text='O Consórcio Intermunicipal Grande ABC realizou, em 18/9, visita técnica para conhecer o simulador. O encontro foi conduzido pelo próprio consórcio com os representantes municipais, sem contratação de equipamento ou treinamento já realizado.';
@@ -71,8 +71,11 @@ test('shadow normaliza grafia sem inventar identidade ou aceitar sigla alheia',(
   assert.equal(entityProven(body,'CIV',body),false);
   assert.equal(entityProven(body+' O CIVA atua aqui.','Consórcio Intermunicipal do Vale Verde (CIVA)',body),false);
 });
-test('shadow prova literal continua exigindo citação do corpo mesmo normalizando o nome',()=>{
-  const prepared=p();assert.equal(decideOriginal(prepared,review(prepared,{evidencia_entidade:text.toUpperCase()})).reason,'identidade_sem_prova_literal');
+test('shadow pode localizar nome no corpo, mas nunca substituir citação inventada do fato',()=>{
+  const prepared=p();const d=decideOriginal(prepared,review(prepared,{evidencia_entidade:text.toUpperCase()}));
+  assert.equal(d.decision,'aceito');assert.equal(d.identityEvidenceOrigin,'nome_localizado_no_corpo');
+  assert.equal(text.includes(d.identityEvidence),true);
+  assert.equal(decideOriginal(prepared,review(prepared,{evidencia:answer.evidencia.toUpperCase()})).reason,'prova_literal_ausente');
 });
 test('shadow distingue mural de documentos de um documento que apenas cita outras normas',()=>{
   const rule={category:'RATEIO',score:9};
@@ -229,4 +232,49 @@ test('shadow segmentos preservam texto, processo e limites sem herdar dispositiv
   assert.equal(segments[0].hasDispositive,true);assert.equal(segments[1].hasDispositive,false);
   assert.equal(segments[2].hasDispositive,true);
   assert.deepEqual(processSegments('Lei 100 Art. 1º e Art. 2º'),[]);
+});
+
+test('shadow identidade recupera hífen/travessão com trecho real, nunca sigla inferida',()=>{
+  const body='O CONSÓRCIO INTERMUNICIPAL VALE AZUL – CIVA divulgou a resolução.';
+  const a={entidade:'Consórcio Intermunicipal Vale Azul - CIVA',evidencia_entidade:'citação errada'};
+  const found=resolveIdentityEvidence(body,a);assert.ok(found);assert.equal(body.includes(found.quote),true);
+  assert.equal(resolveIdentityEvidence(body,{...a,entidade:'Consórcio Intermunicipal Vale Verde - CIVA'}),null);
+  assert.equal(resolveIdentityEvidence(body,{...a,entidade:'CIVA'}),null);
+});
+
+test('shadow parceria passada não significa bolsa entregue nem assinatura futura',()=>{
+  const body='As bolsas da parceria entre o Consórcio Intermunicipal Vale Azul e a Universidade Local exigem documentos em novembro. Firmada em setembro, a parceria prevê até 500 bolsas para alunos.';
+  const base={category:'GERAL',score:0};
+  const result=refineShadow({kind:'news',rawText:body},base);
+  assert.equal(result.proofKind,'signed_partnership_context');assert.match(result.stage,/não são bolsas entregues/);
+  for(const v of ['A ser firmada em setembro','Seria firmada em setembro','Não firmada em setembro'])
+    assert.equal(refineShadow({kind:'news',rawText:body.replace('Firmada em setembro',v)},base).category,'GERAL');
+});
+
+test('shadow evento futuro não passa porque já chegou o dia, mas realização anterior impede veto',()=>{
+  const text='O Seminário de Capacitação ocorrerá nesta terça-feira, no auditório do Consórcio Intermunicipal Vale Azul. Inscrições gratuitas para profissionais.';
+  const base={category:'GERAL',score:0};
+  assert.equal(refineShadow({rawText:text},base).policyExclusion,'future_event_only');
+  assert.notEqual(refineShadow({rawText:text+' O consórcio realizou ontem uma oficina.'},base).policyExclusion,'future_event_only');
+});
+
+test('shadow credenciamento publicado não prova atendimento realizado',()=>{
+  const body='O consórcio publicou três termos de credenciamento que, juntos, preveem até R$ 100.000 para serviços do hospital. O hospital poderá realizar consultas.';
+  const item={kind:'news',title:'Consórcio firma credenciamentos',rawText:body};
+  assert.equal(refineShadow(item,{category:'ATUAÇÃO',score:7}).policyExclusion,'routine_supplier_news');
+  assert.notEqual(refineShadow({...item,rawText:body+' O hospital realizou ontem mil consultas.'},{category:'ATUAÇÃO',score:7}).policyExclusion,'routine_supplier_news');
+});
+
+test('shadow decisão editorial exclui reajuste tarifário, não norma de inspeção',()=>{
+  const item={title:'RESOLUÇÃO 30',rawText:'Contrato de Consórcio Público. Fica homologada, em proveito da concessionária, a recomposição do equilíbrio econômico-financeiro no montante de 9,60%, incidente sobre as tarifas de água.'};
+  assert.equal(refineShadow(item,{category:'ATUAÇÃO',score:8}).policyExclusion,'routine_tariff');
+  assert.notEqual(refineShadow({...item,rawText:'Esta resolução estabelece os procedimentos técnicos do serviço de inspeção consorciado.'},{category:'ATUAÇÃO',score:8}).category,'GERAL');
+});
+
+test('shadow obrigação judicial de prefeitura não prova prazo do consórcio',()=>{
+  const q='A Justiça determinou que o município e o Consórcio Intermunicipal Vale Azul promovam a regularização.';
+  const rule={proofKind:'judicial_order',category:'CONTROLE',evidenceText:q};
+  const a={categoria:'CONTROLE',tipo_fato:'ordem_judicial',evidencia:'A Justiça condenou o município a regularizar em 90 dias.'};
+  assert.equal(factAgreement(rule,a).matches,false);
+  assert.equal(factAgreement(rule,{...a,evidencia:'O Consórcio Intermunicipal Vale Azul, por sua vez, deverá realizar, em 180 dias, a adequação estrutural.'}).matches,true);
 });

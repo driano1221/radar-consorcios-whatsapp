@@ -15,6 +15,11 @@ export function refineShadow(item, rule) {
   const text=normalizeWhitespace(item.rawText), title=normalizeWhitespace(item.title);
   const use=(category,stage,evidence,kind)=>({...rule,category,score:category==='GERAL'?0:Math.max(5,rule.score||0),
     stage,evidenceText:evidence,proofKind:kind,policyExclusion:category==='GERAL'?kind:null,reasons:[stage]});
+  // User decision 16/10: routine tariff recompositions remain outside. This
+  // does NOT exclude new general inspection rules or consortium governance.
+  const tariff=/\bFica homologada,?[^.!?;]{0,160}\brecomposi[cç][aã]o do equil[ií]brio econ[oô]mico-financeiro[^.!?;]{0,230}\btarifas\b[^.!?;]{0,140}/i.exec(text);
+  if(/^RESOLU[CÇ][AÃ]O/i.test(title) && tariff && /Contrato de Cons[oó]rcio P[uú]blico/i.test(text))
+    return use('GERAL','recomposição tarifária rotineira excluída por critério editorial; não confundir com nova norma institucional',tariff[0],'routine_tariff');
   const indexMarker=/\b(?:lista de (?:outras )?publica[cç][oõ]es|foram encontrad[oa]s?\s+\d+\s+registros|exibindo at[eé]\s+\d+\s+publica[cç][oõ]es por p[aá]gina)\b/i.exec(text);
   if (indexMarker && ((text.match(/\bAcessar\b/gi)||[]).length>=3 || (text.match(/\bData:\s*\d/gi)||[]).length>=3))
     return use('GERAL','índice de documentos: descobrir e ler os links individuais; não registrar o mural',
@@ -42,6 +47,19 @@ export function refineShadow(item, rule) {
     if (/^crédito orçamentário;/.test(rule.stage||'') && /cr[eé]dito adicional/i.test(rule.evidenceText||''))
       return use('GERAL',rule.stage,rule.evidenceText,'budget_rubric_excluded');
   }
+  const future=/\b(?:semin[aá]rio|evento|oficina)[^.!?]{0,180}\b(?:ocorrer[aá]|ser[aá] realizado)(?=\s|[,.;])[^.!?]{0,220}/i.exec(text);
+  if(rule.category==='GERAL' && future && !/\b(?:sediou|realizou|aconteceu|foi realizado|firmou|firmada|assinou)\b/i.test(text))
+    return use('GERAL','evento apenas anunciado; data transcorrida e apoio não comprovam realização',future[0],'future_event_only');
+  const routine=/\b(?:termos? de credenciamento)[^.!?]{0,180}\b(?:preveem|prev[eê])\b[^.!?]{0,180}/i.exec(text);
+  if(item.kind==='news' && /credenciamentos?/i.test(title) && routine && /(?:hospital|laborat[oó]rio)/i.test(text) &&
+    !proof(text,/\b(?:Cons[oó]rcio|hospital|laborat[oó]rio)[^.!?]{0,90}\b(?:realizou|prestou|realizaram|prestaram)\b[^.!?]{0,100}\b(?:atendimentos|consultas|exames)\b/i))
+    return use('GERAL','credenciamento rotineiro de fornecedores; capacidade contratada e previsão financeira não comprovam atendimentos',routine[0],'routine_supplier_news');
+  const partnership=/\bparceria entre o Cons[oó]rcio Intermunicipal[^.!?]{0,200}/i.exec(text);
+  const signed=/\bFirmada em [a-zç]+, a parceria prev[eê][^.!?]{0,170}/i.exec(text);
+  if(item.kind==='news' && partnership && signed && signed.index>partnership.index && signed.index-partnership.index<600 &&
+      (text.match(/\bparceria entre\b/gi)||[]).length===1 && !/\b(?:seria|ser[aá]|a ser|n[aã]o)\s+firmada\b/i.test(text))
+    return use('ATUAÇÃO','parceria já firmada relatada como contexto; inscrições futuras não são bolsas entregues; verificar duplicidade do acordo',
+      text.slice(partnership.index,signed.index+signed[0].length),'signed_partnership_context');
   // Require an actual action and its public-consortium subject/target in the
   // same sentence. Neither passive attendance nor a future event qualifies.
   const workshop=proof(text,/\bCons[oó]rcio\s+(?:P[uú]blico\s+)?Intermunicipal\s+[^.!?;]{2,120}?\s+sediou,?\s+[^.!?;]{0,90}\b(?:oficina|curso|semin[aá]rio)\b[^.!?;]{0,180}/i);
