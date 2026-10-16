@@ -7,7 +7,8 @@ import { ALTERNATIVE_TRIAGE_VERSION, ALTERNATIVE_TRIAGE_FROM, sha, originalFinge
   readAlternativeRows, validAlternativeDecision, alternativeUrlKey } from '../src/lib/alternative-triage.mjs';
 
 function key(row, sources) {
-  return sha(JSON.stringify([originalFingerprint(row), sources.map(s => [s.id, s.texto_sha256]).sort(), ALTERNATIVE_TRIAGE_VERSION]));
+  return sha(JSON.stringify([originalFingerprint(row), sources.map(s => [s.id, s.texto_sha256,
+    s.titulo_fonte, s.url_fonte, s.data_fonte || '', s.comparacao]).sort(), ALTERNATIVE_TRIAGE_VERSION]));
 }
 
 export async function decideWithAlternatives(row, sources, { apiKey, review = reviewAlternative,
@@ -89,7 +90,7 @@ export async function triageAlternativeTexts({ directory = 'data/catalogo', appl
   const selected = archive.filter(row => {
     if (!eligibleAlternativeOriginal(row, reviewedIds, cutoff) || !byDocument.has(row.id)) return false;
     const previous = decisions.get(row.id), alternatives = byDocument.get(row.id);
-    if (!previous || previous.inputHash !== key(row, alternatives)) return true;
+    if (!previous || previous.inputHash !== key(row, alternatives) || !validAlternativeDecision(row, previous, sources, reviewedIds, cutoff)) return true;
     return previous.status === 'pendente' && Date.parse(previous.reviewedAt) + 86400000 <= now.getTime();
   }).sort((a, b) => String(a.primeira_coleta).localeCompare(String(b.primeira_coleta)) || a.id.localeCompare(b.id)).slice(0, maxDocuments);
   const results = [];

@@ -10,13 +10,12 @@ import { load } from 'cheerio';
 import { canonicalUrl } from './dedupe.mjs';
 import { redactPublicText } from './article-text-store.mjs';
 import { enrichArticle } from './article-enrichment.mjs';
+import { compareAlternative, matchWords as words, matchNumbers as numbers } from './alternative-match.mjs';
+export { compareAlternative } from './alternative-match.mjs';
 
 const exec = promisify(execFile);
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const normal = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-const stop = new Set('consorcio consorcios intermunicipal intermunicipais saude para pelo pela pelos pelas sobre noticia noticias semana mais esta este entre com dos das uma regio regiao regional prefeitura municipio municipios municipal publica publico noticia'.split(' '));
-const words = s => [...new Set(normal(String(s).split(/\s+-\s+/)[0]).match(/[a-z]{4,}/g) || [])].filter(w => !stop.has(w));
-const numbers = s => [...new Set((normal(String(s).split(/\s+-\s+/)[0]).match(/\b\d+\b/g) || []).filter(n => n.length < 4))];
 const array = x => x == null ? [] : Array.isArray(x) ? x : [x];
 const host = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; } };
 export const isSemana7 = row => /^semana\s*7$/i.test(row.fonte || '') ||
@@ -65,27 +64,6 @@ export async function readGuanhaesPdf(url, { fetchImpl = fetch, ocr = true } = {
     await unlink(file).catch(e => { if (e.code !== 'ENOENT') throw e; });
     await rmdir(directory);
   }
-}
-
-// This is a candidate retrieval score, NEVER a duplicate/event/identity decision.
-export function compareAlternative(original, candidate) {
-  const a = words(original.titulo || original.title), b = words(candidate.titulo || candidate.title);
-  const shared = a.filter(w => b.includes(w));
-  const originalNumbers = numbers(original.titulo || original.title);
-  const candidateNumbers = numbers(candidate.titulo || candidate.title);
-  const numberConflict = originalNumbers.some(n => !candidateNumbers.includes(n)) ||
-    candidateNumbers.some(n => !originalNumbers.includes(n));
-  const negative = title => /\b(nao|nega|negou|boato|desmente|desmentiu|suposto|possivel|proposta|projeto)\b/.test(normal(title));
-  const statusConflict = negative(original.titulo || original.title) !== negative(candidate.titulo || candidate.title);
-  // Only original-page dates are used to assert temporal proximity, never Google indexing dates.
-  const dates = [original.sourcePublishedAt || original.data_noticia_original,
-    candidate.sourcePublishedAt || candidate.data_noticia_original].map(Date.parse);
-  const dateVerified = dates.every(Number.isFinite);
-  const dateConflict = dateVerified && Math.abs(dates[0] - dates[1]) > 7 * 86400000;
-  const score = shared.length / Math.max(1, a.length);
-  return { eligible: a.length >= 4 && shared.length >= 4 && score >= .7 && !numberConflict && !statusConflict && !dateConflict,
-    shared, score, numberConflict, statusConflict, dateConflict, dateVerified,
-    equivalenceConfirmed: false };
 }
 
 export function alternativeSearchUrl(row) {

@@ -4,8 +4,9 @@ import path from 'node:path';
 import { classifyItem } from './classifier.mjs';
 import { canonicalUrl } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
+import { compareAlternative, bodyQuantityConflict } from './alternative-match.mjs';
 
-export const ALTERNATIVE_TRIAGE_VERSION = 1;
+export const ALTERNATIVE_TRIAGE_VERSION = 2;
 export const ALTERNATIVE_TRIAGE_FROM = '2026-10-16T17:13:25.000Z';
 export const sha = text => createHash('sha256').update(text).digest('hex');
 export const originalFingerprint = row => sha(JSON.stringify([row.id, row.url, row.article_url || '', row.titulo, row.trecho || '', row.data_noticia_original || '']));
@@ -35,6 +36,9 @@ export function alternativeInput(row, source) {
   const c = source.comparacao;
   if (!c?.eligible || c.numberConflict || c.statusConflict || c.dateConflict)
     return { error: 'A busca identificou conflito ou correspondência insuficiente.' };
+  const current = compareAlternative(row, { titulo: source.titulo_fonte, data_noticia_original: source.data_fonte });
+  if (!current.eligible || bodyQuantityConflict(row.titulo, source.texto))
+    return { error: 'Conflito de número, etapa, data ou correspondência insuficiente no texto atual; IA não pode presumir correção.' };
   const originalDate = Date.parse(row.data_noticia_original), alternativeDate = Date.parse(source.data_fonte);
   if (Number.isFinite(originalDate) && Number.isFinite(alternativeDate) && Math.abs(originalDate - alternativeDate) > 7 * 86400000)
     return { error: 'Datas de publicação distantes; correspondência precisa de conferência.' };
@@ -97,6 +101,7 @@ export function validAlternativeDecision(row, decision, sources, reviewedIds = n
     return !source || source.texto_sha256 !== reference.hash || sha(source.texto || '') !== reference.hash;
   })) return false;
   if (decision.status === 'pendente') return true;
+  if (decision.sources.some(ref => alternativeInput(row, sources.find(s => s.id === ref.id && s.documento_id === row.id)).error)) return false;
   const source = sources.find(s => s.id === decision.sourceId && s.documento_id === row.id);
   return Boolean(source && decision.sources.some(s => s.id === source.id && s.hash === source.texto_sha256) &&
     urlKey(source.url_fonte) === urlKey(decision.sourceUrl) &&

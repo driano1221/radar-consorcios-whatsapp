@@ -13,6 +13,7 @@ import { loadEditorialGuard, applyEditorialGuard } from '../src/lib/editorial-gu
 import { buildDashboardData, buildPublicDashboardData } from '../scripts/build-dashboard.mjs';
 import { recoveredSourcesView } from '../dashboard/src/recovery-view.mjs';
 import { JSDOM } from 'jsdom';
+import { compareAlternative } from '../src/lib/alternative-match.mjs';
 
 const originals = await readAlternativeRows('data/catalogo', 'arquivo-coletas.ndjson');
 const saved = await readAlternativeRows('data/catalogo', 'fontes-alternativas.ndjson');
@@ -79,6 +80,20 @@ test('uma fonte divergente impede decisão automática; não há votação', asy
   let i = 0;
   const d = await decideWithAlternatives(row, sources, { review: async () => ({ answer: { ...answerFor(row, sources[i]), mesmo_episodio: i++ === 0 } }) });
   assert.equal(d.status, 'pendente');
+});
+test('trava determinística impede IA de inventar erro de digitação em número conflitante', async () => {
+  for (const count of ['900', '9000']) {
+    const wrong = { ...row, titulo: row.titulo.replace('100', count), trecho: row.trecho.replace('100', count) };
+    const d = await decideWithAlternatives(wrong, [source], { review: () => { throw new Error('não consultar IA com conflito conhecido'); } });
+    assert.equal(d.status, 'pendente'); assert.equal(d.calls, 0);
+  }
+  const changed = source.texto.replaceAll('100 pacientes', '900 pacientes');
+  assert.ok(alternativeInput(row, { ...source, texto: changed, texto_sha256: sha(changed) }).error);
+});
+test('autorização versus ingresso efetivado não é diferença de estilo do título', () => {
+  const a = { titulo: 'Lei autoriza ingresso de Caratinga no Consórcio de Saúde União' };
+  const b = { titulo: 'Caratinga ingressou no Consórcio de Saúde União por lei' };
+  assert.equal(compareAlternative(a, b).statusConflict, true);
 });
 test('hash, original, data e decisão humana invalidam cache inadequado', async () => {
   const d = await decideWithAlternatives(row, [source], { review: mockReview });
