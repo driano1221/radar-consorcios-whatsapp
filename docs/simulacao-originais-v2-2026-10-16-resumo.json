@@ -1,0 +1,2590 @@
+{
+  "version": "original-shadow-2.1",
+  "commit": "ab1a724bee87e0f43e6f864b76ac7d0bd64e3890",
+  "run": "38959557626",
+  "generatedAt": "2026-10-16T20:05:57.366Z",
+  "corpusHash": "d29c1649b91daf06321b0042faa6534a25aa0c757d20e3cf917f20e9c74ecf4d",
+  "productionActivated": false,
+  "whatsappCalls": 0,
+  "protectedFilesUnchanged": true,
+  "counts": {
+    "archive": 1982,
+    "storedFulltext": 263,
+    "eligible": 244,
+    "editorialReviews": 224,
+    "reviewedArchive": 217,
+    "comparable": 58,
+    "referenceClasses": {
+      "aceito": 39,
+      "descartado": 19
+    },
+    "eligibleReviewed": 89,
+    "externalReferenceCases": 14,
+    "reviewedDuplicates": 21,
+    "duplicatesWithExactCandidate": 1,
+    "ineligibleReasons": {
+      "sem_integra_armazenada": 1719,
+      "pdf_exige_validacao_por_ato_e_pagina": 13,
+      "texto_acima_do_limite_sem_truncar": 5,
+      "reproducao_nao_e_original": 1
+    },
+    "ruleAgreements": 58,
+    "ruleFalseAccepts": 0,
+    "ruleFalseRejects": 0,
+    "categoryDisagreements": 0,
+    "aiSelected": 70,
+    "aiCalls": 70,
+    "aiErrors": 0,
+    "aiDecisions": {
+      "aceito": 40,
+      "descartado": 21,
+      "pendente": 9
+    },
+    "aiDecisionAgreements": 55,
+    "aiDecisionDisagreements": 0,
+    "aiAcceptedCategoryDisagreements": 0,
+    "proposedNewUnreviewed": 3,
+    "usage": {
+      "input": 202199,
+      "output": 17458
+    }
+  },
+  "cohorts": {
+    "original40": {
+      "total": 40,
+      "before": {
+        "descartado": 13,
+        "aceito": 8,
+        "pendente": 19
+      },
+      "after": {
+        "descartado": 16,
+        "aceito": 22,
+        "pendente": 2
+      },
+      "reasons": {
+        "divergencia_regra_ia": 2
+      },
+      "labeledDecisions": 38,
+      "verdictErrors": 0,
+      "categoryErrors": 0
+    },
+    "additional": {
+      "total": 18,
+      "before": {
+        "nao_testado": 18
+      },
+      "after": {
+        "aceito": 15,
+        "descartado": 2,
+        "pendente": 1
+      },
+      "reasons": {
+        "processos_independentes_no_corpo": 1
+      },
+      "labeledDecisions": 17,
+      "verdictErrors": 0,
+      "categoryErrors": 0
+    },
+    "fresh12": {
+      "total": 12,
+      "before": {
+        "nao_testado": 12
+      },
+      "after": {
+        "aceito": 3,
+        "pendente": 6,
+        "descartado": 3
+      },
+      "reasons": {
+        "divergencia_regra_ia": 6
+      },
+      "labeledDecisions": 0,
+      "verdictErrors": null,
+      "categoryErrors": 0
+    }
+  },
+  "sample": [
+    {
+      "id": "05cd3fe0259c62e2e6133f049b84329daed5274e1844017a46a66d96a84f7aba",
+      "url": "https://www.hojemais.com.br/aracatuba/noticia/cotidiano/rotary-entrega-consultorio-oftalmologico-ao-consorcio-de-saude-de-birigui",
+      "title": "Rotary entrega consultório oftalmológico ao Consórcio de Saúde de Birigui - Hojemais.com.br",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "equipamento recebido; início de atendimentos não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "recebeu um consultório oftalmológico completo, equipado para a realização de atendimentos especializados, que foi entregue oficialmente pelo Rotary",
+        "justificativa": "A notícia relata a entrega efetiva de um consultório oftalmológico ao consórcio, com a estrutura passando a integrar os serviços disponibilizados pelo Cimsa aos 15 municípios. Trata-se de atuação concreta de terceiro em benefício do consórcio, não mera previsão ou convocação. A composição municipal é explicitada, mas o fato principal é a entrega e incorporação do equipamento à operação do consórcio.",
+        "escopo": "entidade",
+        "entidade": "Cimsa",
+        "evidencia_entidade": "O Cimsa (Consórcio Intermunicipal de Saúde) de Birigui (SP) recebeu um consultório oftalmológico completo"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "equipamento recebido; início de atendimentos não comprovado",
+        "reason": "A notícia relata a entrega efetiva de um consultório oftalmológico ao consórcio, com a estrutura passando a integrar os serviços disponibilizados pelo Cimsa aos 15 municípios. Trata-se de atuação concreta de terceiro em benefício do consórcio, não mera previsão ou convocação. A composição municipal é explicitada, mas o fato principal é a entrega e incorporação do equipamento à operação do consórcio.",
+        "evidence": "recebeu um consultório oftalmológico completo, equipado para a realização de atendimentos especializados, que foi entregue oficialmente pelo Rotary",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Cimsa",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "e41368d47d43396f4ed134dd6dfa811e456b77403fead607e67f78b784af66bb",
+      "url": "https://consorciopublico.ro.gov.br/noticias/202",
+      "title": "CIMCERO convoca municípios para participarem da 121ª Assembleia Geral Ordinária - Consórcio CIMCERO",
+      "cohort": "original40",
+      "reference": "descartado",
+      "referenceCategory": "GERAL",
+      "rule": "GERAL",
+      "stage": "convocação e pautas futuras; realização e aprovação não comprovadas",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "O Consórcio Intermunicipal da Região Centro Leste do Estado de Rondônia – CIMCERO convoca os municípios consorciados para participarem da 121ª Assembleia Geral Ordinária",
+        "justificativa": "Trata-se de mera convocação para assembleia futura, com pauta a ser deliberada; não há fato institucional consumado (composição, deliberação, atuação ou contrato) no corpo do documento.",
+        "escopo": "entidade",
+        "entidade": "CIMCERO",
+        "evidencia_entidade": "O Consórcio Intermunicipal da Região Centro Leste do Estado de Rondônia – CIMCERO"
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "convocação e pautas futuras; realização e aprovação não comprovadas",
+        "reason": "Trata-se de mera convocação para assembleia futura, com pauta de deliberações apenas propostas e sem comprovação de realização ou aprovação; constitui convite e pauta, não ato institucional consumado.",
+        "evidence": "O Consórcio Intermunicipal da Região Centro Leste do Estado de Rondônia – CIMCERO convoca os municípios consorciados para participarem da 121ª Assembleia Geral Ordinária",
+        "entity": "",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "convocação e pautas futuras; realização e aprovação não comprovadas",
+        "reason": "Trata-se de mera convocação para assembleia futura, com pauta a ser deliberada; não há fato institucional consumado (composição, deliberação, atuação ou contrato) no corpo do documento.",
+        "evidence": "O Consórcio Intermunicipal da Região Centro Leste do Estado de Rondônia – CIMCERO convoca os municípios consorciados para participarem da 121ª Assembleia Geral Ordinária",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "e64cf89d7f8ea97c9151a19516a24da389782f86d27783df50720f2754725c2a",
+      "url": "https://barcelosnanet.com.br/correios-esperam-novo-emprestimo-ate-o-dia-15-consorcio-de-bancos-conta-com-tres-instituicoes-estrangeiras/",
+      "title": "Correios esperam novo empréstimo até o dia 15; consórcio de bancos conta com três instituições estrangeiras - Portal Barcelos na NET",
+      "cohort": "original40",
+      "reference": "descartado",
+      "referenceCategory": "GERAL",
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "O novo empréstimo, no valor de R$ 7 bilhões, já havia sido confirmado pelos Correios nas demonstrações financeiras do 1º semestre deste ano",
+        "justificativa": "O documento trata de empréstimo bancário a empresa estatal (Correios) com consórcio de bancos privados, não de consórcio público intermunicipal. Não há fato institucional de consórcio público.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "O texto trata de consórcio privado empresarial formado por bancos para concessão de empréstimo aos Correios, não de consórcio público intermunicipal; o termo 'consórcio' é usado em sentido privado/financeiro, sem qualquer entidade pública consorciada.",
+        "evidence": "a nova injeção de dinheiro deve vir de um novo consórcio de bancos, como feito no final do ano passado para os R$ 12 bilhões",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "O documento trata de empréstimo bancário a empresa estatal (Correios) com consórcio de bancos privados, não de consórcio público intermunicipal. Não há fato institucional de consórcio público.",
+        "evidence": "O novo empréstimo, no valor de R$ 7 bilhões, já havia sido confirmado pelos Correios nas demonstrações financeiras do 1º semestre deste ano",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "fora_escopo"
+      }
+    },
+    {
+      "id": "f46c947ce4de4487d7ab15448fa088c01b01fdee07c6d6749ec132428f45669a",
+      "url": "https://abcdjornal.com.br/maua/noticia/2026/09/10/consorcio-abc-e-braskem-discutem-fortalecimento-da-industria-e-preservacao-do-polo-petroquimico/",
+      "title": "Consórcio ABC e Braskem discutem fortalecimento da indústria e preservação do Polo Petroquímico - abcdjornal.com.br",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC recebeu nesta quarta-feira (9/9) a vice-presidente Jurídica, de Relações Institucionais e Comunicação da Braskem, Camilla Tápias, para discutir os desafios do setor petroquímico",
+        "justificativa": "Reunião efetivamente conduzida pelo Consórcio Intermunicipal Grande ABC com a Braskem para discutir preservação do Polo Petroquímico e reindustrialização, caracterizando atuação concreta do consórcio, sem que se trate de mera convocação ou plano aprovado.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC recebeu nesta quarta-feira (9/9) a vice-presidente Jurídica, de Relações Institucionais e Comunicação da Braskem"
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "A notícia relata reunião efetivamente conduzida pelo Consórcio Intermunicipal Grande ABC com representantes da Braskem, caracterizando atuação institucional concreta, e não mera convocação ou proposta; não se inferem acordos, planos aprovados ou entregas.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC recebeu nesta quarta-feira (9/9) a vice-presidente Jurídica, de Relações Institucionais e Comunicação da Braskem, Camilla Tápias, para discutir os desafios do setor petroquímico",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "Reunião efetivamente conduzida pelo Consórcio Intermunicipal Grande ABC com a Braskem para discutir preservação do Polo Petroquímico e reindustrialização, caracterizando atuação concreta do consórcio, sem que se trate de mera convocação ou plano aprovado.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC recebeu nesta quarta-feira (9/9) a vice-presidente Jurídica, de Relações Institucionais e Comunicação da Braskem, Camilla Tápias, para discutir os desafios do setor petroquímico",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "e672ae7aacfdb938379ee72bda602607da4fe08d3f47d225c233f0bbcb970970",
+      "url": "https://localmt.com.br/ministerio-publico-mt/promotorias-cobram-solucao-para-crise-em-hospital-regional/",
+      "title": "Promotorias cobram solução para crise em hospital regional - localmt.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "CONTROLE",
+      "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "as Promotorias de Justiça apresentaram análise sobre a situação jurídica do CISVP. Segundo o Ministério Público, o consórcio não teria concluído o processo de constituição previsto na Lei nº 11.107/2005",
+        "justificativa": "O Ministério Público conduziu audiência no âmbito de inquérito civil e emitiu a Recomendação nº 23/2026 sobre a regularidade institucional do consórcio (constituição não concluída) e a crise do hospital. Trata-se de controle/apuração e recomendação, sem condenação ou constituição do consórcio. A categoria CONTROLE abrange apuração e crise institucional apontada, sem confundir com sanção efetivada.",
+        "escopo": "entidade",
+        "entidade": "CISVP",
+        "evidencia_entidade": "prefeitos dos municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP)"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+        "reason": "O Ministério Público conduziu audiência no âmbito de inquérito civil e emitiu a Recomendação nº 23/2026 sobre a regularidade institucional do consórcio (constituição não concluída) e a crise do hospital. Trata-se de controle/apuração e recomendação, sem condenação ou constituição do consórcio. A categoria CONTROLE abrange apuração e crise institucional apontada, sem confundir com sanção efetivada.",
+        "evidence": "as Promotorias de Justiça apresentaram análise sobre a situação jurídica do CISVP. Segundo o Ministério Público, o consórcio não teria concluído o processo de constituição previsto na Lei nº 11.107/2005",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CISVP",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "5e27bff73a8da4143d94c966fc9eec9b7d9bf47bea177ad1402fa55d2b706079",
+      "url": "https://passandoalimpomt.com.br/mato-grosso/ministerio-publico-mt/promotorias-cobram-solucao-para-crise-em-hospital-regional/",
+      "title": "Promotorias cobram solução para crise em hospital regional - passandoalimpomt.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "CONTROLE",
+      "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CRISE",
+        "evidencia": "o consórcio não teria concluído o processo de constituição previsto na Lei nº 11.107/2005, o que levanta questionamentos sobre sua regularidade institucional e sobre a forma de repasse dos recursos públicos",
+        "justificativa": "A notícia relata audiência de ajustamento de conduta no âmbito de inquérito civil que apura condições do hospital e a situação jurídica do CISVP, com Recomendação nº 23/2026 apontando possível não conclusão do processo de constituição do consórcio e necessidade de regularização ou dissolução. Trata-se de crise institucional ocorrida e sob apuração, sem condenação e sem confundir investigação com decisão.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto",
+        "evidencia_entidade": "O Ministério Público de Mato Grosso (MPMT) reuniu, na quarta-feira (9), prefeitos dos municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP) e representantes da entidade"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "57cbc5c4169c8017e9c5c3f545acfe2f06058d8effea13d29d4e1c70a0d76c0c",
+      "url": "https://sapl.patobranco.pr.leg.br/materia/33573/acompanhar-materia/",
+      "title": "Acompanhamento de Matéria - sapl.patobranco.pr.leg.br",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "requerimento; ato de ingresso não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Requer ao Executivo Municipal o encaminhamento de informações técnicas e detalhadas necessárias ao Projeto de Lei no 69/2026, que ratifica, com reservas, o contrato de consórcio público do Consórcio Intermunicipal de Saneamento Do Paraná – CISPAR aprova o respectivo Estatuto Social, autoriza o pedido de ingresso do Município de Pato Branco no consórcio e dá outras providências.",
+        "justificativa": "Trata-se de requerimento de informações sobre projeto de lei em tramitação, não de ato constitutivo, adesão, autorização legislativa ou governança efetivada. A menção ao projeto não comprova ratificação, aprovação de estatuto ou autorização de ingresso consumadas, e o requerimento é mera solicitação de informações.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saneamento Do Paraná – CISPAR",
+        "evidencia_entidade": "Contrato de consórcio público do Consórcio Intermunicipal de Saneamento Do Paraná – CISPAR"
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "requerimento; ato de ingresso não comprovado",
+        "reason": "Trata-se de mero requerimento de informações sobre projeto de lei que ratifica contrato de consórcio, aprova estatuto e autoriza pedido de ingresso; não há prova de ratificação, ingresso efetivo, protocolo, governança ou qualquer ato institucional consumado, mas apenas etapa preparatória legislativa.",
+        "evidence": "Requer ao Executivo Municipal o encaminhamento de informações técnicas e detalhadas necessárias ao Projeto de Lei no 69/2026",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "requerimento; ato de ingresso não comprovado",
+        "reason": "requerimento; ato de ingresso não comprovado",
+        "evidence": "Tipo: REQ - Requerimento Número: 314 Ano: 2026 Ementa: Requer ao Executivo Municipal o encaminhamento de informações técnicas e detalhadas necessárias ao Projeto de Lei no 69/2026, que ratifica, com reservas, o contrato de consórcio público do Consórcio Intermunicipal de Saneamento Do Paraná – CISPAR",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "request_not_authorization"
+      }
+    },
+    {
+      "id": "97888cdbc4139f52de557a7c5321f8f8ff2082fcba1231438afaae3f27988d4c",
+      "url": "https://www.pontonacurva.com.br/executivo/apos-suspensao-de-cirurgias-mp-cobra-prefeitos-por-solucao-em-hospital/35001",
+      "title": "Após suspensão de cirurgias, MP cobra prefeitos por solução em hospital - pontonacurva.com.br",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "CONTROLE",
+      "rule": "CONTROLE",
+      "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "O Ministério Público de Mato Grosso (MPMT) deu 10 dias para os prefeitos dos municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP) regularizarem a situação do Hospital Regional de Peixoto de Azevedo (HRPAZ).",
+        "justificativa": "O MP instaurou inquérito civil e recomendou medidas ao consórcio em audiência de ajustamento de conduta; trata-se de controle em apuração, sem condenação ou dissolução consumada.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP)",
+        "evidencia_entidade": "municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP)"
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+        "reason": "A recomendação do MPMT em audiência de ajustamento de conduta, com prazo e exigências de regularização sanitária, financeira e institucional do CISVP, configura atuação de controle externo sobre o consórcio, distinta de crise ou mera menção. A dissolução é apenas uma alternativa apresentada, não ato consumado.",
+        "evidence": "O Ministério Público de Mato Grosso (MPMT) deu 10 dias para os prefeitos dos municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP) regularizarem a situação do Hospital Regional de Peixoto de Azevedo (HRPAZ).",
+        "entity": "CISVP",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+        "reason": "O MP instaurou inquérito civil e recomendou medidas ao consórcio em audiência de ajustamento de conduta; trata-se de controle em apuração, sem condenação ou dissolução consumada.",
+        "evidence": "O Ministério Público de Mato Grosso (MPMT) deu 10 dias para os prefeitos dos municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP) regularizarem a situação do Hospital Regional de Peixoto de Azevedo (HRPAZ).",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP)",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "abaee63293712160492481bad2162710c9c1b133a8c3ed5c9b8a21fc901cde03",
+      "url": "https://ngnoticiasdenovaguarita.com.br/promotorias-cobram-solucao-para-crise-em-hospital-regional/",
+      "title": "Promotorias cobram solução para crise em hospital regional - ngnoticiasdenovaguarita.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "CONTROLE",
+      "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "Segundo o Ministério Público, o consórcio não teria concluído o processo de constituição previsto na Lei nº 11.107/2005, o que levanta questionamentos sobre sua regularidade institucional e sobre a forma de repasse dos recursos públicos.",
+        "justificativa": "O Ministério Público, no âmbito de inquérito civil, aponta irregularidades na constituição do consórcio e entrega recomendação com prazos; trata-se de controle em apuração, sem condenação ou decisão judicial.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto",
+        "evidencia_entidade": "prefeitos dos municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP) e representantes da entidade"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+        "reason": "O Ministério Público, no âmbito de inquérito civil, aponta irregularidades na constituição do consórcio e entrega recomendação com prazos; trata-se de controle em apuração, sem condenação ou decisão judicial.",
+        "evidence": "Segundo o Ministério Público, o consórcio não teria concluído o processo de constituição previsto na Lei nº 11.107/2005, o que levanta questionamentos sobre sua regularidade institucional e sobre a forma de repasse dos recursos públicos.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "202641270ddc4cf337f8fa8037d210e54924ea94f2bb9b5519dcea22b13420d9",
+      "url": "https://www.estrategiaconcursos.com.br/blog/concurso-consud-pr/",
+      "title": "Concurso CONSUD PR: gabaritos preliminares divulgados! - estrategiaconcursos.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "RATEIO",
+      "stage": "contrato de rateio citado; celebração a conferir",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "As avaliações de múltipla escolha foram aplicadas oficialmente no dia 13 de setembro.",
+        "justificativa": "O corpo comprova atuação concreta do consórcio CONSUD PR: realização de concurso público com provas objetivas efetivamente aplicadas em 13 de setembro, seleção de pessoal conduzida pelo consórcio. A composição municipal não é explicitada (não são nomeados os municípios), apenas a menção à antiga ARSS e ao Protocolo de Intenções. Não se trata de mera convocação ou pauta futura, mas de etapa de certame já executada.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde do Sudoeste",
+        "evidencia_entidade": "Os candidatos do concurso do Consórcio Intermunicipal de Saúde do Sudoeste (CONSUD PR) já podem consultar os gabaritos preliminares das provas objetivas."
+      },
+      "before": null,
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "473cca93ce84b67612103b5ffbf695d672e6c410b84700dcc2ed77caca99d2c0",
+      "url": "https://abcagora.com.br/2026/09/15/consorcio-abc-politicas-educacionais/",
+      "title": "Consórcio ABC Realiza Oficina Sobre Políticas Públicas Educacionais - abcagora.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC sediou, nesta segunda-feira (14/9), a 3ª Oficina de Memória e Sistematização do Observatório de Políticas Públicas Educacionais",
+        "justificativa": "O consórcio sediou e conduziu uma oficina de sistematização do Observatório de Políticas Públicas Educacionais, configurando atuação concreta já realizada, ainda que sem entrega final.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC sediou, nesta segunda-feira (14/9), a 3ª Oficina de Memória e Sistematização do Observatório de Políticas Públicas Educacionais"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "aa4e7c489fd115157c5d5fd961b53f89eb3aa50e5f65149aea4945b06191373e",
+      "url": "https://viajuris.tce.pr.gov.br/Pesquisa/DetalhesAcordao?idAto=199084",
+      "title": "Detalhes do Acórdão - 2330/2025 - Primeira Câmara - viajuris.tce.pr.gov.br",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "ficha sem resultado do julgamento; ler a decisão vinculada",
+      "ai": {
+        "incerto": true,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL DE SERVICO DE ACOLHIMENTO SOCIOASSISTENCIAL",
+        "justificativa": "Documento é apenas ficha de julgamento de prestação de contas, sem resultado ou ementa; não comprova ato institucional, atuação, controle efetivo ou qualquer fato relevante sobre o consórcio.",
+        "escopo": "entidade",
+        "entidade": "CONSORCIO INTERMUNICIPAL DE SERVICO DE ACOLHIMENTO SOCIOASSISTENCIAL",
+        "evidencia_entidade": "Origem CONSORCIO INTERMUNICIPAL DE SERVICO DE ACOLHIMENTO SOCIOASSISTENCIAL"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "ficha sem resultado do julgamento; ler a decisão vinculada",
+        "reason": "ficha sem resultado do julgamento; ler a decisão vinculada",
+        "evidence": "Acórdão 2330/2025 Processo 267930/2025 Data da Sessão 18/08/2025 Data de Publicação 02/09/2025 Veículo de Publicação DETC Número de Publicação 3518 Decisão na Íntegra (PDF) Copiar Ementa Colegiado Primeira Câmara Relator LIVIO FABIANO SOTERO COSTA Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL DE SERVICO DE ACOLHIMENTO SOCIOASSISTENCIAL Classificação da Decisão Interessados ANTONELY DE CASSIO ALVES DE CARVALHO",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "judgment_metadata"
+      }
+    },
+    {
+      "id": "da010f900d60f2edee35e5151ab13260b9486ca9ce01e0e88e1622c701efcf5b",
+      "url": "https://www.sistemampa.com.br/noticias/camara-divinopolis-aprova-projetos/",
+      "title": "Câmara de Divinópolis aprova cinco projetos em sessão desta quinta - sistemampa.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "GOVERNANÇA",
+      "stage": "projeto autorizativo aprovado; saída ou extinção ainda não comprovada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "SAÍDA AUTORIZADA",
+        "evidencia": "Outro ponto de destaque na sessão foi a autorização para que Divinópolis deixe um consórcio regional criado para oferecer abrigo a mulheres em situação de ameaça de vida, vítimas de violência doméstica.",
+        "justificativa": "A Câmara de Divinópolis aprovou autorização para o município deixar consórcio regional de apoio a mulheres, caracterizando saída autorizada. Não há menção ao nome do consórcio, apenas sua finalidade.",
+        "escopo": "entidade",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": null,
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "689ca3936f43f06c5271d14915ceb258f653bf84db23bae21367f8b31236b097",
+      "url": "https://sounews.com.br/promotorias-cobram-solucao-para-crise-em-hospital-regional/",
+      "title": "Promotorias cobram solução para crise em hospital regional - sounews.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "CONTROLE",
+      "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "O Ministério Público ressaltou que, independentemente da alternativa adotada, não poderá haver interrupção dos serviços prestados à população.",
+        "justificativa": "Audiência e Recomendação nº 23/2026 do MPMT em inquérito civil que apura irregularidades sanitárias, financeiras e institucionais e questiona a regularidade da constituição do consórcio; trata-se de controle em apuração, sem condenação. Não há prova de constituição, protocolo, ingresso, rateio ou atuação concreta do consórcio.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto",
+        "evidencia_entidade": "prefeitos dos municípios integrantes do Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto (CISVP)"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "recomendação do Ministério Público; dissolução apenas alternativa, não realizada",
+        "reason": "Audiência e Recomendação nº 23/2026 do MPMT em inquérito civil que apura irregularidades sanitárias, financeiras e institucionais e questiona a regularidade da constituição do consórcio; trata-se de controle em apuração, sem condenação. Não há prova de constituição, protocolo, ingresso, rateio ou atuação concreta do consórcio.",
+        "evidence": "O Ministério Público ressaltou que, independentemente da alternativa adotada, não poderá haver interrupção dos serviços prestados à população.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde da Região do Vale do Peixoto",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "332c28c98e33581da97a5c333b932f7dd8db542094b7d0bdd888ddafff7f430b",
+      "url": "https://abcagora.com.br/2026/09/18/consorcio-abc-curso-athis-habitacao/",
+      "title": "Consórcio ABC Recebe Curso Sobre Assistência Técnica Para Habitação De Interesse Social - abcagora.com.br",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC recebeu, nesta terça-feira (15/9), a aula inaugural do curso “ATHIS em foco: transformações em territórios e vivências”",
+        "justificativa": "O consórcio sediou efetivamente a aula inaugural de curso de capacitação, fato concreto de atuação institucional, não mera previsão futura.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC recebeu, nesta terça-feira (15/9), a aula inaugural do curso “ATHIS em foco: transformações em territórios e vivências”"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "etapa_ou_prova_da_regra_insuficiente"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+        "reason": "O consórcio sediou efetivamente a aula inaugural de curso de capacitação, fato concreto de atuação institucional, não mera previsão futura.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC recebeu, nesta terça-feira (15/9), a aula inaugural do curso “ATHIS em foco: transformações em territórios e vivências”",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "1806d33968e6c96ce4f595c75ab7f15a77f2aa0f704ab8a3d5a7854f8e093738",
+      "url": "https://abcagora.com.br/2026/09/21/consorcio-abc-tecnologia-gcm/",
+      "title": "Consórcio ABC Avalia Tecnologia De Simulação Para Treinamento Das Guardas Municipais - abcagora.com.br",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC realizou uma visita técnica nesta sexta-feira (18/9), em Taubaté (SP), para conhecer de perto a estrutura de treinamento com simulação de tiro e avaliar possibilidades de aplicação de novas tecnologias na qualificação dos profissionais das Guardas Civis Municipais (GCMs) da região.",
+        "justificativa": "A notícia relata visita técnica efetivamente conduzida pelo Consórcio Intermunicipal Grande ABC a Taubaté para conhecer estrutura de treinamento, configurando atuação concreta do consórcio, ainda que em fase de estudos e intercâmbio de experiências. Não se trata de mera convocação ou plano futuro.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC realizou uma visita técnica nesta sexta-feira (18/9), em Taubaté (SP)"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "A notícia relata visita técnica efetivamente conduzida pelo Consórcio Intermunicipal Grande ABC a Taubaté para conhecer estrutura de treinamento, configurando atuação concreta do consórcio, ainda que em fase de estudos e intercâmbio de experiências. Não se trata de mera convocação ou plano futuro.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC realizou uma visita técnica nesta sexta-feira (18/9), em Taubaté (SP), para conhecer de perto a estrutura de treinamento com simulação de tiro e avaliar possibilidades de aplicação de novas tecnologias na qualificação dos profissionais das Guardas Civis Municipais (GCMs) da região.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "b940d09451244b1070878272f181eba9686128954f39b4717f43f19562e7d340",
+      "url": "https://folhadoabc.com.br/consorcio-abc-realiza-visita-tecnica-ao-centro-de-formacao-da-gcm-de-santo-andre/",
+      "title": "Consórcio ABC realiza visita técnica ao Centro de Formação da GCM de Santo André - folhadoabc.com.br",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC realizou, na quinta (24), visita técnica ao Centro de Formação da Guarda Civil Municipal (GCM) de Santo André",
+        "justificativa": "Visita técnica efetivamente conduzida pelo consórcio, com participação de seu secretário-executivo e diretor, caracterizando atuação concreta no âmbito do programa ABC + Seguro.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC realizou, na quinta (24), visita técnica ao Centro de Formação da Guarda Civil Municipal (GCM) de Santo André"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "Visita técnica efetivamente conduzida pelo consórcio, com participação de seu secretário-executivo e diretor, caracterizando atuação concreta no âmbito do programa ABC + Seguro.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC realizou, na quinta (24), visita técnica ao Centro de Formação da Guarda Civil Municipal (GCM) de Santo André",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "f9d60676462c0953c4aa8b4e9e882d573b471dfa9a13c009df6536d0ead8d976",
+      "url": "https://www.consorcioabc.sp.gov.br/noticia/print-noticia/6137/consorcio-abc-inicia-segunda-fase-do-abc-seguro-com-foco-em-tecnologia-e-capacitacao-das-gcms/",
+      "title": "Consórcio ABC inicia segunda fase do ABC + Seguro com foco em tecnologia e capacitação das GCMs - Consórcio Intermunicipal - Grande ABC",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "o Consórcio Intermunicipal Grande ABC deu início à segunda fase do programa ABC + Seguro, que terá como prioridades a incorporação de novas tecnologias e a ampliação da capacitação dos profissionais.",
+        "justificativa": "O corpo comprova atuação concreta do consórcio: início da segunda fase do programa ABC + Seguro, com visita técnica a centro de treinamento em Taubaté e realização de assembleia itinerante. Não é mera proposta futura, pois a fase já foi iniciada e há atividade efetiva registrada.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "o Consórcio Intermunicipal Grande ABC deu início à segunda fase do programa ABC + Seguro"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "etapa_ou_prova_da_regra_insuficiente"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+        "reason": "O corpo comprova atuação concreta do consórcio: início da segunda fase do programa ABC + Seguro, com visita técnica a centro de treinamento em Taubaté e realização de assembleia itinerante. Não é mera proposta futura, pois a fase já foi iniciada e há atividade efetiva registrada.",
+        "evidence": "o Consórcio Intermunicipal Grande ABC deu início à segunda fase do programa ABC + Seguro, que terá como prioridades a incorporação de novas tecnologias e a ampliação da capacitação dos profissionais.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "e522cbe16809e060b87def2b49b255609f98aa09aa52d0244a2dc7753f824611",
+      "url": "https://cpsibiapaba.ce.gov.br/publicacoes",
+      "title": "Lista de outras publicações - cpsibiapaba.ce.gov.br",
+      "cohort": "additional",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "índice de documentos: descobrir e ler os links individuais; não registrar o mural",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "RATEIO",
+        "evidencia": "CONTRATO DE RATEIO PARA MANUTENÇÃO DAS ATIVIDADES DA POLICLÍNICA REGIONAL, QUE ENTRE SI CELEBRAM O MUNICÍPIO DE CARNAUBAL E O CONSÓRCIO PÚBLICO DE SAÚDE DA IBIAPABA. 10/02/2026",
+        "justificativa": "A lista registra contratos de rateio firmados entre municípios e o consórcio para manutenção de serviços de saúde, caracterizando rateio celebrado, ainda que o documento seja apenas a listagem de publicações.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Público de Saúde da Ibiapaba",
+        "evidencia_entidade": "CONSÓRCIO PÚBLICO DE SAÚDE DA IBIAPABA"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "índice de documentos: descobrir e ler os links individuais; não registrar o mural",
+        "reason": "índice de documentos: descobrir e ler os links individuais; não registrar o mural",
+        "evidence": "Lista de outras publicações Foram encontradas 314 registros Atualizado em: 08/10/2026 15:14:01 CONTRATO DE RATEIO PARA MANUTENÇÃO DAS ATIVIDADES DA POLICLÍNICA REGIONAL, QUE ENTRE SI CELEBRAM O MUNICÍPIO DE CARNAUBAL E O CONSÓRCIO PÚBLICO D",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "document_index"
+      }
+    },
+    {
+      "id": "eecb7a8bc14f1b5abc9fca889931f980a9afc600bf75af0845442a924b10b9b1",
+      "url": "https://poderpb.com.br/2026/10/01/tce-pb-reprova-contas-de-2023-do-consorcio-de-saude-do-vale-do-pianco-e-multa-gestor/",
+      "title": "TCE-PB reprova contas de 2023 do Consórcio de Saúde do Vale do Piancó e multa gestor em R$ 3 mil - poderpb.com.br",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "CONTROLE",
+      "rule": "CONTROLE",
+      "stage": "julgamento de contas relatado; preservar resultado e destinatário das sanções, sem inferir trânsito em julgado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "A 1ª Câmara do Tribunal de Contas do Estado da Paraíba (TCE-PB) rejeitou, em sessão realizada nesta quinta-feira (1º), a prestação de contas do exercício financeira de 2023 do Consórcio Intermunicipal de Saúde da Região do Vale do Piancó.",
+        "justificativa": "Julgmento de contas de consórcio público com reprovação e multa ao gestor, caracterizando controle externo.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região do Vale do Piancó",
+        "evidencia_entidade": "prestação de contas do exercício financeira de 2023 do Consórcio Intermunicipal de Saúde da Região do Vale do Piancó"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "julgamento de contas relatado; preservar resultado e destinatário das sanções, sem inferir trânsito em julgado",
+        "reason": "Julgmento de contas de consórcio público com reprovação e multa ao gestor, caracterizando controle externo.",
+        "evidence": "A 1ª Câmara do Tribunal de Contas do Estado da Paraíba (TCE-PB) rejeitou, em sessão realizada nesta quinta-feira (1º), a prestação de contas do exercício financeira de 2023 do Consórcio Intermunicipal de Saúde da Região do Vale do Piancó.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde da Região do Vale do Piancó",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "cfbb82ef4da4e9f28b3b424e3aea2e29de4ec3c29db4364a3cb45eaad399bc67",
+      "url": "https://www.portalopiniaopublica.com.br/noticia/14385/consorcio-abc-inicia-tratativas-para-construcao-de-um-plano-regional-de-mudancas-climaticas.html",
+      "title": "Consórcio ABC inicia tratativas para construção de um Plano Regional de Mudanças Climáticas - portalopiniaopublica.com.br",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC realizou nesta segunda-feira (28) uma reunião do Grupo de Trabalho (GT) Gestão de Riscos, que reúne as Defesas Civis da região.",
+        "justificativa": "Reunião efetivamente conduzida pelo consórcio (Grupo de Trabalho de Defesas Civis) com início de articulação de demandas e estratégias para um plano regional; trata-se de atuação concreta, ainda que sem plano aprovado ou contrato.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC realizou nesta segunda-feira (28) uma reunião do Grupo de Trabalho (GT) Gestão de Riscos"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "Reunião efetivamente conduzida pelo consórcio (Grupo de Trabalho de Defesas Civis) com início de articulação de demandas e estratégias para um plano regional; trata-se de atuação concreta, ainda que sem plano aprovado ou contrato.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC realizou nesta segunda-feira (28) uma reunião do Grupo de Trabalho (GT) Gestão de Riscos, que reúne as Defesas Civis da região.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "0c2c9c6b97c7fbbba3229c5f0da590b9bc8f7a14a5274eaa360c9c68ac84f8e0",
+      "url": "https://asemanacuritibanos.com.br/featured/amurc-abre-novo-processo-seletivo-para-completar-equipe-de-consorcio-de-acolhimento-em-curitibanos/",
+      "title": "Amurc abre novo processo seletivo para completar equipe de Consórcio de Acolhimento em Curitibanos - asemanacuritibanos.com.br",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "composição explicitamente documentada; ingresso original e início de operação desconhecidos",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "GOVERNANÇA",
+        "evidencia": "O consórcio é formado por Curitibanos, Frei Rogério, Ponte Alta do Norte e São Cristóvão do Sul.",
+        "justificativa": "A notícia trata de processo seletivo para equipe do consórcio, mas contém composição municipal expressa e vinculada ao consórcio, o que caracteriza GOVERNANÇA conforme as regras. Não se infere criação, ingresso ou operação iniciada, apenas a composição afirmada.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Acolhimento de Crianças e Adolescentes",
+        "evidencia_entidade": "um novo processo seletivo foi aberto para completar a equipe que irá atuar no Consórcio Intermunicipal de Acolhimento de Crianças e Adolescentes"
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "composição explicitamente documentada; ingresso original e início de operação desconhecidos",
+        "reason": "O corpo afirma explicitamente a composição do Consórcio Intermunicipal de Acolhimento de Crianças e Adolescentes, com quatro municípios identificados. Trata-se de composição documentada, enquadrável como governança, sem que se possa inferir data de ingresso, operação iniciada ou CNPJ.",
+        "evidence": "O consórcio é formado por Curitibanos, Frei Rogério, Ponte Alta do Norte e São Cristóvão do Sul.",
+        "entity": "Consórcio Intermunicipal de Acolhimento de Crianças e Adolescentes",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "composição explicitamente documentada; ingresso original e início de operação desconhecidos",
+        "reason": "A notícia trata de processo seletivo para equipe do consórcio, mas contém composição municipal expressa e vinculada ao consórcio, o que caracteriza GOVERNANÇA conforme as regras. Não se infere criação, ingresso ou operação iniciada, apenas a composição afirmada.",
+        "evidence": "O consórcio é formado por Curitibanos, Frei Rogério, Ponte Alta do Norte e São Cristóvão do Sul.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Acolhimento de Crianças e Adolescentes",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "4ad8ed86afff62415f567e581f9ada381c052197f6ced2cc025f0bdcb085bba1",
+      "url": "https://www.tce.mg.gov.br/noticia/Detalhe/1111629212",
+      "title": "TCE mantém suspensas licitações de consórcios públicos após identificar possíveis falhas em processos de contratação",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "CONTROLE",
+      "rule": "CONTROLE",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": true,
+        "atos_independentes": [
+          "A decisão, relatada pelo conselheiro Gilberto Diniz, manteve suspensa uma licitação destinada à contratação de empresas para elaborar projetos de arquitetura e engenharia utilizando a metodologia BIM",
+          "Outro processo, também envolvendo o Ciminas (n. 1210770), relatado pelo conselheiro Hamilton Coelho, foi levado diretamente ao plenário da Segunda Câmara durante a sessão",
+          "Já o terceiro processo, n. 1217068, envolve o Consórcio Público para o Desenvolvimento do Alto Paraopeba (Consane) e teve como relator o conselheiro Adonias Monteiro",
+          "A decisão foi confirmada pela Segunda Câmara"
+        ],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "A Segunda Câmara do Tribunal de Contas do Estado de Minas Gerais (TCEMG) analisou, na sessão desta terça-feira (29/9), três processos envolvendo consórcios públicos e decidiu manter medidas cautelares que interromperam licitações e contratações por indícios de irregularidades.",
+        "justificativa": "Trata-se de controle externo exercido pelo TCE-MG, que manteve medidas cautelares suspendendo licitações e contratações de consórcios públicos por indícios de irregularidades. Configura CONTROLE em apuração, não condenação. Há três processos autônomos contra dois consórcios distintos (Ciminas e Consane).",
+        "escopo": "entidade",
+        "entidade": "Consórcio Interfederativo de Minas Gerais",
+        "evidencia_entidade": "Um dos processos, autuado sob o número 1214381, envolve o Consórcio Interfederativo de Minas Gerais (Ciminas)."
+      },
+      "before": null,
+      "proposal": {
+        "decision": "pendente",
+        "reason": "processos_independentes_no_corpo"
+      }
+    },
+    {
+      "id": "ec8a2c3463cd16bb979f15e2596a7c27f9a3903e76d5dc1ff831e58f04e85e7f",
+      "url": "https://amm.diariomunicipal.org/publicacao/1919144/",
+      "title": "LEI MUNICIPAL Nº 1193/2026, DE 02 DE OUTUBRO DE 2026",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "estatuto consolidado ratificado por lei municipal; consórcio já existente",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "GOVERNANÇA",
+        "evidencia": "Art. 1º Fica ratificado, no âmbito do Município, o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA, aprovado pela Assembleia Geral por meio da Resolução nº 002/2026, de 29 de julho de 2026",
+        "justificativa": "Lei municipal ratifica o Estatuto Consolidado do consórcio, aprovado pela Assembleia Geral, e a correspondente alteração contratual, configurando alteração de regras institucionais (GOVERNANÇA). Não se trata de simples autorização de ingresso nem de adesão consumada; o fato é a ratificação de estatuto/contrato já aprovados no âmbito do consórcio.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA",
+        "evidencia_entidade": "ratificado, no âmbito do Município, o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "multiplos_atos"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "estatuto consolidado ratificado por lei municipal; consórcio já existente",
+        "reason": "Lei municipal ratifica o Estatuto Consolidado do consórcio, aprovado pela Assembleia Geral, e a correspondente alteração contratual, configurando alteração de regras institucionais (GOVERNANÇA). Não se trata de simples autorização de ingresso nem de adesão consumada; o fato é a ratificação de estatuto/contrato já aprovados no âmbito do consórcio.",
+        "evidence": "Art. 1º Fica ratificado, no âmbito do Município, o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA, aprovado pela Assembleia Geral por meio da Resolução nº 002/2026, de 29 de julho de 2026",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "3c70e982022c68d1f9b1bd95b733b0c3b93d8d1d4e83dd82060319d296a0be14",
+      "url": "https://www.itatiaia.com.br/juizdefora/justica-determina-regularizacao-do-centro-de-especialidades-odontologicas-de-vicosa/",
+      "title": "Justiça determina regularização do Centro de Especialidades Odontológicas de Viçosa - itatiaia.com.br",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "Ao julgar procedente a ação, a Justiça condenou o município de Viçosa a promover, no prazo de 90 dias, a correção de todas as irregularidades sanitárias e organizacionais apontadas pela Vigilância Sanitária Estadual, mantendo posteriormente a observância contínua das normas aplicáveis. O Consórcio Intermunicipal de Saúde da Microrregião de Viçosa, por sua vez, deverá realizar, em até 180 dias, a completa adequação estrutural de sua sede às exigências sanitárias e de acessibilidade indicadas pelos órgãos de fiscalização.",
+        "justificativa": "Decisão judicial condenatória contra consórcio público e município para adequação de unidade de saúde, configurando controle externo sobre a atuação do consórcio, não mera apuração.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Microrregião de Viçosa",
+        "evidencia_entidade": "o Consórcio Intermunicipal de Saúde da Microrregião de Viçosa (Cismiv) promovam a regularização sanitária, organizacional e estrutural do Centro de Especialidades Odontológicas (CEO)"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "77de468ea47125c069012293cf620d39d35d087ccadef05d58467a089e5eca91",
+      "url": "https://canguaretama.rn.leg.br/plugin.php?slug=publicacoes&page=categoria.php&category_slug=leis&p=4",
+      "title": "Publicações - CÂMARA MUNICIPAL DE CANGUARETAMA",
+      "cohort": "additional",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "índice de documentos: descobrir e ler os links individuais; não registrar o mural",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "PROTOCOLO",
+        "evidencia": "LEI Nº 805/2022 – Dispõe sobre a ratificação do Protocolo de Intenções para a adesão ao Consórcio Público Intermunicipal do Rio Grande do Norte (COPIRN).",
+        "justificativa": "A Lei nº 805/2022 ratifica o Protocolo de Intenções para adesão ao COPIRN, constituindo etapa formal preparatória de ingresso de município em consórcio público intermunicipal. Não se confunde com adesão consumada, tratando-se de ratificação de protocolo de intenções.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Público Intermunicipal do Rio Grande do Norte (COPIRN)",
+        "evidencia_entidade": "Consórcio Público Intermunicipal do Rio Grande do Norte (COPIRN)"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "índice de documentos: descobrir e ler os links individuais; não registrar o mural",
+        "reason": "índice de documentos: descobrir e ler os links individuais; não registrar o mural",
+        "evidence": "al e a municipal […]Exibindo até 50 publicações por página.",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "document_index"
+      }
+    },
+    {
+      "id": "2e4c11e2b6966345d41d73e72b0588259c39d71b510f83055e1e6c5c12055e3a",
+      "url": "https://www.semana7.com.br/politica/dr-eugenio-rebate-boato-sofre-fim-do-consorcio-de-saude-e-reforca-participacao-de-sao-felix-do-araguaia-na-gestao-de-hospital-regional/84025",
+      "title": "Dr. Eugênio rebate boato sofre fim do Consórcio de Saúde e reforça participação de São Félix do Araguaia na gestão de Hospital Regional | SEMANA 7 | Últimas Notícias do Araguaia e de Barra do Garças em Mato Grosso - SEMANA 7",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Dr. Eugênio esclareceu que a proposta discutida entre prefeitos e o governador Otaviano Pivetta não prevê o encerramento do Cisa, mas a união desse Consórcio com o Consórcio Intermunicipal de Saúde Araguaia-Xingu (Cisax) para uma gestão compartilhada do Hospital Regional do Norte-Araguaia.",
+        "justificativa": "Trata-se de notícia que rebate boato sobre suposto fim do consórcio; o fato relatado é uma proposta em discussão entre prefeitos para união de dois consórcios visando gestão compartilhada de hospital. Não há constituição, protocolo, ingresso, rateio, governança formalizada, atuação concreta ou controle. A menção ao consórcio é passiva e a proposta não configura plano aprovado nem ato institucional.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde do Araguaia (Cisa)",
+        "evidencia_entidade": "um suposto fim do Consórcio Intermunicipal de Saúde do Araguaia (Cisa)"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Trata-se de notícia que rebate boato sobre suposto fim do consórcio; o fato relatado é uma proposta em discussão entre prefeitos para união de dois consórcios visando gestão compartilhada de hospital. Não há constituição, protocolo, ingresso, rateio, governança formalizada, atuação concreta ou controle. A menção ao consórcio é passiva e a proposta não configura plano aprovado nem ato institucional.",
+        "evidence": "Dr. Eugênio esclareceu que a proposta discutida entre prefeitos e o governador Otaviano Pivetta não prevê o encerramento do Cisa, mas a união desse Consórcio com o Consórcio Intermunicipal de Saúde Araguaia-Xingu (Cisax) para uma gestão compartilhada do Hospital Regional do Norte-Araguaia.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "969acc27a13387750bb93f099b90c5e84c6a0e279d8aaa9999c25d9ef7ede03d",
+      "url": "https://www.bahianoticias.com.br/justica/noticia/74258-mp-ba-investiga-contrato-de-rdollar-18-milhoes-da-prefeitura-de-correntina-com-consorcio-publico",
+      "title": "MP-BA investiga contrato de R$ 18 milhões da Prefeitura de Correntina com consórcio público - Bahia Notícias",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "CONTROLE",
+      "rule": "CONTROLE",
+      "stage": "inquérito civil instaurado; contratação investigada, irregularidades não comprovadas",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "O Ministério Público da Bahia (MP-BA) instaurou inquérito civil para apurar possíveis irregularidades no Contrato Administrativo nº 244/2025, firmado entre a Prefeitura de Correntina e o Consórcio Público Intermunicipal do Oeste da Bahia (Consid).",
+        "justificativa": "A notícia relata a instauração de inquérito civil pelo MP-BA para apurar possíveis irregularidades em contrato administrativo firmado entre a Prefeitura de Correntina e o Consórcio Público Intermunicipal do Oeste da Bahia (Consid). Trata-se de CONTROLE em apuração, sem condenação ou sanção aplicada, pois o inquérito está em curso e as investigações buscam esclarecer os fatos.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Público Intermunicipal do Oeste da Bahia (Consid)",
+        "evidencia_entidade": "O Ministério Público da Bahia (MP-BA) instaurou inquérito civil para apurar possíveis irregularidades no Contrato Administrativo nº 244/2025, firmado entre a Prefeitura de Correntina e o Consórcio Público Intermunicipal do Oeste da Bahia (Consid)."
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "inquérito civil instaurado; contratação investigada, irregularidades não comprovadas",
+        "reason": "A notícia relata a instauração de inquérito civil pelo MP-BA para apurar possíveis irregularidades em contrato administrativo firmado entre a Prefeitura de Correntina e o Consórcio Público Intermunicipal do Oeste da Bahia (Consid). Trata-se de CONTROLE em apuração, sem condenação ou sanção aplicada, pois o inquérito está em curso e as investigações buscam esclarecer os fatos.",
+        "evidence": "O Ministério Público da Bahia (MP-BA) instaurou inquérito civil para apurar possíveis irregularidades no Contrato Administrativo nº 244/2025, firmado entre a Prefeitura de Correntina e o Consórcio Público Intermunicipal do Oeste da Bahia (Consid).",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Público Intermunicipal do Oeste da Bahia (Consid)",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "35799042ebfb761d05bf042e2b3feb2539b962a34b31a11181733f64d6aba80f",
+      "url": "https://amm.diariomunicipal.org/publicacao/1919732/",
+      "title": "CONTRATO DE RATEIO N.º 055/2.026 - CONSÓRCIO INTERMUNICIPAL DE SAUDE",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "RATEIO",
+      "rule": "RATEIO",
+      "stage": "instrumento de rateio celebrado conforme publicação; pagamento e execução não comprovados",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "RATEIO",
+        "evidencia": "resolvem celebrar o presente Contrato de Rateio, que regerse-á pelas normas gerais aplicáveis e mediante as seguintes cláusulas e condições",
+        "justificativa": "Contrato de rateio celebrado entre o Consórcio Intermunicipal de Saúde da Região Centro Norte do Estado de Mato Grosso e o Município de Alto Paraguai, com valor e objeto definidos, caracterizando RATEIO efetivado.",
+        "escopo": "entidade",
+        "entidade": "CONSÓRCIO INTERMUNICIPAL DE SAUDE DA REGIÃO CENTRO NORTE DO ESTADO DE MATO GROSSO",
+        "evidencia_entidade": "CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA REGIÃO CENTRO NORTE DO ESTADO DE MATO GROSSO"
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "RATEIO",
+        "stage": "contrato de rateio citado; celebração a conferir",
+        "reason": "O corpo registra a celebração de Contrato de Rateio entre o Município de Alto Paraguai e o Consórcio Intermunicipal de Saúde da Região Centro Norte do Estado de Mato Grosso, com valor, objeto, forma de pagamento e vigência definidos, caracterizando rateio efetivo e não mera proposta ou tramitação.",
+        "evidence": "resolvem celebrar o presente Contrato de Rateio, que regerse-á pelas normas gerais aplicáveis",
+        "entity": "CONSÓRCIO INTERMUNICIPAL DE SAUDE DA REGIÃO CENTRO NORTE DO ESTADO DE MATO GROSSO",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "RATEIO",
+        "stage": "instrumento de rateio celebrado conforme publicação; pagamento e execução não comprovados",
+        "reason": "Contrato de rateio celebrado entre o Consórcio Intermunicipal de Saúde da Região Centro Norte do Estado de Mato Grosso e o Município de Alto Paraguai, com valor e objeto definidos, caracterizando RATEIO efetivado.",
+        "evidence": "resolvem celebrar o presente Contrato de Rateio, que regerse-á pelas normas gerais aplicáveis e mediante as seguintes cláusulas e condições",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CONSÓRCIO INTERMUNICIPAL DE SAUDE DA REGIÃO CENTRO NORTE DO ESTADO DE MATO GROSSO",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "49267d3d1ec94d99527c949846bdc815198b1985aa4f3f6c488738feca6d0fd8",
+      "url": "https://amm.diariomunicipal.org/publicacao/1919389/",
+      "title": "RETIFICAÇÃO DO REGULAMENTO ELEITORAL – BIÊNIO 2027/2028 ELEIÇÃO DA DIRETORIA DO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL DO MÉDIO ARAGUAIA – CODEMA",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "calendário eleitoral retificado; eleição não comprovada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "GOVERNANÇA",
+        "evidencia": "considerando a alteração da data da Assembleia Geral Ordinária para o dia 21 de outubro de 2026, conforme Edital de Retificação publicado no Diário Oficial dos Municípios, RETIFICA o Regulamento Eleitoral do Biênio 2027/2028",
+        "justificativa": "O documento retifica as datas da eleição da Diretoria do CODEMA (Assembleia Geral Ordinária e prazo de inscrições), alterando regras institucionais internas do consórcio. Trata-se de alteração de regras de governança (data de eleição e prazos), ainda que a entidade não seja nomeada por composição municipal expressa. A retificação é ato de governança do próprio consórcio, não mera convocação.",
+        "escopo": "entidade",
+        "entidade": "CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL DO MÉDIO ARAGUAIA – CODEMA",
+        "evidencia_entidade": "O PRESIDENTE DO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL DO MÉDIO ARAGUAIA – CODEMA, no uso de suas atribuições estatutárias"
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "calendário eleitoral retificado; eleição não comprovada",
+        "reason": "O documento é ato formal do Presidente do consórcio CODEMA que retifica o Regulamento Eleitoral e o calendário da Assembleia Geral Ordinária, evidenciando governança interna do consórcio público (convocação/alteração de data de assembleia e regras eleitorais), ainda que a eleição em si não esteja comprovada.",
+        "evidence": "O PRESIDENTE DO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL DO MÉDIO ARAGUAIA – CODEMA, no uso de suas atribuições estatutárias",
+        "entity": "CODEMA",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "calendário eleitoral retificado; eleição não comprovada",
+        "reason": "O documento retifica as datas da eleição da Diretoria do CODEMA (Assembleia Geral Ordinária e prazo de inscrições), alterando regras institucionais internas do consórcio. Trata-se de alteração de regras de governança (data de eleição e prazos), ainda que a entidade não seja nomeada por composição municipal expressa. A retificação é ato de governança do próprio consórcio, não mera convocação.",
+        "evidence": "considerando a alteração da data da Assembleia Geral Ordinária para o dia 21 de outubro de 2026, conforme Edital de Retificação publicado no Diário Oficial dos Municípios, RETIFICA o Regulamento Eleitoral do Biênio 2027/2028",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL DO MÉDIO ARAGUAIA – CODEMA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "70ccc357b4bc1bd6b37fa7cffcda6da20404ce402b31031742f13e83aac63767",
+      "url": "https://amm.diariomunicipal.org/publicacao/1919856/",
+      "title": "SEGUNDO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "RATEIO",
+      "rule": "RATEIO",
+      "stage": "aditivo de rateio publicado entre as partes; pagamento não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "RATEIO",
+        "evidencia": "O presente Termo tem por objeto o aditivo de valor ao Contrato de Rateio nº 001/2026, destinado ao repasse financeiro para aquisição de Serviços Médicos, Consultas Especializadas, Exames e Procedimentos de Saúde/SUS, em atendimento ao município consorciado.",
+        "justificativa": "Segundo termo aditivo a contrato de rateio já celebrado entre o Município de Nova Bandeirantes/MT e o Consórcio Intermunicipal de Saúde da Região do Alto Tapajós, com valor e vigência definidos — etapa formal de rateio celebrado, não mera autorização ou tramitação.",
+        "escopo": "entidade",
+        "entidade": "CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA REGIÃO DO ALTO TAPAJÓS",
+        "evidencia_entidade": "CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA REGIÃO DO ALTO TAPAJÓS constituído sob a forma de Associação Pública e de natureza autárquica, integrante da Administração Indireta"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "identidade_sem_prova_literal"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "RATEIO",
+        "stage": "aditivo de rateio publicado entre as partes; pagamento não comprovado",
+        "reason": "Segundo termo aditivo a contrato de rateio já celebrado entre o Município de Nova Bandeirantes/MT e o Consórcio Intermunicipal de Saúde da Região do Alto Tapajós, com valor e vigência definidos — etapa formal de rateio celebrado, não mera autorização ou tramitação.",
+        "evidence": "O presente Termo tem por objeto o aditivo de valor ao Contrato de Rateio nº 001/2026, destinado ao repasse financeiro para aquisição de Serviços Médicos, Consultas Especializadas, Exames e Procedimentos de Saúde/SUS, em atendimento ao município consorciado.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA REGIÃO DO ALTO TAPAJÓS",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "7c686c4bf7b4e4409be57b64c3e6d3f0fc6b4a7329bd7c5571159b5a71e54534",
+      "url": "https://amm.diariomunicipal.org/publicacao/1920370/",
+      "title": "LEI Nº 1376 DE 05 DE OUTUBRO DE 2026.",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "estatuto consolidado ratificado por lei municipal; consórcio já existente",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "GOVERNANÇA",
+        "evidencia": "Fica ratificado, no âmbito do Município de Torixoréu-MT, o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA, aprovado pela Assembleia Geral por meio da Resolução nº 002/2026, de 29 de julho de 2026",
+        "justificativa": "Lei municipal ratifica o Estatuto Consolidado do CIDESAPA e a correspondente alteração contratual, etapa de alteração de regras institucionais do consórcio já existente (substitui estatuto de 2009), caracterizando GOVERNANÇA. As demais previsões (execução do SIM, gestão ambiental, resíduos) são condicionadas a adesão formal e instrumentos futuros, sem comprovar atuação.",
+        "escopo": "entidade",
+        "entidade": "CIDESAPA",
+        "evidencia_entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "estatuto consolidado ratificado por lei municipal; consórcio já existente",
+        "reason": "Lei municipal ratifica o Estatuto Consolidado do CIDESAPA e a correspondente alteração contratual, etapa de alteração de regras institucionais do consórcio já existente (substitui estatuto de 2009), caracterizando GOVERNANÇA. As demais previsões (execução do SIM, gestão ambiental, resíduos) são condicionadas a adesão formal e instrumentos futuros, sem comprovar atuação.",
+        "evidence": "Fica ratificado, no âmbito do Município de Torixoréu-MT, o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA, aprovado pela Assembleia Geral por meio da Resolução nº 002/2026, de 29 de julho de 2026",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CIDESAPA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "3f2be4d96aa88073fb771552593b3ed5ef9826b5399d442663422862569512a0",
+      "url": "https://sapl.saolourencodamata.pe.leg.br/sessao/914/votacao-simbolica-transparencia/4911/9957?&materia=ordem",
+      "title": "SAPL - Câmara Municipal de São Lourenço da Mata - PE - sapl.saolourencodamata.pe.leg.br",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "requerimento; ato de ingresso não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ADESÃO AUTORIZADA",
+        "evidencia": "Solicita a adesão e participação do município no consórcio público para gestão climática e prevenção de desastres. Votos Sim: 13 Não: 0 Abstenções: 0 Resultado da Votação: Aprovado",
+        "justificativa": "Requerimento aprovado que solicita a adesão do município a consórcio público de gestão climática; trata-se de autorização legislativa de adesão, não de adesão consumada.",
+        "escopo": "entidade",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "requerimento; ato de ingresso não comprovado",
+        "reason": "requerimento; ato de ingresso não comprovado",
+        "evidence": "Matéria: Requerimento nº 352 de 2026 Ementa: Solicita a adesão e participação do município no consórcio público para gestão climática e prevenção de desastres",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "request_not_authorization"
+      }
+    },
+    {
+      "id": "64146b92e244b8a632a2935ac3764e8626ec62f540bde1491b03f0393e31244e",
+      "url": "https://amm.diariomunicipal.org/publicacao/1920936/",
+      "title": "LEI MUNICIPAL Nº 1.261/2026 SÚMULA: “RATIFICA A ALTERAÇÃO DO PROTOCOLO DE INTENÇÕES E DO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO SUSTENTÁVEL PORTAL DA AMAZÔNIA - CIDESPA, EM CONFORMIDADE COM A LE",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "alteração do protocolo; ingresso novo não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "GOVERNANÇA",
+        "evidencia": "Art. 1º Fica ratificado o Termo de Alteração do Protocolo de Intenções, constante do Anexo Único, que integra esta Lei, para inclusão e adequação de objetivos do Consórcio Intermunicipal de Desenvolvimento Sustentável Portal Da Amazônia - CIDESPA",
+        "justificativa": "Lei municipal ratifica a alteração do protocolo de intenções de consórcio público existente, alterando seus objetivos e delegando competência para o SIM, constituindo alteração de regras institucionais do consórcio (GOVERNANÇA). Não se trata de constituição inicial, mas de ratificação de termo de alteração de protocolo já vigente, com composição municipal expressa no anexo.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Sustentável Portal Da Amazônia - CIDESPA",
+        "evidencia_entidade": "CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO SUSTENTÁVEL PORTAL DA AMAZÔNIA - CIDESPA, pessoa jurídica de direito público, inscrito no CNPJ nº 08.920.483/0001-54"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "alteração do protocolo; ingresso novo não comprovado",
+        "reason": "Lei municipal ratifica a alteração do protocolo de intenções de consórcio público existente, alterando seus objetivos e delegando competência para o SIM, constituindo alteração de regras institucionais do consórcio (GOVERNANÇA). Não se trata de constituição inicial, mas de ratificação de termo de alteração de protocolo já vigente, com composição municipal expressa no anexo.",
+        "evidence": "Art. 1º Fica ratificado o Termo de Alteração do Protocolo de Intenções, constante do Anexo Único, que integra esta Lei, para inclusão e adequação de objetivos do Consórcio Intermunicipal de Desenvolvimento Sustentável Portal Da Amazônia - CIDESPA",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Desenvolvimento Sustentável Portal Da Amazônia - CIDESPA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "cecaed5b3a4626460cc38b4e04f14216b6e64c2e021fa8224ae8af65e68b91de",
+      "url": "https://abcagora.com.br/2026/10/07/consorcio-abc-cadeia-do-cambuci/",
+      "title": "Consórcio ABC Lança Ação Para Estruturar Cadeia Do Cambuci - ABC Agora",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC realizou nesta quarta-feira (7/10) a primeira reunião de mobilização para estruturar a Cadeia Produtiva Local (CPL) do Cambuci e de outros Frutos Nativos da Mata Atlântica do Grande ABC.",
+        "justificativa": "Reunião de mobilização efetivamente realizada pelo Consórcio Intermunicipal Grande ABC, com participação de atores regionais, caracterizando atuação concreta do consórcio. Menciona governança futura e plano de ação ainda em elaboração, não configurando GOVERNANÇA ou RATEIO.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC realizou nesta quarta-feira (7/10) a primeira reunião de mobilização"
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "O corpo relata reunião de mobilização efetivamente realizada pelo Consórcio Intermunicipal Grande ABC, constituindo atuação concreta do consórcio público, ainda que seja etapa preparatória e sem contrato ou entrega.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC realizou nesta quarta-feira (7/10) a primeira reunião de mobilização para estruturar a Cadeia Produtiva Local (CPL) do Cambuci",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "Reunião de mobilização efetivamente realizada pelo Consórcio Intermunicipal Grande ABC, com participação de atores regionais, caracterizando atuação concreta do consórcio. Menciona governança futura e plano de ação ainda em elaboração, não configurando GOVERNANÇA ou RATEIO.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC realizou nesta quarta-feira (7/10) a primeira reunião de mobilização para estruturar a Cadeia Produtiva Local (CPL) do Cambuci e de outros Frutos Nativos da Mata Atlântica do Grande ABC.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "3c0f44679dd0528f37535c3621a6cb9b30f3df39454ab9fc1ed33b1dde60e2cf",
+      "url": "https://amm.diariomunicipal.org/publicacao/1922173/",
+      "title": "Lei 1887 - 2026",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "crédito orçamentário; contrato de rateio e pagamento não comprovados",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Fica autorizada a abertura de crédito adicional por excesso de arrecadação no orçamento vigente no valor de R$ 1.330.000,00",
+        "justificativa": "A lei apenas autoriza abertura de crédito adicional por excesso de arrecadação, com dotação orçamentária genérica para manutenção de consórcio de saúde; não há prova de ato institucional (criação, adesão, protocolo, governança, rateio celebrado, controle, crise, atuação concreta) nem orientação geral aplicável a consórcios públicos. A menção a 'CONSÓRCIO INTERMUNICIPAL DE SAÚDE' e à rubrica 'TRANSFERÊNCIAS A CONSÓRCIOS PÚBLICOS MEDIANTE CONTRATO DE RATEIO' é apenas classificação orçamentária, sem comprovar instrumento de rateio ou entidade configurada.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "crédito orçamentário; contrato de rateio e pagamento não comprovados",
+        "reason": "A lei apenas autoriza abertura de crédito orçamentário; a menção a 'CONSÓRCIO INTERMUNICIPAL DE SAÚDE' é rótulo de dotação orçamentária e não identifica consórcio público nem comprova rateio, adesão ou ato institucional. Rubrica contábil sem ato não é relevante.",
+        "evidence": "Fica autorizada a abertura de crédito adicional por excesso de arrecadação no orçamento vigente no valor de R$ 1.330.000,00",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "crédito orçamentário; contrato de rateio e pagamento não comprovados",
+        "reason": "crédito orçamentário; contrato de rateio e pagamento não comprovados",
+        "evidence": "LEI Nº 1887/2026 de 08 de Outubro de 2026 “Autoriza abertura de crédito adicional por excesso de arrecadação e dá outras providências” MARIANO BALABAM, Prefeito Municipal de Rosário Oeste - MT, Estado de Mato Grosso, no uso de suas atribuições que lhes são conferidas por Lei, FAZ SABER que Câmara Municipal aprovou e Ele sanciona a seguinte Lei: Art. 1º – Fica autorizada a abertura de crédito adicional por excesso de arrecadação no orçamento vigente no valor de R$ 1.330.000,00 (um milhão, trezent",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "budget_rubric_excluded"
+      }
+    },
+    {
+      "id": "a41575afa3947edb4a2801e4c061f951c67c4815a7bf209b6f72a2063a07e0f2",
+      "url": "https://amm.diariomunicipal.org/publicacao/1921829/",
+      "title": "INSTRUÇÃO NORMATIVA Nº 016 DE 02 DE OUTUBRO DE 2026.",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "norma operacional de inspeção publicada; suspensão de produtos é procedimento, não punição ao consórcio",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "Esta Instrução Normativa estabelece os procedimentos administrativos e técnicos para habilitação, manutenção, suspensão, desabilitação e reabilitação de estabelecimentos e produtos registrados no Serviço de Inspeção Municipal executado ou coordenado pelo Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia",
+        "justificativa": "Instrução Normativa editada pelo próprio consórcio (CIDESAA) que disciplina a execução do Serviço de Inspeção Municipal e a habilitação de estabelecimentos ao SISBI-POA, constituindo atuação concreta e orientação geral aplicável ao consórcio público. Não é mera proposta ou convocação.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia",
+        "evidencia_entidade": "CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONOMICO, SOCIAL E AMBIENTAL DO ARAGUAIA, associação pública de direito público interno, inscrita no CNPJ nº 08.957.566/0001-18, com sede administrativa no Município de São Felix do Araguaia/MT, por intermédio de seu Presidente"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "identidade_sem_prova_literal"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "norma operacional de inspeção publicada; suspensão de produtos é procedimento, não punição ao consórcio",
+        "reason": "Instrução Normativa editada pelo próprio consórcio (CIDESAA) que disciplina a execução do Serviço de Inspeção Municipal e a habilitação de estabelecimentos ao SISBI-POA, constituindo atuação concreta e orientação geral aplicável ao consórcio público. Não é mera proposta ou convocação.",
+        "evidence": "Esta Instrução Normativa estabelece os procedimentos administrativos e técnicos para habilitação, manutenção, suspensão, desabilitação e reabilitação de estabelecimentos e produtos registrados no Serviço de Inspeção Municipal executado ou coordenado pelo Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "dca8e3a45e454def5e0b66f393bd07e23ff44fee78c3a6fbe4d6c33b422bf56e",
+      "url": "https://amm.diariomunicipal.org/publicacao/1921820/",
+      "title": "IT - INSTRUÇÃO DE TRABALHO Nº 010/2026 PROGRAMA DE PREVENÇÃO E COMBATE À FRAUDE.",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "procedimento de inspeção publicado; não é apuração contra o consórcio",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Programa de Prevenção e Combate à Fraude deverá ser executado de forma permanente pelo Serviço de Inspeção Municipal, contemplando ações preventivas, fiscalizatórias e corretivas destinadas a assegurar a autenticidade",
+        "justificativa": "Instrução de Trabalho que estabelece programa de prevenção e combate a fraudes a ser executado pelo Serviço de Inspeção Municipal do consórcio, configurando atuação concreta e orientação operacional do consórcio, com ações permanentes de fiscalização.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia",
+        "evidencia_entidade": "Serviço de Inspeção Municipal do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "identidade_sem_prova_literal"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "procedimento de inspeção publicado; não é apuração contra o consórcio",
+        "reason": "Instrução de Trabalho que estabelece programa de prevenção e combate a fraudes a ser executado pelo Serviço de Inspeção Municipal do consórcio, configurando atuação concreta e orientação operacional do consórcio, com ações permanentes de fiscalização.",
+        "evidence": "O Programa de Prevenção e Combate à Fraude deverá ser executado de forma permanente pelo Serviço de Inspeção Municipal, contemplando ações preventivas, fiscalizatórias e corretivas destinadas a assegurar a autenticidade",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "fa9be6fef8cdf7f1b7eecc26721f3a21eaa750643aa20d2d2bbaf40f0d3101a4",
+      "url": "https://amm.diariomunicipal.org/publicacao/1921937/",
+      "title": "EDITAL DE PUBLICAÇÃO N°160/2026, DE 07 DE OUTUBRO DE 2026",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "RATEIO",
+      "rule": "RATEIO",
+      "stage": "aditivo de rateio publicado; valor e vigência alterados, pagamento não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "RATEIO",
+        "evidencia": "PROCEDIMENTO ADMINISTRATIVO ADITIVO Nº 006/2026 DO CONTRATO DE RATEIO N°006/2026. CONSORCIANTE: CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA REGIÃO GARÇAS/ARAGUAIA-CISGA. CONSORCIADO: PREFEITURA MUNICIPAL DE GENERAL CARNEIRO/MT. OBJETO: O presente TERMO ADITIVO, tem por objetivo alterar a CLÁUSULA SEGUNDA – DO VALOR o Contrato de Rateio nº 006/2026",
+        "justificativa": "Termo aditivo a contrato de rateio já celebrado, alterando valor de repasse do município de General Carneiro ao CISGA, com vigência definida. Representa etapa formal de rateio (aditamento), não mera autorização ou proposta.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região do Garças/Araguaia",
+        "evidencia_entidade": "Consórcio Intermunicipal de Saúde da Região do Garças/Araguaia, através da Secretária Executiva a Sra. Virginia Patrícia Santos Rocha de Oliveira"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "RATEIO",
+        "stage": "aditivo de rateio publicado; valor e vigência alterados, pagamento não comprovado",
+        "reason": "Termo aditivo a contrato de rateio já celebrado, alterando valor de repasse do município de General Carneiro ao CISGA, com vigência definida. Representa etapa formal de rateio (aditamento), não mera autorização ou proposta.",
+        "evidence": "PROCEDIMENTO ADMINISTRATIVO ADITIVO Nº 006/2026 DO CONTRATO DE RATEIO N°006/2026. CONSORCIANTE: CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA REGIÃO GARÇAS/ARAGUAIA-CISGA. CONSORCIADO: PREFEITURA MUNICIPAL DE GENERAL CARNEIRO/MT. OBJETO: O presente TERMO ADITIVO, tem por objetivo alterar a CLÁUSULA SEGUNDA – DO VALOR o Contrato de Rateio nº 006/2026",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde da Região do Garças/Araguaia",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "73103727c4e2df5e394c769f3ce62ee55c71cfff41e8c56adef9df20c6aa794b",
+      "url": "https://abcagora.com.br/2026/10/08/bolsas-graduacao-consorcio-abc/",
+      "title": "Consórcio ABC E Metodista Recebem Documentos Para Bolsas De Graduação Em Novembro - ABC Agora",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "COOPERAÇÃO AUTORIZADA",
+        "evidencia": "Firmada em setembro, a parceria prevê até 1.000 bolsas de graduação, nas modalidades presencial e educação a distância (EAD), para estudantes de baixa renda.",
+        "justificativa": "A notícia relata parceria firmada entre o Consórcio Intermunicipal Grande ABC e a Universidade Metodista para oferta de bolsas de graduação, caracterizando atuação cooperada do consórcio com instituição de ensino, com previsão de benefícios e entrega de documentos em novembro.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "Pessoas interessadas nas bolsas de graduação oferecidas por meio da parceria entre o Consórcio Intermunicipal Grande ABC e a Universidade Metodista devem apresentar a documentação exigida entre os dias 9 e 13 de novembro"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "3e07138f4896fd7cbaef3b8c2c1b880ff37f9325d2eada2627963d3f474b6f56",
+      "url": "https://amm.diariomunicipal.org/publicacao/1922706/",
+      "title": "EXTRATO DO 2º TERMO ADITIVO AO CONTRATO ADMINISTRATIVO Nº 283/2024 - ADESÃO 08/2024",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "EXTRATO DO 2º TERMO ADITIVO AO CONTRATO ADMINISTRATIVO Nº 283/2024 PROCESSO ADMINISTRATIVO Nº: 86/2024 ADESÃO Nº: 008/2024 (Pregão Eletrônico nº 02/2024 – Consórcio Público Intermunicipal de Desenvolvimento Sustentável do Alto Paranaíba)",
+        "justificativa": "Trata-se de extrato de termo aditivo a contrato administrativo de município com empresa privada (1DOC Tecnologia SA), cujo objeto é prorrogação de prazo, reajuste e adequação orçamentária. O consórcio aparece apenas como referência ao pregão eletrônico de origem, sem qualquer ato constitutivo, adesão, rateio ou atuação do consórcio. Documento irrelevante para a base histórica de consórcios públicos.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Trata-se de mero termo aditivo de contrato administrativo rotineiro (prorrogação e reajuste) entre município e empresa privada, com menção passiva ao consórcio apenas como referência ao pregão eletrônico de origem; não há ato institucional de consórcio público, adesão, rateio, governança ou atuação concreta do consórcio.",
+        "evidence": "Prorrogação do prazo de vigência contratual para mais 12 (doze) meses, reajuste do valor contratual pelo índice acumulado do IPCA",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Trata-se de extrato de termo aditivo a contrato administrativo de município com empresa privada (1DOC Tecnologia SA), cujo objeto é prorrogação de prazo, reajuste e adequação orçamentária. O consórcio aparece apenas como referência ao pregão eletrônico de origem, sem qualquer ato constitutivo, adesão, rateio ou atuação do consórcio. Documento irrelevante para a base histórica de consórcios públicos.",
+        "evidence": "EXTRATO DO 2º TERMO ADITIVO AO CONTRATO ADMINISTRATIVO Nº 283/2024 PROCESSO ADMINISTRATIVO Nº: 86/2024 ADESÃO Nº: 008/2024 (Pregão Eletrônico nº 02/2024 – Consórcio Público Intermunicipal de Desenvolvimento Sustentável do Alto Paranaíba)",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "fora_escopo"
+      }
+    },
+    {
+      "id": "fa9d9150d3ca0a6c50dbf7723aa560846ea2c7dddfd48e2aa3fd9c6ea901d023",
+      "url": "https://amm.diariomunicipal.org/publicacao/1923116/",
+      "title": "LEI Nº 1244 /2026 - DISPÕE SOBRE REPASSE DE RECURSOS AO CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL – NORTE ARAGUAIA – CIDESA-NA",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "FINANÇAS",
+      "rule": "FINANÇAS",
+      "stage": "lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "FINANÇAS",
+        "evidencia": "Art. 1º - Fica o Executivo Municipal autorizado a repassar no exercício de 2026, recursos financeiros ao Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia – CIDESA-NA, a importância de R$ 150.000,00",
+        "justificativa": "Lei municipal autoriza repasse financeiro ao consórcio público CIDESA-NA para aquisição de terreno para aterro sanitário, com dotação orçamentária específica (Transferência a Consórcios Públicos mediante Contrato de Rateio). Trata-se de autorização nominal de repasse de valor a consórcio, ato de financiamento, não comprovando contrato de rateio celebrado nem atuação concreta do consórcio.",
+        "escopo": "entidade",
+        "entidade": "CIDESA-NA",
+        "evidencia_entidade": "ao Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia – CIDESA-NA"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "FINANÇAS",
+        "stage": "lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados",
+        "reason": "Lei municipal autoriza repasse financeiro ao consórcio público CIDESA-NA para aquisição de terreno para aterro sanitário, com dotação orçamentária específica (Transferência a Consórcios Públicos mediante Contrato de Rateio). Trata-se de autorização nominal de repasse de valor a consórcio, ato de financiamento, não comprovando contrato de rateio celebrado nem atuação concreta do consórcio.",
+        "evidence": "Art. 1º - Fica o Executivo Municipal autorizado a repassar no exercício de 2026, recursos financeiros ao Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia – CIDESA-NA, a importância de R$ 150.000,00",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CIDESA-NA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "421c342ad158193b8bc7bbf9365e2a6b92060352de5b821d87cfb2d30c6930a6",
+      "url": "https://fonte83.com.br/politica/prefeituras/falhas-na-concessao-de-gratificacoes-levam-tce-pb-a-reprovar-contas-de-consorcio-de-saude-do-vale-do-pianco/",
+      "title": "Falhas na concessão de gratificações levam TCE-PB a reprovar contas de consórcio de saúde do Vale do Piancó - Fonte 83",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "CONTROLE",
+      "rule": "CONTROLE",
+      "stage": "julgamento de contas relatado; preservar resultado e destinatário das sanções, sem inferir trânsito em julgado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "O Tribunal de Contas do Estado da Paraíba (TCE-PB) reprovou as contas de 2024 do Consórcio Intermunicipal de Saúde da Região do Vale do Piancó.",
+        "justificativa": "O TCE-PB reprovou as contas de 2024 do consórcio, caracterizando exercício de controle externo sobre a entidade, com decisão sujeita a recurso.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região do Vale do Piancó",
+        "evidencia_entidade": "reprovou as contas de 2024 do Consórcio Intermunicipal de Saúde da Região do Vale do Piancó."
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "contas do consórcio desaprovadas; recursos ainda possíveis",
+        "reason": "O corpo informa decisão de controle externo (reprovação de contas pelo TCE-PB) referente ao exercício de 2024 do consórcio intermunicipal de saúde, configurando ato concreto de controle.",
+        "evidence": "O Tribunal de Contas do Estado da Paraíba (TCE-PB) reprovou as contas de 2024 do Consórcio Intermunicipal de Saúde da Região do Vale do Piancó. A decisão foi tomada pela Corte durante sessão realizada nesta quinta-feira (8), após a análise de falhas relacionadas à concessão de gratificações e ao emprego público.",
+        "entity": "Consórcio Intermunicipal de Saúde da Região do Vale do Piancó",
+        "scope": "entidade"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "julgamento de contas relatado; preservar resultado e destinatário das sanções, sem inferir trânsito em julgado",
+        "reason": "O TCE-PB reprovou as contas de 2024 do consórcio, caracterizando exercício de controle externo sobre a entidade, com decisão sujeita a recurso.",
+        "evidence": "O Tribunal de Contas do Estado da Paraíba (TCE-PB) reprovou as contas de 2024 do Consórcio Intermunicipal de Saúde da Região do Vale do Piancó.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde da Região do Vale do Piancó",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "c74be91787c052c9b8401214c15696ffafa5ce25d06d760a443eb6729cec8d02",
+      "url": "https://gazetadoparana.com.br/publico/mp-investiga-suspeita-de-cartel-na-contratacao-de-medicos-em-oito-cidades-do-parana",
+      "title": "MP investiga suspeita de cartel na contratação de médicos em oito cidades do Paraná - Gazeta do Paraná",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "CONTROLE",
+      "rule": "CONTROLE",
+      "stage": "inquérito civil em andamento; suspeitas não equivalem a irregularidades comprovadas ou condenação",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "A investigação é conduzida pela 26ª Promotoria de Justiça de Londrina e tem como foco o Chamamento Público nº 007/2024 do Consórcio Intermunicipal de Saúde do Médio Paranapanema (CISMEPAR), responsável pelo credenciamento de empresas para a prestação de plantões médicos",
+        "justificativa": "O corpo descreve inquérito civil do Ministério Público do Paraná que investiga suspeitas de cartel em credenciamento conduzido pelo consórcio CISMEPAR; trata-se de controle em apuração, sem condenação ou responsabilização definitiva, conforme expressamente ressalvado no texto.",
+        "escopo": "entidade",
+        "entidade": "CISMEPAR",
+        "evidencia_entidade": "Chamamento Público nº 007/2024 do Consórcio Intermunicipal de Saúde do Médio Paranapanema (CISMEPAR)"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "etapa_ou_prova_da_regra_insuficiente"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "inquérito civil em andamento; suspeitas não equivalem a irregularidades comprovadas ou condenação",
+        "reason": "O corpo descreve inquérito civil do Ministério Público do Paraná que investiga suspeitas de cartel em credenciamento conduzido pelo consórcio CISMEPAR; trata-se de controle em apuração, sem condenação ou responsabilização definitiva, conforme expressamente ressalvado no texto.",
+        "evidence": "A investigação é conduzida pela 26ª Promotoria de Justiça de Londrina e tem como foco o Chamamento Público nº 007/2024 do Consórcio Intermunicipal de Saúde do Médio Paranapanema (CISMEPAR), responsável pelo credenciamento de empresas para a prestação de plantões médicos",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CISMEPAR",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "b1d740949df98a086e187c6b681ae88049132f8466027336a645ae0902da9e4a",
+      "url": "https://www.corregofundo.mg.leg.br/proposicoes/Projetos-de-Lei-Ordinaria/2026/1/0/469",
+      "title": "PROJETO DE LEI ORDINÁRIA N.º 1129/2026 - corregofundo.mg.leg.br",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "alteração aprovada em assembleias segundo o projeto; ratificação municipal ainda em tramitação",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "GOVERNANÇA",
+        "evidencia": "Ratifica a 7ª Alteração do Contrato de Consórcio Público do Consórcio Intermunicipal da Serra da Canastra, Alto São Francisco e Médio Rio Grande – CICANASTRA e autoriza alteração do Estatuto para modificar o prazo de Mandato do Presidente do Consórcio",
+        "justificativa": "Projeto de lei em tramitação ratifica alteração do contrato de consórcio público e autoriza alteração estatutária sobre mandato da presidência, configurando alteração de regras institucionais do consórcio (GOVERNANÇA). Como é projeto em tramitação, o fato ainda não está consumado, mas a evidência aponta a etapa de alteração de governança.",
+        "escopo": "entidade",
+        "entidade": "CICANASTRA",
+        "evidencia_entidade": "Consórcio Intermunicipal da Serra da Canastra, Alto São Francisco e Médio Rio Grande - CICANASTRA"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "multiplos_atos"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "alteração aprovada em assembleias segundo o projeto; ratificação municipal ainda em tramitação",
+        "reason": "Projeto de lei em tramitação ratifica alteração do contrato de consórcio público e autoriza alteração estatutária sobre mandato da presidência, configurando alteração de regras institucionais do consórcio (GOVERNANÇA). Como é projeto em tramitação, o fato ainda não está consumado, mas a evidência aponta a etapa de alteração de governança.",
+        "evidence": "Ratifica a 7ª Alteração do Contrato de Consórcio Público do Consórcio Intermunicipal da Serra da Canastra, Alto São Francisco e Médio Rio Grande – CICANASTRA e autoriza alteração do Estatuto para modificar o prazo de Mandato do Presidente do Consórcio",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CICANASTRA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "f3981f254c4666c68397365f08baad8497f4ddf9b4d247ad7b71522c1eedac2c",
+      "url": "https://consorcioabc.sp.gov.br/noticia/6062/consorcio-abc-lanca-programa-abc-cultura-para-fortalecer-integracao-regional-e-impulsionar-a-economia-criativa/",
+      "title": "Consórcio ABC lança programa ABC + Cultura para fortalecer integração regional e impulsionar a economia criativa - Consórcio Intermunicipal - Grande ABC",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "programa lançado pelo consórcio; adesão municipal não comprovada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC lançou, nesta terça-feira (14/7), durante a Assembleia de Prefeitos de julho, o programa ABC + Cultura",
+        "justificativa": "O consórcio lançou efetivamente um programa regional de cultura, configurando atuação concreta do ente, e não mera proposta ou convocação.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC lançou, nesta terça-feira (14/7)"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "multiplos_atos"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "programa lançado pelo consórcio; adesão municipal não comprovada",
+        "reason": "O consórcio lançou efetivamente um programa regional de cultura, configurando atuação concreta do ente, e não mera proposta ou convocação.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC lançou, nesta terça-feira (14/7), durante a Assembleia de Prefeitos de julho, o programa ABC + Cultura",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "1e4b6177ba30532940be127fc99fb32bf1d9ee3d3b7397e40a73d98383f637ce",
+      "url": "https://amm.diariomunicipal.org/publicacao/1923527/",
+      "title": "LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "estatuto consolidado ratificado por lei municipal; consórcio já existente",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "GOVERNANÇA",
+        "evidencia": "Art. 1º Fica ratificado, no âmbito do Município, o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA, aprovado pela Assembleia Geral por meio da Resolução nº 002/2026, de 29 de julho de 2026",
+        "justificativa": "Lei municipal ratifica o Estatuto Consolidado do CIDESAPA aprovado em Assembleia Geral, alterando o protocolo/estatuto vigente do consórcio público: fato de governança institucional (alteração de regras do consórcio existente), e não mera autorização de ingresso ou adesão automática.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA",
+        "evidencia_entidade": "o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA, aprovado pela Assembleia Geral por meio da Resolução nº 002/2026"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "GOVERNANÇA",
+        "stage": "estatuto consolidado ratificado por lei municipal; consórcio já existente",
+        "reason": "Lei municipal ratifica o Estatuto Consolidado do CIDESAPA aprovado em Assembleia Geral, alterando o protocolo/estatuto vigente do consórcio público: fato de governança institucional (alteração de regras do consórcio existente), e não mera autorização de ingresso ou adesão automática.",
+        "evidence": "Art. 1º Fica ratificado, no âmbito do Município, o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA, aprovado pela Assembleia Geral por meio da Resolução nº 002/2026, de 29 de julho de 2026",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia – CIDESAPA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "204bf17d2675a3cb1ba3554ccbabd9dd4073a71e671f156e208ad6715588202f",
+      "url": "https://www.tce.pr.gov.br/noticias/ex-presidente-de-consorcio-do-rio-parana-e-multado-por-atraso-no-envio-de-dados/4039/N-4936B620A10BFD0701A121F65293424B-00.htm",
+      "title": "Ex-presidente de consórcio do Rio Paraná é multado por atraso no envio de dados - TCE-PR",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "CONTROLE",
+      "rule": "CONTROLE",
+      "stage": "julgamento de contas relatado; preservar resultado e destinatário das sanções, sem inferir trânsito em julgado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "O Tribunal de Contas do Estado do Paraná (TCE-PR) julgou regulares as contas de 2011 do Consórcio Intermunicipal para a Conservação Remanescente do Rio Paraná (Coripa). Mas aplicou duas multas, que somam R$ 1.450,96, a Cláudio Aparecido Alves Palozi, então presidente da entidade",
+        "justificativa": "Julgamento de contas anual pelo TCE-PR com aplicação de multas ao gestor do consórcio; trata-se de controle externo exercido sobre a entidade, com sanção pessoal ao responsável.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal para a Conservação Remanescente do Rio Paraná (Coripa)",
+        "evidencia_entidade": "as contas de 2011 do Consórcio Intermunicipal para a Conservação Remanescente do Rio Paraná (Coripa)"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "etapa_ou_prova_da_regra_insuficiente"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "CONTROLE",
+        "stage": "julgamento de contas relatado; preservar resultado e destinatário das sanções, sem inferir trânsito em julgado",
+        "reason": "Julgamento de contas anual pelo TCE-PR com aplicação de multas ao gestor do consórcio; trata-se de controle externo exercido sobre a entidade, com sanção pessoal ao responsável.",
+        "evidence": "O Tribunal de Contas do Estado do Paraná (TCE-PR) julgou regulares as contas de 2011 do Consórcio Intermunicipal para a Conservação Remanescente do Rio Paraná (Coripa). Mas aplicou duas multas, que somam R$ 1.450,96, a Cláudio Aparecido Alves Palozi, então presidente da entidade",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal para a Conservação Remanescente do Rio Paraná (Coripa)",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "72768a78f82ea4ef2b0d3dabe2e8e6d3760351e048beb8e40cf373e6b90836d6",
+      "url": "https://amm.diariomunicipal.org/publicacao/1923461/",
+      "title": "AVISO DE INTENÇÃO DE ADESÃO À ATA DE REGISTRO DE PREÇOS 08/2026",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "A Prefeitura Municipal de Canabrava do Norte/MT, por meio da Equipe de Apoio a Licitação, torna público para conhecimento de todos os interessados sua intenção de aderir, como CARONA, à Ata de Registro de Preço 013/CIMCERO/SRP/2024",
+        "justificativa": "Trata-se de mero aviso de intenção de adesão a ata de registro de preços de consórcio, sem comprovação de adesão consumada, contrato ou ato institucional; não configura fato relevante para a base histórica de consórcios públicos.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": null,
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Trata-se de mero aviso de intenção de adesão a ata de registro de preços de consórcio, sem comprovação de adesão consumada, contrato ou ato institucional; não configura fato relevante para a base histórica de consórcios públicos.",
+        "evidence": "A Prefeitura Municipal de Canabrava do Norte/MT, por meio da Equipe de Apoio a Licitação, torna público para conhecimento de todos os interessados sua intenção de aderir, como CARONA, à Ata de Registro de Preço 013/CIMCERO/SRP/2024",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "fora_escopo"
+      }
+    },
+    {
+      "id": "a229b70e241ce005ae15cf54eda886a88511ea43380572272c9ca8fda75cfe70",
+      "url": "https://araguaianoticia.com.br/noticia/79550/consorcio-de-saude-garcasaraguaia-viabiliza-procedimentos-oftalmologicos-para-mais-100-pac",
+      "title": "Consórcio de Saúde Garças/Araguaia viabiliza procedimentos oftalmológicos para mais 100 pacientes da região - Araguaia Notícia",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7).",
+        "justificativa": "O consórcio efetivamente realizou procedimentos oftalmológicos para pacientes de municípios consorciados, configurando atuação concreta na prestação de serviços de saúde. Não se trata de mera previsão ou convocação, mas de ação já executada.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde da Região Garças/Araguaia",
+        "evidencia_entidade": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7)."
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "etapa_ou_prova_da_regra_insuficiente"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+        "reason": "O consórcio efetivamente realizou procedimentos oftalmológicos para pacientes de municípios consorciados, configurando atuação concreta na prestação de serviços de saúde. Não se trata de mera previsão ou convocação, mas de ação já executada.",
+        "evidence": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7).",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde da Região Garças/Araguaia",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "e0f4c638fd55f3bcc92d6befc56d67093d5be835218560888542bd16071e238f",
+      "url": "https://amm.diariomunicipal.org/publicacao/1923311/",
+      "title": "EXTRATO DO CONTRATO DE RATEIO Nº 004/2026",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "RATEIO",
+      "rule": "RATEIO",
+      "stage": "extrato de rateio com data de assinatura; pagamento não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "RATEIO",
+        "evidencia": "Concedente: Município de Campo Verde, inscrito no CNPJ n°. 24.950.495/0001-88. Proponente: Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental da Região Sul - CIDESASUL",
+        "justificativa": "Extrato de contrato de rateio celebrado entre município e consórcio público, com valor, vigência e objeto definidos, configurando rateio efetivado, não mera tramitação.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental da Região Sul - CIDESASUL",
+        "evidencia_entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental da Região Sul - CIDESASUL, inscrito no CNPJ sob o nº. 08.051.612/0001.15"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "RATEIO",
+        "stage": "extrato de rateio com data de assinatura; pagamento não comprovado",
+        "reason": "Extrato de contrato de rateio celebrado entre município e consórcio público, com valor, vigência e objeto definidos, configurando rateio efetivado, não mera tramitação.",
+        "evidence": "Concedente: Município de Campo Verde, inscrito no CNPJ n°. 24.950.495/0001-88. Proponente: Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental da Região Sul - CIDESASUL",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental da Região Sul - CIDESASUL",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "1e478deca0734696bb851d9fbe4f7426b57c3cb915dad2d7db2ee7cd5e90ebbe",
+      "url": "https://www.tce.rn.gov.br/Noticias/NoticiaDetalhada/8119",
+      "title": "Tribunal de Contas mantém bloqueados pagamentos de contrato de energia solar - TCE RN",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "CONTROLE",
+        "evidencia": "O Tribunal de Contas do Estado (TCE/RN) concedeu medida cautelar para manter bloqueados os pagamentos remanescentes de um contrato de implantação e manutenção de sistemas de energia solar fotovoltaica firmado pela Secretaria Municipal de Educação de São Gonçalo do Amarante.",
+        "justificativa": "Trata-se de decisão cautelar de Tribunal de Contas que mantém bloqueio de pagamentos de contrato municipal e determina citação de gestor, do consórcio e das empresas para defesa, caracterizando controle em apuração. O Consórcio MTEC Veredas aparece como contratado do município, não como consórcio público, e o CIM Potiguar é mencionado apenas como gerenciador de ata de registro de preços, sem fato institucional do consórcio público.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "O 'Consórcio MTEC Veredas' é consórcio privado empresarial de fornecedores, não consórcio público intermunicipal; o CIM Potiguar aparece apenas como gestor de ata de registro de preços usada em adesão municipal, sem ato institucional próprio (criação, ingresso, protocolo, rateio, governança ou controle) descrito no corpo.",
+        "evidence": "O contrato, firmado com o Consórcio MTEC Veredas, tem valor total de R$ 15,280 milhões",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "26f6e6e1a3c1f589d5301ae55960a2d81466fb5585567e592272139eee5921b4",
+      "url": "https://ama-al.com.br/cnm-orienta-gestores-sobre-posicao-da-receita-federal-que-trata-de-consorcios-publicos/",
+      "title": "CNM orienta gestores sobre posição da Receita Federal que trata de consórcios públicos - Confederação Nacional de Municípios (CNM)",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "FINANÇAS",
+      "rule": "FINANÇAS",
+      "stage": "orientação tributária geral; não é ato de consórcio individual",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "FINANÇAS",
+        "evidencia": "A Receita Federal do Brasil (RFB), por meio da Solução de Consulta da Coordenação-Geral de Tributação (Cosi) 145/2026, manifestou-se no sentido de que não há base normativa para que os consórcios públicos com natureza jurídica de direito privado façam jus à imunidade recíproca sobre impostos",
+        "justificativa": "O documento trata de orientação tributária geral sobre consórcios públicos, discutindo imunidade recíproca conforme a natureza jurídica (associação pública ou direito privado), o que se enquadra em FINANÇAS. Não há fato institucional específico de criação, adesão, atuação ou governança de entidade nomeada.",
+        "escopo": "orientacao_geral",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "aceito",
+        "category": "FINANÇAS",
+        "stage": "orientação tributária geral; não é ato de consórcio individual",
+        "reason": "O documento veicula orientação tributária geral sobre imunidade recíproca aplicável a consórcios públicos, conforme Solução de Consulta Cosit 145/2026, sem configurar ato de consórcio individual.",
+        "evidence": "a Receita Federal concluiu que não há suporte normativo que autorize o reconhecimento da mesma imunidade",
+        "entity": "",
+        "scope": "orientacao_geral"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "FINANÇAS",
+        "stage": "orientação tributária geral; não é ato de consórcio individual",
+        "reason": "O documento trata de orientação tributária geral sobre consórcios públicos, discutindo imunidade recíproca conforme a natureza jurídica (associação pública ou direito privado), o que se enquadra em FINANÇAS. Não há fato institucional específico de criação, adesão, atuação ou governança de entidade nomeada.",
+        "evidence": "A Receita Federal do Brasil (RFB), por meio da Solução de Consulta da Coordenação-Geral de Tributação (Cosi) 145/2026, manifestou-se no sentido de que não há base normativa para que os consórcios públicos com natureza jurídica de direito privado façam jus à imunidade recíproca sobre impostos",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "orientacao_geral"
+      }
+    },
+    {
+      "id": "b628c35cb1f299cda442bc2c1f6d32323423c1fbd42aae87766310834feaf8c4",
+      "url": "https://www.carapicuiba.sp.gov.br/portal/noticias/0/3/11253/consorcio-abre-processo-seletivo-em-carapicuiba",
+      "title": "Consórcio abre processo seletivo em Carapicuíba - Prefeitura de Carapicuíba/SP",
+      "cohort": "fresh12",
+      "reference": null,
+      "referenceCategory": null,
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "O Consórcio Intermunicipal CEMMIL para o Desenvolvimento Sustentável está com inscrições abertas para o Processo Seletivo nº 014/2026, destinado ao preenchimento de 28 vagas em sete funções",
+        "justificativa": "Notícia de processo seletivo de pessoal sem composição municipal expressa, atuação concreta, governança, criação, adesão, rateio ou outro fato institucional enquadrável; mera seleção de pessoal não comprova constituição, protocolo, ingresso, governança ou atuação do consórcio.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal CEMMIL",
+        "evidencia_entidade": "O Consórcio Intermunicipal CEMMIL para o Desenvolvimento Sustentável está com inscrições abertas para o Processo Seletivo nº 014/2026"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Notícia de processo seletivo de pessoal sem composição municipal expressa, atuação concreta, governança, criação, adesão, rateio ou outro fato institucional enquadrável; mera seleção de pessoal não comprova constituição, protocolo, ingresso, governança ou atuação do consórcio.",
+        "evidence": "O Consórcio Intermunicipal CEMMIL para o Desenvolvimento Sustentável está com inscrições abertas para o Processo Seletivo nº 014/2026, destinado ao preenchimento de 28 vagas em sete funções",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "cc60e177b2ea6005cd33ebf1be03fa5caee430aca14ff66c58443bad43491ed6",
+      "url": "https://www.tce.pr.gov.br/noticias/1-200-pessoas-lotam-auditorio-da-fiep-para-acompanhar-seminario-do-progov.htm",
+      "title": "1.200 pessoas lotam auditório da Fiep para acompanhar seminário do Progov",
+      "cohort": "original40",
+      "reference": "descartado",
+      "referenceCategory": "GERAL",
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Aproximadamente 1.200 pessoas – entre gestores, servidores públicos municipais e agentes do controle social – lotaram o auditório do Centro de Eventos da Federação das Indústrias do Estado do Paraná",
+        "justificativa": "O texto trata de seminário promovido pelo TCE-PR sobre o programa Progov, com palestras e premiação de boas práticas municipais; não há qualquer fato institucional de consórcio público intermunicipal (criação, adesão, protocolo, governança, rateio, atuação de consórcio, controle ou crise).",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "O documento trata de seminário e premiação do Progov, programa de avaliação de contas municipais do TCE-PR; não há constituição, protocolo, ingresso, rateio, governança, crise, atuação ou orientação geral sobre consórcios públicos intermunicipais, nem identificação de qualquer consórcio público.",
+        "evidence": "Aproximadamente 1.200 pessoas – entre gestores, servidores públicos municipais e agentes do controle social – lotaram o auditório do Centro de Eventos da Federação das Indústrias",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "O texto trata de seminário promovido pelo TCE-PR sobre o programa Progov, com palestras e premiação de boas práticas municipais; não há qualquer fato institucional de consórcio público intermunicipal (criação, adesão, protocolo, governança, rateio, atuação de consórcio, controle ou crise).",
+        "evidence": "Aproximadamente 1.200 pessoas – entre gestores, servidores públicos municipais e agentes do controle social – lotaram o auditório do Centro de Eventos da Federação das Indústrias do Estado do Paraná",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "fora_escopo"
+      }
+    },
+    {
+      "id": "39a744a7c4c155d8ce9ed31e7bbc9c3d8f4cb016b236b75efe1acc779ee17809",
+      "url": "https://consorcioabc.sp.gov.br/noticia/6113/grande-abc-discute-estrategias-para-reconversao-industrial-da-regiao/",
+      "title": "Grande ABC discute estratégias para reconversão industria... - Consórcio Intermunicipal - Grande ABC",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Intermunicipal Grande ABC realizou, nesta terça-feira (1/9), reunião do Grupo de Trabalho (GT) Desenvolvimento Econômico para avançar nas discussões sobre a reconversão industrial da região.",
+        "justificativa": "Reunião de grupo de trabalho efetivamente conduzida pelo consórcio, com apresentação de painel diagnóstico e debate entre representantes municipais, configurando atuação concreta do consórcio, e não mera convocação ou plano futuro.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Grande ABC",
+        "evidencia_entidade": "O Consórcio Intermunicipal Grande ABC realizou, nesta terça-feira (1/9), reunião do Grupo de Trabalho (GT) Desenvolvimento Econômico"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "atividade institucional realizada; acordos, planos aprovados e entregas não inferidos",
+        "reason": "Reunião de grupo de trabalho efetivamente conduzida pelo consórcio, com apresentação de painel diagnóstico e debate entre representantes municipais, configurando atuação concreta do consórcio, e não mera convocação ou plano futuro.",
+        "evidence": "O Consórcio Intermunicipal Grande ABC realizou, nesta terça-feira (1/9), reunião do Grupo de Trabalho (GT) Desenvolvimento Econômico para avançar nas discussões sobre a reconversão industrial da região.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Grande ABC",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "1370f1e153fb9b47b2073d95af08c69884b1500a004f2002b46b6a6607eb2056",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924395/",
+      "title": "DÉCIMO PRIMEIRO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "RATEIO",
+      "rule": "RATEIO",
+      "stage": "aditivo de rateio publicado entre as partes; pagamento não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "RATEIO",
+        "evidencia": "RESOLVEM aditar o Contrato de Rateio nº 001/2026, mediante os termos das cláusulas que se seguem: 1.1. CLÁUSULA PRIMEIRA – DA ALTERAÇÃO a) Fica alterado o Parágrafo Décimo Primeiro da Cláusula Segunda do Contrato de Rateio – “Do Valor” – para o fim de aditar em R$ 2.225,00",
+        "justificativa": "Termo aditivo a contrato de rateio já existente, celebrado entre município e consórcio público de saúde, alterando valor e ratificando as demais cláusulas. Configura rateio celebrado (aditamento).",
+        "escopo": "entidade",
+        "entidade": "CONSÓRCIO PÚBLICO DE SAÚDE VALE DO TELES PIRES",
+        "evidencia_entidade": "o CONSÓRCIO PÚBLICO DE SAÚDE VALE DO TELES PIRES, pessoa jurídica de direito público, inscrita no CNPJ/MF sob n. 23.019.551/0001-00"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "identidade_sem_prova_literal"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "RATEIO",
+        "stage": "aditivo de rateio publicado entre as partes; pagamento não comprovado",
+        "reason": "Termo aditivo a contrato de rateio já existente, celebrado entre município e consórcio público de saúde, alterando valor e ratificando as demais cláusulas. Configura rateio celebrado (aditamento).",
+        "evidence": "RESOLVEM aditar o Contrato de Rateio nº 001/2026, mediante os termos das cláusulas que se seguem: 1.1. CLÁUSULA PRIMEIRA – DA ALTERAÇÃO a) Fica alterado o Parágrafo Décimo Primeiro da Cláusula Segunda do Contrato de Rateio – “Do Valor” – para o fim de aditar em R$ 2.225,00",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CONSÓRCIO PÚBLICO DE SAÚDE VALE DO TELES PIRES",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "4739a94035422ec3a71acd34d2716bbea562407f22bea3b74236cc403db62879",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924135/",
+      "title": "LEI ORDINÁRIA Nº 1.148, DE 08 DE OUTUBRO DE 2026.",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "GOVERNANÇA",
+      "rule": "GOVERNANÇA",
+      "stage": "alteração do protocolo; ingresso novo não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "PROTOCOLO",
+        "evidencia": "Fica ratificado o Termo de Alteração do Protocolo de Intenções, constante do Anexo Único, que integra esta Lei, para inclusão e adequação de objetivos do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia - CIDESAA",
+        "justificativa": "Lei municipal ratifica alteração do Protocolo de Intensões do CIDESAA, com Anexo Único que contém protocolo de intenções com municípios consorciados nomeados; é etapa constitutiva de protocolo, tratada como PROTOCOLO, não como governança ordinária.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Araguaia - CIDESAA",
+        "evidencia_entidade": "O CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO ECONÔMICO, SOCIAL E AMBIENTAL DO ARAGUAIA – CIDESAA, pessoa jurídica de direito público, com sede administrativa em São Félix do Araguaia – MT, inscrito no CNPJ sob o nº 08.957.566/0001-18"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "multiplos_atos"
+      },
+      "proposal": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      }
+    },
+    {
+      "id": "ac59dad56e739c8513ae74f657b313155786cc66567fe7b2c4407bc586e15eef",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924128/",
+      "title": "LEI ORDINÁRIA Nº 1.118, DE 25 DE JUNHO DE 2026.",
+      "cohort": "original40",
+      "reference": "aceito",
+      "referenceCategory": "ADESÃO AUTORIZADA",
+      "rule": "ADESÃO AUTORIZADA",
+      "stage": "aprovação ou autorização; ingresso efetivo não comprovado",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ADESÃO AUTORIZADA",
+        "evidencia": "Art. 1º Fica autorizado ao Município de São Félix do Araguaia-MT integrar o Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia (CIDESA-NA), no tocante tão somente ao Aterro Sanitário da Região Norte Araguaia",
+        "justificativa": "Lei sancionada autoriza o Município de São Félix do Araguaia a integrar o consórcio público CIDESA-NA, caracterizando adesão autorizada (autorização legal de ingresso), e não adesão consumada. O artigo 2º trata de repasse financeiro, mas o fato principal é a autorização de ingresso.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia (CIDESA-NA)",
+        "evidencia_entidade": "integrar o Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia (CIDESA-NA)"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "multiplos_atos"
+      },
+      "proposal": {
+        "decision": "aceito",
+        "category": "ADESÃO AUTORIZADA",
+        "stage": "aprovação ou autorização; ingresso efetivo não comprovado",
+        "reason": "Lei sancionada autoriza o Município de São Félix do Araguaia a integrar o consórcio público CIDESA-NA, caracterizando adesão autorizada (autorização legal de ingresso), e não adesão consumada. O artigo 2º trata de repasse financeiro, mas o fato principal é a autorização de ingresso.",
+        "evidence": "Art. 1º Fica autorizado ao Município de São Félix do Araguaia-MT integrar o Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia (CIDESA-NA), no tocante tão somente ao Aterro Sanitário da Região Norte Araguaia",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia (CIDESA-NA)",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "c415a567e92c99dabf004a2aa26b564b47d3cd68b0ca33d564e4c323646d6102",
+      "url": "https://www.tce.pr.gov.br/noticias/curitiba-e-pinhais-sao-primeiros-destaques-em-evento-dos-5-anos-do-progov-na-fiep.htm",
+      "title": "Curitiba e Pinhais são primeiros destaques em evento dos 5 anos do Progov na Fiep",
+      "cohort": "original40",
+      "reference": "descartado",
+      "referenceCategory": "GERAL",
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Aproximadamente 1.200 pessoas – entre gestores, servidores públicos municipais e agentes do controle social – participam do evento, promovido pelo TCE-PR, com o apoio da Fiep, para celebrar os cinco anos de implementação do Programa de Avaliação das Contas Municipais de Governo (Progov) do órgão de controle.",
+        "justificativa": "Trata-se de evento de premiação e seminário do TCE-PR sobre o Programa de Avaliação das Contas Municipais de Governo (Progov), sem qualquer fato institucional de consórcio público intermunicipal: não há constituição, protocolo, ingresso, rateio, governança, controle, crise ou atuação de consórcio. As menções a municípios e áreas de avaliação são do programa do Tribunal de Contas, não de consórcio público.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "O documento trata de premiação e seminário do Progov, programa de avaliação de contas municipais do TCE-PR, sem qualquer menção a consórcio público intermunicipal, sua criação, adesão, atuação ou governança.",
+        "evidence": "Aproximadamente 1.200 pessoas – entre gestores, servidores públicos municipais e agentes do controle social – participam do evento",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Trata-se de evento de premiação e seminário do TCE-PR sobre o Programa de Avaliação das Contas Municipais de Governo (Progov), sem qualquer fato institucional de consórcio público intermunicipal: não há constituição, protocolo, ingresso, rateio, governança, controle, crise ou atuação de consórcio. As menções a municípios e áreas de avaliação são do programa do Tribunal de Contas, não de consórcio público.",
+        "evidence": "Aproximadamente 1.200 pessoas – entre gestores, servidores públicos municipais e agentes do controle social – participam do evento, promovido pelo TCE-PR, com o apoio da Fiep, para celebrar os cinco anos de implementação do Programa de Avaliação das Contas Municipais de Governo (Progov) do órgão de controle.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "fora_escopo"
+      }
+    },
+    {
+      "id": "d3c65b1520f89c334285362ffc772df6014fdf3fe03d03bc731eabab1c0c4410",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924122/",
+      "title": "LEI ORDINÁRIA Nº 1.136, DE 28 DE AGOSTO DE 2026.",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "FINANÇAS",
+      "rule": "FINANÇAS",
+      "stage": "lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "FINANÇAS",
+        "evidencia": "Fica o Poder Executivo Municipal autorizado a repassar recursos financeiros ao Consórcio Intermunicipal de Saúde do Araguaia – CISA",
+        "justificativa": "Lei municipal sancionada autoriza repasses financeiros ao consórcio público CISA para custeio de ações e serviços de saúde de média e alta complexidade, configurando ato de financiamento (FINANÇAS). Não há prova de rateio celebrado, apenas autorização legislativa de repasse.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde do Araguaia – CISA",
+        "evidencia_entidade": "Consórcio Intermunicipal de Saúde do Araguaia – CISA, pessoa jurídica de direito público constituída nos termos da Lei Federal nº 11.107"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "FINANÇAS",
+        "stage": "lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados",
+        "reason": "Lei municipal sancionada autoriza repasses financeiros ao consórcio público CISA para custeio de ações e serviços de saúde de média e alta complexidade, configurando ato de financiamento (FINANÇAS). Não há prova de rateio celebrado, apenas autorização legislativa de repasse.",
+        "evidence": "Fica o Poder Executivo Municipal autorizado a repassar recursos financeiros ao Consórcio Intermunicipal de Saúde do Araguaia – CISA",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal de Saúde do Araguaia – CISA",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "40a51f9efadf68edf60fb5d8c3f7214aa6c17ee798b1170f1e623897d195d7a8",
+      "url": "https://jcconcursos.com.br/noticia/concursos/processo-seletivo-na-grande-sao-paulo-abre-inscricoes-para-28-vagas-146014",
+      "title": "Processo seletivo na Grande São Paulo abre inscrições para 28 vagas - JC Concursos",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Um novo processo seletivo na Grande São Paulo acaba de abrir inscrições para preenchimento de 28 vagas. Chances são para o quadro de pessoal do Consórcio Cemmil",
+        "justificativa": "Notícia sobre processo seletivo de pessoal do consórcio; não há fato institucional como criação, adesão, protocolo, governança, controle, crise, atuação, rateio ou finanças. Composição municipal não é nomeada com vínculo expresso.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Cemmil",
+        "evidencia_entidade": "Consórcio Cemmil (Consórcio Intermunicipal Cemmil para o Desenvolvimento Sustentável)"
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Notícia sobre processo seletivo de pessoal do consórcio; não há fato institucional como criação, adesão, protocolo, governança, controle, crise, atuação, rateio ou finanças. Composição municipal não é nomeada com vínculo expresso.",
+        "evidence": "Um novo processo seletivo na Grande São Paulo acaba de abrir inscrições para preenchimento de 28 vagas. Chances são para o quadro de pessoal do Consórcio Cemmil",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "8dd892b3435e2dfc1626d567f019853c2e570b9b5d4768e0b70423c838b4717b",
+      "url": "https://www.tce.pr.gov.br/noticias/tce-pr-celebra-5-anos-do-progov-reconhecendo-boas-praticas-de-28-municipios.htm",
+      "title": "TCE-PR celebra 5 anos do Progov reconhecendo boas práticas de 28 municípios - TCE-PR",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Trinta boas práticas em políticas públicas – executadas por 28 prefeituras – serão reconhecidas pelo Tribunal de Contas do Estado do Paraná em evento comemorativo aos cinco anos de implantação do Programa de Avaliação das Contas Municipais de Governo (Progov).",
+        "justificativa": "O texto trata de evento comemorativo de programa estadual de avaliação de contas municipais, com premiação de boas práticas, sem qualquer fato institucional sobre consórcio público intermunicipal (criação, adesão, protocolo, governança, rateio, controle, crise ou atuação consorcial).",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "Documento trata de evento comemorativo e premiação de boas práticas municipais do Progov, programa de avaliação de contas do TCE-PR. Não menciona consórcio público intermunicipal, sua criação, adesão, rateio, governança, atuação ou qualquer fato institucional de consórcio. A menção a 'gestão e governança' é prêmio genérico sem entidade consorcial explicitada. Fora do escopo da base histórica de consórcios públicos.",
+        "evidence": "Trinta boas práticas em políticas públicas – executadas por 28 prefeituras – serão reconhecidas pelo Tribunal de Contas do Estado do Paraná em evento comemorativo",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "",
+        "reason": "O texto trata de evento comemorativo de programa estadual de avaliação de contas municipais, com premiação de boas práticas, sem qualquer fato institucional sobre consórcio público intermunicipal (criação, adesão, protocolo, governança, rateio, controle, crise ou atuação consorcial).",
+        "evidence": "Trinta boas práticas em políticas públicas – executadas por 28 prefeituras – serão reconhecidas pelo Tribunal de Contas do Estado do Paraná em evento comemorativo aos cinco anos de implantação do Programa de Avaliação das Contas Municipais de Governo (Progov).",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "fora_escopo"
+      }
+    },
+    {
+      "id": "14401a42b8eb8a5f65136bab83118cc024131133f26781af0fcc647e129cedb3",
+      "url": "https://sapl.lagoadaprata.mg.leg.br/sessao/573/votacao-simbolica-transparencia/2856/7952?&materia=ordem",
+      "title": "Câmara Municipal de Lagoa da Prata - SAPL - Câmara Municipal de Lagoa da Prata",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "PROTOCOLO",
+      "rule": "PROTOCOLO",
+      "stage": "projeto de ratificação aprovado em votação; sanção e constituição não provadas pela ficha",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "PROTOCOLO",
+        "evidencia": "Ratifica o Protocolo de Intenções firmado com a finalidade de constituir consórcio público, denominado Consórcio Intermunicipal Multifinalitário dos Municípios do Vale do Itapecerica – CIMMVI e dá outras providências.",
+        "justificativa": "A votação simbólica aprovou projeto de lei que ratifica protocolo de intenções para constituição de consórcio público. Trata-se de etapa constitutiva (ratificação de protocolo) de consórcio público intermunicipal, enquadrada como PROTOCOLO. A aprovação legislativa é fato institucional sustentado, não mera proposta, pois consta resultado de votação aprovado.",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal Multifinalitário dos Municípios do Vale do Itapecerica – CIMMVI",
+        "evidencia_entidade": "Ratifica o Protocolo de Intenções firmado com a finalidade de constituir consórcio público, denominado Consórcio Intermunicipal Multifinalitário dos Municípios do Vale do Itapecerica – CIMMVI e dá outras providências."
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "PROTOCOLO",
+        "stage": "projeto de ratificação aprovado em votação; sanção e constituição não provadas pela ficha",
+        "reason": "A votação simbólica aprovou projeto de lei que ratifica protocolo de intenções para constituição de consórcio público. Trata-se de etapa constitutiva (ratificação de protocolo) de consórcio público intermunicipal, enquadrada como PROTOCOLO. A aprovação legislativa é fato institucional sustentado, não mera proposta, pois consta resultado de votação aprovado.",
+        "evidence": "Ratifica o Protocolo de Intenções firmado com a finalidade de constituir consórcio público, denominado Consórcio Intermunicipal Multifinalitário dos Municípios do Vale do Itapecerica – CIMMVI e dá outras providências.",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "Consórcio Intermunicipal Multifinalitário dos Municípios do Vale do Itapecerica – CIMMVI",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "8c7dbb9e80621f82e2c4c423c83f9b2dbfdcabd46c26e3f09aef97529f45c113",
+      "url": "https://consorcioconiape.pe.gov.br/2026/10/15/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-em-construcao/",
+      "title": "CONIAPE realiza Assembleia Ordinária e visita técnica à nova sede em construção",
+      "cohort": "additional",
+      "reference": "aceito",
+      "referenceCategory": "ATUAÇÃO",
+      "rule": "ATUAÇÃO",
+      "stage": "assembleia e visita realizadas; inauguração e deliberações específicas não comprovadas",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": true,
+        "categoria": "ATUAÇÃO",
+        "evidencia": "O Consórcio Público Intermunicipal do Agreste Pernambucano e Fronteiras (CONIAPE) realizou, nesta quarta-feira (14), sua Assembleia Ordinária, reunindo gestores públicos e representantes dos municípios consorciados",
+        "justificativa": "A notícia relata a realização efetiva de Assembleia Ordinária e visita técnica às instalações da nova sede do consórcio, configurando atuação concreta do consórcio, distinta de mera convocação ou pauta futura. A visita técnica conduzida é ato efetivo.",
+        "escopo": "entidade",
+        "entidade": "CONIAPE",
+        "evidencia_entidade": "O Consórcio Público Intermunicipal do Agreste Pernambucano e Fronteiras (CONIAPE)"
+      },
+      "before": null,
+      "proposal": {
+        "decision": "aceito",
+        "category": "ATUAÇÃO",
+        "stage": "assembleia e visita realizadas; inauguração e deliberações específicas não comprovadas",
+        "reason": "A notícia relata a realização efetiva de Assembleia Ordinária e visita técnica às instalações da nova sede do consórcio, configurando atuação concreta do consórcio, distinta de mera convocação ou pauta futura. A visita técnica conduzida é ato efetivo.",
+        "evidence": "O Consórcio Público Intermunicipal do Agreste Pernambucano e Fronteiras (CONIAPE) realizou, nesta quarta-feira (14), sua Assembleia Ordinária, reunindo gestores públicos e representantes dos municípios consorciados",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "CONIAPE",
+        "scope": "entidade"
+      }
+    },
+    {
+      "id": "d532ca4a50afb9c4c25f44a45aae2815cbaba9b8ab2baf41d9584741d07a0304",
+      "url": "https://amm.diariomunicipal.org/publicacao/1925327/",
+      "title": "EXTRATO DE TERMO DE RATIFICAÇÃO",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "dispensa para fornecedor ratificada; não é repasse nem prestação de contas realizada",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "OBJETO: Contratação de empresa especializada na prestação de serviços técnicos profissionais de consultoria especializada em gestão de saúde",
+        "justificativa": "Trata-se de extrato de ratificação de dispensa de licitação para contratação de empresa de consultoria em gestão de saúde, contrato rotineiro com fornecedor, sem nexo com fato institucional de consórcio público.",
+        "escopo": "fora_escopo",
+        "entidade": "CISMNORTE",
+        "evidencia_entidade": "Consórcio Intermunicipal de Saúde da Região Médio Norte Mato-grossense"
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "dispensa para fornecedor ratificada; não é repasse nem prestação de contas realizada",
+        "reason": "O documento é extrato de ratificação de dispensa de licitação para contratação de serviços técnicos de consultoria, com credor privado; não documenta ato institucional do consórcio público (criação, adesão, rateio, protocolo, governança, controle, crise, atuação concreta ou cooperação autorizada), tratando-se de contrato rotineiro com fornecedor, fora do escopo da base histórica.",
+        "evidence": "EXTRATO DE TERMO DE RATIFICAÇÃO PROCESSO ADMINISTRATIVO Nº 007/2026",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "dispensa para fornecedor ratificada; não é repasse nem prestação de contas realizada",
+        "reason": "Trata-se de extrato de ratificação de dispensa de licitação para contratação de empresa de consultoria em gestão de saúde, contrato rotineiro com fornecedor, sem nexo com fato institucional de consórcio público.",
+        "evidence": "OBJETO: Contratação de empresa especializada na prestação de serviços técnicos profissionais de consultoria especializada em gestão de saúde",
+        "evidenceOrigin": "segunda_leitura",
+        "entity": "",
+        "scope": "fora_escopo"
+      }
+    },
+    {
+      "id": "46665ce6dcd4d840ea854fef678312eb8ebb8737f34ee6f55311aebbccba762d",
+      "url": "https://amm.diariomunicipal.org/publicacao/1926182/",
+      "title": "125-2026 - Termo de Inex 02.2026 - HOSPITAL SANTA RITA VG",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Constitui objeto do presente termo CREDENCIAMENTO das empresas que tenham interesse na prestação de serviços especializados na área de saúde, sendo ESPECIALIDADES MÉDICAS, para atendimento da demanda dos municípios integrantes do Consórcio Intermunicipal de Saúde Vale do Rio Cuiabá",
+        "justificativa": "Trata-se de termo de credenciamento de empresa privada para prestação de serviços médicos ao consórcio, contrato rotineiro com fornecedor credenciado, expressamente descartado pelas regras. Não configura ato institucional do consórcio (criação, adesão, protocolo, governança, rateio, controle, crise ou atuação relevante).",
+        "escopo": "entidade",
+        "entidade": "CONSORCIO INTERMUNICIPAL DE SAÚDE DO VALE DO RIO CUIABÁ",
+        "evidencia_entidade": "CONSORCIO INTERMUNICPAL DE SAÚDE VALE DO RIO CUIABÁ, Estado de Mato Grosso, Pessoa Jurídica, com sede administrativa Rua Professor Joao Felix, 1024, Quadra 5 Lote 60 Bairro: Lixeira"
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "reason": "Trata-se de contrato de credenciamento para prestação de serviços médicos firmado entre o consórcio e empresa privada, ato rotineiro de contratação de fornecedor, não constituindo fato institucional do consórcio (criação, adesão, rateio, governança, controle, crise ou atuação consorcial típica).",
+        "evidence": "Constitui objeto do presente termo CREDENCIAMENTO das empresas que tenham interesse na prestação de serviços especializados na área de saúde",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "reason": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "evidence": "TERMO DE CREDENCIAMENTO Nº 125/2026 PRESTAÇÃO DE SERVIÇOS FIRMADO ENTRE O CONSORCIO INTERMUNICIPAL DE SAÚDE DO VALE DO RIO CUIABÁ E A EMPRESA HOSPITAL SANTA RITA VG LTDA. O CONSORCIO INTERMUNICPAL DE SAÚDE VALE DO RIO CUIABÁ, Estado de Mato Grosso, Pessoa Jurídica, com sede administrativa Rua Professor Joao Felix, 1024, Quadra 5 Lote 60 Bairro: Lixeira, nesta cidade, inscrita no CNPJ sob o n.º 36.833.348/0001-07, rep",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "routine_supplier_excluded"
+      }
+    },
+    {
+      "id": "7114cd796d3314ace1475c4087d35a0f26fa8980bcb20e794488857fd1a18e40",
+      "url": "https://amm.diariomunicipal.org/publicacao/1926180/",
+      "title": "126-2026 - Termo de Inex 7.2026 - LABORATORIO DE PRÓTESE DENTÁRIA SOLUÇÃO LTDA.",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "RESOLVEM celebrar o presente Contrato nos seguintes termos e condições: CLÁUSULA PRIMEIRA – DO OBJETO 1.1. Constitui objeto do presente termo CREDENCIAMENTO das empresas que tenham interesse na prestação de serviços especializados na área de saúde, sendo ESPECIALIDADES MÉDICAS",
+        "justificativa": "Trata-se de termo de credenciamento firmado entre o consórcio e empresa privada para prestação de serviços odontológicos, com cláusulas contratuais rotineiras. É contrato de credenciamento com fornecedor, não ato institucional do consórcio (criação, adesão, protocolo, governança, rateio, controle ou atuação institucional relevante).",
+        "escopo": "entidade",
+        "entidade": "Consórcio Intermunicipal de Saúde Vale do Rio Cuiabá",
+        "evidencia_entidade": "O CONSORCIO INTERMUNICPAL DE SAÚDE VALE DO RIO CUIABÁ, Estado de Mato Grosso, Pessoa Jurídica, com sede administrativa Rua Professor Joao Felix, 1024"
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "reason": "Trata-se de credenciamento/contrato rotineiro de prestação de serviços odontológicos firmado entre o consórcio e empresa privada, com cláusulas contratuais padrão (pagamento, obrigações, penalidades, vigência). Não constitui ato institucional do consórcio (criação, adesão, saída, rateio, protocolo, governança, controle, crise ou atuação relevante), sendo contrato com fornecedor fora do escopo da base histórica.",
+        "evidence": "TERMO DE CREDENCIAMENTO Nº 126/2026 PRESTAÇÃO DE SERVIÇOS FIRMADO ENTRE O CONSORCIO INTERMUNICIPAL DE SAÚDE DO VALE DO RIO CUIABÁ E A EMPRESA LABORATÓRIO DE PRÓTESE DENTÁRIA SOLUÇÃO LTDA",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "reason": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "evidence": "TERMO DE CREDENCIAMENTO Nº 126/2026 PRESTAÇÃO DE SERVIÇOS FIRMADO ENTRE O CONSORCIO INTERMUNICIPAL DE SAÚDE DO VALE DO RIO CUIABÁ E A EMPRESA LABORATÓRIO DE PRÓTESE DENTÁRIA SOLUÇÃO LTDA. O CONSORCIO INTERMUNICPAL DE SAÚDE VALE DO RIO CUIABÁ, Estado de Mato Grosso, Pessoa Jurídica, com sede administrativa Rua Professor Joao Felix, 1024, Quadra 5 Lote 60 Bairro: Lixeira, nesta cidade, inscrita no CNPJ sob o n.º 36.833",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "routine_supplier_excluded"
+      }
+    },
+    {
+      "id": "a854767cb3855ae1e550a3c7999b45279b84eea39d0783e221283dd4125aa490",
+      "url": "https://amm.diariomunicipal.org/publicacao/1926220/",
+      "title": "124-2026 - Termo de Inex 01.2026 - HOSPITAL SANTA RITA VG",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "Constitui objeto do presente termo CREDENCIAMENTO das empresas que tenham interesse na prestação de serviços especializados na área de saúde, sendo ESPECIALIDADES MÉDICAS, para atendimento da demanda dos municípios integrantes do Consórcio Intermunicipal de Saúde Vale do Rio Cuiabá",
+        "justificativa": "Trata-se de contrato de credenciamento de empresa privada para prestação de serviços médicos, contrato rotineiro com fornecedor, expressamente descartado pelas regras. Não configura rateio, atuação institucional, governança ou qualquer fato institucional relevante.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "reason": "Trata-se de termo de credenciamento de empresa privada para prestação de serviços médicos ao consórcio, com cláusulas contratuais rotineiras de pagamento, penalidades e vigência; não constitui criação, adesão, rateio, protocolo, governança, controle, crise ou atuação institucional do consórcio, sendo mero contrato administrativo de credenciamento fora do escopo da base histórica.",
+        "evidence": "Constitui objeto do presente termo CREDENCIAMENTO das empresas que tenham interesse na prestação de serviços especializados na área de saúde",
+        "entity": "",
+        "scope": "fora_escopo"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "reason": "credenciamento de fornecedor; contrato rotineiro fora do escopo",
+        "evidence": "TERMO DE CREDENCIAMENTO Nº 124/2026 PRESTAÇÃO DE SERVIÇOS FIRMADO ENTRE O CONSORCIO INTERMUNICIPAL DE SAÚDE DO VALE DO RIO CUIABÁ E A EMPRESA HOSPITAL SANTA RITA VG LTDA. O CONSORCIO INTERMUNICPAL DE SAÚDE VALE DO RIO CUIABÁ, Estado de Mato Grosso, Pessoa Jurídica, com sede administrativa Rua Professor Joao Felix, 1024, Quadra 5 Lote 60 Bairro: Lixeira, nesta cidade, inscrita no CNPJ sob o n.º 36.833.348/0001-07, rep",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "routine_supplier_excluded"
+      }
+    },
+    {
+      "id": "f49d49e31e0bc9f36251e0a3806ffe543a0d96ef62b0bba58418b9d70929438e",
+      "url": "https://www.fatosdematogrosso.com.br/cidades/consorcio-preve-r-36-milhoes-para-fornecer-64-mil-proteses-dentarias-gratuitas-em-mt/17488",
+      "title": "Consórcio prevê R$ 3,6 milhões para fornecer 6,4 mil próteses dentárias gratuitas em MT - Fatos de Mato Grosso",
+      "cohort": "original40",
+      "reference": "descartado",
+      "rule": "GERAL",
+      "stage": "notícia de credenciamento rotineiro; atendimento apenas previsto",
+      "ai": {
+        "incerto": false,
+        "multiplos_atos": false,
+        "atos_independentes": [],
+        "relevante": false,
+        "categoria": "IRRELEVANTE",
+        "evidencia": "O termo de credenciamento com o Laboratório de Prótese Dentária Solução Ltda. foi assinado em 5 de outubro pelo secretário executivo do consórcio, Neurilan Fraga",
+        "justificativa": "O documento trata de credenciamento de laboratório de próteses dentárias, contrato rotineiro com fornecedor, sem constituição, protocolo, adesão, rateio, governança, controle, crise ou atuação institucional do consórcio. A menção ao consórcio é passiva e o termo de credenciamento é instrumento de execução de serviço, não fato institucional relevante para a base histórica de consórcios públicos.",
+        "escopo": "fora_escopo",
+        "entidade": "",
+        "evidencia_entidade": ""
+      },
+      "before": {
+        "decision": "pendente",
+        "reason": "divergencia_regra_ia"
+      },
+      "proposal": {
+        "decision": "descartado",
+        "category": "GERAL",
+        "stage": "notícia de credenciamento rotineiro; atendimento apenas previsto",
+        "reason": "notícia de credenciamento rotineiro; atendimento apenas previsto",
+        "evidence": "Ilustração/CanvaConsórcio prevê até R$ 3,6 milhões em próteses dentárias Pacientes da rede pública dos municípios que integram o Consórcio Intermunicipal de Saúde Vale do Rio Cuiabá (Cisvarc) poderão receber até 6.400 próteses dentárias nos próximos 12 meses, fabricadas por um laboratório de Goiânia (GO). O termo de credenciamento com o Laboratório de Prótese Dentária Solução Ltda. foi assinado em 5 de outubro pelo secretário executivo do consórcio, Neurilan Fraga, e publicado nesta sexta-feira (16) no Jornal Oficial dos Municípios de Mato Grosso (AMM-MT). O documento estima gasto de até R$ 3,6 milhões, com o mesmo preço para todas as peças, ",
+        "entity": "",
+        "scope": "fora_escopo",
+        "evidenceOrigin": "regra_explicita",
+        "policyExclusion": "routine_supplier_excluded"
+      }
+    }
+  ]
+}

@@ -45,6 +45,10 @@ O antes é o **protótipo da simulação anterior**, não a base publicada. Os a
 
 ${r.cohorts.fresh12?`Foram também selecionados ${r.cohorts.fresh12.total} textos sem revisão editorial anterior, com semente fixa, seis relevantes e seis não relevantes segundo a regra. Seleção antes de ler seus textos/respostas. Resultado: ${n(r.cohorts.fresh12.after,'aceito')} aceites, ${n(r.cohorts.fresh12.after,'descartado')} descartes, ${n(r.cohorts.fresh12.after,'pendente')} retidos. Eles NÃO entram na taxa de concordância: não há resposta editorial anterior. A inspeção posterior é exploratória, não validação humana independente.`:'Não executada nesta rodada.'}
 
+**Não ativar ainda.** A amostra nova revelou lacunas de cobertura e estabilidade. [Auditoria posterior dos 12, com exemplos e próximos passos](AUDITORIA-NOVOS-SIMULACAO-2026-10-16.md). São nove corpos diferentes: quatro URLs reproduzem a mesma notícia CISVP e a IA produziu categorias diferentes. Os três aceites desse grupo não equivalem a três fatos novos. A decisão posterior do usuário sobre histórico CONSUD tem teste suplementar separado e não altera retrospectivamente os números desta execução.
+
+[Teste suplementar do histórico de fonte secundária](SIMULACAO-HISTORICO-SECUNDARIO-2026-10-16.md): política incorporada ao protótipo, 437 testes passaram; o modelo reconheceu o histórico de 2023, mas divergiu da regra no rótulo da categoria. O caso continua retido e não foi aplicado. Esta execução de 70 é da versão 2.1; o complemento é da versão 2.2.
+
 ## O que mudou
 
 1. Grafia de nomes: comparação tolera caixa e acentos; sigla adicionada só vale com vínculo explícito ao nome no mesmo corpo. A citação continua literal, sem normalizar texto inventado.
@@ -82,6 +86,7 @@ ${chosen.map(x=>`| ${link(x)} | ${x.cohort==='original40'?'40 originais':x.cohor
 
 ## Rastreabilidade e segurança
 
+- Houve uma primeira repetição [38958924924](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38958924924), versão 2: nos 40 originais, 22 aceites, 10 descartes e oito retidos; nos 18 adicionais, 12 aceites e seis retidos. Não houve divergência nos 44 decididos e ocorreu um erro de API. Esses resultados motivaram os vetos explícitos, a correção da etapa de rateio e a identificação de processos distintos. A execução final repetiu a amostra inteira; não foram escolhidas apenas respostas favoráveis nem repetidos só casos até acertar.
 - [GitHub Actions — execução ${run}](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/${run}); commit ${r.commit}.
 - Branch experimental: test/original-triage-simulation. Nenhuma ativação ou alteração em main.
 - ${c.aiCalls} chamadas de IA; ${c.aiErrors} erros de API; ${c.usage.input} tokens de entrada e ${c.usage.output} de saída. Sem cache da produção, sem truncamento e sem tentativas repetidas seletivamente.
