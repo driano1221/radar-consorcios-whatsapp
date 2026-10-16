@@ -21,21 +21,22 @@ const externalReference = (row,p) => {
   const r=reference.get(row.id);
   return Boolean(r?.fonte_evidencia && comparableUrl(r.fonte_evidencia)!==comparableUrl(p.item?.articleUrl || row.article_url || row.url));
 };
-const rank = x => sha('original-shadow-fixed-seed:'+x.row.id);
 const eligibleReviewed = prepared.filter(x => x.p.eligible &&
   ['confirmar_evento','nao_evento'].includes(reference.get(x.row.id)?.decisao) &&
   reference.get(x.row.id)?.trecho_sha256===sha(x.row.trecho || '') && !externalReference(x.row,x.p));
-const ranked = relevant => eligibleReviewed.filter(x => (x.p.rule.category !== 'GERAL' && x.p.rule.score >= 5) === relevant)
-  .sort((a,b) => rank(a).localeCompare(rank(b)));
-const selected = [...ranked(true).slice(0,20), ...ranked(false).slice(0,20)];
-// Fill unused strata without consulting the reference verdict.
-for (const x of eligibleReviewed.sort((a,b)=>rank(a).localeCompare(rank(b))))
-  if (selected.length < 40 && !selected.some(y=>y.row.id===x.row.id)) selected.push(x);
+// Keep EXACTLY the original 40 (do not rerank after fixing rules). Include all
+// remaining same-source reviewed cases as the first-AI extension, with no
+// outcome-based selection. This is not an untouched prospective holdout.
+const baseline=JSON.parse(await readFile('docs/simulacao-originais-2026-10-16-resumo.json','utf8'));
+const oldById=new Map(baseline.sample.map(x=>[x.id,x]));
+const selected=eligibleReviewed.sort((a,b)=>a.row.id.localeCompare(b.row.id));
+if (selected.filter(x=>oldById.has(x.row.id)).length!==40 || selected.length>70)
+  throw new Error('Cohort changed: inspect before spending API calls.');
 await mkdir('output/original-triage-simulation', {recursive:true});
 const answers = [];
 if (options.has('--ai')) {
   if (!process.env.DEEPSEEK_API_KEY) throw new Error('DEEPSEEK_API_KEY unavailable; no AI experiment executed.');
-  // Bounded 40 calls, concurrency 2, no retries and no production AI cache.
+  // Bounded 70 calls, concurrency 2, no retries and no production AI cache.
   let next = 0;
   await Promise.all(Array.from({length:2}, async () => {
     while (next < selected.length) {
@@ -69,9 +70,11 @@ for (const {row,p} of prepared.sort((a,b)=>String(a.row.primeira_coleta).localeC
     expectedRelevant, sameEvidenceReference,
     baselineRule:p.legacy?.category || null, ruleCategory:p.rule?.category || null, ruleRelevant:p.eligible?predictedRelevant:null,
     ruleEvidence:p.rule?.evidenceText || '', ruleStage:p.rule?.stage || '',
+    unchangedRuleCategory:p.rawRule?.category || null, ruleRefinement:p.rule?.proofKind || '',
     ruleMatchesReference:p.eligible && sealed && expectedRelevant!==null?predictedRelevant===expectedRelevant:null,
     referenceCategoryMatches:p.eligible && sealed && expectedRelevant===true?p.rule.category===expected.categoria:null,
-    selectedForAi:selected.some(x=>x.row.id===row.id), ai:answerById.get(row.id) || null,
+    selectedForAi:selected.some(x=>x.row.id===row.id), cohort:oldById.has(row.id)?'original40':'additional',
+    beforeProposal:oldById.get(row.id)?.proposal || null, ai:answerById.get(row.id) || null,
     proposal:decision, duplicateCandidate:duplicate || null,
     proposalMatchesReference:sealed && expectedRelevant!==null && decision.decision!=='pendente'?(decision.decision==='aceito')===expectedRelevant:null});
 }
@@ -84,7 +87,8 @@ const report = {version:VERSION,generatedAt:new Date().toISOString(),commit:exec
     'Duplicatas são avaliadas à parte; não recebem rótulo presumido de relevância. Equivalência exata proposta não é deduplicação completa.',
     'Referências apoiadas em outro documento são separadas da métrica principal; a simulação não recebe esse documento por conhecimento da resposta.',
     'Referências incluem decisões do usuário e revisões do assistente; não equivalem a auditoria humana independente.',
-    'A IA vê a categoria da regra, mas não a decisão editorial. Concordância não é confirmação independente.',
+    'Nesta rodada a IA não vê categoria/etapa da regra nem decisão editorial. Isso reduz ancoragem, mas não garante acerto.',
+    'Adicionais são novos para a leitura de IA, não notícias recém-coletadas nem holdout totalmente intocado: as regras já foram comparadas às 58 referências.',
     'Somente textos originais integrais elegíveis; PDFs e lacunas não são descartes temáticos.'],
   counts:{archive:archive.length,storedFulltext:texts.length,eligible:results.filter(x=>x.eligible).length,
     editorialReviews:reviews.length,reviewedArchive:results.filter(x=>x.referenceDecision!==null).length,
@@ -105,7 +109,14 @@ const report = {version:VERSION,generatedAt:new Date().toISOString(),commit:exec
     aiAcceptedCategoryDisagreements:decided.filter(x=>x.proposal.decision==='aceito' && x.proposal.category!==x.referenceCategory).length,
     proposedNewUnreviewed:results.filter(x=>x.referenceDecision===null && x.proposal.decision==='aceito').length,
     usage:answers.reduce((a,x)=>({input:a.input+(x.usage?.prompt_tokens||0),output:a.output+(x.usage?.completion_tokens||0)}),{input:0,output:0})},
-  results};
+  baselineCommit:baseline.commit,
+  cohorts:Object.fromEntries(['original40','additional'].map(cohort=>{
+    const set=results.filter(x=>x.selectedForAi&&x.cohort===cohort), decided=set.filter(x=>x.proposal.decision!=='pendente');
+    return [cohort,{total:set.length,before:count(set,x=>x.beforeProposal?.decision || 'nao_testado'),
+      after:count(set,x=>x.proposal.decision),reasons:count(set.filter(x=>x.proposal.decision==='pendente'),x=>x.proposal.reason),
+      verdictErrors:decided.filter(x=>!x.proposalMatchesReference).length,
+      categoryErrors:decided.filter(x=>x.proposal.decision==='aceito'&&x.proposal.category!==x.referenceCategory).length}];
+  })),results};
 const after = await protectedSnapshot();
 if (JSON.stringify(before)!==JSON.stringify(after)) throw new Error('Protected files changed: STOP.');
 report.protectedFilesUnchanged=true;

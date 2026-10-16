@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {prepareOriginal,decideOriginal,reviewOriginal,sha,VERSION} from '../scripts/lib/original-triage-shadow.mjs';
+import {refineShadow,entityProven} from '../scripts/lib/original-shadow-rules.mjs';
 const text='O Consórcio Intermunicipal Grande ABC realizou, em 18/9, visita técnica para conhecer o simulador. O encontro foi conduzido pelo próprio consórcio com os representantes municipais, sem contratação de equipamento ou treinamento já realizado.';
 const row={id:'example',titulo:'Visita realizada',url:'https://example.org/noticia',fonte:'Portal público'};
 const stored={documento_id:row.id,url_original:row.url,url_artigo:row.url,leitor:'readability',texto:text,texto_sha256:sha(text)};
@@ -56,7 +57,51 @@ test('shadow API recebe corpo completo e não decisões humanas, nem trecho trun
     return new Response(JSON.stringify({choices:[{message:{content:JSON.stringify(answer)}}]}),{status:200});
   }});
   const input=JSON.parse(payload.messages[1].content);assert.equal(input.corpo,text);
+  assert.equal(input.regra,undefined);
   assert.equal(input.decisao_base,undefined);assert.equal(result.inputHash,prepared.inputHash);
+});
+
+test('shadow normaliza grafia sem inventar identidade ou aceitar sigla alheia',()=>{
+  const body='CONSORCIO INTERMUNICIPAL DO VALE AZUL (CIVA) publicou a resolução com procedimentos de inspeção.';
+  assert.equal(entityProven(body,'Consórcio Intermunicipal do Vale Azul',body),true);
+  assert.equal(entityProven(body,'Consórcio Intermunicipal do Vale Azul (CIVA)','CONSORCIO INTERMUNICIPAL DO VALE AZUL'),true);
+  assert.equal(entityProven(body,'Consórcio Intermunicipal do Vale Verde',body),false);
+  assert.equal(entityProven(body,'Consórcio Intermunicipal do Vale Azul (CIVB)',body),false);
+  assert.equal(entityProven(body,'CIV',body),false);
+  assert.equal(entityProven(body+' O CIVA atua aqui.','Consórcio Intermunicipal do Vale Verde (CIVA)',body),false);
+});
+test('shadow prova literal continua exigindo citação do corpo mesmo normalizando o nome',()=>{
+  const prepared=p();assert.equal(decideOriginal(prepared,review(prepared,{evidencia_entidade:text.toUpperCase()})).reason,'identidade_sem_prova_literal');
+});
+test('shadow distingue mural de documentos de um documento que apenas cita outras normas',()=>{
+  const rule={category:'RATEIO',score:9};
+  const listing={rawText:'Lista de outras publicações Foram encontradas 30 registros Contrato de rateio 01/2026 Acessar Contrato 02/2026 Acessar Contrato 03/2026 Acessar'};
+  assert.equal(refineShadow(listing,rule).category,'GERAL');
+  assert.equal(refineShadow({rawText:'Lei 10/2026 ratifica estatuto e cita a Lei 11.107/2005. Art. 1º Fica ratificado. Art. 2º Fica autorizado o custeio.'},rule).category,'RATEIO');
+});
+test('shadow ficha do acórdão não é julgamento; resultado explícito impede descarte por metadados',()=>{
+  const item={title:'Detalhes do Acórdão - 22/2026',rawText:'Acórdão 22/2026 Decisão na Íntegra (PDF) Classe Processual/Assunto Contas do consórcio.'};
+  const rule={category:'FINANÇAS',score:8};
+  assert.equal(refineShadow(item,rule).category,'GERAL');
+  assert.notEqual(refineShadow({...item,rawText:item.rawText+' O colegiado julgou regulares as contas.'},rule).category,'GERAL');
+});
+test('shadow fato principal prevalece sobre rodapé genérico, sem aceitar futuro ou negação',()=>{
+  const base={category:'GOVERNANÇA',score:8};
+  const sentence='O Consórcio Intermunicipal Vale Azul deu início à segunda fase do programa Saúde Regional. A assembleia é a instância soberana da entidade.';
+  assert.equal(refineShadow({rawText:sentence},base).category,'ATUAÇÃO');
+  assert.equal(refineShadow({rawText:sentence.replace('deu início','pretende dar início')},base).category,'GOVERNANÇA');
+  assert.equal(refineShadow({rawText:sentence.replace('O Consórcio','Não é verdade que o Consórcio')},base).category,'GOVERNANÇA');
+});
+test('shadow julgamento de contas é controle; não altera negação',()=>{
+  const rule={category:'FINANÇAS',score:9};
+  const body='O Tribunal de Contas do Estado do Paraná reprovou as contas de 2023 do Consórcio Intermunicipal Vale Azul.';
+  assert.equal(refineShadow({rawText:body},rule).category,'CONTROLE');
+  assert.equal(refineShadow({rawText:body.replace('reprovou','não reprovou')},rule).category,'FINANÇAS');
+});
+test('shadow não promove contrato com celebração a conferir nem ignora atos independentes',()=>{
+  const prepared=p();prepared.rule.stage='contrato de rateio citado; celebração a conferir';
+  assert.equal(decideOriginal(prepared,review(prepared)).reason,'etapa_ou_prova_da_regra_insuficiente');
+  const x=p();assert.equal(decideOriginal(x,review(x,{multiplos_atos:true,atos_independentes:['Lei 01/2026','Lei 02/2026']})).reason,'multiplos_atos');
 });
 test('shadow não está ligado à produção; executor não possui modo apply',async()=>{
   for(const file of ['../src/radar.mjs','../src/lib/catalog.mjs','../src/weekly.mjs'])
