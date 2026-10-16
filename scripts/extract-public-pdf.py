@@ -16,7 +16,7 @@ from pypdf import PdfReader
 from pdf_page_helpers import redact, image_page
 
 
-def extract(path, ocr=False, max_ocr=20):
+def extract(path, ocr=False, max_ocr=20, force_ocr_pages=()):
     if path.stat().st_size > 20 * 1024 * 1024:
         raise ValueError("PDF acima de 20 MiB")
     reader = PdfReader(path, strict=False)
@@ -29,7 +29,7 @@ def extract(path, ocr=False, max_ocr=20):
     with pdfplumber.open(path) as document, tempfile.TemporaryDirectory(prefix="radar-ocr-") as temporary:
         for number, (page, raw) in enumerate(zip(document.pages, reader.pages), 1):
             text = raw.extract_text() or ""
-            scanned = image_page(page, text)
+            scanned = image_page(page, text) or number in force_ocr_pages
             method, status = "pypdf", "texto"
             if scanned:
                 status = "ocr_pendente"
@@ -62,5 +62,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("pdf", type=Path)
     parser.add_argument("--ocr", action="store_true")
+    parser.add_argument("--force-ocr-pages", default="", help="Comma-separated pages with verified broken native encoding")
     args = parser.parse_args()
-    print(json.dumps(extract(args.pdf, ocr=args.ocr), ensure_ascii=False))
+    forced = [int(p) for p in args.force_ocr_pages.split(",") if p]
+    print(json.dumps(extract(args.pdf, ocr=args.ocr, force_ocr_pages=forced), ensure_ascii=False))

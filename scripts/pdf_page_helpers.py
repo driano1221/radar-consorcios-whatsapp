@@ -9,9 +9,21 @@ def redact(text):
 
 
 def image_page(page, text):
-    if len(text.strip()) >= 80:
-        return False
     area = float(page.width * page.height) or 1
-    return any(abs(float(i.get("x1", 0)) - float(i.get("x0", 0))) *
-               abs(float(i.get("bottom", 0)) - float(i.get("top", 0))) / area >= .55
-               for i in page.images)
+    for image in page.images:
+        x0, x1 = float(image.get("x0", 0)), float(image.get("x1", 0))
+        top, bottom = float(image.get("top", 0)), float(image.get("bottom", 0))
+        if abs(x1 - x0) * abs(bottom - top) / area < .55:
+            continue
+        if len(text.strip()) < 80:
+            return True
+        # A native header does not make a scanned body readable. Count text
+        # over the large image, not the gazette header/footer outside it.
+        chars = getattr(page, "chars", None)
+        if chars is not None:
+            inside = sum(len(c.get("text", "")) for c in chars
+                         if x0 <= (c.get("x0", 0) + c.get("x1", 0)) / 2 <= x1
+                         and top <= (c.get("top", 0) + c.get("bottom", 0)) / 2 <= bottom)
+            if inside < 80:
+                return True
+    return False

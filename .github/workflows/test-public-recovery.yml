@@ -1,12 +1,17 @@
 name: Validar PDFs e fontes alternativas sem envios
 on:
   workflow_dispatch:
+    inputs:
+      retroactive_ten:
+        description: Piloto isolado de dez antigos, sem gravar base nem enviar mensagens
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -26,18 +31,24 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_public_pdf.py'
       - run: node scripts/check-recovery-safety.mjs --before
       - name: Validar fontes reais e OCR sem persistir na base
+        if: ${{ !inputs.retroactive_ten }}
         run: node scripts/validate-public-recovery.mjs
+      - name: Recuperar dez antigos em diretório isolado
+        if: ${{ inputs.retroactive_ten }}
+        run: node scripts/pilot-retroactive-ten.mjs
       - name: Confirmar histórico, decisões e estado de envio intactos
         if: always()
         run: |
           node scripts/check-recovery-safety.mjs
           git diff --exit-code HEAD -- data state
       - name: Renderizar páginas da amostra para conferência
-        if: always()
+        if: ${{ always() && !inputs.retroactive_ten }}
         run: pdftoppm -scale-to 1500 -png output/public-recovery/guanhaes.pdf output/public-recovery/guanhaes-page
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: public-recovery-validation
-          path: output/public-recovery/
+          path: |
+            output/public-recovery/
+            output/retroactive-ten/
           retention-days: 7
