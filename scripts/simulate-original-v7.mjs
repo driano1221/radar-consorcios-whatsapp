@@ -8,7 +8,7 @@ import {prepareProcess} from './lib/original-v5.mjs';
 import {sha} from './lib/original-triage-shadow.mjs';
 import {loadPrimaryEvidenceContext,integratePrimaryEvidence} from '../src/lib/primary-evidence.mjs';
 import {protectedSnapshot} from './pilot-retroactive-ten.mjs';
-const mode=process.argv[2];assert.ok(['--freeze','--ai','--frozen'].includes(mode),'Choose an explicit simulation mode');
+const mode=process.argv[2];assert.ok(['--freeze','--validate','--ai','--frozen'].includes(mode),'Choose an explicit simulation mode');
 const before=await protectedSnapshot(),json=async p=>JSON.parse(await readFile(p,'utf8'));
 const nd=async n=>(await readFile(`data/catalogo/${n}.ndjson`,'utf8')).trim().split(/\r?\n/).map(JSON.parse);
 const archive=await nd('arquivo-coletas'),texts=new Map((await nd('textos-artigos')).map(x=>[x.documento_id,x]));
@@ -35,10 +35,20 @@ if(mode==='--freeze'){
     const {p}=byId.get(x.id);assert.equal(p.textHash,x.textHash);assert.equal(p.inputHash,x.inputHash);
     // Prior model responses stay frozen; this measures integration separately.
     const proposal=x.children.length?decideV6(p):decideV6(p,x.review);
-    const children=x.children.map(c=>({...c,proposal:decideV6(prepareProcess(p,c),c.review)}));
+    const children=x.children.map(c=>{
+      const segment=p.segments.find(s=>s.start===c.start&&s.end===c.end&&s.process===c.process);
+      assert.ok(segment,'Stored segment must still bind to the full original body');
+      return {...c,proposal:decideV6(prepareProcess(p,segment),c.review)};
+    });
     assert.deepEqual(proposal,x.proposal);assert.deepEqual(children.map(c=>c.proposal),x.children.map(c=>c.proposal));
     return integratePrimaryEvidence({...x,group:'regression',proposal,children},context);
   });
+  if(mode==='--validate'){
+    assert.deepEqual(await protectedSnapshot(),before);
+    const changed=results.filter(x=>x.integrated.basis==='approved_primary_document_review');
+    assert.equal(changed.length,2);assert.equal(changed.find(x=>x.integrated.children)?.integrated.children.length,3);
+    console.log(JSON.stringify({validatedRoots:118,documentaryRoots:2,whatsappCalls:0,protectedFilesUnchanged:true}));process.exit(0);
+  }
   const frozen=mode==='--frozen'?new Map((await json('docs/simulacao-v7-resultado.json')).results.filter(x=>x.group==='additional').map(x=>[x.id,x])):null;
   if(mode==='--ai')assert.ok(process.env.DEEPSEEK_API_KEY);
   let index=0;await Promise.all(Array.from({length:2},async()=>{while(index<sample.cases.length){

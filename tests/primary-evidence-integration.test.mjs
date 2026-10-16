@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
 import {createPrimaryEvidenceContext,loadPrimaryEvidenceContext,integratePrimaryEvidence} from '../src/lib/primary-evidence.mjs';
 const json=async p=>JSON.parse(await readFile(new URL('../'+p,import.meta.url),'utf8'));
 const nd=async n=>(await readFile(new URL('../data/catalogo/'+n+'.ndjson',import.meta.url),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
@@ -63,4 +64,8 @@ test('v7 revisão modificada, lacre antigo e remoção do bloqueio de envio não
 test('v7 loader real confere bytes dos cinco PDFs e referências, sem chamar rede',async()=>{
   const ctx=await loadPrimaryEvidenceContext();assert.deepEqual(integratePrimaryEvidence(tce,ctx),integratePrimaryEvidence(tce,context));
   for(const r of manifest.appliedReviews)assert.ok(!ctx.validate(r.documento_id).error);
+});
+test('v7 runner reconstitui segmentos salvos com o corpo original, sem API nem envios',()=>{
+  const result=JSON.parse(execFileSync(process.execPath,['scripts/simulate-original-v7.mjs','--validate'],{encoding:'utf8'}));
+  assert.equal(result.validatedRoots,118);assert.equal(result.whatsappCalls,0);assert.equal(result.protectedFilesUnchanged,true);
 });
