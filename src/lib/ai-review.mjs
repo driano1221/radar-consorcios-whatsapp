@@ -1,7 +1,8 @@
 import { itemId } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
+import { INSTITUTIONAL_REVIEW_POLICY } from './institutional-proof.mjs';
 
-export const AI_PROMPT_VERSION = 5;
+export const AI_PROMPT_VERSION = 6;
 
 // A IA revisa no envio real e, se pedido, na prévia (para a prévia mostrar o que de fato seria publicado).
 export function shouldReviewWithAi({ aiReviewEnabled, sendEnabled, aiPreview }, remainingToday) {
@@ -63,7 +64,7 @@ export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, time
     headers: { authorization: `Bearer ${apiKey}`, 'content-type': 'application/json' },
     body: JSON.stringify({ model: 'deepseek-flash', thinking: { type: 'disabled' },
       response_format: { type: 'json_object' }, max_tokens: 250,
-      messages: [{ role: 'system', content: SYSTEM.replace('|CRISE|ATUAÇÃO|', '|CRISE|ATUAÇÃO|FINANÇAS|') +
+      messages: [{ role: 'system', content: INSTITUTIONAL_REVIEW_POLICY + '\n' + SYSTEM.replace('|CRISE|ATUAÇÃO|', '|CRISE|ATUAÇÃO|FINANÇAS|') +
         '\nFINANÇAS também inclui orientação tributária geral, com ato identificado, aplicável a consórcios públicos. É relevante mesmo sem entidade individual: preserve a abrangência geral, sem inventar nome ou CNPJ. Portaria que só nomeia fiscal de rateio já celebrado é documento de acompanhamento, não novo contrato nem novo alerta.' +
         '\nCláusulas condicionais sobre falência de fornecedor, multas, descredenciamento ou retirada de ordens NÃO são CRISE, CONTROLE ou SAÍDA municipal. Credenciamento e contrato rotineiro com fornecedor privado ficam fora, mesmo firmados. Isso não exclui rateio entre município e consórcio nem fiscalização realmente realizada. Votação de projeto de ratificação com resultado aprovado não comprova sanção ou constituição. Assembleia e visita realizadas pelo consórcio são ATUAÇÃO; não inferir inauguração ou contas aprovadas.' }, { role: 'user', content: JSON.stringify(input) },
         ...(retryStrict ? [{ role: 'user', content: 'A resposta precisa ter campos coerentes. Em evidencia, copie uma frase curta e CONTÍGUA exatamente de titulo, resumo ou trecho acima. Não use paráfrase, reticências, colchetes nem informação externa. Se não houver prova textual, responda relevante=false com evidencia literal da menção examinada.' }] : [])] }),
@@ -109,7 +110,9 @@ export function applyAiReview(item, review, { preserveHistoricalRejection = fals
         /sanção e constituição não provadas/i.test(item.classification.stage || '')) || (originalCategory === 'FINANÇAS' &&
         /contrato de rateio não comprovado/i.test(item.classification.stage || ''));
     const roleBounded = (originalCategory === 'CONTROLE' && item.classification.proofKind === 'court_decision') ||
-      (originalCategory === 'ATUAÇÃO' && item.classification.proofKind === 'inspection_participation');
+      (originalCategory === 'ATUAÇÃO' && ['inspection_participation', 'performed_institutional_activity', 'signed_cooperation'].includes(item.classification.proofKind)) ||
+      (originalCategory === 'PROTOCOLO' && item.classification.proofKind === 'signed_municipal_protocol') ||
+      (originalCategory === 'GOVERNANÇA' && item.classification.proofKind === 'documented_composition');
     const category = preparatory || roleBounded || item.classification.scope === 'orientacao_geral' ? originalCategory : review.category;
     const boundedReview = category === review.category ? review
       : { ...review, category, proposedCategory: review.category, boundedBy: 'etapa do ato' };

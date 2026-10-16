@@ -42,7 +42,10 @@ test('13 históricos têm prova preservada, 5 confirmações, 4 duplicatas e 4 d
 test('CNM original continua distinto da reprodução Conclima; Paraná e protocolo, não adesão consumada', async () => {
   const review = (await nd('revisoes-eventos.ndjson')).find(r => r.documento_id.startsWith('74fb6772'));
   const source = (await nd('fontes-alternativas.ndjson')).find(r => r.documento_id === review.documento_id);
-  assert.ok(!(await nd('textos-artigos.ndjson')).some(r => r.documento_id === review.documento_id));
+  const original = (await nd('textos-artigos.ndjson')).find(r => r.documento_id === review.documento_id);
+  assert.equal(original.leitor, 'cnm_inertia_publica');
+  assert.match(original.url_artigo, /cnm.org.br/);
+  assert.notEqual(original.texto_sha256, source.texto_sha256);
   assert.equal(review.categoria, 'PROTOCOLO'); assert.equal(review.fatos.uf, 'PR');
   assert.equal(review.fatos.quantidade_municipios, 12); assert.deepEqual(review.fatos.municipios, []);
   assert.match(source.url_original_bloqueada, /cnm.org.br/);

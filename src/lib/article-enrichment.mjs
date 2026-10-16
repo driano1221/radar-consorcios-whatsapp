@@ -3,6 +3,7 @@ import googleNewsDecoder from 'google-news-url-decoder';
 import { fetchWithRetry } from './http.mjs';
 import { normalizeWhitespace } from './text.mjs';
 import { classifyItem } from './classifier.mjs';
+import { parseCnmArticle } from './cnm-reader.mjs';
 import { readWithReadability, readWithTrafilatura } from './article-readers.mjs';
 import { sourcePublicationDate } from './publication-date.mjs';
 import { setDefaultResultOrder } from 'node:dns';
@@ -170,6 +171,10 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   if (length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
   const html = await readHtmlResponse(response);
   if (html.length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
+  const cnm = parseCnmArticle(html, articleUrl);
+  if (cnm) return { ...item, articleUrl, rawText: cnm.text, summary: cnm.text.slice(0,1800),
+    sourceTitle: cnm.title, sourcePublishedAt: cnm.date, contentProvenance: 'pagina_original',
+    articleReader: 'cnm_inertia_publica', extractionDisagreement: false };
   // Alguns portais devolvem HTTP 200 para uma tela de desafio, não para a notícia.
   // Não a tratar como extração vazia nem tentar contornar a verificação.
   if (isChallengePage(html)) {

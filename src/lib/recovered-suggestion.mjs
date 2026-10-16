@@ -8,7 +8,7 @@ export function recoveredSuggestion(row, stored, { reviewed = false, sameTextAs 
     source: row.fonte, rawText: stored.texto, summary: stored.texto?.slice(0, 1800),
     publishedAt: row.data_publicacao };
   const classification = classifyItem(item);
-  const outside = /\b(?:concurso|processo seletivo|gabarito|provas|sal[aá]rios|vagas)\b/i.test(row.titulo) ||
+  const outside = (classification.proofKind !== 'documented_composition' && /\b(?:concurso|processo seletivo|gabarito|provas|sal[aá]rios|vagas)\b/i.test(row.titulo)) ||
     /^Detalhes do Ac[oó]rd[aã]o\b.*\b20(?:0\d|1\d|2[0-4])\b/i.test(row.titulo) ||
     isStaleLegislativeDocument(item);
   const candidate = row.tipo_evento === 'GERAL' && !reviewed && !sameTextAs && !outside &&

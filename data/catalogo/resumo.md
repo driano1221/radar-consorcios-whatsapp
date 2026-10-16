@@ -1,15 +1,15 @@
 # Panorama da base histórica
 
 - 1946 documentos recuperados do histórico de coletas; 7 atos individualizados dentro deles.
-- 116 registros relacionados a possíveis eventos de consórcios; 115 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 71 identidades candidatas de consórcios; 94 vínculos documentais, dos quais 65 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 118 registros relacionados a possíveis eventos de consórcios; 117 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 71 identidades candidatas de consórcios; 96 vínculos documentais, dos quais 67 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 28 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 30 |
+| ATUAÇÃO | 32 |
 | GOVERNANÇA | 21 |
 | CONTROLE | 18 |
 | ADESÃO AUTORIZADA | 15 |

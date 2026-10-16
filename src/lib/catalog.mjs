@@ -338,7 +338,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
         sigla: review.fatos?.sigla || result.sigla, municipio: review.fatos?.municipio || result.municipio,
         uf: review.fatos?.uf || result.uf, tipo_documento: review.fatos?.tipo_documento || result.tipo_documento,
         evidencia_triagem: review.evidencia, fonte_evidencia_triagem: review.fonte_evidencia,
-        metodo_triagem: 'revisão retroativa validada pelo usuário' };
+        metodo_triagem: review.metodo_triagem || 'revisão retroativa validada pelo usuário' };
       if (review.fatos?.identidade_nao_aplicavel) result = { ...result,
         consorcio: '', sigla: '', municipio: '', uf: '', abrangencia: review.fatos.abrangencia || 'nacional' };
     }

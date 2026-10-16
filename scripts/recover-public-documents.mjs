@@ -2,7 +2,7 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { isSemana7, isGuanhaesPdf, readGuanhaesPdf, findAlternativeTexts,
+import { isSemana7, isCnm, isGuanhaesPdf, readGuanhaesPdf, findAlternativeTexts,
   completePdfText } from '../src/lib/public-document-recovery.mjs';
 import { recoveryDelayMs, attachRecoveredText } from '../src/lib/recovery-policy.mjs';
 
@@ -26,7 +26,7 @@ export async function recoverPublicDocuments({ directory = 'data/catalogo', appl
   const alternativesSaved = new Map((await rows(alternateFile, true)).map(row => [row.id, row]));
   const selected = archive.filter(row => {
     if (texts.has(row.id)) return false; // Never replace an original or an assisted recovery.
-    if (!isSemana7(row) && !isGuanhaesPdf(row.article_url || row.url)) return false;
+    if (!isSemana7(row) && !isCnm(row) && !isGuanhaesPdf(row.article_url || row.url)) return false;
     if ([...alternativesSaved.values()].some(a => a.documento_id === row.id)) return false;
     const last = audits.get(row.id);
     return !last || !last.proxima_tentativa || Date.parse(last.proxima_tentativa) <= now.getTime();

@@ -68,27 +68,35 @@ export async function loadEditorialGuard(directory) {
 // Documentos diferentes sobre a mesma lei permanecem na base, mas o ato
 // confirmado por uma fonte não deve gerar novo alerta por outra fonte.
 export async function loadConfirmedEventRegistry(directory) {
-  const [archive, reviews, actDefinitions] = await Promise.all([
+  const [archive, reviews, actDefinitions, texts] = await Promise.all([
     readNdjson(path.join(directory, 'arquivo-coletas.ndjson')),
     readNdjson(path.join(directory, 'revisoes-eventos.ndjson')),
     readNdjson(path.join(directory, 'atos-identificados.ndjson')),
+    readNdjson(path.join(directory, 'textos-artigos.ndjson')),
   ]);
   const splitParents = new Set(actDefinitions.map((act) => act.documento_pai_id));
   const byId = new Map([...archive, ...materializeDocumentActs(archive, actDefinitions)]
     .map((row) => [row.id, row]));
   const registry = new Map();
+  const reviewById = new Map(reviews.map(r => [r.documento_id, r]));
+  const byText = new Map(texts.filter(t => t.texto_sha256 === createHash('sha256').update(t.texto || '').digest('hex'))
+    .map(t => [t.documento_id, t]));
   for (const review of reviews) {
-    if (!['confirmar_evento', 'corrigir_categoria'].includes(review.decisao)) continue;
+    const canonicalReview = review.decisao === 'duplicata' ? reviewById.get(review.documento_relacionado) : review;
+    if (!['confirmar_evento', 'corrigir_categoria'].includes(canonicalReview?.decisao)) continue;
+    const canonicalRow = byId.get(canonicalReview.documento_id);
+    if (!canonicalRow || createHash('sha256').update(canonicalRow.trecho || '').digest('hex') !== canonicalReview.trecho_sha256) continue;
     if (splitParents.has(review.documento_id)) continue;
     const row = byId.get(review.documento_id);
     if (!row || !review.trecho_sha256 || createHash('sha256').update(row.trecho || '').digest('hex') !== review.trecho_sha256) continue;
     const key = formalEventKey({ title: row.titulo,
-      classification: { category: review.categoria, evidenceText: review.evidencia },
+      rawText: byText.get(row.id)?.texto || '', publishedAt: row.data_noticia_original || row.data_publicacao,
+      classification: { category: canonicalReview.categoria, evidenceText: review.evidencia },
       editorialFacts: review.fatos || {} });
     if (!key) continue;
     if (!registry.has(key)) registry.set(key, new Set());
-    registry.get(key).add(canonicalUrl(row.url));
-    if (row.article_url) registry.get(key).add(canonicalUrl(row.article_url));
+    registry.get(key).add(canonicalUrl(canonicalRow.url));
+    if (canonicalRow.article_url) registry.get(key).add(canonicalUrl(canonicalRow.article_url));
   }
   return registry;
 }

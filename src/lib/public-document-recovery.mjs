@@ -20,6 +20,8 @@ const array = x => x == null ? [] : Array.isArray(x) ? x : [x];
 const host = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; } };
 export const isSemana7 = row => /^semana\s*7$/i.test(row.fonte || '') ||
   [row.url, row.article_url, row.article_resolved_url].some(url => host(url) === 'semana7.com.br');
+export const isCnm = row => /^(?:CNM|Confederação Nacional de Municípios)$/i.test(row.fonte || '') ||
+  [row.url, row.article_url, row.article_resolved_url].some(url => ['cnm.org.br', 'api.cnm.org.br'].includes(host(url)));
 export const isGuanhaesPdf = url => /^https:\/\/s3\.amazonaws\.com\/el\.com\.br\/portal\/uploads\/3177\/[^?#]+\.pdf$/i.test(url || '');
 export const digest = value => createHash('sha256').update(value).digest('hex');
 export function alternativeSourceKey(url) {
@@ -67,7 +69,7 @@ export async function readGuanhaesPdf(url, { fetchImpl = fetch, ocr = true } = {
 }
 
 export function alternativeSearchUrl(row) {
-  const query = `${words(row.titulo).slice(0, 8).join(' ')} ${numbers(row.titulo).join(' ')} consórcio -site:semana7.com.br`;
+  const query = `${words(row.titulo).slice(0, 8).join(' ')} ${numbers(row.titulo).join(' ')} consórcio -site:${isCnm(row) ? 'cnm.org.br' : 'semana7.com.br'}`;
   return 'https://news.google.com/rss/search?' + new URLSearchParams({ q: query, hl: 'pt-BR', gl: 'BR', ceid: 'BR:pt-419' });
 }
 
@@ -89,27 +91,30 @@ export async function searchGoogleAlternatives(row, fetchImpl = fetch) {
   })).filter(item => typeof item.url === 'string' && /^https:\/\/news\.google\.com\/rss\/articles\//.test(item.url));
 }
 
-export function parsePublicWordpressPosts(data) {
+export function parsePublicWordpressPosts(data, publisher = 'rededanoticia.com.br') {
+  const publishers = { 'rededanoticia.com.br': 'Rede da Notícia', 'conclima.org.br': 'Conclima (portal oficial)' };
+  if (!publishers[publisher]) throw new Error('wordpress_editor_nao_validado');
   if (!Array.isArray(data)) throw new Error('wordpress_formato_invalido');
   const plain = html => {
     const $ = load(html || ''); $('script,style,form,nav').remove();
     $('p,li,h1,h2,h3,br').append(' '); return $.text().replace(/\s+/g, ' ').trim();
   };
   return data.filter(post => post.status === 'publish' && post.type === 'post' &&
-    host(post.link) === 'rededanoticia.com.br' && !post.content?.protected &&
+    host(post.link) === publisher && !post.content?.protected &&
     typeof post.content?.rendered === 'string').map(post => {
     const date = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}$/.test(post.date_gmt || '') ? `${post.date_gmt}Z` : '';
-    return { titulo: plain(post.title?.rendered), url: post.link, fonte: 'Rede da Notícia',
+    return { titulo: plain(post.title?.rendered), url: post.link, fonte: publishers[publisher],
       data_noticia_original: date, apiReading: { articleUrl: post.link, rawText: plain(post.content.rendered),
         contentProvenance: 'pagina_original', sourcePublishedAt: date, articleReader: 'wordpress_api_publica',
-        apiUrl: `https://rededanoticia.com.br/wp-json/wp/v2/posts/${post.id}` } };
+        apiUrl: `https://${publisher}/wp-json/wp/v2/posts/${post.id}` } };
   });
 }
 
-export async function searchPublicWordpress(row, fetchImpl = fetch) {
+export async function searchPublicWordpress(row, fetchImpl = fetch, publisher = 'rededanoticia.com.br') {
+  if (!['rededanoticia.com.br', 'conclima.org.br'].includes(publisher)) throw new Error('wordpress_editor_nao_validado');
   // Official REST link advertised by the publisher; public published posts only.
-  const query = ['consórcio', ...numbers(row.titulo), ...words(row.titulo).slice(0, 2)].join(' ');
-  const url = 'https://rededanoticia.com.br/wp-json/wp/v2/posts?' + new URLSearchParams({ search: query,
+  const query = publisher === 'conclima.org.br' ? 'consórcio' : ['consórcio', ...numbers(row.titulo), ...words(row.titulo).slice(0, 2)].join(' ');
+  const url = `https://${publisher}/wp-json/wp/v2/posts?` + new URLSearchParams({ search: query,
     per_page: '5', status: 'publish', _fields: 'id,link,title,content,date_gmt,status,type' });
   const response = await fetchImpl(url, { redirect: 'error', signal: AbortSignal.timeout(12000) });
   if (!response.ok) throw new Error(`wordpress_http_${response.status}`);
@@ -117,12 +122,14 @@ export async function searchPublicWordpress(row, fetchImpl = fetch) {
   for await (const chunk of response.body) {
     size += chunk.length; if (size > 2_000_000) throw new Error('wordpress_grande_demais'); chunks.push(chunk);
   }
-  return parsePublicWordpressPosts(JSON.parse(Buffer.concat(chunks).toString()));
+  return parsePublicWordpressPosts(JSON.parse(Buffer.concat(chunks).toString()), publisher);
 }
 
 export async function searchAlternatives(row, fetchImpl = fetch) {
-  const providers = ['Google Notícias', 'Rede da Notícia (API pública)'];
-  const results = await Promise.allSettled([searchGoogleAlternatives(row, fetchImpl), searchPublicWordpress(row, fetchImpl)]);
+  const cnm = isCnm(row);
+  const providers = ['Google Notícias', cnm ? 'Conclima (API pública)' : 'Rede da Notícia (API pública)'];
+  const results = await Promise.allSettled([searchGoogleAlternatives(row, fetchImpl),
+    searchPublicWordpress(row, fetchImpl, cnm ? 'conclima.org.br' : 'rededanoticia.com.br')]);
   const output = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
   output.diagnostics = results.map((r, i) => ({ provider: providers[i], status: r.status === 'fulfilled' ? 'ok' : 'erro',
     count: r.status === 'fulfilled' ? r.value.length : 0, error: r.status === 'rejected' ? r.reason.message : '' }));
@@ -132,7 +139,7 @@ export async function searchAlternatives(row, fetchImpl = fetch) {
 
 export async function findAlternativeTexts(row, archive, { search = searchAlternatives, read = enrichArticle,
   searchEvenWithArchive = false, now = new Date(), maxReads = 2, storedTexts = new Map() } = {}) {
-  const candidates = archive.filter(r => r.id !== row.id && !isSemana7(r)).map(r => ({ ...r, origin: 'acervo' }));
+  const candidates = archive.filter(r => r.id !== row.id && !isSemana7(r) && !(isCnm(row) && isCnm(r))).map(r => ({ ...r, origin: 'acervo' }));
   let searchStatus = 'não necessária: acervo tem candidatos', searchCount = 0, searchDiagnostics = [];
   if (searchEvenWithArchive || !candidates.some(c => compareAlternative(row, c).eligible)) {
     try { const found = await search(row); candidates.push(...found.map(c => ({ ...c, origin: 'busca_web' })));
@@ -146,7 +153,7 @@ export async function findAlternativeTexts(row, archive, { search = searchAltern
   for (const { candidate, comparison } of ranked) {
     if (attempts.length >= maxReads) break;
     const target = canonicalUrl(candidate.article_url || candidate.url || '');
-    if (!target || seen.has(target) || host(target) === 'semana7.com.br') continue;
+    if (!target || seen.has(target) || host(target) === 'semana7.com.br' || isCnm(row) && isCnm({url:target})) continue;
     seen.add(target);
     const attempt = { url: target, status: 'sem_texto' }; attempts.push(attempt);
     try {
@@ -160,7 +167,7 @@ export async function findAlternativeTexts(row, archive, { search = searchAltern
         source: candidate.fonte, summary: '', rawText: '' }, { onFailure: (_, reason) => { attempt.status = reason; } }));
       if (article.contentProvenance !== 'pagina_original' || (article.rawText || '').length < 500 ||
           !/cons[oó]rcio/i.test(article.rawText) || !article.articleUrl ||
-          ['semana7.com.br', 'news.google.com'].includes(host(article.articleUrl))) continue;
+          ['semana7.com.br', 'news.google.com'].includes(host(article.articleUrl)) || isCnm(row) && isCnm({url:article.articleUrl})) continue;
       if (alternatives.some(a => alternativeSourceKey(a.url_fonte) === alternativeSourceKey(article.articleUrl))) {
         attempt.status = 'variante_da_mesma_publicacao'; continue;
       }
@@ -181,7 +188,9 @@ export async function findAlternativeTexts(row, archive, { search = searchAltern
         api_url: article.apiUrl || '', leitura_preservada_em: article.reusedFrom || '',
         comparacao: confirmedComparison, equivalencia_confirmada: false,
         situacao: 'texto_alternativo_para_conferencia',
-        independencia: /semana\s*7/i.test(body) ? 'cita Semana 7; não é confirmação independente' : 'não verificada' });
+        independencia: /semana\s*7/i.test(body) ? 'cita Semana 7; não é confirmação independente'
+          : /\bCNM\b|Confedera[cç][aã]o Nacional de Munic[ií]pios/i.test(body)
+            ? 'cita CNM; reprodução ou independência não comprovada' : 'não verificada' });
       attempt.status = 'texto_alternativo_recuperado';
     } catch (error) { attempt.status = `falha: ${error.message}`; }
   }

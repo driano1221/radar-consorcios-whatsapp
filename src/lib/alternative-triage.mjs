@@ -5,6 +5,7 @@ import { classifyItem } from './classifier.mjs';
 import { canonicalUrl } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
 import { compareAlternative, bodyQuantityConflict } from './alternative-match.mjs';
+import { INSTITUTIONAL_REVIEW_POLICY } from './institutional-proof.mjs';
 
 export const ALTERNATIVE_TRIAGE_VERSION = 2;
 export const ALTERNATIVE_TRIAGE_FROM = '2026-10-16T17:13:25.000Z';
@@ -65,7 +66,7 @@ export async function reviewAlternative(input, { apiKey, fetchImpl = fetch } = {
     method: 'POST', headers: { authorization: `Bearer ${apiKey}`, 'content-type': 'application/json' },
     body: JSON.stringify({ model: 'deepseek-flash', thinking: { type: 'disabled' },
       response_format: { type: 'json_object' }, max_tokens: 1000,
-      messages: [{ role: 'system', content: PROMPT }, { role: 'user', content: JSON.stringify(input) }] }),
+      messages: [{ role: 'system', content: INSTITUTIONAL_REVIEW_POLICY + '\n' + PROMPT }, { role: 'user', content: JSON.stringify(input) }] }),
     signal: AbortSignal.timeout(30000),
   });
   if (!response.ok) throw new Error(`DeepSeek HTTP ${response.status}`);

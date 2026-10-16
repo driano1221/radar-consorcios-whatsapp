@@ -1,4 +1,5 @@
 import { normalizeWhitespace } from './text.mjs';
+import { institutionalProof } from './institutional-proof.mjs';
 
 const CONSORTIUM = 'cons[oó]rcio';
 const HYPOTHETICAL_CREATION = new RegExp(
@@ -167,6 +168,16 @@ export function refineEventProof(item, classification) {
       stage: 'projeto em tramitação; aprovação e sanção municipais não comprovadas',
       reasons: [...classification.reasons, 'rejeitado: fórmula de promulgação na minuta não prova lei sancionada'] },
     literalEvidence(text, [/\bmat[eé]ria em tramita[cç][aã]o\b/i], 0, 150));
+  }
+  // Do not let a generic meeting rule replace a specific legal/control fact.
+  const institutional = institutionalProof(item);
+  if (institutional && (['GERAL', 'ATUAÇÃO'].includes(classification.category) ||
+      institutional.proofKind === 'documented_composition' && classification.category === 'CRIAÇÃO' ||
+      institutional.proofKind === 'signed_municipal_protocol' && ['ADESÃO', 'PROTOCOLO'].includes(classification.category) ||
+      institutional.proofKind === 'future_convocation' && classification.category === 'GOVERNANÇA')) {
+    return { ...classification, ...institutional, emoji: institutional.category === 'GOVERNANÇA' ? '⬛' : '📰',
+      score: institutional.category === 'GERAL' ? 0 : Math.max(5, classification.score || 0),
+      publicContext: true, strongPublicContext: true, reasons: [institutional.reason] };
   }
   if (!text || classification.category === 'GERAL') return classification;
 
