@@ -245,7 +245,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   acts = [], participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
   articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
-    kind: 'news', title: row.titulo, publishedAt: row.data_publicacao,
+    kind: 'news', title: row.titulo, publishedAt: publicationDate(row),
   }));
   const eventById = new Map(currentEvents.map((row) => [row.id, row]));
   const eventIds = new Set(eventById.keys());
@@ -288,7 +288,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       review?.fatos?.pagina_pdf, ...(review?.fatos?.paginas_pdf || [])]
       .map(Number).filter(Boolean);
     const relevantSnippets = isAct ? recovered?.trechos?.filter((snippet) =>
-      Number(snippet.pagina) >= Number(row.pagina_inicio) && Number(snippet.pagina) <= Number(row.pagina_fim)) : recovered?.trechos;
+      snippet.chave_ato ? snippet.chave_ato === row.chave_ato :
+        Number(snippet.pagina) >= Number(row.pagina_inicio) && Number(snippet.pagina) <= Number(row.pagina_fim)) : recovered?.trechos;
     const pdfEvidence = distinctPdfSnippets(relevantSnippets, preferredPages);
     const articleText = articleTextById.get(row.documento_pai_id || row.id);
     const pdfText = (relevantSnippets || []).map((snippet) => snippet.texto || '').join(' ');

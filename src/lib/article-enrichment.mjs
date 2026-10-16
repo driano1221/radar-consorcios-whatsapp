@@ -123,11 +123,13 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   ]);
   const readerText = readerResult.status === 'fulfilled' ? normalizeWhitespace(readerResult.value) : '';
   const trafilaturaText = trafilaturaResult.status === 'fulfilled' ? normalizeWhitespace(trafilaturaResult.value) : '';
-  const validReader = readerText.length >= 100 && SIGNAL.test(readerText);
-  const validTrafilatura = trafilaturaText.length >= 100 && SIGNAL.test(trafilaturaText);
-  const text = tceText.length >= 100 && SIGNAL.test(tceText) ? tceText
+  // Leitura e pertinência são etapas diferentes: um corpo legível sem menção
+  // a consórcio é evidência para descarte, não uma falha de recuperação.
+  const validReader = readerText.length >= 100;
+  const validTrafilatura = trafilaturaText.length >= 100;
+  const text = tceText.length >= 100 ? tceText
     : validReader ? readerText : validTrafilatura ? trafilaturaText : extractArticleText(html);
-  if (text.length < 100 || !SIGNAL.test(text)) { onFailure(item, 'texto_ausente_ou_sem_consorcio'); return item; }
+  if (text.length < 100) { onFailure(item, 'texto_ausente_ou_curto'); return item; }
   const readerCategory = validReader ? classifyItem({ ...item, summary: readerText.slice(0, 1800), rawText: readerText }).category : '';
   const trafilaturaCategory = validTrafilatura
     ? classifyItem({ ...item, summary: trafilaturaText.slice(0, 1800), rawText: trafilaturaText }).category : '';

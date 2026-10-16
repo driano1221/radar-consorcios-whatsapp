@@ -108,7 +108,9 @@ export function applyAiReview(item, review, { preserveHistoricalRejection = fals
       .includes(originalCategory) || (originalCategory === 'PROTOCOLO' &&
         /sanção e constituição não provadas/i.test(item.classification.stage || '')) || (originalCategory === 'FINANÇAS' &&
         /contrato de rateio não comprovado/i.test(item.classification.stage || ''));
-    const category = preparatory || item.classification.scope === 'orientacao_geral' ? originalCategory : review.category;
+    const roleBounded = (originalCategory === 'CONTROLE' && item.classification.proofKind === 'court_decision') ||
+      (originalCategory === 'ATUAÇÃO' && item.classification.proofKind === 'inspection_participation');
+    const category = preparatory || roleBounded || item.classification.scope === 'orientacao_geral' ? originalCategory : review.category;
     const boundedReview = category === review.category ? review
       : { ...review, category, proposedCategory: review.category, boundedBy: 'etapa do ato' };
     return { ...item, aiReview: boundedReview,

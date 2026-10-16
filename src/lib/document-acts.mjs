@@ -23,7 +23,10 @@ export function materializeDocumentActs(documents, definitions) {
       throw new Error(`Páginas inválidas para o ato ${key}`);
     }
     if (!title?.trim() || !excerpt?.trim() || !category?.trim()) throw new Error(`Ato incompleto: ${key}`);
-    const cleanUrl = parent.url.split('#')[0];
+    // Um link do Google pode apontar para um PDF: a âncora deve ir ao PDF
+    // comprovado, nunca à página intermediária do agregador.
+    const pdfUrl = definition.url_pdf || parent.article_url || '';
+    const cleanUrl = (/^https:\/\/.+\.pdf(?:[?#]|$)/i.test(pdfUrl) ? pdfUrl : parent.url).split('#')[0];
     return {
       ...parent, id, documento_pai_id: parentId, chave_ato: key,
       pagina_inicio: first, pagina_fim: last, registro_tipo: 'ato',

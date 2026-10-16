@@ -341,7 +341,8 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     };
     // O arquivo bruto mantém inclusive envios antigos, mas uma data de indexação
     // recente não deve transformá-los em eventos atuais nas tabelas derivadas.
-    if (isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: row.data_publicacao })) {
+    if (isStaleLegislativeDocument({ kind: 'news', title: row.titulo,
+      publishedAt: result.data_noticia_original || row.data_publicacao })) {
       return { ...result, tipo_evento: 'GERAL',
         situacao_analise: reviewStillMatches(row) && decisions.get(row.id)?.decisao === 'nao_evento'
           ? result.situacao_analise : 'triagem: ato antigo com data recente de indexação' };

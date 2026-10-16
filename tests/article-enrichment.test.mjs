@@ -115,7 +115,7 @@ test('relatório distingue páginas sem texto de erros técnicos', async () => {
   assert.equal(result.attempted, 2);
   assert.equal(result.enriched, 0);
   assert.equal(result.failed, 0);
-  assert.deepEqual(result.missingText.map((row) => row.reason), ['http_403', 'texto_ausente_ou_sem_consorcio']);
+  assert.deepEqual(result.missingText.map((row) => row.reason), ['http_403', 'texto_ausente_ou_curto']);
   assert.equal(result.missingText[0].url, items[0].url);
 });
 

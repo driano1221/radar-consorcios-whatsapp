@@ -70,6 +70,35 @@ function withEvidence(result, evidence) {
 export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
+  // Só aplicar a atos individualizados: uma edição pode ter dezenas de
+  // processos e não pode herdar a identidade ou o resultado de um deles.
+  const processHeaders = [...text.matchAll(/\bProcesso\s+n[º°o]?\s*:\s*\d+/gi)];
+  const head = text.split(/\bEMENTA\s*:/i)[0];
+  const courtAct = processHeaders.length === 1 && /\bMPTC\s*:/i.test(head) &&
+    /\bRelator\s*:/i.test(head) && /\bSess[aã]o\s*:\s*\d/i.test(head) &&
+    /\b(?:Denunciad[oa]s?|Interessados?)\s*:\s*Cons[oó]rcio\b/i.test(head);
+  if (courtAct) {
+    const endings = [
+      /SUSPENS[AÃ]O DOS EFEITOS DA ATA DE REGISTRO DE PRE[CÇ]OS\.\s*DECIS[AÃ]O MONOCR[AÁ]TICA REFERENDADA/i,
+      /CELEBRA[CÇ][AÃ]O DE CONTRATO DE PROGRAMA[\s\S]{0,200}REGULARIDADE\.\s*IMPROCED[EÊ]NCIA/i,
+      /(?:LICITA[CÇ][AÃ]O FRACASSADA|REVOGA[CÇ][AÃ]O DO CERTAME|ANULA[CÇ][AÃ]O DO CERTAME)\.[\s\S]{0,230}ARQUIVAMENTO/i,
+    ];
+    const proof = literalEvidence(text, endings, 0, 120);
+    if (proof) return withEvidence({ ...classification, category: 'CONTROLE', emoji: '🔎', proofKind: 'court_decision',
+      score: Math.max(8, classification.score || 0), publicContext: true, strongPublicContext: true,
+      stage: /REFERENDADA/i.test(proof.text) ? 'suspensão cautelar referendada; não é julgamento definitivo'
+        : /CONTRATO DE PROGRAMA/i.test(proof.text) ? 'contrato de programa considerado regular; separar outros apontamentos'
+          : 'processo arquivado sem julgamento de mérito; não comprova condenação ou crise',
+      reasons: ['decisão de controle em processo individualizado com consórcio identificado'] }, proof);
+  }
+  const inspectionParticipation = /\bparticipa[cç][aã]o\b.{0,100}\bocorre exclusivamente em atendimento [àa] intima[cç][aã]o do Minist[eé]rio P[uú]blico para acompanhar as a[cç][oõ]es fiscalizat[oó]rias/i;
+  if (/\bcons[oó]rcio\s+intermunicipal\b/i.test(text) && inspectionParticipation.test(text) &&
+    !/\b(?:condenou|multou|sancionou)\s+o\s+cons[oó]rcio\b/i.test(text)) {
+    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰', proofKind: 'inspection_participation',
+      score: Math.max(8, classification.score || 0), publicContext: true, strongPublicContext: true,
+      stage: 'acompanhamento técnico da fiscalização; não é punição ao consórcio nem coordenação da operação',
+      reasons: ['participação operacional confirmada por nota institucional'] }, literalEvidence(text, [inspectionParticipation]));
+  }
   const votedProtocol = /\bmat[eé]ria\s*:\s*projeto de lei\b.{0,100}\bementa\s*:\s*ratifica o protocolo de inten[cç][oõ]es\b/i;
   if (/\/sessao\/\d+\/votacao-/.test(item.articleUrl || item.url || '') && votedProtocol.test(text) &&
     /\bcons[oó]rcio\s+(?:p[uú]blico|intermunicipal)\b/i.test(text) &&
