@@ -1,6 +1,7 @@
 import { load } from 'cheerio';
 import { fetchWithRetry } from '../http.mjs';
 import { normalizeWhitespace } from '../text.mjs';
+import { fetchPublicRoute } from './public-routes.mjs';
 
 const DEFAULT_USER_AGENT =
   'RadarConsorciosIPEA/0.3 (+pesquisa academica; https://github.com/driano1221/radar-consorcios-whatsapp)';
@@ -272,6 +273,9 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
 }
 
 async function fetchSite(site, since, config, fetchImpl) {
+  if (['semana7-rss', 'guanhaes-portaltp'].includes(site.adapter)) {
+    return fetchPublicRoute(site, since, config, fetchImpl);
+  }
   if (site.adapter === 'amm-mt') {
     const items = await fetchAmmMt(site, since, config, fetchImpl);
     return items.map((item) => ({ ...item, scraper: site.adapter,

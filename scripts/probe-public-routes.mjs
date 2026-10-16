@@ -4,6 +4,7 @@ import { setDefaultResultOrder } from 'node:dns';
 import { XMLParser } from 'fast-xml-parser';
 import { load } from 'cheerio';
 import { gunzipSync } from 'node:zlib';
+import { extractArticleText, isChallengePage } from '../src/lib/article-enrichment.mjs';
 setDefaultResultOrder('ipv4first');
 const agent = 'RadarConsorciosIPEA/0.3 (+pesquisa academica; https://github.com/driano1221/radar-consorcios-whatsapp)';
 const parser = new XMLParser();
@@ -37,6 +38,14 @@ await probe('Semana 7 RSS', 'https://www.semana7.com.br/rss.php', async url => {
   const items = array(parsed.rss.channel.item);
   return { count: items.length, completeBodies: items.filter(x => x['content:encoded']).length,
     sample: items.slice(0, 2).map(x => ({ title: x.title, url: x.link, date: x.pubDate })) };
+});
+await probe('Semana 7 artigo integral', 'https://www.semana7.com.br/saude/consorcio-de-saude-viabiliza-procedimentos-oftalmologicos-para-100-pacientes-do-araguaia/84225', async url => {
+  const { bytes } = await request(url);
+  const html = bytes.toString();
+  if (isChallengePage(html)) throw new Error('Verificação de segurança, não é texto da notícia');
+  const text = extractArticleText(html);
+  if (text.length < 500 || !/cons[oó]rcio/i.test(text)) throw new Error('Sem texto integral aproveitável');
+  return { characters: text.length };
 });
 const sitemap = await probe('Semana 7 sitemap', 'https://www.semana7.com.br/sitemaps/1/sitemap-index.xml', async url => {
   const { bytes } = await request(url);

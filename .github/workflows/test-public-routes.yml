@@ -14,10 +14,17 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: npm test
+      - name: Fotografar histórico e envios
+        run: node scripts/check-recovery-safety.mjs --before
       - name: Consultar rotas públicas e validar conteúdo
         run: node scripts/probe-public-routes.mjs
+      - name: Validar coletores de produção em duas passagens sem persistência
+        run: node scripts/validate-public-route-collectors.mjs
       - name: Confirmar que não alterou dados nem estado de envio
-        run: git diff --exit-code HEAD -- data state
+        run: |
+          node scripts/check-recovery-safety.mjs --after
+          git diff --exit-code HEAD -- data state
       - uses: actions/upload-artifact@v4
         with:
           name: public-routes-diagnostic

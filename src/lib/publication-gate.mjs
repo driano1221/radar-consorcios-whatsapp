@@ -33,11 +33,14 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
   // Re-evaluate this against configuration even for queued or editorially
   // approved items: activating a source must never release its old backlog.
   const activation = sourceActivations.find((source) => source.alertsFrom && (
-    source.name === item.source || [item.url, item.articleUrl, item.sourceUrl].some((url) => {
+    source.name === item.source || !source.discoveryOnly && [item.url, item.articleUrl, item.sourceUrl].some((url) => {
       try { return new URL(url).hostname === new URL(source.url).hostname; }
       catch { return false; }
     })));
   if (activation) {
+    if (activation.discoveryOnly) return { ...item, catalogDecision,
+      publicationDecision: 'previa',
+      publicationReason: 'Rota habilitada apenas para descobrir documentos; alertas não liberados.' };
     const original = item.sourcePublishedAt ||
       (!/^https?:\/\/news\.google\.com\//i.test(item.url || '') ? item.publishedAt : null);
     const cutoff = timestamp(activation.alertsFrom);
@@ -74,5 +77,5 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
 
 export function isNotifiable(item, minimumScore = 5) {
   return isPublishableClassification(item.classification, minimumScore) &&
-    !['historico', 'data_inconsistente', 'data_nao_verificada', 'descartado'].includes(item.publicationDecision);
+    !['historico', 'data_inconsistente', 'data_nao_verificada', 'descartado', 'previa'].includes(item.publicationDecision) && !item.discoveryOnly;
 }

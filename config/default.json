@@ -122,6 +122,24 @@
     "userAgent": "RadarConsorciosIPEA/0.3 (+pesquisa academica; contato via GitHub)",
     "sites": [
       {
+        "name": "Semana 7 (RSS público)",
+        "adapter": "semana7-rss",
+        "url": "https://www.semana7.com.br/rss.php",
+        "publish": false,
+        "discoveryOnly": true,
+        "discoverFrom": "2026-10-16T15:40:00.000Z",
+        "alertsFrom": "2026-10-16T15:40:00.000Z"
+      },
+      {
+        "name": "Guanhães Prefeitura (PortalTP)",
+        "adapter": "guanhaes-portaltp",
+        "url": "https://guanhaes-mg.portaltp.com.br/api/institucional/api-legislacao.aspx",
+        "publish": false,
+        "discoveryOnly": true,
+        "discoverFrom": "2026-10-16T15:40:00.000Z",
+        "alertsFrom": "2026-10-16T15:40:00.000Z"
+      },
+      {
         "name": "Rede Nacional de Consórcios Públicos",
         "adapter": "rncp",
         "url": "https://www.rncp.org.br/noticias",

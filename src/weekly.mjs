@@ -30,7 +30,8 @@ async function main() {
           excerpts: [observation.item.classification?.evidenceText, observation.item.summary].filter(Boolean),
         }),
       }, editorialGuard),
-      { now: window.end, lookbackHours: config.lookbackHours, minimumScore: config.minimumScore }) : observation.item,
+      { now: window.end, lookbackHours: config.lookbackHours, minimumScore: config.minimumScore,
+        sourceActivations: config.webScrapers?.sites?.filter(site => site.alertsFrom) || [] }) : observation.item,
     }]),
   ) };
   const edition = process.env.WEEKLY_EDITION?.trim() || '';
