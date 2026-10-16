@@ -67,7 +67,7 @@ export function prepareProcess(parent,segment) {
   const text=segment.text;
   const item={...parent.item,rawText:text,summary:text,excerpts:[text],title:`Processo ${segment.process}`};
   const p={...parent,item,textHash:sha(text),inputHash:sha(JSON.stringify(item)),segments:[],independentProcesses:false,course:null,
-    parentTextHash:parent.textHash,sourceSpan:{start:segment.start,end:segment.end},process:segment.process,annexes:segment.annexes||[]};
+    parentTextHash:parent.textHash,sourceSpan:{start:segment.start,end:segment.end},process:segment.process,annexes:segment.annexes||[],segmentLimitation:segment.limitation||null};
   const proof=/\b(?:[A-ZÀ-Ú][\p{L} ]{3,80} )?determinou a suspens[aã]o[^.!?]{0,700}/u.exec(text);
   const name=/\bCons[oó]rcio (?:P[uú]blico )?(?:Intermunicipal|Interfederativo)[^.!?;]{2,180}?\([\p{L}\d-]+\)/u.exec(text);
   const referendo=/\breferendou (?:a decis[aã]o|a medida)/i.test(text);
