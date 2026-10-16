@@ -60,7 +60,7 @@ test('lei histórica com publicação original comprovada fica na base e fora de
   const item=data.items[0];
   assert.equal(item.baseDecision,'confirmado');assert.equal(item.alertDecision,'historico');
   assert.ok(item.publishedAt.startsWith('2022-12-06'));
-  assert.equal(item.fullText,''); // Corpo da lei conferido via web não é anexo integral recuperado.
+  assert.equal(item.fullText,''); // Sem fornecer a coleção de corpos, o painel não inventa texto.
 });
 
 test('links repetidos de norma e atendimento não contam fatos novos',()=>{

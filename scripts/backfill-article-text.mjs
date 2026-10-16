@@ -7,7 +7,7 @@ import { recoveredSuggestion } from '../src/lib/recovered-suggestion.mjs';
 import { enrichArticles, lacksArticleText } from '../src/lib/article-enrichment.mjs';
 import { redactPublicText } from '../src/lib/article-text-store.mjs';
 import { contentQuality } from './build-dashboard.mjs';
-import { recoveryDue, recoveryAttempt, attachRecoveredText } from '../src/lib/recovery-policy.mjs';
+import { recoveryDue, recoveryAttempt, attachRecoveredText, isRecoveryLead } from '../src/lib/recovery-policy.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'data', 'catalogo');
@@ -50,7 +50,7 @@ const candidates = [...records.values()].filter((row) => !textById.has(row.id) &
   (!titleOnlyGoogle || (row.tipo_evento === 'GERAL' &&
     /^https:\/\/news\.google\.com\//.test(row.url) && contentQuality(row.titulo, row.trecho) !== 'trecho_disponivel')) &&
   ((requestedId || requestedIds.length) ||
-    titleOnlyGoogle || /cons[oó]rc|rateio|protocolo de inten[cç][oõ]es|ades[aã]o|desligamento|retirada/i.test(row.titulo)))
+    titleOnlyGoogle || isRecoveryLead(row)))
   .sort((a, b) => (a.article_attempted_at || '').localeCompare(b.article_attempted_at || '') ||
     Number(/ades[aã]o|ingresso|ratifica|cria[cç][aã]o|retirada|desligamento/i.test(b.titulo)) -
     Number(/ades[aã]o|ingresso|ratifica|cria[cç][aã]o|retirada|desligamento/i.test(a.titulo)) ||
@@ -69,12 +69,16 @@ const candidates = [...records.values()].filter((row) => !textById.has(row.id) &
 
 const failureReasons = new Map();
 const resolvedUrls = new Map();
-const result = await enrichArticles(candidates, { limit, concurrency: 1,
-  includeUnsignaled: Boolean(titleOnlyGoogle || requestedId || requestedIds.length),
+const attemptedIds = new Set();
+const result = await enrichArticles(candidates, { limit, concurrency: 1, maxDurationMs: 90000,
+  // Selection already checks relevance or previous recovery attempts above.
+  includeUnsignaled: true,
+  onAttempt: (item) => attemptedIds.add(item.catalogId),
   onResolved: (item, url) => resolvedUrls.set(item.catalogId, url),
   onFailure: (item, reason) => failureReasons.set(item.catalogId, reason) });
 let changed = 0; let newCandidates = 0;
 for (const item of result.items) {
+  if (!attemptedIds.has(item.catalogId)) continue;
   const row = records.get(item.catalogId);
   records.set(row.id, recoveryAttempt(row, { now: attemptedAt,
     reason: failureReasons.get(row.id) || '', resolvedUrl: resolvedUrls.get(row.id) }));
@@ -85,7 +89,7 @@ for (const item of result.items) {
   textById.set(row.id, { documento_id: row.id, url_original: row.url,
     url_artigo: item.articleUrl, recuperado_em: attemptedAt,
     leitor: item.articleReader || '', texto_sha256: textHash, texto: fullText });
-  if (reviewed.has(row.id)) {
+  if (reviewed.has(row.id) || row.enviado_em) {
     records.set(row.id, attachRecoveredText(records.get(row.id), textById.get(row.id)));
     changed += 1;
     console.log(`[retroativo:revisado] ${row.id.slice(0, 8)} ${fullText.length} caracteres; decisão, prova revisada e envio preservados`);

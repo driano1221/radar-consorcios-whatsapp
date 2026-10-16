@@ -61,6 +61,8 @@ Desde 14/10/2026, a AMM-MT está habilitada para alertas, mantendo a revisão po
 
 ## Onde os dados ficam
 
+**Recuperação de texto é independente da decisão.** A rotina diária de recuperação também pode completar documentos já revisados ou enviados, sem reenviá-los. Erros temporários recebem uma segunda tentativa; falhas persistentes voltam à fila com intervalo crescente (12 horas até 7 dias). Cada passagem tem limite de tempo e de itens por fonte. CAPTCHA real não é contornado: uma recuperação assistida fica identificada como tal. O workflow verifica que IDs, revisões e estado de envios não foram alterados.
+
 | Camada | O que representa | Onde consultar |
 | --- | --- | --- |
 | Publicações | Uma linha por URL arquivada, inclusive descartes. | [Arquivo de coletas](data/catalogo/arquivo-coletas.ndjson) |

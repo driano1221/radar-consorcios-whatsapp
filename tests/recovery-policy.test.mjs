@@ -1,9 +1,29 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { recoveryDue, recoveryDelayMs, recoveryAttempt, attachRecoveredText } from '../src/lib/recovery-policy.mjs';
+import { recoveryDue, recoveryDelayMs, recoveryAttempt, attachRecoveredText, isRecoveryLead } from '../src/lib/recovery-policy.mjs';
 import { fetchWithRetry } from '../src/lib/http.mjs';
-import { enrichArticle, isChallengePage } from '../src/lib/article-enrichment.mjs';
+import { enrichArticle, enrichArticles, isChallengePage } from '../src/lib/article-enrichment.mjs';
+import { redactPublicText } from '../src/lib/article-text-store.mjs';
 const now = '2026-10-16T16:00:00.000Z';
+
+test('orçamento esgotado não marca itens não tentados como falha ou sucesso', async () => {
+  let calls = 0;
+  const items = [{ title: 'Consórcio', url: 'https://example.org/a' }];
+  const result = await enrichArticles(items, { maxDurationMs: 0,
+    onAttempt: () => { calls++; }, fetchImpl: async () => { throw new Error('não deveria executar'); } });
+  assert.equal(calls, 0); assert.equal(result.attempted, 0);
+  assert.equal(result.enriched, 0); assert.equal(result.failed, 0);
+  assert.deepEqual(result.items, items);
+});
+
+test('CPF quebrado em linha no PDF é omitido, sem apagar CNPJ institucional', () => {
+  assert.equal(redactPublicText('123. 456.789-\n00 / 12.345.678/0001-90'), '[CPF omitido] / 12.345.678/0001-90');
+});
+
+test('lei já tentada não desaparece da fila porque o título não contém consórcio', () => {
+  assert.equal(isRecoveryLead({ titulo: 'Lei Nº 3.108, de 6 de dezembro de 2022', article_attempts: 3 }), true);
+  assert.equal(isRecoveryLead({ titulo: 'Notícia genérica sem relação' }), false);
+});
 
 test('Semana 7: JS passivo de segurança no rodapé não apaga uma notícia acessível', async () => {
   const text = 'O CISGA viabilizou procedimentos oftalmológicos para 100 pacientes. '.repeat(15);

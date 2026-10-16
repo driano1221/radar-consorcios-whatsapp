@@ -60,10 +60,10 @@ jobs:
           node scripts/backfill-article-text.mjs --ids="$RECOVERY_IDS" --force --include-sent --apply
       - name: Recuperar até 20 textos sem enviar ao WhatsApp
         if: env.RECOVERY_IDS == ''
-        run: node scripts/backfill-article-text.mjs --limit=20 --apply
+        run: node scripts/backfill-article-text.mjs --limit=20 --include-sent --apply
       - name: Recuperar até 20 títulos antigos do Google Notícias
         if: env.RECOVERY_IDS == ''
-        run: node scripts/backfill-article-text.mjs --title-only-google --retry-failed --limit=20 --apply
+        run: node scripts/backfill-article-text.mjs --title-only-google --retry-failed --limit=20 --include-sent --apply
       - name: Localizar prova por página em até 10 PDFs antigos
         if: env.RECOVERY_IDS == ''
         run: node scripts/backfill-google-pdfs.mjs --retry-failed --limit=10 --apply

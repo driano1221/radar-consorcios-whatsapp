@@ -17,7 +17,7 @@ const snapshot = {
   reviews: hash(await readFile(`${directory}revisoes-eventos.ndjson`)),
   acts: hash(await readFile(`${directory}atos-identificados.ndjson`)),
   sent: rows.map(r => [r.id, r.enviado_em || '', r.decisao_alerta || '', r.motivo_alerta || '']).sort(),
-  decisions: rows.filter(r => reviewed.has(r.id)).map(r => [r.id, r.trecho, r.etapa,
+  decisions: rows.filter(r => reviewed.has(r.id) || r.enviado_em).map(r => [r.id, r.trecho, r.etapa,
     r.tipo_evento, r.situacao_analise]).sort(),
 };
 await mkdir('output', { recursive: true });

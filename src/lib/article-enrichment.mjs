@@ -166,7 +166,8 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
       : incompleteComparison ? 'Um dos leitores não recuperou texto suficiente; conferência humana necessária.' : item.reviewReason || '' };
 }
 
-export async function enrichArticles(items, { limit = 12, concurrency = 3, includeUnsignaled = false, ...deps } = {}) {
+export async function enrichArticles(items, { limit = 12, concurrency = 3, includeUnsignaled = false,
+  maxDurationMs = Infinity, ...deps } = {}) {
   const selected = items.map((item, index) => ({ item, index }))
     .filter(({ item }) => item.kind !== 'gazette' && lacksArticleText(item) &&
       (includeUnsignaled || SIGNAL.test(item.title || '')))
@@ -174,11 +175,15 @@ export async function enrichArticles(items, { limit = 12, concurrency = 3, inclu
       Number(/ades[aã]o|ingresso|ratifica|cria[cç][aã]o|retirada|desligamento/i.test(a.item.title)))
     .slice(0, limit);
   const output = [...items];
-  let next = 0; let enriched = 0; let failed = 0;
+  let next = 0; let enriched = 0; let failed = 0; let attempted = 0;
+  const startedAt = Date.now();
   const missingText = [];
   await Promise.all(Array.from({ length: Math.min(concurrency, selected.length) }, async () => {
     while (next < selected.length) {
+      if (Date.now() - startedAt >= maxDurationMs) break;
       const { item, index } = selected[next++];
+      attempted += 1;
+      deps.onAttempt?.(item);
       const recordMissing = (source, reason) => {
         missingText.push({ index, source: source.source || '', title: source.title || '',
           url: source.url || '', reason });
@@ -191,7 +196,7 @@ export async function enrichArticles(items, { limit = 12, concurrency = 3, inclu
     }
   }));
   missingText.sort((left, right) => left.index - right.index);
-  return { items: output, attempted: selected.length, enriched, failed,
+  return { items: output, attempted, enriched, failed,
     missingText: missingText.map(({ index, ...entry }) => entry) };
 }
 
