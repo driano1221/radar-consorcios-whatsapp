@@ -97,7 +97,7 @@ export function validAlternativeDecision(row, decision, sources, reviewedIds = n
       decision.version !== ALTERNATIVE_TRIAGE_VERSION || decision.originalHash !== originalFingerprint(row) ||
       decision.documento_id !== row.id || !['aceito', 'descartado', 'duplicata', 'pendente'].includes(decision.status)) return false;
   if (!decision.sources?.length || decision.sources.some(reference => {
-    const source = sources.find(s => s.id === reference.id && s.documento_id === row.id);
+    const source = sources.find(s => s.id === reference.id && s.documento_id === row.id && s.texto_sha256 === reference.hash);
     return !source || source.texto_sha256 !== reference.hash || sha(source.texto || '') !== reference.hash;
   })) return false;
   if (decision.status === 'pendente') return true;

@@ -18,6 +18,8 @@ export async function decideWithAlternatives(row, sources, { apiKey, review = re
     sources: sources.map(s => ({ id: s.id, hash: s.texto_sha256 })), status: 'pendente',
     reason: '', calls: 0, checks: [], usage: { prompt_tokens: 0, completion_tokens: 0 } };
   if (!sources.length || sources.length > 2) return { ...record, reason: 'Quantidade de fontes fora do limite de conferência; não ignorar possíveis conflitos.' };
+  if (new Set(sources.map(s => s.id)).size !== sources.length || new Set(sources.map(s => alternativeUrlKey(s.url_fonte))).size !== sources.length)
+    return { ...record, reason: 'Versões conflitantes da mesma fonte; não escolher silenciosamente um texto antigo.' };
   for (const source of sources) {
     const { input, rule, error } = alternativeInput(row, source);
     if (error) { record.checks.push({ sourceId: source.id, status: 'pendente', reason: error }); continue; }
@@ -82,7 +84,7 @@ export async function triageAlternativeTexts({ directory = 'data/catalogo', appl
   for (const source of sources) {
     if (!byDocument.has(source.documento_id)) byDocument.set(source.documento_id, []);
     // Deduplication of the recovery store is also enforced here before billing.
-    if (!byDocument.get(source.documento_id).some(s => s.id === source.id || alternativeUrlKey(s.url_fonte) === alternativeUrlKey(source.url_fonte)))
+    if (!byDocument.get(source.documento_id).some(s => alternativeUrlKey(s.url_fonte) === alternativeUrlKey(source.url_fonte) && s.texto_sha256 === source.texto_sha256))
       byDocument.get(source.documento_id).push(source);
   }
   const day = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);

@@ -141,6 +141,20 @@ test('cota diária e ausência de chave não fazem chamadas nem decisões', asyn
   assert.equal((await triageAlternativeTexts({ directory, now, apiKey: '', review: mockReview })).calls, 0);
   assert.equal((await triageAlternativeTexts({ directory, now, apiKey: 'mock', maxCallsDay: 0, review: mockReview })).calls, 0);
 });
+test('versões conflitantes de uma fonte não selecionam silenciosamente a antiga', async t => {
+  const newerText = source.texto + ' Atualização do texto publicado.';
+  const directory = await fixture(t, [row], [source, { ...source, texto: newerText, texto_sha256: sha(newerText) }]);
+  const result = await triageAlternativeTexts({ directory, now, apiKey: 'mock', review: mockReview });
+  assert.equal(result.calls, 0); assert.equal(result.results[0].status, 'pendente');
+  assert.match(result.results[0].reason, /Versões conflitantes/);
+});
+test('mudança de metadados da alternativa invalida cache e refaz verificação', async t => {
+  const directory = await fixture(t);
+  await triageAlternativeTexts({ directory, apply: true, apiKey: 'mock', now, review: mockReview });
+  await writeFile(path.join(directory, 'fontes-alternativas.ndjson'), JSON.stringify({ ...source, data_fonte: '2025-01-01', titulo_fonte: source.titulo_fonte.replace('100', '900') }) + '\n');
+  const again = await triageAlternativeTexts({ directory, now, apiKey: 'mock', review: mockReview });
+  assert.equal(again.calls, 0); assert.equal(again.results[0].status, 'pendente');
+});
 test('histórico real é inelegível; não chamar IA nem alterar decisões antigas', async () => {
   const d = await triageAlternativeTexts({ apiKey: 'mock', now, review: () => { throw new Error('Proibido revisar históricos'); } });
   assert.equal(d.calls, 0); assert.equal(d.attempted, 0);
@@ -170,6 +184,7 @@ test('painel mostra prova, motivo e URL alternativa, nunca revisão humana fict�
   const local = buildDashboardData({ archive: [row], events: [], consortia: [], links: [], pendingIdentity: [], alternativeTexts: [source], alternativeDecisions: [d] });
   const item = buildPublicDashboardData(local).items[0];
   assert.equal(item.baseDecision, 'confirmado'); assert.equal(item.automaticAlternativeReview.sourceUrl, source.url_fonte);
+  assert.match(item.analysis, /Triagem automática por regras e IA/);
   assert.equal(item.evidence, d.evidence); assert.equal(item.editorialReview, null);
   assert.equal(item.alternativeSources[0].decisionUse, 'automatic'); assert.equal(item.alternativeSources[0].fullText, '');
   assert.equal(item.fullText, '');
