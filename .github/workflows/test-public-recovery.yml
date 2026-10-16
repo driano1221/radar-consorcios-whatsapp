@@ -1,0 +1,43 @@
+name: Validar PDFs e fontes alternativas sem envios
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements-extraction.txt
+      - run: npm ci
+      - run: python -m pip install -r requirements-extraction.txt
+      - name: Preparar OCR português e renderizador
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-por
+      - run: npm test
+      - run: python -m unittest discover -s tests -p 'test_public_pdf.py'
+      - run: node scripts/check-recovery-safety.mjs --before
+      - name: Validar fontes reais e OCR sem persistir na base
+        run: node scripts/validate-public-recovery.mjs
+      - name: Confirmar histórico, decisões e estado de envio intactos
+        if: always()
+        run: |
+          node scripts/check-recovery-safety.mjs
+          git diff --exit-code HEAD -- data state
+      - name: Renderizar páginas da amostra para conferência
+        if: always()
+        run: pdftoppm -scale-to 1500 -png output/public-recovery/guanhaes.pdf output/public-recovery/guanhaes-page
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: public-recovery-validation
+          path: output/public-recovery/
+          retention-days: 7

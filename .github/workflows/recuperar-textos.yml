@@ -50,6 +50,12 @@ jobs:
         run: npm test
       - name: Registrar invariantes antes da recuperação
         run: node scripts/check-recovery-safety.mjs --before
+      - name: Preparar OCR seletivo para PDFs públicos
+        if: env.RECOVERY_IDS == ''
+        run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-por
+      - name: Recuperar PDFs de Guanhães e alternativas Semana 7 sem reclassificar
+        if: env.RECOVERY_IDS == ''
+        run: node scripts/recover-public-documents.mjs --apply
       - name: Recuperar casos específicos sem classificar nem enviar
         if: env.RECOVERY_IDS != ''
         shell: bash
