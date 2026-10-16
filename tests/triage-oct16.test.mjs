@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { classifyItem } from '../src/lib/classifier.mjs';
 import { recoveredSuggestion } from '../src/lib/recovered-suggestion.mjs';
+import { routineSupplierContract } from '../src/lib/contract-context.mjs';
 import { sourcePublicationDate } from '../src/lib/publication-date.mjs';
 import { decidePublication, isNotifiable } from '../src/lib/publication-gate.mjs';
 import { applyAiReview, AI_PROMPT_VERSION } from '../src/lib/ai-review.mjs';
@@ -48,6 +49,16 @@ test('contratos com nomes e números diferentes não ressuscitam como crise na r
   assert.equal(fields.article_suggested_category, '');
   const item = { ...row, classification };
   assert.equal(applyAiReview(item, { status: 'approved', category: 'CRISE', promptVersion: AI_PROMPT_VERSION }).classification.category, 'GERAL');
+});
+
+test('notícia nova do mesmo credenciamento também fica fora, sem bloquear entrega ou sanção real', () => {
+  const row = archive.find(r => r.id.startsWith('f49d49e3'));
+  const stored = texts.find(r => r.documento_id === row.id);
+  const item = { title: row.titulo, rawText: stored.texto };
+  assert.equal(classifyItem(item).category, 'GERAL');
+  assert.equal(classifyItem({ ...item, rawText: stored.texto.replaceAll('Cisvarc', 'CISREGIONAL').replaceAll('6.400', '3.200') }).category, 'GERAL');
+  assert.notEqual(classifyItem({ title: 'Consórcio realizou entrega de próteses', rawText: `O Consórcio Intermunicipal Regional entregou 200 próteses aos pacientes. ${stored.texto}` }).category, 'GERAL');
+  assert.equal(routineSupplierContract({ ...item, rawText: `O Tribunal de Contas aplicou multas ao presidente do consórcio. ${stored.texto}` }), null);
 });
 
 test('hipóteses de falência e retirada de ordens não são acontecimentos do consórcio', () => {

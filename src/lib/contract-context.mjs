@@ -27,6 +27,17 @@ export function routineSupplierContract(item) {
       reason: 'ratificação de contratação rotineira de fornecedor, não alteração institucional ou ato financeiro do consórcio',
       evidence: raw.slice(0, 480) };
   }
+  // A mesma contratação pode reaparecer como notícia, sem o cabeçalho do termo.
+  // Exigir contrato identificado + fornecedor privado + previsão no título;
+  // relatos de atendimento executado ou sanção real não entram neste descarte.
+  const routineNews = /\b(?:preve|preveem|credencia|contrata|assina)\b/.test(title) &&
+    /\btermo de credenciamento\b.{0,180}\b(?:ltda|s\.?a\.?)\b.{0,100}\b(?:foi assinado|firmado)\b/.test(header);
+  const executed = /\b(?:realizou|realizaram|entregou|entregaram|distribuiu|atendeu|atenderam|foram realizadas|foram entregues|determinou|decretou|aplicou|suspendeu|constatou)\b/.test(text);
+  if (routineNews && publicConsortium && !executed && !/\bcontrato de rateio\b/.test(header)) {
+    return { stage: 'notícia de credenciamento rotineiro; atendimento apenas previsto',
+      reason: 'notícia de contrato rotineiro com fornecedor, sem atendimento executado comprovado',
+      evidence: raw.slice(0, 650) };
+  }
   return null;
 }
 
