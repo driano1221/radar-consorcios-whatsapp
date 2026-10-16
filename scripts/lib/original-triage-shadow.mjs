@@ -6,7 +6,7 @@ import { canonicalUrl } from '../../src/lib/dedupe.mjs';
 import { INSTITUTIONAL_REVIEW_POLICY } from '../../src/lib/institutional-proof.mjs';
 import {refineShadow, entityProven} from './original-shadow-rules.mjs';
 
-export const VERSION = 'original-shadow-2';
+export const VERSION = 'original-shadow-2.1';
 export const sha = value => createHash('sha256').update(value).digest('hex');
 const plain = value => normalizeWhitespace(String(value || '')).normalize('NFKC');
 export const literal = (body, quote, min = 25) => plain(quote).length >= min && plain(body).includes(plain(quote));
@@ -32,7 +32,9 @@ export function prepareOriginal(row, stored) {
   const rawRule = classifyItem(item);
   const rule = refineShadow(item, rawRule);
   const legacy = classifyItem({...item, publishedAt: row.data_publicacao || ''});
-  return {eligible: true, item, rule, rawRule, legacy, inputHash: sha(JSON.stringify(item)),
+  const processIds=[...item.rawText.matchAll(/\bprocesso[^.!?]{0,40}?(?:n[uú]mero|n\.|n[º°])\s*(\d{6,})/gi)].map(m=>m[1]);
+  const independentProcesses=item.kind==='news' && new Set(processIds).size>=2 && /\b(?:tr[eê]s|dois|v[aá]rios) processos\b/i.test(item.rawText);
+  return {eligible: true, item, rule, rawRule, legacy, independentProcesses, inputHash: sha(JSON.stringify(item)),
     textHash: stored.texto_sha256, reader: stored.leitor,
     assistedReading: /usuario|assistido|conferencia_visual/.test(stored.leitor || '')};
 }
@@ -47,9 +49,10 @@ Regras de leitura:
 - Julgamento de contas e multas são CONTROLE, não FINANÇAS. Investigar suspeitas é CONTROLE em apuração, nunca condenação. Diferencie sanção ao gestor de sanção à entidade.
 - Requerimento aprovado continua sendo pedido: não é lei aprovada nem adesão autorizada. Projeto em tramitação não é sancionado só porque a MINUTA contém "sanciono". Pode haver aprovação anterior de alteração em assembleia, a registrar apenas nessa etapa.
 - Listas/murais de documentos e fichas de julgamento sem resultado/ementa são IRRELEVANTE para entrada direta; apenas descobrem documentos a ler. Simples convocação é IRRELEVANTE.
+- Autorização nominal de repasse de valor a consórcio é FINANÇAS; não é RATEIO celebrado. Já crédito em rubrica genérica contábil "transferências a consórcios mediante contrato de rateio" é IRRELEVANTE, não comprova instrumento. Contrato de hospital/laboratório credenciado é IRRELEVANTE mesmo assinado e voltado à saúde pública; só previsão de atendimento não é atendimento realizado.
 - Uma lei pode conter vários artigos, anexos e efeitos relacionados (autorizar ingresso e custeio, ratificar estatuto e contrato). Isso NÃO significa documentos independentes. Uma notícia pode relatar fases de um mesmo programa ou um inquérito e sua resposta: escolha o fato principal e preserve limites. multiplos_atos=true apenas se houver atos autônomos sem uma unidade principal segura (ex.: edição com leis diferentes, municípios e processos independentes). Liste evidências dos atos independentes; nunca ignore um segundo ato por conveniência.
 Responda JSON: {"incerto":boolean,"multiplos_atos":boolean,"atos_independentes":["trechos literais dos atos autônomos, vazio se não houver"],"relevante":boolean,"categoria":"CRIAÇÃO|ADESÃO|ADESÃO AUTORIZADA|SAÍDA|SAÍDA AUTORIZADA|RATEIO|RATEIO EM TRAMITAÇÃO|PROTOCOLO|GOVERNANÇA|CONTROLE|CRISE|ATUAÇÃO|FINANÇAS|COOPERAÇÃO AUTORIZADA|IRRELEVANTE","evidencia":"trecho CONTÍGUO literal do CORPO com pelo menos 25 caracteres que prova o FATO, não apenas o nome da entidade","justificativa":"motivo e etapa do fato, sem extrapolar a evidência","escopo":"entidade|orientacao_geral|fora_escopo","entidade":"copie literalmente o nome OU sigla no corpo, sem acrescentar abreviaturas ou reconstruir grafia; vazio para orientação geral/descarte","evidencia_entidade":"trecho CONTÍGUO literal do CORPO identificando o consórcio público; vazio se não aplicável"}.
-Se não houver prova suficiente, use incerto=true. Não decida duplicidade externa: você só lê um documento. Não recebe a classificação da regra nem a resposta editorial; faça sua própria leitura.`;
+Se não houver prova suficiente, use incerto=true. TAMBÉM PARA DESCARTES, preencha evidencia com uma frase literal que demonstre a natureza do conteúdo descartado, nunca deixe vazio. Não decida duplicidade externa: você só lê um documento. Não recebe a classificação da regra nem a resposta editorial; faça sua própria leitura.`;
 
 export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch} = {}) {
   if (!prepared.eligible || !apiKey) throw new Error('Simulação requer texto elegível e chave configurada.');
@@ -72,16 +75,28 @@ export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch} = {})
 export function decideOriginal(prepared, review) {
   const pending = reason => ({decision: 'pendente', reason});
   if (!prepared.eligible) return pending(prepared.reason);
+  const rule=prepared.rule, body=prepared.item.rawText;
+  if (prepared.independentProcesses) return pending('processos_independentes_no_corpo');
+  if(rule.category==='GERAL' && rule.policyExclusion && literal(body,rule.evidenceText))
+    return {decision:'descartado',category:'GERAL',stage:rule.stage,reason:rule.reasons[0],
+      evidence:rule.evidenceText,entity:'',scope:'fora_escopo',evidenceOrigin:'regra_explicita',
+      policyExclusion:rule.policyExclusion};
   if (!review) return pending('segunda_leitura_nao_executada');
+  if (review.error) return pending('segunda_leitura_falhou');
   if (review.version !== VERSION || review.inputHash !== prepared.inputHash || review.textHash !== prepared.textHash)
     return pending('segunda_leitura_desatualizada');
-  const a = review.answer, rule = prepared.rule, body = prepared.item.rawText;
+  const a = review.answer;
   if (!a || typeof a.incerto !== 'boolean' || typeof a.multiplos_atos !== 'boolean' || typeof a.relevante !== 'boolean')
     return pending('resposta_invalida');
   if (a.incerto) return pending('incerteza_da_segunda_leitura');
   // Declining an index as a direct fact does not apply decisions to its links.
   if (a.multiplos_atos && !(rule.proofKind==='document_index' && a.relevante===false)) return pending('multiplos_atos');
-  if (!literal(body, a.evidencia) || typeof a.justificativa !== 'string' || a.justificativa.length < 15)
+  // For an agreed rejection only, a literal rule excerpt may supply the proof
+  // a model omitted. No evidence substitution for acceptance or disagreement.
+  const fallback=rule.category==='GERAL' && a.relevante===false && a.categoria==='IRRELEVANTE' &&
+    !plain(a.evidencia) && literal(body,rule.evidenceText);
+  const evidence=fallback?rule.evidenceText:a.evidencia;
+  if (!literal(body, evidence) || typeof a.justificativa !== 'string' || a.justificativa.length < 15)
     return pending('prova_literal_ausente');
   const accepted = rule.category !== 'GERAL' && rule.score >= 5;
   if (accepted !== a.relevante || (accepted ? a.categoria !== rule.category : a.categoria !== 'IRRELEVANTE'))
@@ -95,6 +110,7 @@ export function decideOriginal(prepared, review) {
       !entityProven(body,a.entidade,a.evidencia_entidade)) return pending('identidade_sem_prova_literal');
   }
   return {decision: accepted ? 'aceito' : 'descartado', category: accepted ? rule.category : 'GERAL',
-    stage: rule.stage || '', reason: a.justificativa, evidence: a.evidencia,
+    stage: rule.stage || '', reason: a.justificativa, evidence,
+    evidenceOrigin:fallback?'regra_concordante':'segunda_leitura',
     entity: accepted ? a.entidade || '' : '', scope: a.escopo};
 }

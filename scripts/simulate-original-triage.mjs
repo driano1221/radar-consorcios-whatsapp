@@ -32,6 +32,15 @@ const oldById=new Map(baseline.sample.map(x=>[x.id,x]));
 const selected=eligibleReviewed.sort((a,b)=>a.row.id.localeCompare(b.row.id));
 if (selected.filter(x=>oldById.has(x.row.id)).length!==40 || selected.length>70)
   throw new Error('Cohort changed: inspect before spending API calls.');
+// Additional prospective-to-this-experiment sample: no editorial reference.
+// Select before viewing text/results; annotate only after the frozen run.
+const freshPool=prepared.filter(x=>x.p.eligible&&!reference.has(x.row.id))
+  .sort((a,b)=>sha('original-v21-fresh:'+a.row.id).localeCompare(sha('original-v21-fresh:'+b.row.id)));
+const fresh=[...freshPool.filter(x=>x.p.rule.category!=='GERAL'&&x.p.rule.score>=5).slice(0,6),
+  ...freshPool.filter(x=>x.p.rule.category==='GERAL'||x.p.rule.score<5).slice(0,6)];
+const freshIds=new Set(fresh.map(x=>x.row.id));
+selected.push(...fresh);
+if(selected.length>70)throw new Error('API budget exceeded');
 await mkdir('output/original-triage-simulation', {recursive:true});
 const answers = [];
 if (options.has('--ai')) {
@@ -73,7 +82,7 @@ for (const {row,p} of prepared.sort((a,b)=>String(a.row.primeira_coleta).localeC
     unchangedRuleCategory:p.rawRule?.category || null, ruleRefinement:p.rule?.proofKind || '',
     ruleMatchesReference:p.eligible && sealed && expectedRelevant!==null?predictedRelevant===expectedRelevant:null,
     referenceCategoryMatches:p.eligible && sealed && expectedRelevant===true?p.rule.category===expected.categoria:null,
-    selectedForAi:selected.some(x=>x.row.id===row.id), cohort:oldById.has(row.id)?'original40':'additional',
+    selectedForAi:selected.some(x=>x.row.id===row.id), cohort:freshIds.has(row.id)?'fresh12':oldById.has(row.id)?'original40':'additional',
     beforeProposal:oldById.get(row.id)?.proposal || null, ai:answerById.get(row.id) || null,
     proposal:decision, duplicateCandidate:duplicate || null,
     proposalMatchesReference:sealed && expectedRelevant!==null && decision.decision!=='pendente'?(decision.decision==='aceito')===expectedRelevant:null});
@@ -110,11 +119,11 @@ const report = {version:VERSION,generatedAt:new Date().toISOString(),commit:exec
     proposedNewUnreviewed:results.filter(x=>x.referenceDecision===null && x.proposal.decision==='aceito').length,
     usage:answers.reduce((a,x)=>({input:a.input+(x.usage?.prompt_tokens||0),output:a.output+(x.usage?.completion_tokens||0)}),{input:0,output:0})},
   baselineCommit:baseline.commit,
-  cohorts:Object.fromEntries(['original40','additional'].map(cohort=>{
-    const set=results.filter(x=>x.selectedForAi&&x.cohort===cohort), decided=set.filter(x=>x.proposal.decision!=='pendente');
+  cohorts:Object.fromEntries(['original40','additional','fresh12'].map(cohort=>{
+    const set=results.filter(x=>x.selectedForAi&&x.cohort===cohort), decided=set.filter(x=>x.proposal.decision!=='pendente'&&x.expectedRelevant!==null);
     return [cohort,{total:set.length,before:count(set,x=>x.beforeProposal?.decision || 'nao_testado'),
       after:count(set,x=>x.proposal.decision),reasons:count(set.filter(x=>x.proposal.decision==='pendente'),x=>x.proposal.reason),
-      verdictErrors:decided.filter(x=>!x.proposalMatchesReference).length,
+      labeledDecisions:decided.length, verdictErrors:decided.length?decided.filter(x=>!x.proposalMatchesReference).length:null,
       categoryErrors:decided.filter(x=>x.proposal.decision==='aceito'&&x.proposal.category!==x.referenceCategory).length}];
   })),results};
 const after = await protectedSnapshot();

@@ -103,6 +103,41 @@ test('shadow não promove contrato com celebração a conferir nem ignora atos i
   assert.equal(decideOriginal(prepared,review(prepared)).reason,'etapa_ou_prova_da_regra_insuficiente');
   const x=p();assert.equal(decideOriginal(x,review(x,{multiplos_atos:true,atos_independentes:['Lei 01/2026','Lei 02/2026']})).reason,'multiplos_atos');
 });
+test('shadow não permite IA revogar veto comprovado para mural ou requerimento',()=>{
+  const body='Lista de outras publicações Foram encontradas 20 registros. Contrato de rateio 01 Acessar Contrato de rateio 02 Acessar Contrato de rateio 03 Acessar. Documentos oficiais disponíveis para consulta.';
+  const prepared=prepareOriginal(row,{...stored,texto:body,texto_sha256:sha(body)});
+  const result=decideOriginal(prepared,review(prepared,{categoria:'RATEIO',evidencia:body,relevante:true}));
+  assert.equal(result.decision,'descartado');assert.equal(result.policyExclusion,'document_index');
+  const req='Matéria: Requerimento 19/2026 Ementa: Solicita adesão do município ao consórcio público. Resultado da Votação: Aprovado. Votos Sim: 12. O sistema informa tramitação e participação dos vereadores.';
+  const q=prepareOriginal(row,{...stored,texto:req,texto_sha256:sha(req)});
+  assert.equal(decideOriginal(q,review(q,{relevante:true,categoria:'ADESÃO AUTORIZADA',evidencia:req})).decision,'descartado');
+});
+test('shadow distingue vários processos de artigos de uma mesma norma',()=>{
+  const s='O tribunal analisou três processos envolvendo consórcios públicos. Um dos processos, autuado sob o número 1234567, envolve o primeiro. Outro processo (n. 7654321), envolve outra entidade. Foram decisões autônomas.';
+  const prepared=prepareOriginal(row,{...stored,texto:s,texto_sha256:sha(s)});
+  assert.equal(prepared.independentProcesses,true);
+  assert.equal(decideOriginal(prepared,review(prepared,{multiplos_atos:false})).reason,'processos_independentes_no_corpo');
+  const t='Lei 11/2026 ratifica estatuto e autoriza custeio. Art. 1º Fica ratificado. Art. 2º Fica autorizado o repasse. A Lei 11.107/2005 é a base legal. O presente texto continua sendo uma única lei municipal.';
+  assert.equal(prepareOriginal(row,{...stored,texto:t,texto_sha256:sha(t)}).independentProcesses,false);
+});
+test('shadow rejeição concordante usa prova literal da regra, mas aceite nunca recebe esse atalho',()=>{
+  const prepared=p();prepared.rule={...prepared.rule,category:'GERAL',score:0,evidenceText:text};
+  const result=decideOriginal(prepared,review(prepared,{relevante:false,categoria:'IRRELEVANTE',evidencia:''}));
+  assert.equal(result.decision,'descartado');assert.equal(result.evidenceOrigin,'regra_concordante');
+  const yes=p();assert.equal(decideOriginal(yes,review(yes,{evidencia:''})).reason,'prova_literal_ausente');
+  assert.equal(decideOriginal(prepared,review(prepared,{relevante:true,categoria:'ATUAÇÃO',evidencia:''})).reason,'prova_literal_ausente');
+});
+test('shadow erro de chamada não se confunde com resposta desatualizada',()=>{
+  assert.equal(decideOriginal(p(),{error:'timeout'}).reason,'segunda_leitura_falhou');
+});
+test('shadow rateio exige instrumento publicado com fechamento, não basta citar celebração',()=>{
+  const rule={category:'RATEIO',score:7,stage:'contrato de rateio citado; celebração a conferir'};
+  const body='As partes resolvem celebrar o presente Contrato de Rateio, conforme cláusulas. Por estarem de acordo, assinam o presente Contrato em quatro vias. PREFEITO MUNICIPAL João. PRESIDENTE DO CONSÓRCIO José.';
+  const item={kind:'gazette',title:'CONTRATO DE RATEIO 55/2026',rawText:body};
+  assert.equal(refineShadow(item,rule).proofKind,'published_rateio_instrument');
+  assert.equal(refineShadow({...item,rawText:'MINUTA '+body},rule).stage,rule.stage);
+  assert.equal(refineShadow({...item,rawText:body.replace('assinam o presente Contrato','assinarão o instrumento')},rule).stage,rule.stage);
+});
 test('shadow não está ligado à produção; executor não possui modo apply',async()=>{
   for(const file of ['../src/radar.mjs','../src/lib/catalog.mjs','../src/weekly.mjs'])
     assert.doesNotMatch(await readFile(new URL(file,import.meta.url),'utf8'),/original-triage-shadow|simulate-original-triage/);
