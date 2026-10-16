@@ -1,0 +1,116 @@
+{
+  "version": "original-shadow-6.0",
+  "selectedBeforeAi": true,
+  "seed": "v6-new-text",
+  "caveat": "Textos distintos dos 106 anteriores; podem conter episódios conhecidos e revisões editoriais. Não é holdout independente nem coleta nova.",
+  "cases": [
+    {
+      "id": "965b6035308c7fe0bf920a6e079ce963b88d6336a936579494f6c7cc8c35d0af",
+      "textHash": "d794f6b05b4f27319e32e33614a539b65d094d7bec959cf10482d6e5320d68d7",
+      "inputHash": "a2032645eb15332b32ae4f90f29bb1265b9a89f42bb0e6e5636f77f726e0a3d0",
+      "title": "Consórcio ABC e Braskem Debatem Fortalecimento do Polo Petroquímico e Reindustrialização Regional - abcagora.com.br",
+      "url": "https://abcagora.com.br/2026/10/02/consorcio-abc-braskem-polo-petroquimico/",
+      "rule": "ATUAÇÃO",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "7bfe3d22290b37671a36cfa3e898fe9fc85dae1df23555cf56358957f6025c91",
+      "textHash": "9e36d64cb6cebd2dbfed67e37f47585a887b77a766b797197bb28dcfbc1c16e7",
+      "inputHash": "534aceaa78b5c7c0085672747774c7d004cc19690a49f71ce28f2e4f399525ba",
+      "title": "Consórcio ABC inicia segunda fase do ABC + Seguro com foco em tecnologia e capacitação das GCMs - ABC Repórter",
+      "url": "https://abcreporter.com.br/2026/09/23/consorcio-abc-inicia-segunda-fase-do-abc-seguro-com-foco-em-tecnologia-e-capacitacao-das-gcms/",
+      "rule": "ATUAÇÃO",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "6f103f8dd7ab4573f89a14b5610d827b4d503d302e38bb37d4765cc047af555f",
+      "textHash": "71d0b6b635e863c0f155319d14ca12ddb0a1c99f37f52cfcac3df325d432d21b",
+      "inputHash": "902814ff081e00b98208a73d6edf691037023b9f7897c08e7772ceec8566fb84",
+      "title": "Promotorias cobram solução para crise em hospital regional - issoenoticia.com.br",
+      "url": "https://www.issoenoticia.com.br/politica-e-poder/promotorias-cobram-solucao-para-crise-em-hospital-regional/930181",
+      "rule": "CONTROLE",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "5b859e7b73176a8437db63e6dc3d1e813214ab56ef2ffe7916b4735dcc26cee9",
+      "textHash": "619e1609db0d512594f27ee6290032ea2c3a2915a74c81965f39962b5c70403a",
+      "inputHash": "ce0776c810ee24e7e28df326ad61d5b4bc4541d7ba7fe2aac3a2d7a476b6d6fb",
+      "title": "Lei Ordinária nº 5.651, de 12 de agosto de 2026 - sapl.saojoaodaboavista.sp.leg.br",
+      "url": "https://sapl.saojoaodaboavista.sp.leg.br/norma/12193",
+      "rule": "GOVERNANÇA",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "814ac792cba46109b3f64d7d13f720576bc9163b42cb479cb166cc5d49a83ea5",
+      "textHash": "ac1610047cae19f71d2fa62095cf20fd3f83bd18a0afbbbd6ffa9f94bd3c34bd",
+      "inputHash": "28d1a654a93f21ccffedde6e1bad369fd43486b21d6f2539aaab5b9d9a592afb",
+      "title": "Promotorias cobram solução para crise em hospital regional - MOMENTO MT",
+      "url": "https://momentomt.com.br/ministerio-publico-mt/promotorias-cobram-solucao-para-crise-em-hospital-regional/",
+      "rule": "CONTROLE",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "abf928abb86a98d8eee9bc23e63bdf520fe96236204233d994f6d65177ccc937",
+      "textHash": "25c14712f75293b967b3c21af5711571b19637e577adcd1e53c912aa96437892",
+      "inputHash": "ef2189e9185e446b4340368028acb9fefaf33bccf3dd6b1fbfcaef9e52c01915",
+      "title": "Umuarama aprova ingresso em consórcio de prevenção a desastres climáticos - Portal da Cidade - Umuarama / PR",
+      "url": "https://umuarama.portaldacidade.com/noticias/cidade/umuarama-aprova-ingresso-em-consorcio-de-prevencao-a-desastres-climaticos-4143",
+      "rule": "ADESÃO AUTORIZADA",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "2b771473950620e3b6572dd1200d359c80d82e19bb73890bd459da0461ade7a4",
+      "textHash": "8f48c41dd1bd0e4d9408284e9ae060a9c8937917d05c876f25aac79b3504a395",
+      "inputHash": "db473b2b0dd287bfad1e19713d559bc38a4ee89f7c3eff7fb7824a8ccbfb9c29",
+      "title": "EDITAL DE CONVOCAÇÃO N° 041/2026 PARA NOMEAÇÃO E POSSE DO CONCURSO PÚBLICO Nº 001/2025.",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924633/",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "8f0d57a695029aed1887c7154c8909e588a8eb7794734e6b2ff0a141fb7048c0",
+      "textHash": "ee28e67b38f05ca3ce6611e77200d12f2571f56d8b97b5a2da35d953b032ac4b",
+      "inputHash": "702f1f06f603e22612332eb693af62efbd010d577ae082d5f48529f1aebcc9e3",
+      "title": "PORTARIA MUNICIPAL N. º 244 DE 13 DE OUTUBRO DE 2026.",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924526/",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "ca0b94ca8fae90b8426d1bc5403b206b5519bfbffe898aa846864b5a06e19729",
+      "textHash": "e88da0c9f84a94858d0a265905d869510accb3d96af3b643d77900588aab0dbc",
+      "inputHash": "6566ae1aa26dfbd4a391cb2a6d7d8e6b4fc32330dfa4bae079683a8dcc64a11e",
+      "title": "CONSÓRCIO ABC SEDIA CURSO SOBRE ASSISTÊNCIA TÉCNICA HABITACIONAL DE INTERESSE SOCIAL - tvsaobernardo.com",
+      "url": "https://tvsaobernardo.com/consorcio-abc-sedia-curso-sobre-assistencia-tecnica-habitacional-de-interesse-social/",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "3459b276f1d8496813599e757f4528741f0bf8d5962b4bfce0d938454359b76c",
+      "textHash": "b5a7e735ff648929d3579e973835afb908213a7ba4d5d35e81cb06b9d41ec204",
+      "inputHash": "e44b302953ca7e2dfb6d1404792a8c26b05495e92a8e26e6d2111664c4f03975",
+      "title": "Consórcio de Saúde 08 de Abril abre processo seletivo com 47 vagas e salários de até R$ 4,5 mil - Mogi Gua ... - mogiguacuacontece.com.br",
+      "url": "https://mogiguacuacontece.com.br/consorcio-de-saude-08-de-abril-abre-processo-seletivo-com-47-vagas-e-salarios-de-ate-r-45-mil/",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "42396b5fe2cea8790a1d545387762004e5b2d889cc95c9cf3a9382f22261c9d4",
+      "textHash": "2ea6357d8c82b45d01a2e03f6c6e892d2c01b207de48ac11fa1fb00f61f504c1",
+      "inputHash": "ced44745e75857baf6ae82b64f9fb55ffd2be16bb9db03ed720f73b5a88f3da9",
+      "title": "Jaru recebe assembleia geral do CISAN Central para discutir melhorias nos serviços de saneamento - Rondônia Dinâmica",
+      "url": "https://www.rondoniadinamica.com/noticias/2026/10/jaru-recebe-assembleia-geral-do-cisan-central-para-discutir-melhorias-nos-servicos-de-saneamento,256190.shtml",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "61b1a8509943cba8efd9a7fa98684efa3db3bc9fb5172c3e075b394eb4ea1da6",
+      "textHash": "b76155a9f83e39bd7f69b93dcf2000058a663e912c14da499828fec2b5e0f995",
+      "inputHash": "f4c39c8b4282d6ee5f79e2d77a2c4fa6c4b65e6529e33a04fa325e6caae22025",
+      "title": "Consórcio Intermunicipal de Gestão e Desenvolvimento Ambiental Sustentável das Vertentes abre concurso com 3 vagas - Qconcursos Folha Dirigida",
+      "url": "https://folha.qconcursos.com/n/consorcio-intermunicipal-de-gestao-e-desenvolvimento-ambiental-sustentavel-das-vertentes-abre-concurso-com-3-vagas",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    }
+  ]
+}

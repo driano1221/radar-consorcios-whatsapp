@@ -104,9 +104,9 @@ export function relatedAspects(p,a) {
 }
 
 export async function readV5(p,options) {
-  return reviewOriginal(p,{...options,additionalPolicy:policy,policyVersion:VERSION});
+  return reviewOriginal(p,{...options,additionalPolicy:policy+(options?.additionalPolicy||''),policyVersion:options?.policyVersion||VERSION});
 }
-export function decideV5(p,review,{replayLegacy=false}={}) {
+export function decideV5(p,review,{replayLegacy=false,expectedVersion=VERSION}={}) {
   if(!p.eligible)return {decision:'pendente',reason:p.reason};
   if(p.segments.length>=2)return {decision:'desdobrar',reason:'processos_independentes_com_intervalos_no_original',
     processes:p.segments.map(s=>({process:s.process,annexes:s.annexes||[],start:s.start,end:s.end}))};
@@ -115,7 +115,7 @@ export function decideV5(p,review,{replayLegacy=false}={}) {
     return {...deterministic,reading:'explicit_existing_policy'};
   if(review?.error)return {decision:'pendente',reason:'segunda_leitura_falhou'};
   if(!review)return {decision:'pendente',reason:'segunda_leitura_nao_executada'};
-  const expected=replayLegacy?BASE_VERSION:VERSION;
+  const expected=replayLegacy?BASE_VERSION:expectedVersion;
   if(review.version!==expected||review.textHash!==p.textHash||review.inputHash!==p.inputHash||
     (review.contentReviewKey && review.contentReviewKey!==sha(expected+'\n'+p.item.rawText)))
     return {decision:'pendente',reason:'segunda_leitura_desatualizada'};
