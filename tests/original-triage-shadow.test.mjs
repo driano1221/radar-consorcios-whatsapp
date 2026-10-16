@@ -278,3 +278,13 @@ test('shadow obrigação judicial de prefeitura não prova prazo do consórcio',
   assert.equal(factAgreement(rule,a).matches,false);
   assert.equal(factAgreement(rule,{...a,evidencia:'O Consórcio Intermunicipal Vale Azul, por sua vez, deverá realizar, em 180 dias, a adequação estrutural.'}).matches,true);
 });
+
+test('shadow seleção de pessoal tem veto explícito sem apagar composição ou histórico',()=>{
+  const text='O Consórcio Intermunicipal Vale Azul está com inscrições abertas para o Processo Seletivo nº 14/2026, para 28 vagas. As provas serão realizadas em novembro. Inscrições e salários disponíveis no edital.';
+  const item={kind:'news',title:'Consórcio abre processo seletivo',rawText:text};
+  assert.equal(refineShadow(item,{category:'GERAL',score:0}).policyExclusion,'personnel_recruitment_only');
+  for(const extra of [' O consórcio é formado pelos municípios de Azul e Verde.',
+    ' O consórcio foi constituído em 2023.', ' O consórcio assinou um protocolo.',
+    ' O consórcio realizou uma visita técnica.'])
+    assert.notEqual(refineShadow({...item,rawText:text+extra},{category:'GERAL',score:0}).policyExclusion,'personnel_recruitment_only');
+});

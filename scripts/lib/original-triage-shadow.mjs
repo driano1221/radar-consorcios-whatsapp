@@ -8,6 +8,7 @@ import {refineShadow, entityProven} from './original-shadow-rules.mjs';
 import {factAgreement} from './shadow-facts.mjs';
 
 export const VERSION = 'original-shadow-3.1';
+export const RULE_VERSION = 'original-shadow-3.2';
 export const sha = value => createHash('sha256').update(value).digest('hex');
 const plain = value => normalizeWhitespace(String(value || '')).normalize('NFKC');
 export const literal = (body, quote, min = 25) => plain(quote).length >= min && plain(body).includes(plain(quote));

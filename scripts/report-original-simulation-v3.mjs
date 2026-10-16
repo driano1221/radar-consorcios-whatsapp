@@ -3,7 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 const [file,run]=process.argv.slice(2);
 if(!file||!/^\d+$/.test(run||''))throw new Error('Saved report and verified run ID required');
 const r=JSON.parse(await readFile(file,'utf8'));
-if(!['original-shadow-3','original-shadow-3.1'].includes(r.version)||r.productionActivated!==false||r.whatsappCalls!==0||!r.protectedFilesUnchanged)
+if(!['original-shadow-3','original-shadow-3.1','original-shadow-3.2'].includes(r.version)||r.productionActivated!==false||r.whatsappCalls!==0||!r.protectedFilesUnchanged)
   throw new Error('Invalid version or missing safety evidence');
 const safe=s=>String(s??'').replace(/\|/g,'/').replace(/[\r\n]+/g,' ');
 const link=x=>`[${safe(x.title)}](${x.url.replace(/\(/g,'%28').replace(/\)/g,'%29')})`;
@@ -11,10 +11,12 @@ const n=(d,k)=>d?.[k]||0;
 const names={original40:'40 originais',additional:'18 adicionais com referência',previous12:'12 exploratórios anteriores',new12:'12 textos diferentes adicionais'};
 const chosen=r.results.filter(x=>x.selectedForAi),pending=chosen.filter(x=>x.proposal.decision==='pendente');
 const c=r.counts;
-const tag=r.version.endsWith('3.1')?'V31':'V3';
+const tag=r.version.endsWith('3.2')?'V32':r.version.endsWith('3.1')?'V31':'V3';
 const md=`# Simulação ${r.version} — regras, prova e republicações
 
 **Não ativada.** Comparação com a execução v2.1 [38959557626](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38959557626). O complemento CONSUD v2.2 permanece documentado separadamente. Acervo, painel e estado de envio não foram alterados.
+
+${r.replaySource?`**Replay determinístico de todas as respostas congeladas**, não uma nova rodada de IA. Origem: [${r.replaySource.run}](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/${r.replaySource.run}), commit ${r.replaySource.commit}, política de leitura ${r.replaySource.readingVersion}. Os 82 vínculos e hashes foram conferidos. Nenhuma resposta foi substituída, nem selecionada por resultado. Uma resposta inválida do mural está preservada; a regra explícita de mural sustenta seu descarte sem depender da IA.`:''}
 
 ## Antes e depois
 
@@ -39,7 +41,7 @@ As 12 leituras exploratórias anteriores agora são casos conhecidos, não holdo
 
 - ${c.archive} publicações; ${c.storedFulltext} textos completos armazenados; ${c.eligible} elegíveis para este piloto de originais HTML.
 - Regras versus referências: ${c.ruleAgreements}/${c.comparable}; falsos aceites ${c.ruleFalseAccepts}; falsos descartes ${c.ruleFalseRejects}; categorias divergentes ${c.categoryDisagreements}.
-- ${c.aiSelected} documentos vinculados a ${c.aiCalls} chamadas; ${c.aiErrors} documentos com falha de API; ${c.sharedBodyGroups} grupo(s) de corpos repetidos; ${c.inconsistentGroups} grupo(s) com divergência de regras retida pela proteção.
+- ${c.aiSelected} documentos, ${c.aiCalls} chamadas novas; ${c.aiErrors} falhas novas; ${c.savedResponseErrors||0} falhas preservadas nas respostas reutilizadas; ${c.sharedBodyGroups} grupo(s) de corpos repetidos; ${c.inconsistentGroups} grupo(s) com divergência de regras retida pela proteção.
 - ${c.usage.input} tokens de entrada e ${c.usage.output} de saída, contados por chamada única, não por URL.
 - PDF, OCR, textos alternativos e íntegra ausente estão fora deste piloto. Sua exclusão da avaliação não significa descarte temático.
 - Aceitar conteúdo não significa inserir fato novo: há republicações e acontecimentos já registrados. A deduplicação semântica completa ainda não foi ativada por este experimento.
@@ -68,7 +70,7 @@ ${chosen.filter(x=>x.processSegments?.length).map(x=>`${link(x)}\n\n| Processo |
 `;
 await writeFile('docs/SIMULACAO-ORIGINAIS-'+tag+'-2026-10-16.md',md);
 await writeFile('docs/simulacao-originais-'+tag.toLowerCase()+'-2026-10-16-resumo.json',JSON.stringify({version:r.version,run,commit:r.commit,
-  generatedAt:r.generatedAt,corpusHash:r.corpusHash,counts:c,cohorts:r.cohorts,productionActivated:false,
+  generatedAt:r.generatedAt,corpusHash:r.corpusHash,counts:c,cohorts:r.cohorts,replaySource:r.replaySource,productionActivated:false,
   whatsappCalls:0,protectedFilesUnchanged:true,sample:chosen.map(x=>({id:x.id,textHash:x.textHash,url:x.url,title:x.title,cohort:x.cohort,
     reference:x.referenceDecision,referenceCategory:x.referenceCategory,before:x.beforeProposal,rule:x.ruleCategory,
     proposal:x.proposal,ai:x.ai?.answer,contentReviewKey:x.ai?.contentReviewKey,duplicateCandidate:x.duplicateCandidate,

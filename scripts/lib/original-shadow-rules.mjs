@@ -60,6 +60,14 @@ export function refineShadow(item, rule) {
       (text.match(/\bparceria entre\b/gi)||[]).length===1 && !/\b(?:seria|ser[aá]|a ser|n[aã]o)\s+firmada\b/i.test(text))
     return use('ATUAÇÃO','parceria já firmada relatada como contexto; inscrições futuras não são bolsas entregues; verificar duplicidade do acordo',
       text.slice(partnership.index,signed.index+signed[0].length),'signed_partnership_context');
+  // Personnel recruitment alone is an explicit exclusion, not an uncertain
+  // lack-of-information rejection. Preserve independently proven composition,
+  // history and actual institutional events, including ones missed by a rule.
+  const recruitment=/\bCons[oó]rcio[^.!?]{2,200}\best[aá] com inscri[cç][oõ]es abertas para o Processo Seletivo[^.!?]{0,140}/i.exec(text);
+  const recruitmentDetails=(text.match(/\b(?:vagas|inscri[cç][oõ]es|prova|provas|sal[aá]rios|cargos|remunera[cç][aã]o)\b/gi)||[]).length;
+  if(rule.category==='GERAL' && item.kind==='news' && /processo seletivo|concurso/i.test(title) && recruitment && recruitmentDetails>=3 &&
+      !/\b(?:formado|integrado|composto|constitu[ií]do|criado|estabelecido|assinaram|assinou|firmou|firmada|sediou|realizou|ratificou)\b/i.test(text))
+    return use('GERAL','seleção de pessoal sem composição municipal ou outro fato institucional comprovado; local das vagas não demonstra adesão',recruitment[0],'personnel_recruitment_only');
   // Require an actual action and its public-consortium subject/target in the
   // same sentence. Neither passive attendance nor a future event qualifies.
   const workshop=proof(text,/\bCons[oó]rcio\s+(?:P[uú]blico\s+)?Intermunicipal\s+[^.!?;]{2,120}?\s+sediou,?\s+[^.!?;]{0,90}\b(?:oficina|curso|semin[aá]rio)\b[^.!?;]{0,180}/i);
