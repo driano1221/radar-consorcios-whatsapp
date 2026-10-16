@@ -1,4 +1,4 @@
-name: Simulação isolada de originais nesta branch
+name: Validar lote histórico sem envios
 on:
   workflow_dispatch:
 permissions:
@@ -6,7 +6,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -14,17 +14,31 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: node --test tests/original-triage-shadow.test.mjs
-      - name: Simular 40 originais com IA sem aplicar
-        env:
-          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: node scripts/simulate-original-triage.mjs --ai
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-extraction.txt
+      - run: npm run check
+      - run: npm test
+      - run: node scripts/apply-retroactive-ten.mjs --apply
+      - run: node scripts/apply-historical-thirteen.mjs --apply
+      - run: node scripts/apply-general-rule-review.mjs --apply
+      - run: node scripts/inventory-retroactive-backlog.mjs
+      - run: npm run dashboard:build:public
+      - run: node scripts/check-public-dashboard.mjs
+      - name: Conferir quatro leituras reais sem tocar no acervo
+        run: node scripts/validate-historical-readers.mjs
+      - name: Diagnosticar formatos públicos da CNM e Conclima sem envios
+        if: always()
+        run: node scripts/validate-cnm-access.mjs
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: original-triage-simulation
-          path: output/original-triage-simulation/
+          name: historical-readers
+          path: |
+            output/historical-readers/
+            output/cnm-access/
           retention-days: 7
-      - name: Confirmar produção e estado de envio intactos
+      - name: Confirmar aplicação idempotente e estado de envio intacto
         if: always()
-        run: git diff --exit-code HEAD -- data state config src
+        run: git diff --exit-code HEAD -- data state

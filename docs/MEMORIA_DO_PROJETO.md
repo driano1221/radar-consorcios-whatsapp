@@ -2,6 +2,15 @@
 
 Atualização mais recente: **16 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Simulação de confirmação de originais — 16/10/2026, NÃO ATIVADA
+
+- Pedido: simular no acervo, comparar com decisões anteriores e apresentar antes/depois antes de ativar. Trabalho isolado na branch `test/original-triage-simulation`, sem modificar main, painel, `src/`, `config/`, `data/` ou `state/`.
+- [Relatório completo e 40 casos](SIMULACAO-ORIGINAIS-2026-10-16.md), [resumo estruturado](simulacao-originais-2026-10-16-resumo.json). [Actions 38957521537](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38957521537) concluído, zero WhatsApp, hashes do acervo e estado preservados. 423 testes locais passaram; os sete novos de simulação passaram também no Actions.
+- Corpus: 1.982 publicações, 263 textos armazenados, 244 leituras elegíveis. Comparação principal com mesma fonte e referência binária: 58 (39 aceites, 19 descartes); regras concordaram em 55, com três falsos aceites e duas categorias divergentes. Duplicatas e referências a outro documento são separadas da métrica principal, para não confundir conteúdo, novidade e acesso a evidência complementar.
+- Segunda leitura real em 40 casos, corpo completo, sem decisões editoriais no prompt: **8 aceites, 13 descartes, 19 bloqueios**. Os 21 decididos concordaram com a referência; cobertura 52,5%, não acerto universal. Cinco divergências regra/IA, cinco faltas de etapa/prova, cinco apontamentos de múltiplos atos e quatro falhas de validação do nome. Estes últimos incluem caixa, acentos e siglas acrescentadas pelo modelo à forma literal citada.
+- IA errou ao tratar mera identificação do CEMMIL/CISVARC como composição municipal, e aprovação de requerimento como autorização de ingresso. Regras bloquearam. ABC + Seguro foi chamado GOVERNANÇA pela regra e pela IA; a falta de etapa/prova impediu promoção incorreta. Não usar simples concordância como garantia.
+- Próximo passo sugerido: corrigir validador do nome e listagens; ampliar etapa/categoria; distinguir artigos de uma norma de atos independentes; testar deduplicação de episódio. Repetir com casos novos ainda não usados para ajuste. **Não ativar sem apresentar nova comparação e autorização.** Nenhuma nova decisão editorial do usuário foi necessária nesta rodada; os casos problemáticos já têm critérios definidos.
+
 ## Integração CNM e limite real da autonomia — 16/10/2026
 
 - Usuário autorizou aplicar CNM e pediu explicação do que falta para aceitar/descartar sem revisão manual, além de atualizar memória, repositório e fluxo.
