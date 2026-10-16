@@ -70,6 +70,41 @@ function withEvidence(result, evidence) {
 export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
+  // Historical recovery may have only a generic search title. Require evidence
+  // in the document body and preserve the legal stage, not the index date.
+  const approvedAutograph = /\baut[oó]grafo\s+n[º°o.]?\s*\d+\/\d{4}\b.{0,650}\baprovado\s+em\s+sess[aã]o\b/i;
+  if (approvedAutograph.test(text) && /\bconstitui[cç][aã]o de cons[oó]rcio p[uú]blico\b/i.test(text) &&
+    /\banexo\s*[-–—]\s*minuta\b/i.test(text)) {
+    return withEvidence({ ...classification, category: 'PROTOCOLO', emoji: '🟨', score: Math.max(5, classification.score || 0),
+      stage: 'projeto aprovado e autógrafo encaminhado; sanção, assinatura e constituição não comprovadas',
+      reasons: ['autógrafo aprovado com minuta anexa; não é prova de constituição consumada'] },
+    literalEvidence(text, [approvedAutograph], 0, 80));
+  }
+  const retainedMember = /\b(?:autoriza|autorizad[oa])\s+[aà]\s+perman[eê]ncia\b.{0,190}\b(?:ente consorciado|cons[oó]rcio)/i;
+  const contractAmendment = /\b(?:ratifica|ratificado)\b.{0,60}\baltera[cç][aã]o\b.{0,70}\bcontrato\b.{0,50}\bcons[oó]rcio/i;
+  if (retainedMember.test(text) && contractAmendment.test(text) &&
+    /\b(?:lei municipal|promulga a seguinte\s*lei)\b/i.test(text)) {
+    return withEvidence({ ...classification, category: 'GOVERNANÇA', emoji: '⬛', score: Math.max(5, classification.score || 0),
+      stage: 'ratificação de alteração e permanência; ingresso original e novo rateio não comprovados',
+      participationEvidence: true, reasons: ['permanência expressa em lei, não adesão nova nem contrato de rateio celebrado'] },
+    literalEvidence(text, [retainedMember], 0, 150));
+  }
+  const authorizedProtocol = /\bautoriza(?:do)?\b.{0,110}\bratificar\s+(?:o\s+)?protocolo de inten[cç][oõ]es\s+para\s+(?:a\s+)?constitui(?:r|[cç][aã]o)\s+(?:de\s+|o\s+)?cons[oó]rcio p[uú]blico/i;
+  if (authorizedProtocol.test(text) && /\blei municipal\b/i.test(text) &&
+    !/\bassembleia\s+(?:geral\s+)?de\s+constitui[cç][aã]o\b.{0,80}\b(?:realizada|ocorreu)\b/i.test(text)) {
+    return withEvidence({ ...classification, category: 'PROTOCOLO', emoji: '🟨', score: Math.max(5, classification.score || 0),
+      stage: 'lei de autorização/ratificação de protocolo; constituição operacional não comprovada',
+      reasons: ['etapa legal de protocolo; não inferir consórcio já constituído ou em operação'] },
+    literalEvidence(text, [authorizedProtocol], 0, 150));
+  }
+  const approvedCofunding = /\bfoi aprovad[oa]\b.{0,100}\bautorizar o cofi\s*-?\s*nanciamento pelos munic[ií]pios consorciados\b/i;
+  if (/\bATA\s+N[º°o.]\s*\.?\s*\d+\/\d{4}\s+DA REUNI[AÃ]O\b/i.test(text) &&
+    /\bcons[oó]rcio p[uú]blico\b/i.test(text) && approvedCofunding.test(text)) {
+    return withEvidence({ ...classification, category: 'FINANÇAS', emoji: '💰', score: Math.max(5, classification.score || 0),
+      stage: 'assembleia autorizou cofinanciamento; pagamento e assinatura de aditivo não comprovados',
+      reasons: ['ata registra deliberação financeira dos municípios; não equivale a pagamento executado'] },
+    literalEvidence(text, [approvedCofunding], 30, 250));
+  }
   // Só aplicar a atos individualizados: uma edição pode ter dezenas de
   // processos e não pode herdar a identidade ou o resultado de um deles.
   const processHeaders = [...text.matchAll(/\bProcesso\s+n[º°o]?\s*:\s*\d+/gi)];

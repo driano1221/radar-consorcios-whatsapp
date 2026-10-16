@@ -23,7 +23,8 @@ const RULES = [
     patterns: [
       /\b(retirada|desligamento|desvinculacao|saida|exclusao)\b.{0,140}\b(consorcio|municipio consorciado)/,
       /\bconsorcio\b.{0,140}\b(retirada|desligamento|desvinculacao|saida|exclusao)\b/,
-      /\b(deixa|deixou|sai|saiu|rompe|rompeu)\b.{0,100}\bconsorcio/,
+      // "Varre-Sai" is a municipality, not the verb "sai". Preserve real exits.
+      /\b(deixa|deixou|(?<!varre[-\s])sai|saiu|rompe|rompeu)\b.{0,100}\bconsorcio/,
       /\bdenuncia\b.{0,100}\bprotocolo de intencoes/,
     ],
   },
