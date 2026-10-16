@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {completedCourse,locateQuote,splitProcesses,prepareV5,prepareProcess,decideV5,readV5,VERSION} from '../scripts/lib/original-v5.mjs';
+import {completedCourse,locateQuote,splitProcesses,prepareV5,prepareProcess,decideV5,readV5,relatedAspects,VERSION} from '../scripts/lib/original-v5.mjs';
 import {sha} from '../scripts/lib/original-triage-shadow.mjs';
 const texts=(await readFile(new URL('../data/catalogo/textos-artigos.ndjson',import.meta.url),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
 const archive=(await readFile(new URL('../data/catalogo/arquivo-coletas.ndjson',import.meta.url),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
@@ -49,6 +49,11 @@ test('v5 citação: nova política exige versão e hash, não reutiliza leitura 
   const p=real('b45f5ada');assert.equal(decideV5(p,{version:'original-shadow-3.1'}).reason,'segunda_leitura_desatualizada');
   assert.equal(decideV5(p,{error:'timeout'}).decision,'pendente');
 });
+test('v5 exclusão determinística de índice não depende de resposta válida da IA',()=>{
+  const p=real('a1c44476');
+  assert.equal(decideV5(p,{error:'JSON inválido'}).decision,'descartado');
+  assert.equal(decideV5(p).reading,'explicit_existing_policy');
+});
 test('v5 TCE: dois processos, anexo não é terceiro processo, spans íntegros sem sobreposição',()=>{
   const p=real('79480ee3');assert.equal(p.segments.length,2);
   assert.deepEqual(p.segments.map(s=>s.process),['1214503','1210634']);
@@ -81,4 +86,33 @@ test('v5 API: corpo inteiro ou segmento explícito, sem decisão esperada e vers
   assert.equal(r.version,VERSION);assert.equal(JSON.parse(payload.messages[1].content).corpo,p.item.rawText);
   assert.match(payload.messages[0].content,/completed course/);
   assert.deepEqual(Object.keys(JSON.parse(payload.messages[1].content)),['corpo']);
+});
+test('v5 mesma lei: ingresso e custeio são aspectos, duas leis ou entidades diferentes não',()=>{
+  const p=real('ac59dad5'),body=p.item.rawText;
+  const name='Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental – Norte Araguaia (CIDESA-NA)';
+  const q1=body.slice(body.indexOf('Art. 1º'),body.indexOf('Art. 2º')).trim();
+  const q2=body.slice(body.indexOf('Art. 2º'),body.indexOf('Art. 3º')).trim();
+  const a={multiplos_atos:true,categoria:'ADESÃO AUTORIZADA',entidade:name,atos_independentes:[q1,q2]};
+  assert.equal(relatedAspects(p,a).kind,'artigos_da_mesma_lei');
+  assert.equal(relatedAspects({...p,item:{...p.item,rawText:body+' Lei seguinte. Art. 1º outra disposição.'}},a),null);
+  assert.equal(relatedAspects(p,{...a,entidade:'Consórcio Público Inventado'}),null);
+  assert.equal(relatedAspects({...p,independentProcesses:true},a),null);
+});
+test('v5 audiência: alternativas de regularização não viram três atos nem dissolução',()=>{
+  const p=real('30f0fad5'),b=p.item.rawText;
+  const q1=b.slice(b.indexOf('Ao final da audiência'),b.indexOf(' O documento estabelece'));
+  const q2=b.slice(b.indexOf('Durante a reunião'),b.indexOf(' O Ministério Público ressaltou'));
+  const a={multiplos_atos:true,categoria:'CONTROLE',tipo_fato:'recomendacao_entregue',atos_independentes:[q1,q2]};
+  assert.equal(relatedAspects(p,a).kind,'alternativas_discutidas_na_mesma_audiencia');
+  assert.equal(relatedAspects({...p,item:{...p.item,rawText:b+' Outra audiência foi realizada.'}},a),null);
+  assert.equal(relatedAspects({...p,item:{...p.item,rawText:b+' Recomendação nº 24/2026 foi entregue.'}},a),null);
+});
+test('v5 decisão do usuário: aprovação técnica de manutenção não é atuação executada',()=>{
+  const p=real('10ed23f6');assert.equal(p.rule.policyExclusion,'routine_technical_project');
+  assert.equal(decideV5(p).decision,'descartado');
+  const r=archive.find(x=>x.id.startsWith('10ed23f6')),s=texts.find(x=>x.documento_id===r.id);
+  for(const extra of [' Obras concluídas foram entregues.', ' Alteração do estatuto aprovada.', ' Consórcio formado pelos municípios de Azul e Verde.']){
+    const body=s.texto+extra;
+    assert.notEqual(prepareV5(r,{...s,texto:body,texto_sha256:sha(body)}).rule.policyExclusion,'routine_technical_project');
+  }
 });

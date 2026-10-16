@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-16",
+  "cases": [{
+    "prefix": "10ed23f6",
+    "decision": "descartado",
+    "category": "GERAL",
+    "answer": "Descartar como rotina operacional",
+    "question": "Na amostra nova, uma portaria do CINDVALE aprova um projeto de conservação de rodovias, mas não comprova que as obras foram executadas. Esse tipo de aprovação técnica deve entrar na base como ato formal, ou ficar fora como rotina operacional?",
+    "scope": "Aprovação técnica rotineira de projeto; não excluir indiscriminadamente normas institucionais, composição explicitamente comprovada ou obras concluídas.",
+    "simulationOnly": true
+  }]
+}

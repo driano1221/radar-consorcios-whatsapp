@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
-import {prepareV5,prepareProcess,decideV5,readV5,VERSION} from './lib/original-v5.mjs';
+import {prepareV5,prepareProcess,decideV5,readV5,VERSION,RULE_VERSION} from './lib/original-v5.mjs';
 import {sha,bindContentReview} from './lib/original-triage-shadow.mjs';
 import {protectedSnapshot} from './pilot-retroactive-ten.mjs';
-const mode=process.argv[2]||'--replay';assert.ok(['--freeze','--replay','--ai'].includes(mode));
+const mode=process.argv[2]||'--replay';assert.ok(['--freeze','--replay','--ai','--frozen'].includes(mode));
 const before=await protectedSnapshot();
 const json=async path=>JSON.parse(await readFile(path,'utf8'));
 const nd=async name=>(await readFile(`data/catalogo/${name}.ndjson`,'utf8')).trim().split(/\r?\n/).map(JSON.parse);
@@ -36,13 +36,22 @@ if(mode==='--freeze') {
       rule:p.rule.category,hadEditorialReview:reviews.has(row.id)}))},null,2)+'\n');
   console.log(selected.map(x=>({id:x.row.id.slice(0,8),title:x.row.titulo,rule:x.p.rule.category,review:reviews.has(x.row.id)})));
 } else {
-  const sample=await json(samplePath),cache=new Map();
+  const sample=await json(samplePath),cache=new Map(),frozenAnswers=new Map();
+  if(mode==='--frozen'){
+    const saved=await json('docs/simulacao-v5-resultado.json');assert.equal(saved.version,VERSION);
+    for(const row of saved.results)for(const entry of row.children.length?row.children:[row]){
+      const r=entry.review;if(r&&!r.error)frozenAnswers.set(r.contentReviewKey,r);
+    }
+  }
   const cohort=[...previous.map(x=>({id:x.id,group:'regression',previous:x})),...sample.cases.map(x=>({id:x.id,group:'additional',frozen:x}))];
   const results=[];let index=0;
   async function evaluate(p) {
-    if(mode!=='--ai')return {proposal:decideV5(p),review:null};
+    if(!['--ai','--frozen'].includes(mode))return {proposal:decideV5(p),review:null};
     const key=sha(VERSION+'\n'+p.item.rawText);
-    if(!cache.has(key))cache.set(key,readV5(p,{apiKey:process.env.DEEPSEEK_API_KEY}).catch(e=>({error:e.message})));
+    if(!cache.has(key)){
+      if(mode==='--frozen'){assert.ok(frozenAnswers.has(key),`Missing frozen body ${key}`);cache.set(key,Promise.resolve(frozenAnswers.get(key)));}
+      else cache.set(key,readV5(p,{apiKey:process.env.DEEPSEEK_API_KEY}).catch(e=>({error:e.message})));
+    }
     const shared=await cache.get(key);
     const review=shared.error?shared:{...shared,inputHash:p.inputHash,sourceInputHash:shared.inputHash};
     return {proposal:decideV5(p,review),review};
@@ -72,8 +81,8 @@ if(mode==='--freeze') {
   assert.deepEqual(await protectedSnapshot(),before);
   const regression=results.filter(x=>x.group==='regression'),additional=results.filter(x=>x.group==='additional');
   const responses=await Promise.all(cache.values());
-  const report={generatedAt:new Date().toISOString(),commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version:VERSION,
-    productionActivated:false,whatsappCalls:0,protectedFilesUnchanged:true,mode,calls:cache.size,
+  const report={generatedAt:new Date().toISOString(),commit:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),version:VERSION,ruleVersion:RULE_VERSION,
+    productionActivated:false,whatsappCalls:0,protectedFilesUnchanged:true,mode,calls:mode==='--ai'?cache.size:0,reusedReadings:mode==='--frozen'?cache.size:0,
     errors:responses.filter(x=>x.error).length,usage:responses.reduce((a,x)=>({input:a.input+(x.usage?.prompt_tokens||0),output:a.output+(x.usage?.completion_tokens||0)}),{input:0,output:0}),
     documentary:{reviews:manifest.appliedReviews.length,pdfs:manifest.documents.length,proofs},
     regression:{total:regression.length,before:count(regression.map(x=>({proposal:x.before}))),after:count(regression),
