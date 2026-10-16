@@ -4,7 +4,7 @@ import { mkdtemp, writeFile, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { compareAlternative, downloadGuanhaesPdf, findAlternativeTexts, completePdfText,
-  searchAlternatives, isSemana7, alternativeSourceKey } from '../src/lib/public-document-recovery.mjs';
+  searchAlternatives, isSemana7, alternativeSourceKey, parsePublicWordpressPosts, digest } from '../src/lib/public-document-recovery.mjs';
 import { recoverPublicDocuments } from '../scripts/recover-public-documents.mjs';
 
 const original = { id: 'original', titulo: 'Consórcio de Saúde viabiliza procedimentos oftalmológicos para 100 pacientes do Araguaia - SEMANA 7',
@@ -77,13 +77,42 @@ test('título semelhante não basta: bloqueio, corpo alheio ou retorno ao Semana
     async item => ({ ...await read(item), rawText: 'Cardápio e futebol. '.repeat(100) }),
     async item => ({ ...await read(item), articleUrl: original.url }),
     async item => ({ ...await read(item), sourcePublishedAt: '2025-01-01' })]) {
-    const result = await findAlternativeTexts(original, [candidate], { read: reader });
+    const result = await findAlternativeTexts(original, [candidate], { read: reader, search: async () => [] });
     assert.equal(result.alternatives.length, 0);
   }
 });
 test('RSS de busca inválido e HTTP 403 são falhas, não zero resultados', async () => {
   await assert.rejects(() => searchAlternatives(original, async () => new Response('Forbidden', { status: 403 })), /403/);
   await assert.rejects(() => searchAlternatives(original, async () => new Response('<html>challenge</html>')), /nao_rss/);
+});
+test('API pública só aceita posts publicados do domínio certo e preserva conteúdo e UTC', () => {
+  const post = { id: 42, status: 'publish', type: 'post', link: 'https://rededanoticia.com.br/exemplo/',
+    title: { rendered: candidate.titulo }, content: { rendered: `<p>${text}</p>` }, date_gmt: '2026-10-13T12:00:00' };
+  const parsed = parsePublicWordpressPosts([post, { ...post, status: 'draft' },
+    { ...post, link: 'http://localhost/secret' }, { ...post, content: { rendered: text, protected: true } }]);
+  assert.equal(parsed.length, 1);
+  assert.equal(parsed[0].data_noticia_original, '2026-10-13T12:00:00Z');
+  assert.equal(parsed[0].apiReading.articleReader, 'wordpress_api_publica');
+  assert.ok(parsed[0].apiReading.rawText.length > 500);
+});
+test('falha de um provedor fica explícita e não derruba o outro', async () => {
+  const results = await searchAlternatives(original, async url => url.startsWith('https://news.google.com')
+    ? new Response('Forbidden', { status: 403 }) : new Response('[]'));
+  assert.equal(results.length, 0);
+  assert.equal(results.diagnostics[0].status, 'erro');
+  assert.equal(results.diagnostics[1].status, 'ok');
+});
+test('cache integral exige hash e URL corretos, mantendo data da leitura preservada', async () => {
+  const cached = { documento_id: candidate.id, texto: text, texto_sha256: digest(text),
+    url_artigo: candidate.url, leitor: 'readability', recuperado_em: '2026-10-15T00:00:00Z' };
+  let reads = 0;
+  const result = await findAlternativeTexts(original, [candidate], { storedTexts: new Map([[candidate.id, cached]]),
+    read: async () => { reads++; throw new Error('Não deveria ler'); } });
+  assert.equal(reads, 0);
+  assert.equal(result.alternatives[0].leitura_preservada_em, cached.recuperado_em);
+  const invalid = await findAlternativeTexts(original, [candidate], { storedTexts: new Map([[candidate.id, { ...cached, texto_sha256: 'invalid' }]]),
+    read: async item => item, search: async () => [] });
+  assert.equal(invalid.alternatives.length, 0);
 });
 test('download PDF exige origem observada, assinatura e não segue redirecionamento', async () => {
   await assert.rejects(() => downloadGuanhaesPdf('https://example.com/a.pdf'), /fora/);

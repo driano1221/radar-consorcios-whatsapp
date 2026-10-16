@@ -5,6 +5,8 @@ dashboard/dist/
 tmp/
 .env
 *.log
+__pycache__/
+*.pyc
 
 # A sessão descriptografada nunca pode entrar no Git.
 state/auth/

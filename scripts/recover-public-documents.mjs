@@ -52,12 +52,12 @@ export async function recoverPublicDocuments({ directory = 'data/catalogo', appl
           audit.proxima_tentativa = ''; stored++;
         }
       } else {
-        const result = await alternatives(row, archive, { now });
+        const result = await alternatives(row, archive, { now, storedTexts: texts });
         for (const entry of result.alternatives) {
           if (!alternativesSaved.has(entry.id)) { alternativesSaved.set(entry.id, entry); alternateCount++; }
         }
         Object.assign(audit, { situacao: result.alternatives.length ? 'texto_alternativo_para_conferencia' : 'sem_alternativa_verificada',
-          busca: result.searchStatus, resultados_busca: result.searchCount,
+          busca: result.searchStatus, resultados_busca: result.searchCount, provedores: result.searchDiagnostics || [],
           tentativas_fontes: result.attempts, alternativas: result.alternatives.map(a => a.id) });
         // No substitution in textos-artigos: a different publisher is a different source.
       }

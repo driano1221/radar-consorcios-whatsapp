@@ -6,7 +6,6 @@ explicit, never advertised as a complete reading. Input is a bounded local file.
 import argparse
 import hashlib
 import json
-import re
 import shutil
 import subprocess
 import tempfile

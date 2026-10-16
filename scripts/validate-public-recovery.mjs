@@ -1,12 +1,13 @@
 // Live read-only test, separate from the archive and from WhatsApp credentials.
 import assert from 'node:assert/strict';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { downloadGuanhaesPdf, readGuanhaesPdf, findAlternativeTexts, searchAlternatives,
-  compareAlternative } from '../src/lib/public-document-recovery.mjs';
+import { downloadGuanhaesPdf, readGuanhaesPdf, findAlternativeTexts } from '../src/lib/public-document-recovery.mjs';
 import { recoverPublicDocuments } from './recover-public-documents.mjs';
 
 await mkdir('output/public-recovery', { recursive: true });
 const archive = (await readFile('data/catalogo/arquivo-coletas.ndjson', 'utf8')).trim().split('\n').map(JSON.parse);
+const storedTexts = new Map((await readFile('data/catalogo/textos-artigos.ndjson', 'utf8')).trim().split('\n')
+  .map(JSON.parse).map(row => [row.documento_id, row]));
 const original = archive.find(row => row.id.startsWith('0783e43a'));
 assert.ok(original, 'Caso real de referência ausente');
 const url = 'https://s3.amazonaws.com/el.com.br/portal/uploads/3177/arquivos/A31B91791FFD4A8D976910AE16B155A0.pdf';
@@ -20,7 +21,7 @@ assert.ok(pdf.paginas.every(page => page.texto.length >= 80));
 assert.match(pdf.paginas[0].texto, /FUNDEB/i);
 assert.match(pdf.paginas[0].texto, /5[.,]?245/);
 // This FUNDEB decree is a technical access/OCR sample, NOT a consortium finding.
-const alternate = await findAlternativeTexts(original, archive, { searchEvenWithArchive: true });
+const alternate = await findAlternativeTexts(original, archive, { searchEvenWithArchive: true, storedTexts });
 await writeFile('output/public-recovery/alternative-reading.json', JSON.stringify(alternate, null, 2));
 assert.equal(alternate.searchStatus, 'ok', 'Busca web falhou');
 assert.ok(alternate.alternatives.some(a => a.url_fonte.includes('araguaianoticia.com.br/noticia/79550/')),
@@ -32,13 +33,14 @@ const external = await findAlternativeTexts(original, [], { searchEvenWithArchiv
 await writeFile('output/public-recovery/external-reading.json', JSON.stringify(external, null, 2));
 assert.equal(external.searchStatus, 'ok');
 assert.ok(external.alternatives.length, 'Busca externa não encontrou um texto legível compatível');
+assert.ok(external.alternatives.some(a => a.leitor === 'wordpress_api_publica'), 'API pública alternativa não recuperou corpo');
 const report = { pdf: { pages: pdf.paginas.length, ocrPages: pdf.ocr_paginas, complete: pdf.completo,
   characters: pdf.paginas.map(p => p.texto.length), pdfSha256: pdf.pdf_sha256 },
   archiveAndWeb: { search: alternate.searchStatus, results: alternate.searchCount,
     alternatives: alternate.alternatives.map(a => ({ url: a.url_fonte, characters: a.texto.length,
-      independent: a.independencia, equivalenceConfirmed: a.equivalencia_confirmada })) },
+      independent: a.independencia, equivalenceConfirmed: a.equivalencia_confirmada, cachedAt: a.leitura_preservada_em })) },
   externalOnly: { search: external.searchStatus, results: external.searchCount,
-    alternatives: external.alternatives.map(a => ({ url: a.url_fonte, characters: a.texto.length })) } };
+    alternatives: external.alternatives.map(a => ({ url: a.url_fonte, characters: a.texto.length, reader: a.leitor })) } };
 console.log(JSON.stringify(report));
 await writeFile('output/public-recovery/report.json', JSON.stringify(report, null, 2));
 // No --apply: real catalog decisions/IDs/send state cannot be modified here.
