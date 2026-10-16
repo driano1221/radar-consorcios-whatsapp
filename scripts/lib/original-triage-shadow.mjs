@@ -6,7 +6,7 @@ import { canonicalUrl } from '../../src/lib/dedupe.mjs';
 import { INSTITUTIONAL_REVIEW_POLICY } from '../../src/lib/institutional-proof.mjs';
 import {refineShadow, entityProven} from './original-shadow-rules.mjs';
 
-export const VERSION = 'original-shadow-2.1';
+export const VERSION = 'original-shadow-2.2';
 export const sha = value => createHash('sha256').update(value).digest('hex');
 const plain = value => normalizeWhitespace(String(value || '')).normalize('NFKC');
 export const literal = (body, quote, min = 25) => plain(quote).length >= min && plain(body).includes(plain(quote));
@@ -45,6 +45,7 @@ Distinga autorização de ingresso de adesão consumada; protocolo assinado de e
 Regras de leitura:
 - GOVÊRNANÇA/GOVERNANÇA é alteração de regras institucionais, eleição/datas, ratificação de ALTERAÇÃO de protocolo de consórcio existente ou composição municipal expressa. PROTOCOLO é a etapa constitutiva/subscrição inicial, não qualquer menção à palavra protocolo.
 - Nome/sigla, cargo do secretário, sede, local do atendimento ou número de municípios NÃO são composição. Só aproveite composição se os MUNICÍPIOS forem nomeados e expressamente vinculados ao consórcio; cite a frase com esses nomes. Seleção de pessoal sem esse fato deve ficar fora.
+- Histórico institucional explícito em matéria de concurso também pode ser aproveitado: se o corpo nomeia um consórcio intermunicipal público e relata sua constituição em um ano, classifique CRIAÇÃO como HISTÓRICO RELATADO POR FONTE SECUNDÁRIA, ato original não conferido. Preserve o ano relatado, sem tratá-lo como criação recente, sem inventar CNPJ ou ingresso municipal. O concurso/prova em si continua fora. Não aceite previsão de criação como constituição ocorrida.
 - O fato principal prevalece sobre rodapés genéricos como "assembleia é instância soberana". Início de programa, curso sediado ou serviços efetivamente realizados são ATUAÇÃO. Não transforme futuras atividades do programa em entregas.
 - Julgamento de contas e multas são CONTROLE, não FINANÇAS. Investigar suspeitas é CONTROLE em apuração, nunca condenação. Diferencie sanção ao gestor de sanção à entidade.
 - Requerimento aprovado continua sendo pedido: não é lei aprovada nem adesão autorizada. Projeto em tramitação não é sancionado só porque a MINUTA contém "sanciono". Pode haver aprovação anterior de alteração em assembleia, a registrar apenas nessa etapa.
@@ -112,5 +113,6 @@ export function decideOriginal(prepared, review) {
   return {decision: accepted ? 'aceito' : 'descartado', category: accepted ? rule.category : 'GERAL',
     stage: rule.stage || '', reason: a.justificativa, evidence,
     evidenceOrigin:fallback?'regra_concordante':'segunda_leitura',
+    ...(rule.sourceQualification?{sourceQualification:rule.sourceQualification,reportedYear:rule.reportedYear}:{}),
     entity: accepted ? a.entidade || '' : '', scope: a.escopo};
 }

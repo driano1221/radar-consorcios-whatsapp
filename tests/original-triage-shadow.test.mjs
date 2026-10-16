@@ -138,6 +138,20 @@ test('shadow rateio exige instrumento publicado com fechamento, não basta citar
   assert.equal(refineShadow({...item,rawText:'MINUTA '+body},rule).stage,rule.stage);
   assert.equal(refineShadow({...item,rawText:body.replace('assinam o presente Contrato','assinarão o instrumento')},rule).stage,rule.stage);
 });
+test('shadow aproveita histórico de fonte secundária sem transformar concurso em criação recente',()=>{
+  const s='O Consórcio Intermunicipal de Saúde do Vale Azul (CIVA), estabelecido em 27 de fevereiro de 2023, surge como entidade pública autárquica interfederativa, resultante da consolidação do Protocolo de Intenções. O concurso oferece 12 vagas.';
+  const item={kind:'news',title:'Concurso: inscrições abertas',rawText:s};
+  const rule=refineShadow(item,{category:'RATEIO',score:8});
+  assert.equal(rule.category,'CRIAÇÃO');assert.equal(rule.reportedYear,2023);
+  assert.equal(rule.sourceQualification,'fonte_secundaria_ato_original_nao_conferido');
+  assert.match(rule.stage,/ato original não conferido/);
+  assert.notEqual(refineShadow({...item,rawText:s.replace('estabelecido','que seria estabelecido')},{category:'GERAL',score:0}).category,'CRIAÇÃO');
+});
+test('shadow carrega qualificação secundária e ano na proposta, não na base',()=>{
+  const prepared=p();prepared.rule={...prepared.rule,sourceQualification:'fonte_secundaria_ato_original_nao_conferido',reportedYear:2023};
+  const result=decideOriginal(prepared,review(prepared));
+  assert.equal(result.sourceQualification,prepared.rule.sourceQualification);assert.equal(result.reportedYear,2023);
+});
 test('shadow não está ligado à produção; executor não possui modo apply',async()=>{
   for(const file of ['../src/radar.mjs','../src/lib/catalog.mjs','../src/weekly.mjs'])
     assert.doesNotMatch(await readFile(new URL(file,import.meta.url),'utf8'),/original-triage-shadow|simulate-original-triage/);

@@ -23,6 +23,14 @@ export function refineShadow(item, rule) {
   if (/^Detalhes do Ac[oó]rd[aã]o\b/i.test(title) && /Decis[aã]o na [ÍI]ntegra\s*\(PDF\)/i.test(text) &&
       /Classe Processual\/Assunto/i.test(text) && !/\b(?:julgou|julgar|decidiu|acordam|condenou|determinou|reprovou|regulares com ressalvas|improced[eê]ncia)\b/i.test(text))
     return use('GERAL','ficha sem resultado do julgamento; ler a decisão vinculada',text.slice(0,450),'judgment_metadata');
+  // User policy (16/10): secondary-source institutional history can be kept,
+  // even inside recruitment news. It is NOT verification of the original act.
+  if(item.kind==='news'&&/\b(?:concurso|processo seletivo)\b/i.test(title)) {
+    const historical=/\bCons[oó]rcio Intermunicipal[^.!?;]{2,170}?,?\s+(?:estabelecido|constitu[ií]do|criado)\s+em\s+(?:\d{1,2}\s+de\s+[a-zç]+\s+de\s+)?(20\d{2}),\s+[^.!?;]{0,90}entidade p[uú]blica[^.!?;]{0,200}/i;
+    const evidence=proof(text,historical), year=evidence&&historical.exec(evidence)?.[1];
+    if(evidence&&year)return {...use('CRIAÇÃO',`constituição relatada em ${year} por fonte secundária; ato original não conferido; concurso não é o fato`,evidence,'secondary_institutional_history'),
+      sourceQualification:'fonte_secundaria_ato_original_nao_conferido',reportedYear:Number(year)};
+  }
   if (rule.category==='GERAL') {
     // Existing explicit editorial exclusions outrank a model's reinterpretation.
     // This is NOT a blanket veto for every low-score/GERAL classification.
