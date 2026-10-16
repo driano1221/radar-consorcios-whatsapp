@@ -6,6 +6,18 @@ import { buildDashboardData, buildPublicDashboardData, contentQuality, dashboard
   hasVerifiedMultiConsortiumNames } from '../scripts/build-dashboard.mjs';
 import { desktopFlowSvg, mobileFlowSvg } from '../scripts/build-flow-diagram.mjs';
 
+test('data da votação não é publicação da ficha nem indexação recente', () => {
+  const row = { id: 'votacao', titulo: 'Ficha de votação', trecho: 'Projeto de 2024 aprovado',
+    tipo_evento: 'PROTOCOLO', data_publicacao: '2026-10-14', primeira_coleta: '2026-10-14' };
+  const review = { documento_id: row.id, decisao: 'confirmar_evento', categoria: 'PROTOCOLO',
+    motivo: 'votação de 2024', evidencia: row.trecho, fatos: { ano: 2024, data_publicacao_nao_comprovada: true },
+    trecho_sha256: createHash('sha256').update(row.trecho).digest('hex') };
+  const result = buildDashboardData({ archive: [row], events: [row], consortia: [], links: [], pendingIdentity: [], editorialReviews: [review] });
+  assert.equal(result.items[0].publishedAt, '');
+  assert.equal(result.items[0].publishedDateSource, 'nao_comprovada');
+  assert.equal(result.items[0].baseDecision, 'confirmado');
+});
+
 test('triagem e arquivo começam por documentos novos; última coleta independe dessa ordenação', () => {
   const rows = [
     { id:'antigo', titulo:'Diário antigo reencontrado', tipo_evento:'GERAL', trecho:'',

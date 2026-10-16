@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCatalog, saveCatalog } from '../src/lib/catalog.mjs';
-import { classifyItem } from '../src/lib/classifier.mjs';
+import { recoveredSuggestion } from '../src/lib/recovered-suggestion.mjs';
 import { enrichArticles, lacksArticleText } from '../src/lib/article-enrichment.mjs';
 import { redactPublicText } from '../src/lib/article-text-store.mjs';
 import { contentQuality } from './build-dashboard.mjs';
@@ -73,9 +73,10 @@ for (const item of result.items) {
   textById.set(row.id, { documento_id: row.id, url_original: row.url,
     url_artigo: item.articleUrl, recuperado_em: attemptedAt,
     leitor: item.articleReader || '', texto_sha256: textHash, texto: fullText });
-  const classification = classifyItem(item);
+  const { classification, candidate: suggested, fields: suggestionFields } = recoveredSuggestion(row,
+    textById.get(row.id), { reviewed: reviewed.has(row.id) });
   if (!apply) console.log(`[retroativo:prévia] ${row.id.slice(0, 8)} ${item.articleReader || 'leitor não identificado'} | ${classification.category} | ${(classification.evidenceText || item.summary || '').slice(0, 180)}`);
-  if (row.tipo_evento === 'GERAL' && classification.category !== 'GERAL' && classification.score >= 5) {
+  if (suggested) {
     newCandidates += 1;
     console.log(`[retroativo:revisar] ${row.titulo.slice(0, 115)} → sugestão ${classification.category} (${classification.score}); classificação original mantida`);
   }
@@ -92,12 +93,7 @@ for (const item of result.items) {
     trecho: excerpt.slice(0, 500), etapa: classification.stage || row.etapa,
     article_text_sha256: textHash, article_reader: item.articleReader || '',
     article_recovery_reason: '',
-    article_suggested_category: row.tipo_evento === 'GERAL' && classification.category !== 'GERAL' && classification.score >= 5
-      ? classification.category : '',
-    article_suggested_score: row.tipo_evento === 'GERAL' && classification.category !== 'GERAL' && classification.score >= 5
-      ? classification.score : '',
-    article_suggestion_evidence: row.tipo_evento === 'GERAL' && classification.category !== 'GERAL' && classification.score >= 5
-      ? redactPublicText(classification.evidenceText || '').slice(0, 500) : '',
+    ...suggestionFields,
     tipo_evento: categoryChanged ? classification.category : row.tipo_evento,
     situacao_analise: categoryChanged
       ? classification.category === 'GERAL'

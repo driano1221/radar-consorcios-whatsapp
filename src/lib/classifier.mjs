@@ -1,5 +1,6 @@
 import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
 import { refineEventProof } from './event-proof.mjs';
+import { isNonEventContractMatch, routineSupplierContract } from './contract-context.mjs';
 
 const PUBLIC_CONTEXT = /\b(consorcios? publicos?|consorcio intermunicipal|consorcios intermunicipais|consorcios? interfederativos?|associacao publica|lei 11\.?107)\b/;
 const MUNICIPAL_CONTEXT = /\b(municipios?|municipal|municipais|prefeituras?|camaras? municipa(?:l|is)|poder executivo)\b/;
@@ -56,6 +57,7 @@ const RULES = [
       /\bconsorcio\b.{0,160}\b(suspensao|suspensa|suspenso|suspendeu)\b/,
       /\bconsorcio\b.{0,140}\b(irregularidades?|fraude|desvio|improbidade|contas rejeitadas)\b/,
       /\b(tribunal de contas|ministerio publico|tce|tcu)\b.{0,80}\b(fiscaliza|suspende|determina|condena|julga|investiga|aponta|recomenda)\b.{0,120}\bconsorcio/,
+      /\btribunal de contas\b.{0,350}\bconsorcio\b.{0,180}\baplicou\b.{0,40}\bmultas?\b/,
     ],
   },
   {
@@ -238,7 +240,8 @@ function evaluateSegment(item, evidence, index) {
   if (item.kind !== 'gazette' && isOfficialUrl(item.sourceUrl || item.url)) score += 1;
 
   for (const rule of RULES) {
-    const matchCount = rule.patterns.filter((pattern) => pattern.test(eventText)).length;
+    const matchCount = rule.patterns.filter((pattern) => [...eventText.matchAll(new RegExp(pattern.source, 'g'))]
+      .some((match) => !isNonEventContractMatch(rule.category, match, eventText))).length;
     if (!matchCount) continue;
     if (rule.requiresPublicContext && !publicContext) {
       reasons.push(`rejeitado: ${rule.category} sem contexto público`);
@@ -310,6 +313,21 @@ function evaluateSegment(item, evidence, index) {
 }
 
 export function classifyItem(item) {
+  // Índices mudam com o tempo e misturam notícias de datas diferentes. Cada
+  // notícia deve entrar por seu link individual, nunca pelo mural inteiro.
+  try {
+    const page = new URL(item.articleUrl || item.url);
+    if (/\/(?:noticias|news)\/?$/i.test(page.pathname) && !page.search &&
+      /^(?:not[ií]cias|news)(?:\s*[-–—|]|\s*$)/i.test(item.title || '')) {
+      return { category: 'GERAL', emoji: '📰', score: 0, stage: 'índice de notícias; apenas descoberta de documentos',
+        reasons: ['rejeitado: página agregadora de notícias, não publicação individual'],
+        evidenceText: item.title, evidenceIndex: -1, publicContext: false, strongPublicContext: false };
+    }
+  } catch { /* Classificação de texto sem URL continua disponível. */ }
+  const supplier = routineSupplierContract(item);
+  if (supplier) return { category: 'GERAL', emoji: '📰', score: 0,
+    stage: supplier.stage, reasons: [`rejeitado: ${supplier.reason}`],
+    evidenceText: supplier.evidence, evidenceIndex: 0, publicContext: true, strongPublicContext: true };
   const articleUrl = item.articleUrl || item.url || '';
   const documentText = normalizeForMatch(`${item.title || ''} ${item.rawText || item.summary || item.excerpts?.join(' ') || ''}`);
   if (item.kind === 'gazette' && /^lei\b/i.test(item.title || '') &&

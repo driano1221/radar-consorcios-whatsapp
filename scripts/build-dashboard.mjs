@@ -156,6 +156,7 @@ function comparableText(value) {
 }
 
 function publicationDate(row, review = null) {
+  if (review?.fatos?.data_publicacao_nao_comprovada) return '';
   const verified = review?.fatos?.data_publicacao_original;
   if (/^\d{4}-\d{2}-\d{2}$/.test(verified || '')) return `${verified}T12:00:00Z`;
   if (row.data_noticia_original && Number.isFinite(Date.parse(row.data_noticia_original))) return row.data_noticia_original;
@@ -325,7 +326,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       relatedActs: actsByParent.get(row.documento_pai_id || row.id) || [],
       actPage: isAct ? Number(row.pagina_inicio) : null,
       url: decision?.articleUrl || row.article_url || row.url,
-      publishedAt: publicationDate(row, appliedReview), publishedDateSource: appliedReview?.fatos?.data_publicacao_original
+      publishedAt: publicationDate(row, appliedReview), publishedDateSource: appliedReview?.fatos?.data_publicacao_nao_comprovada
+        ? 'nao_comprovada' : appliedReview?.fatos?.data_publicacao_original
         ? 'revisao_editorial' : row.data_noticia_original && Number.isFinite(Date.parse(row.data_noticia_original))
           ? 'fonte_original' : row.data_publicacao ? 'catalogo'
         : publicationDate(row) ? 'url_edicao' : '',

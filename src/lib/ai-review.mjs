@@ -1,7 +1,7 @@
 import { itemId } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
 
-export const AI_PROMPT_VERSION = 4;
+export const AI_PROMPT_VERSION = 5;
 
 // A IA revisa no envio real e, se pedido, na prévia (para a prévia mostrar o que de fato seria publicado).
 export function shouldReviewWithAi({ aiReviewEnabled, sendEnabled, aiPreview }, remainingToday) {
@@ -64,7 +64,8 @@ export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, time
     body: JSON.stringify({ model: 'deepseek-flash', thinking: { type: 'disabled' },
       response_format: { type: 'json_object' }, max_tokens: 250,
       messages: [{ role: 'system', content: SYSTEM.replace('|CRISE|ATUAÇÃO|', '|CRISE|ATUAÇÃO|FINANÇAS|') +
-        '\nFINANÇAS também inclui orientação tributária geral, com ato identificado, aplicável a consórcios públicos. É relevante mesmo sem entidade individual: preserve a abrangência geral, sem inventar nome ou CNPJ. Portaria que só nomeia fiscal de rateio já celebrado é documento de acompanhamento, não novo contrato nem novo alerta.' }, { role: 'user', content: JSON.stringify(input) },
+        '\nFINANÇAS também inclui orientação tributária geral, com ato identificado, aplicável a consórcios públicos. É relevante mesmo sem entidade individual: preserve a abrangência geral, sem inventar nome ou CNPJ. Portaria que só nomeia fiscal de rateio já celebrado é documento de acompanhamento, não novo contrato nem novo alerta.' +
+        '\nCláusulas condicionais sobre falência de fornecedor, multas, descredenciamento ou retirada de ordens NÃO são CRISE, CONTROLE ou SAÍDA municipal. Credenciamento e contrato rotineiro com fornecedor privado ficam fora, mesmo firmados. Isso não exclui rateio entre município e consórcio nem fiscalização realmente realizada. Votação de projeto de ratificação com resultado aprovado não comprova sanção ou constituição. Assembleia e visita realizadas pelo consórcio são ATUAÇÃO; não inferir inauguração ou contas aprovadas.' }, { role: 'user', content: JSON.stringify(input) },
         ...(retryStrict ? [{ role: 'user', content: 'A resposta precisa ter campos coerentes. Em evidencia, copie uma frase curta e CONTÍGUA exatamente de titulo, resumo ou trecho acima. Não use paráfrase, reticências, colchetes nem informação externa. Se não houver prova textual, responda relevante=false com evidencia literal da menção examinada.' }] : [])] }),
     signal: AbortSignal.timeout(timeoutMs),
   });
@@ -87,8 +88,11 @@ export async function reviewWithDeepSeek(item, { apiKey, fetchImpl = fetch, time
     usage: { inputTokens: payload.usage?.prompt_tokens || 0, outputTokens: payload.usage?.completion_tokens || 0 } };
 }
 
-export function applyAiReview(item, review) {
-  if (!review || review.promptVersion !== AI_PROMPT_VERSION) return item;
+export function applyAiReview(item, review, { preserveHistoricalRejection = false } = {}) {
+  // Atualizar o prompt renova a revisão para novos envios, mas não invalida
+  // retroativamente um descarte ao reconstruir o catálogo com o mesmo texto.
+  if (!review || (review.promptVersion !== AI_PROMPT_VERSION &&
+    !(preserveHistoricalRejection && review.status === 'rejected'))) return item;
   if (review.status === 'rejected') return { ...item, aiReview: review,
     classification: { ...item.classification, category: 'GERAL', score: 0, emoji: '📰', reasons: ['rejeitado pela segunda revisão de IA'] } };
   // Uma aprovação antiga não pode ressuscitar um item que as regras atuais
@@ -101,7 +105,8 @@ export function applyAiReview(item, review) {
     // contrato celebrado, mesmo que o modelo devolva a categoria RATEIO.
     const originalCategory = item.classification.category;
     const preparatory = ['RATEIO EM TRAMITAÇÃO', 'ADESÃO AUTORIZADA', 'COOPERAÇÃO AUTORIZADA']
-      .includes(originalCategory) || (originalCategory === 'FINANÇAS' &&
+      .includes(originalCategory) || (originalCategory === 'PROTOCOLO' &&
+        /sanção e constituição não provadas/i.test(item.classification.stage || '')) || (originalCategory === 'FINANÇAS' &&
         /contrato de rateio não comprovado/i.test(item.classification.stage || ''));
     const category = preparatory || item.classification.scope === 'orientacao_geral' ? originalCategory : review.category;
     const boundedReview = category === review.category ? review

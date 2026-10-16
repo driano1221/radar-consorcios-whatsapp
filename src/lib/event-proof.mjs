@@ -70,6 +70,25 @@ function withEvidence(result, evidence) {
 export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
+  const votedProtocol = /\bmat[eé]ria\s*:\s*projeto de lei\b.{0,100}\bementa\s*:\s*ratifica o protocolo de inten[cç][oõ]es\b/i;
+  if (/\/sessao\/\d+\/votacao-/.test(item.articleUrl || item.url || '') && votedProtocol.test(text) &&
+    /\bcons[oó]rcio\s+(?:p[uú]blico|intermunicipal)\b/i.test(text) &&
+    /\bresultado da vota[cç][aã]o\s*:\s*aprovado\b/i.test(text)) {
+    return withEvidence({ ...classification, category: 'PROTOCOLO', emoji: '🟨',
+      score: Math.max(5, classification.score || 0),
+      stage: 'projeto de ratificação aprovado em votação; sanção e constituição não provadas pela ficha',
+      reasons: ['votação de projeto com resultado aprovado; não confundir ementa com lei sancionada'] },
+    literalEvidence(text, [votedProtocol], 0, 430));
+  }
+  const performedAssembly = /\bcons[oó]rcio\s+(?:p[uú]blico\s+)?intermunicipal\b.{0,200}\brealizou\b.{0,100}\bassembleia\b/i;
+  if (performedAssembly.test(text) && /\bvisita t[eé]cnica\b/i.test(text) &&
+    !/\b(?:elegeu|deliberou|aprovou|rejeitou|determinou|decretou)\b/i.test(text)) {
+    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰',
+      score: Math.max(5, classification.score || 0),
+      stage: 'assembleia e visita realizadas; inauguração e deliberações específicas não comprovadas',
+      reasons: ['consórcio realizou a atividade; não é mero anúncio ou participação passiva'] },
+    literalEvidence(text, [performedAssembly], 0, 260));
+  }
   // A draft includes the future law's enactment formula. The actual page status
   // takes precedence; an earlier assembly decision is a separate, limited fact.
   if (/^projeto de lei(?: ordin[aá]ria)?\b/i.test(title) && /\bmat[eé]ria em tramita[cç][aã]o\b/i.test(text)) {
@@ -301,13 +320,14 @@ export function refineEventProof(item, classification) {
         reasons: [...classification.reasons, 'alteração de protocolo não comprova adesão nova'] },
       literalEvidence(text, [PROTOCOL_AMENDMENT]));
     }
-    if (APPROVED_PROJECT.test(text) || FORMAL_AUTHORIZATION.test(text) || AUTHORIZED_INGRESS.test(`${title} ${text}`) || AUTHORIZED_ADHESION_TITLE.test(`${title} ${text}`)) {
+    const authorizedToJoin = /\bfica autorizad[oa] ao munic[ií]pio\b.{0,100}\b(?:integrar|aderir|ingressar)\s+(?:o|no|ao)\s+cons[oó]rcio/i;
+    if (APPROVED_PROJECT.test(text) || FORMAL_AUTHORIZATION.test(text) || AUTHORIZED_INGRESS.test(`${title} ${text}`) || AUTHORIZED_ADHESION_TITLE.test(`${title} ${text}`) || authorizedToJoin.test(text)) {
       return withEvidence({ ...classification, category: 'ADESÃO AUTORIZADA', emoji: '🟦',
         stage: /\bcontratos?\s+de\s+rateio\b/i.test(text) && !EXECUTED_RATEIO.test(text)
           ? 'autorização de ingresso; rateio apenas previsto, não celebrado'
           : 'aprovação ou autorização; ingresso efetivo não comprovado',
         reasons: [...classification.reasons, 'aprovação/autorização não prova ingresso efetivado'] },
-      literalEvidence(text, [APPROVED_PROJECT, FORMAL_AUTHORIZATION, AUTHORIZED_INGRESS]));
+      literalEvidence(text, [APPROVED_PROJECT, FORMAL_AUTHORIZATION, AUTHORIZED_INGRESS, authorizedToJoin]));
     }
     return classification;
   }
@@ -338,6 +358,20 @@ export function refineEventProof(item, classification) {
   }
 
   if (classification.category === 'RATEIO') {
+    if (/^lei\b/i.test(title) && AUTHORIZED_TRANSFER.test(text.slice(0, 1600)) &&
+      /\bautoriza\b.{0,160}\brepassar recursos\b/i.test(text.slice(0, 700))) {
+      return withEvidence({ ...classification, category: 'FINANÇAS', emoji: '💰',
+        stage: 'lei autoriza repasse de recursos; pagamento e contrato de rateio não comprovados',
+        reasons: [...classification.reasons, 'rateio aparece como possível fonte; objeto principal é autorização de repasse'] },
+      literalEvidence(text, [AUTHORIZED_TRANSFER], 20, 160));
+    }
+    const addendum = /\b(?:termo\s+)?aditivo ao contrato de rateio\s+n[.º°o\s]*\d+\/20\d{2}\b.{0,100}\b(?:que\s+)?(?:entre si\s+)?celebram\b/i;
+    if (addendum.test(text) && /\bcons[oó]rcio\b/i.test(text)) {
+      return withEvidence({ ...classification,
+        stage: 'aditivo de rateio publicado entre as partes; pagamento não comprovado',
+        reasons: [...classification.reasons, 'documento identifica aditivo, contrato e partes; não é novo ingresso'] },
+      literalEvidence(text, [addendum], 30, 230));
+    }
     if (/^extrato\s+(?:do\s+)?contrato\s+de\s+rateio\b/i.test(title) &&
       /\b(?:concedente|contratante|partes)\s*:/i.test(text) &&
       /\b(?:proponente|contratad[oa]|consorciad[oa])\s*:/i.test(text) &&

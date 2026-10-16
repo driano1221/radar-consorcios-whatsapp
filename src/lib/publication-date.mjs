@@ -49,7 +49,17 @@ export function sourcePublicationDate(html, now = new Date()) {
   }
   const articleTime = $('article time[datetime], [itemprop="articleBody"] time[datetime]').first().attr('datetime');
   const date = validDate(articleTime, now);
-  return date ? { date, source: 'article.time' } : null;
+  if (date) return { date, source: 'article.time' };
+  // Cabeçalho da notícia no TCE-PR, não data de rodapé/atualização do portal.
+  const selector = '.detailed_news_default--header--super_card--footer-date';
+  const printed = $(selector).first().text().replace(/\s+/g, ' ').trim().toLowerCase();
+  const match = /^(\d{1,2}) de ([a-zç]+) de (20\d{2})\s*-\s*\d{1,2}:\d{2}$/.exec(printed);
+  if (match) {
+    const month = MONTHS.get(match[2].normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+    const parsed = month && validDate(`${match[1]}/${month}/${match[3]}`, now);
+    if (parsed) return { date: parsed, source: selector };
+  }
+  return null;
 }
 
 const MONTHS = new Map(Object.entries({ janeiro: 1, fevereiro: 2, marco: 3, abril: 4, maio: 5,

@@ -189,7 +189,7 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
       : original;
     const fresh = original ? classifyItem(recheckItem) : null;
     const candidate = original ? { ...original, classification: fresh } : null;
-    const item = candidate ? applyAiReview(candidate, candidate.aiReview) : null;
+    const item = candidate ? applyAiReview(candidate, candidate.aiReview, { preserveHistoricalRejection: true }) : null;
     if (!item?.url) continue;
     const sent = seenByUrl.get(canonicalUrl(item.url))?.sentAt || '';
     const row = catalogRecord(item, observation.firstSeenAt, observation.lastSeenAt, sent);
@@ -219,7 +219,10 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
         situacao_analise: alreadyReconciled ? old.situacao_analise
           : `categoria recalculada pelas regras atuais — ${old.tipo_evento} → ${row.tipo_evento}; ${correction}`,
         revisao_ia: old.revisao_ia || row.revisao_ia,
-      } : merged);
+      } : item.aiReview?.status === 'rejected' && item.classification.category === 'GERAL' &&
+        !reviewedIds.has(row.id) && !/^categoria recalculada|^descartado após leitura integral/i.test(old?.situacao_analise || '')
+        ? { ...merged, tipo_evento: 'GERAL', pontuacao: 0, situacao_analise: row.situacao_analise }
+        : merged);
     }
   }
   for (const seen of Object.values(state.seen || {})) {
