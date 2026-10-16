@@ -18,7 +18,8 @@ test('13 históricos têm prova preservada, 5 confirmações, 4 duplicatas e 4 d
   const journal = JSON.parse(await readFile(`${directory}/lote-historicos-13.json`, 'utf8'));
   const archive = await nd('arquivo-coletas.ndjson');
   const reviews = (await nd('revisoes-eventos.ndjson')).filter(r => r.lote_retroativo === batch);
-  const texts = (await nd('textos-artigos.ndjson')).filter(r => r.lote_retroativo === batch);
+  const allTexts = await nd('textos-artigos.ndjson');
+  const texts = allTexts.filter(r => r.lote_retroativo === batch);
   const alternatives = (await nd('fontes-alternativas.ndjson')).filter(r => r.lote_retroativo === batch);
   assert.equal(journal.registros.length, 13); assert.equal(reviews.length, 13);
   assert.equal(texts.length, 12); assert.equal(alternatives.length, 1);
@@ -30,7 +31,7 @@ test('13 históricos têm prova preservada, 5 confirmações, 4 duplicatas e 4 d
     const review = reviews.find(r => r.documento_id === saved.documento_id);
     const reading = [...texts, ...alternatives].find(r => r.documento_id === saved.documento_id);
     assertOriginalPreserved(archive.find(r => r.id === saved.documento_id), saved.original,
-      texts.find(r => r.documento_id === saved.documento_id));
+      allTexts.find(r => r.documento_id === saved.documento_id));
     assert.equal(review.trecho_sha256, hash(saved.original.trecho || ''));
     assert.equal(review.publicar, false);
     assert.equal(hash(reading.texto), saved.texto_sha256);
