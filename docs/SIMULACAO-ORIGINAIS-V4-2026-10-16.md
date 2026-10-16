@@ -59,6 +59,8 @@ Ressalvas da coleta: timeout no PortalTP de Guanhães; extração parcial AMM-MT
 
 Também foi identificado um teste histórico sensível à recuperação legítima de texto em rodada posterior: ele procurava o corpo apenas no lote antigo. A correção consulta o acervo completo para validar o vínculo atual, mantendo as verificações de hash e imutabilidade do lote original. Não é mudança de regra editorial.
 
+Essa correção isolada de teste foi publicada em `main` no commit `90f06ac`, após **424/424 testes de produção aprovados**. Nenhum código de triagem experimental, dado, configuração ou estado de WhatsApp foi incluído nesse commit. O restante desta rodada continua somente na branch de simulação.
+
 ## Reproduzir
 
 `node scripts/simulate-original-v4.mjs --replay` repete os 82 e apenas prepara os novos sem IA. `--ai` lê os 12 congelados; não aplica decisões. Para auditar o artefato baixado: `node scripts/audit-original-v4.mjs output/original-v4-ci/report.json`.
