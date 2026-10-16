@@ -4,6 +4,14 @@ Atualização mais recente: **16 de outubro de 2026**. As primeiras seções sã
 
 Este documento registra o contexto, as decisões e o estado operacional do projeto para que o trabalho possa ser retomado sem depender do histórico da conversa. Ele não contém telefone, ID do grupo, senha ou material de autenticação aberto.
 
+## Fontes recuperadas na ficha do painel — 16/10/2026
+
+- Pedido: ver fonte alternativa, texto e justificativa sem confundir com o original. A ficha agora separa decisão/prova, publicação original e leituras auxiliares. Link “fonte usada na decisão” é distinto de “publicação original”.
+- `scripts/dashboard-recovery.mjs` valida hash, liga pelo ID original, elimina repetição de URL e exporta apenas os campos necessários. Não muda evento, classificação, contadores nem envios. Fonte só aparece como citada quando uma revisão editorial válida aponta para a URL; nas demais há aviso explícito de não citação.
+- Dois textos reais da validação Actions `38929375969` foram preservados em `fontes-alternativas.ndjson`, com os hashes/datas e link da execução: Rede da Notícia (2.114 caracteres) e Araguaia Notícia (2.358). Ambos relacionados a `0783e43a…` (Semana 7, 100 pacientes do CISGA), ainda duplicata. Ambos citam Semana 7; não representam confirmações independentes. Leitura Araguaia reaproveitada de 14/10, não nova abertura bem-sucedida do site.
+- Site público: trechos de até 500 caracteres, links diretos e detalhes de proveniência; corpo integral excluído do pacote. Consulta local: texto completo expansível, separado por veículo. PDFs do próprio portal continuam identificados como originais, com marcadores de página na leitura local. Recuperação não equivale a decisão automática.
+- Validação local: **353 testes Node**, incluindo oito novos testes de separação, integridade, segurança de links/HTML, versão pública, leitura do acervo e PDF original. Build público validado (1.946 publicações, sete atos, 8,32 MB). Conferência visual no navegador do Codex com a ficha real do Semana 7. Nenhum registro histórico ou estado de WhatsApp foi modificado.
+
 ## Leitura dos PDFs públicos e fontes alternativas — 16/10/2026
 
 - Implementado `scripts/recover-public-documents.mjs` na recuperação diária, antes da recuperação HTML. Sem reclassificação nem envio, no máximo dois registros/passagem, espera progressiva para falhas e preservação das leituras completas existentes. Originais e fontes alternativas nunca são confundidos.

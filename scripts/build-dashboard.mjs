@@ -6,6 +6,7 @@ import { classifyItem, isStaleLegislativeDocument } from '../src/lib/classifier.
 import { resolveGeography } from '../dashboard/src/geography-model.mjs';
 import { compareNewestDiscovery } from '../dashboard/src/triage-model.mjs';
 import { writeFlowDiagrams } from './build-flow-diagram.mjs';
+import { dashboardAlternatives, textPreview } from './dashboard-recovery.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = path.join(root, 'data', 'catalogo');
@@ -243,7 +244,7 @@ export function dashboardSourceCatalog(config = {}) {
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
   acts = [], participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
-  articleTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
+  articleTexts = [], alternativeTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: publicationDate(row),
   }));
@@ -372,6 +373,10 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       pdfReassessment: Boolean(pdfReassessment),
       contentQuality: contentQuality(row.titulo, curated?.trecho || row.trecho),
       fullText: articleText?.texto || '', fullTextReader: articleText?.leitor || '',
+      originalReading: articleText ? { url: articleText.url_artigo || row.article_url || row.url,
+        recoveredAt: articleText.recuperado_em || '', reader: articleText.leitor || '',
+        pdf: Boolean(articleText.pdf_sha256), excerpt: textPreview(articleText.texto) } : null,
+      alternativeSources: dashboardAlternatives(row.id, alternativeTexts, appliedReview),
       articleRecoveryReason: row.article_recovery_reason || '',
       articleAttempts: Number(row.article_attempts || 0),
       articleDuplicateOf: row.article_duplicate_of || '',
@@ -515,12 +520,15 @@ export function buildPublicDashboardData(data) {
     ...item,
     hasFullText: Boolean(item.fullText),
     fullText: '',
+    alternativeSources: (item.alternativeSources || []).map((source) => ({
+      ...source, hasFullText: Boolean(source.fullText), fullText: '',
+    })),
   }));
   return publicData;
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const [archive, acts, events, consortia, links, pendingIdentity, editorialReviews, participations, pdfRecovery, articleTexts] = await Promise.all([
+  const [archive, acts, events, consortia, links, pendingIdentity, editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'), readCsv('atos.csv'), readCsv('eventos.csv'), readCsv('consorcios.csv'),
     readCsv('vinculos-documentos.csv'), readCsv('identidade-pendente.csv'), readNdjson('revisoes-eventos.ndjson'),
     readCsv('participacoes.csv'),
@@ -529,6 +537,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       readNdjson('recuperacao-pdf-google.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error))])
       .then(([standard, large, curated, google]) => [...standard, ...large.filter((row) => row.trechos?.length), ...curated, ...google]),
     readNdjson('textos-artigos.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error)),
+    readNdjson('fontes-alternativas.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error)),
   ]);
   const state = JSON.parse(await readFile(path.join(root, 'state', 'news-state.json'), 'utf8'));
   const [eventColumns, actColumns, consortiumColumns, participationColumns, linkColumns, pendingColumns] = await Promise.all(
@@ -552,7 +561,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const sourceConfig = JSON.parse(await readFile(path.join(root, 'config', 'default.json'), 'utf8'));
   const geographyReviews = JSON.parse(await readFile(path.join(catalog, 'ufs-revisadas.json'), 'utf8'));
   const data = buildDashboardData({ archive, acts, events, consortia, links, pendingIdentity,
-    editorialReviews, participations, pdfRecovery, articleTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
+    editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
     sourceConfig, geographyReviews,
     baseTables: [
       makeBaseTable('eventos', events, eventColumns),
@@ -567,7 +576,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const publicMode = process.argv.includes('--public');
   const outputData = publicMode ? buildPublicDashboardData(data) : data;
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'recovery-view.mjs', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFlowDiagrams(destination);
   await Promise.all([

@@ -39,6 +39,16 @@ O retroativo pode ser conferido com `node scripts/backfill-article-text.mjs --li
 
 ## Rastreio de decisões
 
+### Fonte original e fontes alternativas
+
+As leituras de `fontes-alternativas.ndjson` aparecem separadas na ficha, com a marca **OUTRA FONTE — NÃO É O ORIGINAL**. Cada uma mostra veículo, título próprio, link direto, trecho, data da recuperação, motivo da associação e independência conhecida. Leitura reaproveitada do acervo informa sua data original; registrar o vínculo não significa reabrir o site.
+
+A decisão e seu trecho de prova continuam acima, sem substituição automática. “Fonte citada na revisão” exige uma revisão editorial válida que aponte para aquela URL; nos demais casos aparece “Não citada na decisão atual”. Sem uma revisão, semelhança de título nunca equivale a confirmação do episódio. PDFs recuperados do próprio portal são identificados como documento original, não como uma segunda reportagem; o texto local mantém marcadores de página.
+
+Na triagem, abra **Fontes alternativas · texto e origem**; em **Publicações**, a seção já fica visível. Para o exemplo real, busque **SEMANA 7** e escolha a notícia dos **100 pacientes**. As duas leituras auxiliares vieram da [validação no Actions](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38929375969); os hashes e datas originais foram preservados. A publicação continua duplicata: não é um novo achado nem novo envio.
+
+O site público exibe até 500 caracteres de cada leitura e link da íntegra no veículo; a consulta local permite expandir o texto guardado. O build público remove os corpos integrais e omite identificadores pessoais. A montagem da ficha valida os hashes, descarta links inseguros e não modifica o catálogo nem os contadores.
+
 O radar passa a guardar em `state/news-state.json` um registro compacto das decisões recentes, limitado a 1.500 URLs e 14 dias: motivo, categoria, pontuação, prévia/fila/seleção, data da última coleta e número da execução. Não duplica texto integral nem segredos. Antes da primeira execução persistente com essa mudança, fichas antigas usam o motivo editorial do catálogo ou uma **reclassificação identificada como reconstruída**, que pode diferir da decisão tomada naquela rodada. O log mostra a **última decisão por URL**, não uma auditoria imutável de todas as rodadas nem a deduplicação exata entre URLs diferentes.
 
 ## GitHub Pages

@@ -1,5 +1,6 @@
 import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs';
 import { buildResults } from './results-model.mjs';
+import { recoveredSourcesView } from './recovery-view.mjs';
 
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
@@ -196,7 +197,8 @@ function renderOverviewDetail(item) {
     ? 'O trecho coletado parece ser índice ou rodapé e não comprova o fato. Confira a fonte original.'
     : 'Nenhum trecho de prova foi recuperado para esta publicação. Confira a fonte original.')));
   const actions = node('div', 'overview-actions');
-  actions.append(link('Abrir fonte original', item.editorialReview?.evidenceUrl || item.pdfEvidenceUrl || item.url));
+  actions.append(link('Abrir publicação original', item.url));
+  if (item.editorialReview?.evidenceUrl) proof.append(link('Abrir fonte usada na decisão', item.editorialReview.evidenceUrl));
   const full = node('button', 'detail-link', 'Ver ficha completa →'); full.type = 'button';
   full.addEventListener('click', () => openItem(item)); actions.append(full);
   const back = node('button', 'detail-link overview-back', 'Voltar à lista ↑'); back.type = 'button';
@@ -206,6 +208,8 @@ function renderOverviewDetail(item) {
     node('p', 'overview-source', item.source || 'Fonte não informada'),
     node('p', 'overview-date-summary', `Publicado em: ${date(item.publishedAt)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
     why, proof, actions);
+  const recovery = recoveredSourcesView(item, { document, date, compact: true });
+  if (recovery) panel.append(recovery);
   const pending = pendingLabels(item);
   if (pending.length) panel.append(node('p', 'overview-caveat', `Também a conferir: ${pending.join(' · ')}.`));
   panel.append(node('p', 'overview-caveat', 'A decisão da base e a decisão de enviar ao WhatsApp são independentes.'));
@@ -424,7 +428,8 @@ function detail(item, target) {
   alert.append(node('h4', '', 'E o WhatsApp?'), node('p', '', alertText));
   if (item.alertReason && !item.sentAt && item.alertDecision !== 'historico') alert.append(node('small', '', item.alertReason));
   const actions = node('div', 'readable-actions');
-  actions.append(link('Abrir fonte original', item.editorialReview?.evidenceUrl || item.pdfEvidenceUrl || item.url));
+  actions.append(link('Abrir publicação original', item.url));
+  if (item.editorialReview?.evidenceUrl) proof.append(link('Abrir fonte usada na decisão', item.editorialReview.evidenceUrl));
   let siblings = null;
   if (item.relatedActs?.length) {
     siblings = node('section', 'readable-proof');
@@ -446,7 +451,8 @@ function detail(item, target) {
   panel.replaceChildren(intro, node('h3', 'detail-head', displayTitle(item)),
     node('p', 'readable-meta', item.source || 'Fonte não informada'),
     node('p', 'overview-date-summary', `Publicado em: ${date(item.publishedAt)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
-    decision, proof, alert, ...(siblings ? [siblings] : []), actions, full);
+    decision, proof, alert, ...(siblings ? [siblings] : []), actions,
+    ...[recoveredSourcesView(item, { document, date })].filter(Boolean), full);
   renderDetailedRecord(item, '#detail-full-record');
   for (const selector of ['.detail-kicker', '.detail-head', '.detail-meta', '.decision-card']) {
     fullBody.querySelector(selector)?.remove();

@@ -267,6 +267,26 @@ summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid #17634d; ou
 .record-more .detail-grid { margin-top: 0; }
 .record-more .technical-details { margin-bottom: 10px; }
 
+/* Leituras auxiliares não competem com o veredito nem se passam pela fonte original. */
+.recovered-sources { margin: 22px 0; padding-top: 18px; border-top: 1px solid var(--line); color: #46594d; }
+.recovered-sources > h4, .recovered-sources > summary { margin: 0 0 14px; font-size: 14px; font-weight: 650; color: #314a3d; }
+.recovered-sources summary { cursor: pointer; line-height: 1.5; }
+.recovered-sources p { margin: 7px 0; line-height: 1.6; font-size: 13px; overflow-wrap: anywhere; }
+.recovery-original { padding: 14px 16px; background: #f5f7f3; border: 1px solid var(--line); }
+.recovery-original strong { font-size: 13px; }
+.recovery-source { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.recovery-kind { display: inline-block; padding: 4px 7px; color: #5f5948; background: #f7f2e7; border: 1px solid #d9ceba; font-size: 10px; font-weight: 650; letter-spacing: .04em; }
+.recovery-source h5 { margin: 10px 0 4px; font-size: 17px; color: #314a3d; }
+.recovery-source h6 { margin: 15px 0 8px; font-size: 12px; }
+.recovery-source .recovery-title { font-weight: 550; }
+.recovery-source .recovery-use { padding: 9px 12px; background: #f7f2e7; border-left: 2px solid #bb9e5e; }
+.recovered-sources blockquote { margin: 8px 0; border-left: 2px solid #b3c5b7; padding-left: 14px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 13px; line-height: 1.65; }
+.recovered-sources .recovery-note { font-size: 12px; color: #647367; }
+.recovery-reading { margin-top: 14px; }
+.recovery-reading summary { font-size: 12px; color: #27624a; font-weight: 600; }
+.recovered-sources a { overflow-wrap: anywhere; }
+.recovered-sources summary:focus-visible { outline: 2px solid #27624a; outline-offset: 3px; }
+
 /* Três colunas de orientação; todas as demais estão na ficha, sem barras internas. */
 .base-table-scroll { max-height: none; overflow: visible; }
 .base-table-scroll table { min-width: 0; width: 100%; table-layout: fixed; }
