@@ -1,0 +1,18 @@
+{
+  "reviewer": "assistente, aplicando critérios anteriores do usuário; não é validação humana independente",
+  "createdBeforeModelCall": true,
+  "cases": [
+    {"prefix":"a8ae05ef","decision":"aceito","category":"ATUAÇÃO","reason":"Procedimentos já realizados pelo CISGA; relato reproduz episódio já conhecido, não é necessariamente fato novo.","quote":"O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7)."},
+    {"prefix":"a0bd9941","decision":"descartado","category":"GERAL","reason":"Ficha de acórdão, sem resultado; descartar a ficha como fato e manter o PDF como pista a recuperar.","quote":"Decisão na Íntegra (PDF) Copiar Ementa"},
+    {"prefix":"233b0307","decision":"descartado","category":"GERAL","reason":"Ficha de acórdão, sem resultado; não presume mérito ou sanção.","quote":"Decisão na Íntegra (PDF) Copiar Ementa"},
+    {"prefix":"79480ee3","decision":"pendente","category":"CONTROLE","reason":"Dois processos autônomos, CIMARG 1214503 e CIMINAS 1210634. Segmentar e conferir duplicidade; não aceitar agregado nem descartar por irrelevância.","quote":"A Segunda Câmara do Tribunal de Contas confirmou, nas últimas duas sessões, duas medidas de caráter preventivo"},
+    {"prefix":"0ebe468d","decision":"descartado","category":"GERAL","reason":"Seleção de pessoal; sede/local de trabalho não comprovam composição municipal.","quote":"para contratação, em caráter emergencial e por processo seletivo simplificado, de educador social"},
+    {"prefix":"7460d067","decision":"descartado","category":"GERAL","reason":"Concurso administrativo, explicação genérica de consórcio sem novo fato nem composição.","quote":"publicou o Edital nº 01/2026 para o cargo de auxiliar administrativo"},
+    {"prefix":"b45f5ada","decision":"descartado","category":"GERAL","reason":"Processo seletivo, sem outro fato institucional comprovado.","quote":"publicou um edital de Processo Seletivo Simplificado visando preencher uma vaga e formar cadastro de reserva"},
+    {"prefix":"816ec81e","decision":"descartado","category":"GERAL","reason":"Contratação temporária de pessoal, rotina operacional, sem comprovação de serviços já prestados.","quote":"FUNÇÃO: TÉCNICO EM ENFERMAGEM, em CARÁTER TEMPORÁRIO"},
+    {"prefix":"3643329a","decision":"descartado","category":"GERAL","reason":"Adesão à Prova Nacional Docente, não a consórcio.","quote":"A edição deste ano da Prova Nacional Docente (PND) tem a adesão de 23 secretarias estaduais de educação e de 2.007 municípios"},
+    {"prefix":"b187ce5d","decision":"aceito","category":"ATUAÇÃO","reason":"Capacitação já promovida e concluída; somente a cerimônia dos certificados é futura. Preservar a distinção e verificar episódio já existente.","quote":"A capacitação foi promovida em parceria com a Academia de Ensino e Pesquisa em Segurança Urbana"},
+    {"prefix":"bccfdaea","decision":"descartado","category":"GERAL","reason":"Concurso de pessoal sem composição municipal nem outro fato institucional.","quote":"publicou edital de Concurso Público para preenchimento de uma vaga imediata e formação de cadastro de reserva"},
+    {"prefix":"0b4815c6","decision":"descartado","category":"GERAL","reason":"Compra municipal por adesão à ata, não ingresso no consórcio nem rateio.","quote":"foi formalizado processo de adesão à Ata de Registro de Preços nº 009/2026"}
+  ]
+}

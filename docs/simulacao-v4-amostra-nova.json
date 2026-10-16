@@ -1,0 +1,131 @@
+{
+  "seed": "v4-independent",
+  "policy": "original-shadow-3.1",
+  "ruleVersion": "original-shadow-3.2",
+  "selectedBeforeAi": true,
+  "productionActivated": false,
+  "pool": 127,
+  "selection": "Até seis positivos pela regra de produção; completar com negativos; máximo dois por domínio; corpos distintos e fora dos 82 anteriores.",
+  "cases": [
+    {
+      "id": "a8ae05ef21f7f597ac32ae469e0525ff60364fa834c58dba7348863081f52f83",
+      "textHash": "33f9a1a36e127194f1d7fa9d3991fe65fd993d94146376e86c8a4cb61af4ff37",
+      "inputHash": "d9d1cc95c6adadbebfe73b06ee1cc361909fd4faffc7522d37e59cc78ba5e7af",
+      "title": "ATENDIMENTO OFTALMOLÓGICO: Consórcio viabiliza procedimentos de YAG Laser para 100 pacientes do Araguaia - Rede da Notícia",
+      "url": "https://rededanoticia.com.br/atendimento-oftalmologico-consorcio-viabiliza-procedimentos-de-yag-laser-para-100-pacientes-do-araguaia/",
+      "productionRule": "ATUAÇÃO",
+      "firstSeen": "2026-10-14T01:56:39.847Z",
+      "chars": 2117
+    },
+    {
+      "id": "a0bd994139af861365e8ceaa391f07990b1ecd81f745e7e01bd94bad418385f7",
+      "textHash": "662da8b36353ccb2ca4825f3454765899322058c3d1bd214e1dabb15891ab46b",
+      "inputHash": "17da380d0d25586a200c7f3d20fa10373983a56be7e503ff9be65ae87409d883",
+      "title": "Detalhes do Acórdão - 726/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
+      "url": "https://viajuris.tce.pr.gov.br/Pesquisa/Visualizar/726/2019/ACO/S1C",
+      "productionRule": "FINANÇAS",
+      "firstSeen": "2026-09-22T14:51:23.572Z",
+      "chars": 511
+    },
+    {
+      "id": "233b0307f90aedbfc8b63b68aa5f1e7d13e78202aeefc1a809ceca9f6c2384cf",
+      "textHash": "4bf687fe4bd10dd8629fcb70ff3a2e83d6d5506853f1431b57467232c1eb4f24",
+      "inputHash": "b743914d11b8f266e64372b44aa6de38347db35b45ad688f28da5d7e92d245c6",
+      "title": "Detalhes do Acórdão - 495/2017 - Segunda Câmara - viajuris.tce.pr.gov.br",
+      "url": "https://viajuris.tce.pr.gov.br/Pesquisa/Visualizar/495/2017/ACO/S2C",
+      "productionRule": "FINANÇAS",
+      "firstSeen": "2026-09-21T17:02:57.673Z",
+      "chars": 515
+    },
+    {
+      "id": "79480ee305bbad4230eb8c5c0a73438a7451557c2e25e10e193bee6a3eb8b9db",
+      "textHash": "359d45e27392d658c94260089048cf0e7f5863137d8648444f704e57514a0cc2",
+      "inputHash": "130ebc747764cb2885065bdef69e815b6564095ea77223a2be9c12dfc1a8ea50",
+      "title": "Flalhas na elaboração de editais levam TCEMG a suspender licitações promovidas por consórcios públicos em Minas Gerais",
+      "url": "https://www.tce.mg.gov.br/noticia/Detalhe/1111629256",
+      "productionRule": "CONTROLE",
+      "firstSeen": "2026-10-16T18:49:52.864Z",
+      "chars": 5002
+    },
+    {
+      "id": "0ebe468d3475edb0c1967c3d4fdfd4531982cdb8957b11d892de2866f227bc5d",
+      "textHash": "f940e585ba28dc70c287f80437c91a308814fd5e489f6b06fc43b6dda6ce9375",
+      "inputHash": "36bbb4498a9f16de2fa116fc3b113764e9c07134a575aa8ef2d8c05df6d3cd12",
+      "title": "Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade abre processo seletivo simplificado para educador social - Qconcursos Folha Dirigida",
+      "url": "https://folha.qconcursos.com/n/consorcio-intermunicipal-do-servico-socioassistencial-de-alta-complexidade-abre-processo-seletivo-simplificado-para-educador-social",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-09-25T22:23:30.239Z",
+      "chars": 2594
+    },
+    {
+      "id": "7460d067f4c86bc51dbff0f07bd604efda2e01ad17603ef1032732c428ec89c2",
+      "textHash": "4d48c11653f457cf86714917bd4f753621e7ba2a2c459817d41fc55c64b9d8f8",
+      "inputHash": "00b2e13686a67494ed54b58899bb9bc6fd3466e8646aac1043fc3b23116a82ad",
+      "title": "Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense abre concurso para auxiliar administrativo - Qconcursos Folha Dirigida",
+      "url": "https://folha.qconcursos.com/n/consorcio-intermunicipal-multifinalitario-do-alto-uruguai-catarinense-abre-concurso-para-auxiliar-administrativo",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-09-24T05:05:12.492Z",
+      "chars": 2681
+    },
+    {
+      "id": "b45f5adaa90715c4baaf998c4c46edf3e725f751d8d45720f28366b51c2b96cd",
+      "textHash": "fa0a062dc798f63798782dce065448ed48d057bf4d9f41d2dfbb670310aaee7d",
+      "inputHash": "db2769f5e2753d798bf2f288b57b87f18020edcca42f1f76f4297b04770d6432",
+      "title": "CIS-VERDE - MG abre processo seletivo para Assistente Administrativo - pciconcursos.com.br",
+      "url": "https://www.pciconcursos.com.br/noticias/cis-verde-mg-abre-processo-seletivo-para-assistente-administrativo",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-09-24T22:23:58.170Z",
+      "chars": 1224
+    },
+    {
+      "id": "816ec81e6a42da0779a82dcf007dea7f01b34c14f38e0c841e1b08a95da650c5",
+      "textHash": "1bf40a85b5a8340d1dc672ce79c99592c0aacf7f8827c89b4a65787e07c02e99",
+      "inputHash": "93978cb9ec41ac2070d1ffb6f09cf0149cabf8a8db642a6774f984a0943ee6b6",
+      "title": "EXTRATO DE CONTRATO TEMPORÁRIO",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924383/",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-10-14T19:23:15.640Z",
+      "chars": 529
+    },
+    {
+      "id": "3643329a1a717d9731cfe156474709d7c8e7df8501c1f468cacc7808657849ee",
+      "textHash": "6017ac2dab02fa6b587029447eeb93c733008407eff92b17171fc45088512897",
+      "inputHash": "ba77d6cb2be3bf9ebba97c76331c0e07ff123fb0d81baa178aeffae0ba7bee4e",
+      "title": "PND 2026 tem adesão de 2.007 municípios e 23 estados",
+      "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-09/pnd-2026-tem-adesao-de-2007-municipios-e-23-estados",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-09-17T18:12:13.879Z",
+      "chars": 5448
+    },
+    {
+      "id": "b187ce5dd0d6bfe971e1d070cc0d00569aa56828d6c9ad74fe62939bb82f5b2b",
+      "textHash": "80632a6abc171fbfeb865ded8f1cd4c3e6164641dd77426756d448886d3361bf",
+      "inputHash": "6f9291239a233d27712da6486b72b9b796900feaaa2365f4b7062b0320b885e7",
+      "title": "GCMs Do ABC Recebem Certificados Após Curso Regional - abcagora.com.br",
+      "url": "https://abcagora.com.br/2026/09/23/gcms-abc-curso-corregedoria/",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-09-24T05:05:12.492Z",
+      "chars": 1657
+    },
+    {
+      "id": "bccfdaea7fdb0aa974e734f8da13e626300b6aa01a372cd491f0b866e2297eeb",
+      "textHash": "dd01d9196e1d61cf1b335b0e372c280c0d88e2f15a796d3c78f567001672b943",
+      "inputHash": "b40af2a141867f855ada9ba6fc8d027c1c156bb59ee088bb88bcb99442856717",
+      "title": "Consórcio Lambari/SC abre concurso com vaga para Auxiliar Administrativo - concursossc.com.br",
+      "url": "https://concursossc.com.br/consorcio-lambari-sc-abre-concurso-com-vaga-para-auxiliar-administrativo/",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-09-24T05:05:12.492Z",
+      "chars": 1760
+    },
+    {
+      "id": "0b4815c6b673dd18a76f284c093dc5c7652e844913658e676de8ea4634dbdc4f",
+      "textHash": "55f8f75a549128cd13b6a3409d77825fc074589619c2636b649f89df621d627f",
+      "inputHash": "6ab415aba4eccde23c4786961acfc02e73025808588b341d7d5d35613010ced3",
+      "title": "AVISO DE ADESÃO A ATA DE REGISTRO DE PREÇOS",
+      "url": "https://amm.diariomunicipal.org/publicacao/1920604/",
+      "productionRule": "GERAL",
+      "firstSeen": "2026-10-06T17:11:05.845Z",
+      "chars": 1163
+    }
+  ]
+}
