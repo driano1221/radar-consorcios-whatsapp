@@ -7,6 +7,7 @@ import { loadEditorialGuard, applyEditorialGuard } from '../src/lib/editorial-gu
 import { decidePublication, isNotifiable } from '../src/lib/publication-gate.mjs';
 import { buildWeeklyReport } from '../src/lib/history.mjs';
 import { formalEventKey } from '../src/lib/event-identity.mjs';
+import { assertOriginalPreserved } from './helpers/archive-invariants.mjs';
 
 const directory = fileURLToPath(new URL('../data/catalogo/', import.meta.url));
 const nd = async name => (await readFile(`${directory}/${name}`, 'utf8')).trim().split(/\r?\n/).map(JSON.parse);
@@ -26,7 +27,8 @@ test('lote aprovado conserva dez originais, dez textos e somente cinco fatos ún
   assert.equal(reviews.filter(r => r.decisao === 'duplicata').length, 2);
   const eventIds = [...(await readFile(`${directory}/eventos.csv`, 'utf8')).matchAll(/^"([a-f0-9]{64})",/gm)].map(m => m[1]);
   for (const saved of journal.registros) {
-    assert.deepEqual(archive.find(r => r.id === saved.documento_id), saved.original);
+    assertOriginalPreserved(archive.find(r => r.id === saved.documento_id), saved.original,
+      texts.find(r => r.documento_id === saved.documento_id));
     const review = reviews.find(r => r.documento_id === saved.documento_id);
     const text = texts.find(r => r.documento_id === saved.documento_id);
     assert.equal(review.publicar, false);

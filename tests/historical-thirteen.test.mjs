@@ -7,6 +7,7 @@ import { loadEditorialGuard, applyEditorialGuard } from '../src/lib/editorial-gu
 import { decidePublication, isNotifiable } from '../src/lib/publication-gate.mjs';
 import { buildWeeklyReport } from '../src/lib/history.mjs';
 import { dashboardAlternatives } from '../scripts/dashboard-recovery.mjs';
+import { assertOriginalPreserved } from './helpers/archive-invariants.mjs';
 
 const directory = fileURLToPath(new URL('../data/catalogo/', import.meta.url));
 const nd = async name => (await readFile(`${directory}/${name}`, 'utf8')).trim().split(/\r?\n/).filter(Boolean).map(JSON.parse);
@@ -28,7 +29,8 @@ test('13 históricos têm prova preservada, 5 confirmações, 4 duplicatas e 4 d
   for (const saved of journal.registros) {
     const review = reviews.find(r => r.documento_id === saved.documento_id);
     const reading = [...texts, ...alternatives].find(r => r.documento_id === saved.documento_id);
-    assert.deepEqual(archive.find(r => r.id === saved.documento_id), saved.original);
+    assertOriginalPreserved(archive.find(r => r.id === saved.documento_id), saved.original,
+      texts.find(r => r.documento_id === saved.documento_id));
     assert.equal(review.trecho_sha256, hash(saved.original.trecho || ''));
     assert.equal(review.publicar, false);
     assert.equal(hash(reading.texto), saved.texto_sha256);
