@@ -2,6 +2,7 @@ import { load } from 'cheerio';
 import { fetchWithRetry } from '../http.mjs';
 import { normalizeWhitespace } from '../text.mjs';
 import { fetchPublicRoute } from './public-routes.mjs';
+import { enrichArticle } from '../article-enrichment.mjs';
 
 const DEFAULT_USER_AGENT =
   'RadarConsorciosIPEA/0.3 (+pesquisa academica; https://github.com/driano1221/radar-consorcios-whatsapp)';
@@ -155,6 +156,7 @@ export function parseCnm(html, site, since) {
   if (!Array.isArray(rows)) throw new Error('lista props.dados.data nao encontrada');
 
   return rows
+    .filter((row) => typeof row.slug === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(row.slug) && typeof row.titulo === 'string')
     .map((row) => ({
       kind: 'news',
       title: normalizeWhitespace(row.titulo),
@@ -162,8 +164,10 @@ export function parseCnm(html, site, since) {
       publishedAt: parseBrazilianDate(row.datetime),
       source: site.name,
       sourceUrl: site.url,
-      summary: normalizeWhitespace(row.conteudo),
-      rawText: normalizeWhitespace(row.conteudo),
+      summary: normalizeWhitespace(load(String(row.conteudo || '')).text()),
+      // The index supplies truncated excerpts, never a complete article.
+      rawText: '',
+      contentProvenance: 'resumo_listagem',
     }))
     .filter((item) => withinWindow(item, since));
 }
@@ -294,7 +298,22 @@ async function fetchSite(site, since, config, fetchImpl) {
   });
   if (!response.ok) throw new Error(`${site.name} respondeu ${response.status}`);
   const html = await responseText(response, site.encoding);
-  const items = await enrichArticles(parser(html, site, since), site, config, fetchImpl);
+  let items = parser(html, site, since);
+  if (site.adapter === 'cnm') {
+    const complete = [];
+    for (const item of items.slice(0, site.maxArticles || 3)) {
+      try {
+        const failures = [];
+        const read = await enrichArticle(item, { fetchImpl, onFailure: (_, reason) => failures.push(reason) });
+        if (read.articleReader !== 'cnm_inertia_publica') throw new Error(failures.join('; ') || 'CNM: íntegra estruturada não comprovada');
+        complete.push(read);
+      } catch (error) {
+        complete.push({ ...item, previewOnly: true, extractionError: error.message });
+      }
+    }
+    items = [...complete, ...items.slice(site.maxArticles || 3).map(item => ({ ...item, previewOnly: true,
+      extractionError: 'CNM: leitura integral adiada pelo limite da rodada' }))];
+  } else items = await enrichArticles(items, site, config, fetchImpl);
   return items.map((item) => ({
     ...item,
     scraper: site.adapter,

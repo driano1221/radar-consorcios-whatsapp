@@ -32,6 +32,10 @@ flowchart TD
     F["Fontes públicas<br/>diários, imprensa, tribunais, portais"] --> C["Coleta e deduplicação<br/>GitHub Actions"]
     C --> H["Arquivo de publicações<br/>fonte, URL, data e trecho"]
     C --> L["Leitura da evidência<br/>HTML e PDF com página quando disponível"]
+    L -. "Original indisponível" .-> R["Recuperação pública<br/>CNM/Inertia; PDF; outra fonte identificada"]
+    R --> V{"Fonte alternativa<br/>mesmo episódio, prova literal<br/>regras + DeepSeek concordam?"}
+    V -->|"Sim; caso novo elegível"| T
+    V -->|"Não / falha de leitura"| E
     L --> T{"Triagem<br/>o que o texto comprova?"}
     L -. "PDF revisto com atos distintos" .-> A["Ato individualizado<br/>página e trecho próprios"]
     A --> T
@@ -75,6 +79,10 @@ O [painel](https://driano1221.github.io/radar-consorcios-whatsapp/) reúne essas
 
 ## Coleta, revisão e publicação
 
+**Estado da automação (16/10):** as regras de atuação realizada, composição documentada, protocolo assinado e convocação futura já valem para novas leituras. Isso **não** equivale a confirmar automaticamente todo texto original na base: a política geral de promoção de candidatos ainda precisa ser implementada e validada. A decisão automática por fonte alternativa já existe, com concordância entre regras e IA, prova literal e proteção das revisões históricas. [Fluxo vigente e próximos passos](docs/TRIAGEM_AUTOMATICA.md).
+
+**CNM:** coletor direto da área de consórcios habilitado, com até três leituras integrais por rodada. A listagem contém resumos truncados; só o conteúdo da página individual validada é íntegra. Alertas exigem data original a partir de **17/10/2026**, além dos controles usuais; não se libera o acervo anterior. Bloqueio real mantém prévia sem envio. A recuperação pode buscar Conclima e outras reproduções públicas, sem trocar a autoria do original nem presumir que todo conteúdo CNM está acessível.
+
 **Textos alternativos na triagem:** novas publicações podem ser aceitas ou descartadas com base em outro veículo quando regras e DeepSeek concordam sobre o mesmo episódio e a prova literal. O painel distingue original, fonte usada e motivo; duplicatas não viram outro fato. Históricos e revisões humanas são preservados, e a recuperação não libera envios. [Funcionamento e limites](data/catalogo/README.md#decisão-por-fonte-alternativa).
 
 - **Fontes:** Google News, Querido Diário, RSS, CIGA, SAPL e portais oficiais. Cada conector funciona isoladamente; fontes em prévia ou bloqueadas não são liberadas para envio só por aparecerem na busca. A [configuração vigente](config/default.json) é a referência para a lista exata.
@@ -112,7 +120,7 @@ Acesse `http://127.0.0.1:4173/`. Para testar o pacote que vai ao Pages, execute 
 ## O que ainda precisa melhorar
 
 1. Identificar automaticamente os limites entre atos em novos PDFs **sem** atribuir a prova da página errada ao evento.
-2. Reduzir exceções de triagem por recuperação de texto, leitura por página e regras testadas contra casos reais; não zerar indicadores trocando rótulos.
+2. Implementar e validar a confirmação automática de textos originais completos, hoje ainda distinta da classificação e da decisão automática por fonte alternativa. Recuperar texto e resolver discordâncias antes de decidir; não zerar indicadores trocando rótulos.
 3. Ampliar e auditar identidades, CNPJ e relações município–consórcio antes de usar a base como cadastro histórico confiável.
 
 Decisões, incidentes e limites ficam na [memória do projeto](docs/MEMORIA_DO_PROJETO.md). Para detalhes técnicos, consulte a [arquitetura](docs/ARQUITETURA.md), o [guia da base](data/catalogo/README.md) e a [documentação do painel](dashboard/README.md).

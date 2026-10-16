@@ -2,6 +2,15 @@
 
 Atualização mais recente: **16 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Ativação da coleta CNM e limite real da autonomia — 16/10/2026
+
+- Usuário autorizou aplicar CNM e pediu explicação do que falta para aceitar/descartar sem revisão manual, além de atualizar memória, repositório e fluxo.
+- O leitor CNM e a busca de alternativas já estavam integrados, mas a listagem direta estava desativada. Coletor agora habilitado, até três íntegra por rodada. Corrigido um risco: `conteudo` na listagem é um resumo truncado, não texto completo. Só a página individual com estrutura Inertia validada libera a prévia; bloqueio ou limite mantém item sem envio.
+- Corte de alertas por data original: **17/10/2026**. Não se abre envio retroativo nem se altera `state/`, revisões ou acervo nesta manutenção. Orientação CNM geral não exige inventar entidade.
+- **Limite explicitado:** as novas regras melhoram a classificação futura, mas não implementam confirmação automática universal de originais. Fontes alternativas já têm decisão automática com regras + DeepSeek e evidência literal. Próximo passo é política equivalente para originais, primeiro em simulação contra o acervo validado; depois identidade e segmentação de PDFs. Falha de acesso não pode virar descarte temático.
+- README, arquitetura, texto acessível e fluxogramas desktop/mobile atualizados; criado [estado da triagem automática](TRIAGEM_AUTOMATICA.md). Corrigida descrição da tabela que atribuía toda confirmação exclusivamente à revisão editorial.
+- Validação local: **416 testes passaram**; cinco novos cobrem resumo versus íntegra, 403, limite por rodada, ausência de entidade fictícia e corte de alerta antigo. Validação de rede e execução GitHub registradas abaixo quando concluídas.
+
 ## Generalização das revisões e leitor CNM — 16/10/2026
 
 - **Fechamento validado no Actions:** [38952698901](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38952698901), código `d3ac6e7`: **411 testes aprovados**, quatro leituras reais aprovadas, aplicação idempotente e `data/state` intactos durante validação. Na rede do GitHub, a orientação tributária CNM abriu com 2.726 caracteres; o artigo Conclima da CNM e sua variante `api.cnm.org.br` ainda deram 403. PDF CNM, RSS Conclima e REST Conclima responderam. Portanto, o bloqueio é parcial, não declarar CNM universalmente liberada. Primeiro ensaio 38952429515 detectou justamente o 403; não foi omitido, e o diagnóstico separado continua exibindo essa limitação.

@@ -53,7 +53,7 @@ jobs:
       - name: Preparar OCR seletivo para PDFs públicos
         if: env.RECOVERY_IDS == ''
         run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-por
-      - name: Recuperar PDFs de Guanhães e alternativas Semana 7 sem reclassificar
+      - name: Recuperar PDFs de Guanhães e alternativas Semana 7 e CNM com proveniência
         if: env.RECOVERY_IDS == ''
         run: node scripts/recover-public-documents.mjs --apply
       - name: Recuperar casos específicos sem classificar nem enviar

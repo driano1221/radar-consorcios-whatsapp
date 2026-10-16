@@ -49,7 +49,7 @@ async function readNdjson(name) {
 }
 
 const TABLES = [
-  ['eventos', 'Eventos', 'Fatos e candidatos relacionados a consórcios; só a revisão editorial confirma um acontecimento.'],
+  ['eventos', 'Eventos', 'Fatos e candidatos relacionados a consórcios; confirmação por revisão editorial ou decisão automática validada por fonte alternativa.'],
   ['consorcios', 'Consórcios', 'Identidades encontradas nos documentos. Não é cadastro oficial nem composição atual.'],
   ['participacoes', 'Participações', 'Relações município–consórcio com evidência documental revisada.'],
   ['vinculos-documentos', 'Vínculos documentais', 'Menções que conectam documentos e consórcios; menção não comprova adesão.'],

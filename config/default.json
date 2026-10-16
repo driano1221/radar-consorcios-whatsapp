@@ -152,7 +152,10 @@
         "name": "Confederação Nacional de Municípios",
         "adapter": "cnm",
         "url": "https://cnm.org.br/areas_tecnicas/consorcios/noticias",
-        "enabled": false,
+        "enabled": true,
+        "publish": true,
+        "maxArticles": 3,
+        "alertsFrom": "2026-10-17T00:00:00.000Z",
         "fallback": "Google News com filtro site:cnm.org.br"
       },
       {

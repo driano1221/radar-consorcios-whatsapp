@@ -4,6 +4,8 @@ import { XMLParser } from 'fast-xml-parser';
 import { searchPublicWordpress } from '../src/lib/public-document-recovery.mjs';
 import { protectedSnapshot } from './pilot-retroactive-ten.mjs';
 import { enrichArticle } from '../src/lib/article-enrichment.mjs';
+import { fetchWebScrapers } from '../src/lib/sources/web-scrapers.mjs';
+import { readFile } from 'node:fs/promises';
 const before = await protectedSnapshot();
 const article = '/comunicacao/noticias/municipios-de-santa-catarina-assinam-adesao-ao-conclima-saiba-como-participar';
 const targets = [
@@ -13,6 +15,12 @@ const targets = [
   ['conclima_rss', 'https://conclima.org.br/feed/'],
 ];
 const results = [];
+const config = JSON.parse(await readFile('config/default.json', 'utf8'));
+const cnmSite = config.webScrapers.sites.find(site => site.adapter === 'cnm');
+const collected = await fetchWebScrapers({...config.webScrapers, sites: [cnmSite]}, new Date('2026-10-01'));
+results.push({kind: 'cnm_production_collector', usable: collected.ok && collected.items.some(item => item.articleReader === 'cnm_inertia_publica'),
+  diagnostics: collected.diagnostics, items: collected.items.map(item => ({url: item.url, chars: item.rawText.length,
+    reader: item.articleReader, previewOnly: item.previewOnly, date: item.sourcePublishedAt}))});
 for(const slug of ['municipios-de-santa-catarina-assinam-adesao-ao-conclima-saiba-como-participar',
   'cnm-orienta-gestores-sobre-posicao-da-receita-federal-que-trata-de-consorcios-publicos']) {
   const url='https://cnm.org.br/comunicacao/noticias/'+slug;
@@ -50,4 +58,5 @@ await mkdir('output/cnm-access',{recursive:true});
 await writeFile('output/cnm-access/report.json',JSON.stringify(report,null,2));
 console.log(JSON.stringify(report,null,2));
 if(!unchanged)throw new Error('Protected files changed');
+if(cnmSite.enabled && !results.some(r=>r.kind==='cnm_production_collector'&&r.usable))throw new Error('CNM collector not validated; do not activate');
 if(!results.some(r=>r.kind==='conclima_public_rest'&&r.usable))throw new Error('Public alternative API unavailable');

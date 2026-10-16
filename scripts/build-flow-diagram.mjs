@@ -65,11 +65,11 @@ export function desktopFlowSvg() {
   const content = [
     label(40, 36, '01 / O QUE ACONTECE COM CADA PUBLICAÇÃO'),
     card({ x: 40, y: 66, w: 320, h: 148, tag: '1 · DESCOBERTA', title: 'Coleta nas fontes',
-      lines: ['Diários, RSS, notícias, SAPL, CIGA', 'e portais de consórcios.'] }),
+      lines: ['Diários, RSS, SAPL, CIGA e CNM.', 'Portais oficiais e imprensa.'] }),
     card({ x: 420, y: 66, w: 320, h: 148, tag: '2 · DOCUMENTO', title: 'Leitura do conteúdo',
-      lines: ['Texto da página e data original.', 'PDF e OCR seletivo na recuperação.'] }),
+      lines: ['HTML, CNM/Inertia e data original.', 'PDF por página; OCR seletivo.'] }),
     card({ x: 800, y: 66, w: 320, h: 148, tag: '3 · CONTEXTO', title: 'Regras + evidência',
-      lines: ['Distingue ato, autorização, intenção', 'e simples menção; guarda o trecho.'] }),
+      lines: ['Ato, atuação, composição ou intenção?', 'Só afirma o que o trecho comprova.'] }),
     arrow('M 360 140 H 412'), arrow('M 740 140 H 792'),
     arrow('M 960 214 V 255 H 295 V 284'),
     arrow('M 960 255 H 865 V 284'),
@@ -102,8 +102,17 @@ export function desktopFlowSvg() {
     `<text class="note" x="40" y="904">Toda coleta guarda fonte e decisão; o trecho, quando obtido. Nem todo item vira alerta.</text>`,
     label(40, 940, 'RESUMO DE SÁBADO'),
     `<text class="note" x="40" y="965">É uma edição separada, produzida a partir dos achados guardados; não é cada alerta somado.</text>`,
+    label(40, 1014, '02 / QUANDO O ORIGINAL NÃO ABRE'),
+    card({ x: 40, y: 1040, w: 320, h: 148, tag: 'RECUPERAÇÃO', title: 'Outra fonte pública',
+      lines: ['CNM → Conclima / busca pública.', 'Texto, URL e hash ficam separados.', 'Não se confunde com o original.'] }),
+    card({ x: 420, y: 1040, w: 320, h: 148, tag: 'REGRA + IA', title: 'Mesmo episódio?',
+      lines: ['Confere título, datas e entidades.', 'DeepSeek exige prova literal.', 'Discordância não confirma fato.'], tone: 'blue' }),
+    card({ x: 800, y: 1040, w: 320, h: 148, tag: 'NOVOS CASOS ELEGÍVEIS', title: 'Aceitar ou descartar',
+      lines: ['Concordância permite decisão na base.', 'Histórico revisado fica protegido.', 'Recuperação não envia WhatsApp.'], tone: 'green' }),
+    arrow('M 360 1114 H 412'), arrow('M 740 1114 H 792'),
+    `<text class="note" x="40" y="1231">Originais: classificação não basta para confirmação automática. Ainda há candidatos e revisão editorial.</text>`,
   ].join('\n');
-  return svg({ width: 1160, height: 994, title: 'Fluxo do Radar Consórcios, da coleta ao catálogo e ao WhatsApp',
+  return svg({ width: 1160, height: 1260, title: 'Fluxo do Radar Consórcios, da coleta ao catálogo e ao WhatsApp',
     description: 'As fontes alimentam a leitura integral e a triagem. Depois há dois caminhos: decisão histórica para a base, com aceito, descartado ou exceção; e decisão independente de envio, com data, duplicidade, limite, revisão opcional por DeepSeek e WhatsApp.', content });
 }
 
@@ -111,11 +120,11 @@ export function mobileFlowSvg() {
   const content = [
     label(20, 38, '01 / DESCOBERTA E LEITURA'),
     card({ x: 20, y: 60, w: 400, h: 115, tag: '1 · DESCOBERTA', title: 'Coleta nas fontes',
-      lines: ['Diários, RSS, notícias, SAPL, CIGA', 'e portais de consórcios.'] }),
+      lines: ['Diários, RSS, SAPL, CIGA e CNM.', 'Portais oficiais e imprensa.'] }),
     card({ x: 20, y: 210, w: 400, h: 115, tag: '2 · DOCUMENTO', title: 'Leitura do conteúdo',
-      lines: ['Texto da página e data original.', 'PDF e OCR na recuperação seletiva.'] }),
+      lines: ['HTML, CNM/Inertia e data original.', 'PDF por página; OCR seletivo.'] }),
     card({ x: 20, y: 360, w: 400, h: 115, tag: '3 · CONTEXTO', title: 'Regras + evidência',
-      lines: ['Ato, autorização, intenção ou menção?', 'O trecho que sustenta a decisão fica salvo.'] }),
+      lines: ['Ato, atuação, composição ou intenção?', 'O trecho que sustenta a decisão fica salvo.'] }),
     arrow('M 220 175 V 204'), arrow('M 220 325 V 354'),
     label(20, 520, '02 / DESTINO HISTÓRICO NA BASE'),
     card({ x: 20, y: 540, w: 400, h: 100, tag: '4A · PRIMEIRA DECISÃO', title: 'O que ficou comprovado?',
@@ -146,8 +155,18 @@ export function mobileFlowSvg() {
     `<text class="note" x="20" y="1683">Fonte e decisão; trecho, quando obtido.</text>`,
     label(20, 1730, 'RESUMO DE SÁBADO'),
     `<text class="note" x="20" y="1754">Edição separada dos achados guardados.</text>`,
+    label(20, 1805, '04 / ORIGINAL SEM ACESSO'),
+    card({ x: 20, y: 1828, w: 400, h: 115, tag: 'RECUPERAÇÃO', title: 'Outra fonte pública',
+      lines: ['CNM → Conclima / busca pública.', 'Texto, URL e hash separados do original.'] }),
+    card({ x: 20, y: 1978, w: 400, h: 115, tag: 'REGRA + IA', title: 'Mesmo episódio?',
+      lines: ['DeepSeek exige trecho literal compatível.', 'Confere datas, entidades e contradições.'], tone: 'blue' }),
+    card({ x: 20, y: 2128, w: 400, h: 115, tag: 'NOVOS CASOS ELEGÍVEIS', title: 'Aceitar ou descartar',
+      lines: ['Só com concordância; sem reenvio antigo.', 'Revisão histórica continua protegida.'], tone: 'green' }),
+    arrow('M 220 1943 V 1972'), arrow('M 220 2093 V 2122'),
+    `<text class="note" x="20" y="2280">Originais: classificar não basta para confirmar.</text>`,
+    `<text class="note" x="20" y="2305">Ainda há candidatos e revisão editorial.</text>`,
   ].join('\n');
-  return svg({ width: 440, height: 1783, title: 'Fluxo do Radar Consórcios para tela estreita',
+  return svg({ width: 440, height: 2335, title: 'Fluxo do Radar Consórcios para tela estreita',
     description: 'Coleta, leitura e regras; destino histórico na base com três resultados; portão independente para alertas com data, novidade, limite, DeepSeek opcional e WhatsApp.', content, mobile: true });
 }
 

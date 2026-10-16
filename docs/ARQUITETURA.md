@@ -1,5 +1,9 @@
 # Arquitetura e pesquisa técnica
 
+## Referência vigente — 16/10/2026
+
+O [estado da triagem automática](TRIAGEM_AUTOMATICA.md) distingue classificação, confirmação na base e autorização de alerta. As regras institucionais foram generalizadas; a decisão por fonte alternativa exige regras + DeepSeek e prova literal. A CNM passa a ter coleta direta com leitura Inertia por notícia, preservando bloqueios reais e o corte de alertas em 17/10. O índice CNM não é texto integral. As descrições abaixo são históricas e não substituem a configuração vigente.
+
 As seções iniciais documentam as decisões de agosto. O comportamento atual e os limites da validação estão na [pesquisa de setembro](PESQUISA_E_VALIDACAO_2026-09-14.md) e na seção de evolução ao final.
 
 ## Objetivo editorial
