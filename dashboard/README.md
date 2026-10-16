@@ -41,6 +41,10 @@ O retroativo pode ser conferido com `node scripts/backfill-article-text.mjs --li
 
 ### Fonte original e fontes alternativas
 
+Para **novos registros desde 16/10/2026, 14h13min25s (Brasília)**, a leitura alternativa pode sustentar a decisão automática quando regras e DeepSeek concordam sobre o mesmo episódio, com citações literais verificadas. A ficha mostra “regras e IA com fonte alternativa”, motivo, prova e link próprio. Isso não é revisão humana. A fonte original permanece separada; a versão pública exibe trechos, não republica a íntegra.
+
+Históricos, enviados e revisados manualmente não são reclassificados por essa integração. Duplicatas ficam relacionadas ao registro anterior, sem segundo fato ou envio. Conflitos/erros são exceções explícitas. Aceitar na base não libera WhatsApp pela recuperação.
+
 As leituras de `fontes-alternativas.ndjson` aparecem separadas na ficha, com a marca **OUTRA FONTE — NÃO É O ORIGINAL**. Cada uma mostra veículo, título próprio, link direto, trecho, data da recuperação, motivo da associação e independência conhecida. Leitura reaproveitada do acervo informa sua data original; registrar o vínculo não significa reabrir o site.
 
 A decisão e seu trecho de prova continuam acima, sem substituição automática. “Fonte citada na revisão” exige uma revisão editorial válida que aponte para aquela URL; nos demais casos aparece “Não citada na decisão atual”. Sem uma revisão, semelhança de título nunca equivale a confirmação do episódio. PDFs recuperados do próprio portal são identificados como documento original, não como uma segunda reportagem; o texto local mantém marcadores de página.

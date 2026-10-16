@@ -4,6 +4,7 @@ import path from 'node:path';
 import { canonicalUrl } from './dedupe.mjs';
 import { formalEventKey } from './event-identity.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
+import { loadAlternativeDecisionData, validAlternativeDecision, applyAlternativeGuard } from './alternative-triage.mjs';
 
 const EMOJI = { CRIAÇÃO: '🟩', 'CRIAÇÃO EM TRAMITAÇÃO': '🟩',
   ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', 'ADESÃO EM TRAMITAÇÃO': '🟦',
@@ -47,6 +48,14 @@ export async function loadEditorialGuard(directory) {
     if (row) guard.set(canonicalUrl(row.url), { decisao: 'desdobrado',
       motivo: 'Edição já separada em atos com decisões individuais na base; não enviar o PDF inteiro como um evento.' });
   }
+  const auxiliary = await loadAlternativeDecisionData(directory);
+  const humanIds = new Set(reviews.map(r => r.documento_id));
+  for (const row of archive) {
+    const decision = auxiliary.decisions.get(row.id);
+    if (splitParents.has(row.id) || guard.has(canonicalUrl(row.url))) continue;
+    if (validAlternativeDecision(row, decision, auxiliary.sources, humanIds))
+      guard.set(canonicalUrl(row.url), { origin: 'alternative_automatic', decision });
+  }
   return guard;
 }
 
@@ -81,6 +90,7 @@ export async function loadConfirmedEventRegistry(directory) {
 export function applyEditorialGuard(item, guard) {
   const review = guard.get(canonicalUrl(item.url || ''));
   if (!review) return item;
+  if (review.origin === 'alternative_automatic') return applyAlternativeGuard(item, review.decision);
   const previous = item.classification || {};
   if (review.decisao === 'desdobrado') return { ...item, classification: {
     ...previous, category: 'GERAL', emoji: '📰', score: 0,

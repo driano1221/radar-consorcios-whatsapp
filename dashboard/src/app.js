@@ -47,6 +47,9 @@ function sourceMessage(row) {
   return row.message || 'A fonte respondeu parcialmente ou não entregou dados nesta coleta.';
 }
 function status(item) {
+  if (item.automaticAlternativeReview) return item.automaticAlternativeReview.status === 'pendente'
+    ? ['Fonte alternativa · conferir conflito', 'wait']
+    : [item.baseDecision === 'confirmado' ? 'Aceito automaticamente · fonte alternativa' : 'Descartado automaticamente · fonte alternativa', item.baseDecision === 'confirmado' ? 'event' : 'raw'];
   if (item.baseDecision === 'desdobrado') return ['Edição · ver atos separados', 'raw'];
   if (item.editorialReview?.decision === 'confirmar_evento') return ['Conferido · aceito', 'event'];
   if (item.editorialReview?.decision === 'nao_evento') return ['Conferido · descartado', 'raw'];
@@ -65,6 +68,7 @@ function status(item) {
   return ['Fora da lista', 'raw'];
 }
 function readableReason(item) {
+  if (item.automaticAlternativeReview) return item.automaticAlternativeReview.reason;
   if (item.baseDecision === 'desdobrado') return item.reason;
   if (item.editorialReview?.reason) return item.editorialReview.reason;
   if (item.rejectedEvent) return item.reason || 'A triagem rejeitou este registro; ele permanece no histórico para consulta.';
@@ -183,10 +187,10 @@ function renderOverviewDetail(item) {
   const bucket = triageBucket(item);
   const decision = item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada na base' : bucket === 'rejected' ? 'Fora da base' : 'Candidata · não confirmada';
   const reasonTitle = item.baseDecision === 'desdobrado' ? 'O que esta edição contém' : bucket === 'accepted' ? 'Por que entrou' : bucket === 'rejected' ? 'Por que ficou fora' : 'O que falta para concluir';
-  const rawEvidence = item.editorialReview?.evidence || item.pdfEvidence?.[0]?.text ||
+  const rawEvidence = item.editorialReview?.evidence || item.automaticAlternativeReview?.evidence || item.pdfEvidence?.[0]?.text ||
     (item.contentQuality === 'trecho_disponivel' ? item.evidence : '');
   const evidence = /\.{10,}/.test(rawEvidence) && !item.editorialReview ? '' : rawEvidence;
-  const evidenceTitle = item.pdfEvidence?.length && !item.editorialReview ?
+  const evidenceTitle = item.automaticAlternativeReview ? 'Prova na fonte alternativa · regras e IA' : item.pdfEvidence?.length && !item.editorialReview ?
     `Trecho localizado · página ${item.pdfEvidence[0].page || 'não identificada'}` : 'Trecho ou informação disponível';
   const head = node('div', 'overview-detail-head');
   head.append(node('span', `overview-verdict ${bucket}`, decision), node('span', 'overview-id', item.id.slice(0, 8).toUpperCase()));
@@ -199,6 +203,7 @@ function renderOverviewDetail(item) {
   const actions = node('div', 'overview-actions');
   actions.append(link('Abrir publicação original', item.url));
   if (item.editorialReview?.evidenceUrl) proof.append(link('Abrir fonte usada na decisão', item.editorialReview.evidenceUrl));
+  if (item.automaticAlternativeReview?.sourceUrl) proof.append(link('Abrir fonte alternativa usada na decisão', item.automaticAlternativeReview.sourceUrl));
   const full = node('button', 'detail-link', 'Ver ficha completa →'); full.type = 'button';
   full.addEventListener('click', () => openItem(item)); actions.append(full);
   const back = node('button', 'detail-link overview-back', 'Voltar à lista ↑'); back.type = 'button';
@@ -240,6 +245,7 @@ function renderDetailedRecord(item, target) {
     node('span', '', item.id.slice(0, 8).toUpperCase()));
   const decision = node('div', `decision-card ${tone}`);
   const verdict = item.baseDecision === 'desdobrado' ? 'EDIÇÃO — DECISÕES NOS ATOS ABAIXO'
+    : item.automaticAlternativeReview ? (item.baseDecision === 'confirmado' ? 'SIM — ACEITO POR REGRAS E IA COM FONTE ALTERNATIVA' : item.baseDecision === 'descartado' ? 'NÃO — FORA DA BASE, COM FONTE ALTERNATIVA' : 'EXCEÇÃO — LEITURAS SEM CONCORDÂNCIA SEGURA')
     : item.editorialReview?.decision === 'confirmar_evento' ? 'SIM — ACHADO CONFERIDO E ACEITO'
     : item.editorialReview?.decision === 'nao_evento' ? 'NÃO — DESCARTADO APÓS CONFERÊNCIA'
       : item.editorialReview?.decision === 'duplicata' ? 'NÃO — JÁ REPRESENTADO POR OUTRA PUBLICAÇÃO'
@@ -257,11 +263,11 @@ function renderDetailedRecord(item, target) {
   const grid = node('div', 'detail-grid');
   const fields = [
     ['ASSUNTO', item.baseDecision === 'desdobrado' ? 'Edição com atos separados' : item.rejectedEvent ? 'Não classificado como achado'
-      : item.baseStatus === 'evento_candidato' ? item.category : 'Não classificado como achado'],
+      : item.baseStatus === 'evento_candidato' || item.baseDecision === 'confirmado' ? item.category : 'Não classificado como achado'],
     ['BASE', item.baseDecision === 'desdobrado' ? 'Decisão por ato' : item.baseDecision === 'confirmado' ? 'Fato confirmado' : item.baseDecision === 'descartado'
       ? 'Fora da base de eventos' : 'Candidato, ainda não confirmado'],
     ...(item.actPage ? [['PÁGINA DO ATO', String(item.actPage)]] : []),
-    ['ALERTA', item.alertDecision === 'historico' ? 'Não enviar — fato antigo'
+    ['ALERTA', item.automaticAlternativeReview ? 'Recuperação para a base — não libera envio' : item.alertDecision === 'historico' ? 'Não enviar — fato antigo'
       : item.alertDecision === 'enviado' ? item.baseDecision === 'descartado'
         ? 'Enviado antes da correção' : 'Já enviado'
         : item.alertDecision === 'elegivel' ? 'Pode ser avaliado para envio'
@@ -402,13 +408,13 @@ function detail(item, target) {
   intro.append(node('span', `overview-verdict ${bucket}`, verdict), node('small', '', `Registro ${item.id.slice(0, 8).toUpperCase()}`));
   const decision = node('section', `readable-decision ${bucket}`);
   decision.append(node('h4', '', 'Por quê?'), node('p', '', readableReason(item)));
-  const rawProof = item.editorialReview?.evidence || item.pdfEvidence?.[0]?.text ||
+  const rawProof = item.editorialReview?.evidence || item.automaticAlternativeReview?.evidence || item.pdfEvidence?.[0]?.text ||
     (item.contentQuality === 'trecho_disponivel' ? item.evidence : '');
   const usableProof = /\.{10,}/.test(rawProof) && !item.editorialReview ? '' : rawProof;
   const proof = node('section', 'readable-proof');
   const location = item.pdfEvidence?.length && !item.editorialReview ?
     ` · página ${item.pdfEvidence[0].page || 'não identificada'}` : '';
-  const proofTitle = item.baseDecision === 'desdobrado' ? 'Trecho histórico da coleta; veja cada ato abaixo' : item.editorialReview ? 'Trecho usado na conferência' :
+  const proofTitle = item.automaticAlternativeReview ? 'Prova na fonte alternativa · regras e IA' : item.baseDecision === 'desdobrado' ? 'Trecho histórico da coleta; veja cada ato abaixo' : item.editorialReview ? 'Trecho usado na conferência' :
     bucket === 'rejected' ? `Trecho coletado — não prova o fato por si só${location}` : `Trecho disponível${location}`;
   const proofPreview = usableProof && !item.editorialReview && usableProof.length > 400
     ? `${usableProof.slice(0, 400).trimEnd()}…` : usableProof;
@@ -430,6 +436,7 @@ function detail(item, target) {
   const actions = node('div', 'readable-actions');
   actions.append(link('Abrir publicação original', item.url));
   if (item.editorialReview?.evidenceUrl) proof.append(link('Abrir fonte usada na decisão', item.editorialReview.evidenceUrl));
+  if (item.automaticAlternativeReview?.sourceUrl) proof.append(link('Abrir fonte alternativa usada na decisão', item.automaticAlternativeReview.sourceUrl));
   let siblings = null;
   if (item.relatedActs?.length) {
     siblings = node('section', 'readable-proof');

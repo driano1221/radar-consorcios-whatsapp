@@ -19,6 +19,14 @@ Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial 
 
 ## Como ler um evento
 
+### Decisão por fonte alternativa
+
+`triagem-fontes-alternativas.ndjson` guarda decisões automáticas **separadas das revisões humanas**: documento original/hash, fontes/hashes, resultado de cada leitura, modelo, prova literal, justificativa, data e vínculo de duplicata. `triagem-alternativa-uso.ndjson` controla as chamadas adicionais (até 4/passagem e 12/dia). São criados quando houver casos elegíveis.
+
+`node scripts/triage-alternative-texts.mjs --apply` integra auxiliares já recuperados à base derivada. Sem `--apply`, pode consultar a IA, mas não grava. Só atua em primeiras coletas desde 16/10/2026 14h13min25s (Brasília), sem envio/revisão humana. Regras e IA devem concordar, com correspondência do episódio e citações literais verificadas. Falha, conflito ou falta de prova nunca viram descarte automático. Não reprocessa históricos nem libera envios.
+
+Nas tabelas derivadas, `evidencia_triagem`, `fonte_evidencia_triagem` e `metodo_triagem` explicam o resultado automático. `trecho` continua sendo o original. Um aceito automático tem `decisao_base=confirmado`, mas não foi confirmado manualmente; veja o método. Uma duplicata/descartado não gera outra linha em `eventos.csv`, mas permanece consultável no painel e no arquivo.
+
 `tipo_evento` é uma hipótese de classificação. `etapa` distingue projeto, autorização, ato publicado e relato. `situacao_analise` distingue candidato, revisão por IA, publicação no WhatsApp e rejeição. **Nenhum desses campos comprova sozinho que um município entrou ou saiu de um consórcio.** Por isso `efeito_na_participacao` permanece “não inferido automaticamente” até haver revisão documental específica.
 
 `decisao_base` e `decisao_alerta` são decisões diferentes: um acontecimento pode estar **confirmado** na base e ser **histórico** para o WhatsApp. `data_fato` guarda apenas uma data exata comprovada; `mes_fato` registra mês conhecido sem inventar dia; `data_noticia_original` vem da página da fonte, não do Google. O alerta usa primeiro a data do fato, depois a data expressa no título de um ato formal, depois a data original da página e, por último, a data da coleta. A janela padrão de novidade é de sete dias. Um item do Google Notícias sem data do fato, do ato ou da página original recebe `data_nao_verificada` e não é enviado automaticamente: a data do Google pode ser só reindexação.

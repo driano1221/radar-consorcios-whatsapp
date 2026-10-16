@@ -4,6 +4,16 @@ Atualização mais recente: **16 de outubro de 2026**. As primeiras seções sã
 
 Este documento registra o contexto, as decisões e o estado operacional do projeto para que o trabalho possa ser retomado sem depender do histórico da conversa. Ele não contém telefone, ID do grupo, senha ou material de autenticação aberto.
 
+## Integração da fonte alternativa à triagem — 16/10/2026
+
+- Pedido autorizado: usar a leitura alternativa para aceitar/descartar automaticamente os próximos casos, com fonte, prova e motivo no painel; preservar históricos e nunca reenviar antigos.
+- Nova camada `triagem-fontes-alternativas.ndjson`, separada de `revisoes-eventos.ndjson` e do texto original. Aplicável somente a documentos com primeira coleta a partir de **16/10/2026 14h13min25s (Brasília)**, sem envio anterior nem revisão humana. O corte explícito protege o acervo anterior; não é um backfill.
+- O fluxo valida hash/vínculo/URL/datas e lê o corpo integral (500–24.000 caracteres; nunca corta para concluir). Exige correspondência de episódio, três citações literais nos documentos corretos, justificativa específica e concordância entre regra determinística e DeepSeek. Havendo duas fontes, ambas precisam concordar; reprodução não conta como prova independente. Divergência/falha de acesso continua exceção explícita, não descarte sem prova.
+- Aceitos alimentam a base derivada; descartados permanecem no arquivo consultável. A ficha identifica **regras e IA com fonte alternativa**, prova literal e URL própria; não simula decisão humana nem substitui título/data/texto original. Nova observação de um item guardado não pode copiar a prova alternativa para o trecho original.
+- Antiduplicação: fonte já representada no arquivo ou compartilhada por decisões automáticas é relacionada ao dono anterior; se o dono ainda não foi validado, não se conta um segundo evento. Decisão humana sempre prevalece. Hash/versão/original alterados invalidam a decisão automática.
+- Limites: dois documentos e quatro chamadas por passagem, doze chamadas/dia nesta etapa adicional. Sem chave, não decide. Resultado final idêntico não chama IA novamente; exceções esperam 24h. A triagem roda depois da recuperação diária (03h37, Brasília, melhor esforço), sem alongar o trabalho normal de envio/sessão do WhatsApp. As coletas posteriores respeitam as decisões salvas. Esta integração **não libera alertas**, nem diário nem semanal.
+- Validação dedicada: workflow `test-alternative-triage.yml`, com permissão de leitura, sem segredos do WhatsApp. Testa IA real em duas fontes do CISGA e controles sintéticos claramente rotulados; integração/idempotência em pasta isolada e invariantes de `data/`/`state/`. Resultados finais e links serão registrados após a execução.
+
 ## Fontes recuperadas na ficha do painel — 16/10/2026
 
 - Pedido: ver fonte alternativa, texto e justificativa sem confundir com o original. A ficha agora separa decisão/prova, publicação original e leituras auxiliares. Link “fonte usada na decisão” é distinto de “publicação original”.

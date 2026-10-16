@@ -9,6 +9,7 @@ import { decidePublication } from './publication-gate.mjs';
 import { formalActDate } from './publication-date.mjs';
 import { AI_PROMPT_VERSION, applyAiReview } from './ai-review.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
+import { loadAlternativeDecisionData, validAlternativeDecision, applyAlternativeToRow } from './alternative-triage.mjs';
 
 const FIELDS = [
   'id', 'documento_pai_id', 'chave_ato', 'pagina_inicio', 'pagina_fim',
@@ -17,6 +18,7 @@ const FIELDS = [
   'etapa', 'situacao_analise', 'efeito_na_participacao', 'tipo_documento',
   'consorcio', 'sigla', 'municipio', 'uf', 'abrangencia', 'titulo', 'fonte', 'url',
   'trecho', 'pontuacao', 'revisao_ia', 'enviado_em',
+  'evidencia_triagem', 'fonte_evidencia_triagem', 'metodo_triagem',
 ];
 
 function safeText(value, limit = 500) {
@@ -183,6 +185,15 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
     .map((row) => [canonicalUrl(row.url), row]));
   for (const observation of Object.values(state.observations || {})) {
     const original = observation.item;
+    // Recovered evidence belongs to the decision layer, never the original snippet.
+    // A later run may observe the guarded item again; preserve the original archive.
+    if (original?.alternativeDecision) {
+      const id = original.alternativeDecision.documento_id;
+      const existing = records.get(id);
+      if (existing) records.set(id, { ...existing,
+        ultima_coleta: [existing.ultima_coleta, observation.lastSeenAt].filter(Boolean).sort().at(-1) || '' });
+      continue;
+    }
     const preservedEvidence = original?.classification?.evidenceText;
     const recheckItem = preservedEvidence
       ? { ...original, excerpts: [preservedEvidence, original.summary].filter(Boolean) }
@@ -242,6 +253,7 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
   for (const pending of Object.values(state.pending || {})) {
     const item = pending.item;
     if (!item) continue;
+    if (item.alternativeDecision) continue;
     const row = catalogRecord(item, pending.queuedAt, pending.queuedAt);
     if (row) records.set(row.id, mergeCatalogRecord(records.get(row.id), row));
   }
@@ -295,11 +307,16 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     .map((review) => [review.documento_id, review]));
   const reviewStillMatches = (row) => decisions.get(row.id)?.trecho_sha256 ===
     createHash('sha256').update(row.trecho || '').digest('hex');
+  const auxiliary = await loadAlternativeDecisionData(directory);
+  const humanIds = new Set(editorialReviews.map(r => r.documento_id));
   const reviewed = [...all, ...acts].map((row) => {
     if (splitParents.has(row.id)) return { ...row, tipo_evento: 'GERAL',
       decisao_base: 'desdobrado', decisao_alerta: 'historico',
       situacao_analise: `edição desdobrada em ${splitParents.get(row.id)} atos individualizados` };
     let result = row;
+    const auto = auxiliary.decisions.get(row.id);
+    const validAuto = validAlternativeDecision(row, auto, auxiliary.sources, humanIds);
+    if (validAuto) result = applyAlternativeToRow(row, auto);
     if (reviewStillMatches(row)) {
       const review = decisions.get(row.id);
       result = { ...row,
@@ -326,16 +343,18 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
       eventAt: result.data_fato,
       eventMonth: result.mes_fato,
       classification: { category: result.tipo_evento, score: Number(result.pontuacao || 5) },
-      publicationDecision: reviewStillMatches(row) && decisions.get(row.id)?.publicar === false ? 'historico' : '',
+      publicationDecision: validAuto ? 'historico' : reviewStillMatches(row) && decisions.get(row.id)?.publicar === false ? 'historico' : '',
       publicationReason: reviewStillMatches(row) && decisions.get(row.id)?.publicar === false
         ? result.motivo_alerta : '',
     }, { now, lookbackHours });
     result = { ...result,
       decisao_alerta: result.enviado_em ? 'enviado'
+        : validAuto ? result.decisao_alerta
         : reviewStillMatches(row) && decisions.get(row.id)?.publicar === false ? 'historico'
           : alert.publicationDecision === 'historico' ? 'historico'
             : result.decisao_alerta === 'previa' ? 'previa' : alert.publicationDecision,
       motivo_alerta: result.enviado_em ? 'Enviado ao WhatsApp anteriormente.'
+        : validAuto ? result.motivo_alerta
         : alert.publicationDecision === 'historico' ? alert.publicationReason
           : result.decisao_alerta === 'previa' ? result.motivo_alerta : alert.publicationReason,
     };

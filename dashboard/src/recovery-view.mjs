@@ -22,7 +22,9 @@ export function recoveredSourcesView(item, { document, date, compact = false }) 
     ? `Fontes alternativas (${sources.length}) · texto e origem` : 'Leitura do documento original'));
   const original = make('div', 'recovery-original');
   original.append(make('strong', '', `Publicação original · ${item.source || 'Fonte não informada'}`),
-    make('p', '', 'O título e a data continuam ligados à publicação original. A justificativa acima é a da decisão registrada; estas leituras não a reescrevem.'),
+    make('p', '', item.automaticAlternativeReview
+      ? 'O título e a data continuam ligados à publicação original. A decisão usa a fonte alternativa indicada, sem substituir o texto original nem simular revisão humana.'
+      : 'O título e a data continuam ligados à publicação original. A justificativa acima é a da decisão registrada; estas leituras não a reescrevem.'),
     link('Abrir publicação original', item.url));
   if (item.originalReading) {
     const reading = item.originalReading;

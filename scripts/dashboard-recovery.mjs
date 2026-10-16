@@ -12,15 +12,17 @@ export function textPreview(text, limit = 500) {
   return `${cut.slice(0, cut.lastIndexOf(' ') > limit / 2 ? cut.lastIndexOf(' ') : limit)}…`;
 }
 
-// These are auxiliary readings, never inputs to classification or counters.
+// Display auxiliary readings separately; only a sealed decision can affect classification.
 // Keep only verified stored bodies; allowlist fields instead of exporting raw API responses.
-export function dashboardAlternatives(documentId, rows, review) {
+export function dashboardAlternatives(documentId, rows, review, automaticReview = null) {
   const unique = new Map();
   for (const row of rows) {
     const url = webUrl(row.url_fonte);
     if (row.documento_id !== documentId || !url || !row.texto ||
         row.texto_sha256 !== createHash('sha256').update(row.texto).digest('hex')) continue;
     const cited = Boolean(review?.fonte_evidencia && webUrl(review.fonte_evidencia) === url);
+    const automatic = automaticReview && ['aceito', 'descartado', 'duplicata'].includes(automaticReview.status) &&
+      automaticReview.checks?.some(c => c.sourceId === row.id && c.sourceHash === row.texto_sha256);
     const candidate = {
       id: row.id, source: row.fonte || new URL(url).hostname, title: row.titulo_fonte || '', url,
       publishedAt: row.data_fonte || '', recoveredAt: row.recuperado_em || '',
@@ -28,12 +30,14 @@ export function dashboardAlternatives(documentId, rows, review) {
       discovery: row.origem_descoberta === 'acervo' ? 'Acervo já guardado' : 'Busca de outra fonte',
       excerpt: textPreview(row.texto), fullText: row.texto, textHash: row.texto_sha256,
       independence: row.independencia || 'Independência da fonte não verificada.',
-      relation: row.comparacao?.shared?.length
+      relation: automatic ? automaticReview.checks.find(c => c.sourceId === row.id)?.correspondenceReason || automaticReview.correspondenceReason
+        : row.comparacao?.shared?.length
         ? `Encontrada por termos em comum no título: ${row.comparacao.shared.join(', ')}. Isso não comprova que seja o mesmo episódio.`
         : 'Texto relacionado para conferência; equivalência com a publicação original não comprovada.',
       dateCompared: row.comparacao?.dateVerified === true,
-      decisionUse: cited ? 'cited' : 'not_cited',
+      decisionUse: cited ? 'cited' : automatic ? 'automatic' : 'not_cited',
       decisionNote: cited ? 'Esta fonte está citada na revisão atual. O trecho e o motivo da decisão estão acima.'
+        : automatic ? 'Usada na decisão automática por regras e IA. A prova e a justificativa estão acima; não é revisão humana.'
         : 'Não citada na decisão atual. Recuperar este texto não muda a classificação nem gera um novo envio.',
       validationUrl: webUrl(row.validacao_url),
     };

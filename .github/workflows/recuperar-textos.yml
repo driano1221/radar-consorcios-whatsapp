@@ -76,6 +76,11 @@ jobs:
       - name: Atualizar sugestões sem publicar automaticamente
         if: env.RECOVERY_IDS == ''
         run: node scripts/review-recovered-texts.mjs --apply
+      - name: Triar fontes alternativas de registros novos sem enviar
+        if: env.RECOVERY_IDS == ''
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: node scripts/triage-alternative-texts.mjs --apply
       - name: Verificar que não duplicou nem alterou envios ou revisões
         run: node scripts/check-recovery-safety.mjs
       - name: Guardar resultados na base

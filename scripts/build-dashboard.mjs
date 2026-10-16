@@ -7,6 +7,7 @@ import { resolveGeography } from '../dashboard/src/geography-model.mjs';
 import { compareNewestDiscovery } from '../dashboard/src/triage-model.mjs';
 import { writeFlowDiagrams } from './build-flow-diagram.mjs';
 import { dashboardAlternatives, textPreview } from './dashboard-recovery.mjs';
+import { validAlternativeDecision } from '../src/lib/alternative-triage.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = path.join(root, 'data', 'catalogo');
@@ -99,6 +100,9 @@ const COLUMN_DOCS = {
   url_evidencia: 'Endereço do documento que sustenta o vínculo.',
   trecho: 'Excerto guardado pelo radar; não é necessariamente o texto integral.',
   evidencia: 'Trecho ou descrição específica que sustenta a decisão.',
+  evidencia_triagem: 'Trecho literal da fonte alternativa usado pela triagem automática; não é texto do original.',
+  fonte_evidencia_triagem: 'URL da fonte alternativa que fundamentou a decisão automática.',
+  metodo_triagem: 'Método usado na decisão: regras e revisão automática, não validação humana.',
   nome_mencionado: 'Nome do consórcio como aparece neste documento.',
   sigla_mencionada: 'Sigla do consórcio como aparece neste documento.',
   cnpj_mencionado: 'CNPJ citado no documento; não significa associação já validada.',
@@ -244,7 +248,7 @@ export function dashboardSourceCatalog(config = {}) {
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
   acts = [], participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
-  articleTexts = [], alternativeTexts = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
+  articleTexts = [], alternativeTexts = [], alternativeDecisions = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: publicationDate(row),
   }));
@@ -253,6 +257,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   const pendingIds = new Map(pendingIdentity.map((row) => [row.documento_id, row.motivo]));
   const reviewById = new Map(editorialReviews.filter((review) => review.documento_id && review.motivo)
     .map((review) => [review.documento_id, review]));
+  const autoById = new Map(alternativeDecisions.map(d => [d.documento_id, d]));
+  const humanIds = new Set(editorialReviews.map(r => r.documento_id));
   const pdfById = new Map(pdfRecovery.filter((row) => row.documento_id && Array.isArray(row.trechos))
     .map((row) => [row.documento_id, row]));
   const articleTextById = new Map(articleTexts.filter((row) => row.documento_id && row.texto)
@@ -273,6 +279,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     });
   }
   const items = [...archive, ...acts].map((row) => {
+    const storedAuto = autoById.get(row.id);
+    const auto = validAlternativeDecision(row, storedAuto, alternativeTexts, humanIds) ? storedAuto : null;
     const isSplitParent = actsByParent.has(row.id);
     const isAct = Boolean(row.documento_pai_id);
     const decision = decisions[row.id] || null;
@@ -376,7 +384,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       originalReading: articleText ? { url: articleText.url_artigo || row.article_url || row.url,
         recoveredAt: articleText.recuperado_em || '', reader: articleText.leitor || '',
         pdf: Boolean(articleText.pdf_sha256), excerpt: textPreview(articleText.texto) } : null,
-      alternativeSources: dashboardAlternatives(row.id, alternativeTexts, appliedReview),
+      alternativeSources: dashboardAlternatives(row.id, alternativeTexts, appliedReview, auto),
       articleRecoveryReason: row.article_recovery_reason || '',
       articleAttempts: Number(row.article_attempts || 0),
       articleDuplicateOf: row.article_duplicate_of || '',
@@ -397,6 +405,22 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       } : null,
       links: linkedByDocument.get(row.id) || [],
       runId: decision?.runId || '', observedCount: decision?.observedCount || null,
+      ...(auto ? {
+        automaticAlternativeReview: { status: auto.status, reason: auto.reason, evidence: auto.evidence || '',
+          sourceUrl: auto.sourceUrl || '', sourceId: auto.sourceId || '', reviewedAt: auto.reviewedAt,
+          relatedDocumentId: auto.relatedDocumentId || '' },
+        baseDecision: auto.status === 'aceito' ? 'confirmado' : auto.status === 'pendente' ? 'candidato' : 'descartado',
+        category: auto.status === 'aceito' ? auto.category : 'GERAL',
+        score: auto.score || 0, stage: auto.stage || '', reason: auto.reason,
+        reasonBasis: 'regras e IA com fonte alternativa', evidence: auto.evidence || '',
+        contentQuality: auto.evidence ? 'trecho_disponivel' : contentQuality(row.titulo, row.trecho),
+        decisionStatus: auto.status === 'pendente' ? 'revisao' : auto.status === 'aceito' ? 'confirmado' : 'descartado',
+        activeCandidate: ['aceito', 'pendente'].includes(auto.status), pendingReview: auto.status === 'pendente',
+        rejectedEvent: ['descartado', 'duplicata'].includes(auto.status), legacyUnverified: false,
+        recoverySuggestion: null, pdfReassessment: false,
+        alertDecision: auto.status === 'aceito' ? 'historico' : auto.status === 'pendente' ? 'previa' : 'descartado',
+        alertReason: 'Decisão da base por texto recuperado; não libera envio nem reenvio.',
+      } : {}),
     };
   }).sort(compareNewestDiscovery);
   const categories = {};
@@ -528,7 +552,7 @@ export function buildPublicDashboardData(data) {
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  const [archive, acts, events, consortia, links, pendingIdentity, editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts] = await Promise.all([
+  const [archive, acts, events, consortia, links, pendingIdentity, editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts, alternativeDecisions] = await Promise.all([
     readNdjson('arquivo-coletas.ndjson'), readCsv('atos.csv'), readCsv('eventos.csv'), readCsv('consorcios.csv'),
     readCsv('vinculos-documentos.csv'), readCsv('identidade-pendente.csv'), readNdjson('revisoes-eventos.ndjson'),
     readCsv('participacoes.csv'),
@@ -538,6 +562,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
       .then(([standard, large, curated, google]) => [...standard, ...large.filter((row) => row.trechos?.length), ...curated, ...google]),
     readNdjson('textos-artigos.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error)),
     readNdjson('fontes-alternativas.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error)),
+    readNdjson('triagem-fontes-alternativas.ndjson').catch((error) => error.code === 'ENOENT' ? [] : Promise.reject(error)),
   ]);
   const state = JSON.parse(await readFile(path.join(root, 'state', 'news-state.json'), 'utf8'));
   const [eventColumns, actColumns, consortiumColumns, participationColumns, linkColumns, pendingColumns] = await Promise.all(
@@ -561,7 +586,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const sourceConfig = JSON.parse(await readFile(path.join(root, 'config', 'default.json'), 'utf8'));
   const geographyReviews = JSON.parse(await readFile(path.join(catalog, 'ufs-revisadas.json'), 'utf8'));
   const data = buildDashboardData({ archive, acts, events, consortia, links, pendingIdentity,
-    editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
+    editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts, alternativeDecisions, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
     sourceConfig, geographyReviews,
     baseTables: [
       makeBaseTable('eventos', events, eventColumns),
