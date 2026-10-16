@@ -5,6 +5,11 @@ on:
     - cron: '37 3 * * *'
       timezone: America/Sao_Paulo
   workflow_dispatch:
+    inputs:
+      ids:
+        description: IDs completos separados por vírgula (vazio = recuperação normal)
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -17,6 +22,8 @@ jobs:
   recuperar:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    env:
+      RECOVERY_IDS: ${{ inputs.ids || '' }}
     outputs:
       catalog_changed: ${{ steps.persist.outputs.changed }}
     steps:
@@ -39,14 +46,32 @@ jobs:
           cache-dependency-path: requirements-extraction.txt
       - name: Instalar Trafilatura
         run: python -m pip install -r requirements-extraction.txt
+      - name: Testes de regressão
+        run: npm test
+      - name: Registrar invariantes antes da recuperação
+        run: node scripts/check-recovery-safety.mjs --before
+      - name: Recuperar casos específicos sem classificar nem enviar
+        if: env.RECOVERY_IDS != ''
+        shell: bash
+        run: |
+          if ! [[ "$RECOVERY_IDS" =~ ^[a-f0-9]{64}(,[a-f0-9]{64})*$ ]]; then
+            echo "IDs inválidos"; exit 1
+          fi
+          node scripts/backfill-article-text.mjs --ids="$RECOVERY_IDS" --force --include-sent --apply
       - name: Recuperar até 20 textos sem enviar ao WhatsApp
+        if: env.RECOVERY_IDS == ''
         run: node scripts/backfill-article-text.mjs --limit=20 --apply
       - name: Recuperar até 20 títulos antigos do Google Notícias
+        if: env.RECOVERY_IDS == ''
         run: node scripts/backfill-article-text.mjs --title-only-google --retry-failed --limit=20 --apply
       - name: Localizar prova por página em até 10 PDFs antigos
+        if: env.RECOVERY_IDS == ''
         run: node scripts/backfill-google-pdfs.mjs --retry-failed --limit=10 --apply
       - name: Atualizar sugestões sem publicar automaticamente
+        if: env.RECOVERY_IDS == ''
         run: node scripts/review-recovered-texts.mjs --apply
+      - name: Verificar que não duplicou nem alterou envios ou revisões
+        run: node scripts/check-recovery-safety.mjs
       - name: Guardar resultados na base
         id: persist
         shell: bash

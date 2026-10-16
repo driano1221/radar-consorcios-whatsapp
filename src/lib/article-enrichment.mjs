@@ -5,6 +5,10 @@ import { normalizeWhitespace } from './text.mjs';
 import { classifyItem } from './classifier.mjs';
 import { readWithReadability, readWithTrafilatura } from './article-readers.mjs';
 import { sourcePublicationDate } from './publication-date.mjs';
+import { setDefaultResultOrder } from 'node:dns';
+
+// Prefer IPv4 where both families exist; never disable TLS or solve challenges.
+setDefaultResultOrder('ipv4first');
 
 const { GoogleDecoder } = googleNewsDecoder;
 const decoder = new GoogleDecoder();
@@ -78,10 +82,24 @@ async function bounded(promise, milliseconds) {
   } finally { clearTimeout(timer); }
 }
 
+export function isChallengePage(html) {
+  const $ = cheerio.load(html);
+  if (/^(?:just a moment|attention required|verifica[cç][aã]o de seguran[cç]a)/i.test($('title').text().trim())) return true;
+  if ($('#challenge-form, #challenge-running, #cf-challenge-running').length) return true;
+  const hasChallengeScript = /cf-chl-|challenge-platform/i.test(html);
+  $('script, style, noscript, nav, header, footer').remove();
+  const visible = normalizeWhitespace($('body').text());
+  if (/checking your browser before accessing|verify you are human|verifique que voc[eê] [eé] humano/i.test(visible)) return true;
+  // Cloudflare can append passive JS detection to a complete, accessible article.
+  // That script alone is NOT a challenge. We never execute it or solve CAPTCHA.
+  return hasChallengeScript && visible.length < 250;
+}
+
 async function fetchPublicHtml(url, fetchImpl) {
   let current = url;
   for (let hop = 0; hop < 4; hop += 1) {
-    const response = await fetchWithRetry(current, { fetchImpl, timeoutMs: 10000, retries: 0,
+    const response = await fetchWithRetry(current, { fetchImpl, timeoutMs: 10000, retries: 1,
+      maxRetryWaitMs: 5000,
       redirect: 'manual', headers: { 'user-agent': 'RadarConsorciosIPEA/0.2 (+pesquisa acadêmica)' } });
     if (![301, 302, 303, 307, 308].includes(response.status)) return response;
     const next = publicHttpUrl(new URL(response.headers.get('location') || '', current).href);
@@ -92,7 +110,8 @@ async function fetchPublicHtml(url, fetchImpl) {
 }
 
 export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) => decoder.decode(url),
-  readability = readWithReadability, trafilatura = readWithTrafilatura, onFailure = () => {} } = {}) {
+  readability = readWithReadability, trafilatura = readWithTrafilatura, onFailure = () => {},
+  onResolved = () => {} } = {}) {
   if (!lacksArticleText(item) || item.kind === 'gazette') return item;
   let articleUrl = canonicalArticleUrl(item.url);
   if (!articleUrl) { onFailure(item, 'url_invalida'); return item; }
@@ -101,6 +120,7 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
     articleUrl = canonicalArticleUrl(result?.decoded_url);
     if (!result?.status || !articleUrl) { onFailure(item, 'google_news_nao_resolvido'); return item; }
   }
+  onResolved(item, articleUrl);
   if (/\.pdf(?:$|\?)/i.test(articleUrl)) { onFailure(item, 'destino_pdf'); return item; }
   const response = await fetchPublicHtml(articleUrl, fetchImpl);
   if (!response?.ok) { onFailure(item, `http_${response?.status || 'sem_resposta'}`); return item; }
@@ -111,8 +131,7 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   if (html.length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
   // Alguns portais devolvem HTTP 200 para uma tela de desafio, não para a notícia.
   // Não a tratar como extração vazia nem tentar contornar a verificação.
-  if (/<title>\s*(?:just a moment|attention required|verifica[cç][aã]o de seguran[cç]a)/i.test(html) ||
-    /(?:cf-chl-|challenge-platform|checking your browser before accessing)/i.test(html)) {
+  if (isChallengePage(html)) {
     onFailure(item, 'bloqueio_antibot'); return item;
   }
   const publication = sourcePublicationDate(html);
