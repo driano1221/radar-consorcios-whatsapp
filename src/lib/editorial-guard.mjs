@@ -42,6 +42,12 @@ export async function loadEditorialGuard(directory) {
     if (['confirmar_evento', 'corrigir_categoria'].includes(review.decisao) && !EMOJI[review.categoria]) continue;
     if (createHash('sha256').update(row.trecho || '').digest('hex') !== review.trecho_sha256) continue;
     guard.set(canonicalUrl(row.url), review);
+    // Only explicit URLs from an approved historical batch; never wildcard a host.
+    if (review.lote_retroativo && review.publicar === false) {
+      for (const url of review.urls_documento || []) {
+        if (/^https:\/\//.test(url) && !guard.has(canonicalUrl(url))) guard.set(canonicalUrl(url), review);
+      }
+    }
   }
   for (const id of splitParents) {
     const row = byId.get(id);

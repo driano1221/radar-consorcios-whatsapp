@@ -14,7 +14,7 @@ import { loadAlternativeDecisionData, validAlternativeDecision, applyAlternative
 const FIELDS = [
   'id', 'documento_pai_id', 'chave_ato', 'pagina_inicio', 'pagina_fim',
   'primeira_coleta', 'ultima_coleta', 'data_publicacao', 'tipo_evento',
-  'data_noticia_original', 'data_fato', 'mes_fato', 'decisao_base', 'decisao_alerta', 'motivo_alerta',
+  'data_noticia_original', 'data_fato', 'mes_fato', 'ano_fato', 'decisao_base', 'decisao_alerta', 'motivo_alerta',
   'etapa', 'situacao_analise', 'efeito_na_participacao', 'tipo_documento',
   'consorcio', 'sigla', 'municipio', 'uf', 'abrangencia', 'titulo', 'fonte', 'url',
   'trecho', 'pontuacao', 'revisao_ia', 'enviado_em',
@@ -332,6 +332,13 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
       data_noticia_original: /^\d{4}-\d{2}-\d{2}$/.test(review.fatos?.data_publicacao_original || '')
         ? `${review.fatos.data_publicacao_original}T12:00:00Z` : row.data_noticia_original || '',
       revisao_editorial: review };
+      if (review.lote_retroativo) result = { ...result,
+        titulo: review.titulo || result.titulo, ano_fato: review.fatos?.ano || '',
+        consorcio: review.fatos?.consorcio || result.consorcio,
+        sigla: review.fatos?.sigla || result.sigla, municipio: review.fatos?.municipio || result.municipio,
+        uf: review.fatos?.uf || result.uf, tipo_documento: review.fatos?.tipo_documento || result.tipo_documento,
+        evidencia_triagem: review.evidencia, fonte_evidencia_triagem: review.fonte_evidencia,
+        metodo_triagem: 'revisão retroativa validada pelo usuário' };
       if (review.fatos?.identidade_nao_aplicavel) result = { ...result,
         consorcio: '', sigla: '', municipio: '', uf: '', abrangencia: review.fatos.abrangencia || 'nacional' };
     }
@@ -360,7 +367,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     };
     // O arquivo bruto mantém inclusive envios antigos, mas uma data de indexação
     // recente não deve transformá-los em eventos atuais nas tabelas derivadas.
-    if (isStaleLegislativeDocument({ kind: 'news', title: row.titulo,
+    if (!(reviewStillMatches(row) && decisions.get(row.id)?.lote_retroativo && decisions.get(row.id)?.publicar === false) && isStaleLegislativeDocument({ kind: 'news', title: row.titulo,
       publishedAt: result.data_noticia_original || row.data_publicacao })) {
       return { ...result, tipo_evento: 'GERAL',
         situacao_analise: reviewStillMatches(row) && decisions.get(row.id)?.decisao === 'nao_evento'
@@ -433,7 +440,8 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     });
     if (new Set(matching.map((link) => link.consorcio_id)).size !== 1) continue;
     const consortiumId = matching[0].consorcio_id;
-    const year = /^\d{4}/.exec(row.data_publicacao || '')?.[0] || '';
+    const year = review.lote_retroativo && /^\d{4}$/.test(String(facts.ano || ''))
+      ? String(facts.ano) : /^\d{4}/.exec(row.data_publicacao || '')?.[0] || '';
     if (!year) continue;
     const key = `${consortiumId}:${facts.municipio.toLocaleLowerCase('pt-BR')}`;
     const prior = participantByKey.get(key);

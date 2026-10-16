@@ -1,6 +1,6 @@
 # Piloto retroativo de dez registros — 16/10/2026
 
-Status: validado em ambiente isolado; **não aplicado à base nem ao restante do acervo**. Branch `fix/amm-triage-recovery`.
+Status atualizado: **os dez foram aplicados após autorização do usuário em 16/10/2026**. O restante não foi ampliado. Ver [aplicação, proteções e inventário](REVISAO-RETROATIVA-APLICADA-2026-10-16.md). As seções abaixo preservam o histórico do piloto isolado.
 
 ## Resultado
 
@@ -46,6 +46,6 @@ Validação final com as regras corrigidas: [Actions 38943846430](https://github
 
 ## Limites e próximo passo
 
-O usuário pediu o antes/depois antes de expandir. Mostrar o relatório, confirmar a proposta e só então planejar aplicação controlada desses dez e expansão. A futura aplicação deve atualizar o mesmo ID, preservar decisão anterior/evidência e bloquear tanto alerta diário quanto resumo semanal para históricos. Não converter as propostas deste piloto em revisões humanas já aprovadas.
+O usuário pediu o antes/depois antes de expandir e, posteriormente, autorizou aplicar apenas os dez. A aplicação controlada preservou os IDs, os originais e as evidências e bloqueou alertas diários e semanais. A ampliação permanece pendente de decisão; o inventário não é autorização para revisar o restante.
 
 Neste lote, recuperaram-se os **PDFs originais**, não fontes jornalísticas alternativas. O piloto não mede a precisão geral da correspondência entre notícias de sites diferentes e não comprova triagem perfeita de todo o acervo.

@@ -71,7 +71,7 @@ test('fatos históricos confirmados ficam na base, mas não voltam à fila como 
   ]);
   const byId = new Map(archive.map((row) => [row.id, row]));
   const guard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
-  const withheld = reviews.filter((review) => review.publicar === false);
+  const withheld = reviews.filter((review) => review.publicar === false && review.decisao === 'confirmar_evento');
   assert.ok(withheld.length >= 3);
   assert.ok(withheld.some((review) => review.documento_id === '2c093a1ef9c6e2f74c3d4cb97872cd433b097f62146e0fcb83b420ed99dc82b4'),
     'a assembleia futura do CONIAPE deve ficar na base, sem alerta');

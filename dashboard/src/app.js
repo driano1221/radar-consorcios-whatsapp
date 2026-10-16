@@ -24,6 +24,9 @@ function formatCnpj(value) {
   return digits.length === 14
     ? digits.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5') : '';
 }
+function publicationLabel(item) {
+  return item.publishedYear ? `Ano do documento: ${item.publishedYear}` : `Publicado em: ${date(item.publishedAt)}`;
+}
 function safeUrl(value) {
   try { const url = new URL(value); return /^https?:$/.test(url.protocol) ? url.href : ''; }
   catch { return ''; }
@@ -146,7 +149,7 @@ function renderDeck() {
     body.append(node('strong', '', displayTitle(item)), node('small', '', item.source || 'Fonte não informada'));
     const dates = node('span', 'overview-dates');
     dates.append(node('small', '', 'Coletado em'), node('time', '', date(item.firstSeenAt)),
-      node('small', '', 'Publicado em'), node('time', '', date(item.publishedAt)));
+      node('small', '', item.publishedYear ? 'Ano do documento' : 'Publicado em'), node('time', '', item.publishedYear || date(item.publishedAt)));
     row.append(dates, body,
       node('span', `overview-verdict ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'));
     row.addEventListener('click', () => {
@@ -211,7 +214,7 @@ function renderOverviewDetail(item) {
   actions.append(back);
   panel.replaceChildren(head, node('h3', '', displayTitle(item)),
     node('p', 'overview-source', item.source || 'Fonte não informada'),
-    node('p', 'overview-date-summary', `Publicado em: ${date(item.publishedAt)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
+    node('p', 'overview-date-summary', `${publicationLabel(item)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
     why, proof, actions);
   const recovery = recoveredSourcesView(item, { document, date, compact: true });
   if (recovery) panel.append(recovery);
@@ -231,7 +234,7 @@ function feedRow(item, index, selected, onClick) {
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
   body.append(top, node('strong', '', displayTitle(item)),
-    node('small', 'publication-date', `Publicado em ${date(item.publishedAt)}`), bottom);
+    node('small', 'publication-date', publicationLabel(item)), bottom);
   button.append(node('span', 'item-number', String(index + 1).padStart(2, '0')), body);
   button.addEventListener('click', onClick);
   return button;
@@ -279,7 +282,7 @@ function renderDetailedRecord(item, target) {
     ...(item.eventAt ? [['DATA DO FATO', date(item.eventAt)]] : []),
     ...(item.eventMonth ? [['MÊS DO FATO', item.eventMonth.slice(5) + '/' + item.eventMonth.slice(0, 4)]] : []),
     ...(item.originalPublishedAt ? [['DATA NA FONTE ORIGINAL', date(item.originalPublishedAt)]] : []),
-    [item.publishedDateSource === 'url_edicao' ? 'DATA DA EDIÇÃO' : 'PUBLICADO EM', date(item.publishedAt)],
+    [item.publishedYear ? 'ANO DO DOCUMENTO' : item.publishedDateSource === 'url_edicao' ? 'DATA DA EDIÇÃO' : 'PUBLICADO EM', item.publishedYear || date(item.publishedAt)],
     ['PRIMEIRA COLETA', date(item.firstSeenAt, true)],
     ['ENCONTRADO PELA ÚLTIMA VEZ', date(item.lastSeenAt, true)],
     ['WHATSAPP', item.sentAt ? `Enviado em ${date(item.sentAt, true)}` : 'Não foi enviado'],
@@ -457,7 +460,7 @@ function detail(item, target) {
   const fullBody = node('div'); fullBody.id = 'detail-full-record'; full.append(fullBody);
   panel.replaceChildren(intro, node('h3', 'detail-head', displayTitle(item)),
     node('p', 'readable-meta', item.source || 'Fonte não informada'),
-    node('p', 'overview-date-summary', `Publicado em: ${date(item.publishedAt)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
+    node('p', 'overview-date-summary', `${publicationLabel(item)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
     decision, proof, alert, ...(siblings ? [siblings] : []), actions,
     ...[recoveredSourcesView(item, { document, date })].filter(Boolean), full);
   renderDetailedRecord(item, '#detail-full-record');
@@ -552,7 +555,7 @@ function renderConsortia() {
   panel.append(label(`Linha do tempo documental (${docs.length})`));
   for (const item of docs) {
     const entry = node('div', 'identity-row');
-    entry.append(node('strong', '', `${item.publishedAt ? date(item.publishedAt) : `Coletado em ${date(item.firstSeenAt)}`} · ${item.category}`),
+    entry.append(node('strong', '', `${item.publishedYear || (item.publishedAt ? date(item.publishedAt) : `Coletado em ${date(item.firstSeenAt)}`)} · ${item.category}`),
       node('small', '', `${item.activeCandidate ? 'Achado na lista' : item.rejectedEvent ? 'Rejeitado' : item.legacyUnverified ? 'Legado pendente' : 'Arquivo bruto'} · ${item.source || 'Fonte não informada'}`),
       link(item.title, item.url));
     panel.append(entry);

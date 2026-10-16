@@ -74,6 +74,7 @@ const COLUMN_DOCS = {
   data_noticia_original: 'Data publicada na página original, quando recuperada.',
   data_fato: 'Data exata do acontecimento, somente quando comprovada.',
   mes_fato: 'Mês do acontecimento quando o dia exato não foi comprovado.',
+  ano_fato: 'Ano comprovado no documento revisado; não presume dia, mês nem ano de ingresso.',
   tipo_evento: 'Categoria atribuída ao acontecimento ou hipótese de triagem.',
   decisao_base: 'Situação do fato para o catálogo: confirmado, candidato ou descartado.',
   decisao_alerta: 'Situação do envio ao WhatsApp; pode diferir da decisão da base.',
@@ -100,9 +101,9 @@ const COLUMN_DOCS = {
   url_evidencia: 'Endereço do documento que sustenta o vínculo.',
   trecho: 'Excerto guardado pelo radar; não é necessariamente o texto integral.',
   evidencia: 'Trecho ou descrição específica que sustenta a decisão.',
-  evidencia_triagem: 'Trecho literal da fonte alternativa usado pela triagem automática; não é texto do original.',
-  fonte_evidencia_triagem: 'URL da fonte alternativa que fundamentou a decisão automática.',
-  metodo_triagem: 'Método usado na decisão: regras e revisão automática, não validação humana.',
+  evidencia_triagem: 'Trecho da fonte que sustenta a decisão; confira o método e o endereço para distinguir original, alternativa e revisão humana.',
+  fonte_evidencia_triagem: 'URL da fonte que fundamentou a decisão, com página quando disponível.',
+  metodo_triagem: 'Indica se a decisão veio de regras automáticas, fonte alternativa ou revisão retroativa validada.',
   nome_mencionado: 'Nome do consórcio como aparece neste documento.',
   sigla_mencionada: 'Sigla do consórcio como aparece neste documento.',
   cnpj_mencionado: 'CNPJ citado no documento; não significa associação já validada.',
@@ -161,6 +162,7 @@ function comparableText(value) {
 }
 
 function publicationDate(row, review = null) {
+  if (review?.fatos?.precisao_data === 'ano') return '';
   if (review?.fatos?.data_publicacao_nao_comprovada) return '';
   const verified = review?.fatos?.data_publicacao_original;
   if (/^\d{4}-\d{2}-\d{2}$/.test(verified || '')) return `${verified}T12:00:00Z`;
@@ -286,9 +288,10 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const decision = decisions[row.id] || null;
     const curated = eventById.get(row.id);
     const inEvents = Boolean(curated);
-    const stale = isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: publicationDate(row) });
     const review = isSplitParent ? null : reviewById.get(row.id);
     const reviewValid = review?.trecho_sha256 === createHash('sha256').update(row.trecho || '').digest('hex');
+    const stale = !(reviewValid && review.lote_retroativo && review.publicar === false) &&
+      isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: publicationDate(row) });
     // Um ato antigo continua fora de eventos atuais, mas a revisão que explica
     // por que ele foi descartado deve permanecer visível ao usuário.
     const appliedReview = reviewValid ? review : null;
@@ -331,7 +334,9 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
         : ruleReclassified ? [decision?.reason, row.situacao_analise].filter(Boolean).join(' ') :
           decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
     return {
-      id: row.id, title: row.titulo, source: sourceName(row),
+      id: row.id, title: appliedReview?.titulo || row.titulo, source: sourceName(row),
+      originalTitle: appliedReview?.titulo ? row.titulo : '',
+      publishedYear: appliedReview?.fatos?.precisao_data === 'ano' ? appliedReview.fatos.ano : null,
       documentParentId: row.documento_pai_id || '',
       relatedActs: actsByParent.get(row.documento_pai_id || row.id) || [],
       actPage: isAct ? Number(row.pagina_inicio) : null,
@@ -375,11 +380,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
         : pdfReassessment ? pdfProof.stage : appliedReview?.etapa || curated?.etapa || row.etapa,
       analysis: inEvents ? curated.situacao_analise : stale ? 'triagem: ato antigo' : row.situacao_analise,
       documentType: curated?.tipo_documento || row.tipo_documento,
-      evidence: pdfReassessment ? pdfProof.evidenceText : curated?.trecho || row.trecho,
+      evidence: pdfReassessment ? pdfProof.evidenceText : appliedReview?.evidencia || curated?.trecho || row.trecho,
       pdfEvidence,
       pdfEvidenceUrl: isAct ? row.url : recovered?.url_pdf || recovered?.url || '',
       pdfReassessment: Boolean(pdfReassessment),
-      contentQuality: contentQuality(row.titulo, curated?.trecho || row.trecho),
+      contentQuality: contentQuality(row.titulo, articleText?.texto || curated?.trecho || row.trecho),
       fullText: articleText?.texto || '', fullTextReader: articleText?.leitor || '',
       originalReading: articleText ? { url: articleText.url_artigo || row.article_url || row.url,
         recoveredAt: articleText.recuperado_em || '', reader: articleText.leitor || '',

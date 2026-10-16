@@ -1,0 +1,25 @@
+name: Validar lote histórico sem envios
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: node scripts/apply-retroactive-ten.mjs --apply
+      - run: node scripts/inventory-retroactive-backlog.mjs
+      - run: npm run dashboard:build:public
+      - run: node scripts/check-public-dashboard.mjs
+      - name: Confirmar aplicação idempotente e estado de envio intacto
+        if: always()
+        run: git diff --exit-code HEAD -- data state

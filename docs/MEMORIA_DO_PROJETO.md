@@ -4,7 +4,15 @@ Atualização mais recente: **16 de outubro de 2026**. As primeiras seções sã
 
 Este documento registra o contexto, as decisões e o estado operacional do projeto para que o trabalho possa ser retomado sem depender do histórico da conversa. Ele não contém telefone, ID do grupo, senha ou material de autenticação aberto.
 
-## Piloto retroativo de dez antigos — 16/10/2026 (somente branch de teste)
+## Aplicação autorizada dos dez históricos — 16/10/2026
+
+- Usuário aprovou os dez, atualização do painel e inventário antes de ampliar. Aplicados **5 aceites, 3 descartes e 2 duplicatas**, sem alterar os 1.946 originais nem o estado de envio. Painel: **110 confirmados**, antes 105. Dez textos integrais preservados com páginas/hash.
+- Novos testes cobrem ausência de duplicação, prova literal e bloqueio dos links Google e PDFs diretos em alertas/resumo. 383 testes Node passaram; aplicação repetida foi no-op. Ano comprovado mostrado separado da primeira coleta; CISVAP com evidência 2025 e ingresso desconhecido.
+- **13 registros restantes com lacuna registrada**: 1 do grupo original, 2 descartados explicitamente por falta de texto e 10 com outras recuperações incompletas. São URLs, não fatos nem episódios únicos. Recomenda-se priorizar 9; quatro têm sinais temáticos de descarte. Não ampliado. Ver [relatório de aplicação e lista dos 13](REVISAO-RETROATIVA-APLICADA-2026-10-16.md).
+- `scripts/apply-retroactive-ten.mjs` só aplica o lote fixo aprovado; nova execução não grava. `scripts/inventory-retroactive-backlog.mjs` só lê. O corte temporal da triagem automática permanece intacto.
+- A seção de piloto abaixo é histórica e foi superada pela autorização acima, não indica pendência de aplicação destes dez.
+
+## Piloto retroativo de dez antigos — 16/10/2026 (histórico anterior à aplicação)
 
 - Pedido: recuperar dez antigos e mostrar antes/depois antes de ampliar, sem duplicar nem reenviar. Os dez IDs foram congelados; nenhum tinha revisão humana ou envio. Proposta: **5 aceites únicos, 3 descartes justificados, 2 duplicatas**. Ver [relatório do piloto](PILOTO-RETROATIVO-10-2026-10-16.md).
 - Recuperados os PDFs originais: 62 ocorrências de páginas (56 únicas), 11 com OCR. Não confundir com validação genérica da busca de fontes jornalísticas alternativas. Vargem Alta abriu localmente, mas deu 403 no Actions; recuperação desse arquivo não resolve acesso contínuo no runner.
