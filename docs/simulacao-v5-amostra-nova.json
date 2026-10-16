@@ -1,0 +1,116 @@
+{
+  "version": "original-shadow-5.0",
+  "selectedBeforeAi": true,
+  "seed": "v5-new-text",
+  "caveat": "Textos fora dos 94 anteriores; positivos podem ter revisão editorial e episódios conhecidos. Não é holdout independente de decisões humanas.",
+  "cases": [
+    {
+      "id": "6816037279c26f44c5a61bccdde19512d21f267870fcc3a029703630559c1a68",
+      "textHash": "c66827136d702ced2c1377dea64c5c47c759de839988e9e3aa9af5b788b22689",
+      "inputHash": "f9b80bb6633f78c688ceaaf6addea45be6e0cd8fd1836d5b09e70c1c2e75ccb6",
+      "title": "Consórcio ABC e Metodista firmam parceria para até mil bolsas de estudo para estudantes de baixa renda - Portal Opinião Publica",
+      "url": "https://www.portalopiniaopublica.com.br/noticia/14349/consorcio-abc-e-metodista-firmam-parceria-para-ate-mil-bolsas-de-estudo-para-estudantes-de-baixa-renda.html",
+      "rule": "ATUAÇÃO",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "cea72684cd8fbc51576e30d661d687d68f16639fa83c83d5d0b8f4e5cdfb115f",
+      "textHash": "9c0a7c3a6f0fdf20d7f4672ca688663f489bfff24b86460b3f57147cb7a3bc1c",
+      "inputHash": "fc797e39e0b64451b289329ffdc398ef18ad5444c268b1677ad852f895aba99a",
+      "title": "Consórcio ABC E Instituto Metodista Firmam Acordo Para Oferecer Até 1.000 Bolsas - abcagora.com.br",
+      "url": "https://abcagora.com.br/2026/09/15/consorcio-abc-metodista-bolsas-estudo-2/",
+      "rule": "ATUAÇÃO",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "a2abb2acfc15838aefcc78789a39eb9b3bf34cac36f29420e8a174a264394993",
+      "textHash": "af182f8452245094586ba32d24a29bb7ba9fe422d9f26073ec9f3fa12effb8dd",
+      "inputHash": "02a3e9e37530201fbc1d6b9a4289b6d0242a8b9920e046fc08120d247744404c",
+      "title": "Promotorias cobram solução para crise em hospital regional - oroncador.com.br",
+      "url": "https://oroncador.com.br/noticia/promotorias-cobram-solucao-para-crise-em-hospital-regional-2",
+      "rule": "CONTROLE",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "fb3492e1d1e8371a564a556207a4d273a3da35f49dfd9b93740d1ebcb798d24f",
+      "textHash": "db1b1b8b289a1bf9a1093ae6b8248e7e16737b6a9221a213001dae7f37f1ff8d",
+      "inputHash": "a92f928a34cf04a995d8dc1ff7180d626de45240e64cbf2aef560af8f59e5635",
+      "title": "Projeto de Lei nº 11/2026 - passodetorres.sc.leg.br",
+      "url": "https://www.passodetorres.sc.leg.br/tramitacoes/2/6359/0",
+      "rule": "GOVERNANÇA",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "c356dc0f6cb47c2f0ea76181f24dc7d75ff40e3601af5f79b06c003a6046c261",
+      "textHash": "b245a52a333e5388c24e0194c7a196beb6ecd3cb02b111d6bfb4bb66bfef5699",
+      "inputHash": "0879ba10feadb500735eb9ef0e446cffcb8f319c1b7b755083335287952c8476",
+      "title": "Lei nº 2.209, de 10 de setembro de 2026 - sapl.juina.mt.leg.br",
+      "url": "https://sapl.juina.mt.leg.br/norma/2320",
+      "rule": "GOVERNANÇA",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "30f0fad5ec941d4d459701b873cbbc55a58d01be94aafbc54b264a08ffa510bd",
+      "textHash": "186d06c449ba1ea9d3e39723a7178bd8902d2427db69406862018b53e6cd4352",
+      "inputHash": "760a3b14b65b2a3adce414db027d5d0b9b7c82d4c004d002a0a819dc0a816aaf",
+      "title": "Ministério Público cobra retomada de cirurgias em hospital de Peixoto e prevê ação judicial - sonoticias.com.br",
+      "url": "https://www.sonoticias.com.br/geral/ministerio-publico-cobra-retomada-de-cirurgias-em-hospital-de-peixoto-e-preve-acao-judicial/",
+      "rule": "CONTROLE",
+      "hadEditorialReview": true
+    },
+    {
+      "id": "74349ed98ea0f264c083a9e3a569b0b7b17df02d343c157bc7021aed66a5bfd2",
+      "textHash": "2f95ba2e01250d5b5e2587731e7e43398bb335a1c1964cafcde8c40294e89b34",
+      "inputHash": "4d9e408ed98ada888c33b776950c7571f6d3a2c799b91a3be6ea4119bd33c909",
+      "title": "Notícia - Nota de pesar - Consórcio Intermunicipal - Grande ABC",
+      "url": "https://consorcioabc.sp.gov.br/noticia/6147/nota-de-pesar/",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "a1c4447613fdbc678271bd87933346f9568a1071c02c0205c07aeda8bb912e80",
+      "textHash": "e612a7e4e2239ef8567398813207921b1a030c2b96fc4f71d75559ea2ff1930e",
+      "inputHash": "f78a853ccad4cf726ff0c68aded5c88f2f10a01fc9563c8d6224db5c8a87385c",
+      "title": "Detalhes do Acórdão - 6678/2014 - Primeira Câmara - viajuris.tce.pr.gov.br",
+      "url": "https://viajuris.tce.pr.gov.br/Pesquisa/Visualizar/6678/2014/ACO/S1C",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "10ed23f60a8b07438bd24129902ecff6ac505b3ec5cb0a42b58d48bfe6cf94a6",
+      "textHash": "0bd3a973d21712c43e6ded67367ea59ad5049ae6e00b9e9a351cc7bf3453b389",
+      "inputHash": "5ba69d8dc82f8379075c1f981afb0a1dd9d632fb5476af91b33c1545afec9352",
+      "title": "PORTARIA N° 039 de 13 de outubro de 2026",
+      "url": "https://amm.diariomunicipal.org/publicacao/1926802/",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "48c62f9780d1a165bfdf0cbd2e86327763b1405762548383e10beb060c219ada",
+      "textHash": "6ac3406a5c0e6956510d6aede6f14ba66c881d4c07d1f6069bd618323315e9fb",
+      "inputHash": "4e32b7ce899fd68b7bb5456b86f821461f643f5822953158b2c8c4a0ccf13041",
+      "title": "TSE forma maioria para manter retirada de posts sobre Nossa Senhora",
+      "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-09/tse-forma-maioria-para-manter-retirada-de-posts-sobre-nossa-senhora",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "6de40280218d744e7e26724a285e24e34ae9f6d9819eb295352c235468dbdb03",
+      "textHash": "82f63205e5145ef09c532379db41ba7732d6438aeb6a1e93c059874fc7037701",
+      "inputHash": "224f255f31915d0782d2aea155d55ad1c18a8e50de18c68fb4c43d6e3872f0a4",
+      "title": "SEGUNDA NOTIFICAÇÃO POR DESCUMPRIMENTO DE OBRIGAÇÃO CONTRATUAL",
+      "url": "https://amm.diariomunicipal.org/publicacao/1926382/",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    },
+    {
+      "id": "a40ed22397bef30adbc786d4bb9b968eb9bdd89e049a8388fad0bad80e8cdece",
+      "textHash": "9be5e2df353adb867134a64a21f4226d41d68dfff87a26800b2087c6048ac126",
+      "inputHash": "f195c0c9422bb6eb834cee3a0cc163002123509787796eb75d51060f56b530d8",
+      "title": "CONSÓRCIO INTERMUNICIPAL DE MULHERES DAS GERAIS - RibeiraoDasNeves.net",
+      "url": "https://ribeiraodasneves.net/component/tags/tag/1976-consorcio-intermunicipal-de-mulheres-das-gerais",
+      "rule": "GERAL",
+      "hadEditorialReview": false
+    }
+  ]
+}

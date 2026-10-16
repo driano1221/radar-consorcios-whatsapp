@@ -57,7 +57,7 @@ Regras de leitura:
 Responda JSON: {"incerto":boolean,"multiplos_atos":boolean,"atos_independentes":["trechos literais dos atos autônomos, vazio se não houver"],"relevante":boolean,"categoria":"CRIAÇÃO|ADESÃO|ADESÃO AUTORIZADA|SAÍDA|SAÍDA AUTORIZADA|RATEIO|RATEIO EM TRAMITAÇÃO|PROTOCOLO|GOVERNANÇA|CONTROLE|CRISE|ATUAÇÃO|FINANÇAS|COOPERAÇÃO AUTORIZADA|IRRELEVANTE","evidencia":"trecho CONTÍGUO literal do CORPO com pelo menos 25 caracteres que prova o FATO, não apenas o nome da entidade","justificativa":"motivo e etapa do fato, sem extrapolar a evidência","escopo":"entidade|orientacao_geral|fora_escopo","entidade":"copie literalmente o nome OU sigla no corpo, sem acrescentar abreviaturas ou reconstruir grafia; vazio para orientação geral/descarte","evidencia_entidade":"trecho CONTÍGUO literal do CORPO identificando o consórcio público; vazio se não aplicável"}.
 Se não houver prova suficiente, use incerto=true. TAMBÉM PARA DESCARTES, preencha evidencia com uma frase literal que demonstre a natureza do conteúdo descartado, nunca deixe vazio. Não decida duplicidade externa: você só lê um documento. Não recebe a classificação da regra nem a resposta editorial; faça sua própria leitura.`;
 
-export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch} = {}) {
+export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch, additionalPolicy = '', policyVersion = VERSION} = {}) {
   if (!prepared.eligible || !apiKey) throw new Error('Simulação requer texto elegível e chave configurada.');
   // Full body only: identical republications receive exactly the same input.
   // Original URLs/titles remain in each document's binding, not the shared call.
@@ -66,12 +66,12 @@ export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch} = {})
     method: 'POST', headers: {authorization: `Bearer ${apiKey}`, 'content-type': 'application/json'},
     body: JSON.stringify({model: 'deepseek-flash', thinking: {type: 'disabled'},
       response_format: {type: 'json_object'}, max_tokens: 1400,
-      messages: [{role: 'system', content: INSTITUTIONAL_REVIEW_POLICY+'\n'+SYSTEM+FACT_INSTRUCTIONS+EXTRA_POLICY}, {role: 'user', content: JSON.stringify(input)}]}),
+      messages: [{role: 'system', content: INSTITUTIONAL_REVIEW_POLICY+'\n'+SYSTEM+FACT_INSTRUCTIONS+EXTRA_POLICY+additionalPolicy}, {role: 'user', content: JSON.stringify(input)}]}),
     signal: AbortSignal.timeout(45000),
   });
   if (!response.ok) throw new Error(`DeepSeek HTTP ${response.status}`);
   const payload = await response.json();
-  return {version: VERSION, inputHash: prepared.inputHash, textHash: prepared.textHash, contentReviewKey:contentReviewKey(prepared),
+  return {version: policyVersion, inputHash: prepared.inputHash, textHash: prepared.textHash, contentReviewKey:sha(policyVersion+'\n'+prepared.item.rawText),
     model: 'deepseek-flash', usage: payload.usage || {},
     answer: JSON.parse(payload.choices?.[0]?.message?.content || '{}')};
 }
