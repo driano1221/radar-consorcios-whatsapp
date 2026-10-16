@@ -30,7 +30,8 @@ export function dashboardAlternatives(documentId, rows, review, automaticReview 
       discovery: row.origem_descoberta === 'acervo' ? 'Acervo já guardado' : 'Busca de outra fonte',
       excerpt: textPreview(row.texto), fullText: row.texto, textHash: row.texto_sha256,
       independence: row.independencia || 'Independência da fonte não verificada.',
-      relation: automatic ? automaticReview.checks.find(c => c.sourceId === row.id)?.correspondenceReason || automaticReview.correspondenceReason
+      relation: cited && row.relacao_validada ? row.relacao_validada
+        : automatic ? automaticReview.checks.find(c => c.sourceId === row.id)?.correspondenceReason || automaticReview.correspondenceReason
         : row.comparacao?.shared?.length
         ? `Encontrada por termos em comum no título: ${row.comparacao.shared.join(', ')}. Isso não comprova que seja o mesmo episódio.`
         : 'Texto relacionado para conferência; equivalência com a publicação original não comprovada.',

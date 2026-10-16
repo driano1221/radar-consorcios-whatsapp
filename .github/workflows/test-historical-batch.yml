@@ -6,7 +6,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -14,12 +14,25 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-extraction.txt
       - run: npm run check
       - run: npm test
       - run: node scripts/apply-retroactive-ten.mjs --apply
+      - run: node scripts/apply-historical-thirteen.mjs --apply
       - run: node scripts/inventory-retroactive-backlog.mjs
       - run: npm run dashboard:build:public
       - run: node scripts/check-public-dashboard.mjs
+      - name: Conferir quatro leituras reais sem tocar no acervo
+        run: node scripts/validate-historical-readers.mjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: historical-readers
+          path: output/historical-readers/
+          retention-days: 7
       - name: Confirmar aplicação idempotente e estado de envio intacto
         if: always()
         run: git diff --exit-code HEAD -- data state

@@ -54,10 +54,37 @@ function extractTceMgText(html) {
   return normalizeWhitespace(body.text());
 }
 
-async function readHtmlResponse(response) {
+export function parseCimceroArticle(data, id, expectedTitle) {
+  const entry = data?.data?.noticia;
+  if (!data?.response || String(entry?.id) !== String(id) || typeof entry?.body !== 'string') return null;
+  const title = comparable(entry.title);
+  const expected = comparable(expectedTitle);
+  if (title.length < 8 || (expected && !expected.startsWith(title) && !title.startsWith(expected))) return null;
+  // This public API is the source used by the portal's own React frontend.
+  // Decode escaped markup, then remove navigation and read only noticia.body.
+  const decoded = /&lt;\/?(?:p|div|h[1-6]|br)\b/i.test(entry.body) ? cheerio.load(entry.body).text() : entry.body;
+  const $ = cheerio.load(decoded);
+  $('script,style,form,nav').remove();
+  $('p,li,h1,h2,h3,br').append(' ');
+  const text = normalizeWhitespace($.text());
+  if (text.length < 100) return null;
+  return { text, title: entry.title.trim(), date: /^\d{4}-\d{2}-\d{2}/.exec(entry.data || '')?.[0] || '' };
+}
+
+export async function readHtmlResponse(response) {
   const charset = response.headers.get('content-type')?.match(/charset\s*=\s*['"]?([^;'"\s]+)/i)?.[1];
   if (!charset || /^utf-?8$/i.test(charset)) return response.text();
-  return new TextDecoder(charset).decode(await response.arrayBuffer());
+  const bytes = await response.arrayBuffer();
+  try { return new TextDecoder(charset).decode(bytes); }
+  catch (error) {
+    if (error.code !== 'ERR_ENCODING_NOT_SUPPORTED') throw error;
+    // Invalid HTTP labels may coexist with a valid HTML declaration. Honor
+    // that declaration (as a browser does), instead of guessing Latin-1.
+    const head = new TextDecoder('latin1').decode(bytes.slice(0, 8192));
+    const declared = head.match(/<meta\b[^>]*charset\s*=\s*["']?\s*([a-z0-9_-]+)/i)?.[1];
+    if (declared) return new TextDecoder(declared).decode(bytes);
+    return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+  }
 }
 
 export function extractArticleText(html) {
@@ -122,6 +149,20 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   }
   onResolved(item, articleUrl);
   if (/\.pdf(?:$|\?)/i.test(articleUrl)) { onFailure(item, 'destino_pdf'); return item; }
+  const parsedUrl = new URL(articleUrl);
+  const cimceroId = parsedUrl.hostname === 'consorciopublico.ro.gov.br' && parsedUrl.pathname.match(/^\/noticias\/(\d+)(?:\/[^/]+)?\/?$/)?.[1];
+  if (cimceroId) {
+    const apiUrl = `https://cdn.consorciopublico.ro.gov.br/api/getnoticia?id=${cimceroId}`;
+    const response = await fetchWithRetry(apiUrl, { fetchImpl, redirect: 'error', timeoutMs: 10000, retries: 1 });
+    if (!response.ok) { onFailure(item, `cimcero_api_http_${response.status}`); return item; }
+    const raw = await response.text();
+    if (raw.length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
+    const article = parseCimceroArticle(JSON.parse(raw), cimceroId, item.title);
+    if (!article) { onFailure(item, 'cimcero_api_corpo_invalido'); return item; }
+    return { ...item, articleUrl, apiUrl, rawText: article.text, summary: article.text.slice(0,1800),
+      sourcePublishedAt: article.date, contentProvenance: 'pagina_original', articleReader: 'cimcero_api_publica',
+      extractionDisagreement: false };
+  }
   const response = await fetchPublicHtml(articleUrl, fetchImpl);
   if (!response?.ok) { onFailure(item, `http_${response?.status || 'sem_resposta'}`); return item; }
   if (!/text\/html/i.test(response.headers.get('content-type') || '')) { onFailure(item, 'destino_nao_html'); return item; }

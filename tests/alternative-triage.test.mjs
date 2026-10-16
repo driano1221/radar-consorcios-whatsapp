@@ -16,7 +16,11 @@ import { JSDOM } from 'jsdom';
 import { compareAlternative } from '../src/lib/alternative-match.mjs';
 
 const originals = await readAlternativeRows('data/catalogo', 'arquivo-coletas.ndjson');
-const saved = await readAlternativeRows('data/catalogo', 'fontes-alternativas.ndjson');
+// Freeze this fixture to CISGA's two sources; unrelated recovered records are not
+// extra evidence for this episode and must not change the test's source count.
+const saved = (await readAlternativeRows('data/catalogo', 'fontes-alternativas.ndjson'))
+  .filter(s => s.documento_id === '0783e43a286fe81821ff9ad5e33526f40fbe35e930c9b89eb251277777fb2b64');
+assert.equal(saved.length, 2);
 const historical = originals.find(r => r.id === saved[0].documento_id);
 const row = { ...historical, id: 'fixture-original', primeira_coleta: '2026-10-16T18:00:00Z', enviado_em: '' };
 const sources = saved.map((s, i) => ({ ...s, id: `fixture-source-${i}`, documento_id: row.id }));

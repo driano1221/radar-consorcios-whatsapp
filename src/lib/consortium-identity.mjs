@@ -86,6 +86,10 @@ export function findIdentityMentions(row) {
         }
       }
       if (!candidate || /\bcons[oó]rcio\b/i.test(candidate.name.slice(match[0].length))) continue;
+      // A verb before the acronym means it belongs to a later actor/place,
+      // e.g. "Consórcio ... realizou visita à Guarda Civil Municipal (GCM)".
+      // Do not trim the verb and attach that unrelated acronym to the consortium.
+      if (/\b(?:realizou|recebeu|visitou|participou|promoveu|reuniu)\b/i.test(candidate.name)) continue;
       const name = cleanName(candidate.name);
       if (!name) continue;
       const acronym = candidate.acronym;

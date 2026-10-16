@@ -4,7 +4,17 @@ Atualização mais recente: **16 de outubro de 2026**. As primeiras seções sã
 
 Este documento registra o contexto, as decisões e o estado operacional do projeto para que o trabalho possa ser retomado sem depender do histórico da conversa. Ele não contém telefone, ID do grupo, senha ou material de autenticação aberto.
 
-## Aplicação autorizada dos dez históricos — 16/10/2026
+## Revisão dos treze históricos restantes — 16/10/2026
+
+- Aplicados os 13 registros autorizados: **5 confirmações, 4 duplicatas e 4 descartes**. Recuperadas 12 leituras originais e uma reprodução oficial alternativa. Acervo permanece em **1.946 publicações**, fatos confirmados passam de **110 para 115**. Os outros fatos, os originais e `state/` ficaram intactos; todos os 13 têm `publicar:false`, inclusive para o resumo semanal.
+- Decisões do usuário: aproveitar a composição explicitamente documentada do consórcio de acolhimento; incluir visitas e reuniões conduzidas pelo ABC e realizadas; **descartar simples convocações**, conservando-as no acervo. Não confundir presença passiva com atuação, assinatura de protocolo com ingresso concluído, nem pautas com deliberações.
+- Acolhimento: quatro relações municipais documentadas em 2026, ingresso original desconhecido. AMURC é associação apoiadora, não sigla do consórcio. Conclima: fonte oficial alternativa identifica **Paraná**, corrigindo título indexado que dizia Santa Catarina; assinatura por 12 municípios não nomeados, sem gerar 12 vínculos presumidos.
+- Três textos ABC–Metodista foram ligados ao acordo já confirmado, não somados como novo acontecimento. PDF de Indaiatuba é duplicata byte a byte de despacho de 2024, não aprovação legislativa de 2026.
+- Correções reutilizáveis: leitura da API pública usada pelo portal CIMCERO, com validação de ID/título e exclusão de notícias relacionadas; tolerância ao charset HTTP inválido com declaração válida no HTML; impedir associação indevida de “GCM” ao consórcio; suporte a vários municípios explicitamente documentados na mesma revisão.
+- **394 testes Node passaram localmente**, mais leitura real das quatro rotas afetadas. Aplicação repetida é no-op. Painel público gerado e validado, com original, reprodução e justificativa separados. Conferência documental pelo assistente e critérios aprovados pelo usuário; não simular aprovação humana de cada frase.
+- Inventário específico de históricos sem revisão e com lacuna registrada: **13 → 0**. Isso não significa acesso universal ou ausência de outros erros. O original CNM continua bloqueado; sua reprodução fica separada. As regras genéricas de atuação e composição não foram ampliadas indiscriminadamente: neste lote são revisões documentais protegidas. Ver [resultado e limites](REVISAO-HISTORICOS-13-2026-10-16.md).
+
+## Aplicação autorizada dos dez históricos — 16/10/2026 (etapa anterior)
 
 - Usuário aprovou os dez, atualização do painel e inventário antes de ampliar. Aplicados **5 aceites, 3 descartes e 2 duplicatas**, sem alterar os 1.946 originais nem o estado de envio. Painel: **110 confirmados**, antes 105. Dez textos integrais preservados com páginas/hash.
 - Novos testes cobrem ausência de duplicação, prova literal e bloqueio dos links Google e PDFs diretos em alertas/resumo. 383 testes Node passaram; aplicação repetida foi no-op. Ano comprovado mostrado separado da primeira coleta; CISVAP com evidência 2025 e ingresso desconhecido.

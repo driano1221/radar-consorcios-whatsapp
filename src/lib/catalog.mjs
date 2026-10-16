@@ -431,7 +431,9 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
   for (const row of reviewed) {
     const review = row.revisao_editorial;
     const facts = review?.fatos || {};
-    if (review?.decisao !== 'confirmar_evento' || !facts.participacao || !facts.municipio || !facts.consorcio) continue;
+    const municipalities = [...new Set((Array.isArray(facts.municipios) ? facts.municipios : [facts.municipio])
+      .filter(value => typeof value === 'string' && value.trim()).map(value => value.trim()))];
+    if (review?.decisao !== 'confirmar_evento' || !facts.participacao || !municipalities.length || !facts.consorcio) continue;
     const matching = links.filter((link) => {
       if (link.documento_id !== row.id || !link.consorcio_id) return false;
       const entity = identityById.get(link.consorcio_id);
@@ -443,16 +445,18 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     const year = review.lote_retroativo && /^\d{4}$/.test(String(facts.ano || ''))
       ? String(facts.ano) : /^\d{4}/.exec(row.data_publicacao || '')?.[0] || '';
     if (!year) continue;
-    const key = `${consortiumId}:${facts.municipio.toLocaleLowerCase('pt-BR')}`;
+    for (const municipality of municipalities) {
+    const key = `${consortiumId}:${municipality.toLocaleLowerCase('pt-BR')}`;
     const prior = participantByKey.get(key);
     if (!prior || Number(year) > Number(prior.ano_ultima_evidencia_participacao)) {
       participantByKey.set(key, {
         consorcio_id: consortiumId, consorcio: facts.consorcio,
-        municipio: facts.municipio, cnpj_municipio: facts.cnpj_municipio || '',
+        municipio: municipality, cnpj_municipio: municipalities.length === 1 ? facts.cnpj_municipio || '' : '',
         ano_ingresso: facts.ano_ingresso || '', ano_ultima_evidencia_participacao: year,
         situacao: 'participação documentada; situação atual não inferida',
         documento_id: row.id, fonte_ultima_evidencia: row.article_url || row.url,
       });
+    }
     }
   }
   const participantFields = ['consorcio_id', 'consorcio', 'municipio', 'cnpj_municipio',
