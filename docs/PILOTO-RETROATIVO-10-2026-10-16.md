@@ -42,6 +42,8 @@ Primeira execução: https://github.com/driano1221/radar-consorcios-whatsapp/act
 
 380 testes Node e três testes Python passaram localmente. 25 arquivos protegidos permaneceram idênticos. Nenhuma chamada à API de IA neste piloto: regras e conferência documental/visual do assistente. A revisão DeepSeek de produção não foi modificada. Tampouco se alterou o corte temporal da triagem automática de fontes alternativas.
 
+Validação final com as regras corrigidas: [Actions 38943846430](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38943846430), commit `6802afb`, sucesso. Testes Node/Python e invariantes passaram; categorias dos nove PDFs acessíveis coincidiram com a conferência. Vargem Alta permaneceu em HTTP 403 no runner, sem mascarar a falha como leitura completa. Artefato final `12064995332`, guardado localmente em `output/retroactive-ten/ci-final/`.
+
 ## Limites e próximo passo
 
 O usuário pediu o antes/depois antes de expandir. Mostrar o relatório, confirmar a proposta e só então planejar aplicação controlada desses dez e expansão. A futura aplicação deve atualizar o mesmo ID, preservar decisão anterior/evidência e bloquear tanto alerta diário quanto resumo semanal para históricos. Não converter as propostas deste piloto em revisões humanas já aprovadas.

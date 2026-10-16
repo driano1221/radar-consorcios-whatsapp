@@ -4,6 +4,16 @@ Atualização mais recente: **16 de outubro de 2026**. As primeiras seções sã
 
 Este documento registra o contexto, as decisões e o estado operacional do projeto para que o trabalho possa ser retomado sem depender do histórico da conversa. Ele não contém telefone, ID do grupo, senha ou material de autenticação aberto.
 
+## Piloto retroativo de dez antigos — 16/10/2026 (somente branch de teste)
+
+- Pedido: recuperar dez antigos e mostrar antes/depois antes de ampliar, sem duplicar nem reenviar. Os dez IDs foram congelados; nenhum tinha revisão humana ou envio. Proposta: **5 aceites únicos, 3 descartes justificados, 2 duplicatas**. Ver [relatório do piloto](PILOTO-RETROATIVO-10-2026-10-16.md).
+- Recuperados os PDFs originais: 62 ocorrências de páginas (56 únicas), 11 com OCR. Não confundir com validação genérica da busca de fontes jornalísticas alternativas. Vargem Alta abriu localmente, mas deu 403 no Actions; recuperação desse arquivo não resolve acesso contínuo no runner.
+- Casos aproveitáveis: CONVALE (etapa legal de protocolo, 2026), CONSPNOR (lei de Varre-Sai autoriza ingresso de Santa Maria Madalena, 2026), CONECTAR (autógrafo aprovado, 2021), CISVAP (alteração e permanência, 2025), CIM Norte (cofinanciamento autorizado, 2021). Nunca inferir ingresso original, pagamento ou constituição consumada além da prova.
+- Defeitos corrigidos apenas na branch: Varre-Sai confundido com verbo de saída; autorização/minuta confundidas com constituição; permanência confundida com rateio; ata de cofinanciamento não reconhecida; cabeçalho textual escondendo corpo escaneado. 380 testes Node e 3 Python passaram localmente.
+- Scripts só gravam resultados em output/, com hash dos 25 arquivos de data/ e state/ preservado. Projeção repetida em memória mantém 10 IDs, 5 fatos e elegibilidade de notificação falsa para todos. Zero chamadas de WhatsApp e zero chamadas à API de IA neste piloto. Conferência pelo assistente, **não aprovação humana simulada**.
+- **Não aplicado em main, no catálogo ou no painel público.** Alterações estão na branch `fix/amm-triage-recovery`. Aguardar validação do antes/depois pelo usuário antes de aplicar ou ampliar. Não alterar o corte temporal da integração automática para forçar históricos a entrarem no fluxo de alertas.
+- Validação final [38943846430](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38943846430): sucesso, testes e invariantes intactos; nove PDFs recuperados no runner, categorias conferidas; Vargem Alta continua 403 no Actions (resolvido neste piloto por cópia original baixada e OCR local, não acesso remoto reparado).
+
 ## Integração da fonte alternativa à triagem — 16/10/2026
 
 - Pedido autorizado: usar a leitura alternativa para aceitar/descartar automaticamente os próximos casos, com fonte, prova e motivo no painel; preservar históricos e nunca reenviar antigos.
