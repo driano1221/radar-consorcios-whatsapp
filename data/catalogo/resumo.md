@@ -1,15 +1,15 @@
 # Panorama da base histórica
 
-- 1933 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
-- 101 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 56 identidades candidatas de consórcios; 73 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 1946 documentos recuperados do histórico de coletas; 2 atos individualizados dentro deles.
+- 102 registros relacionados a possíveis eventos de consórcios; 90 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 56 identidades candidatas de consórcios; 74 vínculos documentais, dos quais 40 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 32 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 26 |
+| ATUAÇÃO | 27 |
 | GOVERNANÇA | 19 |
 | ADESÃO AUTORIZADA | 13 |
 | CONTROLE | 13 |
@@ -29,6 +29,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-16 | ATUAÇÃO — relato — conferir documento original | publicado pelo radar — não confirmado manualmente | [Consórcio prevê R$ 3,6 milhões para fornecer 6,4 mil próteses dentárias gratuitas em MT - Fatos de Mato Grosso](https://news.google.com/rss/articles/CBMi0AFBVV95cUxNNGVPU2hOX0k2LTNvOU9iamlzSHBWSjhtTDVoZ3JrX3RXSVYxVU93MWJNSHRfRV9Xd0ItQUNkX2NhTnFIUFhYc3RaeG5XTXpYWlAyVGU5MXAyVXZtYTRTeTdWRWVzanFQWkxzanM2eGFlS2RTemR0bkx1dWt6VzhuOWx6cnM2RzNJUGpoaFFpZDMwbnhfQnJ0UjdVVk8yU0dfaTZkTUVlYURBd3hobEpybVc5TEVDbU5haGgtdXkyTjBOY1JnM0plOWtvUDUzempo?oc=5) |
 | 2026-10-15 | SAÍDA — ato publicado — efeito a verificar | candidato — requer revisão | [125-2026 - Termo de Inex 02.2026 - HOSPITAL SANTA RITA VG](https://amm.diariomunicipal.org/publicacao/1926182/) |
 | 2026-10-15 | ATUAÇÃO — relato — conferir documento original | publicado pelo radar — não confirmado manualmente | [CONIAPE realiza Assembleia Ordinária e visita técnica à nova sede em construção](https://consorcioconiape.pe.gov.br/2026/10/15/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-em-construcao/) |
 | 2026-10-14 | RATEIO — contrato de rateio citado; celebração a conferir | candidato — requer revisão | [DÉCIMO PRIMEIRO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1924395/) |
@@ -43,6 +44,5 @@
 | 2026-10-13 | ATUAÇÃO — relato — conferir documento original | candidato — requer revisão | [ATENDIMENTO OFTALMOLÓGICO: Consórcio viabiliza procedimentos de YAG Laser para 100 pacientes do Araguaia - Rede da Notícia](https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2FVYno3OUxSUjc0VlNJc3BwaXFLYmVGQ2x6THV0MU5VSktuWnJqZG5aSHQxVVh5dEU4Q2FYTmhDcnF3amNsTWVSY3hpSktacXFCR2MwVTMyWllrRVkyd1V4czJsOThRdWUwT281dHdxbklSelZVWjluWXloaFFzNUZCNXFNdm1GQk5HTndmc2tkS3YwcWNVakxQOEQ1blliNGxQNnV2MHYwME1nUEtmZThjSzlTbDVzSWRHSXpHQzBjV3lSTHNQM1lNbXVVQQ?oc=5) |
 | 2026-10-12 | CONTROLE — relato — conferir documento original | aprovado pela IA — não confirmado manualmente | [Ex-presidente de consórcio do Rio Paraná é multado por atraso no envio de dados - TCE-PR](https://news.google.com/rss/articles/CBMi8wFBVV95cUxNT3VXai0zb2pPcl9kUjJ6eElWbGw4eE9NNmY3TW1weTZQS0pVUW43SHdQa21ZOW5oeDVmb2tZd3oxS1dQUHNfZ3FWZUV3eTZ6a1d2aFpKWXN1cXJIczRiY0piR1l0Qk9yb2FzbGQxOVQwaFV1b0lEdlhkVE5ZeHBENjlzNGRXOS1Cc1JXQnEybWE4SjBITXB1ZUE2eURxWVJHRllxZUJnVXVLYUc5UTNaZTB5WFZYakVvcXlKeEczMWFtbWRIY21VYU10OXVrdEhQcXIxS291U256S3JyaW8zaFVKem5UVzNxY2JIODB5MC1NejA?oc=5) |
 | 2026-10-09 | GOVERNANÇA — alteração aprovada em assembleias segundo o projeto; ratificação municipal ainda em tramitação | confirmado por revisão editorial — O artigo 1º do projeto relata aprovação anterior nas assembleias do CICANASTRA. Aceitar apenas esse antecedente de governança; não afirmar ratificação municipal sancionada nem mudança do mandato já vigente. Texto fornecido pelo usuário após bloqueio por CAPTCHA. | [PROJETO DE LEI ORDINÁRIA N.º 1129/2026 - corregofundo.mg.leg.br](https://news.google.com/rss/articles/CBMijgFBVV95cUxOYUlWMVYzSnRfbU1JeDN2WFpUaGQ0MnlYNm1paEdGY2hIR05JR18xUTQtbkJDa196dEE0NG1CMjVDTWlmQ3RrOXF3RmJCY3JOR1J5endoQ0hTU1lRUnMyVk5xQ3F6dDQtbnFYSkdWelNyNm9nS2IyODk4Ry1vM3FodXJjNm5iOEJBakU0RHFB?oc=5) |
-| 2026-10-09 | CONTROLE — contas de 2024 desaprovadas; cabe recurso | confirmado por revisão editorial — a notícia comprova julgamento do exercício 2024, diferente do exercício 2023 já registrado; não é duplicata desse julgamento anterior | [Falhas na concessão de gratificações levam TCE-PB a reprovar contas de consórcio de saúde do Vale do Piancó - Fonte 83](https://news.google.com/rss/articles/CBMi5wFBVV95cUxORENnc2laREt2bWpXTl8zX0t2R3h4em5URmVwMmNpejFmRGFpejAtVEJTVEZMb0pCY1FQQldmb1B2UEVCNm0zaWp6NzEyVEN0UUVoQzRIVU9OdmRRWjBOcTc5eU1ucjJWbUh3YTktX3JNTUE5S21mLWRlSUJQMlpYY3JvV0szbXZmd19OVFYxRnc1Y3J0czJ4ZFVqczNFMXpkR2tyZnlMbTAxMzBDckdraEJ3d2VicVFBUUVOVWx5MXNnZjF5cWdOUnk2ajNmMG1wT2V0Ti01TEFONG5kVkxCaEwwVkxoLVE?oc=5) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
