@@ -152,11 +152,11 @@
         "name": "Confederação Nacional de Municípios",
         "adapter": "cnm",
         "url": "https://cnm.org.br/areas_tecnicas/consorcios/noticias",
-        "enabled": true,
+        "enabled": false,
         "publish": true,
         "maxArticles": 3,
         "alertsFrom": "2026-10-17T00:00:00.000Z",
-        "fallback": "Google News com filtro site:cnm.org.br"
+        "fallback": "Google News site:cnm.org.br + leitor Inertia por notícia + alternativas públicas; índice direto HTTP 403 no Actions em 16/10/2026"
       },
       {
         "name": "TCE-MG",

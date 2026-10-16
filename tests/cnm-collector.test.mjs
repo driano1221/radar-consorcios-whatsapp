@@ -52,7 +52,9 @@ test('CNM limita leituras e mantém excedente sem envio', async () => {
 test('ativação CNM não libera acervo antigo nem data desconhecida do Google', async () => {
   const cfg = JSON.parse(await readFile(new URL('../config/default.json', import.meta.url)));
   const activation = cfg.webScrapers.sites.find(s => s.adapter === 'cnm');
-  assert.equal(activation.enabled, true);
+  // Direct index remains disabled after a real runner 403. Its gate also
+  // protects CNM URLs discovered through Google News.
+  assert.equal(activation.enabled, false);
   const classification = {category: 'GOVERNANÇA', score: 12, publicContext: true};
   const options = {now: new Date('2026-10-18T12:00:00Z'), sourceActivations: [activation]};
   const old = {url: 'https://cnm.org.br/comunicacao/noticias/noticia-consorcios',

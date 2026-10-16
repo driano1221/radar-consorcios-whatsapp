@@ -17,8 +17,10 @@ const targets = [
 const results = [];
 const config = JSON.parse(await readFile('config/default.json', 'utf8'));
 const cnmSite = config.webScrapers.sites.find(site => site.adapter === 'cnm');
-const collected = await fetchWebScrapers({...config.webScrapers, sites: [cnmSite]}, new Date('2026-10-01'));
-results.push({kind: 'cnm_production_collector', usable: collected.ok && collected.items.some(item => item.articleReader === 'cnm_inertia_publica'),
+// Probe even while disabled, without changing production configuration.
+const collected = await fetchWebScrapers({...config.webScrapers, sites: [{...cnmSite, enabled: true}]}, new Date('2026-10-01'));
+results.push({kind: 'cnm_production_collector', productionEnabled: cnmSite.enabled,
+  usable: collected.ok && collected.items.some(item => item.articleReader === 'cnm_inertia_publica'),
   diagnostics: collected.diagnostics, items: collected.items.map(item => ({url: item.url, chars: item.rawText.length,
     reader: item.articleReader, previewOnly: item.previewOnly, date: item.sourcePublishedAt}))});
 for(const slug of ['municipios-de-santa-catarina-assinam-adesao-ao-conclima-saiba-como-participar',

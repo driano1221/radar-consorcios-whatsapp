@@ -21,12 +21,13 @@ A meta é **aceitar ou descartar o conteúdo quando a evidência permitir**. Uma
 
 ## CNM aplicada
 
-- Descoberta direta: `https://cnm.org.br/areas_tecnicas/consorcios/noticias`.
-- Até três páginas individuais por rodada, com leitor Inertia validando rota, slug, ID, componente, conteúdo e data.
+- Descoberta ativa: Google Notícias com filtro CNM. Listagem direta `https://cnm.org.br/areas_tecnicas/consorcios/noticias` preparada, mas **desativada após HTTP 403 no Actions**. Abriu localmente; isso não homologa o servidor de produção.
+- Coletor preparado limita a três páginas individuais por rodada, com leitor Inertia validando rota, slug, ID, componente, conteúdo e data. O mesmo leitor já é usado em notícias descobertas por outros coletores.
 - Resumo da listagem não ocupa o campo de íntegra. Erro de acesso ou leitura adiada mantém o item em prévia sem envio.
 - Corte de alertas: data original a partir de **17/10/2026**. A manutenção não chama WhatsApp e não altera o estado de envio.
 - Recuperação diária inclui CNM: busca pública e REST público do Conclima, preservando a fonte alternativa. Não é uma API geral documentada da CNM nem garantia de acesso a todas as páginas.
 - Orientações gerais de consórcios não recebem uma entidade fictícia. Protocolo, atuação e composição continuam sujeitos ao alcance real do documento.
+- Diagnóstico distingue o índice bloqueado, notícias com acesso variável e alternativas disponíveis. O teste reprova uma configuração que habilite a listagem sem leitura real comprovada; com a listagem desativada, registra o 403 sem interromper as outras rotas.
 
 ## Onde acompanhar a implementação
 
