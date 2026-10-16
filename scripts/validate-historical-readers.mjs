@@ -11,7 +11,9 @@ const archive = await nd('arquivo-coletas.ndjson');
 const results = [];
 for (const prefix of ['68160372', 'cfbb82ef', 'e41368d4', '74fb6772']) {
   const review = reviews.find(r => r.documento_id.startsWith(prefix));
-  const source = [...texts, ...alternatives].find(r => r.documento_id === review.documento_id);
+  // This regression checks the four routes fixed by that batch. The newly
+  // recovered CNM original is diagnosed separately (runner may still get 403).
+  const source = (prefix === '74fb6772' ? alternatives : texts).find(r => r.documento_id === review.documento_id);
   const url = source.url_artigo || source.url_fonte;
   const result = { prefix, url, status: 'failed', chars: 0 };
   try {

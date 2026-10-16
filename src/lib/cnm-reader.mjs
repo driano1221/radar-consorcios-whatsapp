@@ -15,7 +15,7 @@ export function parseCnmArticle(html, articleUrl) {
     /verify you are human|verifique que voc[eê] [eé] humano/i.test($('body').text()))return null;
   let page;try{page=JSON.parse($('#app[data-page]').attr('data-page')||'');}catch{return null;}
   const article=page.props?.noticia;
-  if(page.component!=='Portal/Comunicacao/Noticia' || page.url?.split('?')[0].replace(/\/$/,'')!==url.pathname.replace(/\/$/,'') ||
+  if(page.component!=='Portal/Comunicacao/Noticia' || typeof page.url!=='string' || page.url.split('?')[0].replace(/\/$/,'')!==url.pathname.replace(/\/$/,'') ||
     article?.slug!==slug || !Number.isInteger(article.id) || article.id<=0 ||
     typeof article.conteudo!=='string' || typeof article.titulo!=='string' || article.titulo.length<10)return null;
   const body=load(article.conteudo);body('script,style,nav,form,iframe,noscript').remove();body('p,li,h1,h2,h3,br').append(' ');

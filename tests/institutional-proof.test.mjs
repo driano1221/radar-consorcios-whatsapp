@@ -26,6 +26,7 @@ test('subject and past tense generalize beyond ABC, without confusing participat
     assert.equal(classify(`O ${name} realizou ontem uma visita técnica ao centro de treinamento municipal.${padding}`).category,'ATUAÇÃO');
     for(const sentence of [`O ${name} não realizou a visita técnica.`, `O ${name} realizará uma visita técnica.`,
       `O ${name} participou da reunião promovida pela associação.`, `O ${name} informou que a prefeitura realizou uma visita técnica.`,
+      `O ${name}, a prefeitura realizou uma visita técnica.`, `O ${name} enquanto o prefeito realizou uma reunião.`,
       `Caso o ${name} realizou uma reunião, ainda não há confirmação.`, `O ${name} teria realizado uma visita técnica.`])
       assert.equal(institutionalProof({rawText:sentence+padding,kind:'news'}),null,sentence);
   }

@@ -3,7 +3,7 @@ export const INSTITUTIONAL_REVIEW_POLICY = 'Aceite como ATUAÇÃO a visita técn
 
 // Subject, completed verb and object must occur in the same sentence. A title,
 // a future agenda or a list of guests cannot establish consortium activity.
-const NAME = String.raw`Cons[oó]rcio\s+(?:P[uú]blico\s+)?Intermunicipal\s+(?:d[aeo]s?\s+)?[A-ZÀ-Ý][^.!?;:]{2,145}?`;
+const NAME = String.raw`Cons[oó]rcio\s+(?:P[uú]blico\s+)?Intermunicipal\s+(?:d[aeo]s?\s+)?[A-ZÀ-Ý][^.!?;:,]{2,145}?`;
 const ACTIVITY = new RegExp(String.raw`\b${NAME}\s+(?:realizou|promoveu|conduziu)\b[^.!?;:]{0,85}?\b(?:visita t[eé]cnica|reuni[aã]o)\b[^.!?;]{0,220}`, 'gi');
 const RECEIVED = new RegExp(String.raw`\b${NAME}\s+recebeu\b[^.!?;:]{0,100}?\b(?:representantes?|vice-presidente|presidente|secret[aá]ri[oa]|comitiva)\b[^.!?;]{0,270}?\bpara\s+(?:discutir|debater|tratar)\b[^.!?;]{0,120}`, 'gi');
 const SIGNED_COOPERATION = new RegExp(String.raw`\b${NAME}\s+e\s+(?:o|a)\s+(?:Instituto|Universidade|Minist[eé]rio|Associa[cç][aã]o)\b[^.!?;:]{3,90}?\s+(?:firmaram|assinaram)\b[^.!?;:]{0,90}?\b(?:um\s+)?acordo\s+de\s+coopera[cç][aã]o\s+t[eé]cnica\b`, 'gi');
@@ -21,7 +21,7 @@ export function institutionalProof(item) {
     for (const match of text.matchAll(pattern)) {
       const clauseStart = Math.max(text.lastIndexOf('.', match.index - 1), text.lastIndexOf('!', match.index - 1), text.lastIndexOf('?', match.index - 1)) + 1;
       if (UNSAFE.test(text.slice(clauseStart, match.index) + match[0]) ||
-          /\b(?:participou|acompanhou|informou|relatou|afirmou|anunciou)\b/i.test(match[0].split(/\b(?:realizou|promoveu|conduziu|recebeu)\b/i)[0])) continue;
+          /\b(?:participou|acompanhou|informou|relatou|afirmou|anunciou|que|quando|enquanto|prefeitura|prefeito)\b/i.test(match[0].split(/\b(?:realizou|promoveu|conduziu|recebeu|firmaram|assinaram)\b/i)[0])) continue;
       if(pattern===SIGNED_COOPERATION)return {category:'ATUAÇÃO',proofKind:'signed_cooperation',
         stage:'acordo de cooperação técnica firmado; execução e benefícios entregues não comprovados',
         reason:'partes identificadas e assinatura relatada no corpo; não é mera intenção',evidenceText:match[0],evidenceOffset:match.index};
