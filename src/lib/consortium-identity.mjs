@@ -56,6 +56,10 @@ export function findIdentityMentions(row) {
   }
   for (const [origin, text] of fields) {
     if (origin === 'metadado') {
+      // A reviewed full name may contain a hyphen (e.g. Mulheres das Gerais).
+      // Do not shorten that same name and create a second identity.
+      if (mentions.some(mention => mention.origin === 'fonte complementar' &&
+        identityKey(mention.name) === identityKey(text))) continue;
       const name = cleanName(text);
       if (name) mentions.push({ name, acronym: (row.sigla || '').trim(), cnpj: '', origin, evidence: text });
       continue;

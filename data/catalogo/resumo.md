@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 1982 documentos recuperados do histórico de coletas; 7 atos individualizados dentro deles.
-- 118 registros relacionados a possíveis eventos de consórcios; 117 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 71 identidades candidatas de consórcios; 96 vínculos documentais, dos quais 67 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 28 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 1982 documentos recuperados do histórico de coletas; 10 atos individualizados dentro deles.
+- 120 registros relacionados a possíveis eventos de consórcios; 119 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 74 identidades candidatas de consórcios; 100 vínculos documentais, dos quais 71 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 26 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -11,7 +11,7 @@
 |---|---:|
 | ATUAÇÃO | 32 |
 | GOVERNANÇA | 21 |
-| CONTROLE | 18 |
+| CONTROLE | 20 |
 | ADESÃO AUTORIZADA | 15 |
 | RATEIO | 10 |
 | FINANÇAS | 9 |
@@ -39,8 +39,8 @@
 | 2026-10-14 | GOVERNANÇA — alteração do protocolo ratificada e competência do SIM delegada por lei | confirmado por revisão editorial — Lei 1148/2026 de São Félix do Araguaia ratifica alteração do CIDESAA e delega competência de inspeção. Anexo identifica municípios já consorciados, sem comprovar nova adesão. | [LEI ORDINÁRIA Nº 1.148, DE 08 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924135/) |
 | 2026-10-14 | ADESÃO AUTORIZADA — integração e repasse autorizados; ingresso e pagamento não comprovados | confirmado por revisão editorial — Lei 1118/2026 autoriza São Félix do Araguaia a integrar o CIDESA-NA para o aterro regional e autoriza repasse. A autorização não comprova assinatura posterior de adesão ou transferência executada. | [LEI ORDINÁRIA Nº 1.118, DE 25 DE JUNHO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924128/) |
 | 2026-10-14 | FINANÇAS — lei autoriza repasse; contrato de rateio e pagamento não comprovados | confirmado por revisão editorial — Lei 1136/2026 autoriza repasses ao CISA e lista fontes possíveis. A expressão contrato de rateio celebrado na lista normativa não comprova um contrato específico já firmado. | [LEI ORDINÁRIA Nº 1.136, DE 28 DE AGOSTO DE 2026.](https://amm.diariomunicipal.org/publicacao/1924122/) |
+| 2026-10-14 | CONTROLE — extinção processual sem resolução de mérito por perda de objeto; multa ao presidente | confirmado por revisão editorial — O certame foi revogado. O acórdão extingue o processo sem resolução de mérito e aplica multa de R$ 10 mil a Frederico Ozanan Rangel por não comunicar a revogação. Não é mera manutenção de cautelar, multa à pessoa jurídica do consórcio ou extinção do consórcio. | [TCE-MG encerra processo do CIMINAS sem mérito e multa presidente em R$ 10 mil](https://tcnotas.tce.mg.gov.br/TCJuris/Nota/BuscarArquivo/4760666#page=2) |
 | 2026-10-14 | RATEIO — primeiro aditivo de rateio publicado; reajuste per capita, não novo ingresso | confirmado por revisão editorial — Edição 3495 de Castro, páginas 4–5: primeiro aditivo ao rateio 094/2026 com o CIMSAMU. A cláusula de eventual suspensão de verbas é condição contratual, não crise ocorrida. Documento conferido visualmente no portal municipal após falha de acesso ao espelho do Querido Diário. | [Diário Oficial de Castro (PR)](https://data.queridodiario.ok.org.br/4104907/2026-10-14/c5db2fc19442d70ae2b03bbef851f7e62115bd6c.pdf) |
 | 2026-10-13 | FINANÇAS — orientação tributária geral; não é ato de consórcio individual | confirmado por revisão editorial — orientação da CNM sobre a Cosit 145/2026, reproduzida pela AMA-AL; abrangência geral aprovada pelo usuário | [CNM orienta gestores sobre posição da Receita Federal que trata de consórcios públicos - Confederação Nacional de Municípios (CNM)](https://news.google.com/rss/articles/CBMixAFBVV95cUxQendEVC13b1UtLTBPNWU2eWpzaFZpczZ3d051ak9rOWJ1cHMzRGZOSVVoZDgzRTJfc3JxbDFPVHlGbjB2SG8zamZ1ZjlYLXN3NjdvMDB4YkpmbmEwUVFIa3dMZVhRZnl0ZEZXYlVBRW5tZHFMdU1oQnE1QzhZT19jSVpuby15WUZPc1ZmM0xmQmwzVjc5M0xJNXFLbGt0M1VXZ3RRSVJ2dER5aUIxaFcxcXctVG1zZ2E5U05UdEFMaFZvN3FU?oc=5) |
-| 2026-10-13 | GOVERNANÇA — ratificação do estatuto consolidado; sem adesão automática a serviços | confirmado por revisão editorial — Lei 1448/2026 ratifica o estatuto do CIDESAPA e preserva a continuidade da entidade; não comprova ingresso novo | [LEI MUNICIPAL Nº 1448, DE 09 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1923527/) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.

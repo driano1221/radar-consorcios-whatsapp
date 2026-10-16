@@ -2,6 +2,19 @@
 
 Atualização mais recente: **16 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Aplicação documental retroativa: Divinópolis e TCE-MG — 16/10/2026
+
+- Usuário autorizou aplicar as correções previamente apresentadas, atualizar o painel e preservar fontes/divergência do CONSANE, sem duplicar nem reenviar. Aplicação isolada da branch experimental: **não ativada a triagem automática de originais**. Sua simulação anterior permanece 80/82, não 82/82 automático.
+- Divinópolis: Lei 9.770/2026 sancionada/publicada autoriza **subscrever extinção** do Mulheres das Gerais; não comprova extinção ou saída consumada. Segunda URL com corpo idêntico tornou-se duplicata do mesmo fato.
+- TCE-MG: notícia desdobrada em três acórdãos. 1214381/CIMINAS: referendo cautelar. 1210770/CIMINAS: extinção do processo sem mérito e multa de R$ 10 mil **ao presidente por não informar a revogação**, não ao consórcio. 1217968/CONSANE: referendo cautelar. Multas condicionais dos outros dois não são multas aplicadas.
+- CONSANE: mantidos número **1217068 e nome equivocado da notícia**, separados de **1217968 / Consórcio Regional de Saneamento Básico** no acórdão. Associação editorial contextual, sem errata oficial nem conversão automática por semelhança.
+- Cinco PDFs primários preservados com SHA-256, texto por página, trechos e histórico de revisões. Manifesto `data/catalogo/documentos-primarios-2026-10-16.json`; PDFs `data/documentos-primarios/`. [Auditoria detalhada](VALIDACAO-DIVINOPOLIS-TCEMG-2026-10-16.md).
+- Painel: seção de documentos oficiais com página, trecho e link; aviso explícito de divergência; fluxo desktop/mobile inclui revisão documental autorizada. Repositório continua hospedando o mesmo painel, com atualização automática pelo workflow Pages.
+- Antes/depois deste lote: **1.982 publicações originais mantidas; 7 → 10 atos individualizados; 117 → 119 fatos confirmados exibidos no painel; 31 → 32 duplicatas**. Não são novas coletas. A notícia TCE deixa de contar como um fato genérico; passa a três. Divinópolis permanece um episódio, atualizado com a lei.
+- Proteção: os seis registros afetados têm `publicar:false`; guardas de URL agora incluem os atos derivados/PDFs e links diretos da publicação-mãe. Testes simulam data nova para impedir reenvio diário e semanal. Estado de WhatsApp e arquivo bruto não foram alterados; nenhuma rotina de envio foi executada nesta manutenção.
+- Validação local: **424 testes aprovados**, incluindo oito regressões novas; reaplicação sem efeito, hashes dos cinco PDFs, páginas/trechos, quatro fatos únicos, segurança do HTML e bloqueio diário/semanal. Corrigida identidade duplicada por corte no hífen quando o mesmo nome completo já foi revisado; catálogo final: **74 identidades e 100 vínculos**, sem presumir validação de CNPJ. Datas dos atos derivados agora identificam separadamente a coleta da publicação de origem.
+- Aplicador idempotente `scripts/apply-primary-document-corrections.mjs`; workflow `validate-documentary-corrections.yml` testa o lote sem segredos de IA/WhatsApp, sem coleta e sem disparos. A versão de produção continua com suas regras atuais; ampliar automação requer nova validação/aprovação.
+
 ## Integração CNM e limite real da autonomia — 16/10/2026
 
 - Usuário autorizou aplicar CNM e pediu explicação do que falta para aceitar/descartar sem revisão manual, além de atualizar memória, repositório e fluxo.

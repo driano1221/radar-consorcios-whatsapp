@@ -26,9 +26,17 @@ export function materializeDocumentActs(documents, definitions) {
     // Um link do Google pode apontar para um PDF: a âncora deve ir ao PDF
     // comprovado, nunca à página intermediária do agregador.
     const pdfUrl = definition.url_pdf || parent.article_url || '';
-    const cleanUrl = (/^https:\/\/.+\.pdf(?:[?#]|$)/i.test(pdfUrl) ? pdfUrl : parent.url).split('#')[0];
+    // Official PDF endpoints need not end in .pdf. Only a verified, explicitly
+    // declared PDF URL may use that path; an article_url remains a fallback hint.
+    const verifiedPdf = definition.pdf_sha256 && SHA256.test(definition.pdf_sha256) &&
+      /^https:\/\//i.test(definition.url_pdf || '');
+    const cleanUrl = (verifiedPdf || /^https:\/\/.+\.pdf(?:[?#]|$)/i.test(pdfUrl) ? pdfUrl : parent.url).split('#')[0];
     return {
       ...parent, id, documento_pai_id: parentId, chave_ato: key,
+      fonte: definition.fonte || parent.fonte,
+      data_publicacao: definition.data_publicacao || parent.data_publicacao,
+      data_noticia_original: definition.data_publicacao || parent.data_noticia_original,
+      data_fato: definition.data_fato || '',
       pagina_inicio: first, pagina_fim: last, registro_tipo: 'ato',
       titulo: title.trim(), trecho: excerpt.trim(), tipo_evento: category.trim(),
       etapa: definition.etapa || '', tipo_documento: definition.tipo_documento || 'ato oficial individualizado',

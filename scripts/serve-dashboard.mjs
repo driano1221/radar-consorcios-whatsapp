@@ -13,6 +13,7 @@ const files = new Map([
   ['/results.css', ['results.css', 'text/css; charset=utf-8']],
   ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
   ['/recovery-view.mjs', ['recovery-view.mjs', 'text/javascript; charset=utf-8']],
+  ['/primary-evidence-view.mjs', ['primary-evidence-view.mjs', 'text/javascript; charset=utf-8']],
   ['/version.json', ['version.json', 'application/json; charset=utf-8']],
   ['/triage-model.mjs', ['triage-model.mjs', 'text/javascript; charset=utf-8']],
   ['/results-model.mjs', ['results-model.mjs', 'text/javascript; charset=utf-8']],

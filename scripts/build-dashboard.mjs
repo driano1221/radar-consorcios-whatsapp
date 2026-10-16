@@ -288,7 +288,9 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const decision = decisions[row.id] || null;
     const curated = eventById.get(row.id);
     const inEvents = Boolean(curated);
-    const review = isSplitParent ? null : reviewById.get(row.id);
+    const auditReview = reviewById.get(row.id);
+    const auditValid = auditReview?.trecho_sha256 === createHash('sha256').update(row.trecho || '').digest('hex');
+    const review = isSplitParent ? null : auditReview;
     const reviewValid = review?.trecho_sha256 === createHash('sha256').update(row.trecho || '').digest('hex');
     const stale = !(reviewValid && review.lote_retroativo && review.publicar === false) &&
       isStaleLegislativeDocument({ kind: 'news', title: row.titulo, publishedAt: publicationDate(row) });
@@ -323,7 +325,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const recoveredSuggestion = !appliedReview && !stale && Boolean(row.article_suggested_category);
     const pendingReview = activeCandidate && !['confirmar_evento', 'nao_evento', 'duplicata'].includes(appliedReview?.decisao)
       || recoveredSuggestion;
-    const reason = isSplitParent ? `Esta edição contém ${actsByParent.get(row.id).length} atos individualizados. A decisão sobre cada ato aparece abaixo.`
+    const reason = isSplitParent ? `Esta publicação contém ${actsByParent.get(row.id).length} atos individualizados. A decisão sobre cada ato aparece abaixo.${auditValid ? ' '+auditReview.motivo : ''}`
       : stale ? 'Ato antigo com data recente de indexação.'
       : rejectedByReview ? `Rejeitado por revisão editorial — ${review.motivo}`
       : duplicateByReview ? `Duplicata vinculada a ${review.documento_relacionado} — ${review.motivo}`
@@ -336,6 +338,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     return {
       id: row.id, title: appliedReview?.titulo || row.titulo, source: sourceName(row),
       originalTitle: appliedReview?.titulo ? row.titulo : '',
+      primaryDocuments: auditValid ? (auditReview.documentos_primarios || []).map(d => ({
+        title:d.titulo,url:d.url,page:d.pagina,excerpt:d.trecho,sha256:d.pdf_sha256,
+      })) : [],
+      sourceDivergence: auditValid ? auditReview.divergencia_fonte || null : null,
+      documentaryReviewAt: auditValid && auditReview.documentos_primarios?.length ? auditReview.revisado_em || '' : '',
       publishedYear: appliedReview?.fatos?.precisao_data === 'ano' ? appliedReview.fatos.ano : null,
       documentParentId: row.documento_pai_id || '',
       relatedActs: actsByParent.get(row.documento_pai_id || row.id) || [],
@@ -609,7 +616,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const publicMode = process.argv.includes('--public');
   const outputData = publicMode ? buildPublicDashboardData(data) : data;
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'recovery-view.mjs', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'recovery-view.mjs', 'primary-evidence-view.mjs', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFlowDiagrams(destination);
   await Promise.all([

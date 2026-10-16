@@ -31,7 +31,7 @@ export async function loadEditorialGuard(directory) {
     readNdjson(path.join(directory, 'revisoes-eventos.ndjson')),
     readNdjson(path.join(directory, 'atos-identificados.ndjson')),
   ]);
-  const byId = new Map(archive.map((row) => [row.id, row]));
+  const byId = new Map([...archive, ...materializeDocumentActs(archive, actDefinitions)].map((row) => [row.id, row]));
   const splitParents = new Set(actDefinitions.map((act) => act.documento_pai_id));
   const guard = new Map();
   for (const review of reviews) {
@@ -51,8 +51,13 @@ export async function loadEditorialGuard(directory) {
   }
   for (const id of splitParents) {
     const row = byId.get(id);
-    if (row) guard.set(canonicalUrl(row.url), { decisao: 'desdobrado',
-      motivo: 'Edição já separada em atos com decisões individuais na base; não enviar o PDF inteiro como um evento.' });
+    if (row) {
+      const review = reviews.find(r => r.documento_id === id && r.publicar === false &&
+        r.trecho_sha256 === createHash('sha256').update(row.trecho || '').digest('hex'));
+      for (const url of [row.url, row.article_url, ...(review?.urls_documento || [])].filter(Boolean))
+        guard.set(canonicalUrl(url), { decisao: 'desdobrado',
+          motivo: 'Publicação já separada em atos com decisões individuais na base; não reenviar como um evento.' });
+    }
   }
   const auxiliary = await loadAlternativeDecisionData(directory);
   const humanIds = new Set(reviews.map(r => r.documento_id));

@@ -1,6 +1,7 @@
 import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs';
 import { buildResults } from './results-model.mjs';
 import { recoveredSourcesView } from './recovery-view.mjs';
+import { primaryEvidenceView } from './primary-evidence-view.mjs';
 
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
@@ -148,7 +149,7 @@ function renderDeck() {
     const body = node('span', 'overview-row-body');
     body.append(node('strong', '', displayTitle(item)), node('small', '', item.source || 'Fonte não informada'));
     const dates = node('span', 'overview-dates');
-    dates.append(node('small', '', 'Coletado em'), node('time', '', date(item.firstSeenAt)),
+    dates.append(node('small', '', item.documentParentId ? 'Origem coletada em' : 'Coletado em'), node('time', '', date(item.firstSeenAt)),
       node('small', '', item.publishedYear ? 'Ano do documento' : 'Publicado em'), node('time', '', item.publishedYear || date(item.publishedAt)));
     row.append(dates, body,
       node('span', `overview-verdict ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'));
@@ -204,7 +205,14 @@ function renderOverviewDetail(item) {
     ? 'O trecho coletado parece ser índice ou rodapé e não comprova o fato. Confira a fonte original.'
     : 'Nenhum trecho de prova foi recuperado para esta publicação. Confira a fonte original.')));
   const actions = node('div', 'overview-actions');
-  actions.append(link('Abrir publicação original', item.url));
+  actions.append(link(item.documentParentId ? 'Abrir ato oficial' : 'Abrir publicação original', item.url));
+  if (item.documentParentId) {
+    const parent = state.data.items.find(row => row.id === item.documentParentId);
+    if (parent) {
+      const original = node('button', 'detail-link', 'Ver notícia original preservada →');
+      original.addEventListener('click', () => openItem(parent)); actions.append(original);
+    }
+  }
   if (item.editorialReview?.evidenceUrl) proof.append(link('Abrir fonte usada na decisão', item.editorialReview.evidenceUrl));
   if (item.automaticAlternativeReview?.sourceUrl) proof.append(link('Abrir fonte alternativa usada na decisão', item.automaticAlternativeReview.sourceUrl));
   const full = node('button', 'detail-link', 'Ver ficha completa →'); full.type = 'button';
@@ -214,10 +222,12 @@ function renderOverviewDetail(item) {
   actions.append(back);
   panel.replaceChildren(head, node('h3', '', displayTitle(item)),
     node('p', 'overview-source', item.source || 'Fonte não informada'),
-    node('p', 'overview-date-summary', `${publicationLabel(item)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
+    node('p', 'overview-date-summary', `${publicationLabel(item)} · ${item.documentParentId ? 'Coleta da publicação de origem' : 'Primeira coleta'}: ${date(item.firstSeenAt, true)}`),
     why, proof, actions);
   const recovery = recoveredSourcesView(item, { document, date, compact: true });
   if (recovery) panel.append(recovery);
+  const primary = primaryEvidenceView(item, {document});
+  if (primary) panel.append(primary);
   const pending = pendingLabels(item);
   if (pending.length) panel.append(node('p', 'overview-caveat', `Também a conferir: ${pending.join(' · ')}.`));
   panel.append(node('p', 'overview-caveat', 'A decisão da base e a decisão de enviar ao WhatsApp são independentes.'));
@@ -230,7 +240,7 @@ function feedRow(item, index, selected, onClick) {
   const [statusText, tone] = status(item);
   const bucket = triageBucket(item);
   top.append(node('span', `decision-flag ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'),
-    node('span', 'item-date', `Coletado em ${date(item.firstSeenAt)}`));
+    node('span', 'item-date', `${item.documentParentId ? 'Origem coletada em' : 'Coletado em'} ${date(item.firstSeenAt)}`));
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
   body.append(top, node('strong', '', displayTitle(item)),
@@ -247,7 +257,7 @@ function renderDetailedRecord(item, target) {
   head.append(node('span', '', item.documentParentId ? 'SOBRE ESTE ATO' : 'SOBRE ESTA PUBLICAÇÃO'),
     node('span', '', item.id.slice(0, 8).toUpperCase()));
   const decision = node('div', `decision-card ${tone}`);
-  const verdict = item.baseDecision === 'desdobrado' ? 'EDIÇÃO — DECISÕES NOS ATOS ABAIXO'
+  const verdict = item.baseDecision === 'desdobrado' ? 'PUBLICAÇÃO — DECISÕES NOS ATOS ABAIXO'
     : item.automaticAlternativeReview ? (item.baseDecision === 'confirmado' ? 'SIM — ACEITO POR REGRAS E IA COM FONTE ALTERNATIVA' : item.baseDecision === 'descartado' ? 'NÃO — FORA DA BASE, COM FONTE ALTERNATIVA' : 'EXCEÇÃO — LEITURAS SEM CONCORDÂNCIA SEGURA')
     : item.editorialReview?.decision === 'confirmar_evento' ? 'SIM — ACHADO CONFERIDO E ACEITO'
     : item.editorialReview?.decision === 'nao_evento' ? 'NÃO — DESCARTADO APÓS CONFERÊNCIA'
@@ -294,7 +304,7 @@ function renderDetailedRecord(item, target) {
     node('div', 'detail-meta', `${item.source || 'Fonte não informada'}${displayTitle(item) !== item.title ? ` · ${item.title}` : ''}`),
     decision, grid);
   if (item.relatedActs?.length) {
-    panel.append(label('Atos individualizados nesta edição'));
+    panel.append(label('Atos individualizados nesta publicação'));
     for (const act of item.relatedActs) {
       const button = node('button', 'detail-link', `Pág. ${act.page} · ${act.title}${act.decision === 'confirmado' ? ' · aceito' : act.decision === 'descartado' ? ' · descartado' : ''} →`);
       button.type = 'button';
@@ -322,7 +332,7 @@ function renderDetailedRecord(item, target) {
     if (item.editorialReview.relatedDocumentId) {
       const related = state.data.items.find((row) => row.id === item.editorialReview.relatedDocumentId);
       if (related) {
-        const button = node('button', 'detail-link', `Ver publicação posterior: ${related.title} →`);
+        const button = node('button', 'detail-link', `Ver publicação vinculada: ${related.title} →`);
         button.type = 'button';
         button.addEventListener('click', () => { state.selectedItem = related.id; renderFeed(); });
         panel.append(button);
@@ -437,13 +447,20 @@ function detail(item, target) {
   alert.append(node('h4', '', 'E o WhatsApp?'), node('p', '', alertText));
   if (item.alertReason && !item.sentAt && item.alertDecision !== 'historico') alert.append(node('small', '', item.alertReason));
   const actions = node('div', 'readable-actions');
-  actions.append(link('Abrir publicação original', item.url));
+  actions.append(link(item.documentParentId ? 'Abrir ato oficial' : 'Abrir publicação original', item.url));
+  if (item.documentParentId) {
+    const parent = state.data.items.find(row => row.id === item.documentParentId);
+    if (parent) {
+      const original = node('button', 'detail-link', 'Ver notícia original preservada →');
+      original.addEventListener('click', () => openItem(parent)); actions.append(original);
+    }
+  }
   if (item.editorialReview?.evidenceUrl) proof.append(link('Abrir fonte usada na decisão', item.editorialReview.evidenceUrl));
   if (item.automaticAlternativeReview?.sourceUrl) proof.append(link('Abrir fonte alternativa usada na decisão', item.automaticAlternativeReview.sourceUrl));
   let siblings = null;
   if (item.relatedActs?.length) {
     siblings = node('section', 'readable-proof');
-    siblings.append(node('h4', '', 'Atos nesta edição'));
+    siblings.append(node('h4', '', 'Atos nesta publicação'));
     for (const act of item.relatedActs) {
       const button = node('button', 'detail-link', `Página ${act.page}: ${act.title} →`);
       button.type = 'button'; button.addEventListener('click', () => {
@@ -460,9 +477,9 @@ function detail(item, target) {
   const fullBody = node('div'); fullBody.id = 'detail-full-record'; full.append(fullBody);
   panel.replaceChildren(intro, node('h3', 'detail-head', displayTitle(item)),
     node('p', 'readable-meta', item.source || 'Fonte não informada'),
-    node('p', 'overview-date-summary', `${publicationLabel(item)} · Primeira coleta: ${date(item.firstSeenAt, true)}`),
+    node('p', 'overview-date-summary', `${publicationLabel(item)} · ${item.documentParentId ? 'Coleta da publicação de origem' : 'Primeira coleta'}: ${date(item.firstSeenAt, true)}`),
     decision, proof, alert, ...(siblings ? [siblings] : []), actions,
-    ...[recoveredSourcesView(item, { document, date })].filter(Boolean), full);
+    ...[primaryEvidenceView(item, {document}), recoveredSourcesView(item, { document, date })].filter(Boolean), full);
   renderDetailedRecord(item, '#detail-full-record');
   for (const selector of ['.detail-kicker', '.detail-head', '.detail-meta', '.decision-card']) {
     fullBody.querySelector(selector)?.remove();

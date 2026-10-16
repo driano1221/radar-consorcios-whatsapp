@@ -103,8 +103,8 @@ test('fluxograma vetorial mostra os dois caminhos reais e tem versão legível n
     assert.match(svg, /Mensagem no grupo/);
     assert.match(svg, /marker-end="url\(#arrow\)"/);
   }
-  assert.match(desktop, /viewBox="0 0 1160 1260"/);
-  assert.match(mobile, /viewBox="0 0 440 2335"/);
+  assert.match(desktop, /viewBox="0 0 1160 1490"/);
+  assert.match(mobile, /viewBox="0 0 440 2825"/);
   for (const svg of [desktop, mobile]) {
     assert.match(svg, /CNM\/Inertia/);
     assert.match(svg, /Mesmo episódio/);

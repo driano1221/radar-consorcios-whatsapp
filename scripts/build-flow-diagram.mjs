@@ -111,8 +111,13 @@ export function desktopFlowSvg() {
       lines: ['Concordância permite decisão na base.', 'Histórico revisado fica protegido.', 'Recuperação não envia WhatsApp.'], tone: 'green' }),
     arrow('M 360 1114 H 412'), arrow('M 740 1114 H 792'),
     `<text class="note" x="40" y="1231">Originais: classificação não basta para confirmação automática. Ainda há candidatos e revisão editorial.</text>`,
+    label(40, 1290, '03 / REVISÃO DOCUMENTAL AUTORIZADA'),
+    card({x:40,y:1310,w:320,h:148,tag:'PROVA PRIMÁRIA',title:'Lei ou acórdão',lines:['SAPL → norma → publicação.', 'Diário TCE → inteiro teor e página.']}),
+    card({x:420,y:1310,w:320,h:148,tag:'CONFERÊNCIA',title:'Separar atos e agentes',lines:['Cautelar não é condenação final.', 'Multa aplicada ≠ advertência.', 'Erro da notícia fica explícito.'],tone:'blue'}),
+    card({x:800,y:1310,w:320,h:148,tag:'APLICAÇÃO RETROATIVA',title:'Atualizar sem reenviar',lines:['Vincular fontes ao mesmo episódio.', 'Preservar original e revisão anterior.', 'Não liberar fila nem resumo.'],tone:'green'}),
+    arrow('M 360 1384 H 412'),arrow('M 740 1384 H 792'),
   ].join('\n');
-  return svg({ width: 1160, height: 1260, title: 'Fluxo do Radar Consórcios, da coleta ao catálogo e ao WhatsApp',
+  return svg({ width: 1160, height: 1490, title: 'Fluxo do Radar Consórcios, da coleta ao catálogo e ao WhatsApp',
     description: 'As fontes alimentam a leitura integral e a triagem. Depois há dois caminhos: decisão histórica para a base, com aceito, descartado ou exceção; e decisão independente de envio, com data, duplicidade, limite, revisão opcional por DeepSeek e WhatsApp.', content });
 }
 
@@ -165,8 +170,13 @@ export function mobileFlowSvg() {
     arrow('M 220 1943 V 1972'), arrow('M 220 2093 V 2122'),
     `<text class="note" x="20" y="2280">Originais: classificar não basta para confirmar.</text>`,
     `<text class="note" x="20" y="2305">Ainda há candidatos e revisão editorial.</text>`,
+    label(20,2360,'05 / REVISÃO DOCUMENTAL AUTORIZADA'),
+    card({x:20,y:2380,w:400,h:115,tag:'PROVA PRIMÁRIA',title:'Lei ou acórdão',lines:['SAPL → norma; Diário TCE → inteiro teor.', 'Página, URL e hash preservados.']}),
+    card({x:20,y:2530,w:400,h:115,tag:'CONFERÊNCIA',title:'Separar atos e agentes',lines:['Cautelar ≠ condenação; multa ≠ ameaça.', 'Divergência da notícia fica explícita.'],tone:'blue'}),
+    card({x:20,y:2680,w:400,h:115,tag:'RETROATIVO',title:'Atualizar sem reenviar',lines:['Mesma fonte não duplica o episódio.', 'Sem fila e sem resumo retroativo.'],tone:'green'}),
+    arrow('M 220 2495 V 2524'),arrow('M 220 2645 V 2674'),
   ].join('\n');
-  return svg({ width: 440, height: 2335, title: 'Fluxo do Radar Consórcios para tela estreita',
+  return svg({ width: 440, height: 2825, title: 'Fluxo do Radar Consórcios para tela estreita',
     description: 'Coleta, leitura e regras; destino histórico na base com três resultados; portão independente para alertas com data, novidade, limite, DeepSeek opcional e WhatsApp.', content, mobile: true });
 }
 
