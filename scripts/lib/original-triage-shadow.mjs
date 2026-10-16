@@ -5,8 +5,9 @@ import { normalizeWhitespace } from '../../src/lib/text.mjs';
 import { canonicalUrl } from '../../src/lib/dedupe.mjs';
 import { INSTITUTIONAL_REVIEW_POLICY } from '../../src/lib/institutional-proof.mjs';
 import {refineShadow, entityProven} from './original-shadow-rules.mjs';
+import {factAgreement} from './shadow-facts.mjs';
 
-export const VERSION = 'original-shadow-2.2';
+export const VERSION = 'original-shadow-3';
 export const sha = value => createHash('sha256').update(value).digest('hex');
 const plain = value => normalizeWhitespace(String(value || '')).normalize('NFKC');
 export const literal = (body, quote, min = 25) => plain(quote).length >= min && plain(body).includes(plain(quote));
@@ -57,20 +58,31 @@ Se não houver prova suficiente, use incerto=true. TAMBÉM PARA DESCARTES, preen
 
 export async function reviewOriginal(prepared, {apiKey, fetchImpl = fetch} = {}) {
   if (!prepared.eligible || !apiKey) throw new Error('Simulação requer texto elegível e chave configurada.');
-  const input = {titulo: prepared.item.title, fonte: prepared.item.source,
-    corpo: prepared.item.rawText};
+  // Full body only: identical republications receive exactly the same input.
+  // Original URLs/titles remain in each document's binding, not the shared call.
+  const input = {corpo: prepared.item.rawText};
   const response = await fetchImpl('https://api.deepseek.com/chat/completions', {
     method: 'POST', headers: {authorization: `Bearer ${apiKey}`, 'content-type': 'application/json'},
     body: JSON.stringify({model: 'deepseek-flash', thinking: {type: 'disabled'},
       response_format: {type: 'json_object'}, max_tokens: 1400,
-      messages: [{role: 'system', content: INSTITUTIONAL_REVIEW_POLICY+'\n'+SYSTEM}, {role: 'user', content: JSON.stringify(input)}]}),
+      messages: [{role: 'system', content: INSTITUTIONAL_REVIEW_POLICY+'\n'+SYSTEM+FACT_INSTRUCTIONS}, {role: 'user', content: JSON.stringify(input)}]}),
     signal: AbortSignal.timeout(45000),
   });
   if (!response.ok) throw new Error(`DeepSeek HTTP ${response.status}`);
   const payload = await response.json();
-  return {version: VERSION, inputHash: prepared.inputHash, textHash: prepared.textHash,
+  return {version: VERSION, inputHash: prepared.inputHash, textHash: prepared.textHash, contentReviewKey:contentReviewKey(prepared),
     model: 'deepseek-flash', usage: payload.usage || {},
     answer: JSON.parse(payload.choices?.[0]?.message?.content || '{}')};
+}
+
+const FACT_INSTRUCTIONS=`\nAcrescente tipo_fato, escolhendo: constituicao_historica (formação já ocorrida relatada no histórico), alteracao_protocolo (ratificação de ALTERAÇÃO de protocolo existente), recomendacao_entregue (ato de controle efetivamente entregue pelo MP), atividade_sediada (consórcio sediou oficina/curso/seminário), ordem_judicial (Justiça determinou obrigação ao consórcio), outro, fora_escopo. O tipo descreve o FATO comprovado, não palavras soltas. Cite na evidencia a oração inteira que prova esse tipo, com agente e ação; "MP ressaltou que" ou anúncio genérico não prova a entrega de recomendação. Não trate recomendação para solucionar crise como dissolução ou crise institucional consumada. Em decisões judiciais, diferencie destinatários/prazos e não afirme trânsito em julgado. Para consórcio empresarial contratado por município, menção a ata gerenciada por consórcio público não o torna destinatário da cautelar. Relevante=true exige escopo entidade ou orientacao_geral; fora_escopo exige relevante=false. Não aceite texto de LEIA TAMBÉM como fato da notícia.`;
+
+export const contentReviewKey=p=>sha(VERSION+'\n'+p.item.rawText);
+export function bindContentReview(p, review) {
+  if(review.version!==VERSION || review.textHash!==p.textHash || review.contentReviewKey!==contentReviewKey(p))
+    throw new Error('Cannot reuse review of a different body or policy');
+  return {...review,sourceInputHash:review.sourceInputHash||review.inputHash,inputHash:p.inputHash,
+    binding:'same_complete_body'};
 }
 
 export function decideOriginal(prepared, review) {
@@ -100,7 +112,9 @@ export function decideOriginal(prepared, review) {
   if (!literal(body, evidence) || typeof a.justificativa !== 'string' || a.justificativa.length < 15)
     return pending('prova_literal_ausente');
   const accepted = rule.category !== 'GERAL' && rule.score >= 5;
-  if (accepted !== a.relevante || (accepted ? a.categoria !== rule.category : a.categoria !== 'IRRELEVANTE'))
+  const agreement=factAgreement(rule,a);
+  if(accepted && agreement.supported && !agreement.matches) return pending('fato_ou_prova_divergente');
+  if (accepted !== a.relevante || (accepted ? a.categoria !== rule.category && !agreement.matches : a.categoria !== 'IRRELEVANTE'))
     return pending('divergencia_regra_ia');
   if (accepted) {
     if (!literal(body, rule.evidenceText) || !rule.stage || /a conferir|etapa desconhecida|celebração não comprovada/i.test(rule.stage))
@@ -112,6 +126,7 @@ export function decideOriginal(prepared, review) {
   }
   return {decision: accepted ? 'aceito' : 'descartado', category: accepted ? rule.category : 'GERAL',
     stage: rule.stage || '', reason: a.justificativa, evidence,
+    ...(agreement.matches?{factType:agreement.type,categoryResolution:a.categoria===rule.category?'concordante':'mesmo_fato_com_rotulo_normalizado',modelCategory:a.categoria}:{}),
     evidenceOrigin:fallback?'regra_concordante':'segunda_leitura',
     ...(rule.sourceQualification?{sourceQualification:rule.sourceQualification,reportedYear:rule.reportedYear}:{}),
     entity: accepted ? a.entidade || '' : '', scope: a.escopo};

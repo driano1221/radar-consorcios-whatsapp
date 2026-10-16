@@ -1,7 +1,8 @@
 // Read-only corpus replay. No sender, catalog writer, editorial guard or state cache.
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
-import { prepareOriginal, reviewOriginal, decideOriginal, sha, VERSION } from './lib/original-triage-shadow.mjs';
+import { prepareOriginal, reviewOriginal, decideOriginal, bindContentReview, contentReviewKey, sha, VERSION } from './lib/original-triage-shadow.mjs';
+import {processSegments} from './lib/shadow-facts.mjs';
 import { protectedSnapshot } from './pilot-retroactive-ten.mjs';
 import { formalEventKey } from '../src/lib/event-identity.mjs';
 import { canonicalUrl } from '../src/lib/dedupe.mjs';
@@ -29,38 +30,61 @@ const eligibleReviewed = prepared.filter(x => x.p.eligible &&
 // outcome-based selection. This is not an untouched prospective holdout.
 const baseline=JSON.parse(await readFile('docs/simulacao-originais-2026-10-16-resumo.json','utf8'));
 const oldById=new Map(baseline.sample.map(x=>[x.id,x]));
-const selected=eligibleReviewed.sort((a,b)=>a.row.id.localeCompare(b.row.id));
-if (selected.filter(x=>oldById.has(x.row.id)).length!==40 || selected.length>70)
+const v2=JSON.parse(await readFile('docs/simulacao-originais-v2-2026-10-16-resumo.json','utf8'));
+const v2ById=new Map(v2.sample.map(x=>[x.id,x]));
+const selected=prepared.filter(x=>v2ById.has(x.row.id)).sort((a,b)=>a.row.id.localeCompare(b.row.id));
+if (selected.filter(x=>oldById.has(x.row.id)).length!==40 || selected.length!==70 || selected.some(x=>!x.p.eligible))
   throw new Error('Cohort changed: inspect before spending API calls.');
 // Additional prospective-to-this-experiment sample: no editorial reference.
 // Select before viewing text/results; annotate only after the frozen run.
-const freshPool=prepared.filter(x=>x.p.eligible&&!reference.has(x.row.id))
-  .sort((a,b)=>sha('original-v21-fresh:'+a.row.id).localeCompare(sha('original-v21-fresh:'+b.row.id)));
-const fresh=[...freshPool.filter(x=>x.p.rule.category!=='GERAL'&&x.p.rule.score>=5).slice(0,6),
-  ...freshPool.filter(x=>x.p.rule.category==='GERAL'||x.p.rule.score<5).slice(0,6)];
+const seenBodies=new Set(selected.map(x=>x.p.textHash));
+const freshPool=prepared.filter(x=>x.p.eligible&&!reference.has(x.row.id)&&!v2ById.has(x.row.id))
+  .sort((a,b)=>sha('original-v3-fresh:'+a.row.id).localeCompare(sha('original-v3-fresh:'+b.row.id)))
+  .filter(x=>{if(seenBodies.has(x.p.textHash))return false;seenBodies.add(x.p.textHash);return true;});
+// Stratify on UNCHANGED production rule, not the experimental fixes.
+const fresh=[...freshPool.filter(x=>x.p.rawRule.category!=='GERAL'&&x.p.rawRule.score>=5).slice(0,6),
+  ...freshPool.filter(x=>x.p.rawRule.category==='GERAL'||x.p.rawRule.score<5).slice(0,6)];
 const freshIds=new Set(fresh.map(x=>x.row.id));
+const frozen=JSON.parse(await readFile('docs/simulacao-v3-amostra-nova.json','utf8'));
+if(fresh.length!==12 || frozen.cases.some(c=>!fresh.some(x=>x.row.id===c.id&&x.p.textHash===c.textHash)))
+  throw new Error('Frozen new sample changed: do not silently replace cases.');
 selected.push(...fresh);
-if(selected.length>70)throw new Error('API budget exceeded');
+if(selected.length>82)throw new Error('API budget exceeded');
 await mkdir('output/original-triage-simulation', {recursive:true});
 const answers = [];
+const contentCalls=new Map();
 if (options.has('--ai')) {
   if (!process.env.DEEPSEEK_API_KEY) throw new Error('DEEPSEEK_API_KEY unavailable; no AI experiment executed.');
-  // Bounded 70 calls, concurrency 2, no retries and no production AI cache.
+  // At most 82 documents, one call per complete body, concurrency 2.
+  // Failures are shared too: never retry duplicates until a favored answer.
   let next = 0;
   await Promise.all(Array.from({length:2}, async () => {
     while (next < selected.length) {
       const x = selected[next++];
-      try { answers.push({id:x.row.id, ...await reviewOriginal(x.p,{apiKey:process.env.DEEPSEEK_API_KEY})}); }
+      try {
+        const key=contentReviewKey(x.p);
+        if(!contentCalls.has(key))contentCalls.set(key,reviewOriginal(x.p,{apiKey:process.env.DEEPSEEK_API_KEY}).catch(e=>({error:e.message})));
+        const shared=await contentCalls.get(key);
+        answers.push({id:x.row.id,...(shared.error?shared:bindContentReview(x.p,shared))});
+      }
       catch (e) {answers.push({id:x.row.id,error:e.message});}
       console.log(`[simulação] ${answers.length}/${selected.length} — ${x.row.id.slice(0,8)}`);
     }
   }));
 }
 const answerById = new Map(answers.map(a=>[a.id,a]));
+const proposals=new Map(selected.map(x=>[x.row.id,decideOriginal(x.p,answerById.get(x.row.id))]));
+const groups=new Map();
+for(const x of selected){const g=groups.get(x.p.textHash)||[];g.push(x);groups.set(x.p.textHash,g);}
+let inconsistentGroups=0;
+for(const g of groups.values()){
+  const signatures=new Set(g.map(x=>{const d=proposals.get(x.row.id);return JSON.stringify([d.decision,d.category||'',d.factType||'']);}));
+  if(signatures.size>1){inconsistentGroups++;for(const x of g)proposals.set(x.row.id,{decision:'pendente',reason:'mesmo_corpo_com_regras_divergentes'});}
+}
 const fingerprints = new Map();
 const results = [];
 for (const {row,p} of prepared.sort((a,b)=>String(a.row.primeira_coleta).localeCompare(String(b.row.primeira_coleta)) || a.row.id.localeCompare(b.row.id))) {
-  const decision = decideOriginal(p,answerById.get(row.id));
+  const decision = proposals.get(row.id)||decideOriginal(p,answerById.get(row.id));
   const predictedRelevant = p.eligible && p.rule.category !== 'GERAL' && p.rule.score >= 5;
   const keys = p.eligible ? ['url:'+canonicalUrl(p.item.articleUrl), ...(p.item.rawText.length>=500?['text:'+p.textHash]:[]),
     ...(predictedRelevant && formalEventKey({...p.item,classification:p.rule})?['event:'+formalEventKey({...p.item,classification:p.rule})]:[])] : [];
@@ -82,8 +106,9 @@ for (const {row,p} of prepared.sort((a,b)=>String(a.row.primeira_coleta).localeC
     unchangedRuleCategory:p.rawRule?.category || null, ruleRefinement:p.rule?.proofKind || '',
     ruleMatchesReference:p.eligible && sealed && expectedRelevant!==null?predictedRelevant===expectedRelevant:null,
     referenceCategoryMatches:p.eligible && sealed && expectedRelevant===true?p.rule.category===expected.categoria:null,
-    selectedForAi:selected.some(x=>x.row.id===row.id), cohort:freshIds.has(row.id)?'fresh12':oldById.has(row.id)?'original40':'additional',
-    beforeProposal:oldById.get(row.id)?.proposal || null, ai:answerById.get(row.id) || null,
+    selectedForAi:selected.some(x=>x.row.id===row.id), cohort:freshIds.has(row.id)?'new12':oldById.has(row.id)?'original40':v2ById.get(row.id)?.cohort==='fresh12'?'previous12':'additional',
+    beforeProposal:v2ById.get(row.id)?.proposal || null, ai:answerById.get(row.id) || null,
+    textHash:p.textHash||'',processSegments:p.independentProcesses?processSegments(p.item.rawText):[],
     proposal:decision, duplicateCandidate:duplicate || null,
     proposalMatchesReference:sealed && expectedRelevant!==null && decision.decision!=='pendente'?(decision.decision==='aceito')===expectedRelevant:null});
 }
@@ -111,15 +136,16 @@ const report = {version:VERSION,generatedAt:new Date().toISOString(),commit:exec
     ruleFalseAccepts:comparable.filter(x=>x.ruleRelevant && !x.expectedRelevant).length,
     ruleFalseRejects:comparable.filter(x=>!x.ruleRelevant && x.expectedRelevant).length,
     categoryDisagreements:comparable.filter(x=>x.expectedRelevant && x.ruleRelevant && !x.referenceCategoryMatches).length,
-    aiSelected:selected.length,aiCalls:answers.length,aiErrors:answers.filter(x=>x.error).length,
+    aiSelected:selected.length,aiCalls:contentCalls.size,aiBoundDocuments:answers.length,aiErrors:answers.filter(x=>x.error).length,
+    sharedBodyGroups:[...groups.values()].filter(g=>g.length>1).length,inconsistentGroups,
     aiDecisions:count(results.filter(x=>x.selectedForAi),x=>x.proposal.decision),
     aiDecisionAgreements:decided.filter(x=>x.proposalMatchesReference).length,
     aiDecisionDisagreements:decided.filter(x=>!x.proposalMatchesReference).length,
     aiAcceptedCategoryDisagreements:decided.filter(x=>x.proposal.decision==='aceito' && x.proposal.category!==x.referenceCategory).length,
     proposedNewUnreviewed:results.filter(x=>x.referenceDecision===null && x.proposal.decision==='aceito').length,
-    usage:answers.reduce((a,x)=>({input:a.input+(x.usage?.prompt_tokens||0),output:a.output+(x.usage?.completion_tokens||0)}),{input:0,output:0})},
+    usage:[...new Map(answers.filter(x=>!x.error).map(x=>[x.contentReviewKey,x])).values()].reduce((a,x)=>({input:a.input+(x.usage?.prompt_tokens||0),output:a.output+(x.usage?.completion_tokens||0)}),{input:0,output:0})},
   baselineCommit:baseline.commit,
-  cohorts:Object.fromEntries(['original40','additional','fresh12'].map(cohort=>{
+  cohorts:Object.fromEntries(['original40','additional','previous12','new12'].map(cohort=>{
     const set=results.filter(x=>x.selectedForAi&&x.cohort===cohort), decided=set.filter(x=>x.proposal.decision!=='pendente'&&x.expectedRelevant!==null);
     return [cohort,{total:set.length,before:count(set,x=>x.beforeProposal?.decision || 'nao_testado'),
       after:count(set,x=>x.proposal.decision),reasons:count(set.filter(x=>x.proposal.decision==='pendente'),x=>x.proposal.reason),

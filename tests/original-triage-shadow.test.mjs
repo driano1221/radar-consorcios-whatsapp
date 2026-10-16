@@ -1,8 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {prepareOriginal,decideOriginal,reviewOriginal,sha,VERSION} from '../scripts/lib/original-triage-shadow.mjs';
+import {prepareOriginal,decideOriginal,reviewOriginal,bindContentReview,contentReviewKey,sha,VERSION} from '../scripts/lib/original-triage-shadow.mjs';
 import {refineShadow,entityProven} from '../scripts/lib/original-shadow-rules.mjs';
+import {factAgreement,processSegments} from '../scripts/lib/shadow-facts.mjs';
 const text='O Consórcio Intermunicipal Grande ABC realizou, em 18/9, visita técnica para conhecer o simulador. O encontro foi conduzido pelo próprio consórcio com os representantes municipais, sem contratação de equipamento ou treinamento já realizado.';
 const row={id:'example',titulo:'Visita realizada',url:'https://example.org/noticia',fonte:'Portal público'};
 const stored={documento_id:row.id,url_original:row.url,url_artigo:row.url,leitor:'readability',texto:text,texto_sha256:sha(text)};
@@ -158,4 +159,74 @@ test('shadow não está ligado à produção; executor não possui modo apply',a
   const script=await readFile(new URL('../scripts/simulate-original-triage.mjs',import.meta.url),'utf8');
   assert.doesNotMatch(script,/sendMessage|saveCatalog|writeState|loadEditorialGuard/);
   assert.match(script,/there is no apply mode/);
+});
+
+test('shadow corpo idêntico compartilha leitura sem falsificar vínculo do documento',async()=>{
+  const a=p(),b=prepareOriginal({...row,titulo:'Título da republicação',fonte:'Outro portal'},stored);
+  assert.notEqual(a.inputHash,b.inputHash);assert.equal(contentReviewKey(a),contentReviewKey(b));
+  let sent;
+  const r=await reviewOriginal(a,{apiKey:'test-only',fetchImpl:async(_,opts)=>{
+    sent=JSON.parse(JSON.parse(opts.body).messages[1].content);
+    return Response.json({choices:[{message:{content:JSON.stringify(answer)}}]});
+  }});
+  assert.deepEqual(Object.keys(sent),['corpo']);
+  const rebound=bindContentReview(b,r);
+  assert.equal(rebound.sourceInputHash,a.inputHash);assert.equal(rebound.inputHash,b.inputHash);
+  assert.equal(decideOriginal(b,rebound).decision,'aceito');
+  assert.throws(()=>bindContentReview({...b,textHash:'different'},r));
+  assert.throws(()=>bindContentReview(b,{...r,version:'older'}));
+});
+
+test('shadow oficina realizada passa de GERAL, mas presença, futuro, negação e leia também não',()=>{
+  const body='O Consórcio Intermunicipal Vale Azul sediou, nesta segunda-feira, a terceira Oficina de Gestão Pública, para avaliar atividades realizadas.';
+  const base={category:'GERAL',score:0};
+  assert.equal(refineShadow({rawText:body},base).category,'ATUAÇÃO');
+  for(const bad of [body.replace('sediou','sediará'),body.replace('sediou','participou'), 'Não é verdade que '+body,'LEIA TAMBÉM: '+body])
+    assert.equal(refineShadow({rawText:bad},base).category,'GERAL');
+});
+
+test('shadow ordem judicial exige consórcio destinatário, não comentário nem hipótese',()=>{
+  const body='A Justiça determinou que o município e o Consórcio Intermunicipal Vale Azul promovam a regularização sanitária do centro de saúde.';
+  const base={category:'GERAL',score:0};
+  assert.equal(refineShadow({rawText:body},base).proofKind,'judicial_order');
+  for(const s of [body.replace('determinou','poderia determinar'),body.replace('determinou','não determinou'),
+    'O Consórcio Intermunicipal Vale Azul comentou a decisão. A Justiça determinou que a empresa regularize os serviços.'])
+    assert.equal(refineShadow({rawText:s},base).category,'GERAL');
+});
+
+test('shadow rótulo diferente só é reconciliado com mesmo tipo e prova específica',()=>{
+  const quote='O Consórcio Intermunicipal Vale Azul, estabelecido em 2023, surge como entidade pública autárquica.';
+  const rule={proofKind:'secondary_institutional_history',category:'CRIAÇÃO',evidenceText:quote};
+  const a={categoria:'GOVERNANÇA',tipo_fato:'constituicao_historica',evidencia:quote};
+  assert.equal(factAgreement(rule,a).matches,true);
+  for(const changed of [{tipo_fato:'outro'},{categoria:'ADESÃO'},{evidencia:'O consórcio oferece vagas para enfermeiros.'},
+    {evidencia:quote.replace('estabelecido','que seria estabelecido')}])
+    assert.equal(factAgreement(rule,{...a,...changed}).matches,false);
+});
+
+test('shadow prova fraca da recomendação não passa mesmo com categoria correta',()=>{
+  const quote='Ao final da audiência, foi entregue aos participantes a Recomendação nº 23/2026, assinada pelas quatro Promotorias de Justiça envolvidas no procedimento.';
+  const rule={proofKind:'delivered_recommendation',category:'CONTROLE',evidenceText:quote};
+  const a={tipo_fato:'recomendacao_entregue',categoria:'CRISE',evidencia:quote};
+  assert.equal(factAgreement(rule,a).matches,true);
+  assert.equal(factAgreement(rule,{...a,categoria:'CONTROLE',evidencia:'O MP ressaltou que não poderá haver interrupção dos atendimentos.'}).matches,false);
+});
+
+test('shadow alteração ratificada não vira protocolo constitutivo nem valida minuta',()=>{
+  const quote='Fica ratificado o Termo de Alteração do Protocolo de Intenções, para adequar os objetivos do Consórcio Intermunicipal Vale Azul.';
+  const body='SANCIONADA EM 2026. '+quote;
+  const rule=refineShadow({title:'Lei 100/2026',rawText:body},{category:'PROTOCOLO',score:8});
+  assert.equal(rule.proofKind,'protocol_amendment');
+  assert.equal(factAgreement(rule,{categoria:'PROTOCOLO',tipo_fato:'alteracao_protocolo',evidencia:quote}).matches,true);
+  assert.notEqual(refineShadow({title:'Projeto de Lei 100',rawText:body},{category:'GERAL',score:0}).proofKind,'protocol_amendment');
+});
+
+test('shadow segmentos preservam texto, processo e limites sem herdar dispositivo de outro ato',()=>{
+  const body='Notícia sobre três processos. Um dos processos, autuado sob o número 1234567, envolve o Consórcio Alfa. A decisão manteve suspensa a licitação. Outro processo, também envolvendo Alfa (n. 7654321), teve o voto acompanhado. Já o terceiro processo, n. 1237654, envolve outro consórcio. A decisão foi confirmada.';
+  const segments=processSegments(body);assert.equal(segments.length,3);
+  assert.deepEqual(segments.map(s=>s.process),['1234567','7654321','1237654']);
+  for(const s of segments)assert.equal(body.slice(s.start,s.end),s.text);
+  assert.equal(segments[0].hasDispositive,true);assert.equal(segments[1].hasDispositive,false);
+  assert.equal(segments[2].hasDispositive,true);
+  assert.deepEqual(processSegments('Lei 100 Art. 1º e Art. 2º'),[]);
 });

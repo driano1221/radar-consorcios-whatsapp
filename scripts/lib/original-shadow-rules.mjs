@@ -7,7 +7,7 @@ const unsafe = /\b(?:nao|nunca|negou|teria|poderia|pretende|caso|se|supostamente
 function proof(text, expression) {
   for (const m of text.matchAll(new RegExp(expression.source, expression.flags.replace('g','')+'g'))) {
     const start = Math.max(text.lastIndexOf('.',m.index-1),text.lastIndexOf('!',m.index-1),text.lastIndexOf('?',m.index-1))+1;
-    if (!unsafe.test(fold(text.slice(start,m.index)+m[0]))) return m[0];
+    if (!unsafe.test(fold(text.slice(start,m.index)+m[0])) && !/leia tamb[eé]m\s*:/i.test(text.slice(start,m.index))) return m[0];
   }
   return '';
 }
@@ -41,8 +41,27 @@ export function refineShadow(item, rule) {
       return use('GERAL',rule.stage,rule.evidenceText,'routine_supplier_excluded');
     if (/^crédito orçamentário;/.test(rule.stage||'') && /cr[eé]dito adicional/i.test(rule.evidenceText||''))
       return use('GERAL',rule.stage,rule.evidenceText,'budget_rubric_excluded');
-    return rule;
   }
+  // Require an actual action and its public-consortium subject/target in the
+  // same sentence. Neither passive attendance nor a future event qualifies.
+  const workshop=proof(text,/\bCons[oó]rcio\s+(?:P[uú]blico\s+)?Intermunicipal\s+[^.!?;]{2,120}?\s+sediou,?\s+[^.!?;]{0,90}\b(?:oficina|curso|semin[aá]rio)\b[^.!?;]{0,180}/i);
+  if(workshop)return use('ATUAÇÃO','oficina/curso/seminário efetivamente sediado pelo consórcio; resultados futuros não presumidos',workshop,'hosted_activity');
+  const judicial=proof(text,/\b(?:a Justi[cç]a|o ju[ií]zo|o Tribunal)\s+determinou\s+que\s+[^.!?;]{0,120}Cons[oó]rcio Intermunicipal[^.!?;]{0,180}\b(?:promovam|promova|regularize|realize|providencie)\b[^.!?;]{0,170}/i);
+  if(judicial)return use('CONTROLE','ordem judicial relatada; obrigações e prazos de cada destinatário separados; trânsito em julgado não comprovado',judicial,'judicial_order');
+  const amendment=proof(text,/\bFica ratificado o Termo de Altera[cç][aã]o do Protocolo de Inten[cç][oõ]es[^.!?;]{0,300}Cons[oó]rcio Intermunicipal[^.!?;]{0,150}/i);
+  if(amendment && !/\b(?:projeto de lei|minuta)\b/i.test(title) && /\b(?:SANCIONADA|Registrada e publicada)\b/i.test(text))
+    return use('GOVERNANÇA','lei ratifica alteração de protocolo de consórcio existente; não prova novo ingresso nem constituição',amendment,'protocol_amendment');
+  const recommendation=proof(text,/\bAo final da audi[eê]ncia, foi entregue aos participantes a Recomenda[cç][aã]o n[º°.]\s*\d+\/20\d{2},\s*assinada pelas?[^.!?;]{0,150}Promotorias[^.!?;]{0,120}/i);
+  if(recommendation && /Cons[oó]rcio Intermunicipal/i.test(text) && /Minist[eé]rio P[uú]blico/.test(text))
+    return use('CONTROLE','recomendação do Ministério Público entregue; providências solicitadas, não condenação nem dissolução consumada',recommendation,'delivered_recommendation');
+  // A payment freeze on a municipal contract is not automatically a sanction
+  // on the public consortium merely managing the referenced price register.
+  const municipalContract=proof(text,/\bcontrato de [^.!?]{0,150}firmado pela Secretaria Municipal[^.!?]{0,120}/i);
+  const ataOnly=proof(text,/\bteve origem em ades[aã]o [àa] Ata de Registro de Pre[cç]os[^.!?]{0,75}gerenciada pelo Cons[oó]rcio Intermunicipal[^.!?]{0,150}/i);
+  if(rule.category==='GERAL' && municipalContract && ataOnly && /\bempresas que o integram\b/i.test(text) &&
+      (text.match(/Cons[oó]rcio Intermunicipal/gi)||[]).length===1 &&
+      /\badministra[cç][aã]o municipal fica impedida de realizar novos desembolsos\b/i.test(text))
+    return use('GERAL','cautelar sobre contrato municipal com consórcio empresarial; consórcio público citado como gerenciador da ata, sem sanção própria comprovada',municipalContract,'municipal_supplier_control');
   if(rule.category==='RATEIO' && /celebração a conferir/.test(rule.stage||'') && item.kind==='gazette' &&
     !/\bminuta\b/i.test(title+' '+text)) {
     const signed=/\bresolvem celebrar o presente Contrato de Rateio\b[^.!?]{0,220}/i.exec(text);

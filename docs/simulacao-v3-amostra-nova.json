@@ -1,0 +1,54 @@
+{
+  "version": "original-shadow-3",
+  "selection": "sha256 original-v3-fresh, 6 positivos e 6 negativos pela regra de produção; excluir corpos já testados",
+  "cases": [
+    {
+      "id": "34f2e231099d6bc75ce83425f39ce1e3dc6f6a4aac497482eefddbe33185f2f6",
+      "textHash": "255de4cb2e1a865a227b30020b4af582714e3a44e4dd338c73cc0d8b47ff5fc1"
+    },
+    {
+      "id": "75410f2d692d13433800041e1eb269bb2b23890639c0049964b90f73c0f87d94",
+      "textHash": "4312db6a3fb5fb7ec3d70a4f675c518fe0742d7dc417a34b24373ec7f40d7441"
+    },
+    {
+      "id": "a53fd21da71370d06d6be135f56556ca53bd839f00119f64ddc4e425e65b939a",
+      "textHash": "ba39708b7a93a6e7987ca67ecdbd0bd2c145334787798fb5a9e001d1a04d1dbb"
+    },
+    {
+      "id": "c25aac40c76d2cec74fbefb161ba65ed5068947f6a6b423f72f2bfd839bd5074",
+      "textHash": "a4b3419210f96e8ad35a914affca5aa965a5c9457f4bde53a036f455d7886cf7"
+    },
+    {
+      "id": "7831e8d35ddce7eebccae22ee02705dc986224988ac194175307420e0e59640a",
+      "textHash": "1a295f0a8c990c73bb0683921cc969f80af253c918fae84e534c457884e347a8"
+    },
+    {
+      "id": "7a5aefb225ba892d61f76c0ef28ce395cf796edbf9b4204bf4c03280e537e327",
+      "textHash": "e7c28847a113c2e12434d45b82a77c0f4cb4b122554dac43b58e79d900f7e761"
+    },
+    {
+      "id": "d9406dcf2836016d945f9e42b1ce1b65773a9bad995a63b3dbd469acc398a5ea",
+      "textHash": "0cf55467546c68f5392cb1c20c911ccb7345bc1fb34cbbee7b219eef247dc89d"
+    },
+    {
+      "id": "7c06e6f71a132e6ec2ed1c3c1d7f09327e8a4a79ff82d9e5db9869a4bd0c4a1c",
+      "textHash": "bb7dcafd288813c6df60fb1ddd88ad0ff9acd6af31740d0d3fe33aa798126853"
+    },
+    {
+      "id": "4f0adc7bef8cc1bd5692b890e67c13dbbee7121c8fd95191017779bac8772f4f",
+      "textHash": "6fbc21c0e89e6148f1a55ec5d32619ff22d21cbbb604052e99d48d863a3bf180"
+    },
+    {
+      "id": "f5e8191e57b5d469abac4d8246ddc11d2ad0b67f4b89c6f9974805373e61da40",
+      "textHash": "3b99bec485bb345cb0f38ebb49e266d3c1fed2f9dc60faf2b93839c304a17b3c"
+    },
+    {
+      "id": "dabc05eec3ae12fa7bf6364007a34146655793f522bd6e6eb54b7d141f7e903a",
+      "textHash": "5afd96c28cc8b25c77b073787108f452827397ffaec6216e362a7053f1b5df73"
+    },
+    {
+      "id": "eed5a239c81fc84206631c140045b41df37273e341bfb766d84bf61f4fb1f087",
+      "textHash": "969839cdb0a69e1f490e31c0dada867f8d76291fb19b261686fc2d2342220837"
+    }
+  ]
+}
