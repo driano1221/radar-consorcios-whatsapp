@@ -34,6 +34,8 @@ O critério de incluir a composição e a atuação realizada foi aprovado pelo 
 - 394 testes Node locais passaram. Cobrem prova literal, hashes, duplicatas, relações municipais, identidade, separação original/alternativa, alertas e resumo semanal. As quatro rotas afetadas também abriram em teste local real.
 - A aplicação verifica que os outros fatos e todos os originais ficaram intactos. Reexecutar `node scripts/apply-historical-thirteen.mjs --apply` não grava nem duplica. Testes reais de leitura não possuem credenciais do WhatsApp nem chamam IA.
 
+O [teste no GitHub Actions](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38948706793) confirmou a suíte, idempotência e as quatro leituras reais: duas páginas do Portal Opinião Pública, API do CIMCERO e reprodução oficial do Conclima. A comparação final manteve dados e estado sem alterações. A [publicação do painel](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38948707383) concluiu com sucesso.
+
 ## Fila restante
 
 O inventário `scripts/inventory-retroactive-backlog.mjs` passou de 13 para **zero registros sem revisão e com lacuna de recuperação registrada** no acervo deste corte. Essa medida não equivale a todos os documentos do acervo terem texto integral, nem a todos os portais funcionarem continuamente.
