@@ -36,6 +36,13 @@ const result={...report,reference:ref.caveat,pdfProofs,literalDecisions,
     falseRejections:fresh.filter(x=>x.expected.decision==='aceito'&&x.integrated.decision==='descartado').length,
     incompleteConcluded:fresh.filter(x=>x.expected.decision==='pendente'&&x.integrated.decision!=='pendente').length},
   results:report.results.map(x=>fresh.find(y=>y.id===x.id)||x)};
+assert.equal(result.additional.falseAcceptances,0,'False acceptance against the frozen reference');
+assert.equal(result.additional.falseRejections,0,'False rejection against the frozen reference');
+assert.equal(result.additional.incompleteConcluded,0,'Incomplete text must not become a thematic conclusion');
+if(report.safetyVersion==='original-v7-safety-1'){
+  assert.equal(fresh.find(x=>x.id.startsWith('dcec74f9')).integrated.factType,'eleicao_realizada');
+  for(const prefix of ['b999516d','74fb6772','f5b8ae64'])assert.equal(fresh.find(x=>x.id.startsWith(prefix)).integrated.decision,'pendente');
+}
 await writeFile(report.mode==='--ai'?'docs/simulacao-v7-resultado.json':'docs/simulacao-v7-replay-resultado.json',JSON.stringify(result,null,2)+'\n');
 assert.deepEqual(await protectedSnapshot(),before);
 console.log(JSON.stringify({...result,results:undefined,canonicalPrimaryFacts:undefined},null,2));
