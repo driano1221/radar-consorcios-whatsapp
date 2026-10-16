@@ -1,0 +1,904 @@
+{
+  "run": "https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/38975839429",
+  "commit": "929d852effdf1a06ea3b87fd9ac572a93ffdf4a9",
+  "generatedAt": "2026-10-16T22:27:54.814Z",
+  "reviewer": "assistente, aplicando critérios anteriores do usuário; não é validação humana independente",
+  "caveat": "Amostra exploratória pequena, não aleatória representativa; decisão concordante não valida automaticamente motivo, prova, identidade ou novidade.",
+  "productionActivated": false,
+  "whatsappCalls": 0,
+  "protectedFilesUnchanged": true,
+  "historical": {
+    "total": 82,
+    "before": {
+      "aceito": 47,
+      "descartado": 33,
+      "pendente": 2
+    },
+    "after": {
+      "aceito": 47,
+      "descartado": 33,
+      "pendente": 2
+    },
+    "changed": 0
+  },
+  "documentary": {
+    "canonicalFacts": 4,
+    "reviews": 6,
+    "pdfs": 5,
+    "checkedProofs": 14,
+    "conclusion": "Correções documentais preservadas e sem envio; não contam como decisões autônomas dos textos originais."
+  },
+  "fresh": {
+    "total": 12,
+    "decisions": {
+      "descartado": 9,
+      "pendente": 2,
+      "aceito": 1
+    },
+    "decisionMatches": 10,
+    "falseRejections": 1,
+    "unexpectedAbstentions": 1,
+    "apiErrors": 0,
+    "calls": 12,
+    "usage": {
+      "input": 33407,
+      "output": 2729
+    },
+    "results": [
+      {
+        "id": "0b4815c6b673dd18a76f284c093dc5c7652e844913658e676de8ea4634dbdc4f",
+        "title": "AVISO DE ADESÃO A ATA DE REGISTRO DE PREÇOS",
+        "url": "https://amm.diariomunicipal.org/publicacao/1920604/",
+        "textHash": "55f8f75a549128cd13b6a3409d77825fc074589619c2636b649f89df621d627f",
+        "inputHash": "6ab415aba4eccde23c4786961acfc02e73025808588b341d7d5d35613010ced3",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -49,
+          "reasons": [
+            "contexto público forte",
+            "ADESÃO",
+            "rejeitado: adesão a ata de preços",
+            "rejeitado: contratação/ata de preços"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "PREGÃO ELETRÔNICO Nº 38/2026 O Município de Campos de Júlio - MT vem a público divulgar, para conhecimento dos interessados, que foi formalizado processo de adesão à Ata de Registro de Preços nº 009/2026, originada do Pregão Eletrônico nº 004/2026, realizado pelo CONSÓRCIO INTERMUNICIPAL DE INFRAESTRUTURA DOS MUNICÍPIOS DO NOROESTE DE MINAS GERAIS – CINF–AMNOR, visando a aquisição de 01 (uma) ambulância zero quilômetro, em atendimento às necessidades da Secretaria Municipal de Saúde. Detentora do preço registrado: CKS VEICULOS ESPECIAIS LTDA, inscrita no CNPJ sob nº 30.330.883/0001-69. Valor aderido: R$ 419.000,00 As especificações detalhadas do objeto constam do Termo de Referência do processo originário e da proposta da detentora dos preços registrados, devidamente juntados ao processo de adesão. A adesão acima mencionada foi autuada internamente sob a modalidade Pregão Eletrônico nº 038/2026, por meio do Processo Licitatório nº 109/2026. Maiores informações poderão ser obtidas pelo telefone (65) 3387 2800 ou pelo e-mail [email omitido]. Campos de Júlio - MT, 05 de outubro de 2026 Eric Rodrigo Pettenan Agente de Contratação Portaria nº 95/2026",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "",
+          "reason": "Trata-se de adesão de município a ata de registro de preços gerenciada por consórcio público para aquisição de ambulância, mero contrato rotineiro de compra com fornecedor, sem fato institucional do consórcio (criação, adesão, rateio, governança etc.).",
+          "evidence": "O Município de Campos de Júlio - MT vem a público divulgar, para conhecimento dos interessados, que foi formalizado processo de adesão à Ata de Registro de Preços nº 009/2026",
+          "evidenceOrigin": "segunda_leitura",
+          "entity": "",
+          "scope": "fora_escopo"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "6ab415aba4eccde23c4786961acfc02e73025808588b341d7d5d35613010ced3",
+          "textHash": "55f8f75a549128cd13b6a3409d77825fc074589619c2636b649f89df621d627f",
+          "contentReviewKey": "44309e95414d3b20eb3c399426454875dd09e949af7f79b1c2123c5f1d761cac",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2569,
+            "completion_tokens": 197,
+            "total_tokens": 2766,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 521
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "O Município de Campos de Júlio - MT vem a público divulgar, para conhecimento dos interessados, que foi formalizado processo de adesão à Ata de Registro de Preços nº 009/2026",
+            "justificativa": "Trata-se de adesão de município a ata de registro de preços gerenciada por consórcio público para aquisição de ambulância, mero contrato rotineiro de compra com fornecedor, sem fato institucional do consórcio (criação, adesão, rateio, governança etc.).",
+            "escopo": "fora_escopo",
+            "entidade": "",
+            "evidencia_entidade": "",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "6ab415aba4eccde23c4786961acfc02e73025808588b341d7d5d35613010ced3",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "0b4815c6",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Compra municipal por adesão à ata, não ingresso no consórcio nem rateio.",
+          "quote": "foi formalizado processo de adesão à Ata de Registro de Preços nº 009/2026"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "0ebe468d3475edb0c1967c3d4fdfd4531982cdb8957b11d892de2866f227bc5d",
+        "title": "Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade abre processo seletivo simplificado para educador social - Qconcursos Folha Dirigida",
+        "url": "https://folha.qconcursos.com/n/consorcio-intermunicipal-do-servico-socioassistencial-de-alta-complexidade-abre-processo-seletivo-simplificado-para-educador-social",
+        "textHash": "f940e585ba28dc70c287f80437c91a308814fd5e489f6b06fc43b6dda6ce9375",
+        "inputHash": "36bbb4498a9f16de2fa116fc3b113764e9c07134a575aa8ef2d8c05df6d3cd12",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade – modalidade: Serviço de Acolhimento Familiar e Institucional (SAFI) publicou o edital nº 03/2026 para contratação, em caráter emergencial e por processo seletivo simplificado, de educador social para atuação em Itá, no oeste catarinense.Paisagem de Itá, Santa Catarina, com o lago da usina e as torres da antiga igreja refletindo na água, em um dia de céu azul.As torres da antiga igreja emergem no lago da Usina Hidrelétrica Itá, um dos cartões-postais do município (Crédito: Rádio 96 FM).Vaga e requisitosCargo: educador social (1 vaga)Remuneração: R$ 2.919,05 mensaisRegime de contratação: CLTJornada: 40 horas semanais, em escala 12x36, com atuação diurna ou noturnaRequisitos: ensino médio completo e CNH categoria BInscriçõesPeríodo: 25 de setembro a 2 de outubro de 2026Taxa: gratuitaOnde se inscrever:Presencialmente: Rua 6, Lote 23, nº 220, Centro, Itá SCPor e-mail: [email omitido]ção e validadeEtapa: análise de títulos (não haverá prova objetiva ou prática)Validade do processo seletivo: 6 meses, prorrogável por igual períodoNo âmbito da assistência social, em serviços de acolhimento familiar e institucional, o educador social atua no cuidado cotidiano, organização de rotinas, mediação de conflitos e fortalecimento de vínculos, sempre orientado por diretrizes de proteção social e pelo Estatuto da Criança e do Adolescente. É uma função central para garantir ambiente protetivo e o desenvolvimento de usuários em situação de vulnerabilidade.Itá em focoItá é conhecida nacionalmente pelas torres da antiga igreja que despontam sobre o lago da Usina Hidrelétrica Itá — um cenário que virou atração turística e símbolo da cidade. A orla e as paisagens do reservatório também movimentam atividades de lazer e ",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "",
+          "reason": "A notícia trata exclusivamente de processo seletivo para contratação de educador social, sem ato institucional, composição municipal nomeada, atuação concreta, governança ou outro fato relevante sobre consórcio público; não há vínculo expresso de municípios ao consórcio.",
+          "evidence": "O Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade – modalidade: Serviço de Acolhimento Familiar e Institucional (SAFI) publicou o edital nº 03/2026 para contratação, em caráter emergencial e por processo seletivo simplificado, de educador social para atuação em Itá, no oeste catarinense.",
+          "evidenceOrigin": "segunda_leitura",
+          "entity": "",
+          "scope": "fora_escopo"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "36bbb4498a9f16de2fa116fc3b113764e9c07134a575aa8ef2d8c05df6d3cd12",
+          "textHash": "f940e585ba28dc70c287f80437c91a308814fd5e489f6b06fc43b6dda6ce9375",
+          "contentReviewKey": "6411325738756be3c563a23333c1162f9a390ae1145e8251146884c1e93be4bb",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2987,
+            "completion_tokens": 235,
+            "total_tokens": 3222,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 939
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "O Consórcio Intermunicipal do Serviço Socioassistencial de Alta Complexidade – modalidade: Serviço de Acolhimento Familiar e Institucional (SAFI) publicou o edital nº 03/2026 para contratação, em caráter emergencial e por processo seletivo simplificado, de educador social para atuação em Itá, no oeste catarinense.",
+            "justificativa": "A notícia trata exclusivamente de processo seletivo para contratação de educador social, sem ato institucional, composição municipal nomeada, atuação concreta, governança ou outro fato relevante sobre consórcio público; não há vínculo expresso de municípios ao consórcio.",
+            "escopo": "fora_escopo",
+            "entidade": "",
+            "evidencia_entidade": "",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "36bbb4498a9f16de2fa116fc3b113764e9c07134a575aa8ef2d8c05df6d3cd12",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "0ebe468d",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Seleção de pessoal; sede/local de trabalho não comprovam composição municipal.",
+          "quote": "para contratação, em caráter emergencial e por processo seletivo simplificado, de educador social"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "233b0307f90aedbfc8b63b68aa5f1e7d13e78202aeefc1a809ceca9f6c2384cf",
+        "title": "Detalhes do Acórdão - 495/2017 - Segunda Câmara - viajuris.tce.pr.gov.br",
+        "url": "https://viajuris.tce.pr.gov.br/Pesquisa/Visualizar/495/2017/ACO/S2C",
+        "textHash": "4bf687fe4bd10dd8629fcb70ff3a2e83d6d5506853f1431b57467232c1eb4f24",
+        "inputHash": "b743914d11b8f266e64372b44aa6de38347db35b45ad688f28da5d7e92d245c6",
+        "productionRule": "FINANÇAS",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "💰",
+          "score": 0,
+          "reasons": [
+            "ficha sem resultado do julgamento; ler a decisão vinculada"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Acórdão 495 Ficha Técnica Acórdão 495/2017 Processo 166880/2015 Data da Sessão 15/02/2017 Data de Publicação 24/02/2017 Veículo de Publicação DETC Número de Publicação 1543 Decisão na Íntegra (PDF) Copiar Ementa Colegiado Segunda Câmara Relator IVAN LELIS BONILHA Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL DE SAUDE DO SUDOESTE - CONSUD Classificação da Decisão Interessados ALBERTO ARISI, CONSORCIO INTERMUNI",
+          "publicContext": true,
+          "strongPublicContext": true,
+          "stage": "ficha sem resultado do julgamento; ler a decisão vinculada",
+          "proofKind": "judgment_metadata",
+          "policyExclusion": "judgment_metadata"
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "ficha sem resultado do julgamento; ler a decisão vinculada",
+          "reason": "ficha sem resultado do julgamento; ler a decisão vinculada",
+          "evidence": "Acórdão 495 Ficha Técnica Acórdão 495/2017 Processo 166880/2015 Data da Sessão 15/02/2017 Data de Publicação 24/02/2017 Veículo de Publicação DETC Número de Publicação 1543 Decisão na Íntegra (PDF) Copiar Ementa Colegiado Segunda Câmara Relator IVAN LELIS BONILHA Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL DE SAUDE DO SUDOESTE - CONSUD Classificação da Decisão Interessados ALBERTO ARISI, CONSORCIO INTERMUNI",
+          "entity": "",
+          "scope": "fora_escopo",
+          "evidenceOrigin": "regra_explicita",
+          "policyExclusion": "judgment_metadata"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "b743914d11b8f266e64372b44aa6de38347db35b45ad688f28da5d7e92d245c6",
+          "textHash": "4bf687fe4bd10dd8629fcb70ff3a2e83d6d5506853f1431b57467232c1eb4f24",
+          "contentReviewKey": "4e9b88314056147074243df93fc9f6c1219b2c7fda8850b20631b3b1de339a87",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2387,
+            "completion_tokens": 224,
+            "total_tokens": 2611,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 339
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": true,
+            "categoria": "CONTROLE",
+            "evidencia": "Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL DE SAUDE DO SUDOESTE - CONSUD",
+            "justificativa": "O documento é uma ficha técnica de acórdão que registra a prestação de contas anual do consórcio público CONSUD, constituindo ato de controle externo (julgamento de contas) sobre a entidade.",
+            "escopo": "entidade",
+            "entidade": "CONSORCIO INTERMUNICIPAL DE SAUDE DO SUDOESTE - CONSUD",
+            "evidencia_entidade": "Origem CONSORCIO INTERMUNICIPAL DE SAUDE DO SUDOESTE - CONSUD",
+            "tipo_fato": "outro"
+          },
+          "sourceInputHash": "b743914d11b8f266e64372b44aa6de38347db35b45ad688f28da5d7e92d245c6",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "233b0307",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Ficha de acórdão, sem resultado; não presume mérito ou sanção.",
+          "quote": "Decisão na Íntegra (PDF) Copiar Ementa"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "3643329a1a717d9731cfe156474709d7c8e7df8501c1f468cacc7808657849ee",
+        "title": "PND 2026 tem adesão de 2.007 municípios e 23 estados",
+        "url": "https://agenciabrasil.ebc.com.br/educacao/noticia/2026-09/pnd-2026-tem-adesao-de-2007-municipios-e-23-estados",
+        "textHash": "6017ac2dab02fa6b587029447eeb93c733008407eff92b17171fc45088512897",
+        "inputHash": "ba77d6cb2be3bf9ebba97c76331c0e07ff123fb0d81baa178aeffae0ba7bee4e",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 0,
+          "reasons": [],
+          "evidenceIndex": 0,
+          "evidenceText": "A edição deste ano da Prova Nacional Docente (PND) tem a adesão de 23 secretarias estaduais de educação e de 2.007 municípios, o que corresponde, respectivamente a 85,19% das 27 unidades da federação e 36,03% entre os 5.571 municípios brasileiros. A adesão das redes municipais, em 2026, representa um crescimento percentual de 33,09% em relação à adesão de 1.508 municípios, em 2025. Na primeira edição da Prova Nacional Docente (PND), o Ministério da Educação (MEC) também anunciou, a adesão de 22 redes de ensino estaduais. Vale ressaltar que a adesão dos entes federativos ao chamado CNU dos Professores é voluntária. De acordo com a portaria publicada pelo Ministério da Educação (nº 527/2026, em junho, os 23 governos estaduais que aderiram à Prova Nacional Docente são: Acre, Alagoas, Amapá, Bahia, Espírito Santo, Maranhão, Mato Grosso, Mato Grosso do Sul, Minas Gerais, Pará, Paraíba, Paraná, Pernambuco, Piauí, Rio de Janeiro, Rio Grande do Norte, Rio Grande do Sul, Rondônia, Roraima, Santa Catarina, São Paulo, Sergipe e Tocantins. Somente os estados do Amazonas, Ceará e Goiás, além do Distrito Federal, não têm confirmado o registro na categoria Estadual. Em relação à lista dos municípios, as 2.007 redes municipais de ensino participantes são de 26 estados brasileiros. Neste ano, as 25 capitais participantes na esfera municipal são: Região Norte: Rio Branco, Manaus, Macapá, Belém, Porto Velho e Boa Vista; Região Nordeste: Maceió, Salvador, Fortaleza, São Luís, João Pessoa, Recife, Teresina, Natal e Aracaju; Região Centro-Oeste: Goiânia, Cuiabá e Campo Grande; Região Sudeste: Belo Horizonte, Rio de Janeiro, São Paulo, Vitória; Região Sul: Curitiba, Porto Alegre e Florianópolis. Somente a capital Palmas não vai adotar esta edição da PND em seus processos seletivos de professo",
+          "publicContext": false,
+          "strongPublicContext": false
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "",
+          "reason": "O documento trata exclusivamente da adesão de estados e municípios à Prova Nacional Docente (PND), programa federal de seleção de professores, sem qualquer menção a consórcios públicos intermunicipais. Não há prova de constituição, adesão, rateio, governança ou atuação de consórcio público.",
+          "evidence": "A edição deste ano da Prova Nacional Docente (PND) tem a adesão de 23 secretarias estaduais de educação e de 2.007 municípios",
+          "evidenceOrigin": "segunda_leitura",
+          "entity": "",
+          "scope": "fora_escopo"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "ba77d6cb2be3bf9ebba97c76331c0e07ff123fb0d81baa178aeffae0ba7bee4e",
+          "textHash": "6017ac2dab02fa6b587029447eeb93c733008407eff92b17171fc45088512897",
+          "contentReviewKey": "043c2423fa296c3dab417ea6e1e6c3ebc5467a303295007b8ace46f07419f0be",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 3630,
+            "completion_tokens": 187,
+            "total_tokens": 3817,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 1582
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "A edição deste ano da Prova Nacional Docente (PND) tem a adesão de 23 secretarias estaduais de educação e de 2.007 municípios",
+            "justificativa": "O documento trata exclusivamente da adesão de estados e municípios à Prova Nacional Docente (PND), programa federal de seleção de professores, sem qualquer menção a consórcios públicos intermunicipais. Não há prova de constituição, adesão, rateio, governança ou atuação de consórcio público.",
+            "escopo": "fora_escopo",
+            "entidade": "",
+            "evidencia_entidade": "",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "ba77d6cb2be3bf9ebba97c76331c0e07ff123fb0d81baa178aeffae0ba7bee4e",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "3643329a",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Adesão à Prova Nacional Docente, não a consórcio.",
+          "quote": "A edição deste ano da Prova Nacional Docente (PND) tem a adesão de 23 secretarias estaduais de educação e de 2.007 municípios"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "7460d067f4c86bc51dbff0f07bd604efda2e01ad17603ef1032732c428ec89c2",
+        "title": "Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense abre concurso para auxiliar administrativo - Qconcursos Folha Dirigida",
+        "url": "https://folha.qconcursos.com/n/consorcio-intermunicipal-multifinalitario-do-alto-uruguai-catarinense-abre-concurso-para-auxiliar-administrativo",
+        "textHash": "4d48c11653f457cf86714917bd4f753621e7ba2a2c459817d41fc55c64b9d8f8",
+        "inputHash": "00b2e13686a67494ed54b58899bb9bc6fd3466e8646aac1043fc3b23116a82ad",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 5,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense, sediado em Concórdia SC, publicou o Edital nº 01/2026 para o cargo de auxiliar administrativo. A seleção oferece 1 vaga, com remuneração de R$ 4.193,34, contratação pelo regime CLT, jornada de 35 horas semanais e exigência de nível superior.Vista de acesso urbano em Concórdia SC, no Oeste catarinenseConcurso do Consórcio Intermunicipal do Alto Uruguai Catarinense em Concórdia SC tem 1 vaga para auxiliar administrativo (Foto: Wikipedia).InscriçõesAs inscrições ocorrem de 24 de setembro a 23 de outubro de 2026, exclusivamente no site oficial do consórcio. A taxa é de R$ 100. Haverá isenção para doadores de sangue e candidatos inscritos no CadÚnico, conforme condições do edital, com solicitação de 24 de setembro a 2 de outubro de 2026.Etapas e validadeA seleção será composta por prova objetiva, prevista para 8 de novembro de 2026. O concurso terá validade de 2 anos a partir da homologação, podendo ser prorrogado uma única vez por igual período.Entenda: o que é um consórcio intermunicipalConsórcios intermunicipais reúnem prefeituras para atuar de forma conjunta em serviços compartilhados (por exemplo, compras comuns, gestão de serviços ou projetos regionais).Esse modelo amplia eficiência e reduz custos administrativos ao concentrar estruturas e processos que atendem a diversos municípios de uma mesma região.Perfil do cargo: auxiliar administrativoAtua em rotinas de escritório, apoio a equipes, controle de documentos, atendimento e suporte a processos internos.Exige organização, boa comunicação, domínio de ferramentas de escritório e atenção a prazos e normas institucionais.O detalhamento de atribuições específicas para este concurso deve ser conferido no edital.Resumo do concursoÓrgão: Consórcio Interm",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "",
+          "reason": "Trata-se de notícia sobre concurso público do consórcio, sem fato institucional como constituição, adesão, protocolo, governança ou atuação do consórcio; a menção é apenas de seleção de pessoal, não havendo composição municipal expressa.",
+          "evidence": "publicou o Edital nº 01/2026 para o cargo de auxiliar administrativo. A seleção oferece 1 vaga, com remuneração de R$ 4.193,34, contratação pelo regime CLT",
+          "evidenceOrigin": "segunda_leitura",
+          "entity": "",
+          "scope": "fora_escopo"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "00b2e13686a67494ed54b58899bb9bc6fd3466e8646aac1043fc3b23116a82ad",
+          "textHash": "4d48c11653f457cf86714917bd4f753621e7ba2a2c459817d41fc55c64b9d8f8",
+          "contentReviewKey": "f3405e2fd933028942036a678f7367889258192e5a79b8f160ceeea199f99b62",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2954,
+            "completion_tokens": 203,
+            "total_tokens": 3157,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 906
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "publicou o Edital nº 01/2026 para o cargo de auxiliar administrativo. A seleção oferece 1 vaga, com remuneração de R$ 4.193,34, contratação pelo regime CLT",
+            "justificativa": "Trata-se de notícia sobre concurso público do consórcio, sem fato institucional como constituição, adesão, protocolo, governança ou atuação do consórcio; a menção é apenas de seleção de pessoal, não havendo composição municipal expressa.",
+            "escopo": "fora_escopo",
+            "entidade": "",
+            "evidencia_entidade": "",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "00b2e13686a67494ed54b58899bb9bc6fd3466e8646aac1043fc3b23116a82ad",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "7460d067",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Concurso administrativo, explicação genérica de consórcio sem novo fato nem composição.",
+          "quote": "publicou o Edital nº 01/2026 para o cargo de auxiliar administrativo"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "79480ee305bbad4230eb8c5c0a73438a7451557c2e25e10e193bee6a3eb8b9db",
+        "title": "Flalhas na elaboração de editais levam TCEMG a suspender licitações promovidas por consórcios públicos em Minas Gerais",
+        "url": "https://www.tce.mg.gov.br/noticia/Detalhe/1111629256",
+        "textHash": "359d45e27392d658c94260089048cf0e7f5863137d8648444f704e57514a0cc2",
+        "inputHash": "130ebc747764cb2885065bdef69e815b6564095ea77223a2be9c12dfc1a8ea50",
+        "productionRule": "CONTROLE",
+        "rule": {
+          "category": "CONTROLE",
+          "emoji": "🟥",
+          "score": 13,
+          "reasons": [
+            "contexto público forte",
+            "CONTROLE"
+          ],
+          "evidenceIndex": 2,
+          "evidenceText": "decisões reforçam um alerta que o Tribunal vem fazendo com frequência: falhas no planejamento, na definição das necessidades e na modalidade das contratações estão entre os principais motivos de questionamentos em licitações realizadas por consórcios públicos. Diante do aumento do número de denúncias e representações envolvendo esse tipo de contratação, o TCEMG promoverá, em breve, um encontro voltado a gestores e gestoras, servidores, servidoras e demais responsáveis por licitações. A proposta é esclarecer dúvidas, orientar sobre a correta aplicação da legislação e apresentar boas práticas capazes de evitar erros recorrentes que têm levado à suspensão de licitações. A iniciativa busca fortalecer a segurança jurídica, a transparência e a eficiência das contratações públicas realizadas pelos consórcios. Um consórcio público é uma união entre dois ou mais entes da federação (União, Estados, Distrito Federal ou Municípios) para realizar ações conjuntas, gerenciar serviços públicos e alcançar objetivos de interesse comum. De acordo com o presidente do TCEMG, conselheiro Durval Ângelo, são \"essenciais para a gestão pública, mas é necessário que ajam corretamente\", afirmou em coletiva em Uberaba, durante a última edição do encontro técnico deste ano. Instituídos pela Lei nº 11.107/2005, o consórcio público é uma pessoa jurídica própria e serve para otimizar recursos, permitindo que cidades ou estados menores comprem equipamentos, contratem serviços ou realizem obras que não conseguiriam financiar sozinhos. Em Minas Gerais, existem cerca de 200 consórcios públicos, sendo responsáveis por movimentar mais de 2,5 bilhões de reais (dado de 2024). Entendidos como figuras jurídicas centrais para ampliação da efetividade de políticas públicas, os consórcios públicos serão tema de um ",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "pendente",
+          "reason": "etapa_ou_prova_da_regra_insuficiente"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "130ebc747764cb2885065bdef69e815b6564095ea77223a2be9c12dfc1a8ea50",
+          "textHash": "359d45e27392d658c94260089048cf0e7f5863137d8648444f704e57514a0cc2",
+          "contentReviewKey": "60a3e95bc3a4dc43244c270c4ec1434a279c41e429dc6adb65d6b279f015a57c",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 3483,
+            "completion_tokens": 276,
+            "total_tokens": 3759,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 1435
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": true,
+            "categoria": "CONTROLE",
+            "tipo_fato": "outro",
+            "evidencia": "Adonias Monteiro determinou a suspensão dos efeitos da Ata de Registro de Preços nº 7/2026, firmada com a empresa vencedora do procedimento, proibindo novas contratações e adesões à ata até nova deliberação do Tribunal. A decisão também determinou que o Cimarg comprovasse o cumprimento da medida no prazo de cinco dias.",
+            "justificativa": "O TCEMG, em sede de controle externo, referendou medidas cautelares que suspenderam licitações e os efeitos de atas de registro de preços de consórcios públicos (Cimarg e Ciminas), determinando ainda comprovação de cumprimento. Trata-se de ato concreto de controle sobre entidades consorciais, não de mera orientação ou notícia.",
+            "escopo": "entidade",
+            "entidade": "Cimarg",
+            "evidencia_entidade": "envolvendo o Consórcio Intermunicipal Multifinalitário do Alto Rio Grande (Cimarg)"
+          },
+          "sourceInputHash": "130ebc747764cb2885065bdef69e815b6564095ea77223a2be9c12dfc1a8ea50",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "79480ee3",
+          "decision": "pendente",
+          "category": "CONTROLE",
+          "reason": "Dois processos autônomos, CIMARG 1214503 e CIMINAS 1210634. Segmentar e conferir duplicidade; não aceitar agregado nem descartar por irrelevância.",
+          "quote": "A Segunda Câmara do Tribunal de Contas confirmou, nas últimas duas sessões, duas medidas de caráter preventivo"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "816ec81e6a42da0779a82dcf007dea7f01b34c14f38e0c841e1b08a95da650c5",
+        "title": "EXTRATO DE CONTRATO TEMPORÁRIO",
+        "url": "https://amm.diariomunicipal.org/publicacao/1924383/",
+        "textHash": "1bf40a85b5a8340d1dc672ce79c99592c0aacf7f8827c89b4a65787e07c02e99",
+        "inputHash": "93978cb9ec41ac2070d1ffb6f09cf0149cabf8a8db642a6774f984a0943ee6b6",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": 4,
+          "reasons": [
+            "contexto público forte"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "EXTRATO DE CONTRATO TEMPORÁRIO DE PRESTAÇÃO DE SERVIÇOS Nº 032/2026 PRESIDENTE DO CISA: ACÁCIO ALVES SOUZA CONTRATANTE: CISA-CONSÓRCIO INTERMUNICIPAL DE SAÚDE DO ARAGUAIA CONTRATADO: ERICA ANDRADE LIMA CONTRATO TEMPORÁRIO Nº 032/2026 DATA DE EMISSÃO DO CONTRATO: 01/09/2026 VIGÊNCIA: 01 de Setembro de 2026 a 01 de Setembro de 2028 CARGA HORÁRIA: 40 (quarenta) horas semanais REMUNERAÇÃO: R$1.815,82+20% de Insalubridade FUNÇÃO: TÉCNICO EM ENFERMAGEM, em CARÁTER TEMPORÁRIO LOTAÇÃO: HOSPITAL MUNICIPAL DE SÃO FÉLIX DO ARAGUAIA-MT",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "",
+          "reason": "Extrato de contrato temporário de prestação de serviços (contratação de técnico em enfermagem), ato rotineiro de pessoal que não constitui fato institucional relevante do consórcio.",
+          "evidence": "CONTRATANTE: CISA-CONSÓRCIO INTERMUNICIPAL DE SAÚDE DO ARAGUAIA CONTRATADO: ERICA ANDRADE LIMA CONTRATO TEMPORÁRIO Nº 032/2026",
+          "evidenceOrigin": "segunda_leitura",
+          "entity": "",
+          "scope": "fora_escopo"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "93978cb9ec41ac2070d1ffb6f09cf0149cabf8a8db642a6774f984a0943ee6b6",
+          "textHash": "1bf40a85b5a8340d1dc672ce79c99592c0aacf7f8827c89b4a65787e07c02e99",
+          "contentReviewKey": "d66d2d71035d03167f4a8c7c9f36e1c2e7cdbeca0f786168fafaca296a4deeb8",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2427,
+            "completion_tokens": 219,
+            "total_tokens": 2646,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 379
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "CONTRATANTE: CISA-CONSÓRCIO INTERMUNICIPAL DE SAÚDE DO ARAGUAIA CONTRATADO: ERICA ANDRADE LIMA CONTRATO TEMPORÁRIO Nº 032/2026",
+            "justificativa": "Extrato de contrato temporário de prestação de serviços (contratação de técnico em enfermagem), ato rotineiro de pessoal que não constitui fato institucional relevante do consórcio.",
+            "escopo": "fora_escopo",
+            "entidade": "CISA",
+            "evidencia_entidade": "CISA-CONSÓRCIO INTERMUNICIPAL DE SAÚDE DO ARAGUAIA",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "93978cb9ec41ac2070d1ffb6f09cf0149cabf8a8db642a6774f984a0943ee6b6",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "816ec81e",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Contratação temporária de pessoal, rotina operacional, sem comprovação de serviços já prestados.",
+          "quote": "FUNÇÃO: TÉCNICO EM ENFERMAGEM, em CARÁTER TEMPORÁRIO"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "a0bd994139af861365e8ceaa391f07990b1ecd81f745e7e01bd94bad418385f7",
+        "title": "Detalhes do Acórdão - 726/2019 - Primeira Câmara - viajuris.tce.pr.gov.br",
+        "url": "https://viajuris.tce.pr.gov.br/Pesquisa/Visualizar/726/2019/ACO/S1C",
+        "textHash": "662da8b36353ccb2ca4825f3454765899322058c3d1bd214e1dabb15891ab46b",
+        "inputHash": "17da380d0d25586a200c7f3d20fa10373983a56be7e503ff9be65ae87409d883",
+        "productionRule": "FINANÇAS",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "💰",
+          "score": 0,
+          "reasons": [
+            "ficha sem resultado do julgamento; ler a decisão vinculada"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Acórdão 726 Ficha Técnica Acórdão 726/2019 Processo 308330/2017 Data da Sessão 01/04/2019 Data de Publicação 09/04/2019 Veículo de Publicação DETC Número de Publicação 2035 Decisão na Íntegra (PDF) Copiar Ementa Colegiado Primeira Câmara Relator FERNANDO AUGUSTO MELLO GUIMARÃES Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL VALE DO CAPANEMA Classificação da Decisão Interessados CONSORCIO INTERMUNICIPAL VALE DO",
+          "publicContext": true,
+          "strongPublicContext": true,
+          "stage": "ficha sem resultado do julgamento; ler a decisão vinculada",
+          "proofKind": "judgment_metadata",
+          "policyExclusion": "judgment_metadata"
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "ficha sem resultado do julgamento; ler a decisão vinculada",
+          "reason": "ficha sem resultado do julgamento; ler a decisão vinculada",
+          "evidence": "Acórdão 726 Ficha Técnica Acórdão 726/2019 Processo 308330/2017 Data da Sessão 01/04/2019 Data de Publicação 09/04/2019 Veículo de Publicação DETC Número de Publicação 2035 Decisão na Íntegra (PDF) Copiar Ementa Colegiado Primeira Câmara Relator FERNANDO AUGUSTO MELLO GUIMARÃES Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL VALE DO CAPANEMA Classificação da Decisão Interessados CONSORCIO INTERMUNICIPAL VALE DO",
+          "entity": "",
+          "scope": "fora_escopo",
+          "evidenceOrigin": "regra_explicita",
+          "policyExclusion": "judgment_metadata"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "17da380d0d25586a200c7f3d20fa10373983a56be7e503ff9be65ae87409d883",
+          "textHash": "662da8b36353ccb2ca4825f3454765899322058c3d1bd214e1dabb15891ab46b",
+          "contentReviewKey": "79c21653483a7f9f8a1efabc2c88f2cbc3e9fdbab5ed2a33318562f76f0d6b8b",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2385,
+            "completion_tokens": 174,
+            "total_tokens": 2559,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 337
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "Classe Processual/Assunto PRESTAÇÃO DE CONTAS ANUAL Origem CONSORCIO INTERMUNICIPAL VALE DO CAPANEMA",
+            "justificativa": "Documento é ficha técnica de acórdão de prestação de contas anual, sem resultado, ementa ou deliberação; não comprova ato institucional, atuação ou controle efetivo do consórcio.",
+            "escopo": "fora_escopo",
+            "entidade": "",
+            "evidencia_entidade": "",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "17da380d0d25586a200c7f3d20fa10373983a56be7e503ff9be65ae87409d883",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "a0bd9941",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Ficha de acórdão, sem resultado; descartar a ficha como fato e manter o PDF como pista a recuperar.",
+          "quote": "Decisão na Íntegra (PDF) Copiar Ementa"
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "a8ae05ef21f7f597ac32ae469e0525ff60364fa834c58dba7348863081f52f83",
+        "title": "ATENDIMENTO OFTALMOLÓGICO: Consórcio viabiliza procedimentos de YAG Laser para 100 pacientes do Araguaia - Rede da Notícia",
+        "url": "https://rededanoticia.com.br/atendimento-oftalmologico-consorcio-viabiliza-procedimentos-de-yag-laser-para-100-pacientes-do-araguaia/",
+        "textHash": "33f9a1a36e127194f1d7fa9d3991fe65fd993d94146376e86c8a4cb61af4ff37",
+        "inputHash": "d9d1cc95c6adadbebfe73b06ee1cc361909fd4faffc7522d37e59cc78ba5e7af",
+        "productionRule": "ATUAÇÃO",
+        "rule": {
+          "category": "ATUAÇÃO",
+          "emoji": "📰",
+          "score": 9,
+          "reasons": [
+            "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7)",
+          "publicContext": true,
+          "strongPublicContext": true,
+          "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+          "proofKind": "completed_activity",
+          "policyExclusion": null
+        },
+        "proposal": {
+          "decision": "aceito",
+          "category": "ATUAÇÃO",
+          "stage": "atividade realizada pelo consórcio; ações futuras e entregas adicionais não presumidas",
+          "reason": "O corpo relata atuação concreta já realizada: o CISGA viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes, com atendimentos realizados por parceiro e moradores de municípios integrantes contemplados. Trata-se de fato institucional consumado de prestação de serviço, não mera previsão ou convocação.",
+          "evidence": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7).",
+          "evidenceOrigin": "segunda_leitura",
+          "identityEvidence": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser",
+          "identityEvidenceOrigin": "segunda_leitura",
+          "entity": "Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA)",
+          "scope": "entidade"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "d9d1cc95c6adadbebfe73b06ee1cc361909fd4faffc7522d37e59cc78ba5e7af",
+          "textHash": "33f9a1a36e127194f1d7fa9d3991fe65fd993d94146376e86c8a4cb61af4ff37",
+          "contentReviewKey": "48f4181a8b7d6cab80765bf7246a33966492ab81fa45283263f3d03da7a585ce",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2731,
+            "completion_tokens": 271,
+            "total_tokens": 3002,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 683
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": true,
+            "categoria": "ATUAÇÃO",
+            "tipo_fato": "outro",
+            "evidencia": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7).",
+            "justificativa": "O corpo relata atuação concreta já realizada: o CISGA viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes, com atendimentos realizados por parceiro e moradores de municípios integrantes contemplados. Trata-se de fato institucional consumado de prestação de serviço, não mera previsão ou convocação.",
+            "escopo": "entidade",
+            "entidade": "Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA)",
+            "evidencia_entidade": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser"
+          },
+          "sourceInputHash": "d9d1cc95c6adadbebfe73b06ee1cc361909fd4faffc7522d37e59cc78ba5e7af",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "a8ae05ef",
+          "decision": "aceito",
+          "category": "ATUAÇÃO",
+          "reason": "Procedimentos já realizados pelo CISGA; relato reproduz episódio já conhecido, não é necessariamente fato novo.",
+          "quote": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7)."
+        },
+        "decisionMatches": true
+      },
+      {
+        "id": "b187ce5dd0d6bfe971e1d070cc0d00569aa56828d6c9ad74fe62939bb82f5b2b",
+        "title": "GCMs Do ABC Recebem Certificados Após Curso Regional - abcagora.com.br",
+        "url": "https://abcagora.com.br/2026/09/23/gcms-abc-curso-corregedoria/",
+        "textHash": "80632a6abc171fbfeb865ded8f1cd4c3e6164641dd77426756d448886d3361bf",
+        "inputHash": "6f9291239a233d27712da6486b72b9b796900feaaa2365f4b7062b0320b885e7",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -8,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: agenda sem deliberação"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "O Consórcio Intermunicipal Grande ABC realiza, na próxima quarta-feira (30/9), às 10h, a solenidade de entrega dos certificados de conclusão do Curso de Corregedoria e Disciplina aos integrantes das Guardas Civis Municipais das sete cidades da região.A capacitação foi promovida em parceria com a Academia de Ensino e Pesquisa em Segurança Urbana da Guarda Civil Metropolitana de São Paulo (GCM/SP) e tem como objetivo contribuir para o aperfeiçoamento das atividades de corregedoria e disciplina das Guardas Civis Municipais do Grande ABC.O evento reunirá Comandantes-Gerais, Corregedores das Guardas Civis Municipais e Secretários de Segurança dos municípios da região. Durante a solenidade, serão entregues oficialmente os certificados aos GCMs que concluíram o curso.LEIA TAMBÉM: Consórcio ABC avalia tecnologia de simulação para treinamento das Guardas MunicipaisAlém da entrega dos certificados, o encontro terá como pauta a ampliação da parceria entre o Consórcio ABC e a GCM/SP para a realização de novos cursos de capacitação. A proposta é discutir, a partir das prioridades identificadas pelos Comandos e Corregedorias, quais formações podem ser desenvolvidas para atender às demandas das Guardas Civis Municipais do Grande ABC e planejar uma agenda conjunta de futuras capacitações com a Academia de Ensino da GCM/SP.ServiçoSolenidade de Entrega de CertificadosDia 30 de setembro, quarta-feira, às 10hLocal: Auditório do Consórcio Intermunicipal Grande ABCAvenida Ramiro Colleoni, 5, Centro, Santo André. Índice LEIA TAMBÉM: Consórcio ABC avalia tecnologia de simulação para treinamento das Guardas MunicipaisSolenidade de Entrega de Certificados",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "",
+          "reason": "O texto anuncia evento futuro de entrega de certificados e discute possibilidades de nova parceria; não há atuação já realizada nem parceria já firmada, apenas convocação/planejamento futuro.",
+          "evidence": "O Consórcio Intermunicipal Grande ABC realiza, na próxima quarta-feira (30/9), às 10h, a solenidade de entrega dos certificados de conclusão do Curso de Corregedoria e Disciplina",
+          "evidenceOrigin": "segunda_leitura",
+          "entity": "",
+          "scope": "fora_escopo"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "6f9291239a233d27712da6486b72b9b796900feaaa2365f4b7062b0320b885e7",
+          "textHash": "80632a6abc171fbfeb865ded8f1cd4c3e6164641dd77426756d448886d3361bf",
+          "contentReviewKey": "e8f283134ef3f9eeddbba8e7625cc86acc3eb7cd9bd3e38946d9e751c9a9644d",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2640,
+            "completion_tokens": 191,
+            "total_tokens": 2831,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 592
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "O Consórcio Intermunicipal Grande ABC realiza, na próxima quarta-feira (30/9), às 10h, a solenidade de entrega dos certificados de conclusão do Curso de Corregedoria e Disciplina",
+            "justificativa": "O texto anuncia evento futuro de entrega de certificados e discute possibilidades de nova parceria; não há atuação já realizada nem parceria já firmada, apenas convocação/planejamento futuro.",
+            "escopo": "fora_escopo",
+            "entidade": "",
+            "evidencia_entidade": "",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "6f9291239a233d27712da6486b72b9b796900feaaa2365f4b7062b0320b885e7",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "b187ce5d",
+          "decision": "aceito",
+          "category": "ATUAÇÃO",
+          "reason": "Capacitação já promovida e concluída; somente a cerimônia dos certificados é futura. Preservar a distinção e verificar episódio já existente.",
+          "quote": "A capacitação foi promovida em parceria com a Academia de Ensino e Pesquisa em Segurança Urbana"
+        },
+        "decisionMatches": false
+      },
+      {
+        "id": "b45f5adaa90715c4baaf998c4c46edf3e725f751d8d45720f28366b51c2b96cd",
+        "title": "CIS-VERDE - MG abre processo seletivo para Assistente Administrativo - pciconcursos.com.br",
+        "url": "https://www.pciconcursos.com.br/noticias/cis-verde-mg-abre-processo-seletivo-para-assistente-administrativo",
+        "textHash": "fa0a062dc798f63798782dce065448ed48d057bf4d9f41d2dfbb670310aaee7d",
+        "inputHash": "db2769f5e2753d798bf2f288b57b87f18020edcca42f1f76f4297b04770d6432",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -26,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "Oportunidade para nível médio com jornada de 40 horas semanais e salário de R$ 1.767,52. A seleção será feita por meio de análise curricular. No Estado de Minas Gerais, o Consórcio Intermunicipal Multifinalitário - CIS-VERDE publicou um edital de Processo Seletivo Simplificado visando preencher uma vaga e formar cadastro de reserva para o cargo de Assistente Administrativo de nível médio. Segundo o edital, a oportunidade é para o cargo de: Assistente Administrativo (1 vaga + cadastro de reserva)A jornada de trabalho é de 40 horas semanais, com remuneração de R$ 1.767,52. As inscrições deverão ser realizadas na sede do Consórcio em Carangola, Rua Anthônio Thomé, nº 100, Bairro Triângulo, das 8h do dia 25 de setembro de 2026 às 16h do dia 1º de outubro de 2026. Não haverá cobrança de taxa de inscrição. A seleção será realizada em etapa única, por meio de análise curricular, conforme os critérios estabelecidos no edital. A contratação será temporária, com prazo determinado, sob o regime celetista. O processo seletivo terá validade de 1 ano, contado da publicação do ato de homologação. Mais informações podem ser obtidas no edital completo.Confira também o podcast desta notícia e fique por dentro dos detalhes.",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "pendente",
+          "reason": "prova_literal_ausente"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "db2769f5e2753d798bf2f288b57b87f18020edcca42f1f76f4297b04770d6432",
+          "textHash": "fa0a062dc798f63798782dce065448ed48d057bf4d9f41d2dfbb670310aaee7d",
+          "contentReviewKey": "b4665f53e4f8a65f4e922cd69a4220ae79f75a10251c0eb9678bdc6b4c9ef714",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2542,
+            "completion_tokens": 277,
+            "total_tokens": 2819,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 494
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "O Consórcio Intermunicipal Multifinalitário - CIS-VERDE publicou um edital de Processo Seletivo Simplificado visando preencher uma vaga e formar cadastro de reserva para o cargo de Assistente Administrativo de nível médio.",
+            "justificativa": "A notícia trata apenas de processo seletivo simplificado para contratação de pessoal; não há fato institucional do consórcio (constituição, protocolo, adesão, rateio, governança, controle, crise, atuação concreta ou finanças). A menção ao consórcio e à sede não configura composição municipal expressa nem outra categoria relevante.",
+            "escopo": "fora_escopo",
+            "entidade": "Consórcio Intermunicipal Multifinalitário - CIS-VERDE",
+            "evidencia_entidade": "No Estado de Minas Gerais, o Consórcio Intermunicipal Multifinalitário - CIS-VERDE publicou um edital de Processo Seletivo Simplificado",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "db2769f5e2753d798bf2f288b57b87f18020edcca42f1f76f4297b04770d6432",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "b45f5ada",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Processo seletivo, sem outro fato institucional comprovado.",
+          "quote": "publicou um edital de Processo Seletivo Simplificado visando preencher uma vaga e formar cadastro de reserva"
+        },
+        "decisionMatches": false
+      },
+      {
+        "id": "bccfdaea7fdb0aa974e734f8da13e626300b6aa01a372cd491f0b866e2297eeb",
+        "title": "Consórcio Lambari/SC abre concurso com vaga para Auxiliar Administrativo - concursossc.com.br",
+        "url": "https://concursossc.com.br/consorcio-lambari-sc-abre-concurso-com-vaga-para-auxiliar-administrativo/",
+        "textHash": "dd01d9196e1d61cf1b335b0e372c280c0d88e2f15a796d3c78f567001672b943",
+        "inputHash": "b40af2a141867f855ada9ba6fc8d027c1c156bb59ee088bb88bcb99442856717",
+        "productionRule": "GERAL",
+        "rule": {
+          "category": "GERAL",
+          "emoji": "📰",
+          "score": -25,
+          "reasons": [
+            "contexto público forte",
+            "rejeitado: recrutamento sem evento institucional"
+          ],
+          "evidenceIndex": 0,
+          "evidenceText": "- Publicidade - O Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense (Consórcio Lambari), com sede em Concórdia, Santa Catarina, publicou edital de Concurso Público para preenchimento de uma vaga imediata e formação de cadastro de reserva. A oportunidade é destinada ao cargo de Auxiliar Administrativo, que, conforme informado no edital, exige nível superior. Vaga O concurso oferece a seguinte oportunidade: Auxiliar Administrativo – 1 vaga + cadastro de reserva A jornada de trabalho será de 35 horas semanais, com remuneração de R$ 4.193,34.- Publicidade - Inscrições As inscrições deverão ser realizadas exclusivamente pela internet, entre os dias 24 de setembro e 23 de outubro de 2026, pelo site da organizadora. https://amauc.selecao.net.br/ A taxa de inscrição é de R$ 100,00. Candidatos que atendam aos critérios previstos no edital poderão solicitar isenção da taxa entre 24 de setembro e 2 de outubro de 2026, incluindo doadores de sangue e pessoas inscritas no CadÚnico. Etapa de seleção A seleção será realizada por meio de prova objetiva, de caráter eliminatório e classificatório. A aplicação da prova está prevista para o dia 8 de novembro de 2026. Regime e validade O contratado será submetido ao regime da Consolidação das Leis do Trabalho (CLT). O concurso público terá validade de dois anos, contados a partir da homologação do resultado, podendo ser prorrogado uma vez, por igual período. - Publicidade - Equipe Editorial Concursos SChttps://concursossc.com.brA Equipe Editorial do Concursos SC acompanha diariamente editais, concursos públicos e processos seletivos em Santa Catarina, no Sul e em todo o Brasil. As informações são verificadas em editais, diários oficiais, bancas organizadoras e canais institucionais.",
+          "publicContext": true,
+          "strongPublicContext": true
+        },
+        "proposal": {
+          "decision": "descartado",
+          "category": "GERAL",
+          "stage": "",
+          "reason": "A notícia trata apenas de concurso público para Auxiliar Administrativo do consórcio, sem fato institucional como composição municipal, constituição, protocolo, rateio, atuação ou controle; mera seleção de pessoal fica fora.",
+          "evidence": "O Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense (Consórcio Lambari), com sede em Concórdia, Santa Catarina, publicou edital de Concurso Público para preenchimento de uma vaga imediata e formação de cadastro de reserva.",
+          "evidenceOrigin": "segunda_leitura",
+          "entity": "",
+          "scope": "fora_escopo"
+        },
+        "review": {
+          "version": "original-shadow-3.1",
+          "inputHash": "b40af2a141867f855ada9ba6fc8d027c1c156bb59ee088bb88bcb99442856717",
+          "textHash": "dd01d9196e1d61cf1b335b0e372c280c0d88e2f15a796d3c78f567001672b943",
+          "contentReviewKey": "e4a8da640e886728bc4b36801e283fc29e70e036f5c762c500237c0e4c2115aa",
+          "model": "deepseek-flash",
+          "usage": {
+            "prompt_tokens": 2672,
+            "completion_tokens": 275,
+            "total_tokens": 2947,
+            "prompt_tokens_details": {
+              "cached_tokens": 2048
+            },
+            "prompt_cache_hit_tokens": 2048,
+            "prompt_cache_miss_tokens": 624
+          },
+          "answer": {
+            "incerto": false,
+            "multiplos_atos": false,
+            "atos_independentes": [],
+            "relevante": false,
+            "categoria": "IRRELEVANTE",
+            "evidencia": "O Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense (Consórcio Lambari), com sede em Concórdia, Santa Catarina, publicou edital de Concurso Público para preenchimento de uma vaga imediata e formação de cadastro de reserva.",
+            "justificativa": "A notícia trata apenas de concurso público para Auxiliar Administrativo do consórcio, sem fato institucional como composição municipal, constituição, protocolo, rateio, atuação ou controle; mera seleção de pessoal fica fora.",
+            "escopo": "fora_escopo",
+            "entidade": "Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense (Consórcio Lambari)",
+            "evidencia_entidade": "O Consórcio Intermunicipal Multifinalitário do Alto Uruguai Catarinense (Consórcio Lambari), com sede em Concórdia, Santa Catarina, publicou edital de Concurso Público",
+            "tipo_fato": "fora_escopo"
+          },
+          "sourceInputHash": "b40af2a141867f855ada9ba6fc8d027c1c156bb59ee088bb88bcb99442856717",
+          "binding": "same_complete_body"
+        },
+        "expected": {
+          "prefix": "bccfdaea",
+          "decision": "descartado",
+          "category": "GERAL",
+          "reason": "Concurso de pessoal sem composição municipal nem outro fato institucional.",
+          "quote": "publicou edital de Concurso Público para preenchimento de uma vaga imediata e formação de cadastro de reserva"
+        },
+        "decisionMatches": true
+      }
+    ]
+  },
+  "defects": [
+    "ABC Agora: descartou cerimônia futura e perdeu a capacitação já concluída; concordância regra/IA não impediu falso negativo.",
+    "CIS-VERDE: decisão de descarte plausível, mas IA alterou o artigo inicial de o para O no trecho; prova literal falhou. Não relaxar a prova sem preservar localização exata.",
+    "TCE-MG: retenção segura por ausência de etapa na regra, mas IA marcou multiplos_atos=false e misturou dois processos. Não contar como segmentação correta.",
+    "CONSUD: IA tentou aceitar ficha sem resultado; exclusão determinística impediu falso positivo.",
+    "CISGA: conteúdo válido já tem episódio canônico no acervo; relevância não é novidade."
+  ]
+}
