@@ -84585,6 +84585,380 @@
         "0": "2026-10-03T15:16:55.249Z"
       },
       "sentAt": "2026-10-03T15:16:55.249Z"
+    },
+    "2026-10-17:f242646b94d4": {
+      "report": {
+        "start": "2026-10-10T12:00:00.000Z",
+        "end": "2026-10-17T12:00:00.000Z",
+        "historyStartedAt": "2026-09-14T19:58:39.657Z",
+        "partial": false,
+        "observations": 399,
+        "events": 3,
+        "categories": {
+          "PROTOCOLO": 1,
+          "CONTROLE": 1,
+          "ATUAÇÃO": 1
+        },
+        "sources": {
+          "Querido Diário": 1,
+          "TCE-MG": 1,
+          "Rede da Notícia": 1
+        },
+        "sent": 5,
+        "pending": 0,
+        "preview": 1,
+        "runs": 29,
+        "failures": [
+          "Google News",
+          "Querido Diário",
+          "Feeds RSS",
+          "CISREC",
+          "Jornal Oficial AMM-MT",
+          "TCE-PR (manchetes)",
+          "Texto das páginas originais",
+          "Scrapers web",
+          "Guanhães Prefeitura (PortalTP)",
+          "TCE-MG"
+        ],
+        "highlights": [
+          {
+            "kind": "gazette",
+            "title": "Diário Oficial de Cafelândia (PR)",
+            "url": "https://data.queridodiario.ok.org.br/4103453/2026-10-16/3ee2607da16816a0dfed6f14fa7c05601aa0569b.pdf",
+            "publishedAt": "2026-10-16T12:00:00-03:00",
+            "source": "Querido Diário",
+            "summary": "Cafelândia, Getulina, Guaiçara, Guaimbê, Guarantã, Lins, Pirajuí, Pongaí, Promissão, Sabino e Uru, doravante denominados Municípios Convenentes. Parágrafo único. O Convênio terá por objetivo estabelecer um regime de mútua ajuda e cooperação técnica entre os Municípios, focando no desenvolvimento e execução de programas e ações nas áreas de Agropecuária e Meio Ambiente, visando a futura e eventual constituição de um Consórcio Público. Art. 2º O Convênio de Cooperação autorizará, entre outras, as seguintes ações de interesse comum: I – Realização de campanhas de prevenção e combate a incêndio com apoio e ajuda mútua entre os Municípios Convenentes, incluindo compartilhamento de informações, equipamentos e boas práticas. II – Organização conjunta de capacitações e ações de educação ambiental para servidores e munícipes; III – Realização de estudos e tratativas para de mútua colaboração e apoio técnico e logístico. § 1º As ações serão realizadas, majoritariamente, mediante o compartilhamento de recursos humanos, equipamentos e infraestrutura já existentes em cada Município, sem oneração orçamentária para fins de transferência direta. § 2º Caso surja a necessidade de despesas conjuntas no futuro, será necessária a formalização de um Aditivo ao Convênio, ou a constituição do Consórcio Público, mediante nova autorização legislativa. DIÁRIO OFICIAL MUNICÍPIO DE CAFELÂNDIA Conforme Lei Municipal nº 3.588, de 23 de maio de 2017 Sexta-feira, 16 de outubro de 2026 Ano X | Edição nº 2004 Página 6 de 9 Município de Cafelândia - SP Diário Oficial assinado digitalmente conforme MP nº 2.200-2, de 2001, e Lei 14.063, de 2020, garantindo autenticidade, validade jurídica e integridade. Art. 4º Fica estabelecida a seguinte estrutura",
+            "territoryId": "4103453",
+            "territoryName": "Cafelândia",
+            "stateCode": "PR",
+            "edition": "2004",
+            "classification": {
+              "category": "PROTOCOLO",
+              "emoji": "🟨",
+              "score": 12,
+              "reasons": [
+                "contexto público forte",
+                "CRIAÇÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "Cafelândia, Getulina, Guaiçara, Guaimbê, Guarantã, Lins, Pirajuí, Pongaí, Promissão, Sabino e Uru, doravante denominados Municípios Convenentes. Parágrafo único. O Convênio terá por objetivo estabelecer um regime de mútua ajuda e cooperação técnica entre os Municípios, focando no desenvolvimento e execução de programas e ações nas áreas de Agropecuária e Meio Ambiente, visando a futura e eventual constituição de um Consórcio Público. Art. 2º O Convênio de Cooperação autorizará, entre outras, as seguintes ações de interesse comum: I – Realização de campanhas de prevenção e combate a incêndio com apoio e ajuda mútua entre os Municípios Convenentes, incluindo compartilhamento de informações, equipamentos e boas práticas. II – Organização conjunta de capacitações e ações de educação ambiental para servidores e munícipes; III – Realização de estudos e tratativas para",
+              "publicContext": true,
+              "strongPublicContext": true,
+              "stage": "constituição documentada"
+            },
+            "previewOnly": false,
+            "aiReview": {
+              "status": "approved",
+              "category": "PROTOCOLO",
+              "evidence": "visando a futura e eventual constituição de um Consórcio Público",
+              "promptVersion": 6,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 1538,
+                "outputTokens": 78
+              },
+              "reviewedAt": "2026-10-17T01:21:42.913Z"
+            },
+            "catalogDecision": "candidato",
+            "publicationDecision": "elegivel",
+            "publicationReason": "Data do coleta dentro da janela.",
+            "publicationDateSource": "coleta",
+            "id": "045b0aeed221b4a140cf4518b2bc5f5dab8c41019d815880f527d651b982707a",
+            "titleFingerprint": "d0c30ef7fbbe66b97b06db256a600fd0a88cb7df0f4b03f99181d177ad9a907a",
+            "contentTokens": [
+              "acoes",
+              "agropecuaria",
+              "ajuda",
+              "ambiente",
+              "apoio",
+              "areas",
+              "art",
+              "autorizara",
+              "cafelandia",
+              "campanhas",
+              "combate",
+              "compartilhamento",
+              "comum",
+              "constituicao",
+              "convenentes",
+              "convenio",
+              "cooperacao",
+              "denominados",
+              "desenvolvimento",
+              "doravante",
+              "entre",
+              "estabelecer",
+              "eventual",
+              "execucao",
+              "focando",
+              "futura",
+              "getulina",
+              "guaicara",
+              "guaimbe",
+              "guaranta",
+              "incendio",
+              "incluindo",
+              "informacoes",
+              "interesse",
+              "lins",
+              "meio",
+              "mutua",
+              "objetivo",
+              "outras",
+              "paragrafo",
+              "pirajui",
+              "pongai",
+              "prevencao",
+              "programas",
+              "promissao",
+              "realizacao",
+              "regime",
+              "sabino",
+              "seguintes",
+              "tecnica",
+              "tera",
+              "unico",
+              "uru",
+              "visando"
+            ],
+            "displayUrl": "https://data.queridodiario.ok.org.br/4103453/2026-10-16/3ee2607da16816a0dfed6f14fa7c05601aa0569b.pdf"
+          },
+          {
+            "kind": "news",
+            "title": "Flalhas na elaboração de editais levam TCEMG a suspender licitações promovidas por consórcios públicos em Minas Gerais",
+            "url": "https://www.tce.mg.gov.br/Flalhas-na-elaboracao-de-editais-levam-TCEMG-a-suspender-licitacoes-promovidas-por-consorcios-publicos-em-Minas-Gerais.html/Noticia/1111629256",
+            "publishedAt": "2026-10-15T15:00:00.000Z",
+            "source": "TCE-MG",
+            "sourceUrl": "https://www.tce.mg.gov.br/noticia",
+            "summary": "Flalhas na elaboração de editais levam TCEMG a suspender licitações promovidas por consórcios públicos em Minas Gerais 15/10/2026 A Segunda Câmara do Tribunal de Contas confirmou, nas últimas duas sessões, duas medidas de caráter preventivo que suspenderam licitações promovidas por consórcios públicos em Minas Gerais. As decisões foram tomadas após a identificação de indícios de irregularidades relacionadas principalmente ao planejamento das contratações, à definição dos quantitativos a serem contratados e à elaboração dos editais. Na sessão de 6 de outubro, o colegiado referendou a decisão do conselheiro em exercício Adonias Monteiro no Processo nº 1.214.503 (anexo nº 1.217.850), envolvendo o Consórcio Intermunicipal Multifinalitário do Alto Rio Grande (Cimarg). O caso trata de uma licitação para contratação de serviços de limpeza urbana e manejo de resíduos sólidos, com valor estimado de cerca de R$ 60 milhões. Na análise inicial, o Tribunal apontou possíveis falhas na estrutura da contratação, como a utilização inadequada do sistema de registro de preços para esse tipo de serviço, deficiência no planejamento e no termo de referência, ausência de memórias de cálculo que justificassem os quantitativos previstos, agrupamento de diversos serviços em um único lote sem demonstração das vantagens dessa escolha e inconsistências nas exigências de qualificação técnica das empresas participantes. Diante dos indícios de irregularidades, Adonias Monteiro determinou a suspensão dos efeitos da Ata de Registro de Preços nº 7/2026, firmada com a empresa vencedora do procedimento, proibindo novas contratações e adesões à ata até nova deliberação do Tribunal. A decisão também determinou que o Cimarg comprovasse o cumprimento da medida no prazo de cinco dias. Nova medida preventiva env",
+            "scraper": "tce-mg",
+            "previewOnly": true,
+            "articleUrl": "https://www.tce.mg.gov.br/noticia/Detalhe/1111629256",
+            "sourcePublishedAt": "",
+            "sourceDateEvidence": "",
+            "contentProvenance": "pagina_original",
+            "articleReader": "tce_mg_corpo",
+            "extractionCategories": {
+              "readability": "CONTROLE",
+              "trafilatura": "CONTROLE"
+            },
+            "extractionDisagreement": false,
+            "reviewReason": "",
+            "classification": {
+              "category": "CONTROLE",
+              "emoji": "🔎",
+              "score": 13,
+              "reasons": [
+                "contexto público forte",
+                "CONTROLE"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "decisões reforçam um alerta que o Tribunal vem fazendo com frequência: falhas no planejamento, na definição das necessidades e na modalidade das contratações estão entre os principais motivos de questionamentos em licitações realizadas por consórcios públicos. Diante do aumento do número de denúncias e representações envolvendo esse tipo de contratação, o TCEMG promoverá, em breve, um encontro voltado a gestores e gestoras, servidores, servidoras e demais responsáveis por licitações. A proposta é esclarecer dúvidas, orientar sobre a correta aplicação da legislação e apresentar boas práticas capazes de evitar erros recorrentes que têm levado à suspensão de licitações. A iniciativa busca fortalecer a segurança jurídica, a transparência e a eficiência das contratações públicas realizadas pelos consórcios. Um consórcio público é uma união entre dois ou mais entes da federação (União, Estados, Distrito Federal ou Municípios) para realizar ações conjuntas, gerenciar serviços públicos e alcançar objetivos de interesse comum. De acordo com o presidente do TCEMG, conselheiro Durval Ângelo, são \"essenciais para a gestão pública, mas é necessário que ajam corretamente\", afirmou em coletiva em Uberaba, durante a última edição do encontro técnico deste ano. Instituídos pela Lei nº 11.107/2005, o consórcio público é uma pessoa jurídica própria e serve para otimizar recursos, permitindo que cidades ou estados menores comprem equipamentos, contratem serviços ou realizem obras que não conseguiriam financiar sozinhos. Em Minas Gerais, existem cerca de 200 consórcios públicos, sendo responsáveis por movimentar mais de 2,5 bilhões de reais (dado de 2024). Entendidos como figuras jurídicas centrais para ampliação da efetividade de políticas públicas, os consórcios públicos serão tema de um",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "catalogDecision": "candidato",
+            "publicationDecision": "elegivel",
+            "publicationReason": "Data do coleta dentro da janela.",
+            "publicationDateSource": "coleta",
+            "id": "43c3881caccc297df9a70c2708a024906ee9d9b72dad60e471516811aa6cbe92",
+            "titleFingerprint": "fdb75f7b74c9cbaf4dbf8edf94de079d97774c97d6ba46da2935f76a30c85291",
+            "contentTokens": [
+              "2026",
+              "214",
+              "217",
+              "503",
+              "850",
+              "adonias",
+              "anexo",
+              "apos",
+              "camara",
+              "carater",
+              "colegiado",
+              "confirmou",
+              "conselheiro",
+              "contas",
+              "contratacoes",
+              "contratados",
+              "decisao",
+              "decisoes",
+              "definicao",
+              "duas",
+              "editais",
+              "elaboracao",
+              "envolvendo",
+              "exercicio",
+              "flalhas",
+              "foram",
+              "gerais",
+              "identificacao",
+              "indicios",
+              "irregularidades",
+              "levam",
+              "licitacoes",
+              "medidas",
+              "minas",
+              "monteiro",
+              "outubro",
+              "planejamento",
+              "preventivo",
+              "principalmente",
+              "processo",
+              "promovidas",
+              "quantitativos",
+              "referendou",
+              "relacionadas",
+              "segunda",
+              "serem",
+              "sessao",
+              "sessoes",
+              "suspender",
+              "suspenderam",
+              "tcemg",
+              "tomadas",
+              "tribunal",
+              "ultimas"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "CONTROLE",
+              "evidence": "A Segunda Câmara do Tribunal de Contas confirmou, nas últimas duas sessões, duas medidas de caráter preventivo que suspenderam licitações promovidas por consórcios públicos em Minas Gerais.",
+              "promptVersion": 6,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 1748,
+                "outputTokens": 114
+              },
+              "reviewedAt": "2026-10-17T20:13:09.825Z"
+            },
+            "displayUrl": "https://spoo.me/c8OG0eg"
+          },
+          {
+            "kind": "news",
+            "title": "ATENDIMENTO OFTALMOLÓGICO: Consórcio viabiliza procedimentos de YAG Laser para 100 pacientes do Araguaia - Rede da Notícia",
+            "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2FVYno3OUxSUjc0VlNJc3BwaXFLYmVGQ2x6THV0MU5VSktuWnJqZG5aSHQxVVh5dEU4Q2FYTmhDcnF3amNsTWVSY3hpSktacXFCR2MwVTMyWllrRVkyd1V4czJsOThRdWUwT281dHdxbklSelZVWjluWXloaFFzNUZCNXFNdm1GQk5HTndmc2tkS3YwcWNVakxQOEQ1blliNGxQNnV2MHYwME1nUEtmZThjSzlTbDVzSWRHSXpHQzBjV3lSTHNQM1lNbXVVQQ?oc=5",
+            "sourceUrl": "https://rededanoticia.com.br",
+            "publishedAt": "2026-10-13T12:48:16.000Z",
+            "source": "Rede da Notícia",
+            "summary": "AssessoriaDa redação c/ Semana7O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7). Os atendimentos foram realizados pelo Centro de Diagnóstico e Cirurgia de Olhos (CDCO), parceiro da iniciativa.Nesta etapa, foram contemplados moradores de Pontal do Araguaia, General Carneiro, Ribeirãozinho e Araguaiana, municípios que integram o consórcio. A meta agora é ampliar o atendimento para aos demais associados, como já ocorreu com outros procedimentos.Segundo o CISGA, o YAG Laser é utilizado no tratamento de determinadas condições oculares, como a opacificação da cápsula após a cirurgia de catarata. A realização do procedimento depende de indicação médica.A ação integra o trabalho do consórcio em parceria com os municípios para ampliar o acesso da população aos serviços especializados de saúde. “Essas parcerias garantem um atendimento digno ao cidadão que precisa do amparo do Poder Público e nesse sentido, o Consórcio tem procurado viabilizar recursos e profissionais especializados em cada área”, disse o presidente da instituição, Thiago Timo.O presidente lembrou que o Consórcio Intermunicipal de Saúde da Região Garças/Araguaia se tornou uma referência estadual ao garantir a realização de cirurgias bariátricas e outros procedimentos médicos para pacientes dos nove municípios associados. “Além da parceria com o Governo do Estado, por meio do Programa Fila Zero, garantimos também convênios com unidades hospitalares para atender a demanda de todos os municípios”, disse Thiago.Para a secretária-executiva do Consórcio, Virginia Patrícia Santos Rocha de Oliveira, os procedimentos oftalmológicos representam melhorias na qualidade de vida de pacientes que não reúnem con",
+            "articleUrl": "https://rededanoticia.com.br/atendimento-oftalmologico-consorcio-viabiliza-procedimentos-de-yag-laser-para-100-pacientes-do-araguaia/",
+            "sourcePublishedAt": "2026-10-13T12:46:38.000Z",
+            "sourceDateEvidence": "meta[property=\"article:published_time\"]",
+            "contentProvenance": "pagina_original",
+            "articleReader": "readability",
+            "extractionCategories": {
+              "readability": "GERAL",
+              "trafilatura": "GERAL"
+            },
+            "extractionDisagreement": false,
+            "previewOnly": false,
+            "reviewReason": "",
+            "classification": {
+              "category": "ATUAÇÃO",
+              "emoji": "📰",
+              "score": 9,
+              "reasons": [
+                "contexto público forte",
+                "ATUAÇÃO"
+              ],
+              "evidenceIndex": 0,
+              "evidenceText": "AssessoriaDa redação c/ Semana7O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7). Os atendimentos foram realizados pelo Centro de Diagnóstico e Cirurgia de Olhos (CDCO), parceiro da iniciativa.Nesta etapa, foram contemplados moradores de Pontal do Araguaia, General Carneiro, Ribeirãozinho e Araguaiana, municípios que integram o consórcio. A meta agora é ampliar o atendimento para aos demais associados, como já ocorreu com outros procedimentos.Segundo o CISGA, o YAG Laser é utilizado no tratamento de determinadas condições oculares, como a opacificação da cápsula após a cirurgia de catarata. A realização do procedimento depende de indicação médica.A ação integra o trabalho do consórcio em parceria com os municípios para ampliar o acesso da população aos serviços especializados de saúde. “Essas parcerias garantem um atendimento digno ao cidadão que precisa do amparo do Poder Público e nesse sentido, o Consórcio tem procurado viabilizar recursos e profissionais especializados em cada área”, disse o presidente da instituição, Thiago Timo.O presidente lembrou que o Consórcio Intermunicipal de Saúde da Região Garças/Araguaia se tornou uma referência estadual ao garantir a realização de cirurgias bariátricas e outros procedimentos médicos para pacientes dos nove municípios associados. “Além da parceria com o Governo do Estado, por meio do Programa Fila Zero, garantimos também convênios com unidades hospitalares para atender a demanda de todos os municípios”, disse Thiago.Para a secretária-executiva do Consórcio, Virginia Patrícia Santos Rocha de Oliveira, os procedimentos oftalmológicos representam melhorias na qualidade de vida de pacientes que não reúnem con",
+              "publicContext": true,
+              "strongPublicContext": true
+            },
+            "catalogDecision": "descartado",
+            "publicationDecision": "elegivel",
+            "publicationReason": "Data do fonte dentro da janela.",
+            "publicationDateSource": "fonte",
+            "id": "48c8055ee0af425db8f8855d3a48dec97b4c09652afd0df95b925eb5d7daa53d",
+            "titleFingerprint": "7edc69f4fd398aa8f8a83d068044d9fff910546662a5b0e16d4f4c27c6e6264e",
+            "contentTokens": [
+              "100",
+              "agora",
+              "ampliar",
+              "araguaia",
+              "araguaiana",
+              "assessoriada",
+              "associados",
+              "atendimento",
+              "atendimentos",
+              "capsula",
+              "carneiro",
+              "cdco",
+              "centro",
+              "cirurgia",
+              "cisga",
+              "como",
+              "condicoes",
+              "contemplados",
+              "demais",
+              "determinadas",
+              "diagnostico",
+              "etapa",
+              "feira",
+              "foram",
+              "garcas",
+              "general",
+              "iniciativa",
+              "integram",
+              "laser",
+              "meta",
+              "moradores",
+              "nesta",
+              "noticia",
+              "ocorreu",
+              "oculares",
+              "oftalmologico",
+              "oftalmologicos",
+              "olhos",
+              "opacificacao",
+              "outros",
+              "pacientes",
+              "parceiro",
+              "pelo",
+              "pontal",
+              "procedimentos",
+              "quarta",
+              "realizados",
+              "redacao",
+              "rede",
+              "regiao",
+              "ribeiraozinho",
+              "saude",
+              "segundo",
+              "semana7o",
+              "tratamento",
+              "ultima",
+              "utilizado",
+              "viabiliza",
+              "viabilizou",
+              "yag"
+            ],
+            "aiReview": {
+              "status": "approved",
+              "category": "ATUAÇÃO",
+              "evidence": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7).",
+              "promptVersion": 6,
+              "model": "deepseek-flash",
+              "usage": {
+                "inputTokens": 1756,
+                "outputTokens": 111
+              },
+              "reviewedAt": "2026-10-17T20:13:09.825Z"
+            },
+            "displayUrl": "https://spoo.me/ZN3ylKp"
+          }
+        ]
+      },
+      "messages": [
+        "🗞️ *RADAR CONSÓRCIOS*\n*Linha do tempo* · 10/10–17/10\n_Atualizado às 09:00 (Brasília)_\n\n*3 achados relevantes*\n\n🟪 *16/10 · PROTOCOLO*\nCafelândia publica protocolo de intenções\n_Querido Diário_\n🔗 https://data.queridodiario.ok.org.br/4103453/2026-10-16/3ee2607da16816a0dfed6f14fa7c05601aa0569b.pdf\n\n🟨 *15/10 · FISCALIZAÇÃO*\nFlalhas na elaboração de editais levam TCEMG a suspender licitações promovidas por consórcios públicos em Minas Gerais\n_TCE-MG_\n🔗 https://spoo.me/c8OG0eg\n\n🟩 *13/10 · ATUAÇÃO*\nATENDIMENTO OFTALMOLÓGICO: Consórcio viabiliza procedimentos de YAG Laser para 100 pacientes do Araguaia\n_Rede da Notícia_\n🔗 https://spoo.me/ZN3ylKp"
+      ],
+      "createdAt": "2026-10-17T20:13:15.291Z",
+      "attempts": 1,
+      "sentParts": {
+        "0": "2026-10-17T20:13:18.052Z"
+      },
+      "sentAt": "2026-10-17T20:13:18.052Z"
     }
   },
   "shortLinks": {
@@ -84602,7 +84976,9 @@
     "https://news.google.com/rss/articles/CBMitgFBVV95cUxPZTEzT2M2OUhGRGd4V09WZlVRZEx3SV9rRks4MV9yWGJLTnNHUURVNm44WVNCLXcxVHZVc29hRnh5X1prTFZjcHRKQk9kbGpfc2lFZFBFSENCZFY5SDhxa2t3eGhLQWdlR2ExTGtKRG9JUWlLVnQ1cTJ6M05TdU52VlViRlhMcXJvYm5fYUoxZ2hLaGxDRlZ6SUdLLTJHcC1KNlJkTjNmakJSOVRPd3JDVi1va0lmdw?oc=5": "https://spoo.me/MIoDwXK",
     "https://consorcioconiape.pe.gov.br/2026/10/15/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-em-construcao/": "https://spoo.me/0gr3CDi",
     "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNNGVPU2hOX0k2LTNvOU9iamlzSHBWSjhtTDVoZ3JrX3RXSVYxVU93MWJNSHRfRV9Xd0ItQUNkX2NhTnFIUFhYc3RaeG5XTXpYWlAyVGU5MXAyVXZtYTRTeTdWRWVzanFQWkxzanM2eGFlS2RTemR0bkx1dWt6VzhuOWx6cnM2RzNJUGpoaFFpZDMwbnhfQnJ0UjdVVk8yU0dfaTZkTUVlYURBd3hobEpybVc5TEVDbU5haGgtdXkyTjBOY1JnM0plOWtvUDUzempo?oc=5": "https://spoo.me/W8dYEW0",
-    "https://consorcioconiape.pe.gov.br/2026/10/15/uma-historia-construida-a-muitas-maos-um-sonho-que-esta-se-tornando-realidade/": "https://spoo.me/04vOWDl"
+    "https://consorcioconiape.pe.gov.br/2026/10/15/uma-historia-construida-a-muitas-maos-um-sonho-que-esta-se-tornando-realidade/": "https://spoo.me/04vOWDl",
+    "https://www.tce.mg.gov.br/Flalhas-na-elaboracao-de-editais-levam-TCEMG-a-suspender-licitacoes-promovidas-por-consorcios-publicos-em-Minas-Gerais.html/Noticia/1111629256": "https://spoo.me/c8OG0eg",
+    "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2FVYno3OUxSUjc0VlNJc3BwaXFLYmVGQ2x6THV0MU5VSktuWnJqZG5aSHQxVVh5dEU4Q2FYTmhDcnF3amNsTWVSY3hpSktacXFCR2MwVTMyWllrRVkyd1V4czJsOThRdWUwT281dHdxbklSelZVWjluWXloaFFzNUZCNXFNdm1GQk5HTndmc2tkS3YwcWNVakxQOEQ1blliNGxQNnV2MHYwME1nUEtmZThjSzlTbDVzSWRHSXpHQzBjV3lSTHNQM1lNbXVVQQ?oc=5": "https://spoo.me/ZN3ylKp"
   },
   "aiReviews": {
     "ea8ee5deacbc1c955b0812975620ab59ad4455152abe2e691d45eb2ecd3977a0": {
@@ -85146,16 +85522,16 @@
       "reviewedAt": "2026-10-15T17:48:06.889Z"
     },
     "ac4c3dbe05ff15fe49bcea8018db176e344bf10ccd7412bc22b245449082130c": {
-      "status": "approved",
-      "category": "ATUAÇÃO",
-      "evidence": "Ao longo dessa caminhada, o Consórcio ampliou sua atuação nas áreas de engenharia e meio ambiente, educação, saúde e iluminação pública",
-      "promptVersion": 5,
+      "status": "rejected",
+      "category": "IRRELEVANTE",
+      "evidence": "a construção da nossa própria sede",
+      "promptVersion": 6,
       "model": "deepseek-flash",
       "usage": {
-        "inputTokens": 1226,
-        "outputTokens": 99
+        "inputTokens": 1382,
+        "outputTokens": 87
       },
-      "reviewedAt": "2026-10-16T18:49:49.089Z"
+      "reviewedAt": "2026-10-17T20:13:09.825Z"
     },
     "54e0815432a8f38763f5446a6ad310dcf0d64cbb231d591eb3b5807b22132e6a": {
       "status": "rejected",
@@ -85228,6 +85604,42 @@
         "outputTokens": 78
       },
       "reviewedAt": "2026-10-17T01:21:42.913Z"
+    },
+    "43c3881caccc297df9a70c2708a024906ee9d9b72dad60e471516811aa6cbe92": {
+      "status": "approved",
+      "category": "CONTROLE",
+      "evidence": "A Segunda Câmara do Tribunal de Contas confirmou, nas últimas duas sessões, duas medidas de caráter preventivo que suspenderam licitações promovidas por consórcios públicos em Minas Gerais.",
+      "promptVersion": 6,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 1748,
+        "outputTokens": 114
+      },
+      "reviewedAt": "2026-10-17T20:13:09.825Z"
+    },
+    "67a1bdb9e33f999bb975ff9ba448abf60b764353d45ef9118852fac4189344ca": {
+      "status": "rejected",
+      "category": "IRRELEVANTE",
+      "evidence": "A presente suplementação orçamentária tem por finalidade adequar a dotação orçamentária para viabilizar a locação de equipamentos rodoviários por meio do Consórcio",
+      "promptVersion": 6,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 1589,
+        "outputTokens": 121
+      },
+      "reviewedAt": "2026-10-17T20:13:09.825Z"
+    },
+    "48c8055ee0af425db8f8855d3a48dec97b4c09652afd0df95b925eb5d7daa53d": {
+      "status": "approved",
+      "category": "ATUAÇÃO",
+      "evidence": "O Consórcio Intermunicipal de Saúde da Região Garças/Araguaia (CISGA) viabilizou procedimentos oftalmológicos de YAG Laser para 100 pacientes na última quarta-feira (7).",
+      "promptVersion": 6,
+      "model": "deepseek-flash",
+      "usage": {
+        "inputTokens": 1756,
+        "outputTokens": 111
+      },
+      "reviewedAt": "2026-10-17T20:13:09.825Z"
     }
   },
   "aiUsage": {
