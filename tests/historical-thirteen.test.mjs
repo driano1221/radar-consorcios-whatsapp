@@ -31,7 +31,7 @@ test('13 históricos têm prova preservada, 5 confirmações, 4 duplicatas e 4 d
     const review = reviews.find(r => r.documento_id === saved.documento_id);
     const reading = [...texts, ...alternatives].find(r => r.documento_id === saved.documento_id);
     assertOriginalPreserved(archive.find(r => r.id === saved.documento_id), saved.original,
-      allTexts.find(r => r.documento_id === saved.documento_id));
+      allTexts.find(r => r.documento_id === saved.documento_id), archive);
     assert.equal(review.trecho_sha256, hash(saved.original.trecho || ''));
     assert.equal(review.publicar, false);
     assert.equal(hash(reading.texto), saved.texto_sha256);

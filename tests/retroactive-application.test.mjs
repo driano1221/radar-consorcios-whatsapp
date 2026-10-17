@@ -28,7 +28,7 @@ test('lote aprovado conserva dez originais, dez textos e somente cinco fatos ún
   const eventIds = [...(await readFile(`${directory}/eventos.csv`, 'utf8')).matchAll(/^"([a-f0-9]{64})",/gm)].map(m => m[1]);
   for (const saved of journal.registros) {
     assertOriginalPreserved(archive.find(r => r.id === saved.documento_id), saved.original,
-      texts.find(r => r.documento_id === saved.documento_id));
+      texts.find(r => r.documento_id === saved.documento_id), archive);
     const review = reviews.find(r => r.documento_id === saved.documento_id);
     const text = texts.find(r => r.documento_id === saved.documento_id);
     assert.equal(review.publicar, false);

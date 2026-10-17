@@ -2,9 +2,9 @@ import assert from 'node:assert/strict';
 // Production catalog:update legitimately attaches an already preserved reading.
 // Permit only those verified pointers and observation time; all source/decision
 // fields, particularly the sealed snippet, must remain identical to the journal.
-export function assertOriginalPreserved(actual, original, stored) {
+export function assertOriginalPreserved(actual, original, stored, archive = []) {
   assert.ok(actual);
-  const mutable=['article_url','article_text_sha256','article_reader','article_recovery_reason','ultima_coleta'];
+  const mutable=['article_url','article_text_sha256','article_reader','article_recovery_reason','article_duplicate_of','ultima_coleta'];
   for(const key of new Set([...Object.keys(actual),...Object.keys(original)])) {
     if(!mutable.includes(key))assert.deepEqual(actual[key],original[key],key);
   }
@@ -16,5 +16,12 @@ export function assertOriginalPreserved(actual, original, stored) {
     if(key==='article_text_sha256')assert.equal(actual[key],stored.texto_sha256);
     if(key==='article_reader')assert.equal(actual[key],stored.leitor);
     if(key==='article_recovery_reason')assert.equal(actual[key],'');
+    // Duplicate pointer: another archived record that holds the same recovered text.
+    if(key==='article_duplicate_of'){
+      const twin=archive.find(r=>r.id===actual[key]);
+      assert.ok(!original.article_duplicate_of);
+      assert.ok(twin&&twin.id!==actual.id,'duplicate pointer must reference another archived record');
+      assert.equal(twin.article_text_sha256,stored.texto_sha256);
+    }
   }
 }
