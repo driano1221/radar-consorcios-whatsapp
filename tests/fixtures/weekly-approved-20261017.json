@@ -1,0 +1,157 @@
+{
+  "start": "2026-10-10T12:00:00.000Z",
+  "end": "2026-10-17T12:00:00.000Z",
+  "events": 15,
+  "highlights": [
+    {
+      "title": "Diário Oficial de Cafelândia (PR)",
+      "url": "https://data.queridodiario.ok.org.br/4103453/2026-10-16/3ee2607da16816a0dfed6f14fa7c05601aa0569b.pdf",
+      "publishedAt": "2026-10-16T12:00:00-03:00",
+      "source": "Querido Diário",
+      "classification": {
+        "category": "PROTOCOLO",
+        "score": 12
+      }
+    },
+    {
+      "title": "CONIAPE realiza Assembleia Ordinária e visita técnica à nova sede em construção",
+      "url": "https://consorcioconiape.pe.gov.br/2026/10/15/coniape-realiza-assembleia-ordinaria-e-visita-tecnica-a-nova-sede-em-construcao/",
+      "publishedAt": "2026-10-15T12:00:00-03:00",
+      "source": "CONIAPE",
+      "classification": {
+        "category": "ATUAÇÃO",
+        "score": 19
+      }
+    },
+    {
+      "title": "CIM-AMFRI confirma acompanhamento técnico de fiscalização a pedido do Ministério Público",
+      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQTFFYNGhOaDBSTkpQTnEtOTBCVFV0a3JsUExxWWhpbWNtcHIxMmYtcXhnaXZWTm9pTU11cnY4S2t3Mmk2a3I0Sm5HNmxkbWdGaDlZUUw5ckNzQ2JISXRDUUVFRmIxakJiY29qb0s1UktRQ19fUWFQRE1jRjIteXVkMXhzQXNwbnUtQ25MUEJqWGV3cm5VeWU4MVlvQk9tSHViaEtZeFR5d1RvXzhwSV9SMHFTOGM0QndxNlFoUHptYTVfdmpKdFlsOE1YRDhnTWtYYlhFVzJMVi1nSXYzZktj?oc=5",
+      "publishedAt": "2026-10-15T12:00:00-03:00",
+      "source": "Página 3",
+      "classification": {
+        "category": "ATUAÇÃO",
+        "score": 5
+      }
+    },
+    {
+      "title": "TCE-MG arquiva denúncia sobre pregão fracassado do ICISMEP",
+      "url": "https://doc.tce.mg.gov.br/Home/ViewDiario/2026_10_15_Diario.pdf#page=2",
+      "publishedAt": "2026-10-15T12:00:00-03:00",
+      "source": "Tribunal de Contas do Estado de Minas Gerais",
+      "classification": {
+        "category": "CONTROLE",
+        "score": 5
+      }
+    },
+    {
+      "title": "TCE-MG: contrato de programa em processo de Ponte Nova/CIMVALPI considerado regular",
+      "url": "https://doc.tce.mg.gov.br/Home/ViewDiario/2026_10_15_Diario.pdf#page=4",
+      "publishedAt": "2026-10-15T12:00:00-03:00",
+      "source": "Tribunal de Contas do Estado de Minas Gerais",
+      "classification": {
+        "category": "CONTROLE",
+        "score": 5
+      }
+    },
+    {
+      "title": "TCE-MG arquiva denúncia do CNIF após revogação do certame",
+      "url": "https://doc.tce.mg.gov.br/Home/ViewDiario/2026_10_15_Diario.pdf#page=6",
+      "publishedAt": "2026-10-15T12:00:00-03:00",
+      "source": "Tribunal de Contas do Estado de Minas Gerais",
+      "classification": {
+        "category": "CONTROLE",
+        "score": 5
+      }
+    },
+    {
+      "title": "TCE-MG arquiva denúncias do CIMCENTRAL após anulação do certame",
+      "url": "https://doc.tce.mg.gov.br/Home/ViewDiario/2026_10_15_Diario.pdf#page=6",
+      "publishedAt": "2026-10-15T12:00:00-03:00",
+      "source": "Tribunal de Contas do Estado de Minas Gerais",
+      "classification": {
+        "category": "CONTROLE",
+        "score": 5
+      }
+    },
+    {
+      "title": "TCE-MG referenda suspensão cautelar de ata do CIMARG",
+      "url": "https://doc.tce.mg.gov.br/Home/ViewDiario/2026_10_15_Diario.pdf#page=6",
+      "publishedAt": "2026-10-15T12:00:00-03:00",
+      "source": "Tribunal de Contas do Estado de Minas Gerais",
+      "classification": {
+        "category": "CONTROLE",
+        "score": 5
+      }
+    },
+    {
+      "title": "São Félix do Araguaia ratifica alteração do CIDESAA e delega inspeção municipal",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924135/",
+      "publishedAt": "2026-10-14T15:00:00.000Z",
+      "source": "Jornal Oficial AMM-MT",
+      "classification": {
+        "category": "GOVERNANÇA",
+        "score": 26
+      }
+    },
+    {
+      "title": "Cláudia firma aditivo de R$ 2.225 ao rateio com o Vale do Teles Pires",
+      "url": "https://amm.diariomunicipal.org/publicacao/1924395/",
+      "publishedAt": "2026-10-14T15:00:00.000Z",
+      "source": "Jornal Oficial AMM-MT",
+      "classification": {
+        "category": "RATEIO",
+        "score": 12
+      }
+    },
+    {
+      "title": "Castro reajusta rateio com o CIMSAMU de R$ 2,18 para R$ 2,90 por habitante",
+      "url": "https://data.queridodiario.ok.org.br/4104907/2026-10-14/c5db2fc19442d70ae2b03bbef851f7e62115bd6c.pdf",
+      "publishedAt": "2026-10-14T12:00:00-03:00",
+      "source": "Querido Diário",
+      "classification": {
+        "category": "RATEIO",
+        "score": 12
+      }
+    },
+    {
+      "title": "TCE-MG encerra processo do CIMINAS sem mérito e multa presidente em R$ 10 mil",
+      "url": "https://tcnotas.tce.mg.gov.br/TCJuris/Nota/BuscarArquivo/4760666#page=2",
+      "publishedAt": "2026-10-14T12:00:00Z",
+      "source": "TCE-MG · acórdão",
+      "classification": {
+        "category": "CONTROLE",
+        "score": 5
+      }
+    },
+    {
+      "title": "Pontal do Araguaia ratifica estatuto consolidado do CIDESAPA",
+      "url": "https://amm.diariomunicipal.org/publicacao/1923527/",
+      "publishedAt": "2026-10-13T15:00:00.000Z",
+      "source": "Jornal Oficial AMM-MT",
+      "classification": {
+        "category": "GOVERNANÇA",
+        "score": 19
+      }
+    },
+    {
+      "title": "Campo Verde firma rateio de R$ 1.618,73 com o CIDESASUL",
+      "url": "https://amm.diariomunicipal.org/publicacao/1923311/",
+      "publishedAt": "2026-10-13T15:00:00.000Z",
+      "source": "Jornal Oficial AMM-MT",
+      "classification": {
+        "category": "RATEIO",
+        "score": 11
+      }
+    },
+    {
+      "title": "ATENDIMENTO OFTALMOLÓGICO: Consórcio viabiliza procedimentos de YAG Laser para 100 pacientes do Araguaia - Rede da Notícia",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOY2FVYno3OUxSUjc0VlNJc3BwaXFLYmVGQ2x6THV0MU5VSktuWnJqZG5aSHQxVVh5dEU4Q2FYTmhDcnF3amNsTWVSY3hpSktacXFCR2MwVTMyWllrRVkyd1V4czJsOThRdWUwT281dHdxbklSelZVWjluWXloaFFzNUZCNXFNdm1GQk5HTndmc2tkS3YwcWNVakxQOEQ1blliNGxQNnV2MHYwME1nUEtmZThjSzlTbDVzSWRHSXpHQzBjV3lSTHNQM1lNbXVVQQ?oc=5",
+      "publishedAt": "2026-10-13T12:48:16.000Z",
+      "source": "Rede da Notícia",
+      "classification": {
+        "category": "ATUAÇÃO",
+        "score": 9
+      }
+    }
+  ]
+}
