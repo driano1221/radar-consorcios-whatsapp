@@ -2,6 +2,14 @@
 
 Atualização mais recente: **19 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Querido Diário: domínio corrigido e incidente externo — 19/10/2026
+
+- Prioridade solicitada pelo usuário: restabelecer o Querido Diário. A investigação encontrou uma lacuna no teste anterior: cobria rotas legadas, não diretamente a API atual. O frontend público e os manifestos oficiais anunciam `https://api.queridodiario.org.br`; configuração e padrão do coletor corrigidos para esse domínio. Proxies públicos ficam como alternativas; o domínio legado com erro TLS deixa de ser alternativa padrão.
+- Timeout por consulta de 30 segundos e orçamento de três minutos. Preservados IDs, URLs dos diários, deduplicação e recibos. Diagnóstico dedicado somente de leitura, sem credenciais de IA/WhatsApp.
+- [Actions 39331259680](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/39331259680): **447 testes aprovados**, mas API atual, proxies e backend público responderam **503 `no available server`**, inclusive curl HTTP/1.1/IPv4. O diagnóstico de rede ficou vermelho corretamente; não declarar recuperação. PDF público conhecido abriu com 206, mas a listagem anônima do armazenamento foi negada: isso não substitui a descoberta de diários novos.
+- Outro consumidor abriu a issue oficial #113 para o incidente atual. Usuário autorizou publicar comentário pela conta dele: [evidências e pedido de restabelecimento/rota temporária publicados uma única vez](https://github.com/okfn-brasil/querido-diario-api/issues/113#issuecomment-6278325588). Não foi criada issue duplicada. A issue #110 trata do TLS legado, problema distinto.
+- **Estado final: cliente corrigido; fonte ainda indisponível externamente.** As coletas regulares usarão o endereço correto, mas dependem da restauração do serviço. Nenhuma mensagem enviada nem alteração de acervo, revisões, fila, recibos ou sessão nesta manutenção. [Diagnóstico e limites](DIAGNOSTICO-QUERIDO-DIARIO-2026-10-19.md).
+
 ## Correções de fontes e revisão — 19/10/2026
 
 - AMM-MT: corpo de 13 publicações mudou para páginas SVG com camada `data-text`. Novo leitor conserva páginas, valida origem/ID/sequência e recusa leitura parcial. As 131 páginas abriram no Actions; coletor real 20/20 sem erro de extração. Instruções operacionais do SIM não viram alteração de protocolo nem fiscalização realizada por causa do preâmbulo.

@@ -65,6 +65,8 @@ Desde 14/10/2026, a AMM-MT está habilitada para alertas, mantendo a revisão po
 
 **Leitura e fontes (19/10):** páginas SVG da AMM-MT têm leitor próprio, com texto e localização por página; publicações recuperadas anteriores a 20/10 ficam sem alerta retroativo. O radar reutiliza íntegras verificadas, a revisão recebe o corpo dos artigos e a recuperação procura reproduções públicas da CNM/Araguaia com autoria separada. A indisponibilidade externa do Querido Diário permanece explícita. [Correções, testes e limites](docs/CORRECAO-FONTES-IA-2026-10-19.md).
 
+**Querido Diário (19/10):** cliente migrado para `api.queridodiario.org.br`, confirmado pela configuração pública oficial. Os 447 testes passaram no Actions, mas a API atual continua retornando 503; os PDFs históricos acessíveis não substituem a busca. [Diagnóstico real e acompanhamento do incidente oficial](docs/DIAGNOSTICO-QUERIDO-DIARIO-2026-10-19.md).
+
 ## Onde os dados ficam
 
 **Recuperação de texto é independente da decisão.** A rotina diária de recuperação também pode completar documentos já revisados ou enviados, sem reenviá-los. Erros temporários recebem uma segunda tentativa; falhas persistentes voltam à fila com intervalo crescente (12 horas até 7 dias). Cada passagem tem limite de tempo e de itens por fonte. CAPTCHA real não é contornado: uma recuperação assistida fica identificada como tal. O workflow verifica que IDs, revisões e estado de envios não foram alterados.
