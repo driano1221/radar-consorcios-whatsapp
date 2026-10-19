@@ -187,6 +187,7 @@
         "url": "https://amm.diariomunicipal.org/publicacoes/",
         "query": "consórcio",
         "maxPages": 2,
+        "svgAlertsFrom": "2026-10-20T00:00:00-03:00",
         "publish": true,
         "alertsFrom": "2026-10-14T17:20:22.000Z"
       },

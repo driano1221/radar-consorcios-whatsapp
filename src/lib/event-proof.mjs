@@ -71,6 +71,18 @@ function withEvidence(result, evidence) {
 export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
+  const operationalInstruction = /\b(?:instru[cç][aã]o normativa|instru[cç][aã]o de trabalho)\s+n[º°o.]?\s*\d+/i;
+  const instructionHeader = operationalInstruction.test(title) ||
+    /^\[Página 1\]/.test(text) && operationalInstruction.test(text.slice(0, 400));
+  if (instructionHeader && /\bservi[cç]o\s+de\s+inspe[cç][aã]o\s+municipal\b/i.test(text) &&
+      /\b(?:estabelece|estabelecer|procedimentos|programa)\b/i.test(text.slice(0, 1200)) &&
+      !/\bart\.?\s*1[º°o.]?\b.{0,180}\b(?:altera|ratifica|aprova)\b.{0,100}\b(?:estatuto|protocolo de inten[cç][oõ]es)\b/i.test(text)) {
+    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰',
+      score: Math.max(5, classification.score || 0),
+      stage: 'norma operacional de inspeção publicada; não comprova fiscalização realizada nem alteração constitutiva',
+      reasons: ['norma técnica de inspeção; protocolo citado no preâmbulo é fundamento, não objeto de alteração'] },
+    literalEvidence(text, [operationalInstruction], 0, 450));
+  }
   // Historical recovery may have only a generic search title. Require evidence
   // in the document body and preserve the legal stage, not the index date.
   const approvedAutograph = /\baut[oó]grafo\s+n[º°o.]?\s*\d+\/\d{4}\b.{0,650}\baprovado\s+em\s+sess[aã]o\b/i;

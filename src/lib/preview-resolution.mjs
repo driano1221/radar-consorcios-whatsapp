@@ -1,6 +1,7 @@
 import { AI_PROMPT_VERSION, applyAiReview, reviewQueue } from './ai-review.mjs';
 import { itemId } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
+import { locateQuote } from './quote-evidence.mjs';
 
 // A prévia decorrente da leitura do artigo pode ser resolvida por uma segunda
 // revisão. Prévia imposta pela própria fonte (ainda não homologada) continua
@@ -24,13 +25,14 @@ export async function resolveArticlePreviews(items, originals, state, {
     const ai = state.aiReviews?.[itemId(item)];
     if (ai?.promptVersion !== AI_PROMPT_VERSION || !['approved', 'rejected'].includes(ai.status)) return item;
     // A prova deve existir no artigo, não apenas no título ou no resumo do feed.
-    if (!normalizeWhitespace(item.rawText).includes(normalizeWhitespace(ai.evidence || '')) ||
-      normalizeWhitespace(ai.evidence || '').length < 12) return item;
-    const reviewed = applyAiReview(item, ai);
+    const evidence = locateQuote(ai.evidence, [item.rawText]);
+    if (!evidence) return item;
+    state.aiReviews[itemId(item)] = { ...ai, evidence };
+    const reviewed = applyAiReview(item, state.aiReviews[itemId(item)]);
     return { ...reviewed, previewOnly: false, reviewReason: '',
-      classification: { ...reviewed.classification, evidenceText: ai.evidence },
+      classification: { ...reviewed.classification, evidenceText: evidence },
       triageResolution: { decision: ai.status === 'approved' ? 'adotado' : 'descartado',
-        reason: 'segunda revisão automática com trecho conferido no artigo', evidence: ai.evidence } };
+        reason: 'segunda revisão automática com trecho conferido no artigo', evidence } };
   });
   return { items: resolved, audit: result.audit || [], callsRun: result.callsRun || 0 };
 }

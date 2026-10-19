@@ -11,6 +11,34 @@ export function redactPublicText(value) {
     .replace(/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g, '[email omitido]');
 }
 
+export async function reuseArticleTexts(directory, items) {
+  let rows;
+  try { rows = (await readFile(path.join(directory, 'textos-artigos.ndjson'), 'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse); }
+  catch (error) { if (error.code === 'ENOENT') return { items, reused: 0 }; throw error; }
+  const byUrl = new Map();
+  for (const row of rows) {
+    if (!row.texto || row.texto.length < 100 ||
+        createHash('sha256').update(row.texto).digest('hex') !== row.texto_sha256) continue;
+    for (const url of [row.url_original, row.url_artigo].filter(Boolean)) byUrl.set(canonicalUrl(url), row);
+  }
+  let reused = 0;
+  const host = raw => { try { return new URL(raw).hostname.replace(/^www\./, ''); } catch { return ''; } };
+  return { items: items.map(item => {
+    if (item.contentProvenance === 'pagina_original' || item.kind === 'gazette') return item;
+    const saved = byUrl.get(canonicalUrl(item.url || ''));
+    if (!saved) return item;
+    // Some historical recoveries stored a republication under the Google ID.
+    // Reuse only the actual publisher. Alternatives retain their separate layer.
+    const publisher = host(item.url) === 'news.google.com' ? host(item.sourceUrl) : host(item.url);
+    if (!publisher || publisher !== host(saved.url_artigo)) return item;
+    reused++;
+    return { ...item, rawText: saved.texto, summary: saved.texto.slice(0, 1800),
+      articleUrl: saved.url_artigo, articleReader: saved.leitor,
+      articleTextRecoveredAt: saved.recuperado_em, articleTextReused: true,
+      contentProvenance: 'pagina_original' };
+  }), reused };
+}
+
 // Keep the first complete reading; a later shorter response must not overwrite
 // evidence recovered or checked by an editor. Content changes need a new review.
 export async function persistArticleTexts(directory, items, now = new Date()) {

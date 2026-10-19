@@ -34,7 +34,7 @@ import { resolveArticlePreviews } from './lib/preview-resolution.mjs';
 import { decidePublication, isNotifiable } from './lib/publication-gate.mjs';
 import { isWhatsAppCategoryAllowed } from './lib/whatsapp-policy.mjs';
 import { fileURLToPath } from 'node:url';
-import { persistArticleTexts } from './lib/article-text-store.mjs';
+import { persistArticleTexts, reuseArticleTexts } from './lib/article-text-store.mjs';
 
 async function appendGitHubSummary(markdown) {
   if (!process.env.GITHUB_STEP_SUMMARY) return;
@@ -102,15 +102,17 @@ async function main() {
       console.warn(`[fonte] ${sourceRequests[index][0]}: ${result.reason.message}`);
     }
   }
-  const articleResult = await enrichArticles(collected);
+  const cached = await reuseArticleTexts(catalogDirectory, collected);
+  const articleResult = await enrichArticles(cached.items);
+  console.log(`[texto] ${cached.reused} leitura(s) integral(is) preservada(s) reutilizada(s).`);
   if (config.persistState) {
     const stored = await persistArticleTexts(catalogDirectory, articleResult.items);
     console.log(`[texto] ${stored} leitura(s) integral(is) nova(s) preservada(s) no catálogo.`);
   }
   sourceHealth.push({ name: 'Texto das páginas originais',
-    status: articleResult.failed ? 'degraded' : 'ok', itemCount: articleResult.enriched,
+    status: articleResult.failed || articleResult.missingText.length ? 'degraded' : 'ok', itemCount: articleResult.enriched + cached.reused,
     message: `${articleResult.attempted} tentativa(s); ${articleResult.enriched} texto(s) obtido(s); ` +
-      `${articleResult.missingText.length} sem texto aproveitável; ${articleResult.failed} erro(s) técnico(s).` });
+      `${articleResult.missingText.length} sem texto aproveitável; ${articleResult.failed} erro(s) técnico(s); ${cached.reused} leitura(s) preservada(s) reutilizada(s).` });
   console.log(`[texto] ${articleResult.enriched}/${articleResult.attempted} páginas enriquecidas; ` +
     `${articleResult.missingText.length} sem texto aproveitável; ${articleResult.failed} erros técnicos.`);
   for (const gap of articleResult.missingText) {
@@ -122,6 +124,7 @@ async function main() {
       ? applyAiReview(classifiedItem, state.aiReviews?.[itemId(classifiedItem)]) : classifiedItem;
   });
   let previewReviewCalls = 0;
+  let previewReviewAudit = [];
   if (config.aiReviewEnabled && (config.sendEnabled || config.aiPreview)) {
     const resolution = await resolveArticlePreviews(classified, collected, state, {
       apiKey: process.env.DEEPSEEK_API_KEY,
@@ -130,6 +133,7 @@ async function main() {
     });
     classified = resolution.items;
     previewReviewCalls = resolution.callsRun;
+    previewReviewAudit = resolution.audit;
     console.log(`[segunda passagem] ${resolution.callsRun} revisão(ões) de artigo; ` +
       `${classified.filter((item) => item.triageResolution?.decision === 'adotado').length} adotado(s); ` +
       `${classified.filter((item) => item.triageResolution?.decision === 'descartado').length} descartado(s).`);
@@ -174,10 +178,13 @@ async function main() {
     console.log(`[ia] ${reviewResult.callsRun} chamada(s); ${reviewResult.audit.filter((r) => r.status === 'approved').length} aprovado(s); ` +
       `${reviewResult.audit.filter((r) => r.status === 'rejected').length} rejeitado(s); ` +
       `${reviewResult.audit.filter((r) => ['deferred', 'disputed'].includes(r.status)).length} pendente(s).`);
-    const apiFailure = reviewResult.audit.find((entry) => entry.status === 'deferred' && entry.reason !== 'limite de chamadas');
-    sourceHealth.push({ name: 'DeepSeek', status: apiFailure ? 'error' : 'ok',
-      itemCount: reviewResult.callsRun, ...(apiFailure ? { message: apiFailure.reason } : {}) });
   }
+  const reviewFailures = [...previewReviewAudit, ...(reviewResult?.audit || [])]
+    .filter(entry => entry.status === 'deferred' && entry.reason !== 'limite de chamadas');
+  if (config.aiReviewEnabled && (config.sendEnabled || config.aiPreview))
+    sourceHealth.push({ name: 'DeepSeek', status: reviewFailures.length ? 'degraded' : 'ok',
+      itemCount: previewReviewCalls + (reviewResult?.callsRun || 0),
+      ...(reviewFailures.length ? { message: reviewFailures.map(x => x.reason).join('; ') } : {}) });
   const finalClassified = classified.map((item) => decidePublication(config.aiReviewEnabled
     ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item, publicationOptions));
   if (config.persistState) recordRunDecisions(state, finalClassified, {
@@ -249,7 +256,7 @@ async function main() {
   await writeFile(
     path.join(config.outputDir, 'article-enrichment-audit.json'),
     `${JSON.stringify({ generatedAt: new Date().toISOString(), attempted: articleResult.attempted,
-      enriched: articleResult.enriched, technicalErrors: articleResult.failed,
+      enriched: articleResult.enriched, reused: cached.reused, technicalErrors: articleResult.failed,
       missingText: articleResult.missingText }, null, 2)}\n`,
     'utf8',
   );
@@ -269,7 +276,8 @@ async function main() {
     'utf8',
   );
   await writeFile(path.join(config.outputDir, 'ai-review-audit.json'),
-    `${JSON.stringify({ enabled: config.aiReviewEnabled, ...reviewResult }, null, 2)}\n`, 'utf8');
+    `${JSON.stringify({ enabled: config.aiReviewEnabled, ...reviewResult,
+      articlePreview: { audit: previewReviewAudit, callsRun: previewReviewCalls } }, null, 2)}\n`, 'utf8');
 
   console.log(
     `${collected.length} itens coletados; ${relevant.length} relevantes; ${discovered.length} novos candidatos; ` +

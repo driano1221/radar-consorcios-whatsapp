@@ -30,6 +30,16 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
   };
   const catalogDecision = item.catalogDecision || 'candidato';
   if (item.publicationDecision === 'historico') return { ...item, catalogDecision };
+  const recoveredSource = sourceActivations.find(source => source.svgAlertsFrom &&
+    item.articleReader === 'amm_mt_svg_textual' && (source.name === item.source ||
+      source.adapter === item.scraper));
+  if (recoveredSource) {
+    const published = timestamp(item.sourcePublishedAt || item.publishedAt);
+    if (!Number.isFinite(published) || published < timestamp(recoveredSource.svgAlertsFrom)) return {
+      ...item, catalogDecision, publicationDecision: 'historico',
+      publicationReason: 'Texto em páginas recuperado após falha de leitura; preservar no acervo sem envio retroativo.',
+    };
+  }
   // Re-evaluate this against configuration even for queued or editorially
   // approved items: activating a source must never release its old backlog.
   const activation = sourceActivations.find((source) => source.alertsFrom && (

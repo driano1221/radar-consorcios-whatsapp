@@ -3,6 +3,7 @@ import { fetchWithRetry } from '../http.mjs';
 import { normalizeWhitespace } from '../text.mjs';
 import { fetchPublicRoute } from './public-routes.mjs';
 import { enrichArticle } from '../article-enrichment.mjs';
+import { readAmmPages } from '../amm-pages.mjs';
 
 const DEFAULT_USER_AGENT =
   'RadarConsorciosIPEA/0.3 (+pesquisa academica; https://github.com/driano1221/radar-consorcios-whatsapp)';
@@ -267,7 +268,9 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
       const response = await fetchWithRetry(item.url, { fetchImpl, timeoutMs: config.timeoutMs,
         retries: Math.min(1, config.retries ?? 1), headers: { 'user-agent': config.userAgent || DEFAULT_USER_AGENT } });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      enriched.push(parseAmmMtPublication(await responseText(response), item));
+      const html = await responseText(response);
+      const paged = await readAmmPages(html, item, { fetchImpl, timeoutMs: config.timeoutMs });
+      enriched.push(paged || parseAmmMtPublication(html, item));
     } catch (error) {
       console.warn(`[artigo:${site.name}] ${item.url}: ${error.message}`);
       enriched.push({ ...item, previewOnly: true, extractionError: error.message });
@@ -368,7 +371,8 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
       console.warn(`[fonte:scraper:${site.name}] ${result.reason.message}`);
     }
   });
-  return { items, diagnostics, ok: !activeSites.length || successfulSites > 0, degraded: successfulSites < activeSites.length };
+  return { items, diagnostics, ok: !activeSites.length || successfulSites > 0,
+    degraded: successfulSites < activeSites.length || diagnostics.some(d => d.status === 'degraded') };
 }
 
 export { parseBrazilianDate };

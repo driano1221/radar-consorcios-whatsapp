@@ -92,7 +92,8 @@ export async function searchGoogleAlternatives(row, fetchImpl = fetch) {
 }
 
 export function parsePublicWordpressPosts(data, publisher = 'rededanoticia.com.br') {
-  const publishers = { 'rededanoticia.com.br': 'Rede da Notícia', 'conclima.org.br': 'Conclima (portal oficial)' };
+  const publishers = { 'rededanoticia.com.br': 'Rede da Notícia', 'conclima.org.br': 'Conclima (portal oficial)',
+    'ama-al.com.br': 'Associação dos Municípios Alagoanos (AMA)' };
   if (!publishers[publisher]) throw new Error('wordpress_editor_nao_validado');
   if (!Array.isArray(data)) throw new Error('wordpress_formato_invalido');
   const plain = html => {
@@ -111,7 +112,7 @@ export function parsePublicWordpressPosts(data, publisher = 'rededanoticia.com.b
 }
 
 export async function searchPublicWordpress(row, fetchImpl = fetch, publisher = 'rededanoticia.com.br') {
-  if (!['rededanoticia.com.br', 'conclima.org.br'].includes(publisher)) throw new Error('wordpress_editor_nao_validado');
+  if (!['rededanoticia.com.br', 'conclima.org.br', 'ama-al.com.br'].includes(publisher)) throw new Error('wordpress_editor_nao_validado');
   // Official REST link advertised by the publisher; public published posts only.
   const query = publisher === 'conclima.org.br' ? 'consórcio' : ['consórcio', ...numbers(row.titulo), ...words(row.titulo).slice(0, 2)].join(' ');
   const url = `https://${publisher}/wp-json/wp/v2/posts?` + new URLSearchParams({ search: query,
@@ -127,9 +128,11 @@ export async function searchPublicWordpress(row, fetchImpl = fetch, publisher = 
 
 export async function searchAlternatives(row, fetchImpl = fetch) {
   const cnm = isCnm(row);
-  const providers = ['Google Notícias', cnm ? 'Conclima (API pública)' : 'Rede da Notícia (API pública)'];
+  const providers = ['Google Notícias', cnm ? 'Conclima (API pública)' : 'Rede da Notícia (API pública)',
+    ...(cnm ? ['AMA (API pública)'] : [])];
   const results = await Promise.allSettled([searchGoogleAlternatives(row, fetchImpl),
-    searchPublicWordpress(row, fetchImpl, cnm ? 'conclima.org.br' : 'rededanoticia.com.br')]);
+    searchPublicWordpress(row, fetchImpl, cnm ? 'conclima.org.br' : 'rededanoticia.com.br'),
+    ...(cnm ? [searchPublicWordpress(row, fetchImpl, 'ama-al.com.br')] : [])]);
   const output = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
   output.diagnostics = results.map((r, i) => ({ provider: providers[i], status: r.status === 'fulfilled' ? 'ok' : 'erro',
     count: r.status === 'fulfilled' ? r.value.length : 0, error: r.status === 'rejected' ? r.reason.message : '' }));

@@ -27,7 +27,12 @@ async function fetchGroup(terms, config, since, fetchImpl, timeoutMs = config.ti
     retries,
     headers: { 'user-agent': 'RadarConsorciosIPEA/0.2 (+pesquisa acadêmica)' },
   });
-  if (!response.ok) throw new Error(`Querido Diário respondeu ${response.status}`);
+  if (!response.ok) {
+    const message = (await response.text()).slice(0, 200);
+    const error = new Error(`Querido Diário respondeu ${response.status}`);
+    error.serviceUnavailable = response.status === 503 && /no available server|service unavailable/i.test(message);
+    throw error;
+  }
   const payload = await response.json();
   if (!Array.isArray(payload.gazettes)) throw new Error('Querido Diário: formato inesperado (gazettes ausente)');
   return { gazettes: payload.gazettes, truncated: payload.gazettes.length >= (config.pageSize || 100) };
@@ -71,6 +76,29 @@ function mergeGazettes(groups) {
 export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
   if (!config.enabled) return [];
   const groups = queryGroups(config);
+  const endpoints = [...new Set([config.baseUrl || 'https://queridodiario.ok.org.br/api',
+    ...(config.fallbackBaseUrls || ['https://api.queridodiario.ok.org.br'])])];
+  let workingEndpoint = '', outage = '';
+  const startedAt = Date.now();
+  const request = async (terms) => {
+    const errors = [];
+    for (const baseUrl of workingEndpoint ? [workingEndpoint] : endpoints) {
+      const remaining = (config.maxDurationMs || 65000) - (Date.now() - startedAt);
+      if (remaining < 500) throw new Error('Querido Diário: orçamento de tempo da rodada esgotado');
+      try {
+        const result = await fetchGroupWithFallback(terms, { ...config, baseUrl,
+          timeoutMs: Math.floor(Math.min(config.timeoutMs || 15000, Math.max(250, remaining / 4))),
+          fallbackTimeoutMs: Math.floor(Math.min(config.fallbackTimeoutMs || 16000, Math.max(250, remaining / 4))) }, since, fetchImpl);
+        workingEndpoint = baseUrl;
+        return { ...result, endpoint: baseUrl };
+      } catch (error) { errors.push({ baseUrl, error }); }
+    }
+    const message = errors.map(({ baseUrl, error }) => `${baseUrl}: ${error.message}${error.cause?.code ? ` (${error.cause.code})` : ''}`).join('; ');
+    const error = new Error(message);
+    error.serviceUnavailable = errors.length === endpoints.length && errors.every(({ error: e }) =>
+      e.serviceUnavailable || /TLS|SSL|ECONNREFUSED|ENOTFOUND/i.test(e.cause?.code || e.code || ''));
+    throw error;
+  };
   // Consultas longas ao índice podem ficar lentas. Limitar simultaneidade
   // reduz a carga na API pública sem deixar uma falha bloquear os outros grupos.
   const settled = new Array(groups.length);
@@ -78,10 +106,15 @@ export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
   const worker = async () => {
     while (nextGroup < groups.length) {
       const index = nextGroup++;
+      if (outage) {
+        settled[index] = { status: 'rejected', reason: new Error(`Consulta adiada: ${outage}`) };
+        continue;
+      }
       try {
-        settled[index] = { status: 'fulfilled', value: await fetchGroupWithFallback(groups[index], config, since, fetchImpl) };
+        settled[index] = { status: 'fulfilled', value: await request(groups[index]) };
       } catch (reason) {
         settled[index] = { status: 'rejected', reason };
+        if (reason.serviceUnavailable && !workingEndpoint) outage = reason.message;
       }
     }
   };
@@ -95,6 +128,7 @@ export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
       results.push(result.value.gazettes);
       diagnostics.push({ name: `Querido Diário — consulta ${index + 1}`, status: result.value.truncated || result.value.partial ? 'degraded' : 'ok',
         itemCount: result.value.gazettes.length,
+        endpoint: result.value.endpoint,
         ...(result.value.truncated || result.value.partial || result.value.fallback ? {
           message: [result.value.fallback ? 'Consulta OR expirou; busca simples de recuperação usada' : '',
             result.value.partial ? 'cobertura parcial' : '',
