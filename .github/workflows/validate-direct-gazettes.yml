@@ -1,0 +1,52 @@
+name: Validar diários diretos e RNCP sem envios
+on:
+  push:
+    branches: [feat/direct-gazettes-rncp]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      SEND_ENABLED: 'false'
+      PERSIST_STATE: 'false'
+      AI_REVIEW_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements-extraction.txt
+      - run: npm ci --ignore-scripts
+      - run: python -m pip install -r requirements-extraction.txt
+      - run: npm run check && npm test
+      - run: node scripts/check-recovery-safety.mjs --before
+      - name: Ler índices e íntegras reais, classificar e bloquear histórico
+        run: node scripts/validate-direct-gazettes.mjs
+      - name: Testar integração completa sem IA paga, sessão ou envio
+        run: npm run collect
+      - name: Gerar e validar painel com as fontes configuradas
+        run: npm run dashboard:build:public && node scripts/check-public-dashboard.mjs
+      - name: Confirmar documentos, decisões e recibos intactos
+        if: always()
+        run: |
+          node scripts/check-recovery-safety.mjs
+          git diff --exit-code HEAD -- data state
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: direct-gazettes-${{ github.run_id }}
+          path: |
+            output/direct-gazettes/
+            output/source-health.json
+            output/source-funnel.json
+            output/classification-audit.json
+            output/preview.txt
+          retention-days: 14

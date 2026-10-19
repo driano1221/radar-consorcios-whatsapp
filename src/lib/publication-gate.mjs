@@ -44,7 +44,11 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
   // approved items: activating a source must never release its old backlog.
   const activation = sourceActivations.find((source) => source.alertsFrom && (
     source.name === item.source || !source.discoveryOnly && [item.url, item.articleUrl, item.sourceUrl].some((url) => {
-      try { return new URL(url).hostname === new URL(source.url).hostname; }
+      try {
+        const target = new URL(url), origin = new URL(source.url);
+        return target.hostname === origin.hostname && (source.adapter !== 'sigpub' ||
+          target.pathname.split('/')[1] === origin.pathname.split('/')[1]);
+      }
       catch { return false; }
     })));
   if (activation) {

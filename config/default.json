@@ -147,8 +147,9 @@
         "name": "Rede Nacional de Consórcios Públicos",
         "adapter": "rncp",
         "url": "https://www.rncp.org.br/noticias",
-        "enabled": false,
-        "fallback": "Google News com filtro site:rncp.org.br; HTTP 403 confirmado no Actions em 14/09/2026",
+        "enabled": true,
+        "maxArticles": 8,
+        "alertsFrom": "2026-10-20T00:00:00-03:00",
         "publish": true,
         "articleSelector": ".the_content_wrapper"
       },
@@ -208,8 +209,43 @@
       },
       {
         "name": "Diário Municipal AMM-MG",
-        "adapter": "diario-municipal-index",
-        "url": "https://www.diariomunicipal.com.br/amm-mg/"
+        "adapter": "sigpub",
+        "url": "https://www.diariomunicipal.com.br/amm-mg/pesquisar",
+        "stateCode": "MG",
+        "publish": true,
+        "maxPages": 2,
+        "maxDocuments": 60,
+        "alertsFrom": "2026-10-20T00:00:00-03:00"
+      },
+      {
+        "name": "Diário Municipal AMA-AL",
+        "adapter": "sigpub",
+        "url": "https://www.diariomunicipal.com.br/ama/pesquisar",
+        "stateCode": "AL",
+        "publish": true,
+        "maxPages": 2,
+        "maxDocuments": 60,
+        "alertsFrom": "2026-10-20T00:00:00-03:00"
+      },
+      {
+        "name": "Diário Municipal AMP-PR",
+        "adapter": "sigpub",
+        "url": "https://www.diariomunicipal.com.br/amp/pesquisar",
+        "stateCode": "PR",
+        "publish": true,
+        "maxPages": 2,
+        "maxDocuments": 60,
+        "alertsFrom": "2026-10-20T00:00:00-03:00"
+      },
+      {
+        "name": "Diário Municipal FEMURN-RN",
+        "adapter": "sigpub",
+        "url": "https://www.diariomunicipal.com.br/femurn/pesquisar",
+        "stateCode": "RN",
+        "publish": true,
+        "maxPages": 2,
+        "maxDocuments": 60,
+        "alertsFrom": "2026-10-20T00:00:00-03:00"
       }
     ]
   }

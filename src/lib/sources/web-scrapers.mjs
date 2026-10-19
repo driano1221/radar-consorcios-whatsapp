@@ -4,6 +4,7 @@ import { normalizeWhitespace } from '../text.mjs';
 import { fetchPublicRoute } from './public-routes.mjs';
 import { enrichArticle } from '../article-enrichment.mjs';
 import { readAmmPages } from '../amm-pages.mjs';
+import { fetchDirectGazette, sigpubDate } from './direct-gazettes.mjs';
 
 const DEFAULT_USER_AGENT =
   'RadarConsorciosIPEA/0.3 (+pesquisa academica; https://github.com/driano1221/radar-consorcios-whatsapp)';
@@ -95,9 +96,15 @@ export async function enrichArticles(items, site, config, fetchImpl) {
   for (const item of items.slice(0, site.maxArticles || 12)) {
     try {
       if (new URL(item.url).hostname !== new URL(site.url).hostname) throw new Error('Domínio inesperado');
-      const r = await fetchWithRetry(item.url, { fetchImpl, timeoutMs: config.timeoutMs, retries: 0 });
+      const r = await fetchWithRetry(item.url, { fetchImpl, timeoutMs: config.timeoutMs, retries: 0,
+        ...(site.adapter === 'rncp' ? { redirect: 'error' } : {}) });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
-      const $ = load(await responseText(r, site.encoding));
+      const html = await responseText(r, site.encoding);
+      if (site.adapter === 'rncp') {
+        enriched.push(parseRncpArticle(html, item, site));
+        continue;
+      }
+      const $ = load(html);
       const body = $(site.articleSelector).first().clone();
       body.find('script,style,nav,footer,form').remove();
       body.find('p,li,h1,h2,h3,h4,br').append(' ');
@@ -109,7 +116,8 @@ export async function enrichArticles(items, site, config, fetchImpl) {
       enriched.push({ ...item, previewOnly: true, extractionError: error.message });
     }
   }
-  return [...enriched, ...items.slice(site.maxArticles || 12)];
+  return [...enriched, ...items.slice(site.maxArticles || 12).map(item => site.adapter === 'rncp'
+    ? { ...item, previewOnly: true, extractionError: 'RNCP: íntegra adiada pelo limite da rodada' } : item)];
 }
 
 async function responseText(response, encoding) {
@@ -132,20 +140,41 @@ export function parseRncp(html, site, since) {
       const card = $(element);
       const anchor = card.find('.entry-title a').first();
       const title = normalizeWhitespace(anchor.text());
-      const summary = normalizeWhitespace(card.find('.post-excerpt, .post-desc').first().text());
+      const summary = normalizeWhitespace(card.find('.post-excerpt').first().text());
+      const url = absoluteUrl(anchor.attr('href'), 'https://www.rncp.org.br/');
+      if (!/^https:\/\/www\.rncp\.org\.br\/noticia\/[^/]+\/\d+$/.test(url)) return null;
       return {
         kind: 'news',
         title,
-        url: absoluteUrl(anchor.attr('href'), site.url),
-        publishedAt: parseBrazilianDate(card.find('.post-date.updated, .post-date').first().text()),
+        url,
+        publishedAt: sigpubDate(normalizeWhitespace(card.find('.post-date.updated, .post-date').first().text())),
         source: site.name,
         sourceUrl: site.url,
         summary,
         rawText: summary,
+        contentProvenance: 'resumo_listagem',
       };
     })
     .get()
-    .filter((item) => withinWindow(item, since));
+    .filter((item) => item && withinWindow(item, since))
+    .filter((item, index, rows) => rows.findIndex(row => row.url === item.url) === index);
+}
+
+export function parseRncpArticle(html, item, site) {
+  const $ = load(html);
+  const title = normalizeWhitespace($('h1').first().text());
+  const wrapper = $('.the_content_wrapper').first();
+  const publishedAt = sigpubDate(normalizeWhitespace(wrapper.children('p').first().text()));
+  const body = wrapper.children('.big').first().clone();
+  body.find('script,style,nav,footer,form,aside,title,iframe').remove();
+  body.find('p,li,h2,h3,br').append(' ');
+  const text = normalizeWhitespace(body.text());
+  if (!title || title !== item.title || !publishedAt || publishedAt !== item.publishedAt || text.length < 100) {
+    throw new Error('RNCP: título/data/corpo original não conferem com a listagem');
+  }
+  return { ...item, rawText: text, summary: text.slice(0, 1800), articleUrl: item.url,
+    sourcePublishedAt: publishedAt, contentProvenance: 'pagina_original', articleReader: 'rncp_corpo_original',
+    previewOnly: site.publish !== true };
 }
 
 export function parseCnm(html, site, since) {
@@ -280,6 +309,7 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
 }
 
 async function fetchSite(site, since, config, fetchImpl) {
+  if (site.adapter === 'sigpub') return fetchDirectGazette(site, since, config, fetchImpl);
   if (['semana7-rss', 'guanhaes-portaltp'].includes(site.adapter)) {
     return fetchPublicRoute(site, since, { ...config, timeoutMs: site.timeoutMs || config.timeoutMs,
       retries: site.retries ?? config.retries }, fetchImpl);
@@ -352,15 +382,16 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
     const site = activeSites[index];
     if (result.status === 'fulfilled') {
       successfulSites += 1;
-      items.push(...result.value);
-      diagnostics.push({
+      const rows = Array.isArray(result.value) ? result.value : result.value.items;
+      items.push(...rows);
+      diagnostics.push(result.value.diagnostic || {
         name: site.name,
         adapter: site.adapter,
-        status: result.value.some((item) => item.extractionError) ? 'degraded' : 'ok',
-        ...(result.value.some((item) => item.extractionError) ? { message: 'Falha ao extrair texto de uma ou mais notícias; itens mantidos em prévia' } : {}),
-        itemCount: result.value.length,
+        status: rows.some((item) => item.extractionError) ? 'degraded' : 'ok',
+        ...(rows.some((item) => item.extractionError) ? { message: 'Falha ao extrair texto de uma ou mais notícias; itens mantidos em prévia' } : {}),
+        itemCount: rows.length,
       });
-      console.log(`[fonte:scraper:${site.name}] ${result.value.length} item(ns)`);
+      console.log(`[fonte:scraper:${site.name}] ${rows.length} item(ns)`);
     } else {
       diagnostics.push({
         name: site.name,

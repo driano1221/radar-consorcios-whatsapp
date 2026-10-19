@@ -11,7 +11,7 @@ export function redactPublicText(value) {
     .replace(/[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g, '[email omitido]');
 }
 
-export async function reuseArticleTexts(directory, items) {
+export async function reuseArticleTexts(directory, items, { includeGazettes = false } = {}) {
   let rows;
   try { rows = (await readFile(path.join(directory, 'textos-artigos.ndjson'), 'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse); }
   catch (error) { if (error.code === 'ENOENT') return { items, reused: 0 }; throw error; }
@@ -24,9 +24,11 @@ export async function reuseArticleTexts(directory, items) {
   let reused = 0;
   const host = raw => { try { return new URL(raw).hostname.replace(/^www\./, ''); } catch { return ''; } };
   return { items: items.map(item => {
-    if (item.contentProvenance === 'pagina_original' || item.kind === 'gazette') return item;
+    if (item.contentProvenance === 'pagina_original' || item.kind === 'gazette' && !includeGazettes) return item;
     const saved = byUrl.get(canonicalUrl(item.url || ''));
     if (!saved) return item;
+    if (item.kind === 'gazette' && (saved.leitor !== 'sigpub_materia_original' ||
+        saved.data_publicacao !== item.sourcePublishedAt && saved.data_publicacao !== item.publishedAt)) return item;
     // Some historical recoveries stored a republication under the Google ID.
     // Reuse only the actual publisher. Alternatives retain their separate layer.
     const publisher = host(item.url) === 'news.google.com' ? host(item.sourceUrl) : host(item.url);
@@ -60,6 +62,8 @@ export async function persistArticleTexts(directory, items, now = new Date()) {
     byId.set(id, { documento_id: id, url_original: url,
       url_artigo: item.articleUrl || url, recuperado_em: now.toISOString(),
       leitor: item.articleReader || 'corpo_original',
+      ...(item.articleReader === 'sigpub_materia_original'
+        ? { data_publicacao: item.sourcePublishedAt || item.publishedAt } : {}),
       ...(item.articleFetchUrl ? { url_leitura: item.articleFetchUrl, variante: item.articleVariant } : {}),
       texto_sha256: createHash('sha256').update(texto).digest('hex'), texto });
     added += 1;
