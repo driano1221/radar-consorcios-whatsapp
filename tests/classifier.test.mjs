@@ -3,6 +3,24 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { classifyItem } from '../src/lib/classifier.mjs';
 
+test('índice de notícias continua bloqueado quando o coletor troca o título por uma manchete', () => {
+  const item = { kind: 'news', title: 'Consórcio Intermunicipal lança programa regional',
+    rawText: 'O Consórcio Intermunicipal da Serra lançou um novo programa regional durante a assembleia.' };
+  for (const url of ['https://example.org/noticias', 'https://example.org/noticias/', 'https://example.org/news/']) {
+    for (const resolved of [false, true]) {
+      const result = classifyItem({ ...item, url: resolved ? 'https://news.google.com/rss/articles/registro' : url,
+        ...(resolved ? { articleUrl: url } : {}) });
+      assert.equal(result.category, 'GERAL', url);
+      assert.equal(result.score, 0);
+      assert.match(result.stage, /índice de notícias/);
+    }
+  }
+  for (const url of ['https://example.org/noticias/programa-regional', 'https://example.org/noticias?id=123',
+    'https://example.org/newsroom/programa-regional']) {
+    assert.equal(classifyItem({ ...item, url }).category, 'ATUAÇÃO', url);
+  }
+});
+
 test('protege os casos reais de regressão editorial', async () => {
   const fixtureUrl = new URL('./fixtures/classifier-regression.json', import.meta.url);
   const cases = JSON.parse(await readFile(fixtureUrl, 'utf8'));

@@ -318,8 +318,7 @@ export function classifyItem(item) {
   // notícia deve entrar por seu link individual, nunca pelo mural inteiro.
   try {
     const page = new URL(item.articleUrl || item.url);
-    if (/\/(?:noticias|news)\/?$/i.test(page.pathname) && !page.search &&
-      /^(?:not[ií]cias|news)(?:\s*[-–—|]|\s*$)/i.test(item.title || '')) {
+    if (/\/(?:noticias|news)\/?$/i.test(page.pathname) && !page.search) {
       return { category: 'GERAL', emoji: '📰', score: 0, stage: 'índice de notícias; apenas descoberta de documentos',
         reasons: ['rejeitado: página agregadora de notícias, não publicação individual'],
         evidenceText: item.title, evidenceIndex: -1, publicContext: false, strongPublicContext: false };
