@@ -61,7 +61,8 @@ export function parsePortalTpRows(rows) {
 
 async function request(url, config, fetchImpl, options = {}) {
   const r = await fetchWithRetry(url, { fetchImpl, timeoutMs: config.timeoutMs || 20000,
-    retries: 0, ...options, headers: { 'user-agent': config.userAgent || 'RadarConsorciosIPEA/0.3 (+pesquisa academica)' } });
+    retries: Math.min(1, config.retries ?? 1), ...options,
+    headers: { 'user-agent': config.userAgent || 'RadarConsorciosIPEA/0.3 (+pesquisa academica)' } });
   if (!r.ok) throw new Error(`HTTP ${r.status}`);
   let size = 0; const chunks = [];
   for await (const chunk of r.body) {

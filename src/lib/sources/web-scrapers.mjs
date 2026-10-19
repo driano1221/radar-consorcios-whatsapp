@@ -281,7 +281,8 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
 
 async function fetchSite(site, since, config, fetchImpl) {
   if (['semana7-rss', 'guanhaes-portaltp'].includes(site.adapter)) {
-    return fetchPublicRoute(site, since, config, fetchImpl);
+    return fetchPublicRoute(site, since, { ...config, timeoutMs: site.timeoutMs || config.timeoutMs,
+      retries: site.retries ?? config.retries }, fetchImpl);
   }
   if (site.adapter === 'amm-mt') {
     const items = await fetchAmmMt(site, since, config, fetchImpl);

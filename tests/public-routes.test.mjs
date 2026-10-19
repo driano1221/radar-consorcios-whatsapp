@@ -94,6 +94,15 @@ test('HTTP 403 isola a rota e não é repetido agressivamente', async () => {
   assert.equal(result.items.length, 0);
 });
 
+test('rota pública repete timeout transitório com limite, sem duplicar a entrada', async () => {
+  let calls=0;
+  const result=await fetchWebScrapers({enabled:true,sites:[{...site,timeoutMs:25000,retries:1}],knownPublicUrls:new Set()},since,
+    async (_url,options)=>{calls++;assert.ok(options.signal);if(calls===1)throw new DOMException('Timeout','TimeoutError');return new Response(xml);});
+  assert.equal(calls,2);
+  assert.equal(result.items.length,1);
+  assert.equal(result.items[0].discoveryOnly,true);
+});
+
 test('índice de URLs do catálogo inclui originais e URLs resolvidas; não escreve no arquivo', async () => {
   const known = await readKnownPublicUrls(new URL('../data/catalogo/arquivo-coletas.ndjson', import.meta.url));
   assert.ok(known.size > 0);

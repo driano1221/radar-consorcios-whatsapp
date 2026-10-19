@@ -133,6 +133,8 @@
       {
         "name": "Guanhães Prefeitura (PortalTP)",
         "adapter": "guanhaes-portaltp",
+        "timeoutMs": 25000,
+        "retries": 1,
         "url": "https://guanhaes-mg.portaltp.com.br/api/institucional/api-legislacao.aspx",
         "publish": false,
         "discoveryOnly": true,
