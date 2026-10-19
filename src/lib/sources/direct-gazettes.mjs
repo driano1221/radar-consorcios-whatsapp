@@ -152,6 +152,7 @@ export async function fetchDirectGazette(site, since, config = {}, fetchImpl = f
     if (Date.now() - started >= budget) { hasNext = true; break; }
     try {
       const parsed = parseSigpubIndex(await request(sigpubSearchUrl(site, since, now, page), options, fetchImpl), site, since, now);
+      console.log(`[diário:${site.stateCode}] página ${page}: ${parsed.listed} matérias; próxima página: ${parsed.hasNext ? 'sim' : 'não'}.`);
       for (const item of parsed.items) byUrl.set(item.url, item);
       pages++; hasNext = parsed.hasNext;
       if (!hasNext) break;

@@ -36,7 +36,12 @@ try {
   assert.ok(ciga.items.some(i=>i.contentProvenance==='pagina_original'),'CIGA: nenhum texto real');
   const rncp=sites.find(s=>s.adapter==='rncp');
   const response=await fetch(rncp.url,{signal:AbortSignal.timeout(20000)});
-  assert.equal(response.status,200,'RNCP: índice público bloqueado');
+  if(response.status===403) {
+    report.sources.push({name:rncp.name,adapter:'rncp',status:'blocked',httpStatus:403,
+      itemCount:0,productionEnabled:false,message:'Cloudflare bloqueia o runner; Google continua como descoberta. Não declarar coleta direta recuperada.'});
+    console.log('[RNCP] HTTP 403 confirmado: acesso direto não habilitado, descoberta Google preservada.');
+  } else {
+  assert.equal(response.status,200,'RNCP: falha inesperada do índice público');
   const html=await response.text();
   const historical=parseRncp(html,rncp,new Date('2000-01-01'));
   assert.ok(historical.length>0,'RNCP: lista histórica vazia');
@@ -44,11 +49,12 @@ try {
   // Latest articles are older than the normal lookback. Test the real reader on
   // a historical sample without importing it or releasing it for notifications.
   const sampleSince=new Date(new Date(historical[0].publishedAt).getTime()-90*86400000);
-  const rncpRead=await fetchWebScrapers({...config.webScrapers,sites:[rncp]},sampleSince);
+  const rncpRead=await fetchWebScrapers({...config.webScrapers,sites:[{...rncp,enabled:true}]},sampleSince);
   assert.ok(rncpRead.items.filter(i=>i.contentProvenance==='pagina_original').length>=3,'RNCP: menos de três íntegras verificadas');
   report.sources.push(...rncpRead.diagnostics.map(d=>({...d,historicalIndexCount:historical.length,
     currentWindowCount:current.length,latestPublishedAt:historical[0].publishedAt,historicalTest:true})));
   all.push(...rncpRead.items);
+  }
   const classified=all.map(item=>decidePublication({...item,classification:classifyItem(item)},
     {sourceActivations:sites,lookbackHours:168}));
   report.summary={discovered:classified.length,fullTexts:classified.filter(i=>i.contentProvenance==='pagina_original').length,

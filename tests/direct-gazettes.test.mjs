@@ -126,7 +126,9 @@ test('cache de íntegra de ato é explícito, com hash, mesma origem e não alte
 test('novos portais não reenviam histórico, inclusive reindexado pelo Google', async () => {
   const cfg=JSON.parse(await readFile(new URL('../config/default.json',import.meta.url),'utf8'));
   const sources=cfg.webScrapers.sites.filter(s=>s.adapter==='sigpub'||s.adapter==='rncp');
-  assert.equal(sources.length,5); assert.ok(sources.every(s=>s.enabled!==false&&s.publish&&s.alertsFrom));
+  assert.equal(sources.length,5); assert.ok(sources.every(s=>s.publish&&s.alertsFrom));
+  assert.ok(sources.filter(s=>s.adapter==='sigpub').every(s=>s.enabled!==false));
+  assert.equal(sources.find(s=>s.adapter==='rncp').enabled,false);
   const row=parseSigpubArticle(article(),parseSigpubIndex(index(),site,since,now).items[0],site);
   const classification=classifyItem(row); assert.equal(classification.category,'ADESÃO AUTORIZADA');
   assert.equal(decidePublication({...row,classification},{now,sourceActivations:sources}).publicationDecision,'historico');
