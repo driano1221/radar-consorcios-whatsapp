@@ -311,7 +311,7 @@ export function formatWeeklyMessage(report, test = false) {
   const rows = [
     `${test ? '🧪 ' : '🗞️ '}*RADAR CONSÓRCIOS*`,
     `*${test ? 'Prévia · linha do tempo' : 'Linha do tempo'}* · ${date(report.start)}–${date(report.end)}`,
-    `_Atualizado às ${hour} (Brasília)_`,
+    `_Período: ${date(report.start)} às ${hour} até ${date(report.end)} às ${hour} (Brasília)_`,
     '',
     `*${report.events} ${report.events === 1 ? 'achado relevante' : 'achados relevantes'}*`,
   ];
@@ -321,12 +321,13 @@ export function formatWeeklyMessage(report, test = false) {
   for (const item of chronological) {
     const ratifiedProtocol = item.kind === 'gazette' && ['GOVERNANÇA', 'PROTOCOLO'].includes(item.classification?.category) &&
       /ratifica.{0,35}protocolo de intenções/i.test(item.summary || '');
-    const title = ratifiedProtocol
+    const title = item.presentationTitle ? cleanInline(item.presentationTitle) : ratifiedProtocol
       ? `${cleanInline(item.territoryName || 'Município')} ratifica protocolo de intenções${extractConsortiumLabel(item) ? ` do ${extractConsortiumLabel(item)}` : ''}`
       : cleanInline(displayTitle(item));
     const source = cleanInline(item.source || 'Fonte não informada');
     const headline = withoutSourceSuffix(title, source);
-    const category = labels[item.classification?.category] || 'CONSÓRCIOS';
+    const category = item.classification?.scope === 'orientacao_geral' ? 'ORIENTAÇÃO GERAL'
+      : labels[item.classification?.category] || 'CONSÓRCIOS';
     const icon = icons[item.classification?.category] || '📰';
     rows.push('', `${icon} *${date(item.publishedAt)} · ${category}*`,
       headline, `_${source}_`,

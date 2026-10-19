@@ -181,6 +181,10 @@ export function mergeCatalogRecord(existing, incoming) {
 }
 
 export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() } = {}) {
+  // A review seals an exact excerpt. Recaptures remain in observations and
+  // textos-artigos; they must not silently invalidate an editorial decision.
+  const sealedExcerpts = new Map([...reviewedIds].filter(id => records.has(id))
+    .map(id => [id, records.get(id).trecho]));
   const seenByUrl = new Map(Object.values(state.seen || {}).filter((row) => row.url)
     .map((row) => [canonicalUrl(row.url), row]));
   for (const observation of Object.values(state.observations || {})) {
@@ -257,6 +261,7 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
     const row = catalogRecord(item, pending.queuedAt, pending.queuedAt);
     if (row) records.set(row.id, mergeCatalogRecord(records.get(row.id), row));
   }
+  for (const [id, trecho] of sealedExcerpts) records.set(id, { ...records.get(id), trecho });
   return records;
 }
 

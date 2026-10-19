@@ -209,6 +209,12 @@ export async function reviewWeeklyFindings(items, state, {
   let calls = 0;
   for (const item of items) {
     const id = item.id || itemId(item);
+    if (item.weeklyDecision === 'incluir' && item.weeklyEvidence?.documentId &&
+      ['confirmar_evento', 'corrigir_categoria'].includes(item.editorialDecision)) {
+      highlights.push(item);
+      audit.push({ id, status: 'editorial-confirmed', category: item.classification.category });
+      continue;
+    }
     let review = state.aiReviews[id];
     if (!review || review.promptVersion !== AI_PROMPT_VERSION) {
       review = null;

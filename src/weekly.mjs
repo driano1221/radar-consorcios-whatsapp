@@ -8,9 +8,7 @@ import { formatWeeklyMessages } from './lib/format.mjs';
 import { sendMessages } from './lib/whatsapp.mjs';
 import { presentItem, shortenLongUrl } from './lib/message-presentation.mjs';
 import { reviewWeeklyFindings } from './lib/ai-review.mjs';
-import { applyEditorialGuard, loadEditorialGuard } from './lib/editorial-guard.mjs';
-import { decidePublication } from './lib/publication-gate.mjs';
-import { classifyItem } from './lib/classifier.mjs';
+import { prepareWeeklyState } from './lib/weekly-selection.mjs';
 import { fileURLToPath } from 'node:url';
 
 async function main() {
@@ -19,26 +17,23 @@ async function main() {
   const groupId = process.env.WHATSAPP_WEEKLY_GROUP_ID?.trim() || config.groupId;
   // A prévia sem envio usa a mesma janela da execução agendada. Só a opção
   // explícita de teste mostra uma janela móvel até o instante da prévia.
-  const window = weeklyWindow(new Date(), process.env.WEEKLY_TEST === 'true');
-  const editorialGuard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
-  const reportState = { ...state, observations: Object.fromEntries(
-    Object.entries(state.observations || {}).map(([key, observation]) => [key, {
-      ...observation,
-      item: observation.item ? decidePublication(applyEditorialGuard({ ...observation.item,
-        classification: classifyItem({ ...observation.item,
-          rawText: observation.item.summary || observation.item.rawText || '',
-          excerpts: [observation.item.classification?.evidenceText, observation.item.summary].filter(Boolean),
-        }),
-      }, editorialGuard),
-      { now: window.end, lookbackHours: config.lookbackHours, minimumScore: config.minimumScore,
-        sourceActivations: config.webScrapers?.sites?.filter(site => site.alertsFrom) || [] }) : observation.item,
-    }]),
-  ) };
+  const rebuild = process.env.WEEKLY_REBUILD_PREVIEW === 'true';
+  const reference = process.env.WEEKLY_REFERENCE_TIME;
+  if (config.sendEnabled && (rebuild || reference)) throw new Error('Revisão de edição antiga só pode rodar sem envio.');
+  const now = reference ? new Date(reference) : new Date();
+  if (!Number.isFinite(now.getTime())) throw new Error('Data de referência inválida.');
+  const window = weeklyWindow(now, process.env.WEEKLY_TEST === 'true');
+  const reportState = await prepareWeeklyState(state,
+    fileURLToPath(new URL('../data/catalogo/', import.meta.url)), window,
+    { lookbackHours: config.lookbackHours, minimumScore: config.minimumScore,
+      sourceActivations: config.webScrapers?.sites?.filter(site => site.alertsFrom) || [] });
   const edition = process.env.WEEKLY_EDITION?.trim() || '';
   if (edition && !/^[a-z0-9-]{1,40}$/.test(edition)) throw new Error('WEEKLY_EDITION inválida.');
   const id = `${process.env.WEEKLY_TEST === 'true' ? 'test:' : ''}${window.end.toISOString().slice(0, 10)}:${edition ? `${edition}:` : ''}${createHash('sha256').update(groupId).digest('hex').slice(0, 12)}`;
   state.weekly ||= {};
-  const existing = state.weekly[id];
+  // Rebuilding is a read-only preview. Never replace receipts or resume a sent
+  // edition with new contents under the same deterministic message IDs.
+  const existing = rebuild ? undefined : state.weekly[id];
   if (config.sendEnabled && existing?.sentAt) {
     console.log('Resumo desta semana já enviado para este destino.');
     return;
@@ -68,10 +63,11 @@ async function main() {
   await mkdir(config.outputDir, { recursive: true });
   await writeFile(path.join(config.outputDir, 'weekly-preview.txt'), text + '\n');
   await writeFile(path.join(config.outputDir, 'weekly-report.json'), JSON.stringify(report, null, 2) + '\n');
+  await writeFile(path.join(config.outputDir, 'weekly-selection-audit.json'), JSON.stringify(reportState.weeklySelectionAudit, null, 2) + '\n');
   await writeFile(path.join(config.outputDir, 'weekly-ai-audit.json'), JSON.stringify({ enabled: config.aiReviewEnabled,
     calls: ai?.calls || 0, audit: ai?.audit || [] }, null, 2) + '\n');
-  if (ai?.audit.some((entry) => entry.status === 'deferred') && !ai.highlights.length) {
-    throw new Error('Nenhum achado pôde ser validado; resumo não enviado. Consulte weekly-ai-audit.json.');
+  if (ai?.audit.some((entry) => entry.status === 'deferred')) {
+    throw new Error('Revisão semanal incompleta; resumo não enviado. Consulte weekly-ai-audit.json.');
   }
   console.log(text);
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `## Resumo semanal\n\n${text}\n`);

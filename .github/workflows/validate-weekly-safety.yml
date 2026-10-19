@@ -1,0 +1,43 @@
+name: Validar Actions e resumo sem envios
+
+on:
+  push:
+    branches: [fix/actions-weekly-evidence]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      SEND_ENABLED: 'false'
+      PERSIST_STATE: 'false'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm test
+      - name: Gerar prévia corrigida de 10 a 17 de outubro sem tocar nos recibos
+        env:
+          AI_REVIEW_ENABLED: 'true'
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          WEEKLY_REBUILD_PREVIEW: 'true'
+          WEEKLY_REFERENCE_TIME: '2026-10-17T20:13:00Z'
+        run: npm run weekly
+      - name: Não pode alterar acervo, fila, recibos nem sessão
+        run: git diff --exit-code HEAD -- state data
+      - name: Conferir painel público
+        run: npm run dashboard:build:public && node scripts/check-public-dashboard.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: previa-semanal-corrigida-${{ github.run_id }}
+          path: output/weekly-*
+          retention-days: 14

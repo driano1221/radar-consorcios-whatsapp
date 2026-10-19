@@ -90,14 +90,17 @@ export function weeklyWindow(now = new Date(), rolling = false) {
 
 export function buildWeeklyReport(state, { start, end }, minimumScore = 5) {
   const inside = (date) => new Date(date) >= start && new Date(date) < end;
-  const observations = Object.values(state.observations || {}).filter((r) => inside(r.firstSeenAt));
+  const observations = Object.values(state.observations || {}).filter((r) =>
+    r.item?.weeklyDecision === 'incluir' || inside(r.firstSeenAt));
   const relevant = observations.map((r) => r.item).filter((i) => {
+    if (i.weeklyDecision) return i.weeklyDecision === 'incluir' && inside(i.weeklyDate);
     const date = publicationDate(i)?.date;
     return isNotifiable(i, minimumScore) && i.kind !== 'gazette-index' &&
       (!date || new Date(date) >= start);
   })
-    .map(weeklyFinding).filter(Boolean);
-  const sorted = relevant.sort((a, b) => b.classification.score - a.classification.score || new Date(b.publishedAt) - new Date(a.publishedAt));
+    .map(i => i.weeklyDecision === 'incluir' ? i : weeklyFinding(i)).filter(Boolean);
+  const sorted = relevant.sort((a, b) => Number(Boolean(b.weeklyEvidence)) - Number(Boolean(a.weeklyEvidence)) ||
+    b.classification.score - a.classification.score || new Date(b.publishedAt) - new Date(a.publishedAt));
   const events = selectUnseen(sorted, { seen: {}, pending: {} });
   events.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt) || b.classification.score - a.classification.score);
   const sources = {};

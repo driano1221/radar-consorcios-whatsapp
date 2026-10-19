@@ -18,6 +18,14 @@ on:
         description: Identificador opcional para reenviar uma versão revisada da prévia
         type: string
         default: ''
+      rebuild_preview:
+        description: Recalcular edição somente para conferência, sem envio
+        type: boolean
+        default: false
+      reference_time:
+        description: Data ISO de referência para prévia histórica (somente sem envio)
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -42,10 +50,13 @@ jobs:
       SEND_ENABLED: ${{ github.event_name == 'schedule' && (vars.SEND_ENABLED || 'false') || format('{0}', inputs.send_enabled) }}
       WEEKLY_TEST: ${{ format('{0}', inputs.test_preview) }}
       WEEKLY_EDITION: ${{ inputs.edition }}
+      WEEKLY_REBUILD_PREVIEW: ${{ format('{0}', inputs.rebuild_preview) }}
+      WEEKLY_REFERENCE_TIME: ${{ inputs.reference_time }}
     steps:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v7
         with:
           node-version: 22
@@ -53,16 +64,18 @@ jobs:
       - run: npm ci
       - run: npm test
       - name: Restaurar sessão
+        id: restore_session
         if: env.SEND_ENABLED == 'true'
         run: npm run session:decrypt
       - name: Preparar e enviar resumo
         run: npm run weekly
       - name: Criptografar sessão
-        if: always() && env.SEND_ENABLED == 'true'
+        id: encrypt_session
+        if: always() && steps.restore_session.outcome == 'success'
         run: npm run session:encrypt
       - name: Persistir confirmação e sessão
         id: persist
-        if: always() && env.SEND_ENABLED == 'true'
+        if: always() && steps.encrypt_session.outcome == 'success'
         shell: bash
         run: |
           git config user.name "radar-consorcios[bot]"
