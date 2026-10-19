@@ -30,3 +30,4 @@
 - Testes reais reaplicam o estado em memória duas vezes, simulam nova fila, verificam todos os hashes editoriais e a integridade dos recibos.
 - Workflow `validate-weekly-safety.yml`: sem credenciais de WhatsApp, com envio desativado; valida testes, prévia histórica, imutabilidade de `state/` e `data/` e painel público. Artefatos incluem texto, relatório, auditoria editorial e auditoria da IA.
 - Nenhum resumo corrigido deve ser enviado nesta manutenção. A prévia é apresentada ao usuário antes de qualquer novo envio.
+- [Actions 39246914074](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/39246914074): aprovado. **3 → 15 achados** na edição 10–17/10, 13 confirmados documentalmente e dois aprovados pela IA em cache; zero chamadas novas. Cinco itens continuam rejeitados pela revisão da IA. A notícia-mãe do TCE não é repetida; os atos confirmados usam suas próprias datas de publicação. `state/` e `data/` ficaram intactos durante a prévia.

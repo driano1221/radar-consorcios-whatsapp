@@ -1,6 +1,6 @@
 # Memória do projeto — Radar de Consórcios
 
-Atualização mais recente: **16 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
+Atualização mais recente: **19 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
 ## Aplicação documental retroativa: Divinópolis e TCE-MG — 16/10/2026
 
@@ -430,11 +430,12 @@ Esta seção registra **desde a ideia de criar uma base**, e não apenas as últ
 - Direção visual: banner SVG próprio em `docs/assets/`, dois indicadores reais dos workflows e fluxograma Mermaid nativo do GitHub. Não há imagem de terceiros, dependência de serviço de design nem números estáticos no cabeçalho. A referência foi a documentação do GitHub para README, links relativos, Mermaid e alertas, além de exemplos curados de READMEs; a identidade é editorial e não copia a marca do Ipea.
 - Ao manter o README, atualizar primeiro os workflows, `config/default.json` e as contagens do painel; o diagrama deve continuar distinguindo arquivo, decisão da base e portão de alerta. A memória é cronológica; seu bloco inicial de agosto não deve ser interpretado como configuração vigente.
 - Referências consultadas: [README e links relativos no GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes), [Mermaid nativo](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams) e a curadoria [awesome-readme](https://github.com/matiassingers/awesome-readme). Serviram para a estrutura e a navegação, não como conteúdo copiado.
-# Correção do bloqueio das coletas e seleção semanal — 19/10/2026
+## Correção do bloqueio das coletas e seleção semanal — 19/10/2026
 
 - Solicitação atual: corrigir Actions e separar resumo dos alertas; incluir CIMSAMU no período certo; testar e apresentar prévia antes de enviar. Não reenviar nem recolocar antigos na fila.
 - Causa reproduzida: `mergeStateIntoCatalog` substituía trecho de duplicata revisada do Semana 7 por texto maior. Trecho lacrado restaurado e preservado nas futuras mesclagens. Texto integral continua separado.
 - Workflows passam a usar a ponta atual da branch dentro da fila serializada, criptografar apenas sessão restaurada e validar catálogo depois de atualizá-lo.
 - Seleção semanal independente da flag de alerta: fatos confirmados por publicação original entram no seu período, sem modificar fila/recibos. CIMSAMU/Castro (14/10) e CONIAPE (15/10) incluídos; Campo Mourão/CISCOMCAM (09/10) e republicações de meses antigos ficam fora.
 - Reconstrução histórica estritamente sem envio, com auditoria de inclusão/exclusão. Prévia não substitui a edição já enviada. Documentação: [correção Actions/resumo](CORRECAO-ACTIONS-RESUMO-2026-10-19.md).
+- [Validação no Actions](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/39246914074): 429 testes, painel público e integridade de acervo/recibos aprovados. Prévia de 10–17/10 passa de 3 para **15 achados** (13 confirmados documentalmente, dois aprovados pela IA em cache), sem chamadas novas à IA e sem envio ao WhatsApp. A notícia-mãe do TCE é substituída pelos atos com datas próprias, não duplicada.
 
