@@ -35,6 +35,7 @@ export async function reuseArticleTexts(directory, items) {
     return { ...item, rawText: saved.texto, summary: saved.texto.slice(0, 1800),
       articleUrl: saved.url_artigo, articleReader: saved.leitor,
       articleTextRecoveredAt: saved.recuperado_em, articleTextReused: true,
+      ...(saved.url_leitura ? { articleFetchUrl: saved.url_leitura, articleVariant: saved.variante } : {}),
       contentProvenance: 'pagina_original' };
   }), reused };
 }
@@ -59,6 +60,7 @@ export async function persistArticleTexts(directory, items, now = new Date()) {
     byId.set(id, { documento_id: id, url_original: url,
       url_artigo: item.articleUrl || url, recuperado_em: now.toISOString(),
       leitor: item.articleReader || 'corpo_original',
+      ...(item.articleFetchUrl ? { url_leitura: item.articleFetchUrl, variante: item.articleVariant } : {}),
       texto_sha256: createHash('sha256').update(texto).digest('hex'), texto });
     added += 1;
   }

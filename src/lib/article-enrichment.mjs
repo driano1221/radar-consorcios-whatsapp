@@ -164,12 +164,29 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
       sourcePublishedAt: article.date, contentProvenance: 'pagina_original', articleReader: 'cimcero_api_publica',
       extractionDisagreement: false };
   }
-  const response = await fetchPublicHtml(articleUrl, fetchImpl);
+  let response = await fetchPublicHtml(articleUrl, fetchImpl);
+  let variantHtml = '', articleFetchUrl = '';
+  // Public AMP route advertised by this publisher's rel=amphtml. It refers to
+  // the same article ID; never substitute another publisher or a search page.
+  if (response?.status === 403 && parsedUrl.hostname === 'araguaianoticia.com.br' &&
+      /^\/noticia\/\d+\/[^/]+\/?$/.test(parsedUrl.pathname)) {
+    const ampUrl = articleUrl.replace(/\/$/, '') + '/amp';
+    const alternate = await fetchPublicHtml(ampUrl, fetchImpl);
+    if (alternate?.ok && /text\/html/i.test(alternate.headers.get('content-type') || '')) {
+      const html = await readHtmlResponse(alternate);
+      if (html.length <= 2_000_000 && !isChallengePage(html)) {
+        const canonical = cheerio.load(html)('link[rel="canonical"]').attr('href');
+        if (canonicalArticleUrl(canonical)?.replace(/\/$/, '') === articleUrl.replace(/\/$/, '')) {
+          response = alternate; variantHtml = html; articleFetchUrl = ampUrl;
+        }
+      }
+    }
+  }
   if (!response?.ok) { onFailure(item, `http_${response?.status || 'sem_resposta'}`); return item; }
   if (!/text\/html/i.test(response.headers.get('content-type') || '')) { onFailure(item, 'destino_nao_html'); return item; }
   const length = Number(response.headers.get('content-length') || 0);
   if (length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
-  const html = await readHtmlResponse(response);
+  const html = variantHtml || await readHtmlResponse(response);
   if (html.length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
   const cnm = parseCnmArticle(html, articleUrl);
   if (cnm) return { ...item, articleUrl, rawText: cnm.text, summary: cnm.text.slice(0,1800),
@@ -201,6 +218,7 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   const incompleteComparison = !validReader || !validTrafilatura;
   const disagreement = !incompleteComparison && readerCategory !== trafilaturaCategory;
   return { ...item, articleUrl, summary: text.slice(0, 1800), rawText: text,
+    ...(articleFetchUrl ? { articleFetchUrl, articleVariant: 'amp_publico' } : {}),
     sourcePublishedAt: publication?.date || item.sourcePublishedAt || '',
     sourceDateEvidence: publication?.source || item.sourceDateEvidence || '',
     contentProvenance: 'pagina_original', articleReader: text === tceText ? 'tce_mg_corpo'

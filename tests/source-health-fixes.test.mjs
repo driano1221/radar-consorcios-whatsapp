@@ -12,6 +12,8 @@ import { resolveArticlePreviews } from '../src/lib/preview-resolution.mjs';
 import { fetchQueridoDiario } from '../src/lib/sources/querido-diario.mjs';
 import { classifyItem } from '../src/lib/classifier.mjs';
 import { decidePublication } from '../src/lib/publication-gate.mjs';
+import { isCnm, isAraguaia, parsePublicWordpressPosts, searchPublicWordpress } from '../src/lib/public-document-recovery.mjs';
+import { enrichArticle } from '../src/lib/article-enrichment.mjs';
 
 const cdn = 'https://cdn-amm.diariomunicipal.org/publicacoes-pdf/2026/10/16/3590_1927082/1123be80-d318-45ba-9403-9c5d9aedd19e';
 const html = `<div id="publication-text"><img src="${cdn}/p-0.svg"><img src="${cdn}/p-1.svg"></div>`;
@@ -117,6 +119,40 @@ test('QD usa a segunda rota oficial e não duplica o diário recuperado', async 
   assert.equal(result.items.length, 1);
   assert.equal(result.ok, true);
   assert.equal(result.diagnostics[0].endpoint, 'https://api.queridodiario.ok.org.br');
+});
+
+test('nome CNM do Google entra na recuperação e AMA mantém editor e URL próprios', () => {
+  assert.ok(isCnm({fonte:'Confederação Nacional de Municípios (CNM)',url:'https://news.google.com/rss/articles/1'}));
+  const posts=parsePublicWordpressPosts([{id:1,status:'publish',type:'post',link:'https://ama-al.com.br/orientacao/',
+    title:{rendered:'CNM orienta gestores sobre consórcios públicos'},content:{rendered:'<p>Orientação sobre consórcios públicos.</p>'},date_gmt:'2026-10-14T12:30:33'}],'ama-al.com.br');
+  assert.equal(posts[0].fonte,'Associação dos Municípios Alagoanos (AMA)');
+  assert.equal(posts[0].apiReading.articleUrl,'https://ama-al.com.br/orientacao/');
+  assert.equal(posts[0].apiReading.apiUrl,'https://ama-al.com.br/wp-json/wp/v2/posts/1');
+});
+
+test('rota AMP só fornece texto com canônico da mesma publicação', async () => {
+  const url='https://araguaianoticia.com.br/noticia/79633/consorcio-visita';
+  const body='O consórcio público prepara uma visita técnica ao hospital municipal. '.repeat(4);
+  const run=canonical=>enrichArticle({url,title:'Consórcio prepara visita técnica'}, {
+    fetchImpl:async target=>target.endsWith('/amp')?new Response(`<html><head><link rel="canonical" href="${canonical}"></head><body><article>${body}</article></body></html>`,
+      {headers:{'content-type':'text/html'}}):new Response('Acesso negado',{status:403}),
+    readability:()=>body,trafilatura:()=>body});
+  const valid=await run(url);
+  assert.equal(valid.articleFetchUrl,url+'/amp');
+  assert.equal(valid.articleUrl,url);
+  assert.equal(valid.contentProvenance,'pagina_original');
+  const wrong=await run(url.replace('79633','1'));
+  assert.equal(wrong.rawText,undefined);
+});
+
+test('recuperação Araguaia usa palavras do assunto na busca pública', async () => {
+  assert.ok(isAraguaia({fonte:'Araguaia Notícia'}));
+  let request='';
+  await searchPublicWordpress({titulo:'Consórcio de Saúde fará em breve visita técnica para definir gestão regional do hospital'},
+    async url=>{request=url;return Response.json([]);});
+  const query=new URL(request).searchParams.get('search');
+  assert.match(query,/visita t[eé]cnica/);
+  assert.doesNotMatch(query,/fara|breve/);
 });
 
 test('QD interrompe repetição quando as duas rotas confirmam indisponibilidade', async () => {

@@ -2,6 +2,14 @@
 
 Atualização mais recente: **19 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Correções de fontes e revisão — 19/10/2026
+
+- AMM-MT: corpo de 13 publicações mudou para páginas SVG com camada `data-text`. Novo leitor conserva páginas, valida origem/ID/sequência e recusa leitura parcial. As 131 páginas abriram no Actions; coletor real 20/20 sem erro de extração. Instruções operacionais do SIM não viram alteração de protocolo nem fiscalização realizada por causa do preâmbulo.
+- IA: artigos curtos completos (até 24 mil caracteres), janelas separadas/identificadas para longos, citação reconduzida à grafia literal da fonte e uma segunda tentativa estrita dentro dos tetos. Falha de rede não vira aprovação. Saúde e auditoria agora incluem a segunda passagem. TCE-MG real aprovado em uma chamada; prova literal conferida e cache sem nova chamada.
+- Reuso de íntegras exige hash e mesmo editor. Semana 7 recupera sua leitura original de 2.060 caracteres; cópia de outro veículo não pode ser disfarçada de original. CNM conta com reprodução via API pública da AMA (2.726 caracteres), em camada separada; nome com sufixo `(CNM)` também reconhecido. Araguaia entra na recuperação diária via Rede da Notícia; AMP só é aceita com canônico da mesma publicação.
+- Querido Diário: ambas as rotas oficiais testadas no runner; uma retornou 503 e a outra falha TLS. Cobertura permanece degradada, com tentativas limitadas e novo teste nas próximas rodadas; não declarar fonte recuperada enquanto o servidor não voltar.
+- Sem alertas retroativos: páginas SVG anteriores a **20/10/2026, 00h Brasília** ficam somente no acervo. Manutenção/testes não enviam mensagens nem alteram recibos, fila, sessão ou revisões seladas. [Relatório e validações](CORRECAO-FONTES-IA-2026-10-19.md).
+
 ## Preferência de WhatsApp aprovada — 19/10/2026
 
 - Usuário dispensou Controle/Fiscalização no WhatsApp e autorizou enviar os demais itens da prévia. São nove: três de Atuação, três de Rateio, dois de Governança e um de Protocolo. Os seis de Controle continuam na base/painel, sem reclassificação ou exclusão do acervo.

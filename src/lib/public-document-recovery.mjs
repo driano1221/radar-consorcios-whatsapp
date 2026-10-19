@@ -20,8 +20,10 @@ const array = x => x == null ? [] : Array.isArray(x) ? x : [x];
 const host = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; } };
 export const isSemana7 = row => /^semana\s*7$/i.test(row.fonte || '') ||
   [row.url, row.article_url, row.article_resolved_url].some(url => host(url) === 'semana7.com.br');
-export const isCnm = row => /^(?:CNM|Confederação Nacional de Municípios)$/i.test(row.fonte || '') ||
+export const isCnm = row => /^(?:CNM|Confederação Nacional de Municípios(?:\s*\(CNM\))?)$/i.test(row.fonte || '') ||
   [row.url, row.article_url, row.article_resolved_url].some(url => ['cnm.org.br', 'api.cnm.org.br'].includes(host(url)));
+export const isAraguaia = row => /^Araguaia Not[ií]cia$/i.test(row.fonte || '') ||
+  [row.url, row.article_url, row.article_resolved_url].some(url => host(url) === 'araguaianoticia.com.br');
 export const isGuanhaesPdf = url => /^https:\/\/s3\.amazonaws\.com\/el\.com\.br\/portal\/uploads\/3177\/[^?#]+\.pdf$/i.test(url || '');
 export const digest = value => createHash('sha256').update(value).digest('hex');
 export function alternativeSourceKey(url) {
@@ -69,7 +71,7 @@ export async function readGuanhaesPdf(url, { fetchImpl = fetch, ocr = true } = {
 }
 
 export function alternativeSearchUrl(row) {
-  const query = `${words(row.titulo).slice(0, 8).join(' ')} ${numbers(row.titulo).join(' ')} consórcio -site:${isCnm(row) ? 'cnm.org.br' : 'semana7.com.br'}`;
+  const query = `${words(row.titulo).slice(0, 8).join(' ')} ${numbers(row.titulo).join(' ')} consórcio -site:${isCnm(row) ? 'cnm.org.br' : isAraguaia(row) ? 'araguaianoticia.com.br' : 'semana7.com.br'}`;
   return 'https://news.google.com/rss/search?' + new URLSearchParams({ q: query, hl: 'pt-BR', gl: 'BR', ceid: 'BR:pt-419' });
 }
 
@@ -114,7 +116,8 @@ export function parsePublicWordpressPosts(data, publisher = 'rededanoticia.com.b
 export async function searchPublicWordpress(row, fetchImpl = fetch, publisher = 'rededanoticia.com.br') {
   if (!['rededanoticia.com.br', 'conclima.org.br', 'ama-al.com.br'].includes(publisher)) throw new Error('wordpress_editor_nao_validado');
   // Official REST link advertised by the publisher; public published posts only.
-  const query = publisher === 'conclima.org.br' ? 'consórcio' : ['consórcio', ...numbers(row.titulo), ...words(row.titulo).slice(0, 2)].join(' ');
+  const anchorWords = words(row.titulo).filter(word => !['fara','breve','prepara','viabiliza','promove','realiza'].includes(word));
+  const query = publisher === 'conclima.org.br' ? 'consórcio' : ['consórcio', ...numbers(row.titulo), ...anchorWords.slice(0, 2)].join(' ');
   const url = `https://${publisher}/wp-json/wp/v2/posts?` + new URLSearchParams({ search: query,
     per_page: '5', status: 'publish', _fields: 'id,link,title,content,date_gmt,status,type' });
   const response = await fetchImpl(url, { redirect: 'error', signal: AbortSignal.timeout(12000) });
@@ -142,7 +145,8 @@ export async function searchAlternatives(row, fetchImpl = fetch) {
 
 export async function findAlternativeTexts(row, archive, { search = searchAlternatives, read = enrichArticle,
   searchEvenWithArchive = false, now = new Date(), maxReads = 2, storedTexts = new Map() } = {}) {
-  const candidates = archive.filter(r => r.id !== row.id && !isSemana7(r) && !(isCnm(row) && isCnm(r))).map(r => ({ ...r, origin: 'acervo' }));
+  const candidates = archive.filter(r => r.id !== row.id && !isSemana7(r) && !(isCnm(row) && isCnm(r)) &&
+    !(isAraguaia(row) && isAraguaia(r))).map(r => ({ ...r, origin: 'acervo' }));
   let searchStatus = 'não necessária: acervo tem candidatos', searchCount = 0, searchDiagnostics = [];
   if (searchEvenWithArchive || !candidates.some(c => compareAlternative(row, c).eligible)) {
     try { const found = await search(row); candidates.push(...found.map(c => ({ ...c, origin: 'busca_web' })));
@@ -156,7 +160,8 @@ export async function findAlternativeTexts(row, archive, { search = searchAltern
   for (const { candidate, comparison } of ranked) {
     if (attempts.length >= maxReads) break;
     const target = canonicalUrl(candidate.article_url || candidate.url || '');
-    if (!target || seen.has(target) || host(target) === 'semana7.com.br' || isCnm(row) && isCnm({url:target})) continue;
+    if (!target || seen.has(target) || host(target) === 'semana7.com.br' || isCnm(row) && isCnm({url:target}) ||
+        isAraguaia(row) && isAraguaia({url:target})) continue;
     seen.add(target);
     const attempt = { url: target, status: 'sem_texto' }; attempts.push(attempt);
     try {
@@ -170,7 +175,8 @@ export async function findAlternativeTexts(row, archive, { search = searchAltern
         source: candidate.fonte, summary: '', rawText: '' }, { onFailure: (_, reason) => { attempt.status = reason; } }));
       if (article.contentProvenance !== 'pagina_original' || (article.rawText || '').length < 500 ||
           !/cons[oó]rcio/i.test(article.rawText) || !article.articleUrl ||
-          ['semana7.com.br', 'news.google.com'].includes(host(article.articleUrl)) || isCnm(row) && isCnm({url:article.articleUrl})) continue;
+          ['semana7.com.br', 'news.google.com'].includes(host(article.articleUrl)) || isCnm(row) && isCnm({url:article.articleUrl}) ||
+          isAraguaia(row) && isAraguaia({url:article.articleUrl})) continue;
       if (alternatives.some(a => alternativeSourceKey(a.url_fonte) === alternativeSourceKey(article.articleUrl))) {
         attempt.status = 'variante_da_mesma_publicacao'; continue;
       }

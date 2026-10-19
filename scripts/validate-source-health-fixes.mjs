@@ -56,7 +56,14 @@ results.push({kind:'cnm_alternative',original:'https://cnm.org.br/comunicacao/no
 const araguaia = await enrichArticle({kind:'news',title:'Consórcio de Saúde fará em breve visita técnica para definir gestão regional do Hospital de Barra do Garças',
   source:'Araguaia Notícia',url:'https://araguaianoticia.com.br/noticia/79633/consorcio-de-saude-fara-em-breve-visita-tecnica-para-definir-gestao-regional-do-hospital'});
 results.push({kind:'araguaia_original',characters:araguaia.rawText?.length||0,reader:araguaia.articleReader||'',
+  readingUrl:araguaia.articleFetchUrl||araguaia.articleUrl||'',variant:araguaia.articleVariant||'',
   category:araguaia.rawText?classifyItem(araguaia).category:'sem texto'});
+const araguaiaRow=archive.find(x=>x.id.startsWith('25c5cc08'));
+const publicPosts=await searchPublicWordpress(araguaiaRow);
+const araguaiaFallback=await findAlternativeTexts(araguaiaRow,[],{search:async()=>publicPosts,searchEvenWithArchive:true});
+assert.ok(araguaiaFallback.alternatives.length,'Araguaia: alternativa pública não recuperada');
+results.push({kind:'araguaia_alternative',alternatives:araguaiaFallback.alternatives.map(x=>({url:x.url_fonte,
+  reader:x.leitor,characters:x.texto.length,equivalenceConfirmed:x.equivalencia_confirmada}))});
 
 const tce = await enrichArticle({kind:'news',title:'Erros em editais levam TCEMG a suspender licitações de consórcios em Minas Gerais',
   source:'TCE-MG',url:'https://www.tce.mg.gov.br/noticia/Detalhe/1111629256'});
