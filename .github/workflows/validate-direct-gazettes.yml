@@ -32,6 +32,10 @@ jobs:
       - run: node scripts/check-recovery-safety.mjs --before
       - name: Ler índices e íntegras reais, classificar e bloquear histórico
         run: node scripts/validate-direct-gazettes.mjs
+      - name: Conferir cinco textos públicos com IA e prova literal sem aplicar decisões
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: node scripts/validate-direct-gazettes-ai.mjs
       - name: Testar integração completa sem IA paga, sessão ou envio
         run: npm run collect
       - name: Gerar e validar painel com as fontes configuradas
