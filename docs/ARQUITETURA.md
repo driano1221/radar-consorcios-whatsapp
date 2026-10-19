@@ -1,6 +1,10 @@
 # Arquitetura e pesquisa técnica
 
-## Referência vigente — 16/10/2026
+## Coleta independente — 19/10/2026
+
+Os diários SIGPub de MG/AL/PR/RN agora têm busca pública e leitor de matéria individual; o CIGA/SC usa exportações CKAN oficiais com texto, sem rastrear o frontend restrito. As íntegras seguem o mesmo fluxo de regras, prova, IA e deduplicação. RNCP foi retestado: leitor local corrigido, mas acesso direto no Actions segue bloqueado por Cloudflare; descoberta Google mantida. [Integração, validação e limites](ALTERNATIVAS-DIARIOS-RNCP-2026-10-19.md). Querido Diário continua como fonte separada, aguardando restabelecimento externo.
+
+## Referência anterior — 16/10/2026
 
 O [estado da triagem automática](TRIAGEM_AUTOMATICA.md) distingue classificação, confirmação na base e autorização de alerta. As regras institucionais foram generalizadas; a decisão por fonte alternativa exige regras + DeepSeek e prova literal. A CNM usa leitura Inertia por notícia, busca Google e recuperação alternativa; o índice direto continua desativado após HTTP 403 no Actions. Há corte de alertas em 17/10. O índice CNM não é texto integral. As descrições abaixo são históricas e não substituem a configuração vigente.
 

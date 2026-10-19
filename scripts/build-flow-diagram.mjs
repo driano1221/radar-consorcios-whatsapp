@@ -65,7 +65,7 @@ export function desktopFlowSvg() {
   const content = [
     label(40, 36, '01 / O QUE ACONTECE COM CADA PUBLICAÇÃO'),
     card({ x: 40, y: 66, w: 320, h: 148, tag: '1 · DESCOBERTA', title: 'Coleta nas fontes',
-      lines: ['Diários, RSS, SAPL, CIGA e CNM.', 'Portais oficiais e imprensa.'] }),
+      lines: ['Diários diretos e CIGA/SC (CKAN).', 'RSS, SAPL, portais e imprensa.'] }),
     card({ x: 420, y: 66, w: 320, h: 148, tag: '2 · DOCUMENTO', title: 'Leitura do conteúdo',
       lines: ['HTML, CNM/Inertia e data original.', 'PDF por página; OCR seletivo.'] }),
     card({ x: 800, y: 66, w: 320, h: 148, tag: '3 · CONTEXTO', title: 'Regras + evidência',
@@ -125,7 +125,7 @@ export function mobileFlowSvg() {
   const content = [
     label(20, 38, '01 / DESCOBERTA E LEITURA'),
     card({ x: 20, y: 60, w: 400, h: 115, tag: '1 · DESCOBERTA', title: 'Coleta nas fontes',
-      lines: ['Diários, RSS, SAPL, CIGA e CNM.', 'Portais oficiais e imprensa.'] }),
+      lines: ['Diários diretos e CIGA/SC (CKAN).', 'RSS, SAPL, portais e imprensa.'] }),
     card({ x: 20, y: 210, w: 400, h: 115, tag: '2 · DOCUMENTO', title: 'Leitura do conteúdo',
       lines: ['HTML, CNM/Inertia e data original.', 'PDF por página; OCR seletivo.'] }),
     card({ x: 20, y: 360, w: 400, h: 115, tag: '3 · CONTEXTO', title: 'Regras + evidência',

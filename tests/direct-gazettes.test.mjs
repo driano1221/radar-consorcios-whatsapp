@@ -13,6 +13,7 @@ import { decidePublication, isNotifiable } from '../src/lib/publication-gate.mjs
 import { itemId, selectUnseen, titleFingerprint } from '../src/lib/dedupe.mjs';
 import { inputFor } from '../src/lib/ai-review.mjs';
 import { catalogRecord } from '../src/lib/catalog.mjs';
+import { buildWeeklyReport } from '../src/lib/history.mjs';
 
 const site = { name: 'Diário Municipal AMM-MG', adapter: 'sigpub',
   url: 'https://www.diariomunicipal.com.br/amm-mg/pesquisar', stateCode: 'MG', publish: true,
@@ -139,6 +140,13 @@ test('novos portais não reenviam histórico, inclusive reindexado pelo Google',
   assert.equal(isNotifiable(decidePublication(current,{now:new Date('2026-10-21T22:00:00Z'),sourceActivations:sources})),true);
   const state={seen:{[itemId(current)]:{url:current.url,title:current.title,titleFingerprint:titleFingerprint(current)}},pending:{}};
   assert.equal(selectUnseen([current,current],state).length,0);
+  const googleState={seen:{old:{url:'https://news.google.com/rss/articles/old',articleUrl:current.url,
+    title:current.title+' - Diário Municipal',sentAt:'2026-10-21T18:00:00Z'}},pending:{}};
+  assert.equal(selectUnseen([current],googleState).length,0,'URL oficial já enviada via Google não pode reaparecer');
+  const historical=decidePublication({...row,classification},{now,sourceActivations:sources});
+  const weekly=buildWeeklyReport({seen:{},observations:{old:{firstSeenAt:'2026-10-22T12:00:00Z',item:historical}}},
+    {start:new Date('2026-10-19T00:00:00Z'),end:new Date('2026-10-26T00:00:00Z')});
+  assert.equal(weekly.events,0,'Recuperação histórica também deve ficar fora do resumo');
   const al={...site,name:'AL',url:'https://www.diariomunicipal.com.br/ama/pesquisar',stateCode:'AL',alertsFrom:'2026-10-22T00:00:00-03:00'};
   const alItem={...current,source:'Outro editor',sourceUrl:al.url,url:'https://www.diariomunicipal.com.br/ama/materia/DEADBEEF',articleUrl:''};
   assert.equal(decidePublication(alItem,{now:new Date('2026-10-21T22:00:00Z'),sourceActivations:[site,al]}).publicationDecision,'historico');

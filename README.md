@@ -67,6 +67,8 @@ Desde 14/10/2026, a AMM-MT está habilitada para alertas, mantendo a revisão po
 
 **Querido Diário (19/10):** cliente migrado para `api.queridodiario.org.br`, confirmado pela configuração pública oficial. Os 447 testes passaram no Actions, mas a API atual continua retornando 503; os PDFs históricos acessíveis não substituem a busca. [Diagnóstico real e acompanhamento do incidente oficial](docs/DIAGNOSTICO-QUERIDO-DIARIO-2026-10-19.md).
 
+**Coleta independente (19/10):** integração de matérias oficiais em HTML dos diários de MG, AL, PR e RN e exportações oficiais do CIGA/SC via CKAN. Textos completos, códigos, datas e proveniência passam pelo fluxo de triagem existente; isso não é um espelho nacional do Querido Diário. RNCP segue na descoberta Google: seu leitor foi corrigido, mas Cloudflare ainda bloqueia o Actions. Fontes novas têm corte de alertas em **20/10, 00h de Brasília**, sem liberar o histórico. [Fontes, testes e limites](docs/ALTERNATIVAS-DIARIOS-RNCP-2026-10-19.md).
+
 ## Onde os dados ficam
 
 **Recuperação de texto é independente da decisão.** A rotina diária de recuperação também pode completar documentos já revisados ou enviados, sem reenviá-los. Erros temporários recebem uma segunda tentativa; falhas persistentes voltam à fila com intervalo crescente (12 horas até 7 dias). Cada passagem tem limite de tempo e de itens por fonte. CAPTCHA real não é contornado: uma recuperação assistida fica identificada como tal. O workflow verifica que IDs, revisões e estado de envios não foram alterados.
