@@ -14,7 +14,7 @@ const state=JSON.parse(await readFile('state/news-state.json','utf8'));
 const protectedState=JSON.stringify(state);
 const archive=(await readFile('data/catalogo/arquivo-coletas.ndjson','utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);
 const known=new Set(archive.flatMap(r=>[r.url,r.article_url]).filter(Boolean).map(canonicalUrl));
-const sites=config.webScrapers.sites.filter(s=>s.adapter==='sigpub'||s.adapter==='rncp');
+const sites=config.webScrapers.sites.filter(s=>['sigpub','rncp','ciga-open-data'].includes(s.adapter));
 const since=new Date(Date.now()-168*3600000);
 const report={at:new Date().toISOString(),since:since.toISOString(),sources:[],samples:[],stateUntouched:false,whatsappSends:0};
 const all=[];
@@ -30,6 +30,10 @@ try {
     assert.equal(rows.filter(i=>i.extractionError&&!/adiada/.test(i.extractionError)).length,0,
       `${site.name}: erro de leitura real: ${JSON.stringify(report.readingGaps.filter(i=>i.source===site.name))}`);
   }
+  const ciga=await fetchWebScrapers({...config.webScrapers,sites:sites.filter(s=>s.adapter==='ciga-open-data')},since);
+  report.sources.push(...ciga.diagnostics);all.push(...ciga.items);
+  assert.equal(ciga.diagnostics[0]?.status,'ok','CIGA: exportações reais não foram integralmente abertas');
+  assert.ok(ciga.items.some(i=>i.contentProvenance==='pagina_original'),'CIGA: nenhum texto real');
   const rncp=sites.find(s=>s.adapter==='rncp');
   const response=await fetch(rncp.url,{signal:AbortSignal.timeout(20000)});
   assert.equal(response.status,200,'RNCP: índice público bloqueado');

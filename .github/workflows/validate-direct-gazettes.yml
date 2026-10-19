@@ -26,6 +26,8 @@ jobs:
           cache-dependency-path: requirements-extraction.txt
       - run: npm ci --ignore-scripts
       - run: python -m pip install -r requirements-extraction.txt
+      - name: Conferir rotas públicas RNCP e pilha HTTP sem autenticação
+        run: node scripts/probe-rncp-access.mjs
       - run: npm run check && npm test
       - run: node scripts/check-recovery-safety.mjs --before
       - name: Ler índices e íntegras reais, classificar e bloquear histórico

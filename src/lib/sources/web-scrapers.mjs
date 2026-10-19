@@ -5,6 +5,7 @@ import { fetchPublicRoute } from './public-routes.mjs';
 import { enrichArticle } from '../article-enrichment.mjs';
 import { readAmmPages } from '../amm-pages.mjs';
 import { fetchDirectGazette, sigpubDate } from './direct-gazettes.mjs';
+import { fetchCigaOpenData } from './ciga-open-data.mjs';
 
 const DEFAULT_USER_AGENT =
   'RadarConsorciosIPEA/0.3 (+pesquisa academica; https://github.com/driano1221/radar-consorcios-whatsapp)';
@@ -309,6 +310,7 @@ async function fetchAmmMt(site, since, config, fetchImpl) {
 }
 
 async function fetchSite(site, since, config, fetchImpl) {
+  if (site.adapter === 'ciga-open-data') return fetchCigaOpenData(site, since, config, fetchImpl);
   if (site.adapter === 'sigpub') return fetchDirectGazette(site, since, config, fetchImpl);
   if (['semana7-rss', 'guanhaes-portaltp'].includes(site.adapter)) {
     return fetchPublicRoute(site, since, { ...config, timeoutMs: site.timeoutMs || config.timeoutMs,

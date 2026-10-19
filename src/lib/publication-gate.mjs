@@ -46,7 +46,8 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
     source.name === item.source || !source.discoveryOnly && [item.url, item.articleUrl, item.sourceUrl].some((url) => {
       try {
         const target = new URL(url), origin = new URL(source.url);
-        return target.hostname === origin.hostname && (source.adapter !== 'sigpub' ||
+        const host = target.hostname.replace(/^www\./, '');
+        return [origin.hostname.replace(/^www\./, ''), source.articleHost].includes(host) && (source.adapter !== 'sigpub' ||
           target.pathname.split('/')[1] === origin.pathname.split('/')[1]);
       }
       catch { return false; }

@@ -218,6 +218,16 @@
         "alertsFrom": "2026-10-20T00:00:00-03:00"
       },
       {
+        "name": "Diário Municipal SC (CIGA Dados Abertos)",
+        "adapter": "ciga-open-data",
+        "url": "https://dados.ciga.sc.gov.br/dataset/",
+        "articleHost": "diariomunicipal.sc.gov.br",
+        "timeoutMs": 25000,
+        "publish": true,
+        "maxResources": 3,
+        "alertsFrom": "2026-10-20T00:00:00-03:00"
+      },
+      {
         "name": "Diário Municipal AMA-AL",
         "adapter": "sigpub",
         "url": "https://www.diariomunicipal.com.br/ama/pesquisar",
