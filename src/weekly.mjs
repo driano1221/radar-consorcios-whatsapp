@@ -9,6 +9,7 @@ import { sendMessages } from './lib/whatsapp.mjs';
 import { presentItem, shortenLongUrl } from './lib/message-presentation.mjs';
 import { reviewWeeklyFindings } from './lib/ai-review.mjs';
 import { prepareWeeklyState } from './lib/weekly-selection.mjs';
+import { isWhatsAppCategoryAllowed } from './lib/whatsapp-policy.mjs';
 import { fileURLToPath } from 'node:url';
 
 async function main() {
@@ -42,11 +43,15 @@ async function main() {
   const baseReport = existing?.report || buildWeeklyReport(reportState, window, config.minimumScore);
   const ai = config.aiReviewEnabled && !existing?.text && !existing?.messages
     ? await reviewWeeklyFindings(baseReport.highlights, state, { apiKey: process.env.DEEPSEEK_API_KEY }) : null;
-  const reviewedReport = ai ? { ...baseReport, highlights: ai.highlights, events: ai.highlights.length,
-    categories: Object.fromEntries([...new Set(ai.highlights.map((item) => item.classification.category))]
-      .map((category) => [category, ai.highlights.filter((item) => item.classification.category === category).length])),
-    sources: Object.fromEntries([...new Set(ai.highlights.map((item) => item.source))]
-      .map((source) => [source, ai.highlights.filter((item) => item.source === source).length])) } : baseReport;
+  const highlights = (ai?.highlights || baseReport.highlights).filter(isWhatsAppCategoryAllowed);
+  if (existing && highlights.length !== baseReport.highlights.length) {
+    throw new Error('Edição preparada contém categoria bloqueada no WhatsApp; exige nova edição revisada, sem alterar recibos.');
+  }
+  const reviewedReport = { ...baseReport, highlights, events: highlights.length,
+    categories: Object.fromEntries([...new Set(highlights.map((item) => item.classification.category))]
+      .map((category) => [category, highlights.filter((item) => item.classification.category === category).length])),
+    sources: Object.fromEntries([...new Set(highlights.map((item) => item.source))]
+      .map((source) => [source, highlights.filter((item) => item.source === source).length])) };
   const report = existing?.text || existing?.messages ? reviewedReport : { ...reviewedReport, highlights: [] };
   if (!existing?.text && !existing?.messages) {
     for (const item of reviewedReport.highlights) {

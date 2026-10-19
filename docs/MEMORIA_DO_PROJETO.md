@@ -2,6 +2,12 @@
 
 Atualização mais recente: **19 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Preferência de WhatsApp aprovada — 19/10/2026
+
+- Usuário dispensou Controle/Fiscalização no WhatsApp e autorizou enviar os demais itens da prévia. São nove: três de Atuação, três de Rateio, dois de Governança e um de Protocolo. Os seis de Controle continuam na base/painel, sem reclassificação ou exclusão do acervo.
+- Política de canal aplicada antes da fila e depois da IA, e na seleção semanal. CIM-AMFRI permanece como Atuação comprovada, não punição/fiscalização contra o consórcio.
+- Envio autorizado é um resumo revisado, não nove alertas individuais. Edição própria e idempotente `sem-controle-19out`; recibos anteriores preservados. A prévia anterior de 15 itens permanece como registro histórico da conferência.
+
 ## Aplicação documental retroativa: Divinópolis e TCE-MG — 16/10/2026
 
 - Usuário autorizou aplicar as correções previamente apresentadas, atualizar o painel e preservar fontes/divergência do CONSANE, sem duplicar nem reenviar. Aplicação isolada da branch experimental: **não ativada a triagem automática de originais**. Sua simulação anterior permanece 80/82, não 82/82 automático.

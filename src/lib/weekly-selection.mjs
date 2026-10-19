@@ -6,6 +6,7 @@ import { applyEditorialGuard, loadEditorialGuard } from './editorial-guard.mjs';
 import { classifyItem } from './classifier.mjs';
 import { decidePublication } from './publication-gate.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
+import { isWhatsAppCategoryAllowed } from './whatsapp-policy.mjs';
 
 const confirmed = review => ['confirmar_evento', 'corrigir_categoria'].includes(review?.decisao);
 const dateValue = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? `${value}T12:00:00-03:00` : value;
@@ -39,8 +40,10 @@ export async function prepareWeeklyState(state, directory, window, options = {})
     // A republication of an explicitly historical act is not a new event.
     // Preserve the known month rather than presenting June/August laws as October news.
     const historicalMonth = review.mes_fato && review.mes_fato < window.start.toISOString().slice(0, 7);
-    const include = inside && !historicalMonth && review.incluir_resumo !== false;
-    const reason = historicalMonth ? 'Fato de mês anterior comprovado; não apresentar republicação como novidade.'
+    const channelAllowed = isWhatsAppCategoryAllowed({ classification: { category: review.categoria } });
+    const include = inside && !historicalMonth && review.incluir_resumo !== false && channelAllowed;
+    const reason = !channelAllowed ? 'Controle/fiscalização: manter na base e no painel, sem envio ao WhatsApp.'
+      : historicalMonth ? 'Fato de mês anterior comprovado; não apresentar republicação como novidade.'
       : !date ? 'Sem data original comprovada para o resumo.' : !inside
       ? 'Publicação original fora do período.' : review.incluir_resumo === false
         ? 'Resumo explicitamente bloqueado pela revisão.' : 'Fato confirmado no período; bloqueio de alerta individual preservado.';

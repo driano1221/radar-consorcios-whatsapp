@@ -32,6 +32,7 @@ import { enrichArticles, classifyEnrichedItem } from './lib/article-enrichment.m
 import { applyEditorialGuard, loadConfirmedEventRegistry, loadEditorialGuard } from './lib/editorial-guard.mjs';
 import { resolveArticlePreviews } from './lib/preview-resolution.mjs';
 import { decidePublication, isNotifiable } from './lib/publication-gate.mjs';
+import { isWhatsAppCategoryAllowed } from './lib/whatsapp-policy.mjs';
 import { fileURLToPath } from 'node:url';
 import { persistArticleTexts } from './lib/article-text-store.mjs';
 
@@ -144,7 +145,7 @@ async function main() {
       return scoreDifference || new Date(b.publishedAt) - new Date(a.publishedAt);
     });
   const previewRelevant = relevant.filter((item) => item.previewOnly);
-  const publishableRelevant = relevant.filter((item) => !item.previewOnly);
+  const publishableRelevant = relevant.filter((item) => !item.previewOnly && isWhatsAppCategoryAllowed(item));
   const sentToday = countSentToday(state);
   const remainingToday = Math.max(0, config.maxPostsPerDay - sentToday);
   const discovered = selectUnseen(publishableRelevant, state, { confirmedEvents });
@@ -152,12 +153,14 @@ async function main() {
   if (config.sendEnabled) {
     const removed = reclassifyPending(state, config.minimumScore,
       (item, classification) => applyEditorialGuard({ ...item, classification }, editorialGuard).classification,
-      (item, classification) => isNotifiable(decidePublication(
-        applyEditorialGuard({ ...item, classification }, editorialGuard), publicationOptions), config.minimumScore));
+      (item, classification) => {
+        const guarded = decidePublication(applyEditorialGuard({ ...item, classification }, editorialGuard), publicationOptions);
+        return isNotifiable(guarded, config.minimumScore) && isWhatsAppCategoryAllowed(guarded);
+      });
     if (removed) console.log(`[fila] ${removed} item(ns) antigos descartados após reclassificação.`);
   }
   if (config.persistState) await saveState(config.stateFile, state);
-  const available = config.sendEnabled ? listPending(state) : discovered;
+  const available = (config.sendEnabled ? listPending(state) : discovered).filter(isWhatsAppCategoryAllowed);
   const reviewResult = shouldReviewWithAi(config, remainingToday)
     ? await reviewQueue(available, state, {
       apiKey: process.env.DEEPSEEK_API_KEY,
@@ -165,7 +168,8 @@ async function main() {
       maxCallsRun: Math.max(0, config.maxAiReviewsPerRun - previewReviewCalls),
       maxCallsDay: config.maxAiReviewsPerDay,
     }) : null;
-  const unseen = reviewResult?.selected || available.slice(0, Math.min(config.maxPostsPerRun, remainingToday));
+  const unseen = (reviewResult?.selected || available.slice(0, Math.min(config.maxPostsPerRun, remainingToday)))
+    .filter(isWhatsAppCategoryAllowed);
   if (reviewResult) {
     console.log(`[ia] ${reviewResult.callsRun} chamada(s); ${reviewResult.audit.filter((r) => r.status === 'approved').length} aprovado(s); ` +
       `${reviewResult.audit.filter((r) => r.status === 'rejected').length} rejeitado(s); ` +

@@ -3,6 +3,7 @@ import { canonicalUrl, selectUnseen } from './dedupe.mjs';
 import { classifyItem, isPublishableClassification, isStaleLegislativeDocument } from './classifier.mjs';
 import { normalizeForMatch } from './text.mjs';
 import { publicationDate, isNotifiable } from './publication-gate.mjs';
+import { isWhatsAppCategoryAllowed } from './whatsapp-policy.mjs';
 
 function weeklyFinding(item) {
   if (item.aiReview?.status === 'disputed') return null;
@@ -93,6 +94,7 @@ export function buildWeeklyReport(state, { start, end }, minimumScore = 5) {
   const observations = Object.values(state.observations || {}).filter((r) =>
     r.item?.weeklyDecision === 'incluir' || inside(r.firstSeenAt));
   const relevant = observations.map((r) => r.item).filter((i) => {
+    if (!isWhatsAppCategoryAllowed(i)) return false;
     if (i.weeklyDecision) return i.weeklyDecision === 'incluir' && inside(i.weeklyDate);
     const date = publicationDate(i)?.date;
     return isNotifiable(i, minimumScore) && i.kind !== 'gazette-index' &&
