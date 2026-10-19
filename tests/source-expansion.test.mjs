@@ -89,7 +89,7 @@ test('Querido Diário usa endereço atual e sinaliza falha parcial e página che
     return url.includes('rateio') ? new Response('', { status: 503 }) : Response.json({ gazettes: [{ url: 'https://exemplo.gov.br/ato.pdf', territory_name: 'Exemplo', date: '2026-09-10', excerpts: ['consórcio intermunicipal'] }] });
   });
   assert.ok(urls.every(url => url.startsWith('https://queridodiario.ok.org.br/api/gazettes?') ||
-    url.startsWith('https://api.queridodiario.ok.org.br/gazettes?')));
+    url.startsWith('https://api.queridodiario.org.br/gazettes?')));
   assert.equal(result.items.length, 1);
   assert.equal(result.ok, true);
   assert.equal(result.degraded, true);

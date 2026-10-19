@@ -34,11 +34,13 @@
   },
   "queridoDiario": {
     "enabled": true,
-    "baseUrl": "https://queridodiario.ok.org.br/api",
+    "baseUrl": "https://api.queridodiario.org.br",
+    "fallbackBaseUrls": ["https://queridodiario.org.br/api", "https://queridodiario.ok.org.br/api"],
     "pageSize": 100,
     "excerptSize": 900,
     "numberOfExcerpts": 3,
-    "timeoutMs": 16000,
+    "timeoutMs": 30000,
+    "maxDurationMs": 180000,
     "retries": 1,
     "maxConcurrent": 2,
     "queryGroups": [

@@ -113,6 +113,7 @@ test('cache íntegro evita nova abertura, mas reprodução não vira página ori
 
 test('QD usa a segunda rota oficial e não duplica o diário recuperado', async () => {
   const result = await fetchQueridoDiario({ enabled: true, retries: 0, queryGroups: [['consórcio']],
+    baseUrl: 'https://queridodiario.ok.org.br/api',
     fallbackBaseUrls: ['https://api.queridodiario.ok.org.br'] }, new Date('2026-10-01'), async url =>
     url.startsWith('https://queridodiario.ok.org.br/api') ? new Response('no available server', { status: 503 })
       : Response.json({ gazettes: [{ url: 'https://example.gov.br/1.pdf', territory_id: '1',date:'2026-10-15',excerpts:['consórcio público'] }] }));

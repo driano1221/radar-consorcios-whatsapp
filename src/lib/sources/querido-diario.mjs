@@ -1,6 +1,8 @@
 import { fetchWithRetry } from '../http.mjs';
 import { normalizeWhitespace } from '../text.mjs';
 
+export const QD_API_BASE_URL = 'https://api.queridodiario.org.br';
+
 function isoDate(date) {
   return date.toISOString().slice(0, 10);
 }
@@ -20,7 +22,7 @@ async function fetchGroup(terms, config, since, fetchImpl, timeoutMs = config.ti
     size: String(config.pageSize || 100),
     sort_by: 'descending_date',
   });
-  const url = `${config.baseUrl || 'https://queridodiario.ok.org.br/api'}/gazettes?${params}`;
+  const url = `${config.baseUrl || QD_API_BASE_URL}/gazettes?${params}`;
   const response = await fetchWithRetry(url, {
     fetchImpl,
     timeoutMs,
@@ -76,8 +78,8 @@ function mergeGazettes(groups) {
 export async function fetchQueridoDiario(config, since, fetchImpl = fetch) {
   if (!config.enabled) return [];
   const groups = queryGroups(config);
-  const endpoints = [...new Set([config.baseUrl || 'https://queridodiario.ok.org.br/api',
-    ...(config.fallbackBaseUrls || ['https://api.queridodiario.ok.org.br'])])];
+  const endpoints = [...new Set([config.baseUrl || QD_API_BASE_URL,
+    ...(config.fallbackBaseUrls || ['https://queridodiario.ok.org.br/api'])])];
   let workingEndpoint = '', outage = '';
   const startedAt = Date.now();
   const request = async (terms) => {
