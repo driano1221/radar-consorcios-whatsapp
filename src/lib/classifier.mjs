@@ -1,6 +1,7 @@
 import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
 import { refineEventProof } from './event-proof.mjs';
 import { isNonEventContractMatch, routineSupplierContract } from './contract-context.mjs';
+import { administrativeRoutine } from './administrative-routine.mjs';
 
 const PUBLIC_CONTEXT = /\b(consorcios? publicos?|consorcio intermunicipal|consorcios intermunicipais|consorcios? interfederativos?|associacao publica|lei 11\.?107)\b/;
 const MUNICIPAL_CONTEXT = /\b(municipios?|municipal|municipais|prefeituras?|camaras? municipa(?:l|is)|poder executivo)\b/;
@@ -314,6 +315,10 @@ function evaluateSegment(item, evidence, index) {
 }
 
 export function classifyItem(item) {
+  const routine=administrativeRoutine(item);
+  if(routine)return {category:'GERAL',emoji:'📰',score:0,stage:routine.stage,
+    reasons:[`rejeitado: ${routine.reason}`],evidenceIndex:0,evidenceText:routine.evidence,
+    publicContext:true,strongPublicContext:true};
   // Índices mudam com o tempo e misturam notícias de datas diferentes. Cada
   // notícia deve entrar por seu link individual, nunca pelo mural inteiro.
   try {

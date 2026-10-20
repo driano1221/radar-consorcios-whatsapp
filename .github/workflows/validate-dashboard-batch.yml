@@ -22,9 +22,17 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run check && npm test
       - run: node scripts/check-recovery-safety.mjs --before
+      - name: Reaplicar lote concluído para comprovar idempotência
+        run: node scripts/review-historical-188.mjs --apply
       - run: npm run dashboard:build:public && node scripts/check-public-dashboard.mjs
       - name: Confirmar acervo e estado intactos
         if: always()
         run: |
           node scripts/check-recovery-safety.mjs
           git diff --exit-code HEAD -- data state
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: historical-188-${{ github.run_id }}
+          path: output/historical-188/report.json
+          retention-days: 14
