@@ -8,6 +8,7 @@ import { compareNewestDiscovery } from '../dashboard/src/triage-model.mjs';
 import { writeFlowDiagrams } from './build-flow-diagram.mjs';
 import { dashboardAlternatives, textPreview } from './dashboard-recovery.mjs';
 import { validAlternativeDecision } from '../src/lib/alternative-triage.mjs';
+import { partitionDashboard } from './dashboard-package.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = path.join(root, 'data', 'catalogo');
@@ -616,10 +617,14 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const publicMode = process.argv.includes('--public');
   const outputData = publicMode ? buildPublicDashboardData(data) : data;
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'recovery-view.mjs', 'primary-evidence-view.mjs', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'snapshot-loader.mjs', 'recovery-view.mjs', 'primary-evidence-view.mjs', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFlowDiagrams(destination);
+  const {manifest,files}=partitionDashboard(outputData);
+  await mkdir(path.join(destination,'parts'),{recursive:true});
+  await Promise.all([...files].map(([name,content])=>writeFile(path.join(destination,name),content,'utf8')));
   await Promise.all([
+    writeFile(path.join(destination,'snapshot.json'),JSON.stringify(manifest)+'\n','utf8'),
     writeFile(path.join(destination, 'data.json'), `${JSON.stringify(outputData)}\n`, 'utf8'),
     writeFile(path.join(destination, 'version.json'), `${JSON.stringify({ generatedAt: outputData.generatedAt,
       lastCollectionAt: outputData.lastCollectionAt })}\n`, 'utf8'),

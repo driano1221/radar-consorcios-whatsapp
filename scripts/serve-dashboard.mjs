@@ -21,11 +21,14 @@ const files = new Map([
   ['/fluxo-radar.svg', ['fluxo-radar.svg', 'image/svg+xml']],
   ['/fluxo-radar-mobile.svg', ['fluxo-radar-mobile.svg', 'image/svg+xml']],
   ['/data.json', ['data.json', 'application/json; charset=utf-8']],
+  ['/snapshot.json', ['snapshot.json', 'application/json; charset=utf-8']],
+  ['/snapshot-loader.mjs', ['snapshot-loader.mjs', 'text/javascript; charset=utf-8']],
 ]);
 const port = Number(process.env.DASHBOARD_PORT || 4173);
 createServer(async (request, response) => {
   const route = new URL(request.url, 'http://127.0.0.1').pathname;
-  const file = files.get(route);
+  const file = files.get(route) || (/^\/parts\/(?:items|table-[a-z-]+)-[a-f0-9]{64}\.json$/.test(route)
+    ? [route.slice(1), 'application/json; charset=utf-8'] : null);
   if (!file) { response.writeHead(404); response.end('Não encontrado'); return; }
   try {
     const body = await readFile(path.join(root, file[0]));

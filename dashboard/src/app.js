@@ -2,6 +2,7 @@ import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs';
 import { buildResults } from './results-model.mjs';
 import { recoveredSourcesView } from './recovery-view.mjs';
 import { primaryEvidenceView } from './primary-evidence-view.mjs';
+import {fetchSnapshot,hydrateTable} from './snapshot-loader.mjs';
 
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
@@ -606,11 +607,12 @@ function renderBasePreview(table, row) {
     target.append(field);
   }
 }
-function renderBase() {
+const loadingTables=new WeakSet();
+async function renderBase() {
   const tables = state.data.baseTables || [];
   $('#base-tabs').replaceChildren(...tables.map((table) => {
     const button = node('button', table.id === state.baseTableId ? 'base-tab active' : 'base-tab',
-      `${table.title}  ${number.format(table.rows.length)}`);
+      `${table.title}  ${number.format(table.rowCount ?? table.rows.length)}`);
     button.type = 'button'; button.setAttribute('role', 'tab');
     button.setAttribute('aria-selected', table.id === state.baseTableId ? 'true' : 'false');
     button.addEventListener('click', () => { state.baseTableId = table.id; state.baseLimit = 25;
@@ -619,6 +621,28 @@ function renderBase() {
   }));
   const table = currentTable();
   if (!table) return;
+  if(table.rowParts&&!table.rowsLoaded){
+    $('#base-table-title').textContent=table.title;
+    $('#base-table-count').textContent=`${number.format(table.rowCount)} LINHAS · carregando`;
+    $('#base-preview').replaceChildren(node('p','empty','Carregando a tabela completa…'));
+    $('#base-table tbody').replaceChildren();
+    if(loadingTables.has(table))return;
+    loadingTables.add(table);const snapshot=state.data;
+    try{
+      const loaded=await hydrateTable(table,snapshot.generatedAt);
+      if(state.data!==snapshot)return;
+      snapshot.baseTables=snapshot.baseTables.map(row=>row===table?loaded:row);
+      if(state.view==='base')renderBase();
+    }catch(error){
+      if(state.data===snapshot&&currentTable()===table){
+        const retry=node('button','detail-link','Tentar carregar novamente');
+        retry.addEventListener('click',()=>renderBase());
+        $('#base-preview').replaceChildren(node('p','empty','Não foi possível carregar a tabela. Seus dados não foram apagados.'),retry);
+      }
+      console.warn('Falha ao carregar tabela:',error);
+    }finally{loadingTables.delete(table);}
+    return;
+  }
   const rows = filteredBaseRows(table);
   state.baseRowIndex = Math.min(state.baseRowIndex, Math.max(0, rows.length - 1));
   $('#base-table-title').textContent = table.title;
@@ -854,9 +878,7 @@ async function refreshPublishedData() {
     if (!versionResponse.ok) return;
     const version = await versionResponse.json();
     if (!version.generatedAt || version.generatedAt === state.data.generatedAt) return;
-    const response = await fetch(`./data.json?version=${encodeURIComponent(version.generatedAt)}`, { cache: 'no-store' });
-    if (!response.ok) return;
-    const nextData = await response.json();
+    const nextData = await fetchSnapshot(version.generatedAt);
     if (nextData.generatedAt !== version.generatedAt) return;
     state.data = nextData;
     renderSnapshot();
@@ -868,9 +890,7 @@ async function refreshPublishedData() {
 }
 async function init() {
   try {
-    const response = await fetch('./data.json', { cache: 'no-store' });
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    state.data = await response.json();
+    state.data = await fetchSnapshot();
     renderSnapshot();
     document.querySelectorAll('.nav-button').forEach((button) => button.addEventListener('click', () => switchView(button.dataset.view)));
     document.querySelectorAll('.results-period-button').forEach((button) => button.addEventListener('click', () => {

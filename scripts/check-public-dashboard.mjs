@@ -1,6 +1,7 @@
 import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {hydrateSnapshot,hydrateTable} from '../dashboard/src/snapshot-loader.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'dashboard', 'dist');
@@ -20,7 +21,27 @@ if (version.generatedAt !== data.generatedAt || version.lastCollectionAt !== dat
 if (/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i.test(raw) ||
     /\b\d{3}\.\d{3}\.\d{3}-\d{2}\b/.test(raw) || /\b\d{10,20}@g\.us\b/.test(raw))
   throw new Error('Identificador pessoal detectado no pacote público.');
-if (size.size > 10_000_000) throw new Error('Pacote público excede 10 MB; revisar conteúdo antes de publicar.');
+const manifestRaw=await readFile(path.join(directory,'snapshot.json'),'utf8');
+const manifest=JSON.parse(manifestRaw);
+if(Buffer.byteLength(manifestRaw)>1_000_000)throw new Error('Manifesto público excede 1 MB');
+let totalBytes=Buffer.byteLength(manifestRaw);const checked=new Set();
+const localFetch=async url=>{
+  const relative=String(url).replace(/^\.\//,'');
+  if(!/^parts\/(?:items|table-[a-z-]+)-[a-f0-9]{64}\.json$/.test(relative))throw new Error('Parte fora da pasta pública');
+  const bytes=await readFile(path.join(directory,relative));
+  if(bytes.length>2_000_000)throw new Error('Parte pública excede 2 MB');
+  if(!checked.has(relative)){totalBytes+=bytes.length;checked.add(relative);}
+  return new Response(bytes,{headers:{'content-type':'application/json'}});
+};
+const hydrated=await hydrateSnapshot(manifest,localFetch);
+for(const table of hydrated.baseTables||[]){
+  const loaded=await hydrateTable(table,manifest.generatedAt,localFetch);
+  const original=data.baseTables.find(t=>t.id===table.id);
+  if(JSON.stringify(loaded.rows)!==JSON.stringify(original?.rows))throw new Error('Linhas foram perdidas no particionamento');
+}
+if(JSON.stringify(hydrated.items)!==JSON.stringify(data.items)||manifest.generatedAt!==data.generatedAt)throw new Error('Publicações divergiram no particionamento');
+// Keep the complete legacy file for already-open clients; new clients do not download it.
+if(totalBytes>100_000_000||size.size>100_000_000)throw new Error('Acervo público excedeu orçamento de 100 MB; revisar crescimento');
 if (data.items.length !== data.stats.documents + data.stats.acts)
   throw new Error('Quantidade de publicações e atos não corresponde aos registros do painel.');
-console.log(`[painel] Pacote público validado: ${data.stats.documents} publicações e ${data.stats.acts} atos, ${(size.size / 1_000_000).toFixed(2)} MB.`);
+console.log(`[painel] Validado sem perda: ${data.stats.documents} publicações e ${data.stats.acts} atos; manifesto ${(Buffer.byteLength(manifestRaw)/1000).toFixed(0)} KB; ${checked.size} partes, até 2 MB cada. Compatibilidade ${(size.size/1_000_000).toFixed(2)} MB.`);

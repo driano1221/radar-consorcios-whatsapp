@@ -1,0 +1,30 @@
+name: Validar painel e lote histórico sem envios
+on:
+  push:
+    branches: [fix/historical-188-and-workflows]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SEND_ENABLED: 'false'
+      PERSIST_STATE: 'false'
+      AI_REVIEW_ENABLED: 'false'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check && npm test
+      - run: node scripts/check-recovery-safety.mjs --before
+      - run: npm run dashboard:build:public && node scripts/check-public-dashboard.mjs
+      - name: Confirmar acervo e estado intactos
+        if: always()
+        run: |
+          node scripts/check-recovery-safety.mjs
+          git diff --exit-code HEAD -- data state
