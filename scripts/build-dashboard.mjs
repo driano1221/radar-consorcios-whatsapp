@@ -55,9 +55,9 @@ const TABLES = [
   ['participacoes', 'Participações', 'Relações município–consórcio com evidência documental revisada.'],
   ['vinculos-documentos', 'Vínculos documentais', 'Menções que conectam documentos e consórcios; menção não comprova adesão.'],
   ['identidade-pendente', 'Sinalizações de identidade', 'Histórico de documentos sinalizados na extração; alguns já foram descartados ou esclarecidos. Os pontos atuais ficam na triagem.'],
-  ['arquivo-coletas', 'Arquivo de coletas', 'Todos os documentos guardados, inclusive descartes e títulos sem texto.'],
+  ['arquivo-coletas', 'Arquivo de coletas', 'Arquivo bruto preservado: mostra os valores da captura, antes das revisões. A decisão atual está em Publicações e Eventos. Inclui descartes e títulos sem texto.'],
   ['atos', 'Atos dentro dos documentos', 'Atos individualizados de uma mesma edição, cada um com decisão e página próprias.'],
-  ['revisoes-eventos', 'Revisões editoriais', 'Decisões humanas lacradas ao trecho do documento e sua justificativa.'],
+  ['revisoes-eventos', 'Revisões editoriais', 'Decisões documentais lacradas ao trecho, com justificativa e método de revisão. Não são todas revisões humanas: confira o método de cada registro.'],
 ];
 
 const COLUMN_DOCS = {

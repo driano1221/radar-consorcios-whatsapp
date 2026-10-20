@@ -56,7 +56,7 @@ export async function prepareBatch(dir='data/catalogo'){
   return {archive,texts,reviews,decisions,alreadyApplied:existing.length===188};
 }
 
-export async function applyBatch({apply=false,dir='data/catalogo'}={}){
+export async function applyBatch({apply=false,rebuild=false,dir='data/catalogo'}={}){
   assert.notEqual(process.env.SEND_ENABLED,'true','Manutenção não aceita envio habilitado');
   assert.notEqual(process.env.PERSIST_STATE,'true','Manutenção não persiste estado de envio');
   const before=await protectedSnapshot(),batch=await prepareBatch(dir);
@@ -70,11 +70,11 @@ export async function applyBatch({apply=false,dir='data/catalogo'}={}){
       title:review.titulo,reason:review.motivo,evidence:review.evidencia,
       textHash:t.texto_sha256,related:review.documento_relacionado,facts:review.fatos}))};
   await mkdir('output/historical-188',{recursive:true});
-  if(!batch.alreadyApplied){
+  if(!batch.alreadyApplied||rebuild){
     const staged=await mkdtemp('output/historical-188/staged-');await cp(dir,staged,{recursive:true});
-    const next=[...batch.reviews,...batch.decisions.map(d=>d.review)];
+    const next=batch.alreadyApplied?batch.reviews:[...batch.reviews,...batch.decisions.map(d=>d.review)];
     const oldEvidence=await rows(dir,'evidencias-complementares');
-    const addedEvidence=batch.decisions.filter(d=>d.review.decisao==='confirmar_evento').map(({review})=>({
+    const addedEvidence=batch.alreadyApplied?[]:batch.decisions.filter(d=>d.review.decisao==='confirmar_evento').map(({review})=>({
       documento_id:review.documento_id,nome:review.fatos.consorcio,sigla:review.fatos.sigla||'',cnpj:review.fatos.cnpj||'',
       fonte_evidencia:review.fonte_evidencia,evidencia:review.evidencia}));
     for(const[name,data]of[['revisoes-eventos',next],['evidencias-complementares',[...oldEvidence,...addedEvidence]]])
@@ -95,8 +95,8 @@ export async function applyBatch({apply=false,dir='data/catalogo'}={}){
   }
   const after=await protectedSnapshot();
   for(const[file,hash]of Object.entries(before))if(file.startsWith('state'))assert.equal(after[file],hash,`Estado de envio mudou: ${file}`);
-  if(!apply||batch.alreadyApplied)assert.deepEqual(after,before);
+  if(!apply||(batch.alreadyApplied&&!rebuild))assert.deepEqual(after,before);
   await writeFile('output/historical-188/report.json',JSON.stringify(report,null,2)+'\n');
   console.log(JSON.stringify({...report,cases:undefined}));return report;
 }
-if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await applyBatch({apply:process.argv.includes('--apply')});
+if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url))await applyBatch({apply:process.argv.includes('--apply'),rebuild:process.argv.includes('--rebuild')});

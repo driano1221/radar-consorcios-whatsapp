@@ -64,3 +64,10 @@ test('os 188 históricos seguem bloqueados no alerta e no resumo mesmo com data 
     {start:new Date('2026-10-19'),end:new Date('2026-10-22')});
   assert.equal(summary.events,0);assert.equal(summary.highlights.length,0);
 });
+test('publicação com três municípios não herda como parte o município do editor',async()=>{
+  const b=await prepareBatch(),d=b.decisions[90];
+  assert.equal(d.review.fatos.municipios.length,3);assert.equal(d.review.fatos.municipio,'');
+  const events=await readFile('data/catalogo/eventos.csv','utf8');
+  const line=events.split(/\r?\n/).find(l=>l.startsWith(`"${d.row.id}"`));
+  assert.ok(line);assert.ok(!line.includes('"Guaira"'));
+});
