@@ -62,7 +62,13 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm test
+      - name: Testes de regressão
+        env:
+          SEND_ENABLED: 'false'
+          PERSIST_STATE: 'false'
+          AI_REVIEW_ENABLED: 'false'
+          AI_PREVIEW: 'false'
+        run: npm test
       - name: Restaurar sessão
         id: restore_session
         if: env.SEND_ENABLED == 'true'

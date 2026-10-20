@@ -77,6 +77,11 @@ jobs:
 
       - name: Testes de regressão
         if: steps.freshness.outputs.run == 'true'
+        env:
+          SEND_ENABLED: 'false'
+          PERSIST_STATE: 'false'
+          AI_REVIEW_ENABLED: 'false'
+          AI_PREVIEW: 'false'
         run: npm test
 
       - name: Restaurar sessão criptografada
@@ -97,6 +102,11 @@ jobs:
       - name: Validar base após a coleta
         id: validate_catalog
         if: steps.catalog.outcome == 'success'
+        env:
+          SEND_ENABLED: 'false'
+          PERSIST_STATE: 'false'
+          AI_REVIEW_ENABLED: 'false'
+          AI_PREVIEW: 'false'
         run: npm test
 
       - name: Atualizar sessão criptografada

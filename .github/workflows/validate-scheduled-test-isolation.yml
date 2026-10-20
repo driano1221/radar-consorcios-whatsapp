@@ -1,0 +1,45 @@
+name: Validar isolamento com configuração de disparo agendado
+on:
+  push:
+    branches: [fix/scheduled-test-isolation]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    name: Isolamento — ${{ matrix.profile }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: radar
+            persist: 'true'
+          - profile: weekly
+            persist: '' # o workflow semanal não define PERSIST_STATE
+    env:
+      ISOLATION_PROFILE: ${{ matrix.profile }}
+      SEND_ENABLED: 'true'
+      PERSIST_STATE: ${{ matrix.persist }}
+      AI_REVIEW_ENABLED: 'true'
+      AI_PREVIEW: 'false'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - name: Reproduzir flags agendadas somente nos testes e prévias puras
+        run: node scripts/validate-scheduled-test-isolation.mjs
+      - name: Confirmar que não alterou acervo nem recibos
+        if: always()
+        run: git diff --exit-code HEAD -- data state
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-isolation-${{ matrix.profile }}-${{ github.run_id }}
+          path: output/test-isolation/${{ matrix.profile }}/
+          retention-days: 14

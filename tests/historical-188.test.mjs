@@ -1,7 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {prepareBatch,applyBatch} from '../scripts/review-historical-188.mjs';
+import {prepareBatch} from '../scripts/review-historical-188.mjs';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
+import {isolatedTestEnvironment} from '../scripts/isolated-environment.mjs';
 import {urls,BATCH} from '../scripts/historical-188-definitions.mjs';
 import {administrativeRoutine} from '../src/lib/administrative-routine.mjs';
 import {classifyItem} from '../src/lib/classifier.mjs';
@@ -28,7 +31,10 @@ test('188 URLs existentes recebem decisões com prova literal e sem inventar ing
   assert.equal(byN.get(91).fatos.instrumentos[2].valor_fonte,'-1.243.572,37');
 });
 test('simulação não altera arquivo, textos, revisões ou estado; aplicação já feita é idempotente',async()=>{
-  const result=await applyBatch();assert.equal(result.total,188);assert.equal(result.whatsappCalls,0);
+  const {stdout}=await promisify(execFile)(process.execPath,['scripts/review-historical-188.mjs'],{
+    env:isolatedTestEnvironment(),windowsHide:true});
+  const result=JSON.parse(stdout.trim().split(/\r?\n/).at(-1));
+  assert.equal(result.total,188);assert.equal(result.whatsappCalls,0);
   assert.equal(result.documentsAdded,0);assert.equal(result.protectedStateUnchanged,true);
 });
 test('pessoal e suspensões internas não viram governança ou fiscalização externa',()=>{
