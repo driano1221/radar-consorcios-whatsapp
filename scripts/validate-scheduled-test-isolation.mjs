@@ -1,4 +1,5 @@
-// Runs under production-like flags, without production entrypoints or secrets.
+// Production-like flags without live collection/dispatch or secrets. Negative
+// guard tests can invoke the weekly CLI, which must abort before connecting.
 import assert from 'node:assert/strict';
 import {execFile} from 'node:child_process';
 import {promisify} from 'node:util';
@@ -56,6 +57,6 @@ assert.equal(previews[0].start,previews[1].start);assert.equal(previews[0].end,p
 assert.equal(previews[0].events,previews[1].events);
 assert.deepEqual(await protectedSnapshot(),before,'Acervo, sessão ou recibos foram modificados');
 const report={profile,parentFlags:flags,parentFlagsUnchanged:true,protectedFilesUnchanged:true,
-  productionEntrypointsRun:false,whatsappConnections:0,whatsappSends:0,apiCalls:0,weeklyPreviews:previews};
+  liveCollectionOrDispatchRun:false,whatsappConnections:0,whatsappSends:0,apiCalls:0,weeklyPreviews:previews};
 await writeFile(`${out}/report.json`,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report));
