@@ -184,6 +184,7 @@ export async function fetchDirectGazette(site, since, config = {}, fetchImpl = f
   }
   const degraded = hasNext || failures > 0 || errors.length > 0;
   return { items, diagnostic: { name: site.name, adapter: 'sigpub', status: degraded ? 'degraded' : 'ok',
+    limited: hasNext && failures === 0 && errors.length === 0,
     itemCount: items.length, pages, fullTextCount: items.filter(i => i.contentProvenance === 'pagina_original').length,
     partialTextCount: failures, truncated: hasNext, durationMs: Date.now() - started,
     message: `${pages} página(s); ${reads} leitura(s); ${failures} íntegra(s) pendente(s).` +

@@ -53,6 +53,20 @@ test('contadores de saúde zeram apenas depois de uma coleta saudável', () => {
   assert.ok(state.health.QD.lastSuccessAt);
 });
 
+test('limite de cobertura não vira falha consecutiva, e erro real continua contado', () => {
+  const state = { seen: {} };
+  const now = new Date('2026-10-20T22:00:00Z');
+  observeRun(state, [], [{ name: 'Portal', status: 'error' }], 5, now);
+  observeRun(state, [], [{ name: 'Portal', status: 'degraded', limited: true,
+    truncated: true, partialTextCount: 0 }], 5, now);
+  assert.equal(state.health.Portal.status, 'degraded', 'cobertura incompleta deve continuar visível');
+  assert.equal(state.health.Portal.consecutiveFailures, 0);
+  assert.equal(state.health.Portal.lastSuccessAt, now.toISOString());
+  observeRun(state, [], [{ name: 'Portal', status: 'degraded', limited: false,
+    truncated: true, partialTextCount: 1 }], 5, now);
+  assert.equal(state.health.Portal.consecutiveFailures, 1);
+});
+
 test('estado preserva histórico e confirmação semanal ao reiniciar', async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), 'radar-weekly-test-'));
   try {

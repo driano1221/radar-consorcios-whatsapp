@@ -3,6 +3,11 @@ on:
   push:
     branches: [feat/direct-gazettes-rncp]
   workflow_dispatch:
+    inputs:
+      review_ai:
+        description: Executar também a revisão opcional com a API de IA configurada
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -33,6 +38,7 @@ jobs:
       - name: Ler índices e íntegras reais, classificar e bloquear histórico
         run: node scripts/validate-direct-gazettes.mjs
       - name: Conferir cinco textos públicos com IA e prova literal sem aplicar decisões
+        if: inputs.review_ai == true
         env:
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: node scripts/validate-direct-gazettes-ai.mjs

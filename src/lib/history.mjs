@@ -65,9 +65,11 @@ export function observeRun(state, items, health, minimumScore, now = new Date(),
       continue;
     }
     const old = state.health[source.name] || {};
+    // Leitura completa da amostra limitada continua parcial, sem inventar falha de acesso.
+    const available = source.status === 'ok' || (source.status === 'degraded' && source.limited === true);
     state.health[source.name] = { ...source, checkedAt: now.toISOString(),
-      consecutiveFailures: source.status === 'ok' ? 0 : (old.consecutiveFailures || 0) + 1,
-      lastSuccessAt: source.status === 'ok' ? now.toISOString() : old.lastSuccessAt || null };
+      consecutiveFailures: available ? 0 : (old.consecutiveFailures || 0) + 1,
+      lastSuccessAt: available ? now.toISOString() : old.lastSuccessAt || null };
   }
   const cutoff = now.getTime() - 60 * 86400000;
   for (const [id, record] of Object.entries(state.observations)) {

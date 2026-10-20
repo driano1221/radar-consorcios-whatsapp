@@ -30,9 +30,9 @@ async function fetchGroup(terms, config, since, fetchImpl, timeoutMs = config.ti
     headers: { 'user-agent': 'RadarConsorciosIPEA/0.2 (+pesquisa acadêmica)' },
   });
   if (!response.ok) {
-    const message = (await response.text()).slice(0, 200);
+    await response.body?.cancel();
     const error = new Error(`Querido Diário respondeu ${response.status}`);
-    error.serviceUnavailable = response.status === 503 && /no available server|service unavailable/i.test(message);
+    error.serviceUnavailable = [503, 521, 522, 523].includes(response.status);
     throw error;
   }
   const payload = await response.json();

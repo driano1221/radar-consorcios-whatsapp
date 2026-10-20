@@ -505,3 +505,9 @@ Esta seção registra **desde a ideia de criar uma base**, e não apenas as últ
 - A regressão nova falhou antes da correção e passou depois. `npm run catalog:update`, a suíte completa `npm test` e `npm run check` passaram sobre o estado da rodada que falhou. O catálogo reconstruído foi usado apenas para validação local; a próxima coleta regular fará sua atualização. Nenhuma chamada à IA paga nem conexão/envio ao WhatsApp foi feita para este teste.
 - Esta falha é de classificação e validação após a coleta, diferente do bloqueio de sincronização da sessão da agenda. Uma rodada sem candidatos não comprova conexão com o WhatsApp; o resultado da próxima rodada de produção ainda precisa ser observado.
 
+## Saúde dos coletores — 20/10/2026
+
+- Separados indisponibilidade externa, limite de paginação e falha de extração. QD continua 503 no domínio atual; três originais permanecem com 403. Não se declara recuperação sem leitura real.
+- MG/PR/RN passam de duas para até quatro páginas por rodada, mantendo orçamento de tempo e proteções editoriais. A amostra com íntegra e apenas paginação pendente continua parcial, mas deixa de aumentar o contador de falhas de acesso.
+- Validação local: 361 documentos examinados, 360 íntegras; MG/PR 100 cada, AL 15, RN 56 e SC 85. Acervo, revisões, fila, recibos e sessão inalterados, zero mensagens e nenhuma chamada paga de IA. [Diagnóstico, alterações e reprodução](SAUDE-COLETORES-2026-10-20.md).
+

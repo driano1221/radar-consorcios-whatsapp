@@ -132,4 +132,4 @@ Acesse `http://127.0.0.1:4173/`. Para testar o pacote que vai ao Pages, execute 
 2. Implementar e validar a confirmação automática de textos originais completos, hoje ainda distinta da classificação e da decisão automática por fonte alternativa. Recuperar texto e resolver discordâncias antes de decidir; não zerar indicadores trocando rótulos.
 3. Ampliar e auditar identidades, CNPJ e relações município–consórcio antes de usar a base como cadastro histórico confiável.
 
-Decisões, incidentes e limites ficam na [memória do projeto](docs/MEMORIA_DO_PROJETO.md). Para detalhes técnicos, consulte a [arquitetura](docs/ARQUITETURA.md), o [guia da base](data/catalogo/README.md) e a [documentação do painel](dashboard/README.md).
+Decisões, incidentes e limites ficam na [memória do projeto](docs/MEMORIA_DO_PROJETO.md). A [revisão dos coletores de 20/10](docs/SAUDE-COLETORES-2026-10-20.md) distingue a indisponibilidade do Querido Diário, bloqueios de páginas e cobertura parcial por paginação. Para detalhes técnicos, consulte a [arquitetura](docs/ARQUITETURA.md), o [guia da base](data/catalogo/README.md) e a [documentação do painel](dashboard/README.md).

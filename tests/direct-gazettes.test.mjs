@@ -93,6 +93,7 @@ test('SIGPub elimina repetição na paginação sem confundir limite com cobertu
   });
   assert.equal(result.items.length, 1); assert.equal(result.diagnostic.fullTextCount, 1);
   assert.equal(result.diagnostic.truncated, true); assert.equal(result.diagnostic.status, 'degraded');
+  assert.equal(result.diagnostic.limited, true);
   assert.equal(calls.filter(u => u.includes('/materia/')).length, 1);
 });
 
@@ -100,7 +101,41 @@ test('falha/limite de íntegra não libera ementa para WhatsApp nem some do diag
   const result = await fetchDirectGazette(site, since, config,
     async url => response(String(url).includes('/materia/') ? 'indisponível' : index(), String(url).includes('/materia/') ? 403 : 200));
   assert.equal(result.diagnostic.status, 'degraded'); assert.equal(result.diagnostic.partialTextCount, 1);
+  assert.equal(result.diagnostic.limited, false);
   assert.equal(result.items[0].previewOnly, true); assert.equal(result.items[0].rawText, '');
+});
+
+test('paginação com erro de rede permanece falha mesmo quando a primeira página foi lida', async () => {
+  const result = await fetchDirectGazette(site, since, config, async url => {
+    const target = new URL(url);
+    if (target.searchParams.get('busca_avancada[pagina]') === '2') return response('', 503);
+    return response(target.pathname.includes('/materia/') ? article() : index('AABBCCDD',
+      '<a href="/amm-mg/pesquisar?busca_avancada%5Bpagina%5D=2">Próxima</a>'));
+  });
+  assert.equal(result.diagnostic.status, 'degraded');
+  assert.equal(result.diagnostic.fullTextCount, 1);
+  assert.equal(result.diagnostic.limited, false);
+  assert.match(result.diagnostic.message, /Página 2: SIGPub HTTP 503/);
+});
+
+test('quatro páginas leem documentos distintos e o agregado distingue limite de erro de extração', async () => {
+  const fetchImpl = async url => {
+    const target = new URL(url);
+    const page = Number(target.searchParams.get('busca_avancada[pagina]') || 1);
+    const code = target.pathname.includes('/materia/') ? target.pathname.split('/').at(-1) : String(page).padStart(8, '0');
+    return response(target.pathname.includes('/materia/') ? article(code) : index(code,
+      `<a href="/amm-mg/pesquisar?busca_avancada%5Bpagina%5D=${page + 1}">Próxima</a>`));
+  };
+  const result = await fetchWebScrapers({ ...config, enabled: true, sites: [{ ...site, maxPages: 4 }] }, since, fetchImpl);
+  assert.equal(result.items.length, 4);
+  assert.equal(new Set(result.items.map(item => item.url)).size, 4);
+  assert.equal(result.diagnostics[0].pages, 4);
+  assert.equal(result.diagnostics[0].fullTextCount, 4);
+  assert.equal(result.degraded, true);
+  assert.equal(result.limited, true);
+  const failed = await fetchWebScrapers({ ...config, enabled: true, sites: [site] }, since,
+    async url => response(String(url).includes('/materia/') ? '' : index(), String(url).includes('/materia/') ? 403 : 200));
+  assert.equal(failed.limited, false);
 });
 
 test('diários independentes continuam quando um portal está indisponível', async () => {

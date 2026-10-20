@@ -86,7 +86,8 @@ async function main() {
         scraperDiagnostics = payload.diagnostics || [];
       }
       sourceHealth.push({
-        name: sourceRequests[index][0], status: payload.ok === false || payload.degraded ? 'degraded' : 'ok',
+        name: sourceRequests[index][0], status: payload.ok === false ? 'error' : payload.degraded ? 'degraded' : 'ok',
+        ...(payload.limited === true ? { limited: true } : {}),
         itemCount: payload.items.length, durationMs,
       });
       sourceHealth.push(...(payload.diagnostics || []));

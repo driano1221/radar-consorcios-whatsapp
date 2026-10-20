@@ -168,3 +168,31 @@ test('QD interrompe repetição quando as duas rotas confirmam indisponibilidade
   assert.equal(result.degraded, true);
   assert.match(result.diagnostics[1].message,/adiada/);
 });
+
+test('QD reconhece indisponibilidade HTTP sem depender do texto da página de erro', async () => {
+  for (const status of [503, 521, 522, 523]) {
+    let calls = 0;
+    const result = await fetchQueridoDiario({ enabled: true, retries: 0, maxConcurrent: 1,
+      queryGroups: Array.from({ length: 10 }, (_, index) => ['termo' + index]) }, new Date('2026-10-01'), async () => {
+      calls++; return new Response('<html>Origin unavailable</html>', { status });
+    });
+    assert.equal(calls, 2, 'consultas restantes devem aguardar a próxima rodada após HTTP ' + status);
+    assert.equal(result.ok, false);
+    assert.equal(result.degraded, true);
+    assert.match(result.diagnostics[1].message, /adiada/);
+  }
+});
+
+test('QD mantém outras consultas após erro de gateway ou de tempo de uma busca', async () => {
+  for (const status of [502, 504, 520, 524]) {
+    const result = await fetchQueridoDiario({ enabled: true, retries: 0, maxConcurrent: 1,
+      queryGroups: [['busca_lenta'], ['consorcio']] }, new Date('2026-10-01'), async url => {
+      if (url.includes('busca_lenta')) return new Response('Gateway error', { status });
+      return Response.json({ gazettes: [{ url: 'https://example.gov.br/ato.pdf', territory_id: '1',
+        date: '2026-10-20', excerpts: ['consórcio público'] }] });
+    });
+    assert.equal(result.ok, true);
+    assert.equal(result.items.length, 1);
+    assert.equal(result.diagnostics[0].status, 'error');
+  }
+});

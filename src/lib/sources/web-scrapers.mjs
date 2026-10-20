@@ -406,7 +406,9 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
     }
   });
   return { items, diagnostics, ok: !activeSites.length || successfulSites > 0,
-    degraded: successfulSites < activeSites.length || diagnostics.some(d => d.status === 'degraded') };
+    degraded: successfulSites < activeSites.length || diagnostics.some(d => d.status === 'degraded'),
+    limited: diagnostics.some(d => d.limited) && diagnostics.every(d =>
+      ['ok', 'disabled'].includes(d.status) || (d.status === 'degraded' && d.limited === true)) };
 }
 
 export { parseBrazilianDate };
