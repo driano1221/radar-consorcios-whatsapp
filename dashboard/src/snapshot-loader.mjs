@@ -25,7 +25,11 @@ export async function hydrateSnapshot(data,fetchImpl=fetch){
   if(data.formatVersion!==2)return data;
   const items=await loadParts(data.itemParts,data.generatedAt,fetchImpl);
   if(items.length!==data.itemCount||new Set(items.map(i=>i.id)).size!==items.length)throw new Error('Contagem ou identidade das publicações não confere');
-  return {...data,items};
+  // Results depend on these two small tables. Hydrate them atomically with the
+  // snapshot, even when the user opens Results before visiting the base tabs.
+  const baseTables=await Promise.all((data.baseTables||[]).map(table=>
+    ['eventos','participacoes'].includes(table.id)?hydrateTable(table,data.generatedAt,fetchImpl):table));
+  return {...data,items,baseTables};
 }
 export async function hydrateTable(table,generatedAt,fetchImpl=fetch){
   if(!table.rowParts||table.rowsLoaded)return table;

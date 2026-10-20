@@ -2,6 +2,7 @@ import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {hydrateSnapshot,hydrateTable} from '../dashboard/src/snapshot-loader.mjs';
+import {buildResults} from '../dashboard/src/results-model.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'dashboard', 'dist');
@@ -34,6 +35,10 @@ const localFetch=async url=>{
   return new Response(bytes,{headers:{'content-type':'application/json'}});
 };
 const hydrated=await hydrateSnapshot(manifest,localFetch);
+for(const period of ['all','30d','7d'])for(const mode of ['discovery','occurrence']){
+  if(JSON.stringify(buildResults(hydrated,{period,mode}))!==JSON.stringify(buildResults(data,{period,mode})))
+    throw new Error('Indicadores dependem da ordem de abertura das tabelas');
+}
 for(const table of hydrated.baseTables||[]){
   const loaded=await hydrateTable(table,manifest.generatedAt,localFetch);
   const original=data.baseTables.find(t=>t.id===table.id);

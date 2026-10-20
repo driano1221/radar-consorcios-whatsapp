@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {partitionDashboard} from '../scripts/dashboard-package.mjs';
 import {hydrateSnapshot,hydrateTable,fetchSnapshot,loadParts} from '../dashboard/src/snapshot-loader.mjs';
+import {buildResults} from '../dashboard/src/results-model.mjs';
 
 function fixture(){
   const data={generatedAt:'2026-10-20T13:00:00.000Z',stats:{documents:20},
@@ -46,4 +47,20 @@ test('snapshot antigo continua funcionando e fallback só acontece no 404',async
   const data=await fetchSnapshot('',async url=>url.includes('snapshot')?new Response('',{status:404}):new Response(JSON.stringify(f.data)));
   assert.deepEqual(data,f.data);
   await assert.rejects(fetchSnapshot('',async()=>new Response('',{status:500})),/500/);
+});
+test('Resultados mostra eventos e municípios antes de abrir qualquer tabela, em todos os recortes',async()=>{
+  const f=fixture();const data={...f.data,lastCollectionAt:'2026-10-20T13:00:00Z',
+    items:f.data.items.map(i=>({...i,firstSeenAt:'2026-10-19T13:00:00Z'})),
+    baseTables:[...f.data.baseTables,{id:'eventos',rows:[{id:'1',decisao_base:'confirmado',
+      primeira_coleta:'2026-10-19T13:00:00Z',data_fato:'2026-10-19',tipo_evento:'RATEIO',uf:'RN'}]},
+      {id:'participacoes',rows:[{documento_id:'1',municipio:'Encanto'}]}]};
+  const p=partitionDashboard(data,{maxBytes:1000}),requests=[];
+  const mock=async url=>{requests.push(url);return new Response(p.files.get(url.slice(2)));};
+  const loaded=await hydrateSnapshot(p.manifest,mock);
+  for(const period of ['all','30d','7d'])for(const mode of ['discovery','occurrence']){
+    const result=buildResults(loaded,{period,mode});
+    assert.deepEqual(result,buildResults(data,{period,mode}));
+    assert.equal(result.confirmedCount,1);assert.equal(result.municipalityCount,1);
+  }
+  assert.ok(!requests.some(url=>url.includes('table-arquivo')));
 });
