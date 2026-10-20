@@ -1,7 +1,13 @@
 name: Validar isolamento com configuração de disparo agendado
 on:
   push:
-    branches: [fix/scheduled-test-isolation]
+    branches: [main, fix/scheduled-test-isolation]
+    paths:
+      - '.github/workflows/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'tests/**'
+      - 'package*.json'
   workflow_dispatch:
 permissions:
   contents: read

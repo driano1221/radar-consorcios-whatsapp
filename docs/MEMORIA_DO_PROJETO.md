@@ -2,6 +2,16 @@
 
 Atualização mais recente: **20 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Isolamento dos testes no disparo agendado — 20/10/2026
+
+- Incidente [39470588933](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/39470588933), 14h57 de Brasília: 474/475 testes passaram; simulação dos 188 chamou `applyBatch()` herdando `SEND_ENABLED=true` e `PERSIST_STATE=true`. A manutenção recusou a execução, corretamente, mas isso bloqueou a coleta antes de restaurar a sessão ou enviar. Não era repetição do limite de 10 MB do painel.
+- Causa reproduzida com quatro combinações das flags; ligar qualquer uma bloqueava o teste. A validação anterior usava flags desligadas e não cobria o contexto de produção. Não remover as guardas de manutenção para resolver falha de teste.
+- Correção: `npm test` executa Node em processo filho isolado, com envio/persistência/IA desligados e credenciais de WhatsApp, DeepSeek, GitHub e senha da sessão removidas. Processo pai mantém sua configuração. O teste histórico também isola sua chamada de manutenção, inclusive quando invocado diretamente com `node --test`.
+- Workflows Radar (antes e depois da coleta) e resumo semanal agora desligam essas flags **somente nos passos de teste**. A coleta/envio real continua usando a configuração original. Não foram alterados agenda, destinatários, cotas, fila ou recibos.
+- Workflow `validate-scheduled-test-isolation.yml`: matriz Radar (envio/persistência ligados) e semanal (envio ligado, persistência não definida pelo workflow), IA ligada no contexto pai, **sem secrets e sem executar os pontos de entrada de produção**. Roda a suíte inteira, testes diretos do histórico e da segurança semanal, seleção/formatação semanal por funções puras e comparação dos hashes de todos os arquivos de `data/` e `state/`.
+- Conferência semanal: referências de sábado 24/10 às 09h e 12h de Brasília produzem a mesma janela 17/10 09h–24/10 09h e a mesma prévia nesta fotografia. Não é autorização de envio nem garantia dos achados definitivos até sábado. Sem encurtadores, IA paga, conexão ao WhatsApp ou escrita de recibos.
+- A matriz de configuração permanece como regressão para futuras mudanças de código/workflows no `main`. Guardas inseguras continuam testadas como falhas esperadas; testes não compartilham flags de envio nem credenciais com produção.
+
 ## Lote de 188 diários e correção do crescimento do painel — 20/10/2026
 
 - Os 188 documentos da validação real 39336621942 já estavam arquivados pelas coletas regulares, todos com texto preservado. Não foram importados outra vez: 188 revisões lacradas por trecho e hash da íntegra, com **16 publicações aceitas, 171 descartadas e 1 documento complementar/duplicata**. Conferência documental das exceções pelo assistente; exclusões por critérios explícitos. Não alegar leitura humana de cada cláusula nem classificação automática perfeita.
