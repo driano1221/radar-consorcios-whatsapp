@@ -116,24 +116,44 @@ export function parseSigpubArticle(html, item, site) {
 }
 
 async function request(url, config, fetchImpl) {
+  if (Date.now() >= config.deadline) throw new Error('SIGPub: orçamento do portal esgotado');
   // The portals share one host: space starts across collectors, not just per state.
   if (config.requestDelayMs !== 0) {
     const wait = Math.max(0, nextRequestAt - Date.now());
     nextRequestAt = Math.max(nextRequestAt, Date.now()) + 350;
     if (wait) await new Promise(resolve => setTimeout(resolve, wait));
   }
-  const response = await fetchWithRetry(url, { fetchImpl, timeoutMs: config.timeoutMs || 20000,
-    retries: config.retries ?? 1, redirect: 'error', headers: {
+  const remaining = config.deadline - Date.now();
+  if (remaining <= 0) throw new Error('SIGPub: orçamento do portal esgotado');
+  const timeoutMs = Math.min(config.timeoutMs || 20000, remaining);
+  let response;
+  try { response = await fetchWithRetry(url, { fetchImpl, timeoutMs,
+    retries: remaining >= timeoutMs * 2 + 1000 ? Math.min(config.retries ?? 1, 1) : 0,
+    maxRetryWaitMs: Math.max(0, Math.min(5000, remaining - timeoutMs * 2)),
+    redirect: 'error', headers: {
       'user-agent': config.userAgent || 'RadarConsorciosIPEA/0.3 (+pesquisa academica)',
       accept: 'text/html,application/xhtml+xml',
     } });
+  } catch (error) { throw new Error(`SIGPub: cabeçalhos HTTP: ${error.message}`, { cause: error }); }
   if (!response.ok) throw new Error(`SIGPub HTTP ${response.status}`);
   if (!/text\/html/i.test(response.headers.get('content-type') || '')) throw new Error('SIGPub: resposta não HTML');
   let size = 0; const chunks = [];
-  for await (const chunk of response.body) {
-    size += chunk.length;
-    if (size > 8_000_000) throw new Error('SIGPub: HTML excede 8 MB');
-    chunks.push(Buffer.from(chunk));
+  try {
+    for await (const chunk of response.body) {
+      size += chunk.length;
+      if (size > 8_000_000) throw new Error('SIGPub: HTML excede 8 MB');
+      chunks.push(Buffer.from(chunk));
+    }
+  } catch (error) {
+    // A resposta pode interromper após HTTP 200; reinicie sem os fragmentos anteriores.
+    const transient = ['TimeoutError', 'AbortError'].includes(error.name) ||
+      ['ECONNRESET', 'UND_ERR_SOCKET'].includes(error.cause?.code || error.code);
+    if (transient && (config.retries ?? 1) > 0 && config.deadline - Date.now() > 500) {
+      console.warn(`[diário:${new URL(url).pathname.split('/')[1]}] corpo HTTP interrompido; uma nova leitura.`);
+      await new Promise(resolve => setTimeout(resolve, 500));
+      return request(url, { ...config, retries: 0 }, fetchImpl);
+    }
+    throw new Error(`SIGPub: corpo HTTP: ${error.message}`, { cause: error });
   }
   return Buffer.concat(chunks).toString('utf8');
 }
@@ -222,7 +242,8 @@ export async function fetchDirectGazette(site, since, config = {}, fetchImpl = f
   const byUrl = new Map();
   let hasNext = false; let pages = 0; let failures = 0; let reads = 0;
   const errors = [];
-  const options = { ...config, timeoutMs: site.timeoutMs || config.timeoutMs };
+  const options = { ...config, timeoutMs: site.timeoutMs ?? config.timeoutMs,
+    retries: site.retries ?? config.retries, deadline: started + budget };
   const pagination = site.resumePagination === true ? await resumedPages(site, since, now, options, fetchImpl, started, budget, maxPages) : null;
   if (pagination) {
     for (const [url, item] of pagination.byUrl) byUrl.set(url, item);
@@ -280,6 +301,7 @@ export async function fetchDirectGazette(site, since, config = {}, fetchImpl = f
     limited: hasNext && failures === 0 && errors.length === 0,
     itemCount: items.length, pages, fullTextCount: items.filter(i => i.contentProvenance === 'pagina_original').length,
     partialTextCount: failures, truncated: hasNext, durationMs: Date.now() - started,
+    timeoutMs: options.timeoutMs || 20000,
     ...(pagination ? { freshPages: pagination.freshPages, resumePages: pagination.resumePages,
       nextPage: pagination.checkpoint.nextPage, cycleComplete: pagination.checkpoint.complete,
       window: { from: pagination.checkpoint.from, to: pagination.checkpoint.to } } : {}),

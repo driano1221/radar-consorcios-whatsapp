@@ -287,6 +287,116 @@ test('página de índice que falha é mantida para retentativa e conta no orçam
   assert.match(result.diagnostic.message,/Retomada página 6/);
 });
 
+function interruptedHtml(fragment = '', name = 'TimeoutError') {
+  let sent = false;
+  return new Response(new ReadableStream({ pull(controller) {
+    if (!sent) { sent = true; controller.enqueue(Buffer.from(fragment)); }
+    else controller.error(typeof name === 'string' ? new DOMException('HTML interrompido', name) : name);
+  } }), { headers: { 'content-type': 'text/html' } });
+}
+
+test('MG repete o HTML interrompido da página 7 e descarta fragmentos antes de avançar', async () => {
+  const calls = [], fixture = pageFixture(calls);
+  let attempts = 0;
+  const result = await fetchDirectGazette({ ...resumeSite, retries: 1 }, since,
+    { ...config, gazetteState: resumeState({ nextPage: 7 }) }, async url => {
+      if (new URL(url).searchParams.get('busca_avancada[pagina]') === '7' && ++attempts === 1) {
+        return interruptedHtml(index(codeFor(99)), 'AbortError');
+      }
+      return fixture(url);
+    });
+  assert.equal(attempts, 2);
+  assert.deepEqual(calls.map(c => c.page), [1, 7, 8, 9]);
+  assert.equal(result.checkpoint.nextPage, 10);
+  assert.equal(result.diagnostic.fullTextCount, 4);
+  assert.equal(result.diagnostic.limited, true);
+  assert.ok(result.items.every(i => i.gazetteCode !== codeFor(99)));
+});
+
+test('timeout persistente do corpo tem uma repetição e conserva o cursor da página 7', async () => {
+  let attempts = 0;
+  const fixture = pageFixture([]);
+  const result = await fetchDirectGazette({ ...resumeSite, retries: 1 }, since,
+    { ...config, gazetteState: resumeState({ nextPage: 7 }) }, async url => {
+      if (new URL(url).searchParams.get('busca_avancada[pagina]') === '7') {
+        attempts++; return interruptedHtml();
+      }
+      return fixture(url);
+    });
+  assert.equal(attempts, 2);
+  assert.equal(result.checkpoint.nextPage, 7);
+  assert.equal(result.diagnostic.limited, false);
+  assert.match(result.diagnostic.message, /Retomada página 7:.*corpo HTTP.*HTML interrompido/);
+});
+
+test('SIGPub honra retries=0 da fonte sem herdar a repetição geral', async () => {
+  let calls = 0;
+  await assert.rejects(fetchDirectGazette({ ...site, retries: 0 }, since,
+    { ...config, retries: 1 }, async () => {
+      calls++; throw new DOMException('índice lento', 'TimeoutError');
+    }), /índice lento/);
+  assert.equal(calls, 1);
+});
+
+test('SIGPub recupera corpo de íntegra interrompido sem publicar fragmentos', async () => {
+  let attempts = 0;
+  const result = await fetchDirectGazette({ ...site, retries: 1 }, since, config, async url => {
+    if (!String(url).includes('/materia/')) return response(index());
+    return ++attempts === 1 ? interruptedHtml(article('DEADBEEF')) : response(article());
+  });
+  assert.equal(attempts, 2);
+  assert.equal(result.items[0].rawText, proof);
+  assert.equal(result.diagnostic.status, 'ok');
+});
+
+test('SIGPub não repete 403, HTML excessivo ou tipo inválido', async () => {
+  for (const kind of ['403', 'size', 'type']) {
+    let calls = 0;
+    await assert.rejects(fetchDirectGazette({ ...site, retries: 1 }, since, config, async () => {
+      calls++;
+      return kind === '403' ? response('', 403) : kind === 'size' ? response('x'.repeat(8_000_001)) :
+        new Response('invalid', { headers: { 'content-type': 'application/json' } });
+    }), kind === '403' ? /HTTP 403/ : kind === 'size' ? /8 MB/ : /não HTML/);
+    assert.equal(calls, 1, kind);
+  }
+});
+
+test('SIGPub retenta conexão interrompida durante a leitura do HTML', async () => {
+  for (const code of ['ECONNRESET', 'UND_ERR_SOCKET']) {
+    let calls = 0;
+    const result = await fetchDirectGazette({ ...site, retries: 1 }, since, config, async url => {
+      if (String(url).includes('/materia/')) return response(article());
+      return ++calls === 1 ? interruptedHtml('', new TypeError('terminated', { cause: { code } })) : response(index());
+    });
+    assert.equal(calls, 2, code);
+    assert.equal(result.diagnostic.fullTextCount, 1);
+  }
+});
+
+test('SIGPub não repete o corpo após esgotar o orçamento do portal', async t => {
+  let clock = 0, calls = 0;
+  t.mock.method(Date, 'now', () => clock);
+  await assert.rejects(fetchDirectGazette({ ...site, maxDurationMs: 100, retries: 1 }, since, config, async () => {
+    calls++; clock = 100; return interruptedHtml();
+  }), /corpo HTTP/);
+  assert.equal(calls, 1);
+});
+
+test('MG tem prazo específico de 20 segundos e mantém as outras fontes em 12', async t => {
+  const defaults = JSON.parse(await readFile(new URL('../config/default.json', import.meta.url), 'utf8'));
+  const mg = defaults.webScrapers.sites.find(s => s.stateCode === 'MG');
+  assert.equal(mg.timeoutMs, 20000);
+  const timeouts = [];
+  t.mock.method(AbortSignal, 'timeout', ms => { timeouts.push(ms); return new AbortController().signal; });
+  const original = { ...config, timeoutMs: 12000 };
+  const result = await fetchDirectGazette(mg, since, original,
+    async url => response(String(url).includes('/materia/') ? article() : index()));
+  assert.ok(timeouts.length > 0 && timeouts.every(ms => ms === 20000));
+  assert.equal(result.diagnostic.timeoutMs, 20000);
+  assert.equal(original.timeoutMs, 12000);
+  assert.equal(defaults.webScrapers.timeoutMs, 12000);
+});
+
 test('íntegra com falha impede avançar aquela página e fica guardada até recuperar',async()=>{
   const state=resumeState(),calls=[];
   const result=await fetchDirectGazette(resumeSite,since,{...config,gazetteState:state},pageFixture(calls,{badCode:codeFor(5)}));
