@@ -93,12 +93,12 @@ try {
         sha256:createHash('sha256').update(i.rawText).digest('hex'),
         evidence:redactPublicText(i.classification.evidenceText||''),text:redactPublicText(i.rawText)})));
   }
-  assert.equal(JSON.stringify(state),protectedState,'Estado em memória alterado');
-  report.stateUntouched=true;
   console.log(JSON.stringify({sources:report.sources,coldMG:report.coldMG,previousMGPending:report.previousMGPending,
-    summary:report.summary,stateUntouched:true,whatsappSends:0,aiCalls:0},null,2));
+    summary:report.summary,stateUntouched:JSON.stringify(state)===protectedState,whatsappSends:0,aiCalls:0},null,2));
 } catch(error) { report.error=error.message;process.exitCode=1;console.error(error.message); }
 finally {
+  report.stateUntouched=JSON.stringify(state)===protectedState;
+  assert.equal(report.stateUntouched,true,'Estado em memória alterado');
   await mkdir('output/direct-gazettes',{recursive:true});
   await writeFile('output/direct-gazettes/report.json',JSON.stringify(report,null,2)+'\n');
 }
