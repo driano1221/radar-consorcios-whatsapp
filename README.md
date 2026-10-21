@@ -8,6 +8,10 @@
 
 [Abrir o painel público](https://driano1221.github.io/radar-consorcios-whatsapp/) · [Explorar a base](data/catalogo/README.md) · [Entender o painel](dashboard/README.md) · [Ler a memória do projeto](docs/MEMORIA_DO_PROJETO.md)
 
+O fluxo principal é **notícia → triagem com prova → confirmada ou rejeitada → WhatsApp quando elegível**. Casos inconclusivos ficam em **Revisar comigo**. As sete categorias são Criação, Adesão, Saída, Rateio, Protocolo, Crise e Atuação; esta última mantém os subtipos Governança, Finanças e Controle/Fiscalização. Controle permanece só no painel.
+
+Das 69 pendências de 21/10, **29 foram confirmadas, uma rejeitada e 39 precisam de revisão conjunta**. [Abrir os casos, links e orientações](docs/REVISAR-COMIGO-2026-10-21.md). O lote é histórico: atualizar a triagem não autoriza envio ou reenvio. [Política e reprodução offline](docs/TRIAGEM_AUTOMATICA.md).
+
 [![Coleta do radar](https://github.com/driano1221/radar-consorcios-whatsapp/actions/workflows/radar.yml/badge.svg)](https://github.com/driano1221/radar-consorcios-whatsapp/actions/workflows/radar.yml) [![Publicação do painel](https://github.com/driano1221/radar-consorcios-whatsapp/actions/workflows/publish-dashboard.yml/badge.svg)](https://github.com/driano1221/radar-consorcios-whatsapp/actions/workflows/publish-dashboard.yml)
 
 > [!IMPORTANT]

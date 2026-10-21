@@ -60,7 +60,8 @@ test('TCE materializa três PDFs oficiais sem extensão .pdf, mantendo fonte, da
 
 test('quatro fatos canônicos, sem duplicar a notícia do TCE nem a segunda URL de Divinópolis', async () => {
   const csv=await readFile(new URL('../data/catalogo/eventos.csv',import.meta.url),'utf8');
-  const ids=csv.split('\n').slice(1).filter(Boolean).map(l=>/^"([a-f0-9]{64})"/.exec(l)?.[1]);
+  // Trechos literais podem conter quebras de linha dentro da célula CSV.
+  const ids=[...csv.matchAll(/^"([a-f0-9]{64})",/gm)].map(match=>match[1]);
   for(const id of [IDS.div,...PROCESSES.map(actId)]) assert.equal(ids.filter(v=>v===id).length,1);
   for(const id of [IDS.tce,IDS.duplicate]) assert.ok(!ids.includes(id));
   assert.equal(ids.length,new Set(ids).size);

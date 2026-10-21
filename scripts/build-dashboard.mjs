@@ -9,6 +9,7 @@ import { writeFlowDiagrams } from './build-flow-diagram.mjs';
 import { dashboardAlternatives, textPreview } from './dashboard-recovery.mjs';
 import { validAlternativeDecision } from '../src/lib/alternative-triage.mjs';
 import { partitionDashboard } from './dashboard-package.mjs';
+import { categoryGroup, categoryLabel, reviewChecks, loadOriginalTriage, validOriginalTriage } from '../src/lib/simple-triage.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = path.join(root, 'data', 'catalogo');
@@ -50,7 +51,7 @@ async function readNdjson(name) {
 }
 
 const TABLES = [
-  ['eventos', 'Eventos', 'Fatos e candidatos relacionados a consórcios; confirmação por revisão editorial ou decisão automática validada por fonte alternativa.'],
+  ['eventos', 'Eventos', 'Fatos confirmados e casos em Revisar comigo, com categoria, etapa e evidência da triagem.'],
   ['consorcios', 'Consórcios', 'Identidades encontradas nos documentos. Não é cadastro oficial nem composição atual.'],
   ['participacoes', 'Participações', 'Relações município–consórcio com evidência documental revisada.'],
   ['vinculos-documentos', 'Vínculos documentais', 'Menções que conectam documentos e consórcios; menção não comprova adesão.'],
@@ -77,7 +78,7 @@ const COLUMN_DOCS = {
   mes_fato: 'Mês do acontecimento quando o dia exato não foi comprovado.',
   ano_fato: 'Ano comprovado no documento revisado; não presume dia, mês nem ano de ingresso.',
   tipo_evento: 'Categoria atribuída ao acontecimento ou hipótese de triagem.',
-  decisao_base: 'Situação do fato para o catálogo: confirmado, candidato ou descartado.',
+  decisao_base: 'Decisão da triagem: confirmado, descartado ou revisão conjunta. Valores antigos são preservados no arquivo bruto.',
   decisao_alerta: 'Situação do envio ao WhatsApp; pode diferir da decisão da base.',
   motivo_alerta: 'Explicação da decisão de enviar ou não enviar.',
   etapa: 'Estágio comprovado: proposta, autorização, ato assinado ou atuação.',
@@ -251,7 +252,7 @@ export function dashboardSourceCatalog(config = {}) {
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
   acts = [], participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
-  articleTexts = [], alternativeTexts = [], alternativeDecisions = [], sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
+  articleTexts = [], alternativeTexts = [], alternativeDecisions = [], originalDecisions = new Map(), sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: publicationDate(row),
   }));
@@ -438,6 +439,45 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
         alertReason: 'Decisão da base por texto recuperado; não libera envio nem reenvio.',
       } : {}),
     };
+  }).map(item => {
+    const row = archive.find(row => row.id === item.id);
+    const stored = originalDecisions.get(item.id);
+    if (!item.editorialReview && row && validOriginalTriage(row, stored)) Object.assign(item, {
+      baseDecision: stored.status, category: stored.status === 'descartado' ? 'GERAL' : stored.category,
+      stage: stored.stage, reason: stored.reason, evidence: stored.evidence || item.evidence,
+      contentQuality: stored.evidence ? 'trecho_disponivel' : item.contentQuality,
+      pendingReview: stored.status === 'revisao', rejectedEvent: stored.status === 'descartado',
+      decisionStatus: stored.status, automaticOriginalReview: stored,
+      recoverySuggestion: null, pdfReassessment: false,
+      alertDecision: item.sentAt ? 'enviado' : 'historico',
+      alertReason: 'Lote histórico reavaliado; não autoriza envio ou reenvio.',
+    });
+    const liveTriage = row?.triagem_automatica;
+    if (!item.editorialReview && !item.automaticOriginalReview && !item.automaticAlternativeReview && liveTriage?.version === 1) Object.assign(item, {
+      baseDecision: liveTriage.status, category: liveTriage.category, stage: liveTriage.stage,
+      reason: liveTriage.reason, evidence: liveTriage.evidence || item.evidence, automaticOriginalReview: liveTriage,
+      contentQuality: liveTriage.evidence ? 'trecho_disponivel' : item.contentQuality,
+      pendingReview: liveTriage.status === 'revisao', rejectedEvent: liveTriage.status === 'descartado',
+      recoverySuggestion: null, pdfReassessment: false,
+    });
+    const curated = eventById.get(item.id);
+    const automated = !item.editorialReview && !item.automaticAlternativeReview &&
+      ['confirmado', 'revisao', 'descartado'].includes(curated?.decisao_base) && /pela triagem/.test(curated?.situacao_analise || '');
+    if (automated && !item.automaticOriginalReview) Object.assign(item, {
+      baseDecision: curated.decisao_base, pendingReview: curated.decisao_base === 'revisao',
+      rejectedEvent: curated.decisao_base === 'descartado', decisionStatus: curated.decisao_base,
+      category: curated.tipo_evento, reason: curated.situacao_analise,
+      evidence: curated.evidencia_triagem || curated.trecho || item.evidence,
+      stage: curated.etapa || item.stage, recoverySuggestion: null, pdfReassessment: false,
+      reasonBasis: curated.metodo_triagem || 'triagem automática com evidência',
+    });
+    if (!['confirmado', 'descartado', 'desdobrado'].includes(item.baseDecision)) {
+      item.baseDecision = 'revisao'; item.pendingReview = true;
+    }
+    item.categoryFamily = categoryGroup(item.category);
+    item.categoryDisplay = categoryLabel(item.category);
+    item.reviewChecks = item.baseDecision === 'revisao' ? reviewChecks(item.reason, item.category) : [];
+    return item;
   }).sort(compareNewestDiscovery);
   const categories = {};
   const sources = {};
@@ -489,7 +529,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       const item = itemById.get(row.id) || {};
       const reviewed = geographyReviews[row.id] || {};
       const geography = resolveGeography(row, item, reviewed);
-      return { ...row, uf: geography.ufs.join('/'), uf_criterio: geography.basis,
+      return { ...row, categoria_grupo: categoryGroup(row.tipo_evento), uf: geography.ufs.join('/'), uf_criterio: geography.basis,
         uf_evidencia: geography.evidence, uf_fonte: reviewed.source || item.url || row.url || '' };
     }) };
   });
@@ -501,7 +541,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     disclaimer: 'O painel mostra documentos e hipóteses de eventos. Não comprova composição municipal ou efeito jurídico.',
     stats: {
       documents: archive.length, acts: acts.length, eventCandidates: items.filter((row) => row.activeCandidate).length,
-      pendingReview: items.filter((row) => row.pendingReview).length,
+      pendingReview: items.filter((row) => row.baseDecision === 'revisao').length,
       eventRecords: eventIds.size,
       rejectedEventRecords: items.filter((row) => row.rejectedEvent).length,
       legacyUnverifiedRecords: items.filter((row) => row.legacyUnverified).length,
@@ -519,7 +559,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
         !row.fullText && row.contentQuality !== 'trecho_disponivel').length,
       recoveredSuggestions: items.filter((row) => row.recoverySuggestion).length,
       missingSourceCandidates: items.filter((row) => row.activeCandidate && !row.source).length,
-      confirmed: items.filter((row) => row.editorialReview?.decision === 'confirmar_evento').length,
+      confirmed: items.filter((row) => row.baseDecision === 'confirmado').length,
       editoriallyDiscarded: items.filter((row) => row.editorialReview?.decision === 'nao_evento').length,
       duplicates: items.filter((row) => row.editorialReview?.decision === 'duplicata').length,
       categories, sources,
@@ -603,7 +643,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const geographyReviews = JSON.parse(await readFile(path.join(catalog, 'ufs-revisadas.json'), 'utf8'));
   const data = buildDashboardData({ archive, acts, events, consortia, links, pendingIdentity,
     editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts, alternativeDecisions, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
-    sourceConfig, geographyReviews,
+    sourceConfig, geographyReviews, originalDecisions: await loadOriginalTriage(catalog),
     baseTables: [
       makeBaseTable('eventos', events, eventColumns),
       makeBaseTable('atos', acts, actColumns),

@@ -32,6 +32,7 @@ import { enrichArticles, classifyEnrichedItem } from './lib/article-enrichment.m
 import { applyEditorialGuard, loadConfirmedEventRegistry, loadEditorialGuard } from './lib/editorial-guard.mjs';
 import { resolveArticlePreviews } from './lib/preview-resolution.mjs';
 import { decidePublication, isNotifiable } from './lib/publication-gate.mjs';
+import { applySimpleTriage } from './lib/simple-triage.mjs';
 import { isWhatsAppCategoryAllowed } from './lib/whatsapp-policy.mjs';
 import { fileURLToPath } from 'node:url';
 import { persistArticleTexts, reuseArticleTexts } from './lib/article-text-store.mjs';
@@ -128,7 +129,8 @@ async function main() {
     console.log(`[texto] sem texto (${gap.reason}): ${gap.source} — ${gap.title.slice(0, 120)} — ${gap.url}`);
   }
   let classified = articleResult.items.map((item, index) => {
-    const classifiedItem = applyEditorialGuard(classifyEnrichedItem(item, collected[index]), editorialGuard);
+    const guarded = applyEditorialGuard(classifyEnrichedItem(item, collected[index]), editorialGuard);
+    const classifiedItem = { ...guarded, ruleClassification: guarded.classification };
     return config.aiReviewEnabled
       ? applyAiReview(classifiedItem, state.aiReviews?.[itemId(classifiedItem)]) : classifiedItem;
   });
@@ -182,6 +184,7 @@ async function main() {
       maxCallsDay: config.maxAiReviewsPerDay,
     }) : null;
   const unseen = (reviewResult?.selected || available.slice(0, Math.min(config.maxPostsPerRun, remainingToday)))
+    .map(applySimpleTriage).filter(item => item.catalogDecision === 'confirmado')
     .filter(isWhatsAppCategoryAllowed);
   if (reviewResult) {
     console.log(`[ia] ${reviewResult.callsRun} chamada(s); ${reviewResult.audit.filter((r) => r.status === 'approved').length} aprovado(s); ` +
@@ -195,7 +198,7 @@ async function main() {
       itemCount: previewReviewCalls + (reviewResult?.callsRun || 0),
       ...(reviewFailures.length ? { message: reviewFailures.map(x => x.reason).join('; ') } : {}) });
   const finalClassified = classified.map((item) => decidePublication(config.aiReviewEnabled
-    ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item, publicationOptions));
+    ? applyAiReview(item, state.aiReviews?.[itemId(item)]) : item, publicationOptions)).map(applySimpleTriage);
   if (config.persistState) recordRunDecisions(state, finalClassified, {
     minimumScore: config.minimumScore,
     relevant, discovered, selected: unseen,
@@ -275,9 +278,9 @@ async function main() {
       generatedAt: new Date().toISOString(),
       minimumScore: config.minimumScore,
       items: finalClassified.map(({ title, url, source, sourceUrl, kind, previewOnly, reviewReason,
-        triageResolution, classification, aiReview, catalogDecision, publicationDecision,
+        triageResolution, classification, aiReview, triage, catalogDecision, publicationDecision,
         publicationReason, publicationDateSource, sourcePublishedAt, eventAt, eventMonth, eventKey }) => ({
-        title, url, source, sourceUrl, kind, previewOnly, reviewReason, triageResolution, classification, aiReview,
+        title, url, source, sourceUrl, kind, previewOnly, reviewReason, triageResolution, classification, aiReview, triage,
         catalogDecision, publicationDecision, publicationReason, publicationDateSource,
         sourcePublishedAt, eventAt, eventMonth, eventKey,
       })),

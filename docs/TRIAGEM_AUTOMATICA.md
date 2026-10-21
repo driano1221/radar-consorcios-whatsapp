@@ -1,4 +1,23 @@
-# Triagem automática — estado em 16/10/2026
+# Triagem automática — estado em 21/10/2026
+
+## Fluxo em produção
+
+**Coletar → ler o original → decidir com prova → confirmar ou rejeitar → considerar o WhatsApp.** Falta de texto, discordância, listagem sem notícia individual e possível duplicidade ficam em **Revisar comigo**, com fonte e roteiro de conferência. Confirmar o conteúdo não remove os controles de data, novidade, cota ou preferência de canal.
+
+O painel usa sete famílias: **Criação, Adesão, Saída, Rateio, Protocolo, Crise e Atuação**. Governança, Finanças e Controle/Fiscalização aparecem como subtipos de Atuação. As etapas jurídicas continuam explícitas: autorização não equivale a ingresso, assinatura não equivale a pagamento. Controle/Fiscalização continua somente no painel, inclusive fora do boletim do WhatsApp.
+
+`simple-triage.mjs` aplica uma decisão canônica aos originais e ao envio diário. Confirma por regra documental específica ou concordância da regra com uma segunda leitura válida e evidência literal no corpo. A regra independente é preservada antes de aplicar a opinião da IA. Rejeição exige prova de exclusão; falha de acesso nunca é irrelevância. O resumo semanal preserva a decisão canônica guardada, exige confirmação e continua excluindo as revisões históricas deste lote.
+
+## Lote inicial: as 69 pendências
+
+- Escopo congelado em `triagem-simples-lote.json`, a partir do painel de 21/10 às 16h41 de Brasília: **29 confirmadas, uma rejeitada e 39 em Revisar comigo**.
+- Reutilizados somente textos com hash válido e leituras já guardadas. Zero chamadas adicionais à IA e zero conexões/envios ao WhatsApp na reconciliação.
+- Decisões separadas em `triagem-originais.ndjson`, vinculadas a ID, URL, título, trecho e hash da íntegra. Mudança nesses dados invalida a decisão e mantém o bloqueio histórico.
+- Guardas protegem URL capturada e URL original contra alerta individual e boletim. Nenhum dos 69 é liberado para envio retroativo, mesmo quando confirmado.
+- Revisões documentais anteriores, recibos, fila, sessão e arquivo bruto preservados. O painel passa de 135 a **164 fatos confirmados**, nesta fotografia; não são 29 novas coletas ou 29 novos consórcios.
+- [Lista separada para revisão conjunta](REVISAR-COMIGO-2026-10-21.md): cada caso tem link, dúvida e o que conferir. Responder com número/ID, conclusão e trecho/página. A solução deve ampliar regra e teste reutilizáveis.
+
+Reprodução offline, sem acesso a fontes ou envio: `node scripts/reconcile-simple-triage.mjs`. Ele trabalha exclusivamente sobre o lote congelado; não substitui revisões documentais já existentes. A geração regular do catálogo e painel projeta as decisões desse registro auxiliar.
 
 ## O que já funciona sem pedir uma decisão a cada notícia
 
@@ -12,7 +31,7 @@
 
 | Lacuna real | Próxima implementação | Critério de validação |
 | --- | --- | --- |
-| Texto original relevante ainda pode virar candidato | Política de decisão automática para originais completos, com prova literal, categoria/etapa, identidade ou escopo geral explícito e concordância com a revisão quando exigida | Rodar primeiro em simulação no acervo; comparar com decisões já validadas e inspecionar divergências antes de ativar |
+| Casos ainda sem regra documental conclusiva | Revisar comigo, comparar prova e ampliar a regra geral | Teste positivo e negativo; manter bloqueado enquanto não houver conclusão |
 | Texto bloqueado, incompleto ou PDF com muitos atos | Recuperação com tentativas limitadas; identificar ato e página; conferir equivalência da alternativa | Nunca descartar pelo simples 403; não usar trecho de outro ato para confirmar |
 | Consórcio/município ambíguo | Identidade apoiada em evidência e cadastro de referência | Não inventar CNPJ nem filiação; orientação geral CNM pode entrar sem entidade específica |
 | Casos novos ou discordâncias | Registrar tipo de falha e ampliar testes/regras reutilizáveis | Novos testes negativos e comparação de antes/depois; não criar exceção por ID como regra geral |

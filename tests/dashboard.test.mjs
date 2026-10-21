@@ -98,8 +98,8 @@ test('fluxograma vetorial mostra os dois caminhos reais e tem versão legível n
     assert.match(svg, /<title id="title">/);
     assert.match(svg, /DENTRO|Fato comprovado/);
     assert.match(svg, /FORA|Descartado com motivo/);
-    assert.match(svg, /Candidato/);
-    assert.match(svg, /DeepSeek confere/);
+    assert.match(svg, /Revisar comigo/);
+    assert.match(svg, /Confirmação da triagem/);
     assert.match(svg, /Mensagem no grupo/);
     assert.match(svg, /marker-end="url\(#arrow\)"/);
   }
@@ -108,7 +108,7 @@ test('fluxograma vetorial mostra os dois caminhos reais e tem versão legível n
   for (const svg of [desktop, mobile]) {
     assert.match(svg, /CNM\/Inertia/);
     assert.match(svg, /Mesmo episódio/);
-    assert.match(svg, /Ainda há candidatos/);
+    assert.match(svg, /Casos difíceis|Revisar comigo/);
   }
 });
 
@@ -153,7 +153,7 @@ test('sugestão de texto integral recuperado entra na fila visível até decisã
   const input = { archive: [row], events: [], consortia: [], links: [], pendingIdentity: [] };
   const before = buildDashboardData(input);
   assert.equal(before.items[0].pendingReview, true);
-  assert.equal(before.items[0].baseDecision, 'candidato');
+  assert.equal(before.items[0].baseDecision, 'revisao');
   assert.match(before.items[0].reason, /texto integral recuperado sugere CONTROLE/i);
   const editorialReviews = [{ documento_id: row.id, decisao: 'confirmar_evento', categoria: 'CONTROLE',
     motivo: 'medida cautelar confirmada', evidencia: row.article_suggestion_evidence,

@@ -52,6 +52,9 @@ function sourceMessage(row) {
   return row.message || 'A fonte respondeu parcialmente ou não entregou dados nesta coleta.';
 }
 function status(item) {
+  if (item.baseDecision === 'confirmado') return ['Confirmada', 'event'];
+  if (item.baseDecision === 'revisao') return ['Revisar comigo', 'wait'];
+  if (item.baseDecision === 'descartado') return ['Rejeitada', 'raw'];
   if (item.automaticAlternativeReview) return item.automaticAlternativeReview.status === 'pendente'
     ? ['Fonte alternativa · conferir conflito', 'wait']
     : [item.baseDecision === 'confirmado' ? 'Aceito automaticamente · fonte alternativa' : 'Descartado automaticamente · fonte alternativa', item.baseDecision === 'confirmado' ? 'event' : 'raw'];
@@ -73,9 +76,11 @@ function status(item) {
   return ['Fora da lista', 'raw'];
 }
 function readableReason(item) {
+  if (item.automaticOriginalReview) return item.automaticOriginalReview.reason;
   if (item.automaticAlternativeReview) return item.automaticAlternativeReview.reason;
   if (item.baseDecision === 'desdobrado') return item.reason;
   if (item.editorialReview?.reason) return item.editorialReview.reason;
+  if (item.baseDecision === 'confirmado') return item.reason || 'Confirmada pela triagem com evidência no documento original.';
   if (item.rejectedEvent) return item.reason || 'A triagem rejeitou este registro; ele permanece no histórico para consulta.';
   if (item.legacyUnverified) return 'Registro antigo ainda sem reconfirmação documental. O texto pode estar disponível, mas a decisão precisa de prova revisada.';
   if (item.pdfReassessment) return item.reason || 'A categoria foi reavaliada pelo PDF e precisa de conferência.';
@@ -100,8 +105,10 @@ function readableReason(item) {
 function deckItems() {
   const query = $('#deck-search').value.toLocaleLowerCase('pt-BR').trim();
   const filter = $('#deck-filter').value;
+  const category = $('#deck-category').value;
   return state.data.items.filter((item) => (filter === 'all' || triageBucket(item) === filter ||
     pendingKinds.some((kind) => kind.key === filter && kind.matches(item))) &&
+    (!category || item.categoryFamily === category) &&
     (!query || [item.title, item.source, item.stage, item.category,
       item.links.map((link) => link.name).join(' ')].join(' ').toLocaleLowerCase('pt-BR').includes(query)));
 }
@@ -122,13 +129,14 @@ function renderDeck() {
     [state.data.stats.documents, 'publicações arquivadas'],
     [counts.accepted, 'fatos confirmados'],
     [rejectedDocuments, 'publicações fora da base'],
-    [counts.pending, 'candidatos'],
+    [counts.pending, 'Revisar comigo'],
   ].map(([value, title]) => {
     const box = node('div', 'summary-number');
     box.append(node('strong', '', number.format(value)), node('span', '', title)); return box;
   }));
   renderCollectionCompare();
-  $('#pending-breakdown').replaceChildren(...pendingKinds.map((kind) => {
+  $('#pending-breakdown').replaceChildren(...[{ key: 'pending', title: 'Revisar comigo',
+    description: 'Abra o caso para ver a fonte e o que precisa ser checado.', matches: item => triageBucket(item) === 'pending' }].map((kind) => {
     const count = state.data.items.filter(kind.matches).length;
     const button = node('button', 'pending-kind'); button.type = 'button';
     button.title = `${kind.title}: ${kind.description} Clique para ver os registros.`;
@@ -153,7 +161,7 @@ function renderDeck() {
     dates.append(node('small', '', item.documentParentId ? 'Origem coletada em' : 'Coletado em'), node('time', '', date(item.firstSeenAt)),
       node('small', '', item.publishedYear ? 'Ano do documento' : 'Publicado em'), node('time', '', item.publishedYear || date(item.publishedAt)));
     row.append(dates, body,
-      node('span', `overview-verdict ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'));
+      node('span', `overview-verdict ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Rejeitada' : 'Revisar comigo'));
     row.addEventListener('click', () => {
       state.selectedOverviewItem = item.id; renderDeck();
       if (window.matchMedia('(max-width: 780px)').matches) $('#overview-detail').scrollIntoView({
@@ -190,7 +198,7 @@ function renderOverviewDetail(item) {
   const panel = $('#overview-detail');
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
   const bucket = triageBucket(item);
-  const decision = item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada na base' : bucket === 'rejected' ? 'Fora da base' : 'Candidata · não confirmada';
+  const decision = item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Rejeitada' : 'Revisar comigo';
   const reasonTitle = item.baseDecision === 'desdobrado' ? 'O que esta edição contém' : bucket === 'accepted' ? 'Por que entrou' : bucket === 'rejected' ? 'Por que ficou fora' : 'O que falta para concluir';
   const rawEvidence = item.editorialReview?.evidence || item.automaticAlternativeReview?.evidence || item.pdfEvidence?.[0]?.text ||
     (item.contentQuality === 'trecho_disponivel' ? item.evidence : '');
@@ -223,15 +231,22 @@ function renderOverviewDetail(item) {
   actions.append(back);
   panel.replaceChildren(head, node('h3', '', displayTitle(item)),
     node('p', 'overview-source', item.source || 'Fonte não informada'),
+    node('p', 'overview-date-summary', item.categoryDisplay || item.category),
     node('p', 'overview-date-summary', `${publicationLabel(item)} · ${item.documentParentId ? 'Coleta da publicação de origem' : 'Primeira coleta'}: ${date(item.firstSeenAt, true)}`),
     why, proof, actions);
+  if (item.reviewChecks?.length) {
+    const checks = node('div', 'overview-proof');
+    checks.append(node('strong', '', 'O que você precisa checar'));
+    for (const check of item.reviewChecks) checks.append(node('p', '', check));
+    panel.append(checks);
+  }
   const recovery = recoveredSourcesView(item, { document, date, compact: true });
   if (recovery) panel.append(recovery);
   const primary = primaryEvidenceView(item, {document});
   if (primary) panel.append(primary);
-  const pending = pendingLabels(item);
+  const pending = item.automaticOriginalReview ? [] : pendingLabels(item);
   if (pending.length) panel.append(node('p', 'overview-caveat', `Também a conferir: ${pending.join(' · ')}.`));
-  panel.append(node('p', 'overview-caveat', 'A decisão da base e a decisão de enviar ao WhatsApp são independentes.'));
+  panel.append(node('p', 'overview-caveat', 'Só notícias confirmadas podem seguir para o WhatsApp, respeitando data, novidade e limites. Revisões do acervo não geram reenvio.'));
 }
 function renderOverview() { renderDeck(); }
 function feedRow(item, index, selected, onClick) {
@@ -269,7 +284,7 @@ function renderDetailedRecord(item, target) {
         : item.pdfReassessment ? 'PRECISA CONFERIR — CATEGORIA REAVALIADA PELO PDF'
         : item.articleDuplicateOf ? 'NÃO — MESMO TEXTO DE OUTRA PUBLICAÇÃO'
         : item.recoverySuggestion ? 'PRECISA CONFERIR — TEXTO RECUPERADO SUGERE UM ACHADO'
-        : item.baseStatus === 'evento_candidato' ? 'POSSÍVEL ACHADO — AINDA NÃO CONFERIDO'
+        : item.baseStatus === 'evento_candidato' ? 'REVISAR COMIGO'
           : item.contentQuality !== 'trecho_disponivel' && !item.pdfEvidence?.length ? 'SEM CONCLUSÃO — TEXTO NÃO RECUPERADO'
             : 'NÃO — FICOU FORA DA LISTA PRINCIPAL';
   decision.append(node('b', '', verdict),
@@ -277,9 +292,9 @@ function renderDetailedRecord(item, target) {
   const grid = node('div', 'detail-grid');
   const fields = [
     ['ASSUNTO', item.baseDecision === 'desdobrado' ? 'Edição com atos separados' : item.rejectedEvent ? 'Não classificado como achado'
-      : item.baseStatus === 'evento_candidato' || item.baseDecision === 'confirmado' ? item.category : 'Não classificado como achado'],
+      : item.baseStatus === 'evento_candidato' || item.baseDecision === 'confirmado' ? (item.categoryDisplay || item.category) : 'Não classificado como achado'],
     ['BASE', item.baseDecision === 'desdobrado' ? 'Decisão por ato' : item.baseDecision === 'confirmado' ? 'Fato confirmado' : item.baseDecision === 'descartado'
-      ? 'Fora da base de eventos' : 'Candidato, ainda não confirmado'],
+      ? 'Fora da base de eventos' : 'Revisar comigo'],
     ...(item.actPage ? [['PÁGINA DO ATO', String(item.actPage)]] : []),
     ['ALERTA', item.automaticAlternativeReview ? 'Recuperação para a base — não libera envio' : item.alertDecision === 'historico' ? 'Não enviar — fato antigo'
       : item.alertDecision === 'enviado' ? item.baseDecision === 'descartado'
@@ -490,9 +505,9 @@ function filteredFeed() {
   const query = $('#search').value.toLocaleLowerCase('pt-BR').trim();
   const filter = $('#status-filter').value;
   return state.data.items.filter((item) => {
-    if (filter === 'event' && !item.pendingReview) return false;
-    if (filter === 'confirmed' && item.editorialReview?.decision !== 'confirmar_evento') return false;
-    if (filter === 'editorially-discarded' && !['nao_evento', 'duplicata'].includes(item.editorialReview?.decision)) return false;
+    if (filter === 'event' && triageBucket(item) !== 'pending') return false;
+    if (filter === 'confirmed' && triageBucket(item) !== 'accepted') return false;
+    if (filter === 'editorially-discarded' && triageBucket(item) !== 'rejected') return false;
     if (filter === 'auto-rejected' && !item.rejectedEvent) return false;
     if (filter === 'legacy' && !item.legacyUnverified) return false;
     if (filter === 'raw' && item.baseStatus !== 'arquivo_bruto') return false;
@@ -907,6 +922,7 @@ async function init() {
     $('#open-feed').addEventListener('click', () => switchView('feed'));
     $('#deck-search').addEventListener('input', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
     $('#deck-filter').addEventListener('change', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
+    $('#deck-category').addEventListener('change', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
     $('#search').addEventListener('input', () => { state.limit = 40; renderFeed(); });
     $('#status-filter').addEventListener('change', () => { state.limit = 40; renderFeed(); });
     $('#more-button').addEventListener('click', () => { state.limit += 40; renderFeed(); });

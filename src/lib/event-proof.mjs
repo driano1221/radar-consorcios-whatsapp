@@ -77,11 +77,23 @@ export function refineEventProof(item, classification) {
   if (instructionHeader && /\bservi[cç]o\s+de\s+inspe[cç][aã]o\s+municipal\b/i.test(text) &&
       /\b(?:estabelece|estabelecer|procedimentos|programa)\b/i.test(text.slice(0, 1200)) &&
       !/\bart\.?\s*1[º°o.]?\b.{0,180}\b(?:altera|ratifica|aprova)\b.{0,100}\b(?:estatuto|protocolo de inten[cç][oõ]es)\b/i.test(text)) {
-    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰',
+    return withEvidence({ ...classification, category: 'ATUAÇÃO', emoji: '📰', proofKind: 'published_inspection_rule',
       score: Math.max(5, classification.score || 0),
       stage: 'norma operacional de inspeção publicada; não comprova fiscalização realizada nem alteração constitutiva',
       reasons: ['norma técnica de inspeção; protocolo citado no preâmbulo é fundamento, não objeto de alteração'] },
     literalEvidence(text, [operationalInstruction], 0, 450));
+  }
+  const rateioSignature = /\b(?:local\s*\/\s*)?data\s*(?:da|de)\s*assinatura(?:\s+do\s+aditivo)?\s*:\s*[^.;]{0,45}?\d{2}\/\d{2}\/20\d{2}/i;
+  const rateioSigned = /\bcontratos?\s+de\s+rateio\s*,?\s*firmados?\s+entre\b/i;
+  if (classification.category === 'RATEIO' && text.length < 12000 &&
+    /\bcontratos?\s+de\s+rateio\b/i.test(title) && /\bcons[oó]rcio\b/i.test(text) &&
+    /\bmunic[ií]pio(?:s)?\b/i.test(text) && (rateioSignature.test(text) || rateioSigned.test(text))) {
+    return withEvidence({ ...classification, proofKind: 'documented_rateio',
+      stage: /\b(?:termo\s+aditivo|aditivo\s+ao)\b/i.test(title)
+        ? 'aditivo ao rateio formalizado em extrato; não comprova pagamento ou novo ingresso'
+        : 'rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso',
+      reasons: [...classification.reasons, 'extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração'] },
+    literalEvidence(text, [rateioSigned, rateioSignature], 100, 240));
   }
   // Historical recovery may have only a generic search title. Require evidence
   // in the document body and preserve the legal stage, not the index date.
@@ -300,7 +312,7 @@ export function refineEventProof(item, classification) {
       /autorizado\s+a\s+firmar\s+conv[eê]nio\s+com\s+o\s+cons[oó]rcio/i], 70, 180));
   }
   if (RATIFIED_STATUTE.test(text)) {
-    return withEvidence({ ...classification, category: 'GOVERNANÇA', emoji: '⬛',
+    return withEvidence({ ...classification, category: 'GOVERNANÇA', emoji: '⬛', proofKind: 'ratified_statute',
       stage: 'estatuto consolidado ratificado por lei municipal; consórcio já existente',
       reasons: [...classification.reasons, 'ratificação estatutária não cria consórcio nem comprova nova adesão'] },
     literalEvidence(text, [RATIFIED_STATUTE], 50, 160));

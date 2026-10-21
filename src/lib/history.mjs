@@ -6,6 +6,7 @@ import { publicationDate, isNotifiable } from './publication-gate.mjs';
 import { isWhatsAppCategoryAllowed } from './whatsapp-policy.mjs';
 
 function weeklyFinding(item) {
+  if (item.triage && (item.triage.status !== 'confirmado' || item.triage.retroactive)) return null;
   if (item.aiReview?.status === 'disputed') return null;
   if (isStaleLegislativeDocument(item)) return null;
   const category = item.classification?.category;
@@ -48,7 +49,7 @@ export function observeRun(state, items, health, minimumScore, now = new Date(),
     const newReviewed = Boolean(item.aiReview);
     const newerReview = newReviewed && (!oldReviewed ||
       new Date(item.aiReview.reviewedAt || 0) > new Date(previous.aiReview.reviewedAt || 0));
-    const preservePrevious = previous &&
+    const preservePrevious = previous && !item.triage &&
       !['historico', 'descartado', 'data_inconsistente', 'data_nao_verificada'].includes(item.publicationDecision) &&
       !newerReview && ((oldReviewed && !newReviewed) ||
         (oldReviewed === newReviewed && (previous.classification?.score || 0) > (item.classification?.score || 0)));

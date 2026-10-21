@@ -7,6 +7,7 @@ import { classifyItem } from './classifier.mjs';
 import { decidePublication } from './publication-gate.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
 import { isWhatsAppCategoryAllowed } from './whatsapp-policy.mjs';
+import { applySimpleTriage } from './simple-triage.mjs';
 
 const confirmed = review => ['confirmar_evento', 'corrigir_categoria'].includes(review?.decisao);
 const dateValue = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? `${value}T12:00:00-03:00` : value;
@@ -64,10 +65,10 @@ export async function prepareWeeklyState(state, directory, window, options = {})
       addReviewed(original, observation, byId.get(review.documento_id), review, key);
       continue;
     }
-    const item = decidePublication(applyEditorialGuard({ ...original,
+    const item = applySimpleTriage(decidePublication(applyEditorialGuard({ ...original,
       classification: classifyItem({ ...original, rawText: original.summary || original.rawText || '',
         excerpts: [original.classification?.evidenceText, original.summary].filter(Boolean) }),
-    }, guard), { ...options, now: window.end });
+    }, guard), { ...options, now: window.end }));
     observations[key] = { ...observation, item };
   }
   // Include sealed confirmed documents even when they are absent from the

@@ -120,7 +120,7 @@ export function buildResults(data, { period = 'all', mode = 'discovery' } = {}) 
     cnpjCount: cnpj.length, municipalityCount, missingOccurrenceDate,
     ...timelineData,
     breakdowns: {
-      categories: groupCount(selected, (row) => [row.tipo_evento]),
+      categories: groupCount(selected, (row) => [row.categoria_grupo || row.tipo_evento]),
       states: groupCount(selected, (row) => {
         const geography = resolveGeography(row, itemById.get(row.id) || {}, data.geographyReviews?.[row.id]);
         return geography.scope === 'nacional' ? ['Nacional'] : geography.ufs.length ? geography.ufs : ['Não identificado'];

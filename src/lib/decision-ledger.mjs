@@ -50,6 +50,7 @@ export function recordRunDecisions(state, items, options = {}) {
       observedCount: (previous?.observedCount || 0) + 1,
       status, reason, category: item.classification?.category || 'GERAL',
       catalogDecision: item.catalogDecision || 'candidato',
+      ...(item.triage ? { triage: item.triage } : {}),
       publicationDecision: item.publicationDecision || '',
       sourcePublishedAt: item.sourcePublishedAt || '', eventAt: item.eventAt || '',
       score: Number(item.classification?.score || 0),

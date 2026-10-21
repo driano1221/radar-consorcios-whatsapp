@@ -99,7 +99,7 @@ test('resumo lista todos os achados, sem limite de cinco e sem estatísticas de 
   const text = formatWeeklyMessage(report);
   assert.equal(report.events, 7);
   assert.equal(report.highlights.length, 7);
-  assert.match(text, /🟪 \*15\/09 · FINANÇAS\*\nAchado real 7/);
+  assert.match(text, /🟪 \*15\/09 · ATUAÇÃO · FINANÇAS\*\nAchado real 7/);
   assert.doesNotMatch(text, /publicações únicas|coletas|Cobertura com falhas|Origem dos achados/);
 });
 

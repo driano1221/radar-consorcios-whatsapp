@@ -10,6 +10,7 @@ import { formalActDate } from './publication-date.mjs';
 import { AI_PROMPT_VERSION, applyAiReview } from './ai-review.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
 import { loadAlternativeDecisionData, validAlternativeDecision, applyAlternativeToRow } from './alternative-triage.mjs';
+import { loadOriginalTriage, validOriginalTriage } from './simple-triage.mjs';
 
 const FIELDS = [
   'id', 'documento_pai_id', 'chave_ato', 'pagina_inicio', 'pagina_fim',
@@ -55,6 +56,7 @@ function stage(item, type) {
 }
 
 function analysisStatus(item, sentAt) {
+  if (item.triage) return `${item.triage.status} pela triagem — ${item.triage.reason}`;
   const ai = ['rejected', 'disputed'].includes(item.aiReview?.status) ||
     item.aiReview?.promptVersion === AI_PROMPT_VERSION ? item.aiReview?.status : '';
   if (ai === 'rejected') return 'rejeitado pela revisão automática';
@@ -93,7 +95,7 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
     data_publicacao: item.publishedAt || '', tipo_evento: item.classification?.category || 'NÃO CLASSIFICADO',
     data_noticia_original: item.sourcePublishedAt || '', data_fato: item.eventAt || '',
     mes_fato: item.eventMonth || '',
-    decisao_base: item.catalogDecision || (item.classification?.category === 'GERAL' ? 'descartado' : 'candidato'),
+    decisao_base: item.triage?.status || item.catalogDecision || (item.classification?.category === 'GERAL' ? 'descartado' : 'candidato'),
     decisao_alerta: item.previewOnly && item.classification?.category !== 'GERAL' &&
       (!item.publicationDecision || item.publicationDecision === 'elegivel')
       ? 'previa' : item.publicationDecision || '',
@@ -111,6 +113,9 @@ export function catalogRecord(item, firstSeenAt, lastSeenAt, sentAt = '') {
       ? (item.summary || item.classification?.evidenceText)
       : (item.classification?.evidenceText || item.summary), 500),
     pontuacao: item.classification?.score ?? '', revisao_ia: item.aiReview?.status || '', enviado_em: sentAt || '',
+    ...(item.triage ? { triagem_automatica: item.triage,
+      evidencia_triagem: item.triage.evidence, fonte_evidencia_triagem: item.triage.sourceUrl,
+      metodo_triagem: item.triage.method || 'triagem automática com revisão das exceções' } : {}),
   };
 }
 
@@ -134,7 +139,7 @@ export function mergeCatalogRecord(existing, incoming) {
   const oldAiRateioApproval = incoming.tipo_evento === 'RATEIO EM TRAMITAÇÃO' &&
     /contrato não assinado|assinatura pendente/i.test(incoming.etapa) &&
     existing.revisao_ia === 'approved';
-  const incomingBetter = statusPriority(incoming.situacao_analise) > statusPriority(existing.situacao_analise) ||
+  const incomingBetter = Boolean(incoming.triagem_automatica) || statusPriority(incoming.situacao_analise) > statusPriority(existing.situacao_analise) ||
     (statusPriority(incoming.situacao_analise) === statusPriority(existing.situacao_analise) &&
       (incoming.trecho.length > existing.trecho.length ||
         (incoming.pontuacao || 0) > (existing.pontuacao || 0)));
@@ -248,7 +253,7 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
     const old = records.get(row.id);
     if (old) {
       records.set(row.id, { ...old, enviado_em: seen.sentAt || old.enviado_em,
-        situacao_analise: old.tipo_evento === 'GERAL' || /^(rejeitado|divergente|categoria recalculada|descartado após leitura integral)/.test(old.situacao_analise)
+        situacao_analise: old.triagem_automatica || old.tipo_evento === 'GERAL' || /^(rejeitado|divergente|categoria recalculada|descartado após leitura integral)/.test(old.situacao_analise)
           ? old.situacao_analise : old.trecho
             ? 'publicado pelo radar — não confirmado manualmente'
             : 'legado sem texto — publicação antiga, requer conferência' });
@@ -313,6 +318,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
   const reviewStillMatches = (row) => decisions.get(row.id)?.trecho_sha256 ===
     createHash('sha256').update(row.trecho || '').digest('hex');
   const auxiliary = await loadAlternativeDecisionData(directory);
+  const originals = await loadOriginalTriage(directory);
   const humanIds = new Set(editorialReviews.map(r => r.documento_id));
   const reviewed = [...all, ...acts].map((row) => {
     if (splitParents.has(row.id)) return { ...row, tipo_evento: 'GERAL',
@@ -347,6 +353,14 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
       if (review.fatos?.identidade_nao_aplicavel) result = { ...result,
         consorcio: '', sigla: '', municipio: '', uf: '', abrangencia: review.fatos.abrangencia || 'nacional' };
     }
+    const originalDecision = originals.get(row.id);
+    if (!reviewStillMatches(row) && validOriginalTriage(row, originalDecision)) result = { ...result,
+      decisao_base: originalDecision.status, tipo_evento: originalDecision.status === 'descartado' ? 'GERAL' : originalDecision.category,
+      etapa: originalDecision.stage, evidencia_triagem: originalDecision.evidence,
+      fonte_evidencia_triagem: originalDecision.sourceUrl, metodo_triagem: originalDecision.method || 'triagem automática com revisão das exceções',
+      situacao_analise: `${originalDecision.status} pela triagem — ${originalDecision.reason}`,
+      decisao_alerta: row.enviado_em ? 'enviado' : 'historico',
+      motivo_alerta: 'Lote histórico reavaliado sem autorização de envio ou reenvio.', triagem_automatica: originalDecision };
     result = { ...result, data_fato: result.data_fato || formalActDate({ title: result.titulo }, now) };
     const alert = decidePublication({
       title: result.titulo,
@@ -355,8 +369,8 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
       eventAt: result.data_fato,
       eventMonth: result.mes_fato,
       classification: { category: result.tipo_evento, score: Number(result.pontuacao || 5) },
-      publicationDecision: validAuto ? 'historico' : reviewStillMatches(row) && decisions.get(row.id)?.publicar === false ? 'historico' : '',
-      publicationReason: reviewStillMatches(row) && decisions.get(row.id)?.publicar === false
+      publicationDecision: validAuto || validOriginalTriage(row, originalDecision) ? 'historico' : reviewStillMatches(row) && decisions.get(row.id)?.publicar === false ? 'historico' : '',
+      publicationReason: validOriginalTriage(row, originalDecision) ? result.motivo_alerta : reviewStillMatches(row) && decisions.get(row.id)?.publicar === false
         ? result.motivo_alerta : '',
     }, { now, lookbackHours });
     result = { ...result,

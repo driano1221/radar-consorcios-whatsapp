@@ -5,6 +5,7 @@ import { canonicalUrl } from './dedupe.mjs';
 import { formalEventKey } from './event-identity.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
 import { loadAlternativeDecisionData, validAlternativeDecision, applyAlternativeGuard } from './alternative-triage.mjs';
+import { loadOriginalTriage, validOriginalTriage } from './simple-triage.mjs';
 
 const EMOJI = { CRIAÇÃO: '🟩', 'CRIAÇÃO EM TRAMITAÇÃO': '🟩',
   ADESÃO: '🟦', 'ADESÃO AUTORIZADA': '🟦', 'ADESÃO EM TRAMITAÇÃO': '🟦',
@@ -67,6 +68,16 @@ export async function loadEditorialGuard(directory) {
     if (validAlternativeDecision(row, decision, auxiliary.sources, humanIds))
       guard.set(canonicalUrl(row.url), { origin: 'alternative_automatic', decision });
   }
+  const originals = await loadOriginalTriage(directory);
+  for (const row of archive) {
+    if (originals.has(row.id)) {
+      const stored = originals.get(row.id);
+      const decision = validOriginalTriage(row, stored) ? stored : { ...stored, status: 'revisao',
+        category: row.tipo_evento, evidence: '', reason: 'O registro mudou após a revisão histórica; conferir novamente.' };
+      for (const url of [row.url, row.article_url, stored.sourceUrl].filter(Boolean))
+        if (!guard.has(canonicalUrl(url))) guard.set(canonicalUrl(url), { origin: 'original_automatic', decision });
+    }
+  }
   return guard;
 }
 
@@ -109,6 +120,12 @@ export async function loadConfirmedEventRegistry(directory) {
 export function applyEditorialGuard(item, guard) {
   const review = guard.get(canonicalUrl(item.url || ''));
   if (!review) return item;
+  if (review.origin === 'original_automatic') return { ...item, triage: review.decision,
+    catalogDecision: review.decision.status, publicationDecision: 'historico',
+    publicationReason: 'Lote histórico reavaliado; não enviar nem reenviar.',
+    classification: { ...item.classification, category: review.decision.category,
+      evidenceText: review.decision.evidence || item.classification?.evidenceText,
+      stage: review.decision.stage || item.classification?.stage } };
   if (review.origin === 'alternative_automatic') return applyAlternativeGuard(item, review.decision);
   const previous = item.classification || {};
   if (review.decisao === 'desdobrado') return { ...item, classification: {

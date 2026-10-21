@@ -1,6 +1,16 @@
 # Memória do projeto — Radar de Consórcios
 
-Atualização mais recente: **20 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
+Atualização mais recente: **21 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
+
+## Fluxo simples e lote de 69 pendências — 21/10/2026
+
+- Pedido autorizado: sete categorias, confirmação/rejeição pela própria triagem e exceções em Revisar comigo. Governança, Finanças e Controle/Fiscalização são subtipos de Atuação; Controle permanece só no painel.
+- Lote congelado de 69: **29 confirmadas, uma rejeitada, 39 para revisão conjunta**. Reutilização offline de textos verificados e leituras já guardadas; sem novas chamadas à IA. A conferência conservadora mantém listagens, versões potencialmente duplicadas, leituras discordantes, texto ausente e documentos extensos para revisão.
+- Resultado da fotografia: 135 → **164 fatos confirmados**. Não são 29 novas coletas, novos consórcios ou envios. As 69 decisões ficam lacradas em arquivo auxiliar por registro e hash do corpo. Revisões manuais anteriores e histórico bruto não foram reescritos.
+- Regra documental de rateio exige partes públicas e assinatura datada ou declaração expressa de celebração. Normas operacionais e estatuto ratificado têm provas específicas; não se presume inspeção realizada, pagamento ou nova adesão.
+- O mesmo veredito é preservado no catálogo, no painel e no controle de envio. Só confirmadas podem seguir ao WhatsApp, com os filtros anteriores de data/novidade/cota. URLs capturadas e originais dos 69 estão bloqueadas contra alerta e boletim retroativos. Nenhuma mensagem de teste ou conexão de WhatsApp nesta manutenção; sessões, recibos e fila preservados.
+- [Casos separados com fonte, dúvida e roteiro](REVISAR-COMIGO-2026-10-21.md). Responder com número/ID, conclusão e trecho/página; soluções futuras devem ampliar regras e regressões reutilizáveis.
+- Política e reprodução: [TRIAGEM_AUTOMATICA.md](TRIAGEM_AUTOMATICA.md). Hospedagem e workflows existentes no GitHub, sem novo serviço ou chamadas pagas para este lote.
 
 ## Isolamento dos testes no disparo agendado — 20/10/2026
 
