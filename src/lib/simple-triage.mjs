@@ -23,9 +23,9 @@ export const rowFingerprint = row => sha(JSON.stringify([row.id, row.url, row.ti
 
 // A decisão é sobre conteúdo lido; acesso bloqueado e divergência são revisão, nunca irrelevância.
 export function decideSimpleTriage(item) {
-  if (item.triage?.retroactive || !item.rawText && item.triage?.version === TRIAGE_VERSION) return item.triage;
+  if (!item.editorialDecision && (item.triage?.retroactive || !item.rawText && item.triage?.version === TRIAGE_VERSION)) return item.triage;
   const body = String(item.rawText || '');
-  const rule = item.ruleClassification || item.classification || classifyItem(item);
+  const rule = item.editorialDecision ? item.classification || classifyItem(item) : item.ruleClassification || item.classification || classifyItem(item);
   const base = { version: TRIAGE_VERSION, category: rule.category || 'GERAL', stage: rule.stage || '',
     evidence: '', bodyHash: sha(body), sourceUrl: item.articleUrl || item.url || '' };
   const review = reason => ({ ...base, status: 'revisao', reason, checks: reviewChecks(reason, rule.category) });

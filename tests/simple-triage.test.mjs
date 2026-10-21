@@ -12,6 +12,7 @@ import { prepareWeeklyState } from '../src/lib/weekly-selection.mjs';
 import { buildWeeklyReport } from '../src/lib/history.mjs';
 import { AI_PROMPT_VERSION } from '../src/lib/ai-review.mjs';
 import { refineEventProof } from '../src/lib/event-proof.mjs';
+import { canonicalUrl } from '../src/lib/dedupe.mjs';
 
 const evidence = 'O Consórcio Intermunicipal de Saúde realizou a reunião técnica e apresentou os resultados dos serviços aos municípios.';
 const item = { kind: 'news', title: 'Reunião realizada pelo consórcio', url: 'https://example.org/noticia/1',
@@ -92,6 +93,16 @@ test('instalação rotineira de ar-condicionado é exclusão documentada, sem ex
 test('revisões documentais anteriores mantêm precedência sobre aprovação automática', () => {
   assert.equal(applySimpleTriage({ ...item, editorialDecision: 'nao_evento' }).catalogDecision, 'descartado');
   assert.equal(applySimpleTriage({ ...item, editorialDecision: 'confirmar_evento', rawText: '' }).catalogDecision, 'confirmado');
+});
+test('revisão humana posterior substitui pendência automática histórica e permite a seleção semanal autorizada', () => {
+  const pending={...item,ruleClassification:{category:'GERAL'},triage:{...decideSimpleTriage(item),status:'revisao',retroactive:true}};
+  const guard=new Map([[canonicalUrl(item.url),{decisao:'confirmar_evento',categoria:'ATUAÇÃO',evidencia:evidence,motivo:'Atividade comprovada',publicar:false}]]);
+  const reviewed=applyEditorialGuard(pending,guard);
+  assert.equal(reviewed.triage,undefined);
+  assert.equal(applySimpleTriage({...reviewed,rawText:undefined}).catalogDecision,'confirmado');
+  const report=buildWeeklyReport({seen:{},observations:{one:{firstSeenAt:'2026-10-21T12:00:00Z',lastSeenAt:'2026-10-21T12:00:00Z',item:{...reviewed,weeklyDecision:'incluir',weeklyDate:'2026-10-21T12:00:00Z'}}}},
+    {start:new Date('2026-10-20T12:00:00Z'),end:new Date('2026-10-22T12:00:00Z')});
+  assert.equal(report.events,1);
 });
 test('lote histórico é vinculado ao registro exato e não vale após alterar o trecho', () => {
   const row = { id: 'x', url: item.url, titulo: item.title, trecho: evidence };

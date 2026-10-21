@@ -127,6 +127,8 @@ export function applyEditorialGuard(item, guard) {
       evidenceText: review.decision.evidence || item.classification?.evidenceText,
       stage: review.decision.stage || item.classification?.stage } };
   if (review.origin === 'alternative_automatic') return applyAlternativeGuard(item, review.decision);
+  // A decisão humana nova substitui a triagem automática guardada, inclusive no boletim.
+  item = { ...item, triage: undefined, ruleClassification: undefined };
   const previous = item.classification || {};
   if (review.decisao === 'desdobrado') return { ...item, classification: {
     ...previous, category: 'GERAL', emoji: '📰', score: 0,
