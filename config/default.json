@@ -210,6 +210,7 @@
       },
       {
         "name": "Diário Municipal AMM-MG",
+        "resumePagination": true,
         "adapter": "sigpub",
         "url": "https://www.diariomunicipal.com.br/amm-mg/pesquisar",
         "stateCode": "MG",
@@ -280,11 +281,12 @@
       },
       {
         "name": "Diário Municipal AMUPE-PE",
+        "resumePagination": true,
         "adapter": "sigpub",
         "url": "https://www.diariomunicipal.com.br/amupe/pesquisar",
         "stateCode": "PE",
         "publish": true,
-        "maxPages": 1,
+        "maxPages": 2,
         "maxDocuments": 25,
         "alertsFrom": "2026-10-22T00:00:00-03:00"
       }

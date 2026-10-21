@@ -138,6 +138,81 @@ async function request(url, config, fetchImpl) {
   return Buffer.concat(chunks).toString('utf8');
 }
 
+async function resumedPages(site, since, now, config, fetchImpl, started, budget, maxPages) {
+  const query = site.query || 'consórcio';
+  const current = { from: day(since), to: day(now) };
+  const validDay = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') &&
+    Number.isFinite(Date.parse(`${value}T12:00:00-03:00`)) && day(new Date(`${value}T12:00:00-03:00`)) === value;
+  let saved = config.gazetteState?.gazetteCursors?.[site.url];
+  if (saved && saved.query !== query) saved = null;
+  if (saved && (!validDay(saved.from) || !validDay(saved.to) ||
+      saved.from > saved.to || saved.to > current.to || !Number.isSafeInteger(saved.nextPage) || saved.nextPage < 1 ||
+      typeof saved.complete !== 'boolean' || !Array.isArray(saved.pending))) throw new Error('SIGPub: marcador de paginação inválido');
+  let checkpoint = saved ? { ...saved } : { query, ...current, nextPage: 1, complete: false, pending: [] };
+  if (checkpoint.complete && checkpoint.to < current.to) {
+    checkpoint = { ...checkpoint, from: checkpoint.to > current.from ? checkpoint.to : current.from,
+      to: current.to, nextPage: 1, complete: false };
+  }
+  const known = new Set(Object.values(config.gazetteState?.observations || {})
+    .map(o => o.item).filter(i => i?.sourceUrl === site.url).map(i => i.url));
+  if (Array.isArray(checkpoint.headUrls)) { known.clear(); for (const url of checkpoint.headUrls) known.add(url); }
+  const byUrl = new Map(), pageByUrl = new Map(), fetched = new Map();
+  const errors = [], freshPages = [], resumePages = [];
+  let pages = 0, freshIncomplete = false, freshError = false, headUrls = [];
+  const startPage = checkpoint.nextPage;
+  const sameWindow = current.from === checkpoint.from && current.to === checkpoint.to;
+  const loadPage = async (window, page, fresh) => {
+    const key = `${window.from}:${window.to}:${page}`;
+    if (fetched.has(key)) return fetched.get(key);
+    pages++; (fresh ? freshPages : resumePages).push(page);
+    const parsed = parseSigpubIndex(await request(sigpubSearchUrl(site, new Date(`${window.from}T00:00:00-03:00`),
+      new Date(`${window.to}T12:00:00-03:00`), page), config, fetchImpl), site,
+    new Date(`${window.from}T00:00:00-03:00`), new Date(`${window.to}T12:00:00-03:00`));
+    fetched.set(key, parsed);
+    for (const item of parsed.items) {
+      byUrl.set(item.url, item);
+      if (!fresh || sameWindow && page >= startPage) pageByUrl.set(item.url, page);
+    }
+    console.log(`[diário:${site.stateCode}] ${fresh ? 'novidades' : 'retomada'} página ${page}: ${parsed.listed} matérias.`);
+    return parsed;
+  };
+  // Refresh until a known result, then spend the remaining page budget on the saved window.
+  for (let page = 1; pages < maxPages && Date.now() - started < budget; page++) {
+    try {
+      const parsed = await loadPage(current, page, true);
+      if (page === 1) headUrls = parsed.items.map(i => i.url);
+      if (sameWindow && page === checkpoint.nextPage) checkpoint.nextPage++;
+      if (!parsed.hasNext) {
+        if (sameWindow) checkpoint.complete = true;
+        freshIncomplete = false; break;
+      }
+      freshIncomplete = !parsed.items.some(i => known.has(i.url));
+      if (!freshIncomplete) break;
+      if (sameWindow && checkpoint.complete) { checkpoint.complete = false; checkpoint.nextPage = page + 1; }
+    } catch (error) {
+      if (!fetched.size) throw error;
+      errors.push(`Novidades página ${page}: ${error.message}`); freshIncomplete = true; freshError = true; break;
+    }
+  }
+  if (!fetched.size) throw new Error('SIGPub: orçamento esgotado antes de consultar uma página');
+  checkpoint.headUrls = freshError ? [...known] : headUrls;
+  // shortcut: o portal pagina por posição; adotar cursor estável se o publicador oferecer.
+  while (!checkpoint.complete && pages < maxPages && Date.now() - started < budget) {
+    const page = checkpoint.nextPage;
+    try {
+      const parsed = await loadPage(checkpoint, page, false);
+      checkpoint.nextPage = page + 1; checkpoint.complete = !parsed.hasNext;
+    } catch (error) { errors.push(`Retomada página ${page}: ${error.message}`); break; }
+  }
+  for (const item of checkpoint.pending) {
+    safeUrl(item.url, site, 'materia/[A-Fa-f0-9]{8}');
+    if (!byUrl.has(item.url)) byUrl.set(item.url, { ...item, rawText: '', previewOnly: true,
+      contentProvenance: 'resumo_listagem', extractionError: undefined });
+  }
+  return { byUrl, pageByUrl, pages, errors, checkpoint, freshPages, resumePages,
+    hasNext: !checkpoint.complete || freshIncomplete };
+}
+
 export async function fetchDirectGazette(site, since, config = {}, fetchImpl = fetch) {
   const now = config.now || new Date();
   const started = Date.now();
@@ -148,7 +223,12 @@ export async function fetchDirectGazette(site, since, config = {}, fetchImpl = f
   let hasNext = false; let pages = 0; let failures = 0; let reads = 0;
   const errors = [];
   const options = { ...config, timeoutMs: site.timeoutMs || config.timeoutMs };
-  for (let page = 1; page <= maxPages; page++) {
+  const pagination = site.resumePagination === true ? await resumedPages(site, since, now, options, fetchImpl, started, budget, maxPages) : null;
+  if (pagination) {
+    for (const [url, item] of pagination.byUrl) byUrl.set(url, item);
+    pages = pagination.pages; hasNext = pagination.hasNext; errors.push(...pagination.errors);
+  }
+  for (let page = 1; !pagination && page <= maxPages; page++) {
     if (Date.now() - started >= budget) { hasNext = true; break; }
     try {
       const parsed = parseSigpubIndex(await request(sigpubSearchUrl(site, since, now, page), options, fetchImpl), site, since, now);
@@ -186,11 +266,23 @@ export async function fetchDirectGazette(site, since, config = {}, fetchImpl = f
     }
   };
   await Promise.all(Array.from({ length: Math.min(2, rows.length) }, readNext));
+  if (pagination) {
+    pagination.checkpoint.pending = items.filter(i => i.extractionError).map(i => ({ ...i, rawText: '', summary: '' }));
+    const failedPages = items.filter(i => i.extractionError).map(i => pagination.pageByUrl.get(i.url)).filter(Boolean);
+    if (failedPages.length) {
+      pagination.checkpoint.nextPage = Math.min(pagination.checkpoint.nextPage, ...failedPages);
+      pagination.checkpoint.complete = false; hasNext = true;
+    }
+  }
   const degraded = hasNext || failures > 0 || errors.length > 0;
-  return { items, diagnostic: { name: site.name, adapter: 'sigpub', status: degraded ? 'degraded' : 'ok',
+  return { items, ...(pagination ? { checkpoint: pagination.checkpoint } : {}),
+    diagnostic: { name: site.name, adapter: 'sigpub', status: degraded ? 'degraded' : 'ok',
     limited: hasNext && failures === 0 && errors.length === 0,
     itemCount: items.length, pages, fullTextCount: items.filter(i => i.contentProvenance === 'pagina_original').length,
     partialTextCount: failures, truncated: hasNext, durationMs: Date.now() - started,
+    ...(pagination ? { freshPages: pagination.freshPages, resumePages: pagination.resumePages,
+      nextPage: pagination.checkpoint.nextPage, cycleComplete: pagination.checkpoint.complete,
+      window: { from: pagination.checkpoint.from, to: pagination.checkpoint.to } } : {}),
     message: `${pages} página(s); ${reads} leitura(s); ${failures} íntegra(s) pendente(s).` +
       (hasNext ? ' Há mais páginas: cobertura limitada nesta rodada.' : '') + (errors.length ? ` ${errors.join('; ')}` : '') } };
 }

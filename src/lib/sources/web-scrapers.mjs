@@ -379,12 +379,14 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
       itemCount: 0,
       message: site.fallback ? `cobertura alternativa: ${site.fallback}` : 'coletor desativado',
     }));
+  const gazetteCursors = {};
   let successfulSites = 0;
   settled.forEach((result, index) => {
     const site = activeSites[index];
     if (result.status === 'fulfilled') {
       successfulSites += 1;
       const rows = Array.isArray(result.value) ? result.value : result.value.items;
+      if (result.value.checkpoint) gazetteCursors[site.url] = result.value.checkpoint;
       items.push(...rows);
       diagnostics.push(result.value.diagnostic || {
         name: site.name,
@@ -405,7 +407,7 @@ export async function fetchWebScrapers(config, since, fetchImpl = fetch) {
       console.warn(`[fonte:scraper:${site.name}] ${result.reason.message}`);
     }
   });
-  return { items, diagnostics, ok: !activeSites.length || successfulSites > 0,
+  return { items, diagnostics, gazetteCursors, ok: !activeSites.length || successfulSites > 0,
     degraded: successfulSites < activeSites.length || diagnostics.some(d => d.status === 'degraded'),
     limited: diagnostics.some(d => d.limited) && diagnostics.every(d =>
       ['ok', 'disabled'].includes(d.status) || (d.status === 'degraded' && d.limited === true)) };

@@ -109,6 +109,10 @@ jobs:
           AI_PREVIEW: 'false'
         run: npm test
 
+      - name: Confirmar avanço dos diários após validar acervo
+        if: steps.validate_catalog.outcome == 'success' && env.PERSIST_STATE == 'true'
+        run: node scripts/commit-gazette-cursors.mjs
+
       - name: Atualizar sessão criptografada
         id: encrypt_session
         if: always() && steps.restore_session.outcome == 'success'

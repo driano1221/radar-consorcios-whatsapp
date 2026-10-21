@@ -48,6 +48,11 @@ async function main() {
   }
   const since = new Date(Date.now() - config.lookbackHours * 60 * 60 * 1000);
   const state = await loadState(config.stateFile);
+  const cursorPlan = path.join(config.outputDir, 'gazette-cursors.json');
+  if (config.persistState) {
+    await mkdir(config.outputDir, { recursive: true });
+    await writeFile(cursorPlan, '{}\n', 'utf8');
+  }
   const catalogDirectory = fileURLToPath(new URL('../data/catalogo/', import.meta.url));
   const [editorialGuard, confirmedEvents] = await Promise.all([
     loadEditorialGuard(catalogDirectory), loadConfirmedEventRegistry(catalogDirectory),
@@ -61,7 +66,7 @@ async function main() {
     ['Google News', () => fetchGoogleNews(config.googleNews, since)],
     ['Querido Diário', () => fetchQueridoDiario(config.queridoDiario, since)],
     ['Feeds RSS', () => fetchRssFeeds(config.rssFeeds, since)],
-    ['Scrapers web', () => fetchWebScrapers(config.webScrapers, since)],
+    ['Scrapers web', () => fetchWebScrapers({ ...config.webScrapers, gazetteState: state }, since)],
     ['SAPL', () => fetchSapl(config.sapl, since)],
     ['CIGA', () => fetchCiga(config.ciga, since)],
   ];
@@ -73,6 +78,7 @@ async function main() {
     }),
   );
   const collected = [];
+  const gazetteCursors = {};
   let scraperDiagnostics = [];
   let successfulSources = 0;
   const sourceHealth = [];
@@ -80,6 +86,7 @@ async function main() {
     if (result.status === 'fulfilled') {
       const { value, durationMs } = result.value;
       const payload = Array.isArray(value) ? { items: value, ok: true, diagnostics: [] } : value;
+      Object.assign(gazetteCursors, payload.gazetteCursors || {});
       if (payload.ok !== false) successfulSources += 1;
       collected.push(...payload.items);
       if (sourceRequests[index][0] === 'Scrapers web') {
@@ -103,6 +110,7 @@ async function main() {
       console.warn(`[fonte] ${sourceRequests[index][0]}: ${result.reason.message}`);
     }
   }
+  if (config.persistState) await writeFile(cursorPlan, JSON.stringify(gazetteCursors, null, 2) + '\n', 'utf8');
   const cached = await reuseArticleTexts(catalogDirectory, collected);
   const articleResult = await enrichArticles(cached.items);
   console.log(`[texto] ${cached.reused} leitura(s) integral(is) preservada(s) reutilizada(s).`);
