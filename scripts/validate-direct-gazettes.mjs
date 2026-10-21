@@ -9,6 +9,7 @@ import { redactPublicText } from '../src/lib/article-text-store.mjs';
 
 assert.notEqual(process.env.SEND_ENABLED,'true');
 assert.notEqual(process.env.PERSIST_STATE,'true');
+assert.notEqual(process.env.AI_REVIEW_ENABLED,'true');
 const config=JSON.parse(await readFile('config/default.json','utf8'));
 const state=JSON.parse(await readFile('state/news-state.json','utf8'));
 const protectedState=JSON.stringify(state);
@@ -16,20 +17,35 @@ const archive=(await readFile('data/catalogo/arquivo-coletas.ndjson','utf8')).sp
 const known=new Set(archive.flatMap(r=>[r.url,r.article_url]).filter(Boolean).map(canonicalUrl));
 const sites=config.webScrapers.sites.filter(s=>['sigpub','rncp','ciga-open-data'].includes(s.adapter));
 const since=new Date(Date.now()-168*3600000);
-const report={at:new Date().toISOString(),since:since.toISOString(),sources:[],samples:[],stateUntouched:false,whatsappSends:0};
+const report={at:new Date().toISOString(),since:since.toISOString(),sources:[],samples:[],stateUntouched:false,whatsappSends:0,aiCalls:0};
 const all=[];
 try {
-  // Run the exact production limits/readers on the four independent diary portals.
+  // Run the exact production limits/readers on all independent diary portals.
   const diaries=await fetchWebScrapers({...config.webScrapers,sites:sites.filter(s=>s.adapter==='sigpub')},since);
   report.sources.push(...diaries.diagnostics); all.push(...diaries.items);
-  report.readingGaps=diaries.items.filter(i=>i.extractionError&&!/adiada/.test(i.extractionError))
+  report.readingGaps=diaries.items.filter(i=>i.extractionError)
     .map(i=>({source:i.source,title:i.title,url:i.url,error:i.extractionError}));
+  report.previousMGPending=Object.values(state.observations||{}).map(o=>o.item)
+    .filter(i=>i?.scraper==='sigpub'&&i.stateCode==='MG'&&i.extractionError)
+    .map(old=>{
+      const read=diaries.items.find(i=>i.url===old.url);
+      return {url:old.url,status:!read?'outside_sample':read.contentProvenance==='pagina_original'&&!read.extractionError?'recovered':'pending',
+        fullTextLength:read?.rawText?.length||0};
+    });
   for(const site of sites.filter(s=>s.adapter==='sigpub')) {
     const rows=diaries.items.filter(i=>i.source===site.name);
     assert.ok(rows.some(i=>i.contentProvenance==='pagina_original'),`${site.name}: nenhuma íntegra real`);
-    assert.equal(rows.filter(i=>i.extractionError&&!/adiada/.test(i.extractionError)).length,0,
+    assert.equal(rows.filter(i=>i.extractionError).length,0,
       `${site.name}: erro de leitura real: ${JSON.stringify(report.readingGaps.filter(i=>i.source===site.name))}`);
   }
+  // A warm cache alone cannot prove that the reading budget handles new publications.
+  const coldMG=await fetchWebScrapers({...config.webScrapers,reuseCache:false,
+    sites:sites.filter(s=>s.adapter==='sigpub'&&s.stateCode==='MG')},since);
+  report.coldMG=coldMG.diagnostics[0];
+  assert.ok(coldMG.items.length>0,'MG sem cache: nenhuma matéria encontrada');
+  assert.equal(report.coldMG.partialTextCount,0,'MG sem cache: leitura da amostra incompleta');
+  assert.equal(report.coldMG.fullTextCount,coldMG.items.length);
+  assert.ok(coldMG.items.every(i=>!i.articleTextReused),'MG sem cache: leitura preservada reutilizada');
   const ciga=await fetchWebScrapers({...config.webScrapers,sites:sites.filter(s=>s.adapter==='ciga-open-data')},since);
   report.sources.push(...ciga.diagnostics);all.push(...ciga.items);
   assert.equal(ciga.diagnostics[0]?.status,'ok','CIGA: exportações reais não foram integralmente abertas');
@@ -79,7 +95,8 @@ try {
   }
   assert.equal(JSON.stringify(state),protectedState,'Estado em memória alterado');
   report.stateUntouched=true;
-  console.log(JSON.stringify({sources:report.sources,summary:report.summary,stateUntouched:true,whatsappSends:0},null,2));
+  console.log(JSON.stringify({sources:report.sources,coldMG:report.coldMG,previousMGPending:report.previousMGPending,
+    summary:report.summary,stateUntouched:true,whatsappSends:0,aiCalls:0},null,2));
 } catch(error) { report.error=error.message;process.exitCode=1;console.error(error.message); }
 finally {
   await mkdir('output/direct-gazettes',{recursive:true});

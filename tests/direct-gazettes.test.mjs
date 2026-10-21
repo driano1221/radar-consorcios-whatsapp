@@ -105,6 +105,72 @@ test('falha/limite de íntegra não libera ementa para WhatsApp nem some do diag
   assert.equal(result.items[0].previewOnly, true); assert.equal(result.items[0].rawText, '');
 });
 
+test('SIGPub sobrepõe no máximo duas leituras para completar a amostra dentro do orçamento', async t => {
+  let clock=0, active=0, maximum=0;
+  t.mock.method(Date,'now',()=>clock);
+  const codes=Array.from({length:6},(_,i)=>String(i+1).padStart(8,'0'));
+  const result=await fetchDirectGazette({...site,maxDurationMs:50},since,config,async url=>{
+    const started=clock;
+    active++;maximum=Math.max(maximum,active);
+    await new Promise(resolve=>setTimeout(resolve,0));
+    clock=Math.max(clock,started+10);active--;
+    const code=new URL(url).pathname.match(/materia\/([A-F0-9]+)/)?.[1];
+    return response(code?article(code):codes.map(code=>index(code)).join(''));
+  });
+  assert.equal(result.diagnostic.fullTextCount,6);
+  assert.equal(result.diagnostic.partialTextCount,0);
+  assert.equal(maximum,2);
+  assert.deepEqual(result.items.map(i=>i.gazetteCode),codes,'preservar ordem da amostra');
+  assert.ok(result.diagnostic.durationMs<50);
+});
+
+test('SIGPub mantém o teto de documentos com dois leitores e preserva prévias pendentes', async () => {
+  let reads=0;
+  const codes=Array.from({length:6},(_,i)=>String(i+1).padStart(8,'0'));
+  const result=await fetchDirectGazette({...site,maxDocuments:3},since,config,async url=>{
+    const code=new URL(url).pathname.match(/materia\/([A-F0-9]+)/)?.[1];
+    if(code)reads++;
+    return response(code?article(code):codes.map(code=>index(code)).join(''));
+  });
+  assert.equal(reads,3);
+  assert.equal(result.diagnostic.fullTextCount,3);
+  assert.equal(result.diagnostic.partialTextCount,3);
+  assert.equal(result.diagnostic.limited,false);
+  assert.ok(result.items.slice(3).every(i=>i.previewOnly&&i.extractionError&&!i.rawText));
+});
+
+test('SIGPub espaça inícios de requisições entre portais no mesmo host', async () => {
+  const starts=[];
+  const al={...site,name:'AL',url:'https://www.diariomunicipal.com.br/ama/pesquisar',stateCode:'AL'};
+  const result=await fetchWebScrapers({...config,requestDelayMs:350,enabled:true,sites:[site,al]},since,async url=>{
+    starts.push(Date.now());
+    const portal=new URL(url).pathname.split('/')[1];
+    return response(String(url).includes('/materia/')?article():index().replaceAll('/amm-mg/',`/${portal}/`));
+  });
+  assert.equal(result.items.length,2);
+  assert.equal(starts.length,4);
+  assert.ok(starts.slice(1).every((time,index)=>time-starts[index]>=300),JSON.stringify(starts));
+});
+
+test('CE, PB e PE leem fonte oficial independente do QD e bloqueiam o acervo anterior à ativação', async () => {
+  const cfg=JSON.parse(await readFile(new URL('../config/default.json',import.meta.url),'utf8'));
+  const sources=cfg.webScrapers.sites.filter(s=>['CE','PB','PE'].includes(s.stateCode));
+  assert.equal(sources.length,3);
+  for(const source of sources){
+    const portal=new URL(source.url).pathname.split('/')[1];
+    assert.equal(source.maxPages,1);assert.equal(source.maxDocuments,25);
+    const fetched=await fetchDirectGazette(source,since,config,async url=>response(
+      String(url).includes('/materia/')?article():index().replaceAll('/amm-mg/',`/${portal}/`)));
+    const item=fetched.items[0];
+    assert.equal(item.stateCode,source.stateCode);assert.equal(item.rawText,proof);
+    assert.equal(item.contentProvenance,'pagina_original');
+    const classified={...item,classification:classifyItem(item)};
+    assert.equal(decidePublication(classified,{now:new Date('2026-10-23T22:00:00Z'),sourceActivations:sources}).publicationDecision,'historico');
+    const current={...classified,sourcePublishedAt:'2026-10-23T15:00:00.000Z',publishedAt:'2026-10-23T15:00:00.000Z'};
+    assert.equal(isNotifiable(decidePublication(current,{now:new Date('2026-10-23T22:00:00Z'),sourceActivations:sources})),true);
+  }
+});
+
 test('paginação com erro de rede permanece falha mesmo quando a primeira página foi lida', async () => {
   const result = await fetchDirectGazette(site, since, config, async url => {
     const target = new URL(url);
@@ -162,7 +228,7 @@ test('cache de íntegra de ato é explícito, com hash, mesma origem e não alte
 test('novos portais não reenviam histórico, inclusive reindexado pelo Google', async () => {
   const cfg=JSON.parse(await readFile(new URL('../config/default.json',import.meta.url),'utf8'));
   const sources=cfg.webScrapers.sites.filter(s=>s.adapter==='sigpub'||s.adapter==='rncp');
-  assert.equal(sources.length,5); assert.ok(sources.every(s=>s.publish&&s.alertsFrom));
+  assert.equal(sources.length,8); assert.ok(sources.every(s=>s.publish&&s.alertsFrom));
   assert.ok(sources.filter(s=>s.adapter==='sigpub').every(s=>s.enabled!==false));
   assert.equal(sources.find(s=>s.adapter==='rncp').enabled,false);
   const row=parseSigpubArticle(article(),parseSigpubIndex(index(),site,since,now).items[0],site);

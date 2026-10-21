@@ -257,6 +257,36 @@
         "maxPages": 4,
         "maxDocuments": 100,
         "alertsFrom": "2026-10-20T00:00:00-03:00"
+      },
+      {
+        "name": "Diário Municipal APRECE-CE",
+        "adapter": "sigpub",
+        "url": "https://www.diariomunicipal.com.br/aprece/pesquisar",
+        "stateCode": "CE",
+        "publish": true,
+        "maxPages": 1,
+        "maxDocuments": 25,
+        "alertsFrom": "2026-10-22T00:00:00-03:00"
+      },
+      {
+        "name": "Diário Municipal FAMUP-PB",
+        "adapter": "sigpub",
+        "url": "https://www.diariomunicipal.com.br/famup/pesquisar",
+        "stateCode": "PB",
+        "publish": true,
+        "maxPages": 1,
+        "maxDocuments": 25,
+        "alertsFrom": "2026-10-22T00:00:00-03:00"
+      },
+      {
+        "name": "Diário Municipal AMUPE-PE",
+        "adapter": "sigpub",
+        "url": "https://www.diariomunicipal.com.br/amupe/pesquisar",
+        "stateCode": "PE",
+        "publish": true,
+        "maxPages": 1,
+        "maxDocuments": 25,
+        "alertsFrom": "2026-10-22T00:00:00-03:00"
       }
     ]
   }

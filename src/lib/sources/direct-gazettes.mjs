@@ -6,7 +6,7 @@ import { normalizeWhitespace } from '../text.mjs';
 import { reuseArticleTexts } from '../article-text-store.mjs';
 
 const HOST = 'www.diariomunicipal.com.br';
-const PORTALS = { 'amm-mg': 'MG', ama: 'AL', amp: 'PR', femurn: 'RN' };
+const PORTALS = { 'amm-mg': 'MG', ama: 'AL', amp: 'PR', femurn: 'RN', aprece: 'CE', famup: 'PB', amupe: 'PE' };
 const clean = value => normalizeWhitespace(value || '');
 let nextRequestAt = 0;
 const day = date => new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Sao_Paulo',
@@ -116,7 +116,7 @@ export function parseSigpubArticle(html, item, site) {
 }
 
 async function request(url, config, fetchImpl) {
-  // All four portals share one host: space starts across collectors, not just per state.
+  // The portals share one host: space starts across collectors, not just per state.
   if (config.requestDelayMs !== 0) {
     const wait = Math.max(0, nextRequestAt - Date.now());
     nextRequestAt = Math.max(nextRequestAt, Date.now()) + 350;
@@ -169,19 +169,23 @@ export async function fetchDirectGazette(site, since, config = {}, fetchImpl = f
   // Structural acts get their full reading first; all remaining index entries stay explicit previews.
   rows.sort((a, b) => Number(/rateio|protocolo|estatuto|ratifica|assembleia|ingresso|ades[aã]o|extin[cç][aã]o/i.test(b.title)) -
     Number(/rateio|protocolo|estatuto|ratifica|assembleia|ingresso|ades[aã]o|extin[cç][aã]o/i.test(a.title)));
-  const items = [];
-  for (const row of rows) {
-    if (row.contentProvenance === 'pagina_original') {
-      items.push({ ...row, previewOnly: site.publish !== true }); continue;
+  const items = new Array(rows.length); let nextRow = 0;
+  // Overlap two responses while request() still spaces every start on the shared host.
+  const readNext = async () => {
+    while (nextRow < rows.length) {
+      const index = nextRow++; const row = rows[index];
+      if (row.contentProvenance === 'pagina_original') {
+        items[index] = { ...row, previewOnly: site.publish !== true }; continue;
+      }
+      if (reads >= maxDocuments || Date.now() - started >= budget) {
+        failures++; items[index] = { ...row, extractionError: 'Íntegra adiada pelo limite de leitura da rodada' }; continue;
+      }
+      reads++;
+      try { items[index] = parseSigpubArticle(await request(row.url, options, fetchImpl), row, site); }
+      catch (error) { failures++; items[index] = { ...row, extractionError: error.message }; }
     }
-    if (reads >= maxDocuments || Date.now() - started >= budget) {
-      failures++; items.push({ ...row, extractionError: 'Íntegra adiada pelo limite de leitura da rodada' }); continue;
-    }
-    reads++;
-    try { items.push(parseSigpubArticle(await request(row.url, options, fetchImpl), row, site)); }
-    catch (error) { failures++; items.push({ ...row, extractionError: error.message }); }
-    if (config.requestDelayMs !== 0) await new Promise(resolve => setTimeout(resolve, config.requestDelayMs ?? 350));
-  }
+  };
+  await Promise.all(Array.from({ length: Math.min(2, rows.length) }, readNext));
   const degraded = hasNext || failures > 0 || errors.length > 0;
   return { items, diagnostic: { name: site.name, adapter: 'sigpub', status: degraded ? 'degraded' : 'ok',
     limited: hasNext && failures === 0 && errors.length === 0,
