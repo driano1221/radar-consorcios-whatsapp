@@ -255,7 +255,7 @@ function feedRow(item, index, selected, onClick) {
   const body = node('div'); const top = node('div', 'item-top');
   const [statusText, tone] = status(item);
   const bucket = triageBucket(item);
-  top.append(node('span', `decision-flag ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Fora da base' : 'Candidata'),
+  top.append(node('span', `decision-flag ${bucket}`, item.baseDecision === 'desdobrado' ? 'Edição · ver atos' : bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Rejeitada' : 'Revisar comigo'),
     node('span', 'item-date', `${item.documentParentId ? 'Origem coletada em' : 'Coletado em'} ${date(item.firstSeenAt)}`));
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
