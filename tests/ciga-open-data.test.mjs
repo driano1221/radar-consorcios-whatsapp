@@ -59,3 +59,56 @@ test('CIGA desduplica ato repetido nos pacotes e não depende de abrir o DOM/SC'
   assert.equal(out.items.length,1);assert.equal(out.diagnostic.resources,1);
   assert.ok(requests.every(u=>u.startsWith('https://dados.ciga.sc.gov.br/')));
 });
+
+test('CIGA honra os 25 segundos da fonte em vez dos 12 segundos gerais',async t=>{
+  const timeouts=[];
+  t.mock.method(AbortSignal,'timeout',ms=>{timeouts.push(ms);return new AbortController().signal;});
+  const config={now,timeoutMs:12000,retries:0};
+  const out=await fetchCigaOpenData({...site,timeoutMs:25000},since,config,async url=>
+    String(url).includes('/api/')?Response.json({success:true,result:{private:false,resources:[resource]}}):new Response('ZIP'),
+  async()=>({total:1,rows:[row]}));
+  assert.equal(out.items.length,1);
+  assert.deepEqual(timeouts,[25000,25000]);
+  assert.equal(config.timeoutMs,12000,'não alterar a configuração dos outros coletores');
+});
+
+test('CIGA respeita a retentativa da fonte e identifica falha no catálogo',async()=>{
+  let calls=0;
+  await assert.rejects(fetchCigaOpenData({...site,retries:0},since,{now,retries:1},async()=>{
+    calls++;throw new DOMException('catálogo lento','TimeoutError');
+  }),/CIGA: catálogo 2026-10.*catálogo lento/);
+  assert.equal(calls,1,'fonte com retries=0 não deve herdar a repetição geral');
+});
+
+test('CIGA recupera uma interrupção do corpo ZIP com uma única nova leitura',async()=>{
+  let downloads=0;
+  const out=await fetchCigaOpenData({...site,retries:1},since,{now,retries:0},async url=>{
+    if(String(url).includes('/api/'))return Response.json({success:true,result:{private:false,resources:[resource]}});
+    downloads++;
+    let sentPartial=false;
+    return downloads===1?new Response(new ReadableStream({pull(controller){
+      if(!sentPartial){sentPartial=true;controller.enqueue(Buffer.from('fragmento incompleto'));}
+      else controller.error(new DOMException('corpo interrompido','AbortError'));
+    }})):new Response('ZIP completo');
+  },async bytes=>{assert.equal(bytes.toString(),'ZIP completo');return{total:1,rows:[row]};});
+  assert.equal(downloads,2);
+  assert.equal(out.items.length,1);
+  assert.equal(out.diagnostic.status,'ok');
+});
+
+test('CIGA limita repetição do corpo e não repete 403 nem resposta acima do tamanho permitido',async()=>{
+  for(const failure of ['timeout','http403','oversized']){
+    let downloads=0;
+    await assert.rejects(fetchCigaOpenData({...site,retries:1},since,{now,retries:0},async url=>{
+      if(String(url).includes('/api/'))return Response.json({success:true,result:{private:false,resources:[resource]}});
+      downloads++;
+      if(failure==='http403')return new Response('acesso negado',{status:403});
+      if(failure==='oversized')return new Response(new Uint8Array(12_000_001));
+      return new Response(new ReadableStream({start(controller){
+        controller.error(new DOMException('corpo interrompido','TimeoutError'));
+      }}));
+    },async()=>{throw new Error('não decodificar conteúdo incompleto');}),
+    failure==='http403'?/HTTP 403/:failure==='oversized'?/limite/:/corpo interrompido/);
+    assert.equal(downloads,failure==='timeout'?2:1,failure);
+  }
+});

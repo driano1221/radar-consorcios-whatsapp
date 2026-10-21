@@ -31,4 +31,19 @@ A simulação geral coletou **445 itens**, um candidato novo selecionado em pré
 
 Na simulação do GitHub, MG/PR e o agregado dos scrapers mantiveram `degraded, limited:true`, com todas as íntegras da amostra lidas; RN/AL/SC ficaram `ok`. O Querido Diário confirmou novamente 503 em todas as rotas e ficou `error`. Araguaia, Portal da Cidade e Alto Paraopeba permaneceram `http_403`, sem falhas técnicas dos leitores; não foram declarados recuperados.
 
+## Timeout do CIGA/SC na coleta seguinte
+
+A coleta automática [39528086661](https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/39528086661), de 20/10 às 22h34 de Brasília, aplicou as correções de paginação: MG/PR 100 íntegras cada e zero falhas consecutivas; RN 56, com todas as páginas da janela. O CIGA/SC falhou antes de localizar os ZIPs, com mensagem de timeout sem chave de recurso. O status agregado dos scrapers corretamente continuou com falha real por causa dessa fonte.
+
+O cliente tinha dois defeitos reproduzidos em testes:
+
+- `fetchCigaOpenData` recebia o prazo geral de 12 segundos e não aplicava `site.timeoutMs:25000`. Agora honra timeout e retries específicos da fonte sem alterar a configuração dos outros coletores.
+- `fetchWithRetry` cobre a espera dos cabeçalhos. Uma interrupção ao consumir o corpo, depois do HTTP 200, escapava sem nova leitura. O leitor CIGA agora permite uma única repetição adicional do corpo para timeout/aborto ou conexão interrompida, descartando todos os fragmentos da primeira resposta. `retries:0` continua proibindo repetição. Recusas 403, limites de tamanho e erros de ZIP/decodificação não recebem essa repetição.
+
+As mensagens distinguem `CIGA: catálogo AAAA-MM` de `CIGA: ZIP <janela>`. O diagnóstico de sucesso registra o timeout efetivo. Mantidos domínio/origem, datas, hash/proveniência, três recursos, limites de 12 MB/80 MB e bloqueio de alertas históricos.
+
+Isso não prova que o provedor esteja disponível: durante a investigação, a API ficou sem resposta por 25 segundos, a página pública e um ZIP conhecido por 20 segundos. O curl concluiu DNS, conexão e TLS em menos de 0,3 segundo, mas não recebeu resposta HTTP em 30 segundos. Essa condição externa é separada do prazo de 12 segundos usado incorretamente pelo bot; não se inventou um espelho nem se desativou TLS.
+
+Validação local: os quatro testes novos falharam antes da correção; depois passaram os **487 testes** completos. O teste de corpo parcial confere descarte dos fragmentos, repetição limitada e ausência de repetição para 403/tamanho excessivo. O workflow manual `validate-ciga-timeout.yml` usa a entrada real de produção e Python padrão para ler os ZIPs, com envio/persistência/IA desligados, `contents:read`, nenhum secret e sem agenda recorrente. Salva tempos/etapas/contagens, sem texto dos atos, e verifica acervo, revisões, fila, recibos e sessão antes/depois. Uma fonte indisponível mantém esse teste real vermelho; testes unitários aprovados não são tratados como acesso recuperado.
+
 Não há novo servidor, dependência, assinatura, agendamento recorrente ou chamada paga de IA nesta validação. A API QD e as páginas com 403 **não estão declaradas recuperadas**. O estado operacional de saúde só reflete a nova regra quando uma coleta regular persistir sua observação; não foi editado manualmente para zerar alertas.

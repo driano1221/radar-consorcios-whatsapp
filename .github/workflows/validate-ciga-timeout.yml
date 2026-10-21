@@ -1,0 +1,39 @@
+name: Validar prazo e leitura real CIGA sem envios
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      SEND_ENABLED: 'false'
+      PERSIST_STATE: 'false'
+      AI_REVIEW_ENABLED: 'false'
+      AI_PREVIEW: 'false'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci --ignore-scripts
+      - run: npm run check && npm test
+      - run: node scripts/check-recovery-safety.mjs --before
+      - name: Consultar catálogo e ZIPs oficiais usando a configuração de produção
+        run: node scripts/validate-ciga-timeout.mjs
+      - name: Confirmar acervo, decisões, fila, recibos e sessão intactos
+        if: always()
+        run: |
+          node scripts/check-recovery-safety.mjs
+          git diff --exit-code HEAD -- data state
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ciga-timeout-${{ github.run_id }}
+          path: output/ciga-timeout/
+          retention-days: 14

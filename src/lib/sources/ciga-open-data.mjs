@@ -76,12 +76,23 @@ async function request(url, config, fetchImpl, limit) {
     redirect:'error',headers:{'user-agent':config.userAgent||'RadarConsorciosIPEA/0.3 (+pesquisa academica)'}});
   if(!r.ok)throw new Error(`CIGA dados abertos HTTP ${r.status}`);
   const chunks=[];let size=0;
-  for await(const chunk of r.body){size+=chunk.length;if(size>limit)throw new Error('CIGA: resposta maior que o limite');chunks.push(chunk);}
+  try{
+    for await(const chunk of r.body){size+=chunk.length;if(size>limit)throw new Error('CIGA: resposta maior que o limite');chunks.push(chunk);}
+  }catch(error){
+    // fetchWithRetry cobre os cabeçalhos; o corpo também pode interromper depois do HTTP 200.
+    if((config.retries??1)>0&&(['TimeoutError','AbortError'].includes(error.name)||
+      ['ECONNRESET','UND_ERR_SOCKET'].includes(error.cause?.code||error.code))){
+      await new Promise(resolve=>setTimeout(resolve,500));
+      return request(url,{...config,retries:0},fetchImpl,limit);
+    }
+    throw error;
+  }
   return Buffer.concat(chunks);
 }
 
 export async function fetchCigaOpenData(site,since,config={},fetchImpl=fetch,decode=decodeCigaZip){
   if(site.url!==`https://${HOST}/dataset/`)throw new Error('CIGA: origem CKAN inesperada');
+  const options={...config,timeoutMs:site.timeoutMs??config.timeoutMs,retries:site.retries??config.retries};
   const now=config.now||new Date();const started=Date.now();
   // Three latest published exports, not every ZIP of every historical month.
   const months=[...new Set([localDay(now).slice(0,7),localDay(since).slice(0,7)])];
@@ -89,8 +100,8 @@ export async function fetchCigaOpenData(site,since,config={},fetchImpl=fetch,dec
   for(const month of months){
     const [year,mm]=month.split('-');
     const url=`https://${HOST}/api/3/action/package_show?id=domsc-publicacoes-de-${mm}-${year}`;
-    try{resources.push(...cigaResources(JSON.parse((await request(url,config,fetchImpl,3_000_000)).toString('utf8')),since,now));}
-    catch(error){errors.push(error.message);}
+    try{resources.push(...cigaResources(JSON.parse((await request(url,options,fetchImpl,3_000_000)).toString('utf8')),since,now));}
+    catch(error){errors.push(`CIGA: catálogo ${month}: ${error.message}`);}
   }
   const selected=[...new Map(resources.map(r=>[r.url,r])).values()].sort((a,b)=>b.key.localeCompare(a.key))
     .slice(0,Math.min(site.maxResources||3,6));
@@ -99,20 +110,20 @@ export async function fetchCigaOpenData(site,since,config={},fetchImpl=fetch,dec
   for(const resource of selected){
     if(resource.size>12_000_000){errors.push('CIGA: pacote maior que 12 MB adiado');continue;}
     try{
-      const decoded=await decode(await request(resource.url,config,fetchImpl,12_000_000));
+      const decoded=await decode(await request(resource.url,options,fetchImpl,12_000_000));
       if(!Array.isArray(decoded.rows)||!Number.isInteger(decoded.total))throw new Error('CIGA: exportação decodificada inválida');
       total+=decoded.total;opened++;oldest=resource.key;
       for(const row of decoded.rows){
         const item=parseCigaExportRow(row,resource,site,since,now);
         if(item&&!items.has(item.url))items.set(item.url,item);
       }
-    }catch(error){errors.push(`${resource.key}: ${error.message}`);}
+    }catch(error){errors.push(`CIGA: ZIP ${resource.key}: ${error.message}`);}
   }
   if(!opened)throw new Error(errors.join('; '));
   const rows=[...items.values()];
   return {items:rows,diagnostic:{name:site.name,adapter:site.adapter,status:errors.length||rows.some(i=>i.extractionError)?'degraded':'ok',
     itemCount:rows.length,fullTextCount:rows.filter(i=>i.contentProvenance==='pagina_original').length,
-    resources:opened,rawActOccurrences:total,oldestResource:oldest,durationMs:Date.now()-started,
+    resources:opened,rawActOccurrences:total,oldestResource:oldest,durationMs:Date.now()-started,timeoutMs:options.timeoutMs||25000,
     message:`${opened} pacotes oficiais; ${rows.length} atos únicos sobre consórcios. Exportações periódicas: não é busca nacional nem histórico integral.`+
       (errors.length?` ${errors.join('; ')}`:'')}};
 }
