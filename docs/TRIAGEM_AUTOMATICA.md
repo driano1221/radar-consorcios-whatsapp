@@ -10,6 +10,12 @@ O painel usa sete famílias: **Criação, Adesão, Saída, Rateio, Protocolo, Cr
 
 ## Lote inicial: as 69 pendências
 
+**Atualização após a revisão conjunta dos 39 casos:** 22 confirmações, 12 rejeições, quatro documentos complementares/duplicados e uma pendência (caso 31, aditivo com valores, ano e assinatura divergentes). O [resultado preserva os números originais](REVISAO-CONJUNTA-39-2026-10-21.md). As 416 revisões anteriores e o arquivo bruto foram mantidos; foram acrescentadas 38 decisões, todas com `publicar=false` e `incluir_resumo=false`.
+
+Conferência reproduzível: `node scripts/apply-joint-review-39.mjs` simula; `--apply` aplica somente se ainda faltar o lote completo. A aplicação é idempotente, valida provas e hashes e não importa clientes de rede/WhatsApp. O script inicial abaixo passa a preservar o relatório congelado quando encontra revisão humana posterior.
+
+As regras aprendidas distinguem LDO e cronograma de um rateio assinado, conselho consultivo de protocolo, ratificação legal de ingresso e cooperação autorizada de criação. Normas operacionais publicadas com prova literal não exigem revisão só por serem longas ou por uma interpretação antiga da IA. O aceite do credenciamento do caso 38 é uma inclusão expressa desse caso pelo usuário; não amplia automaticamente o escopo para todos os contratos de fornecedores. Valores dessa notícia secundária continuam sem conferência independente no diário.
+
 - Escopo congelado em `triagem-simples-lote.json`, a partir do painel de 21/10 às 16h41 de Brasília: **29 confirmadas, uma rejeitada e 39 em Revisar comigo**.
 - Reutilizados somente textos com hash válido e leituras já guardadas. Zero chamadas adicionais à IA e zero conexões/envios ao WhatsApp na reconciliação.
 - Decisões separadas em `triagem-originais.ndjson`, vinculadas a ID, URL, título, trecho e hash da íntegra. Mudança nesses dados invalida a decisão e mantém o bloqueio histórico.

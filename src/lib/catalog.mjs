@@ -348,7 +348,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
         consorcio: review.fatos?.consorcio ?? result.consorcio,
         sigla: review.fatos?.sigla ?? result.sigla, municipio: review.fatos?.municipio ?? result.municipio,
         uf: review.fatos?.uf ?? result.uf, tipo_documento: review.fatos?.tipo_documento ?? result.tipo_documento,
-        evidencia_triagem: review.evidencia, fonte_evidencia_triagem: review.fonte_evidencia,
+        evidencia_triagem: normalizeWhitespace(review.evidencia), fonte_evidencia_triagem: review.fonte_evidencia,
         metodo_triagem: review.metodo_triagem || 'revisão retroativa validada pelo usuário' };
       if (review.fatos?.identidade_nao_aplicavel) result = { ...result,
         consorcio: '', sigla: '', municipio: '', uf: '', abrangencia: review.fatos.abrangencia || 'nacional' };
@@ -356,7 +356,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     const originalDecision = originals.get(row.id);
     if (!reviewStillMatches(row) && validOriginalTriage(row, originalDecision)) result = { ...result,
       decisao_base: originalDecision.status, tipo_evento: originalDecision.status === 'descartado' ? 'GERAL' : originalDecision.category,
-      etapa: originalDecision.stage, evidencia_triagem: originalDecision.evidence,
+      etapa: originalDecision.stage, evidencia_triagem: normalizeWhitespace(originalDecision.evidence),
       fonte_evidencia_triagem: originalDecision.sourceUrl, metodo_triagem: originalDecision.method || 'triagem automática com revisão das exceções',
       situacao_analise: `${originalDecision.status} pela triagem — ${originalDecision.reason}`,
       decisao_alerta: row.enviado_em ? 'enviado' : 'historico',

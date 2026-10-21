@@ -1,5 +1,6 @@
 import { normalizeWhitespace } from './text.mjs';
 import { institutionalProof } from './institutional-proof.mjs';
+import { documentaryCorrection } from './documentary-corrections.mjs';
 
 const CONSORTIUM = 'cons[oó]rcio';
 const HYPOTHETICAL_CREATION = new RegExp(
@@ -71,6 +72,11 @@ function withEvidence(result, evidence) {
 export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
+  const correction = item.rawText && documentaryCorrection(title, text);
+  if (correction) return { ...classification, ...correction,
+    emoji: correction.category === 'PROTOCOLO' ? '🟨' : correction.category === 'GOVERNANÇA' ? '🟨' : '📰',
+    score: correction.category === 'GERAL' ? 0 : Math.max(5, classification.score || 0),
+    reasons: [correction.reason] };
   const operationalInstruction = /\b(?:instru[cç][aã]o normativa|instru[cç][aã]o de trabalho)\s+n[º°o.]?\s*\d+/i;
   const instructionHeader = operationalInstruction.test(title) ||
     /^\[Página 1\]/.test(text) && operationalInstruction.test(text.slice(0, 400));

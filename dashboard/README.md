@@ -1,5 +1,7 @@
 # Painel de acompanhamento do Radar
 
+A consulta principal está em **Notícias** no [painel público](https://driano1221.github.io/radar-consorcios-whatsapp/): uma tabela com data, notícia, consórcio/UF, classificação e etapa, decisão e WhatsApp. [Baixar essa base em CSV](https://driano1221.github.io/radar-consorcios-whatsapp/noticias.csv). As tabelas detalhadas abaixo são apoio técnico e histórico, não bases concorrentes de decisão.
+
 Interface estática, **somente de leitura**, para acompanhar documentos, decisões e a base histórica. O visual é de registro editorial: lista compacta à esquerda, justificativa e trecho disponível à direita. No celular, a ficha fica abaixo da lista. O motivo aparece na ficha e como dica ao passar o mouse; não depende apenas do hover. Não há login, editor, envio ao WhatsApp nem chamada a APIs externas no navegador.
 
 ## Abrir localmente

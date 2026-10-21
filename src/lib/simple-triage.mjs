@@ -46,6 +46,14 @@ export function decideSimpleTriage(item) {
   // O extrator delimita janelas por caracteres; retire só as palavras cortadas nas bordas.
   const literalRule = locateQuote(rule.evidenceText, [body]) ||
     locateQuote(String(rule.evidenceText || '').split(/\s+/).slice(1, -1).join(' '), [body]);
+  // A published rule or operative legal ratification is itself the fact. A
+  // generic older AI interpretation must not turn it into accession/control,
+  // or require human rereading solely because the regulation is lengthy.
+  if (literalRule && ['published_inspection_rule','published_governance_rule','ratified_protocol','documentary_exclusion'].includes(rule.proofKind))
+    return { ...base, status: rule.category==='GERAL'?'descartado':'confirmado', evidence:literalRule,
+      reason: rule.proofKind==='documentary_exclusion' ? rule.reasons?.[0] :
+        'Ato documental identificado por regra específica; confirmada somente a publicação ou ratificação, com sua etapa explícita.',
+      method:'regra_documental_especifica' };
   if (ai?.status === 'disputed') return review('As leituras discordam sobre o fato ou sua classificação.');
   if (ai && ai.promptVersion !== AI_PROMPT_VERSION) return review('A segunda leitura guardada usa uma política anterior.');
   if (ai && !quote) return review('A evidência da segunda leitura não foi localizada no corpo original.');
@@ -71,7 +79,7 @@ export function decideSimpleTriage(item) {
       return review('A regra encontra um evento, mas a segunda leitura rejeita: precisamos definir o enquadramento.');
     return { ...base, status: 'descartado', evidence: quote, reason: 'Regra e segunda leitura rejeitam o conteúdo examinado.', method: 'regra_e_ia_em_cache' };
   }
-  if (literalRule && ['performed_institutional_activity', 'signed_cooperation', 'signed_municipal_protocol', 'documented_composition', 'court_decision', 'published_inspection_rule', 'ratified_statute', 'documented_rateio'].includes(rule.proofKind))
+  if (literalRule && ['performed_institutional_activity', 'signed_cooperation', 'signed_municipal_protocol', 'documented_composition', 'court_decision', 'published_inspection_rule', 'published_governance_rule', 'ratified_protocol', 'ratified_statute', 'documented_rateio'].includes(rule.proofKind))
     return { ...base, status: 'confirmado', evidence: literalRule, reason: 'Ato identificado no corpo por regra documental específica.', method: 'regra_documental' };
   return review('Ainda falta uma regra conclusiva ou segunda leitura válida para este caso.');
 }

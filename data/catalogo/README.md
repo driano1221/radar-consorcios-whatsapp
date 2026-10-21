@@ -1,5 +1,7 @@
 # Base histórica do Radar Consórcios
 
+A consulta principal está em **Notícias** no [painel público](https://driano1221.github.io/radar-consorcios-whatsapp/): uma tabela com data, notícia, consórcio/UF, classificação e etapa, decisão e WhatsApp. [Baixar essa base em CSV](https://driano1221.github.io/radar-consorcios-whatsapp/noticias.csv). As tabelas detalhadas abaixo são apoio técnico e histórico, não bases concorrentes de decisão.
+
 Esta pasta guarda **documentos encontrados pelo radar**, não uma lista oficial e definitiva de consórcios ou de seus membros. Ela é atualizada nas execuções persistentes do GitHub Actions, independentemente de a notícia ser enviada ao WhatsApp.
 
 ## Por onde começar

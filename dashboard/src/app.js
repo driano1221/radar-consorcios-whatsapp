@@ -3,10 +3,11 @@ import { buildResults } from './results-model.mjs';
 import { recoveredSourcesView } from './recovery-view.mjs';
 import { primaryEvidenceView } from './primary-evidence-view.mjs';
 import {fetchSnapshot,hydrateTable} from './snapshot-loader.mjs';
+import {newsRecord} from './news-view.mjs';
 
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
-  baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0, resultPeriod: 'all', resultMode: 'discovery' };
+  baseTableId: 'eventos', baseLimit: 25, baseRowIndex: 0, resultPeriod: 'all', resultMode: 'discovery', overviewLimit:40 };
 const dateTime = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const dateOnly = new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeZone: 'America/Sao_Paulo' });
 const number = new Intl.NumberFormat('pt-BR');
@@ -109,7 +110,8 @@ function deckItems() {
     pendingKinds.some((kind) => kind.key === filter && kind.matches(item))) &&
     (!category || item.categoryFamily === category) &&
     (!query || [item.title, item.source, item.stage, item.category,
-      item.links.map((link) => link.name).join(' ')].join(' ').toLocaleLowerCase('pt-BR').includes(query)));
+      item.links.map((link) => link.name).join(' '),item.uf,item.municipality,
+      Object.values(item.editorialReview?.facts||{}).join(' ')].join(' ').toLocaleLowerCase('pt-BR').includes(query)));
 }
 function openItem(item) {
   $('#status-filter').value = 'all';
@@ -143,34 +145,49 @@ function renderDeck() {
       state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); $('#decision-stage').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     return button;
   }));
-  if (!items.some((item) => item.id === state.selectedOverviewItem)) state.selectedOverviewItem = items[0]?.id || '';
+  if (!items.some((item) => item.id === state.selectedOverviewItem)) state.selectedOverviewItem = '';
   const list = $('#deck-stack');
   const previousScroll = list.scrollTop;
   const listHead = node('div', 'overview-list-head', `${number.format(items.length)} ${items.length === 1 ? 'registro' : 'registros'} nesta seleção · mais recentes pela primeira coleta`);
-  const rows = items.slice(0, 80).map((item) => {
+  const table=node('table','news-table');
+  const caption=node('caption','sr-only','Base principal de notícias e decisões'); table.append(caption);
+  const thead=node('thead'),header=node('tr');
+  for(const title of ['Data','Notícia','Consórcio / UF','Classificação e etapa','Decisão','WhatsApp']) {
+    const th=node('th','',title); th.scope='col'; header.append(th);
+  }
+  thead.append(header); table.append(thead);
+  const tbody=node('tbody');
+  const rows = items.slice(0, state.overviewLimit).map((item) => {
     const bucket = triageBucket(item);
-    const row = node('button', `overview-row ${bucket}${item.id === state.selectedOverviewItem ? ' active' : ''}`);
-    row.type = 'button'; row.setAttribute('aria-pressed', String(item.id === state.selectedOverviewItem));
-    row.title = readableReason(item);
-    const body = node('span', 'overview-row-body');
-    body.append(node('strong', '', displayTitle(item)), node('small', '', item.source || 'Fonte não informada'));
-    const dates = node('span', 'overview-dates');
-    dates.append(node('small', '', item.documentParentId ? 'Origem coletada em' : 'Coletado em'), node('time', '', date(item.firstSeenAt)),
-      node('small', '', item.publishedYear ? 'Ano do documento' : 'Publicado em'), node('time', '', item.publishedYear || date(item.publishedAt)));
-    row.append(dates, body,
-      node('span', `overview-verdict ${bucket}`, bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Rejeitada' : 'Revisar comigo'));
-    row.addEventListener('click', () => {
+    const record=newsRecord(item),row=node('tr',`${bucket}${item.id===state.selectedOverviewItem?' active':''}`);
+    const cell=(title)=>{const td=node('td');td.dataset.label=title;row.append(td);return td;};
+    cell('Data').append(node('time','',/^\d{4}$/.test(record.publication)?record.publication:date(record.publication)),
+      node('small','',`Coletada ${date(record.discovered)}`));
+    const open=node('button','news-title',displayTitle(item));open.type='button';
+    open.setAttribute('aria-label',`Ver decisão e prova: ${displayTitle(item)}`);
+    cell('Notícia').append(open,node('small','',record.source));
+    cell('Consórcio / UF').append(node('strong','',record.consortium||'Não identificado'),
+      node('small','',[record.municipality,record.uf].filter(Boolean).join(' · ')||'UF não identificada'));
+    cell('Classificação e etapa').append(node('strong','',record.category),node('small','news-stage',record.stage));
+    cell('Decisão').append(node('span',`overview-verdict ${bucket}`,record.decision));
+    cell('WhatsApp').append(node('span','',record.whatsapp),...(record.sentAt?[node('small','',date(record.sentAt,true))]:[]));
+    open.addEventListener('click', () => {
       state.selectedOverviewItem = item.id; renderDeck();
-      if (window.matchMedia('(max-width: 780px)').matches) $('#overview-detail').scrollIntoView({
+      $('#overview-detail').scrollIntoView({
         behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start',
       });
     });
     return row;
   });
-  list.replaceChildren(listHead, ...rows);
+  tbody.append(...rows); table.append(tbody);
+  list.replaceChildren(listHead,table);
   list.scrollTop = previousScroll;
   if (!items.length) list.append(node('p', 'empty', 'Nenhuma publicação corresponde à busca.'));
-  if (items.length > 80) list.append(node('p', 'overview-more', 'Exibindo as 80 primeiras. Use a busca ou abra o arquivo completo para ver todas.'));
+  if (items.length > state.overviewLimit) {
+    const more=node('button','more-button',`Mostrar mais · ${number.format(Math.min(state.overviewLimit,items.length))} de ${number.format(items.length)}`);
+    more.type='button';more.addEventListener('click',()=>{state.overviewLimit+=40;renderDeck();});list.append(more);
+  }
+  $('#overview-detail').hidden=!state.selectedOverviewItem;
   renderOverviewDetail(items.find((item) => item.id === state.selectedOverviewItem));
 }
 function renderCollectionCompare() {
@@ -204,6 +221,8 @@ function renderOverviewDetail(item) {
     `Trecho localizado · página ${item.pdfEvidence[0].page || 'não identificada'}` : 'Trecho ou informação disponível';
   const head = node('div', 'overview-detail-head');
   head.append(node('span', `overview-verdict ${bucket}`, decision), node('span', 'overview-id', item.id.slice(0, 8).toUpperCase()));
+  const close=node('button','detail-link','Fechar detalhes ×');close.type='button';
+  close.addEventListener('click',()=>{state.selectedOverviewItem='';renderDeck();});head.append(close);
   const why = node('section', `overview-why ${bucket}`);
   why.append(node('h4', '', reasonTitle), node('p', '', readableReason(item)));
   const proof = node('section', 'overview-proof');
@@ -848,16 +867,16 @@ function renderResults() {
 }
 function switchView(view, focusDetail = false) {
   state.view = view;
-  const titles = { overview: ['Triagem', 'Registro de publicações'], results: ['Resultados', 'Resultados do radar'], feed: ['Publicações', 'Arquivo de publicações'],
-    base: ['Base completa', 'Base de dados'], method: ['Como funciona', 'Fluxo e critérios'] };
+  const titles = { overview: ['Notícias', 'Notícias de consórcios'], results: ['Resultados', 'Resultados do radar'], feed: ['Notícias', 'Decisão e prova'],
+    base: ['Dados técnicos', 'Dados técnicos e histórico'], method: ['Como funciona', 'Fluxo e critérios'] };
   document.querySelectorAll('.view').forEach((section) => section.classList.toggle('active', section.id === view));
-  document.querySelectorAll('.nav-button').forEach((button) => button.classList.toggle('active', button.dataset.view === view));
+  document.querySelectorAll('.nav-button').forEach((button) => button.classList.toggle('active', button.dataset.view === (view==='feed'?'overview':view)));
   $('#breadcrumb-current').textContent = titles[view][0];
   $('#page-title').textContent = titles[view][1];
   const descriptions = { overview: 'O que entrou na base, o que foi descartado e qual documento sustenta cada decisão.',
     results: 'Consórcios, fatos e participação documentada, com recortes temporais e fontes visíveis.',
     feed: 'Todas as coletas guardadas, com filtros, evidências e fonte original.',
-    base: 'Consulte cada tabela, inclusive colunas vazias, com explicação e prévia da linha.',
+    base: 'Tabelas de apoio para conferência. A lista principal reúne notícias e decisões em um só lugar.',
     method: 'Entenda onde entram as regras, a IA e a revisão humana.' };
   $('#page-description').textContent = descriptions[view];
   if (view === 'feed') renderFeed();
@@ -916,10 +935,10 @@ async function init() {
       const nextMobile = window.matchMedia('(max-width: 650px)').matches;
       if (nextMobile !== resultChartMobile) { resultChartMobile = nextMobile; if (state.view === 'results') renderResultsChart(buildResults(state.data, { period: state.resultPeriod, mode: state.resultMode })); }
     });
-    $('#open-feed').addEventListener('click', () => switchView('feed'));
+    $('#open-feed').addEventListener('click', () => { $('#deck-filter').value='all';state.overviewLimit=40;renderDeck(); });
     $('#deck-search').addEventListener('input', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
-    $('#deck-filter').addEventListener('change', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
-    $('#deck-category').addEventListener('change', () => { state.selectedOverviewItem = ''; $('#deck-stack').scrollTop = 0; renderDeck(); });
+    $('#deck-filter').addEventListener('change', () => { state.selectedOverviewItem = ''; state.overviewLimit=40; $('#deck-stack').scrollTop = 0; renderDeck(); });
+    $('#deck-category').addEventListener('change', () => { state.selectedOverviewItem = ''; state.overviewLimit=40; $('#deck-stack').scrollTop = 0; renderDeck(); });
     $('#search').addEventListener('input', () => { state.limit = 40; renderFeed(); });
     $('#status-filter').addEventListener('change', () => { state.limit = 40; renderFeed(); });
     $('#more-button').addEventListener('click', () => { state.limit += 40; renderFeed(); });

@@ -129,7 +129,7 @@ test('as 69 URLs não geram alertas ou boletim, inclusive confirmação sem alte
   for (const row of archive.filter(r => decisions.has(r.id))) {
     for (const url of [row.url, row.article_url, decisions.get(row.id).sourceUrl].filter(Boolean)) {
       const protectedItem = applyEditorialGuard({ ...item, url }, guard);
-      assert.equal(protectedItem.publicationDecision, 'historico', row.id);
+      assert.ok(['historico','descartado'].includes(protectedItem.publicationDecision), row.id);
       assert.equal(isNotifiable(protectedItem), false, row.id);
     }
   }

@@ -15,6 +15,11 @@ const state = JSON.parse(stateBytes);
 const rows = new Map((await ndjson('arquivo-coletas.ndjson')).map(row => [row.id, row]));
 const texts = new Map((await ndjson('textos-artigos.ndjson')).map(row => [row.documento_id, row]));
 const protectedIds = new Set((await ndjson('revisoes-eventos.ndjson')).map(row => row.documento_id));
+if (batch.ids.some(id => protectedIds.has(id))) {
+  console.log(JSON.stringify({ batch: 69, skipped: true,
+    reason: 'O lote já recebeu revisão conjunta. Preservados decisões humanas e relatório original numerado; usar apply-joint-review-39.mjs para conferir a aplicação.' }));
+  process.exit(0);
+}
 const results = [];
 for (const id of batch.ids) {
   const row = rows.get(id); assert.ok(row); assert.ok(!protectedIds.has(id), 'Não substituir revisão já aplicada');

@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import { classifyItem, isStaleLegislativeDocument } from '../src/lib/classifier.mjs';
 import { resolveGeography } from '../dashboard/src/geography-model.mjs';
 import { compareNewestDiscovery } from '../dashboard/src/triage-model.mjs';
+import {newsCsv} from '../dashboard/src/news-view.mjs';
 import { writeFlowDiagrams } from './build-flow-diagram.mjs';
 import { dashboardAlternatives, textPreview } from './dashboard-recovery.mjs';
 import { validAlternativeDecision } from '../src/lib/alternative-triage.mjs';
@@ -164,10 +165,10 @@ function comparableText(value) {
 }
 
 function publicationDate(row, review = null) {
-  if (review?.fatos?.precisao_data === 'ano') return '';
   if (review?.fatos?.data_publicacao_nao_comprovada) return '';
   const verified = review?.fatos?.data_publicacao_original;
   if (/^\d{4}-\d{2}-\d{2}$/.test(verified || '')) return `${verified}T12:00:00Z`;
+  if (review?.fatos?.precisao_data === 'ano') return '';
   if (row.data_noticia_original && Number.isFinite(Date.parse(row.data_noticia_original))) return row.data_noticia_original;
   if (row.data_publicacao) return row.data_publicacao;
   const match = /^https:\/\/data\.queridodiario\.ok\.org\.br\/\d+\/(\d{4}-\d{2}-\d{2})\//.exec(row.url || '');
@@ -340,6 +341,10 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     return {
       id: row.id, title: appliedReview?.titulo || row.titulo, source: sourceName(row),
       originalTitle: appliedReview?.titulo ? row.titulo : '',
+      consortium: appliedReview?.fatos?.consorcio ?? curated?.consorcio ?? row.consorcio ?? '',
+      consortiumAcronym: appliedReview?.fatos?.sigla ?? curated?.sigla ?? row.sigla ?? '',
+      municipality: appliedReview?.fatos?.municipio ?? curated?.municipio ?? row.municipio ?? '',
+      uf: appliedReview?.fatos?.uf ?? curated?.uf ?? row.uf ?? '',
       primaryDocuments: auditValid ? (auditReview.documentos_primarios || []).map(d => ({
         title:d.titulo,url:d.url,page:d.pagina,excerpt:d.trecho,sha256:d.pdf_sha256,
       })) : [],
@@ -386,7 +391,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
         ? [row.situacao_analise.split('; ').at(-1)].filter(Boolean) : decision?.classificationReasons || [],
       reasonBasis: stale || rejectedByReview || ruleReclassified ? 'regra ou revisão atual'
         : pdfReassessment ? 'releitura automática do PDF' : decision?.reasonBasis || 'catálogo',
-      stage: rejectedByReview || duplicateByReview ? ''
+      stage: rejectedByReview || duplicateByReview ? appliedReview.etapa || ''
         : pdfReassessment ? pdfProof.stage : appliedReview?.etapa || curated?.etapa || row.etapa,
       analysis: inEvents ? curated.situacao_analise : stale ? 'triagem: ato antigo' : row.situacao_analise,
       documentType: curated?.tipo_documento || row.tipo_documento,
@@ -477,7 +482,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     }
     item.categoryFamily = categoryGroup(item.category);
     item.categoryDisplay = categoryLabel(item.category);
-    item.reviewChecks = item.baseDecision === 'revisao' ? reviewChecks(item.reason, item.category) : [];
+    item.reviewChecks = item.baseDecision === 'revisao' ? item.automaticOriginalReview?.checks || reviewChecks(item.reason, item.category) : [];
     return item;
   }).sort(compareNewestDiscovery);
   const categories = {};
@@ -660,9 +665,10 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const publicMode = process.argv.includes('--public');
   const outputData = publicMode ? buildPublicDashboardData(data) : data;
   await mkdir(destination, { recursive: true });
-  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'snapshot-loader.mjs', 'recovery-view.mjs', 'primary-evidence-view.mjs', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
+  await Promise.all(['index.html', 'style.css', 'redesign.css', 'registry.css', 'results.css', 'app.js', 'news-view.mjs', 'snapshot-loader.mjs', 'recovery-view.mjs', 'primary-evidence-view.mjs', 'triage-model.mjs', 'results-model.mjs', 'geography-model.mjs'].map((name) =>
     copyFile(path.join(root, 'dashboard', 'src', name), path.join(destination, name))));
   await writeFlowDiagrams(destination);
+  await writeFile(path.join(destination,'noticias.csv'),newsCsv(outputData.items));
   const {manifest,files}=partitionDashboard(outputData);
   await mkdir(path.join(destination,'parts'),{recursive:true});
   await Promise.all([...files].map(([name,content])=>writeFile(path.join(destination,name),content,'utf8')));
