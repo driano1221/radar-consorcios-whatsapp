@@ -322,8 +322,8 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
   const humanIds = new Set(editorialReviews.map(r => r.documento_id));
   const reviewed = [...all, ...acts].map((row) => {
     if (splitParents.has(row.id)) return { ...row, tipo_evento: 'GERAL',
-      decisao_base: 'desdobrado', decisao_alerta: 'historico',
-      situacao_analise: `edição desdobrada em ${splitParents.get(row.id)} atos individualizados` };
+      decisao_base: 'descartado', decisao_alerta: 'historico',
+      situacao_analise: `rejeitado como registro adicional para evitar duplicação; ${splitParents.get(row.id)} fatos registrados separadamente` };
     let result = row;
     const auto = auxiliary.decisions.get(row.id);
     const validAuto = validAlternativeDecision(row, auto, auxiliary.sources, humanIds);
@@ -509,7 +509,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     .slice(0, 15);
   const summary = [
     '# Panorama da base histórica', '',
-    `- ${all.length} documentos recuperados do histórico de coletas; ${acts.length} atos individualizados dentro deles.`,
+    `- ${all.length} documentos de origem no acervo; ${acts.length} fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.`,
     `- ${relevant.length} registros relacionados a possíveis eventos de consórcios; ${relevant.filter((row) => row.revisao_editorial?.decisao === 'confirmar_evento').length} aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.`,
     `- ${identities.length} identidades candidatas de consórcios; ${links.filter((link) => link.consorcio_id).length} vínculos documentais, dos quais ${links.filter((link) => link.consorcio_id && link.origem === 'fonte complementar').length} apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.`,
     `- ${pendingIdentity.length} documentos relevantes sem identidade segura, listados em \`identidade-pendente.csv\`.`,

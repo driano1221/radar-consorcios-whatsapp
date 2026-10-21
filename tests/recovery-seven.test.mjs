@@ -50,7 +50,7 @@ test('painel não mistura processos que compartilham a mesma página do PDF',()=
   assert.ok(cnif.pdfEvidence.every(p=>p.text.includes('1217718')&&!p.text.includes('1217658')));
   const central=data.items.find(i=>i.title.includes('CIMCENTRAL'));
   assert.ok(central.pdfEvidence.every(p=>p.text.includes('1217658')&&!p.text.includes('1217718')));
-  assert.equal(data.items.find(i=>i.id===parent.id).baseDecision,'desdobrado');
+  assert.equal(data.items.find(i=>i.id===parent.id).baseDecision,'descartado');
 });
 
 test('lei histórica com publicação original comprovada fica na base e fora de alertas',()=>{

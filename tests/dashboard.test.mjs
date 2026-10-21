@@ -340,7 +340,10 @@ test('painel mostra atos da mesma edição com decisões e páginas próprias', 
   assert.equal(result.stats.documents, 1);
   assert.equal(result.stats.acts, 2);
   assert.equal(result.stats.confirmed, 1);
-  assert.equal(result.items.find((item) => item.id === parent.id).baseDecision, 'desdobrado');
+  assert.equal(result.items.find((item) => item.id === parent.id).baseDecision, 'descartado');
+  assert.equal(result.items.find((item) => item.id === parent.id).splitPublication, true);
+  assert.match(result.items.find((item) => item.id === parent.id).reason, /evitar duplicação/);
+  assert.deepEqual(result.items.map(item => item.baseDecision).sort(), ['confirmado','descartado','descartado']);
   assert.equal(result.items.find((item) => item.id === parent.id).alertDecision, 'historico');
   assert.equal(result.items.find((item) => item.id === parent.id).editorialReview, null);
   assert.equal(result.items.find((item) => item.id === compra.id).baseDecision, 'descartado');

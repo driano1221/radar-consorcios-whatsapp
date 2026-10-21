@@ -2,6 +2,14 @@
 
 Atualização mais recente: **21 de outubro de 2026**. As primeiras seções são um registro histórico da implantação original; números, agendas e decisões antigas nelas descritos foram substituídos pelas atualizações datadas. Para operação corrente, use também o [README principal](../README.md) e os workflows versionados.
 
+## Fontes com vários fatos sem quarto status — 21/10/2026
+
+- Esclarecimento e simplificação solicitados pelo usuário: o rótulo “desdobrada” deixa de ser decisão no painel e no catálogo derivado. As três fontes agregadas ficam **rejeitadas como registros adicionais**, com justificativa de duplicação e links aos fatos próprios.
+- Os “10 atos individualizados” já existentes são dez fatos em três fontes: Joinville (dois), diário TCE-MG (cinco), notícia TCE-MG (três). **Nove confirmados e um rejeitado**, preservados. Exemplo: no mesmo diário de Joinville, o apostilamento de rateio do CINCATARINA é confirmado; a compra municipal via pregão do CISNORDESTE é rejeitada.
+- Os nove confirmados já fazem parte dos 164 fatos confirmados; não são nove entradas novas. Os 39 casos de Revisar comigo permanecem iguais, inclusive IDs e numeração do relatório.
+- Retirado o rodapé global “inclui 10 atos separados”, que aparecia até em filtros sem nenhum desses fatos. O resumo usa uma unidade única: **2.854 registros = 164 confirmados + 2.651 rejeitados + 39 em revisão**, nesta fotografia. São 2.844 fontes arquivadas mais os dez fatos extraídos; nenhuma nova coleta foi criada.
+- Preservados arquivo bruto, definições dos dez fatos, páginas, revisões, fila, recibos e sessão. Mudança de projeção e linguagem, sem nova consulta à IA, conexão WhatsApp, envio ou reenvio. Os valores históricos de desdobramento continuam apenas no histórico técnico e nas guardas de não envio.
+
 ## Fluxo simples e lote de 69 pendências — 21/10/2026
 
 - Pedido autorizado: sete categorias, confirmação/rejeição pela própria triagem e exceções em Revisar comigo. Governança, Finanças e Controle/Fiscalização são subtipos de Atuação; Controle permanece só no painel.

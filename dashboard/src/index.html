@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./redesign.css">
   <link rel="stylesheet" href="./registry.css">
   <link rel="stylesheet" href="./results.css">
-  <script src="./app.js?v=20261021-triagem-simples" type="module"></script>
+  <script src="./app.js?v=20261021-status-unico" type="module"></script>
 </head>
 <body>
   <div class="shell">
@@ -31,7 +31,7 @@
         <div class="page-head"><div><h1 id="page-title">Notícias de consórcios</h1><p id="page-description" class="page-description">A triagem confirma ou rejeita cada notícia. Casos difíceis ficam em Revisar comigo.</p></div><div class="refresh-box"><span>Última coleta</span><strong id="last-collection">—</strong><small id="generated-at">Painel gerado em —</small></div></div>
 
         <section id="overview" class="view active" aria-label="Triagem visual">
-          <div class="summary-heading"><h2>Acervo acumulado</h2><p>Documentos guardados desde o início do radar; não são somente da última execução.</p></div>
+          <div class="summary-heading"><h2>Acervo acumulado</h2><p>Cada registro recebe uma decisão. Documentos que repetem fatos já registrados ficam em Rejeitadas.</p></div>
           <div class="summary-strip" id="triage-summary"></div>
           <div class="collection-compare" id="collection-compare" aria-label="Coletas de hoje e da última execução"></div>
           <div class="section-intro"><div><h2>Publicações e decisões</h2><p>Selecione um registro para ler a justificativa, a prova e o destino do alerta.</p></div><button class="text-button" id="open-feed" type="button">Ver arquivo completo ↗</button></div>

@@ -57,7 +57,7 @@ const TABLES = [
   ['vinculos-documentos', 'Vínculos documentais', 'Menções que conectam documentos e consórcios; menção não comprova adesão.'],
   ['identidade-pendente', 'Sinalizações de identidade', 'Histórico de documentos sinalizados na extração; alguns já foram descartados ou esclarecidos. Os pontos atuais ficam na triagem.'],
   ['arquivo-coletas', 'Arquivo de coletas', 'Arquivo bruto preservado: mostra os valores da captura, antes das revisões. A decisão atual está em Publicações e Eventos. Inclui descartes e títulos sem texto.'],
-  ['atos', 'Atos dentro dos documentos', 'Atos individualizados de uma mesma edição, cada um com decisão e página próprias.'],
+  ['atos', 'Fatos encontrados nos documentos', 'Fatos de uma mesma fonte, cada um com decisão e página próprias; a fonte não é contada novamente como fato.'],
   ['revisoes-eventos', 'Revisões editoriais', 'Decisões documentais lacradas ao trecho, com justificativa e método de revisão. Não são todas revisões humanas: confira o método de cada registro.'],
 ];
 
@@ -327,7 +327,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
     const recoveredSuggestion = !appliedReview && !stale && Boolean(row.article_suggested_category);
     const pendingReview = activeCandidate && !['confirmar_evento', 'nao_evento', 'duplicata'].includes(appliedReview?.decisao)
       || recoveredSuggestion;
-    const reason = isSplitParent ? `Esta publicação contém ${actsByParent.get(row.id).length} atos individualizados. A decisão sobre cada ato aparece abaixo.${auditValid ? ' '+auditReview.motivo : ''}`
+    const reason = isSplitParent ? `Rejeitada como registro adicional para evitar duplicação: os ${actsByParent.get(row.id).length} fatos desta fonte já foram registrados separadamente, com suas próprias decisões. Consulte os registros vinculados.`
       : stale ? 'Ato antigo com data recente de indexação.'
       : rejectedByReview ? `Rejeitado por revisão editorial — ${review.motivo}`
       : duplicateByReview ? `Duplicata vinculada a ${review.documento_relacionado} — ${review.motivo}`
@@ -347,6 +347,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       documentaryReviewAt: auditValid && auditReview.documentos_primarios?.length ? auditReview.revisado_em || '' : '',
       publishedYear: appliedReview?.fatos?.precisao_data === 'ano' ? appliedReview.fatos.ano : null,
       documentParentId: row.documento_pai_id || '',
+      splitPublication: isSplitParent,
       relatedActs: actsByParent.get(row.documento_pai_id || row.id) || [],
       actPage: isAct ? Number(row.pagina_inicio) : null,
       url: decision?.articleUrl || row.article_url || row.url,
@@ -362,7 +363,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       score: stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? ''
         : ruleReclassified ? row.pontuacao : decision?.score ?? row.pontuacao,
       baseStatus: inEvents ? 'evento_candidato' : 'arquivo_bruto',
-      baseDecision: isSplitParent ? 'desdobrado' : rejectedByReview || duplicateByReview ? 'descartado'
+      baseDecision: isSplitParent ? 'descartado' : rejectedByReview || duplicateByReview ? 'descartado'
         : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'
           : recoveredSuggestion ? 'candidato'
             : !inEvents ? 'descartado'
@@ -376,7 +377,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       eventMonth: curated?.mes_fato || row.mes_fato || '',
       originalPublishedAt: curated?.data_noticia_original || row.data_noticia_original || '',
       activeCandidate, pendingReview, rejectedEvent, legacyUnverified,
-      decisionStatus: isSplitParent ? 'desdobrado'
+      decisionStatus: isSplitParent ? 'descartado'
         : stale || rejectedByReview || duplicateByReview || correctedOutOfBase ? 'descartado'
         : appliedReview?.decisao === 'confirmar_evento' ? 'confirmado'
           : rejectedEvent ? 'rejeitado' : legacyUnverified || recoveredSuggestion ? 'revisao' : pdfReassessment ? 'revisao'
@@ -471,7 +472,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       stage: curated.etapa || item.stage, recoverySuggestion: null, pdfReassessment: false,
       reasonBasis: curated.metodo_triagem || 'triagem automática com evidência',
     });
-    if (!['confirmado', 'descartado', 'desdobrado'].includes(item.baseDecision)) {
+    if (!['confirmado', 'descartado'].includes(item.baseDecision)) {
       item.baseDecision = 'revisao'; item.pendingReview = true;
     }
     item.categoryFamily = categoryGroup(item.category);
@@ -519,6 +520,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   }
   const itemById = new Map(items.map((item) => [item.id, item]));
   const geographicTables = baseTables.map((table) => {
+    if (table.id === 'arquivo') return { ...table, rows: table.rows.map(row => itemById.get(row.id)?.splitPublication
+      ? { ...row, decisao_base: 'descartado', situacao_analise: itemById.get(row.id).reason } : row) };
     if (table.id !== 'eventos') return table;
     const addedColumns = [
       { key: 'uf_criterio', label: 'Como a UF foi identificada', description: 'Origem da localização: catálogo, revisão editorial, título, domínio oficial, trecho ou revisão documental.' },
