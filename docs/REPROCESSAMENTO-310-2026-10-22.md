@@ -6,15 +6,15 @@ O crescimento de 1 para 310 revisões não representava 309 dúvidas documentais
 
 | Resultado | Registros |
 |---|---:|
-| Confirmados com categoria e etapa; 2 por inferência autorizada com ressalvas | 26 |
-| Rejeitados após triagem de escopo/leitura | 281 |
+| Confirmados com categoria e etapa; 2 por inferência autorizada com ressalvas | 27 |
+| Rejeitados após triagem de escopo/leitura | 283 |
 | Revisar comigo | 0 |
-| Em processamento automático: acesso/leitura pendente | 3 |
+| Em processamento automático: acesso/leitura pendente | 0 |
 | Total | 310 |
 
-Após a autorização expressa de Adriano para inferir a classificação dos dois casos, o painel completo passou a 3.113 registros, 214 confirmados, 2.874 rejeitados, nenhum em revisão e 25 em processamento. A leitura manual posterior dos casos 3–13 resolveu 11 desses processamentos: **situação atual, 3.113 registros, 216 confirmados, 2.883 rejeitados, nenhum em revisão e 14 em processamento**. Permanecem pendentes os casos 14–27 da lista manual, incluindo as três leituras do lote dos 310. O resultado inicial daquele lote era 24 confirmados, 281 rejeitados, 2 revisões e 3 processamentos; os dois casos foram depois classificados com as ressalvas abaixo, sem alterar o resultado dos outros 308. Novas notícias podem mudar os totais.
+Após a autorização expressa de Adriano para inferir a classificação dos dois casos, o painel completo passou a 3.113 registros, 214 confirmados, 2.874 rejeitados, nenhum em revisão e 25 em processamento. A leitura manual dos casos 3–13 resolveu 11 desses processamentos; a dos casos 14–27 encerrou os demais. **Situação atual: 3.113 registros, 218 confirmados, 2.895 rejeitados, nenhum em revisão ou processamento.** A lista manual está concluída: seis confirmações e 21 rejeições nos 27 casos. O resultado inicial dos 310 era 24 confirmados, 281 rejeitados, duas revisões e três processamentos; a tabela acima incorpora as conclusões posteriores. Novas notícias podem mudar os totais.
 
-Todos os 310 continuam bloqueados para alerta e resumo retroativo. O estado de entregas, a fila de envio, as sessões e as 454 revisões anteriores foram preservados. As duas classificações com ressalvas e as 11 leituras posteriores foram acrescentadas ao histórico, totalizando 467 revisões. A sincronização local incorporou a recuperação automática `feafce0` do GitHub antes de concluir o trabalho; a coleta `e880a35` também foi incorporada, preservando seu estado e seus recibos.
+Todos os 310 continuam bloqueados para alerta e resumo retroativo. O estado de entregas, a fila de envio, as sessões e as 454 revisões anteriores foram preservados. As duas classificações com ressalvas, as 25 leituras posteriores e duas correções complementares dos casos 5/10 foram acrescentadas ao histórico, totalizando 483 revisões. A sincronização local incorporou a recuperação automática `feafce0` do GitHub antes de concluir o trabalho; a coleta `e880a35` também foi incorporada, preservando seu estado e seus recibos.
 
 ## Dois casos classificados por inferência autorizada
 
@@ -50,12 +50,12 @@ Adriano forneceu conclusões e trechos para 11 dos 25 processamentos. Os casos 1
 |---|---|---|
 | 3 — Salto/CONIRPI, 22/10 | Rejeitada | Edital de licitação de fornecedor; não é resultado, contrato ou execução. |
 | 4 — Mogi Guaçu/CEMMIL, 22/10 | Rejeitada | Convocações para admissão, inclusive Pirassununga; rotina de pessoal. |
-| 5 — CONSISA | Rejeitada | Meta de 50 municípios e orçamento projetado; não há ingresso identificado ou aprovação demonstrada. |
+| 5 — CONSISA/RS | Rejeitada | Meta de 50 municípios e orçamento projetado; não há ingresso identificado ou aprovação demonstrada. O original identifica Vale do Taquari/RS; a indicação posterior de MG foi corrigida. |
 | 6 — Antas | Rejeitada | Dotação de R$ 3 mil anulada para crédito suplementar; não é repasse/rateio firmado. |
 | 7 — Andradina/CIENSP, 21/10 | Rejeitada | Homologação/adjudicação parcial a fornecedores; objeto não informado. |
 | 8 — Águas de São Pedro | Rejeitada | Remanejamento municipal; rubrica não identifica consórcio nem cria contrato/repasse. |
 | 9 — Consórcio ABC | Confirmada · Atuação | Cadastro cultural aberto, levantamento em andamento; não é mapeamento concluído. |
-| 10 — Salto/CONIRPI, 20/10 | Rejeitada | Contrato com CRR Engenharia; objeto ausente no resumo. A dispensa ao lado não demonstra vínculo entre atos. |
+| 10 — Salto/CONIRPI, 20/10 | Rejeitada | Contrato com CRR Engenharia; objeto ausente no resumo. A leitura posterior do caso 25 vinculou a dispensa ao contrato por processo, fornecedor e valor; etapas sucessivas, não duas contratações. |
 | 11 — Mogi Guaçu/CEMMIL, 20/10 | Rejeitada | Convocação de eletricista em Leme; chamamento da Secult não pertence ao consórcio. |
 | 12 — Andradina/CIENSP, 20/10 | Rejeitada | Apenas expediente/lista de entidades; nenhum ato próprio. |
 | 13 — Cachoeira de Minas/CISMARPA | Confirmada · Atuação/Governança | Ratificação de alteração contratual publicada; teor do anexo e ingresso não inferidos. |
@@ -66,13 +66,36 @@ As 11 decisões estão em `revisoes-eventos.ndjson`, lote `revisao-manual-3-13-2
 
 Foram acrescentadas regras reutilizáveis para os dois aceites: cadastro aberto é atividade já iniciada, sem conclusão do levantamento; lei sancionada que ratifica alteração do contrato confirma a ratificação publicada, sem exigir o anexo para inventariar esse ato e sem presumir seu conteúdo. Os testes incluem futuro, negação, outro ator, projeto de lei e ausência do original para evitar aceites indevidos. Não foi criada regra por nome ou URL.
 
-## Pendências do bot, com leitura manual opcional
+## Leitura manual dos casos 14–27
 
-- Lei 2.210/2026 da AMM-MT: publicação acima do limite de páginas do leitor dessa fonte.
-- Santa Cruz das Palmeiras/Portal da Cidade: leitura bloqueada com HTTP 403.
-- PDF da Câmara de Passa Quatro: HTTP 403 na leitura direta.
+Adriano forneceu as 14 conclusões restantes. Foram aplicadas **duas confirmações e 12 rejeições**, mantendo prova, etapa e limites de leitura. O lote `revisao-manual-14-27-2026-10-22` acrescenta essas decisões e duas correções aos casos 5/10, sem modificar nenhuma das 467 revisões já existentes.
 
-Esses registros permanecem visíveis em **Em processamento automático**. A recuperação existente tenta novamente com limites e intervalo progressivo, sem expirar após três falhas. Não se afirma recuperação enquanto a leitura não ocorrer. PDFs completos recuperados voltam à triagem por regras; documento digitalizado ou truncado não é registrado como íntegra.
+| Caso | Decisão | Fato e limite |
+|---|---|---|
+| 14 — Carmo da Cachoeira | Rejeitada | Crédito municipal para dotação do CISLAV; não comprova instrumento firmado ou novo ingresso. |
+| 15 — Juína | Rejeitada | LDO de 2027 e rubrica genérica em anexo; não é rateio assinado. |
+| 16 — Santa Cruz das Palmeiras/SP | Rejeitada | Convocação para assembleia em 04/11/2026; constituição ainda não demonstrada. A UF é SP, não MG. |
+| 17 — Passa Quatro | Confirmada · Protocolo | Lei 2.417, de 21/06/2024, ratifica protocolo e autoriza contrato; ato histórico, sem constituição/ingresso efetivo presumido. |
+| 18 — CEMMIL, 17/10 | Rejeitada | Convocações de empregados em Mogi Guaçu e Mogi Mirim. |
+| 19 — CIENSP, 16/10 | Rejeitada | Abertura de pregão para dietas/leites/suplementos; sem resultado ou contrato. |
+| 20 — Taubaté | Rejeitada | Compra municipal de fornecedor privado via pregão compartilhado; consórcio não é o contratado. |
+| 21 — CONVALE | Rejeitada | Aviso de licitação para futura contratação de parques; página da FETI pertence a outro ator. |
+| 22 — Mogi Guaçu, 16/10 | Rejeitada | Pessoal e prorrogação de ata de uniformes; conselho cultural municipal é outro órgão. |
+| 23 — Santa Clara do Sul | Confirmada · Atuação/Cooperação autorizada | Dispensa 101/2026 para serviço de engenharia do CONSISA; somente autorização publicada, sem contrato firmado, execução ou pagamento comprovados. |
+| 24 — Contagem | Rejeitada | Descrição de serviço existente do Mulheres das Gerais, sem fato novo. |
+| 25 — CONIRPI, 15/10 | Rejeitada | Autorização que precede o contrato do caso 10; contratação rotineira, etapas relacionadas, não duplicata nem dois contratos. |
+| 26 — Mogi Guaçu, 15/10 | Rejeitada | Convocações de pessoal; edital reaparecer com outra data não prova publicação idêntica. |
+| 27 — Aguaí | Rejeitada | Convocação de pessoal também presente no caso 26; documentos preservados e relacionados, sem expor o convocado. |
+
+As páginas 1 e 51 da publicação de Juína foram conferidas visualmente no portal oficial, confirmando a natureza de LDO apesar do OCR fraco. Isso não equivale a recuperar as 99 páginas. O aviso de Santa Clara foi conferido no texto nativo e na imagem da página 4 do PDF. O original de Passa Quatro continuou respondendo HTTP 403 ao assistente: a conclusão usa a leitura/OCR fornecidos pelo usuário, com essa procedência explícita. Nenhum desses relatos foi gravado como íntegra recuperada.
+
+A matéria original do caso 5 identifica o CONSISA do Vale do Taquari/RS. O aviso de Santa Clara informa CNPJ 07.242.772/0001-89 e denominação correspondente; a indicação de um CONSISA/MG no relatório posterior não foi adotada. Identidade não foi decidida apenas pela sigla. As novas correções mantêm as entradas históricas e o resultado rejeitado do caso 5.
+
+Foram ampliadas regras documentais reutilizáveis: “Art. 1º Ratifica o protocolo” em lei sancionada confirma a ratificação, sem inventar constituição; aviso municipal de dispensa pelo art. 75, XI, para contratar serviço de consórcio confirma somente a cooperação autorizada. Contratação privada, plano futuro e resumo sem corpo não satisfazem essa segunda regra. Esses limites e os bloqueios históricos têm testes próprios.
+
+## Lacunas de leitura que não reabrem decisões concluídas
+
+Os três casos que ainda aguardavam leitura no lote dos 310 foram classificados com o material manual: Juína, Santa Cruz das Palmeiras e Passa Quatro. As limitações dos leitores continuam registradas (publicação extensa e HTTP 403), mas não são mais pendências de classificação. Não se declara acesso recuperado ou íntegra completa apenas por fechar a decisão. Uma recuperação posterior deve preservar a decisão humana, os limites da prova e o bloqueio de envio retroativo.
 
 ## Regra permanente do fluxo
 
@@ -99,3 +122,5 @@ Validação local: **548 testes do projeto e 5 testes de PDF aprovados**; painel
 Atualização posterior das duas classificações por inferência: **39 testes relacionados aprovados**; painel e CSV regenerados e validados para 3.113 registros, agora com 214 confirmados, 2.874 rejeitados, zero revisões e 25 processamentos. Sessões, filas e recibos intactos; zero mensagens e zero chamadas de IA. Isso confirma a projeção local e a preservação das decisões; a publicação remota é conferida separadamente.
 
 Leitura manual posterior dos casos 3–13: **552 testes do projeto aprovados**, incluindo contrapontos às duas regras novas, preservação das 456 revisões anteriores e bloqueio de alerta/resumo para os 11 registros. Painel e CSV regenerados e pacote público validado sem perda de registros: 216 confirmações, 2.883 rejeições, zero revisões e 14 processamentos. Fontes, textos integrais, sessões, filas e recibos preservados; nenhum envio ou chamada de IA nesta manutenção. A publicação remota é conferida separadamente.
+
+Conclusão dos casos 14–27: **555 testes do projeto aprovados**, com contrapontos para minuta, negação, condição, fornecedor privado, ausência do corpo e efeitos jurídicos posteriores. O teste de proteção da fila considera a última revisão de cada publicação: uma correção acrescentada ao histórico não cria outra notícia. Pacote público validado com hashes/contagens das partes e CSV idêntico à projeção canônica dos 3.113 registros: 218 confirmados, 2.895 rejeitados, nenhuma revisão ou processamento. As 467 revisões anteriores, o arquivo bruto, os textos integrais, os manifestos históricos, as sessões, a fila e os recibos permaneceram intactos. Nenhuma mensagem, reexecução de coleta ou chamada de IA foi feita nesta manutenção. A publicação remota é conferida separadamente.

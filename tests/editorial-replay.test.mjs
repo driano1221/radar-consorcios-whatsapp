@@ -113,7 +113,9 @@ test('falsos positivos editoriais não retornam à coleta, fila ou resumo semana
   const byId = new Map(archive.map((row) => [row.id, row]));
   const pdfById = new Map([...recovered, ...largeRecovered.filter((row) => row.trechos?.length)]
     .map((row) => [row.documento_id, row]));
-  const rejected = reviews.filter((row) => row.decisao === 'nao_evento' && byId.has(row.documento_id));
+  // A correction appends a review of the same publication, not another item in the queue.
+  const rejected = [...new Map(reviews.map(row => [row.documento_id, row])).values()]
+    .filter((row) => row.decisao === 'nao_evento' && byId.has(row.documento_id));
   assert.ok(rejected.length >= 33, 'as decisões editoriais históricas devem permanecer');
   const guard = await loadEditorialGuard(fileURLToPath(new URL('../data/catalogo/', import.meta.url)));
 

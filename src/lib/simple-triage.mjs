@@ -63,7 +63,7 @@ export function decideSimpleTriage(item) {
   // generic older AI interpretation must not turn it into accession/control,
   // or require human rereading solely because the regulation is lengthy.
   if (literalRule && ['published_inspection_rule','published_governance_rule','ratified_protocol','documentary_exclusion',
-    'legal_entry_authorization','approved_legislative_project','public_service_agreement','court_notice','consortium_budget_act','recorded_receipt',
+    'legal_entry_authorization','approved_legislative_project','public_service_agreement','authorized_public_cooperation','court_notice','consortium_budget_act','recorded_receipt',
     'documented_rateio','performed_institutional_activity','reported_ongoing_work','signed_cooperation','signed_municipal_protocol','documented_composition','court_decision','ratified_statute'].includes(rule.proofKind))
     return { ...base, status: rule.category==='GERAL'?'descartado':'confirmado', evidence:literalRule,
       reason: rule.reason || rule.reasons?.at(-1) ||

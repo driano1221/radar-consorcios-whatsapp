@@ -61,6 +61,13 @@ export function documentaryCorrection(title, text) {
   const publishedAgreement = /^extrato de conv[eê]nio/i.test(title) && /contratante[\s.:]*prefeitura municipal.{0,120}contratada[\s.:]*cons[oó]rcio/i.test(text);
   if (agreement && publicParties && (formalized || publishedAgreement) && !/\b(?:minuta|modelo de contrato)\b/i.test(title))
     return result('ATUAÇÃO', 'public_service_agreement', 'instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos', 'partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito', agreement);
+  const authorizedService = /\bo munic[ií]pio de.{1,90}torna p[uú]blico que foi efetuado o processo de dispensa de licita[cç][aã]o.{0,200}?artigo 75,\s*inciso XI.{0,330}?visando a contrata[cç][aã]o.{0,150}?para presta[cç][aã]o de servi[cç]os.{0,160}?\ba contrata[cç][aã]o ser[aá] realizada com o cons[oó]rcio intermunicipal[^.;]{0,160}/i.exec(text);
+  const authorizationPrefix = authorizedService && text.slice(Math.max(0, authorizedService.index - 120), authorizedService.index).split(/[.!?;]/).at(-1);
+  if (authorizedService && !/\b(?:minuta|modelo de aviso)\b/i.test(title) &&
+      !/\b(?:n[aã]o|se|caso)\b/i.test(authorizationPrefix + authorizedService[0].split(/\btorna p[uú]blico\b/i)[0]))
+    return result('COOPERAÇÃO AUTORIZADA', 'authorized_public_cooperation',
+      'dispensa intermunicipal publicada; contrato firmado, execução e pagamento não comprovados',
+      'município publicou a autorização para contratar serviço de consórcio; classificar somente a etapa autorizada', authorizedService);
   const budget = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*(?:fica este cons[oó]rcio autorizado\s*)?(?:a\s*)?abrir.{0,60}cr[eé]dito adicional suplementar\b.{0,240}/i.exec(text);
   if (/^(?:resolu[cç][aã]o|ato de cons[oó]rcio)/i.test(title) && budget && /\bpresidente do cons[oó]rcio\b/i.test(head))
     return result('FINANÇAS', 'consortium_budget_act', 'crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio', 'ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal', budget);
@@ -81,7 +88,7 @@ export function documentaryCorrection(title, text) {
   }
   // Both the legal act and its operative ratification must be present. A
   // hypothetical protocol in a recital does not satisfy this condition.
-  const ratification = /\bart\.?\s*1[º°o.]?\s*\.?(?:(?!\bn[aã]o\b|\bse\b|\bcaso\b).){0,420}?\bfica ratificado,?\s*(?:em todos os seus termos,?\s*)?o protocolo de inten[cç][oõ]es[^.]{0,300}/i.exec(text);
+  const ratification = /\bart\.?\s*1[º°o.]?\s*\.?(?:(?!\bn[aã]o\b|\bse\b|\bcaso\b).){0,420}?\b(?:fica ratificado,?\s*(?:em todos os seus termos,?\s*)?o|ratifica o) protocolo de inten[cç][oõ]es[^.]{0,300}/i.exec(text);
   if (/^lei\b/i.test(title) && /(?:sanciona|sanciono|promulg[ao])/i.test(head) && ratification)
     return result('PROTOCOLO', 'ratified_protocol',
       'ratificação legal do protocolo; ingresso homologado, constituição e rateio assinado não comprovados',
