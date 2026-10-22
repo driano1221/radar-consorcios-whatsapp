@@ -12,9 +12,9 @@ O crescimento de 1 para 310 revisões não representava 309 dúvidas documentais
 | Em processamento automático: acesso/leitura pendente | 3 |
 | Total | 310 |
 
-Após a autorização expressa de Adriano para inferir a classificação dos dois casos, o painel completo fica com **3.113 registros, 214 confirmados, 2.874 rejeitados, nenhum em revisão e 25 em processamento**. Os 25 processamentos incluem 3 do lote dos 310 e 22 fora dele. O resultado inicial do lote era 24 confirmados, 281 rejeitados, 2 revisões e 3 processamentos; os dois casos foram depois classificados com as ressalvas abaixo, sem alterar o resultado dos outros 308. Novas notícias podem mudar os totais.
+Após a autorização expressa de Adriano para inferir a classificação dos dois casos, o painel completo passou a 3.113 registros, 214 confirmados, 2.874 rejeitados, nenhum em revisão e 25 em processamento. A leitura manual posterior dos casos 3–13 resolveu 11 desses processamentos: **situação atual, 3.113 registros, 216 confirmados, 2.883 rejeitados, nenhum em revisão e 14 em processamento**. Permanecem pendentes os casos 14–27 da lista manual, incluindo as três leituras do lote dos 310. O resultado inicial daquele lote era 24 confirmados, 281 rejeitados, 2 revisões e 3 processamentos; os dois casos foram depois classificados com as ressalvas abaixo, sem alterar o resultado dos outros 308. Novas notícias podem mudar os totais.
 
-Todos os 310 continuam bloqueados para alerta e resumo retroativo. O estado de entregas, a fila de envio, as sessões e as 454 revisões anteriores foram preservados. Duas novas decisões editoriais foram acrescentadas ao histórico, totalizando 456; somente os dois registros correspondentes da triagem foram atualizados. A sincronização local incorporou a recuperação automática `feafce0` do GitHub antes de concluir o trabalho; a coleta `e880a35` também foi incorporada, preservando seu estado e seus recibos.
+Todos os 310 continuam bloqueados para alerta e resumo retroativo. O estado de entregas, a fila de envio, as sessões e as 454 revisões anteriores foram preservados. As duas classificações com ressalvas e as 11 leituras posteriores foram acrescentadas ao histórico, totalizando 467 revisões. A sincronização local incorporou a recuperação automática `feafce0` do GitHub antes de concluir o trabalho; a coleta `e880a35` também foi incorporada, preservando seu estado e seus recibos.
 
 ## Dois casos classificados por inferência autorizada
 
@@ -42,7 +42,31 @@ As verificações e a autorização posterior estão ligadas aos mesmos IDs e ha
 
 Critério desta decisão: é possível classificar o tipo e a etapa de um ato publicado mantendo ressalvas explícitas sobre outros atributos. A autorização de inferência nestes dois registros não elimina requisitos de evidência para novos casos nem converte lacuna de assinatura em assinatura comprovada, nomes semelhantes em identidade jurídica ou autorização em ingresso efetivo. Distinguir também valor acrescido de novo total comparando com o instrumento anterior. Não criar uma regra geral de confirmação sem leitura.
 
-## Pendências do bot, sem tarefa para o usuário
+## Leitura manual dos casos 3–13
+
+Adriano forneceu conclusões e trechos para 11 dos 25 processamentos. Os casos 1 e 2 repetidos no arquivo não trouxeram novas evidências e mantêm a classificação com ressalvas expressamente autorizada na mensagem anterior. Não foram reabertos como revisão.
+
+| Caso da lista manual | Decisão | Fato e limite |
+|---|---|---|
+| 3 — Salto/CONIRPI, 22/10 | Rejeitada | Edital de licitação de fornecedor; não é resultado, contrato ou execução. |
+| 4 — Mogi Guaçu/CEMMIL, 22/10 | Rejeitada | Convocações para admissão, inclusive Pirassununga; rotina de pessoal. |
+| 5 — CONSISA | Rejeitada | Meta de 50 municípios e orçamento projetado; não há ingresso identificado ou aprovação demonstrada. |
+| 6 — Antas | Rejeitada | Dotação de R$ 3 mil anulada para crédito suplementar; não é repasse/rateio firmado. |
+| 7 — Andradina/CIENSP, 21/10 | Rejeitada | Homologação/adjudicação parcial a fornecedores; objeto não informado. |
+| 8 — Águas de São Pedro | Rejeitada | Remanejamento municipal; rubrica não identifica consórcio nem cria contrato/repasse. |
+| 9 — Consórcio ABC | Confirmada · Atuação | Cadastro cultural aberto, levantamento em andamento; não é mapeamento concluído. |
+| 10 — Salto/CONIRPI, 20/10 | Rejeitada | Contrato com CRR Engenharia; objeto ausente no resumo. A dispensa ao lado não demonstra vínculo entre atos. |
+| 11 — Mogi Guaçu/CEMMIL, 20/10 | Rejeitada | Convocação de eletricista em Leme; chamamento da Secult não pertence ao consórcio. |
+| 12 — Andradina/CIENSP, 20/10 | Rejeitada | Apenas expediente/lista de entidades; nenhum ato próprio. |
+| 13 — Cachoeira de Minas/CISMARPA | Confirmada · Atuação/Governança | Ratificação de alteração contratual publicada; teor do anexo e ingresso não inferidos. |
+
+São **2 confirmações e 9 rejeições**, pelo recorte vigente: licitação/contratação rotineira de fornecedores não é automaticamente atuação institucional. O caso 38 antigo, aceito por autorização específica, continua preservado e não foi usado para ampliar esse recorte.
+
+As 11 decisões estão em `revisoes-eventos.ndjson`, lote `revisao-manual-3-13-2026-10-22`, com numeração, relato e hash da leitura do usuário, fonte, página quando fornecida, decisão e bloqueios de alerta/resumo. As 456 revisões já existentes foram preservadas. Os nove relatos relativos a fontes sem íntegra arquivada não foram gravados em `textos-artigos.ndjson` nem apresentados como PDFs recuperados.
+
+Foram acrescentadas regras reutilizáveis para os dois aceites: cadastro aberto é atividade já iniciada, sem conclusão do levantamento; lei sancionada que ratifica alteração do contrato confirma a ratificação publicada, sem exigir o anexo para inventariar esse ato e sem presumir seu conteúdo. Os testes incluem futuro, negação, outro ator, projeto de lei e ausência do original para evitar aceites indevidos. Não foi criada regra por nome ou URL.
+
+## Pendências do bot, com leitura manual opcional
 
 - Lei 2.210/2026 da AMM-MT: publicação acima do limite de páginas do leitor dessa fonte.
 - Santa Cruz das Palmeiras/Portal da Cidade: leitura bloqueada com HTTP 403.
@@ -73,3 +97,5 @@ Os testes usam ambiente isolado, com persistência, IA e mensagens desligadas. U
 Validação local: **548 testes do projeto e 5 testes de PDF aprovados**; painel e CSV conferidos para 3.113 registros, com partes verificadas sem perda. A interface foi aberta em navegador isolado, com dois registros no filtro humano, 25 no processamento (3 do lote e 22 da coleta incorporada) e nenhum erro de execução. Nenhum envio, reenvio ou chamada à API de IA foi feito nesta manutenção.
 
 Atualização posterior das duas classificações por inferência: **39 testes relacionados aprovados**; painel e CSV regenerados e validados para 3.113 registros, agora com 214 confirmados, 2.874 rejeitados, zero revisões e 25 processamentos. Sessões, filas e recibos intactos; zero mensagens e zero chamadas de IA. Isso confirma a projeção local e a preservação das decisões; a publicação remota é conferida separadamente.
+
+Leitura manual posterior dos casos 3–13: **552 testes do projeto aprovados**, incluindo contrapontos às duas regras novas, preservação das 456 revisões anteriores e bloqueio de alerta/resumo para os 11 registros. Painel e CSV regenerados e pacote público validado sem perda de registros: 216 confirmações, 2.883 rejeições, zero revisões e 14 processamentos. Fontes, textos integrais, sessões, filas e recibos preservados; nenhum envio ou chamada de IA nesta manutenção. A publicação remota é conferida separadamente.

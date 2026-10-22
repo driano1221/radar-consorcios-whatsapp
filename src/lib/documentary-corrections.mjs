@@ -5,11 +5,25 @@ export function documentaryCorrection(title, text) {
   const result = (category, proofKind, stage, reason, match) => match && ({ category, proofKind,
     stage, reason, evidenceText: match[0], evidenceOffset: match.index });
   const reject = (stage, reason, match) => result('GERAL', 'documentary_exclusion', stage, `rejeitado: ${reason}`, match);
+  // An open registry is an activity already started, not a completed mapping.
+  const registration = /\bcons[oó]rcio\b[^.!?;]{0,150}?\b(?:lan[cç]ou|abriu)\s+(?:um[a]?\s+|o\s+|a\s+)?(?:mapeamento|cadastro|levantamento)\b[^.!?;]{0,200}/i.exec(text);
+  const invitation = /\ba iniciativa convida\b[^.!?;]{0,260}\bparticiparem do cadastro\b/i.test(text);
+  const registrationPrefix = registration && text.slice(Math.max(0, registration.index - 120), registration.index).split(/[.!?;]/).at(-1);
+  if (/mapeamento|cadastro|levantamento/i.test(title) && registration && invitation &&
+      !/\b(?:n[aã]o|pretende|pretendia|poderia|se|caso)\b/i.test(registrationPrefix + registration[0].split(/\blan[cç]ou\b|\babriu\b/i)[0]))
+    return result('ATUAÇÃO', 'performed_institutional_activity',
+      'cadastro aberto; mapeamento em andamento, conclusão não comprovada',
+      'consórcio lançou o levantamento e abriu participação; classificar a etapa realizada', registration);
   const draft = /^(?:\[Página 1\]\s*)?PROJETO DE LEI\b/i.test(text.slice(0,150)) &&
     /\b(?:contamos com o apoio|para a aprova[cç][aã]o do presente projeto|consequente convers[aã]o em lei)\b/i.exec(text);
   if (draft) return reject('projeto ainda submetido à aprovação; a fórmula de sanção faz parte da minuta', 'projeto não é lei sancionada nem rateio celebrado', draft);
   const committee = /\bPARECER DA COMISS[AÃÀÁ]O\b/i.test(head) && /(?:^|\s)[eé] de parecer que seja encaminhado\b.{0,120}/i.exec(text);
   if (committee) return reject('parecer de comissão sobre projeto; sanção e ratificação não comprovadas', 'parecer/redação não comprova lei sancionada', committee);
+  const amendedContract = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*fica ratificad[ao]\s+(?:a\s+)?altera[cç][aã]o\s+do\s+contrato\s+(?:de\s+cons[oó]rcio\s+p[uú]blico\s+do\s+|do\s+)?cons[oó]rcio\b[^.;]{0,330}/i.exec(text);
+  if (/^lei\b/i.test(title) && /\b(?:sanciona|sanciono|promulg[ao])\b/i.test(head) && amendedContract)
+    return result('GOVERNANÇA', 'published_governance_rule',
+      'ratificação de alteração contratual publicada; teor do anexo e novo ingresso não comprovados',
+      'a ratificação publicada é o fato; não inventar o conteúdo do anexo nem adesão municipal', amendedContract);
   const operative = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*(?:(?:fica\s+)?(?:o poder executivo municipal\s+)?autorizad[oa]|esta lei autoriza)\b.{0,220}\b(?:ingresso|participa[cç][aã]o|aderir)\b.{0,240}\bcons[oó]rcio\b[^.;]{0,230}/i.exec(text.slice(0, 2200));
   if (/^lei\b/i.test(title) && operative && /\b(?:sanciono|sanciona|promulga)\b/i.test(head)) {
     const proof = result('ADESÃO AUTORIZADA', 'legal_entry_authorization',

@@ -1,8 +1,8 @@
-# Triagem automática — estado em 21/10/2026
+# Triagem automática — estado em 22/10/2026
 
 ## Fluxo em produção
 
-**Coletar → ler o original → decidir com prova → confirmar ou rejeitar → considerar o WhatsApp.** Falta de texto, discordância, listagem sem notícia individual e possível duplicidade ficam em **Revisar comigo**, com fonte e roteiro de conferência. Confirmar o conteúdo não remove os controles de data, novidade, cota ou preferência de canal.
+**Coletar → ler o original → decidir com prova → confirmar ou rejeitar → considerar o WhatsApp.** Falta de texto, citação inválida ou segunda leitura pendente ficam em **Em processamento automático**. Revisar comigo exige conflito específico não resolvido; releitura fraca não reabre decisões concluídas. Inferências editoriais expressamente autorizadas podem concluir a classificação de um ato publicado com ressalvas visíveis, sem comprovar atributos ainda incertos. Confirmar o conteúdo não remove os controles de data, novidade, cota ou preferência de canal.
 
 O painel usa sete famílias: **Criação, Adesão, Saída, Rateio, Protocolo, Crise e Atuação**. Governança, Finanças e Controle/Fiscalização aparecem como subtipos de Atuação. As etapas jurídicas continuam explícitas: autorização não equivale a ingresso, assinatura não equivale a pagamento. Controle/Fiscalização continua somente no painel, inclusive fora do boletim do WhatsApp.
 
@@ -15,6 +15,8 @@ O painel usa sete famílias: **Criação, Adesão, Saída, Rateio, Protocolo, Cr
 Conferência reproduzível: `node scripts/apply-joint-review-39.mjs` simula; `--apply` aplica somente se ainda faltar o lote completo. A aplicação é idempotente, valida provas e hashes e não importa clientes de rede/WhatsApp. O script inicial abaixo passa a preservar o relatório congelado quando encontra revisão humana posterior.
 
 As regras aprendidas distinguem LDO e cronograma de um rateio assinado, conselho consultivo de protocolo, ratificação legal de ingresso e cooperação autorizada de criação. Normas operacionais publicadas com prova literal não exigem revisão só por serem longas ou por uma interpretação antiga da IA. O aceite do credenciamento do caso 38 é uma inclusão expressa desse caso pelo usuário; não amplia automaticamente o escopo para todos os contratos de fornecedores. Valores dessa notícia secundária continuam sem conferência independente no diário.
+
+A leitura manual dos casos 3–13 acrescentou dois critérios gerais: lançamento de cadastro com convite aberto confirma Atuação em andamento, sem levantamento concluído; ratificação legal de alteração do contrato confirma Atuação/Governança publicada, sem inferir conteúdo do anexo ou novo ingresso. Edital, homologação parcial e contrato rotineiro com fornecedor continuam distintos desses fatos. Atos adjacentes na mesma página não têm objeto/vínculo presumido. [Decisões, limites e casos restantes](REPROCESSAMENTO-310-2026-10-22.md#leitura-manual-dos-casos-313).
 
 - Escopo congelado em `triagem-simples-lote.json`, a partir do painel de 21/10 às 16h41 de Brasília: **29 confirmadas, uma rejeitada e 39 em Revisar comigo**.
 - Reutilizados somente textos com hash válido e leituras já guardadas. Zero chamadas adicionais à IA e zero conexões/envios ao WhatsApp na reconciliação.
