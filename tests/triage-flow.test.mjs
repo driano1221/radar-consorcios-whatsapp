@@ -142,3 +142,28 @@ test('os 310 preservam fonte e prova, não viram alertas e registram atos formai
  }
  assert.ok(checked>0,'Atos formais devem ter bloqueio independente da URL');
 });
+
+test('verificação humana dos dois casos preserva esclarecimentos e só reapresenta as pendências reais',async()=>{
+ const directory=fileURLToPath(new URL('../data/catalogo/',import.meta.url));
+ const decisions=await loadOriginalTriage(directory),guard=await loadEditorialGuard(directory);
+ const ids=['1bc1d2cd210804080585d795ebf74f33f55dda1d0cac75858080cccc40511700','4a51b6537e6254f1bbed7f0989e906aa01afc1a90ec5aa06015ca12dc499c45e'];
+ const archive=(await readFile(path.join(directory,'arquivo-coletas.ndjson'),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
+ const texts=(await readFile(path.join(directory,'textos-artigos.ndjson'),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
+ for(const id of ids) {
+  const d=decisions.get(id),row=archive.find(r=>r.id===id),rawText=texts.find(t=>t.documento_id===id)?.texto;
+  assert.equal(d.status,'revisao');assert.equal(d.method,'revisao_humana_inconclusiva');assert.ok(validOriginalTriage(row,d));
+  assert.equal(d.manualReview.reviewer,'Adriano');assert.equal(d.manualReview.decision,'manter_revisao');
+  assert.equal(d.alertAllowed,false);assert.equal(d.weeklyAllowed,false);assert.equal(d.checks.length,2);
+  for(const body of [rawText,'']) {
+   const item=applySimpleTriage(applyEditorialGuard({url:row.url,title:row.titulo,rawText:body,classification:{category:'RATEIO',score:99}},guard));
+   assert.equal(item.triage.status,'revisao');assert.deepEqual(item.triage.checks,d.checks);assert.equal(isNotifiable(item),false);
+  }
+ }
+ const planalto=decisions.get(ids[0]),money=planalto.manualReview.amountsCents;
+ assert.equal(money.originalMedicines+money.increase,money.newMedicines);
+ assert.equal(money.originalTotal+money.increase,money.newTotal);
+ assert.doesNotMatch(planalto.checks.join(' '),/13\.925|413\.925|076\/2025|76\/2026/);
+ assert.match(planalto.checks.join(' '),/assinatura digital.*prefeito/);assert.match(planalto.checks.join(' '),/alínea h versus e/);
+ assert.match(decisions.get(ids[1]).checks.join(' '),/Protocolo de Intenções/);
+ assert.match(decisions.get(ids[1]).reason,/relação geográfica.*não comprova identidade jurídica/);
+});

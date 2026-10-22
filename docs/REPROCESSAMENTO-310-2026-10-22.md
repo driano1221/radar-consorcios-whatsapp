@@ -22,7 +22,11 @@ Todos os 310 continuam bloqueados para alerta e resumo retroativo. O estado de e
 
 [Aditivo de rateio de Planalto Alegre](https://diariomunicipal.sc.gov.br/atos/8821385).
 
-Conferir os valores **R$ 13.925,40 / R$ 413.925,40**, as referências **076/2025 / 76/2026** e a assinatura municipal. Uma retificação ou explicação oficial e a conferência das assinaturas podem resolver o conflito. A numeração e a decisão do relatório dos 39 permanecem intactas.
+**Atualização após a verificação manual relatada por Adriano em 22/10:** os valores estão esclarecidos. No [contrato original 76/2025, ato 7889244](https://diariomunicipal.sc.gov.br/atos/7889244), a linha de medicamentos era R$ 400.000,00. Somada ao acréscimo de R$ 13.925,40, passa a R$ 413.925,40. O repasse total também fecha: R$ 1.453.633,76 + R$ 13.925,40 = R$ 1.467.559,16. Essas duas contas foram conferidas em centavos, sem ponto flutuante.
+
+O corpo do aditivo identifica 076/2025, igual ao original; 76/2026 aparece no título. A hipótese de erro de lançamento não foi tratada como retificação oficial. Conforme a conferência de assinaturas relatada pelo usuário, o único assinante digital é Vanderlei Canci, em 09/10/2026; Evandro Cleber Bet aparece apenas impresso. Essa verificação externa não foi refeita independentemente pelo assistente.
+
+**Permanece em Revisar comigo por dois pontos:** localizar assinatura digital municipal ou documento oficial que esclareça a formalização; esclarecer/retificar a cláusula quinta, que menciona a alínea h, enquanto a lista altera a alínea e. A diferença entre acréscimo e novo total não deve voltar como dúvida de valor. A numeração do caso 31 e as 38 decisões concluídas do lote anterior permanecem preservadas.
 
 ### Nova dúvida: destinatário da autorização de Aiuaba
 
@@ -30,7 +34,13 @@ Conferir os valores **R$ 13.925,40 / R$ 413.925,40**, as referências **076/2025
 
 A ementa cita o Consórcio de Desenvolvimento Econômico e Sustentável do Sertão dos Inhamuns. O art. 1º cita o Consórcio Intermunicipal de Governança Cooperativa para o Desenvolvimento Sustentável dos Municípios do Semiárido Cearense. A lei autoriza participação; não comprova saída nem ingresso efetivamente homologado.
 
-Conferir no protocolo/CNPJ se os nomes designam a mesma pessoa jurídica. Se forem diferentes, localizar retificação ou confirmação oficial do destinatário. A [notícia do Governo do Ceará](https://www.ce.gov.br/sde/2025/08/05/governo-do-ceara-por-meio-da-sde-lanca-consorcio-de-desenvolvimento-economico-e-sustentavel-do-sertao-dos-inhamuns/) confirma o grupo regional, mas não resolve por si só a divergência dos nomes da lei; não foi usada como prova de equivalência.
+**Atualização após a verificação manual relatada por Adriano em 22/10:** o protocolo referido como anexo ao art. 1º não foi localizado na publicação. A tentativa de leitura do PDF da Câmara relatada pelo usuário não esclareceu a identificação. Não foi localizada retificação. O fato de Sertão dos Inhamuns ser sub-região do Semiárido não comprova identidade jurídica.
+
+**Permanece em Revisar comigo:** obter o Protocolo de Intenções com razão social e identificação/CNPJ do destinatário ou retificação oficial da ementa/art. 1º. A [notícia do Governo do Ceará](https://www.ce.gov.br/sde/2025/08/05/governo-do-ceara-por-meio-da-sde-lanca-consorcio-de-desenvolvimento-economico-e-sustentavel-do-sertao-dos-inhamuns/) confirma o grupo regional, mas não resolve por si só a divergência dos nomes da lei; não foi usada como prova de equivalência. Não confirmar a identidade por inferência geográfica nem registrar ingresso homologado.
+
+As duas verificações manuais estão ligadas aos mesmos IDs, hashes de texto e decisões pendentes em `triagem-originais.ndjson` e `triagem-reprocessada.ndjson`, com procedência explícita, pontos esclarecidos e pendências restantes. Não houve alteração do texto bruto, dos 310 resultados históricos nem das 454 revisões anteriores. Os dois registros continuam bloqueados para alertas e resumos.
+
+Critérios reutilizáveis: distinguir valor acrescido de novo total comparando com o instrumento anterior, sem inventar erro financeiro; distinguir assinatura impressa de assinatura digital efetivamente verificada; divergência de referência à alínea exige esclarecimento; proximidade geográfica ou nomes semelhantes não estabelecem equivalência entre pessoas jurídicas. Dúvidas resolvidas não devem ser reapresentadas como perguntas novas, e pendências documentais reais não se tornam confirmações apenas para zerar o contador.
 
 ## Pendências do bot, sem tarefa para o usuário
 

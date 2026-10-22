@@ -14,7 +14,7 @@ A numeração do relatório original foi preservada. Evidências, hashes e decis
 
 Somente **caso 31**: [aditivo de Planalto Alegre](https://diariomunicipal.sc.gov.br/atos/8821385) · [verificação de assinaturas](https://cisamosc.1doc.com.br/verificacao/1F80-8913-51CE-5AE9).
 
-Verificar assinatura do município e obter explicação/retificação para R$ 13.925,40 versus R$ 413.925,40 e contrato 076/2025 versus 76/2026. A página respondeu HTTP 200, mas não expôs os signatários na leitura pública feita; isso não prova ausência de assinatura.
+Atualização de 22/10 após a conferência manual relatada por Adriano: a diferença entre acréscimo e novo total foi esclarecida com o contrato original; o corpo mantém 076/2025 e 76/2026 aparece no título. Restam a formalização municipal, pois só a assinatura digital do consórcio foi localizada, e a inconsistência entre alíneas h/e da cláusula quinta. [Conferência atualizada e procedência](REPROCESSAMENTO-310-2026-10-22.md). O relato original por caso abaixo fica preservado como histórico da revisão de 21/10.
 
 ## Decisões por caso
 
