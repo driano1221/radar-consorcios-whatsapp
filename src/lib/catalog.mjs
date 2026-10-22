@@ -10,7 +10,7 @@ import { formalActDate } from './publication-date.mjs';
 import { AI_PROMPT_VERSION, applyAiReview } from './ai-review.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
 import { loadAlternativeDecisionData, validAlternativeDecision, applyAlternativeToRow } from './alternative-triage.mjs';
-import { loadOriginalTriage, validOriginalTriage } from './simple-triage.mjs';
+import { loadOriginalTriage, validOriginalTriage, applySimpleTriage } from './simple-triage.mjs';
 
 const FIELDS = [
   'id', 'documento_pai_id', 'chave_ato', 'pagina_inicio', 'pagina_fim',
@@ -139,10 +139,17 @@ export function mergeCatalogRecord(existing, incoming) {
   const oldAiRateioApproval = incoming.tipo_evento === 'RATEIO EM TRAMITAÇÃO' &&
     /contrato não assinado|assinatura pendente/i.test(incoming.etapa) &&
     existing.revisao_ia === 'approved';
-  const incomingBetter = Boolean(incoming.triagem_automatica) || statusPriority(incoming.situacao_analise) > statusPriority(existing.situacao_analise) ||
+  const settled = ['confirmado', 'descartado'].includes(existing.triagem_automatica?.status);
+  const staleReview = incoming.triagem_automatica?.version === 1 && incoming.triagem_automatica.status === 'revisao' && !incoming.triagem_automatica.retroactive;
+  const incomplete = !incoming.triagem_automatica || incoming.triagem_automatica.status === 'processando' || staleReview;
+  const preserveDecision = settled && incomplete && (!incoming.triagem_automatica ||
+    staleReview ||
+    incoming.triagem_automatica.nextAction === 'recuperar_texto' ||
+    existing.triagem_automatica.bodyHash === incoming.triagem_automatica.bodyHash);
+  const incomingBetter = !preserveDecision && (Boolean(incoming.triagem_automatica) || statusPriority(incoming.situacao_analise) > statusPriority(existing.situacao_analise) ||
     (statusPriority(incoming.situacao_analise) === statusPriority(existing.situacao_analise) &&
       (incoming.trecho.length > existing.trecho.length ||
-        (incoming.pontuacao || 0) > (existing.pontuacao || 0)));
+        (incoming.pontuacao || 0) > (existing.pontuacao || 0))));
   const best = correctedRateioStage || incomingBetter ? incoming : existing;
   return { ...best,
     primeira_coleta: [existing.primeira_coleta, incoming.primeira_coleta].filter(Boolean).sort()[0] || '',
@@ -177,7 +184,7 @@ export function mergeCatalogRecord(existing, incoming) {
     data_fato: incoming.data_fato || existing.data_fato || '',
     mes_fato: incoming.mes_fato || existing.mes_fato || '',
     decisao_base: /^categoria recalculada pelas regras atuais/i.test(existing.situacao_analise || '')
-      ? existing.decisao_base : incoming.decisao_base || existing.decisao_base || 'candidato',
+      ? existing.decisao_base : best.decisao_base || existing.decisao_base || 'candidato',
     decisao_alerta: /^categoria recalculada pelas regras atuais/i.test(existing.situacao_analise || '')
       ? existing.decisao_alerta : incoming.decisao_alerta || existing.decisao_alerta || '',
     motivo_alerta: /^categoria recalculada pelas regras atuais/i.test(existing.situacao_analise || '')
@@ -209,7 +216,8 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
       : original;
     const fresh = original ? classifyItem(recheckItem) : null;
     const candidate = original ? { ...original, classification: fresh } : null;
-    const item = candidate ? applyAiReview(candidate, candidate.aiReview, { preserveHistoricalRejection: true }) : null;
+    let item = candidate ? applyAiReview(candidate, candidate.aiReview, { preserveHistoricalRejection: true }) : null;
+    if (item?.triage) item = applySimpleTriage(item);
     if (!item?.url) continue;
     const sent = seenByUrl.get(canonicalUrl(item.url))?.sentAt || '';
     const row = catalogRecord(item, observation.firstSeenAt, observation.lastSeenAt, sent);
@@ -288,7 +296,7 @@ export async function loadCatalog(file) {
 
 export async function saveCatalog(directory, records, { now = new Date(), lookbackHours = 168 } = {}) {
   await mkdir(directory, { recursive: true });
-  const all = [...records.values()].sort((a, b) => a.id.localeCompare(b.id));
+  let all = [...records.values()].sort((a, b) => a.id.localeCompare(b.id));
   let actDefinitions = [];
   try {
     actDefinitions = (await readFile(path.join(directory, 'atos-identificados.ndjson'), 'utf8'))
@@ -297,7 +305,6 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
     if (error.code !== 'ENOENT') throw error;
   }
   const acts = materializeDocumentActs(all, actDefinitions);
-  await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), all.map((row) => JSON.stringify(row)).join('\n') + '\n');
   const splitParents = new Map();
   for (const act of acts) splitParents.set(act.documento_pai_id,
     (splitParents.get(act.documento_pai_id) || 0) + 1);
@@ -320,6 +327,13 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
   const auxiliary = await loadAlternativeDecisionData(directory);
   const originals = await loadOriginalTriage(directory);
   const humanIds = new Set(editorialReviews.map(r => r.documento_id));
+  all = all.map(row => {
+    const decision = originals.get(row.id);
+    if (humanIds.has(row.id) || !validOriginalTriage(row, decision)) return row;
+    const {bodyMatches, ...triage} = decision;
+    return {...row, decisao_base:triage.status, triagem_automatica:triage};
+  });
+  await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), all.map((row) => JSON.stringify(row)).join('\n') + '\n');
   const reviewed = [...all, ...acts].map((row) => {
     if (splitParents.has(row.id)) return { ...row, tipo_evento: 'GERAL',
       decisao_base: 'descartado', decisao_alerta: 'historico',

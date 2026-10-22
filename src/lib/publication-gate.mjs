@@ -91,6 +91,6 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
 }
 
 export function isNotifiable(item, minimumScore = 5) {
-  return isPublishableClassification(item.classification, minimumScore) &&
+  return (!item.triage || item.triage.status === 'confirmado') && isPublishableClassification(item.classification, minimumScore) &&
     !['historico', 'data_inconsistente', 'data_nao_verificada', 'descartado', 'previa'].includes(item.publicationDecision) && !item.discoveryOnly;
 }

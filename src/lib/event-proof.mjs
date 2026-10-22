@@ -89,7 +89,7 @@ export function refineEventProof(item, classification) {
       reasons: ['norma técnica de inspeção; protocolo citado no preâmbulo é fundamento, não objeto de alteração'] },
     literalEvidence(text, [operationalInstruction], 0, 450));
   }
-  const rateioSignature = /\b(?:local\s*\/\s*)?data\s*(?:da|de)\s*assinatura(?:\s+do\s+aditivo)?\s*:\s*[^.;]{0,45}?\d{2}\/\d{2}\/20\d{2}/i;
+  const rateioSignature = /\b(?:local\s*\/\s*)?data\s*(?:da|de)\s*assinatura(?:\s+do\s+aditivo)?\s*:\s*[^.;]{0,45}?(?:\d{2}\/\d{2}\/20\d{2}|\d{1,2}\s+de\s+[a-zç]+\s+de\s+20\d{2})/i;
   const rateioSigned = /\bcontratos?\s+de\s+rateio\s*,?\s*firmados?\s+entre\b/i;
   if (classification.category === 'RATEIO' && text.length < 12000 &&
     /\bcontratos?\s+de\s+rateio\b/i.test(title) && /\bcons[oó]rcio\b/i.test(text) &&

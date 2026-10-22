@@ -330,7 +330,7 @@ export function classifyItem(item) {
     }
   } catch { /* Classificação de texto sem URL continua disponível. */ }
   const supplier = routineSupplierContract(item);
-  if (supplier) return { category: 'GERAL', emoji: '📰', score: 0,
+  if (supplier) return { category: 'GERAL', emoji: '📰', score: 0, proofKind:'documentary_exclusion',
     stage: supplier.stage, reasons: [`rejeitado: ${supplier.reason}`],
     evidenceText: supplier.evidence, evidenceIndex: 0, publicContext: true, strongPublicContext: true };
   const articleUrl = item.articleUrl || item.url || '';

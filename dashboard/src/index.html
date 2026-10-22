@@ -7,9 +7,9 @@
   <title>Radar Consórcios · Acompanhamento</title>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./redesign.css">
-  <link rel="stylesheet" href="./registry.css?v=20261021-base-simples">
+  <link rel="stylesheet" href="./registry.css?v=triagem20261022">
   <link rel="stylesheet" href="./results.css">
-  <script src="./app.js?v=20261021-base-simples" type="module"></script>
+  <script src="./app.js?v=triagem-20261022" type="module"></script>
 </head>
 <body>
   <div class="shell">
@@ -32,7 +32,7 @@
           <div class="summary-strip" id="triage-summary"></div>
           <details class="collection-details"><summary>Detalhes da última coleta</summary><div class="collection-compare" id="collection-compare" aria-label="Coletas de hoje e da última execução"></div></details>
           <div class="section-intro"><div><h2>Base principal de notícias</h2><p>Os campos essenciais ficam visíveis. Clique na notícia para conferir a decisão e a prova.</p></div><div class="news-actions"><button class="text-button" id="open-feed" type="button">Ver todas</button><a class="text-button" href="./noticias.csv" download="radar-noticias.csv">Baixar base (CSV) ↓</a></div></div>
-          <div class="deck-filters"><label class="search-wrap"><input id="deck-search" type="search" placeholder="Buscar título, fonte ou consórcio" aria-label="Buscar publicações na triagem"></label><label class="select-wrap"><span>Decisão</span><select id="deck-filter" aria-label="Filtrar a triagem"><option value="accepted" selected>Confirmadas</option><option value="rejected">Rejeitadas</option><option value="pending">Revisar comigo</option><option value="all">Todas</option></select></label>
+          <div class="deck-filters"><label class="search-wrap"><input id="deck-search" type="search" placeholder="Buscar título, fonte ou consórcio" aria-label="Buscar publicações na triagem"></label><label class="select-wrap"><span>Decisão</span><select id="deck-filter" aria-label="Filtrar a triagem"><option value="accepted" selected>Confirmadas</option><option value="rejected">Rejeitadas</option><option value="pending">Revisar comigo</option><option value="processing">Em processamento automático</option><option value="all">Todas</option></select></label>
           <label class="select-wrap">Categoria <select id="deck-category" aria-label="Filtrar pelas sete categorias"><option value="">Todas as categorias</option><option value="CRIAÇÃO">Criação</option><option value="ADESÃO">Adesão</option><option value="SAÍDA">Saída</option><option value="RATEIO">Rateio</option><option value="PROTOCOLO">Protocolo</option><option value="CRISE">Crise</option><option value="ATUAÇÃO">Atuação</option></select></label></div>
           <div class="decision-stage news-principal" id="decision-stage"><div class="overview-list" id="deck-stack" aria-label="Publicações da triagem"></div><aside id="overview-detail" class="overview-detail" hidden aria-label="Decisão e evidência da publicação"></aside></div>
           <section class="pending-panel" aria-labelledby="pending-heading"><div class="pending-panel-head"><div><h2 id="pending-heading">Revisar comigo</h2></div><p>São publicações com dúvida específica, não falhas da coleta. Clique em um número para ver os casos.</p></div><div id="pending-breakdown" class="pending-breakdown"></div></section>

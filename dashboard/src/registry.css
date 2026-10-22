@@ -45,7 +45,7 @@ summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid #17634d; ou
 .refresh-box { min-width: 140px; }
 .refresh-box span, .refresh-box small { color: #718079; font: 11px "Segoe UI", Arial, sans-serif; letter-spacing: 0; }
 .refresh-box strong { color: #203c32; font: 600 14px "Segoe UI", Arial, sans-serif; margin: 5px 0; font-variant-numeric: tabular-nums; }
-.summary-strip { margin: 0 0 34px; background: transparent; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.summary-strip { margin: 0 0 34px; background: transparent; border: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); }
 .summary-number { padding: 19px 20px 18px; border-right: 1px solid var(--line); }
 .summary-number:first-child { padding-left: 0; }
 .summary-number:last-child { border-right: 0; }

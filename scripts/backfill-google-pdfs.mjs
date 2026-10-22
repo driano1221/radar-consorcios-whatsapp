@@ -8,6 +8,9 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import googleNewsDecoder from 'google-news-url-decoder';
 import { loadCatalog, saveCatalog } from '../src/lib/catalog.mjs';
+import {persistArticleTexts} from '../src/lib/article-text-store.mjs';
+import {reprocessTriage} from './reprocess-triage.mjs';
+import {recoveryDelayMs} from '../src/lib/recovery-policy.mjs';
 
 const execFileAsync = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -22,6 +25,7 @@ const records = await loadCatalog(path.join(directory, 'arquivo-coletas.ndjson')
 const reviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
   .split(/\r?\n/).filter(Boolean).map(JSON.parse);
 const reviewedIds = new Set(reviews.map((row) => row.documento_id));
+const fullTextIds = new Set((await readFile(path.join(directory,'textos-artigos.ndjson'),'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse).map(r=>r.documento_id));
 let previous = [];
 try { previous = (await readFile(output, 'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse); }
 catch (error) { if (error.code !== 'ENOENT') throw error; }
@@ -65,13 +69,13 @@ async function fetchPdf(url) {
 }
 
 const selected = [...records.values()].filter((row) =>
-  !reviewedIds.has(row.id) &&
+  !reviewedIds.has(row.id) && !fullTextIds.has(row.id) &&
   (['destino_pdf', 'destino_nao_html'].includes(row.article_recovery_reason) ||
-    (retryFailed && row.article_recovery_reason?.startsWith('falha:'))) &&
-  (!existing.has(row.id) || (retryFailed && existing.get(row.id).situacao?.startsWith('falha:') &&
-    Number(existing.get(row.id).tentativas || 1) < 3 &&
-    Date.now() - new Date(existing.get(row.id).tentado_em || 0).getTime() > 24 * 3600000)) &&
-  /^https:\/\/news\.google\.com\//.test(row.url)).slice(0, limit);
+    (retryFailed && row.article_recovery_reason?.startsWith('falha:')) ||
+    row.triagem_automatica?.status === 'processando' && /\.pdf(?:[?#]|$)/i.test(row.article_resolved_url || row.article_url || row.url)) &&
+  (!existing.has(row.id) || (retryFailed && (existing.get(row.id).situacao?.startsWith('falha:') || row.triagem_automatica?.status==='processando') &&
+    Date.now() - new Date(existing.get(row.id).tentado_em || 0).getTime() >= recoveryDelayMs(existing.get(row.id).tentativas))) &&
+  (/^https:\/\/news\.google\.com\//.test(row.url) || /\.pdf(?:[?#]|$)/i.test(row.url))).slice(0, limit);
 const results = [];
 for (const [index, row] of selected.entries()) {
   const result = { documento_id: row.id, url: row.url, url_pdf: '',
@@ -79,17 +83,21 @@ for (const [index, row] of selected.entries()) {
     tentado_em: new Date().toISOString(), tentativas: Number(existing.get(row.id)?.tentativas || 0) + 1 };
   let temporary = '';
   try {
-    const decoded = await decoder.decode(row.url);
-    const target = publicUrl(decoded?.decoded_url);
-    if (!decoded?.status || !target) throw new Error('google_news_nao_resolvido');
+    const direct = row.article_resolved_url || row.article_url || '';
+    const decoded = !direct && /^https:\/\/news\.google\.com\//.test(row.url) ? await decoder.decode(row.url) : null;
+    const target = publicUrl(direct || decoded?.decoded_url || row.url);
+    if (!target || new URL(target).hostname === 'news.google.com') throw new Error('google_news_nao_resolvido');
     const pdf = await fetchPdf(target);
     result.url_pdf = pdf.url;
     temporary = await mkdtemp(path.join(tmpdir(), 'radar-google-pdf-'));
     const pdfFile = path.join(temporary, 'source.pdf');
     await writeFile(pdfFile, pdf.buffer);
-    const { stdout } = await execFileAsync('python', [path.join(root, 'scripts', 'pdf-page-evidence.py'), pdfFile],
+    const { stdout } = await execFileAsync('python', [path.join(root, 'scripts', 'pdf-page-evidence.py'), pdfFile, '--full-text'],
       { cwd: root, timeout: 180000, maxBuffer: 5 * 1024 * 1024 });
-    Object.assign(result, JSON.parse(stdout));
+    const {texto_integral, ...pageEvidence} = JSON.parse(stdout);
+    Object.assign(result, pageEvidence);
+    if (apply && texto_integral) await persistArticleTexts(directory, [{url:row.url,articleUrl:pdf.url,
+      rawText:texto_integral,articleReader:'pdf_integral_por_pagina',contentProvenance:'pagina_original'}]);
     result.situacao = result.trechos.length ? 'trechos por página recuperados'
       : result.paginas_ocr_pendente.length ? 'ocr_pendente' : 'sem menção textual';
     console.log(`[pdf ${index + 1}/${selected.length}] ${row.id.slice(0, 8)}: ${result.situacao}; ${result.trechos.length} trechos`);
@@ -110,6 +118,7 @@ console.log(`[pdf] ${selected.length} documento(s) selecionado(s); ${results.fil
 if (apply && results.length) {
   for (const row of results) existing.set(row.documento_id, row);
   await writeFile(output, [...existing.values()].map((row) => JSON.stringify(row)).join('\n') + '\n', 'utf8');
+  await reprocessTriage(directory,{apply:true});
   await saveCatalog(directory, records);
   console.log('[pdf] Provas por página salvas; nenhum evento confirmado automaticamente.');
 }

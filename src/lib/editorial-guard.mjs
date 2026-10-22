@@ -72,8 +72,8 @@ export async function loadEditorialGuard(directory) {
   for (const row of archive) {
     if (originals.has(row.id)) {
       const stored = originals.get(row.id);
-      const decision = validOriginalTriage(row, stored) ? stored : { ...stored, status: 'revisao',
-        category: row.tipo_evento, evidence: '', reason: 'O registro mudou após a revisão histórica; conferir novamente.' };
+      const decision = validOriginalTriage(row, stored) ? stored : { ...stored, status: 'processando',
+        category: row.tipo_evento, evidence: '', reason: 'Revalidar automaticamente a prova após mudança do registro.', nextAction:'revalidar_texto', checks:[] };
       for (const url of [row.url, row.article_url, stored.sourceUrl].filter(Boolean))
         if (!guard.has(canonicalUrl(url))) guard.set(canonicalUrl(url), { origin: 'original_automatic', decision });
     }
@@ -113,6 +113,16 @@ export async function loadConfirmedEventRegistry(directory) {
     if (!registry.has(key)) registry.set(key, new Set());
     registry.get(key).add(canonicalUrl(canonicalRow.url));
     if (canonicalRow.article_url) registry.get(key).add(canonicalUrl(canonicalRow.article_url));
+  }
+  const originals = await loadOriginalTriage(directory);
+  for (const [id, decision] of originals) {
+    const row = byId.get(id);
+    if (!row || reviewById.has(id) || decision.status !== 'confirmado' || !validOriginalTriage(row, decision)) continue;
+    const key = formalEventKey({title:row.titulo,rawText:byText.get(id)?.texto||'',publishedAt:row.data_noticia_original||row.data_publicacao,
+      classification:{category:decision.category,evidenceText:decision.evidence}});
+    if (!key) continue;
+    if (!registry.has(key)) registry.set(key,new Set());
+    for (const url of [row.url,row.article_url,decision.sourceUrl].filter(Boolean)) registry.get(key).add(canonicalUrl(url));
   }
   return registry;
 }

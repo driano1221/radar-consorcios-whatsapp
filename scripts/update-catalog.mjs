@@ -4,10 +4,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCatalog, mergeStateIntoCatalog, saveCatalog } from '../src/lib/catalog.mjs';
 import { loadOriginalTriage } from '../src/lib/simple-triage.mjs';
+import { reprocessTriage,upgradeLegacyTriage } from './reprocess-triage.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'data', 'catalogo');
 const statePath = path.join(root, 'state', 'news-state.json');
+const state = JSON.parse(await readFile(statePath, 'utf8'));
+await reprocessTriage(directory, { state, apply: true });
 const editorialReviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
   .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 const reviewedIds = new Set(editorialReviews.map((review) => review.documento_id).filter(Boolean));
@@ -29,7 +32,8 @@ if (process.argv.includes('--history')) {
   console.log(`[catálogo] ${recovered} versões históricas do estado processadas.`);
 }
 
-mergeStateIntoCatalog(records, JSON.parse(await readFile(statePath, 'utf8')), { reviewedIds });
+mergeStateIntoCatalog(records, state, { reviewedIds });
+await upgradeLegacyTriage(directory,records,state,reviewedIds);
 // Full-text evidence is stored separately, never substituted for a sealed excerpt.
 try {
   const texts = (await readFile(path.join(directory, 'textos-artigos.ndjson'), 'utf8'))

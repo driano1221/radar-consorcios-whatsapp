@@ -48,7 +48,9 @@ jobs:
       - name: Instalar Trafilatura
         run: python -m pip install -r requirements-extraction.txt
       - name: Testes de regressão
-        run: npm test
+        run: |
+          npm test
+          python -m unittest discover -s tests -p 'test_*pdf*.py'
       - name: Registrar invariantes antes da recuperação
         run: node scripts/check-recovery-safety.mjs --before
       - name: Preparar OCR seletivo para PDFs públicos

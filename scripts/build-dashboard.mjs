@@ -448,6 +448,11 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
   }).map(item => {
     const row = archive.find(row => row.id === item.id);
     const stored = originalDecisions.get(item.id);
+    if (!item.editorialReview && row && stored && !validOriginalTriage(row, stored)) Object.assign(item, {
+      baseDecision:'processando',pendingReview:false,rejectedEvent:false,
+      reason:'Revalidar automaticamente a prova após mudança do registro.',
+      automaticOriginalReview:{...stored,status:'processando',reason:'Revalidar automaticamente a prova após mudança do registro.',checks:[]},
+    });
     if (!item.editorialReview && row && validOriginalTriage(row, stored)) Object.assign(item, {
       baseDecision: stored.status, category: stored.status === 'descartado' ? 'GERAL' : stored.category,
       stage: stored.stage, reason: stored.reason, evidence: stored.evidence || item.evidence,
@@ -459,7 +464,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       alertReason: 'Lote histórico reavaliado; não autoriza envio ou reenvio.',
     });
     const liveTriage = row?.triagem_automatica;
-    if (!item.editorialReview && !item.automaticOriginalReview && !item.automaticAlternativeReview && liveTriage?.version === 1) Object.assign(item, {
+    if (!item.editorialReview && !item.automaticOriginalReview && !item.automaticAlternativeReview && liveTriage?.version >= 1) Object.assign(item, {
       baseDecision: liveTriage.status, category: liveTriage.category, stage: liveTriage.stage,
       reason: liveTriage.reason, evidence: liveTriage.evidence || item.evidence, automaticOriginalReview: liveTriage,
       contentQuality: liveTriage.evidence ? 'trecho_disponivel' : item.contentQuality,
@@ -477,9 +482,12 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       stage: curated.etapa || item.stage, recoverySuggestion: null, pdfReassessment: false,
       reasonBasis: curated.metodo_triagem || 'triagem automática com evidência',
     });
-    if (!['confirmado', 'descartado'].includes(item.baseDecision)) {
-      item.baseDecision = 'revisao'; item.pendingReview = true;
+    if (['confirmar_evento','corrigir_categoria'].includes(item.editorialReview?.decision)) item.baseDecision='confirmado';
+    if (!['confirmado', 'descartado', 'revisao', 'processando'].includes(item.baseDecision)) {
+      item.baseDecision = 'processando'; item.pendingReview = false;
+      item.reason ||= 'Processamento automático ainda não concluiu a prova do ato; não exige revisão humana.';
     }
+    item.pendingReview = item.baseDecision === 'revisao';
     item.categoryFamily = categoryGroup(item.category);
     item.categoryDisplay = categoryLabel(item.category);
     item.reviewChecks = item.baseDecision === 'revisao' ? item.automaticOriginalReview?.checks || reviewChecks(item.reason, item.category) : [];

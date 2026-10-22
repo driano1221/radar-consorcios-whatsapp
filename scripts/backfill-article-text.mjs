@@ -8,6 +8,8 @@ import { enrichArticles, lacksArticleText } from '../src/lib/article-enrichment.
 import { redactPublicText } from '../src/lib/article-text-store.mjs';
 import { contentQuality } from './build-dashboard.mjs';
 import { recoveryDue, recoveryAttempt, attachRecoveredText, isRecoveryLead } from '../src/lib/recovery-policy.mjs';
+import {reprocessTriage} from './reprocess-triage.mjs';
+import {loadOriginalTriage} from '../src/lib/simple-triage.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'data', 'catalogo');
@@ -40,6 +42,7 @@ const attemptedAt = new Date().toISOString();
 const reviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
   .split(/\r?\n/).filter(Boolean).map(JSON.parse);
 const reviewed = new Set(reviews.map((row) => row.documento_id));
+for (const id of (await loadOriginalTriage(directory)).keys()) reviewed.add(id);
 const perSource = new Map();
 const candidates = [...records.values()].filter((row) => !textById.has(row.id) &&
   (!requestedId || row.id.startsWith(requestedId)) &&
@@ -129,6 +132,7 @@ if (apply && candidates.length) {
   await writeFile(textFile, [...textById.values()]
     .sort((a, b) => a.documento_id.localeCompare(b.documento_id))
     .map((row) => JSON.stringify(row)).join('\n') + '\n', 'utf8');
+  await reprocessTriage(directory,{apply:true});
   const counts = await saveCatalog(directory, records);
   console.log(`[retroativo] Catálogo atualizado: ${counts.all} documentos. Nenhum envio ao WhatsApp foi realizado.`);
 } else if (!apply) console.log('[retroativo] Prévia apenas. Use --apply para salvar os textos recuperados.');

@@ -86,5 +86,5 @@ test('norma extensa com fundamento em protocolo não exige revisão por tamanho 
   assert.equal(classification.category,'ATUAÇÃO');
   const d=decideSimpleTriage({...item,ruleClassification:classification,classification,aiReview:{status:'disputed',promptVersion:0}});
   assert.equal(d.status,'confirmado');assert.match(d.stage,/norma.*não comprova fiscalização/);
-  assert.equal(decideSimpleTriage({...item,rawText:'Texto incompleto',classification}).status,'revisao');
+  assert.equal(decideSimpleTriage({...item,rawText:'Texto incompleto',classification}).status,'processando');
 });

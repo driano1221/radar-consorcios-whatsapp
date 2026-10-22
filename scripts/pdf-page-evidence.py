@@ -15,6 +15,7 @@ from pathlib import Path
 
 import pdfplumber
 from pypdf import PdfReader
+from pdf_page_helpers import image_page
 
 
 TERM = re.compile(r"\bcons[oó]rci[oa]s?\b", re.IGNORECASE)
@@ -57,7 +58,7 @@ def page_regions(page):
     return [("página inteira", page)]
 
 
-def inspect_pdf(path, large=False):
+def inspect_pdf(path, large=False, full_text=False):
     max_bytes = 50 * 1024 * 1024 if large else MAX_BYTES
     max_pages = 500 if large else MAX_PAGES
     if path.stat().st_size > max_bytes:
@@ -67,10 +68,13 @@ def inspect_pdf(path, large=False):
         raise ValueError(f"PDF acima do limite de {max_pages} páginas")
     findings = []
     ocr_pages = []
+    complete_pages = []
     with pdfplumber.open(path) as document:
         for index, (page, original) in enumerate(zip(document.pages, reader.pages), 1):
             pypdf_text = original.extract_text() or ""
-            if needs_ocr(page, pypdf_text):
+            if full_text:
+                complete_pages.append(f"[Página {index}]\n{normalize(pypdf_text)}")
+            if needs_ocr(page, pypdf_text) or full_text and image_page(page, pypdf_text):
                 ocr_pages.append(index)
                 continue
             page_snippets = 0
@@ -85,7 +89,11 @@ def inspect_pdf(path, large=False):
                         break
                 if page_snippets >= 8:
                     break
-    return {"paginas": len(reader.pages), "trechos": findings, "paginas_ocr_pendente": ocr_pages}
+    result = {"paginas": len(reader.pages), "trechos": findings, "paginas_ocr_pendente": ocr_pages}
+    if full_text:
+        text = "\n\n".join(complete_pages)
+        result["texto_integral"] = text if not ocr_pages and len(text) <= 1_500_000 else ""
+    return result
 
 
 def run_ocr(path, large=False):
@@ -104,8 +112,9 @@ def main():
     parser.add_argument("pdf", type=Path)
     parser.add_argument("--ocr", action="store_true", help="Rodar OCRmyPDF somente se houver páginas sem texto")
     parser.add_argument("--large", action="store_true", help="Permitir até 50 MiB e 500 páginas em auditoria local")
+    parser.add_argument("--full-text", action="store_true", help="Preservar leitura textual completa, sem OCR ou truncamento")
     args = parser.parse_args()
-    result = inspect_pdf(args.pdf, large=args.large)
+    result = inspect_pdf(args.pdf, large=args.large, full_text=args.full_text)
     if args.ocr and result["paginas_ocr_pendente"]:
         result = run_ocr(args.pdf, large=args.large)
         result["ocr_aplicado"] = True

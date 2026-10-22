@@ -139,3 +139,7 @@ Acesse `http://127.0.0.1:4173/`. Para testar o pacote que vai ao Pages, execute 
 3. Ampliar e auditar identidades, CNPJ e relações município–consórcio antes de usar a base como cadastro histórico confiável.
 
 Decisões, incidentes e limites ficam na [memória do projeto](docs/MEMORIA_DO_PROJETO.md). A [revisão dos coletores de 20/10](docs/SAUDE-COLETORES-2026-10-20.md) distingue a indisponibilidade do Querido Diário, bloqueios de páginas e cobertura parcial por paginação. Para detalhes técnicos, consulte a [arquitetura](docs/ARQUITETURA.md), o [guia da base](data/catalogo/README.md) e a [documentação do painel](dashboard/README.md).
+
+### Triagem: revisão humana como exceção
+
+A manutenção de 22/10 corrigiu a reabertura de rejeições e reprocessou os 310 registros: 24 confirmados, 281 rejeitados, 2 conflitos documentais e 3 leituras pendentes do bot. A fila técnica aparece separada em **Em processamento automático**; não constitui uma conclusão de conteúdo. As sete famílias e todas as decisões humanas continuam válidas. [Resultado, dúvidas específicas e reprodução](docs/REPROCESSAMENTO-310-2026-10-22.md). Novos ajustes devem melhorar regras e testes reutilizáveis, mantendo os bloqueios de alerta/resumo do acervo.

@@ -1,11 +1,11 @@
-import {triageBucket} from './triage-model.mjs';
+import {triageBucket} from './triage-model.mjs?v=triagem20261022';
 
 // The table and the downloadable main base use the same decision and fields.
 export function newsRecord(item) {
   const facts=item.editorialReview?.facts||{};
-  const decision={accepted:'Confirmada',rejected:'Rejeitada',pending:'Revisar comigo'}[triageBucket(item)];
+  const decision={accepted:'Confirmada',rejected:'Rejeitada',pending:'Revisar comigo',processing:'Em processamento automático'}[triageBucket(item)];
   const whatsapp=item.sentAt?(decision==='Rejeitada'?'Enviada antes da revisão':'Enviada'):item.category==='CONTROLE'?'Só no painel':decision==='Rejeitada'?'Não enviar':
-    decision==='Revisar comigo'?'Aguarda triagem':item.alertDecision==='historico'?'Sem reenvio':
+    ['Revisar comigo','Em processamento automático'].includes(decision)?'Aguarda triagem':item.alertDecision==='historico'?'Sem reenvio':
       item.alertDecision==='elegivel'?'Elegível':'Sem envio registrado';
   return {id:item.id,publication:item.publishedAt||String(item.publishedYear||''),discovered:item.firstSeenAt||'',
     eventDate:item.eventAt||item.eventMonth||'',title:item.title,source:item.source||'',

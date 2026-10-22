@@ -144,7 +144,7 @@ test('revisão de falso positivo aparece como fora da base, não como candidato'
   assert.equal(result.items[0].pendingReview, false);
 });
 
-test('sugestão de texto integral recuperado entra na fila visível até decisão lacrada', () => {
+test('sugestão de texto recuperado entra no processamento automático até decisão com prova', () => {
   const row = { id: 'recuperado', titulo: 'Tribunal mantém suspensão de licitação de consórcio',
     url: 'https://example.org/decisao', trecho: 'Texto inicialmente insuficiente.',
     tipo_evento: 'GERAL', decisao_base: 'descartado',
@@ -152,8 +152,8 @@ test('sugestão de texto integral recuperado entra na fila visível até decisã
     article_suggestion_evidence: 'A Câmara manteve a medida cautelar.' };
   const input = { archive: [row], events: [], consortia: [], links: [], pendingIdentity: [] };
   const before = buildDashboardData(input);
-  assert.equal(before.items[0].pendingReview, true);
-  assert.equal(before.items[0].baseDecision, 'revisao');
+  assert.equal(before.items[0].pendingReview, false);
+  assert.equal(before.items[0].baseDecision, 'processando');
   assert.match(before.items[0].reason, /texto integral recuperado sugere CONTROLE/i);
   const editorialReviews = [{ documento_id: row.id, decisao: 'confirmar_evento', categoria: 'CONTROLE',
     motivo: 'medida cautelar confirmada', evidencia: row.article_suggestion_evidence,
@@ -381,8 +381,8 @@ test('painel separa pendências reais de aceitos, correções intermediárias e 
   const result = buildDashboardData({ archive: rows, events: rows.slice(0, 3),
     editorialReviews: [review(rows[1], 'confirmar_evento'), review(rows[2], 'corrigir_categoria'),
       review(rows[3], 'duplicata')], consortia: [], links: [], pendingIdentity: [] });
-  assert.equal(result.stats.pendingReview, 2);
-  assert.equal(result.stats.confirmed, 1);
+  assert.equal(result.stats.pendingReview, 0);
+  assert.equal(result.items.filter(i=>i.baseDecision==='confirmado').length, 2);
   assert.equal(result.stats.duplicates, 1);
   assert.equal(result.items.find((row) => row.id === 'duplicado').editorialReview.relatedDocumentId, 'aceito');
 });

@@ -1,9 +1,9 @@
-import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs';
+import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs?v=triagem20261022';
 import { buildResults } from './results-model.mjs';
 import { recoveredSourcesView } from './recovery-view.mjs';
 import { primaryEvidenceView } from './primary-evidence-view.mjs';
 import {fetchSnapshot,hydrateTable} from './snapshot-loader.mjs';
-import {newsRecord} from './news-view.mjs';
+import {newsRecord} from './news-view.mjs?v=triagem20261022';
 
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
@@ -55,6 +55,7 @@ function sourceMessage(row) {
 function status(item) {
   if (item.baseDecision === 'confirmado') return ['Confirmada', 'event'];
   if (item.baseDecision === 'revisao') return ['Revisar comigo', 'wait'];
+  if (item.baseDecision === 'processando') return ['Em processamento automático', 'wait'];
   if (item.baseDecision === 'descartado') return ['Rejeitada', 'raw'];
   if (item.automaticAlternativeReview) return item.automaticAlternativeReview.status === 'pendente'
     ? ['Fonte alternativa · conferir conflito', 'wait']
@@ -122,20 +123,22 @@ function openItem(item) {
 }
 function renderDeck() {
   const items = deckItems();
-  const counts = { accepted: 0, rejected: 0, pending: 0 };
+  const counts = { accepted: 0, rejected: 0, pending: 0, processing: 0 };
   for (const row of state.data.items) counts[triageBucket(row)] += 1;
   $('#triage-summary').replaceChildren(...[
     [state.data.items.length, 'registros analisados'],
     [counts.accepted, 'fatos confirmados'],
     [counts.rejected, 'registros rejeitados'],
     [counts.pending, 'Revisar comigo'],
+    ...(counts.processing ? [[counts.processing, 'Em processamento automático']] : []),
   ].map(([value, title]) => {
     const box = node('div', 'summary-number');
     box.append(node('strong', '', number.format(value)), node('span', '', title)); return box;
   }));
   renderCollectionCompare();
   $('#pending-breakdown').replaceChildren(...[{ key: 'pending', title: 'Revisar comigo',
-    description: 'Abra o caso para ver a fonte e o que precisa ser checado.', matches: item => triageBucket(item) === 'pending' }].map((kind) => {
+    description: 'Dúvida documental específica; veja as provas e a pergunta.', matches: item => triageBucket(item) === 'pending' },
+    ...(counts.processing ? [{ key:'processing',title:'Em processamento automático',description:'Leitura ou recuperação pendente do bot; não é tarefa sua.',matches:item=>triageBucket(item)==='processing' }] : [])].map((kind) => {
     const count = state.data.items.filter(kind.matches).length;
     const button = node('button', 'pending-kind'); button.type = 'button';
     button.title = `${kind.title}: ${kind.description} Clique para ver os registros.`;
@@ -206,13 +209,13 @@ function renderCollectionCompare() {
     node('strong', '', number.format(collection.newDocuments)),
     node('p', '', `documentos novos entre ${number.format(collection.rawCollected)} resultados retornados pelas fontes.`));
   target.replaceChildren(day, run);
-  target.append(node('p', 'collection-definition', 'Os quatro totais do acervo são históricos. “Resultado” pode repetir publicação conhecida; “documento novo” conta sua primeira entrada no arquivo.'));
+  target.append(node('p', 'collection-definition', 'Os totais do acervo são históricos. “Resultado” pode repetir publicação conhecida; “documento novo” conta sua primeira entrada no arquivo.'));
 }
 function renderOverviewDetail(item) {
   const panel = $('#overview-detail');
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
   const bucket = triageBucket(item);
-  const decision = bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Rejeitada' : 'Revisar comigo';
+  const decision = newsRecord(item).decision;
   const reasonTitle = bucket === 'accepted' ? 'Por que entrou' : bucket === 'rejected' ? 'Por que ficou fora' : 'O que falta para concluir';
   const rawEvidence = item.editorialReview?.evidence || item.automaticAlternativeReview?.evidence || item.pdfEvidence?.[0]?.text ||
     (item.contentQuality === 'trecho_disponivel' ? item.evidence : '');
@@ -271,7 +274,7 @@ function feedRow(item, index, selected, onClick) {
   const body = node('div'); const top = node('div', 'item-top');
   const [statusText, tone] = status(item);
   const bucket = triageBucket(item);
-  top.append(node('span', `decision-flag ${bucket}`, bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Rejeitada' : 'Revisar comigo'),
+  top.append(node('span', `decision-flag ${bucket}`, newsRecord(item).decision),
     node('span', 'item-date', `${item.documentParentId ? 'Origem coletada em' : 'Coletado em'} ${date(item.firstSeenAt)}`));
   const bottom = node('div', 'item-bottom');
   bottom.append(node('span', `status-dot ${tone}`), node('span', '', `${item.source || 'Origem não informada'} · ${statusText}`));
@@ -309,8 +312,7 @@ function renderDetailedRecord(item, target) {
   const fields = [
     ['ASSUNTO', item.splitPublication ? 'Documento de origem de outros registros' : item.rejectedEvent ? 'Não classificado como achado'
       : item.baseStatus === 'evento_candidato' || item.baseDecision === 'confirmado' ? (item.categoryDisplay || item.category) : 'Não classificado como achado'],
-    ['BASE', item.baseDecision === 'confirmado' ? 'Fato confirmado' : item.baseDecision === 'descartado'
-      ? 'Fora da base de eventos' : 'Revisar comigo'],
+    ['BASE', newsRecord(item).decision],
     ...(item.actPage ? [['PÁGINA DO ATO', String(item.actPage)]] : []),
     ['ALERTA', item.automaticAlternativeReview ? 'Recuperação para a base — não libera envio' : item.alertDecision === 'historico' ? 'Não enviar — fato antigo'
       : item.alertDecision === 'enviado' ? item.baseDecision === 'descartado'
@@ -448,7 +450,7 @@ function detail(item, target) {
   const panel = $(target);
   if (!item) { panel.replaceChildren(node('p', 'empty', 'Selecione uma publicação para ler a decisão.')); return; }
   const bucket = triageBucket(item);
-  const verdict = bucket === 'accepted' ? 'Confirmada' : bucket === 'rejected' ? 'Rejeitada' : 'Revisar comigo';
+  const verdict = newsRecord(item).decision;
   const intro = node('div', 'readable-intro');
   intro.append(node('span', `overview-verdict ${bucket}`, verdict), node('small', '', `Registro ${item.id.slice(0, 8).toUpperCase()}`));
   const decision = node('section', `readable-decision ${bucket}`);

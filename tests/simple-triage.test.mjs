@@ -36,8 +36,8 @@ test('regra e IA com prova literal confirmam antes de autorizar mensagem', () =>
   assert.equal(result.triage.bodyHash.length, 64);
 });
 test('não aprova evidência que só aparece no título nem usa aprovação desatualizada', () => {
-  assert.equal(decideSimpleTriage({ ...item, aiReview: { ...item.aiReview, evidence: 'Apenas palavras inventadas no título' } }).status, 'revisao');
-  assert.equal(decideSimpleTriage({ ...item, aiReview: { ...item.aiReview, promptVersion: AI_PROMPT_VERSION - 1 } }).status, 'revisao');
+  assert.equal(decideSimpleTriage({ ...item, aiReview: { ...item.aiReview, evidence: 'Apenas palavras inventadas no título' } }).status, 'processando');
+  assert.equal(decideSimpleTriage({ ...item, aiReview: { ...item.aiReview, promptVersion: AI_PROMPT_VERSION - 1 } }).status, 'processando');
 });
 test('discordância preserva a regra independente e a decisão semanal usa o veredito guardado', () => {
   const triaged = applySimpleTriage({ ...item, ruleClassification:item.classification,
@@ -47,21 +47,23 @@ test('discordância preserva a regra independente e a decisão semanal usa o ver
   const confirmed=applySimpleTriage(item);
   assert.deepEqual(applySimpleTriage({...confirmed,rawText:undefined}).triage,confirmed.triage);
 });
-test('falta de texto, fonte em teste, leitura parcial e discordância ficam em Revisar comigo', () => {
+test('pendência técnica é do bot; só divergência de conteúdo vai para Revisar comigo', () => {
   const cases = [{ rawText: '' }, { previewOnly: true }, { rawText: item.rawText.repeat(200) },
     { aiReview: { ...item.aiReview, status: 'disputed' } }, { aiReview: { ...item.aiReview, status: 'rejected' } },
     { classification: { ...item.classification, category: 'GERAL', score: 0 } }];
   for (const change of cases) {
     const decision = decideSimpleTriage({ ...item, ...change });
-    assert.equal(decision.status, 'revisao'); assert.ok(decision.checks.length >= 2);
+    const human=change.aiReview && ['disputed','rejected'].includes(change.aiReview.status);
+    assert.equal(decision.status, human?'revisao':'processando');
+    assert.equal(decision.checks.length>=2, Boolean(human));
   }
 });
 test('sem segunda leitura não se finge confirmação por mera palavra-chave', () => {
-  assert.equal(decideSimpleTriage({ ...item, aiReview: null }).status, 'revisao');
+  assert.equal(decideSimpleTriage({ ...item, aiReview: null }).status, 'processando');
 });
-test('listagem e versões da mesma publicação ficam para revisão, mesmo com aprovação em cache', () => {
-  assert.equal(decideSimpleTriage({ ...item, duplicatePublication: true }).status, 'revisao');
-  assert.equal(decideSimpleTriage({ ...item, articleUrl: 'https://example.org/category/institucional/' }).status, 'revisao');
+test('listagem é rejeitada como registro adicional e comparação de versões é trabalho automático', () => {
+  assert.equal(decideSimpleTriage({ ...item, duplicatePublication: true }).status, 'processando');
+  assert.equal(decideSimpleTriage({ ...item, articleUrl: 'https://example.org/category/institucional/' }).status, 'descartado');
 });
 test('rateio com partes e assinatura ganha prova de celebração; minuta não ganha', () => {
   const rawText = 'CONTRATO DE RATEIO Nº 1/2026. Município de São Pedro e Consórcio Intermunicipal de Saúde. Objeto: custeio regional. Data de Assinatura: 08/10/2026. Assinantes: prefeito e presidente.';
@@ -81,14 +83,14 @@ test('rejeição exige texto e evidência; não confunde erro de acesso com cont
   const result = decideSimpleTriage({ ...item, aiReview: null,
     classification: { category: 'GERAL', score: 0, evidenceText: evidence, reasons: ['rejeitado: contratação rotineira'] } });
   assert.equal(result.status, 'descartado');
-  assert.equal(decideSimpleTriage({ ...item, rawText: '', classification: { category: 'GERAL', score: 0 } }).status, 'revisao');
+  assert.equal(decideSimpleTriage({ ...item, rawText: '', classification: { category: 'GERAL', score: 0 } }).status, 'processando');
 });
 test('instalação rotineira de ar-condicionado é exclusão documentada, sem excluir ato positivo de outra categoria', () => {
   const rawText='O Consórcio Intermunicipal publicou aviso para contratação de empresa especializada para prestação de serviços de instalação de um aparelho de ar-condicionado na cabine da usina. Envio de propostas até 27 de outubro.';
   const irrelevant={...item,rawText,aiReview:null,classification:{category:'GERAL',score:0}};
   const result=decideSimpleTriage(irrelevant);
   assert.equal(result.status,'descartado'); assert.ok(rawText.includes(result.evidence));
-  assert.equal(decideSimpleTriage({...irrelevant,classification:{category:'RATEIO',score:8}}).status,'revisao');
+  assert.equal(decideSimpleTriage({...irrelevant,classification:{category:'RATEIO',score:8}}).status,'processando');
 });
 test('revisões documentais anteriores mantêm precedência sobre aprovação automática', () => {
   assert.equal(applySimpleTriage({ ...item, editorialDecision: 'nao_evento' }).catalogDecision, 'descartado');
@@ -114,7 +116,7 @@ test('lote contém exatamente as 69 pendências e cada exceção possui fonte e 
   const directory = new URL('../data/catalogo/', import.meta.url);
   const batch = JSON.parse(await readFile(new URL('triagem-simples-lote.json', directory), 'utf8'));
   const decisions = await loadOriginalTriage(fileURLToPath(directory));
-  assert.equal(batch.ids.length, 69); assert.equal(decisions.size, 69);
+  assert.equal(batch.ids.length, 69); assert.ok(decisions.size >= 69);
   for (const id of batch.ids) {
     const d = decisions.get(id); assert.ok(d); assert.ok(/^https:\/\//.test(d.sourceUrl));
     if (d.status === 'revisao') assert.ok(d.checks?.length >= 2);

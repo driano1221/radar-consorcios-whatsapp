@@ -16,6 +16,12 @@ export function institutionalProof(item) {
   const text = normalizeWhitespace(item.rawText || '');
   if (text.length < 160 || item.kind === 'gazette' ||
       /^(?:lei|projeto de lei|contrato|resolu[cç][aã]o|portaria|di[aá]rio oficial)\b/i.test(item.title || '')) return null;
+  const construction=/\b(?:estamos vivendo|est[aá] em andamento)\b[^.!?]{0,160}\bconstru[cç][aã]o da nossa pr[oó]pria sede\b[^.!?]{0,60}/i.exec(text);
+  if (construction && item.entityName && item.entityAlias && text.includes(item.entityAlias) && /\bcons[oó]rcio\b/i.test(text) && /\bnossa sede est[aá] tomando forma\b/i.test(text) &&
+      !/\b(?:hip[oó]tese|talvez|caso aprovad[oa]|poderia|n[aã]o est[aá])\b/i.test(text))
+    return {category:'ATUAÇÃO',proofKind:'reported_ongoing_work',
+      stage:'construção da própria sede relatada em andamento; inauguração, contratos e pagamentos não comprovados',
+      reason:'relato institucional descreve obra atual; referência à fundação antiga não é nova criação',evidenceText:construction[0],evidenceOffset:construction.index};
   for (const pattern of [ACTIVITY, RECEIVED, SIGNED_COOPERATION, SIGNED_PROTOCOL]) {
     pattern.lastIndex = 0;
     for (const match of text.matchAll(pattern)) {

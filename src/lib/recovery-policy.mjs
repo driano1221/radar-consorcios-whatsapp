@@ -2,7 +2,7 @@
 // without resetting identity, classifications, reviewed evidence or alert state.
 export function isRecoveryLead(row) {
   // A legal title may omit "consórcio"; once attempted, don't lose it in the queue.
-  return Number(row.article_attempts || 0) > 0 ||
+  return row.triagem_automatica?.status === 'processando' || Number(row.article_attempts || 0) > 0 ||
     /cons[oó]rc|rateio|protocolo de inten[cç][oõ]es|ades[aã]o|desligamento|retirada/i.test(row.titulo || '');
 }
 

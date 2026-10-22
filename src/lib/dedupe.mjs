@@ -223,6 +223,7 @@ export function reclassifyPending(state, minimumScore = 5, editorialGuard = null
       removed += 1;
     } else {
       record.item.classification = classification;
+      record.item.ruleClassification = classification;
     }
   }
   return removed;

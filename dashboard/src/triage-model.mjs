@@ -15,6 +15,7 @@ export function compareNewestDiscovery(a, b) {
 export function triageBucket(item) {
   const review = item.editorialReview?.decision;
   if (['confirmar_evento', 'corrigir_categoria'].includes(review) || item.baseDecision === 'confirmado') return 'accepted';
+  if (item.baseDecision === 'processando') return 'processing';
   if (item.baseDecision === 'desdobrado') return 'rejected';
   if (['nao_evento', 'duplicata'].includes(review) || item.rejectedEvent || item.baseDecision === 'descartado') return 'rejected';
   return 'pending';

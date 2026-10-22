@@ -10,8 +10,13 @@ export function routineSupplierContract(item) {
   const header = text.slice(0, 1800);
   const credential = /^(?:termo de credenciamento\b|\d+[-/]20\d{2}\s*-\s*termo de inex\b)/.test(title) ||
     /^termo de credenciamento\b/.test(header);
-  const supplier = /\b(?:e a empresa|contratada\s*:?\s*.{0,100}(?:ltda|s\.?a\.?))\b/.test(header);
-  const publicConsortium = /\bconsorcio(?: publico)? intermunic(?:ipal|pal)\b/.test(header);
+  const supplier = /\b(?:e a empresa|de outro lado.{0,15}a empresa|contratada\s*:?\s*.{0,100}(?:ltda|s\.?a\.?))\b/.test(header);
+  const publicConsortium = /\bconsorcio(?: publico)? (?:intermunic(?:ipal|pal)|interfederativo)\b/.test(header);
+  if (/^contrato administrativo\b/.test(title) && supplier && publicConsortium &&
+      /\b(?:contratacao de pessoas juridicas|prestacao de servicos|fornecimento)\b/.test(header) &&
+      !/\bcontrato de rateio\b/.test(header)) return {
+    stage: 'contrato do consórcio com fornecedor privado; não é rateio nem ingresso',
+    reason: 'fornecedor privado contratado; cláusulas hipotéticas de saída ou sanção não são acontecimentos', evidence: raw.slice(0, 650) };
   if (credential && supplier && publicConsortium &&
     /\b(?:prestacao de servicos|contratacao|fornecimento)\b/.test(header)) {
     return { stage: 'credenciamento de fornecedor; contrato rotineiro fora do escopo',
