@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 3234 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 227 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 101 identidades candidatas de consórcios; 158 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 76 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 3332 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 231 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 102 identidades candidatas de consórcios; 161 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 78 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -12,24 +12,26 @@
 | ATUAÇÃO | 88 |
 | GOVERNANÇA | 33 |
 | RATEIO | 27 |
-| CONTROLE | 23 |
+| CONTROLE | 25 |
 | ADESÃO AUTORIZADA | 18 |
 | FINANÇAS | 15 |
 | PROTOCOLO | 10 |
 | RATEIO EM TRAMITAÇÃO | 4 |
 | COOPERAÇÃO AUTORIZADA | 2 |
+| SAÍDA | 2 |
 | ADESÃO | 1 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
+| CRIAÇÃO | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
 | CRISE | 1 |
 | PROPOSTA DE ADESÃO | 1 |
-| SAÍDA | 1 |
 | SAÍDA AUTORIZADA | 1 |
 
 ## Registros recentes para conferir
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-22 | CRIAÇÃO — constituição documentada | revisao pela triagem — A regra encontra um evento, mas a segunda leitura rejeita: precisamos definir o enquadramento. | [Compartilhar recursos: Vereadora propõe criação de consórcio intermunicipal para melhorar iluminação pública de Taquaritinga - odefensor.com.br](https://news.google.com/rss/articles/CBMi4wFBVV95cUxNbERpbTVaMjVWeU9WRGt2bWYzVXRNVjFTZVZNZU16b3dlZEdqT3VacEFDa1d3OWxVemw1RzkxVmlyU05YVm0xaEdFZVVvb09QVVdPb0RUekkwZkt3WUtqcDdNZUtWVEt2dkE4MkZINnRYVzl5UElmeWo1VTdvTWNlUTdWbnBQVXVfRHNfUDJWRjBnTnRwREtMZEVtV1RRcDN0QlB5Z3dGemZCOGV2Nm5PcTF5QWVvRlgwYjFqdXF5MFVCbTR6SEhLVGZiWjBkcy1zeHg1QVExTmt0bkNUNmRhUHBNbw?oc=5) |
 | 2026-10-22 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATOS CONTRATOS](https://www.diariomunicipal.com.br/amm-mg/materia/3E87809E) |
 | 2026-10-22 | FINANÇAS — crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio | confirmado pela triagem — ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal | [RESOLUÇÃO Nº 16/2026, DE 21 DE OUTUBRO DE 2026](https://www.diariomunicipal.com.br/femurn/materia/2C9DA522) |
 | 2026-10-22 | ADESÃO AUTORIZADA — autorização legal publicada; classificação por inferência, identidade do consórcio e adesão efetiva não comprovadas | confirmado por revisão editorial — Classificação autorizada por Adriano: a Lei 287/2025 publicada autoriza a participação de Aiuaba em consórcio público. A classificação limita-se à autorização legal. A ementa e o art. 1º mantêm nomes distintos, sem protocolo anexo ou retificação localizados; não foi comprovado que os nomes designam a mesma pessoa jurídica. Não inferir equivalência entre entidades, CNPJ ou ingresso efetivamente homologado. | [LEI Nº 287/2025 DE 10 DE SETEMBRO DE 2025](https://www.diariomunicipal.com.br/aprece/materia/A14A7668) |
@@ -44,6 +46,5 @@
 | 2026-10-21 | GOVERNANÇA — sistema e regras institucionais publicados; adesões futuras não comprovadas | confirmado por revisão editorial — Resolução institui o SIACA e disciplina sua governança. Art. 19 exige termo e rateio para adesões futuras: nenhum município ingressante é comprovado. | [CIMPAJEÚ institui o Sistema Intermunicipal de Acolhimento](https://www.diariomunicipal.com.br/amupe/materia/40E91897) |
 | 2026-10-21 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO Nº 005/2026](https://www.diariomunicipal.com.br/amp/materia/EF9FB3C1) |
 | 2026-10-21 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [CONTRATO DE RATEIO Nº 039/2026](https://www.diariomunicipal.com.br/femurn/materia/1C0BEE24) |
-| 2026-10-21 | PROTOCOLO — ratificação legal; ingresso homologado e rateio assinado não comprovados | confirmado por revisão editorial — Lei 2.164/2026 ratifica o protocolo. A autorização de créditos e a previsão de rateio não equivalem a ingresso homologado, contrato assinado ou pagamento. | [Picuí ratifica por lei o protocolo do CONCLIMA](https://www.diariomunicipal.com.br/famup/materia/C068F1A4) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
