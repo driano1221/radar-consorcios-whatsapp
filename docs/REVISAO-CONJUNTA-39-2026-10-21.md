@@ -1,6 +1,6 @@
 # Resultado da revisão conjunta — 39 casos
 
-**22 confirmados, 12 rejeitados, 4 documentos duplicados/complementares e 1 caso ainda em Revisar comigo.**
+**Resultado original de 21/10: 22 confirmados, 12 rejeitados, 4 documentos duplicados/complementares e 1 caso em Revisar comigo.** A decisão posterior de 22/10 está registrada abaixo; o caso restante foi classificado como Rateio, por inferência autorizada com ressalvas.
 
 Duplicatas ficam em Rejeitadas como registros adicionais. O fato continua no documento principal; não há um quarto status.
 
@@ -10,11 +10,11 @@ Todos os 39 casos permanecem bloqueados para alertas e resumo no WhatsApp. Nenhu
 
 A numeração do relatório original foi preservada. Evidências, hashes e decisões reproduzíveis estão em `data/catalogo/revisao-conjunta-39.json`.
 
-## Falta conferir
+## Atualização de 22/10
 
-Somente **caso 31**: [aditivo de Planalto Alegre](https://diariomunicipal.sc.gov.br/atos/8821385) · [verificação de assinaturas](https://cisamosc.1doc.com.br/verificacao/1F80-8913-51CE-5AE9).
+O **caso 31**, antes pendente, foi classificado em 22/10 por autorização expressa de Adriano: [aditivo de Planalto Alegre](https://diariomunicipal.sc.gov.br/atos/8821385) — **Rateio, aditivo publicado por inferência**, mantendo ressalvas documentais e bloqueio de envios. Nenhum dos 39 permanece em Revisar comigo na projeção atual.
 
-Atualização de 22/10 após a conferência manual relatada por Adriano: a diferença entre acréscimo e novo total foi esclarecida com o contrato original; o corpo mantém 076/2025 e 76/2026 aparece no título. Restam a formalização municipal, pois só a assinatura digital do consórcio foi localizada, e a inconsistência entre alíneas h/e da cláusula quinta. [Conferência atualizada e procedência](REPROCESSAMENTO-310-2026-10-22.md). O relato original por caso abaixo fica preservado como histórico da revisão de 21/10.
+Atualização de 22/10: a diferença entre acréscimo e novo total foi esclarecida com o contrato original; o corpo mantém 076/2025 e 76/2026 aparece no título. A formalização municipal e a inconsistência entre alíneas h/e da cláusula quinta ficam como ressalvas, sem impedir a classificação do documento publicado como aditivo. [Decisão atualizada, autorização e procedência](REPROCESSAMENTO-310-2026-10-22.md). O relato original e os totais abaixo ficam preservados como histórico da revisão de 21/10; a decisão posterior está acrescentada ao histórico editorial, sem reescrever o manifesto original.
 
 ## Decisões por caso
 

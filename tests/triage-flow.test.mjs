@@ -143,27 +143,38 @@ test('os 310 preservam fonte e prova, não viram alertas e registram atos formai
  assert.ok(checked>0,'Atos formais devem ter bloqueio independente da URL');
 });
 
-test('verificação humana dos dois casos preserva esclarecimentos e só reapresenta as pendências reais',async()=>{
+test('inferência autorizada classifica os dois atos sem inventar formalização, identidade ou permissão de envio',async()=>{
  const directory=fileURLToPath(new URL('../data/catalogo/',import.meta.url));
  const decisions=await loadOriginalTriage(directory),guard=await loadEditorialGuard(directory);
  const ids=['1bc1d2cd210804080585d795ebf74f33f55dda1d0cac75858080cccc40511700','4a51b6537e6254f1bbed7f0989e906aa01afc1a90ec5aa06015ca12dc499c45e'];
  const archive=(await readFile(path.join(directory,'arquivo-coletas.ndjson'),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
  const texts=(await readFile(path.join(directory,'textos-artigos.ndjson'),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
+ const reviews=(await readFile(path.join(directory,'revisoes-eventos.ndjson'),'utf8')).trim().split(/\r?\n/).map(JSON.parse);
  for(const id of ids) {
   const d=decisions.get(id),row=archive.find(r=>r.id===id),rawText=texts.find(t=>t.documento_id===id)?.texto;
-  assert.equal(d.status,'revisao');assert.equal(d.method,'revisao_humana_inconclusiva');assert.ok(validOriginalTriage(row,d));
-  assert.equal(d.manualReview.reviewer,'Adriano');assert.equal(d.manualReview.decision,'manter_revisao');
-  assert.equal(d.alertAllowed,false);assert.equal(d.weeklyAllowed,false);assert.equal(d.checks.length,2);
+  const review=reviews.find(r=>r.documento_id===id);
+  assert.equal(d.status,'confirmado');assert.equal(d.method,'inferencia_autorizada_pelo_usuario');assert.ok(validOriginalTriage(row,d));
+  assert.equal(d.manualReview.reviewer,'Adriano');assert.equal(d.manualReview.previousDecision,'manter_revisao');
+  assert.equal(d.manualReview.decision,'confirmar_classificacao_com_ressalvas');assert.equal(d.manualReview.inference,true);
+  assert.equal(d.alertAllowed,false);assert.equal(d.weeklyAllowed,false);assert.deepEqual(d.checks,[]);assert.equal(d.limitations.length,2);
+  assert.equal(review.decisao,'confirmar_evento');assert.equal(review.fatos.classificacao_por_inferencia,true);
+  assert.equal(review.publicar,false);assert.equal(review.incluir_resumo,false);assert.equal(review.ressalvas.length,2);
   for(const body of [rawText,'']) {
    const item=applySimpleTriage(applyEditorialGuard({url:row.url,title:row.titulo,rawText:body,classification:{category:'RATEIO',score:99}},guard));
-   assert.equal(item.triage.status,'revisao');assert.deepEqual(item.triage.checks,d.checks);assert.equal(isNotifiable(item),false);
+   assert.equal(item.triage.status,'confirmado');assert.equal(item.classification.category,d.category);assert.equal(isNotifiable(item),false);
+   assert.match(item.triage.stage,/classificação por inferência/);
   }
+  const data=buildDashboardData({archive:[row],events:[],consortia:[],links:[],pendingIdentity:[],editorialReviews:[review],originalDecisions:decisions});
+  assert.equal(newsRecord(data.items[0]).decision,'Confirmada');assert.deepEqual(data.items[0].reviewChecks,[]);
+  assert.match(data.items[0].stage,/classificação por inferência/);
+  assert.doesNotMatch(newsCsv(data.items),/Revisar comigo/);
  }
  const planalto=decisions.get(ids[0]),money=planalto.manualReview.amountsCents;
  assert.equal(money.originalMedicines+money.increase,money.newMedicines);
  assert.equal(money.originalTotal+money.increase,money.newTotal);
- assert.doesNotMatch(planalto.checks.join(' '),/13\.925|413\.925|076\/2025|76\/2026/);
- assert.match(planalto.checks.join(' '),/assinatura digital.*prefeito/);assert.match(planalto.checks.join(' '),/alínea h versus e/);
- assert.match(decisions.get(ids[1]).checks.join(' '),/Protocolo de Intenções/);
- assert.match(decisions.get(ids[1]).reason,/relação geográfica.*não comprova identidade jurídica/);
+ assert.match(planalto.stage,/sem comprovação da assinatura municipal/);
+ assert.match(planalto.limitations.join(' '),/alínea h versus e/);
+ const aiuaba=decisions.get(ids[1]);assert.equal(aiuaba.category,'ADESÃO AUTORIZADA');
+ assert.match(aiuaba.stage,/identidade do consórcio e adesão efetiva não comprovadas/);
+ assert.equal(reviews.find(r=>r.documento_id===ids[1]).fatos.consorcio,'');
 });
