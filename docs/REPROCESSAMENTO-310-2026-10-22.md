@@ -14,7 +14,7 @@ O crescimento de 1 para 310 revisões não representava 309 dúvidas documentais
 
 Após a autorização expressa de Adriano para inferir a classificação dos dois casos, o painel completo passou a 3.113 registros, 214 confirmados, 2.874 rejeitados, nenhum em revisão e 25 em processamento. A leitura manual dos casos 3–13 resolveu 11 desses processamentos; a dos casos 14–27 encerrou os demais. **Situação atual: 3.113 registros, 218 confirmados, 2.895 rejeitados, nenhum em revisão ou processamento.** A lista manual está concluída: seis confirmações e 21 rejeições nos 27 casos. O resultado inicial dos 310 era 24 confirmados, 281 rejeitados, duas revisões e três processamentos; a tabela acima incorpora as conclusões posteriores. Novas notícias podem mudar os totais.
 
-Todos os 310 continuam bloqueados para alerta e resumo retroativo. O estado de entregas, a fila de envio, as sessões e as 454 revisões anteriores foram preservados. As duas classificações com ressalvas, as 25 leituras posteriores e duas correções complementares dos casos 5/10 foram acrescentadas ao histórico, totalizando 483 revisões. A sincronização local incorporou a recuperação automática `feafce0` do GitHub antes de concluir o trabalho; a coleta `e880a35` também foi incorporada, preservando seu estado e seus recibos.
+Todos os 310 continuam bloqueados para alerta e resumo retroativo. O estado de entregas, a fila de envio, as sessões e as 454 revisões anteriores foram preservados. As duas classificações com ressalvas, as 25 leituras posteriores e três correções complementares dos casos 5/10/17 foram acrescentadas ao histórico, totalizando 484 revisões. A sincronização local incorporou a recuperação automática `feafce0` do GitHub antes de concluir o trabalho; a coleta `e880a35` também foi incorporada, preservando seu estado e seus recibos.
 
 ## Dois casos classificados por inferência autorizada
 
@@ -68,7 +68,7 @@ Foram acrescentadas regras reutilizáveis para os dois aceites: cadastro aberto 
 
 ## Leitura manual dos casos 14–27
 
-Adriano forneceu as 14 conclusões restantes. Foram aplicadas **duas confirmações e 12 rejeições**, mantendo prova, etapa e limites de leitura. O lote `revisao-manual-14-27-2026-10-22` acrescenta essas decisões e duas correções aos casos 5/10, sem modificar nenhuma das 467 revisões já existentes.
+Adriano forneceu as 14 conclusões restantes. Foram aplicadas **duas confirmações e 12 rejeições**, mantendo prova, etapa e limites de leitura. O lote `revisao-manual-14-27-2026-10-22` acrescenta essas decisões e três correções aos casos 5/10/17, sem modificar nenhuma das 467 revisões já existentes.
 
 | Caso | Decisão | Fato e limite |
 |---|---|---|
@@ -88,6 +88,8 @@ Adriano forneceu as 14 conclusões restantes. Foram aplicadas **duas confirmaç�
 | 27 — Aguaí | Rejeitada | Convocação de pessoal também presente no caso 26; documentos preservados e relacionados, sem expor o convocado. |
 
 As páginas 1 e 51 da publicação de Juína foram conferidas visualmente no portal oficial, confirmando a natureza de LDO apesar do OCR fraco. Isso não equivale a recuperar as 99 páginas. O aviso de Santa Clara foi conferido no texto nativo e na imagem da página 4 do PDF. O original de Passa Quatro continuou respondendo HTTP 403 ao assistente: a conclusão usa a leitura/OCR fornecidos pelo usuário, com essa procedência explícita. Nenhum desses relatos foi gravado como íntegra recuperada.
+
+Em Passa Quatro, 21/06/2024 é a data do documento/fato informada pelo usuário; a data recente da indexação/captura do Google não comprova a publicação original. Uma entrada complementar preserva o relato anterior e deixa a publicação original sem data comprovada no painel/CSV, mantendo a data do fato em 2024 e o bloqueio histórico.
 
 A matéria original do caso 5 identifica o CONSISA do Vale do Taquari/RS. O aviso de Santa Clara informa CNPJ 07.242.772/0001-89 e denominação correspondente; a indicação de um CONSISA/MG no relatório posterior não foi adotada. Identidade não foi decidida apenas pela sigla. As novas correções mantêm as entradas históricas e o resultado rejeitado do caso 5.
 

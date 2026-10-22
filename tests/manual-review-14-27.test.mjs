@@ -52,7 +52,8 @@ test('ratifica o protocolo no artigo operativo de lei é ratificação, sem inve
 test('casos 14–27 fecham com procedência, limites de OCR e relações sem apagar revisões anteriores',async()=>{
  const [archive,reviews,guard,originalDecisions]=await Promise.all([read('arquivo-coletas'),read('revisoes-eventos'),loadEditorialGuard(directory),loadOriginalTriage(directory)]);
  const batch=reviews.filter(r=>r.lote_retroativo==='revisao-manual-14-27-2026-10-22');
- const cases=batch.filter(r=>r.caso_lista_manual>=14),byCase=new Map(batch.map(r=>[r.caso_lista_manual,r]));
+ const byCase=new Map(batch.map(r=>[r.caso_lista_manual,r]));
+ const cases=[...byCase.values()].filter(r=>r.caso_lista_manual>=14);
  assert.deepEqual(cases.map(r=>r.caso_lista_manual),[14,15,16,17,18,19,20,21,22,23,24,25,26,27]);
  assert.deepEqual(cases.filter(r=>r.decisao==='confirmar_evento').map(r=>r.caso_lista_manual),[17,23]);
  for(const r of cases){
@@ -65,6 +66,7 @@ test('casos 14–27 fecham com procedência, limites de OCR e relações sem apa
  assert.deepEqual(byCase.get(15).verificacoes_assistente.map(v=>v.pagina),[1,51]);
  assert.equal(byCase.get(16).fatos.uf,'SP');assert.match(byCase.get(16).etapa,/assembleia futura/);
  assert.equal(byCase.get(17).fatos.ano,2024);assert.equal(byCase.get(17).data_fato,'2024-06-21');
+ assert.equal(byCase.get(17).fatos.data_publicacao_nao_comprovada,true);
  assert.match(byCase.get(17).motivo,/HTTP 403/);assert.match(byCase.get(23).etapa,/execução e pagamento não comprovados/);
  assert.equal(byCase.get(23).verificacoes_assistente[0].pagina,4);
  assert.equal(byCase.get(5).fatos.uf,'RS');assert.match(byCase.get(5).fatos.consorcio,/Vale do Taquari/);
@@ -91,6 +93,8 @@ test('casos 14–27 fecham com procedência, limites de OCR e relações sem apa
   assert.deepEqual(item.reviewChecks,[]);
  }
  assert.doesNotMatch(newsCsv(data.items),/Revisar comigo|Em processamento automático/);
+ const protocol=newsRecord(data.items.find(i=>i.id===byCase.get(17).documento_id));
+ assert.equal(protocol.publication,'');
  for(const prefix of ['1bc1d2cd2108','4a51b6537e62']){
   const decision=[...originalDecisions.values()].find(d=>d.documentId.startsWith(prefix));
   assert.equal(decision.status,'confirmado');assert.equal(decision.method,'inferencia_autorizada_pelo_usuario');
