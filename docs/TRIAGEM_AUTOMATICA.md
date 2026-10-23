@@ -1,5 +1,19 @@
 # Triagem automática — estado em 23/10/2026
 
+## Conclusão das 26 pendências — 23/10
+
+O [lote auditado](../data/catalogo/conclusao-pendencias-26.json) resultou em **12 confirmações, 13 rejeições e uma leitura ainda bloqueada**, sem novas dúvidas humanas. Cada resultado tem ID, URL, categoria, etapa, motivo e hashes da prova/íntegra. Os 26 têm `alertAllowed=false` e `weeklyAllowed=false`: concluir a base não libera alerta ou resumo retroativo. As decisões anteriores, recibos, fila e sessão são preservados.
+
+Foram recuperados quatro originais: Finfa, Semana7/CISGA, CISALP e a Lei 543 de Sítio Novo. Esta última inclui anexos extensos; o leitor SIGPub valida código/data e lê o corpo completo, com teto de 12 MB de HTML, sem truncar o documento para decidir. Notícias comuns mantêm 2 MB. O PL 0076/2026 de Lagoa Vermelha devolveu uma tela de verificação automática: permanece uma pendência de acesso, com motivo, tentativas e próxima janela visíveis. Não é rejeição de conteúdo nem uma revisão humana genérica.
+
+O fluxo agora é **ler → concluir a decisão da base → aplicar preferências e limites do WhatsApp**. A varredura do catálogo reavalia todos os processamentos com texto válido a cada rodada, mesmo com a mesma versão/hash, sem exigir redescoberta, IA nova ou presença na fila de mensagens. A recuperação aplica texto e conclusão no mesmo caminho, incluindo sugestões legadas como o Ato 115 do CONSAMU. O workflow regular retoma até cinco leituras pendentes, respeitando o orçamento existente de 90 segundos e recuo entre tentativas de 2 a 24 horas; a recuperação diária existente continua. Não há novo agendamento ou serviço.
+
+Exemplos reproduzíveis: os extratos assinados do CIMOP são Rateio, independentemente da ratificação citada como fundamento; a autorização ad referendum do CIS-Seridó conserva a homologação pendente; a retificação do contrato CISAMURES é Governança, não saída hipotética descrita em anexo; a decisão efetiva do TCE/RN é Controle, somente no painel; a designação de comissão para apurar possível dívida confirma o início da apuração, sem afirmar dívida ou crise. Rubricas municipais, diárias individuais, fornecedor credenciado, cadastro de licitação no TCE e suspensão administrativa de compra recebem exclusão com prova própria.
+
+Não se exige nova chamada paga para concluir esses padrões. A conferência de citações continua literal, mas evita reconstrução quadrática de anexos extensos. `tests/processing-completion.test.mjs` cobre conclusão independente do envio, reaplicação com hash inalterado, preservação de decisões concluídas/humanas, limites de leitura, bloqueio sem decisão inventada e guardas contra reenvio dos 26. Para reproduzir sem rede ou envio: `node --test tests/processing-completion.test.mjs`. O script `scripts/reprocess-triage.mjs --ids-file=data/catalogo/conclusao-pendencias-26.json` simula a decisão sobre os textos guardados; `--apply` reaplica apenas o lote autorizado e mantém o bloqueio histórico.
+
+Uma fonte inacessível não pode ser classificada com segurança pelo título. A nova janela é um limite mínimo para tentar novamente na próxima coleta disponível, não promessa de pontualidade do GitHub. Novos formatos podem exigir aprimorar as regras; o contador não é zerado por descarte de falhas de acesso.
+
 ## Correção de rubricas e fila — 23/10
 
 A [Lei 3.431/2026 de Juara](https://amm.diariomunicipal.org/publicacao/1929786/) abre crédito especial de R$ 80 mil. “Transferências a Consórcios Públicos mediante contrato de rateio” é uma rubrica da dotação. O texto integral preservado confirma abertura de crédito, sem celebração ou pagamento de rateio. A regra agora rejeita esse padrão documental, independentemente do nome/URL, e não alcança extratos de contratos efetivamente firmados ou atos orçamentários do próprio consórcio.

@@ -11,7 +11,7 @@ const nd=async(directory,name)=>{try{return (await readFile(path.join(directory,
 
 export function reviewCatalogRow(row,observation={},text) {
   const item={...observation,triage:undefined,editorialDecision:undefined,
-    title:row.titulo,url:row.url,articleUrl:text?.url_artigo||row.article_url||observation.articleUrl,
+    title:row.titulo,url:row.url,articleUrl:text?.url_artigo||row.article_url||row.article_resolved_url||observation.articleUrl,
     source:row.fonte,sourceUrl:observation.sourceUrl||row.url,
     kind:observation.kind||(/diariomunicipal|\.pdf(?:[?#]|$)/.test(row.url)?'gazette':'news'),
     publishedAt:row.data_publicacao,summary:observation.summary||row.trecho,
@@ -22,16 +22,19 @@ export function reviewCatalogRow(row,observation={},text) {
   return decideSimpleTriage(item);
 }
 
-// Migrate old generic reviews, including runs that finished during deployment.
-// This changes the catalog decision only; delivery state and alert dates stay intact.
+// Every pending reading reaches the same conclusion path, including panel-only
+// sources and legacy recovered suggestions. Delivery state is never an input gate.
 export async function upgradeLegacyTriage(directory,records,state,reviewedIds=new Set()) {
   const texts=new Map((await nd(directory,'textos-artigos.ndjson')).filter(t=>sha(t.texto||'')===t.texto_sha256).map(t=>[t.documento_id,t]));
   let updated=0;
   for(const row of records.values()) {
     const old=row.triagem_automatica||(!['confirmado','descartado'].includes(row.decisao_base)?state.decisions?.[row.id]?.triage:null),text=texts.get(row.id);
-    if(reviewedIds.has(row.id)||old?.retroactive||!(old?.version<TRIAGE_VERSION&&['revisao','processando'].includes(old.status)||old?.status==='processando'&&text&&text.texto_sha256!==old.bodyHash))continue;
+    const recoveredLegacy = !old && row.article_suggested_category && text;
+    if(reviewedIds.has(row.id)||old?.retroactive||!(recoveredLegacy||old?.status==='processando'||old?.version<TRIAGE_VERSION&&old?.status==='revisao'))continue;
     const triage=reviewCatalogRow(row,state.observations?.[row.id]?.item,text);
-    records.set(row.id,{...row,triagem_automatica:triage,decisao_base:triage.status,tipo_evento:triage.category,etapa:triage.stage});updated++;
+    records.set(row.id,{...row,triagem_automatica:triage,decisao_base:triage.status,tipo_evento:triage.category,etapa:triage.stage,
+      evidencia_triagem:triage.evidence,fonte_evidencia_triagem:triage.sourceUrl,metodo_triagem:triage.method||'',
+      situacao_analise:`${triage.status} pela triagem — ${triage.reason}`});updated++;
   }
   return updated;
 }
@@ -47,13 +50,19 @@ export async function reprocessTriage(directory,{state={},ids,apply=false}={}) {
   for(const row of archive.filter(r=>targets.has(r.id))) {
     if(protectedIds.has(row.id)) {results.push({documentId:row.id,preserved:true});continue;}
     const text=byText.get(row.id),old=stored.get(row.id),observation=state.observations?.[row.id]?.item||{};
-    if(!ids&&(!text||old?.bodyHash===text.texto_sha256))continue;
+    if(!ids&&old?.status!=='processando')continue;
     const decision={...reviewCatalogRow(row,observation,text),documentId:row.id,rowHash:rowFingerprint(row),retroactive:true,
       reviewedAt:new Date().toISOString(),alertAllowed:false,weeklyAllowed:false};
     const failure=row.article_recovery_reason||observation.extractionError;
     if (decision.status==='processando'&&decision.nextAction==='recuperar_texto'&&failure) {
-      const message=/403/.test(failure)?'A fonte bloqueou a leitura':/destino_pdf/.test(failure)?'O PDF original aguarda leitura completa':/limite/.test(failure)?'O documento ultrapassa o limite de leitura desta fonte':'O texto original ainda não foi recuperado';
+      const message=/bloqueio_antibot/.test(failure)?'A fonte exige verificação automática e não entregou o documento':/403/.test(failure)?'A fonte bloqueou a leitura':/destino_pdf/.test(failure)?'O PDF original aguarda leitura completa':/limite/.test(failure)?'O documento ultrapassa o limite de leitura desta fonte':'O texto original ainda não foi recuperado';
       decision.reason=`${message}. O bot mantém a recuperação pendente, com tentativas limitadas; não exige decisão sua.`;
+    }
+    if(decision.status==='processando'&&decision.nextAction==='recuperar_texto') {
+      decision.nextAttemptAt=row.article_next_attempt_at||'';
+      decision.attempts=Number(row.article_attempts||0);
+      if(decision.nextAttemptAt)decision.reason+=` Nova tentativa a partir de ${new Intl.DateTimeFormat('pt-BR',
+        {dateStyle:'short',timeStyle:'short',timeZone:'America/Sao_Paulo'}).format(new Date(decision.nextAttemptAt))} (Brasília), na próxima coleta disponível.`;
     }
     assert.ok(decision.status!=='confirmado'||decision.evidence,'Confirmação sem prova');
     stored.set(row.id,decision); results.push(decision);

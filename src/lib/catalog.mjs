@@ -151,6 +151,7 @@ export function mergeCatalogRecord(existing, incoming) {
       (incoming.trecho.length > existing.trecho.length ||
         (incoming.pontuacao || 0) > (existing.pontuacao || 0))));
   const best = correctedRateioStage || incomingBetter ? incoming : existing;
+  const recovery=[existing,incoming].sort((a,b)=>(b.article_attempted_at||'').localeCompare(a.article_attempted_at||''))[0];
   return { ...best,
     primeira_coleta: [existing.primeira_coleta, incoming.primeira_coleta].filter(Boolean).sort()[0] || '',
     ultima_coleta: [existing.ultima_coleta, incoming.ultima_coleta].filter(Boolean).sort().at(-1) || '',
@@ -169,12 +170,18 @@ export function mergeCatalogRecord(existing, incoming) {
     municipio: best.municipio || existing.municipio || incoming.municipio,
     uf: best.uf || existing.uf || incoming.uf,
     article_url: existing.article_url || incoming.article_url || '',
-    article_attempted_at: existing.article_attempted_at || incoming.article_attempted_at || '',
+    article_attempted_at: recovery.article_attempted_at || '',
     article_attempts: Math.max(Number(existing.article_attempts || 0), Number(incoming.article_attempts || 0)),
+    ...('article_next_attempt_at' in existing||'article_next_attempt_at' in incoming?{
+      article_next_attempt_at: existing.article_text_sha256||incoming.article_text_sha256?'':recovery.article_next_attempt_at||''}:{}),
+    ...('article_resolved_url' in existing||'article_resolved_url' in incoming?{
+      article_resolved_url: recovery.article_resolved_url || existing.article_resolved_url || incoming.article_resolved_url || ''}:{}),
+    ...('article_recovery_status' in existing||'article_recovery_status' in incoming?{
+      article_recovery_status: existing.article_text_sha256||incoming.article_text_sha256?'recuperado':recovery.article_recovery_status||''}:{}),
     article_text_sha256: existing.article_text_sha256 || incoming.article_text_sha256 || '',
     article_reader: existing.article_reader || incoming.article_reader || '',
-    article_recovery_reason: existing.article_text_sha256 ? ''
-      : existing.article_recovery_reason || incoming.article_recovery_reason || '',
+    article_recovery_reason: existing.article_text_sha256||incoming.article_text_sha256 ? ''
+      : recovery.article_recovery_reason || '',
     article_suggested_category: existing.article_suggested_category || incoming.article_suggested_category || '',
     article_suggested_score: existing.article_suggested_score || incoming.article_suggested_score || '',
     article_suggestion_evidence: existing.article_suggestion_evidence || incoming.article_suggestion_evidence || '',

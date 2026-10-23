@@ -8,7 +8,7 @@ import { enrichArticles, lacksArticleText } from '../src/lib/article-enrichment.
 import { redactPublicText } from '../src/lib/article-text-store.mjs';
 import { contentQuality } from './build-dashboard.mjs';
 import { recoveryDue, recoveryAttempt, attachRecoveredText, isRecoveryLead } from '../src/lib/recovery-policy.mjs';
-import {reprocessTriage} from './reprocess-triage.mjs';
+import {reprocessTriage,upgradeLegacyTriage} from './reprocess-triage.mjs';
 import {loadOriginalTriage} from '../src/lib/simple-triage.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -19,6 +19,7 @@ const reclassify = process.argv.includes('--reclassify');
 const demote = process.argv.includes('--demote');
 const force = process.argv.includes('--force');
 const titleOnlyGoogle = process.argv.includes('--title-only-google');
+const pendingTriage = process.argv.includes('--pending-triage');
 // --retry-failed remains accepted for older callers; failed items now stay in
 // a durable, bounded-backoff queue instead of expiring after three attempts.
 const limit = Math.min(60, Math.max(1, Number(process.argv.find((arg) => arg.startsWith('--limit='))?.split('=')[1] || 20)));
@@ -39,17 +40,19 @@ try { storedTexts = (await readFile(textFile, 'utf8')).split(/\r?\n/).filter(Boo
 catch (error) { if (error.code !== 'ENOENT') throw error; }
 const textById = new Map(storedTexts.map((row) => [row.documento_id, row]));
 const attemptedAt = new Date().toISOString();
+const state=JSON.parse(await readFile(path.join(root,'state/news-state.json'),'utf8'));
 const reviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
   .split(/\r?\n/).filter(Boolean).map(JSON.parse);
 const reviewed = new Set(reviews.map((row) => row.documento_id));
 for (const id of (await loadOriginalTriage(directory)).keys()) reviewed.add(id);
 const perSource = new Map();
 const candidates = [...records.values()].filter((row) => !textById.has(row.id) &&
+  (!pendingTriage || row.triagem_automatica?.status==='processando' || row.decisao_base==='processando') &&
   (!requestedId || row.id.startsWith(requestedId)) &&
   (!requestedIds.length || requestedIds.some((id) => row.id.startsWith(id))) &&
   (includeSent || !row.enviado_em) && row.fonte !== 'Querido Diário' &&
   recoveryDue(row, { force }) &&
-  lacksArticleText({ title: row.titulo, summary: row.trecho }) &&
+  (row.triagem_automatica?.status==='processando'||lacksArticleText({ title: row.titulo, summary: row.trecho })) &&
   (!titleOnlyGoogle || (row.tipo_evento === 'GERAL' &&
     /^https:\/\/news\.google\.com\//.test(row.url) && contentQuality(row.titulo, row.trecho) !== 'trecho_disponivel')) &&
   ((requestedId || requestedIds.length) ||
@@ -132,7 +135,11 @@ if (apply && candidates.length) {
   await writeFile(textFile, [...textById.values()]
     .sort((a, b) => a.documento_id.localeCompare(b.documento_id))
     .map((row) => JSON.stringify(row)).join('\n') + '\n', 'utf8');
-  await reprocessTriage(directory,{apply:true});
+  // Save the recovered body and its decision together, rather than leaving only
+  // a suggestion until another workflow happens to rediscover this publication.
+  await saveCatalog(directory, records);
+  await reprocessTriage(directory,{state,apply:true});
+  await upgradeLegacyTriage(directory,records,state,reviewed);
   const counts = await saveCatalog(directory, records);
   console.log(`[retroativo] Catálogo atualizado: ${counts.all} documentos. Nenhum envio ao WhatsApp foi realizado.`);
 } else if (!apply) console.log('[retroativo] Prévia apenas. Use --apply para salvar os textos recuperados.');

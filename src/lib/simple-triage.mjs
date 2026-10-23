@@ -5,7 +5,7 @@ import { classifyItem } from './classifier.mjs';
 import { AI_PROMPT_VERSION } from './ai-review.mjs';
 import { locateQuote } from './quote-evidence.mjs';
 
-export const TRIAGE_VERSION = 3;
+export const TRIAGE_VERSION = 4;
 export const CATEGORY_FAMILIES = ['CRIAÇÃO', 'ADESÃO', 'SAÍDA', 'RATEIO', 'PROTOCOLO', 'CRISE', 'ATUAÇÃO'];
 export function categoryGroup(category = '') {
   if (['GOVERNANÇA', 'FINANÇAS', 'CONTROLE', 'COOPERAÇÃO AUTORIZADA', 'AÇÃO'].includes(category)) return 'ATUAÇÃO';
@@ -50,7 +50,7 @@ export function decideSimpleTriage(item) {
       item.kind === 'news' && !/news\.google\.com/.test(item.url || '') && screening.length >= 160)
     return reject('Triagem de escopo: título e texto disponível não indicam consórcio ou ato das sete categorias.',
       (body || item.summary).slice(0, 500), 'filtro_de_escopo');
-  if (/\b(?:abre sele[cç][aã]o|concurso\b.*\bprovas aplicadas)\b/i.test(item.title || '') && rule.category === 'GERAL' && !rule.proofKind)
+  if (/\b(?:abre sele[cç][aã]o|processo seletivo|concurso\b.*\bprovas aplicadas)\b/i.test(item.title || '') && rule.category === 'GERAL' && !rule.proofKind)
     return reject('Seleção de pessoal; não há composição municipal ou mudança institucional comprovada.', item.title, 'filtro_de_escopo');
   if (body.length < 160 || item.extractionError) return processing('Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana.', 'recuperar_texto');
   const ai = item.aiReview;
@@ -64,7 +64,7 @@ export function decideSimpleTriage(item) {
   // or require human rereading solely because the regulation is lengthy.
   if (literalRule && ['published_inspection_rule','published_governance_rule','ratified_protocol','documentary_exclusion',
     'legal_entry_authorization','approved_legislative_project','public_service_agreement','authorized_public_cooperation','court_notice','consortium_budget_act','recorded_receipt',
-    'documented_rateio','performed_institutional_activity','reported_ongoing_work','signed_cooperation','signed_municipal_protocol','documented_composition','court_decision','ratified_statute'].includes(rule.proofKind))
+    'documented_rateio','performed_institutional_activity','reported_ongoing_work','reported_institutional_dispute','initiated_inspection','signed_cooperation','signed_municipal_protocol','documented_composition','court_decision','ratified_statute'].includes(rule.proofKind))
     return { ...base, status: rule.category==='GERAL'?'descartado':'confirmado', evidence:literalRule,
       reason: rule.reason || rule.reasons?.at(-1) ||
         'Ato documental identificado por regra específica; confirmada somente a publicação ou ratificação, com sua etapa explícita.',
@@ -134,7 +134,7 @@ export async function loadOriginalTriage(directory) {
   return new Map(rows.map(d => [d.documentId, { ...d, bodyMatches: d.bodyHash === (hashes.get(d.documentId) || sha('')) }]));
 }
 export function validOriginalTriage(row, decision) {
-  return [1, 2, TRIAGE_VERSION].includes(decision?.version) && decision.documentId === row.id &&
+  return [1, 2, 3, TRIAGE_VERSION].includes(decision?.version) && decision.documentId === row.id &&
     decision.rowHash === rowFingerprint(row) && (decision.status === 'processando' || decision.bodyMatches !== false) && decision.retroactive === true &&
     ['confirmado', 'descartado', 'revisao', 'processando'].includes(decision.status) && Boolean(decision.reason) &&
     (['revisao', 'processando'].includes(decision.status) || Boolean(decision.evidence));

@@ -410,6 +410,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       alternativeSources: dashboardAlternatives(row.id, alternativeTexts, appliedReview, auto),
       articleRecoveryReason: row.article_recovery_reason || '',
       articleAttempts: Number(row.article_attempts || 0),
+      articleNextAttemptAt: row.article_next_attempt_at || '',
       articleDuplicateOf: row.article_duplicate_of || '',
       recoverySuggestion: !appliedReview && row.article_suggested_category ? {
         category: row.article_suggested_category,

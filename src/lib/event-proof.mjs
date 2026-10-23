@@ -91,10 +91,10 @@ export function refineEventProof(item, classification) {
   }
   const rateioSignature = /\b(?:local\s*\/\s*)?data\s*(?:da|de)\s*assinatura(?:\s+do\s+aditivo)?\s*:\s*[^.;]{0,45}?(?:\d{2}\/\d{2}\/20\d{2}|\d{1,2}\s+de\s+[a-zç]+\s+de\s+20\d{2})/i;
   const rateioSigned = /\bcontratos?\s+de\s+rateio\s*,?\s*firmados?\s+entre\b/i;
-  if (classification.category === 'RATEIO' && text.length < 12000 &&
+  if (text.length < 12000 && !/\b(?:minuta|modelo)\b/i.test(title) &&
     /\bcontratos?\s+de\s+rateio\b/i.test(title) && /\bcons[oó]rcio\b/i.test(text) &&
     /\bmunic[ií]pio(?:s)?\b/i.test(text) && (rateioSignature.test(text) || rateioSigned.test(text))) {
-    return withEvidence({ ...classification, proofKind: 'documented_rateio',
+    return withEvidence({ ...classification, category:'RATEIO', proofKind: 'documented_rateio', score:Math.max(5,classification.score || 0),
       stage: /\b(?:termo\s+aditivo|aditivo\s+ao)\b/i.test(title)
         ? 'aditivo ao rateio formalizado em extrato; não comprova pagamento ou novo ingresso'
         : 'rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso',

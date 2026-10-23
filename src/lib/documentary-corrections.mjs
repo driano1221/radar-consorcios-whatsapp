@@ -5,6 +5,72 @@ export function documentaryCorrection(title, text) {
   const result = (category, proofKind, stage, reason, match) => match && ({ category, proofKind,
     stage, reason, evidenceText: match[0], evidenceOffset: match.index });
   const reject = (stage, reason, match) => result('GERAL', 'documentary_exclusion', stage, `rejeitado: ${reason}`, match);
+  // Decide the operative act before scoring words in annexes and legal recitals.
+  const court = /\bTribunal de Contas[^.!?]{0,100}?\b(?:confirmou|determinou|manteve) a suspens[aã]o\b[^.!?]{0,300}/i.exec(text);
+  if (court && /\b(?:cons[oó]rcio|CIM[A-Z]*)\b/i.test(court[0]) && /cons[oó]rcio (?:p[uú]blico|intermunicipal|interfederativo)/i.test(title + ' ' + text.slice(0,700)) &&
+      !/\b(?:n[aã]o|poderia|se|caso)\b/i.test(court[0].split(/confirmou|determinou|manteve/i)[0]))
+    return result('CONTROLE','court_decision','suspensão confirmada/determinada pelo Tribunal; condenação definitiva não inferida',
+      'órgão de controle e decisão efetiva identificados no corpo',court);
+  const provisionalEntry = /\bDECIDE AUTORIZAR,?\s+em car[aá]ter ad referendum[^.!?]{0,150}?\bades[aã]o do Munic[ií]pio[^.!?]{0,220}?\bCons[oó]rcio[^.!?]{0,130}/i.exec(text);
+  if (/^decis[aã]o administrativa/i.test(title) && provisionalEntry)
+    return result('ADESÃO AUTORIZADA','legal_entry_authorization','aprovação provisória ad referendum; homologação pelo colegiado ainda pendente',
+      'decisão autoriza participação provisória; não inferir homologação definitiva',provisionalEntry);
+  const election = /\b(?:foi reeleito presidente do Cons[oó]rcio[^.!?]{0,170}|a chapa foi eleita por aclama[cç][aã]o[^.!?]{0,250}\bDiretoria\b[^.!?]{0,70})/i.exec(text);
+  if (election && /\bcons[oó]rcio\b/i.test(text.slice(0,1000)) && !/\b(?:n[aã]o|teria|caso|se)\s+(?:a chapa\s+)?$/i.test(text.slice(Math.max(0,election.index-35),election.index)))
+    return result('GOVERNANÇA','published_governance_rule','eleição/reeleição realizada; promessas, investimentos e entregas não inferidos',
+      'resultado eleitoral afirmado no corpo, distinto de convocação futura',election);
+  const dispute = /\binformou que recorreu [àa] Justi[cç]a para contestar a restri[cç][aã]o ao seu direito de voto[^.!?]{0,220}/i.exec(text);
+  if (dispute && /\bcons[oó]rcio p[uú]blico\b/i.test(text.slice(Math.max(0,dispute.index-600),dispute.index)))
+    return result('CRISE','reported_institutional_dispute','contestação judicial de regra eleitoral relatada; decisão judicial e novo consórcio não comprovados',
+      'notícia atribui à gestora recurso contra restrição eleitoral; não confirma o mérito da alegação',dispute);
+  const correction = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*Ficam retificados,? por erro material[^.!?]{0,270}\bContrato de Cons[oó]rcio P[uú]blico\b[^.!?]{0,80}/i.exec(text.slice(0,5000));
+  const internalRule = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*Esta Resolu[cç][aã]o institui o regime jur[ií]dico[^.!?]{0,170}/i.exec(text.slice(0,2400));
+  if (/^resolu[cç][aã]o\b/i.test(title) && /\bcons[oó]rcio\b/i.test(head) && (correction || internalRule))
+    return result('GOVERNANÇA','published_governance_rule',correction
+      ? 'retificação material do contrato consolidado publicada; novo contrato, protocolo e saída não comprovados'
+      : 'regime jurídico dos cargos eletivos publicado; eleição e ingresso não inferidos',
+      'dispositivo inicial define a norma publicada; cláusulas de anexos não são eventos ocorridos',correction || internalRule);
+  const annualBudget = /\b(?:aprova a estimativa da receita e a autoriza[cç][aã]o da despesa do Cons[oó]rcio|a programa[cç][aã]o or[cç]ament[aá]ria estima a receita e autoriza a despesa)[^.!?]{0,200}/i.exec(text.slice(0,1800));
+  if (/^(?:portaria|resolu[cç][aã]o)\b/i.test(title) && annualBudget && /\bAssembleia Geral do Cons[oó]rcio\b/i.test(text.slice(0,1600)))
+    return result('FINANÇAS','consortium_budget_act','orçamento do próprio consórcio aprovado; receita arrecadada, despesa executada e rateio assinado não comprovados',
+      'aprovação orçamentária do consórcio identificada, distinta de rubrica municipal',annualBudget);
+  const municipalAnnualBudget = /\bestima a receita e fixa a despesa\b[^.!?]{0,220}/i.exec(head);
+  if (/^lei\b/i.test(title) && municipalAnnualBudget && /\b(?:Prefeitura Municipal|Munic[ií]pio)\b/i.test(municipalAnnualBudget[0]))
+    return reject('orçamento anual municipal; não comprova ato institucional do consórcio',
+      'estimativa de receita e autorização de despesa municipal não são rateio firmado',municipalAnnualBudget);
+  const fiscal = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*designar[^.!?]{0,240}\b(?:fiscaliza[cç][aã]o e controle do contrato|fiscais? do contrato)\b[^.!?]{0,100}/i.exec(text.slice(0,2200));
+  if (/^portaria\b/i.test(title) && fiscal)
+    return reject('designação de fiscais de contrato existente; sem nova celebração',
+      'acompanhamento rotineiro do contrato não comprova novo rateio nem julgamento de controle',fiscal);
+  const debtInquiry = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*Designar[^.!?]{0,240}\bpara avaliarem se h[aá] ou n[aã]o d[ií]vida pendente junto ao Cons[oó]rcio[^.!?]{0,150}/i.exec(text);
+  if (/^portaria\b/i.test(title) && debtInquiry)
+    return result('CONTROLE','initiated_inspection','comissão designada para apurar possível dívida; existência do débito e conclusão não comprovadas',
+      'ato constitui apuração específica; não transformar dívida sob avaliação em crise confirmada',debtInquiry);
+  const travel = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*Autorizar a concess[aã]o de di[aá]rias de viagem[^.!?]{0,240}/i.exec(text);
+  if (/concess[aã]o de di[aá]rias de viagem/i.test(title) && travel)
+    return reject('despesa administrativa de viagem autorizada; não é saída de município',
+      'saída e retorno são datas de deslocamento de agente, sem mudança de composição municipal',travel);
+  const procurementMetadata = /\ba presente retifica[cç][aã]o limita-se [àa] inclus[aã]o do identificador de registro[^.!?]{0,300}/i.exec(text.slice(0,2200));
+  if (/^termo de retifica[cç][aã]o/i.test(title) && procurementMetadata)
+    return reject('correção do cadastro de licitação; não comprova fiscalização realizada',
+      'registro perante Tribunal de Contas não é decisão do Tribunal contra o consórcio',procurementMetadata);
+  const administrativeSuspension = /\b(?:suspens[aã]o cautelar[^.!?]{0,150}at[eé] decis[aã]o administrativa ulterior|Motivo:\s*ADEQUA[CÇ][AÃ]O FASE INTERNA)[^.!?]{0,80}/i.exec(text);
+  if (/suspens[aã]o/i.test(title) && administrativeSuspension && !/Tribunal de Contas|decis[aã]o judicial|determina[cç][aã]o judicial/i.test(text))
+    return reject('suspensão administrativa de procedimento de compra; não é decisão de controle externo',
+      'aviso do próprio consórcio não identifica julgamento, sanção ou crise institucional',administrativeSuspension);
+  const privateProvider = /\be a Empresa\b.{0,240}?\binscrit[ao] no CNPJ/i.exec(text);
+  if (/^termo de credenciamento/i.test(title) && privateProvider && /\b(?:CRE[D]?ENCIAD[AO]|CREDENCIADO)\b/i.test(text) && /\bfuturos contratos\b/i.test(text))
+    return reject('credenciamento rotineiro de fornecedor para contratos futuros',
+      'fornecedor privado credenciado; não comprova cooperação pública, execução nem mudança institucional',privateProvider);
+  const contractErratum = /\bPermanecem inalteradas as demais informa[cç][oõ]es constantes da publica[cç][aã]o original\b/i.exec(text);
+  if (/^retifica[cç][aã]o do extrato do contrato\b/i.test(title) && contractErratum && /\bConv[eê]nio de Sa[ií]da\b/i.test(text) && !/Contrato de Cons[oó]rcio P[uú]blico/i.test(head))
+    return reject('errata de número e denominação em contrato anterior; não é retirada municipal',
+      'convênio de saída é o nome do instrumento, sem ato de desligamento do consórcio',contractErratum);
+  const privateConsortium = /\bparticipa[cç][aã]o em regime de cons[oó]rcio de empresas[^.!?]{0,160}/i.exec(text);
+  if (/\b(?:chamada p[uú]blica|edital|preg[aã]o)\b/i.test(title) && privateConsortium &&
+      !/\bcons[oó]rcio\s+(?:p[uú]blico|intermunicipal|interfederativo)\b/i.test(head))
+    return reject('edital municipal admite empresas consorciadas; fora do escopo intermunicipal',
+      'habilitação/falência hipotética de empresas não comprova crise de consórcio público',privateConsortium);
   // An open registry is an activity already started, not a completed mapping.
   const registration = /\bcons[oó]rcio\b[^.!?;]{0,150}?\b(?:lan[cç]ou|abriu)\s+(?:um[a]?\s+|o\s+|a\s+)?(?:mapeamento|cadastro|levantamento)\b[^.!?;]{0,200}/i.exec(text);
   const invitation = /\ba iniciativa convida\b[^.!?;]{0,260}\bparticiparem do cadastro\b/i.test(text);
@@ -78,10 +144,11 @@ export function documentaryCorrection(title, text) {
   const municipalCredit = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*fica o poder executivo municipal[^.;]{0,140}?autorizado a abrir cr[eé]dito (?:adicional )?(?:especial|suplementar)\b/i.exec(text);
   const budgetHeading = /autoriza o poder executivo[^.]{0,160}(?:abertura de cr[eé]dito|abrir cr[eé]dito)/i.test(head);
   const budgetLine = /transfer[eê]ncias a cons[oó]rcios p[uú]blicos mediante contrato de rateio/i.exec(text);
-  if (/^lei\b/i.test(title) && budgetHeading && municipalCredit && budgetLine &&
+  const openedCredit = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*fica aberto no or[cç]amento[^.;]{0,90}\bcr[eé]dito (?:adicional )?(?:especial|suplementar)\b/i.exec(text);
+  if ((/^lei\b/i.test(title) && budgetHeading && municipalCredit || /^decreto\b/i.test(title) && /\bPrefeito do Munic[ií]pio\b/i.test(head) && openedCredit) && budgetLine &&
       !/\b(?:celebram|firmam|assinam)\s+(?:(?:o|presente)\s+)?contrato de rateio\b|\b(?:extrato|termo aditivo)\s+(?:ao|do)\s+contrato de rateio\b/i.test(text))
     return reject('crédito orçamentário municipal; rateio apenas em rubrica de dotação',
-      'abertura de crédito e rubrica de transferência não comprovam contrato de rateio firmado ou pagamento', municipalCredit);
+      'abertura de crédito e rubrica de transferência não comprovam contrato de rateio firmado ou pagamento', municipalCredit || openedCredit);
   if (/^lei\b/i.test(title) && ldo)
     return reject('LDO municipal; menções genéricas não comprovam ato do consórcio',
       'diretrizes orçamentárias não comprovam adesão, rateio assinado ou fiscalização', ldo);

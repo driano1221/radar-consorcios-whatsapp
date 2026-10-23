@@ -6,6 +6,7 @@ import { classifyItem } from './classifier.mjs';
 import { parseCnmArticle } from './cnm-reader.mjs';
 import { readWithReadability, readWithTrafilatura } from './article-readers.mjs';
 import { sourcePublicationDate } from './publication-date.mjs';
+import { parseSigpubArticle, sigpubDate } from './sources/direct-gazettes.mjs';
 import { setDefaultResultOrder } from 'node:dns';
 
 // Prefer IPv4 where both families exist; never disable TLS or solve challenges.
@@ -72,10 +73,17 @@ export function parseCimceroArticle(data, id, expectedTitle) {
   return { text, title: entry.title.trim(), date: /^\d{4}-\d{2}-\d{2}/.exec(entry.data || '')?.[0] || '' };
 }
 
-export async function readHtmlResponse(response) {
+export async function readHtmlResponse(response, maxBytes = 2_000_000) {
+  if(!response.body)return '';
+  const chunks=[];let size=0;
+  for await(const chunk of response.body) {
+    size+=chunk.byteLength;
+    if(size>maxBytes)throw Object.assign(new Error('pagina_grande_demais'),{code:'HTML_LIMIT'});
+    chunks.push(chunk);
+  }
+  const bytes=Buffer.concat(chunks);
   const charset = response.headers.get('content-type')?.match(/charset\s*=\s*['"]?([^;'"\s]+)/i)?.[1];
-  if (!charset || /^utf-?8$/i.test(charset)) return response.text();
-  const bytes = await response.arrayBuffer();
+  if (!charset || /^utf-?8$/i.test(charset)) return new TextDecoder('utf-8').decode(bytes);
   try { return new TextDecoder(charset).decode(bytes); }
   catch (error) {
     if (error.code !== 'ERR_ENCODING_NOT_SUPPORTED') throw error;
@@ -112,7 +120,7 @@ async function bounded(promise, milliseconds) {
 
 export function isChallengePage(html) {
   const $ = cheerio.load(html);
-  if (/^(?:just a moment|attention required|verifica[cç][aã]o de seguran[cç]a)/i.test($('title').text().trim())) return true;
+  if (/^(?:just a moment|attention required|bot verification|verifica[cç][aã]o de seguran[cç]a)/i.test($('title').text().trim())) return true;
   if ($('#challenge-form, #challenge-running, #cf-challenge-running').length) return true;
   const hasChallengeScript = /cf-chl-|challenge-platform/i.test(html);
   $('script, style, noscript, nav, header, footer').remove();
@@ -151,6 +159,7 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   onResolved(item, articleUrl);
   if (/\.pdf(?:$|\?)/i.test(articleUrl)) { onFailure(item, 'destino_pdf'); return item; }
   const parsedUrl = new URL(articleUrl);
+  const sigpub=parsedUrl.hostname==='www.diariomunicipal.com.br' && parsedUrl.pathname.match(/^\/(amm-mg|ama|amp|femurn|aprece|famup|amupe)\/materia\/([a-f0-9]{8})\/?$/i);
   const cimceroId = parsedUrl.hostname === 'consorciopublico.ro.gov.br' && parsedUrl.pathname.match(/^\/noticias\/(\d+)(?:\/[^/]+)?\/?$/)?.[1];
   if (cimceroId) {
     const apiUrl = `https://cdn.consorciopublico.ro.gov.br/api/getnoticia?id=${cimceroId}`;
@@ -185,9 +194,13 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   if (!response?.ok) { onFailure(item, `http_${response?.status || 'sem_resposta'}`); return item; }
   if (!/text\/html/i.test(response.headers.get('content-type') || '')) { onFailure(item, 'destino_nao_html'); return item; }
   const length = Number(response.headers.get('content-length') || 0);
-  if (length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
-  const html = variantHtml || await readHtmlResponse(response);
-  if (html.length > 2_000_000) { onFailure(item, 'pagina_grande_demais'); return item; }
+  // Official budget annexes can exceed the news limit. Still bound the stream;
+  // read only the identified matter body, never truncate it to make a decision.
+  const maxBytes=sigpub?12_000_000:2_000_000;
+  if (length > maxBytes) { onFailure(item, 'pagina_grande_demais'); return item; }
+  let html=variantHtml;
+  try {html ||= await readHtmlResponse(response,maxBytes);}
+  catch(error){if(error.code!=='HTML_LIMIT')throw error;onFailure(item,'pagina_grande_demais');return item;}
   const cnm = parseCnmArticle(html, articleUrl);
   if (cnm) return { ...item, articleUrl, rawText: cnm.text, summary: cnm.text.slice(0,1800),
     sourceTitle: cnm.title, sourcePublishedAt: cnm.date, contentProvenance: 'pagina_original',
@@ -196,6 +209,16 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
   // Não a tratar como extração vazia nem tentar contornar a verificação.
   if (isChallengePage(html)) {
     onFailure(item, 'bloqueio_antibot'); return item;
+  }
+  if(sigpub) {
+    const $=cheerio.load(html),published=sigpubDate($('.verificacao__dados dt').filter((_,el)=>$(el).text().trim()==='Publicada em').next('dd').text().trim());
+    if(!published){onFailure(item,'sigpub_data_ausente');return item;}
+    const stateCode={'amm-mg':'MG',ama:'AL',amp:'PR',femurn:'RN',aprece:'CE',famup:'PB',amupe:'PE'}[sigpub[1]];
+    try {
+      const read=parseSigpubArticle(html,{...item,url:articleUrl,publishedAt:published,gazetteCode:sigpub[2]},
+        {url:`https://www.diariomunicipal.com.br/${sigpub[1]}/pesquisar`,stateCode,publish:true});
+      return {...read,url:item.url,articleUrl,sourcePublishedAt:published,extractionDisagreement:false};
+    }catch{onFailure(item,'sigpub_corpo_ou_identidade_invalida');return item;}
   }
   const publication = sourcePublicationDate(html);
   const tceText = new URL(articleUrl).hostname === 'www.tce.mg.gov.br' ? extractTceMgText(html) : '';

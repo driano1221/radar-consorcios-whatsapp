@@ -438,6 +438,8 @@ function renderDetailedRecord(item, target) {
   if (item.identityPending) technical.append(label('Identificação do consórcio'), node('p', 'detail-copy', item.identityPending));
   if (item.articleRecoveryReason) technical.append(label('Última falha ao recuperar texto'),
     node('p', 'detail-copy', `${item.articleRecoveryReason} · ${item.articleAttempts || 0} tentativa(s)`));
+  if (item.articleNextAttemptAt) technical.append(label('Próxima tentativa de leitura'),
+    node('p','detail-copy',`${date(item.articleNextAttemptAt,true)} · retomada automática nas coletas do GitHub`));
   if (item.classificationReasons.length) {
     technical.append(label('Sinais usados pelo robô'));
     const list = node('ul', 'reason-list');

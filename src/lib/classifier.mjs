@@ -2,6 +2,7 @@ import { normalizeForMatch, normalizeWhitespace } from './text.mjs';
 import { refineEventProof } from './event-proof.mjs';
 import { isNonEventContractMatch, routineSupplierContract } from './contract-context.mjs';
 import { administrativeRoutine } from './administrative-routine.mjs';
+import { documentaryCorrection } from './documentary-corrections.mjs';
 
 const PUBLIC_CONTEXT = /\b(consorcios? publicos?|consorcio intermunicipal|consorcios intermunicipais|consorcios? interfederativos?|associacao publica|lei 11\.?107)\b/;
 const MUNICIPAL_CONTEXT = /\b(municipios?|municipal|municipais|prefeituras?|camaras? municipa(?:l|is)|poder executivo)\b/;
@@ -361,6 +362,10 @@ export function classifyItem(item) {
       reasons: ['rejeitado: ato antigo com data recente de indexação'], evidenceIndex: -1,
       evidenceText: '', publicContext: false, strongPublicContext: false };
   }
+  // An operative document-level proof outranks keyword windows in long annexes.
+  const proof=item.rawText&&documentaryCorrection(normalizeWhitespace(item.title||''),normalizeWhitespace(item.rawText));
+  if(proof)return {...proof,emoji:proof.category==='GERAL'?'📰':proof.category==='RATEIO'?'🟪':'📰',
+    score:proof.category==='GERAL'?0:5,reasons:[proof.reason],evidenceIndex:0,publicContext:true,strongPublicContext:true};
   const classifications = evidenceSegments(item).map((evidence, index) => evaluateSegment(item, evidence, index));
   if (!classifications.length) {
     return { category: 'GERAL', emoji: '📰', score: 0, reasons: ['rejeitado: sem texto para classificação'], evidenceIndex: -1, evidenceText: '', publicContext: false, strongPublicContext: false };

@@ -75,7 +75,9 @@ export async function loadEditorialGuard(directory) {
       const decision = validOriginalTriage(row, stored) ? stored : { ...stored, status: 'processando',
         category: row.tipo_evento, evidence: '', reason: 'Revalidar automaticamente a prova após mudança do registro.', nextAction:'revalidar_texto', checks:[] };
       for (const url of [row.url, row.article_url, stored.sourceUrl].filter(Boolean))
-        if (!guard.has(canonicalUrl(url))) guard.set(canonicalUrl(url), { origin: 'original_automatic', decision });
+        if (!guard.has(canonicalUrl(url)) || guard.get(canonicalUrl(url)).origin==='alternative_automatic' &&
+            guard.get(canonicalUrl(url)).decision.status==='pendente' && ['confirmado','descartado'].includes(decision.status))
+          guard.set(canonicalUrl(url), { origin: 'original_automatic', decision });
     }
   }
   return guard;

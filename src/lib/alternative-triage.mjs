@@ -26,7 +26,8 @@ export const originalContext = row => `${row.titulo || ''}\n${row.trecho || ''}`
 export function eligibleAlternativeOriginal(row, reviewedIds = new Set(), cutoff = ALTERNATIVE_TRIAGE_FROM) {
   return Boolean(row?.id && Number.isFinite(Date.parse(row.primeira_coleta)) &&
     Date.parse(row.primeira_coleta) >= Date.parse(cutoff) && !row.enviado_em &&
-    !reviewedIds.has(row.id) && !row.documento_pai_id);
+    !reviewedIds.has(row.id) && !row.documento_pai_id && !row.triagem_automatica?.retroactive &&
+    !['confirmado','descartado'].includes(row.triagem_automatica?.status));
 }
 
 export function alternativeInput(row, source) {

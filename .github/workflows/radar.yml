@@ -97,7 +97,9 @@ jobs:
       - name: Atualizar base histórica de consórcios
         id: catalog
         if: steps.freshness.outputs.run == 'true' && env.PERSIST_STATE == 'true'
-        run: npm run catalog:update
+        run: |
+          node scripts/backfill-article-text.mjs --pending-triage --limit=5 --apply
+          npm run catalog:update
 
       - name: Validar base após a coleta
         id: validate_catalog

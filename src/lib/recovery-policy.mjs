@@ -6,8 +6,8 @@ export function isRecoveryLead(row) {
     /cons[oó]rc|rateio|protocolo de inten[cç][oõ]es|ades[aã]o|desligamento|retirada/i.test(row.titulo || '');
 }
 
-export function recoveryDelayMs(attempts) {
-  return Math.min(168, 12 * 2 ** Math.min(4, Math.max(0, Number(attempts || 1) - 1))) * 3600000;
+export function recoveryDelayMs(attempts, pendingTriage = false) {
+  return Math.min(pendingTriage?24:168, (pendingTriage?2:12) * 2 ** Math.min(4, Math.max(0, Number(attempts || 1) - 1))) * 3600000;
 }
 
 export function recoveryDue(row, { now = Date.now(), force = false } = {}) {
@@ -16,7 +16,7 @@ export function recoveryDue(row, { now = Date.now(), force = false } = {}) {
   const last = Date.parse(row.article_attempted_at || '');
   const next = Date.parse(row.article_next_attempt_at || '');
   return Number.isFinite(next) ? now >= next
-    : !Number.isFinite(last) || now >= last + recoveryDelayMs(row.article_attempts);
+    : !Number.isFinite(last) || now >= last + recoveryDelayMs(row.article_attempts,row.triagem_automatica?.status==='processando');
 }
 
 export function recoveryAttempt(row, { now, reason = '', resolvedUrl = '' }) {
@@ -24,7 +24,7 @@ export function recoveryAttempt(row, { now, reason = '', resolvedUrl = '' }) {
   return { ...row, article_attempted_at: now, article_attempts: attempts,
     article_recovery_reason: reason,
     article_recovery_status: reason ? 'aguardando_recuperacao' : 'recuperado',
-    article_next_attempt_at: reason ? new Date(Date.parse(now) + recoveryDelayMs(attempts)).toISOString() : '',
+    article_next_attempt_at: reason ? new Date(Date.parse(now) + recoveryDelayMs(attempts,row.triagem_automatica?.status==='processando')).toISOString() : '',
     ...(resolvedUrl ? { article_resolved_url: resolvedUrl } : {}) };
 }
 
