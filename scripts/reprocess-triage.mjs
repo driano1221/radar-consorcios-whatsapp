@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {classifyItem} from '../src/lib/classifier.mjs';
-import {decideSimpleTriage,rowFingerprint} from '../src/lib/simple-triage.mjs';
+import {decideSimpleTriage,rowFingerprint,TRIAGE_VERSION} from '../src/lib/simple-triage.mjs';
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const nd=async(directory,name)=>{try{return (await readFile(path.join(directory,name),'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);}catch(e){if(e.code==='ENOENT')return [];throw e;}};
 
@@ -28,8 +28,8 @@ export async function upgradeLegacyTriage(directory,records,state,reviewedIds=ne
   const texts=new Map((await nd(directory,'textos-artigos.ndjson')).filter(t=>sha(t.texto||'')===t.texto_sha256).map(t=>[t.documento_id,t]));
   let updated=0;
   for(const row of records.values()) {
-    const old=row.triagem_automatica,text=texts.get(row.id);
-    if(reviewedIds.has(row.id)||old?.retroactive||!(old?.version===1&&old.status==='revisao'||old?.status==='processando'&&text&&text.texto_sha256!==old.bodyHash))continue;
+    const old=row.triagem_automatica||(!['confirmado','descartado'].includes(row.decisao_base)?state.decisions?.[row.id]?.triage:null),text=texts.get(row.id);
+    if(reviewedIds.has(row.id)||old?.retroactive||!(old?.version<TRIAGE_VERSION&&['revisao','processando'].includes(old.status)||old?.status==='processando'&&text&&text.texto_sha256!==old.bodyHash))continue;
     const triage=reviewCatalogRow(row,state.observations?.[row.id]?.item,text);
     records.set(row.id,{...row,triagem_automatica:triage,decisao_base:triage.status,tipo_evento:triage.category,etapa:triage.stage});updated++;
   }

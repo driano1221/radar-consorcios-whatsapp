@@ -5,7 +5,7 @@ import { classifyItem } from './classifier.mjs';
 import { AI_PROMPT_VERSION } from './ai-review.mjs';
 import { locateQuote } from './quote-evidence.mjs';
 
-export const TRIAGE_VERSION = 2;
+export const TRIAGE_VERSION = 3;
 export const CATEGORY_FAMILIES = ['CRIAÇÃO', 'ADESÃO', 'SAÍDA', 'RATEIO', 'PROTOCOLO', 'CRISE', 'ATUAÇÃO'];
 export function categoryGroup(category = '') {
   if (['GOVERNANÇA', 'FINANÇAS', 'CONTROLE', 'COOPERAÇÃO AUTORIZADA', 'AÇÃO'].includes(category)) return 'ATUAÇÃO';
@@ -28,7 +28,7 @@ export function decideSimpleTriage(item) {
   const rule = item.editorialDecision ? item.classification || classifyItem(item) : item.ruleClassification || item.classification || classifyItem(item);
   const base = { version: TRIAGE_VERSION, category: rule.category || 'GERAL', stage: rule.stage || '',
     ...(item.triage?.retroactive ? {retroactive:true} : {}),
-    evidence: '', bodyHash: sha(body), sourceUrl: item.articleUrl || item.url || '' };
+    evidence: '', bodyHash: sha(body), sourceUrl: item.articleUrl || item.url || '', checks: [] };
   const review = reason => ({ ...base, status: 'revisao', reason, checks: reviewChecks(reason, rule.category) });
   const processing = (reason, nextAction) => ({ ...base, status: 'processando', reason, nextAction, checks: [] });
   const reject = (reason, evidence, method) => ({ ...base, status: 'descartado', reason, evidence, method, checks: [] });
@@ -70,14 +70,18 @@ export function decideSimpleTriage(item) {
         'Ato documental identificado por regra específica; confirmada somente a publicação ou ratificação, com sua etapa explícita.',
       method:'regra_documental_especifica' };
   if ((item.previewOnly || item.discoveryOnly) && rule.category !== 'GERAL') return processing('Homologar a leitura original; a fonte em prévia não é dúvida documental do usuário.', 'homologar_leitura');
-  if (ai?.status === 'disputed') return review(`As leituras discordam sobre ${rule.category}: ${ai.reason || 'conferir os trechos e a etapa do ato'}.`);
+  const specificRule = Boolean(rule.proofKind && literalRule);
+  if (ai?.status === 'disputed') return specificRule
+    ? review(`As leituras discordam sobre ${rule.category}: ${ai.reason || 'conferir os trechos e a etapa do ato'}.`)
+    : processing('Delimitar a prova do ato antes de comparar as leituras; palavra-chave não comprova conflito documental.', 'delimitar_ato');
   if (ai && ai.promptVersion !== AI_PROMPT_VERSION) return processing('Atualizar a segunda leitura guardada antes de decidir.', 'segunda_leitura');
   if (ai && !quote) return processing('Conferir novamente a citação da segunda leitura no documento original.', 'segunda_leitura');
   if (ai?.status === 'approved') {
     if (!categoryGroup(rule.category) || (rule.score || 0) < 5)
       return processing('A segunda leitura aprovou, mas ainda falta delimitar a prova do ato na regra atual.', 'delimitar_ato');
     if (ai.category !== rule.category && !ai.boundedBy)
-      return review(`Classificações divergentes: regra ${rule.category}; segunda leitura ${ai.category}.`);
+      return specificRule ? review(`Classificações divergentes: regra ${rule.category}; segunda leitura ${ai.category}.`)
+        : processing('A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir.', 'delimitar_ato');
     if (body.length > 24000) return processing('Delimitar o ato no documento extenso antes de concluir; não usar leitura truncada.', 'delimitar_ato');
     return { ...base, status: 'confirmado', evidence: rule.proofKind === 'documented_rateio' && literalRule ? literalRule : quote,
       reason: 'Texto original lido; regra e segunda leitura concordam, com evidência literal.', method: 'regra_e_ia_em_cache' };
@@ -91,7 +95,7 @@ export function decideSimpleTriage(item) {
     return reject(rejection || 'Texto original examinado: não foi identificado ato das sete categorias; menção ao consórcio não basta.',
       literalRule || body.slice(0, 500), rejection ? 'regra_com_prova' : 'leitura_sem_evento');
   if (ai?.status === 'rejected') {
-    if (rule.category !== 'GERAL' && (rule.score || 0) >= 5)
+    if (rule.category !== 'GERAL' && specificRule)
       return review('A regra encontra um evento, mas a segunda leitura rejeita: precisamos definir o enquadramento.');
     return { ...base, status: 'descartado', evidence: quote, reason: 'Regra e segunda leitura rejeitam o conteúdo examinado.', method: 'regra_e_ia_em_cache' };
   }
@@ -130,7 +134,7 @@ export async function loadOriginalTriage(directory) {
   return new Map(rows.map(d => [d.documentId, { ...d, bodyMatches: d.bodyHash === (hashes.get(d.documentId) || sha('')) }]));
 }
 export function validOriginalTriage(row, decision) {
-  return [1, TRIAGE_VERSION].includes(decision?.version) && decision.documentId === row.id &&
+  return [1, 2, TRIAGE_VERSION].includes(decision?.version) && decision.documentId === row.id &&
     decision.rowHash === rowFingerprint(row) && (decision.status === 'processando' || decision.bodyMatches !== false) && decision.retroactive === true &&
     ['confirmado', 'descartado', 'revisao', 'processando'].includes(decision.status) && Boolean(decision.reason) &&
     (['revisao', 'processando'].includes(decision.status) || Boolean(decision.evidence));

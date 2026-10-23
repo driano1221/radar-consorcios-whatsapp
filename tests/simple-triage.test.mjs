@@ -39,10 +39,10 @@ test('não aprova evidência que só aparece no título nem usa aprovação desa
   assert.equal(decideSimpleTriage({ ...item, aiReview: { ...item.aiReview, evidence: 'Apenas palavras inventadas no título' } }).status, 'processando');
   assert.equal(decideSimpleTriage({ ...item, aiReview: { ...item.aiReview, promptVersion: AI_PROMPT_VERSION - 1 } }).status, 'processando');
 });
-test('discordância preserva a regra independente e a decisão semanal usa o veredito guardado', () => {
+test('rejeição com citação válida e sem prova documental positiva não cria dúvida humana', () => {
   const triaged = applySimpleTriage({ ...item, ruleClassification:item.classification,
     classification:{category:'GERAL',score:0},aiReview:{...item.aiReview,status:'rejected'} });
-  assert.equal(triaged.catalogDecision,'revisao');
+  assert.equal(triaged.catalogDecision,'descartado');
   assert.equal(triaged.classification.category,'ATUAÇÃO');
   const confirmed=applySimpleTriage(item);
   assert.deepEqual(applySimpleTriage({...confirmed,rawText:undefined}).triage,confirmed.triage);
@@ -53,9 +53,9 @@ test('pendência técnica é do bot; só divergência de conteúdo vai para Revi
     { classification: { ...item.classification, category: 'GERAL', score: 0 } }];
   for (const change of cases) {
     const decision = decideSimpleTriage({ ...item, ...change });
-    const human=change.aiReview && ['disputed','rejected'].includes(change.aiReview.status);
-    assert.equal(decision.status, human?'revisao':'processando');
-    assert.equal(decision.checks.length>=2, Boolean(human));
+    const rejected=change.aiReview?.status==='rejected';
+    assert.equal(decision.status, rejected?'descartado':'processando');
+    assert.deepEqual(decision.checks,[]);
   }
 });
 test('sem segunda leitura não se finge confirmação por mera palavra-chave', () => {

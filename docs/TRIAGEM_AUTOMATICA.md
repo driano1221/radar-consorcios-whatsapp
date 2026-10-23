@@ -1,4 +1,18 @@
-# Triagem automática — estado em 22/10/2026
+# Triagem automática — estado em 23/10/2026
+
+## Correção de rubricas e fila — 23/10
+
+A [Lei 3.431/2026 de Juara](https://amm.diariomunicipal.org/publicacao/1929786/) abre crédito especial de R$ 80 mil. “Transferências a Consórcios Públicos mediante contrato de rateio” é uma rubrica da dotação. O texto integral preservado confirma abertura de crédito, sem celebração ou pagamento de rateio. A regra agora rejeita esse padrão documental, independentemente do nome/URL, e não alcança extratos de contratos efetivamente firmados ou atos orçamentários do próprio consórcio.
+
+Uma categoria encontrada por palavras-chave não é prova de conflito documental. Sem prova positiva específica, discordância de classificação permanece com o bot para delimitar o ato; uma rejeição da segunda leitura com citação válida pode concluir o descarte. Conflitos documentais explícitos, como nomes divergentes na ementa e no artigo operativo, mantêm seu tratamento específico. Decisões humanas continuam tendo precedência.
+
+A versão 3 migra apenas decisões automáticas ainda em revisão/processamento. Não reabre confirmações, rejeições, lotes retroativos ou revisões humanas; decisões seladas das versões 1 e 2 continuam válidas. A classificação recalculada do original também substitui a cópia antiga da regra antes de reaplicar a segunda leitura no catálogo.
+
+**Fila de envio é um eixo de entrega, separado da decisão.** O painel e o CSV indicam “Na fila de envio” somente quando a notícia está confirmada, consta na fila operacional, não tem entrega e não está bloqueada como histórica ou Controle/Fiscalização. Itens guardados operacionalmente antes de concluir a leitura continuam em processamento/revisão, com o motivo documental, e não contam como confirmados prontos para envio. O novo filtro e contador mostram apenas confirmadas aguardando publicação. O painel usa a triagem persistida como alternativa quando a ficha do catálogo ainda não a contém; o motivo “na fila” não substitui a dúvida de leitura.
+
+A manutenção reavaliou 27 pendências automáticas: dois descartes e 25 processamentos, sem confirmações presumidas para esvaziar indicadores. As 484 revisões humanas, os lotes selados, os textos integrais e todos os arquivos de estado/sessão/fila/recibos foram preservados por comparação de hashes. Nenhuma coleta, chamada de IA, conexão WhatsApp ou envio foi disparado pela manutenção. Novas coletas legítimas podem mudar os números; a publicação é conferida separadamente.
+
+Validação: 559 testes aprovados em ambiente isolado, com mensagens, IA e persistência operacional desligadas. Painel público e CSV conferidos para 3.716 registros: 227 confirmados, 3.463 rejeitados, zero revisões humanas e 26 processamentos; três confirmados aparecem separadamente na fila de envio. A interface foi aberta em prévia local: o filtro da fila apresentou exatamente as três confirmadas, com a coluna WhatsApp coerente. Dez itens do armazenamento operacional ainda aguardam triagem e não foram declarados prontos para envio. O pacote foi validado por hashes e contagem das partes, sem perda de linhas no CSV.
 
 ## Fluxo em produção
 

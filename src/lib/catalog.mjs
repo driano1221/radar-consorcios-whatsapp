@@ -215,7 +215,7 @@ export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() 
       ? { ...original, excerpts: [preservedEvidence, original.summary].filter(Boolean) }
       : original;
     const fresh = original ? classifyItem(recheckItem) : null;
-    const candidate = original ? { ...original, classification: fresh } : null;
+    const candidate = original ? { ...original, classification: fresh, ruleClassification: fresh } : null;
     let item = candidate ? applyAiReview(candidate, candidate.aiReview, { preserveHistoricalRejection: true }) : null;
     if (item?.triage) item = applySimpleTriage(item);
     if (!item?.url) continue;

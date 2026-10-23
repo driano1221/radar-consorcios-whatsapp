@@ -75,6 +75,13 @@ export function documentaryCorrection(title, text) {
   if (receipt && /TRANSFER[EÊ]NCIAS DE MUNIC[IÍ]PIOS A CONS[OÓ]RCIOS P[UÚ]BLICOS/i.test(text))
     return result('FINANÇAS', 'recorded_receipt', 'receita municipal registrada no portal do consórcio; não comprova novo ingresso ou assinatura de rateio', 'talão, data, valor e ente de origem registrados na fonte oficial', receipt);
   const ldo = /disp[oõ]e\s+sobre[^.]{0,160}diretrizes\s+(?:or[cç]ament[aá]rias|para a elabora[cç][aã]o da lei or[cç]ament[aá]ria)[^.]{0,100}/i.exec(head);
+  const municipalCredit = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*fica o poder executivo municipal[^.;]{0,140}?autorizado a abrir cr[eé]dito (?:adicional )?(?:especial|suplementar)\b/i.exec(text);
+  const budgetHeading = /autoriza o poder executivo[^.]{0,160}(?:abertura de cr[eé]dito|abrir cr[eé]dito)/i.test(head);
+  const budgetLine = /transfer[eê]ncias a cons[oó]rcios p[uú]blicos mediante contrato de rateio/i.exec(text);
+  if (/^lei\b/i.test(title) && budgetHeading && municipalCredit && budgetLine &&
+      !/\b(?:celebram|firmam|assinam)\s+(?:(?:o|presente)\s+)?contrato de rateio\b|\b(?:extrato|termo aditivo)\s+(?:ao|do)\s+contrato de rateio\b/i.test(text))
+    return reject('crédito orçamentário municipal; rateio apenas em rubrica de dotação',
+      'abertura de crédito e rubrica de transferência não comprovam contrato de rateio firmado ou pagamento', municipalCredit);
   if (/^lei\b/i.test(title) && ldo)
     return reject('LDO municipal; menções genéricas não comprovam ato do consórcio',
       'diretrizes orçamentárias não comprovam adesão, rateio assinado ou fiscalização', ldo);

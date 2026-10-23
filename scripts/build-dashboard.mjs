@@ -11,6 +11,7 @@ import { dashboardAlternatives, textPreview } from './dashboard-recovery.mjs';
 import { validAlternativeDecision } from '../src/lib/alternative-triage.mjs';
 import { partitionDashboard } from './dashboard-package.mjs';
 import { categoryGroup, categoryLabel, reviewChecks, loadOriginalTriage, validOriginalTriage } from '../src/lib/simple-triage.mjs';
+import {canonicalUrl} from '../src/lib/dedupe.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const catalog = path.join(root, 'data', 'catalogo');
@@ -253,7 +254,8 @@ export function dashboardSourceCatalog(config = {}) {
 
 export function buildDashboardData({ archive, events, consortia, links, pendingIdentity,
   acts = [], participations = [], decisions = {}, editorialReviews = [], pdfRecovery = [],
-  articleTexts = [], alternativeTexts = [], alternativeDecisions = [], originalDecisions = new Map(), sourceHealth = {}, runs = {}, baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
+  articleTexts = [], alternativeTexts = [], alternativeDecisions = [], originalDecisions = new Map(), sourceHealth = {}, runs = {}, deliveryQueue = [], baseTables = [], sourceConfig = {}, geographyReviews = {} }, generatedAt = new Date().toISOString()) {
+  const queuedUrls = new Set(deliveryQueue.map(item=>canonicalUrl(item.url||'')));
   const currentEvents = events.filter((row) => !isStaleLegislativeDocument({
     kind: 'news', title: row.titulo, publishedAt: publicationDate(row),
   }));
@@ -340,6 +342,7 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
           decision?.reason || curated?.situacao_analise || row.situacao_analise || 'Motivo individual ainda não registrado.';
     return {
       id: row.id, title: appliedReview?.titulo || row.titulo, source: sourceName(row),
+      deliveryQueued: queuedUrls.has(canonicalUrl(row.url)),
       originalTitle: appliedReview?.titulo ? row.titulo : '',
       consortium: appliedReview?.fatos?.consorcio ?? curated?.consorcio ?? row.consorcio ?? '',
       consortiumAcronym: appliedReview?.fatos?.sigla ?? curated?.sigla ?? row.sigla ?? '',
@@ -463,7 +466,8 @@ export function buildDashboardData({ archive, events, consortia, links, pendingI
       alertDecision: item.sentAt ? 'enviado' : 'historico',
       alertReason: 'Lote histórico reavaliado; não autoriza envio ou reenvio.',
     });
-    const liveTriage = row?.triagem_automatica;
+    const liveTriage = row?.triagem_automatica ||
+      (!['confirmado','descartado'].includes(row?.decisao_base) ? decisions[item.id]?.triage : null);
     if (!item.editorialReview && !item.automaticOriginalReview && !item.automaticAlternativeReview && liveTriage?.version >= 1) Object.assign(item, {
       baseDecision: liveTriage.status, category: liveTriage.category, stage: liveTriage.stage,
       reason: liveTriage.reason, evidence: liveTriage.evidence || item.evidence, automaticOriginalReview: liveTriage,
@@ -660,6 +664,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const data = buildDashboardData({ archive, acts, events, consortia, links, pendingIdentity,
     editorialReviews, participations, pdfRecovery, articleTexts, alternativeTexts, alternativeDecisions, decisions, sourceHealth: state.health || {}, runs: state.runs || {},
     sourceConfig, geographyReviews, originalDecisions: await loadOriginalTriage(catalog),
+    deliveryQueue: Object.values(state.pending || {}).map(entry=>entry.item).filter(Boolean),
     baseTables: [
       makeBaseTable('eventos', events, eventColumns),
       makeBaseTable('atos', acts, actColumns),

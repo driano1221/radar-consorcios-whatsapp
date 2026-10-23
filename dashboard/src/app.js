@@ -1,9 +1,9 @@
-import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs?v=triagem20261022';
+import { triageBucket, pendingKinds, pendingLabels } from './triage-model.mjs?v=triagem20261023';
 import { buildResults } from './results-model.mjs';
 import { recoveredSourcesView } from './recovery-view.mjs';
 import { primaryEvidenceView } from './primary-evidence-view.mjs';
 import {fetchSnapshot,hydrateTable} from './snapshot-loader.mjs';
-import {newsRecord} from './news-view.mjs?v=triagem20261022';
+import {newsRecord,isQueuedForDelivery} from './news-view.mjs?v=triagem20261023';
 
 const $ = (selector) => document.querySelector(selector);
 const state = { data: null, view: 'overview', selectedItem: '', selectedOverviewItem: '', limit: 40,
@@ -107,7 +107,7 @@ function deckItems() {
   const query = $('#deck-search').value.toLocaleLowerCase('pt-BR').trim();
   const filter = $('#deck-filter').value;
   const category = $('#deck-category').value;
-  return state.data.items.filter((item) => (filter === 'all' || triageBucket(item) === filter ||
+  return state.data.items.filter((item) => (filter === 'all' || triageBucket(item) === filter || filter==='delivery' && isQueuedForDelivery(item) ||
     pendingKinds.some((kind) => kind.key === filter && kind.matches(item))) &&
     (!category || item.categoryFamily === category) &&
     (!query || [item.title, item.source, item.stage, item.category,
@@ -131,6 +131,7 @@ function renderDeck() {
     [counts.rejected, 'registros rejeitados'],
     [counts.pending, 'Revisar comigo'],
     ...(counts.processing ? [[counts.processing, 'Em processamento automático']] : []),
+    [state.data.items.filter(isQueuedForDelivery).length, 'Confirmadas na fila de envio'],
   ].map(([value, title]) => {
     const box = node('div', 'summary-number');
     box.append(node('strong', '', number.format(value)), node('span', '', title)); return box;
@@ -138,7 +139,8 @@ function renderDeck() {
   renderCollectionCompare();
   $('#pending-breakdown').replaceChildren(...[{ key: 'pending', title: 'Revisar comigo',
     description: 'Dúvida documental específica; veja as provas e a pergunta.', matches: item => triageBucket(item) === 'pending' },
-    ...(counts.processing ? [{ key:'processing',title:'Em processamento automático',description:'Leitura ou recuperação pendente do bot; não é tarefa sua.',matches:item=>triageBucket(item)==='processing' }] : [])].map((kind) => {
+    ...(counts.processing ? [{ key:'processing',title:'Em processamento automático',description:'Leitura ou recuperação pendente do bot; não é tarefa sua.',matches:item=>triageBucket(item)==='processing' }] : []),
+    {key:'delivery',title:'Fila de envio',description:'Notícias já confirmadas que aguardam publicação no WhatsApp.',matches:isQueuedForDelivery}].map((kind) => {
     const count = state.data.items.filter(kind.matches).length;
     const button = node('button', 'pending-kind'); button.type = 'button';
     button.title = `${kind.title}: ${kind.description} Clique para ver os registros.`;
