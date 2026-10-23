@@ -6,8 +6,8 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {classifyItem} from '../src/lib/classifier.mjs';
 import {documentaryCorrection} from '../src/lib/documentary-corrections.mjs';
-import {applyAiReview,AI_PROMPT_VERSION} from '../src/lib/ai-review.mjs';
-import {decideSimpleTriage,TRIAGE_VERSION} from '../src/lib/simple-triage.mjs';
+import {applyAiReview,AI_PROMPT_VERSION,reviewQueue} from '../src/lib/ai-review.mjs';
+import {decideSimpleTriage,applySimpleTriage,TRIAGE_VERSION} from '../src/lib/simple-triage.mjs';
 import {upgradeLegacyTriage} from '../scripts/reprocess-triage.mjs';
 import {buildDashboardData} from '../scripts/build-dashboard.mjs';
 import {newsRecord,isQueuedForDelivery,newsCsv} from '../dashboard/src/news-view.mjs';
@@ -85,4 +85,21 @@ test('migração só conclui pendências antigas, preserva decisões humanas/sel
   for(const [id,value] of preserved)assert.equal(JSON.stringify(records.get(id)),value);
   assert.equal(JSON.stringify(state),before);
  }finally{await rm(dir,{recursive:true,force:true});}
+});
+
+test('aprovação de IA ainda em processamento não ocupa a vaga de uma notícia pronta para envio',async()=>{
+ const evidence='O consórcio realizou uma atividade institucional já documentada para os municípios participantes.';
+ const body=evidence+' O texto completo identifica a atividade e seus participantes, sem resolver qualquer outra hipótese de classificação.';
+ const waitingRule={category:'SAÍDA',score:47,evidenceText:evidence},readyRule={category:'ATUAÇÃO',score:10,evidenceText:evidence};
+ const waiting={id:'waiting',title:'Ato pendente',url:'https://fonte.exemplo/waiting',rawText:body,classification:waitingRule,ruleClassification:waitingRule};
+ const ready={...waiting,id:'ready',url:'https://fonte.exemplo/ready',classification:readyRule,ruleClassification:readyRule};
+ const state={pending:{waiting:{item:waiting},ready:{item:ready}},seen:{},aiReviews:{
+  waiting:{status:'approved',category:'PROTOCOLO',evidence,promptVersion:AI_PROMPT_VERSION},
+  ready:{status:'approved',category:'ATUAÇÃO',evidence,promptVersion:AI_PROMPT_VERSION}}};
+ const result=await reviewQueue([waiting,ready],state,{maxPosts:1,maxCallsRun:0,
+  reviewImpl:()=>{throw Error('Apenas cache, sem chamadas externas');},
+  selectable:item=>applySimpleTriage(item).catalogDecision==='confirmado'});
+ assert.deepEqual(result.selected.map(i=>i.id),['ready']);assert.equal(result.callsRun,0);
+ assert.equal(result.audit[0].selected,false);assert.equal(result.audit[1].selected,true);
+ assert.ok(state.pending.waiting);assert.deepEqual(state.seen,{});
 });

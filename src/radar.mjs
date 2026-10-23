@@ -182,6 +182,10 @@ async function main() {
       maxPosts: Math.min(config.maxPostsPerRun, remainingToday),
       maxCallsRun: Math.max(0, config.maxAiReviewsPerRun - previewReviewCalls),
       maxCallsDay: config.maxAiReviewsPerDay,
+      selectable: item => {
+        const triaged = applySimpleTriage(item);
+        return triaged.catalogDecision === 'confirmado' && isWhatsAppCategoryAllowed(triaged);
+      },
     }) : null;
   const unseen = (reviewResult?.selected || available.slice(0, Math.min(config.maxPostsPerRun, remainingToday)))
     .map(applySimpleTriage).filter(item => item.catalogDecision === 'confirmado')

@@ -140,7 +140,7 @@ function localDay(now) {
 
 export async function reviewQueue(items, state, {
   apiKey, maxPosts = 3, maxCallsRun = 12, maxCallsDay = 60,
-  now = new Date(), reviewImpl = reviewWithDeepSeek,
+  now = new Date(), reviewImpl = reviewWithDeepSeek, selectable = () => true,
 } = {}) {
   state.aiReviews ||= {};
   const today = localDay(now);
@@ -199,8 +199,9 @@ export async function reviewQueue(items, state, {
     }
     if (review.status === 'approved') {
       const approvedItem = applyAiReview(item, review);
-      selected.push(approvedItem);
-      audit.push({ id, status: 'approved', category: approvedItem.classification.category });
+      const selectedForDelivery = selectable(approvedItem);
+      if (selectedForDelivery) selected.push(approvedItem);
+      audit.push({ id, status: 'approved', category: approvedItem.classification.category, selected: selectedForDelivery });
     }
   }
   return { selected, audit, callsRun, usage: { ...state.aiUsage } };
