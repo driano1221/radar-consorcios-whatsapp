@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 3515 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 241 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 3593 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 242 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 105 identidades candidatas de consórcios; 167 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 82 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 83 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -18,8 +18,8 @@
 | PROTOCOLO | 11 |
 | ADESÃO | 4 |
 | RATEIO EM TRAMITAÇÃO | 4 |
+| SAÍDA | 3 |
 | COOPERAÇÃO AUTORIZADA | 2 |
-| SAÍDA | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | CRIAÇÃO | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
@@ -31,11 +31,11 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
-| 2026-10-23 | ADESÃO —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [DECISÃO ADMINISTRATIVA](https://www.diariomunicipal.com.br/femurn/materia/C49229EC) |
+| 2026-10-23 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [DECISÃO ADMINISTRATIVA](https://www.diariomunicipal.com.br/femurn/materia/C49229EC) |
 | 2026-10-23 | CONTROLE — suspensão cautelar determinada em decisão monocrática; não é condenação definitiva | confirmado pela triagem — aviso oficial identifica decisão, processo e suspensão efetiva do certame | [AVISO DE SUSPENSÃO DE LICITAÇÃO – EDITAL DE PREGÃO ELETRÔNICO N.º 004/2026 – PE/CIMOP AMPLA PARTICIPAÇÃO](https://www.diariomunicipal.com.br/femurn/materia/BD47B1AA) |
 | 2026-10-23 | PROTOCOLO — ratificação legal do protocolo; ingresso homologado, constituição e rateio assinado não comprovados | confirmado pela triagem — dispositivo legal ratifica protocolo; não inferir efeitos posteriores | [LEI Nº 965/2026](https://www.diariomunicipal.com.br/famup/materia/EF411DF6) |
-| 2026-10-23 | ADESÃO —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [EXTRATO DO CONTRATO DE RATEIO Nº 2026027/001](https://www.diariomunicipal.com.br/femurn/materia/320EE0AB) |
-| 2026-10-23 | ADESÃO —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [EXTRATO DO CONTRATO DE RATEIO Nº 2026028/001](https://www.diariomunicipal.com.br/femurn/materia/78F4F5AF) |
+| 2026-10-23 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [EXTRATO DO CONTRATO DE RATEIO Nº 2026027/001](https://www.diariomunicipal.com.br/femurn/materia/320EE0AB) |
+| 2026-10-23 | ADESÃO — ato publicado — efeito a verificar | candidato — requer revisão | [EXTRATO DO CONTRATO DE RATEIO Nº 2026028/001](https://www.diariomunicipal.com.br/femurn/materia/78F4F5AF) |
 | 2026-10-23 | GOVERNANÇA —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [PORTARIA 002/2026 - APROVAÇÃO DO ORÇAMMENTO 2027](https://www.diariomunicipal.com.br/amm-mg/materia/0FF0B1F7) |
 | 2026-10-23 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONTRATO DE PROGRAMA](https://www.diariomunicipal.com.br/amm-mg/materia/1A98DC1D) |
 | 2026-10-23 | GOVERNANÇA —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [RESOLUÇÃO COMAGSUL Nº 164, DE 3 DE DEZEMBRO DE 2025.](https://www.diariomunicipal.com.br/amupe/materia/3043975B) |
