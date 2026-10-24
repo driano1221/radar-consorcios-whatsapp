@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 3800 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 248 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 106 identidades candidatas de consórcios; 167 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 88 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 3823 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 250 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 107 identidades candidatas de consórcios; 168 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 89 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -11,15 +11,15 @@
 |---|---:|
 | ATUAÇÃO | 89 |
 | GOVERNANÇA | 37 |
-| RATEIO | 31 |
+| RATEIO | 32 |
 | CONTROLE | 27 |
 | ADESÃO AUTORIZADA | 20 |
 | FINANÇAS | 18 |
 | PROTOCOLO | 11 |
 | RATEIO EM TRAMITAÇÃO | 4 |
+| CRISE | 3 |
 | ADESÃO | 2 |
 | COOPERAÇÃO AUTORIZADA | 2 |
-| CRISE | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | CRIAÇÃO | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
@@ -41,9 +41,9 @@
 | 2026-10-23 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO CONTRATO DE RATEIO Nº 2026028/001](https://www.diariomunicipal.com.br/femurn/materia/78F4F5AF) |
 | 2026-10-23 | FINANÇAS — orçamento do próprio consórcio aprovado; receita arrecadada, despesa executada e rateio assinado não comprovados | confirmado pela triagem — aprovação orçamentária do consórcio identificada, distinta de rubrica municipal | [PORTARIA 002/2026 - APROVAÇÃO DO ORÇAMMENTO 2027](https://www.diariomunicipal.com.br/amm-mg/materia/0FF0B1F7) |
 | 2026-10-23 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONTRATO DE PROGRAMA](https://www.diariomunicipal.com.br/amm-mg/materia/1A98DC1D) |
+| 2026-10-23 | CRISE — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [PUBLICAÇÃO DO DIA 21/10/2026](https://www.diariomunicipal.com.br/amm-mg/materia/B01B6A86) |
 | 2026-10-23 | FINANÇAS — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [EDITAL DE CONVOCAÇÃO PARA PROCESSO ELEITORAL DO CISVI - BIÊNIO 2027/2028](https://www.diariomunicipal.com.br/amm-mg/materia/CA8ADAB8) |
 | 2026-10-23 | GOVERNANÇA — regime jurídico dos cargos eletivos publicado; eleição e ingresso não inferidos | confirmado pela triagem — dispositivo inicial define a norma publicada; cláusulas de anexos não são eventos ocorridos | [RESOLUÇÃO COMAGSUL Nº 164, DE 3 DE DEZEMBRO DE 2025.](https://www.diariomunicipal.com.br/amupe/materia/3043975B) |
 | 2026-10-23 | RATEIO — contrato de rateio citado; celebração a conferir | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [LEI Nº. 1.464 DE 22 DE OUTUBRO DE 2026.](https://www.diariomunicipal.com.br/amm-mg/materia/540F401B) |
-| 2026-10-23 | CONTROLE — suspensão confirmada/determinada pelo Tribunal; condenação definitiva não inferida | confirmado pela triagem — órgão de controle e decisão efetiva identificados no corpo | [TCE confirma suspensão de licitação de mobiliário escolar por consórcio intermunicipal - TCE RN](https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBYejNoWWYtMzJOM2JRWWl6b0E3cWRBcWdsaEwwSEpSTVhPbmwtTThsZ19ZS2NvTllJa2JPWk1CMVdUUUxYdk9oeDF6cWx6RW0xdGs2b0pDQXFWWEFfM1ZqT2JRUUh2dzg?oc=5) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
