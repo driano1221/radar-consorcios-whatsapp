@@ -1,6 +1,6 @@
 # Panorama da base histórica
 
-- 3926 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 3937 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
 - 252 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 107 identidades candidatas de consórcios; 168 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 91 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
@@ -10,8 +10,8 @@
 | Tema | Registros |
 |---|---:|
 | ATUAÇÃO | 89 |
-| GOVERNANÇA | 37 |
-| RATEIO | 33 |
+| GOVERNANÇA | 38 |
+| RATEIO | 32 |
 | CONTROLE | 27 |
 | ADESÃO AUTORIZADA | 20 |
 | FINANÇAS | 19 |
@@ -30,6 +30,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-24 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [Lei Municipal nº 5.956, de 28 de setembro de 2026 - sapl.patrocinio.mg.leg.br](https://news.google.com/rss/articles/CBMiYkFVX3lxTFA4NnJKTVNoTld0eG95ZTNiLV9JMDZpM1JEMnhWLUZOQWJOZ290RHh6bFlJblY5TGlvTzBkaDBhMFl3NjZDUWJYVnpxTDdreVY1dWhZUHdZckQ1YUd1dnhCaTFR?oc=5) |
 | 2026-10-23 | CONTROLE — suspensão confirmada/determinada pelo Tribunal; condenação definitiva não inferida | confirmado pela triagem — órgão de controle e decisão efetiva identificados no corpo | [Indícios TCE-RN confirma suspensão de licitação de mobiliário escolar por consórcio intermunicipal - NOVO Notícias](https://news.google.com/rss/articles/CBMiugFBVV95cUxOdm5sQ0I5Zy14d0RsRkw2M2NKdDE4Q1VaLW1zQVFUMVc1TjNkTVBpdld1QWd3cHBtdm9PSndqVW9zVlg3V053a0xTRGcwWktQRm9sckhGSHVtQndtVEEwN2locnhNRWMxUmhudWVudnAzZlFvVVpvQUZ1Q2loM1ZubkFFWUZMNEpkRGEybEQ3ZldYU0tNa2VYRGJRajFjbE5XM2p1VU82UjREM2J2UXFuQVJHdXNneFRkYUE?oc=5) |
 | 2026-10-23 | ADESÃO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [LEI ORDINÁRIA N° 3710, DE 20 DE OUTUBRO DE 2026. INSTITUI O PLANO MUNICIPAL DE TURISMO - PMT DE PENHA, ESTADO DE SANTA CATARINA, E DÁ OUTRAS PROVIDÊNCIAS](https://diariomunicipal.sc.gov.br/atos/8841179) |
 | 2026-10-23 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [CONTRATO 88.2026 - ADITIVO DO CONTRATO DE RATEIO CISA-AMOSC](https://diariomunicipal.sc.gov.br/atos/8841154) |
@@ -44,6 +45,5 @@
 | 2026-10-23 | CRISE — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [PUBLICAÇÃO DO DIA 21/10/2026](https://www.diariomunicipal.com.br/amm-mg/materia/B01B6A86) |
 | 2026-10-23 | FINANÇAS — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [EDITAL DE CONVOCAÇÃO PARA PROCESSO ELEITORAL DO CISVI - BIÊNIO 2027/2028](https://www.diariomunicipal.com.br/amm-mg/materia/CA8ADAB8) |
 | 2026-10-23 | GOVERNANÇA — regime jurídico dos cargos eletivos publicado; eleição e ingresso não inferidos | confirmado pela triagem — dispositivo inicial define a norma publicada; cláusulas de anexos não são eventos ocorridos | [RESOLUÇÃO COMAGSUL Nº 164, DE 3 DE DEZEMBRO DE 2025.](https://www.diariomunicipal.com.br/amupe/materia/3043975B) |
-| 2026-10-23 | RATEIO — contrato de rateio citado; celebração a conferir | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [LEI Nº. 1.464 DE 22 DE OUTUBRO DE 2026.](https://www.diariomunicipal.com.br/amm-mg/materia/540F401B) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
