@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 3823 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 250 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 3873 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 252 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 107 identidades candidatas de consórcios; 168 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 89 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 91 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -11,10 +11,10 @@
 |---|---:|
 | ATUAÇÃO | 89 |
 | GOVERNANÇA | 37 |
-| RATEIO | 32 |
+| RATEIO | 33 |
 | CONTROLE | 27 |
 | ADESÃO AUTORIZADA | 20 |
-| FINANÇAS | 18 |
+| FINANÇAS | 19 |
 | PROTOCOLO | 11 |
 | RATEIO EM TRAMITAÇÃO | 4 |
 | CRISE | 3 |
