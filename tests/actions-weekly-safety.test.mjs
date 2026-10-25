@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdtemp, rm, access } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { mergeStateIntoCatalog } from '../src/lib/catalog.mjs';
@@ -11,6 +11,12 @@ import { reviewWeeklyFindings } from '../src/lib/ai-review.mjs';
 import { isNotifiable } from '../src/lib/publication-gate.mjs';
 import { formatWeeklyMessages } from '../src/lib/format.mjs';
 import { spawnSync } from 'node:child_process';
+import path from 'node:path';
+import os from 'node:os';
+import { isolatedTestEnvironment } from '../scripts/isolated-environment.mjs';
+import { itemId } from '../src/lib/dedupe.mjs';
+import { classifyItem } from '../src/lib/classifier.mjs';
+import { AI_PROMPT_VERSION } from '../src/lib/ai-review.mjs';
 
 const dir = fileURLToPath(new URL('../data/catalogo/', import.meta.url));
 const read = async name => (await readFile(`${dir}/${name}`, 'utf8')).trim().split('\n').map(JSON.parse);
@@ -89,4 +95,86 @@ test('prévia histórica rejeita SEND_ENABLED=true antes de conectar ou modifica
   assert.equal(result.status, 1);
   assert.match(result.stderr, /só pode rodar sem envio/);
   assert.equal(await readFile(file, 'utf8'), before);
+});
+
+test('entrada semanal isola resposta inválida e gera só aprovados, sem rede real ou persistência', async () => {
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-weekly-isolation-'));
+  assert.equal(path.dirname(directory), path.resolve(os.tmpdir()));
+  const production = await readFile(new URL('../state/news-state.json', import.meta.url), 'utf8');
+  try {
+    for (const withApproved of [true, false]) {
+      const output = path.join(directory, withApproved ? 'partial' : 'none');
+      const stateFile = path.join(directory, 'state.json');
+      const body = 'O Prefeito Municipal faz saber que a Câmara aprovou e sanciona a seguinte Lei: Art. 1º Fica ratificado, em todos os seus termos, o Protocolo de Intenções firmado entre o Município de Teste e os demais municípios, visando à constituição do Consórcio Público Intermunicipal Regional, nos termos da Lei Federal nº 11.107/2005.';
+      const activity = 'O Consórcio Intermunicipal Vale Verde realizou visita técnica a uma unidade de reciclagem em Santa Clara para discutir a gestão de resíduos e conhecer os equipamentos em funcionamento. A atividade reuniu os gestores municipais da região.';
+      const observations = Object.fromEntries((withApproved ? ['Pendente', 'Aprovada'] : ['Pendente']).map(name => [name, {
+        firstSeenAt: '2030-10-25T15:00:00Z', lastSeenAt: '2030-10-25T15:00:00Z', item: {
+          kind: name === 'Pendente' ? 'gazette' : 'news',
+          title: name === 'Pendente' ? 'LEI Nº 101/2030 - Pendente' : 'Consórcio Vale Verde: visita técnica Aprovada',
+          summary: name === 'Pendente' ? body : activity, rawText: name === 'Pendente' ? body : activity,
+          url: `https://exemplo.gov.br/lei-${name}`, source: 'Diário de teste',
+          publishedAt: '2030-10-25T15:00:00Z', sourcePublishedAt: '2030-10-25T15:00:00Z',
+        },
+      }]));
+      const state = JSON.stringify({ version: 4, seen: {}, pending: {}, observations, runs: {}, health: {}, weekly: {} });
+      await writeFile(stateFile, state);
+      const script = `
+        globalThis.fetch = async (url, options) => {
+          if (url !== 'https://api.deepseek.com/chat/completions') throw new Error('Rede não autorizada no teste');
+          const request = JSON.parse(options.body);
+          const input = JSON.parse(request.messages.find(m => m.role === 'user').content);
+          return Response.json({ choices: [{ message: { content: JSON.stringify({ relevante: true,
+            categoria: input.titulo.includes('Pendente') ? 'CRIAÇÃO' : 'ATUAÇÃO', novo_consorcio: false,
+            evidencia: input.titulo.includes('Pendente')
+              ? 'Fica ratificado, em todos os seus termos, o Protocolo de Intenções'
+              : 'Consórcio Intermunicipal Vale Verde realizou visita técnica' }) } }] });
+        };
+        await import(${JSON.stringify(new URL('../src/weekly.mjs', import.meta.url).href)});
+      `;
+      const run = spawnSync(process.execPath, ['--input-type=module', '-e', script], {
+        cwd: fileURLToPath(new URL('..', import.meta.url)), encoding: 'utf8', timeout: 120000,
+        env: { ...isolatedTestEnvironment(), AI_REVIEW_ENABLED: 'true', DEEPSEEK_API_KEY: 'fake-test-key',
+          NEWS_STATE_FILE: stateFile, OUTPUT_DIR: output, AUTH_DIR: path.join(directory, 'auth'),
+          WEEKLY_REBUILD_PREVIEW: 'true', WEEKLY_TEST: 'false', WEEKLY_EDITION: '',
+          WEEKLY_REFERENCE_TIME: '2030-10-26T12:01:00Z', GITHUB_STEP_SUMMARY: '' },
+      });
+      assert.equal(run.status, withApproved ? 0 : 1, run.stderr);
+      const report = JSON.parse(await readFile(path.join(output, 'weekly-report.json'), 'utf8'));
+      const audit = JSON.parse(await readFile(path.join(output, 'weekly-ai-audit.json'), 'utf8'));
+      assert.equal(report.events, withApproved ? 1 : 0);
+      assert.equal(audit.calls, withApproved ? 3 : 2);
+      assert.equal(audit.audit.filter(v => v.status === 'deferred').length, 1);
+      assert.ok(report.highlights.every(v => v.title.includes('Aprovada')));
+      assert.equal(await readFile(stateFile, 'utf8'), state);
+      await assert.rejects(access(path.join(directory, 'auth')), { code: 'ENOENT' });
+    }
+    assert.equal(await readFile(new URL('../state/news-state.json', import.meta.url), 'utf8'), production);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
+});
+
+test('Lei 965/2026 de Boa Vista continua Protocolo no resumo, com corpo e decisão preservados', async () => {
+  const state = JSON.parse(await readFile(new URL('../state/news-state.json', import.meta.url), 'utf8'));
+  const before = JSON.stringify(state);
+  const row = (await read('arquivo-coletas.ndjson')).find(v => v.url === 'https://www.diariomunicipal.com.br/famup/materia/EF411DF6');
+  const original = (await read('textos-artigos.ndjson')).find(v => v.documento_id === row.id);
+  assert.equal(hash(original.texto), original.texto_sha256);
+  const rule = classifyItem({ kind: 'gazette', title: row.titulo, rawText: original.texto });
+  assert.equal(rule.category, 'PROTOCOLO');
+  assert.equal(rule.proofKind, 'ratified_protocol');
+  const window = weeklyWindow(new Date('2026-10-24T17:43:32Z'));
+  const report = buildWeeklyReport(await prepareWeeklyState(state, dir, window), window);
+  const item = report.highlights.find(v => v.url === row.url);
+  assert.equal(item.classification.proofKind, 'ratified_protocol');
+  const cached = { status: 'approved', category: 'CRIAÇÃO', promptVersion: AI_PROMPT_VERSION,
+    evidence: 'visando à constituição do Consórcio Público Intermunicipal Geoparque Cariri Paraibano (CIGCP)' };
+  const reviewed = await reviewWeeklyFindings([item], { aiReviews: { [itemId(item)]: cached } }, {
+    apiKey: 'fake-test-key', reviewImpl: async () => { throw new Error('Não chamar a API'); },
+  });
+  assert.equal(reviewed.calls, 0);
+  assert.equal(reviewed.highlights[0].classification.category, 'PROTOCOLO');
+  assert.equal(reviewed.audit[0].category, 'PROTOCOLO');
+  assert.match(reviewed.highlights[0].classification.stage, /constituição.*não comprovad/);
+  assert.equal(JSON.stringify(state), before);
 });

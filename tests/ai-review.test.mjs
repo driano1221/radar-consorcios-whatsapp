@@ -249,6 +249,23 @@ test('duas decisões inválidas adiam só o achado afetado e preservam o próxim
   assert.equal(state.aiReviews[itemId(broken)], undefined);
 });
 
+test('resumo preserva ratificação de protocolo mesmo com criação aprovada no cache da IA', async () => {
+  const candidate = { ...item('Lei ratifica protocolo de intenções', 'PROTOCOLO'),
+    classification: { category: 'PROTOCOLO', score: 12, proofKind: 'ratified_protocol',
+      stage: 'ratificação legal; constituição não comprovada' } };
+  const cached = result('approved', 'CRIAÇÃO');
+  const state = { aiReviews: { [itemId(candidate)]: cached } };
+  const reviewed = await reviewWeeklyFindings([candidate], state, {
+    apiKey: 'segredo-falso', reviewImpl: async () => { throw new Error('não consultar a API'); },
+  });
+  assert.equal(reviewed.calls, 0);
+  assert.equal(reviewed.highlights[0].classification.category, 'PROTOCOLO');
+  assert.equal(reviewed.highlights[0].classification.stage, candidate.classification.stage);
+  assert.equal(reviewed.highlights[0].aiReview.proposedCategory, 'CRIAÇÃO');
+  assert.equal(reviewed.audit[0].category, 'PROTOCOLO');
+  assert.deepEqual(state.aiReviews[itemId(candidate)], cached);
+});
+
 test('falha de API no resumo continua bloqueando envio em vez de aprovar sem revisão', async () => {
   const candidate = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
   await assert.rejects(reviewWeeklyFindings([candidate], {}, {

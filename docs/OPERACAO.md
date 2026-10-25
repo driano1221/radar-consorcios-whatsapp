@@ -13,6 +13,12 @@ Este guia reúne os controles de execução. Para entender a finalidade e as dec
 
 As definições executáveis estão em [radar.yml](../.github/workflows/radar.yml), [weekly.yml](../.github/workflows/weekly.yml), [publish-dashboard.yml](../.github/workflows/publish-dashboard.yml) e [config/default.json](../config/default.json). Se este texto divergir deles, a configuração executável prevalece.
 
+## Revisão do resumo semanal
+
+Uma resposta de IA inválida, mesmo após a repetição limitada, adia somente a notícia afetada. Ela fica fora dos destaques e identificada em `weekly-ai-audit.json`; as notícias aprovadas continuam no resumo. Se nenhuma notícia puder ser aprovada e houver revisão adiada, a execução falha antes do envio, sem anunciar falsamente ausência de fatos. Falhas de rede/API, credencial ausente e teto de chamadas continuam bloqueios explícitos. Os limites de chamadas, recibos de edições e partes já enviadas permanecem em vigor.
+
+O incidente de 24/10/2026 foi a [Lei 965/2026 de Boa Vista/PB](https://www.diariomunicipal.com.br/famup/materia/EF411DF6): o art. 1º ratifica o protocolo, enquanto a constituição aparece como finalidade futura. A leitura integral arquivada, com 3.456 caracteres e hash conferido, sustenta **Protocolo**, sem inferir constituição ou ingresso homologado. Essa etapa limita também a categoria proposta pela IA no resumo, inclusive no cache; a auditoria registra a categoria efetivamente utilizada. A correção não reabre decisões, não modifica o acervo ou recibos e não dispara recuperação do resumo antigo.
+
 ## Pausar sem remover o histórico
 
 Em **Settings → Secrets and variables → Actions → Variables**, defina `SEND_ENABLED=false`. Isso pausa o envio programado, mas não apaga a base nem o histórico. Antes de uma execução manual do workflow, confira o campo `send_enabled`: o padrão é **false**. Não troque o grupo de destino sem validar o ID e o objetivo da mudança.

@@ -71,8 +71,10 @@ async function main() {
   await writeFile(path.join(config.outputDir, 'weekly-selection-audit.json'), JSON.stringify(reportState.weeklySelectionAudit, null, 2) + '\n');
   await writeFile(path.join(config.outputDir, 'weekly-ai-audit.json'), JSON.stringify({ enabled: config.aiReviewEnabled,
     calls: ai?.calls || 0, audit: ai?.audit || [] }, null, 2) + '\n');
-  if (ai?.audit.some((entry) => entry.status === 'deferred')) {
-    throw new Error('Revisão semanal incompleta; resumo não enviado. Consulte weekly-ai-audit.json.');
+  const deferred = ai?.audit.filter((entry) => entry.status === 'deferred').length || 0;
+  if (deferred) {
+    console.warn(`[semanal] ${deferred} achado(s) adiado(s), fora do resumo; consulte weekly-ai-audit.json.`);
+    if (!report.events) throw new Error('Nenhum achado aprovado após a revisão; resumo não enviado.');
   }
   console.log(text);
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `## Resumo semanal\n\n${text}\n`);

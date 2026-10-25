@@ -119,7 +119,7 @@ export function applyAiReview(item, review, { preserveHistoricalRejection = fals
         /contrato de rateio não comprovado/i.test(item.classification.stage || ''));
     const roleBounded = (originalCategory === 'CONTROLE' && item.classification.proofKind === 'court_decision') ||
       (originalCategory === 'ATUAÇÃO' && ['inspection_participation', 'performed_institutional_activity', 'signed_cooperation'].includes(item.classification.proofKind)) ||
-      (originalCategory === 'PROTOCOLO' && item.classification.proofKind === 'signed_municipal_protocol') ||
+      (originalCategory === 'PROTOCOLO' && ['signed_municipal_protocol', 'ratified_protocol'].includes(item.classification.proofKind)) ||
       (originalCategory === 'GOVERNANÇA' && item.classification.proofKind === 'documented_composition');
     const category = preparatory || roleBounded || item.classification.scope === 'orientacao_geral' ? originalCategory : review.category;
     const boundedReview = category === review.category ? review
@@ -254,8 +254,9 @@ export async function reviewWeeklyFindings(items, state, {
       if (!review) continue;
     }
     if (review.status === 'approved') {
-      highlights.push(applyAiReview(item, state.aiReviews[id]));
-      audit.push({ id, status: 'approved', category: review.category });
+      const approved = applyAiReview(item, state.aiReviews[id]);
+      highlights.push(approved);
+      audit.push({ id, status: 'approved', category: approved.classification.category });
     } else if (item.classification?.category === 'RATEIO' && concreteRateio(item)) {
       state.aiReviews[id] = { ...state.aiReviews[id], status: 'disputed' };
       highlights.push(item);
