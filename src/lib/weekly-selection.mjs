@@ -4,10 +4,11 @@ import { createHash } from 'node:crypto';
 import { canonicalUrl } from './dedupe.mjs';
 import { applyEditorialGuard, loadEditorialGuard } from './editorial-guard.mjs';
 import { classifyItem } from './classifier.mjs';
-import { decidePublication } from './publication-gate.mjs';
+import { decidePublication, isNotifiable } from './publication-gate.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
 import { isWhatsAppCategoryAllowed } from './whatsapp-policy.mjs';
 import { applySimpleTriage } from './simple-triage.mjs';
+import { verifiedTriage } from './triage-proof.mjs';
 
 const confirmed = review => ['confirmar_evento', 'corrigir_categoria'].includes(review?.decisao);
 const dateValue = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? `${value}T12:00:00-03:00` : value;
@@ -24,12 +25,14 @@ export function weeklyPublicationDate(item, row, review) {
 export async function prepareWeeklyState(state, directory, window, options = {}) {
   const read = async name => (await readFile(path.join(directory, name), 'utf8'))
     .trim().split(/\r?\n/).filter(Boolean).map(JSON.parse);
-  const [archive, reviews, definitions, guard] = await Promise.all([
+  const [archive, reviews, definitions, guard, texts] = await Promise.all([
     read('arquivo-coletas.ndjson'), read('revisoes-eventos.ndjson'), read('atos-identificados.ndjson'),
-    loadEditorialGuard(directory),
+    loadEditorialGuard(directory), read('textos-artigos.ndjson'),
   ]);
   const rows = [...archive, ...materializeDocumentActs(archive, definitions)];
   const byId = new Map(rows.map(row => [row.id, row]));
+  const byUrl = new Map(rows.flatMap(row => [row.url, row.article_url].filter(Boolean).map(url => [canonicalUrl(url), row])));
+  const textById = new Map(texts.map(text => [text.documento_id, text]));
   const observations = {};
   const audit = [];
   const selectedReviews = new Set();
@@ -63,6 +66,36 @@ export async function prepareWeeklyState(state, directory, window, options = {})
     const review = guard.get(canonicalUrl(original.url));
     if (confirmed(review)) {
       addReviewed(original, observation, byId.get(review.documento_id), review, key);
+      continue;
+    }
+    const row = byUrl.get(canonicalUrl(original.url));
+    const triage = row?.triagem_automatica;
+    if (!review && ['confirmado', 'descartado'].includes(triage?.status)) {
+      const body = textById.get(row.id)?.texto || '';
+      const verified = verifiedTriage(triage, body);
+      const date = weeklyPublicationDate(original, row, {});
+      const inside = date && new Date(date) >= window.start && new Date(date) < window.end;
+      const channel = isWhatsAppCategoryAllowed({ classification: { category: triage.category } });
+      const publication = decidePublication({ ...original, triage,
+        classification: { ...original.classification, category: triage.category,
+          stage: triage.stage, evidenceText: triage.evidence, score: Math.max(5, original.classification?.score || 0) },
+      }, { ...options, now: window.end });
+      const publishable = isNotifiable(publication, options.minimumScore) && !original.previewOnly;
+      const include = verified && triage.status === 'confirmado' && !triage.retroactive &&
+        triage.weeklyAllowed !== false && inside && channel && publishable;
+      const reason = !verified ? 'Prova da decisão canônica ausente ou alterada; não reclassificar por trecho parcial.'
+        : triage.status === 'descartado' ? 'Rejeição canônica preservada.'
+        : triage.retroactive || triage.weeklyAllowed === false ? 'Resumo bloqueado para revisão histórica.'
+        : !channel ? 'Controle/fiscalização: somente no painel.'
+        : !inside ? 'Publicação original fora do período.'
+        : !publishable ? publication.publicationReason || 'Fonte em prévia ou alerta não liberado.'
+        : 'Triagem canônica confirmada com corpo e prova verificados.';
+      audit.push({ id: row.id, title: row.titulo, date, included: Boolean(include), reason });
+      observations[key] = { ...observation, item: { ...publication, rawText: body, triage,
+        weeklyDecision: include ? 'incluir' : 'excluir', weeklyDate: date,
+        weeklyEvidence: { documentId: row.id, reason, evidence: triage.evidence },
+        ...(include ? { publishedAt: date } : {}),
+      } };
       continue;
     }
     const item = applySimpleTriage(decidePublication(applyEditorialGuard({ ...original,

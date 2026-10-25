@@ -167,6 +167,34 @@ test('falha de API não vira aprovação automática', async () => {
   assert.ok(state.pending[itemId(candidate)]);
 });
 
+test('coleta mantém o cache aprovado após falha de API e não perde os outros itens pendentes', async () => {
+  const broken = item('Lei aguardando leitura', 'ADESÃO');
+  const waiting = item('Outra lei aguardando leitura', 'ADESÃO');
+  const valid = item('Lei previamente aprovada', 'ADESÃO');
+  const state = { aiReviews: { [itemId(valid)]: result('approved', 'ADESÃO AUTORIZADA') },
+    pending: Object.fromEntries([broken, waiting, valid].map(i => [itemId(i), { item: i }])) };
+  const reviewed = await reviewQueue([broken, waiting, valid], state, {
+    reviewImpl: async () => { throw new Error('HTTP 503'); },
+  });
+  assert.equal(reviewed.callsRun, 1);
+  assert.equal(reviewed.usage.calls, 1);
+  assert.deepEqual(reviewed.audit.map(v => v.status), ['deferred', 'deferred', 'approved']);
+  assert.deepEqual(reviewed.selected.map(v => v.title), [valid.title]);
+  assert.ok(state.pending[itemId(broken)]);
+  assert.ok(state.pending[itemId(waiting)]);
+});
+
+test('coleta não grava resposta malformada como decisão concluída', async () => {
+  const candidate = item('Lei com retorno sem status', 'ADESÃO');
+  const state = { pending: { [itemId(candidate)]: { item: candidate } } };
+  const reviewed = await reviewQueue([candidate], state, { reviewImpl: async () => ({ status: 'unknown' }) });
+  assert.equal(reviewed.callsRun, 2);
+  assert.equal(reviewed.audit[0].status, 'deferred');
+  assert.equal(reviewed.selected.length, 0);
+  assert.equal(state.aiReviews[itemId(candidate)], undefined);
+  assert.ok(state.pending[itemId(candidate)]);
+});
+
 test('resposta inválida da IA adia só o item afetado e não bloqueia o próximo', async () => {
   const broken = item('Proposta de ingresso no consórcio', 'ADESÃO');
   const valid = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
@@ -188,7 +216,7 @@ test('resposta inválida da IA adia só o item afetado e não bloqueia o próxim
   assert.ok(state.pending[itemId(broken)]);
 });
 
-test('resumo semanal revisa todos os achados, retém rateio documentado e remove ruído', async () => {
+test('resumo semanal não publica rateio divergente sem triagem canônica verificada', async () => {
   const agenda = item('Consórcio cria agenda', 'CRIAÇÃO');
   const balance = item('Balanço contábil menciona consórcio', 'RATEIO');
   const rateio = { ...item('Município publica contrato de rateio', 'RATEIO'), kind: 'gazette',
@@ -198,8 +226,8 @@ test('resumo semanal revisa todos os achados, retém rateio documentado e remove
     apiKey: 'segredo-falso', reviewImpl: async (entry) => entry === agenda
       ? result('approved', 'ATUAÇÃO') : result('rejected', 'IRRELEVANTE'),
   });
-  assert.deepEqual(reviewed.highlights.map((entry) => entry.classification.category), ['ATUAÇÃO', 'RATEIO']);
-  assert.deepEqual(reviewed.audit.map((entry) => entry.status), ['approved', 'rejected', 'disputed-kept']);
+  assert.deepEqual(reviewed.highlights.map((entry) => entry.classification.category), ['ATUAÇÃO']);
+  assert.deepEqual(reviewed.audit.map((entry) => entry.status), ['approved', 'rejected', 'deferred']);
   assert.equal(reviewed.calls, 3);
   const again = await reviewWeeklyFindings([agenda], state, {
     apiKey: 'segredo-falso', reviewImpl: async () => { throw new Error('não deveria consultar'); },
@@ -266,11 +294,62 @@ test('resumo preserva ratificação de protocolo mesmo com criação aprovada no
   assert.deepEqual(state.aiReviews[itemId(candidate)], cached);
 });
 
-test('falha de API no resumo continua bloqueando envio em vez de aprovar sem revisão', async () => {
-  const candidate = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
-  await assert.rejects(reviewWeeklyFindings([candidate], {}, {
-    apiKey: 'segredo-falso', reviewImpl: async () => { throw new Error('DeepSeek respondeu HTTP 503.'); },
-  }), /HTTP 503/);
+test('falha de API suspende novas chamadas sem bloquear o cache aprovado posterior', async () => {
+  const unavailable = item('Lei autoriza ingresso no consórcio', 'ADESÃO');
+  const waiting = item('Outra lei ainda sem revisão', 'ADESÃO');
+  const cached = item('Lei já aprovada', 'ADESÃO');
+  const state = { aiReviews: { [itemId(cached)]: result('approved', 'ADESÃO AUTORIZADA') } };
+  const reviewed = await reviewWeeklyFindings([unavailable, waiting, cached], state, {
+    apiKey: 'fake-test-key', reviewImpl: async () => { throw new Error('DeepSeek respondeu HTTP 503.'); },
+  });
+  assert.equal(reviewed.calls, 1);
+  assert.deepEqual(reviewed.audit.map(v => v.status), ['deferred', 'deferred', 'approved']);
+  assert.deepEqual(reviewed.highlights.map(v => v.title), [cached.title]);
+  assert.equal(state.aiReviews[itemId(unavailable)], undefined);
+});
+
+test('teto de chamadas não impede itens aprovados no cache nem autoriza os demais', async () => {
+  const first = item('Lei primeira', 'ADESÃO'), second = item('Lei segunda', 'ADESÃO');
+  const cached = item('Lei no cache', 'ADESÃO');
+  const reviewed = await reviewWeeklyFindings([first, second, cached], {
+    aiReviews: { [itemId(cached)]: result('approved', 'ADESÃO AUTORIZADA') },
+  }, { apiKey: 'fake-test-key', maxCalls: 1, reviewImpl: async () => result('approved', 'ADESÃO AUTORIZADA') });
+  assert.equal(reviewed.calls, 1);
+  assert.deepEqual(reviewed.audit.map(v => v.status), ['approved', 'deferred', 'approved']);
+  assert.equal(reviewed.audit[1].reason, 'limite de chamadas');
+  assert.equal(reviewed.highlights.length, 2);
+});
+
+test('credencial ausente não apaga aprovação no cache nem aprova item sem revisão', async () => {
+  const waiting = item('Lei sem revisão', 'ADESÃO'), cached = item('Lei aprovada', 'ADESÃO');
+  const reviewed = await reviewWeeklyFindings([waiting, cached], {
+    aiReviews: { [itemId(cached)]: result('approved', 'ADESÃO AUTORIZADA') },
+  }, { reviewImpl: async () => { throw new Error('Não chamar a API'); } });
+  assert.equal(reviewed.calls, 0);
+  assert.deepEqual(reviewed.audit.map(v => v.status), ['deferred', 'approved']);
+  assert.equal(reviewed.highlights.length, 1);
+});
+
+test('cache com status desconhecido não é convertido silenciosamente em rejeição', async () => {
+  const waiting = item('Lei com cache inválido', 'ADESÃO');
+  const reviewed = await reviewWeeklyFindings([waiting], {
+    aiReviews: { [itemId(waiting)]: { promptVersion: AI_PROMPT_VERSION, status: 'unknown' } },
+  });
+  assert.equal(reviewed.calls, 0);
+  assert.equal(reviewed.audit[0].status, 'deferred');
+  assert.equal(reviewed.highlights.length, 0);
+});
+
+test('resposta sem decisão válida é adiada sem gravar aprovação ou rejeição no cache', async () => {
+  const candidate = item('Lei com resposta incompleta', 'ADESÃO');
+  const state = {};
+  const reviewed = await reviewWeeklyFindings([candidate], state, {
+    apiKey: 'fake-test-key', reviewImpl: async () => ({ status: 'unknown' }),
+  });
+  assert.equal(reviewed.calls, 2);
+  assert.equal(reviewed.audit[0].status, 'deferred');
+  assert.equal(reviewed.highlights.length, 0);
+  assert.equal(state.aiReviews[itemId(candidate)], undefined);
 });
 
 test('IA revisa no envio e na prévia só quando pedida', () => {

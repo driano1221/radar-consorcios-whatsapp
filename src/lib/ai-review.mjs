@@ -2,6 +2,7 @@ import { itemId } from './dedupe.mjs';
 import { normalizeWhitespace } from './text.mjs';
 import { INSTITUTIONAL_REVIEW_POLICY } from './institutional-proof.mjs';
 import { locateQuote } from './quote-evidence.mjs';
+import { verifiedTriage } from './triage-proof.mjs';
 
 export const AI_PROMPT_VERSION = 6;
 
@@ -148,33 +149,40 @@ export async function reviewQueue(items, state, {
   const selected = [];
   const audit = [];
   let callsRun = 0;
+  let unavailable = '';
   for (const item of items) {
     if (selected.length >= maxPosts) break;
     const id = item.id || itemId(item);
     let review = state.aiReviews[id];
-    if (!review || review.promptVersion !== AI_PROMPT_VERSION) {
+    if (!review || review.promptVersion !== AI_PROMPT_VERSION ||
+        !['approved', 'rejected', 'disputed'].includes(review.status)) {
       review = null;
       for (let attempt = 1; attempt <= 2; attempt++) {
-        if (callsRun >= maxCallsRun || state.aiUsage.calls >= maxCallsDay) {
-          audit.push({ id, status: 'deferred', reason: 'limite de chamadas' });
+        if (unavailable || callsRun >= maxCallsRun || state.aiUsage.calls >= maxCallsDay) {
+          audit.push({ id, status: 'deferred', reason: unavailable || 'limite de chamadas' });
           break;
         }
         callsRun += 1;
         state.aiUsage.calls += 1;
         try {
           review = await reviewImpl(item, { apiKey, retryStrict: attempt === 2 });
+          if (!['approved', 'rejected'].includes(review?.status)) {
+            const error = new Error('Segunda leitura sem decisão válida.');
+            error.code = 'INVALID_AI_DECISION';
+            throw error;
+          }
           state.aiUsage.inputTokens += review.usage?.inputTokens || 0;
           state.aiUsage.outputTokens += review.usage?.outputTokens || 0;
           state.aiReviews[id] = { ...review, reviewedAt: now.toISOString() };
           break;
         } catch (error) {
+          review = null;
           if (error.code === 'INVALID_AI_DECISION' && attempt === 1) continue;
           audit.push({ id, status: 'deferred', reason: error.message });
           console.warn(`[ia] Revisão suspensa para ${id.slice(0, 10)}: ${error.message}`);
           // A network failure stops additional paid calls. Invalid decisions
           // only defer the affected item after the bounded second attempt.
-          if (error.code !== 'INVALID_AI_DECISION')
-            return { selected, audit, callsRun, usage: { ...state.aiUsage } };
+          if (error.code !== 'INVALID_AI_DECISION') unavailable = error.message;
           break;
         }
       }
@@ -218,11 +226,11 @@ function concreteRateio(item) {
 export async function reviewWeeklyFindings(items, state, {
   apiKey, maxCalls = 40, reviewImpl = reviewWithDeepSeek, now = new Date(),
 } = {}) {
-  if (!apiKey) throw new Error('DEEPSEEK_API_KEY ausente; resumo não enviado sem revisão.');
   state.aiReviews ||= {};
   const highlights = [];
   const audit = [];
   let calls = 0;
+  let unavailable = apiKey ? '' : 'Credencial de revisão ausente';
   for (const item of items) {
     const id = item.id || itemId(item);
     if (item.weeklyDecision === 'incluir' && item.weeklyEvidence?.documentId &&
@@ -231,20 +239,40 @@ export async function reviewWeeklyFindings(items, state, {
       audit.push({ id, status: 'editorial-confirmed', category: item.classification.category });
       continue;
     }
+    if (item.weeklyDecision === 'incluir' && item.weeklyEvidence?.documentId &&
+        verifiedTriage(item.triage, item.rawText) && item.triage.status === 'confirmado' &&
+        item.classification?.category === item.triage.category) {
+      highlights.push(item);
+      audit.push({ id, status: 'canonical-confirmed', category: item.triage.category });
+      continue;
+    }
     let review = state.aiReviews[id];
-    if (!review || review.promptVersion !== AI_PROMPT_VERSION) {
+    if (!review || review.promptVersion !== AI_PROMPT_VERSION ||
+        !['approved', 'rejected', 'disputed'].includes(review.status)) {
       review = null;
       for (let attempt = 1; attempt <= 2; attempt += 1) {
-        if (calls >= maxCalls) throw new Error('Resumo excedeu o teto de revisões por IA; envio suspenso.');
+        if (unavailable || calls >= maxCalls) {
+          audit.push({ id, status: 'deferred', reason: unavailable || 'limite de chamadas', attempts: attempt - 1 });
+          break;
+        }
         calls += 1;
         try {
           review = await reviewImpl(item, { apiKey, retryStrict: attempt === 2 });
+          if (!['approved', 'rejected'].includes(review?.status)) {
+            const error = new Error('Segunda leitura sem decisão válida.');
+            error.code = 'INVALID_AI_DECISION';
+            throw error;
+          }
           state.aiReviews[id] = { ...review, reviewedAt: now.toISOString() };
           break;
         } catch (error) {
-          // Só decisões inválidas são isoladas. Falhas da API ou da rede não
-          // permitem concluir a revisão e continuam bloqueando o boletim.
-          if (error.code !== 'INVALID_AI_DECISION') throw error;
+          review = null;
+          if (error.code !== 'INVALID_AI_DECISION') {
+            // Uma indisponibilidade não deve consumir o orçamento dos demais.
+            unavailable = error.message;
+            audit.push({ id, status: 'deferred', reason: unavailable, attempts: attempt });
+            break;
+          }
           if (attempt === 2) {
             audit.push({ id, status: 'deferred', reason: error.message, attempts: attempt });
             console.warn(`[ia] Achado semanal ${id.slice(0, 10)} adiado após ${attempt} respostas inválidas: ${error.message}`);
@@ -259,8 +287,10 @@ export async function reviewWeeklyFindings(items, state, {
       audit.push({ id, status: 'approved', category: approved.classification.category });
     } else if (item.classification?.category === 'RATEIO' && concreteRateio(item)) {
       state.aiReviews[id] = { ...state.aiReviews[id], status: 'disputed' };
-      highlights.push(item);
-      audit.push({ id, status: 'disputed-kept', category: 'RATEIO' });
+      audit.push({ id, status: 'deferred', category: 'RATEIO',
+        reason: 'Discordância sobre rateio sem decisão canônica verificada; não incluir sem prova concluída.' });
+    } else if (review.status === 'disputed') {
+      audit.push({ id, status: 'deferred', reason: 'Segunda leitura divergente; falta decisão canônica verificada.' });
     } else {
       audit.push({ id, status: 'rejected', category: item.classification?.category });
     }

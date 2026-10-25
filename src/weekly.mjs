@@ -43,7 +43,9 @@ async function main() {
   const baseReport = existing?.report || buildWeeklyReport(reportState, window, config.minimumScore);
   const ai = config.aiReviewEnabled && !existing?.text && !existing?.messages
     ? await reviewWeeklyFindings(baseReport.highlights, state, { apiKey: process.env.DEEPSEEK_API_KEY }) : null;
-  const highlights = (ai?.highlights || baseReport.highlights).filter(isWhatsAppCategoryAllowed);
+  // O corpo integral serve à conferência; não duplicar o acervo no estado semanal.
+  const highlights = (ai?.highlights || baseReport.highlights).filter(isWhatsAppCategoryAllowed)
+    .map(item => item.weeklyEvidence?.documentId ? { ...item, rawText: undefined } : item);
   if (existing && highlights.length !== baseReport.highlights.length) {
     throw new Error('Edição preparada contém categoria bloqueada no WhatsApp; exige nova edição revisada, sem alterar recibos.');
   }
