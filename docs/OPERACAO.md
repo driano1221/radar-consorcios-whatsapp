@@ -13,6 +13,12 @@ Este guia reúne os controles de execução. Para entender a finalidade e as dec
 
 As definições executáveis estão em [radar.yml](../.github/workflows/radar.yml), [weekly.yml](../.github/workflows/weekly.yml), [publish-dashboard.yml](../.github/workflows/publish-dashboard.yml) e [config/default.json](../config/default.json). Se este texto divergir deles, a configuração executável prevalece.
 
+## Conclusão da segunda leitura
+
+Textos recuperados passam pelas mesmas regras documentais da coleta, inclusive na varredura `upgradeLegacyTriage` durante `catalog:update`, sem depender da fila de WhatsApp ou de mudança de versão/hash. Uma parceria de bolsas já firmada, identificando consórcio e universidade no corpo, confirma somente a parceria; o prazo futuro de documentos não comprova bolsas concedidas. Uma ficha oficial `/norma/` do Legislativo que identifica lei municipal, data de publicação e ementa de ratificação confirma somente a alteração contratual descrita; não presume o teor do anexo, ingresso ou constituição. Projeto, data ausente, hipótese e negação não recebem essa confirmação.
+
+Em 25/10/2026, os textos preservados do [Consórcio Grande ABC](https://www.consorcioabc.sp.gov.br/noticia/6154/consorcio-abc-recebe-documentacao-para-concessao-de-bolsas-de-estudo-na-universidade-metodista/) e da [Lei 5.956 de Patrocínio](https://sapl.patrocinio.mg.leg.br/norma/3142?display) concluíram respectivamente **Atuação** e **Atuação · Governança** por essas regras. As decisões estão em `triagem-reprocessada.ndjson`, vinculadas ao registro e hash do texto, com `alertAllowed=false` e `weeklyAllowed=false`. A manutenção não altera revisões humanas, recibos ou sessões. Os testes em `tests/second-reading-completion.test.mjs` reproduzem a conclusão com a fila vazia e a preservação na rodada seguinte; bloqueios de acesso continuam pendências de recuperação, não rejeições de conteúdo.
+
 ## Revisão do resumo semanal
 
 O resumo consome as decisões concluídas da triagem, verificando o hash do corpo integral e a citação literal. Confirmações verificadas não são reclassificadas nem pagam nova consulta à IA; rejeições não são reabertas. Corpo ausente/alterado ou citação inválida exclui o item dessa edição e deixa motivo em `weekly-selection-audit.json`, sem inventar decisão. Revisões humanas, datas originais, bloqueios históricos, ativação de fontes, prévias e Controle/Fiscalização continuam respeitados. O corpo integral permanece no acervo, sem duplicação no estado semanal.

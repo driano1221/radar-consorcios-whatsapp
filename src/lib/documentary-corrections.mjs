@@ -1,6 +1,6 @@
 // Rules learned from the joint review. Match the operative document, not a
 // mention in its legal foundations. Human reviews still take precedence.
-export function documentaryCorrection(title, text) {
+export function documentaryCorrection(title, text, sourceUrl = '') {
   const head = text.slice(0, 900);
   const result = (category, proofKind, stage, reason, match) => match && ({ category, proofKind,
     stage, reason, evidenceText: match[0], evidenceOffset: match.index });
@@ -86,6 +86,13 @@ export function documentaryCorrection(title, text) {
   const committee = /\bPARECER DA COMISS[AÃÀÁ]O\b/i.test(head) && /(?:^|\s)[eé] de parecer que seja encaminhado\b.{0,120}/i.exec(text);
   if (committee) return reject('parecer de comissão sobre projeto; sanção e ratificação não comprovadas', 'parecer/redação não comprova lei sancionada', committee);
   const amendedContract = /\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*fica ratificad[ao]\s+(?:a\s+)?altera[cç][aã]o\s+do\s+contrato\s+(?:de\s+cons[oó]rcio\s+p[uú]blico\s+do\s+|do\s+)?cons[oó]rcio\b[^.;]{0,330}/i.exec(text);
+  const amendmentSummary = /\bEmenta\s*[“"]?RATIFICA\s+(?:AS?\s+)?ALTERA[CÇ](?:[AÃ]O|[OÕ]ES)\s+(?:PROMOVIDAS?\s+)?(?:NO|DO)\s+CONTRATO DE CONS[OÓ]RCIO P[UÚ]BLICO DO CONS[OÓ]RCIO\b[^“”"]{5,400}/i.exec(text);
+  if (/^lei(?: municipal)?\b/i.test(title) && /^https:\/\/[^/?#]+\.leg\.br\/norma\/\d+(?:[/?#]|$)/i.test(sourceUrl) &&
+      /\bTipo da Norma Jur[ií]dica Lei Municipal N[uú]mero \d+ Ano 20\d{2}\b/i.test(head) &&
+      /\bData de Publica[cç][aã]o \d{2}\/\d{2}\/20\d{2}\b/i.test(head) && amendmentSummary)
+    return result('GOVERNANÇA', 'published_governance_rule',
+      'lei publicada segundo ficha legislativa; ementa ratifica alteração contratual; anexo, novo ingresso e constituição não comprovados',
+      'ficha oficial identifica lei e data de publicação; confirmar somente a ratificação descrita na ementa', amendmentSummary);
   if (/^lei\b/i.test(title) && /\b(?:sanciona|sanciono|promulg[ao])\b/i.test(head) && amendedContract)
     return result('GOVERNANÇA', 'published_governance_rule',
       'ratificação de alteração contratual publicada; teor do anexo e novo ingresso não comprovados',

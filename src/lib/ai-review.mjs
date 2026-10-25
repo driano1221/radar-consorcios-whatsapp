@@ -121,7 +121,7 @@ export function applyAiReview(item, review, { preserveHistoricalRejection = fals
     const roleBounded = (originalCategory === 'CONTROLE' && item.classification.proofKind === 'court_decision') ||
       (originalCategory === 'ATUAÇÃO' && ['inspection_participation', 'performed_institutional_activity', 'signed_cooperation'].includes(item.classification.proofKind)) ||
       (originalCategory === 'PROTOCOLO' && ['signed_municipal_protocol', 'ratified_protocol'].includes(item.classification.proofKind)) ||
-      (originalCategory === 'GOVERNANÇA' && item.classification.proofKind === 'documented_composition');
+      (originalCategory === 'GOVERNANÇA' && ['documented_composition', 'published_governance_rule'].includes(item.classification.proofKind));
     const category = preparatory || roleBounded || item.classification.scope === 'orientacao_geral' ? originalCategory : review.category;
     const boundedReview = category === review.category ? review
       : { ...review, category, proposedCategory: review.category, boundedBy: 'etapa do ato' };

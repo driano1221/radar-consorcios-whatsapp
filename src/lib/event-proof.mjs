@@ -72,7 +72,7 @@ function withEvidence(result, evidence) {
 export function refineEventProof(item, classification) {
   const text = normalizeWhitespace(item.rawText || item.summary || item.excerpts?.join(' ') || '');
   const title = normalizeWhitespace(item.title || '');
-  const correction = item.rawText && documentaryCorrection(title, text);
+  const correction = item.rawText && documentaryCorrection(title, text, item.articleUrl || item.url || '');
   if (correction) return { ...classification, ...correction,
     emoji: correction.category === 'PROTOCOLO' ? '🟨' : correction.category === 'GOVERNANÇA' ? '🟨' : '📰',
     score: correction.category === 'GERAL' ? 0 : Math.max(5, classification.score || 0),

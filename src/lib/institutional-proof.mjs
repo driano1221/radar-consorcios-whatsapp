@@ -16,6 +16,16 @@ export function institutionalProof(item) {
   const text = normalizeWhitespace(item.rawText || '');
   if (text.length < 160 || item.kind === 'gazette' ||
       /^(?:lei|projeto de lei|contrato|resolu[cç][aã]o|portaria|di[aá]rio oficial)\b/i.test(item.title || '')) return null;
+  const partnership = /\bparceria entre o Cons[oó]rcio\s+(?:P[uú]blico\s+)?Intermunicipal\b[^.!?;]{2,145}?\s+e\s+a\s+Universidade\b/i.exec(text);
+  const established = /\bFirmada\s+em\s+[^,.;]{3,40},\s*a parceria\s+(?:prev[eê]|oferece|disponibiliza)\s+[^!?;]{0,150}/i.exec(text);
+  if (/\bbolsas?\b/i.test(item.title || '') && partnership && established &&
+      established.index > partnership.index && established.index - partnership.index < 700 &&
+      !UNSAFE.test(text.slice(Math.max(0, text.lastIndexOf('.', partnership.index - 1) + 1), partnership.index)) &&
+      !/\b(?:n[aã]o|nunca|ser[aá]|seria|se|caso|teria|poderia)(?=\s|$)/i.test(text.slice(text.lastIndexOf('.', established.index - 1) + 1, established.index)))
+    return {category:'ATUAÇÃO',proofKind:'signed_cooperation',
+      stage:'parceria de bolsas já firmada; entrega de documentação futura, concessão e bolsas entregues não comprovadas',
+      reason:'corpo identifica consórcio e universidade e afirma parceria firmada; prazo futuro de documentos não é entrega realizada',
+      evidenceText:text.slice(partnership.index,established.index+established[0].length),evidenceOffset:partnership.index};
   const construction=/\b(?:estamos vivendo|est[aá] em andamento)\b[^.!?]{0,160}\bconstru[cç][aã]o da nossa pr[oó]pria sede\b[^.!?]{0,60}/i.exec(text);
   if (construction && item.entityName && item.entityAlias && text.includes(item.entityAlias) && /\bcons[oó]rcio\b/i.test(text) && /\bnossa sede est[aá] tomando forma\b/i.test(text) &&
       !/\b(?:hip[oó]tese|talvez|caso aprovad[oa]|poderia|n[aã]o est[aá])\b/i.test(text))
