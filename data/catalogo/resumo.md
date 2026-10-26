@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 4164 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 262 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 4179 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 263 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 108 identidades candidatas de consórcios; 172 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 97 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 98 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -16,7 +16,7 @@
 | ADESÃO AUTORIZADA | 20 |
 | FINANÇAS | 19 |
 | PROTOCOLO | 11 |
-| CRISE | 4 |
+| CRISE | 5 |
 | RATEIO EM TRAMITAÇÃO | 4 |
 | ADESÃO | 3 |
 | COOPERAÇÃO AUTORIZADA | 2 |
@@ -30,13 +30,13 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
-| 2026-10-26 | CRISE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI MUNICIPAL 475/2026](https://www.diariomunicipal.com.br/aprece/materia/AF042FE0) |
-| 2026-10-26 | CRIAÇÃO — constituição documentada | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [DECRETO Nº 1.075/2026](https://www.diariomunicipal.com.br/famup/materia/91069D3B) |
-| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI MUNICIPAL 956/2026](https://www.diariomunicipal.com.br/amm-mg/materia/61684C95) |
-| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI N.º 1.580/2026](https://www.diariomunicipal.com.br/amp/materia/106EF81E) |
+| 2026-10-26 | CRISE —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI MUNICIPAL 475/2026](https://www.diariomunicipal.com.br/aprece/materia/AF042FE0) |
+| 2026-10-26 | CRIAÇÃO — constituição documentada | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [DECRETO Nº 1.075/2026](https://www.diariomunicipal.com.br/famup/materia/91069D3B) |
+| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [LEI MUNICIPAL 956/2026](https://www.diariomunicipal.com.br/amm-mg/materia/61684C95) |
+| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI N.º 1.580/2026](https://www.diariomunicipal.com.br/amp/materia/106EF81E) |
 | 2026-10-26 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATO DO CONTRATO Nº 059/2026.](https://www.diariomunicipal.com.br/amm-mg/materia/9405C735) |
-| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [DECRETO POR ANULAÇÃO](https://www.diariomunicipal.com.br/amp/materia/A0EAC9D8) |
-| 2026-10-26 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI MUNICIPAL 474/2026](https://www.diariomunicipal.com.br/aprece/materia/6496E584) |
+| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [DECRETO POR ANULAÇÃO](https://www.diariomunicipal.com.br/amp/materia/A0EAC9D8) |
+| 2026-10-26 | ADESÃO —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI MUNICIPAL 474/2026](https://www.diariomunicipal.com.br/aprece/materia/6496E584) |
 | 2026-10-24 | GOVERNANÇA — lei publicada segundo ficha legislativa; ementa ratifica alteração contratual; anexo, novo ingresso e constituição não comprovados | confirmado pela triagem — ficha oficial identifica lei e data de publicação; confirmar somente a ratificação descrita na ementa | [Lei Municipal nº 5.956, de 28 de setembro de 2026 - sapl.patrocinio.mg.leg.br](https://news.google.com/rss/articles/CBMiYkFVX3lxTFA4NnJKTVNoTld0eG95ZTNiLV9JMDZpM1JEMnhWLUZOQWJOZ290RHh6bFlJblY5TGlvTzBkaDBhMFl3NjZDUWJYVnpxTDdreVY1dWhZUHdZckQ1YUd1dnhCaTFR?oc=5) |
 | 2026-10-23 | CONTROLE — suspensão confirmada/determinada pelo Tribunal; condenação definitiva não inferida | confirmado pela triagem — órgão de controle e decisão efetiva identificados no corpo | [Indícios TCE-RN confirma suspensão de licitação de mobiliário escolar por consórcio intermunicipal - NOVO Notícias](https://news.google.com/rss/articles/CBMiugFBVV95cUxOdm5sQ0I5Zy14d0RsRkw2M2NKdDE4Q1VaLW1zQVFUMVc1TjNkTVBpdld1QWd3cHBtdm9PSndqVW9zVlg3V053a0xTRGcwWktQRm9sckhGSHVtQndtVEEwN2locnhNRWMxUmhudWVudnAzZlFvVVpvQUZ1Q2loM1ZubkFFWUZMNEpkRGEybEQ3ZldYU0tNa2VYRGJRajFjbE5XM2p1VU82UjREM2J2UXFuQVJHdXNneFRkYUE?oc=5) |
 | 2026-10-23 | CONTROLE — suspensão confirmada/determinada pelo Tribunal; condenação definitiva não inferida | confirmado pela triagem — órgão de controle e decisão efetiva identificados no corpo | [TCE confirma suspensão de licitação de mobiliário escolar por consórcio intermunicipal - TCE RN](https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBYejNoWWYtMzJOM2JRWWl6b0E3cWRBcWdsaEwwSEpSTVhPbmwtTThsZ19ZS2NvTllJa2JPWk1CMVdUUUxYdk9oeDF6cWx6RW0xdGs2b0pDQXFWWEFfM1ZqT2JRUUh2dzg?oc=5) |
