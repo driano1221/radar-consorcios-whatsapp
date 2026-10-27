@@ -1,27 +1,27 @@
 # Panorama da base histórica
 
-- 4302 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 274 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 109 identidades candidatas de consórcios; 175 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 106 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 4445 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 286 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 110 identidades candidatas de consórcios; 180 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 113 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 94 |
-| GOVERNANÇA | 41 |
-| RATEIO | 38 |
+| ATUAÇÃO | 97 |
+| GOVERNANÇA | 42 |
+| RATEIO | 42 |
 | CONTROLE | 28 |
 | ADESÃO AUTORIZADA | 20 |
 | FINANÇAS | 19 |
 | PROTOCOLO | 11 |
-| CRISE | 5 |
-| ADESÃO | 4 |
+| ADESÃO | 6 |
+| CRISE | 6 |
 | RATEIO EM TRAMITAÇÃO | 4 |
+| SAÍDA | 3 |
 | COOPERAÇÃO AUTORIZADA | 2 |
 | CRIAÇÃO | 2 |
-| SAÍDA | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
 | CRIAÇÃO EM TRAMITAÇÃO | 1 |
 | PROPOSTA DE ADESÃO | 1 |
@@ -31,20 +31,20 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-27 | CRISE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EDITAL CREDENCIAMENTO BANCÁRIO 001/2026](https://www.diariomunicipal.com.br/amp/materia/C29CC3B2) |
+| 2026-10-27 | SAÍDA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EXTRATO DE TERMO ADITIVO AO CONTRATO - 097/2024](https://www.diariomunicipal.com.br/amm-mg/materia/07643433) |
+| 2026-10-27 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EDITAL DE CONVOCAÇÃO ASSEMBLÉIA GERAL ORDINÁRIA](https://www.diariomunicipal.com.br/amm-mg/materia/6842DA2B) |
+| 2026-10-27 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO Nº 01/2026 QUE ENTRE SI CELEBRAM O MUNICÍPIO DE E O CONSÓRCIO INTERGESTORES PARANÁ SAÚDE COM VISTAS A OPERACIONALIZAÇÃO DAS AÇÕES DE ASSISTÊNCIA FARMACÊUTICA DO SUS NO MUNICÍPIO.](https://www.diariomunicipal.com.br/amp/materia/667B5A82) |
+| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [CONTRATO DE RATEIO Nº 086/2026 MUNICÍPIO DE SANTO ANTÔNIO DA PLATINA](https://www.diariomunicipal.com.br/amp/materia/5CC9B5D5) |
+| 2026-10-27 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO PRODUTOS PARA SAÚDE](https://www.diariomunicipal.com.br/amp/materia/7F50D5EE) |
+| 2026-10-27 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [TERMO DE HOMOLOGAÇÃO PROCESSO LICITATORIO Nº100/2026 ADESÃO N.º 100031/2026](https://www.diariomunicipal.com.br/amm-mg/materia/BD0B7A9E) |
+| 2026-10-27 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO CONTRATO DE RATEIO Nº 2026029/001](https://www.diariomunicipal.com.br/femurn/materia/123BF927) |
+| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EXTRATO DE CONTRATO DE RATEIO N.º 25-A/2026 – CIMOP](https://www.diariomunicipal.com.br/femurn/materia/19850DE7) |
+| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [CONTRATO DE RATEIO Nº 103/2026 MUNICÍPIO DE PARANACITY - PR.](https://www.diariomunicipal.com.br/amp/materia/E32F9B39) |
+| 2026-10-27 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [PROCESSO LICITATÓRIO Nº 155/2026 ADESÃO/CARONA Nº 30/2026](https://www.diariomunicipal.com.br/amp/materia/40EB53EA) |
 | 2026-10-26 | CRISE —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI MUNICIPAL 475/2026](https://www.diariomunicipal.com.br/aprece/materia/AF042FE0) |
 | 2026-10-26 | CRIAÇÃO — constituição documentada | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [DECRETO Nº 1.075/2026](https://www.diariomunicipal.com.br/famup/materia/91069D3B) |
 | 2026-10-26 | GOVERNANÇA — estatuto consolidado ratificado por lei municipal; consórcio já existente | confirmado pela triagem — ratificação estatutária não cria consórcio nem comprova nova adesão | [Lei Nº 1.355/2026, de 23 de outubro de 2026 - Ratifica o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia (CIDESAPA).](https://amm.diariomunicipal.org/publicacao/1931056/) |
 | 2026-10-26 | SAÍDA —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [Seminário do TCEMG orienta gestores e reforça segurança jurídica nos consórcios públicos](https://www.tce.mg.gov.br/Seminario-do-TCEMG-orienta-gestores-e-reforca-seguranca-juridica-nos-consorcios-publicos-.html/Noticia/1111629281) |
-| 2026-10-26 | ADESÃO —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [EXTRATO DO CONTRATO DE RATEIO N°083-2026](https://amm.diariomunicipal.org/publicacao/1931228/) |
-| 2026-10-26 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATO CONTRATO 103/2026](https://www.diariomunicipal.com.br/amm-mg/materia/39CA3B4B) |
-| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [RESOLUÇÃO DA ASSEMBLEIA GERAL Nº 009/2026, DE 22 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1931242/) |
-| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [LEI MUNICIPAL 956/2026](https://www.diariomunicipal.com.br/amm-mg/materia/61684C95) |
-| 2026-10-26 | GOVERNANÇA — estatuto consolidado ratificado por lei municipal; consórcio já existente | confirmado pela triagem — ratificação estatutária não cria consórcio nem comprova nova adesão | [LEI Nº 1070/2026](https://amm.diariomunicipal.org/publicacao/1931321/) |
-| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI N.º 1.580/2026](https://www.diariomunicipal.com.br/amp/materia/106EF81E) |
-| 2026-10-26 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [EXTRATO 1º ADT AO CONTRATO DE RATEIO º 002/2026](https://amm.diariomunicipal.org/publicacao/1931024/) |
-| 2026-10-26 | GOVERNANÇA — alteração do protocolo; ingresso novo não comprovado | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [Lei Nº 1.356/2026, de 23 de outubro de 2026 - Ratifica a alteração do Protocolo de Intenções do Consórcio de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia (CIDESAPA).](https://amm.diariomunicipal.org/publicacao/1931053/) |
-| 2026-10-26 | SAÍDA —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [RESOLUÇÃO DA ASSEMBLEIA GERAL Nº 008/2026, DE 22 DE OUTUBRO DE 2026](https://amm.diariomunicipal.org/publicacao/1931244/) |
-| 2026-10-26 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATO DE PUBLICAÇÃO DO TERMO DE RETIFICAÇÃO DO CONTRATO Nº071/2023](https://amm.diariomunicipal.org/publicacao/1931258/) |
-| 2026-10-26 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATO DO CONTRATO Nº 059/2026.](https://www.diariomunicipal.com.br/amm-mg/materia/9405C735) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
