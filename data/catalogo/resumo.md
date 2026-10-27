@@ -1,25 +1,25 @@
 # Panorama da base histórica
 
-- 4445 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 286 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 110 identidades candidatas de consórcios; 180 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 113 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 4471 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 291 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 111 identidades candidatas de consórcios; 182 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 116 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 97 |
+| ATUAÇÃO | 98 |
 | GOVERNANÇA | 42 |
 | RATEIO | 42 |
-| CONTROLE | 28 |
-| ADESÃO AUTORIZADA | 20 |
+| CONTROLE | 29 |
+| ADESÃO AUTORIZADA | 21 |
 | FINANÇAS | 19 |
 | PROTOCOLO | 11 |
+| CRISE | 7 |
 | ADESÃO | 6 |
-| CRISE | 6 |
 | RATEIO EM TRAMITAÇÃO | 4 |
-| SAÍDA | 3 |
+| SAÍDA | 4 |
 | COOPERAÇÃO AUTORIZADA | 2 |
 | CRIAÇÃO | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
@@ -42,9 +42,9 @@
 | 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EXTRATO DE CONTRATO DE RATEIO N.º 25-A/2026 – CIMOP](https://www.diariomunicipal.com.br/femurn/materia/19850DE7) |
 | 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [CONTRATO DE RATEIO Nº 103/2026 MUNICÍPIO DE PARANACITY - PR.](https://www.diariomunicipal.com.br/amp/materia/E32F9B39) |
 | 2026-10-27 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [PROCESSO LICITATÓRIO Nº 155/2026 ADESÃO/CARONA Nº 30/2026](https://www.diariomunicipal.com.br/amp/materia/40EB53EA) |
+| 2026-10-27 | ATUAÇÃO — relato — conferir documento original | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [FNP promove webinário sobre equilíbrio federativo na Reforma Tributária](https://fnp.org.br/noticias/item/3997-fnp-promove-webinario-sobre-equilibrio-federativo-na-reforma-tributaria) |
+| 2026-10-26 | SAÍDA —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [Seminário do TCEMG orienta gestores e reforça segurança jurídica nos consórcios públicos - Tribunal de Contas do Estado de Minas Gerais](https://news.google.com/rss/articles/CBMi1gFBVV95cUxQN244aG0yU1ZRZWdsb3BnSVQxVDEwWm90VW1KVXIzZDdOeGRjUkotUHA2RURVd213dUE5cFhCN1J1cnlRcmxkS2lBSnkxVms2YWxMZUUtWjFWLWFud0YxQWZpbF9tRWxuWU9md2hlTjA3akN2bVRMODlicXloLUlZVFc1NllnbkhvQmpkanNMeGJieF84a3UwZUxiYjRjRGF2WjFZME9KSmI5Y21aakpuMFVERTRub0piTDFGWFVXRmV0eFRmcng3WkdlWTRWNHpPMU0wc0dn?oc=5) |
 | 2026-10-26 | CRISE —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI MUNICIPAL 475/2026](https://www.diariomunicipal.com.br/aprece/materia/AF042FE0) |
 | 2026-10-26 | CRIAÇÃO — constituição documentada | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [DECRETO Nº 1.075/2026](https://www.diariomunicipal.com.br/famup/materia/91069D3B) |
-| 2026-10-26 | GOVERNANÇA — estatuto consolidado ratificado por lei municipal; consórcio já existente | confirmado pela triagem — ratificação estatutária não cria consórcio nem comprova nova adesão | [Lei Nº 1.355/2026, de 23 de outubro de 2026 - Ratifica o Estatuto Consolidado do Consórcio Intermunicipal de Desenvolvimento Econômico, Social e Ambiental do Portal do Araguaia (CIDESAPA).](https://amm.diariomunicipal.org/publicacao/1931056/) |
-| 2026-10-26 | SAÍDA —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [Seminário do TCEMG orienta gestores e reforça segurança jurídica nos consórcios públicos](https://www.tce.mg.gov.br/Seminario-do-TCEMG-orienta-gestores-e-reforca-seguranca-juridica-nos-consorcios-publicos-.html/Noticia/1111629281) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
