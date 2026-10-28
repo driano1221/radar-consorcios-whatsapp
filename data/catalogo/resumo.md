@@ -1,25 +1,25 @@
 # Panorama da base histórica
 
-- 4578 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 299 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 114 identidades candidatas de consórcios; 186 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 120 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 4741 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 317 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 116 identidades candidatas de consórcios; 195 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 129 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 99 |
-| RATEIO | 44 |
-| GOVERNANÇA | 43 |
-| CONTROLE | 31 |
+| ATUAÇÃO | 102 |
+| RATEIO | 49 |
+| GOVERNANÇA | 45 |
+| CONTROLE | 34 |
 | ADESÃO AUTORIZADA | 21 |
-| FINANÇAS | 19 |
-| PROTOCOLO | 13 |
+| FINANÇAS | 20 |
+| PROTOCOLO | 15 |
+| ADESÃO | 7 |
 | CRISE | 7 |
-| ADESÃO | 6 |
+| SAÍDA | 5 |
 | RATEIO EM TRAMITAÇÃO | 4 |
-| SAÍDA | 4 |
 | COOPERAÇÃO AUTORIZADA | 2 |
 | CRIAÇÃO | 2 |
 | ADESÃO EM TRAMITAÇÃO | 1 |
@@ -31,20 +31,20 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
-| 2026-10-27 | CRISE — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [EDITAL CREDENCIAMENTO BANCÁRIO 001/2026](https://www.diariomunicipal.com.br/amp/materia/C29CC3B2) |
-| 2026-10-27 | SAÍDA — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [EXTRATO DE TERMO ADITIVO AO CONTRATO - 097/2024](https://www.diariomunicipal.com.br/amm-mg/materia/07643433) |
-| 2026-10-27 | GOVERNANÇA — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [EDITAL DE CONVOCAÇÃO ASSEMBLÉIA GERAL ORDINÁRIA](https://www.diariomunicipal.com.br/amm-mg/materia/6842DA2B) |
-| 2026-10-27 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO Nº 01/2026 QUE ENTRE SI CELEBRAM O MUNICÍPIO DE E O CONSÓRCIO INTERGESTORES PARANÁ SAÚDE COM VISTAS A OPERACIONALIZAÇÃO DAS AÇÕES DE ASSISTÊNCIA FARMACÊUTICA DO SUS NO MUNICÍPIO.](https://www.diariomunicipal.com.br/amp/materia/667B5A82) |
-| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI MUNICIPAL Nº 1.717 /2026 DE 26 DE OUTUBRO 2026](https://amm.diariomunicipal.org/publicacao/1931721/) |
-| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [CONTRATO DE RATEIO Nº 086/2026 MUNICÍPIO DE SANTO ANTÔNIO DA PLATINA](https://www.diariomunicipal.com.br/amp/materia/5CC9B5D5) |
-| 2026-10-27 | GOVERNANÇA — ato publicado — efeito a verificar | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [TERMO DE POSSE DO PRESIDENTE, CONSELHO DIRETOR E CONSELHO FISCAL DO CONSÓRCIO INTERMUNICIPAL DE SERVIÇOS AMBIENTAIS - (09/04/2026)](https://www.diariomunicipal.com.br/amp/materia/4BE8AD7A) |
-| 2026-10-27 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO PRODUTOS PARA SAÚDE](https://www.diariomunicipal.com.br/amp/materia/7F50D5EE) |
-| 2026-10-27 | PROTOCOLO — ato publicado — efeito a verificar | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [EXTRATO PUBLICAÇÃO SUBSCRIÇÃO DO PROTOCOLO DE INTENÇÕES DO CONCLIMA](https://amm.diariomunicipal.org/publicacao/1931685/) |
-| 2026-10-27 | ADESÃO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [TERMO DE HOMOLOGAÇÃO PROCESSO LICITATORIO Nº100/2026 ADESÃO N.º 100031/2026](https://www.diariomunicipal.com.br/amm-mg/materia/BD0B7A9E) |
-| 2026-10-27 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO CONTRATO DE RATEIO Nº 2026029/001](https://www.diariomunicipal.com.br/femurn/materia/123BF927) |
-| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [EXTRATO DE CONTRATO DE RATEIO N.º 25-A/2026 – CIMOP](https://www.diariomunicipal.com.br/femurn/materia/19850DE7) |
-| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [CONTRATO DE RATEIO Nº 103/2026 MUNICÍPIO DE PARANACITY - PR.](https://www.diariomunicipal.com.br/amp/materia/E32F9B39) |
-| 2026-10-27 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [EXTRATO DE ADITAMENTO](https://amm.diariomunicipal.org/publicacao/1931763/) |
-| 2026-10-27 | PROTOCOLO — ratificação legal do protocolo; ingresso homologado, constituição e rateio assinado não comprovados | confirmado pela triagem — dispositivo legal ratifica protocolo; não inferir efeitos posteriores | [LEI ORDINÁRIA Nº. 1.777, DE 26 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1931982/) |
+| 2026-10-28 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI Nº 1005/2026 DE 26 DE OUTUBRO DE 2026.](https://www.diariomunicipal.com.br/amp/materia/8F6EC149) |
+| 2026-10-28 | CONTROLE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [AVISO DE SUSPENSÃO](https://www.diariomunicipal.com.br/amm-mg/materia/6D94D184) |
+| 2026-10-28 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATO 7º TERMO ADITIVO AO CONVÊNIO Nº 009/2022 - SECRETARIA MUNICIPAL DE SAÚDE - NÚCLEO DE GERENCIAMENTO EM SAÚDE](https://www.diariomunicipal.com.br/amm-mg/materia/4267834D) |
+| 2026-10-28 | PROTOCOLO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [ATO NORMATIVO Nº 10/2026 DISPÕE SOBRE A NOMEAÇÃO DE SERVIDOR PARA EXERCER CARGO EM COMISSÃO NO ÂMBITO DO CISMARG E DÁ OUTRAS PROVIDÊNCIAS.](https://www.diariomunicipal.com.br/amm-mg/materia/D06EA6B5) |
+| 2026-10-28 | RATEIO — aditivo ao rateio formalizado em extrato; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO 2° TERMO ADITIVO AO CONTRATO DE RATEIO Nº 23/2026 - REAJUSTE](https://www.diariomunicipal.com.br/amp/materia/829F6CE6) |
+| 2026-10-28 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [RETIFICAÇÃO TERMO DE HOMOLOGAÇÃO PROCESSO LICITATORIO Nº100/2026 ADESÃO Nº 100031/2026](https://www.diariomunicipal.com.br/amm-mg/materia/AB3E36D6) |
+| 2026-10-28 | PROTOCOLO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [ATO DA PRESIDÊNCIA](https://www.diariomunicipal.com.br/amupe/materia/078162F9) |
+| 2026-10-28 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI Nº.1530/2026](https://www.diariomunicipal.com.br/amp/materia/A5F07B13) |
+| 2026-10-28 | CONTROLE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI Nº 963/2026.](https://www.diariomunicipal.com.br/amm-mg/materia/AE7AC117) |
+| 2026-10-28 | ATUAÇÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [PROCEDIMENTO LICITATÓRIO 006/2026, INEXIGIBILIDADE 001/2026](https://www.diariomunicipal.com.br/amm-mg/materia/A1A97A68) |
+| 2026-10-28 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EXTRATO – 1° TERMO DE RERRATIFICAÇÃO DO 3° TERMO DE APOSTILAMENTO AO CONTRATO DE PROGRAMA Nº 031/2024 – DISPENSA 028/2023](https://www.diariomunicipal.com.br/amm-mg/materia/11F3D987) |
+| 2026-10-28 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [CIDES – CONVIDA PARA REUNIÃO PREPARATÓRIA E ELEIÇÃO DIRETORIA CIDES 2027.](https://www.diariomunicipal.com.br/amm-mg/materia/2E10B643) |
+| 2026-10-28 | SAÍDA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [RESPOSTA À IMPUGNAÇÃO AO EDITAL (3ª IMPUGNAÇÃO)](https://www.diariomunicipal.com.br/amm-mg/materia/CC171E43) |
+| 2026-10-28 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EXTRATO DO PRIMEIRO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 6/2026](https://www.diariomunicipal.com.br/femurn/materia/F95E33D7) |
+| 2026-10-28 | CONTROLE —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [Diário Oficial de Salto (SP)](https://data.queridodiario.ok.org.br/3545209/2026-10-28/76a228648a5bbbe5de2b4dc381a2454ae5d75a4c.pdf) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
