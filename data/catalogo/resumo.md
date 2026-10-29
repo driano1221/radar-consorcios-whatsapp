@@ -1,9 +1,9 @@
 # Panorama da base histórica
 
-- 4836 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 324 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 4854 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 326 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 119 identidades candidatas de consórcios; 191 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 140 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 142 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
@@ -12,13 +12,13 @@
 | ATUAÇÃO | 102 |
 | RATEIO | 50 |
 | GOVERNANÇA | 45 |
-| CONTROLE | 35 |
+| CONTROLE | 36 |
 | ADESÃO AUTORIZADA | 21 |
 | FINANÇAS | 21 |
 | PROTOCOLO | 19 |
 | ADESÃO | 7 |
 | CRISE | 7 |
-| SAÍDA | 5 |
+| SAÍDA | 6 |
 | RATEIO EM TRAMITAÇÃO | 4 |
 | COOPERAÇÃO AUTORIZADA | 2 |
 | CRIAÇÃO | 2 |
@@ -31,6 +31,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-10-29 | CONTROLE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [Consórcio Intermunicipal realiza nova edição da Operação ABC+Seguro em São Bernardo - ABCD Jornal](https://news.google.com/rss/articles/CBMivAFBVV95cUxPN3lXU0gwR2V6T19CRjROUzNvZ1NRTEtqdmVCbzRCbGl1UU14czQtS29KQlRzYmdTNU9FWTJCU1FXM1FXQWJXVjRFeG02N0M0T1FjQjkwM2c4b2dleWpCUTEwakxhYklodXo4bWhNZkRDZXprSzJrbGtweldsTkZMTjFiYVRSNEdQMXdid0JuSE1ZYVNXVnRrVWZ0Q1pPb0pnclVQSEZQN0xMblVFZlpDNVVWVk9ndmd1WFVCSA?oc=5) |
 | 2026-10-28 | PROTOCOLO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [PORTARIA N° 09, DE 22 DE OUTUBRO DE 2026. DISPÕE SOBRE A AUTORIZAÇÃO DE AGENTE PÚBLICO, PARA OPERAR A ESCAVADEIRA HIDRÁULICA CEDIDA VIA TCU Nº 008/2022 PROC. SIE 20174/2022 AO CONSÓRCIO INTERMUNICIPAL DE GESTÃO PÚBLICA DO VALE DO ITAPOCU – CIGAMVALI](https://diariomunicipal.sc.gov.br/atos/8868849) |
 | 2026-10-28 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [CONTRATO DE RATEIO PARA USO DE EQUIPAMENTO Nº 001/2026 CONTRATO DE RATEIO PARA USO DE EQUIPAMENTO CELEBRADO ENTRE O MUNICÍPIO DE JARAGUÁ DO SUL E O CONSÓRCIO INTERMUNICIPAL DE GESTÃO PÚBLICA DO VALE DO ITAPOCU (CIGAMVALI](https://diariomunicipal.sc.gov.br/atos/8868841) |
 | 2026-10-28 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [LEI Nº 1005/2026 DE 26 DE OUTUBRO DE 2026.](https://www.diariomunicipal.com.br/amp/materia/8F6EC149) |
@@ -45,6 +46,5 @@
 | 2026-10-28 | CONTROLE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI Nº 963/2026.](https://www.diariomunicipal.com.br/amm-mg/materia/AE7AC117) |
 | 2026-10-28 | ATUAÇÃO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [PROCEDIMENTO LICITATÓRIO 006/2026, INEXIGIBILIDADE 001/2026](https://www.diariomunicipal.com.br/amm-mg/materia/A1A97A68) |
 | 2026-10-28 | PROTOCOLO —  | processando pela triagem — Conferir novamente a citação da segunda leitura no documento original. | [Portaria n. 214/2026](https://amm.diariomunicipal.org/publicacao/1933082/) |
-| 2026-10-28 | PROTOCOLO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [PORTARIA Nº 214, DE 27 DE OUTUBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1933152/) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
