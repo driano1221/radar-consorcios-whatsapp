@@ -1,8 +1,8 @@
 # Panorama da base histórica
 
-- 5083 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 343 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 120 identidades candidatas de consórcios; 195 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 5094 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 344 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 121 identidades candidatas de consórcios; 196 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 155 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
@@ -12,7 +12,7 @@
 | ATUAÇÃO | 104 |
 | RATEIO | 54 |
 | GOVERNANÇA | 46 |
-| CONTROLE | 37 |
+| CONTROLE | 38 |
 | FINANÇAS | 22 |
 | ADESÃO AUTORIZADA | 21 |
 | PROTOCOLO | 20 |
@@ -43,8 +43,8 @@
 | 2026-10-29 | ADESÃO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [LEI MUNICIPAL 999/2026](https://www.diariomunicipal.com.br/amupe/materia/03ED848A) |
 | 2026-10-29 | FINANÇAS —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [TERMO DE COOPERAÇÃO TÉCNICA E FINANCEIRA Nº 002/2026](https://amm.diariomunicipal.org/publicacao/1933844/) |
 | 2026-10-29 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [CONTRATO DE RATEIO 0792026](https://diariomunicipal.sc.gov.br/atos/8875133) |
+| 2026-10-29 | CONTROLE —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [Diário Oficial de Taiobeiras (MG)](https://data.queridodiario.ok.org.br/3168002/2026-10-29/c0c3065fbdd3f52e58092c5df3ef425fdc05665e.pdf) |
 | 2026-10-29 | CRISE — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [1º RETIFICAÇÃO EDITAL CREDENCIAMENTO Nº 01.2025 - TRANSPORTE COMPARTILHADO DE PACIENTES TFD](https://diariomunicipal.sc.gov.br/atos/8874784) |
 | 2026-10-29 | GOVERNANÇA — ato publicado — efeito a verificar | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [RESOLUÇÃO 0502026](https://diariomunicipal.sc.gov.br/atos/8874554) |
-| 2026-10-29 | CRISE — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [TERMO DE CREDENCIAMENTO 059/2026 -DENIS BRAGA SERVIÇOS MÉDICOS SOC. UNIPESSOAL LTDA - TELECONSULTA - (ÁGUA DOCE](https://diariomunicipal.sc.gov.br/atos/8873987) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
