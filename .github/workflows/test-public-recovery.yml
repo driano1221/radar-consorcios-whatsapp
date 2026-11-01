@@ -6,6 +6,10 @@ on:
         description: Piloto isolado de dez antigos, sem gravar base nem enviar mensagens
         type: boolean
         default: false
+      pending_access:
+        description: Estudar somente os cinco bloqueios de acesso, sem alterar base ou enviar
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -31,18 +35,21 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_public_pdf.py'
       - run: node scripts/check-recovery-safety.mjs --before
       - name: Validar fontes reais e OCR sem persistir na base
-        if: ${{ !inputs.retroactive_ten }}
+        if: ${{ !inputs.retroactive_ten && !inputs.pending_access }}
         run: node scripts/validate-public-recovery.mjs
       - name: Recuperar dez antigos em diretório isolado
-        if: ${{ inputs.retroactive_ten }}
+        if: ${{ inputs.retroactive_ten && !inputs.pending_access }}
         run: node scripts/pilot-retroactive-ten.mjs
+      - name: Estudar cinco bloqueios e rotas públicas sem persistir no acervo
+        if: ${{ inputs.pending_access }}
+        run: node scripts/study-pending-access.mjs
       - name: Confirmar histórico, decisões e estado de envio intactos
         if: always()
         run: |
           node scripts/check-recovery-safety.mjs
           git diff --exit-code HEAD -- data state
       - name: Renderizar páginas da amostra para conferência
-        if: ${{ always() && !inputs.retroactive_ten }}
+        if: ${{ always() && !inputs.retroactive_ten && !inputs.pending_access }}
         run: pdftoppm -scale-to 1500 -png output/public-recovery/guanhaes.pdf output/public-recovery/guanhaes-page
       - uses: actions/upload-artifact@v4
         if: always()
