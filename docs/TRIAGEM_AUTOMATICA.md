@@ -1,4 +1,10 @@
-# Triagem automática — estado em 23/10/2026
+# Triagem automática — atualizada em 01/11/2026
+
+## Atualização de 01/11
+
+O [lote de 51](../data/catalogo/conclusao-pendencias-51.json) teve **19 confirmações, 27 rejeições e cinco bloqueios reais de acesso**, sem apagar as 484 revisões históricas. A [conferência do fluxo e das entregas](TRIAGEM-E-ENTREGA-2026-11-01.md) registra causas, correções, limites e o incidente de três mensagens antigas da coleta concorrente. A [pesquisa enviada por Adriano](PESQUISA-TRINCHEIRA-2026-11-01.md) foi verificada nas fontes originais; foram aproveitados contratos executáveis, rastreabilidade e testes de invariância, sem instalar novos serviços.
+
+A fila agora exige confirmação antes da entrada, e pistas antigas em processamento não podem ser promovidas por mera atualização de regra. A recuperação regular incorpora os registros novos ao catálogo antes de selecionar leituras. Confirmar a base continua diferente de autorizar alerta histórico.
 
 ## Conclusão das 26 pendências — 23/10
 

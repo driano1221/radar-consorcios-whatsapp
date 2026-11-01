@@ -61,3 +61,17 @@ test('política municipal com consórcio identificado não recebe descarte gené
     assert.equal(operativeAct('LEI MUNICIPAL Nº 953/2026',body),null);
   }
 });
+
+test('formatação, endereço alternativo e recitação de cláusula não mudam o ato operativo',()=>{
+  // Metamorphic check: vary irrelevant inputs while preserving the enacted fact.
+  const [title,body,status,category]=fixtures[2];
+  for(const text of [body,body.replaceAll(' ','  '),body+' Anexo: regras genéricas de saída e de fiscalização do contrato.']) {
+    for(const url of ['https://fonte.gov.br/lei/2383','https://fonte.gov.br/lei/2383?origem=arquivo']) {
+      const item={title,rawText:text,url,kind:'gazette'};
+      item.classification=classifyItem(item);item.ruleClassification=item.classification;
+      const result=applySimpleTriage(item);
+      assert.equal(result.catalogDecision,status);assert.equal(result.triage.category,category);
+      assert.ok(verifiedTriage(result.triage,text));
+    }
+  }
+});
