@@ -7,12 +7,15 @@ import {isolatedTestEnvironment} from '../scripts/isolated-environment.mjs';
 test('ambiente dos testes desliga efeitos e remove credenciais sem mudar o processo de produção',()=>{
   const parent={PATH:'path',CI:'true',SEND_ENABLED:'true',PERSIST_STATE:'true',AI_REVIEW_ENABLED:'true',AI_PREVIEW:'true',
     BOT_STATE_PASSWORD:'fixture',DEEPSEEK_API_KEY:'fixture',WHATSAPP_GROUP_ID:'fixture',WHATSAPP_WEEKLY_GROUP_ID:'fixture',
-    GITHUB_TOKEN:'fixture',GH_TOKEN:'fixture',whatsapp_secret:'fixture',send_enabled:'true'};
+    GITHUB_TOKEN:'fixture',GH_TOKEN:'fixture',whatsapp_secret:'fixture',send_enabled:'true',
+    WEEKLY_APPROVED_FILE:'data/weekly-approved/2026-10-31.json',WEEKLY_EXPECTED_GROUP_NAME:'Destino real',
+    WEEKLY_REFERENCE_TIME:'2026-10-31T12:00:00Z',PENDING_DELIVERY_IDS:'fixture',RECOVERY_IDS:'fixture'};
   const before=JSON.stringify(parent),child=isolatedTestEnvironment(parent);
   for(const key of ['SEND_ENABLED','PERSIST_STATE','AI_REVIEW_ENABLED','AI_PREVIEW'])assert.equal(child[key],'false');
   assert.equal(child.CI,'true');assert.equal(child.PATH,'path');
   assert.ok(!('send_enabled' in child));
   for(const key of ['BOT_STATE_PASSWORD','DEEPSEEK_API_KEY','WHATSAPP_GROUP_ID','WHATSAPP_WEEKLY_GROUP_ID','GITHUB_TOKEN','GH_TOKEN','whatsapp_secret'])assert.ok(!(key in child));
+  for(const key of ['WEEKLY_APPROVED_FILE','WEEKLY_EXPECTED_GROUP_NAME','WEEKLY_REFERENCE_TIME','PENDING_DELIVERY_IDS','RECOVERY_IDS'])assert.ok(!(key in child));
   assert.equal(JSON.stringify(parent),before);
 });
 test('manutenção continua recusando envio e persistência mesmo após isolar o executor dos testes',()=>{
