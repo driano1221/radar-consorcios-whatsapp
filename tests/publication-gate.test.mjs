@@ -8,6 +8,15 @@ const now = new Date('2026-10-09T12:00:00Z');
 const base = { title: 'Consórcio realiza assembleia', url: 'https://exemplo.org/noticia',
   publishedAt: '2026-10-08T12:00:00Z', classification: { category: 'GOVERNANÇA', score: 9, reasons: [] } };
 
+test('termo de posse antigo republicado não vira novidade na semana da publicação',()=>{
+  const item={...base,title:'TERMO DE POSSE DO PRESIDENTE DO CONSÓRCIO - (09/04/2026)',
+    publishedAt:'2026-10-27T15:00:00Z',sourcePublishedAt:'2026-10-27T15:00:00Z'};
+  const options={now:new Date('2026-10-31T12:00:00Z'),lookbackHours:168};
+  assert.equal(publicationDate(item,options.now).date,'2026-04-09T00:00:00.000Z');
+  assert.equal(isNotifiable(decidePublication(item,options)),false);
+  assert.equal(isNotifiable(decidePublication({...item,title:'TERMO DE POSSE DO PRESIDENTE - (27/10/2026)'},options)),true);
+});
+
 test('ativação da AMM libera só publicações posteriores, sem perder registro histórico', () => {
   const source = { name: 'Jornal Oficial AMM-MT', url: 'https://amm.diariomunicipal.org/publicacoes/',
     alertsFrom: '2026-10-08T18:00:00Z' };

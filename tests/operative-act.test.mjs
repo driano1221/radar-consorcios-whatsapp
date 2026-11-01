@@ -82,3 +82,14 @@ test('formatação, endereço alternativo e recitação de cláusula não mudam 
     }
   }
 });
+
+test('contrato municipal com consórcio empresarial conhecido não vira cooperação pública por citar convênio',()=>{
+  const item={kind:'gazette',title:'EXTRATO DE RETIFICAÇÃO DO CONTRATO Nº 071/2023',url:'https://fonte.gov.br/contrato',
+    rawText:'CONTRATANTE: Município de Exemplo. CONTRATADA: CONSÓRCIO AGROESTRADAS, CNPJ nº 50.953.858/0001-49. OBJETO: Retificação dos termos aditivos para corrigir supressão e glosa no Convênio nº 941706. DATA DE ASSINATURA: 23 de Outubro de 2026.'};
+  item.classification=classifyItem(item);item.ruleClassification=item.classification;
+  assert.equal(applySimpleTriage(item).catalogDecision,'descartado');
+  assert.equal(item.classification.proofKind,'documentary_exclusion');
+  // An unqualified consortium name is insufficient to assert public parties.
+  const unknown={...item,rawText:item.rawText.replace('CONSÓRCIO AGROESTRADAS','CONSÓRCIO COMERCIAL EXEMPLO')};
+  assert.notEqual(classifyItem(unknown).proofKind,'public_service_agreement');
+});

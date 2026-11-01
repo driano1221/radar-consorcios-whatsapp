@@ -70,7 +70,7 @@ const MONTHS = new Map(Object.entries({ janeiro: 1, fevereiro: 2, marco: 3, abri
 export function formalActDate(item, now = new Date()) {
   const title = String(item.title || item.titulo || '').normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  if (!/^(?:\d{1,2}\/\d{1,2}\/20\d{2}\s*[-–]\s*)?(?:lei|resolucao|decreto|portaria|contrato(?: de rateio)?|instrucao normativa)\b/.test(title)) return '';
+  if (!/^(?:\d{1,2}\/\d{1,2}\/20\d{2}\s*[-–]\s*)?(?:lei|resolucao|decreto|portaria|contrato(?: de rateio)?|instrucao normativa|termo de posse)\b/.test(title)) return '';
   const named = /\b(?:de|em)\s+(\d{1,2})\s+de\s+([a-z]+)\s+de\s+(20\d{2})\b/.exec(title);
   if (named) {
     const month = MONTHS.get(named[2]);

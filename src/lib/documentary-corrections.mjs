@@ -133,7 +133,13 @@ export function documentaryCorrection(title, text, sourceUrl = '') {
   const formalized = /\b(?:data d[ae] assinatura\s*:|firmam o presente conv[eê]nio\b|resolvem celebrar\s*o presente\b|que entre si celebram\b)/i.test(text);
   const agreement = /\b(?:contrato de programa|contrato\s*administrativo|conv[eê]nio)\b.{0,120}/i.exec(text.slice(0, 700));
   const publishedAgreement = /^extrato de conv[eê]nio/i.test(title) && /contratante[\s.:]*prefeitura municipal.{0,120}contratada[\s.:]*cons[oó]rcio/i.test(text);
-  if (agreement && publicParties && (formalized || publishedAgreement) && !/\b(?:minuta|modelo de contrato)\b/i.test(title))
+  const publicConsortium=/\bcons[oó]rcio\s+(?:p[uú]blico|intermunicipal|interfederativo|intergestores|regional (?:de|do|da))\b/i.test(text.slice(0,2200));
+  // Identity verified in the official gazette, not inferred from a trade name:
+  // https://amm.diariomunicipal.org/publicacao/1410826/ (Elsali + Enpa).
+  const businessSupplier=/\bCONTRATAD[AO]:\s*CONS[OÓ]RCIO AGROESTRADAS,?\s*CNPJ\s*(?:n[º°o.]?\s*)?50\.?953\.?858\/?0001-?49\b/i.exec(text);
+  if(businessSupplier&&!publicConsortium)return reject('contrato municipal com consórcio empresarial; não é instrumento com consórcio público',
+    'fornecedor identificado por nome e CNPJ em publicação oficial complementar; referência a convênio financeiro não altera sua natureza',businessSupplier);
+  if (agreement && publicParties && publicConsortium && (formalized || publishedAgreement) && !/\b(?:minuta|modelo de contrato)\b/i.test(title))
     return result('ATUAÇÃO', 'public_service_agreement', 'instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos', 'partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito', agreement);
   const authorizedService = /\bo munic[ií]pio de.{1,90}torna p[uú]blico que foi efetuado o processo de dispensa de licita[cç][aã]o.{0,200}?artigo 75,\s*inciso XI.{0,330}?visando a contrata[cç][aã]o.{0,150}?para presta[cç][aã]o de servi[cç]os.{0,160}?\ba contrata[cç][aã]o ser[aá] realizada com o cons[oó]rcio intermunicipal[^.;]{0,160}/i.exec(text);
   const authorizationPrefix = authorizedService && text.slice(Math.max(0, authorizedService.index - 120), authorizedService.index).split(/[.!?;]/).at(-1);
