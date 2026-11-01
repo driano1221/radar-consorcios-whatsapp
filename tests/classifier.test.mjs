@@ -90,7 +90,8 @@ test('integração regional de programa cultural não é adesão municipal', () 
     title: 'Consórcio ABC lança programa ABC + Cultura para fortalecer integração regional',
     rawText: 'O Consórcio Intermunicipal Grande ABC lançou o programa ABC + Cultura durante a Assembleia de Prefeitos. O programa tem como pilar a Integração Regional e prevê intercâmbio cultural entre as cidades.' });
   assert.equal(result.category, 'ATUAÇÃO');
-  assert.match(result.stage, /programa lançado/);
+  assert.match(result.stage, /programa (?:institucional )?lançado/);
+  assert.match(result.stage, /entregas futuros não comprovados/);
 });
 
 test('adesão ao consórcio de geração compartilhada CEMIG SIM não é ingresso intermunicipal', () => {
