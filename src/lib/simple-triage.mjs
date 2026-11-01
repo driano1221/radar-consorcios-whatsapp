@@ -123,6 +123,11 @@ export function applySimpleTriage(item) {
     classification: { ...item.classification, category: triage.category, stage: triage.stage,
       evidenceText: triage.evidence || item.ruleClassification?.evidenceText || item.classification?.evidenceText || '' } };
 }
+
+// Old processing leads are catalog work, not approvals waiting for delivery.
+export function wasQueuedAsConfirmed(item) {
+  return (item.triage||decideSimpleTriage(item)).status==='confirmado';
+}
 export async function loadOriginalTriage(directory) {
   const groups = await Promise.all(['triagem-originais.ndjson', 'triagem-reprocessada.ndjson'].map(async name => {
     try { return (await readFile(path.join(directory, name), 'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse); }

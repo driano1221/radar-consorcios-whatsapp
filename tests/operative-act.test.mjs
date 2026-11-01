@@ -30,6 +30,7 @@ const fixtures=[
  ['PROJETO DE LEI DO EXECUTIVO Nº 36','A Prefeita apresenta à judiciosa apreciação da Colenda Câmara o seguinte Projeto de Lei: Art. 1º Fica ratificada a alteração do Contrato do Consórcio Público. Anexo: disposições sobre extinção, rateio e responsabilidades.','descartado','GERAL'],
  ['Diário Oficial de Salto','REQUERIMENTOS SUJEITOS A DESPACHO DO PRESIDENTE: Nº 620/2026 – Vereador de Exemplo – Presidência do Consórcio Intermunicipal do Ribeirão Piraí (CONIRPI) – Solicitando informações sobre impactos de data centers nas proximidades do rio.','descartado','GERAL'],
  ['CNM realiza atendimentos técnicos','A Confederação Nacional de Municípios (CNM) realizou atendimentos técnicos com representantes dos Municípios. Seus analistas apresentaram o Consórcio Nacional para Gestão Climática e suas possibilidades de apoio. Nenhuma adesão foi declarada.','confirmado','ATUAÇÃO'],
+ ['Consórcio lança programa de cultura','O Consórcio Intermunicipal Grande ABC lançou, nesta terça-feira (14/7), durante a Assembleia de Prefeitos, o programa ABC + Cultura, uma iniciativa para integração regional. O programa prevê festival e projetos futuros, ainda sem execução demonstrada.','confirmado','ATUAÇÃO'],
 ];
 
 for(const [title,body,status,category] of fixtures)test(`ato operativo: ${title}`,()=>{

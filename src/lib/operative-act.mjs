@@ -101,6 +101,9 @@ export function operativeAct(title,text) {
   const operation=/\bO Cons[oó]rcio Intermunicipal[^.]{0,80}\brealizou,?[^.]{0,130}\bOpera[cç][aã]o ABC\+Seguro\b[^.]{0,80}/i.exec(text);
   if(operation)return result('ATUAÇÃO','performed_institutional_activity','operação integrada de segurança realizada; não é fiscalização do consórcio por Tribunal',
     'operação com guardas municipais executada; menção a protocolos não é protocolo constitutivo',operation);
+  const launched=/\bO Cons[oó]rcio Intermunicipal[^.]{0,90}\blan[cç]ou,?[^.]{0,220}\bo programa\b[^.]{0,190}/i.exec(text);
+  if(launched)return result('ATUAÇÃO','performed_institutional_activity','programa institucional lançado; projetos anunciados, festival e entregas futuros não comprovados',
+    'corpo relata lançamento realizado pelo consórcio; propostas que integram o programa não são entregas executadas',launched);
   const seminar=/\bTribunal de Contas[^.]{0,100}\breuniu,?[^.]{0,180}especialistas[^.]{0,160}cons[oó]rcios p[uú]blicos/i.exec(text);
   if(seminar&&/semin[aá]rio/i.test(title)) {
     const event=result('ATUAÇÃO','performed_institutional_activity','seminário/orientação sobre consórcios realizado; nenhuma saída municipal comprovada',

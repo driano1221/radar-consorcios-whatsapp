@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import {selectApprovedPending,deliverApprovedPending} from '../scripts/send-approved-pending.mjs';
 import {itemId} from '../src/lib/dedupe.mjs';
 import {applyEditorialGuard} from '../src/lib/editorial-guard.mjs';
+import {applySimpleTriage,wasQueuedAsConfirmed} from '../src/lib/simple-triage.mjs';
+import {classifyItem} from '../src/lib/classifier.mjs';
+import {reclassifyPending} from '../src/lib/dedupe.mjs';
 
 function fixture() {
   const rawText='CONVÊNIO Nº 02/2026 QUE ENTRE SI CELEBRAM O MUNICÍPIO DE TESTE E O CONSÓRCIO INTERMUNICIPAL DE SAÚDE. O MUNICÍPIO DE TESTE, CONTRATANTE, e de outro lado o CONSÓRCIO INTERMUNICIPAL DE SAÚDE resolvem celebrar o presente convênio para a prestação compartilhada de serviços de saúde. DATA DA ASSINATURA: 01/11/2026.';
@@ -18,6 +21,20 @@ test('alias novo do Google respeita decisão retroativa da URL original, sem blo
   assert.equal(applyEditorialGuard(alias,guard).publicationDecision,'historico');
   const other={...alias,articleUrl:'https://fonte.gov.br/convenio/3',sourceUrl:original};
   assert.equal(applyEditorialGuard(other,guard).publicationDecision,undefined);
+});
+
+test('correção de regra não libera lead legado que entrou em processamento na fila de envio',()=>{
+  const item={title:'LEI MUNICIPAL Nº 474/2026',url:'https://fonte.gov.br/lei/474',kind:'gazette',
+    rawText:'A Câmara aprovou e eu sanciono. Art. 1º Os valores repassados pelo Município de Orós ao Consórcio Público de Saúde, mediante contrato de rateio, serão reajustados anualmente pelo IPCA. Art. 2º Os contratos de programa terão vigência regulada nesta Lei.',
+    classification:{category:'ADESÃO',score:5}};
+  assert.equal(wasQueuedAsConfirmed(item),false);
+  const current=applySimpleTriage({...item,classification:classifyItem(item)});
+  assert.equal(current.catalogDecision,'confirmado');assert.equal(current.classification.category,'GOVERNANÇA');
+  assert.equal(wasQueuedAsConfirmed(current),true);
+  assert.equal(wasQueuedAsConfirmed({...current,triage:{status:'processando'}}),false);
+  const state={seen:{},pending:{old:{item}}};
+  assert.equal(reclassifyPending(state,5,null,wasQueuedAsConfirmed),1);
+  assert.deepEqual(state.pending,{});assert.deepEqual(state.seen,{});
 });
 test('envio dirigido seleciona só confirmação atual; preserva estado e ignora recibos/aliases',()=>{
   const {state,item,options}=fixture(),before=JSON.stringify(state);

@@ -32,7 +32,7 @@ import { enrichArticles, classifyEnrichedItem } from './lib/article-enrichment.m
 import { applyEditorialGuard, loadConfirmedEventRegistry, loadEditorialGuard } from './lib/editorial-guard.mjs';
 import { resolveArticlePreviews } from './lib/preview-resolution.mjs';
 import { decidePublication, isNotifiable } from './lib/publication-gate.mjs';
-import { applySimpleTriage } from './lib/simple-triage.mjs';
+import { applySimpleTriage,wasQueuedAsConfirmed } from './lib/simple-triage.mjs';
 import { isWhatsAppCategoryAllowed } from './lib/whatsapp-policy.mjs';
 import { fileURLToPath } from 'node:url';
 import { persistArticleTexts, reuseArticleTexts } from './lib/article-text-store.mjs';
@@ -151,7 +151,7 @@ async function main() {
   }
   const publicationOptions = { lookbackHours: config.lookbackHours, minimumScore: config.minimumScore,
     sourceActivations: config.webScrapers?.sites?.filter((site) => site.alertsFrom) || [] };
-  classified = classified.map((item) => decidePublication(item, publicationOptions));
+  classified = classified.map((item) => applySimpleTriage(decidePublication(item, publicationOptions)));
   if (!successfulSources) throw new Error('Todas as fontes falharam; o radar não continuará.');
   const relevant = classified
     .filter((item) => isNotifiable(item, config.minimumScore))
@@ -169,7 +169,9 @@ async function main() {
     const removed = reclassifyPending(state, config.minimumScore,
       (item, classification) => applyEditorialGuard({ ...item, classification }, editorialGuard).classification,
       (item, classification) => {
-        const guarded = decidePublication(applyEditorialGuard({ ...item, classification }, editorialGuard), publicationOptions);
+        if(!wasQueuedAsConfirmed(item))return false;
+        const guarded = applySimpleTriage(decidePublication(applyEditorialGuard({ ...item, classification,
+          ruleClassification:classification }, editorialGuard), publicationOptions));
         return isNotifiable(guarded, config.minimumScore) && isWhatsAppCategoryAllowed(guarded);
       });
     if (removed) console.log(`[fila] ${removed} item(ns) antigos descartados após reclassificação.`);

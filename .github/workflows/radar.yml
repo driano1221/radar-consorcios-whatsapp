@@ -111,6 +111,7 @@ jobs:
         if: steps.freshness.outputs.run == 'true' && env.PERSIST_STATE == 'true'
         run: |
           if [ -z "$PENDING_DELIVERY_IDS" ]; then
+            npm run catalog:update
             node scripts/backfill-article-text.mjs --pending-triage --limit=5 --apply
           fi
           npm run catalog:update

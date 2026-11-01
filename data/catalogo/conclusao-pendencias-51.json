@@ -977,5 +977,25 @@
       "alertAllowed": false,
       "weeklyAllowed": false
     }
-  ]
+  ],
+  "additionalCollectionConclusions": [
+    {
+      "id": "006dac62b9b6a7ae8a96a89b5a3502d87f2ff7cba8fc5972f145258bbfa43f33",
+      "title": "Consórcio ABC lança programa ABC + Cultura para fortalecer integração regional e impulsionar a economia criativa - Consórcio Intermunicipal - Grande ABC",
+      "status": "confirmado",
+      "category": "ATUAÇÃO",
+      "sourceUrl": "https://www.consorcioabc.sp.gov.br/noticia/6062/consorcio-abc-lanca-programa-abc-cultura-para-fortalecer-integracao-regional-e-impulsionar-a-economia-criativa",
+      "bodyHash": "ec9c76741d4ae591ef9296e628458d414fee2d62be46c04bb1f951bcc7ccbaf0",
+      "sourcePublishedAt": "",
+      "alertAllowed": false,
+      "weeklyAllowed": false
+    }
+  ],
+  "concurrentScheduledRun": {
+    "id": "41324038350",
+    "sentBeyondDirectedRequest": 3,
+    "articleAiCalls": 2,
+    "queueAiCalls": 2,
+    "manualAiCalls": 0
+  }
 }
