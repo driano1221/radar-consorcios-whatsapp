@@ -54,7 +54,6 @@ jobs:
       - name: Registrar invariantes antes da recuperação
         run: node scripts/check-recovery-safety.mjs --before
       - name: Preparar OCR seletivo para PDFs públicos
-        if: env.RECOVERY_IDS == ''
         run: sudo apt-get update -qq && sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr tesseract-ocr-por
       - name: Recuperar PDFs de Guanhães e alternativas Semana 7, CNM e Araguaia com proveniência
         if: env.RECOVERY_IDS == ''
@@ -68,6 +67,7 @@ jobs:
           fi
           node scripts/backfill-article-text.mjs --ids="$RECOVERY_IDS" --force --include-sent --apply
           node scripts/backfill-google-pdfs.mjs --ids="$RECOVERY_IDS" --retry-failed --limit=10 --apply
+          node scripts/recover-public-documents.mjs --ids="$RECOVERY_IDS" --apply
       - name: Recuperar até 20 textos sem enviar ao WhatsApp
         if: env.RECOVERY_IDS == ''
         run: node scripts/backfill-article-text.mjs --limit=20 --include-sent --apply

@@ -139,6 +139,9 @@ test('duas recuperações preservam IDs, decisão, prova e envios; fonte alterna
     let calls = 0;
     const options = { directory, apply: true, readPdf: async () => { calls++; return pdf; },
       alternatives: async row => findAlternativeTexts(row, [candidate], { read }) };
+    assert.deepEqual(await recoverPublicDocuments({...options,apply:false,ids:[original.id]}),
+      {attempted:1,completePdfs:0,alternativeTexts:1,apply:false});
+    assert.equal(calls,0,'Seleção explícita não pode abrir outro PDF');
     assert.deepEqual(await recoverPublicDocuments(options), { attempted: 2, completePdfs: 1, alternativeTexts: 1, apply: true });
     assert.equal((await recoverPublicDocuments(options)).attempted, 0);
     assert.equal(calls, 1);

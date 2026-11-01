@@ -8,7 +8,7 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import googleNewsDecoder from 'google-news-url-decoder';
 import { loadCatalog, saveCatalog } from '../src/lib/catalog.mjs';
-import {persistArticleTexts} from '../src/lib/article-text-store.mjs';
+import {persistArticleTexts,redactPublicText} from '../src/lib/article-text-store.mjs';
 import {reprocessTriage,upgradeLegacyTriage} from './reprocess-triage.mjs';
 import {pdfRecoveryDue,recoveryAttempt,attachRecoveredText} from '../src/lib/recovery-policy.mjs';
 import {loadOriginalTriage} from '../src/lib/simple-triage.mjs';
@@ -91,10 +91,22 @@ for (const [index, row] of selected.entries()) {
     await writeFile(pdfFile, pdf.buffer);
     const { stdout } = await execFileAsync('python', [path.join(root, 'scripts', 'pdf-page-evidence.py'), pdfFile, '--full-text'],
       { cwd: root, timeout: 180000, maxBuffer: 5 * 1024 * 1024 });
-    const {texto_integral, ...pageEvidence} = JSON.parse(stdout);
+    let {texto_integral, ...pageEvidence} = JSON.parse(stdout);
     Object.assign(result, pageEvidence);
+    let reader='pdf_integral_por_pagina';
+    if(requestedIds.length&&result.paginas_ocr_pendente.length) {
+      const {stdout:ocrOutput}=await execFileAsync('python',[path.join(root,'scripts/extract-public-pdf.py'),pdfFile,'--ocr','--large',
+        '--force-ocr-pages='+result.paginas_ocr_pendente.join(',')],{cwd:root,timeout:180000,maxBuffer:8*1024*1024});
+      const ocr=JSON.parse(ocrOutput);
+      result.paginas_ocr_pendente=ocr.paginas_pendentes;
+      result.pdf_sha256=ocr.pdf_sha256;result.ocr_paginas=ocr.ocr_paginas;
+      if(ocr.completo&&!ocr.paginas_pendentes.length) {
+        texto_integral=redactPublicText(ocr.paginas.map(p=>`[Página ${p.pagina}]\n${p.texto}`).join('\n\n'));
+        reader='pdf_paginas_ocr_seletivo';
+      }
+    }
     if (apply && texto_integral) await persistArticleTexts(directory, [{url:row.url,articleUrl:pdf.url,
-      rawText:texto_integral,articleReader:'pdf_integral_por_pagina',contentProvenance:'pagina_original'}]);
+      rawText:texto_integral,articleReader:reader,contentProvenance:'pagina_original'}]);
     result.situacao = result.trechos.length ? 'trechos por página recuperados'
       : result.paginas_ocr_pendente.length ? 'ocr_pendente' : 'sem menção textual';
     console.log(`[pdf ${index + 1}/${selected.length}] ${row.id.slice(0, 8)}: ${result.situacao}; ${result.trechos.length} trechos`);
@@ -109,7 +121,8 @@ for (const [index, row] of selected.entries()) {
   }
   results.push(result);
   if (apply) records.set(row.id, recoveryAttempt(row,{now:result.tentado_em,
-    resolvedUrl:result.url_pdf||'',reason:result.situacao==='trechos por página recuperados'&&!result.paginas_ocr_pendente.length?'':result.situacao}));
+    resolvedUrl:result.url_pdf||'',reason:result.situacao==='trechos por página recuperados'&&!result.paginas_ocr_pendente.length?'':
+      result.paginas_ocr_pendente.length?'ocr_pendente':result.situacao}));
 }
 console.log(`[pdf] ${selected.length} documento(s) selecionado(s); ${results.filter((row) => row.trechos.length).length} com trechos recuperados.`);
 if (apply && results.length) {

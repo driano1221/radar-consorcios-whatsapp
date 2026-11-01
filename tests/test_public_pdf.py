@@ -1,9 +1,32 @@
 import sys
 import unittest
+import importlib.util
+import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from pdf_page_helpers import redact, image_page
+from pypdf import PdfWriter
+
+
+class DedicatedPdfLimitTests(unittest.TestCase):
+    def test_large_mode_keeps_default_limit_and_does_not_claim_blank_pages_as_read(self):
+        script = Path(__file__).resolve().parents[1] / "scripts" / "extract-public-pdf.py"
+        spec = importlib.util.spec_from_file_location("public_pdf_reader", script)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory(prefix="radar-pdf-limit-") as directory:
+            document = Path(directory) / "blank-pages.pdf"
+            writer = PdfWriter()
+            for _ in range(81):
+                writer.add_blank_page(width=100, height=100)
+            with document.open("wb") as output:
+                writer.write(output)
+            with self.assertRaisesRegex(ValueError, "80 páginas"):
+                module.extract(document)
+            result = module.extract(document, large=True)
+            self.assertFalse(result["completo"])
+            self.assertEqual(len(result["paginas_pendentes"]), 81)
 
 
 class Page:

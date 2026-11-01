@@ -14,7 +14,7 @@ async function save(file, data) {
   await writeFile(file, data.map(JSON.stringify).join('\n') + '\n', 'utf8');
 }
 
-export async function recoverPublicDocuments({ directory = 'data/catalogo', apply = false, limit = 2,
+export async function recoverPublicDocuments({ directory = 'data/catalogo', apply = false, limit = 2,ids=[],
   now = new Date(), readPdf = readGuanhaesPdf, alternatives = findAlternativeTexts, budgetMs = 150000 } = {}) {
   const archiveFile = path.join(directory, 'arquivo-coletas.ndjson');
   const textFile = path.join(directory, 'textos-artigos.ndjson');
@@ -25,6 +25,7 @@ export async function recoverPublicDocuments({ directory = 'data/catalogo', appl
   const audits = new Map((await rows(auditFile, true)).map(row => [row.documento_id, row]));
   const alternativesSaved = new Map((await rows(alternateFile, true)).map(row => [row.id, row]));
   const selected = archive.filter(row => {
+    if(ids.length&&!ids.includes(row.id))return false;
     if (texts.has(row.id)) return false; // Never replace an original or an assisted recovery.
     if (!isSemana7(row) && !isCnm(row) && !isAraguaia(row) && !isGuanhaesPdf(row.article_url || row.url)) return false;
     if ([...alternativesSaved.values()].some(a => a.documento_id === row.id)) return false;
@@ -77,5 +78,7 @@ export async function recoverPublicDocuments({ directory = 'data/catalogo', appl
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  await recoverPublicDocuments({ apply: process.argv.includes('--apply') });
+  const ids=(process.argv.find(arg=>arg.startsWith('--ids='))?.slice(6)||'').split(',').filter(Boolean);
+  if(ids.some(id=>!/^[a-f0-9]{64}$/.test(id)))throw new Error('IDs inválidos');
+  await recoverPublicDocuments({ apply: process.argv.includes('--apply'),ids });
 }
