@@ -18,6 +18,11 @@ on:
         type: boolean
         required: false
         default: false
+      pending_ids:
+        description: Enviar somente estas confirmações já na fila (IDs completos separados por vírgula; sem coleta ou IA)
+        type: string
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -41,6 +46,7 @@ jobs:
       SEND_ENABLED: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.send_enabled) || vars.SEND_ENABLED || 'false' }}
       AI_PREVIEW: ${{ github.event_name == 'workflow_dispatch' && format('{0}', inputs.ai_preview) || 'false' }}
       PERSIST_STATE: ${{ github.event_name == 'schedule' || inputs.send_enabled }}
+      PENDING_DELIVERY_IDS: ${{ inputs.pending_ids || '' }}
 
     steps:
       - name: Baixar o projeto
@@ -92,13 +98,21 @@ jobs:
       - name: Executar radar
         id: collect
         if: steps.freshness.outputs.run == 'true'
-        run: npm run collect
+        shell: bash
+        run: |
+          if [ -n "$PENDING_DELIVERY_IDS" ]; then
+            node scripts/send-approved-pending.mjs
+          else
+            npm run collect
+          fi
 
       - name: Atualizar base histórica de consórcios
         id: catalog
         if: steps.freshness.outputs.run == 'true' && env.PERSIST_STATE == 'true'
         run: |
-          node scripts/backfill-article-text.mjs --pending-triage --limit=5 --apply
+          if [ -z "$PENDING_DELIVERY_IDS" ]; then
+            node scripts/backfill-article-text.mjs --pending-triage --limit=5 --apply
+          fi
           npm run catalog:update
 
       - name: Validar base após a coleta
@@ -112,7 +126,7 @@ jobs:
         run: npm test
 
       - name: Confirmar avanço dos diários após validar acervo
-        if: steps.validate_catalog.outcome == 'success' && env.PERSIST_STATE == 'true'
+        if: steps.validate_catalog.outcome == 'success' && env.PERSIST_STATE == 'true' && env.PENDING_DELIVERY_IDS == ''
         run: node scripts/commit-gazette-cursors.mjs
 
       - name: Atualizar sessão criptografada
@@ -145,7 +159,7 @@ jobs:
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Guardar relatórios de coleta
-        if: always() && steps.freshness.outputs.run == 'true'
+        if: always() && steps.freshness.outputs.run == 'true' && env.PENDING_DELIVERY_IDS == ''
         uses: actions/upload-artifact@v4
         with:
           name: radar-${{ github.run_id }}
@@ -159,7 +173,7 @@ jobs:
           retention-days: 7
 
       - name: Alertar falhas persistentes
-        if: always() && github.ref_name == 'main' && (steps.freshness.outputs.run == 'true' || failure())
+        if: always() && github.ref_name == 'main' && env.PENDING_DELIVERY_IDS == '' && (steps.freshness.outputs.run == 'true' || failure())
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           RUN_STATUS: ${{ job.status }}
