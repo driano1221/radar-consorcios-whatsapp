@@ -989,6 +989,18 @@
       "sourcePublishedAt": "",
       "alertAllowed": false,
       "weeklyAllowed": false
+    },
+    {
+      "id": "2e5d8502af258b76c57089ba01a4c4be0327781739e41ad4e557055cf0d8a920",
+      "status": "confirmado",
+      "category": "RATEIO EM TRAMITAÇÃO",
+      "stage": "dispensa para rateio autorizada; contrato assinado, repasse e pagamento não comprovados",
+      "bodyHash": "21d02fca3955f2792146647d9166025945ba8ba681b86aab770cf4f6ac7f796d",
+      "evidence": "fica  autorizada a dispensa de licitação \npara CONTRATO DE RATEIO COM O CIUENP (CONSÓRCIO INT ERMUNICIPAL DA REDE DE URGÊNCIA E EMERGÊNCIA DO NOR OESTE DO \nPARANÁ",
+      "sourceUrl": "https://data.queridodiario.ok.org.br/4104303/2026-10-30/f6aced9b29c1d9df9c69dd875fa64ae02715cfc5.pdf",
+      "alertAllowed": false,
+      "weeklyAllowed": false,
+      "reason": "PDF novo recuperado; autoria e etapa da dispensa identificadas, sem contrato assinado inferido"
     }
   ],
   "concurrentScheduledRun": {

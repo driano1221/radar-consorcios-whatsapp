@@ -50,6 +50,12 @@ export function operativeAct(title,text) {
     if(law&&rateioRule)return result('GOVERNANÇA','published_governance_rule','regra de reajuste e vigência publicada; novos contratos e pagamentos não comprovados',
       'lei regula contratos futuros e limites administrativos; não comprova assinatura nem ingresso',rateioRule);
   }
+  const rateioWaiver=/\bfica\s+autorizad[ao]\s+a\s+dispensa de licita[cç][aã]o\s+para\s+contrato de rateio com\s+(?:o\s+)?[A-Z][A-Z0-9-]{2,20}\s*\([^)]{0,400}\bcons[oó]rcio\b[^)]{0,400}\)/i.exec(text);
+  if(rateioWaiver&&/^(?:di[aá]rio oficial|dispensa de licita[cç][aã]o)\b/i.test(title)&&
+    !/\b(?:minuta|projeto|cancelad[ao]|revogad[ao])\b/i.test(text.slice(Math.max(0,rateioWaiver.index-600),rateioWaiver.index)))
+    return result('RATEIO EM TRAMITAÇÃO','published_governance_rule',
+      'dispensa para rateio autorizada; contrato assinado, repasse e pagamento não comprovados',
+      'ato publicado autoriza contratação direta com consórcio identificado; confirmar somente essa etapa, sem inferir celebração do contrato',rateioWaiver);
   const presidency=/\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*formalizar o afastamento tempor[aá]rio[^.]{0,300}/i.exec(head);
   if(/^ato da presid[eê]ncia/i.test(title)&&presidency)return result('GOVERNANÇA','published_governance_rule',
     'afastamento temporário e substituição estatutária publicados; titularidade do mandato preservada',

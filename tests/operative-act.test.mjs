@@ -31,6 +31,7 @@ const fixtures=[
  ['Diário Oficial de Salto','REQUERIMENTOS SUJEITOS A DESPACHO DO PRESIDENTE: Nº 620/2026 – Vereador de Exemplo – Presidência do Consórcio Intermunicipal do Ribeirão Piraí (CONIRPI) – Solicitando informações sobre impactos de data centers nas proximidades do rio.','descartado','GERAL'],
  ['CNM realiza atendimentos técnicos','A Confederação Nacional de Municípios (CNM) realizou atendimentos técnicos com representantes dos Municípios. Seus analistas apresentaram o Consórcio Nacional para Gestão Climática e suas possibilidades de apoio. Nenhuma adesão foi declarada.','confirmado','ATUAÇÃO'],
  ['Consórcio lança programa de cultura','O Consórcio Intermunicipal Grande ABC lançou, nesta terça-feira (14/7), durante a Assembleia de Prefeitos, o programa ABC + Cultura, uma iniciativa para integração regional. O programa prevê festival e projetos futuros, ainda sem execução demonstrada.','confirmado','ATUAÇÃO'],
+ ['Diário Oficial de Município Exemplo','DISPENSA DE LICITAÇÃO Nº 166/2026. Considerando o processo administrativo, fica autorizada a dispensa de licitação para CONTRATO DE RATEIO COM O CIEX (CONSÓRCIO INTERMUNICIPAL DE URGÊNCIA E EMERGÊNCIA). Prestação de serviços para o próximo exercício. Município de Exemplo, 30 de outubro de 2026.','confirmado','RATEIO EM TRAMITAÇÃO'],
 ];
 
 for(const [title,body,status,category] of fixtures)test(`ato operativo: ${title}`,()=>{
@@ -53,6 +54,12 @@ test('negação, hipótese e falta de dispositivo não viram confirmação docum
     item.classification=classifyItem(item);
     assert.notEqual(applySimpleTriage(item).catalogDecision,'confirmado');
   }
+});
+
+test('minuta, cancelamento e negação não comprovam dispensa de rateio autorizada',()=>{
+  const fact='fica autorizada a dispensa de licitação para CONTRATO DE RATEIO COM O CIEX (CONSÓRCIO INTERMUNICIPAL DE SAÚDE).';
+  for(const prefix of ['MINUTA: ','Dispensa cancelada. ','Não '])
+    assert.equal(operativeAct('Diário Oficial de Exemplo',prefix+fact),null);
 });
 
 test('política municipal com consórcio identificado não recebe descarte genérico por diferença de maiúsculas',()=>{
