@@ -1,0 +1,33 @@
+{
+  "run": "https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/41350666337",
+  "newSourceCalls": 0,
+  "newAiCalls": 0,
+  "whatsappSends": 0,
+  "observations": [
+    {
+      "documentId": "531af87275e8eb34b551e0de727d5bc16adfe7b60a389a81a0eb1ba7e0be36b1",
+      "observedAt": "2026-11-01T21:12:43.546Z",
+      "reason": "destino_nao_html",
+      "attempts": 1,
+      "nextAttemptAt": "2026-11-01T23:12:43.546Z",
+      "timestampMeaning": "Falha observada no log; não é o início exato da requisição."
+    },
+    {
+      "documentId": "745123c7dda07f5894f9abf750e5c8b3c52b6db6509888135640df80e19a455e",
+      "observedAt": "2026-11-01T21:12:43.546Z",
+      "reason": "destino_nao_html",
+      "attempts": 1,
+      "nextAttemptAt": "2026-11-01T23:12:43.546Z",
+      "timestampMeaning": "Falha observada no log; não é o início exato da requisição."
+    },
+    {
+      "documentId": "ab4ea20a96acb67a6cb9447216d5dd3af2b897ba4160a5c42737b970dd9ed139",
+      "observedAt": "2026-11-01T21:12:43.546Z",
+      "reason": "http_403",
+      "attempts": 2,
+      "nextAttemptAt": "2026-11-02T01:12:43.546Z",
+      "timestampMeaning": "Falha observada no log; não é o início exato da requisição."
+    }
+  ],
+  "canonicalDecisionsPreserved": true
+}

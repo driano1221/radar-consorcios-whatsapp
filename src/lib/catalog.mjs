@@ -10,6 +10,7 @@ import { formalActDate } from './publication-date.mjs';
 import { AI_PROMPT_VERSION, applyAiReview } from './ai-review.mjs';
 import { materializeDocumentActs } from './document-acts.mjs';
 import { loadAlternativeDecisionData, validAlternativeDecision, applyAlternativeToRow } from './alternative-triage.mjs';
+import { restoreRecoveryFailures } from './recovery-policy.mjs';
 import { loadOriginalTriage, validOriginalTriage, applySimpleTriage } from './simple-triage.mjs';
 
 const FIELDS = [
@@ -200,6 +201,7 @@ export function mergeCatalogRecord(existing, incoming) {
 }
 
 export function mergeStateIntoCatalog(records, state, { reviewedIds = new Set() } = {}) {
+  restoreRecoveryFailures(records,state);
   // A review seals an exact excerpt. Recaptures remain in observations and
   // textos-artigos; they must not silently invalidate an editorial decision.
   const sealedExcerpts = new Map([...reviewedIds].filter(id => records.has(id))

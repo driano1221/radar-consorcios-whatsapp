@@ -7,6 +7,8 @@ import {fileURLToPath} from 'node:url';
 import {classifyItem} from '../src/lib/classifier.mjs';
 import {decideSimpleTriage,rowFingerprint,TRIAGE_VERSION} from '../src/lib/simple-triage.mjs';
 import {readingAdmission} from '../src/lib/reading-admission.mjs';
+import {loadAlternativeDecisionData,validAlternativeDecision} from '../src/lib/alternative-triage.mjs';
+import {restoreRecoveryFailures} from '../src/lib/recovery-policy.mjs';
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const nd=async(directory,name)=>{try{return (await readFile(path.join(directory,name),'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);}catch(e){if(e.code==='ENOENT')return [];throw e;}};
 
@@ -27,11 +29,16 @@ export function reviewCatalogRow(row,observation={},text) {
 // sources and legacy recovered suggestions. Delivery state is never an input gate.
 export async function upgradeLegacyTriage(directory,records,state,reviewedIds=new Set()) {
   const texts=new Map((await nd(directory,'textos-artigos.ndjson')).filter(t=>sha(t.texto||'')===t.texto_sha256).map(t=>[t.documento_id,t]));
+  const alternatives=await loadAlternativeDecisionData(directory);
   let updated=0;
   for(const row of records.values()) {
     const old=row.triagem_automatica||(!['confirmado','descartado'].includes(row.decisao_base)?state.decisions?.[row.id]?.triage:null),text=texts.get(row.id);
     const recoveredLegacy = !old && row.article_suggested_category && text;
     const readmitted = old?.method==='barreira_de_leitura'&&text;
+    // A readable, verified alternative already settled the content. Failure to
+    // read the original must not replace that decision with an admission block.
+    const alternative=alternatives.decisions.get(row.id);
+    if(alternative&&alternative.status!=='pendente'&&validAlternativeDecision(row,alternative,alternatives.sources,reviewedIds))continue;
     if(reviewedIds.has(row.id)||old?.retroactive&&!readmitted||!(readmitted||recoveredLegacy||old?.status==='processando'||old?.version<TRIAGE_VERSION&&old?.status==='revisao'))continue;
     const triage=reviewCatalogRow(row,state.observations?.[row.id]?.item,text);
     records.set(row.id,{...row,triagem_automatica:triage,decisao_base:triage.status,tipo_evento:triage.category,etapa:triage.stage,
@@ -46,12 +53,13 @@ export async function reprocessTriage(directory,{state={},ids,apply=false}={}) {
   const [archive,texts,reviews,originals,previous]=await Promise.all(['arquivo-coletas.ndjson','textos-artigos.ndjson',
     'revisoes-eventos.ndjson','triagem-originais.ndjson','triagem-reprocessada.ndjson'].map(n=>nd(directory,n)));
   const protectedIds=new Set([...reviews,...originals].map(r=>r.documento_id||r.documentId));
+  const records=restoreRecoveryFailures(new Map(archive.map(row=>[row.id,row])),state);
   const byText=new Map(texts.filter(t=>sha(t.texto||'')===t.texto_sha256).map(t=>[t.documento_id,t]));
   const stored=new Map(previous.map(d=>[d.documentId,d]));
   const targets=ids?new Set(ids):new Set(previous.filter(d=>d.status==='processando'||
     d.method==='barreira_de_leitura'&&byText.has(d.documentId)).map(d=>d.documentId));
   const results=[];
-  for(const row of archive.filter(r=>targets.has(r.id))) {
+  for(const row of [...records.values()].filter(r=>targets.has(r.id))) {
     if(protectedIds.has(row.id)) {results.push({documentId:row.id,preserved:true});continue;}
     const text=byText.get(row.id),old=stored.get(row.id),observation=state.observations?.[row.id]?.item||{};
     if(!ids&&old?.status!=='processando'&&!(old?.method==='barreira_de_leitura'&&text))continue;

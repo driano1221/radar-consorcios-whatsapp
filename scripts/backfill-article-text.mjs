@@ -7,7 +7,8 @@ import { recoveredSuggestion } from '../src/lib/recovered-suggestion.mjs';
 import { enrichArticles, lacksArticleText } from '../src/lib/article-enrichment.mjs';
 import { redactPublicText } from '../src/lib/article-text-store.mjs';
 import { contentQuality } from './build-dashboard.mjs';
-import { recoveryDue, recoveryAttempt, attachRecoveredText, isRecoveryLead } from '../src/lib/recovery-policy.mjs';
+import { recoveryDue, recoveryAttempt, attachRecoveredText, isRecoveryLead, checkpointRecoveryFailure, restoreRecoveryFailures } from '../src/lib/recovery-policy.mjs';
+import { saveState } from '../src/lib/dedupe.mjs';
 import {reprocessTriage,upgradeLegacyTriage} from './reprocess-triage.mjs';
 import {loadOriginalTriage} from '../src/lib/simple-triage.mjs';
 
@@ -41,6 +42,7 @@ catch (error) { if (error.code !== 'ENOENT') throw error; }
 const textById = new Map(storedTexts.map((row) => [row.documento_id, row]));
 const attemptedAt = new Date().toISOString();
 const state=JSON.parse(await readFile(path.join(root,'state/news-state.json'),'utf8'));
+restoreRecoveryFailures(records,state);
 const reviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
   .split(/\r?\n/).filter(Boolean).map(JSON.parse);
 const reviewed = new Set(reviews.map((row) => row.documento_id));
@@ -88,6 +90,8 @@ for (const item of result.items) {
   const row = records.get(item.catalogId);
   records.set(row.id, recoveryAttempt(row, { now: attemptedAt,
     reason: failureReasons.get(row.id) || '', resolvedUrl: resolvedUrls.get(row.id) }));
+  if(apply&&process.env.PERSIST_STATE==='true'&&checkpointRecoveryFailure(state,records.get(row.id),{runId:process.env.GITHUB_RUN_ID||''}))
+    await saveState(path.join(root,'state/news-state.json'),state);
   console.log(`[retroativo:acesso] ${row.id.slice(0, 8)} ${failureReasons.get(row.id) || 'texto recuperado'}`);
   if (item.contentProvenance !== 'pagina_original') continue;
   const fullText = redactPublicText(item.rawText || item.summary || '');

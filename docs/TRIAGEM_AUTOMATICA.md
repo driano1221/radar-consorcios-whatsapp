@@ -2,6 +2,8 @@
 
 ## Atualização de 01/11
 
+Correção posterior à automática das 18h10: a [integridade do lote de 51](INTEGRIDADE-LOTE-51-2026-11-01.md) agora preserva a decisão final por fonte alternativa durante o tratamento da leitura original. Falhas de acesso ganham ponto de controle operacional independente da aprovação editorial do catálogo; a tentativa real do CISAMAPI foi recuperada dos logs sem nova consulta à fonte.
+
 Atualização posterior: os cinco originais já saíram de processamento. Itanhaém foi lido em PDF oficial e rejeitado como notícia nova de 2023; quatro foram barrados na entrada após acesso persistentemente bloqueado. A [política de admissão finita](ADMISSAO-DE-LEITURA-2026-11-01.md) preserva a diferença entre conteúdo rejeitado e entrada ilegível.
 
 O [lote de 51](../data/catalogo/conclusao-pendencias-51.json) teve **19 confirmações, 27 rejeições e cinco bloqueios reais de acesso**, sem apagar as 484 revisões históricas. A [conferência do fluxo e das entregas](TRIAGEM-E-ENTREGA-2026-11-01.md) registra causas, correções, limites e o incidente de três mensagens antigas da coleta concorrente. A [pesquisa enviada por Adriano](PESQUISA-TRINCHEIRA-2026-11-01.md) foi verificada nas fontes originais; foram aproveitados contratos executáveis, rastreabilidade e testes de invariância, sem instalar novos serviços.

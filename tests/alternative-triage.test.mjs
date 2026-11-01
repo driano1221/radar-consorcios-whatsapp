@@ -7,7 +7,9 @@ import { sha, originalFingerprint, originalContext, alternativeInput, eligibleAl
   validateAlternativeAnswer, validAlternativeDecision, applyAlternativeGuard, readAlternativeRows,
   reviewAlternative, alternativeUrlKey } from '../src/lib/alternative-triage.mjs';
 import { decideWithAlternatives, triageAlternativeTexts } from '../scripts/triage-alternative-texts.mjs';
-import { saveCatalog, mergeStateIntoCatalog } from '../src/lib/catalog.mjs';
+import { loadCatalog, saveCatalog, mergeStateIntoCatalog } from '../src/lib/catalog.mjs';
+import { upgradeLegacyTriage } from '../scripts/reprocess-triage.mjs';
+import { recoveryAttempt } from '../src/lib/recovery-policy.mjs';
 import { isNotifiable } from '../src/lib/publication-gate.mjs';
 import { loadEditorialGuard, applyEditorialGuard } from '../src/lib/editorial-guard.mjs';
 import { buildDashboardData, buildPublicDashboardData } from '../scripts/build-dashboard.mjs';
@@ -206,4 +208,37 @@ test('requisição manda corpo integral e trata falhas da API explicitamente', a
   } });
   await assert.rejects(reviewAlternative(input, { apiKey: 'mock', fetchImpl: async () => ({ ok: false, status: 429 }) }), /HTTP 429/);
   assert.equal(applyAlternativeGuard({}, { status: 'descartado', reason: 'Rotina' }).publicationDecision, 'historico');
+});
+
+test('atualização preserva alternativa concluída e salva tentativa independente sem sobrescrever estado', async t => {
+  for (const status of ['aceito', 'descartado']) {
+    const pending = { ...row, decisao_base:'processando', article_text_sha256:'', article_attempts:4,
+      article_attempted_at:'2026-11-01T12:00:00Z', article_recovery_reason:'http_403',
+      triagem_automatica:{version:4,status:'processando'} };
+    const result = await decideWithAlternatives(pending, [source], { review:mockReview });
+    const decision = status==='aceito' ? result : {...result,status,category:'GERAL',score:0};
+    assert.ok(validAlternativeDecision(pending,decision,[source]));
+    const directory = await fixture(t,[pending],[source]);
+    await writeFile(path.join(directory,'triagem-fontes-alternativas.ndjson'),JSON.stringify(decision)+'\n');
+    const blocked = recoveryAttempt({...pending,id:'fixture-other',url:'https://fonte.gov.br/noticia/1',
+      titulo:'Consórcio participa de seminário',article_attempts:1},
+      {now:'2026-11-01T21:12:43.546Z',reason:'http_403'});
+    const state={pending:{},seen:{fixture:{sentAt:'2026-10-31T12:00:00Z'}},weekly:{fixture:{sentAt:'2026-11-01T18:28:45Z'}}};
+    const before=JSON.stringify(state);
+    let records=new Map([[pending.id,pending],[blocked.id,blocked]]);
+    for(let cycle=0;cycle<2;cycle++){
+      await upgradeLegacyTriage(directory,records,state);
+      assert.deepEqual(records.get(pending.id),pending,'A leitura do original não substitui a decisão alternativa válida');
+      assert.ok(validAlternativeDecision(records.get(pending.id),decision,[source]));
+      await saveCatalog(directory,records);
+      records=await loadCatalog(path.join(directory,'arquivo-coletas.ndjson'));
+      assert.equal(records.get(blocked.id).article_attempts,2);
+      assert.equal(records.get(blocked.id).article_next_attempt_at,'2026-11-02T01:12:43.546Z');
+      assert.equal(JSON.stringify(state),before);
+    }
+    // A corrupted alternative must not gain protection merely by having a row.
+    await writeFile(path.join(directory,'fontes-alternativas.ndjson'),JSON.stringify({...source,texto:'alterado'})+'\n');
+    await upgradeLegacyTriage(directory,records,state);
+    assert.equal(records.get(pending.id).triagem_automatica.method,'barreira_de_leitura');
+  }
 });

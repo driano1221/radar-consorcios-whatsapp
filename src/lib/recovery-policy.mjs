@@ -50,3 +50,30 @@ export function attachRecoveredText(row, stored) {
     article_reader: stored.leitor, article_recovery_status: 'recuperado',
     article_recovery_reason: '', article_next_attempt_at: '' };
 }
+
+// Access failures are observed facts, independent of approval of the catalog.
+// The existing atomic state write survives a later catalog-validation failure.
+export function checkpointRecoveryFailure(state,row,{runId='',timeBasis='attempt_start'}={}) {
+  if(!row.article_recovery_reason||!Number.isFinite(Date.parse(row.article_attempted_at)))return false;
+  const previous=state.recoveryFailures?.[row.id];
+  if(previous&&Date.parse(previous.attemptedAt)>=Date.parse(row.article_attempted_at))return false;
+  state.recoveryFailures||={};
+  state.recoveryFailures[row.id]={attemptedAt:row.article_attempted_at,attempts:row.article_attempts,
+    reason:row.article_recovery_reason,resolvedUrl:row.article_resolved_url||'',
+    nextAttemptAt:row.article_next_attempt_at||'',runId,timeBasis};
+  return true;
+}
+
+export function restoreRecoveryFailures(records,state) {
+  for(const[id,failure]of Object.entries(state.recoveryFailures||{})){
+    const row=records.get(id),at=Date.parse(failure.attemptedAt);
+    if(!row||row.article_text_sha256||!Number.isFinite(at)||!failure.reason||
+      !Number.isSafeInteger(failure.attempts)||failure.attempts<1||
+      Date.parse(row.article_attempted_at||'1970-01-01')>=at)continue;
+    records.set(id,{...row,article_attempted_at:failure.attemptedAt,
+      article_attempts:Math.max(Number(row.article_attempts||0),failure.attempts),
+      article_recovery_reason:failure.reason,article_resolved_url:failure.resolvedUrl||row.article_resolved_url||'',
+      article_next_attempt_at:failure.nextAttemptAt||'',article_recovery_status:'aguardando_recuperacao'});
+  }
+  return records;
+}

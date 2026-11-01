@@ -1,10 +1,38 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { recoveryDue, recoveryDelayMs, recoveryAttempt, attachRecoveredText, isRecoveryLead,pdfRecoveryDue } from '../src/lib/recovery-policy.mjs';
+import { recoveryDue, recoveryDelayMs, recoveryAttempt, attachRecoveredText, isRecoveryLead,pdfRecoveryDue,
+  checkpointRecoveryFailure,restoreRecoveryFailures } from '../src/lib/recovery-policy.mjs';
+import {mkdtemp,readFile,rm} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {loadState,saveState} from '../src/lib/dedupe.mjs';
 import { fetchWithRetry } from '../src/lib/http.mjs';
 import { enrichArticle, enrichArticles, isChallengePage } from '../src/lib/article-enrichment.mjs';
 import { redactPublicText } from '../src/lib/article-text-store.mjs';
 const now = '2026-10-16T16:00:00.000Z';
+
+test('falha real sobrevive à rejeição do catálogo sem mexer em fila, decisões ou recibos e sem duplicar tentativa',async t=>{
+  const directory=await mkdtemp(path.join(os.tmpdir(),'radar-recovery-checkpoint-'));
+  t.after(()=>rm(directory,{recursive:true,force:true}));
+  const state={version:4,pending:{a:{status:'approved'}},seen:{b:{sentAt:now}},weekly:{c:{sentAt:now}},decisions:{a:{status:'descartado'}}};
+  const before=JSON.stringify(state),row={id:'documento',url:'https://fonte.gov.br/noticia',article_attempts:1,
+    article_attempted_at:now,decisao_base:'processando',triagem_automatica:{version:4,status:'processando'}};
+  const failure=recoveryAttempt(row,{now:'2026-11-01T21:12:43.546Z',reason:'http_403',resolvedUrl:row.url});
+  assert.equal(checkpointRecoveryFailure(state,failure,{runId:'fixture-run'}),true);
+  assert.equal(checkpointRecoveryFailure(state,failure),false);
+  assert.equal(checkpointRecoveryFailure(state,recoveryAttempt(row,{now:'2026-11-02T01:00:00Z'})),false,'Não declarar texto recuperado sem preservar o corpo');
+  const file=path.join(directory,'state.json');await saveState(file,state);
+  const restored=await loadState(file),records=new Map([[row.id,row]]);
+  restoreRecoveryFailures(records,restored);restoreRecoveryFailures(records,restored);
+  assert.equal(records.get(row.id).article_attempts,2);
+  assert.equal(records.get(row.id).article_next_attempt_at,'2026-11-02T01:12:43.546Z');
+  assert.equal(records.get(row.id).decisao_base,'processando');
+  assert.equal(recoveryDue(records.get(row.id),{now:Date.parse('2026-11-01T23:00:00Z')}),false);
+  const {recoveryFailures,...other}=JSON.parse(await readFile(file,'utf8'));
+  assert.equal(JSON.stringify(other),before);
+  const newer={...records.get(row.id),article_attempted_at:'2026-11-02T03:00:00Z',article_recovery_reason:'',article_text_sha256:'valid-text'};
+  records.set(row.id,newer);restoreRecoveryFailures(records,restored);assert.deepEqual(records.get(row.id),newer);
+});
 
 test('PDF pendente e endpoint sem extensão chegam ao leitor PDF; escolha explícita não inclui outras fontes',()=>{
   const row={id:'salto',url:'https://data.queridodiario.ok.org.br/salto/edicao.pdf',triagem_automatica:{status:'processando'}};

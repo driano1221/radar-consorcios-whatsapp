@@ -377792,5 +377792,34 @@
         "https://www.diariomunicipal.com.br/amupe/materia/A7D4534D"
       ]
     }
+  },
+  "recoveryFailures": {
+    "531af87275e8eb34b551e0de727d5bc16adfe7b60a389a81a0eb1ba7e0be36b1": {
+      "attemptedAt": "2026-11-01T21:12:43.546Z",
+      "attempts": 1,
+      "reason": "destino_nao_html",
+      "resolvedUrl": "",
+      "nextAttemptAt": "2026-11-01T23:12:43.546Z",
+      "runId": "41350666337",
+      "timeBasis": "failure_log_observed"
+    },
+    "745123c7dda07f5894f9abf750e5c8b3c52b6db6509888135640df80e19a455e": {
+      "attemptedAt": "2026-11-01T21:12:43.546Z",
+      "attempts": 1,
+      "reason": "destino_nao_html",
+      "resolvedUrl": "",
+      "nextAttemptAt": "2026-11-01T23:12:43.546Z",
+      "runId": "41350666337",
+      "timeBasis": "failure_log_observed"
+    },
+    "ab4ea20a96acb67a6cb9447216d5dd3af2b897ba4160a5c42737b970dd9ed139": {
+      "attemptedAt": "2026-11-01T21:12:43.546Z",
+      "attempts": 2,
+      "reason": "http_403",
+      "resolvedUrl": "https://www.cisamapi.mg.gov.br/noticia/geral/27-10-2026/5879/cisamapi-participa-do-2-seminario-do-tcemg-de-consorcios-publicos",
+      "nextAttemptAt": "2026-11-02T01:12:43.546Z",
+      "runId": "41350666337",
+      "timeBasis": "failure_log_observed"
+    }
   }
 }
