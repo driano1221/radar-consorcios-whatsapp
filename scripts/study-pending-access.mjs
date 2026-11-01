@@ -57,7 +57,8 @@ async function main(){
      }finally{await rm(temporary,{recursive:true,force:true});}
     }else if(url.includes('/wp-json/')){
      const response=await fetchImpl(url,{redirect:'error'});if(!response.ok)throw Error('http_'+response.status);
-     const bytes=Buffer.from(await response.arrayBuffer());if(bytes.length>2_000_000)throw Error('api_grande_demais');
+     const chunks=[];let size=0;for await(const c of response.body){size+=c.length;if(size>2_000_000)throw Error('api_grande_demais');chunks.push(c);}
+     const bytes=Buffer.concat(chunks);
      reading=samePublisherPost(JSON.parse(bytes),original);
     }else{
      let reason='';const item=await enrichArticle({kind:'news',title:row.titulo,url,summary:'',source:row.fonte},

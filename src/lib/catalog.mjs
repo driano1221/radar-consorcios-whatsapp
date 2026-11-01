@@ -344,6 +344,7 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
       tipo_evento:triage.status==='descartado'?'GERAL':triage.category,etapa:triage.stage||'',
       evidencia_triagem:triage.evidence,fonte_evidencia_triagem:triage.sourceUrl,metodo_triagem:triage.method||'',
       situacao_analise:`${triage.status} pela triagem — ${triage.reason}`,
+      ...(triage.method==='barreira_de_leitura'?{article_next_attempt_at:'',article_recovery_status:'barrada_na_entrada'}:{}),
       decisao_alerta:row.enviado_em?'enviado':'historico',
       motivo_alerta:'Revisão retroativa preservada; não autoriza envio ou resumo retroativo.'};
   });

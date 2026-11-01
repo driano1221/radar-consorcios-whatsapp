@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "studyRun": "https://github.com/driano1221/radar-consorcios-whatsapp/actions/runs/41337003818",
+  "studySha256": "f1a2ce575b7830c3b972b5b5f692bf05e33bfa6f29e61e3bd5528342e98961f6",
+  "at": "2026-11-01T18:32:26.684Z",
+  "reports": [
+    {
+      "id": "29e265125c8d8814d44b27269da1b73ff893faf9710bb80f1fd3ceaacbd5e05e",
+      "title": "Consórcio prevê aumento de áreas de risco no ABC por conta do El Niño - Repórter Diário",
+      "previousAttempts": 6,
+      "routes": [
+        {
+          "url": "https://www.reporterdiario.com.br/noticia/3919446/consorcio-preve-aumento-de-areas-de-risco-no-abc-por-conta-do-el-nino/",
+          "attemptedAt": "2026-11-01T18:32:12.347Z",
+          "status": 403,
+          "contentType": "text/html; charset=UTF-8",
+          "failure": "http_403"
+        },
+        {
+          "url": "https://www.reporterdiario.com.br/wp-json/wp/v2/posts/3919446",
+          "attemptedAt": "2026-11-01T18:32:12.949Z",
+          "status": 403,
+          "contentType": "text/html; charset=UTF-8",
+          "failure": "http_403"
+        }
+      ]
+    },
+    {
+      "id": "7b9e6e3e5f509cd3fc55b1628fcdd2565d58952e53ae790ecc413ca3863e82d6",
+      "title": "BOLETIM OFICIAL EXECUTIVO - legislacao.itanhaem.sp.leg.br",
+      "previousAttempts": 7,
+      "routes": [
+        {
+          "url": "https://legislacao.itanhaem.sp.leg.br/Itanhaem-SP/LeisOrdinarias/4696-2023/Arquivos/2",
+          "attemptedAt": "2026-11-01T18:32:13.396Z",
+          "status": 400,
+          "contentType": "",
+          "failure": "http_400"
+        },
+        {
+          "url": "https://www2.itanhaem.sp.gov.br/wp-content/uploads/2023/10/829.pdf",
+          "attemptedAt": "2026-11-01T18:32:15.288Z",
+          "status": 200,
+          "contentType": "application/pdf",
+          "pages": 20,
+          "complete": true,
+          "pendingPages": [],
+          "characters": 64736,
+          "bodyHash": "442cb6c92f528c674dd44b91c8a2994ddc0cf2b4ef2359980e0387235f269132",
+          "reader": "pdf_oficial_completo"
+        }
+      ]
+    },
+    {
+      "id": "ef76ec87a1bb7901d0c778adf5a358011cbe83ce9542acaa391086caae03ae50",
+      "title": "TCE-MS anula licitação de R$ 3,6 milhões do Consórcio Central por irregularidades - Midiamax",
+      "previousAttempts": 9,
+      "routes": [
+        {
+          "url": "https://midiamax.com.br/politica/transparencia/2026/tce-ms-anula-licitacao-r-36-milhoes-consorcio-central-irregularidades/",
+          "attemptedAt": "2026-11-01T18:32:22.392Z",
+          "status": 403,
+          "contentType": "text/html; charset=UTF-8",
+          "failure": "http_403"
+        },
+        {
+          "url": "https://midiamax.com.br/wp-json/wp/v2/posts?slug=tce-ms-anula-licitacao-r-36-milhoes-consorcio-central-irregularidades&per_page=1",
+          "attemptedAt": "2026-11-01T18:32:22.965Z",
+          "status": 403,
+          "contentType": "text/html; charset=UTF-8",
+          "failure": "http_403"
+        }
+      ]
+    },
+    {
+      "id": "198bc150ca581b66c7483be0f59051b81e21e12cd8c89beda55a89c15bc87fe3",
+      "title": "Presidente da CNM aborda desafios do financiamento da Defesa Civil em evento em Gramado (RS) - Confederação Nacional de Municípios (CNM)",
+      "previousAttempts": 11,
+      "routes": [
+        {
+          "url": "https://cnm.org.br/comunicacao/noticias/presidente-da-cnm-aborda-desafios-do-financiamento-da-defesa-civil-em-evento-em-gramado-rs",
+          "attemptedAt": "2026-11-01T18:32:23.347Z",
+          "status": 403,
+          "contentType": "text/html; charset=UTF-8",
+          "failure": "http_403"
+        },
+        {
+          "url": "https://api.cnm.org.br/comunicacao/noticias/presidente-da-cnm-aborda-desafios-do-financiamento-da-defesa-civil-em-evento-em-gramado-rs",
+          "attemptedAt": "2026-11-01T18:32:23.901Z",
+          "status": 403,
+          "contentType": "text/html; charset=UTF-8",
+          "failure": "http_403"
+        }
+      ]
+    },
+    {
+      "id": "7ba18863b64395858e2cb763abde3b0b7a03e9de2acf638b7ffed57d60e2ab7c",
+      "title": "PROJETO DE LEI Nº 0076/2026 - Câmara Municipal de Lagoa Vermelha",
+      "previousAttempts": 10,
+      "routes": [
+        {
+          "url": "https://www.lagoavermelha.rs.leg.br/proposicoes/Projetos-de-Lei/2026/1/0/27272",
+          "attemptedAt": "2026-11-01T18:32:24.453Z",
+          "status": 200,
+          "contentType": "text/html",
+          "failure": "bloqueio_antibot"
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "version": 4,
+      "category": "GERAL",
+      "stage": "Barrada na entrada — íntegra indisponível",
+      "evidence": "",
+      "bodyHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceUrl": "https://www.reporterdiario.com.br/noticia/3919446/consorcio-preve-aumento-de-areas-de-risco-no-abc-por-conta-do-el-nino/",
+      "checks": [],
+      "status": "descartado",
+      "method": "barreira_de_leitura",
+      "decisionBasis": "admissibilidade",
+      "reason": "Entrada não admitida após 8 tentativas registradas (http_403). Conteúdo não analisado; isto não afirma ausência do fato. Sem novas tentativas automáticas deste endereço. Uma íntegra válida permite nova triagem; PDF e HTML legíveis continuam aceitos.",
+      "admission": {
+        "version": 1,
+        "documentId": "29e265125c8d8814d44b27269da1b73ff893faf9710bb80f1fd3ceaacbd5e05e",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOX2FFNmJEck1FMEY0TllrMEowWEhlNU1kMFNKZks5c1lGTnNjRkNiY0QzWkVxaThmLXpwT1JBbC10bXFueWtkdmdiQmQ3SmE4eVZoZGpueGV4OXFLZEl2dExzZXBKUzdvN01IbjJYczhlRHVlVEhaNmhmTFVGeU5TYTdoUllKSFNrMEJIQmpsa3d5RDVKTTJzSlZGdGpKS0U2ekNGS3N5elVzdHhpcmJMZFYzbG1fb0R2ZlQ4Tw?oc=5",
+        "status": "barrada",
+        "failure": "http_403",
+        "attempts": 8,
+        "attemptedAt": "2026-11-01T18:32:12.949Z",
+        "diagnosticHash": "54683de334a066676242963b8e6fc255f7bc7a6227b850cb7deb4ae8a0d69403"
+      },
+      "documentId": "29e265125c8d8814d44b27269da1b73ff893faf9710bb80f1fd3ceaacbd5e05e",
+      "rowHash": "8b4b8d2719a8cbeceafce12c537b4a8d2f89986b425f80ab435491836ee10e7f",
+      "retroactive": true,
+      "reviewedAt": "2026-11-01T18:32:26.684Z",
+      "alertAllowed": false,
+      "weeklyAllowed": false
+    },
+    {
+      "version": 4,
+      "category": "GERAL",
+      "stage": "",
+      "evidence": "LEI Nº 4.696, DE 18 DE OUTUBRO DE 2023",
+      "bodyHash": "2f94f465f46dfeb25430d3fd4f47b59c0dd83c4a8395001e756dd6641b513569",
+      "sourceUrl": "https://www2.itanhaem.sp.gov.br/wp-content/uploads/2023/10/829.pdf",
+      "checks": [],
+      "status": "descartado",
+      "reason": "Ato antigo reapareceu com data recente de indexação; não é notícia nova.",
+      "method": "filtro_de_data",
+      "documentId": "7b9e6e3e5f509cd3fc55b1628fcdd2565d58952e53ae790ecc413ca3863e82d6",
+      "rowHash": "5859cf9636a4462fb5dd4d3acf1e0ccd16cadeecbf04fec464b5ecc4f1283866",
+      "retroactive": true,
+      "reviewedAt": "2026-11-01T18:32:26.684Z",
+      "alertAllowed": false,
+      "weeklyAllowed": false
+    },
+    {
+      "version": 4,
+      "category": "GERAL",
+      "stage": "Barrada na entrada — íntegra indisponível",
+      "evidence": "",
+      "bodyHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceUrl": "https://midiamax.com.br/politica/transparencia/2026/tce-ms-anula-licitacao-r-36-milhoes-consorcio-central-irregularidades/",
+      "checks": [],
+      "status": "descartado",
+      "method": "barreira_de_leitura",
+      "decisionBasis": "admissibilidade",
+      "reason": "Entrada não admitida após 11 tentativas registradas (http_403). Conteúdo não analisado; isto não afirma ausência do fato. Sem novas tentativas automáticas deste endereço. Uma íntegra válida permite nova triagem; PDF e HTML legíveis continuam aceitos.",
+      "admission": {
+        "version": 1,
+        "documentId": "ef76ec87a1bb7901d0c778adf5a358011cbe83ce9542acaa391086caae03ae50",
+        "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVUt6eVZYQUNLUFN6Zm03XzUteHhETFdZUkdKTjBRM3c4UTB2dzRnMmJJX2ZINzRxcndSWXhJbVQxY1pFUkRvdTBXU0xseE5jU1JsaUdNSVN6NzZReERUMGNvVnZtazFuRmxWTVE0RWJNT09FRF8zTFhOVWx2Vk82eWxKU1EyREdiUnNSVklGYktWeDltc1V3NnJqdmk3LUtPM2hJc2p2Y3dad2dWaTZrdkJ6STBjTkYzVjd5Y2ViUQ?oc=5",
+        "status": "barrada",
+        "failure": "http_403",
+        "attempts": 11,
+        "attemptedAt": "2026-11-01T18:32:22.965Z",
+        "diagnosticHash": "f44138f25cbcf25c28952adbc7d6df57f7568ca2923f4c7bac9fd447d6d3b658"
+      },
+      "documentId": "ef76ec87a1bb7901d0c778adf5a358011cbe83ce9542acaa391086caae03ae50",
+      "rowHash": "17c5aa8f176fb0cf55af36d0073d3c845d9a1428f3bb904c003b7f3bda63fd3c",
+      "retroactive": true,
+      "reviewedAt": "2026-11-01T18:32:26.684Z",
+      "alertAllowed": false,
+      "weeklyAllowed": false
+    },
+    {
+      "version": 4,
+      "category": "GERAL",
+      "stage": "Barrada na entrada — íntegra indisponível",
+      "evidence": "",
+      "bodyHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceUrl": "https://cnm.org.br/comunicacao/noticias/presidente-da-cnm-aborda-desafios-do-financiamento-da-defesa-civil-em-evento-em-gramado-rs",
+      "checks": [],
+      "status": "descartado",
+      "method": "barreira_de_leitura",
+      "decisionBasis": "admissibilidade",
+      "reason": "Entrada não admitida após 13 tentativas registradas (http_403). Conteúdo não analisado; isto não afirma ausência do fato. Sem novas tentativas automáticas deste endereço. Uma íntegra válida permite nova triagem; PDF e HTML legíveis continuam aceitos.",
+      "admission": {
+        "version": 1,
+        "documentId": "198bc150ca581b66c7483be0f59051b81e21e12cd8c89beda55a89c15bc87fe3",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRWd4MkRlZDFtZ294QVNqYThRQVoxLVBWQ1piSlBEa20xT0V6enZEVVNERUsyWTBXa3FwRnlKYVZuZTQzczh0VGNLb3hJVFMteFFWRWRBMmtzbnNrTVdOQVF1MFhsNEJjXzJ1eVFYMTQ3eGw5NS1yaFFNTVBJcVVJX3otWGFmS0ljbmdnbUttWUN2UEUzRHRBWm1TYXBTV0VnUXVNdk0xREI5MGl3OE00Z1lBUHdHNDExOWY0XzY3blpYNDhjZGppdjh3?oc=5",
+        "status": "barrada",
+        "failure": "http_403",
+        "attempts": 13,
+        "attemptedAt": "2026-11-01T18:32:23.901Z",
+        "diagnosticHash": "132a27450eb1688d1e1274e7767bfae7d727eb4bcf650bc974b704bb5156b398"
+      },
+      "documentId": "198bc150ca581b66c7483be0f59051b81e21e12cd8c89beda55a89c15bc87fe3",
+      "rowHash": "dde13c7d4532f43c0cbba598c57cd9ff97dc95e2b6d621a98f60599e9c9fae76",
+      "retroactive": true,
+      "reviewedAt": "2026-11-01T18:32:26.684Z",
+      "alertAllowed": false,
+      "weeklyAllowed": false
+    },
+    {
+      "version": 4,
+      "category": "GERAL",
+      "stage": "Barrada na entrada — íntegra indisponível",
+      "evidence": "",
+      "bodyHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceUrl": "https://www.lagoavermelha.rs.leg.br/proposicoes/Projetos-de-Lei/2026/1/0/27272",
+      "checks": [],
+      "status": "descartado",
+      "method": "barreira_de_leitura",
+      "decisionBasis": "admissibilidade",
+      "reason": "Entrada não admitida após 11 tentativas registradas (bloqueio_antibot). Conteúdo não analisado; isto não afirma ausência do fato. Sem novas tentativas automáticas deste endereço. Uma íntegra válida permite nova triagem; PDF e HTML legíveis continuam aceitos.",
+      "admission": {
+        "version": 1,
+        "documentId": "7ba18863b64395858e2cb763abde3b0b7a03e9de2acf638b7ffed57d60e2ab7c",
+        "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOFRleWRrdWRsNjI1NWRsQTlUQ01CSjhjRDZwcEc5d0JmN0FHUEUzam5femgwaUZGOWJyTHM4MklqMlZBNEszNnE5SzgwWlR2U2h4djl0TVlxejREanE2blM0Y2p4VDdFZVBzV0FFYXQ1Rk93WXJTVFFEejRla0dhNFB2a2Y?oc=5",
+        "status": "barrada",
+        "failure": "bloqueio_antibot",
+        "attempts": 11,
+        "attemptedAt": "2026-11-01T18:32:24.453Z",
+        "diagnosticHash": "6bacb0c4b7cdd9b8a5cf86eb9ac763ebce658dbdbc979a591043007b4ea1159d"
+      },
+      "documentId": "7ba18863b64395858e2cb763abde3b0b7a03e9de2acf638b7ffed57d60e2ab7c",
+      "rowHash": "4d929b298d23f89f069f69ee408f77f272d3514a339d9e50c257fae6ac2ef4e0",
+      "retroactive": true,
+      "reviewedAt": "2026-11-01T18:32:26.684Z",
+      "alertAllowed": false,
+      "weeklyAllowed": false
+    }
+  ],
+  "aiCalls": 0,
+  "whatsappSends": 0
+}

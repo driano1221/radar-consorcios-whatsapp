@@ -1,6 +1,9 @@
-// Recovery state is independent of the editorial decision. Keep trying, slowly,
-// without resetting identity, classifications, reviewed evidence or alert state.
+import { readingAdmission } from './reading-admission.mjs';
+
+// Recovery state is independent of the editorial decision. Pending inputs have
+// a finite admission budget; completed human/content decisions are preserved.
 export function isRecoveryLead(row) {
+  if (row.triagem_automatica?.method === 'barreira_de_leitura' || readingAdmission(row)) return false;
   // A legal title may omit "consórcio"; once attempted, don't lose it in the queue.
   return row.triagem_automatica?.status === 'processando' || Number(row.article_attempts || 0) > 0 ||
     /cons[oó]rc|rateio|protocolo de inten[cç][oõ]es|ades[aã]o|desligamento|retirada/i.test(row.titulo || '');
@@ -12,6 +15,7 @@ export function recoveryDelayMs(attempts, pendingTriage = false) {
 
 export function recoveryDue(row, { now = Date.now(), force = false } = {}) {
   if (force) return true;
+  if (row.triagem_automatica?.method === 'barreira_de_leitura' || readingAdmission(row)) return false;
   if (['url_invalida', 'destino_pdf', 'destino_nao_html'].includes(row.article_recovery_reason)) return false;
   const last = Date.parse(row.article_attempted_at || '');
   const next = Date.parse(row.article_next_attempt_at || '');
@@ -25,6 +29,7 @@ export function pdfRecoveryDue(row,{requestedIds=[],hasText=false,reviewed=false
   if(!pdf&&!['destino_pdf','destino_nao_html'].includes(row.article_recovery_reason)&&
     !(retryFailed&&row.article_recovery_reason?.startsWith('falha:')))return false;
   if(requestedIds.length)return requestedIds.includes(row.id);
+  if(row.triagem_automatica?.method==='barreira_de_leitura'||readingAdmission(row))return false;
   if(!/^https:\/\/news\.google\.com\//.test(row.url)&&!pdf)return false;
   return !previous||retryFailed&&(previous.situacao?.startsWith('falha:')||row.triagem_automatica?.status==='processando')&&
     now-Date.parse(previous.tentado_em||0)>=recoveryDelayMs(previous.tentativas,row.triagem_automatica?.status==='processando');

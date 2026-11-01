@@ -4,6 +4,7 @@ import path from 'node:path';
 import { classifyItem } from './classifier.mjs';
 import { AI_PROMPT_VERSION } from './ai-review.mjs';
 import { locateQuote } from './quote-evidence.mjs';
+import { admissionTriage, validReadingAdmission } from './reading-admission.mjs';
 
 export const TRIAGE_VERSION = 4;
 export const CATEGORY_FAMILIES = ['CRIAÇÃO', 'ADESÃO', 'SAÍDA', 'RATEIO', 'PROTOCOLO', 'CRISE', 'ATUAÇÃO'];
@@ -39,6 +40,7 @@ export function decideSimpleTriage(item) {
   if (item.alternativeDecision) return { ...base,
     status: item.catalogDecision === 'confirmado' ? 'confirmado' : item.catalogDecision === 'descartado' ? 'descartado' : 'revisao',
     reason: item.alternativeDecision.reason || 'Decisão por fonte alternativa preservada.', method: 'fonte_alternativa' };
+  if (body.length < 160 && item.readingAdmission) return admissionTriage(base, item.readingAdmission);
   if (/\/(?:category|categoria|tag)\/|\/(?:noticias|news)\/?(?:[?#]|$)/i.test(base.sourceUrl))
     return reject('Página de listagem usada apenas para descoberta; as notícias individuais têm decisão própria.', base.sourceUrl, 'filtro_de_listagem');
   if (item.duplicatePublication) return processing('Comparar automaticamente a publicação com a versão já arquivada.', 'conferir_duplicata');
@@ -145,5 +147,7 @@ export function validOriginalTriage(row, decision) {
   return [1, 2, 3, TRIAGE_VERSION].includes(decision?.version) && decision.documentId === row.id &&
     decision.rowHash === rowFingerprint(row) && (decision.status === 'processando' || decision.bodyMatches !== false) && decision.retroactive === true &&
     ['confirmado', 'descartado', 'revisao', 'processando'].includes(decision.status) && Boolean(decision.reason) &&
-    (['revisao', 'processando'].includes(decision.status) || Boolean(decision.evidence));
+    (['revisao', 'processando'].includes(decision.status) || Boolean(decision.evidence) ||
+      decision.status === 'descartado' && decision.method === 'barreira_de_leitura' &&
+      decision.decisionBasis === 'admissibilidade' && validReadingAdmission(row, decision.admission));
 }

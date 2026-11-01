@@ -2,6 +2,8 @@
 
 ## Atualização de 01/11
 
+Atualização posterior: os cinco originais já saíram de processamento. Itanhaém foi lido em PDF oficial e rejeitado como notícia nova de 2023; quatro foram barrados na entrada após acesso persistentemente bloqueado. A [política de admissão finita](ADMISSAO-DE-LEITURA-2026-11-01.md) preserva a diferença entre conteúdo rejeitado e entrada ilegível.
+
 O [lote de 51](../data/catalogo/conclusao-pendencias-51.json) teve **19 confirmações, 27 rejeições e cinco bloqueios reais de acesso**, sem apagar as 484 revisões históricas. A [conferência do fluxo e das entregas](TRIAGEM-E-ENTREGA-2026-11-01.md) registra causas, correções, limites e o incidente de três mensagens antigas da coleta concorrente. A [pesquisa enviada por Adriano](PESQUISA-TRINCHEIRA-2026-11-01.md) foi verificada nas fontes originais; foram aproveitados contratos executáveis, rastreabilidade e testes de invariância, sem instalar novos serviços.
 
 A fila agora exige confirmação antes da entrada, e pistas antigas em processamento não podem ser promovidas por mera atualização de regra. A recuperação regular incorpora os registros novos ao catálogo antes de selecionar leituras. Confirmar a base continua diferente de autorizar alerta histórico.
@@ -99,3 +101,6 @@ A meta é **aceitar ou descartar o conteúdo quando a evidência permitir**. Uma
 `institutional-proof.mjs` interpreta os novos padrões; `event-proof.mjs` integra a classificação; `ai-review.mjs` limita a reinterpretação pela IA; `alternative-triage.mjs` decide usando fontes alternativas; `catalog.mjs` aplica revisões e decisões válidas; `publication-gate.mjs` controla elegibilidade de alerta. `cnm-reader.mjs` e `sources/web-scrapers.mjs` fazem leitura e coleta CNM. O fluxograma do painel distingue a base e o envio e mostra a recuperação alternativa.
 
 As revisões anteriores de 10, 13 e 4 registros são lotes históricos auditados, não prova de que todos os documentos futuros já dispensam conferência. Os testes de aplicação idempotente protegem esses lotes contra duplicação e reenvio.
+# Admissão finita de leitura — 01/11/2026
+
+Os cinco bloqueios originais foram estudados no executor GitHub. Itanhaém foi recuperado em PDF oficial e rejeitado como notícia nova por ser lei de 2023; os outros quatro foram barrados explicitamente na entrada, sem julgamento do conteúdo inacessível. Não há retentativa indefinida nem banimento genérico de PDF/HTML. Regras, evidências e reprodução: [ADMISSAO-DE-LEITURA-2026-11-01.md](ADMISSAO-DE-LEITURA-2026-11-01.md).

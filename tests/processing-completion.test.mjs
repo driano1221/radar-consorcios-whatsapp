@@ -12,6 +12,7 @@ import {persistArticleTexts} from '../src/lib/article-text-store.mjs';
 import {upgradeLegacyTriage} from '../scripts/reprocess-triage.mjs';
 import {enrichArticle} from '../src/lib/article-enrichment.mjs';
 import {recoveryAttempt,recoveryDue} from '../src/lib/recovery-policy.mjs';
+import {validReadingAdmission} from '../src/lib/reading-admission.mjs';
 import {locateQuote} from '../src/lib/quote-evidence.mjs';
 import {loadOriginalTriage,validOriginalTriage} from '../src/lib/simple-triage.mjs';
 import {loadEditorialGuard,applyEditorialGuard} from '../src/lib/editorial-guard.mjs';
@@ -130,9 +131,12 @@ test('lote dos 26 mantém prova, decisão canônica e bloqueio de reenvio inclus
   assert.equal(audit.length,26);
   assert.equal(audit.filter(d=>d.status==='confirmado').length,12);assert.equal(audit.filter(d=>d.status==='descartado').length,13);
   for(const a of audit){
-    const row=byId.get(a.id),d=decisions.get(a.id);assert.equal(d.status,a.status);assert.equal(d.category,a.category);
+    const row=byId.get(a.id),d=decisions.get(a.id);
+    // The 25 conclusions are immutable. The access-pending entry may later
+    // conclude with real text or an explicitly validated admission diagnosis.
+    if(a.status!=='processando'){assert.equal(d.status,a.status);assert.equal(d.category,a.category);}
     assert.ok(validOriginalTriage(row,d));assert.equal(d.alertAllowed,false);assert.equal(d.weeklyAllowed,false);
-    assert.ok(d.status==='processando'||d.evidence);
+    assert.ok(d.status==='processando'||d.evidence||d.method==='barreira_de_leitura'&&validReadingAdmission(row,d.admission));
     for(const url of new Set([row.url,row.article_url,d.sourceUrl].filter(Boolean))){
       const i=applyEditorialGuard({url,title:row.titulo,publishedAt:'2030-01-01',classification:{category:d.category,score:99}},guard);
       assert.equal(isNotifiable(i),false,url);assert.equal(i.publicationDecision,'historico');

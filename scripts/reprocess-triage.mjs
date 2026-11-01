@@ -6,16 +6,17 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {classifyItem} from '../src/lib/classifier.mjs';
 import {decideSimpleTriage,rowFingerprint,TRIAGE_VERSION} from '../src/lib/simple-triage.mjs';
+import {readingAdmission} from '../src/lib/reading-admission.mjs';
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const nd=async(directory,name)=>{try{return (await readFile(path.join(directory,name),'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);}catch(e){if(e.code==='ENOENT')return [];throw e;}};
 
 export function reviewCatalogRow(row,observation={},text) {
   const item={...observation,triage:undefined,editorialDecision:undefined,
-    title:row.titulo,url:row.url,articleUrl:text?.url_artigo||row.article_url||row.article_resolved_url||observation.articleUrl,
+    title:text?.titulo_documento||row.titulo,url:row.url,articleUrl:text?.url_artigo||row.article_url||row.article_resolved_url||observation.articleUrl,
     source:row.fonte,sourceUrl:observation.sourceUrl||row.url,
     kind:observation.kind||(/diariomunicipal|\.pdf(?:[?#]|$)/.test(row.url)?'gazette':'news'),
-    publishedAt:row.data_publicacao,summary:observation.summary||row.trecho,
-    rawText:text?.texto||'',excerpts:undefined,
+    publishedAt:row.data_indexacao||row.data_publicacao,summary:observation.summary||row.trecho,
+    rawText:text?.texto||'',excerpts:undefined,readingAdmission:readingAdmission(row),
     ...(text?{contentProvenance:'pagina_original',extractionError:undefined}:{}),
   };
   item.classification=classifyItem(item);item.ruleClassification=item.classification;
@@ -30,11 +31,13 @@ export async function upgradeLegacyTriage(directory,records,state,reviewedIds=ne
   for(const row of records.values()) {
     const old=row.triagem_automatica||(!['confirmado','descartado'].includes(row.decisao_base)?state.decisions?.[row.id]?.triage:null),text=texts.get(row.id);
     const recoveredLegacy = !old && row.article_suggested_category && text;
-    if(reviewedIds.has(row.id)||old?.retroactive||!(recoveredLegacy||old?.status==='processando'||old?.version<TRIAGE_VERSION&&old?.status==='revisao'))continue;
+    const readmitted = old?.method==='barreira_de_leitura'&&text;
+    if(reviewedIds.has(row.id)||old?.retroactive&&!readmitted||!(readmitted||recoveredLegacy||old?.status==='processando'||old?.version<TRIAGE_VERSION&&old?.status==='revisao'))continue;
     const triage=reviewCatalogRow(row,state.observations?.[row.id]?.item,text);
     records.set(row.id,{...row,triagem_automatica:triage,decisao_base:triage.status,tipo_evento:triage.category,etapa:triage.stage,
       evidencia_triagem:triage.evidence,fonte_evidencia_triagem:triage.sourceUrl,metodo_triagem:triage.method||'',
-      situacao_analise:`${triage.status} pela triagem — ${triage.reason}`});updated++;
+      situacao_analise:`${triage.status} pela triagem — ${triage.reason}`,
+      ...(triage.method==='barreira_de_leitura'?{article_next_attempt_at:'',article_recovery_status:'barrada_na_entrada'}:{})});updated++;
   }
   return updated;
 }
@@ -45,12 +48,13 @@ export async function reprocessTriage(directory,{state={},ids,apply=false}={}) {
   const protectedIds=new Set([...reviews,...originals].map(r=>r.documento_id||r.documentId));
   const byText=new Map(texts.filter(t=>sha(t.texto||'')===t.texto_sha256).map(t=>[t.documento_id,t]));
   const stored=new Map(previous.map(d=>[d.documentId,d]));
-  const targets=ids?new Set(ids):new Set(previous.filter(d=>d.status==='processando').map(d=>d.documentId));
+  const targets=ids?new Set(ids):new Set(previous.filter(d=>d.status==='processando'||
+    d.method==='barreira_de_leitura'&&byText.has(d.documentId)).map(d=>d.documentId));
   const results=[];
   for(const row of archive.filter(r=>targets.has(r.id))) {
     if(protectedIds.has(row.id)) {results.push({documentId:row.id,preserved:true});continue;}
     const text=byText.get(row.id),old=stored.get(row.id),observation=state.observations?.[row.id]?.item||{};
-    if(!ids&&old?.status!=='processando')continue;
+    if(!ids&&old?.status!=='processando'&&!(old?.method==='barreira_de_leitura'&&text))continue;
     const decision={...reviewCatalogRow(row,observation,text),documentId:row.id,rowHash:rowFingerprint(row),retroactive:true,
       reviewedAt:new Date().toISOString(),alertAllowed:false,weeklyAllowed:false};
     const failure=row.article_recovery_reason||observation.extractionError;
