@@ -17,6 +17,7 @@ import { isolatedTestEnvironment } from '../scripts/isolated-environment.mjs';
 import { itemId } from '../src/lib/dedupe.mjs';
 import { classifyItem } from '../src/lib/classifier.mjs';
 import { AI_PROMPT_VERSION } from '../src/lib/ai-review.mjs';
+import { applySimpleTriage } from '../src/lib/simple-triage.mjs';
 
 const dir = fileURLToPath(new URL('../data/catalogo/', import.meta.url));
 const read = async name => (await readFile(`${dir}/${name}`, 'utf8')).trim().split('\n').map(JSON.parse);
@@ -154,27 +155,89 @@ test('entrada semanal isola resposta inválida e gera só aprovados, sem rede re
   }
 });
 
-test('Lei 965/2026 de Boa Vista continua Protocolo no resumo, com corpo e decisão preservados', async () => {
-  const state = JSON.parse(await readFile(new URL('../state/news-state.json', import.meta.url), 'utf8'));
-  const before = JSON.stringify(state);
+test('Lei 965/2026 de Boa Vista continua Protocolo em cenário isolado, mesmo após recaptura', async () => {
+  const production = await readFile(new URL('../state/news-state.json', import.meta.url), 'utf8');
   const row = (await read('arquivo-coletas.ndjson')).find(v => v.url === 'https://www.diariomunicipal.com.br/famup/materia/EF411DF6');
+  assert.ok(row, 'A lei de referência precisa existir no acervo');
   const original = (await read('textos-artigos.ndjson')).find(v => v.documento_id === row.id);
+  assert.ok(original?.texto, 'A lei de referência precisa ter texto preservado');
   assert.equal(hash(original.texto), original.texto_sha256);
   const rule = classifyItem({ kind: 'gazette', title: row.titulo, rawText: original.texto });
   assert.equal(rule.category, 'PROTOCOLO');
   assert.equal(rule.proofKind, 'ratified_protocol');
-  const window = weeklyWindow(new Date('2026-10-24T17:43:32Z'));
-  const report = buildWeeklyReport(await prepareWeeklyState(state, dir, window), window);
-  const item = report.highlights.find(v => v.url === row.url);
-  assert.equal(item.classification.proofKind, 'ratified_protocol');
-  const cached = { status: 'approved', category: 'CRIAÇÃO', promptVersion: AI_PROMPT_VERSION,
-    evidence: 'visando à constituição do Consórcio Público Intermunicipal Geoparque Cariri Paraibano (CIGCP)' };
-  const reviewed = await reviewWeeklyFindings([item], { aiReviews: { [itemId(item)]: cached } }, {
-    apiKey: 'fake-test-key', reviewImpl: async () => { throw new Error('Não chamar a API'); },
-  });
-  assert.equal(reviewed.calls, 0);
-  assert.equal(reviewed.highlights[0].classification.category, 'PROTOCOLO');
-  assert.equal(reviewed.audit[0].category, 'PROTOCOLO');
-  assert.match(reviewed.highlights[0].classification.stage, /constituição.*não comprovad/);
-  assert.equal(JSON.stringify(state), before);
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'radar-weekly-boa-vista-'));
+  try {
+    const publishedAt = '2026-10-22T12:00:00Z';
+    const source = { kind: 'gazette', title: row.titulo, url: row.url, source: row.fonte,
+      publishedAt, sourcePublishedAt: publishedAt, summary: original.texto, rawText: original.texto,
+      classification: rule };
+    const triage = applySimpleTriage(source).triage;
+    assert.equal(triage.status, 'confirmado');
+    const fixture = { ...row, data_publicacao: publishedAt, data_noticia_original: publishedAt,
+      decisao_base: 'confirmado', triagem_automatica: triage };
+    // A rodada real pode substituir a observação. A regressão histórica usa seu
+    // próprio estado e catálogo, sem mudar decisões ou recibos de produção.
+    for (const [name, values] of [
+      ['arquivo-coletas.ndjson', [fixture]], ['textos-artigos.ndjson', [original]],
+      ['revisoes-eventos.ndjson', []], ['atos-identificados.ndjson', []],
+    ]) await writeFile(path.join(directory, name), values.map(JSON.stringify).join('\n') + '\n');
+    const window = weeklyWindow(new Date('2026-10-24T17:43:32Z'));
+    const stateFor = (item, firstSeenAt = publishedAt) => ({
+      seen: {}, pending: {}, runs: {}, weekly: { preserved: { sentAt: '2026-10-24T18:00:00Z' } },
+      observations: { reference: { firstSeenAt, lastSeenAt: '2026-10-30T17:00:00Z', item } },
+    });
+    for (const [observed, firstSeenAt] of [
+      [source, publishedAt],
+      [{ ...source, rawText: '', summary: 'Trecho da recaptura sem prova integral',
+        classification: { category: 'CRIAÇÃO', score: 10 }, publishedAt: '2026-10-30T17:00:00Z' },
+        '2026-10-30T17:00:00Z'],
+    ]) {
+      const state = stateFor(observed, firstSeenAt), before = JSON.stringify(state);
+      const prepared = await prepareWeeklyState(state, directory, window);
+      const report = buildWeeklyReport(prepared, window);
+      assert.equal(report.events, 1);
+      const item = report.highlights.find(v => v.url === row.url);
+      assert.ok(item, 'A prova canônica da fixture deve entrar no período de referência');
+      assert.equal(item.classification.category, 'PROTOCOLO');
+      assert.equal(item.triage.bodyHash, hash(original.texto));
+      assert.equal(item.triage.evidence, triage.evidence);
+      const cached = { status: 'approved', category: 'CRIAÇÃO', promptVersion: AI_PROMPT_VERSION,
+        evidence: 'visando à constituição do Consórcio Público Intermunicipal Geoparque Cariri Paraibano (CIGCP)' };
+      const reviewed = await reviewWeeklyFindings([item], { aiReviews: { [itemId(item)]: cached } }, {
+        apiKey: 'fake-test-key', reviewImpl: async () => { throw new Error('Não chamar a API'); },
+      });
+      assert.equal(reviewed.calls, 0);
+      assert.equal(reviewed.highlights.length, 1);
+      assert.equal(reviewed.highlights[0].classification.category, 'PROTOCOLO');
+      assert.equal(reviewed.audit[0].category, 'PROTOCOLO');
+      assert.match(reviewed.highlights[0].classification.stage, /constituição.*não comprovad/);
+      assert.equal(JSON.stringify(state), before);
+    }
+    // Ausência ou exclusão legítima não exige que um item exista no resumo.
+    const empty = { seen: {}, pending: {}, observations: {}, runs: {} };
+    assert.equal(buildWeeklyReport(await prepareWeeklyState(empty, directory, window), window).events, 0);
+    const historical = stateFor({ ...source, publicationDecision: 'historico',
+      publicationReason: 'Data do fonte anterior à janela de envio na recaptura.' });
+    const historicalBefore = JSON.stringify(historical);
+    const excluded = await prepareWeeklyState(historical, directory, window);
+    assert.equal(excluded.weeklySelectionAudit[0].included, false);
+    assert.equal(buildWeeklyReport(excluded, window).events, 0);
+    assert.equal(JSON.stringify(historical), historicalBefore);
+    for (const change of [
+      { triagem_automatica: { ...triage, weeklyAllowed: false } },
+      { triagem_automatica: { ...triage, bodyHash: '0'.repeat(64) } },
+      { data_publicacao: '2026-10-30T12:00:00Z', data_noticia_original: '2026-10-30T12:00:00Z' },
+    ]) {
+      await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), JSON.stringify({ ...fixture, ...change }) + '\n');
+      const state = stateFor(source), before = JSON.stringify(state);
+      const prepared = await prepareWeeklyState(state, directory, window);
+      assert.equal(prepared.weeklySelectionAudit.length, 1);
+      assert.equal(prepared.weeklySelectionAudit[0].included, false);
+      assert.equal(buildWeeklyReport(prepared, window).events, 0);
+      assert.equal(JSON.stringify(state), before);
+    }
+    assert.equal(await readFile(new URL('../state/news-state.json', import.meta.url), 'utf8'), production);
+  } finally {
+    await rm(directory, { recursive: true, force: true });
+  }
 });
