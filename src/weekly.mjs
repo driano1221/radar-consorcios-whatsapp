@@ -11,6 +11,7 @@ import { reviewWeeklyFindings } from './lib/ai-review.mjs';
 import { prepareWeeklyState } from './lib/weekly-selection.mjs';
 import { isWhatsAppCategoryAllowed } from './lib/whatsapp-policy.mjs';
 import { fileURLToPath } from 'node:url';
+import { loadApprovedWeekly,readApprovedWeekly } from './lib/approved-weekly.mjs';
 
 async function main() {
   const config = await loadConfig();
@@ -20,14 +21,20 @@ async function main() {
   // explícita de teste mostra uma janela móvel até o instante da prévia.
   const rebuild = process.env.WEEKLY_REBUILD_PREVIEW === 'true';
   const reference = process.env.WEEKLY_REFERENCE_TIME;
+  const approvedFile=process.env.WEEKLY_APPROVED_FILE||'';
+  const expectedGroupName=process.env.WEEKLY_EXPECTED_GROUP_NAME?.trim()||'';
+  if(approvedFile&&!expectedGroupName)throw Error('Edição aprovada exige o nome exato do grupo autorizado.');
   if (config.sendEnabled && (rebuild || reference)) throw new Error('Revisão de edição antiga só pode rodar sem envio.');
-  const now = reference ? new Date(reference) : new Date();
+  const approvedEnd=approvedFile&&(await readApprovedWeekly(config.projectRoot,approvedFile)).end;
+  const now = approvedEnd?new Date(approvedEnd):reference ? new Date(reference) : new Date();
   if (!Number.isFinite(now.getTime())) throw new Error('Data de referência inválida.');
   const window = weeklyWindow(now, process.env.WEEKLY_TEST === 'true');
   const reportState = await prepareWeeklyState(state,
     fileURLToPath(new URL('../data/catalogo/', import.meta.url)), window,
     { lookbackHours: config.lookbackHours, minimumScore: config.minimumScore,
       sourceActivations: config.webScrapers?.sites?.filter(site => site.alertsFrom) || [] });
+  const approved=approvedFile?await loadApprovedWeekly(config.projectRoot,approvedFile,
+    buildWeeklyReport(reportState,window,config.minimumScore).highlights):null;
   const edition = process.env.WEEKLY_EDITION?.trim() || '';
   if (edition && !/^[a-z0-9-]{1,40}$/.test(edition)) throw new Error('WEEKLY_EDITION inválida.');
   const id = `${process.env.WEEKLY_TEST === 'true' ? 'test:' : ''}${window.end.toISOString().slice(0, 10)}:${edition ? `${edition}:` : ''}${createHash('sha256').update(groupId).digest('hex').slice(0, 12)}`;
@@ -39,9 +46,12 @@ async function main() {
     console.log('Resumo desta semana já enviado para este destino.');
     return;
   }
+  if(approved&&existing?.messages&&JSON.stringify(existing.messages)!==JSON.stringify(approved.messages))
+    throw Error('Edição já preparada tem outro texto; preservar recibos e conferir antes de enviar.');
   state.shortLinks ||= {};
-  const baseReport = existing?.report || buildWeeklyReport(reportState, window, config.minimumScore);
-  const ai = config.aiReviewEnabled && !existing?.text && !existing?.messages
+  const baseReport = approved?{...buildWeeklyReport(reportState,window,config.minimumScore),highlights:approved.highlights}
+    :existing?.report || buildWeeklyReport(reportState, window, config.minimumScore);
+  const ai = !approved&&config.aiReviewEnabled && !existing?.text && !existing?.messages
     ? await reviewWeeklyFindings(baseReport.highlights, state, { apiKey: process.env.DEEPSEEK_API_KEY }) : null;
   // O corpo integral serve à conferência; não duplicar o acervo no estado semanal.
   const highlights = (ai?.highlights || baseReport.highlights).filter(isWhatsAppCategoryAllowed)
@@ -55,7 +65,8 @@ async function main() {
     sources: Object.fromEntries([...new Set(highlights.map((item) => item.source))]
       .map((source) => [source, highlights.filter((item) => item.source === source).length])) };
   const report = existing?.text || existing?.messages ? reviewedReport : { ...reviewedReport, highlights: [] };
-  if (!existing?.text && !existing?.messages) {
+  if(approved)report.highlights=reviewedReport.highlights;
+  else if (!existing?.text && !existing?.messages) {
     for (const item of reviewedReport.highlights) {
       const presented = await presentItem(item, state.shortLinks);
       const target = /^(?:https:\/\/cleanuri\.com\/|https:\/\/is\.gd\/)/.test(presented.displayUrl || '')
@@ -64,14 +75,14 @@ async function main() {
       report.highlights.push({ ...presented, displayUrl });
     }
   }
-  const messages = existing?.messages || (existing?.text
+  const messages = approved?.messages||existing?.messages || (existing?.text
     ? [existing.text] : formatWeeklyMessages(report, process.env.WEEKLY_TEST === 'true'));
   const text = messages.join('\n\n──────────\n\n');
   await mkdir(config.outputDir, { recursive: true });
   await writeFile(path.join(config.outputDir, 'weekly-preview.txt'), text + '\n');
   await writeFile(path.join(config.outputDir, 'weekly-report.json'), JSON.stringify(report, null, 2) + '\n');
   await writeFile(path.join(config.outputDir, 'weekly-selection-audit.json'), JSON.stringify(reportState.weeklySelectionAudit, null, 2) + '\n');
-  await writeFile(path.join(config.outputDir, 'weekly-ai-audit.json'), JSON.stringify({ enabled: config.aiReviewEnabled,
+  await writeFile(path.join(config.outputDir, 'weekly-ai-audit.json'), JSON.stringify({ enabled: !approved&&config.aiReviewEnabled,approvedEdition:Boolean(approved),
     calls: ai?.calls || 0, audit: ai?.audit || [] }, null, 2) + '\n');
   const deferred = ai?.audit.filter((entry) => entry.status === 'deferred').length || 0;
   if (deferred) {
@@ -82,6 +93,7 @@ async function main() {
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `## Resumo semanal\n\n${text}\n`);
   if (!config.sendEnabled) return;
   state.weekly[id] ||= { report, messages, createdAt: new Date().toISOString(), attempts: 0, sentParts: {} };
+  if(approved)Object.assign(state.weekly[id],{approvedFile,approvedMessagesSha256:approved.messagesSha256,expectedGroupName});
   state.weekly[id].messages ||= messages;
   state.weekly[id].sentParts ||= {};
   state.weekly[id].attempts += 1;
@@ -89,7 +101,7 @@ async function main() {
   const remaining = messages.map((message, index) => ({ text: message, index,
     messageId: createHash('sha256').update(`weekly:${id}:${index}`).digest('hex').slice(0, 32).toUpperCase() }))
     .filter((message) => !state.weekly[id].sentParts[message.index]);
-  await sendMessages({ authDir: config.authDir, groupId,
+  await sendMessages({ authDir: config.authDir, groupId,expectedGroupName,
     messages: remaining,
     onSent: async (message) => {
       state.weekly[id].sentParts[message.index] = new Date().toISOString();

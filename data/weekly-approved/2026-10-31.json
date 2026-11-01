@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "start": "2026-10-24T12:00:00.000Z",
+  "end": "2026-10-31T12:00:00.000Z",
+  "approvedBy": "Adriano — aprovação expressa neste chat em 01/11/2026",
+  "items": [
+    {
+      "id": "249cd95674bac4f7f65096b15d7cc9e8cc7b50f5df0310721c77813a0f3b0bef",
+      "label": "Guaraci/PR — convênio com Paraná Saúde para aquisição de produtos de saúde",
+      "url": "https://www.diariomunicipal.com.br/amp/materia/363D2954",
+      "date": "2026-10-30T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "a1625857cdec9574b5894b06bcfc2caf9e63d3cae80ff3cf30ad403a365cbdce"
+    },
+    {
+      "id": "1def44c90b12ca200de0e4886e2e6899ecb1587c03e6089d854eb79e5dc9984f",
+      "label": "Cafeara/PR — aditivo de prazo e valor do contrato de programa com o CISMEPAR",
+      "url": "https://www.diariomunicipal.com.br/amp/materia/951A4303",
+      "date": "2026-10-30T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "3655042da83d7d8aee4c9d11a511d43b5605efb1d711a6ac455b1a06cf28632f"
+    },
+    {
+      "id": "7c98ef8afdec009fd823752452e2a3f2bcb655a8de3266f847e4831d2c7b7501",
+      "label": "Sertanópolis/PR — convênio com Paraná Saúde para produtos de saúde",
+      "url": "https://www.diariomunicipal.com.br/amp/materia/C9FD1751",
+      "date": "2026-10-30T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "85a20bbae320485a934121761137ce04b6954033a4ccd3079d37a77a80b2de23"
+    },
+    {
+      "id": "5079c6b745d437445a0b3a15b65a3edd47c4157b16e7314bc9f73572f9b0ca94",
+      "label": "Porecatu/PR — convênio com Paraná Saúde para produtos de saúde",
+      "url": "https://www.diariomunicipal.com.br/amp/materia/7F8A7831",
+      "date": "2026-10-30T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "3e55a0f5052337152a017f0428c5e3054acf64331706de476c6102e8e9dd198e"
+    },
+    {
+      "id": "b1f4aeab91f2b7b383c4c143cdc1900b975aa7aa23799cc03aaba7e16b245ad5",
+      "label": "Nova Itaberaba/SC — rateio de serviços médicos com o consórcio de saúde do Oeste catarinense",
+      "url": "https://diariomunicipal.sc.gov.br/atos/8875133",
+      "date": "2026-10-29T14:01:55-03:00",
+      "category": "RATEIO",
+      "bodyHash": "8e2c2bc6b6846e6d47c5e8bdde81817d92f565b971ac0f964a08d135e86427fc"
+    },
+    {
+      "id": "7553fceeb2fe56bcbe8198ad1ee86cbbbc74edecc083f9892278aa80390bb8aa",
+      "label": "Coronel João Pessoa/RN — contrato de rateio com o CIMOP para manejo de resíduos",
+      "url": "https://www.diariomunicipal.com.br/femurn/materia/AED8176E",
+      "date": "2026-10-29T15:00:00.000Z",
+      "category": "RATEIO",
+      "bodyHash": "3d8e550e532a60970d997e61ed4c4dc3169fa22f0dbf86805fc17ea8f09c7b6a"
+    },
+    {
+      "id": "32f93c03b86396a97c8ac1f1f9748180516f9b833d2d5b72f713c8d083dd4c1d",
+      "label": "Apiacás/MT — terceiro aditivo de rateio com o consórcio de saúde do Alto Tapajós",
+      "url": "https://amm.diariomunicipal.org/publicacao/1934112/",
+      "date": "2026-10-29T15:00:00.000Z",
+      "category": "RATEIO",
+      "bodyHash": "1181ee216b6fa5d0019457676227c07179765c573db92d113060a7ff64061635"
+    },
+    {
+      "id": "9ab82e5d25eec4184699fbd57ebd9f11ba27a88eeef2db5808e17f23f16d2a65",
+      "label": "Consórcio de Saúde do Oeste de SC — norma sobre o Plano de Contratações Anual (Governança)",
+      "url": "https://diariomunicipal.sc.gov.br/atos/8874554",
+      "date": "2026-10-29T10:52:20-03:00",
+      "category": "GOVERNANÇA",
+      "bodyHash": "01ef91aefca0c0faa1bbc12f935a1c37c265a8caf2a7fa8b826ff1ad7c59a733"
+    },
+    {
+      "id": "88deee97f87bbfcb547d41bdbc9d33a940539bf029d44636bad5c8e15a5ee240",
+      "label": "Jaraguá do Sul/SC — contrato de rateio para uso de equipamento com o CIGAMVALI",
+      "url": "https://diariomunicipal.sc.gov.br/atos/8868841",
+      "date": "2026-10-28T15:05:43-03:00",
+      "category": "RATEIO",
+      "bodyHash": "9bdbb52f878eca73914cd5144ae65c798ab14e67b2db96c793dd4ef3f7232513"
+    },
+    {
+      "id": "687321da7cb7badb2f9a3bd49a5b90a51eac6dc5584a4a3f6d7df228e00babf9",
+      "label": "Itaperuçu/PR — segundo aditivo de reajuste do rateio de resíduos sólidos",
+      "url": "https://www.diariomunicipal.com.br/amp/materia/829F6CE6",
+      "date": "2026-10-28T15:00:00.000Z",
+      "category": "RATEIO",
+      "bodyHash": "e38a936aac8cee54e55de832d0b4abb627470f9b1f6a6a80305c99292d3c56ae"
+    },
+    {
+      "id": "fcd2272cfd9ec215d4c55dc08dea75c5e0dc89c3f6e4b154ca5590efe3941457",
+      "label": "Acari/RN — aditivo de R$ 100 mil ao rateio com o CIS/Seridó",
+      "url": "https://www.diariomunicipal.com.br/femurn/materia/F95E33D7",
+      "date": "2026-10-28T15:00:00.000Z",
+      "category": "RATEIO",
+      "bodyHash": "0649ae8ffb5841b991ea81bacb5c85c44b661d92f5767ebf7755814b88fcd743"
+    },
+    {
+      "id": "5c533f0f7ef943e83386957fa76d4bfaa7cb062e0047e5dafbe88fd3033685b2",
+      "label": "Teófilo Otoni/MG — sétimo aditivo financeiro do convênio com o CISEVMJ",
+      "url": "https://www.diariomunicipal.com.br/amm-mg/materia/4267834D",
+      "date": "2026-10-28T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "f088d1006dd367a32954db5d8a128663df5a623e768a25b75f30f024dd5c777d"
+    },
+    {
+      "id": "a87121e574f744adb34ede87ed007a2b266decbf5982ce5aa6077866f69513d0",
+      "label": "Viçosa/RN — contrato de rateio administrativo com o CIMOP",
+      "url": "https://www.diariomunicipal.com.br/femurn/materia/19850DE7",
+      "date": "2026-10-27T15:00:00.000Z",
+      "category": "RATEIO",
+      "bodyHash": "d43e7867d3056a82abf2d0142a2bb634154c323b75b344ffe23ae71d70716950"
+    },
+    {
+      "id": "db01e84c21595f8d0816454a31dd4e6a3cd5b1b8bd66cdbfbdcfc18d31ac3053",
+      "label": "Campo Novo do Parecis/MT — aditivo financeiro de rateio com o CISMNORTE",
+      "url": "https://amm.diariomunicipal.org/publicacao/1931763/",
+      "date": "2026-10-27T15:00:00.000Z",
+      "category": "RATEIO",
+      "bodyHash": "273eb11af6637d3e02e55c591fd3d1b45ccc25a1e37ec239248af7c961797e6d"
+    },
+    {
+      "id": "7fe8c5feef0819f0eb0dfb10a4e237d7d3ed0b38d4f59425f888aabed2a77b92",
+      "label": "Nova Nazaré/MT — subscrição do protocolo de intenções do CONCLIMA",
+      "url": "https://amm.diariomunicipal.org/publicacao/1931685/",
+      "date": "2026-10-27T15:00:00.000Z",
+      "category": "PROTOCOLO",
+      "bodyHash": "ac37b9b0f61e5911c8ca8e4992257a27c9c6fe55d971c74f7375357c90d1db08"
+    },
+    {
+      "id": "7dfb67c96ae8bffdc35a55bc1ee73f0c0626d4c62b2bdbffaa9579bc752e0720",
+      "label": "Tomazina/PR — convênio com Paraná Saúde para aquisição de produtos de saúde",
+      "url": "https://www.diariomunicipal.com.br/amp/materia/7F50D5EE",
+      "date": "2026-10-27T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "da2a6f38ecee045b2d98296b20a5bcf98803af5eef52a34bf206004e4c279bc8"
+    },
+    {
+      "id": "27d111172320318b88d3bcd796e2f16f6908706d549eb82d6820d2a14bcf0618",
+      "label": "Realeza/PR — convênio com Paraná Saúde para assistência farmacêutica",
+      "url": "https://www.diariomunicipal.com.br/amp/materia/667B5A82",
+      "date": "2026-10-27T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "e3cdcd6f14a1fab6ee2529a3e9b8664bbca14f7beb4e84b9fb993f160ea413c7"
+    },
+    {
+      "id": "e33a3e6f6fd094748f1518c3aa93d455c50cceabc7d7726971f8284f2708989c",
+      "label": "Vila Bela da Santíssima Trindade/MT — lei de ratificação do protocolo da ARIS MT",
+      "url": "https://amm.diariomunicipal.org/publicacao/1931982/",
+      "date": "2026-10-27T15:00:00.000Z",
+      "category": "PROTOCOLO",
+      "bodyHash": "c9cb69ff0fc94a8012adc8c340694b91a25139b98adb52633cc514bcec4abc1d"
+    },
+    {
+      "id": "68036c384c64ba4152db3b299cae87984a8eafcacb313a32bb22235791858171",
+      "label": "Novo São Joaquim/MT — ratificação do estatuto consolidado do CIDESAPA (Governança)",
+      "url": "https://amm.diariomunicipal.org/publicacao/1931321/",
+      "date": "2026-10-26T15:00:00.000Z",
+      "category": "GOVERNANÇA",
+      "bodyHash": "9b441cfb533152dbf69a772a087cced93d6352756fd586b640365f8613d8030f"
+    },
+    {
+      "id": "972d53779109b91548c40a68845e3dfc0425fe2b610de15d5da8f0e502e6ba76",
+      "label": "Querência/MT — primeiro aditivo de acréscimo ao rateio com o CODEMA",
+      "url": "https://amm.diariomunicipal.org/publicacao/1931024/",
+      "date": "2026-10-26T15:00:00.000Z",
+      "category": "RATEIO",
+      "bodyHash": "0f04a3cd19b7374004f2128099c8c1ef51796e1db3467f35fa7d0d62cf24032a"
+    },
+    {
+      "id": "dcddccab9c11cdec9bed98051b106d127a028a66039427d4a84901cb299b4e4e",
+      "label": "Cristália/MG — contrato de programa de serviços de saúde com o CISARVG",
+      "url": "https://www.diariomunicipal.com.br/amm-mg/materia/9405C735",
+      "date": "2026-10-26T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "d7f832c552ed98af7c0a9165860c80c77ff0244169900643ffb273b076571648"
+    },
+    {
+      "id": "32bf7c1d99d86c0e93a7e5ec379fceb63c81005726dfa9998d9470ed1e6be28f",
+      "label": "Paula Cândido/MG — contrato de programa com o CIMVALPI para iluminação pública",
+      "url": "https://www.diariomunicipal.com.br/amm-mg/materia/39CA3B4B",
+      "date": "2026-10-26T15:00:00.000Z",
+      "category": "ATUAÇÃO",
+      "bodyHash": "75de6a6d0060f72bf86095bd2b7c9ce97cd228f07faf749d8aae399a8ae180c7"
+    }
+  ],
+  "messagesSha256": "e952f96388d23cf6734fc20b68d193869b1e66b11cb24deb78ae7697428129b8"
+}

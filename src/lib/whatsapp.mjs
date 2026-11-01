@@ -98,11 +98,18 @@ export function validateGroupId(groupId) {
   }
 }
 
-export async function sendMessages({ authDir, groupId, messages, delayMs = 5000, onSent }) {
+export async function sendMessages({ authDir, groupId, messages, delayMs = 5000, onSent,
+  expectedGroupName='',connectImpl=connectWhatsApp }) {
   validateGroupId(groupId);
-  const socket = await connectWhatsApp({ authDir });
+  const socket = await connectImpl({ authDir });
   const sent = [];
   try {
+    if(expectedGroupName){
+      const group=await socket.groupMetadata(groupId);
+      if(group.subject?.normalize('NFC').trim()!==expectedGroupName.normalize('NFC').trim())
+        throw new Error('Nome do grupo difere do destino autorizado; nenhuma mensagem enviada.');
+      console.log(`Destino conferido: ${group.subject}`);
+    }
     for (const message of messages) {
       await socket.sendMessage(groupId, { text: message.text }, message.messageId ? { messageId: message.messageId } : {});
       sent.push(message);

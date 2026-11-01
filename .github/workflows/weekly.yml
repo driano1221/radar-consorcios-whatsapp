@@ -26,6 +26,14 @@ on:
         description: Data ISO de referência para prévia histórica (somente sem envio)
         type: string
         default: ''
+      approved_summary:
+        description: Arquivo de edição expressamente aprovada, sem coleta nem IA
+        type: string
+        default: ''
+      expected_group_name:
+        description: Nome exato do grupo autorizado; conferir antes de transmitir
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -52,6 +60,8 @@ jobs:
       WEEKLY_EDITION: ${{ inputs.edition }}
       WEEKLY_REBUILD_PREVIEW: ${{ format('{0}', inputs.rebuild_preview) }}
       WEEKLY_REFERENCE_TIME: ${{ inputs.reference_time }}
+      WEEKLY_APPROVED_FILE: ${{ inputs.approved_summary }}
+      WEEKLY_EXPECTED_GROUP_NAME: ${{ inputs.expected_group_name }}
     steps:
       - uses: actions/checkout@v7
         with:
