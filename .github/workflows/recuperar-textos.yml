@@ -67,6 +67,7 @@ jobs:
             echo "IDs inválidos"; exit 1
           fi
           node scripts/backfill-article-text.mjs --ids="$RECOVERY_IDS" --force --include-sent --apply
+          node scripts/backfill-google-pdfs.mjs --ids="$RECOVERY_IDS" --retry-failed --limit=10 --apply
       - name: Recuperar até 20 textos sem enviar ao WhatsApp
         if: env.RECOVERY_IDS == ''
         run: node scripts/backfill-article-text.mjs --limit=20 --include-sent --apply

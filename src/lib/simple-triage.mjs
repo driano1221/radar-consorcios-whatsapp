@@ -59,6 +59,9 @@ export function decideSimpleTriage(item) {
   const literalRule = locateQuote(rule.evidenceText, [body]) ||
     locateQuote(String(rule.evidenceText || '').split(/\s+/).slice(1, -1).join(' '), [body]);
   if (rule.documentConflict) return { ...review(rule.documentConflict.reason), evidence:body.slice(0,1300), checks: rule.documentConflict.checks };
+  const explicitRejection=(rule.reasons||[]).find(reason=>reason.startsWith('rejeitado:'));
+  if(rule.category==='GERAL'&&literalRule&&explicitRejection)
+    return reject(explicitRejection,literalRule,'regra_com_prova');
   // A published rule or operative legal ratification is itself the fact. A
   // generic older AI interpretation must not turn it into accession/control,
   // or require human rereading solely because the regulation is lengthy.

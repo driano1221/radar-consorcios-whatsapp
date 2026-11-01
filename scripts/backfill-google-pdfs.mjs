@@ -9,8 +9,9 @@ import { fileURLToPath } from 'node:url';
 import googleNewsDecoder from 'google-news-url-decoder';
 import { loadCatalog, saveCatalog } from '../src/lib/catalog.mjs';
 import {persistArticleTexts} from '../src/lib/article-text-store.mjs';
-import {reprocessTriage} from './reprocess-triage.mjs';
-import {recoveryDelayMs} from '../src/lib/recovery-policy.mjs';
+import {reprocessTriage,upgradeLegacyTriage} from './reprocess-triage.mjs';
+import {pdfRecoveryDue,recoveryAttempt,attachRecoveredText} from '../src/lib/recovery-policy.mjs';
+import {loadOriginalTriage} from '../src/lib/simple-triage.mjs';
 
 const execFileAsync = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -18,6 +19,8 @@ const directory = path.join(root, 'data', 'catalogo');
 const output = path.join(directory, 'recuperacao-pdf-google.ndjson');
 const apply = process.argv.includes('--apply');
 const retryFailed = process.argv.includes('--retry-failed');
+const requestedIds=(process.argv.find(arg=>arg.startsWith('--ids='))?.slice(6)||'').split(',').filter(Boolean);
+if(requestedIds.some(id=>!/^[a-f0-9]{64}$/.test(id)))throw new Error('IDs inválidos');
 const limit = Math.min(30, Math.max(1, Number(process.argv.find((value) => value.startsWith('--limit='))?.split('=')[1] || 15)));
 const { GoogleDecoder } = googleNewsDecoder;
 const decoder = new GoogleDecoder();
@@ -68,14 +71,8 @@ async function fetchPdf(url) {
   throw new Error('redirecionamentos_demais');
 }
 
-const selected = [...records.values()].filter((row) =>
-  !reviewedIds.has(row.id) && !fullTextIds.has(row.id) &&
-  (['destino_pdf', 'destino_nao_html'].includes(row.article_recovery_reason) ||
-    (retryFailed && row.article_recovery_reason?.startsWith('falha:')) ||
-    row.triagem_automatica?.status === 'processando' && /\.pdf(?:[?#]|$)/i.test(row.article_resolved_url || row.article_url || row.url)) &&
-  (!existing.has(row.id) || (retryFailed && (existing.get(row.id).situacao?.startsWith('falha:') || row.triagem_automatica?.status==='processando') &&
-    Date.now() - new Date(existing.get(row.id).tentado_em || 0).getTime() >= recoveryDelayMs(existing.get(row.id).tentativas))) &&
-  (/^https:\/\/news\.google\.com\//.test(row.url) || /\.pdf(?:[?#]|$)/i.test(row.url))).slice(0, limit);
+const selected = [...records.values()].filter(row=>pdfRecoveryDue(row,{requestedIds,hasText:fullTextIds.has(row.id),
+  reviewed:reviewedIds.has(row.id),previous:existing.get(row.id),retryFailed})).slice(0, limit);
 const results = [];
 for (const [index, row] of selected.entries()) {
   const result = { documento_id: row.id, url: row.url, url_pdf: '',
@@ -111,14 +108,21 @@ for (const [index, row] of selected.entries()) {
     }
   }
   results.push(result);
-  if (apply) records.set(row.id, { ...row, article_url: result.url_pdf || row.article_url || '',
-    article_recovery_reason: result.situacao === 'trechos por página recuperados' ? '' : result.situacao });
+  if (apply) records.set(row.id, recoveryAttempt(row,{now:result.tentado_em,
+    resolvedUrl:result.url_pdf||'',reason:result.situacao==='trechos por página recuperados'&&!result.paginas_ocr_pendente.length?'':result.situacao}));
 }
 console.log(`[pdf] ${selected.length} documento(s) selecionado(s); ${results.filter((row) => row.trechos.length).length} com trechos recuperados.`);
 if (apply && results.length) {
   for (const row of results) existing.set(row.documento_id, row);
   await writeFile(output, [...existing.values()].map((row) => JSON.stringify(row)).join('\n') + '\n', 'utf8');
-  await reprocessTriage(directory,{apply:true});
+  const state=JSON.parse(await readFile(path.join(root,'state/news-state.json'),'utf8'));
+  const texts=(await readFile(path.join(directory,'textos-artigos.ndjson'),'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);
+  for(const text of texts)if(selected.some(row=>row.id===text.documento_id))
+    records.set(text.documento_id,attachRecoveredText(records.get(text.documento_id),text));
   await saveCatalog(directory, records);
-  console.log('[pdf] Provas por página salvas; nenhum evento confirmado automaticamente.');
+  await reprocessTriage(directory,{state,apply:true});
+  for(const id of (await loadOriginalTriage(directory)).keys())reviewedIds.add(id);
+  await upgradeLegacyTriage(directory,records,state,reviewedIds);
+  await saveCatalog(directory,records);
+  console.log('[pdf] Provas por página e triagem salvas; nenhuma mensagem enviada.');
 }

@@ -19,6 +19,17 @@ export function recoveryDue(row, { now = Date.now(), force = false } = {}) {
     : !Number.isFinite(last) || now >= last + recoveryDelayMs(row.article_attempts,row.triagem_automatica?.status==='processando');
 }
 
+export function pdfRecoveryDue(row,{requestedIds=[],hasText=false,reviewed=false,previous,retryFailed=false,now=Date.now()}={}) {
+  if(hasText||reviewed)return false;
+  const pdf=/\.pdf(?:[?#]|$)/i.test(row.article_resolved_url||row.article_url||row.url);
+  if(!pdf&&!['destino_pdf','destino_nao_html'].includes(row.article_recovery_reason)&&
+    !(retryFailed&&row.article_recovery_reason?.startsWith('falha:')))return false;
+  if(requestedIds.length)return requestedIds.includes(row.id);
+  if(!/^https:\/\/news\.google\.com\//.test(row.url)&&!pdf)return false;
+  return !previous||retryFailed&&(previous.situacao?.startsWith('falha:')||row.triagem_automatica?.status==='processando')&&
+    now-Date.parse(previous.tentado_em||0)>=recoveryDelayMs(previous.tentativas,row.triagem_automatica?.status==='processando');
+}
+
 export function recoveryAttempt(row, { now, reason = '', resolvedUrl = '' }) {
   const attempts = Number(row.article_attempts || 0) + 1;
   return { ...row, article_attempted_at: now, article_attempts: attempts,

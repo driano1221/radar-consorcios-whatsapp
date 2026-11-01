@@ -1,10 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { recoveryDue, recoveryDelayMs, recoveryAttempt, attachRecoveredText, isRecoveryLead } from '../src/lib/recovery-policy.mjs';
+import { recoveryDue, recoveryDelayMs, recoveryAttempt, attachRecoveredText, isRecoveryLead,pdfRecoveryDue } from '../src/lib/recovery-policy.mjs';
 import { fetchWithRetry } from '../src/lib/http.mjs';
 import { enrichArticle, enrichArticles, isChallengePage } from '../src/lib/article-enrichment.mjs';
 import { redactPublicText } from '../src/lib/article-text-store.mjs';
 const now = '2026-10-16T16:00:00.000Z';
+
+test('PDF pendente e endpoint sem extensão chegam ao leitor PDF; escolha explícita não inclui outras fontes',()=>{
+  const row={id:'salto',url:'https://data.queridodiario.ok.org.br/salto/edicao.pdf',triagem_automatica:{status:'processando'}};
+  assert.equal(pdfRecoveryDue(row),true);
+  assert.equal(pdfRecoveryDue(row,{requestedIds:['outro']}),false);
+  assert.equal(pdfRecoveryDue(row,{requestedIds:['salto'],hasText:true}),false);
+  assert.equal(pdfRecoveryDue(row,{requestedIds:['salto'],reviewed:true}),false);
+  const chamber={id:'camara',url:'https://www.camara.leg.br/mostrarintegra?codteor=123',article_recovery_reason:'destino_nao_html'};
+  assert.equal(pdfRecoveryDue(chamber,{requestedIds:['camara']}),true);
+  assert.equal(pdfRecoveryDue({...chamber,article_recovery_reason:'http_403'},{requestedIds:['camara']}),false);
+  const previous={tentado_em:now,tentativas:4,situacao:'falha: http_403'};
+  assert.equal(pdfRecoveryDue(row,{previous,retryFailed:true,now:Date.parse(now)+1000}),false);
+  assert.equal(pdfRecoveryDue(row,{previous,retryFailed:true,now:Date.parse(now)+24*3600000}),true);
+});
 
 test('orçamento esgotado não marca itens não tentados como falha ou sucesso', async () => {
   let calls = 0;

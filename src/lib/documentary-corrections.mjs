@@ -1,3 +1,4 @@
+import {operativeAct} from './operative-act.mjs';
 // Rules learned from the joint review. Match the operative document, not a
 // mention in its legal foundations. Human reviews still take precedence.
 export function documentaryCorrection(title, text, sourceUrl = '') {
@@ -184,5 +185,5 @@ export function documentaryCorrection(title, text, sourceUrl = '') {
   if (/^lei\b/i.test(title) && /conv[eê]nio de coopera[cç][aã]o intermunicipal/i.test(head) && hypothetical)
     return reject('cooperação municipal autorizada; consórcio apenas eventual e futuro',
       'não há consórcio constituído, protocolo firmado nem atividade realizada por consórcio existente', hypothetical);
-  return null;
+  return operativeAct(title,text);
 }
