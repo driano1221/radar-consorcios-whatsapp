@@ -17,6 +17,11 @@ export function operativeAct(title,text) {
   if(/^di[aá]rio oficial/i.test(title)&&recital&&[...text.matchAll(/\bcons[oó]rcio\b/gi)].length===1)
     return reject('diário municipal; consórcio citado somente em fundamento de ato ambiental municipal',
       'única menção é referência a norma preexistente no considerando, sem novo ato do consórcio',recital);
+  const request=/\bN[º°o.]\s*\d+\/\d{4}\s*[–—-]\s*Vereador[^.]{0,140}\bPresid[eê]ncia do Cons[oó]rcio[^.]{0,160}\bSolicitando informa[cç][oõ]es[^.]{0,250}/i.exec(text);
+  if(/^di[aá]rio oficial/i.test(title)&&request&&[...text.matchAll(/\bcons[oó]rcios?\b/gi)].length===1&&
+    /REQUERIMENTOS SUJEITOS A DESPACHO DO PRESIDENTE/i.test(text.slice(Math.max(0,request.index-5000),request.index)))
+    return reject('requerimento de informação sujeito a despacho; apuração e julgamento não comprovados',
+      'único registro consorcial é pedido de informação ainda sujeito a despacho; não comprova fiscalização realizada nem ato institucional do consórcio',request);
 
   if(law||/^decreto\b/i.test(title)) {
     const credit=/(?:abre cr[eé]dito suplementar ao or[cç]amento|abertura de cr[eé]dito adicional (?:especial|suplementar)|altera o quadro de detalhamento de despesas|estabelece o or[cç]amento do munic[ií]pio|estabelece as diretrizes or[cç]ament[aá]rias|disp[oõ]e sobre as diretrizes para a elabora[cç][aã]o da lei or[cç]ament[aá]ria)[^.]{0,180}/i.exec(head);
@@ -36,7 +41,9 @@ export function operativeAct(title,text) {
     if(law&&revenue)return result('FINANÇAS','consortium_budget_act','incorporação de IRRF à receita do consórcio autorizada; arrecadação e pagamento não verificados',
       'lei disciplina receita própria; referência a controle judicial é cláusula condicional, não crise comprovada',revenue);
     const policy=/\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*esta lei institui a pol[ií]tica municipal de saneamento b[aá]sico[^.]{0,300}/i.exec(head);
-    if(law&&policy&&!/cons[oó]rcio (?:intermunicipal|interfederativo|regional)|cons[oó]rcio p[uú]blico [A-ZÀ-Ú]{2,}/.test(text))
+    const namedConsortium=/\bcons[oó]rcio (?:intermunicipal|interfederativo|regional|p[uú]blico de (?:sa[uú]de|desenvolvimento|gest[aã]o|saneamento))\b/i.test(text)||
+      [...text.matchAll(/\bcons[oó]rcio p[uú]blico\s+(\p{L}+)/giu)].some(([,name])=>name.length>=3&&name===name.toUpperCase()&&!['DOS','DAS','PARA'].includes(name));
+    if(law&&policy&&!namedConsortium)
       return reject('política municipal de saneamento; cooperação consorcial apenas genérica',
         'norma municipal cita formas possíveis de gestão; não identifica ingresso ou instrumento com consórcio determinado',policy);
     const rateioRule=/\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*os valores repassados pelo munic[ií]pio[^.]{0,320}ser[aã]o reajustados anualmente[^.]{0,140}/i.exec(text);
@@ -103,7 +110,8 @@ export function operativeAct(title,text) {
   const works=/\bA Prefeitura[^.]{0,220}\bobras[^.]{0,200}\bprojeto de engenharia elaborado pelo Cons[oó]rcio[^.]{0,130}/i.exec(text);
   if(works)return result('ATUAÇÃO','reported_ongoing_work','início de obra municipal com projeto do consórcio relatado; conclusão e financiamento da obra não inferidos',
     'notícia diferencia projeto elaborado pelo consórcio e execução pela prefeitura; gargalos históricos não são crise atual',works);
-  const presentation=/\bA Confedera[cç][aã]o Nacional de Munic[ií]pios[^.]{0,30}se reuniu com[^.]{0,230}\bapresentar o Cons[oó]rcio[^.]{0,120}/i.exec(text);
+  const presentation=/\bA Confedera[cç][aã]o Nacional de Munic[ií]pios[^.]{0,30}se reuniu com[^.]{0,230}\bapresentar o Cons[oó]rcio[^.]{0,120}/i.exec(text)||
+    (/\bapresentaram o Cons[oó]rcio Nacional\b/i.test(text)&&/\bConfedera[cç][aã]o Nacional de Munic[ií]pios[^.]{0,30}realizou atendimentos t[eé]cnicos[^.]{0,200}/i.exec(text));
   if(presentation)return result('ATUAÇÃO','performed_institutional_activity','reunião técnica e apresentação do consórcio realizadas; adesão municipal e serviços futuros não comprovados',
     'reunião documentada de orientação; possibilidade de apoio não equivale a ingresso ou atendimento executado',presentation);
   return null;

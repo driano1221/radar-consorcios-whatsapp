@@ -336,9 +336,16 @@ export async function saveCatalog(directory, records, { now = new Date(), lookba
   const humanIds = new Set(editorialReviews.map(r => r.documento_id));
   all = all.map(row => {
     const decision = originals.get(row.id);
-    if (humanIds.has(row.id) || !validOriginalTriage(row, decision)) return row;
+    if(humanIds.has(row.id)||!validOriginalTriage(row,decision))return row;
     const {bodyMatches, ...triage} = decision;
-    return {...row, decisao_base:triage.status, triagem_automatica:triage};
+    // Persist the canonical projection too: a cached observation may carry an
+    // older category/stage even when the separate decision remains intact.
+    return {...row, decisao_base:triage.status, triagem_automatica:triage,
+      tipo_evento:triage.status==='descartado'?'GERAL':triage.category,etapa:triage.stage||'',
+      evidencia_triagem:triage.evidence,fonte_evidencia_triagem:triage.sourceUrl,metodo_triagem:triage.method||'',
+      situacao_analise:`${triage.status} pela triagem — ${triage.reason}`,
+      decisao_alerta:row.enviado_em?'enviado':'historico',
+      motivo_alerta:'Revisão retroativa preservada; não autoriza envio ou resumo retroativo.'};
   });
   await writeFile(path.join(directory, 'arquivo-coletas.ndjson'), all.map((row) => JSON.stringify(row)).join('\n') + '\n');
   const reviewed = [...all, ...acts].map((row) => {

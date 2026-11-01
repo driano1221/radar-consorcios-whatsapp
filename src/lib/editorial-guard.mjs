@@ -130,7 +130,8 @@ export async function loadConfirmedEventRegistry(directory) {
 }
 
 export function applyEditorialGuard(item, guard) {
-  const review = guard.get(canonicalUrl(item.url || ''));
+  const review = guard.get(canonicalUrl(item.url || '')) ||
+    guard.get(canonicalUrl(item.articleUrl || ''));
   if (!review) return item;
   if (review.origin === 'original_automatic') return { ...item, triage: review.decision,
     catalogDecision: review.decision.status, publicationDecision: 'historico',

@@ -1,18 +1,18 @@
 # Panorama da base histórica
 
 - 5311 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 345 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 121 identidades candidatas de consórcios; 207 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 150 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 342 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 121 identidades candidatas de consórcios; 205 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 149 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 116 |
-| GOVERNANÇA | 55 |
+| ATUAÇÃO | 115 |
+| GOVERNANÇA | 54 |
 | RATEIO | 53 |
-| CONTROLE | 30 |
+| CONTROLE | 29 |
 | FINANÇAS | 22 |
 | ADESÃO AUTORIZADA | 21 |
 | PROTOCOLO | 17 |
@@ -40,7 +40,7 @@
 | 2026-10-30 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-10-30/f6aced9b29c1d9df9c69dd875fa64ae02715cfc5.pdf) |
 | 2026-10-30 | RATEIO — contrato de rateio citado; celebração a conferir | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [Diário Oficial de Dois Irmãos (RS)](https://data.queridodiario.ok.org.br/4306403/2026-10-30/2cf3b3383634142432a5b448e1e6b07700c9fe33.pdf) |
 | 2026-10-30 | PROTOCOLO — relato — conferir documento original | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [Sancionada lei que autoriza consórcio assumir inspeção sanitária de produtos em Alta Floresta - Só Notícias](https://news.google.com/rss/articles/CBMizgFBVV95cUxPYnJabHdSRmF5a1VEdkx6R1ZFUDd0a00tSlFqcUxXV1Z1OFN2Ql8wUmFqZ1h4T1A5ZzJVR2pZOUpZUGo3RG1RWWxCOXNBN1pFZjVSbmVTMHRvNFNzcmJ5b0FXRldPd3FDYl9Ub0kySFN1RU1iTGpHQWRmemx1Y1kzSjRFNjNDV2ZOVXdWeFc1OWhqRnB4M0loeGhseDRuYmNTeS1wZlg1dTByellyN0dDNVBXM3o1dGYtQkpKWVB1NmJmQXdzbWpqVGRRRHpQUQ?oc=5) |
-| 2026-10-29 | ATUAÇÃO —  | triagem automática com fonte alternativa — pendente: Uma das evidências não está literalmente no documento indicado. | [CISGA investe R$ 365 mil em caminhonete zero km para atender municípios do Araguaia](https://www.semana7.com.br/geral-economia/cisga-investe-r-365-mil-em-caminhonete-zero-km-para-atender-municipios-do-araguaia/84526) |
+| 2026-10-29 | ATUAÇÃO — reunião técnica e apresentação do consórcio realizadas; adesão municipal e serviços futuros não comprovados | confirmado pela triagem — reunião documentada de orientação; possibilidade de apoio não equivale a ingresso ou atendimento executado | [CNM dialoga com Conceição do Pará (MG) sobre redução de riscos de desastres e apresenta o Conclima - Confederação Nacional de Municípios](https://news.google.com/rss/articles/CBMi0gFBVV95cUxQWlplbF81WFBJSDNoa1JDQWZEdVJRZmdINU11RkFqZmV6SXRTYjd5Zl9zQlo5eUhSZkowcFpiQjBZc2dvZnJoR2I1Q2JxT2JtMjR1UW5SMlIyLTE4bURPOXhuSzRueVlNR3g2MExjR2VLckp0Zi1jT3NuWk11bWxQcFpRVkY0OEhuaUVmYVA1MmFyU1dyeGEyRXFXd0NWQlNqQkZPUzVKZjE2V2xhNmtNcW5QMk1PVFY5Zm5EMlhLb1g3azdJMmNnbjF2b0E3ZmFhQXc?oc=5) |
 | 2026-10-29 | RATEIO — contrato de rateio citado; celebração a conferir | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [3º TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026.](https://amm.diariomunicipal.org/publicacao/1934112/) |
 | 2026-10-29 | ADESÃO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [LEI MUNICIPAL Nº 1.281, DE 20 AGOSTO DE 2026](https://www.diariomunicipal.com.br/amupe/materia/2A57620A) |
 | 2026-10-29 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO CONTRATO DE RATEIO Nº 2026030/001](https://www.diariomunicipal.com.br/femurn/materia/AED8176E) |

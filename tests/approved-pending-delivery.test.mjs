@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {selectApprovedPending,deliverApprovedPending} from '../scripts/send-approved-pending.mjs';
 import {itemId} from '../src/lib/dedupe.mjs';
+import {applyEditorialGuard} from '../src/lib/editorial-guard.mjs';
 
 function fixture() {
   const rawText='CONVÊNIO Nº 02/2026 QUE ENTRE SI CELEBRAM O MUNICÍPIO DE TESTE E O CONSÓRCIO INTERMUNICIPAL DE SAÚDE. O MUNICÍPIO DE TESTE, CONTRATANTE, e de outro lado o CONSÓRCIO INTERMUNICIPAL DE SAÚDE resolvem celebrar o presente convênio para a prestação compartilhada de serviços de saúde. DATA DA ASSINATURA: 01/11/2026.';
@@ -10,6 +11,14 @@ function fixture() {
   item.id=itemId(item);
   return {item,state:{seen:{},pending:{[item.id]:{item,attempts:0}}},options:{guard:new Map(),confirmedEvents:new Map()}};
 }
+test('alias novo do Google respeita decisão retroativa da URL original, sem bloquear a fonte inteira',()=>{
+  const original='https://fonte.gov.br/convenio/2';
+  const guard=new Map([[original,{origin:'original_automatic',decision:{status:'confirmado',category:'ATUAÇÃO',retroactive:true}}]]);
+  const alias={url:'https://news.google.com/rss/articles/novo-alias',articleUrl:original,classification:{category:'ATUAÇÃO',score:5}};
+  assert.equal(applyEditorialGuard(alias,guard).publicationDecision,'historico');
+  const other={...alias,articleUrl:'https://fonte.gov.br/convenio/3',sourceUrl:original};
+  assert.equal(applyEditorialGuard(other,guard).publicationDecision,undefined);
+});
 test('envio dirigido seleciona só confirmação atual; preserva estado e ignora recibos/aliases',()=>{
   const {state,item,options}=fixture(),before=JSON.stringify(state);
   const selected=selectApprovedPending(state,[item.id],options);

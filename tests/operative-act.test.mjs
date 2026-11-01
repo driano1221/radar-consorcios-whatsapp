@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {classifyItem} from '../src/lib/classifier.mjs';
 import {applySimpleTriage} from '../src/lib/simple-triage.mjs';
 import {verifiedTriage} from '../src/lib/triage-proof.mjs';
+import {operativeAct} from '../src/lib/operative-act.mjs';
 
 const fixtures=[
  ['DECRETO ORÇAMENTÁRIO Nº 30/2026','O PREFEITO MUNICIPAL. Abre Crédito Suplementar ao Orçamento do exercício. Art. 1.º Fica aberto ao orçamento vigente um crédito. ANEXO: Consórcio Intermunicipal de Saúde; Rateio pela participação em consórcio público.','descartado','GERAL'],
@@ -27,6 +28,8 @@ const fixtures=[
  ['Seminário do TCEMG sobre consórcios públicos','O Tribunal de Contas de Minas Gerais reuniu, na manhã desta segunda-feira, especialistas da área de auditoria para discutir o papel dos consórcios públicos. O seminário apresentou um estudo temático e orientou gestores.','confirmado','ATUAÇÃO'],
  ['Prefeitura inicia obras com projeto do consórcio','A Prefeitura de Exemplo inicia nesta segunda-feira as obras de um corredor de ônibus, a partir de projeto de engenharia elaborado pelo Consórcio Intermunicipal. Financiamento e execução da obra competem ao Município.','confirmado','ATUAÇÃO'],
  ['PROJETO DE LEI DO EXECUTIVO Nº 36','A Prefeita apresenta à judiciosa apreciação da Colenda Câmara o seguinte Projeto de Lei: Art. 1º Fica ratificada a alteração do Contrato do Consórcio Público. Anexo: disposições sobre extinção, rateio e responsabilidades.','descartado','GERAL'],
+ ['Diário Oficial de Salto','REQUERIMENTOS SUJEITOS A DESPACHO DO PRESIDENTE: Nº 620/2026 – Vereador de Exemplo – Presidência do Consórcio Intermunicipal do Ribeirão Piraí (CONIRPI) – Solicitando informações sobre impactos de data centers nas proximidades do rio.','descartado','GERAL'],
+ ['CNM realiza atendimentos técnicos','A Confederação Nacional de Municípios (CNM) realizou atendimentos técnicos com representantes dos Municípios. Seus analistas apresentaram o Consórcio Nacional para Gestão Climática e suas possibilidades de apoio. Nenhuma adesão foi declarada.','confirmado','ATUAÇÃO'],
 ];
 
 for(const [title,body,status,category] of fixtures)test(`ato operativo: ${title}`,()=>{
@@ -48,5 +51,12 @@ test('negação, hipótese e falta de dispositivo não viram confirmação docum
     const item={title:'Notícia sobre consórcio',kind:'news',url:'https://fonte.gov.br/hipotese',rawText:body};
     item.classification=classifyItem(item);
     assert.notEqual(applySimpleTriage(item).catalogDecision,'confirmado');
+  }
+});
+
+test('política municipal com consórcio identificado não recebe descarte genérico por diferença de maiúsculas',()=>{
+  for(const name of ['Consórcio Intermunicipal de Saneamento','CONSÓRCIO PÚBLICO CISABC','Consórcio Público de Gestão Regional']) {
+    const body=`Art. 1º Esta Lei institui a Política Municipal de Saneamento Básico. Art. 2º O Município delega a regulação ao ${name}.`;
+    assert.equal(operativeAct('LEI MUNICIPAL Nº 953/2026',body),null);
   }
 });
