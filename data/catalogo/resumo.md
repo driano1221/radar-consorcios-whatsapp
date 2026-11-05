@@ -1,21 +1,21 @@
 # Panorama da base histórica
 
-- 5664 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 353 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 121 identidades candidatas de consórcios; 213 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 152 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 5818 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 369 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 122 identidades candidatas de consórcios; 222 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 159 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
 | ATUAÇÃO | 115 |
-| GOVERNANÇA | 57 |
-| RATEIO | 53 |
-| CONTROLE | 29 |
-| FINANÇAS | 22 |
-| ADESÃO AUTORIZADA | 21 |
-| PROTOCOLO | 21 |
+| GOVERNANÇA | 61 |
+| RATEIO | 56 |
+| CONTROLE | 33 |
+| FINANÇAS | 24 |
+| ADESÃO AUTORIZADA | 23 |
+| PROTOCOLO | 22 |
 | ADESÃO | 11 |
 | CRISE | 6 |
 | RATEIO EM TRAMITAÇÃO | 6 |
@@ -31,20 +31,20 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
-| 2026-11-04 | ATUAÇÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [Consórcio ABC firma parceria com universidades da região com foco em inovação na gestão pública - Consórcio Intermunicipal - Grande ABC](https://news.google.com/rss/articles/CBMi2wFBVV95cUxPR1ZiU3hZUlZLV3pDTVJsTVJyWTNEMjBOeWFnR1prQ1ozNUFFdXhqR3AzZTJ3ZHQ2SVk0eGxmUlNjRkZISENfcFFTdDJQWXRZRW1fd1NrVDZIYzJUbWlBYkNRVlp3c0N2bWRjUWlsVGxWZUdwblFfRXA5TVJDUGVhVHE4MGdfQk1fa2hXd1N1OHVOdFJsaWNtZGgwNFY4SmVUdkVRM2JkWHlZbGJ5LUJpX0gtS3JQUHVfOVhXRVhnS3NXZW83Vzl3a0J0MHZheWJUZmxidXNfR1lJY1U?oc=5) |
-| 2026-11-04 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EXTRATO DE CONTRATO](https://www.diariomunicipal.com.br/amm-mg/materia/B115F619) |
-| 2026-11-04 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EXTRATO DE CONTRATO](https://www.diariomunicipal.com.br/amm-mg/materia/4CF8F15A) |
-| 2026-11-04 | GOVERNANÇA —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [Diário Oficial de Salto (SP)](https://data.queridodiario.ok.org.br/3545209/2026-11-04/ac9f5ed156281387e7b9cc02859ef66fb288f7e3.pdf) |
-| 2026-11-03 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EDITAL DA 29ª ASSEMBLÉIA GERAL - DEZ 2026](https://www.diariomunicipal.com.br/amp/materia/23172202) |
-| 2026-11-03 | ADESÃO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI MUNICIPAL Nº 976/2026 - DISPÕE SOBRE O SERVIÇO DE INSPEÇÃO MUNICIPAL DE BONITO DE SANTA FÉ - PB E DÁ OUTRAS PROVIDÊNCIAS.](https://www.diariomunicipal.com.br/famup/materia/E158E55F) |
-| 2026-11-03 | PROTOCOLO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [Dra. Cátia Junsara assume a presidência interina do CONIAPE durante licença do presidente Josafá Almeida](https://consorcioconiape.pe.gov.br/2026/11/03/dra-catia-junsara-assume-a-presidencia-interina-do-coniape-durante-licenca-do-presidente-josafa-almeida/) |
-| 2026-11-03 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [Diário Oficial de Campo Belo (MG)](https://data.queridodiario.ok.org.br/3111200/2026-11-03/7a0700a815af8fd9f85c000bcbdce97e281ddd59.pdf) |
-| 2026-11-03 | PROTOCOLO —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [Diário Oficial de Campo Mourão (PR)](https://data.queridodiario.ok.org.br/4104303/2026-11-03/90389ebcee9efdc0d2505d52a74e3cd99b14bc72.pdf) |
-| 2026-11-03 | PROTOCOLO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [RESOLUÇÃO 35 2026 DISPÕE SOBRE A NOMEAÇÃO DE FISCAL DE CONTRATO ESPECIFICADO E DÁ OUTRAS PROVIDÊNCIAS](https://diariomunicipal.sc.gov.br/atos/8880978) |
-| 2026-10-30 | CRIAÇÃO — constituição documentada | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [Consórcio intermunicipal entra em debate como caminho para fortalecer a região Tocantina - ASN Maranhão](https://news.google.com/rss/articles/CBMi2wFBVV95cUxPN2lWZk10MWJxODhjdll4Y0h3Wk5iR2lsaHhYZkl3YXlPU3I5QmxVckdHY0xuVU5nOWhRZV82MTYyRjZiLWlsNFNsdzEwZUl3US1XUVlNQzQxRkU2U2I5ZFV3WWVtOVBLQVVkUFd6VUNaTHF6TWNHbzF5Y3Q4YmQ2UVVRT2Mwd00yZ1g2S3QycWhSaUZ0bl9IU2IzX1VCZUxBTzZ5QmdHN3YtUF8xUEhLYlN4VDBpTF96S0h0R0Q1Y21KSjVUM2o1SVFsb2FRNGowek5IOUpqNXNtdVk?oc=5) |
-| 2026-10-30 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [ADITIVO](https://www.diariomunicipal.com.br/amp/materia/951A4303) |
-| 2026-10-30 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO Nº 017/2026](https://www.diariomunicipal.com.br/amp/materia/363D2954) |
-| 2026-10-30 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO Nº 01/2026 QUE ENTRE SI CELEBRAM O MUNICÍPIO DE PORECATU E O CONSÓRCIO INTERGESTORES PARANÁ SAÚDE](https://www.diariomunicipal.com.br/amp/materia/7F8A7831) |
-| 2026-10-30 | ADESÃO — ato publicado — efeito a verificar | descartado pela triagem — Regra e segunda leitura rejeitam o conteúdo examinado. | [TERMO DE COOPERAÇÃO TÉCNICA Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1935060/) |
+| 2026-11-05 | CONTROLE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [AVISO DE SUSPENSÃO DE LICITAÇÃO - PREGÃO ELETRÔNICO Nº 50/2026](https://www.diariomunicipal.com.br/amp/materia/55723116) |
+| 2026-11-05 | FINANÇAS — crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio | confirmado pela triagem — ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal | [RESOLUÇÃO Nº 17/2026, DE 04 DE NOVEMBRO DE 2026](https://www.diariomunicipal.com.br/femurn/materia/63F0B1B3) |
+| 2026-11-05 | CONTROLE —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [DESPACHO DA SECRETARIA EXECUTIVA DO CONSÓRCIO INTERMUNICIPAL DE SAÚDE E DE POLÍTICAS DE DESENVOLVIMENTO DA REGIÃO DO CALCÁRIO – CISREC](https://www.diariomunicipal.com.br/amm-mg/materia/4BB906C9) |
+| 2026-11-05 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EDITAL DE CONVOCAÇÃO DA 29ª. ASSEMBLEIA GERAL](https://www.diariomunicipal.com.br/amp/materia/DC7271AA) |
+| 2026-11-05 | RATEIO — aditivo de rateio publicado entre as partes; pagamento não comprovado | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [1º TERMO ADITIVO AO CONTRATO DE RATEIO Nº 007/2026 QUE ENTRE SI CELEBRAM O CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DO TRIÂNGULO MINEIRO – AMVAP SAÚDE E O MUNICÍPIO DE INDIANÓPOLIS-MG.](https://www.diariomunicipal.com.br/amm-mg/materia/D4381773) |
+| 2026-11-05 | FINANÇAS — crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio | confirmado pela triagem — ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal | [ATO DE CONSÓRCIO Nº 121/2026](https://www.diariomunicipal.com.br/amp/materia/71B9971F) |
+| 2026-11-05 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI N° 4621, DE 04 DE NOVEMBRO DE 2026](https://www.diariomunicipal.com.br/amp/materia/F9ACF195) |
+| 2026-11-05 | ADESÃO AUTORIZADA — aprovação ou autorização; ingresso efetivo não comprovado | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [AUTORIZA O MUNICÍPIO DE UNIÃO DE MINAS/MG A PARTICIPAR DO CONSÓRCIO PÚBLICO INTERMUNICIPAL DE DESENVOLVIMENTO SUSTENTÁVEL DO TRIÂNGULO MINEIRO E ALTO PARANAÍBA – CIDES E DÁ OUTRAS PROVIDÊNCIAS.](https://www.diariomunicipal.com.br/amm-mg/materia/8313207A) |
+| 2026-11-05 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [EDITAL DE CONVOCAÇÃO DE ASSEMBLEIA GERAL EXTRAORDINÁRIA Nº 196/2026](https://www.diariomunicipal.com.br/amp/materia/428164A2) |
+| 2026-11-05 | ADESÃO AUTORIZADA — autorização legal de ingresso/participação; adesão efetiva não comprovada | confirmado pela triagem — dispositivo operativo da lei prevalece sobre cláusulas hipotéticas de retirada nos anexos | [LEI MUNICIPAL N.º 836/2025](https://www.diariomunicipal.com.br/aprece/materia/18D8900C) |
+| 2026-11-05 | RATEIO — aditivo de rateio publicado entre as partes; pagamento não comprovado | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [PREFEITURA MUNICIPAL DE ARCOS P ADM 354/2025](https://www.diariomunicipal.com.br/amm-mg/materia/2769908E) |
+| 2026-11-05 | RATEIO — contrato de rateio citado; celebração a conferir | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [LEI DE Nº 3.541/2026](https://www.diariomunicipal.com.br/amm-mg/materia/36CD206C) |
+| 2026-11-05 | GOVERNANÇA —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [CIDES - ATA DA 27ª ASSEMBLEIA GERAL EXTRAORDINÁRIA](https://www.diariomunicipal.com.br/amm-mg/materia/E0330F88) |
+| 2026-11-05 | PROTOCOLO —  | processando pela triagem — Concluir a leitura automática e delimitar a prova antes da decisão. | [PORTARIA CONIAPE Nº 010, DE 03 DE NOVEMBRO DE 2026.](https://www.diariomunicipal.com.br/amupe/materia/1C0848BC) |
+| 2026-11-04 | CONTROLE —  | processando pela triagem — A segunda leitura propõe outra categoria; o bot precisa delimitar a prova antes de decidir. | [Segurança Pública é tema de reunião entre a CNM e consórcio público do Paraná - Confederação Nacional de Municípios (CNM)](https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQi1NUG9IcGp4QWJEZjN4eUhYdk9OMlhJMFRRNUNQc0pMbC1fdkJZZWhRb3hwVWFhTmh5eDh6dzFhaURjaFdNRW1DY0pvRlNXemtfemZZeDdVclFqbjltSDRtTjBaNGx4d0xSUURqN0twSThUV2JZLTZBOTNlSXZUNkZzcnJ2TVBfTVBJMTFxWTFnYWd2bzk2T2dCbk5tZlpNU25WWm54ZHEyODZOYmhDUFU3dTNCTTNj?oc=5) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
