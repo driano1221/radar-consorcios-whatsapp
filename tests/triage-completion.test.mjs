@@ -8,6 +8,15 @@ import {decidePublication,isNotifiable} from '../src/lib/publication-gate.mjs';
 import {formalActDate} from '../src/lib/publication-date.mjs';
 import {readFile} from 'node:fs/promises';
 const sha=x=>createHash('sha256').update(x).digest('hex');
+test('texto original de 100–159 caracteres salvo pelo leitor chega à decisão, sem ficar excluído da recuperação',()=>{
+ const texto='O Consórcio informa o horário de expediente e os canais administrativos de atendimento durante o feriado municipal.';
+ assert.ok(texto.length>=100&&texto.length<160);
+ const row={id:'curto',titulo:'Expediente do consórcio',url:'https://oficial.gov.br/nota',fonte:'Oficial',decisao_base:'processando'};
+ const text={documento_id:row.id,texto,texto_sha256:sha(texto),url_artigo:row.url};
+ const d=reviewCatalogRow(row,{kind:'news'},text);
+ assert.equal(d.status,'descartado');assert.equal(d.nextAction,undefined);assert.ok(texto.includes(d.evidence));
+ assert.throws(()=>assertNoReadableProcessing([row],[text]),/sem decisão editorial/);
+});
 test('validação do catálogo detecta texto íntegro parado, preservando pendências de acesso',()=>{
  const row={id:'document',decisao_base:'processando'},texto='Texto integral validado. '.repeat(10),text={documento_id:row.id,texto,texto_sha256:sha(texto)};
  assert.throws(()=>assertNoReadableProcessing([row],[text]),/sem decisão editorial/);

@@ -40,6 +40,16 @@ test('falha transitória não é bloqueio permanente: suspende apenas após orç
  assert.equal(decision.decisionBasis,'admissibilidade');assert.equal(decision.evidence,'');
 });
 
+test('código novo de erro também tem desfecho finito, enquanto encaminhamento PDF não é falsa tentativa de leitura PDF',()=>{
+ for(const failure of ['http_503','google_news_nao_resolvido','cimcero_api_corpo_invalido','texto_ausente_ou_curto']){
+  assert.equal(readingAdmission({...row,article_attempts:4,article_recovery_reason:failure}),null);
+  const d=readingAdmission({...row,article_attempts:5,article_recovery_reason:failure});
+  assert.ok(d);assert.ok(validReadingAdmission({...row,article_recovery_reason:failure},d));
+ }
+ assert.equal(readingAdmission({...row,article_attempts:9,article_recovery_reason:'destino_pdf'}),null);
+ assert.ok(readingAdmission({...row,article_attempts:1,article_recovery_reason:'pagina_grande_demais'}));
+});
+
 test('processamento chega à decisão de entrada; só íntegra nova válida permite reanálise e decisões humanas permanecem',async t=>{
   const dir=await mkdtemp(path.join(os.tmpdir(),'radar-admission-'));
   t.after(()=>rm(dir,{recursive:true,force:true}));

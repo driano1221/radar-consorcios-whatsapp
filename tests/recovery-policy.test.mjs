@@ -42,6 +42,7 @@ test('PDF pendente e endpoint sem extensão chegam ao leitor PDF; escolha explí
   assert.equal(pdfRecoveryDue(row,{requestedIds:['salto'],reviewed:true}),false);
   const chamber={id:'camara',url:'https://www.camara.leg.br/mostrarintegra?codteor=123',article_recovery_reason:'destino_nao_html'};
   assert.equal(pdfRecoveryDue(chamber,{requestedIds:['camara']}),true);
+  assert.equal(pdfRecoveryDue({...chamber,article_recovery_reason:'destino_pdf'}),true,'PDF comprovado sem extensão entra automaticamente, sem escolha manual');
   assert.equal(pdfRecoveryDue({...chamber,article_recovery_reason:'http_403'},{requestedIds:['camara']}),false);
   const previous={tentado_em:now,tentativas:4,situacao:'falha: http_403'};
   assert.equal(pdfRecoveryDue(row,{previous,retryFailed:true,now:Date.parse(now)+1000}),false);

@@ -40,7 +40,7 @@ export function decideSimpleTriage(item) {
   if (item.alternativeDecision) return { ...base,
     status: item.catalogDecision === 'confirmado' ? 'confirmado' : item.catalogDecision === 'descartado' ? 'descartado' : 'revisao',
     reason: item.alternativeDecision.reason || 'Decisão por fonte alternativa preservada.', method: 'fonte_alternativa' };
-  if (body.length < 160 && item.readingAdmission) return admissionTriage(base, item.readingAdmission);
+  if (body.length < 100 && item.readingAdmission) return admissionTriage(base, item.readingAdmission);
   if (/\/(?:category|categoria|tag)\/|\/(?:noticias|news)\/?(?:[?#]|$)/i.test(base.sourceUrl))
     return reject('Página de listagem usada apenas para descoberta; as notícias individuais têm decisão própria.', base.sourceUrl, 'filtro_de_listagem');
   if (item.duplicatePublication) return processing('Comparar automaticamente a publicação com a versão já arquivada.', 'conferir_duplicata');
@@ -54,7 +54,7 @@ export function decideSimpleTriage(item) {
       (body || item.summary).slice(0, 500), 'filtro_de_escopo');
   if (/\b(?:abre sele[cç][aã]o|processo seletivo|concurso\b.*\bprovas aplicadas)\b/i.test(item.title || '') && rule.category === 'GERAL' && !rule.proofKind)
     return reject('Seleção de pessoal; não há composição municipal ou mudança institucional comprovada.', item.title, 'filtro_de_escopo');
-  if (body.length < 160 || item.extractionError) return processing('Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana.', 'recuperar_texto');
+  if (body.length < 100 || item.extractionError) return processing('Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana.', 'recuperar_texto');
   const ai = item.aiReview;
   const quote = ai && locateQuote(ai.evidence, [body]);
   // O extrator delimita janelas por caracteres; retire só as palavras cortadas nas bordas.
@@ -122,7 +122,7 @@ export function reviewChecks(reason = '', category = '') {
 export function applySimpleTriage(item) {
   let triage = decideSimpleTriage(item);
   // A readable input must finish independently of delivery eligibility or paid AI.
-  if(triage.status==='processando'&&String(item.rawText||'').length>=160&&!item.extractionError&&
+  if(triage.status==='processando'&&String(item.rawText||'').length>=100&&!item.extractionError&&
     ['segunda_leitura','delimitar_ato','homologar_leitura'].includes(triage.nextAction)) {
     const {nextAction,...settled}=triage;
     triage={...settled,status:'descartado',category:'GERAL',stage:'Texto lido — prova de ato insuficiente',
@@ -140,7 +140,7 @@ export function wasQueuedAsConfirmed(item) {
 }
 
 export function assertNoReadableProcessing(records,texts,{settledIds=new Set()}={}) {
-  const readable=new Set(texts.filter(t=>t.texto?.length>=160&&sha(t.texto)===t.texto_sha256).map(t=>t.documento_id));
+  const readable=new Set(texts.filter(t=>t.texto?.length>=100&&sha(t.texto)===t.texto_sha256).map(t=>t.documento_id));
   for(const row of records)if(!settledIds.has(row.id)&&(row.decisao_base||row.triagem_automatica?.status)==='processando'&&readable.has(row.id))
     throw new Error('Íntegra válida sem decisão editorial concluída: '+row.id);
 }

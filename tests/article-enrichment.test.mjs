@@ -3,6 +3,14 @@ import assert from 'node:assert/strict';
 import { enrichArticle, enrichArticles, extractArticleText, lacksArticleText,
   classifyEnrichedItem } from '../src/lib/article-enrichment.mjs';
 
+test('PDF identificado pelo content-type chega ao leitor PDF mesmo sem extensão no endereço',async()=>{
+ let failure='',resolved='';
+ const item={kind:'news',title:'Consórcio público',url:'https://oficial.gov.br/documento?id=1'};
+ const out=await enrichArticle(item,{fetchImpl:async()=>new Response('%PDF-1.7',{headers:{'content-type':'application/pdf'}}),
+  onFailure:(_,reason)=>failure=reason,onResolved:(_,url)=>resolved=url});
+ assert.equal(failure,'destino_pdf');assert.equal(resolved,item.url);assert.equal(out.rawText,undefined);
+});
+
 test('detecta quando resumo é somente o título', () => {
   assert.equal(lacksArticleText({ title: 'Consórcio abre concurso - Portal', summary: 'Consórcio abre concurso Portal' }), true);
   assert.equal(lacksArticleText({ title: 'Consórcio aprova adesão', summary: 'A assembleia aprovou a adesão do município após votação.' }), true);

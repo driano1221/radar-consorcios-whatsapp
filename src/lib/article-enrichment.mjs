@@ -192,7 +192,8 @@ export async function enrichArticle(item, { fetchImpl = fetch, decode = (url) =>
     }
   }
   if (!response?.ok) { onFailure(item, `http_${response?.status || 'sem_resposta'}`); return item; }
-  if (!/text\/html/i.test(response.headers.get('content-type') || '')) { onFailure(item, 'destino_nao_html'); return item; }
+  const contentType=response.headers.get('content-type')||'';
+  if (!/text\/html/i.test(contentType)) { onFailure(item, /application\/pdf/i.test(contentType)?'destino_pdf':'destino_nao_html'); return item; }
   const length = Number(response.headers.get('content-length') || 0);
   // Official budget annexes can exceed the news limit. Still bound the stream;
   // read only the identified matter body, never truncate it to make a decision.

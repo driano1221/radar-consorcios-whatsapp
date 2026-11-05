@@ -25,7 +25,7 @@ export function recoveryDue(row, { now = Date.now(), force = false } = {}) {
 
 export function pdfRecoveryDue(row,{requestedIds=[],hasText=false,reviewed=false,previous,retryFailed=false,now=Date.now()}={}) {
   if(hasText||reviewed)return false;
-  const pdf=/\.pdf(?:[?#]|$)/i.test(row.article_resolved_url||row.article_url||row.url);
+  const pdf=/\.pdf(?:[?#]|$)/i.test(row.article_resolved_url||row.article_url||row.url)||row.article_recovery_reason==='destino_pdf';
   if(!pdf&&!['destino_pdf','destino_nao_html'].includes(row.article_recovery_reason)&&
     !(retryFailed&&row.article_recovery_reason?.startsWith('falha:')))return false;
   if(requestedIds.length)return requestedIds.includes(row.id);
