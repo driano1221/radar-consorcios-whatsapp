@@ -139,9 +139,9 @@ export function wasQueuedAsConfirmed(item) {
   return (item.triage||decideSimpleTriage(item)).status==='confirmado';
 }
 
-export function assertNoReadableProcessing(records,texts) {
+export function assertNoReadableProcessing(records,texts,{settledIds=new Set()}={}) {
   const readable=new Set(texts.filter(t=>t.texto?.length>=160&&sha(t.texto)===t.texto_sha256).map(t=>t.documento_id));
-  for(const row of records)if((row.decisao_base||row.triagem_automatica?.status)==='processando'&&readable.has(row.id))
+  for(const row of records)if(!settledIds.has(row.id)&&(row.decisao_base||row.triagem_automatica?.status)==='processando'&&readable.has(row.id))
     throw new Error('Íntegra válida sem decisão editorial concluída: '+row.id);
 }
 export async function loadOriginalTriage(directory) {

@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { loadCatalog, mergeStateIntoCatalog, saveCatalog } from '../src/lib/catalog.mjs';
 import { loadOriginalTriage,assertNoReadableProcessing } from '../src/lib/simple-triage.mjs';
 import { reprocessTriage,upgradeLegacyTriage } from './reprocess-triage.mjs';
+import {loadAlternativeDecisionData,validAlternativeDecision} from '../src/lib/alternative-triage.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const directory = path.join(root, 'data', 'catalogo');
@@ -14,6 +15,7 @@ await reprocessTriage(directory, { state, apply: true });
 const editorialReviews = (await readFile(path.join(directory, 'revisoes-eventos.ndjson'), 'utf8'))
   .split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
 const reviewedIds = new Set(editorialReviews.map((review) => review.documento_id).filter(Boolean));
+const humanIds=new Set(reviewedIds);
 for (const id of (await loadOriginalTriage(directory)).keys()) reviewedIds.add(id);
 const records = process.argv.includes('--history')
   ? new Map()
@@ -45,7 +47,9 @@ try {
       article_reader: text.leitor, article_url: row.article_url || text.url_artigo,
       article_recovery_reason: '' });
   }
-  assertNoReadableProcessing(records.values(),texts);
+  const auxiliary=await loadAlternativeDecisionData(directory),settledIds=new Set(humanIds);
+  for(const[id,decision]of auxiliary.decisions)if(decision.status!=='pendente'&&records.has(id)&&validAlternativeDecision(records.get(id),decision,auxiliary.sources,humanIds))settledIds.add(id);
+  assertNoReadableProcessing(records.values(),texts,{settledIds});
 } catch (error) { if (error.code !== 'ENOENT') throw error; }
 const counts = await saveCatalog(directory, records);
 console.log(`[catálogo] ${counts.all} documentos encontrados; ${counts.relevant} classificados como potenciais eventos; ${counts.consortia} consórcios identificados explicitamente.`);

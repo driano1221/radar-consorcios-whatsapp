@@ -14,6 +14,7 @@ test('validação do catálogo detecta texto íntegro parado, preservando pendê
  assert.doesNotThrow(()=>assertNoReadableProcessing([row],[]));
  assert.doesNotThrow(()=>assertNoReadableProcessing([{...row,decisao_base:'descartado'}],[text]));
  assert.doesNotThrow(()=>assertNoReadableProcessing([{...row,decisao_base:'confirmado',triagem_automatica:{status:'processando'}}],[text]),'decisão canônica concluída tem prioridade sobre marcador técnico antigo');
+ assert.doesNotThrow(()=>assertNoReadableProcessing([row],[text],{settledIds:new Set([row.id])}),'revisão humana ou alternativa válida já concluiu a análise');
 });
 const samples=[
  ['Resolução Nº 2/2026','O Consórcio Intermunicipal de Saúde, em cumprimento ao Protocolo de Intenções. RESOLVE: Art. 1º Nomear Fiscal do Contrato de aquisição de pneus. O acompanhamento obedece à legislação administrativa vigente.','descartado','GERAL'],
