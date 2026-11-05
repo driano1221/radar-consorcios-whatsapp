@@ -1,5 +1,5 @@
 import { isPublishableClassification } from './classifier.mjs';
-import { eventMonthEnd, formalActDate } from './publication-date.mjs';
+import { eventMonthEnd, formalActDate, formalActYear } from './publication-date.mjs';
 
 const HOUR = 3600000;
 
@@ -68,6 +68,10 @@ export function decidePublication(item, { now = new Date(), lookbackHours = 168,
       publicationReason: `Publicação anterior à ativação dos alertas da fonte (${activation.alertsFrom}); sem envio retroativo.` };
   }
   const evidence = publicationDate(item, now);
+  const actYear=formalActYear(item);
+  if(actYear&&evidence&&['fonte','coleta'].includes(evidence.field)&&actYear<new Date(evidence.date).getUTCFullYear())
+    return {...item,catalogDecision,publicationDecision:'data_nao_verificada',publicationDateSource:evidence.field,
+      publicationReason:'Ato de ano anterior: a data recente da página não comprova fato novo. Exigir a data própria do ato antes de alertar.'};
   // O RSS do Google pode exibir hoje uma página publicada há meses. Sem data
   // do ato ou da fonte original, a data do feed não prova novidade.
   if (evidence?.field === 'coleta' && /^https?:\/\/news\.google\.com\//i.test(item.url || '')) {

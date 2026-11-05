@@ -77,7 +77,20 @@ export function formalActDate(item, now = new Date()) {
     if (month) return validDate(`${named[1]}/${month}/${named[3]}`, now);
   }
   const numeric = /\b(\d{1,2})\/(\d{1,2})\/(20\d{2})\b/.exec(title);
-  return numeric ? validDate(`${numeric[1]}/${numeric[2]}/${numeric[3]}`, now) : '';
+  if(numeric)return validDate(`${numeric[1]}/${numeric[2]}/${numeric[3]}`,now);
+  const body=String(item.rawText||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  // Only the act's own header/dateline; federal laws quoted in articles are not its date.
+  const header=/^(?:[^.;]{0,160}?)?(?:lei|resolucao|decreto|portaria)\s+(?:municipal\s+)?(?:n[º°o.]*\s*)?\d[\d.]*[^;]{0,45}?\bde,?\s*(\d{1,2})\s+de\s+([a-z]+)\s+de\s+(20\d{2})\b/.exec(body.slice(0,400));
+  const datelines=[...body.matchAll(/\b(?:gabinete|paco|palacio|prefeitura)\b[^.!?]{0,180}?\b(?:aos?|em)\s+(\d{1,2})\s+de\s+([a-z]+)\s+de\s+(20\d{2})\b/g)];
+  const own=datelines.at(-1)||(header&&(!formalActYear(item)||Number(header[3])===formalActYear(item))?header:null);
+  const month=own&&MONTHS.get(own[2]);
+  return month?validDate(`${own[1]}/${month}/${own[3]}`,now):'';
+}
+
+export function formalActYear(item) {
+  const title=String(item.title||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+  const m=/^(?:lei(?: municipal)?|resolucao|decreto|portaria)\s*(?:de\s+)?n[º°o.]*\s*[\d.]+\/(20\d{2})\b/.exec(title);
+  return m?Number(m[1]):null;
 }
 
 export function eventMonthEnd(value) {

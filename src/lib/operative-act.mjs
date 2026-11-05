@@ -10,6 +10,81 @@ export function operativeAct(title,text) {
   const reject=(stage,reason,match)=>result('GERAL','documentary_exclusion',stage,`rejeitado: ${reason}`,match);
   const consortium=/\bcons[oó]rci[oa]/i.test(text);
   if(!consortium)return null;
+  const staffRoutine=/\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*(?:dispor sobre a concess[aã]o de f[eé]rias|(?:designar|nomear)\s+fiscal\s+(?:do|de)\s+contrato)[^.;]{0,280}/i.exec(head);
+  if(/^(?:portaria|resolu[cç][aã]o)\b/i.test(title)&&staffRoutine)
+    return reject('rotina de pessoal ou fiscalização administrativa do contrato',
+      'protocolo citado como fundamento não é ratificação; designar fiscal não comprova fiscalização realizada',staffRoutine);
+  const executive=/\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*nomear[\s\S]{0,220}?cargo de\s*secret[aá]rio\s*executivo[\s\S]{0,120}?cons[oó]rcio[^.;]{0,120}/i.exec(head);
+  if(/^portaria\b/i.test(title)&&executive)
+    return result('GOVERNANÇA','published_governance_rule','secretário executivo nomeado; referendo posterior e posse não inferidos',
+      'ato operativo nomeia a direção executiva; não é movimentação de empregado comum',/para ocupar o cargo de\s*secret[aá]rio\s*executivo[\s\S]{0,120}?cons[oó]rcio[^.;]{0,120}/i.exec(text));
+  const interim=/\bassume interinamente a presid[eê]ncia do Cons[oó]rcio[^.!?]{0,220}/i.exec(text);
+  if(/presid[eê]ncia interina/i.test(title)&&interim&&/licen[cç]a|afastamento tempor[aá]rio/i.test(text)&&
+    !/\b(?:n[aã]o|poder[aá]|caso|se)\s*$/i.test(text.slice(Math.max(0,interim.index-25),interim.index)))
+    return result('GOVERNANÇA','published_governance_rule','substituição interina da presidência relatada; mandato titular e entregas preservados',
+      'corpo informa o exercício interino durante licença, sem inferir nova eleição',interim);
+  const authorization=/\bart\.?\s*[12][º°o.]?\s*[.–—-]?\s*(?:fica\s+(?:o\s+)?(?:poder executivo|munic[ií]pio)[^.;]{0,140}?|esta lei[^.;]{0,80}?)autorizad[oa]\s+a\s+participar\b[^.;]{0,270}?cons[oó]rcio[^.;]{0,180}/i.exec(head);
+  if(authorization&&/\b(?:sanciono|sanciona|promulg[ao])\b/i.test(head)&&!/^(?:projeto|minuta)\b/i.test(title))
+    return result('ADESÃO AUTORIZADA','legal_entry_authorization','participação autorizada em lei; subscrição e ingresso efetivo não comprovados',
+      'dispositivo autoriza município identificado a participar de consórcio determinado',authorization);
+  const simPolicy=/\bart\.?\s*1[º°o.]?\s*[.–—-]?\s*esta lei\s+(?:cria|estabelece normas)[^.;]{0,380}?inspe[cç][aã]o[^.;]{0,220}/i.exec(head);
+  if(simPolicy&&/\bservi[cç]o de inspe[cç][aã]o municipal\b/i.test(head)&&
+    !/\bcons[oó]rcio\s+(?:intermunicipal|interfederativo|regional|interestadual)\b/i.test(text))
+    return reject('serviço de inspeção municipal instituído; cooperação consorcial apenas genérica',
+      'lei municipal não identifica ingresso ou instrumento com consórcio determinado; norma não comprova inspeção realizada',simPolicy);
+  const procurement=/\b(?:ades[aã]o\s+(?:n[.º°o]*\s*\d+\/20\d{2},?\s*)?a\s*(?:arp|ata de registro de pre[cç]o)|termo de ades[aã]o a ata de registro de pre[cç]o)[^;]{0,240}/i.exec(head);
+  if(procurement&&/\b(?:contratada|empresa|fornecimento|aquisi[cç][aã]o)\b/i.test(text))
+    return reject('adesão a ata de preços; não é ingresso em consórcio',
+      'instrumento compra de fornecedor; consórcio gerencia a ata, sem nova participação municipal',procurement);
+  const privateAccreditation=/\b(?:e de outro|e,? de outro lado,?)\s+a empresa[^;]{0,160}?\b(?:LTDA|S\.?\s*A\.)/i.exec(head);
+  if(/^termo de credenciamento/i.test(title)&&privateAccreditation)
+    return reject('credenciamento de fornecedor privado; sem alteração institucional',
+      'credenciamento para serviços administrativos não comprova nova cooperação pública ou serviço regional executado',privateAccreditation);
+  const signedRateio=/\b(?:firmado\s+em\s+\d{2}\/\d{2}\/20\d{2}|assinam\s+(?:pela|o presente)|celebram o presente termo aditivo|que entre si celebram)\b[^.;]{0,220}/i.exec(text);
+  if(/contrato de rateio/i.test(text.slice(0,700))&&signedRateio&&/\bmunic[ií]pio|prefeitura municipal/i.test(head)&&
+    !/^(?:minuta|projeto)/i.test(title)&&(/rateio/i.test(title)||/termo aditivo/i.test(head)))
+    return result('RATEIO','documented_rateio',/aditivo/i.test(title+' '+head)
+      ?'aditivo de rateio formalizado; pagamento e novo ingresso não comprovados':'rateio publicado com partes e assinantes; pagamento não comprovado',
+      'texto identifica município, consórcio e celebração/assinantes do instrumento',
+      Object.assign([text.slice(0,Math.max(650,signedRateio.index+signedRateio[0].length))],{index:0}));
+  const reportRateio=/\bN[uú]mero Contrato:\s*\d+\s+N[uú]mero Aditivo:[\s\S]{0,60}?Objeto:\s*\.?\s*O contrato de rateio\b[\s\S]{0,350}?Nome\s*\/\s*CNPJ:\s*CONS[OÓ]RCIO\b[\s\S]{0,180}?Data Assinatura:\s*\d{2}\/\d{2}\/20\d{2}/i.exec(text);
+  if(/^extrato dos contratos/i.test(title)&&/\bMUNIC[IÍ]PIO DE\b/i.test(head)&&reportRateio)
+    return result('RATEIO','documented_rateio','rateio individualizado no relatório com consórcio e data de assinatura; demais contratos não confundidos',
+      'bloco próprio do contrato contém objeto de rateio, contratado público e assinatura; não é dotação genérica',reportRateio);
+  const reintegration=/\bfoi registrado o retorno e a reintegra[cç][aã]o do munic[ií]pio[^.;]{0,200}?ao cons[oó]rcio\b/i.exec(text);
+  if(/\bata\b/i.test(title)&&reintegration)
+    return result('ADESÃO','documented_composition','retorno municipal registrado em ata; data do ingresso original não inferida',
+      'ata relata reintegração efetiva, distinta de pauta ou autorização futura',reintegration);
+  const firstVote=/\bas (?:\w+\s+)?propostas foram apreciadas em primeira vota[cç][aã]o e contaram com a aprova[cç][aã]o de todos os vereadores\b/i.exec(text);
+  if(/\bprojetos\b/i.test(title)&&firstVote)
+    return result('GOVERNANÇA','approved_legislative_project','projetos consorciais aprovados em primeira votação; segunda votação, sanção, extinção e ingresso não comprovados',
+      'notícia relata etapa legislativa realizada; objetos dos projetos não são mudanças consumadas',firstVote);
+  const consortiumActivity=/\bcons[oó]rcio\b[^.!?]{0,120}?\b(?:promoveu|avan[cç]ou)\b[^.!?]{0,300}/i.exec(text);
+  if(consortiumActivity&&/webin[aá]rio|assembleia de prefeitos/i.test(title+' '+head)&&
+    !/\b(?:n[aã]o|pretende|caso|se)\s*$/i.test(text.slice(Math.max(0,consortiumActivity.index-25),consortiumActivity.index)))
+    return result('ATUAÇÃO','performed_institutional_activity','encontro/discussão regional realizado; projetos e entregas futuros não inferidos',
+      'texto relata atividade realizada pelo consórcio; referência a protocolo anterior não é assinatura nova',consortiumActivity);
+  const meeting=/\bestiveram reunidos com representantes do Cons[oó]rcio[^.!?]{0,230}/i.exec(text);
+  if(meeting&&/Confedera[cç][aã]o Nacional de Munic[ií]pios/i.test(head))
+    return result('ATUAÇÃO','performed_institutional_activity','reunião técnica realizada; serviços e adesões não comprovados',
+      'representantes do consórcio participaram de encontro efetivo, sem inferir execução das propostas',meeting);
+  const partnership=/\bcons[oó]rcio\b[^.!?]{0,120}?\b(?:firmou|assinou)\b[^.!?]{0,230}?\b(?:termo|parceria|coopera[cç][aã]o)\b[^.!?]{0,220}/i.exec(head);
+  if(partnership&&/universidad|institui[cç][oõ]es de ensino/i.test(head)&&
+    !/\b(?:nao|podera|caso|se|pretende)\b/i.test(partnership[0].split(/\b(?:firmou|assinou)\b/i)[0].normalize('NFD').replace(/[\u0300-\u036f]/g,'')))
+    return result('ATUAÇÃO','signed_cooperation','cooperação acadêmica firmada; execução, recursos e benefícios futuros não comprovados',
+      'termo assinado relatado no corpo; agenda futura não equivale a entrega realizada',partnership);
+  const convocation=/\bficam convocados[^.!?]{0,320}?assembl[eé]ia geral\b/i.exec(text)||/\bconvoca[^.!?]{0,260}?assembl[eé]ia geral\b/i.exec(text);
+  if(/edital.*convoca[cç][aã]o|edital.*assembl[eé]ia geral/i.test(title)&&convocation)
+    return reject('convocação de assembleia futura; pautas ainda não deliberadas',
+      'edital convoca reunião; eleição, aprovação e alteração institucional não comprovadas',convocation);
+  const selfSuspension=/\best[aá] suspensa em virtude de an[aá]lise e resposta a um pedido de impugna[cç][aã]o\b/i.exec(text);
+  if(/aviso de suspens[aã]o/i.test(title)&&selfSuspension)
+    return reject('suspensão administrativa para responder impugnação; sem julgamento externo',
+      'aviso registra etapa da licitação; não é decisão do Tribunal nem crise institucional',selfSuspension);
+  const controlRequest=/\bTribunal de Contas[^!?]{0,180}?encaminhou[^!?]{0,220}?solicitando esclarecimentos[^.!?]{0,300}/i.exec(text);
+  if(/^despacho/i.test(title)&&controlRequest&&/DECIDE:\s*REVOGAR/i.test(text))
+    return result('CONTROLE','initiated_inspection','ofício de fiscalização e resposta publicados; revogação administrativa, sem condenação',
+      'despacho documenta questionamento efetivo do órgão de controle; não atribuir a ele a revogação feita pelo consórcio',controlRequest);
   const proposal=/\bapresenta [àa] judiciosa aprecia[cç][aã]o[^.]{0,150}o seguinte projeto de lei/i.exec(head);
   if(/^projeto de lei\b/i.test(title)&&proposal)return reject('projeto submetido à Câmara; ratificação e lei sancionada não comprovadas',
     'texto proposto e anexo não comprovam ratificação legal em vigor ou crise ocorrida',proposal);

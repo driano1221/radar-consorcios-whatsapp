@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {classifyItem} from '../src/lib/classifier.mjs';
-import {decideSimpleTriage,rowFingerprint,TRIAGE_VERSION} from '../src/lib/simple-triage.mjs';
+import {applySimpleTriage,rowFingerprint,TRIAGE_VERSION} from '../src/lib/simple-triage.mjs';
 import {readingAdmission} from '../src/lib/reading-admission.mjs';
 import {loadAlternativeDecisionData,validAlternativeDecision} from '../src/lib/alternative-triage.mjs';
 import {restoreRecoveryFailures} from '../src/lib/recovery-policy.mjs';
@@ -22,7 +22,7 @@ export function reviewCatalogRow(row,observation={},text) {
     ...(text?{contentProvenance:'pagina_original',extractionError:undefined}:{}),
   };
   item.classification=classifyItem(item);item.ruleClassification=item.classification;
-  return decideSimpleTriage(item);
+  return applySimpleTriage(item).triage;
 }
 
 // Every pending reading reaches the same conclusion path, including panel-only

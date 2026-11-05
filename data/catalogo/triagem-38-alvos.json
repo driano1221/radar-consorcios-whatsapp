@@ -1,0 +1,234 @@
+{
+  "version": 1,
+  "baseline": "9b108bf81aba473c8befeaa42c85ab7c0e71f614",
+  "targets": [
+    {
+      "id": "a3696fee87a5ef7eb226ff45903389253e0b23b702d07ebafd20bb47e09df2f3",
+      "title": "Câmara de Taió aprova pacote de projetos que tratam de consórcios públicos - Rádio Educadora",
+      "needsReading": false,
+      "baselineHash": "07fb960495b64557823d653aab3c10acf116394b68025c4ec4582585c4aad87e"
+    },
+    {
+      "id": "ea9de06718298e37a9bf95b82b33dff5c713b3e2f8412ef3a5479222ee8f9cfd",
+      "title": "PORTARIA Nº 37/2026/CIDIRIOS, DE 05/11/2026 – FERIAS DISPÕE SOBRE A CONCESSÃO DE FÉRIAS A EMPREGADO PÚBLICO DO CONSORCIO CIDIRIOS, E DÁ OUTRAS PROVIDÊNCIAS",
+      "needsReading": false,
+      "baselineHash": "d7aa66005cd490b1ba70ca1e85217a2e80f32f0d4e07af96100f7fc6f87a3d9a"
+    },
+    {
+      "id": "5a64efb3c52db07036484f93937900036a62cf3afb835ddceba447699c931280",
+      "title": "LEI Nº 1.589, DE 04 DE NOVEMBRO DE 2026.",
+      "needsReading": false,
+      "baselineHash": "1b89b107abeb0315144b27fd81cf975fcd9b3393a05547df5c229f06961b6b9f"
+    },
+    {
+      "id": "8160a73a5820b668374960a3551d10777c0d8f5255b9a109128b5ccfce83a942",
+      "title": "EXTRATO AO CONTRATO DE RATEIO Nº 015/2026",
+      "needsReading": false,
+      "baselineHash": "ee39f5e99961990fce3504983f6de281442220314ba47290cf29637fd1119f71"
+    },
+    {
+      "id": "b2c6eea55501a1f54793b781e838bb160b17ad61175315f47336078fb051c044",
+      "title": "EXTRATO DOS CONTRATOS OUT/26",
+      "needsReading": false,
+      "baselineHash": "e37158d85995ac5a8b5f389e1f3e423fe2a14d5dded49750571926cae6e6ea49"
+    },
+    {
+      "id": "cb111458e4c0323ff97679d8b2ea272355f4899a8448f606b42f8cfbb5aea5c6",
+      "title": "TERMO DE ADESÃO",
+      "needsReading": false,
+      "baselineHash": "86ff5a6c8be8d852ee1559bd35098c29cd1d1312ce8001b180bd5c089ec19ef5"
+    },
+    {
+      "id": "e8b71e9f4eb81eb2b228c703a0d92ee96c0801b1bad948909b802e88f9c32c31",
+      "title": "TERMO ADITIVO N.º 01/2026 AO CONTRATO SUPERIOR N.º 110/2025",
+      "needsReading": false,
+      "baselineHash": "56a7646d7e57dea0f676e289ee25b9771423e4e24ed6d9053b3b45fcc4e3e515"
+    },
+    {
+      "id": "5b194f56422cb60196c3e5cd4aba57779c89524f4123638879aa4f3c20fd221a",
+      "title": "TERMO DE CREDENCIAMENTO Nº 02/2026",
+      "needsReading": false,
+      "baselineHash": "f15162f47e0a073633aa9ce7b8f1a486950a7f39c1d8ad9072acba2266c5eb4e"
+    },
+    {
+      "id": "9ba7f7dd89c240d12c9e7630b6ca29359c00281660a0572241f0d03602e9120a",
+      "title": "TERMO DE CREDENCIAMENTO Nº 01/2026",
+      "needsReading": false,
+      "baselineHash": "3a27802d40d21b0e0bb45f57e6b359a18c0ed861f14185fc2773e167f1d2c9bb"
+    },
+    {
+      "id": "339cdde5f47a9819c5915c56e57d2c69c24470f65b49862aea8ba5a672bcaaf0",
+      "title": "RESOLUÇÃO 37 2026 DISPÕE SOBRE A NOMEAÇÃO DE FISCAL DE CONTRATO ESPECIFICADO E DÁ OUTRAS PROVIDÊNCIAS",
+      "needsReading": false,
+      "baselineHash": "704e76508fb402969f34db60c30a242ceb99195f3a409ec28aba7b000f56847a"
+    },
+    {
+      "id": "e0b1ee2489898f23266d91e5fe10199dac7395fed7210a521dde17d24c7a5ae6",
+      "title": "RESOLUÇÃO 36 2026 DISPÕE SOBRE A NOMEAÇÃO DE FISCAL DE CONTRATO ESPECIFICADO E DÁ OUTRAS PROVIDÊNCIAS",
+      "needsReading": false,
+      "baselineHash": "e86f72c0be71a87c6028082a42cf1be29874f3a14df9ff199d089b473906b0c9"
+    },
+    {
+      "id": "405d0eafa09e0fdaa96530fc19704eb1c37642d2c39d3d7ecd02c99e148f5d59",
+      "title": "Diário Oficial de Rio Claro (SP)",
+      "needsReading": true,
+      "baselineHash": "5a2cb5225d3a92c1568177ec628bba43aada12ebc20631e1970d5d88fe9ccb71"
+    },
+    {
+      "id": "1f8e3dec2f3d0887e9ce96f15b8426ade671b44980aa50b3239194c25c233b54",
+      "title": "AVISO DE SUSPENSÃO DE LICITAÇÃO - PREGÃO ELETRÔNICO Nº 50/2026",
+      "needsReading": false,
+      "baselineHash": "6413a5194a4108ea4658c06465c4c1e95c6e661b214dd6b4bb69737debaa0332"
+    },
+    {
+      "id": "43dd19f9eaf2906741012104d06c8928cc803403ecdb69b1b66b6e18f2dd115f",
+      "title": "DESPACHO DA SECRETARIA EXECUTIVA DO CONSÓRCIO INTERMUNICIPAL DE SAÚDE E DE POLÍTICAS DE DESENVOLVIMENTO DA REGIÃO DO CALCÁRIO – CISREC",
+      "needsReading": false,
+      "baselineHash": "7d7a2cb8cb768b4109a72dee6f6b554b8159b4d798428394aaf31190292827b7"
+    },
+    {
+      "id": "460e804f26e8af26d74725ada5a53c736e0c88974f4aeb25eecfde656da00411",
+      "title": "EDITAL DE CONVOCAÇÃO DA 29ª. ASSEMBLEIA GERAL",
+      "needsReading": false,
+      "baselineHash": "6b299a3da9ca0169d7895ecf00c4c33dc9e4d7efb8123ddd43f3f042fd166806"
+    },
+    {
+      "id": "637fe5117213424c725c664b3f23dc37e3d24b3ea5f5b7e105096c96fac6075a",
+      "title": "1º TERMO ADITIVO AO CONTRATO DE RATEIO Nº 007/2026 QUE ENTRE SI CELEBRAM O CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DO TRIÂNGULO MINEIRO – AMVAP SAÚDE E O MUNICÍPIO DE INDIANÓPOLIS-MG.",
+      "needsReading": false,
+      "baselineHash": "86b0800aeb8e26ce332aaf16bc563b824b05010e3565f7579a8d4fa193385c9c"
+    },
+    {
+      "id": "c60448fc9ee4c5d68a08b42e3feef6bbe4f25841cee0e3308ee5b36a05d79875",
+      "title": "AUTORIZA O MUNICÍPIO DE UNIÃO DE MINAS/MG A PARTICIPAR DO CONSÓRCIO PÚBLICO INTERMUNICIPAL DE DESENVOLVIMENTO SUSTENTÁVEL DO TRIÂNGULO MINEIRO E ALTO PARANAÍBA – CIDES E DÁ OUTRAS PROVIDÊNCIAS.",
+      "needsReading": false,
+      "baselineHash": "e2063af7302d23d28b325cd9a8616a8522cf9eb01c28879bae15616761df2a4e"
+    },
+    {
+      "id": "c908f473ed56022eca682b7e4de09c0fc2c20acbb1ae1ad32bad20c6bb368b4c",
+      "title": "EDITAL DE CONVOCAÇÃO DE ASSEMBLEIA GERAL EXTRAORDINÁRIA Nº 196/2026",
+      "needsReading": false,
+      "baselineHash": "76039a490d9f983c66b56eeadb3279d3c3eb798fedcf3a9e04487cbd0fdff82a"
+    },
+    {
+      "id": "db1ed1d4a5cb42ddbf450c06d33bc3dfbd6f8a135cbcd647504aebac2b51caef",
+      "title": "PREFEITURA MUNICIPAL DE ARCOS P ADM 354/2025",
+      "needsReading": false,
+      "baselineHash": "0e4f717fcc6e7423ebb609a7354e271bfe5b26d6710addd62c32fab6a89ac77b"
+    },
+    {
+      "id": "ddbf5153c38d0e4ea048c0f7dbe5fceab052db9cb62c77fc42896aa5aef701cb",
+      "title": "LEI DE Nº 3.541/2026",
+      "needsReading": false,
+      "baselineHash": "147e8ee577b821d3418888d872e76bc2352f106cf583ae432fb1f64ea6aa819d"
+    },
+    {
+      "id": "ebde281ec163a72dbc0ced68436598b9801de124001602b66ecc841a35c21729",
+      "title": "CIDES - ATA DA 27ª ASSEMBLEIA GERAL EXTRAORDINÁRIA",
+      "needsReading": false,
+      "baselineHash": "cb7b0d3e96c190aea97f33f1f87ef73f5c3b7abf6836e0349f9aae61146e666b"
+    },
+    {
+      "id": "faeae1d69f791f60c5767452a2f47ced358487af0c95f0b869c30237ecf08814",
+      "title": "PORTARIA CONIAPE Nº 010, DE 03 DE NOVEMBRO DE 2026.",
+      "needsReading": false,
+      "baselineHash": "3d69295773c67f348624fd30ba5ab0b004f728aae06dea24c927b8f7e33e284a"
+    },
+    {
+      "id": "3561b72b90793cdfc0ff841c4e1914a3effcc5d6f6cbb008225cf9a938155e85",
+      "title": "Diário Oficial de Cafezal do Sul (PR)",
+      "needsReading": true,
+      "baselineHash": "89daea7eb11c8a74d8709f3d4fd942d6a8ded6e5d36b6f3c8c0265bf926b4fbf"
+    },
+    {
+      "id": "9b85836dd596a0779537a11169c353cf8f87473c65609c7abba08f9388d81844",
+      "title": "Consórcio ABC firma parceria com universidades da região com foco em inovação na gestão pública - Consórcio Intermunicipal - Grande ABC",
+      "needsReading": false,
+      "baselineHash": "bc34f443bb77e8e626c783cc03df1bd58387798eb3a13210b28730d91119d533"
+    },
+    {
+      "id": "41bda7157dc376598c1560c413f3a9f1d64956ebad7609fd2bbded79f365c223",
+      "title": "Diário Oficial de Salto (SP)",
+      "needsReading": true,
+      "baselineHash": "279e55b01c0ae2b7b561e9fc4e7e7acc7e52e488933a190904d69205450c4c05"
+    },
+    {
+      "id": "d38a2b2ec15e50412522ecce365a4a966de5358b247a848071c0b4c8fbc51288",
+      "title": "Segurança Pública é tema de reunião entre a CNM e consórcio público do Paraná - Confederação Nacional de Municípios (CNM)",
+      "needsReading": false,
+      "baselineHash": "0a854b06e0e872bd60ca7b28a164754b14bde584d3fd6142a46e580b7feec64c"
+    },
+    {
+      "id": "5be11050eff002b70f6e7fea33fe476cd5ec7d4b1ee94166ce9f66cba9174398",
+      "title": "EXTRATO DE CONTRATO",
+      "needsReading": false,
+      "baselineHash": "87509ed7080365923f6210de1d4d0857b30dfedce909f6077e2d00f12a268491"
+    },
+    {
+      "id": "89495076abd69b39dee991962532f36e5fe4fc460338f63a72bcd0e884b53c67",
+      "title": "EXTRATO DE CONTRATO",
+      "needsReading": false,
+      "baselineHash": "8b1e367f700055bcbbc18a24df438044ae1dbfb5c18f862661ab265b84c52224"
+    },
+    {
+      "id": "bf05b42870f55d7ec509044948d9ad1c50dda5e472a46e8db4b703d3e7bb881b",
+      "title": "Diário Oficial de Campo Belo (MG)",
+      "needsReading": true,
+      "baselineHash": "a80289661b8a44ada8f351615ed5bc90e56c8a75eea20fc5112aefb375103f42"
+    },
+    {
+      "id": "c2af878b27bd2d2d03ce04fe7217875c2d9a87a3338af363091d033b900ddcc6",
+      "title": "Diário Oficial de Campo Mourão (PR)",
+      "needsReading": true,
+      "baselineHash": "ad8cf2c354523b771afbdb240a16cec1df6e6a09162bc2e080b77e73221305fa"
+    },
+    {
+      "id": "ebb751e9378748333c391c0e014faf483507abf551149dfc5785b172819d7b4c",
+      "title": "Untitled - TCE-PR",
+      "needsReading": true,
+      "baselineHash": "45bbcdc7798213d803283c528987c85b333ba515d82cd971b73db6c1a860f0a7"
+    },
+    {
+      "id": "fa429df14cc1a3ab700ba376eabfd7bf4bca320f25184e67753988874431d1db",
+      "title": "Consórcio ABC discute regionalização da ortopedia de alta complexidade em Assembleia de Prefeitos - Consórcio Intermunicipal - Grande ABC",
+      "needsReading": false,
+      "baselineHash": "15993f5a84bb56cd4d3540a60b58c1f6924b58dd3dba6d9bc4cac094533ccecd"
+    },
+    {
+      "id": "93ecd54e1b29703c921c15f025278fb6bc0bfc24c40deb1e800c06b2425a2d11",
+      "title": "Inscrição Evento - redeparcerias.sistema.gov.br",
+      "needsReading": true,
+      "baselineHash": "51a7f2e619301b99368d9deb98ac304c835fdf3534579672df9cd6e51421a580"
+    },
+    {
+      "id": "f1c300cc8e7309c48982100ccdddd62a109ff349f0f0d3267fe7d0a20928f76b",
+      "title": "Dra. Cátia Junsara assume a presidência interina do CONIAPE durante licença do presidente Josafá Almeida",
+      "needsReading": false,
+      "baselineHash": "213978cd614c3fbc133e367c9dc024a0183b4a22e560edfb35c5edfd8e3ccb9f"
+    },
+    {
+      "id": "ab0291e5866c64fb30ab415c0cda45c751ce58ce1ac7de46cc937409b212c8e1",
+      "title": "RESOLUÇÃO 35 2026 DISPÕE SOBRE A NOMEAÇÃO DE FISCAL DE CONTRATO ESPECIFICADO E DÁ OUTRAS PROVIDÊNCIAS",
+      "needsReading": false,
+      "baselineHash": "67794ed161b8273c1fd8552d0b2d35012d7dbc14a8e3101158b91d044b5edc94"
+    },
+    {
+      "id": "16b4488c9f705d75498c9913d5b427ca702b077472c7bc4d12d11f7364deb17e",
+      "title": "EDITAL DA 29ª ASSEMBLÉIA GERAL - DEZ 2026",
+      "needsReading": false,
+      "baselineHash": "e00618e986310643abf353984a19e8ba4329f8f7ff6265367d2faa2313926457"
+    },
+    {
+      "id": "cf052f168beeb3a779f14c8e2880cc73a82b4914e641b838cd84bf2756a3b206",
+      "title": "LEI MUNICIPAL Nº 976/2026 - DISPÕE SOBRE O SERVIÇO DE INSPEÇÃO MUNICIPAL DE BONITO DE SANTA FÉ - PB E DÁ OUTRAS PROVIDÊNCIAS.",
+      "needsReading": false,
+      "baselineHash": "5df68170dcc4dc2ddb228a9dc59dd95b66fca04c4177fd874fef4b788ec779ed"
+    },
+    {
+      "id": "aea8cd2ce7d770e5352aa0254105dd33e0bdaf7e0be142a4e092c8ec1c46e86e",
+      "title": "Notícia - Educação ambiental ganha destaque em debate sobre mudanças climáticas - Consórcio Intermunicipal - Grande ABC",
+      "needsReading": false,
+      "baselineHash": "b45b1ca9ab39001b09090c695f05bd80b63f82e474716a7d63a2226b89acdb9c"
+    }
+  ]
+}

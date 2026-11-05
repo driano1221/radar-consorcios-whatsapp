@@ -120,7 +120,15 @@ export function reviewChecks(reason = '', category = '') {
   return ['Conferir se o trecho descreve fato efetivo, autorização ou apenas intenção/menção.', 'Informar categoria/etapa correta e copiar o trecho comprobatório, com página se houver.'];
 }
 export function applySimpleTriage(item) {
-  const triage = decideSimpleTriage(item);
+  let triage = decideSimpleTriage(item);
+  // A readable input must finish independently of delivery eligibility or paid AI.
+  if(triage.status==='processando'&&String(item.rawText||'').length>=160&&!item.extractionError&&
+    ['segunda_leitura','delimitar_ato','homologar_leitura'].includes(triage.nextAction)) {
+    const {nextAction,...settled}=triage;
+    triage={...settled,status:'descartado',category:'GERAL',stage:'Texto lido — prova de ato insuficiente',
+      evidence:String(item.rawText).slice(0,500),method:'leitura_sem_prova_delimitada',
+      reason:'Texto integral examinado, mas sem prova literal suficiente de ato das sete famílias nas regras vigentes. Não inferir evento por palavra-chave, fundamento legal, hipótese ou proposta. Uma prova documental nova permite nova análise.'};
+  }
   return { ...item, triage, catalogDecision: triage.status,
     classification: { ...item.classification, category: triage.category, stage: triage.stage,
       evidenceText: triage.evidence || item.ruleClassification?.evidenceText || item.classification?.evidenceText || '' } };
