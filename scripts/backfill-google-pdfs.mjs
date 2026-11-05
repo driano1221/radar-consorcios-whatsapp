@@ -72,7 +72,10 @@ async function fetchPdf(url) {
 }
 
 const selected = [...records.values()].filter(row=>pdfRecoveryDue(row,{requestedIds,hasText:fullTextIds.has(row.id),
-  reviewed:reviewedIds.has(row.id),previous:existing.get(row.id),retryFailed})).slice(0, limit);
+  reviewed:reviewedIds.has(row.id),previous:existing.get(row.id),retryFailed}))
+  .sort((a,b)=>Number(b.decisao_base==='processando')-Number(a.decisao_base==='processando')||
+    (existing.get(a.id)?.tentado_em||'').localeCompare(existing.get(b.id)?.tentado_em||''))
+  .slice(0, limit);
 const results = [];
 for (const [index, row] of selected.entries()) {
   const result = { documento_id: row.id, url: row.url, url_pdf: '',
@@ -111,7 +114,8 @@ for (const [index, row] of selected.entries()) {
       : result.paginas_ocr_pendente.length ? 'ocr_pendente' : 'sem menção textual';
     console.log(`[pdf ${index + 1}/${selected.length}] ${row.id.slice(0, 8)}: ${result.situacao}; ${result.trechos.length} trechos`);
   } catch (error) {
-    result.situacao = `falha: ${error.message.slice(0, 140)}`;
+    result.situacao = /pdf_grande_demais|PDF acima do limite|PDF acima de \d+ p[aá]ginas/.test(error.message+' '+(error.stderr||''))
+      ?'limite_pdf':`falha: ${error.message.slice(0, 140)}`;
     console.log(`[pdf ${index + 1}/${selected.length}] ${row.id.slice(0, 8)}: ${result.situacao}`);
   } finally {
     if (temporary) {

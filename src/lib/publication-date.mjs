@@ -89,7 +89,7 @@ export function formalActDate(item, now = new Date()) {
 
 export function formalActYear(item) {
   const title=String(item.title||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-  const m=/^(?:lei(?: municipal)?|resolucao|decreto|portaria)\s*(?:de\s+)?n[º°o.]*\s*[\d.]+\/(20\d{2})\b/.exec(title);
+  const m=/^(?:lei(?: municipal)?|resolucao|decreto|portaria)\s*(?:de\s+)?(?:n[º°o.]*\s*)?[\d.]+\/(20\d{2})\b/.exec(title);
   return m?Number(m[1]):null;
 }
 

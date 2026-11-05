@@ -31,6 +31,15 @@ test('admissibilidade encerra falha persistente real, sem chamar isso de julgame
   assert.equal(human.status,'confirmado');assert.equal(human.method,'revisao_documental');
 });
 
+test('falha transitória não é bloqueio permanente: suspende apenas após orçamento real de cinco tentativas',()=>{
+ assert.equal(readingAdmission({...row,article_attempts:3,article_recovery_reason:'erro: fetch failed'}),null);
+ const admission=readingAdmission({...row,article_attempts:5,article_recovery_reason:'erro: fetch failed'});
+ assert.ok(validReadingAdmission(row,admission));
+ const decision=decideSimpleTriage({rawText:'',classification:{category:'PROTOCOLO'},readingAdmission:admission});
+ assert.match(decision.reason,/não afirma bloqueio permanente/);assert.equal(decision.status,'descartado');
+ assert.equal(decision.decisionBasis,'admissibilidade');assert.equal(decision.evidence,'');
+});
+
 test('processamento chega à decisão de entrada; só íntegra nova válida permite reanálise e decisões humanas permanecem',async t=>{
   const dir=await mkdtemp(path.join(os.tmpdir(),'radar-admission-'));
   t.after(()=>rm(dir,{recursive:true,force:true}));

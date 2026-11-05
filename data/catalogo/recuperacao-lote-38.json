@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "runId": "42113875166",
+  "at": "2026-11-05T21:41:49.407Z",
+  "studySha256": "f342d15c06a7005f05d528912906681993e10647fdf3086ebd124f6e6092c994",
+  "attempts": [
+    {
+      "id": "3561b72b90793cdfc0ff841c4e1914a3effcc5d6f6cbb008225cf9a938155e85",
+      "attempts": 1,
+      "at": "2026-11-05T21:35:57.250Z",
+      "reason": "",
+      "resolvedUrl": "https://data.queridodiario.ok.org.br/4103479/2026-11-04/318075685ba89faf77b05e8aae6ba847c434215e.pdf",
+      "next": ""
+    },
+    {
+      "id": "405d0eafa09e0fdaa96530fc19704eb1c37642d2c39d3d7ecd02c99e148f5d59",
+      "attempts": 1,
+      "at": "2026-11-05T21:36:07.205Z",
+      "reason": "",
+      "resolvedUrl": "https://data.queridodiario.ok.org.br/3543907/2026-11-04/cf3d723e751a24748b3cb78c9380b3a1e548b3cc.pdf",
+      "next": ""
+    },
+    {
+      "id": "41bda7157dc376598c1560c413f3a9f1d64956ebad7609fd2bbded79f365c223",
+      "attempts": 1,
+      "at": "2026-11-05T21:39:45.814Z",
+      "reason": "",
+      "resolvedUrl": "https://data.queridodiario.ok.org.br/3545209/2026-11-04/ac9f5ed156281387e7b9cc02859ef66fb288f7e3.pdf",
+      "next": ""
+    },
+    {
+      "id": "93ecd54e1b29703c921c15f025278fb6bc0bfc24c40deb1e800c06b2425a2d11",
+      "attempts": 6,
+      "at": "2026-11-05T21:41:44.372Z",
+      "reason": "erro: fetch failed",
+      "resolvedUrl": "https://redeparcerias.sistema.gov.br/evento_inscricao/154",
+      "next": "2026-11-06T21:41:44.372Z"
+    },
+    {
+      "id": "bf05b42870f55d7ec509044948d9ad1c50dda5e472a46e8db4b703d3e7bb881b",
+      "attempts": 1,
+      "at": "2026-11-05T21:40:14.733Z",
+      "reason": "",
+      "resolvedUrl": "https://data.queridodiario.ok.org.br/3111200/2026-11-03/7a0700a815af8fd9f85c000bcbdce97e281ddd59.pdf",
+      "next": ""
+    },
+    {
+      "id": "c2af878b27bd2d2d03ce04fe7217875c2d9a87a3338af363091d033b900ddcc6",
+      "attempts": 1,
+      "at": "2026-11-05T21:41:03.129Z",
+      "reason": "",
+      "resolvedUrl": "https://data.queridodiario.ok.org.br/4104303/2026-11-03/90389ebcee9efdc0d2505d52a74e3cd99b14bc72.pdf",
+      "next": ""
+    },
+    {
+      "id": "ebb751e9378748333c391c0e014faf483507abf551149dfc5785b172819d7b4c",
+      "attempts": 2,
+      "at": "2026-11-05T21:41:25.761Z",
+      "reason": "",
+      "resolvedUrl": "https://www.tce.pr.gov.br/data/files/A3/80/8C/63/3DADE91091F5F8E9026B6394/PAF%2024-25%20Relatorio%20de%20Balanco.pdf",
+      "next": ""
+    }
+  ],
+  "pdfAudits": [
+    {
+      "documento_id": "3561b72b90793cdfc0ff841c4e1914a3effcc5d6f6cbb008225cf9a938155e85",
+      "url": "https://data.queridodiario.ok.org.br/4103479/2026-11-04/318075685ba89faf77b05e8aae6ba847c434215e.pdf",
+      "url_pdf": "https://data.queridodiario.ok.org.br/4103479/2026-11-04/318075685ba89faf77b05e8aae6ba847c434215e.pdf",
+      "situacao": "trechos por página recuperados",
+      "paginas": 13,
+      "trechos": [
+        {
+          "pagina": 5,
+          "coluna": "página inteira",
+          "texto": "E VANTAGENS FIXAS - 7.000,00 PESSOAL CIVIL 05.003.10.302.1500.2.04 Suporte financeiro à operação do Consorcio intermunicipal de saúde - CISA 120 3.3.72.30.00.00 303 MATERIAL DE CONSUMO 40.000,00 05.004 Suporte Profilático e Terapêutico 05.004.10.303.1500.2.00 Suporte Profilático e Terapêutico - Distribuição de medicamentos (farmácia) 131"
+        }
+      ],
+      "paginas_ocr_pendente": [],
+      "tentado_em": "2026-11-05T21:35:57.250Z",
+      "tentativas": 1
+    },
+    {
+      "documento_id": "405d0eafa09e0fdaa96530fc19704eb1c37642d2c39d3d7ecd02c99e148f5d59",
+      "url": "https://data.queridodiario.ok.org.br/3543907/2026-11-04/cf3d723e751a24748b3cb78c9380b3a1e548b3cc.pdf",
+      "url_pdf": "https://data.queridodiario.ok.org.br/3543907/2026-11-04/cf3d723e751a24748b3cb78c9380b3a1e548b3cc.pdf",
+      "situacao": "trechos por página recuperados",
+      "paginas": 169,
+      "trechos": [
+        {
+          "pagina": 7,
+          "coluna": "direita",
+          "texto": "AS IA REGULADORA ARES-PCJ), no uso das atribuições que nções da ARES-PCJ, convertido em Contrato de Consórcio nº 11.445, de 05/01/2007, no Decreto Federal nº 7.217, de Município de Rio Claro ratificou o Protocolo de Intenções da Consórcio Público, e delegou as competências municipais serviços públicos de saneamento básico à ARES-PCJ; env"
+        },
+        {
+          "pagina": 7,
+          "coluna": "direita",
+          "texto": "/2007, no Decreto Federal nº 7.217, de Município de Rio Claro ratificou o Protocolo de Intenções da Consórcio Público, e delegou as competências municipais serviços públicos de saneamento básico à ARES-PCJ; envolvimento Sustentável de Rio Claro, responsável pelos anos do Município de Rio Claro, por meio do Protocolo ra instituição dos va"
+        }
+      ],
+      "paginas_ocr_pendente": [],
+      "tentado_em": "2026-11-05T21:36:07.205Z",
+      "tentativas": 1,
+      "pdf_sha256": "ef18fec0a230845545ade1cdacf9308bf9665817fe4e71125f21779b4d6c5973",
+      "ocr_paginas": 1
+    },
+    {
+      "documento_id": "41bda7157dc376598c1560c413f3a9f1d64956ebad7609fd2bbded79f365c223",
+      "url": "https://data.queridodiario.ok.org.br/3545209/2026-11-04/ac9f5ed156281387e7b9cc02859ef66fb288f7e3.pdf",
+      "url_pdf": "https://data.queridodiario.ok.org.br/3545209/2026-11-04/ac9f5ed156281387e7b9cc02859ef66fb288f7e3.pdf",
+      "situacao": "trechos por página recuperados",
+      "paginas": 32,
+      "trechos": [
+        {
+          "pagina": 2,
+          "coluna": "esquerda",
+          "texto": "esentes, o vereador Wilson José dos Santos Salto, e também, Vanessa Cristina do Car Coordenadora de Consórcios do SAAE Superintendente da CIS-ITU; Patrísia de Oliv Indaiatuba; Dr. Fabricio Alessandro Barbosa, Hulmann, Secretário Municipal de Justiça d Presidente do CONIRPI, que agradeceu a pr convocação e urgência desta reunião, conform E"
+        },
+        {
+          "pagina": 2,
+          "coluna": "direita",
+          "texto": "novembro de 2026 Ano IX | Edição nº 2354 | Página 2 de 32 DO PREFEITO do Consórcio Intermunicipal do Ribeirão Piraí 10/2026 dois mil e vinte e seis, às 16h00, na Prefeitura de nida Itu 400 Anos, 111 - Novo Centro, Itu - SP, , art. 16, do Novo Estatuto, reuniram-se a Prefeita ros Bernardes; o Prefeito da Estânci"
+        },
+        {
+          "pagina": 3,
+          "coluna": "esquerda",
+          "texto": "DIÁRIO OFICIAL - MUNICÍPIO DE SALTO Quarta-feira, 04 de funcionamento do Consórcio, incluindo s administrativos. Destacou que, visando garan obrigações financeiras, propõe-se a revisão d montante inicialmente previsto de R$ 5.447.8 sete mil, oitocentos e sessenta e dois reais) par seiscentos e vinte e cinco rea"
+        },
+        {
+          "pagina": 4,
+          "coluna": "esquerda",
+          "texto": "nços nas tratativas com representantes das Superintendências Nacion estudar alternativas para que o Consórcio utiliz foi selecionado. Para dar continuidade às nego jurídico, em conjunto com o escritório jurídico Q a ser submetido à análise preliminar da Sup ressaltou que a seleção foi formalizada por p Ministério competente, o que reforç"
+        },
+        {
+          "pagina": 4,
+          "coluna": "direita",
+          "texto": "seguir. O valor quatorze mil, quatrocentos e cinquenta e sete reais forço da Ficha 15, referente ao Consórcio GIDP – 2026 do Contrato nº 02/2023. O recurso foi alocado ão programática 17.544.0302.19.09, categoria a as despesas com laudos e honorários periciais, arenta e oito mil reais), mediante reforço da Ficha 01.00, função programátic"
+        },
+        {
+          "pagina": 4,
+          "coluna": "direita",
+          "texto": "ros sta será desenvolvida com o apoio jurídico e ara análise, com vistas a estabelecer um modelo ao Consórcio utilizar os recursos na execução da 3 de Salto - SP 14.063, de 2020, garantindo autenticidade, validade jurídica e integridade."
+        }
+      ],
+      "paginas_ocr_pendente": [],
+      "tentado_em": "2026-11-05T21:39:45.814Z",
+      "tentativas": 1,
+      "pdf_sha256": "c549b20abd08a7265eabd2ffc8b56304d757eb63626db34bd4686830a25a4922",
+      "ocr_paginas": 2
+    },
+    {
+      "documento_id": "bf05b42870f55d7ec509044948d9ad1c50dda5e472a46e8db4b703d3e7bb881b",
+      "url": "https://data.queridodiario.ok.org.br/3111200/2026-11-03/7a0700a815af8fd9f85c000bcbdce97e281ddd59.pdf",
+      "url_pdf": "https://data.queridodiario.ok.org.br/3111200/2026-11-03/7a0700a815af8fd9f85c000bcbdce97e281ddd59.pdf",
+      "situacao": "trechos por página recuperados",
+      "paginas": 122,
+      "trechos": [
+        {
+          "pagina": 106,
+          "coluna": "página inteira",
+          "texto": "Belo – MG; Espécie: Primeiro Termo de Aditamento ao Contrato de Rateio nº 009/2026 realizado com o CONSÓRCIO INTERMUNICIPAL DE SAÚDE DA REGIÃO AMPLIADA OESTE PARA GERENCIAMENTO DOS SERVIÇOS DE URGÊNCIA E EMERGÊNCIA CIS-URG OESTE; Objeto: Alteração do valor total anual, em virtude da deliberação exarada da Assembleia Geral Extraordinária"
+        },
+        {
+          "pagina": 106,
+          "coluna": "página inteira",
+          "texto": "ração do valor total anual, em virtude da deliberação exarada da Assembleia Geral Extraordinária do Consórcio Intermunicipal de Saúde da Região Ampliada Oeste pra gerenciamento dos Serviços de Urgência e Emergência – CIS-URG OESTE, realizada em 28 de setembro de 2026 que aprovou o repasse da 13º (décima terceira) parcela de contribuição"
+        }
+      ],
+      "paginas_ocr_pendente": [],
+      "tentado_em": "2026-11-05T21:40:14.733Z",
+      "tentativas": 1
+    },
+    {
+      "documento_id": "c2af878b27bd2d2d03ce04fe7217875c2d9a87a3338af363091d033b900ddcc6",
+      "url": "https://data.queridodiario.ok.org.br/4104303/2026-11-03/90389ebcee9efdc0d2505d52a74e3cd99b14bc72.pdf",
+      "url_pdf": "https://data.queridodiario.ok.org.br/4104303/2026-11-03/90389ebcee9efdc0d2505d52a74e3cd99b14bc72.pdf",
+      "situacao": "trechos por página recuperados",
+      "paginas": 18,
+      "trechos": [
+        {
+          "pagina": 12,
+          "coluna": "direita",
+          "texto": "LIZADO COM RESOLUÇÃO ONSÓRCIO PELOS ENTES CONSORCIADOS, conforme especificado ca de direito público CONSÓRCIO INTERMUNICIPAL PARA O – CONDESCOM (CNPJ nº 13.133.982/0001-31), com sede na Rua ado por AIRTON ANTONIO AGNOLIN (CPF nº [CPF omitido]), no vembro de 2026. ÃO N° 170/2026 133/2021, c/c art. 66, inciso II, e art. 152 do Decreto Muni"
+        }
+      ],
+      "paginas_ocr_pendente": [],
+      "tentado_em": "2026-11-05T21:41:03.129Z",
+      "tentativas": 1,
+      "pdf_sha256": "a62008467ef997118eb7f7dfae3d67b1e349d71cfd8e011eaeaef89c37ff7577",
+      "ocr_paginas": 7
+    },
+    {
+      "documento_id": "ebb751e9378748333c391c0e014faf483507abf551149dfc5785b172819d7b4c",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQeW1rLW1hcEtHWFpLVU5OUEl1NFJOZndlMDl6MGFxYmFwRGktdHIzX1REZjFLaE9ycUcyaGxtNGlPcHRqZFdnd2JBdDdtbFVUd3hsTHkwYlNMUUEzVng4WmdZMlhHa2FFbGNTZWxWLWxJWGNEdkVrdkF2QmVjMVlmbUlrMWptVlpTSDQyM1BOMG5LR2VwR3Y3YzZNLUMxQ3VhOFhxMEpGNFMxY2RtbC12ZldpbHZUUGM?oc=5",
+      "url_pdf": "https://www.tce.pr.gov.br/data/files/A3/80/8C/63/3DADE91091F5F8E9026B6394/PAF%2024-25%20Relatorio%20de%20Balanco.pdf",
+      "situacao": "trechos por página recuperados",
+      "paginas": 32,
+      "trechos": [
+        {
+          "pagina": 12,
+          "coluna": "esquerda",
+          "texto": "PARANÁ, TUNE UMUARAMA, UNIÃO DA VITÓRIA, UNIFLOR, URA VITORIN O, WENCESLAU BRAZ, XAMBRÊ CIEDEPAR - CONSÓRCIO INTERMUNICIP CIMSAMU - CONSÓRCIO INTERMUNICI CINDEPAR - CONSÓRCIO PÚBLIC DESENVOLVIMENTO DO ESTADO DO PARANÁ CISI - CONSÓRCIO INTERMUNICIPAL DE CISLIPA - CONSÓRCIO INTERMUNICIPAL CISPAR - CONSÓRCIO INTERMUNICIPAL CISVAP - CONSÓRC"
+        },
+        {
+          "pagina": 12,
+          "coluna": "esquerda",
+          "texto": "VITÓRIA, UNIFLOR, URA VITORIN O, WENCESLAU BRAZ, XAMBRÊ CIEDEPAR - CONSÓRCIO INTERMUNICIP CIMSAMU - CONSÓRCIO INTERMUNICI CINDEPAR - CONSÓRCIO PÚBLIC DESENVOLVIMENTO DO ESTADO DO PARANÁ CISI - CONSÓRCIO INTERMUNICIPAL DE CISLIPA - CONSÓRCIO INTERMUNICIPAL CISPAR - CONSÓRCIO INTERMUNICIPAL CISVAP - CONSÓRCIO PÚBLICO IN PARANAPANEMA"
+        },
+        {
+          "pagina": 12,
+          "coluna": "esquerda",
+          "texto": "WENCESLAU BRAZ, XAMBRÊ CIEDEPAR - CONSÓRCIO INTERMUNICIP CIMSAMU - CONSÓRCIO INTERMUNICI CINDEPAR - CONSÓRCIO PÚBLIC DESENVOLVIMENTO DO ESTADO DO PARANÁ CISI - CONSÓRCIO INTERMUNICIPAL DE CISLIPA - CONSÓRCIO INTERMUNICIPAL CISPAR - CONSÓRCIO INTERMUNICIPAL CISVAP - CONSÓRCIO PÚBLICO IN PARANAPANEMA"
+        },
+        {
+          "pagina": 12,
+          "coluna": "esquerda",
+          "texto": "SAMU - CONSÓRCIO INTERMUNICI CINDEPAR - CONSÓRCIO PÚBLIC DESENVOLVIMENTO DO ESTADO DO PARANÁ CISI - CONSÓRCIO INTERMUNICIPAL DE CISLIPA - CONSÓRCIO INTERMUNICIPAL CISPAR - CONSÓRCIO INTERMUNICIPAL CISVAP - CONSÓRCIO PÚBLICO IN PARANAPANEMA"
+        },
+        {
+          "pagina": 12,
+          "coluna": "esquerda",
+          "texto": "- CONSÓRCIO PÚBLIC DESENVOLVIMENTO DO ESTADO DO PARANÁ CISI - CONSÓRCIO INTERMUNICIPAL DE CISLIPA - CONSÓRCIO INTERMUNICIPAL CISPAR - CONSÓRCIO INTERMUNICIPAL CISVAP - CONSÓRCIO PÚBLICO IN PARANAPANEMA"
+        },
+        {
+          "pagina": 12,
+          "coluna": "esquerda",
+          "texto": "DO ESTADO DO PARANÁ CISI - CONSÓRCIO INTERMUNICIPAL DE CISLIPA - CONSÓRCIO INTERMUNICIPAL CISPAR - CONSÓRCIO INTERMUNICIPAL CISVAP - CONSÓRCIO PÚBLICO IN PARANAPANEMA"
+        },
+        {
+          "pagina": 12,
+          "coluna": "esquerda",
+          "texto": "CIO INTERMUNICIPAL DE CISLIPA - CONSÓRCIO INTERMUNICIPAL CISPAR - CONSÓRCIO INTERMUNICIPAL CISVAP - CONSÓRCIO PÚBLICO IN PARANAPANEMA"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "CODINORP - CONSÓRCIO DE DESENVOLVIMENTO E INOVAÇÃO DO NORTE DO PARANÁ COIN-GM - CONSÓRCIO INTERMUNICIPAL DAS GUARDAS MUNICIPAIS DA REGIÃO METROPOLITANA DE CURITIBA CONDESCOM - CONSÓRCIO INTERMUNICIPAL PARA DESENVOLVIMENTO DOS MUNICÍPIOS DA REGIÃO CAM"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "CODINORP - CONSÓRCIO DE DESENVOLVIMENTO E INOVAÇÃO DO NORTE DO PARANÁ COIN-GM - CONSÓRCIO INTERMUNICIPAL DAS GUARDAS MUNICIPAIS DA REGIÃO METROPOLITANA DE CURITIBA CONDESCOM - CONSÓRCIO INTERMUNICIPAL PARA DESENVOLVIMENTO DOS MUNICÍPIOS DA REGIÃO CAMPO MOURÃO CONSAMU - CONSÓRCIO DE SAÚDE DOS MUNICÍPIOS DO OESTE DO PAR"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "M - CONSÓRCIO INTERMUNICIPAL DAS GUARDAS MUNICIPAIS DA REGIÃO METROPOLITANA DE CURITIBA CONDESCOM - CONSÓRCIO INTERMUNICIPAL PARA DESENVOLVIMENTO DOS MUNICÍPIOS DA REGIÃO CAMPO MOURÃO CONSAMU - CONSÓRCIO DE SAÚDE DOS MUNICÍPIOS DO OESTE DO PARANÁ CONSÓRCIO INTERGESTORES PARANÁ SAÚDE CONSÓRCIO INTERMUNICIPAL CAIUA-AMBIENTAL CONSÓRCIO INTE"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "COM - CONSÓRCIO INTERMUNICIPAL PARA DESENVOLVIMENTO DOS MUNICÍPIOS DA REGIÃO CAMPO MOURÃO CONSAMU - CONSÓRCIO DE SAÚDE DOS MUNICÍPIOS DO OESTE DO PARANÁ CONSÓRCIO INTERGESTORES PARANÁ SAÚDE CONSÓRCIO INTERMUNICIPAL CAIUA-AMBIENTAL CONSÓRCIO INTERMUNICIPAL DA REDE DE URGÊNCIAS DO SUDOESTE DO PARANÁ CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIME"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "OS MUNICÍPIOS DA REGIÃO CAMPO MOURÃO CONSAMU - CONSÓRCIO DE SAÚDE DOS MUNICÍPIOS DO OESTE DO PARANÁ CONSÓRCIO INTERGESTORES PARANÁ SAÚDE CONSÓRCIO INTERMUNICIPAL CAIUA-AMBIENTAL CONSÓRCIO INTERMUNICIPAL DA REDE DE URGÊNCIAS DO SUDOESTE DO PARANÁ CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO REGIONAL CAMINHOS DO TIBAGI CONSÓRCIO INTERMUNICI"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "CONSAMU - CONSÓRCIO DE SAÚDE DOS MUNICÍPIOS DO OESTE DO PARANÁ CONSÓRCIO INTERGESTORES PARANÁ SAÚDE CONSÓRCIO INTERMUNICIPAL CAIUA-AMBIENTAL CONSÓRCIO INTERMUNICIPAL DA REDE DE URGÊNCIAS DO SUDOESTE DO PARANÁ CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO REGIONAL CAMINHOS DO TIBAGI CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO REGIONAL DO TE"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "OS DO OESTE DO PARANÁ CONSÓRCIO INTERGESTORES PARANÁ SAÚDE CONSÓRCIO INTERMUNICIPAL CAIUA-AMBIENTAL CONSÓRCIO INTERMUNICIPAL DA REDE DE URGÊNCIAS DO SUDOESTE DO PARANÁ CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO REGIONAL CAMINHOS DO TIBAGI CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO REGIONAL DO TERRITÓRIO DIVISA NORTE DO PARANÁ CONSÓRCIO"
+        },
+        {
+          "pagina": 13,
+          "coluna": "página inteira",
+          "texto": "INTERMUNICIPAL CAIUA-AMBIENTAL CONSÓRCIO INTERMUNICIPAL DA REDE DE URGÊNCIAS DO SUDOESTE DO PARANÁ CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO REGIONAL CAMINHOS DO TIBAGI CONSÓRCIO INTERMUNICIPAL DE DESENVOLVIMENTO REGIONAL DO TERRITÓRIO DIVISA NORTE DO PARANÁ CONSÓRCIO INTERMUNICIPAL DE SAÚDE - CONIMS CONSÓRCIO INTERMUNICIPAL DE SAÚDE"
+        },
+        {
+          "pagina": 14,
+          "coluna": "página inteira",
+          "texto": "CONSÓRCIO PÚBLICO INTERMUNICIPAL PARA O DESENVOLVIMENTO RURAL E URBANO DA REGIÃO DO VALE DO IVAÍ DO ESTADO DO PARANÁ CURIÚVA - CONSÓRCIO INTERMUNICIPAL PARA ATERRO SANITÁRIO Prefeituras Municipais de ABATIÁ, ADRIANÓPOLIS, AGUDOS DO SUL, AL"
+        },
+        {
+          "pagina": 14,
+          "coluna": "página inteira",
+          "texto": "CIPAL PARA O DESENVOLVIMENTO RURAL E URBANO DA REGIÃO DO VALE DO IVAÍ DO ESTADO DO PARANÁ CURIÚVA - CONSÓRCIO INTERMUNICIPAL PARA ATERRO SANITÁRIO Prefeituras Municipais de ABATIÁ, ADRIANÓPOLIS, AGUDOS DO SUL, ALMIRANTE TAMANDARÉ, ALTAMIRA DO PARANÁ, ALTO PARAÍSO, ALTO PIQUIRI, ALTÔNIA, ALVORADA DO SUL, AMAPORÃ, AMPÉRE, ANAHY, ANDIRÁ, ÂN"
+        },
+        {
+          "pagina": 19,
+          "coluna": "esquerda",
+          "texto": "s processos lici serviços no âmbito municipal. Entidade Municipal AUTARQUIA MUNICIPAL DE SAÚDE DE A CONSORCIO INTERGESTORES PARANA S CONSÓRCIO INTERMUNICIPAL DE SAÚD CONSÓRCIO INTERMUNICIPAL DE SAUD FUNDACAO MUNICIPAL DE SAUDE DE A FUNDAÇÃO MUNICIPAL DE SAÚDE DE FO FUNDAÇÃO MUNICIPAL DE SAÚDE DE P FUNDO MUNICIPAL DE SAUDE DE CONG FUNDO M"
+        },
+        {
+          "pagina": 19,
+          "coluna": "esquerda",
+          "texto": "to municipal. Entidade Municipal AUTARQUIA MUNICIPAL DE SAÚDE DE A CONSORCIO INTERGESTORES PARANA S CONSÓRCIO INTERMUNICIPAL DE SAÚD CONSÓRCIO INTERMUNICIPAL DE SAUD FUNDACAO MUNICIPAL DE SAUDE DE A FUNDAÇÃO MUNICIPAL DE SAÚDE DE FO FUNDAÇÃO MUNICIPAL DE SAÚDE DE P FUNDO MUNICIPAL DE SAUDE DE CONG FUNDO MUNICIPAL DE SAÚDE DE UMUA INSTITU"
+        },
+        {
+          "pagina": 19,
+          "coluna": "esquerda",
+          "texto": "AUTARQUIA MUNICIPAL DE SAÚDE DE A CONSORCIO INTERGESTORES PARANA S CONSÓRCIO INTERMUNICIPAL DE SAÚD CONSÓRCIO INTERMUNICIPAL DE SAUD FUNDACAO MUNICIPAL DE SAUDE DE A FUNDAÇÃO MUNICIPAL DE SAÚDE DE FO FUNDAÇÃO MUNICIPAL DE SAÚDE DE P FUNDO MUNICIPAL DE SAUDE DE CONG FUNDO MUNICIPAL DE SAÚDE DE UMUA INSTITUTO CURITIBA DE SAUDE MARINGÁ PREV"
+        }
+      ],
+      "paginas_ocr_pendente": [],
+      "tentado_em": "2026-11-05T21:41:25.761Z",
+      "tentativas": 1,
+      "pdf_sha256": "dbf71bd8829bb46a8e3770d1036444d02d332863aead0242243b3ea1c4c5b4f8",
+      "ocr_paginas": 1
+    }
+  ],
+  "aiCalls": 0,
+  "whatsappSends": 0
+}

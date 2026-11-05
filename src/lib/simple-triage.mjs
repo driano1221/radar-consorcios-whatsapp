@@ -138,6 +138,12 @@ export function applySimpleTriage(item) {
 export function wasQueuedAsConfirmed(item) {
   return (item.triage||decideSimpleTriage(item)).status==='confirmado';
 }
+
+export function assertNoReadableProcessing(records,texts) {
+  const readable=new Set(texts.filter(t=>t.texto?.length>=160&&sha(t.texto)===t.texto_sha256).map(t=>t.documento_id));
+  for(const row of records)if((row.decisao_base||row.triagem_automatica?.status)==='processando'&&readable.has(row.id))
+    throw new Error('Íntegra válida sem decisão editorial concluída: '+row.id);
+}
 export async function loadOriginalTriage(directory) {
   const groups = await Promise.all(['triagem-originais.ndjson', 'triagem-reprocessada.ndjson'].map(async name => {
     try { return (await readFile(path.join(directory, name), 'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse); }

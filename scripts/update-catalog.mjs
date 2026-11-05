@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadCatalog, mergeStateIntoCatalog, saveCatalog } from '../src/lib/catalog.mjs';
-import { loadOriginalTriage } from '../src/lib/simple-triage.mjs';
+import { loadOriginalTriage,assertNoReadableProcessing } from '../src/lib/simple-triage.mjs';
 import { reprocessTriage,upgradeLegacyTriage } from './reprocess-triage.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -45,6 +45,7 @@ try {
       article_reader: text.leitor, article_url: row.article_url || text.url_artigo,
       article_recovery_reason: '' });
   }
+  assertNoReadableProcessing(records.values(),texts);
 } catch (error) { if (error.code !== 'ENOENT') throw error; }
 const counts = await saveCatalog(directory, records);
 console.log(`[catálogo] ${counts.all} documentos encontrados; ${counts.relevant} classificados como potenciais eventos; ${counts.consortia} consórcios identificados explicitamente.`);

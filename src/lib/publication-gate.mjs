@@ -13,7 +13,7 @@ function timestamp(value) {
 // Uma data de fato documentada tem prioridade, seguida da página original.
 export function publicationDate(item, now = new Date()) {
   for (const [field, date] of [
-    ['fato', item.eventAt], ['mês do fato', eventMonthEnd(item.eventMonth)], ['ato', formalActDate(item, now)],
+    ['ato', formalActDate(item, now)], ['fato', item.eventAt], ['mês do fato', eventMonthEnd(item.eventMonth)],
     ['fonte', item.sourcePublishedAt], ['coleta', item.publishedAt],
   ]) {
     if (Number.isFinite(timestamp(date))) return { date: new Date(date).toISOString(), field };

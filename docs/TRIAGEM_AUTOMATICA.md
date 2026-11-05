@@ -106,3 +106,7 @@ As revisões anteriores de 10, 13 e 4 registros são lotes históricos auditados
 # Admissão finita de leitura — 01/11/2026
 
 Os cinco bloqueios originais foram estudados no executor GitHub. Itanhaém foi recuperado em PDF oficial e rejeitado como notícia nova por ser lei de 2023; os outros quatro foram barrados explicitamente na entrada, sem julgamento do conteúdo inacessível. Não há retentativa indefinida nem banimento genérico de PDF/HTML. Regras, evidências e reprodução: [ADMISSAO-DE-LEITURA-2026-11-01.md](ADMISSAO-DE-LEITURA-2026-11-01.md).
+
+## Conclusão independente da fila — 05/11/2026
+
+Os 38 processamentos foram revisados com originais e leitura isolada no GitHub: 21 confirmações, 16 rejeições de conteúdo e uma suspensão por limite técnico de leitura. Não geram alertas nem resumos retroativos. O caminho compartilhado conclui textos legíveis independentemente da fila de envio; a validação detecta íntegra ainda em processamento. A data própria do ato prevalece sobre página recente, e PDFs pendentes têm prioridade na recuperação diária. [Causas, critérios, limites e evidências por registro](TRIAGEM-38-2026-11-05.md).

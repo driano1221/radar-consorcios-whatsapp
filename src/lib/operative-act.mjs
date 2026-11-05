@@ -10,6 +10,30 @@ export function operativeAct(title,text) {
   const reject=(stage,reason,match)=>result('GERAL','documentary_exclusion',stage,`rejeitado: ${reason}`,match);
   const consortium=/\bcons[oó]rci[oa]/i.test(text);
   if(!consortium)return null;
+  const budgetCredit=/\bFica aberto[^.!?]{0,120}?Cr[eé]dito ADICIONAL SUPLEMENTAR[^.!?]{0,220}/i.exec(head);
+  if(/^decreto/i.test(title)&&budgetCredit&&/prefeito municipal/i.test(head))
+    return reject('crédito suplementar municipal; rubrica consorcial não comprova rateio',
+      'ato abre dotação no orçamento municipal; não é assinatura de contrato nem pagamento realizado',budgetCredit);
+  const tariff=/\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*Fixar os valores das Tarifas[^.!?]{0,380}/i.exec(text.slice(0,5000));
+  if(/^resolu[cç][aã]o/i.test(title)&&/AG[EÊ]NCIA REGULADORA/i.test(head)&&tariff)
+    return result('ATUAÇÃO','published_inspection_rule','norma tarifária publicada pelo consórcio regulador; cobrança e fiscalização executadas não comprovadas',
+      'dispositivo fixa tarifas; protocolo antigo no preâmbulo é fundamento, não nova ratificação',tariff);
+  const supplement=/\bsuplementa[cç][aã]o or[cç]ament[aá]ria foi aprovada por unanimidade[^.!?]{0,120}/i.exec(text);
+  if(/^ata/i.test(title)&&supplement&&/funcionamento do Cons[oó]rcio/i.test(text))
+    return result('FINANÇAS','consortium_budget_act','suplementação do orçamento do consórcio aprovada; rateio futuro ainda sujeito a votação',
+      'ata registra deliberação orçamentária efetiva, sem converter proposta de rateio em contrato assinado',supplement);
+  const publishedAmendment=/\bPrimeiro Termo de Aditamento ao Contrato de Rateio[^;]{0,330}?realizado com o CONS[OÓ]RCIO[^;]{0,380}/i.exec(head);
+  if(/^extrato termo aditivo/i.test(title)&&publishedAmendment&&/\bEntidade:\s*Munic[ií]pio/i.test(head)&&/\bValor:\s*Fica acrescido/i.test(text))
+    return result('RATEIO','documented_rateio','aditamento de rateio publicado com valor acrescido; pagamento não comprovado',
+      'extrato identifica município, consórcio, contrato e alteração de valor realizada',publishedAmendment);
+  const publicRental=/\bfica\s+autorizada a dispensa de licita[cç][aã]o\s+para\s+LOCA[CÇ][AÃ]O[^.!?]{0,230}/i.exec(head);
+  if(/^dispensa de licita[cç][aã]o/i.test(title)&&publicRental&&/pessoa jur[ií]dica de direito p[uú]blico CONS[OÓ]RCIO/i.test(text))
+    return result('ATUAÇÃO','authorized_public_cooperation','contratação direta com consórcio autorizada; contrato assinado, uso e pagamento não comprovados',
+      'dispensa identifica serviço e consórcio público; confirmar somente a autorização publicada',publicRental);
+  const completedAudits=/\bAP[EÊ]NDICE:\s*DETALHAMENTO DAS ENTIDADES FISCALIZADAS PARA ATENDER AO\s+PLANO DE FISCALIZA[CÇ][AÃ]O DE 20\d{2}\s*[-–]\s*20\d{2}/i.exec(text);
+  if(/^relat[oó]rio de balan[cç]o/i.test(title)&&completedAudits)
+    return result('CONTROLE','initiated_inspection','balanço histórico das fiscalizações realizadas; achados, sanções e julgamentos individuais não inferidos',
+      'relatório oficial diferencia resultados gerais e entidades fiscalizadas de decisões individuais',completedAudits);
   const staffRoutine=/\bart\.?\s*1[º°o.]?\s*[-–—.]?\s*(?:dispor sobre a concess[aã]o de f[eé]rias|(?:designar|nomear)\s+fiscal\s+(?:do|de)\s+contrato)[^.;]{0,280}/i.exec(head);
   if(/^(?:portaria|resolu[cç][aã]o)\b/i.test(title)&&staffRoutine)
     return reject('rotina de pessoal ou fiscalização administrativa do contrato',
@@ -55,7 +79,7 @@ export function operativeAct(title,text) {
   if(/\bata\b/i.test(title)&&reintegration)
     return result('ADESÃO','documented_composition','retorno municipal registrado em ata; data do ingresso original não inferida',
       'ata relata reintegração efetiva, distinta de pauta ou autorização futura',reintegration);
-  const firstVote=/\bas (?:\w+\s+)?propostas foram apreciadas em primeira vota[cç][aã]o e contaram com a aprova[cç][aã]o de todos os vereadores\b/i.exec(text);
+  const firstVote=/\bas (?:[\p{L}\d]+\s+)?propostas foram apreciadas em primeira vota[cç][aã]o e contaram com a aprova[cç][aã]o de todos os vereadores\b/iu.exec(text);
   if(/\bprojetos\b/i.test(title)&&firstVote)
     return result('GOVERNANÇA','approved_legislative_project','projetos consorciais aprovados em primeira votação; segunda votação, sanção, extinção e ingresso não comprovados',
       'notícia relata etapa legislativa realizada; objetos dos projetos não são mudanças consumadas',firstVote);

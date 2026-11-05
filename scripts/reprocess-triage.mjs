@@ -9,19 +9,21 @@ import {applySimpleTriage,rowFingerprint,TRIAGE_VERSION} from '../src/lib/simple
 import {readingAdmission} from '../src/lib/reading-admission.mjs';
 import {loadAlternativeDecisionData,validAlternativeDecision} from '../src/lib/alternative-triage.mjs';
 import {restoreRecoveryFailures} from '../src/lib/recovery-policy.mjs';
+import {bulletinUnit} from '../src/lib/bulletin-unit.mjs';
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const nd=async(directory,name)=>{try{return (await readFile(path.join(directory,name),'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);}catch(e){if(e.code==='ENOENT')return [];throw e;}};
 
 export function reviewCatalogRow(row,observation={},text) {
+  const unit=bulletinUnit(row,text);
   const item={...observation,triage:undefined,editorialDecision:undefined,
-    title:text?.titulo_documento||row.titulo,url:row.url,articleUrl:text?.url_artigo||row.article_url||row.article_resolved_url||observation.articleUrl,
+    title:text?.titulo_documento||unit?.title||row.titulo,url:row.url,articleUrl:text?.url_artigo||row.article_url||row.article_resolved_url||observation.articleUrl,
     source:row.fonte,sourceUrl:observation.sourceUrl||row.url,
     kind:observation.kind||(/diariomunicipal|\.pdf(?:[?#]|$)/.test(row.url)?'gazette':'news'),
     publishedAt:row.data_indexacao||row.data_publicacao,summary:observation.summary||row.trecho,
     rawText:text?.texto||'',excerpts:undefined,readingAdmission:readingAdmission(row),
     ...(text?{contentProvenance:'pagina_original',extractionError:undefined}:{}),
   };
-  item.classification=classifyItem(item);item.ruleClassification=item.classification;
+  item.classification=classifyItem(unit?{...item,rawText:unit.text}:item);item.ruleClassification=item.classification;
   return applySimpleTriage(item).triage;
 }
 

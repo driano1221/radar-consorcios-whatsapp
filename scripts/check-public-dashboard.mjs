@@ -15,6 +15,8 @@ const data = JSON.parse(raw);
 const version = JSON.parse(versionRaw);
 if (!data.public) throw new Error('O pacote não foi gerado no modo público.');
 if (data.items.some((item) => item.fullText)) throw new Error('Texto integral entrou no pacote público.');
+if(data.items.some(item=>item.baseDecision==='processando'&&item.hasFullText))
+  throw new Error('Íntegra disponível parada em processamento; concluir a triagem antes de publicar.');
 if (data.items.some((item) => item.alternativeSources?.some(source => source.fullText)))
   throw new Error('Texto integral de fonte alternativa entrou no pacote público.');
 if (version.generatedAt !== data.generatedAt || version.lastCollectionAt !== data.lastCollectionAt)
