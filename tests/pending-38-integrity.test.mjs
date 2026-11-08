@@ -15,12 +15,16 @@ test('recaptura com título normalizado não invalida o selo do lote; adulteraç
  const title=row.titulo.replace(/ \(CNM\)$/,'');assert.notEqual(title,row.titulo);
  const item={kind:'news',url:row.url,title,source:row.fonte,summary:text.texto,rawText:text.texto,
   triage:{...decision,retroactive:false}};
- const state={observations:{recapture:{item,firstSeenAt:row.primeira_coleta,lastSeenAt:'2026-11-08T01:00:00Z'}}};
+ const recapturedAt=new Date(Date.parse(row.ultima_coleta||row.primeira_coleta)+60000).toISOString();
+ const state={observations:{recapture:{item,firstSeenAt:row.primeira_coleta,lastSeenAt:recapturedAt}}};
  const records=new Map([[row.id,structuredClone(row)]]);
  mergeStateIntoCatalog(records,state,{reviewedIds:new Set(decisions.keys())});
  const after=records.get(row.id);
  for(const key of ['id','url','titulo','trecho'])assert.equal(after[key],row[key],key);
- assert.ok(validOriginalTriage(after,decision));assert.equal(after.ultima_coleta,'2026-11-08T01:00:00Z');
+ assert.ok(validOriginalTriage(after,decision));assert.equal(after.ultima_coleta,recapturedAt);
+ mergeStateIntoCatalog(records,{observations:{older:{item,firstSeenAt:row.primeira_coleta,lastSeenAt:row.ultima_coleta}}},{reviewedIds:new Set(decisions.keys())});
+ assert.equal(records.get(row.id).ultima_coleta,recapturedAt,'observação antiga não pode retroceder a data');
+ assert.ok(validOriginalTriage(records.get(row.id),decision));
  assert.equal(state.observations.recapture.item.title,title,'a captura nova continua auditável');
  assert.equal(validOriginalTriage({...after,titulo:title},decision),false);
  assert.equal(validOriginalTriage(after,{...decision,bodyMatches:false}),false);
