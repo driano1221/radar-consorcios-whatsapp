@@ -1,15 +1,15 @@
 # Panorama da base histórica
 
-- 6206 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 372 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 123 identidades candidatas de consórcios; 219 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 6213 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 373 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 123 identidades candidatas de consórcios; 220 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 165 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 124 |
+| ATUAÇÃO | 125 |
 | GOVERNANÇA | 59 |
 | RATEIO | 59 |
 | CONTROLE | 31 |
@@ -31,6 +31,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-11-07 | ATUAÇÃO — relato — conferir documento original | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [Consórcio ABC Discute Caminhos Para Ampliar A Equidade Na Saúde Do Grande ABC - ABC Agora](https://news.google.com/rss/articles/CBMidEFVX3lxTE9NZGppendlSnR2dG1nUVl0aHZ4eVJDdG5JN2NhZjUzbnRIOUxlMXJRWFhJTlRlZnctM0Rkdm1XY190M0doell6ekd3X2t3Y2M1YmpkQmtfWnJRTWdiUEd6QnpTd0ttZHNjT1hlYlJUVlIxUHlV?oc=5) |
 | 2026-11-06 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [MUNICÍPIO DE SÃO PEDRO DO PARANÁ - CONVÊNIO 2/2026](https://www.diariomunicipal.com.br/amp/materia/5E56B7B6) |
 | 2026-11-06 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [MODELO DE CONVÊNIO PRODUTOS PARA SAÚDE](https://www.diariomunicipal.com.br/amp/materia/9EEB28AA) |
 | 2026-11-06 | RATEIO — aditivo de rateio formalizado; pagamento e novo ingresso não comprovados | confirmado pela triagem — texto identifica município, consórcio e celebração/assinantes do instrumento | [PRIMEIRO TERMO ADITIVO DE VALOR AO CONTRATO DE RATEIO Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1937546/) |
@@ -45,6 +46,5 @@
 | 2026-11-05 | RATEIO — rateio individualizado no relatório com consórcio e data de assinatura; demais contratos não confundidos | confirmado pela triagem — bloco próprio do contrato contém objeto de rateio, contratado público e assinatura; não é dotação genérica | [EXTRATO DOS CONTRATOS OUT/26](https://diariomunicipal.sc.gov.br/atos/8886765) |
 | 2026-11-05 | ADESÃO AUTORIZADA — participação autorizada em lei; subscrição e ingresso efetivo não comprovados | confirmado pela triagem — dispositivo autoriza município identificado a participar de consórcio determinado | [AUTORIZA O MUNICÍPIO DE UNIÃO DE MINAS/MG A PARTICIPAR DO CONSÓRCIO PÚBLICO INTERMUNICIPAL DE DESENVOLVIMENTO SUSTENTÁVEL DO TRIÂNGULO MINEIRO E ALTO PARANAÍBA – CIDES E DÁ OUTRAS PROVIDÊNCIAS.](https://www.diariomunicipal.com.br/amm-mg/materia/8313207A) |
 | 2026-11-05 | ADESÃO AUTORIZADA — autorização legal de ingresso/participação; adesão efetiva não comprovada | confirmado pela triagem — dispositivo operativo da lei prevalece sobre cláusulas hipotéticas de retirada nos anexos | [LEI MUNICIPAL N.º 836/2025](https://www.diariomunicipal.com.br/aprece/materia/18D8900C) |
-| 2026-11-05 | RATEIO — aditivo de rateio formalizado; pagamento e novo ingresso não comprovados | confirmado pela triagem — texto identifica município, consórcio e celebração/assinantes do instrumento | [PREFEITURA MUNICIPAL DE ARCOS P ADM 354/2025](https://www.diariomunicipal.com.br/amm-mg/materia/2769908E) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
