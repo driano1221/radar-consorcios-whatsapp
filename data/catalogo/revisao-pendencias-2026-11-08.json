@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "at": "2026-11-08T04:04:38.683Z",
+  "baseline": "b089248b71038149115da03935894dbe579999e7",
+  "studies": [
+    {
+      "runId": "42442536225",
+      "at": "2026-11-08T03:25:23.745Z",
+      "sha256": "39e6427dd53f01197ab2545378055de5342af8f5649ec385104c6f891936986c"
+    }
+  ],
+  "outcomes": [
+    {
+      "decision": {
+        "version": 4,
+        "category": "GOVERNANÇA",
+        "stage": "projeto consorcial com aprovação registrada em primeira e segunda votação; sanção, ingresso efetivo e rateio assinado não comprovados",
+        "evidence": "APROVADO EM 1ª VOTAÇÃO Documento aprovado em 16/03/2026 com 11 votos favoráveis e 1 votos contrários de 15 presentes. _____________________ Presidente CÂMARA MUNICIPAL DE VIÇOSA - MG APROVADO EM 2ª VOTAÇÃO Documento aprovado em 16/03/2026 com 11 votos favoráveis e 1 votos contrários de 14 presentes",
+        "bodyHash": "4b717215770aced9401e1c5a60bd2b69d18a34d5d4f111ccc08c3ce2e79a16e8",
+        "sourceUrl": "https://www.vicosa.mg.leg.br/doc/materia/2974",
+        "checks": [],
+        "status": "confirmado",
+        "reason": "documento do próprio projeto registra votação concluída com data e contagem de votos; o texto proposto não é lei sancionada",
+        "method": "regra_documental_especifica",
+        "documentId": "cb9ed2abbd7930c9ac25e7820e86061f934a61ae3331c6bfba4d42d6df009ac3",
+        "rowHash": "0a4a834790a63a80a6dedc8c7773fd2ca832d2a039b3086762d1bf74b4cf8454",
+        "retroactive": true,
+        "reviewedAt": "2026-11-08T04:04:34.830Z",
+        "alertAllowed": false,
+        "weeklyAllowed": false
+      },
+      "reading": {
+        "sha256": "4b717215770aced9401e1c5a60bd2b69d18a34d5d4f111ccc08c3ce2e79a16e8",
+        "chars": 15352,
+        "reader": "pdf_integral_por_pagina",
+        "url": "https://www.vicosa.mg.leg.br/doc/materia/2974"
+      },
+      "attempt": {
+        "count": 2,
+        "at": "2026-11-08T03:25:12.390Z",
+        "reason": "",
+        "next": ""
+      },
+      "eventAt": "2026-03-16T00:00:00.000Z"
+    }
+  ],
+  "aiCalls": 0,
+  "whatsappSends": 0
+}

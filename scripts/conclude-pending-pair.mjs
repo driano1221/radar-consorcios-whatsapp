@@ -4,7 +4,9 @@ import{loadCatalog,saveCatalog}from'../src/lib/catalog.mjs';import{reviewCatalog
 import{rowFingerprint,validOriginalTriage}from'../src/lib/simple-triage.mjs';import{attachRecoveredText}from'../src/lib/recovery-policy.mjs';
 import{validReadingAdmission}from'../src/lib/reading-admission.mjs';import{formalActDate}from'../src/lib/publication-date.mjs';import{locateQuote}from'../src/lib/quote-evidence.mjs';
 import{findIdentityMentions}from'../src/lib/consortium-identity.mjs';
-const directory='data/catalogo',ids=new Set(['cb9ed2abbd7930c9ac25e7820e86061f934a61ae3331c6bfba4d42d6df009ac3','1d59dd103f2998d8461e3235ce1de5ba444f32ca7e67bfc2b32d19fb73937c5e']);
+const directory='data/catalogo',allowedIds=['cb9ed2abbd7930c9ac25e7820e86061f934a61ae3331c6bfba4d42d6df009ac3','1d59dd103f2998d8461e3235ce1de5ba444f32ca7e67bfc2b32d19fb73937c5e'];
+const ids=new Set(process.argv.find(a=>a.startsWith('--ids='))?.slice(6).split(',')||allowedIds);
+assert.ok(ids.size&&[...ids].every(id=>allowedIds.includes(id)),'Escopo diferente dos dois casos autorizados');
 assert.notEqual(process.env.SEND_ENABLED,'true');assert.notEqual(process.env.PERSIST_STATE,'true');
 const sha=x=>createHash('sha256').update(x).digest('hex'),nd=async n=>(await readFile(directory+'/'+n+'.ndjson','utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);
 const input=process.argv.filter(a=>a.startsWith('--study-file=')).map(a=>a.slice(13));assert.ok(input.length);
@@ -39,7 +41,9 @@ if(process.argv.includes('--apply')){
  for(const[name,map]of[['textos-artigos',texts],['triagem-reprocessada',decisions]])await writeFile(directory+'/'+name+'.ndjson',[...map.values()].sort((a,b)=>(a.documentId||a.documento_id).localeCompare(b.documentId||b.documento_id)).map(JSON.stringify).join('\n')+'\n');
  await saveCatalog(directory,records);const after=await loadCatalog(directory+'/arquivo-coletas.ndjson');
  for(const[id,value]of oldRows)if(!ids.has(id))assert.equal(JSON.stringify(after.get(id)),value,'Registro externo alterado: '+id);
- await writeFile(directory+'/revisao-pendencias-2026-11-08.json',JSON.stringify({version:1,at:new Date().toISOString(),baseline:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),studies:studies.map(s=>({runId:s.study.runId,at:s.study.at,sha256:s.sha256})),outcomes,aiCalls:0,whatsappSends:0},null,2)+'\n');
+ let previous;try{previous=JSON.parse(await readFile(directory+'/revisao-pendencias-2026-11-08.json','utf8'));}catch(e){if(e.code!=='ENOENT')throw e;}
+ const studiesByRun=new Map((previous?.studies||[]).map(s=>[s.runId,s]));for(const s of studies)studiesByRun.set(s.study.runId,{runId:s.study.runId,at:s.study.at,sha256:s.sha256});
+ await writeFile(directory+'/revisao-pendencias-2026-11-08.json',JSON.stringify({version:1,at:new Date().toISOString(),baseline:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),studies:[...studiesByRun.values()],outcomes:[...(previous?.outcomes||[]).filter(o=>!ids.has(o.decision.documentId)),...outcomes],aiCalls:0,whatsappSends:0},null,2)+'\n');
 }
 for(const[f,hash]of frozenHashes)assert.equal(sha(await readFile(f)),hash,'Arquivo protegido alterado: '+f);
 for(const[id,value]of oldTexts)assert.equal(JSON.stringify(texts.get(id)),value,'Texto anterior alterado');
