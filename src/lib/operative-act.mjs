@@ -1,4 +1,24 @@
 // Read the operative act before treating vocabulary in its recitals/annexes as events.
+export function legislativeApproval(title,text,now=new Date()) {
+  const number=/^projeto de lei(?: complementar)?\s+(?:n[º°o.]*\s*)?(\d+)\/(20\d{2})\b/i.exec(title);
+  if(!number)return null;
+  const head=text.slice(0,2600),own=/\bprojeto de lei(?: complementar)?\s+(?:n[º°o.]*\s*)?(\d+)\/(20\d{2})\b/i.exec(head);
+  if(!own||own[1]!==number[1]||own[2]!==number[2]||
+    !/\b(?:aprova|ratifica)\b[^.;]{0,150}?contrato de cons[oó]rcio\b|\bautoriza\b[^.;]{0,150}?(?:ingresso|ades[aã]o)[^.;]{0,150}?cons[oó]rcio\b/i.test(head))return null;
+  const main=text.split(/\bLISTA DE ANEXOS E ATOS VINCULADOS\b/i)[0],votes=[];
+  for(const match of main.matchAll(/\bAPROVADO EM ([12])[ªaº°]?\s+VOTA[CÇ][AÃ]O\s+Documento aprovado em (\d{2})\/(\d{2})\/(20\d{2})\s+com (\d+) votos? favor[aá]veis? e (\d+) votos? contr[aá]rios? de (\d+) presentes\b/gi)) {
+    if(/\b(?:n[aã]o|se|caso|ser[aá]|modelo|exemplo|hip[oó]tese)\b/i.test(main.slice(Math.max(0,match.index-65),match.index)))continue;
+    const[day,month,year]=match.slice(2,5).map(Number),date=new Date(Date.UTC(year,month-1,day));
+    const[yes,no,present]=match.slice(5,8).map(Number);
+    if(date.getUTCDate()!==day||date.getUTCMonth()!==month-1||date.getUTCFullYear()!==year||date>new Date(now.getTime()+86400000)||yes<=no||yes+no>present)continue;
+    votes.push({match,round:Number(match[1]),date:date.toISOString()});
+  }
+  if(!votes.length)return null;
+  const last=[...votes].sort((a,b)=>b.round-a.round)[0],first=votes[0].match;
+  return{date:last.date,rounds:[...new Set(votes.map(v=>v.round))],
+    match:Object.assign([main.slice(first.index,last.match.index+last.match[0].length)],{index:first.index})};
+}
+
 export function operativeAct(title,text) {
   const head=text.slice(0,2600),law=/^(?:republica[cç][aã]o da )?lei\b/i.test(title),resolution=/^resolu[cç][aã]o\b/i.test(title);
   const result=(category,proofKind,stage,reason,match)=> {
@@ -10,6 +30,10 @@ export function operativeAct(title,text) {
   const reject=(stage,reason,match)=>result('GERAL','documentary_exclusion',stage,`rejeitado: ${reason}`,match);
   const consortium=/\bcons[oó]rci[oa]/i.test(text);
   if(!consortium)return null;
+  const approval=legislativeApproval(title,text);
+  if(approval)return result('GOVERNANÇA','approved_legislative_project',
+    `projeto consorcial com aprovação registrada em ${approval.rounds.includes(1)&&approval.rounds.includes(2)?'primeira e segunda votação':approval.rounds.includes(2)?'segunda votação':'primeira votação'}; sanção, ingresso efetivo e rateio assinado não comprovados`,
+    'documento do próprio projeto registra votação concluída com data e contagem de votos; o texto proposto não é lei sancionada',approval.match);
   const budgetCredit=/\bFica aberto[^.!?]{0,120}?Cr[eé]dito ADICIONAL SUPLEMENTAR[^.!?]{0,220}/i.exec(head);
   if(/^decreto/i.test(title)&&budgetCredit&&/prefeito municipal/i.test(head))
     return reject('crédito suplementar municipal; rubrica consorcial não comprova rateio',

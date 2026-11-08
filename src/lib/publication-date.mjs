@@ -1,4 +1,5 @@
 import * as cheerio from 'cheerio';
+import {legislativeApproval} from './operative-act.mjs';
 
 function validDate(value, now = new Date()) {
   if (!value || typeof value !== 'string') return '';
@@ -68,6 +69,8 @@ const MONTHS = new Map(Object.entries({ janeiro: 1, fevereiro: 2, marco: 3, abri
 // Apenas títulos de atos formais: datas soltas no corpo de uma notícia podem
 // ser contexto histórico e não a data do acontecimento principal.
 export function formalActDate(item, now = new Date()) {
+  const approval=legislativeApproval(String(item.title||item.titulo||''),String(item.rawText||''),now);
+  if(approval)return approval.date;
   const title = String(item.title || item.titulo || '').normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '').toLowerCase();
   if (!/^(?:\d{1,2}\/\d{1,2}\/20\d{2}\s*[-–]\s*)?(?:lei|resolucao|decreto|portaria|contrato(?: de rateio)?|instrucao normativa|termo de posse)\b/.test(title)) return '';
