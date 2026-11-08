@@ -14,6 +14,10 @@ on:
         description: Recuperar somente as sete íntegras do lote de 38, em cópia isolada e sem envios
         type: boolean
         default: false
+      pending_ids:
+        description: Estudar até duas pendências por ID, respeitando o recuo e sem gravar produção ou enviar
+        type: string
+        default: ''
 permissions:
   contents: read
 jobs:
@@ -39,24 +43,34 @@ jobs:
       - run: python -m unittest discover -s tests -p 'test_public_pdf.py'
       - run: node scripts/check-recovery-safety.mjs --before
       - name: Validar fontes reais e OCR sem persistir na base
-        if: ${{ !inputs.retroactive_ten && !inputs.pending_access && !inputs.pending_batch }}
+        if: ${{ !inputs.retroactive_ten && !inputs.pending_access && !inputs.pending_batch && inputs.pending_ids == '' }}
         run: node scripts/validate-public-recovery.mjs
       - name: Recuperar dez antigos em diretório isolado
-        if: ${{ inputs.retroactive_ten && !inputs.pending_access && !inputs.pending_batch }}
+        if: ${{ inputs.retroactive_ten && !inputs.pending_access && !inputs.pending_batch && inputs.pending_ids == '' }}
         run: node scripts/pilot-retroactive-ten.mjs
       - name: Estudar cinco bloqueios e rotas públicas sem persistir no acervo
-        if: ${{ inputs.pending_access && !inputs.pending_batch }}
+        if: ${{ inputs.pending_access && !inputs.pending_batch && inputs.pending_ids == '' }}
         run: node scripts/study-pending-access.mjs
       - name: Recuperar íntegras do lote pendente em cópia isolada
-        if: ${{ inputs.pending_batch }}
+        if: ${{ inputs.pending_batch && inputs.pending_ids == '' }}
         run: node scripts/study-pending-batch.mjs
+      - name: Ler somente as pendências solicitadas em cópia isolada
+        if: ${{ inputs.pending_ids != '' }}
+        env:
+          READING_IDS: ${{ inputs.pending_ids }}
+        shell: bash
+        run: |
+          if ! [[ "$READING_IDS" =~ ^[a-f0-9]{64}(,[a-f0-9]{64})?$ ]]; then
+            echo "IDs inválidos"; exit 1
+          fi
+          node scripts/study-pending-batch.mjs --ids="$READING_IDS"
       - name: Confirmar histórico, decisões e estado de envio intactos
         if: always()
         run: |
           node scripts/check-recovery-safety.mjs
           git diff --exit-code HEAD -- data state
       - name: Renderizar páginas da amostra para conferência
-        if: ${{ always() && !inputs.retroactive_ten && !inputs.pending_access && !inputs.pending_batch }}
+        if: ${{ always() && !inputs.retroactive_ten && !inputs.pending_access && !inputs.pending_batch && inputs.pending_ids == '' }}
         run: pdftoppm -scale-to 1500 -png output/public-recovery/guanhaes.pdf output/public-recovery/guanhaes-page
       - uses: actions/upload-artifact@v4
         if: always()

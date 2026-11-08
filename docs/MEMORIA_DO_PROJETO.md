@@ -1,6 +1,12 @@
 # Memória do projeto — Radar de Consórcios
 
-Atualização mais recente: **5 de novembro de 2026**. As seções antigas são registros históricos; números, agendas e decisões nelas descritos podem ter sido substituídos pelas atualizações datadas. Para operação corrente, confira esta memória, as evidências datadas e os workflows versionados.
+Atualização mais recente: **8 de novembro de 2026**. As seções antigas são registros históricos; números, agendas e decisões nelas descritos podem ter sido substituídos pelas atualizações datadas. Para operação corrente, confira esta memória, as evidências datadas e os workflows versionados.
+
+## Integridade do lote 38 — correção da causa em 08/11/2026
+
+- As três falhas de 06/11 foram reproduzidas com os estados reais das execuções `42205704428`, `42266246851` e `42313726986`. A nova captura de uma notícia retirava “(CNM)” do título; corpo, prova e decisão estavam preservados, mas o título integra o hash do registro. A mesclagem protegia somente o trecho.
+- A mesclagem compartilhada agora preserva todos os campos do selo dos registros revisados (ID, URL, título e trecho), mantendo a captura nova nas observações. Não há exceção por ID, recálculo de selo ou relaxamento de `validOriginalTriage`/guarda dos 38. A regressão falha no código anterior e passa no corrigido, inclusive verificando que adulteração continua inválida e registros sem selo continuam atualizáveis. Os três estados antigos passam com a correção.
+- Verificação local inicial: 647 testes da suíte mais dois testes de integração do estudo isolado, todos aprovados. A revisão das duas pendências usa leitores no GitHub, respeita janelas e não altera produção, filas ou recibos. Resultado das leituras e validação publicada devem ser registrados após a execução, sem atribuir resultado local à coleta automática.
 
 ## Trincheira com conclusão verificável — 05/11/2026
 

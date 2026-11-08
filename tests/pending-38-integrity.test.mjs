@@ -4,7 +4,29 @@ import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {loadOriginalTriage,validOriginalTriage} from '../src/lib/simple-triage.mjs';
 import {locateQuote} from '../src/lib/quote-evidence.mjs';
+import {mergeStateIntoCatalog} from '../src/lib/catalog.mjs';
 const directory='data/catalogo',nd=async n=>(await readFile(`${directory}/${n}.ndjson`,'utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse);
+
+test('recaptura com título normalizado não invalida o selo do lote; adulteração de título ou corpo continua inválida',async()=>{
+ const rows=await nd('arquivo-coletas'),decisions=await loadOriginalTriage(directory);
+ const row=rows.find(r=>r.id==='d38a2b2ec15e50412522ecce365a4a966de5358b247a848071c0b4c8fbc51288'),decision=decisions.get(row.id);
+ const text=(await nd('textos-artigos')).find(t=>t.documento_id===row.id);
+ assert.ok(validOriginalTriage(row,decision));
+ const title=row.titulo.replace(/ \(CNM\)$/,'');assert.notEqual(title,row.titulo);
+ const item={kind:'news',url:row.url,title,source:row.fonte,summary:text.texto,rawText:text.texto,
+  triage:{...decision,retroactive:false}};
+ const state={observations:{recapture:{item,firstSeenAt:row.primeira_coleta,lastSeenAt:'2026-11-08T01:00:00Z'}}};
+ const records=new Map([[row.id,structuredClone(row)]]);
+ mergeStateIntoCatalog(records,state,{reviewedIds:new Set(decisions.keys())});
+ const after=records.get(row.id);
+ for(const key of ['id','url','titulo','trecho'])assert.equal(after[key],row[key],key);
+ assert.ok(validOriginalTriage(after,decision));assert.equal(after.ultima_coleta,'2026-11-08T01:00:00Z');
+ assert.equal(state.observations.recapture.item.title,title,'a captura nova continua auditável');
+ assert.equal(validOriginalTriage({...after,titulo:title},decision),false);
+ assert.equal(validOriginalTriage(after,{...decision,bodyMatches:false}),false);
+ const unsealed=new Map([[row.id,structuredClone(row)]]);mergeStateIntoCatalog(unsealed,state);
+ assert.equal(unsealed.get(row.id).titulo,title,'não congelar observações sem decisão lacrada');
+});
 test('38 conclusões mantêm corpo/prova íntegros e bloqueios retroativos, inclusive após atualização de catálogo',async()=>{
  const batch=JSON.parse(await readFile(`${directory}/conclusao-pendencias-38.json`,'utf8'));
  assert.equal(batch.decisions.length,38);assert.deepEqual([batch.aiCalls,batch.whatsappSends],[0,0]);
