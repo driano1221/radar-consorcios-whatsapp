@@ -1,12 +1,17 @@
 {
   "version": 1,
-  "at": "2026-11-08T04:04:38.683Z",
-  "baseline": "b089248b71038149115da03935894dbe579999e7",
+  "at": "2026-11-08T04:42:58.638Z",
+  "baseline": "69a81469a7e952e5dd8f19f5f8c12b59704daad5",
   "studies": [
     {
       "runId": "42442536225",
       "at": "2026-11-08T03:25:23.745Z",
       "sha256": "39e6427dd53f01197ab2545378055de5342af8f5649ec385104c6f891936986c"
+    },
+    {
+      "runId": "42447527053",
+      "at": "2026-11-08T04:38:14.961Z",
+      "sha256": "86cea83dd09fcb673a86ba138b1e18b1364e47b5583f96ed2e3697cb468cfe7a"
     }
   ],
   "outcomes": [
@@ -42,6 +47,45 @@
         "next": ""
       },
       "eventAt": "2026-03-16T00:00:00.000Z"
+    },
+    {
+      "decision": {
+        "version": 4,
+        "category": "GERAL",
+        "stage": "Barrada na entrada — íntegra indisponível",
+        "evidence": "",
+        "bodyHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sourceUrl": "https://www.lontras.sc.leg.br/proposicoes/Leis-ordinarias/0/3/0/16123",
+        "checks": [],
+        "status": "descartado",
+        "method": "barreira_de_leitura",
+        "decisionBasis": "admissibilidade",
+        "reason": "Entrada não admitida após 3 tentativas registradas (bloqueio_antibot). Conteúdo não analisado; isto não afirma ausência do fato. Sem novas tentativas automáticas deste endereço. Uma íntegra válida permite nova triagem; PDF e HTML legíveis continuam aceitos.",
+        "admission": {
+          "version": 1,
+          "documentId": "1d59dd103f2998d8461e3235ce1de5ba444f32ca7e67bfc2b32d19fb73937c5e",
+          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1KMWp4Ti1pT1ZwVktWa0dTa0cxTzEydWFBMlhYekY2YU5zRk1DVW83eWNfRS1jWEU1Z3hQSXhzRnRkWmIyZlVaZ3ZqTGF4ejB0Zmc1U0E2RFNEU0lfeDBpS2U2SUFUUG5oUzFoN3FJTFN3ZmN0TmxVNA?oc=5",
+          "status": "barrada",
+          "failure": "bloqueio_antibot",
+          "attempts": 3,
+          "attemptedAt": "2026-11-08T04:38:09.247Z",
+          "diagnosticHash": "3b9587ae366bfb9f1a74caebbd35d322d1cdfa7e0013eb2bd9c5be94ae2bfe29"
+        },
+        "documentId": "1d59dd103f2998d8461e3235ce1de5ba444f32ca7e67bfc2b32d19fb73937c5e",
+        "rowHash": "d400115786a16b687c38dc64f622600f190e3d346f24155246e6138da3630056",
+        "retroactive": true,
+        "reviewedAt": "2026-11-08T04:42:57.109Z",
+        "alertAllowed": false,
+        "weeklyAllowed": false
+      },
+      "reading": null,
+      "attempt": {
+        "count": 3,
+        "at": "2026-11-08T04:38:09.247Z",
+        "reason": "bloqueio_antibot",
+        "next": ""
+      },
+      "eventAt": ""
     }
   ],
   "aiCalls": 0,
