@@ -1,8 +1,8 @@
 # Panorama da base histórica
 
-- 6492 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 385 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 128 identidades candidatas de consórcios; 229 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 6580 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 386 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 128 identidades candidatas de consórcios; 230 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 169 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
@@ -11,7 +11,7 @@
 |---|---:|
 | ATUAÇÃO | 127 |
 | GOVERNANÇA | 64 |
-| RATEIO | 62 |
+| RATEIO | 63 |
 | CONTROLE | 32 |
 | FINANÇAS | 26 |
 | ADESÃO AUTORIZADA | 24 |
@@ -32,6 +32,7 @@
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
 | 2026-11-10 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI 1.710/2026](https://www.diariomunicipal.com.br/aprece/materia/4BDA9212) |
+| 2026-11-10 | RATEIO — aditivo de rateio formalizado; pagamento e novo ingresso não comprovados | confirmado pela triagem — texto identifica município, consórcio e celebração/assinantes do instrumento | [AMVAP SAÚDE - 1º TERMO ADITIVO AO CONTRATO DE RATEIO Nº 019/2026 QUE ENTRE SI CELEBRAM O CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DO TRIÂNGULO MINEIRO – AMVAP SAÚDE E O MUNICÍPIO DE CENTRALINA-MG.](https://www.diariomunicipal.com.br/amm-mg/materia/D9052CA9) |
 | 2026-11-10 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI MUNICIPAL Nº 2.013/2026](https://www.diariomunicipal.com.br/aprece/materia/5315A95E) |
 | 2026-11-10 | FINANÇAS — crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio | confirmado pela triagem — ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal | [ATO DE CONSÓRCIO Nº 123/2026](https://www.diariomunicipal.com.br/amp/materia/473280BB) |
 | 2026-11-10 | GOVERNANÇA — organização interna dos conselhos consultivos publicada; não é protocolo nem ingresso municipal | confirmado pela triagem — norma interna descreve órgãos e competências do consórcio | [RESOLUÇÃO Nº 006, DE 09 DE NOVEMBRO DE 2026.](https://www.diariomunicipal.com.br/femurn/materia/A90D0ECA) |
@@ -45,6 +46,5 @@
 | 2026-11-07 | GOVERNANÇA — projeto consorcial com aprovação registrada em primeira e segunda votação; sanção, ingresso efetivo e rateio assinado não comprovados | confirmado pela triagem — documento do próprio projeto registra votação concluída com data e contagem de votos; o texto proposto não é lei sancionada | [Projeto de Lei Nº 10/2026 - Câmara Municipal de Viçosa](https://news.google.com/rss/articles/CBMiWEFVX3lxTFBuQ1pBOGhOWnpWN3lDQ1laWS1xTGlmcjZGd2xJMVpLLWYwQ0ZrUnE4QU1zMy0tQUR4alpON0xXbVMzOGp3d2Z4WG9HSlplMTFJMm94SDJvQWY?oc=5) |
 | 2026-11-07 | CONTROLE — relato — conferir documento original | confirmado pela triagem — Texto original lido; regra e segunda leitura concordam, com evidência literal. | [Tribunal de Contas suspende licitação de R$ 165 milhões por 'apagão' em dados do orçamento - Bonito Informa](https://news.google.com/rss/articles/CBMi1AFBVV95cUxPY24yZ0hCUlFmamRibkZnLXRSazYtdFNiV0F6UmdBNGRhZ2NTbHBGZ1M1N2tYYVRTTl9jMXFZS0o0bU1mNFE4NGw5LWl5VjJlY3dHVHV0VmEzSEowMTh3bTd0MnNsbnNsMHp2Q3hMbE54R0hDS0g5dHU3anpaWk5pa3NfaW03OFRSNkMwVG5FamxQaUpMQ1dOVVFmXzdlUzBYcEtYOTlVYXg4QXdadkxMbUF2eTdsVHY5S2xaU21RUjl4SkxySHdwUjlILVdwR3M3WjVVcw?oc=5) |
 | 2026-11-06 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [MUNICÍPIO DE SÃO PEDRO DO PARANÁ - CONVÊNIO 2/2026](https://www.diariomunicipal.com.br/amp/materia/5E56B7B6) |
-| 2026-11-06 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [MODELO DE CONVÊNIO PRODUTOS PARA SAÚDE](https://www.diariomunicipal.com.br/amp/materia/9EEB28AA) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
