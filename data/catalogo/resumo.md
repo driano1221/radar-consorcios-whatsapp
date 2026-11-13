@@ -1,8 +1,8 @@
 # Panorama da base histórica
 
-- 7159 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 399 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 130 identidades candidatas de consórcios; 239 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 7170 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 400 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 131 identidades candidatas de consórcios; 240 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
 - 174 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
@@ -10,7 +10,7 @@
 | Tema | Registros |
 |---|---:|
 | ATUAÇÃO | 130 |
-| GOVERNANÇA | 70 |
+| GOVERNANÇA | 71 |
 | RATEIO | 66 |
 | CONTROLE | 32 |
 | FINANÇAS | 27 |
@@ -31,6 +31,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-11-12 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI ORDINÁRIA N° 3727, DE 11 DE NOVEMBRO DE 2026. RATIFICA A 2ª ALTERAÇÃO E CONSOLIDAÇÃO DO CONTRATO DO CONSÓRCIO INTERFEDERATIVO DE TURISMO COSTA VERDE E MAR – CITMAR E DÁ OUTRAS PROVIDÊNCIAS](https://diariomunicipal.sc.gov.br/atos/8911786) |
 | 2026-11-12 | FINANÇAS — crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio | confirmado pela triagem — ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal | [ATO DE CONSÓRCIO Nº 125/2026](https://www.diariomunicipal.com.br/amp/materia/86D3D33E) |
 | 2026-11-12 | RATEIO — aditivo de rateio formalizado; pagamento e novo ingresso não comprovados | confirmado pela triagem — texto identifica município, consórcio e celebração/assinantes do instrumento | [DÉCIMO QUARTO TERMO ADITIVO AO CONTRATO DE RATEIO Nº 001/2026](https://amm.diariomunicipal.org/publicacao/1940913/) |
 | 2026-11-12 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI Nº 943/2026](https://www.diariomunicipal.com.br/amp/materia/BF4DF237) |
@@ -45,6 +46,5 @@
 | 2026-11-10 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI Nº 1.328/2026 Ratifica a alteração do Protocolo de Intenções e do Estatuto do Consórcio Intermunicipal de Infraestrutura e Desenvolvimento do Vale do Rio Arinos – CINDVALE, em conformidade com a L](https://amm.diariomunicipal.org/publicacao/1939080/) |
 | 2026-11-10 | RATEIO — aditivo de rateio formalizado; pagamento e novo ingresso não comprovados | confirmado pela triagem — texto identifica município, consórcio e celebração/assinantes do instrumento | [AMVAP SAÚDE - 1º TERMO ADITIVO AO CONTRATO DE RATEIO Nº 019/2026 QUE ENTRE SI CELEBRAM O CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DO TRIÂNGULO MINEIRO – AMVAP SAÚDE E O MUNICÍPIO DE CENTRALINA-MG.](https://www.diariomunicipal.com.br/amm-mg/materia/D9052CA9) |
 | 2026-11-10 | ATUAÇÃO — norma operacional de inspeção publicada; não comprova fiscalização realizada nem alteração constitutiva | confirmado pela triagem — norma técnica de inspeção; protocolo citado no preâmbulo é fundamento, não objeto de alteração | [INSTRUÇÃO NORMATIVA N°15 DE 09 DE NOVEMBRO DE 2026.](https://amm.diariomunicipal.org/publicacao/1939549/) |
-| 2026-11-10 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI MUNICIPAL Nº 2.013/2026](https://www.diariomunicipal.com.br/aprece/materia/5315A95E) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
