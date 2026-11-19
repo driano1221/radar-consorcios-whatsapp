@@ -1,15 +1,15 @@
 # Panorama da base histórica
 
-- 8180 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 426 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 8348 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 427 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
 - 133 identidades candidatas de consórcios; 249 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 191 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 192 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
-| ATUAÇÃO | 142 |
+| ATUAÇÃO | 143 |
 | GOVERNANÇA | 74 |
 | RATEIO | 72 |
 | CONTROLE | 32 |
@@ -31,6 +31,7 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-11-19 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATO DE TERMO ADITIVO](https://www.diariomunicipal.com.br/amm-mg/materia/50EE745B) |
 | 2026-11-18 | ATUAÇÃO — atividade institucional realizada; acordos, planos aprovados e entregas não inferidos | confirmado pela triagem — consórcio é o agente da visita/reunião realizada, não mero participante ou anúncio | [Consórcio Intermunicipal Grande ABC alinha ações de igualdade racial, feira de afroempreendedores e celebração do Dia do Samba - ABC Agora](https://news.google.com/rss/articles/CBMigAFBVV95cUxPZ0pfZlNlUDViNGdyUjBKMFNzWXpIdlY4ZzYwb1Q3WVFxb3ZPNnp3dFhjU2ZmWE9QWFRFdkl4SGpxbG9nLXFIcjRfbnBWb2dOU01GWWM3eWFhM1kyeWs0RjV1ejFCQ050NXgtZ1hYVlJvUGJXc3JqQTFkWVpsUWlucA?oc=5) |
 | 2026-11-18 | GOVERNANÇA —  | processando pela triagem — Obter o texto original antes de decidir; falha de leitura não é dúvida para revisão humana. | [César Ulian é eleito presidente do Consórcio Intermunicipal da Serra Gaúcha - Rádio Solaris](https://news.google.com/rss/articles/CBMipwFBVV95cUxNN2lyVVhmT2RwNUhHTUVtQ2JQc0JzdlhTQUJmZXFjTjVraXRpeGoybkdxZTZfVldiNjlUd1N4aHRNbUh6Q2IwT082N2ZWcGtuNElmcnF3ZVAwQmEzNVFwVHh6YWxNdXgyRVZvTE9xWEVTa21HSzNQdWFPT3JIRDZJaGxEdE1iOUVKUmVOdlFDRUFjRHdaY0l2SlhLNEIydGc2TVZKY3Y5Zw?oc=5) |
 | 2026-11-18 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO CONTRATO DE RATEIO Nº 010/2026](https://amm.diariomunicipal.org/publicacao/1944530/) |
@@ -45,6 +46,5 @@
 | 2026-11-17 | PROTOCOLO — ratificação legal do protocolo; ingresso homologado, constituição e rateio assinado não comprovados | confirmado pela triagem — dispositivo legal ratifica protocolo; não inferir efeitos posteriores | [LEI MUNICIPAL Nº 1.923/2026](https://amm.diariomunicipal.org/publicacao/1943063/) |
 | 2026-11-17 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [Contrato de Rateio nº 013/2026](https://amm.diariomunicipal.org/publicacao/1943228/) |
 | 2026-11-17 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI MUNICIPAL Nº 1.925/2026](https://amm.diariomunicipal.org/publicacao/1943066/) |
-| 2026-11-17 | PROTOCOLO — ratificação legal do protocolo; ingresso homologado, constituição e rateio assinado não comprovados | confirmado pela triagem — dispositivo legal ratifica protocolo; não inferir efeitos posteriores | [LEI ORDINÁRIA Nº 893/2026 DE 17 DE NOVEMBRO DE 2026 RATIFICA O PROTOCOLO DE INTENÇÕES E AUTORIZA O INGRESSO DO MUNICÍPIO DE ZORTÉA NO CONSÓRCIO INTERFEDERATIVO DE SAÚDE DO ALTO VALE DO RIO DO PEIXE - CISAMARP](https://diariomunicipal.sc.gov.br/atos/8924067) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
