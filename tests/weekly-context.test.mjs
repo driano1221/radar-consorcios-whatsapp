@@ -5,7 +5,7 @@ import { formatWeeklyMessages } from '../src/lib/format.mjs';
 
 const item = { kind: 'gazette', title: 'CONVÊNIO Nº 004/2030', publishedAt: '2030-11-18T12:00:00Z',
   url: 'https://exemplo.gov.br/ato', source: 'Diário municipal', stateCode: 'PR',
-  classification: { category: 'ATUAÇÃO', stage: 'instrumento publicado; execução e pagamento não comprovados' } };
+  classification: { category: 'ATUAÇÃO', proofKind: 'public_service_agreement', stage: 'instrumento publicado; execução e pagamento não comprovados' } };
 
 test('semanal identifica consórcio sem sigla, município e objeto antes de remover a íntegra', () => {
   const body = 'O MUNICÍPIO DE BALSA NOVA E O CONSÓRCIO INTERGESTORES PARANÁ SAÚDE COM VISTAS A COOPERAÇÃO. ' +
@@ -19,7 +19,9 @@ test('semanal identifica consórcio sem sigla, município e objeto antes de remo
   const before = JSON.stringify(report);
   const text = formatWeeklyMessages(report).join('\n');
   assert.match(text, /aquisição e distribuição de medicamentos/);
-  assert.match(text, /execução e pagamento não comprovados/);
+  assert.equal(report.highlights[0].classification.stage, item.classification.stage);
+  assert.match(text, /\*Paraná Saúde — Balsa Nova\/PR:\*/);
+  assert.doesNotMatch(text, /Etapa:|No documento:|Município:/);
   assert.doesNotMatch(text, /Agência|conta 1234/);
   assert.equal(JSON.stringify(report), before);
 });
@@ -56,11 +58,12 @@ test('preserva o nome AMVAP Saúde e o aditivo, sem incorporar CNPJ na sigla', (
     'Consórcio Público Intermunicipal de Saúde do Triângulo Mineiro – AMVAP SAÚDE, inscrito no CNPJ nº 00.000.000/0000-00, ' +
     'e o Município de Gurinhatã/MG. Objeto: acréscimo do valor disposto na Cláusula Quarta; alteração do Anexo Único. ' +
     'Valor acrescido no aditivo: R$ 180.000,00. Valor total do contrato de rateio: R$ 935.586,80.';
-  const context = weeklyContext({ ...item, title: body.slice(0, 62), classification: { category: 'RATEIO' } }, {}, body);
+  const context = weeklyContext({ ...item, title: body.slice(0, 62), classification: { category: 'RATEIO', proofKind: 'documented_rateio' } }, {}, body);
   assert.match(context.consortia[0], /\(AMVAP SAÚDE\)$/);
   assert.match(context.title, /3º Termo Aditivo/);
   assert.match(context.description, /Cláusula Quarta; alteração do Anexo Único/);
   assert.equal(context.values.length, 2);
+  assert.match(context.fact, /^Aditivo de R\$ 180 mil ao rateio nº 12\/2030\.$/);
   assert.doesNotMatch(context.consortia.join(''), /CNPJ/);
 });
 
@@ -87,4 +90,33 @@ test('nome ausente fica explícito; não inventa identificação nem perde achad
   assert.equal((text.match(/nome não identificado com segurança/g) || []).length, 14);
   assert.equal((text.match(/🔗 /g) || []).length, 14);
   assert.match(text, /Datas dos itens: publicação/);
+});
+
+test('frase curta conserva autorização e negação, sem transformar projeto em lei ratificada', () => {
+  const protocol = { ...item, title: 'Projeto de Lei nº 123/2030',
+    classification: { category: 'PROTOCOLO', proofKind: 'ratified_protocol' } };
+  const denied = weeklyContext(protocol, {}, 'Art. 1º Não fica ratificado o protocolo do Consórcio Intermunicipal de Saúde Regional – CISR. Art. 2º Vigência.');
+  assert.match(denied.fact, /Não fica ratificado/);
+  assert.doesNotMatch(denied.fact, /^Município ratifica/);
+  const project = weeklyContext({ ...protocol, classification: { category: 'GOVERNANÇA', proofKind: 'approved_legislative_project' } }, {},
+    'Art. 1º O projeto propõe ratificar alteração do protocolo de intenções. Art. 2º Vigência.');
+  assert.match(project.fact, /projeto propõe ratificar/);
+  assert.doesNotMatch(project.fact, /^Lei ratifica/);
+  const authorized = weeklyContext({ ...item, classification: { category: 'COOPERAÇÃO AUTORIZADA', proofKind: 'authorized_public_cooperation' } }, {},
+    'Art. 1º Fica autorizada a celebração de convênio para serviços de saúde. Art. 2º Vigência.');
+  assert.match(authorized.fact, /autorizada a celebração/);
+  assert.doesNotMatch(authorized.fact, /^Convênio para/);
+});
+
+test('frase de convênio não inventa SUS ou medicamentos essenciais quando ausentes', () => {
+  const context = weeklyContext(item, {}, 'Objeto: aquisição e distribuição de medicamentos oncológicos para pacientes particulares.');
+  assert.doesNotMatch(context.fact, /essenciais|SUS/);
+});
+
+test('valor total do contrato não é apresentado como valor do aditivo', () => {
+  const context = weeklyContext({ ...item, title: 'Termo aditivo ao contrato de rateio nº 12/2030',
+    classification: { category: 'RATEIO', proofKind: 'documented_rateio' } }, {},
+    'Objeto: prorrogação de vigência. Valor total do contrato: R$ 935.586,80.');
+  assert.equal(context.fact, 'Aditivo ao rateio nº 12/2030.');
+  assert.equal(context.values.length, 1);
 });

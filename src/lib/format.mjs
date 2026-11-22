@@ -300,7 +300,7 @@ export function formatWeeklyMessage(report, test = false) {
   const labels = {
     CRISE: 'ALERTA', SAÍDA: 'SAÍDA', CRIAÇÃO: 'NOVO CONSÓRCIO', ADESÃO: 'ADESÃO',
     'ADESÃO AUTORIZADA': 'INGRESSO AUTORIZADO',
-    RATEIO: 'RATEIO', 'RATEIO EM TRAMITAÇÃO': 'RATEIO EM TRAMITAÇÃO', 'COOPERAÇÃO AUTORIZADA': 'ATUAÇÃO · COOPERAÇÃO AUTORIZADA', PROTOCOLO: 'PROTOCOLO', GOVERNANÇA: 'ATUAÇÃO · GOVERNANÇA',
+    RATEIO: 'RATEIO', 'RATEIO EM TRAMITAÇÃO': 'RATEIO EM TRAMITAÇÃO', 'COOPERAÇÃO AUTORIZADA': 'ATUAÇÃO · COOPERAÇÃO AUTORIZADA', PROTOCOLO: 'PROTOCOLO', GOVERNANÇA: 'GOVERNANÇA',
     CONTROLE: 'ATUAÇÃO · CONTROLE/FISCALIZAÇÃO', FINANÇAS: 'ATUAÇÃO · FINANÇAS', ATUAÇÃO: 'ATUAÇÃO', AÇÃO: 'ATUAÇÃO',
   };
   const icons = {
@@ -333,16 +333,17 @@ export function formatWeeklyMessage(report, test = false) {
     const category = item.classification?.scope === 'orientacao_geral' ? 'ORIENTAÇÃO GERAL'
       : labels[item.classification?.category] || 'CONSÓRCIOS';
     const icon = icons[item.classification?.category] || '📰';
+    const names = (context.labels || context.consortia).map(cleanInline).join('; ');
+    const location = cleanInline(context.location).replace(/\p{L}+/gu, word => {
+      if (/^(?:de|do|da|dos|das|e)$/i.test(word)) return word.toLowerCase();
+      return word.length > 2 && word === word.toUpperCase() ? word[0] + word.slice(1).toLowerCase() : word;
+    });
+    const actor = [names, location].filter(Boolean).join(' — ');
+    const fact = cleanInline(item.presentationTitle || context.fact || headline);
     rows.push('', `${icon} *${date(item.publishedAt)} · ${category}*`,
-      headline,
-      ...(context.consortia.length ? [`Consórcio: ${context.consortia.map(cleanInline).join('; ')}`] :
-        item.kind === 'gazette' ? ['Consórcio: nome não identificado com segurança no trecho.'] : []),
-      ...(context.location ? [`Município: ${cleanInline(context.location)}`] : []),
-      ...(context.description ? [`No documento: ${cleanInline(context.description)}`] : []),
-      ...context.values.map(cleanInline),
-      ...(item.classification?.stage ? [`Etapa: ${cleanInline(item.classification.stage)}.`] : []),
-      `_${source}_`,
-      `🔗 ${item.displayUrl || item.url}`);
+      ...(actor ? [`*${actor}:* ${fact}`] : [headline,
+        ...(item.kind === 'gazette' ? ['Consórcio: nome não identificado com segurança no trecho.'] : [])]),
+      `🔗 ${source}: ${item.displayUrl || item.url}`);
   }
   return rows.join('\n').trim();
 }
