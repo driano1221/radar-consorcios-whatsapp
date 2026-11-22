@@ -1,4 +1,5 @@
 import { escapeWhatsApp, normalizeForMatch, normalizeWhitespace } from './text.mjs';
+import { weeklyContext } from './weekly-context.mjs';
 
 const categoryLabels = {
   CRISE: 'ALERTA SOBRE CONSÓRCIO',
@@ -314,14 +315,17 @@ export function formatWeeklyMessage(report, test = false) {
     `_Período: ${date(report.start)} às ${hour} até ${date(report.end)} às ${hour} (Brasília)_`,
     '',
     `*${report.events} ${report.events === 1 ? 'achado relevante' : 'achados relevantes'}*`,
+    '_Datas dos itens: publicação; os atos podem ser anteriores._',
   ];
   if (!report.highlights.length) rows.push('', 'Nenhum achado atingiu os critérios nesta janela.');
   const chronological = [...report.highlights].sort((a, b) =>
     new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
   for (const item of chronological) {
+    const context = item.weeklyContext || weeklyContext(item);
     const ratifiedProtocol = item.kind === 'gazette' && ['GOVERNANÇA', 'PROTOCOLO'].includes(item.classification?.category) &&
       /ratifica.{0,35}protocolo de intenções/i.test(item.summary || '');
-    const title = item.presentationTitle ? cleanInline(item.presentationTitle) : ratifiedProtocol
+    const title = item.presentationTitle ? cleanInline(item.presentationTitle) : context.title
+      ? cleanInline(context.title) : ratifiedProtocol
       ? `${cleanInline(item.territoryName || 'Município')} ratifica protocolo de intenções${extractConsortiumLabel(item) ? ` do ${extractConsortiumLabel(item)}` : ''}`
       : cleanInline(displayTitle(item));
     const source = cleanInline(item.source || 'Fonte não informada');
@@ -330,7 +334,14 @@ export function formatWeeklyMessage(report, test = false) {
       : labels[item.classification?.category] || 'CONSÓRCIOS';
     const icon = icons[item.classification?.category] || '📰';
     rows.push('', `${icon} *${date(item.publishedAt)} · ${category}*`,
-      headline, `_${source}_`,
+      headline,
+      ...(context.consortia.length ? [`Consórcio: ${context.consortia.map(cleanInline).join('; ')}`] :
+        item.kind === 'gazette' ? ['Consórcio: nome não identificado com segurança no trecho.'] : []),
+      ...(context.location ? [`Município: ${cleanInline(context.location)}`] : []),
+      ...(context.description ? [`No documento: ${cleanInline(context.description)}`] : []),
+      ...context.values.map(cleanInline),
+      ...(item.classification?.stage ? [`Etapa: ${cleanInline(item.classification.stage)}.`] : []),
+      `_${source}_`,
       `🔗 ${item.displayUrl || item.url}`);
   }
   return rows.join('\n').trim();

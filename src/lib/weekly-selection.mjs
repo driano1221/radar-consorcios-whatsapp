@@ -9,6 +9,7 @@ import { materializeDocumentActs } from './document-acts.mjs';
 import { isWhatsAppCategoryAllowed } from './whatsapp-policy.mjs';
 import { applySimpleTriage } from './simple-triage.mjs';
 import { verifiedTriage } from './triage-proof.mjs';
+import { weeklyContext } from './weekly-context.mjs';
 
 const confirmed = review => ['confirmar_evento', 'corrigir_categoria'].includes(review?.decisao);
 const dateValue = value => /^\d{4}-\d{2}-\d{2}$/.test(value || '') ? `${value}T12:00:00-03:00` : value;
@@ -117,6 +118,16 @@ export async function prepareWeeklyState(state, directory, window, options = {})
       kind: row.registro_tipo === 'ato' ? 'document' : /Diário Oficial/.test(row.titulo) ? 'gazette' : 'news',
       territoryName: row.municipio, summary: row.trecho, classification: { score: 5, category: review.categoria } };
     addReviewed(item, { firstSeenAt: row.primeira_coleta, lastSeenAt: row.ultima_coleta }, row, review, `review:${row.id}`);
+  }
+  for (const observation of Object.values(observations)) {
+    const item = observation.item;
+    const row = byId.get(item.weeklyEvidence?.documentId) || byUrl.get(canonicalUrl(item.url));
+    // A separately delimited PDF act must not inherit the whole parent edition.
+    const stored = row?.registro_tipo !== 'ato' && textById.get(row?.id);
+    const body = row?.registro_tipo === 'ato' ? row.trecho || item.weeklyEvidence?.evidence || ''
+      : stored?.texto && createHash('sha256').update(stored.texto).digest('hex') === row.article_text_sha256
+        ? stored.texto : item.rawText || item.summary || '';
+    observation.item = { ...item, weeklyContext: weeklyContext(item, row, body) };
   }
   return { ...state, observations, weeklySelectionAudit: audit };
 }
