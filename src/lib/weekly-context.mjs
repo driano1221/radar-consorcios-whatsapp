@@ -20,7 +20,7 @@ export function weeklyContext(item, row = {}, body = item.rawText || item.summar
   const placeEnd = '(?=\\s*(?:[,.;:/]|[–—-]\\s*[A-Z]{2}\\b)|\\s+e\\s+o\\s+cons[oó]rcio\\b|$)';
   const issuer = opening.match(new RegExp('prefeito\\s+(?:municipal\\s+de|do\\s+munic[ií]pio\\s+de)\\s+([\\p{L} \'’–-]+?)' + placeEnd, 'iu'))?.[1];
   const party = opening.match(new RegExp('(?:prefeitura\\s+municipal|munic[ií]pio)\\s+de\\s+([\\p{L} \'’–-]+?)' + placeEnd, 'iu'))?.[1];
-  const municipality = issuer || row.municipio || item.editorialFacts?.municipio || item.territoryName || party || '';
+  const municipality = item.editorialFacts?.municipio || issuer || row.municipio || item.territoryName || party || '';
   const stateCode = row.uf || item.stateCode || '';
   const location = municipality ? `${municipality}${stateCode && !new RegExp('[/–—-]\\s*' + stateCode + '$', 'i').test(municipality) ? `/${stateCode}` : ''}` : '';
 

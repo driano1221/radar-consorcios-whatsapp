@@ -35,6 +35,8 @@ test('identifica o autor municipal da lei antes do anexo e mantém alteração c
   assert.match(context.consortia[0], /Portal da Amazônia \(CIDESPA\)/);
   assert.match(context.description, /^Fica ratificado o Termo de Alteração/);
   assert.doesNotMatch(context.description, /Art\. 13|Colíder|Outro Lugar|Integra o Estatuto/);
+  const reviewed = weeklyContext({ ...item, editorialFacts: { municipio: 'Ato delimitado por revisão' } }, { uf: 'MT' }, body);
+  assert.equal(reviewed.location, 'Ato delimitado por revisão/MT');
 });
 
 test('separa retificação do mesmo rateio, sem expor o valor substituído como vigente', () => {
