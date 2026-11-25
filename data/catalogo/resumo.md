@@ -1,19 +1,19 @@
 # Panorama da base histórica
 
-- 9208 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
-- 442 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
-- 135 identidades candidatas de consórcios; 254 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
-- 203 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
+- 9429 documentos de origem no acervo; 10 fatos registrados separadamente dentro deles, cada um com decisão própria. As fontes desses fatos ficam rejeitadas como registros adicionais para evitar duplicação.
+- 446 registros relacionados a possíveis eventos de consórcios; 163 aceitos após revisão documental. Os demais não devem ser tratados como fatos confirmados.
+- 136 identidades candidatas de consórcios; 259 vínculos documentais, dos quais 87 apoiados em fonte complementar conferida. A identidade e os eventos ainda exigem validação independente.
+- 205 documentos relevantes sem identidade segura, listados em `identidade-pendente.csv`.
 
 ## Registros por tema
 
 | Tema | Registros |
 |---|---:|
 | ATUAÇÃO | 149 |
-| GOVERNANÇA | 75 |
-| RATEIO | 75 |
+| RATEIO | 77 |
+| GOVERNANÇA | 76 |
 | CONTROLE | 32 |
-| FINANÇAS | 30 |
+| FINANÇAS | 31 |
 | ADESÃO AUTORIZADA | 26 |
 | PROTOCOLO | 22 |
 | ADESÃO | 9 |
@@ -31,6 +31,10 @@
 
 | Publicação | Tema e etapa | Situação | Documento |
 |---|---|---|---|
+| 2026-11-25 | RATEIO — aditivo de rateio formalizado; pagamento e novo ingresso não comprovados | confirmado pela triagem — texto identifica município, consórcio e celebração/assinantes do instrumento | [AMVAP SAUDE - 1º TERMO ADITIVO AO CONTRATO DE RATEIO Nº 020/2026, FIRMADO ENTRE O CONSÓRCIO PÚBLICO INTERMUNICIPAL DE SAÚDE DO TRIÂNGULO MINEIRO – AMVAP SAÚDE, INSCRITO NO CNPJ Nº 18.151.467/0001-06, E O MUNICÍPIO DE ARAPORÃ/MG](https://www.diariomunicipal.com.br/amm-mg/materia/D17B10E8) |
+| 2026-11-25 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO CONTRATO DE RATEIO Nº 2026032/001](https://www.diariomunicipal.com.br/femurn/materia/21E74907) |
+| 2026-11-25 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [LEI ORDINÁRIA MUNICIPAL Nº 721, DE 03 DE NOVEMBRO DE 2026.](https://www.diariomunicipal.com.br/aprece/materia/7078D90D) |
+| 2026-11-25 | FINANÇAS — crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio | confirmado pela triagem — ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal | [ATO DE CONSÓRCIO Nº 129/2026](https://www.diariomunicipal.com.br/amp/materia/D043376A) |
 | 2026-11-24 | FINANÇAS — crédito suplementar do próprio consórcio autorizado; não comprova pagamento ou novo rateio | confirmado pela triagem — ato orçamentário do consórcio, distinto de rubrica genérica em orçamento municipal | [ATO DE CONSÓRCIO Nº 127/2026](https://www.diariomunicipal.com.br/amp/materia/DC73F95F) |
 | 2026-11-24 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO 01/2026](https://www.diariomunicipal.com.br/amp/materia/59D50C40) |
 | 2026-11-24 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVÊNIO Nº. 001/2026](https://www.diariomunicipal.com.br/amp/materia/0580986F) |
@@ -42,9 +46,5 @@
 | 2026-11-23 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [CONVENIO BF-CIP](https://www.diariomunicipal.com.br/amp/materia/FDC5C129) |
 | 2026-11-23 | RATEIO — aditivo de rateio formalizado; pagamento e novo ingresso não comprovados | confirmado pela triagem — texto identifica município, consórcio e celebração/assinantes do instrumento | [CONTRATO DE RATEIO - 1º TERMO ADITIVO](https://www.diariomunicipal.com.br/amm-mg/materia/64E5FB3B) |
 | 2026-11-23 | RATEIO — rateio firmado em extrato publicado; não comprova pagamento ou novo ingresso | confirmado pela triagem — extrato de rateio com partes públicas e assinatura ou declaração expressa de celebração | [EXTRATO DO CONTRATO DE RATEIO Nº 2026030/001](https://www.diariomunicipal.com.br/femurn/materia/B007523B) |
-| 2026-11-23 | PROTOCOLO — ratificação legal do protocolo; ingresso homologado, constituição e rateio assinado não comprovados | confirmado pela triagem — dispositivo legal ratifica protocolo; não inferir efeitos posteriores | [LEI Nº 970/2026](https://www.diariomunicipal.com.br/famup/materia/BD999953) |
-| 2026-11-23 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [DECRETO Nº 6441, DE 18 DE NOVEMBRO DE 2026](https://www.diariomunicipal.com.br/amp/materia/2E6ABEF7) |
-| 2026-11-19 | GOVERNANÇA — ratificação de alteração contratual/protocolo publicada; não é novo ingresso nem novo rateio | confirmado pela triagem — dispositivo inicial ratifica alteração de instrumento já existente; cláusulas do anexo não são fatos ocorridos | [Lei nº 746/2026. De 18 de novembro de 2026](https://amm.diariomunicipal.org/publicacao/1945372/) |
-| 2026-11-19 | ATUAÇÃO — instrumento município–consórcio publicado; execução, pagamento e novo ingresso não inferidos | confirmado pela triagem — partes públicas e objeto do instrumento identificados; fornecedor privado não é o fato aceito | [EXTRATO DE TERMO ADITIVO](https://www.diariomunicipal.com.br/amm-mg/materia/50EE745B) |
 
 Veja todos os registros em `eventos.csv`. Classificação automática, publicação pelo radar e autorização legal não comprovam sozinhas a composição de um consórcio.
